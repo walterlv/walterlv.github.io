@@ -13,6 +13,7 @@ body {
     margin: 0;
     background-color: rgba(255, 255, 255, 0.9);
     float: left;
+    position: fixed;
 }
 
 .rootPanel {
@@ -24,7 +25,7 @@ body {
     margin-right: 15%;
 }
 
-#headerPanel {
+.headerPanel {
     height: 40px;
     background-color: rgb(2, 113, 188)
 }
