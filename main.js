@@ -8,6 +8,8 @@ function searchButtonOnClick() {
     var text = textInput.value;
     if (text != "") {
         var resultList = document.getElementById("resultList");
-        alert("Click");
+        var li = document.createElement("li");
+        li.innerText = text;
+        resultList.appendChild(li);
     }
 }

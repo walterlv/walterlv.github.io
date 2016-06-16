@@ -1,0 +1,52 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url("http://s.cn.bing.net/az/hprichbg/rb/BomboHeadland_ZH-CN9339065341_1920x1080.jpg");
+    background-attachment: fixed;
+}
+
+#splitView{
+    width: 240;
+    height: 100%;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    float: left;
+}
+
+#rootPanel{
+    margin-left: 240;
+}
+
+#mainPanel{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#headerPanel{
+    height: 40;
+    background-color: rgb(2, 113, 188)
+}
+
+#bannerPanel{
+    height: 400;
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+#contentPanel{
+    min-height: 720;
+    background-color: white;
+}
+
+#searchForm{
+    padding-left: 68%;
+    padding-top: 8;
+}
+
+#resultList{
+    padding-left: 70%;
+    padding-top: 16;
+    padding-bottom: 16;
+    margin: 0;
+    max-height: 368;
+}

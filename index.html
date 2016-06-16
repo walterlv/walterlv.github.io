@@ -8,20 +8,25 @@
 </head>
 
 <body>
-    <form>
-        <input type="text" id="searchTextInput" size="40" placeholder="筛选">
-        <input type="button" id="searchButton" value="查找">
-    </form>
-    <table>
-        <tr>
-            <td>Hello, World!</td>
-        </tr>
-        <tr>
-            <td>Hello, World!</td>
-        </tr>
-    </table>
-    <ul id="resultList">
-    </ul>
+    <div id="splitView">
+
+    </div>
+    <div id="rootPanel">
+        <div id="mainPanel">
+            <div id="headerPanel">
+                <form id="searchForm">
+                    <input type="text" id="searchTextInput" size="40" placeholder="Hello, you!">
+                    <input type="button" id="searchButton" value="Add">
+                </form>
+            </div>
+            <div id="bannerPanel">
+                <ul id="resultList">
+                </ul>
+            </div>
+            <div id="contentPanel">
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
