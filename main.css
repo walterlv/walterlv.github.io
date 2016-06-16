@@ -1,4 +1,4 @@
-body{
+body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@ body{
     background-attachment: fixed;
 }
 
-#splitView{
+#splitView {
     width: 240;
     height: 100%;
     margin: 0;
@@ -14,39 +14,113 @@ body{
     float: left;
 }
 
-#rootPanel{
+#rootPanel {
     margin-left: 240;
 }
 
-#mainPanel{
+#mainPanel {
     margin-left: 15%;
     margin-right: 15%;
 }
 
-#headerPanel{
+#headerPanel {
     height: 40;
     background-color: rgb(2, 113, 188)
 }
 
-#bannerPanel{
+#bannerPanel {
     height: 400;
     background-color: rgba(255, 255, 255, 0.95);
 }
 
-#contentPanel{
+#contentPanel {
     min-height: 720;
     background-color: white;
 }
 
-#searchForm{
-    padding-left: 68%;
+#searchForm {
+    padding-right: 8;
     padding-top: 8;
+    float: right;
 }
 
-#resultList{
+#resultList {
     padding-left: 70%;
     padding-top: 16;
     padding-bottom: 16;
     margin: 0;
     max-height: 368;
+}
+
+@media screen and(max-width: 639px) {
+    #splitView {
+        width: 0;
+    }
+    #rootPanel {
+        margin-left: 0;
+    }
+    #mainPanel {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #bannerPanel {
+        height: 240;
+    }
+}
+
+@media screen and(min-width:640) and(max-width: 959px) {
+    #splitView {
+        width: 40;
+    }
+    #rootPanel {
+        margin-left: 40;
+    }
+    #mainPanel {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #bannerPanel {
+        height: 240;
+    }
+}
+
+@media screen and(min-width:960) and(max-width: 1599px) {
+    #splitView {
+        width: 240;
+    }
+    #rootPanel {
+        margin-left: 240;
+    }
+    #mainPanel {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #bannerPanel {
+        height: 400;
+    }
+}
+
+@media screen and(max-width: 1600px) {
+    #splitView {
+        width: 240;
+    }
+    #rootPanel {
+        margin-left: 240;
+    }
+    #mainPanel {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    #bannerPanel {
+        height: 400;
+    }
+}
+
+@media only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+    body {
+        font-size: 24px;
+    }
+    .box2 {
+        background-size: 50%;
+    }
 }
