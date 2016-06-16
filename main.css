@@ -34,7 +34,7 @@ body {
     background-color: rgba(255, 255, 255, 0.95);
 }
 
-#contentPanel {
+.contentPanel {
     min-height: 720px;
     background-color: white;
 }
@@ -136,6 +136,5 @@ body {
 @media only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
     body {
         font-size: 24px;
-        background-size: 50%;
     }
 }
