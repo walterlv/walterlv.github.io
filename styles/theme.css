@@ -5,6 +5,7 @@ body {
     background: url("http://s.cn.bing.net/az/hprichbg/rb/CanyonlandsNP_ZH-CN12598047863_1920x1080.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .themeAccentBackground {
@@ -41,10 +42,6 @@ body {
 
 .headerPanel {
     height: 40px;
-}
-
-.bannerPanel {
-    height: 320px;
 }
 
 .contentPanel {
