@@ -1,45 +1,3 @@
-body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: url("http://s.cn.bing.net/az/hprichbg/rb/CanyonlandsNP_ZH-CN12598047863_1920x1080.jpg");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-}
-
-.splitView {
-    width: 240px;
-    height: 100%;
-    margin: 0;
-    background-color: rgba(255, 255, 255, 0.9);
-    float: left;
-    position: fixed;
-}
-
-.rootPanel {
-    margin-left: 240px;
-}
-
-.mainPanel {
-    margin-left: 15%;
-    margin-right: 15%;
-}
-
-.headerPanel {
-    height: 40px;
-    background-color: rgb(2, 113, 188)
-}
-
-.bannerPanel {
-    height: 400px;
-    background-color: rgba(255, 255, 255, 0.95);
-}
-
-.contentPanel {
-    min-height: 720px;
-    background-color: white;
-}
-
 #searchForm {
     padding-right: 8px;
     padding-top: 8px;
@@ -54,88 +12,12 @@ body {
     max-height: 368px;
 }
 
-@media screen and (max-width: 479px) {
-    .splitView {
-        display: none;
-    }
-    .rootPanel {
-        margin-left: 0;
-    }
-    .mainPanel {
-        margin-left: 0;
-        margin-right: 0;
-    }
-    .bannerPanel {
-        height: 160px;
-    }
-}
+@media screen and (max-width: 479px) {}
 
-@media screen and (min-width:480px) and (max-width: 639px) {
-    .splitView {
-        display: none;
-    }
-    .rootPanel {
-        margin-left: 0;
-    }
-    .mainPanel {
-        margin-left: 0;
-        margin-right: 0;
-    }
-    .bannerPanel {
-        height: 240px;
-    }
-}
+@media screen and (min-width:480px) and (max-width: 639px) {}
 
-@media screen and (min-width:640px) and (max-width: 959px) {
-    .splitView {
-        width: 40px;
-    }
-    .rootPanel {
-        margin-left: 40px;
-    }
-    .mainPanel {
-        margin-left: 0;
-        margin-right: 0;
-    }
-    .bannerPanel {
-        height: 240px;
-    }
-}
+@media screen and (min-width:640px) and (max-width: 959px) {}
 
-@media screen and (min-width:960px) and (max-width: 1279px) {
-    .splitView {
-        width: 240px;
-    }
-    .rootPanel {
-        margin-left: 240px;
-    }
-    .mainPanel {
-        margin-left: 0;
-        margin-right: 0;
-    }
-    .bannerPanel {
-        height: 400px;
-    }
-}
+@media screen and (min-width:960px) and (max-width: 1279px) {}
 
-@media screen and (min-width: 1280px) {
-    .splitView {
-        width: 240px;
-    }
-    .rootPanel {
-        margin-left: 240px;
-    }
-    .mainPanel {
-        margin-left: 15%;
-        margin-right: 15%;
-    }
-    .bannerPanel {
-        height: 400px;
-    }
-}
-
-@media only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
-    body {
-        font-size: 24px;
-    }
-}
+@media screen and (min-width: 1280px) {}
