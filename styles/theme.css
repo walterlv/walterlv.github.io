@@ -1,7 +1,6 @@
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 0;
-    padding: 0;
+    font-size: 12px;
     background: url("http://s.cn.bing.net/az/hprichbg/rb/CarolineAtoll_ZH-CN13285093461_1920x1080.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -14,6 +13,10 @@ body {
 
 .themeAlphaBackground {
     background-color: rgba(255, 255, 255, 0.9);
+}
+
+.themeHolderBackground {
+    background-color: dimgray;
 }
 
 .themeMainBackground {
@@ -36,12 +39,23 @@ body {
 }
 
 .mainPanel {
-    margin-left: 30%;
+    margin-left: 0;
     margin-right: 0;
 }
 
 .headerPanel {
     height: 40px;
+}
+
+.bannerPanel {
+    height: 360px;
+}
+
+.navPanel {
+    height: 40px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: lightgray;
 }
 
 .contentPanel {
@@ -112,8 +126,7 @@ body {
     }
 }
 
-@media screen and (min-width: 1280px) {
-}
+@media screen and (min-width: 1280px) {}
 
 @media only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
     body {
