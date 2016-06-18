@@ -12,28 +12,13 @@
     max-height: 368px;
 }
 
-.bannerPanel {
+#bannerPanel {
     width: 100%;
     height: 320px;
-    padding: 0;
-    display: flex;
-    align-content: space-around;
-}
-
-#mostTopPanel0 {
-    width: 60%;
-    height: 256px;
-    background-color: darkseagreen;
-}
-
-#modeTopPanel12 {
-    width: 240px;
-    height: 256px;
-    background-color: darkseagreen;
 }
 
 @media screen and (max-width: 479px) {
-    .bannerPanel {
+    #bannerPanel {
         height: 200px;
     }
     #mostTopPanel0 {
@@ -42,7 +27,7 @@
 }
 
 @media screen and (min-width:480px) and (max-width: 639px) {
-    .bannerPanel {
+    #bannerPanel {
         height: 240px;
     }
     #mostTopPanel0 {
@@ -52,7 +37,7 @@
 }
 
 @media screen and (min-width:640px) and (max-width: 959px) {
-    .bannerPanel {
+    #bannerPanel {
         height: 320px;
     }
     #mostTopPanel0 {
@@ -62,7 +47,7 @@
 }
 
 @media screen and (min-width:960px) and (max-width: 1279px) {
-    .bannerPanel {
+    #bannerPanel {
         height: 320px;
     }
     #mostTopPanel0 {
