@@ -1,15 +1,12 @@
 window.onload = function () {
-    var button = document.getElementById("searchButton");
-    button.onclick = searchButtonOnClick;
-}
+    // Handle .hamburger
+    var hamburger = document.querySelector(".hamburger");
+    hamburger.addEventListener("click", function () {
+        hamburger.classList.toggle("is-active");
+    });
 
-function searchButtonOnClick() {
-    var textInput = document.getElementById("searchTextInput");
-    var text = textInput.value;
-    if (text != "") {
-        var resultList = document.getElementById("resultList");
-        var li = document.createElement("li");
-        li.innerText = text;
-        resultList.appendChild(li);
-    }
+    var navLink = document.querySelector(".navLink");
+    navLink.addEventListener("click", function () {
+        navLink.classList.toggle("is-selected");
+    });
 }

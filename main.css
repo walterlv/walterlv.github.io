@@ -1,0 +1,15 @@
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 38px;
+    height: 2px;
+}
+
+body {
+    background-image: url("http://s.cn.bing.net/az/hprichbg/rb/CarolineAtoll_ZH-CN13285093461_1920x1080.jpg");
+}
+
+.bannerPanel {
+    background-attachment: local;
+    background-repeat: space;
+    background-size: cover;
+    background-image: url("http://sdtimes.com/wp-content/uploads/2014/11/1111.sdt-github.png");
+}

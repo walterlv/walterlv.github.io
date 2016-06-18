@@ -4,21 +4,35 @@
     <title>walterlv.github</title>
     <meta charset="utf-8">
     <script src="main.js"></script>
+    <link rel="stylesheet" href="lib/css/hamburgers.css" />
     <link rel="stylesheet" href="lib/css/reset.css" />
+    <link rel="stylesheet" href="styles/theme-a.css" />
     <link rel="stylesheet" href="styles/theme.css" />
     <link rel="stylesheet" href="main.css" />
 </head>
 
 <body>
-    <div class="splitView themeAlphaBackground">
+    <div class="splitView themeAlphaBackground themeBorder">
+        <button class="hamburger hamburger--arrow" type="button" aria-label="Menu" aria-controls="navigation">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+        <nav id="navigation">
+            <!--navigation goes here-->
+        </nav>
     </div>
     <div class="rootPanel">
         <div class="mainPanel">
             <div class="headerPanel themeAccentBackground">
             </div>
             <div class="bannerPanel themeHolderBackground">
+                <div class="uniformFillBackground"></div>
             </div>
-            <div class="navPanel themeAlphaBackground">
+            <div class="navPanel themeAlphaBackground themeBorder">
+                <a class="navLink is-selected">Item1</a>
+                <a class="navLink" href="https://walterlv.github.io">Item2</a>
+                <a class="navLink" href="https://walterlv.github.io">Item3</a>
             </div>
             <div class="contentPanel themeMainBackground">
             </div>

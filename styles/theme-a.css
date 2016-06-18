@@ -1,0 +1,23 @@
+a.navLink {
+    text-decoration: none;
+}
+
+a.navLink:link {
+    color: gray;
+}
+
+a.navLink:visited {
+    color: gray;
+}
+
+a.navLink:active {
+    color: black;
+}
+
+a.navLink:hover {
+    color: black;
+}
+
+a.is-selected {
+    color: black;
+}
