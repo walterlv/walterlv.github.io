@@ -8,8 +8,39 @@ body {
 }
 
 .bannerPanel {
+    position: relative;
     background-attachment: local;
     background-repeat: space;
     background-size: cover;
     background-image: url("http://sdtimes.com/wp-content/uploads/2014/11/1111.sdt-github.png");
+}
+
+#bannerInner {
+    font-family: 'Microsoft Yahei Light', sans-serif;
+    font-size: 48px;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#bannerText {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 30px;
+}
+
+#navLinks {
+    padding: 8px 0;
+    top: auto;
+    bottom: 0;
+}
+
+.navLink {
+    padding-left: 32px;
+    padding-right: 32px;
 }

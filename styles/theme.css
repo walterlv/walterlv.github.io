@@ -1,5 +1,5 @@
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Microsoft Yahei', Verdana, Geneva, Tahoma, sans-serif;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -8,6 +8,11 @@ body {
 .themeBorder {
     border-style: solid;
     border-color: lightgray;
+}
+
+.themeAccentBorder {
+    border-style: solid;
+    border-color: rgb(2, 113, 188);
 }
 
 .themeAccentBackground {
@@ -26,6 +31,14 @@ body {
     background-color: white;
 }
 
+.absoluteFill {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
 .splitView {
     width: 240px;
     height: 100%;
@@ -36,7 +49,7 @@ body {
 }
 
 .rootPanel {
-    margin-left: 240px;
+    margin-left: 241px;
 }
 
 .mainPanel {
@@ -53,19 +66,14 @@ body {
 }
 
 .navPanel {
-    font-size: 28px;
+    position: relative;
+    font-size: 32px;
     height: 64px;
     border-bottom-width: 1px;
 }
 
 .contentPanel {
     min-height: 100%;
-}
-
-a.navLink {
-    margin-left: 32px;
-    height: 64px;
-    line-height: 64px;
 }
 
 @media screen and (max-width: 479px) {
@@ -105,7 +113,7 @@ a.navLink {
         width: 40px;
     }
     .rootPanel {
-        margin-left: 40px;
+        margin-left: 41px;
     }
     .mainPanel {
         margin-left: 0;
@@ -121,7 +129,7 @@ a.navLink {
         width: 240px;
     }
     .rootPanel {
-        margin-left: 240px;
+        margin-left: 241px;
     }
     .mainPanel {
         margin-left: 0;

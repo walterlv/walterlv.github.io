@@ -20,4 +20,5 @@ a.navLink:hover {
 
 a.is-selected {
     color: black;
+    border-bottom-width: 4px;
 }
