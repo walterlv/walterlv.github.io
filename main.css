@@ -35,9 +35,9 @@ body {
 }
 
 #navLinks {
-    padding: 8px 0;
+    height: 48px;
     top: auto;
-    bottom: 0;
+    bottom: -4;
 }
 
 .navLink {

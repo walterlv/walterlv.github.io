@@ -1,5 +1,10 @@
 a.navLink {
     text-decoration: none;
+    height: 48px;
+    line-height: 48px;
+    padding-top: 12px;
+    padding-bottom: 4px;
+    background-color: transparent;
 }
 
 a.navLink:link {

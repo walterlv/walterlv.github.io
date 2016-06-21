@@ -58,7 +58,7 @@ body {
 }
 
 .headerPanel {
-    height: 54px;
+    height: 40px;
 }
 
 .bannerPanel {
@@ -67,8 +67,8 @@ body {
 
 .navPanel {
     position: relative;
-    font-size: 32px;
-    height: 64px;
+    font-size: 20px;
+    height: 48px;
     border-bottom-width: 1px;
 }
 
