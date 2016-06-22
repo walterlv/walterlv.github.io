@@ -1,0 +1,28 @@
+.splitview-pane {
+    width: 200px;
+    height: 100%;
+    float: left;
+    position: fixed;
+}
+
+.splitview-body {
+    padding-left: 200px;
+    height: 100%;
+    position: relative;
+}
+
+.splitview-list {
+    width: 25%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 200px;
+    float: left;
+    position: fixed;
+}
+
+.splitview-content {
+    margin-left: 25%;
+    height: 100%;
+}
