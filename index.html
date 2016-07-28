@@ -1,68 +1,23 @@
-<html>
+---
+layout: default
+---
 
-<head>
-    <title>walterlv.github</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="lib/css/reset.css" />
-    <link rel="stylesheet" href="assets/color.css" />
-    <link rel="stylesheet" href="assets/layout.css" />
-    <link rel="stylesheet" href="assets/style.css" />
-    <script src="main.js"></script>
-</head>
+<div class="home">
 
-<body>
-    <div class="root-panel">
-        <div class="splitview-pane theme-background-accent-alpha">
-            <div class="split-menu-panel">
+  <h1 class="page-heading">Posts</h1>
 
-            </div>
-            <div class="split-user-panel">
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-            </div>
-            <div class="split-nav-panel">
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
 
-            </div>
-            <div class="split-sys-panel">
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
-            </div>
-        </div>
-        <div class="splitview-body">
-            <div class="splitview-list theme-background-alpha">
-                <div class="split-banner-panel">
-
-                </div>
-                <div class="split-nav-panel">
-
-                </div>
-                <div class="split-articallist-panel">
-
-                </div>
-            </div>
-            <div class="splitview-content theme-background">
-                <div class="rootPanel">
-                    <div class="mainPanel">
-                        <div class="bannerPanel themeHolderBackground">
-                            <div id="bannerInner" class="uniformFillBackground">
-                                <div id="bannerText">
-                                    Building...<br> 正在构建…… 正在開發…… 開発中……
-                                </div>
-                            </div>
-                        </div>
-                        <div class="navPanel themeAlphaBackground themeBorder">
-                            <div id="navLinks" class="absoluteFill">
-                                <a class="navLink themeAccentBorder is-selected">Item 1</a>
-                                <a class="navLink" href="https://walterlv.github.io">导航 2</a>
-                                <a class="navLink" href="https://walterlv.github.io">欄目 3</a>
-                                <a class="navLink" href="https://walterlv.github.io">項目 4</a>
-                            </div>
-                        </div>
-                        <div class="contentPanel themeMainBackground">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-
-</html>
+</div>

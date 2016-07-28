@@ -1,0 +1,21 @@
+# Site settings
+title: Windows 10 Development
+email: walterlv@outlook.com
+description: 
+  Windows 10
+  UWP
+  WPF
+  Xamarin
+  Visual Studio
+  Visual Studio Code
+  iOS
+  Html
+  CSS
+  JavaScript
+  TypeScript
+baseurl: ""
+url: "https://walterlv.github.io/"
+github_username:  walterlv
+
+# Build settings
+markdown: kramdown
