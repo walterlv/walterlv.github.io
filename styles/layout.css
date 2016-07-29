@@ -1,0 +1,17 @@
+.splitview-pane {
+    width: 240px;
+    height: 100%;
+    float: left;
+    position: float;
+    background-color: rgba(49, 48, 41, 0.95);
+}
+
+.splitview-body {
+    padding-left: 240px;
+    height: 100%;
+    position: relative;
+}
+
+.splitview-content {
+    height: 100%;
+}

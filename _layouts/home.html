@@ -3,15 +3,15 @@
 <head>
     {% include head.html %}
     <link rel="stylesheet" href="lib/css/reset.css" />
-    <link rel="stylesheet" href="assets/color.css" />
-    <link rel="stylesheet" href="assets/layout.css" />
-    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="styles/color.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/style.css" />
     <script src="main.js"></script>
 </head>
 
 <body>
     <div class="root-panel">
-        <div class="splitview-pane theme-background-accent-alpha">
+        <div class="splitview-pane">
             <div class="split-menu-panel">
 
             </div>
@@ -21,22 +21,14 @@
             <div class="split-nav-panel">
 
             </div>
+            <div class="split-product-panel">
+                <a href="//ClipboardViewer/">ClipboardViewer</a>
+            </div>
             <div class="split-sys-panel">
 
             </div>
         </div>
         <div class="splitview-body">
-            <div class="splitview-list theme-background-alpha">
-                <div class="split-banner-panel">
-
-                </div>
-                <div class="split-nav-panel">
-
-                </div>
-                <div class="split-articallist-panel">
-                  {{ content }}
-                </div>
-            </div>
             <div class="splitview-content theme-background">
                 <div class="rootPanel">
                     <div class="mainPanel">
@@ -56,6 +48,7 @@
                             </div>
                         </div>
                         <div class="contentPanel themeMainBackground">
+                            {{ content }}
                         </div>
                     </div>
                 </div>
