@@ -1,17 +1,78 @@
+.flex-cont {
+    /* flexbox 的父元素 */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flex-ver {
+    /* flexbox 垂直方向 */
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.flex-item {
+    /* flexbox 的子元素 */
+    -webkit-box-flex: 1;
+    -webkit-flex:1;
+    flex: 1;
+}
+
+.root-pane {
+}
+
 .splitview-pane {
     width: 240px;
     height: 100%;
-    float: left;
-    position: float;
     background-color: rgba(49, 48, 41, 0.95);
+    font-family: 'Microsoft Yahei Light', 'Helvetica',Arial, Helvetica ,"Microsoft Yahei","Hiragino Sans GB",sans-serif;
+}
+
+.split-pane-head {
+    height: 80px;
+}
+
+a.nav-item {
+    line-height: 40px;
+    text-justify: middle;
+    text-decoration: none;
+    color: rgb(228, 228, 228);
+    background-color: transparent;
+    border-color: transparent;
+    border-style: solid;
+    border-left-width: 8px;
+}
+
+a.nav-item-selected {
+    color: rgb(2, 113, 188);
+    background-color: white;
+    border-color: rgb(2, 113, 188);
+    font-family: 'Helvetica',Arial, Helvetica ,"Microsoft Yahei","Hiragino Sans GB",sans-serif;
+}
+
+.empty-nav-icon {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-family: "Segoe MDL2 Assets";
+}
+
+.split-pane-nav {
+
+}
+
+.split-pane-sys {
+    height: 80px;
 }
 
 .splitview-body {
-    padding-left: 240px;
-    height: 100%;
-    position: relative;
 }
 
-.splitview-content {
-    height: 100%;
+#bannerText {
+    font-size: 48;
+    font-family: 'Microsoft Yahei Light', 'Helvetica',Arial, Helvetica ,"Microsoft Yahei","Hiragino Sans GB",sans-serif;
 }

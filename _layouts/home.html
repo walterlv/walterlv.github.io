@@ -1,57 +1,47 @@
 <html>
 
 <head>
-    {% include head.html %}
     <link rel="stylesheet" href="lib/css/reset.css" />
+    {% include head.html %}
     <link rel="stylesheet" href="styles/color.css" />
     <link rel="stylesheet" href="styles/layout.css" />
-    <link rel="stylesheet" href="styles/style.css" />
     <script src="main.js"></script>
 </head>
 
 <body>
-    <div class="root-panel">
-        <div class="splitview-pane">
-            <div class="split-menu-panel">
+    <div class="root-panel flex-cont">
+        <div class="splitview-pane flex-cont flex-ver">
+            <div class="split-pane-head">
 
             </div>
-            <div class="split-user-panel">
-
+            <div class="split-pane-nav flex-item flex-cont flex-ver">
+                <a class="flex-cont nav-item nav-item-selected">
+                    <i class="empty-nav-icon"></i><span>Products</span>
+                </a>
+                <a class="flex-cont nav-item">
+                    <i class="empty-nav-icon"></i><span>Blogs</span>
+                </a>
+                <a class="flex-cont nav-item">
+                    <i class="empty-nav-icon"></i><span>Links</span>
+                </a>
+                <a class="flex-cont nav-item">
+                    <i class="empty-nav-icon"></i><span>GitHub</span>
+                </a>
             </div>
-            <div class="split-nav-panel">
-
-            </div>
-            <div class="split-product-panel">
-                <a href="//ClipboardViewer/">ClipboardViewer</a>
-            </div>
-            <div class="split-sys-panel">
-
+            <div class="split-pane-sys flex-cont flex-ver">
+                <a class="flex-cont nav-item">
+                    <i class="empty-nav-icon"></i><span>About</span>
+                </a>
+                <a class="flex-cont nav-item">
+                    <i class="empty-nav-icon"></i><span>Unpin</span>
+                </a>
             </div>
         </div>
-        <div class="splitview-body">
-            <div class="splitview-content theme-background">
-                <div class="rootPanel">
-                    <div class="mainPanel">
-                        <div class="bannerPanel themeHolderBackground">
-                            <div id="bannerInner" class="uniformFillBackground">
-                                <div id="bannerText">
-                                    Building...<br> 正在构建…… 正在開發…… 開発中……
-                                </div>
-                            </div>
-                        </div>
-                        <div class="navPanel themeAlphaBackground themeBorder">
-                            <div id="navLinks" class="absoluteFill">
-                                <a class="navLink themeAccentBorder is-selected">Item 1</a>
-                                <a class="navLink" href="https://walterlv.github.io">导航 2</a>
-                                <a class="navLink" href="https://walterlv.github.io">欄目 3</a>
-                                <a class="navLink" href="https://walterlv.github.io">項目 4</a>
-                            </div>
-                        </div>
-                        <div class="contentPanel themeMainBackground">
-                            {{ content }}
-                        </div>
-                    </div>
-                </div>
+        <div class="splitview-body flex-item">
+            <div id="bannerText">
+                Building...<br/>正在构建……<br/>正在開發……<br/>開発中……
+                <br/>
+                {{ content }}
             </div>
         </div>
     </div>
