@@ -112,6 +112,12 @@ a.post-list-item-head {
     font-size: 80%;
 }
 
+/* 文章 */
+
+.post-artical {
+    padding: 40px 24px;
+}
+
 /* 特殊样式 */
 
 #dev-panel {
@@ -156,6 +162,10 @@ a.post-list-item-head {
     border-left-width: 3px;
     padding-left: 8px;
     text-decoration: none;
+}
+
+.post-artical {
+    padding: 16px 8px;
 }
 
 }
