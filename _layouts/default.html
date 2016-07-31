@@ -1,20 +1,18 @@
-<!DOCTYPE html>
 <html>
 
-  {% include head.html %}
+<head>
+    <link rel="stylesheet" href="{{ "/lib/css/reset.css" | prepend: site.baseurl }}" />
+    {% include head.html %}
+    <link rel="stylesheet" href="{{ "/styles/color.css" | prepend: site.baseurl }}" />
+    <link rel="stylesheet" href="{{ "/styles/layout.css" | prepend: site.baseurl }}" />
+    <script src="{{ "/main.js" | prepend: site.baseurl }}"></script>
+</head>
 
-  <body>
-
-    {% include header.html %}
-
-    <div class="page-content">
-      <div class="wrapper">
+<body>
+    <div class="root-panel flex-cont">
+        {% include splitview-pane.html %}
         {{ content }}
-      </div>
     </div>
-
-    {% include footer.html %}
-
-  </body>
+</body>
 
 </html>
