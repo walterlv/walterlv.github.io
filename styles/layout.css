@@ -96,7 +96,7 @@ a.nav-item-selected {
     padding-bottom: 16px;
 }
 
-.post-list-item-head {
+a.post-list-item-head {
     font-size: 150%;
     line-height: 40px;
     text-justify: middle;
@@ -108,8 +108,8 @@ a.nav-item-selected {
     padding-left: 16px;
 }
 
-a.post-list-item-head-link {
-    color: rgb(2, 113, 188);
+.post-list-item-date {
+    font-size: 80%;
 }
 
 /* 特殊样式 */
@@ -147,14 +147,19 @@ a.post-list-item-head-link {
 
 .post-list-item {
     padding-top: 2px;
-    padding-bottom: 4px;
+    padding-bottom: 40px;
 }
 
-.post-list-item-head {
+a.post-list-item-head {
     font-size: 100%;
     line-height: 24px;
-    border-left-width: 4px;
+    border-left-width: 3px;
     padding-left: 8px;
+    text-decoration: none;
+}
+
+.post-list-item-date {
+    font-size: 50%;
 }
 
 }

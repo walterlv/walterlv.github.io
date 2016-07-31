@@ -14,10 +14,8 @@ layout: default
     <div class="flex-cont flex-ver post-list">
       {% for post in site.posts %}
       <div class="flex-cont flex-ver post-list-item">
-        <div class="post-list-item-head">
-          <a class="post-list-item-head-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </div>
-        <div class="post-meta">{{ post.date | date: "%Y年%m月%d日" }}</div>
+        <a class="post-list-item-head" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <div class="post-list-item-date">{{ post.date | date: "%Y年%m月%d日" }}</div>
       </div>
       {% endfor %}
     </div>
