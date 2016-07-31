@@ -14,7 +14,6 @@
     -webkit-flex-direction: column;
     flex-direction: column;
     width: 100%;
-    height: 100%;
 }
 
 .flex-item {
@@ -78,12 +77,14 @@ a.nav-item-selected {
 /* 内容样式 */
 
 .splitview-body {
+    /* 内容水平居中 */
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     justify-content: center;
+    /* 内容垂直居中
     -webkit-box-align: center;
     -webkit-align-items: center;
-    align-items: center;
+    align-items: center; */
 }
 
 .split-content {
@@ -93,6 +94,8 @@ a.nav-item-selected {
 /* 文章样式 */
 
 .post-list-item {
+    padding-top: 8px;
+    padding-bottom: 16px;
 }
 
 a.post-list-item-head {
@@ -110,7 +113,13 @@ a.post-list-item-head {
 
 /* 特殊样式 */
 
-#bannerText {
-    font-size: 250%;
+#dev-panel {
+    font-size: 100%;
+    color: white;
+    background-color: rgb(2, 113, 188);
     font-family: 'Microsoft Yahei Light', 'Helvetica',Arial, Helvetica ,"Microsoft Yahei","Hiragino Sans GB",sans-serif;
+}
+
+#dev-text {
+    text-align: center;
 }
