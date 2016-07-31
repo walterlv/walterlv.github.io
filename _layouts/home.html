@@ -1,11 +1,11 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="lib/css/reset.css" />
+    <link rel="stylesheet" href="{{ "/lib/css/reset.css" | prepend: site.baseurl }}" />
     {% include head.html %}
-    <link rel="stylesheet" href="styles/color.css" />
-    <link rel="stylesheet" href="styles/layout.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="{{ "/styles/color.css" | prepend: site.baseurl }}" />
+    <link rel="stylesheet" href="{{ "/styles/layout.css" | prepend: site.baseurl }}" />
+    <script src="{{ "/main.js" | prepend: site.baseurl }}"></script>
 </head>
 
 <body>
