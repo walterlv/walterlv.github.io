@@ -66,17 +66,13 @@ a.nav-item-selected {
     font-family: "Segoe MDL2 Assets";
 }
 
-.split-pane-nav {
-
-}
-
 .split-pane-sys {
     height: 80px;
 }
 
 /* 内容样式 */
 
-.splitview-body {
+.split-body {
     /* 内容水平居中 */
     -webkit-box-pack: center;
     -webkit-justify-content: center;
