@@ -65,6 +65,13 @@ a.nav-item-selected {
     height: 80px;
 }
 
+.splitview-colpane {
+    height: 0px;
+    visibility: hidden;
+    background-color: rgba(49, 48, 41, 0.95);
+    font-family: 'Microsoft Yahei Light', 'Helvetica',Arial, Helvetica ,"Microsoft Yahei","Hiragino Sans GB",sans-serif;
+}
+
 /* 内容样式 */
 
 .split-body {
@@ -116,4 +123,38 @@ a.post-list-item-head-link {
 
 #dev-text {
     text-align: center;
+}
+
+/* 多设备适应 */
+
+@media screen and (max-device-width: 400px) {
+
+.splitview-pane {
+    visibility: hidden;
+    width: 0;
+}
+
+.splitview-colpane {
+    height: 40px;
+    visibility: visible;
+}
+
+.split-content {
+    width: 100%;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.post-list-item {
+    padding-top: 2px;
+    padding-bottom: 4px;
+}
+
+.post-list-item-head {
+    font-size: 100%;
+    line-height: 24px;
+    border-left-width: 4px;
+    padding-left: 8px;
+}
+
 }

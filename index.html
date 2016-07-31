@@ -2,26 +2,24 @@
 layout: default
 ---
 
-<div class="splitview-body flex-item flex-cont flex-ver">
-  <div id="dev-panel" class="flex-cont">
-    <div id="dev-text" class="flex-item">Building...</div>
-    <div id="dev-text" class="flex-item">正在构建……</div>
-    <div id="dev-text" class="flex-item">正在開發……</div>
-    <div id="dev-text" class="flex-item">開発中……</div>
-  </div>
-  <br/>
-  <div class="split-body flex-item flex-cont">
-    <div class="split-content">
-      <div class="flex-cont flex-ver post-list">
-        {% for post in site.posts %}
-        <div class="flex-cont flex-ver post-list-item">
-          <div class="post-list-item-head">
-            <a class="post-list-item-head-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-          </div>
-          <div class="post-meta">{{ post.date | date: "%Y年%m月%d日" }}</div>
+<div id="dev-panel" class="flex-cont">
+  <div id="dev-text" class="flex-item">Building...</div>
+  <div id="dev-text" class="flex-item">正在构建……</div>
+  <div id="dev-text" class="flex-item">正在開發……</div>
+  <div id="dev-text" class="flex-item">開発中……</div>
+</div>
+<br/>
+<div class="split-body flex-item flex-cont">
+  <div class="split-content">
+    <div class="flex-cont flex-ver post-list">
+      {% for post in site.posts %}
+      <div class="flex-cont flex-ver post-list-item">
+        <div class="post-list-item-head">
+          <a class="post-list-item-head-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </div>
-        {% endfor %}
+        <div class="post-meta">{{ post.date | date: "%Y年%m月%d日" }}</div>
       </div>
+      {% endfor %}
     </div>
   </div>
 </div>
