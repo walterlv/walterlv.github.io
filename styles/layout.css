@@ -23,11 +23,6 @@
     flex: 1;
 }
 
-/* 根样式 */
-
-.root-pane {
-}
-
 /* 导航样式 */
 
 .splitview-pane {
@@ -94,17 +89,20 @@ a.nav-item-selected {
     padding-bottom: 16px;
 }
 
-a.post-list-item-head {
+.post-list-item-head {
     font-size: 150%;
     line-height: 40px;
     text-justify: middle;
-    text-decoration: none;
     color: rgb(2, 113, 188);
     background-color: transparent;
     border-color: rgb(2, 113, 188);
     border-style: solid;
     border-left-width: 8px;
     padding-left: 16px;
+}
+
+a.post-list-item-head-link {
+    color: rgb(2, 113, 188);
 }
 
 /* 特殊样式 */
