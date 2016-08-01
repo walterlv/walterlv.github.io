@@ -100,7 +100,7 @@ a.post-list-item-head {
     font-size: 120%;
     line-height: 40px;
     text-justify: middle;
-    color: rgb(2, 113, 188);
+    color: black;
     background-color: transparent;
     border-color: rgb(2, 113, 188);
     border-style: solid;
@@ -116,6 +116,12 @@ a.post-list-item-head {
 
 .post-artical {
     padding: 40px 24px;
+}
+
+.post-meta {
+    width: 100%;
+    font-size: 80%;
+    color: gray;
 }
 
 /* 特殊样式 */
@@ -166,6 +172,14 @@ a.post-list-item-head {
 
 .post-artical {
     padding: 16px 8px;
+}
+
+.flex-ver-mobileonly {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
 }
 
 }

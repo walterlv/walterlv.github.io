@@ -7,14 +7,34 @@ layout: default
 
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-      <p class="post-meta">
-        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
-        {% if page.author %} •
-        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span itemprop="name">{{ page.author }}</span>
-        </span>
-        {% endif %}
-      </p>
+      <div class="post-meta flex-cont flex-ver-mobileonly">
+        <div class="flex-item" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            作者：
+            <span itemprop="name">
+                {% if page.author %}
+                {{ page.author }}
+                {% else %}
+                walterlv
+                {% endif %}
+            </span>
+        </div>
+        <div class="flex-item">
+            首次发表：
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%Y年%m月%d日" }}</time>
+        </div>
+        <div class="flex-item">
+            最后编辑：
+            {% if page.date_modified %}
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="dateModified">
+                {{ page.date | date: "%Y年%m月%d日" }}
+            </time>
+            {% else %}
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="dateModified">
+                {{ page.date | date: "%Y年%m月%d日" }}
+            </time>
+            {% endif %}
+        </div>
+      </div>
     </header>
 
     <div class="post-content" itemprop="articleBody">
