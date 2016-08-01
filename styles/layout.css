@@ -36,6 +36,13 @@
     height: 80px;
 }
 
+.nav-title {
+    line-height: 40px;
+    color: white;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
 a.nav-item {
     line-height: 40px;
     text-justify: middle;
@@ -54,7 +61,7 @@ a.nav-item-selected {
     font-family: 'Helvetica',Arial, Helvetica ,"Microsoft Yahei","Hiragino Sans GB",sans-serif;
 }
 
-.empty-nav-icon {
+.split-nav-icon {
     width: 40px;
     height: 40px;
     text-align: center;
@@ -70,6 +77,13 @@ a.nav-item-selected {
     visibility: hidden;
     background-color: rgba(49, 48, 41, 0.95);
     font-family: 'Microsoft Yahei Light', 'Helvetica',Arial, Helvetica ,"Microsoft Yahei","Hiragino Sans GB",sans-serif;
+}
+
+a.nav-col-item {
+    line-height: 40px;
+    text-justify: middle;
+    text-decoration: none;
+    color: rgb(228, 228, 228);
 }
 
 /* 内容样式 */
@@ -139,7 +153,7 @@ a.post-list-item-head {
 
 /* 多设备适应 */
 
-@media screen and (max-device-width: 400px) {
+@media screen and (max-device-width: 500px) {
 
 .splitview-pane {
     visibility: hidden;
@@ -167,6 +181,7 @@ a.post-list-item-head {
     line-height: 24px;
     border-left-width: 3px;
     padding-left: 8px;
+    color: rgb(2, 113, 188);
     text-decoration: none;
 }
 
@@ -180,6 +195,11 @@ a.post-list-item-head {
     -webkit-flex-direction: column;
     flex-direction: column;
     width: 100%;
+}
+
+#dev-panel {
+    height: 0;
+    visibility: hidden;
 }
 
 }

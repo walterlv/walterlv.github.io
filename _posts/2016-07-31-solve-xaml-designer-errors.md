@@ -52,5 +52,5 @@ categories: Windows WPF
 
 #### 参考资料
 
-[MSDN - Troubleshooting Designer Load Failures](https://msdn.microsoft.com/en-us/library/jj871742.aspx)
+[MSDN - Troubleshooting Designer Load Failures](https://msdn.microsoft.com/en-us/library/jj871742.aspx)  
 [MSDN - How to: Debug a Designer Load Failure](https://msdn.microsoft.com/en-us/library/ee856616.aspx)

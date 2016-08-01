@@ -25,8 +25,8 @@ layout: default
         <div class="flex-item">
             最后编辑：
             {% if page.date_modified %}
-            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="dateModified">
-                {{ page.date | date: "%Y年%m月%d日" }}
+            <time datetime="{{ page.date_modified | date_to_xmlschema }}" itemprop="dateModified">
+                {{ page.date_modified | date: "%Y年%m月%d日" }}
             </time>
             {% else %}
             <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="dateModified">
