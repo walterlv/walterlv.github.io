@@ -23,11 +23,16 @@
     flex: 1;
 }
 
+.body {
+    font-family: 'lucida grande','lucida sans unicode',lucida,helvetica,'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei',sans-serif;
+}
+
 /* 导航样式 */
 
 .splitview-pane {
     width: 240px;
     height: 100%;
+    position: fixed;
     background-color: rgba(49, 48, 41, 0.95);
     font-family: 'Microsoft Yahei Light', 'Helvetica',Arial, Helvetica ,"Microsoft Yahei","Hiragino Sans GB",sans-serif;
 }
@@ -88,6 +93,10 @@ a.nav-col-item {
 
 /* 内容样式 */
 
+.splitview-body {
+    padding-left: 240px;
+}
+
 .split-body {
     /* 内容水平居中 */
     -webkit-box-pack: center;
@@ -132,10 +141,22 @@ a.post-list-item-head {
     padding: 40px 24px;
 }
 
+.post-title {
+    font-size: 140%;
+}
+
 .post-meta {
     width: 100%;
     font-size: 80%;
     color: gray;
+}
+
+.post-meta-author {
+    padding-right: 16px;
+}
+
+.post-content {
+    font-size: 90%;
 }
 
 /* 特殊样式 */
@@ -163,6 +184,10 @@ a.post-list-item-head {
 .splitview-colpane {
     height: 40px;
     visibility: visible;
+}
+
+.splitview-body {
+    padding-left: 0px;
 }
 
 .split-content {
