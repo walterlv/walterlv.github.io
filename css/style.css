@@ -933,7 +933,7 @@
 
 	#header {
 		background: #4267b2;
-		color: #d1f1e9;
+		color: #b6c9ef;
 		height: 100%;
 		position: fixed;
 		text-align: center;
@@ -951,11 +951,11 @@
 			}
 
 		#header header p {
-			color: #b6e9dc;
+			color: #ffffff;
 		}
 
 		#header a {
-			color: #d1f1e9;
+			color: #b6c9ef;
 		}
 
 			#header a:hover {
@@ -978,7 +978,7 @@
 			}
 
 			#header > header p {
-				color: #d1f1e9;
+				color: #b6c9ef;
 				font-style: italic;
 				margin: 1em 0 0 0;
 			}
@@ -996,7 +996,7 @@
 			}
 
 				#header > footer .icons li a {
-					color: #b6e9dc;
+					color: #ffffff;
 				}
 
 		#header > nav ul {
@@ -1006,7 +1006,7 @@
 		}
 
 			#header > nav ul li {
-				border-top: solid 2px #5ccfb0;
+				border-top: solid 1px #6287d2;
 				display: block;
 				padding: 0;
 			}
