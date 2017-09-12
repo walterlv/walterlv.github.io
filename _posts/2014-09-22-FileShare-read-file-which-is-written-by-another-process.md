@@ -5,6 +5,8 @@ date:   2014-09-22 22:36:00 +0800
 categories: Windows WPF
 ---
 
+Windows 允许多个应用程序同时读取一个文件，即便这个文件正在被写入。
+
 ```CSharp
 private string[] ReadLogLines(string key)
 {

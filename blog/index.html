@@ -30,8 +30,7 @@ layout: default
                 <header>
                     <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
                 </header>
-                
-                    {{ post.content | truncatewords: 10 }}
+                    {{ post.excerpt }}
                 </section>
                 <footer>
                     <ul class="actions">
