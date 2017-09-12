@@ -7,6 +7,8 @@ categories: Windows
 
 是否见过桌面上同时存在两个同名的文件？这其实是可能的。
 
+---
+
 我们见过这样的情况：
 
 ![两个 desktop.ini]({{ site.baseurl }}/assets/2014-09-25-two-same-files.png)

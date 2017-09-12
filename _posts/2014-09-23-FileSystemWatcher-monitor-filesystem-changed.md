@@ -7,6 +7,8 @@ categories: Windows WPF
 
 要监视文件或文件夹的改变，可使用 `FileSystemWatcher`。
 
+---
+
 ```CSharp
 FileSystemWatcher fileWatcher = new FileSystemWatcher
 {

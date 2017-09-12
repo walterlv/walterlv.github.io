@@ -8,6 +8,8 @@ categories: Windows
 
 在 Windows 中关联程序或协议是通过注册表项实现的，编写任意一个程序甚至只是个脚本来写注册表即可实现。
 
+---
+
 注册表项的位置在这里：  
 ```
 HKEY_CLASSES_ROOT\XXX\shell\open\command

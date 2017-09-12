@@ -7,6 +7,8 @@ categories: dotnet
 
 从 .NET Framework 4.5 开始，有了几个快速获取调用方信息的 Attribute。
 
+---
+
 | Attribute | 描述 |
 |---|---|
 | CallerMemberName | 允许您打算调用方的方法或属性名称传递给方法。 |

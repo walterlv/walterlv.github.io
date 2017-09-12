@@ -7,6 +7,8 @@ categories: Windows WPF
 
 对于 WPF 程序，要控制程序的 DPI 感知程度，可在 App.manifest 中添加如下代码。
 
+---
+
 ```xml
  <asmv3:application xmlns:asmv3="urn:schemas-microsoft-com:asm.v3">
     <asmv3:windowsSettings xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings">

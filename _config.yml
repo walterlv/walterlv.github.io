@@ -25,6 +25,7 @@ facebook_username: Xblero
 github_username:  walterlv
 
 # Build settings
+excerpt_separator: ---
 markdown: kramdown
 theme: minima
 highlighter: rouge
