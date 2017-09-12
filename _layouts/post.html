@@ -5,20 +5,23 @@ layout: default
     <div class="container">
         <header class="major">
             <h2>{{ page.title }}</h2>
-                <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+            <p class="post-meta">{{ page.date | date: "%Y-%m-%d" }}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
         </header>
 
         <section class="post-content">
             {{ content }}
+
+            本文会经常更新，请阅读原文：
+            <a href="{{ page.url | prepend: site.url }}">{{ page.url | prepend: site.url }}</a>
+            ，以避免陈旧错误知识的误导，同时有更好的阅读体验。
         </section>
         
         <footer>
+            <br>
             {% if page.previous %}
-            <a href="{{ page.previous.url }}" class="float-left">&larr; Previous post</a> {% endif %}
+            <a href="{{ page.previous.url }}" class="float-left">&larr; {{ page.previous.title }}</a> {% endif %}
             {% if page.next %}
-            <a href="{{ page.next.url }}" class="float-right">Next post &rarr;</a> {% endif %}
+            <a href="{{ page.next.url }}" class="float-right">{{ page.next.title }} &rarr;</a> {% endif %}
         </footer>
-
     </div>
-
 </section>
