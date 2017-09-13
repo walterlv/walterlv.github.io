@@ -17,7 +17,7 @@ categories: dotnet
 
 这样，在实现用于 XAML 绑定的类型中，可以更方便更高效地进行属性更改通知。
 
-```CSharp
+```csharp
 [NotifyPropertyChangedInvocator]
 protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
 {
@@ -28,7 +28,7 @@ protected virtual void OnPropertyChanged([CallerMemberName] string propertyName 
 
 当使用 OnPropertyChanged() 句子调用以上方法时，参数 propertyName 会被自动赋值。
 
-```CSharp
+```csharp
 protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
 {
     if (Equals(storage, value)) return false;
@@ -41,7 +41,7 @@ protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string 
 
 可在类型中添加以上方法，使得属性更改变得更加简单：
 
-```CSharp
+```csharp
 private string _notifyMessage;
 public string Notification
 {

@@ -20,7 +20,7 @@ categories: Windows WPF
 ```
 
 #### 修改窗口属性
-```CSharp
+```csharp
 ShowInTaskbar=true
 TopMost=true
 ```

@@ -12,7 +12,7 @@ description: 了解 System.Exception 类型中 Data 属性及它的用途。
 
 `System.Exception` 类中就自带了这样的属性 `Data`，它是 `IDictionary` 类型的：
 
-```CSharp
+```csharp
 public virtual IDictionary Data { 
     [System.Security.SecuritySafeCritical]  // auto-generated
     get {
@@ -31,7 +31,7 @@ public virtual IDictionary Data {
 
 最近在调试 .Net Framework 内部代码的异常时就发现微软就是使用这个属性储存异常的更多细节的：
 
-```CSharp
+```csharp
 internal void RegisterStylusDeviceCore(StylusDevice stylusDevice)
 {
     lock (__stylusDeviceLock)

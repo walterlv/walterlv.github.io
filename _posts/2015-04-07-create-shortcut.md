@@ -12,7 +12,7 @@ categories: Windows WPF
 
 #### 引用 COM 组件
 
-```CSharp
+```csharp
 Interop.IWshRuntimeLibrary.dll
 var shell = new IWshRuntimeLibrary.WshShell();
 var shortcut = (IWshRuntimeLibrary.IWshShortcut)shell.CreateShortcut(linkFileName);
@@ -23,7 +23,7 @@ shortcut.Save();
 
 #### .NET 4 可使用 dynamic
 
-```CSharp
+```csharp
 Type shellType = Type.GetTypeFromProgID("WScript.Shell");
 dynamic shell = Activator.CreateInstance(shellType);
 dynamic shortcut = shell.CreateShortcut(linkFileName);
@@ -34,7 +34,7 @@ shortcut.Save();
 
 #### .NET 3.5 或早期版本使用反射
 
-```CSharp
+```csharp
 Type shellType = Type.GetTypeFromProgID("WScript.Shell");
 object shell = Activator.CreateInstance(shellType);
 object shortcut = shellType.InvokeMember("CreateShortcut",

@@ -34,7 +34,7 @@ WPF 程序在启动期间，如果触摸组件发生了异常，极有可能会�
 
 或者，在 `WorkerOperationGetTabletsInfo.OnDoWork` 方法中，获取到了错误的触摸设备个数：
 
-```CSharp
+```csharp
 IPimcManager pimcManager = UnsafeNativeMethods.PimcManager;
 uint count;
 pimcManager.GetTabletCount(out count);

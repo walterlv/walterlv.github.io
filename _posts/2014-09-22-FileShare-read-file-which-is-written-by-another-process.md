@@ -9,7 +9,7 @@ Windows 允许多个应用程序同时读取一个文件，即便这个文件正
 
 ---
 
-```CSharp
+```csharp
 private string[] ReadLogLines(string key)
 {
     FileStream fs = new FileStream(_watchingFileNameDictionary[key], FileMode.Open, FileAccess.Read, FileShare.ReadWrite);

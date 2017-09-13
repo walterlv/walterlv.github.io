@@ -9,7 +9,7 @@ categories: Windows WPF
 
 ---
 
-```CSharp
+```csharp
 FileSystemWatcher fileWatcher = new FileSystemWatcher
 {
     Path = watchingFolder,
@@ -20,7 +20,7 @@ FileSystemWatcher fileWatcher = new FileSystemWatcher
 _fileWatcher.Changed += FileWatcher_Changed;
 ```
 
-```CSharp
+```csharp
 private void FileWatcher_Changed(object sender, FileSystemEventArgs e)
 {
     if (e.ChangeType == WatcherChangeTypes.Changed)
