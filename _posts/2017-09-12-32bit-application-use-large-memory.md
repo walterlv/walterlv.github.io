@@ -2,6 +2,7 @@
 layout: post
 title: "使 32 位程序使用大于 2GB 的内存"
 date: 2017-09-12 21:48:46 +0800
+date_modified: 2017-09-13 08:57:22 +0800
 categories: Windows
 ---
 
@@ -26,17 +27,30 @@ categories: Windows
 
 编辑一个程序使之声明支持大于 2GB 内存的命令是：
 
-```Bash
+```bash
 editbin /largeaddressaware xxx.exe
 ```
 
-其中，`xxx.exe` 是我们准备修改的程序，可以使用相对路径或绝对路径（如果路径中出现空格记得带引号）。但是，`editbin` 从哪里来呢？
+其中，`xxx.exe` 是我们准备修改的程序，可以使用相对路径或绝对路径（如果路径中出现空格记得带引号）。
 
-**撰写中……**
+验证这个程序是否改好了的命令是：
+
+```bash
+dumpbin /headers xxx.exe | more
+```
+
+同样，`xxx.exe` 是我们刚刚改好准备检查的程序，可以使用相对路径或绝对路径。
+
+editbin 改之前和改之后用 dumpbin 查看我们的程序头信息，得到下面两张图：
+
+![改之前]({{ site.baseurl }}/assets/2017-09-12-normal-32bit-header.png)
+![改之后]({{ site.baseurl }}/assets/2017-09-12-large-address-32bit-header.png)
+
+注意到 `FILE HEADER VALUES` 块的倒数第二行多出了 `Application can handle large (>2GB) addresses`。
+
+如果没发现，一定是你命令执行中发生了错误，检查一下吧！最容易出现的错误是执行后发现**根本就没有这个命令**。是的，`editbin` 命令从哪里来呢？
 
 ![本机工具提示符]({{ site.baseurl }}/assets/2017-09-12-where-to-find-editbin.png)
-
-**撰写中……**
 
 #### 编译成 AnyCPU (Prefer 32-bit)
 
