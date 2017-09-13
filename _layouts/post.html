@@ -22,6 +22,8 @@ layout: default
             <a href="{{ page.previous.url }}" class="float-left">&larr; {{ page.previous.title }}</a> {% endif %}
             {% if page.next %}
             <a href="{{ page.next.url }}" class="float-right">{{ page.next.title }} &rarr;</a> {% endif %}
+
+            <div class="fb-share-button" data-href="{{site.url}}{{page.url}}" data-layout="button_count" style="position: relative; top: -8px; left: 33px;"></div>
         </footer>
     </div>
 </section>
