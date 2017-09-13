@@ -24,10 +24,19 @@ git filter-branch --index-filter "cp /C/仓库外面某个路径下的/.gitignor
 如果希望此操作对所有分支生效，则加一个 `--all` 参数，即：
 
 ```bash
-git filter-branch --index-filter --all "cp /C/仓库外面某个路径下的/.gitignore . && git add .gitignore"
+git filter-branch --index-filter "cp /C/仓库外面某个路径下的/.gitignore . && git add .gitignore" -- --all
 ```
 
-*顺带一提，Bash 在 git 里写的时候，`C:\` 需要写成 `/C/`。*
+写这个命令时需要注意：
+- git 在 Bash 里写的时候，`C:\` 需要写成 `/C/`。
+- `-- --all` 中的 `--` 是用来区分路径和提交的，官方说法是：
+
+```bash
+fatal: ambiguous argument 'cp /C/仓库外面某个路径下的/.gitignore . && git add .g
+itignore': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+```
 
 执行了此命令后，所有的提交其实都被重写了，提交号已经改变。如果你从未推送到远端过，那么恭喜，你已经在神不知鬼不觉中添加了一个 .gitignore 文件，就像是第一次提交就加了这个文件一样。
 
