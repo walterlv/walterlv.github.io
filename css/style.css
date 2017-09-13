@@ -199,8 +199,7 @@
 
 		header.major h2 + p {
 			color: #777;
-			font-size: 1em;
-			font-weight: 700;
+			font-size: 0.9em;
 			margin-top: 0;
 		}
 
@@ -1072,7 +1071,7 @@
 		border-top: 0;
 		color: #808080;
 		overflow: hidden;
-		padding: 4em 0 2em 0;
+		padding: 2em 0 1em 0;
 	}
 
 		#footer .copyright {
@@ -1080,6 +1079,12 @@
 			list-style: none;
 			padding: 0;
 		}
+
+	    #footer ul {
+	    	list-style: disc;
+	    	margin: 0 0 1em 0;
+	    	padding-left: 1em;
+	    }
 
 			#footer .copyright li {
 				border-left: solid 1px #d4d4d4;
