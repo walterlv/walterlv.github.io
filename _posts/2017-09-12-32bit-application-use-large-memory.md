@@ -4,6 +4,8 @@ title: "使 32 位程序使用大于 2GB 的内存"
 date: 2017-09-12 21:48:46 +0800
 date_modified: 2017-09-13 08:57:22 +0800
 categories: Windows
+keywords: Windows 32-bit 2GB largeaddressaware editbin dumpbin anycpu
+meta: 了解 Windows 系统上如何使 32 位应用程序使用大于 2GB 的内存。
 ---
 
 不管在 32 位 Windows 上还是在 64 位 Windows 上，32 位的应用程序都只能使用最大 2GB 的内存，这是我们司空见惯的一个设定。但其实 Windows 提供了一些方法让我们打破这样的设定，使程序使用大于 2GB 的内存。
