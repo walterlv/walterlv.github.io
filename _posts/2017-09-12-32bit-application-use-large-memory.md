@@ -48,9 +48,11 @@ editbin 改之前和改之后用 dumpbin 查看我们的程序头信息，得到
 
 注意到 `FILE HEADER VALUES` 块的倒数第二行多出了 `Application can handle large (>2GB) addresses`。
 
-如果没发现，一定是你命令执行中发生了错误，检查一下吧！最容易出现的错误是执行后发现**根本就没有这个命令**。是的，`editbin` 命令从哪里来呢？
+如果没发现，一定是你命令执行中发生了错误，检查一下吧！最容易出现的错误是执行后发现**根本就没有这个命令**。是的，`editbin` 命令从哪里来呢？可以在开始菜单中的 Visual Studio 文件夹中查找 Developer Command Prompt for VS 2017，运行这个启动的命令行中就带有 editbin 和 dumpbin。
 
 ![本机工具提示符]({{ site.baseurl }}/assets/2017-09-12-where-to-find-editbin.png)
+
+如果希望能够在 Visual Studio 编译的时候自动调用这个工具，请参见：[LargeAddressAware Visual Studio 2015 C#](https://stackoverflow.com/questions/31565532/largeaddressaware-visual-studio-2015-c-sharp)。
 
 #### 编译成 AnyCPU (Prefer 32-bit)
 
