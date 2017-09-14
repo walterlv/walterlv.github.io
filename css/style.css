@@ -118,13 +118,11 @@
 		padding: 0.5em 0 0.5em 2em;
 	}
 
-	/* code {
-		border-radius: 4px;
+	code {
 		font-family: Monaco, "Source Code Pro", Hack, Consolas, monospace;
-		font-size: 0.9em;
 	}
 
-	pre {
+	/* pre {
 		color: #fff;
 		background: #555;
 		font-family: Monaco, "Source Code Pro", Hack, Consolas, monospace;
