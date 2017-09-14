@@ -35,7 +35,7 @@
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #4267b2 !important;
+			color: #4267b2;
 		}
 
 	strong, b {
@@ -202,6 +202,14 @@
 			font-size: 0.9em;
 			margin-top: 0;
 		}
+
+	.post-content a {
+		color: #4267b2;
+	}
+
+	.post-content a:hover {
+		color: #4267d2;
+	}
 
 /* Form */
 
