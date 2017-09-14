@@ -122,15 +122,11 @@
 		font-family: Monaco, "Source Code Pro", Hack, Consolas, monospace;
 	}
 
-	/* pre {
-		color: #fff;
-		background: #555;
-		font-family: Monaco, "Source Code Pro", Hack, Consolas, monospace;
-		font-size: 0.9em;
-		margin: 0 0 2.25em 0;
+	pre {
+		overflow-x: auto;
 	}
 
-		pre code {
+	/* 	pre code {
 			-webkit-overflow-scrolling: touch;
 			display: block;
 			line-height: 1.5em;
