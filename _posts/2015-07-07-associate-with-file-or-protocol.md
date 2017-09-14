@@ -3,7 +3,7 @@ layout: post
 title:  "关联一个文件扩展名或协议"
 date:   2015-07-07 20:00:00 +0800
 date_modified: 2017-09-12 22:46:59 +0800
-categories: Windows
+categories: windows
 ---
 
 在 Windows 中关联程序或协议是通过注册表项实现的，编写任意一个程序甚至只是个脚本来写注册表即可实现。

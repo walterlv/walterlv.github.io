@@ -2,7 +2,7 @@
 layout: post
 title:  "使用链接共享 Visual Studio 中的代码文件"
 date:   2016-08-01 11:04:42 +0800
-categories: VisualStudio
+categories: visualstudio
 ---
 
 如果你还在通过复制来共享代码就太 out 了！  

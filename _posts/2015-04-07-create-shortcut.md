@@ -3,7 +3,7 @@ layout: post
 title:  "创建快捷方式"
 date:   2015-04-07 12:48:00 +0800
 date_modified: 2017-09-12 22:42:22 +0800
-categories: Windows WPF
+categories: windows
 ---
 
 虽然我们都知道快捷方式是一种特殊的文件，扩展名为 lnk。但是使用 C# 代码创建一个快捷方式却不那么容易。本文分享三种不同的方式创建快捷方式。

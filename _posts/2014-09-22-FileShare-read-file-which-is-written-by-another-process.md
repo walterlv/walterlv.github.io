@@ -2,7 +2,7 @@
 layout: post
 title:  "FileShare 读取一个其它进程正在写的文件"
 date:   2014-09-22 22:36:00 +0800
-categories: Windows WPF
+categories: dotnet
 ---
 
 Windows 允许多个应用程序同时读取一个文件，即便这个文件正在被写入。

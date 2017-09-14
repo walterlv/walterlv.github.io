@@ -3,7 +3,7 @@ layout: post
 title:  "让 Windows 桌面程序运行在 Windows 应用上面"
 date:   2015-03-31 16:47:00 +0800
 date_modified: 2017-09-12 22:47:43 +0800
-categories: Windows WPF
+categories: wpf
 ---
 
 启动系统自带的放大镜程序，我们会发现即便进了 Windows 8 或 Windows 10 的开始屏幕，它也依然显示在最顶层，而其他程序早已不见踪影。如果你为任务管理器开启置顶效果，你会发现它也能显示到开始屏幕的顶层。这是怎么做到的呢？

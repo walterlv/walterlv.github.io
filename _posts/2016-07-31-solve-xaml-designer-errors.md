@@ -3,7 +3,7 @@ layout: post
 title:  "解决XAML设计器中遇到的那些错误"
 date:   2016-07-31 22:29:12 +0800
 date_modified:   2016-08-02 09:55:38 +0800
-categories: Windows WPF
+categories: wpf
 ---
 
 使用 Visual Studio 开发 WPF 程序时，XAML 设计器能够极大提高我们的开发效率。不止是写出的代码无需运行就能看到效果，还有能够直接在设计器中点击定位元素以及拖拽改变属性。
