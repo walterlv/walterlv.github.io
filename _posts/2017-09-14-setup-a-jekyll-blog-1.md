@@ -72,7 +72,7 @@ your_github_username.github.io
 
 - 去 [Disqus](https://disqus.com/) 创建个账号
 - 一步步开通 Disqus 站点账号之后，进入到 Universal Code install instructions 页面
-- 将 Disqus 提供的代码贴到 _layout / post.hmtl 文件里面
+- 将 Disqus 提供的代码贴到 _layout / post.html 文件里面
 
 (译者注：国内接入社会化评论需取得 ICP 备案，也就是说随着国内使用人数的增多，Disqus 随时有被屏蔽的可能性。)
 
