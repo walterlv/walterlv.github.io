@@ -2,7 +2,7 @@
 layout: post
 title: "如何搭建一个基于 GitHub Pages 的 Jekyll 静态博客（目录）"
 date: 2017-09-14 13:38:04 +0800
-date_modified: 2017-09-14 18:29:22 +0800
+date_modified: 2017-09-15 20:02:24 +0800
 categories: jekyll
 keywords: jekyll
 description: 了解如何用 Jekyll 搭建一个基于 GitHub Pages 博客，并且让博客支持评论和分享；了解如何优化搜索引擎对此博客内容的搜索（SEO）。
@@ -18,7 +18,7 @@ GitHub Pages 为个人、组织和项目提供了展示一些页面的方式，G
 有三篇是翻译文章，来自于 [Vincent Daubry](http://vdaubry.github.io)，会比较专业；其它是自己的原创文章，用于一些补充。
 
 目录：
-1. [[译] 搭建一个基于 GitHub Pages 的 Jekyll 博客（包含评论功能）](./2017-09-14-setup-a-jekyll-blog-1.html)
+1. [[译] 搭建一个托管在 GitHub Pages 的 Jekyll 博客，并添加 Disqus 评论功能](./2017-09-14-setup-a-jekyll-blog-1.html)
    - [原] [Setup up a jekyll blog using github pages and disqus comments](http://vdaubry.github.io/2014/10/19/setup-a-jekyll-blog/)
 1. [在 Windows 系统上安装 Jekyll 环境](2017-09-14-setup-a-jekyll-blog-on-windows.html)
 1. [[译] 为 Jekyll 博客添加社交分享按钮](./2017-09-14-setup-a-jekyll-blog-2.html)
