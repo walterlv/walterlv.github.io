@@ -45,14 +45,14 @@ dumpbin /headers xxx.exe | more
 
 editbin 改之前和改之后用 dumpbin 查看我们的程序头信息，得到下面两张图：
 
-![改之前]({{ site.baseurl }}/assets/2017-09-12-normal-32bit-header.png)
-![改之后]({{ site.baseurl }}/assets/2017-09-12-large-address-32bit-header.png)
+![改之前](/assets/2017-09-12-normal-32bit-header.png)
+![改之后](/assets/2017-09-12-large-address-32bit-header.png)
 
 注意到 `FILE HEADER VALUES` 块的倒数第二行多出了 `Application can handle large (>2GB) addresses`。
 
 如果没发现，一定是你命令执行中发生了错误，检查一下吧！最容易出现的错误是执行后发现**根本就没有这个命令**。是的，`editbin` 命令从哪里来呢？可以在开始菜单中的 Visual Studio 文件夹中查找 Developer Command Prompt for VS 2017，运行这个启动的命令行中就带有 editbin 和 dumpbin。
 
-![本机工具提示符]({{ site.baseurl }}/assets/2017-09-12-where-to-find-editbin.png)
+![本机工具提示符](/assets/2017-09-12-where-to-find-editbin.png)
 
 如果希望能够在 Visual Studio 编译的时候自动调用这个工具，请参见：[LargeAddressAware Visual Studio 2015 C#](https://stackoverflow.com/questions/31565532/largeaddressaware-visual-studio-2015-c-sharp)。
 
@@ -60,7 +60,7 @@ editbin 改之前和改之后用 dumpbin 查看我们的程序头信息，得到
 
 这是本文更推荐的做法，也是最简单的做法。方法是打开入口程序集的属性页，将“目标平台”选为“AnyCPU”，然后勾选“首选 32 位”。需要注意的是，这种生成方式是 .Net Framework 4.5 及以上版本才提供的。
 
-![AnyCPU (Prefer 32-bit)]({{ site.baseurl }}/assets/2017-09-12-anycpu-with-32bit-preferred-build.png)
+![AnyCPU (Prefer 32-bit)](/assets/2017-09-12-anycpu-with-32bit-preferred-build.png)
 
 至于 AnyCPU (Prefer 32-bit) 和 x86 两种生成方式的区别，请参见：[What is the purpose of the “Prefer 32-bit” setting in Visual Studio 2012 and how does it actually work?](https://stackoverflow.com/questions/12066638/what-is-the-purpose-of-the-prefer-32-bit-setting-in-visual-studio-2012-and-how)。
 

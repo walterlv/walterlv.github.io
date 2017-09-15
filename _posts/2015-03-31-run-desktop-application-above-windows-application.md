@@ -26,7 +26,7 @@ TopMost=true
 ```
 
 #### 为程序签名
-[参见此处]({{ site.baseurl }}/windows/wpf/2015/03/31/sign-for-desktop-application.html)
+[参见此处](/windows/wpf/2015/03/31/sign-for-desktop-application.html)
 
 #### 将程序放到受信任的目录下
 ```

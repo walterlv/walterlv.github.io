@@ -11,7 +11,7 @@ categories: windows
 
 我们见过这样的情况：
 
-![两个 desktop.ini]({{ site.baseurl }}/assets/2014-09-25-two-same-files.png)
+![两个 desktop.ini](/assets/2014-09-25-two-same-files.png)
 
 当打开隐藏文件和系统文件时，桌面上会看到这样两个同名的文件。
 
@@ -21,6 +21,6 @@ categories: windows
 后者提供的图标在所有用户帐户的桌面上显示。由于这两个“桌面”配置文件夹都有自己的 Desktop.ini，
 所以当我们允许显示隐含的文件时，两个 Desktop.ini 都将出现在桌面上。
 
-![属性面板]({{ site.baseurl }}/assets/2014-09-25-attributes.png)
+![属性面板](/assets/2014-09-25-attributes.png)
 
 请注意“对象名称”，其中指示两个文件存在于不同路径。
