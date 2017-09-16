@@ -48,7 +48,7 @@
 	}
 
 	p {
-		margin: 0.5em 0 0 0;
+		margin: 0.5em 0;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -70,7 +70,7 @@
 	}
 
 	h3 {
-		font-size: 1.75em;
+		font-size: 1.5em;
 		line-height: 1.5em;
 	}
 
@@ -80,12 +80,12 @@
 	}
 
 	h5 {
-		font-size: 0.9em;
+		font-size: 1em;
 		line-height: 1.5em;
 	}
 
 	h6 {
-		font-size: 0.7em;
+		font-size: 0.75em;
 		line-height: 1.5em;
 	}
 
@@ -188,7 +188,7 @@
 
 	header.major h2 {
 		color: #4267b2;
-		font-size: 2.5em;
+		font-size: 2em;
 	}
 
 		header.major h2 + p {
@@ -504,8 +504,8 @@
 
 	ol {
 		list-style: decimal;
-		margin: 0 0 2.25em 0;
-		padding-left: 1.25em;
+		margin: 0;
+		padding-left: 1em;
 	}
 
 		ol li {
@@ -885,9 +885,8 @@
 /* Features */
 
 	.features article {
-		border-top: solid 3px #f4f4f4;
-		margin-bottom: 2.25em;
-		padding-top: 2.25em;
+		border-top: solid 2px #f4f4f4;
+		margin: 1.5em 0;
 	}
 
 		.features article:first-child {

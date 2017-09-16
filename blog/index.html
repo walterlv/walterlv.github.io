@@ -12,7 +12,7 @@ layout: default
                 <section style="font-size: 0.8em">
                     {% if post.date_modified %}{{ post.date_modified | date: "%Y-%m-%d %H:%m" }}{% else %}{{ post.date | date: "%Y-%m-%d %H:%m" }}{% endif %}
                 </section>
-                <section class="post-content">
+                <section class="excerpt">
                     {{ post.excerpt }}
                 </section>
                 <section class="special">

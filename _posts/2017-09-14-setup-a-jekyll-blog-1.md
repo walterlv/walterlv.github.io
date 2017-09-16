@@ -46,7 +46,7 @@ gem install jekyll
 
 要部署你的博客，你只需要做以下任意一件事即可：
 
-1. 手动生成静态博客
+##### 1. 手动生成静态博客
 
 ```bash
 jekyll build
@@ -58,7 +58,7 @@ jekyll build
 - 扔到亚马逊 S3 上作为静态站点
 - 拷贝到 Dropbox 上作为公开的文件夹（不确定有没有用，算了还是别试了……）（译者注：这句话是原作者说的，不关我的事……）
 
-1. 用 GitHub Pages 托管，而你需要做的只是在 GitHub 上建一个这种名字的仓库：
+##### 2. 用 GitHub Pages 托管，而你需要做的只是在 GitHub 上建一个这种名字的仓库：
 
 ```
 your_github_username.github.io
