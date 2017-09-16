@@ -47,7 +47,7 @@ pre.highlight span ::selection {
 }
 
 .highlight .k {
-    color: #8959A8
+    color: #1D64E9
 }
 
 .highlight .l {
@@ -55,7 +55,7 @@ pre.highlight span ::selection {
 }
 
 .highlight .n {
-    color: #929292
+    color: #07365C
 }
 
 .highlight .o {
@@ -63,7 +63,7 @@ pre.highlight span ::selection {
 }
 
 .highlight .p {
-    color: #929292
+    color: #292929
 }
 
 .highlight .cm {
@@ -75,7 +75,7 @@ pre.highlight span ::selection {
 }
 
 .highlight .c1 {
-    color: #929292
+    color: #0D9953
 }
 
 .highlight .cs {
@@ -134,7 +134,7 @@ pre.highlight span ::selection {
 }
 
 .highlight .kt {
-    color: #EAB700
+    color: #1F1F1F
 }
 
 .highlight .ld {
@@ -146,11 +146,15 @@ pre.highlight span ::selection {
 }
 
 .highlight .s {
-    color: #718C00
+    color: #1A55F7
+}
+
+.language-csharp .highlight .s {
+    color: #A73E15
 }
 
 .highlight .na {
-    color: #4271AE
+    color: #E74F21
 }
 
 .highlight .nb {
@@ -178,7 +182,7 @@ pre.highlight span ::selection {
 }
 
 .highlight .nf {
-    color: #4271AE
+    color: #88752B
 }
 
 .highlight .nl {
@@ -198,7 +202,7 @@ pre.highlight span ::selection {
 }
 
 .highlight .nt {
-    color: #3E999F
+    color: #790808
 }
 
 .highlight .nv {
