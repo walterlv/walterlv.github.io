@@ -47,7 +47,7 @@
 	}
 
 		header.major h2 + p {
-			font-size: 1.5em;
+			font-size: 1em;
 		}
 
 /* Features */
@@ -90,7 +90,7 @@
 /* Main */
 
 	#main > section > .container {
-		padding: 2em 0 0 0;
+		padding: 0;
 	}
 
 /* One */
