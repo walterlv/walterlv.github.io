@@ -42,15 +42,15 @@ System.OutOfMemoryException: Insufficient memory to continue the execution of th
 查阅资料：
 
 - Mysterious “Not enough quota is available to process this command” in WinRT port of DataGrid
-[http://stackoverflow.com/questions/12584619/mysterious-not-enough-quota-is-available-to-process-this-command-in-winrt-port](http://stackoverflow.com/questions/12584619/mysterious-not-enough-quota-is-available-to-process-this-command-in-winrt-port)
+[https://stackoverflow.com/questions/12584619/mysterious-not-enough-quota-is-available-to-process-this-command-in-winrt-port](https://stackoverflow.com/questions/12584619/mysterious-not-enough-quota-is-available-to-process-this-command-in-winrt-port)
 - Not enough quota is available to process this command -WPF  
-[http://stackoverflow.com/questions/20964360/not-enough-quota-is-available-to-process-this-command-wpf](http://stackoverflow.com/questions/20964360/not-enough-quota-is-available-to-process-this-command-wpf)
+[https://stackoverflow.com/questions/20964360/not-enough-quota-is-available-to-process-this-command-wpf](https://stackoverflow.com/questions/20964360/not-enough-quota-is-available-to-process-this-command-wpf)
 - （在查阅此页一天后，此页已无法访问）   
 [https://support.microsoft.com/en-us/kb/327699](https://support.microsoft.com/en-us/kb/327699)
 - Invisible WPF dialog filling up windows message queue?  
 [https://social.msdn.microsoft.com/Forums/vstudio/en-US/6e94283a-76be-42b3-98e6-a8e18c4e43de/invisible-wpf-dialog-filling-up-windows-message-queue?forum=wpf](https://social.msdn.microsoft.com/Forums/vstudio/en-US/6e94283a-76be-42b3-98e6-a8e18c4e43de/invisible-wpf-dialog-filling-up-windows-message-queue?forum=wpf)
 - Diagnosis on “Quota Exceeded” Win32Exception  
-[http://stackoverflow.com/questions/10086985/diagnosis-on-quota-exceeded-win32exception](http://stackoverflow.com/questions/10086985/diagnosis-on-quota-exceeded-win32exception)
+[https://stackoverflow.com/questions/10086985/diagnosis-on-quota-exceeded-win32exception](https://stackoverflow.com/questions/10086985/diagnosis-on-quota-exceeded-win32exception)
 - WPF app fails to start second time  
 [https://social.msdn.microsoft.com/Forums/vstudio/en-US/664f2de6-342f-4527-977e-a7e12eac8d90/wpf-app-fails-to-start-second-time-?forum=wpf](https://social.msdn.microsoft.com/Forums/vstudio/en-US/664f2de6-342f-4527-977e-a7e12eac8d90/wpf-app-fails-to-start-second-time-?forum=wpf)
 - MsOfficeTracker - Not enough quota available（由于我在此页上有回复，所以此页包含了以上所有链接。）  
@@ -58,7 +58,7 @@ System.OutOfMemoryException: Insufficient memory to continue the execution of th
 - Pushing the Limits of Windows: Handles  
 [https://blogs.technet.microsoft.com/markrussinovich/2009/09/29/pushing-the-limits-of-windows-handles/](https://blogs.technet.microsoft.com/markrussinovich/2009/09/29/pushing-the-limits-of-windows-handles/)
 - Why does my WPF application use up so many Windows handles? [closed]  
-[http://stackoverflow.com/questions/25316479/why-does-my-wpf-application-use-up-so-many-windows-handles](http://stackoverflow.com/questions/25316479/why-does-my-wpf-application-use-up-so-many-windows-handles)
+[https://stackoverflow.com/questions/25316479/why-does-my-wpf-application-use-up-so-many-windows-handles](https://stackoverflow.com/questions/25316479/why-does-my-wpf-application-use-up-so-many-windows-handles)
 - The current process has used all of its system allowance of handles for Window Manager objects  
 [https://social.msdn.microsoft.com/Forums/windows/en-US/73aaa1f3-30a7-4593-b299-7ec1fd582b27/the-current-process-has-used-all-of-its-system-allowance-of-handles-for-window-manager-objects?forum=winforms](https://social.msdn.microsoft.com/Forums/windows/en-US/73aaa1f3-30a7-4593-b299-7ec1fd582b27/the-current-process-has-used-all-of-its-system-allowance-of-handles-for-window-manager-objects?forum=winforms)
 
@@ -69,7 +69,7 @@ System.OutOfMemoryException: Insufficient memory to continue the execution of th
 表现现象：从唯一的一次复现来看，会导致整个窗口无法操作，无任何响应。
 问题进展：  
 微软说，这是 TextInterface 的内存泄露问题，.NET Framework 4.6 解了，要升 4.6 才行。
-- [http://stackoverflow.com/questions/35182703/wpf-error-when-calling-measure-not-enough-storage-is-available-to-process-thi/41341668#41341668](http://stackoverflow.com/questions/35182703/wpf-error-when-calling-measure-not-enough-storage-is-available-to-process-thi/41341668#41341668)
+- [https://stackoverflow.com/questions/35182703/wpf-error-when-calling-measure-not-enough-storage-is-available-to-process-thi/41341668#41341668](https://stackoverflow.com/questions/35182703/wpf-error-when-calling-measure-not-enough-storage-is-available-to-process-thi/41341668#41341668)
 - [https://social.msdn.microsoft.com/Forums/vstudio/en-US/350a8d21-f361-4983-9bc3-65c71a78cb52/comexception-this-command-is-not-enough-memory-available?forum=wpf](https://social.msdn.microsoft.com/Forums/vstudio/en-US/350a8d21-f361-4983-9bc3-65c71a78cb52/comexception-this-command-is-not-enough-memory-available?forum=wpf)
 - [https://connect.microsoft.com/VisualStudio/feedback/details/1468770/exception-with-textinterface](https://connect.microsoft.com/VisualStudio/feedback/details/1468770/exception-with-textinterface)
 

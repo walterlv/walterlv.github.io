@@ -51,7 +51,7 @@ public static T GetValue<T>(this Configurator config, string key) where T : stru
 
 既然名字类似，那自然又能想到反射。可是，拥有 `Parse` 的类型并不多，`ToString` 中能传入 `CultureInfo.InvariantCulture` 且参数顺序保持一致的类型也少的可怜。于是，反射只能保证写得出来代码，却并不能保证多种类型的支持。
 
-另外想到一点，`Int32` 类型的 `TryParse` 中有 `out` 关键字修饰的参数，反射能否支持呢？[StackOverflow 上找到了答案](http://stackoverflow.com/questions/2438065/c-sharp-reflection-how-can-i-invoke-a-method-with-an-out-parameter)：
+另外想到一点，`Int32` 类型的 `TryParse` 中有 `out` 关键字修饰的参数，反射能否支持呢？[StackOverflow 上找到了答案](https://stackoverflow.com/questions/2438065/c-sharp-reflection-how-can-i-invoke-a-method-with-an-out-parameter)：
 
 > You invoke a method with an out parameter via reflection just like any other method. The difference is that the returned value will be copied back into the parameter array so you can access it from the calling function.
 > ```CSharp
@@ -64,7 +64,7 @@ public static T GetValue<T>(this Configurator config, string key) where T : stru
 
 ## 尝试寻找更通用的方案
 
-在 Google 上继续漫游，在 StackOverflow 上发现这篇讨论：[How to convert string to any type](http://stackoverflow.com/questions/2922855/how-to-convert-string-to-any-type)。
+在 Google 上继续漫游，在 StackOverflow 上发现这篇讨论：[How to convert string to any type](https://stackoverflow.com/questions/2922855/how-to-convert-string-to-any-type)。
 
 最高票答案给出的回复是：
 

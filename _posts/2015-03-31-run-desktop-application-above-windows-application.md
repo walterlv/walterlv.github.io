@@ -38,7 +38,7 @@ C:\Windows\system32
 #### 参考资料
 
 How to make Windows 8 desktop apps shown in Metro UI (like Task Manager)?  
-[http://stackoverflow.com/questions/12873323/how-to-make-windows-8-desktop-apps-shown-in-metro-ui-like-task-manager](http://stackoverflow.com/questions/12873323/how-to-make-windows-8-desktop-apps-shown-in-metro-ui-like-task-manager)
+[https://stackoverflow.com/questions/12873323/how-to-make-windows-8-desktop-apps-shown-in-metro-ui-like-task-manager](https://stackoverflow.com/questions/12873323/how-to-make-windows-8-desktop-apps-shown-in-metro-ui-like-task-manager)
 
 Code Signing Notes  
 [http://techsupt.winbatch.com/webcgi/webbatch.exe?techsupt/nftechsupt.web+WinBatch/Manifest+Manifest~Faqs.txt](http://techsupt.winbatch.com/webcgi/webbatch.exe?techsupt/nftechsupt.web+WinBatch/Manifest+Manifest~Faqs.txt

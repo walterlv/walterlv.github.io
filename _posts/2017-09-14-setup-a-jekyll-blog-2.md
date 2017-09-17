@@ -8,7 +8,7 @@ description: 允许分享你的博客到 Facebook, Twitter 和 Google+。
 published: false
 ---
 
-本文翻译自 [Add social sharing buttons to your Jekyll blog](http://vdaubry.github.io/2014/10/20/add-social-sharing-buttons-with-jekyll/)，原作者 [Vincent Daubry](http://vdaubry.github.io)。
+本文翻译自 [Add social sharing buttons to your Jekyll blog](https://vdaubry.github.io/2014/10/20/add-social-sharing-buttons-with-jekyll/)，原作者 [Vincent Daubry](https://vdaubry.github.io)。
 
 帮助你将你的博客分享到 Facebook, Twitter 和 Google+。
 

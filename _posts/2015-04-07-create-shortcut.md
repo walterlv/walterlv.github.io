@@ -53,4 +53,4 @@ shortcutType.InvokeMember("Save",
 ```
 
 #### 参考资料
-[http://stackoverflow.com/questions/6808369/call-com-wituout-com-interop-dll](http://stackoverflow.com/questions/6808369/call-com-wituout-com-interop-dll)
+[https://stackoverflow.com/questions/6808369/call-com-wituout-com-interop-dll](https://stackoverflow.com/questions/6808369/call-com-wituout-com-interop-dll)

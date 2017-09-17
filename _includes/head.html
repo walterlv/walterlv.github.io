@@ -50,7 +50,12 @@
 		<script src="{{ site.baseurl }}/js/jquery.scrolly.min.js"></script>
 		<script src="{{ site.baseurl }}/js/skel.min.js"></script>
 		<script src="{{ site.baseurl }}/js/skel-layers.min.js"></script>
-		<script src="{{ site.baseurl }}/js/init.js"></script>
+    <script src="{{ site.baseurl }}/js/init.js"></script>
+    <script>
+      // 判断非本机且未使用 https 时，强制重定向到 https。
+      if ((!window.location.host.startsWith("localhost")) && (window.location.protocol != "https:"))
+        window.location = window.location.toString().replace(/^http:/, "https:");
+    </script>
 		<noscript>
 			<link rel="stylesheet" href="{{ site.baseurl }}/css/skel.css" />
 			<link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" />

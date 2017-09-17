@@ -82,4 +82,4 @@ PreviewKeyDown += (s, e) =>
 > 
 > 在 Windows 中（包括 WPF 中），Alt 键如此特殊是为了处理应用程序中那些带有“特殊标记”文字的菜单项（MenuItems）、按钮（Buttons）和其它标签（Labels）的。举个例子，如果按钮的文字内容被设置成“Say _Hi”，那么 Alt+H 快捷键就会被转变成为一次按钮点击（Click）事件。
 > 
-> 这段解释可以在这里 [http://stackoverflow.com/questions/3099472/previewkeydown-is-not-seeing-alt-modifiers](http://stackoverflow.com/questions/3099472/previewkeydown-is-not-seeing-alt-modifiers) 得到更详细的信息。
+> 这段解释可以在这里 [https://stackoverflow.com/questions/3099472/previewkeydown-is-not-seeing-alt-modifiers](https://stackoverflow.com/questions/3099472/previewkeydown-is-not-seeing-alt-modifiers) 得到更详细的信息。

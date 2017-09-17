@@ -7,7 +7,7 @@ keywords: jekyll
 description: 搭建一个博客，并且看起来还不错。
 ---
 
-本文翻译自 [Setup up a jekyll blog using github pages and disqus comments](http://vdaubry.github.io/2014/10/19/setup-a-jekyll-blog/)，原作者 [Vincent Daubry](http://vdaubry.github.io)。
+本文翻译自 [Setup up a jekyll blog using github pages and disqus comments](https://vdaubry.github.io/2014/10/19/setup-a-jekyll-blog/)，原作者 [Vincent Daubry](https://vdaubry.github.io)。
 
 想不想马上就开始搭建个人博客，简单易学，还好看？这篇文章将教你用 [Jekyll](http://jekyllcn.com/) 搭建博客，配上一款养眼的主题，然后跑在 [GitHub Pages](https://pages.github.com/) 上。
 
