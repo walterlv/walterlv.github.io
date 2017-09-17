@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "让 GitHub Pages 强制使用 HTTPS（含码云的 oschina.io）"
-date: 2017-09-17 15:34:19 +0800
+date: 2017-09-17 16:01:34 +0800
 categories: jekyll
 keywords: jekyll https
 description: 对于 GitHub Pages，了解如何强制使用 https；对于码云 oschina.io，了解如何强制重定向到 https。
