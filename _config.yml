@@ -26,12 +26,15 @@ github_username:  walterlv
 
 # Build settings
 excerpt_separator: ---
+paginate: 30
+paginate_path: "/blog/page:num"
 markdown: kramdown
 theme: minima
 highlighter: rouge
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-paginate
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

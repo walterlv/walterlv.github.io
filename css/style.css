@@ -1064,6 +1064,48 @@
 		width: 100%;
 	}
 
+/* Paginator */
+
+ul.pagination {
+	text-align: center;
+}
+
+ul.pagination li {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #e0e0e0;
+	width: 2.5em;
+	height: 2.5em;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+}
+
+ul.pagination li.active {
+	border-width: 0;
+	background-color: #4267b2;
+	color: white;
+}
+
+ul.pagination li.disabled {
+	opacity: 0.5;
+}
+
+ul.pagination li a {
+	padding: 0 0.75em;
+	text-align: center;
+	line-height: 2.5em;
+	border-width: 0;
+}
+
+ul.pagination li a.button:hover {
+	color: #4267b2;
+}
+
+ul.pagination li.active a.button:hover {
+	color: white;
+}
+
 /* Footer */
 
 	#footer {
