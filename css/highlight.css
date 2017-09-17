@@ -137,6 +137,10 @@ pre.highlight span ::selection {
     color: #1F1F1F
 }
 
+.language-csharp .highlight .kt {
+    color: #2585FA
+}
+
 .highlight .ld {
     color: #718C00
 }
@@ -182,7 +186,7 @@ pre.highlight span ::selection {
 }
 
 .highlight .nf {
-    color: #88752B
+    color: #0B95BB
 }
 
 .highlight .nl {
