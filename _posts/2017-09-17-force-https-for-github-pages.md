@@ -37,7 +37,7 @@ GitHub Pages 设置得这么轻松，想必码云的 Pages 服务应该也不难
 
 可是，大多数读者怎么会去注意到去输入 https 呢？只好做重定向了。
 
-于是再 Jekyll 的 GitHub 仓库中找到有人在讨论此问题：[https://github.com/jekyll/jekyll-redirect-from/issues/18](https://github.com/jekyll/jekyll-redirect-from/issues/18)。
+于是在 Jekyll 的 GitHub 仓库中找到有人在讨论此问题：[https://github.com/jekyll/jekyll-redirect-from/issues/18](https://github.com/jekyll/jekyll-redirect-from/issues/18)。
 
 根据其中的讨论，我在所有页面的头文件（其实就是 /_includes/head.html 文件）中写下了这么一段代码：
 
