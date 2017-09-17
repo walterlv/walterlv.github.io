@@ -25,4 +25,4 @@ GitHub Pages 为个人、组织和项目提供了展示一些页面的方式，G
    - [原] [Add social sharing buttons to your Jekyll blog](https://vdaubry.github.io/2014/10/20/add-social-sharing-buttons-with-jekyll/) 
 1. [[译] 为 Jekyll 博客做搜索引擎优化（SEO）](./2017-09-14-setup-a-jekyll-blog-3.html)
    - [原] [SEO for your Jekyll blog](https://vdaubry.github.io/2014/10/21/SEO-for-your-Jekyll-blog/)
-1. [将 GitHub Pages 设置为 https 安全链接](./2017-09-14-setup-a-jekyll-blog-4.html)
+1. [将 GitHub Pages 设置为 https 安全链接](./2017-09-17-force-https-for-github-pages.html)
