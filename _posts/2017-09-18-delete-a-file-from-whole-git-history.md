@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "彻底删除 Git 仓库中的某个文件避免占用大量宝贵的磁盘空间"
-date: 2017-09-18 23:40:52 +0800
+date: 2017-09-18 23:45:21 +0800
 categories: git
 keywords: git filter-branch delete
 description: 如果不小心向 Git 仓库中上传了一个不需要的超大文件，我们如何才能够删除它，使之不占用我们宝贵的磁盘空间。
@@ -12,6 +12,8 @@ description: 如果不小心向 Git 仓库中上传了一个不需要的超大�
 小伙伴说“不要紧，现在我已经删除它了！”突然一阵后背发凉，我们才 900M 的仓库肯定一下子飙到了 2000+M，必须马上处理之。
 
 ---
+
+如果你想知道到底发生了什么造成突然多出这么大的文件，请阅读：[一个压缩包引发的血案 - niuyanjie's blog](http://niuyanjie.oschina.io/blog/%E4%B8%80%E4%B8%AA%E5%8E%8B%E7%BC%A9%E5%8C%85%E5%BC%95%E5%8F%91%E7%9A%84%E8%A1%80%E6%A1%88/)。
 
 ### 问题的本质和解决思路
 
