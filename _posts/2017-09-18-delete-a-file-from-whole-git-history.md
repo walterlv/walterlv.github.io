@@ -111,3 +111,7 @@ git gc --prune=now
 ```bash
 $ git push -d origin 死灰复燃的包含误传提交的某个分支名
 ```
+
+---
+
+另外再吐个槽，以上一切都做完了，还写完了这篇博客。结果 `filter-branch` 那个命令依然还跑着没有结束……
