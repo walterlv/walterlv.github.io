@@ -86,13 +86,20 @@ $ git branch -d <branch_name>
 
 ```bash
 git fetch -f -p
-git checkout dev
-git reset origin/dev --hard
+git checkout develop
+git reset origin/develop --hard
 git reflog expire --expire=now --all
 git gc --prune=now
 ```
 
-命令的本质是回收那些无法跟踪的提交所占用的空间。也就是说我们必须确保本地和远端没有任何分支可以跟踪到那次误传文件的提交。
+命令的解释：
+- 提取远端服务器上最新的提交（这样本地仓库才会包含我修复的那些提交）
+- 切换到 `develop` 分支（避免影响到小伙伴当前的工作分支，防止丢失工作）
+- 将本地 `develop` 分支强制重置成远端的 `develop` 分支（以便丢掉本地有问题的那些提交）
+- 立刻将所有无法跟踪到的提交标记为已过期（以便垃圾回收工具可以回收）
+- 立刻进行垃圾回收（这样误传文件的那次提交包含的 1.47GB 空间就被回收啦）
+
+需要注意：必须确保本地和远端没有任何分支可以跟踪到那次误传文件的提交。
 
 如果本地没有基于之前的 `develop` 分支做新的修改，则以上命令足以将本地磁盘的空间收回。如下图：
 
