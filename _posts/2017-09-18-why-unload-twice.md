@@ -49,12 +49,12 @@ Why the `_problemChild` unloaded twice?
 ### When a non-generic style of `Child` is added, the `Unloaded` event will be raised of these two operations.
 
 Removing from visual tree with non-generic style  
-![Removing from visual tree with non-generic style](./Docs/removing-from-visual-tree-with-non-generic-style.png)
+![Removing from visual tree with non-generic style](https://github.com/walterlv/why-unload-twice/raw/master/Docs/removing-from-visual-tree-with-non-generic-style.png)
 
 Removing from logical tree with non-generic style  
-![Removing from logical tree with non-generic style](./Docs/removing-from-logical-tree-with-non-generic-style.png)
+![Removing from logical tree with non-generic style](https://github.com/walterlv/why-unload-twice/raw/master/Docs/removing-from-logical-tree-with-non-generic-style.png)
 
 ### When only the generic style of `Child` is defined, the `Unloaded` event will be raised of only one operations.
 
 Removing from visual tree with generic style  
-![Removing from visual tree with generic style](./Docs/removing-from-visual-tree-with-generic-style.png)
+![Removing from visual tree with generic style](https://github.com/walterlv/why-unload-twice/raw/master/Docs/removing-from-visual-tree-with-generic-style.png)
