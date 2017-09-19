@@ -28,3 +28,9 @@ $ git filter-branch --tree-filter 'rm _posts/2017-09-18-delete-a-file-from-whole
 Rewrite f74ff6c8057dcfdf96822989a09c357ae07cd2f8 (5/5) (2 seconds passed, remaining 0 predicted)
 Ref 'refs/heads/master' was rewritten
 ```
+
+#### 参考资料
+
+- [Git - 重写历史](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E5%86%99%E5%8E%86%E5%8F%B2)
+- [Git - git-filter-branch Documentation](https://git-scm.com/docs/git-filter-branch)
+- [Link Intersystems – Remove directories and files permanently from git](http://www.link-intersystems.com/blog/2014/07/17/remove-directories-and-files-permanently-from-git/)
