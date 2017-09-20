@@ -109,4 +109,4 @@ var properties = type.GetTypeInfo().DeclaredProperties;
 #### 参考资料
 - [c# - Type.GetProperties() doesn't work in Release - Stack Overflow](https://stackoverflow.com/questions/35359942/type-getproperties-doesnt-work-in-release/35361710)
 - [c# - Adding runtime directives for generic types in UWP app - Stack Overflow](https://stackoverflow.com/questions/39365184/adding-runtime-directives-for-generic-types-in-uwp-app)
-- [.NET Native Deep Dive: Dynamic Features in Static Code | .NET Blog](https://blogs.msdn.microsoft.com/dotnet/2014/05/20/net-native-deep-dive-dynamic-features-in-static-code/)
+- [.NET Native Deep Dive: Dynamic Features in Static Code](https://blogs.msdn.microsoft.com/dotnet/2014/05/20/net-native-deep-dive-dynamic-features-in-static-code/)
