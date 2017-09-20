@@ -15,11 +15,11 @@
 	}
 
 	h2 {
-		font-size: 1.75em;
+		font-size: 1.5em;
 	}
 
 	h3 {
-		font-size: 1.5em;
+		font-size: 1.25em;
 	}
 
 	h4 {
@@ -43,11 +43,11 @@
 	}
 
 	header.major h2 {
-		font-size: 2.5em;
+		font-size: 1.5em;
 	}
 
 		header.major h2 + p {
-			font-size: 1em;
+			font-size: 0.9em;
 		}
 
 /* Features */
