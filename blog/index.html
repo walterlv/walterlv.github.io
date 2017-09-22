@@ -12,7 +12,7 @@ layout: default
                     <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
                 </header>
                 <section style="font-size: 0.8em">
-                    {% if post.date_modified %}{{ post.date_modified | date: "%Y-%m-%d %H:%m" }}{% else %}{{ post.date | date: "%Y-%m-%d %H:%m" }}{% endif %}
+                    {% if post.date_modified %}{{ post.date_modified | date: "%Y-%m-%d %H:%M" }}{% else %}{{ post.date | date: "%Y-%m-%d %H:%M" }}{% endif %}
                 </section>
                 <section class="excerpt">
                     {{ post.excerpt }}
@@ -37,8 +37,8 @@ layout: default
                         <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
                     </header>
                     <section style="font-size: 0.75em">
-                        <span>{{ post.date | date: "%Y-%m-%d %H:%m" }}</span>
-                        <span style="margin: 0 0 0 2em">{% if post.date_modified %}last edit: {{ post.date_modified | date: "%Y-%m-%d %H:%m" }}{% endif %}</span>
+                        <span>{{ post.date | date: "%Y-%m-%d %H:%M" }}</span>
+                        <span style="margin: 0 0 0 2em">{% if post.date_modified %}last edit: {{ post.date_modified | date: "%Y-%m-%d %H:%M" }}{% endif %}</span>
                     </section>
                     {{ post.excerpt }}
                 </section>
@@ -66,8 +66,8 @@ layout: default
                         <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
                     </header>
                     <section style="font-size: 0.75em">
-                        <span>{{ post.date | date: "%Y-%m-%d %H:%m" }}</span>
-                        <span style="margin: 0 0 0 2em">{% if post.date_modified %}last edit: {{ post.date_modified | date: "%Y-%m-%d %H:%m" }}{% endif %}</span>
+                        <span>{{ post.date | date: "%Y-%m-%d %H:%M" }}</span>
+                        <span style="margin: 0 0 0 2em">{% if post.date_modified %}last edit: {{ post.date_modified | date: "%Y-%m-%d %H:%M" }}{% endif %}</span>
                     </section>
                     {{ post.excerpt }}
                 </section>
