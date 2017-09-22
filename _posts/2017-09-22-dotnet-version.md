@@ -5,10 +5,10 @@ date_created: 2017-09-22 18:05:00 +0800
 date: 2017-09-22 21:42:14 +0800
 categories: dotnet
 keywords: dotnet version sku runtime
-description: 
+description: 了解 .Net Framework 的公共语言运行时版本，这与 .Net Framework 基础库的版本是不一样的。
 ---
 
-当我们编译程序目标框架选为 .Net Framework 4.5/4.6/4.7 时，CLR 运行时是如何判断我们究竟应该用哪一个 .Net Framework 呢？
+当我们编译程序目标框架选为 .Net Framework 4.5/4.6/4.7 时，CLR 运行时是如何判断我们究竟应该用哪一个 .Net Framework 呢？.Net Framework 的版本到底由哪些部分组成？我们编译 .Net Framework 时选择的版本决定了什么？
 
 ---
 
