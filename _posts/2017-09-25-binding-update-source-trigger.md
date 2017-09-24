@@ -47,7 +47,7 @@ public enum UpdateSourceTrigger
 这些值代表的含义是：
 
 - `Default`
-  - 默认值，多数情况下与 `PropertyChanged` 一样，然而对 `TextBox.Text` 属性来说，却是 LostFocus（WPF）或 Explicit（UWP）。
+  - 默认值，多数情况下与 `PropertyChanged` 一样，然而**对 `TextBox.Text` 属性来说，却是 LostFocus（WPF）或 Explicit（UWP）**。
 - `Explicit`
   - 必须在显式地调用 BindingExpression.UpdateSource 的情况下才会更新源值。
 - `LostFocus`（WPF 专属，不过 UWP 的预览版里也有）
