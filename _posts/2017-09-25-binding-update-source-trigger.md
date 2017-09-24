@@ -10,7 +10,7 @@ description: 为 `TextBox` 的 `Text` 属性制定了双向绑定，然而运行
 在开发 [markdown-mail](https://github.com/walterlv/markdown-mail) 时遇到了一些诡异的情况。代码是这么写的：
 
 ```xml
-<TextBox Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+<TextBox Text="{Binding Text, Mode=TwoWay}"/>
 ```
 
 然而在 `TextChanged` 事件之后延时执行了一些操作时，从 `ViewModel` 里拿到的值却始终是旧的。
