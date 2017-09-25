@@ -27,9 +27,9 @@ description: 为 `TextBox` 的 `Text` 属性制定了双向绑定，然而运行
 public enum UpdateSourceTrigger
 {
     Default,
-    Explicit,
-    LostFocus,
     PropertyChanged,
+    LostFocus,
+    Explicit
 }
 ```
 
@@ -39,8 +39,8 @@ public enum UpdateSourceTrigger
 public enum UpdateSourceTrigger
 {
     Default,
-    Explicit,
     PropertyChanged,
+    Explicit
 }
 ```
 
