@@ -1,17 +1,22 @@
 ---
 layout: post
-title: "深入了解 WPF Dispatcher 的工作原理（Invoke/InvokeAsync/PushFrame）"
-date: 2017-09-25 22:12:15 +0800
-categories: post dotnet
-keywords: dotnet dispatcher Invoke InvokeAsync PushFrame
+title: "深入了解 WPF Dispatcher 的工作原理（Invoke/InvokeAsync 部分）"
+date: 2017-09-26 01:00:26 +0800
+categories: post wpf
+keywords: dotnet wpf dispatcher Invoke BeginInvoke InvokeAsync
 description: 
 ---
 
-深耕 WPF 开发的各位程序员大大们一定避不开使用 Dispatcher。跨线程访问 UI 当然免不了用到它，将某个任务延迟到当前任务之后执行也会用到它。Dispatcher.Invoke、Dispatcher.BeginInvoke 是过去大家经常使用的方法，而 .Net Framework 4.5 中微软为我们带来了 Dispatcher.InvokeAsync 方法，它和前面两个有何不同？极端情况下我们会见到的 Dispatcher.PushFrame 背后又做了哪些事情使得不卡死当前线程的情况下好像阻塞了一个方法一样。
+深耕 WPF 开发的各位程序员大大们一定避不开使用 Dispatcher。跨线程访问 UI 当然免不了用到它，将某个任务延迟到当前任务之后执行也会用到它。Dispatcher.Invoke、Dispatcher.BeginInvoke 是过去大家经常使用的方法，而 .Net Framework 4.5 中微软为我们带来了 Dispatcher.InvokeAsync 方法，它和前面两个有何不同？
 
 阅读本文将更深入地了解 Dispatcher 的工作机制。
 
 ---
+
+本文是**深入了解 WPF Dispatcher 的工作原理**系列文章的一部分：
+
+- [Invoke/InvokeAsync 部分](/post/wpf/2017/09/26/dispatcher-invoke-async.html)（本文）
+- [PushFrame 部分](/post/wpf/2017/09/26/dispatcher-push-frame.html)
 
 ### 回顾老旧的 BeginInvoke，看看新的 InvokeAsync
 
@@ -164,9 +169,10 @@ _window.Value.AddHook(_hook);
 
 而被我们遗弃的 `BeginInvoke`，由于内部调用了同一个函数，所以实现原理是完全一样的。而且，这么古老的函数也允许 `await`。
 
-### PushFrame 的实现原理
+### 总结
 
-
+1. 进入了 .Net Framework 4.5 及以上的开发者们，建议使用 `InvokeAsync` 代替 `BeginInvoke`；
+1. `Dispatcher` 通过创建一个隐藏的消息窗口来让一个个 `Invoke` 到此线程的任务按照优先级执行。
 
 #### 参考资料
 
