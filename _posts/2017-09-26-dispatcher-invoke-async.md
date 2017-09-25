@@ -5,6 +5,7 @@ date: 2017-09-26 02:02:24 +0800
 categories: post dotnet
 keywords: dotnet dotnet dispatcher Invoke BeginInvoke InvokeAsync
 description: 了解 Dispatcher.BeginInvoke 和 Dispatcher.InvokeAsync 的不同之处，并且学习它们的工作原理。
+published: false
 ---
 
 深耕 WPF 开发的各位程序员大大们一定避不开使用 Dispatcher。跨线程访问 UI 当然免不了用到它，将某个任务延迟到当前任务之后执行也会用到它。Dispatcher.Invoke、Dispatcher.BeginInvoke 是过去大家经常使用的方法，而 .Net Framework 4.5 中微软为我们带来了 Dispatcher.InvokeAsync 方法，它和前面两个有何不同？
