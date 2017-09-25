@@ -21,6 +21,8 @@ description:
 
 **它叫做——`Dispatcher.InvokeAsync`。**
 
+---
+
 ### BeginInvoke 和 InvokeAsync 有什么不同？
 
 这个还真得扒开微软的源码看一看呢！
@@ -107,7 +109,62 @@ public DispatcherOperation InvokeAsync(Action callback, DispatcherPriority prior
 
 既然两个方法一样，后文我也就没必要两个都说了，一切以新款的 `InvokeAsync` 为主。
 
+---
+
 ### InvokeAsync 的实现原理
+
+前面一节几乎告诉我们，`InvokeAsync` 的关键就在 `InvokeAsyncImpl` 方法中。
+
+1. 用一个 `DispatcerOperation` 把我们传入的 `Action`/`Func` 包装起来。这样，我们传入的任务和优先级将在一起处理。
+1. 将 `DispatcherOperation` 加入到一个 `PriorityQueue<DispatcherOperation>` 类型的队列中。这个队列内部实现是一个 `SortedList`，于是每次入队之后，出对的时候一定是按照优先级出队的。
+1. 调用 `RequestProcessing`，直至最后向**某个隐藏窗口**发送了一条消息。
+1. **那个隐藏窗口**接收到了这条消息，然后从 `PriorityQueue<DispatcherOperation>` 队列中取出一条任务执行（真实情况复杂一点，后面会谈到）。
+
+上面第 3 点的消息是这样发的：
+
+```csharp
+UnsafeNativeMethods.TryPostMessage(new HandleRef(this, _window.Value.Handle), _msgProcessQueue, IntPtr.Zero, IntPtr.Zero);
+```
+
+等等，这句代码里面的 `_window` 是哪儿来的？为什么凭空出现了一个可以用来发送消息的窗口？于是，在 `Dispatcher` 构造函数中发现了这个窗口。这并不是我们平时所熟知的那个 `Window` 类，而是一个用于发送和接收 `Dispatcher` 调度器调度任务消息的 Win32 隐藏窗口。不信它是一个窗口？请进入 `MessageOnlyHwndWrapper` 类看，它的基类 `HwndWrapper` 中直接使用了方法 `UnsafeNativeMethods.CreateWindowEx` 创建了这个窗口，然后拿到了它的句柄 `Handle`。
+
+既然会向窗口发消息，自然而然可以 `Hook` 它的消息处理函数，就像下面这样：
+
+```csharp
+// Create the message-only window we use to receive messages
+// that tell us to process the queue.
+MessageOnlyHwndWrapper window = new MessageOnlyHwndWrapper();
+_window = new SecurityCriticalData<MessageOnlyHwndWrapper>( window );
+
+_hook = new HwndWrapperHook(WndProcHook);
+_window.Value.AddHook(_hook);
+```
+
+而这里处理的消息类型只有三种：
+
+1. 关掉这个隐藏窗口；
+1. 处理 `Dispatcher` 调度的任务（这个消息是在 `Dispatcher` 的静态构造函数中注册的）；
+1. 定时器。
+
+前面两个不难理解，但是为什么这里与定时器有关？！
+
+继续调查，我们发现微软在 `Dispatcher` 中把所有不同种类的优先级分成了三个大类：
+
+1. 前台优先级（对应 `DispatcherPriority.Loaded` 到 `DispatcherPriority.Send`，也就是数字 6~10）
+1. 后台优先级（对应 `DispatcherPriority.Background` 到 `DispatcherPriority.Input`，也就是数字 4~5）
+1. 空闲优先级（对应 `DispatcherPriority.SystemIdle` 到 `DispatcherPriority.ApplicationIdle`，也就是数字 1~3）
+
+在这里微软又开始逗我们玩了……因为在他的处理中，后面两个是完全相同的！所以严格意义上只分了两种——前台优先级和非前台优先级。而区分他们的一个分界点就是——用户的输入。
+
+如果有用户的输入发生，那么会开启一个定时器，在定时器时间到达之前，所有的后台优先级任务都不会去执行。但前台优先级任务不受用户输入的影响。在这样的设定下，用户的输入不会随随便便被饿死，WPF 程序也就不会从输入层面开始卡顿了。
+
+研究到这里，似乎 `InvokeAsync` 的执行原理差不多都清楚了。但是不要忘了这可是 TAP 异步模式的一项实践啊，这方法是要支持 `await` 并附带返回值的。
+
+但这里就没有更多底层的内容了。我们注意到 `InvokeAsync` 的返回值是 `DispatcherOperation` 类型的，而这就是 `InvokeAsync` 方法中我们前面看到的代码中直接 `new` 出来的。`DispatcherOperation` 中有一个 `Invoke` 方法，这是无返回值的，但是它执行完后会置 `Task` 的 `Result` 值。另外 `DispatcherOperation` 实现了 `GetAwaiter` 方法，于是就可以使用 `await`。对于如何自己实现一个可以 `await` 的类，我可能会专门写一篇文章，但如果你现在就希望了解，可以阅读：[How to write a custom awaiter – Lucian's VBlog](https://blogs.msdn.microsoft.com/lucian/2012/12/11/how-to-write-a-custom-awaiter/)。
+
+而被我们遗弃的 `BeginInvoke`，由于内部调用了同一个函数，所以实现原理是完全一样的。而且，这么古老的函数也允许 `await`。
+
+### PushFrame 的实现原理
 
 
 
@@ -120,4 +177,7 @@ public DispatcherOperation InvokeAsync(Action callback, DispatcherPriority prior
   - [Task-based Asynchronous Pattern (TAP) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)
 - InvokeAsync
   - [Dispatcher.cs](http://referencesource.microsoft.com/#WindowsBase/Base/System/Windows/Threading/Dispatcher.cs)
-  - 
+- WPF 消息机制
+  - [WPF message mechanism (two) - WPF inside the 5 window of the hidden message window - the grape city control technology team blog Blog Channel - PROG3.COM](http://prog3.com/sbdm/blog/powertoolsteam/article/details/6109036)
+- Awaiter
+  - [How to write a custom awaiter – Lucian's VBlog](https://blogs.msdn.microsoft.com/lucian/2012/12/11/how-to-write-a-custom-awaiter/)
