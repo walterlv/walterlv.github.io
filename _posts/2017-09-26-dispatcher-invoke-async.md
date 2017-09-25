@@ -15,8 +15,8 @@ description: 了解 Dispatcher.BeginInvoke 和 Dispatcher.InvokeAsync 的不同�
 
 本文是**深入了解 WPF Dispatcher 的工作原理**系列文章的一部分：
 
-- [Invoke/InvokeAsync 部分](/post/wpf/2017/09/26/dispatcher-invoke-async.html)（本文）
-- [PushFrame 部分](/post/wpf/2017/09/26/dispatcher-push-frame.html)
+1. [Invoke/InvokeAsync 部分](/post/wpf/2017/09/26/dispatcher-invoke-async.html)（本文）
+1. [PushFrame 部分](/post/wpf/2017/09/26/dispatcher-push-frame.html)
 
 ### 回顾老旧的 BeginInvoke，看看新的 InvokeAsync
 
