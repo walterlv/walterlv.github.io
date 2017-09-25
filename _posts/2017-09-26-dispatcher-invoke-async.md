@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "深入了解 WPF Dispatcher 的工作原理（Invoke/InvokeAsync 部分）"
-date: 2017-09-26 01:00:26 +0800
+date: 2017-09-26 02:02:24 +0800
 categories: post wpf
 keywords: dotnet wpf dispatcher Invoke BeginInvoke InvokeAsync
-description: 
+description: 了解 Dispatcher.BeginInvoke 和 Dispatcher.InvokeAsync 的不同之处，并且学习它们的工作原理。
 ---
 
 深耕 WPF 开发的各位程序员大大们一定避不开使用 Dispatcher。跨线程访问 UI 当然免不了用到它，将某个任务延迟到当前任务之后执行也会用到它。Dispatcher.Invoke、Dispatcher.BeginInvoke 是过去大家经常使用的方法，而 .Net Framework 4.5 中微软为我们带来了 Dispatcher.InvokeAsync 方法，它和前面两个有何不同？
@@ -125,6 +125,8 @@ public DispatcherOperation InvokeAsync(Action callback, DispatcherPriority prior
 1. 调用 `RequestProcessing`，直至最后向**某个隐藏窗口**发送了一条消息。
 1. **那个隐藏窗口**接收到了这条消息，然后从 `PriorityQueue<DispatcherOperation>` 队列中取出一条任务执行（真实情况复杂一点，后面会谈到）。
 
+![InvokeAsync 的实现原理图](/assets/2017-09-26-01-20-05.png)
+
 上面第 3 点的消息是这样发的：
 
 ```csharp
@@ -169,10 +171,44 @@ _window.Value.AddHook(_hook);
 
 而被我们遗弃的 `BeginInvoke`，由于内部调用了同一个函数，所以实现原理是完全一样的。而且，这么古老的函数也允许 `await`。
 
+### Invoke 的实现原理
+
+也许你会觉得奇怪。我们连“异步”的 `InvokeAsync` 的实现原理都了解了，同步的 `Invoke` 还有何难！
+
+如果你这么认为，你一定忽略了一个很重要的问题——死锁！
+
+如果是另一个线程调用到此线程的 `Invoke`，那么同步等待一下当然不会有问题。但是如果调用线程就是此线程本身呢？如果依然采用“同步等待”的方式，那么 UI 线程就会因为 `Invoke` 的调用而阻塞，然而 `Invoke` 中传入的 `Action` 是插入到 UI 线程执行的，如果 UI 线程正在等待 `Invoke`，还怎么插入得进去？！
+
+所以，它一定有另外一套实现方式！而微软为这套实现方式做了两条路径：
+
+1. 如果是 10 的最高优先级，则直接调用 `Invoke` 里传入的任务；
+1. 如果是其他，则调用 `DispatcherOperation` 的 `Wait` 方法进行等待。
+
+等等，这不还是 `Wait` 吗！然而进去 `Wait` 方法查看，你会发现，根本不是！
+
+```csharp
+public DispatcherOperationStatus Wait(TimeSpan timeout)
+{
+    // 省略一些前面的代码。
+            
+    // We are the dispatching thread for this operation, so
+    // we can't block.  We will push a frame instead.
+    DispatcherOperationFrame frame = new DispatcherOperationFrame(this, timeout);
+    Dispatcher.PushFrame(frame);
+        
+    // 省略一些后面的代码。
+    
+    return _status;
+}
+```
+
+它用了 `Dispatcher.PushFrame`。这样保证了在不阻塞线程的情况下进行“等待”。至于如何做到“不阻塞地等待”，请参阅本系列的第二篇文章 [深入了解 WPF Dispatcher 的工作原理（PushFrame 部分）](/post/wpf/2017/09/26/dispatcher-push-frame.html)。
+
 ### 总结
 
 1. 进入了 .Net Framework 4.5 及以上的开发者们，建议使用 `InvokeAsync` 代替 `BeginInvoke`；
-1. `Dispatcher` 通过创建一个隐藏的消息窗口来让一个个 `Invoke` 到此线程的任务按照优先级执行。
+1. `Dispatcher` 通过创建一个隐藏的消息窗口来让一个个 `Invoke` 到此线程的任务按照优先级执行；
+1. `Invoke` 使用 `PushFrame` 做到了不阻塞 UI 线程的等待。
 
 #### 参考资料
 
