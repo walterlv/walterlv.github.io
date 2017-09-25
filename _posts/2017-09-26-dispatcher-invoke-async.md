@@ -2,8 +2,8 @@
 layout: post
 title: "深入了解 WPF Dispatcher 的工作原理（Invoke/InvokeAsync 部分）"
 date: 2017-09-26 02:02:24 +0800
-categories: post wpf
-keywords: dotnet wpf dispatcher Invoke BeginInvoke InvokeAsync
+categories: post dotnet
+keywords: dotnet dotnet dispatcher Invoke BeginInvoke InvokeAsync
 description: 了解 Dispatcher.BeginInvoke 和 Dispatcher.InvokeAsync 的不同之处，并且学习它们的工作原理。
 ---
 
@@ -15,8 +15,8 @@ description: 了解 Dispatcher.BeginInvoke 和 Dispatcher.InvokeAsync 的不同�
 
 本文是**深入了解 WPF Dispatcher 的工作原理**系列文章的一部分：
 
-1. [Invoke/InvokeAsync 部分](/post/wpf/2017/09/26/dispatcher-invoke-async.html)（本文）
-1. [PushFrame 部分](/post/wpf/2017/09/26/dispatcher-push-frame.html)
+1. [Invoke/InvokeAsync 部分](/post/dotnet/2017/09/26/dispatcher-invoke-async.html)（本文）
+1. [PushFrame 部分](/post/dotnet/2017/09/26/dispatcher-push-frame.html)
 
 ### 回顾老旧的 BeginInvoke，看看新的 InvokeAsync
 
@@ -202,7 +202,7 @@ public DispatcherOperationStatus Wait(TimeSpan timeout)
 }
 ```
 
-它用了 `Dispatcher.PushFrame`。这样保证了在不阻塞线程的情况下进行“等待”。至于如何做到“不阻塞地等待”，请参阅本系列的第二篇文章 [深入了解 WPF Dispatcher 的工作原理（PushFrame 部分）](/post/wpf/2017/09/26/dispatcher-push-frame.html)。
+它用了 `Dispatcher.PushFrame`。这样保证了在不阻塞线程的情况下进行“等待”。至于如何做到“不阻塞地等待”，请参阅本系列的第二篇文章 [深入了解 WPF Dispatcher 的工作原理（PushFrame 部分）](/post/dotnet/2017/09/26/dispatcher-push-frame.html)。
 
 ### 总结
 
