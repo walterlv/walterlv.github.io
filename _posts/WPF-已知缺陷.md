@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WPF 已知缺陷"
-categories: wpf
+categories: favorites wpf
 keywords: wpf bug
 published: false
 ---
