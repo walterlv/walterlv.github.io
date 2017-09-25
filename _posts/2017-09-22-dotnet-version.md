@@ -82,7 +82,7 @@ description: 了解 .Net Framework 的公共语言运行时版本，这与 .Net 
 
 于是我们谈论 .Net Framework 的版本其实应该分三个不同的部分来谈：
 
-> 每个新版本的 .NET Framework 都会保留早期版本中的功能并会添加新功能。 CLR 由其自己的版本号标识。 虽然 CLR 版本并不总是递增的，但 .NET Framework 版本号在每次发布时都会递增。 例如，.NET Framework 4、4.5 和更高版本包含 CLR 4，而 .NET Framework 2.0、3.0 和 3.5 包含 CLR 2.0。 （没有版本 3 的 CLR。）
+> 每个新版本的 .NET Framework 都会保留早期版本中的功能并会添加新功能。 CLR 有其自己的版本号标识。 虽然 CLR 版本并不总是递增的，但 .NET Framework 版本号在每次发布时都会递增。 例如，.NET Framework 4、4.5 和更高版本包含 CLR 4，而 .NET Framework 2.0、3.0 和 3.5 包含 CLR 2.0。 （没有版本 3 的 CLR。）
 
 从官方文档给出的表格当中我们可以确信：**.Net Framework 4.0/4.5/4.6/4.7 包含的 CLR 版本都是 4.0。**
 

@@ -19,3 +19,7 @@ published: false
 
 - 独立更新
   - [Description of the Windows Update Standalone Installer in Windows](https://support.microsoft.com/en-us/help/934307/description-of-the-windows-update-standalone-installer-in-windows)
+
+- VisualBrush/RenderTargetBitmap
+  - [c# - How do I make RenderTargetBitmap and VisualBrush play nice together? - Stack Overflow](https://stackoverflow.com/questions/12433638/how-do-i-make-rendertargetbitmap-and-visualbrush-play-nice-together)
+  - [wpf - Why don't these animations work when I'm using a storyboard? - Stack Overflow](https://stackoverflow.com/questions/2338714/why-dont-these-animations-work-when-im-using-a-storyboard)
