@@ -2,6 +2,7 @@
 layout: post
 title: "深入了解 WPF Dispatcher 的工作原理（PushFrame 部分）"
 date: 2017-09-26 03:49:41 +0800
+date_modified: 2017-09-26 17:49:59 +0800
 categories: post dotnet
 keywords: dotnet dotnet dispatcher PushFrame
 description: 了解 Dispatcher.PushFrame 方法的作用和背后的实现原理。
@@ -155,19 +156,45 @@ while(frame.Continue)
 
 然而，这两个方法内部都调用到了非托管代码，很难通过阅读代码了解到它处理消息的原理。但是通过 .Net Framework 源码调试技术我发现 `TranslateAndDispatchMessage` 方法似乎并没有被调用到，`GetMessage` 始终在执行。我们有理由相信用于实现非阻塞等待的关键在 `GetMessage` 方法内部。.Net Framework 源码调试技术请参阅：[调试 ms 源代码 - 林德熙](http://lindexi.oschina.io/lindexi//post/%E8%B0%83%E8%AF%95-ms-%E6%BA%90%E4%BB%A3%E7%A0%81/)。
 
-于是去 `GetMessage` 方法内，找到了 `UnsafeNativeMethods.ITfMessagePump` 类型的变量 `messagePump`。这是 Windows 消息循环中的重要概念。看到这里，似乎需要更了解消息循环才能明白实现非阻塞等待的关键。但至少我们已经可以肯定，在这个方法执行中，我们的主线程允许插入一些对于消息循环的处理，于是我们基于消息的窗口能够继续交互和渲染而不被阻塞。
+于是去 `GetMessage` 方法内，找到了 `UnsafeNativeMethods.ITfMessagePump` 类型的变量 `messagePump`。这是 Windows 消息循环中的重要概念。看到这里，似乎需要更了解消息循环才能明白实现非阻塞等待的关键。不过我们可以再次通过调试 .Net Framework 的源码来了解消息循环在其中做的重要事情。
 
-由于 `DispatcherFrame` 通过 `PushFrame` 的调用而一层层嵌套，每一次嵌套就会通过前面提到的 `while` 循环开启一个新的 Windows 消息循环。于是我们每一次从一个 `DispatcherFrame` 退出的时候，我们总能回到跳出 `while` 循环回到当初调用 `DispatcherFrame` 的地方。于是，通过消息循环来处理窗口收到的消息，我们能够不阻塞线程；而同样在循环中，我们又能在需要的时候退出循环，以便等待结束后随时继续执行之前没有执行完的代码。依然通过调试 .Net Framework 源码，我找到了这一证据——多次 `PushFrame` 的嵌套，在 Visual Studio 的调用堆栈中是都存在的（能明显看得见嵌套，如下图）。
+---
+
+### 调试源码以研究 PushFrame 不阻塞等待的原理
+
+为了开始调试，我为主窗口添加了触摸按下的事件处理函数：
+
+```csharp
+private void OnStylusDown(object sender, StylusDownEventArgs e)
+{
+    Dispatcher.Invoke(() =>
+    {
+        Console.WriteLine();
+        new MainWindow().ShowDialog();
+    }, DispatcherPriority.Background);
+}
+```
+
+其中 `Dispatcher.Invoke` 和 `ShowDialog` 都是为了执行 `PushFrame` 而写的代码。`Console.WriteLine()` 只是为了让我打上一个用于观察的断点。
+
+运行程序，在每一次触摸主窗口的时候，我们都会命中一次断点。观察 Visual Studio 的调用堆栈子窗口，我们会发现每触摸一次命中断点时调用堆栈中会多一次 `PushFrame`，继续执行，由于 `ShowDialog` 又会多一次 `PushFrame`。于是，我们每触摸一次，调用堆栈中会多出两个 `PushFrame`。
+
+每次 `PushFrame` 之后，都会经历一次托管到本机和本机到托管的转换，随后是消息处理。我们的触摸消息就是从消息处理中调用而来。
+
+于是可以肯定，每一次 `PushFrame` 都将开启一个新的消息循环，由非托管代码开启。当 `ShowDialog` 出来的窗口关掉，或者 `Invoke` 执行完毕，或者其它会导致 `PushFrame` 退出循环的代码执行时，就会退出一次 `PushFrame` 带来的消息循环。于是，在上一次消息处理中被 `while` “阻塞”的代码得以继续执行。一层层退出，直到最后 `Main` 函数退出时，程序结束。
 
 ![PushFrame 的嵌套](/assets/2017-09-26-03-47-20.png)
 
 上图使用的是我在 GitHub 上的一款专门研究 WPF 触摸原理的测试项目：[https://github.com/walterlv/ManipulationDemo](https://github.com/walterlv/ManipulationDemo)。
 
----
+至此，`PushFrame` 能够做到不阻塞 UI 线程的情况下继续响应消息的原理得以清晰地梳理出来。
 
-### 没什么进展的进展
+### 结论
 
-为了继续了解非阻塞等待的关键，我发现了一篇看似“深入”介绍 `DispatcherFrame` 的文章，名为 [DispatcherFrame. Look in-Depth](https://www.codeproject.com/Articles/152137/DispatcherFrame-Look-in-Depth)。看名字是深入 `DispatcherFrame`，里面的内容是了解为何能够做到在不阻塞的情况下继续处理 Windows 消息，然而阅读完发现说得再深也不过像本文一样，依然没有解释到关键之处。
+1. 每一次 `PushFrame` 都会开启一个新的消息循环，记录 `_frameDepth` 加 1；
+1. 在新的消息循环中，会处理各种各样的 Windows 消息，其中有的以事件的形式转发，有的是执行加入到 `PriorityQueue<DispatcherOperation>` 队列中的任务；
+1. 在显式地退出 `PushFrame` 时，新开启的消息循环将退出，并继续此前 `PushFrame` 处的代码执行；
+1. 当所有的 `PushFrame` 都退出后，程序结束。
 
 #### 参考资料
 
