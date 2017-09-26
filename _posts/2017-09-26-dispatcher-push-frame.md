@@ -181,7 +181,7 @@ private void OnStylusDown(object sender, StylusDownEventArgs e)
 
 每次 `PushFrame` 之后，都会经历一次托管到本机和本机到托管的转换，随后是消息处理。我们的触摸消息就是从消息处理中调用而来。
 
-于是可以肯定，每一次 `PushFrame` 都将开启一个新的消息循环，由非托管代码开启。当 `ShowDialog` 出来的窗口关掉，或者 `Invoke` 执行完毕，或者其它会导致 `PushFrame` 退出循环的代码执行时，就会退出一次 `PushFrame` 带来的消息循环。于是，在上一次消息处理中被 `while` “阻塞”的代码得以继续执行。一层层退出，直到最后 `Main` 函数退出时，程序结束。
+于是可以肯定，每一次 `PushFrame` 都将开启一个新的消息循环，由非托管代码开启。当 `ShowDialog` 出来的窗口关掉，或者 `Invoke` 执行完毕，或者其它会导致 `PushFrame` 退出循环的代码执行时，就会退出一次 `PushFrame` 带来的消息循环。于是，在上一次消息处理中被 `while` 阻塞的代码得以继续执行。一层层退出，直到最后 `Main` 函数退出时，程序结束。
 
 ![PushFrame 的嵌套](/assets/2017-09-26-03-47-20.png)
 
@@ -197,6 +197,7 @@ private void OnStylusDown(object sender, StylusDownEventArgs e)
 1. 在新的消息循环中，会处理各种各样的 Windows 消息，其中有的以事件的形式转发，有的是执行加入到 `PriorityQueue<DispatcherOperation>` 队列中的任务；
 1. 在显式地退出 `PushFrame` 时，新开启的消息循环将退出，并继续此前 `PushFrame` 处的代码执行；
 1. 当所有的 `PushFrame` 都退出后，程序结束。
+1. `PushFrame` 的 `while` 循环是真的阻塞着主线程，但循环内部会处理消息循环，以至于能够不断地处理新的消息，看起来就像没有阻塞一样。（这与我们平时随便写代码阻塞主线程导致无法处理消息还是有区别的。）
 
 #### 参考资料
 
