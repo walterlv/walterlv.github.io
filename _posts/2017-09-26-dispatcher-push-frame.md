@@ -52,7 +52,7 @@ public object ExitFrame(object f)
 }
 ```
 
-首先我们需要拿出本文一开始的结论——调用 `DispatcherPushFrame` 可以在不阻塞 UI 线程的情况下等待。
+首先我们需要拿出本文一开始的结论——调用 `Dispatcher.PushFrame` 可以在不阻塞 UI 线程的情况下等待。
 
 在此基础之上，我们仔细分析此源码的原理，发现是这样的：
 
