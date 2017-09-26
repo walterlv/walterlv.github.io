@@ -189,6 +189,8 @@ private void OnStylusDown(object sender, StylusDownEventArgs e)
 
 至此，`PushFrame` 能够做到不阻塞 UI 线程的情况下继续响应消息的原理得以清晰地梳理出来。
 
+如果希望更详细地了解 WPF 中的 Dispatcher 对消息循环的处理，可以参考：[详解WPF线程模型和Dispatcher - 踏雪无痕 - CSDN博客](http://blog.csdn.net/royyeah/article/details/4785473)。
+
 ### 结论
 
 1. 每一次 `PushFrame` 都会开启一个新的消息循环，记录 `_frameDepth` 加 1；
@@ -208,5 +210,6 @@ private void OnStylusDown(object sender, StylusDownEventArgs e)
 - Windows 消息循环
   - [Message loop in Microsoft Windows - Wikipedia](https://en.wikipedia.org/wiki/Message_loop_in_Microsoft_Windows)
   - [c# - Understanding the Dispatcher Queue - Stack Overflow](https://stackoverflow.com/questions/11417216/understanding-the-dispatcher-queue/11419762)
+  - [详解WPF线程模型和Dispatcher - 踏雪无痕 - CSDN博客](http://blog.csdn.net/royyeah/article/details/4785473)
 - 调试 .Net Framework 源码
   - [调试 ms 源代码 - 林德熙](http://lindexi.oschina.io/lindexi//post/%E8%B0%83%E8%AF%95-ms-%E6%BA%90%E4%BB%A3%E7%A0%81/)
