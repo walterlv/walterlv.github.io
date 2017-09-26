@@ -5,7 +5,6 @@ date: 2017-09-26 03:49:41 +0800
 categories: post dotnet
 keywords: dotnet dotnet dispatcher PushFrame
 description: 了解 Dispatcher.PushFrame 方法的作用和背后的实现原理。
-published: false
 ---
 
 在上一篇文章 [深入了解 WPF Dispatcher 的工作原理（Invoke/InvokeAsync 部分）](/post/dotnet/2017/09/26/dispatcher-invoke-async.html) 中我们发现 `Dispatcher.Invoke` 方法内部是靠 `Dispatcher.PushFrame` 来确保“不阻塞地等待”的。然而它是怎么做到“不阻塞地等待”的呢？
