@@ -6,7 +6,8 @@ layout: default
         <header class="major">
             <h2>{{ page.title }}</h2>
             <p class="post-meta">
-                {{ page.date | date: "%Y-%m-%d %H:%M" }}
+                <span>{{ page.date | date: "%Y-%m-%d %H:%M" }}</span>
+                <span style="margin: 0 0 0 2em">{% if page.date_modified %}最后更新: {{ page.date_modified | date: "%Y-%m-%d %H:%M" }}{% endif %}</span>
                 <a href="{{ page.url }}#disqus_thread" class="float-right">评论</a>
             </p>
             <script id="dsq-count-scr" src="//walterlv.disqus.com/count.js" async></script>
