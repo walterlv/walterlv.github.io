@@ -5,6 +5,13 @@ categories: post
 published: false
 ---
 
+- async/await
+  - [Dixin's Blog - Understanding C# async / await (1) Compilation](https://weblogs.asp.net/dixin/understanding-c-sharp-async-await-1-compilation)
+  - [Dixin's Blog - Understanding C# async / await (2) The Awaitable-Awaiter Pattern](https://weblogs.asp.net/dixin/understanding-c-sharp-async-await-2-awaitable-awaiter-pattern)
+  - [await anything; | Parallel Programming with .NET](https://blogs.msdn.microsoft.com/pfxteam/2011/01/13/await-anything/)
+  - [【C#】【多线程】【05-使用C#6.0】08-自定义awaitable类型 - L.M](http://liujiajia.me/blog/details/csharp-multi-threading-05-csharp6-08-customize-awaitable)
+  - [AsyncMethodBuilder](https://referencesource.microsoft.com/#mscorlib/system/runtime/compilerservices/AsyncMethodBuilder.cs)
+
 - WPF 渲染线程同步
   - [WPF rendering thread synchronization](http://graemehill.ca/wpf-rendering-thread-synchronization/)
 
