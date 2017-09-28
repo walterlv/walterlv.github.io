@@ -2,19 +2,19 @@
 layout: post
 title: "彻底删除 Git 仓库中的文件避免占用大量磁盘空间"
 date: 2017-09-18 23:45:21 +0800
-date_modified: 2017-09-19 00:03:44 +0800
+date_modified: 2017-09-29 07:36:22 +0800
 categories: git
 keywords: git filter-branch delete
 description: 如果不小心向 Git 仓库中上传了一个不需要的超大文件，我们如何才能够删除它，使之不占用我们宝贵的磁盘空间。
 ---
 
-今天早上照常 `git fetch --prune` 获取大家写的代码，发现需要好长时间，但没怎么在意。直到下午小伙伴们才发现居然 `fetch` 了一个多 GB！询问才发现小伙伴 [JAKE](http://niuyanjie.oschina.io/blog/)（其实我是在推荐博客）误传了 1.47GB 的垃圾文件。关键是等发现时，`develop` 分支上已经有 20+ 个基于这个文件的新提交了。
+今天早上照常 `git fetch --prune` 获取大家写的代码，发现需要好长时间，但没怎么在意。直到下午小伙伴们才发现居然 `fetch` 了一个多 GB！询问才发现小伙伴 [JAKE](http://niuyanjie.gitee.io/blog/)（其实我是在推荐博客）误传了 1.47GB 的垃圾文件。关键是等发现时，`develop` 分支上已经有 20+ 个基于这个文件的新提交了。
 
 小伙伴说“不要紧，现在我已经删除它了！”突然一阵后背发凉，我们才 900M 的仓库肯定一下子飙到了 2000+M，必须马上处理之。
 
 ---
 
-如果你想知道到底发生了什么造成突然多出这么大的文件，请阅读：[一个压缩包引发的血案 - niuyanjie's blog](http://niuyanjie.oschina.io/blog/%E4%B8%80%E4%B8%AA%E5%8E%8B%E7%BC%A9%E5%8C%85%E5%BC%95%E5%8F%91%E7%9A%84%E8%A1%80%E6%A1%88/)。
+如果你想知道到底发生了什么造成突然多出这么大的文件，请阅读：[一个压缩包引发的血案 - niuyanjie's blog](http://niuyanjie.gitee.io/blog/%E4%B8%80%E4%B8%AA%E5%8E%8B%E7%BC%A9%E5%8C%85%E5%BC%95%E5%8F%91%E7%9A%84%E8%A1%80%E6%A1%88/)。
 
 ### 问题的本质和解决思路
 
@@ -28,7 +28,7 @@ description: 如果不小心向 Git 仓库中上传了一个不需要的超大�
 
 ### 推荐的方法
 
-感谢小伙伴 [林德熙](http://lindexi.oschina.io/) 的帮助，帮我找到了一篇非常有价值的博客：[Git如何永久删除文件(包括历史记录) - shines77 - 博客园](http://www.cnblogs.com/shines77/p/3460274.html)。
+感谢小伙伴 [林德熙](http://lindexi.gitee.io/) 的帮助，帮我找到了一篇非常有价值的博客：[Git如何永久删除文件(包括历史记录) - shines77 - 博客园](http://www.cnblogs.com/shines77/p/3460274.html)。
 
 **强烈推荐只阅读上面那篇文章而不要阅读本文，因为本文真正用到的方法比上面的更 low。**
 
@@ -83,7 +83,7 @@ $ git branch -d <branch_name>
 
 这样，远端服务器上的任何分支都不存在包含误传文件的提交了。理论上新克隆的本地仓库将不再有 2000+M 的大小，实测也是如此。但已经克隆并且包含那次提交的小伙伴该怎么办？
 
-小伙伴 [林德熙](http://lindexi.oschina.io/) 再次提供了一组命令，我和他一起简化后整理如下：
+小伙伴 [林德熙](http://lindexi.gitee.io/) 再次提供了一组命令，我和他一起简化后整理如下：
 
 ```bash
 git fetch -f -p
@@ -93,7 +93,7 @@ git reflog expire --expire=now --all
 git gc --prune=now
 ```
 
-命令的解释小伙伴 [林德熙有详细介绍](http://lindexi.oschina.io/lindexi/post/%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4%E9%94%99%E8%AF%AF%E6%8F%90%E4%BA%A4%E7%9A%84-git-%E5%A4%A7%E6%96%87%E4%BB%B6/)。大体为：
+命令的解释小伙伴 [林德熙有详细介绍](http://lindexi.gitee.io/lindexi/post/%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4%E9%94%99%E8%AF%AF%E6%8F%90%E4%BA%A4%E7%9A%84-git-%E5%A4%A7%E6%96%87%E4%BB%B6/)。大体为：
 - 提取远端服务器上最新的提交（这样本地仓库才会包含我修复的那些提交）
 - 切换到 `develop` 分支（避免影响到小伙伴当前的工作分支，防止丢失工作）
 - 将本地 `develop` 分支强制重置成远端的 `develop` 分支（以便丢掉本地有问题的那些提交）

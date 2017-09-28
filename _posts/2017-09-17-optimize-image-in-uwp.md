@@ -2,6 +2,7 @@
 layout: post
 title: "优化 UWP 中图片的内存占用"
 date: 2017-09-17 12:44:45 +0800
+date_modified: 2017-09-29 07:36:02 +0800
 categories: uwp
 keywords: uwp image thumbnail GetThumbnailAsync UriSource
 description: 优化 UWP 中图片的内存占用。
@@ -102,4 +103,4 @@ Image img = new Image();
 img.Source = bmp;
 ```
 
-关于 `GetThumbnailAsync` 的详细用法，我的好朋友林德熙有更详细的说明，参见：[win10 uwp 获得缩略图](https://lindexi.oschina.io/lindexi//post/win10-uwp-%E8%8E%B7%E5%BE%97%E7%BC%A9%E7%95%A5%E5%9B%BE/)。
+关于 `GetThumbnailAsync` 的详细用法，我的好朋友林德熙有更详细的说明，参见：[win10 uwp 获得缩略图](https://lindexi.gitee.io/lindexi//post/win10-uwp-%E8%8E%B7%E5%BE%97%E7%BC%A9%E7%95%A5%E5%9B%BE/)。

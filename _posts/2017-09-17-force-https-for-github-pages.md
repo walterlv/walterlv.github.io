@@ -1,17 +1,18 @@
 ---
 layout: post
-title: "让 GitHub Pages 强制使用 HTTPS（含码云的 oschina.io）"
+title: "让 GitHub Pages 强制使用 HTTPS（含码云的 gitee/oschina.io）"
 date: 2017-09-17 16:01:34 +0800
+date_modified: 2017-09-29 07:33:03 +0800
 categories: jekyll
 keywords: jekyll https
-description: 对于 GitHub Pages，了解如何强制使用 https；对于码云 oschina.io，了解如何强制重定向到 https。
+description: 对于 GitHub Pages，了解如何强制使用 https；对于码云 gitee.io 和 oschina.io，了解如何强制重定向到 https。
 ---
 
 一天晚上在手机上浏览自己的博客时，发现居然充斥着各种恶心的广告！顿时内心犹如一万只神兽呼啸而过，不过又能怪谁呢？！
 
 为避免引起读者不适，不贴图，只放链接，感兴趣自己点开看：[图 2](/assets/2017-09-17-ads-over-http-2.png)、[图 1](/assets/2017-09-17-ads-over-http-1.png)。
 
-本文的重点其实是括号里的码云（oschina.io）。
+gitee.io）。
 
 ---
 
@@ -33,7 +34,7 @@ GitHub Pages 设置得这么轻松，想必码云的 Pages 服务应该也不难
 
 没有。去设置里找，还是没有……
 
-于是去码云 QQ 群里问了问，得到答复是直接在地址栏输入 [https://walterl.oschina.io](https://walterl.oschina.io/) 就会是 https 的。
+于是去码云 QQ 群里问了问，得到答复是直接在地址栏输入 [https://walterl.gitee.io](https://walterl.gitee.io/) 就会是 https 的。
 
 可是，大多数读者怎么会去注意到去输入 https 呢？只好做重定向了。
 
