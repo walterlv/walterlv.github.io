@@ -121,7 +121,7 @@ public DispatcherOperation InvokeAsync(Action callback, DispatcherPriority prior
 前面一节几乎告诉我们，`InvokeAsync` 的关键就在 `InvokeAsyncImpl` 方法中。
 
 1. 用一个 `DispatcerOperation` 把我们传入的 `Action`/`Func` 包装起来。这样，我们传入的任务和优先级将在一起处理。
-1. 将 `DispatcherOperation` 加入到一个 `PriorityQueue<DispatcherOperation>` 类型的队列中。这个队列内部实现是一个 `SortedList`，于是每次入队之后，出对的时候一定是按照优先级出队的。
+1. 将 `DispatcherOperation` 加入到一个 `PriorityQueue<DispatcherOperation>` 类型的队列中。这个队列内部实现是一个 `SortedList`，于是每次入队之后，出队的时候一定是按照优先级出队的。
 1. 调用 `RequestProcessing`，直至最后向**某个隐藏窗口**发送了一条消息。
 1. **那个隐藏窗口**接收到了这条消息，然后从 `PriorityQueue<DispatcherOperation>` 队列中取出一条任务执行（真实情况复杂一点，后面会谈到）。
 
