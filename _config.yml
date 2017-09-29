@@ -19,7 +19,7 @@ description: Windows 10 Developer
 description_detail: >
   Write code for Windows 10, with UWP, WPF, Xamarin, Visual Studio, Visual Studio Code, iOS, html, TypeScript.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://walterlv.gitee.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://walterlv.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: _lvyi_
 facebook_username: Xblero
 github_username:  walterlv
