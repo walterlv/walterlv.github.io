@@ -12,7 +12,7 @@ description: 对于 GitHub Pages，了解如何强制使用 https；对于码云
 
 为避免引起读者不适，不贴图，只放链接，感兴趣自己点开看：[图 2](/assets/2017-09-17-ads-over-http-2.png)、[图 1](/assets/2017-09-17-ads-over-http-1.png)。
 
-gitee.io）。
+本文的重点其实是括号里的码云（gitee.io）。
 
 ---
 
