@@ -5,6 +5,9 @@ categories: post
 published: false
 ---
 
+- Jekyll Filters
+  - [Jekyll Filters - Where and Group_By | Webjeda](https://blog.webjeda.com/jekyll-filters/)
+
 - Windows Update which affects D3DCOMPILER_47.dll
   - 主要更新参见：[.NET Framework May 2017 Preview of Quality Rollup | .NET Blog](https://blogs.msdn.microsoft.com/dotnet/2017/05/17/net-framework-may-2017-preview-of-quality-rollup/ )
   - [May 2017 Preview of the Quality Rollups for the .NET Framework 3.5.1, 4.5.2, 4.6, 4.6.1, and 4.6.2 for Windows 7 and Windows Server 2008 R2 (KB4019288): May 16, 2017](https://support.microsoft.com/en-us/help/4019288/may-2017-preview-of-the-quality-rollups-for-the-net-framework-3-5-1-4 )
