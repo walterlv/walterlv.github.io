@@ -5,6 +5,17 @@ categories: post
 published: false
 ---
 
+- 查看 Wi-Fi 密码
+  - [2 Ways To Find All Saved Wifi Passwords In Windows 10](https://www.itechtics.com/2-ways-find-saved-wifi-passwords-windows-10/)
+  - `netsh wlan show profiles`
+  - `netsh wlan show profiles name="XXXX" key=Clear`
+
+- 平方根速算法
+  - [数学之美：平方根倒数速算法中的神奇数字 0x5f3759df - 文章 - 伯乐在线](http://blog.jobbole.com/105295/?utm_medium=hao.caibaojian.com&utm_source=hao.caibaojian.com)
+
+- WMF/EMF to XAML
+  - [Paste2Xaml & ReaderWmf](https://www.ab4d.com/paste2xaml.aspx)
+
 - Fluent Design System
   - [windows - Mimicking Acrylic in a Win32 app - Stack Overflow](https://stackoverflow.com/questions/44000217/mimicking-acrylic-in-a-win32-app)
   - [DirectComposition (Windows)](https://msdn.microsoft.com/en-us/library/windows/desktop/hh437371%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396)
