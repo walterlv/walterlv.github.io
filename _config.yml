@@ -28,7 +28,9 @@ plugins:
 defaults:
   - scope:
       path: "_posts"
-      type: posts
+      type: "posts"
     values:
-      layout: post
-      permalink: /post/:categories/:title.html
+      layout: "post"
+      author: "吕毅"
+      categories: "post"
+      permalink: "/:categories/:title.html"
