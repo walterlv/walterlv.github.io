@@ -3,6 +3,7 @@ layout: post
 title: "使用 filter-branch 从 Git 历史中删除一个文件"
 date: 2017-09-19 20:19:04 +0800
 categories: git
+permalink: /git/2017/09/19/delete-file-using-filter-branch.html
 keywords: git filter-branch delete
 description: 使用 Git 官方提供的方法 filter-branch 从 Git 的提交历史中删除一个文件。
 ---

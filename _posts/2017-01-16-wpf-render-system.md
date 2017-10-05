@@ -3,6 +3,7 @@ layout: post
 title: "WPF 渲染系统（WPF Render System）"
 date: 2017-01-16 14:50:00 +0800
 categories: wpf
+permalink: /wpf/2017/01/16/wpf-render-system.html
 keywords: wpf render
 description: 通过添加移除视觉树一步步跟踪微软源码，了解渲染系统背后的故事。
 ---

@@ -3,6 +3,7 @@ layout: post
 title: "如何向整个 Git 仓库补提交一个文件"
 date: 2017-09-13 19:10:47 +0800
 categories: git
+permalink: /git/2017/09/13/add-file-to-whole-git-repository.html
 keywords: git
 description: 提交了很多次之后，突然发现一开始就忘记提交了某个重要文件（比如 .gitignore），本文将教你如何将这个文件补上。
 ---

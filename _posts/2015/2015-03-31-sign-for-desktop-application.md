@@ -3,6 +3,7 @@ layout: post
 title:  "为程序签名"
 date:   2015-03-31 16:46:00 +0800
 categories: windows
+permalink: /windows/2015/03/31/sign-for-desktop-application.html
 ---
 
 给应用程序签名，可以让系统知道你的程序是受信任的程序。一部分操作，系统只会为受信任的程序开启。

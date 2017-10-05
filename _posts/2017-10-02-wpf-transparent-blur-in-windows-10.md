@@ -4,6 +4,7 @@ title: "在 Windows 10 上为 WPF 窗口添加模糊特效（就像开始菜单�
 date: 2017-10-02 00:14:07 +0800
 date_modified: 2017-10-02 09:00:45 +0800
 categories: post win10
+permalink: /post/win10/2017/10/02/wpf-transparent-blur-in-windows-10.html
 keywords: WPF Windows Blur SetWindowCompositionAttribute
 description: 
 ---

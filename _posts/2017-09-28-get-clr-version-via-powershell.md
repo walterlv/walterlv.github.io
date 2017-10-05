@@ -3,6 +3,7 @@ layout: post
 title: "使用 PowerShell 获取 CLR 版本号"
 date: 2017-09-28 00:24:08 +0800
 categories: post powershell
+permalink: /post/powershell/2017/09/28/get-clr-version-via-powershell.html
 keywords: PowerShell CLR Version Environment
 description: 
 ---

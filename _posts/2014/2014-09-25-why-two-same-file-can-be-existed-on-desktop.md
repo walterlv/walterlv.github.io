@@ -3,6 +3,7 @@ layout: post
 title:  "为什么桌面上可能有两个同名文件？"
 date:   2014-09-25 18:11:00 +0800
 categories: windows
+permalink: /windows/2014/09/25/why-two-same-file-can-be-existed-on-desktop.html
 ---
 
 是否见过桌面上同时存在两个同名的文件？这其实是可能的。

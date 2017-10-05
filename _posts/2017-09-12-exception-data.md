@@ -3,6 +3,7 @@ layout: post
 title: "Exception.Data 为异常添加更多调试信息"
 date: 2017-09-12 15:44:36 +0800
 categories: dotnet
+permalink: /dotnet/2017/09/12/exception-data.html
 description: 了解 System.Exception 类型中 Data 属性及它的用途。
 ---
 

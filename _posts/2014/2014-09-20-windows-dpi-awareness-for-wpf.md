@@ -3,6 +3,7 @@ layout: post
 title:  "Windows DPI Awareness for WPF"
 date:   2014-09-20 16:56:00 +0800
 categories: windows
+permalink: /windows/2014/09/20/windows-dpi-awareness-for-wpf.html
 ---
 
 对于 WPF 程序，要控制程序的 DPI 感知程度，可在 App.manifest 中添加如下代码。

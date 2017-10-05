@@ -3,6 +3,7 @@ layout: post
 title:  "FileSystemWatcher 监视文件改变"
 date:   2014-09-23 20:22:00 +0800
 categories: dotnet
+permalink: /dotnet/2014/09/23/FileSystemWatcher-monitor-filesystem-changed.html
 ---
 
 要监视文件或文件夹的改变，可使用 `FileSystemWatcher`。

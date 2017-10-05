@@ -4,6 +4,7 @@ title: "深入了解 WPF Dispatcher 的工作原理（Invoke/InvokeAsync 部分�
 date: 2017-09-26 02:02:24 +0800
 date_modified: 2017-09-29 07:38:24 +0800
 categories: post dotnet
+permalink: /post/dotnet/2017/09/26/dispatcher-invoke-async.html
 keywords: dotnet dotnet dispatcher Invoke BeginInvoke InvokeAsync
 description: 了解 Dispatcher.BeginInvoke 和 Dispatcher.InvokeAsync 的不同之处，并且学习它们的工作原理。
 ---

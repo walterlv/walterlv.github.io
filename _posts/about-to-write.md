@@ -2,7 +2,6 @@
 layout: post
 title: "About to Write"
 categories: post
-published: false
 ---
 
 - 查看 Wi-Fi 密码

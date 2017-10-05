@@ -3,6 +3,7 @@ layout: post
 title:  "减速动画 AnimationShiftKey"
 date:   2014-12-28 15:57:00 +0800
 categories: windows
+permalink: /windows/2014/12/28/decelerate-windows-animation.html
 ---
 
 想不想让你 Windows 自带的各种动画都变得缓慢？这可别有一番风味啊！顺便还能观察下系统的动画是怎么实现的呢。

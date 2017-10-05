@@ -3,6 +3,7 @@ layout: post
 title: "利用 TypeConverter，转换字符串和各种类型只需写一个函数"
 date: 2017-01-17 18:13:00 +0800
 categories: dotnet
+permalink: /dotnet/2017/01/17/convert-using-type-converter.html
 keywords: dotnet typeconverter
 description: 使用 TypeConverter 实现字符串转各种类型。
 ---

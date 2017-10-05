@@ -3,6 +3,7 @@ layout: post
 title:  "CallerMemberName"
 date:   2014-09-12 10:19:00 +0800
 categories: dotnet
+permalink: /dotnet/2014/09/12/CallerMemberName.html
 ---
 
 从 .NET Framework 4.5 开始，有了几个快速获取调用方信息的 Attribute。
