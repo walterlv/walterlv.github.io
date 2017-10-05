@@ -8,7 +8,7 @@ sitemap: false
 <section id="one" >
     <div class="container">
         {% for post in paginator.posts limit:1 %}
-            <article>
+            <div>
                 <header>
                     <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
                 </header>
@@ -23,7 +23,7 @@ sitemap: false
                         <li><a href="{{ post.url }}" class="button special">Read More</a></li>
                     </ul>
                 </section>
-            </article>
+            </div>
         {% endfor %}
     </div>
 </section>
@@ -32,7 +32,7 @@ sitemap: false
     <div class="container">
         <div class="features">
         {% for post in paginator.posts offset:1 %}
-            <article>
+            <div>
                 <section class="excerpt">
                     <header>
                         <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
@@ -49,7 +49,7 @@ sitemap: false
                     </ul>
                 </footer>
                 <div class="clear"></div>
-            </article>
+            </div>
         {% endfor %}
         </div>
     </div>
@@ -61,7 +61,7 @@ sitemap: false
     <div class="container">
         <div class="features">
         {% for post in paginator.posts %}
-            <article>
+            <div>
                 <section class="excerpt">
                     <header>
                         <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
@@ -78,7 +78,7 @@ sitemap: false
                     </ul>
                 </footer>
                 <div class="clear"></div>
-            </article>
+            </div>
         {% endfor %}
         </div>
     </div>

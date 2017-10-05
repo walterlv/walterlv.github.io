@@ -15,26 +15,37 @@ sitemap: false
     </section>
 
 <!-- Two -->
-    <section id="two">
-        <div class="container">
-            {% for post in site.posts limit:1 %}
-                <article>
-                    <header>
-                        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-                    </header>
-                    <section class="post-content">
-                        {{ post.excerpt }}
-                        <a href="{{ post.url }}">Read more……</a>
-                    </section>
-                    <section class="special">
-                        <ul class="actions">
-                            <li><a href="/blog" class="button special">All Blogs</a></li>
-                        </ul>
-                    </section>
-                </article>
-            {% endfor %}
-        </div>
-    </section>
+<section id="two">
+    <div class="container">
+        {% for post in site.posts limit:5 %}
+            <div>
+                <header>
+                    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                </header>
+                <section style="font-size: 0.8em">
+                    {% if post.date_modified %}{{ post.date_modified | date: "%Y-%m-%d %H:%M" }}{% else %}{{ post.date | date: "%Y-%m-%d %H:%M" }}{% endif %}
+                </section>
+                <section class="post-content">
+                    {{ post.excerpt }}
+                </section>
+                <footer>
+                    <ul class="actions">
+                        <li><a href="{{ post.url }}" class="button">继续阅读</a></li>
+                        <li><a href="{{ post.url }}" class="button special">所有博客</a></li>
+                    </ul>
+                </footer>
+            </div>
+        {% endfor %}
+        {% for post in site.posts limit:10 offset:5 %}
+            <p><a href="{{ post.url }}">{{ post.title }}</a></p>
+        {% endfor %}
+        <footer>
+            <ul class="actions">
+                <li><a href="/blog/page2" class="button special">其他博客</a></li>
+            </ul>
+        </footer>
+    </div>
+</section>
 
 <!-- Three -->
     <section id="three">
