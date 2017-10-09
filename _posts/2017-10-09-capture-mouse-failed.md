@@ -3,7 +3,7 @@ title: "CaptureMouse/CaptureStylus 可能会失败"
 date: 2017-10-09 19:05:56 +0800
 categories: wpf
 tags: CaptureMouse CaptureStylus
-description: 
+description: 了解 Mouse.Capture 和 Stylus.Capture 方法的调用可能返回 false，了解其返回 false 的原因。
 ---
 
 在 WPF 中，如果我们要做拖动效果，通常会调用一下 `CaptureMouse`/`CaptureStylus` 以便当鼠标或手指离开控件的时候依然能够响应 `Move` 和 `Up` 事件。不知有没有注意到这两个函数其实是有 `bool` 返回值的？——是的，它们可能会失败。
