@@ -4,11 +4,6 @@ title: "About to Write"
 categories: post
 ---
 
-- 查看 Wi-Fi 密码
-  - [2 Ways To Find All Saved Wifi Passwords In Windows 10](https://www.itechtics.com/2-ways-find-saved-wifi-passwords-windows-10/)
-  - `netsh wlan show profiles`
-  - `netsh wlan show profiles name="XXXX" key=Clear`
-
 - 平方根速算法
   - [数学之美：平方根倒数速算法中的神奇数字 0x5f3759df - 文章 - 伯乐在线](http://blog.jobbole.com/105295/?utm_medium=hao.caibaojian.com&utm_source=hao.caibaojian.com)
 
