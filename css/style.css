@@ -15,7 +15,7 @@
 	}
 
 	body, input, select, textarea {
-		color: #888;
+		color: #777;
 		font-family: "Lato", sans-serif;
 		font-size: 16pt;
 		line-height: 1.75em;
@@ -38,7 +38,7 @@
 		}
 
 	strong, b {
-		color: #777;
+		color: #666;
 		font-weight: 700;
 	}
 
@@ -51,8 +51,9 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #777;
+		color: #666;
 		line-height: 1em;
+		font-weight: 300;
 		margin: 1em 0 0 0;
 	}
 
