@@ -18,7 +18,6 @@
 		color: #888;
 		font-family: "Lato", sans-serif;
 		font-size: 16pt;
-		font-weight: 400;
 		line-height: 1.75em;
 	}
 
@@ -53,7 +52,6 @@
 
 	h1, h2, h3, h4, h5, h6 {
 		color: #777;
-		font-weight: 700;
 		line-height: 1em;
 		margin: 1em 0 0 0;
 	}
@@ -215,7 +213,6 @@
 		color: #777;
 		display: block;
 		font-size: 0.9em;
-		font-weight: 700;
 		margin: 0 0 1.125em 0;
 	}
 
@@ -273,7 +270,6 @@
 			-webkit-font-smoothing: antialiased;
 			font-family: FontAwesome;
 			font-style: normal;
-			font-weight: normal;
 			text-transform: none !important;
 		}
 
@@ -327,7 +323,6 @@
 			cursor: pointer;
 			display: inline-block;
 			font-size: 1em;
-			font-weight: 400;
 			padding-left: 2.4em;
 			padding-right: 0.75em;
 			position: relative;
@@ -693,7 +688,6 @@
 		table th {
 			color: #777;
 			font-size: 0.9em;
-			font-weight: 700;
 			padding: 0 0.75em 0.75em 0.75em;
 			text-align: left;
 		}
@@ -753,7 +747,6 @@
 		color: #ffffff !important;
 		cursor: pointer;
 		display: inline-block;
-		font-weight: 700;
 		height: 2.5em;
 		line-height: 2.5em;
 		padding: 0 2em;
