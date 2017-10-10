@@ -4,6 +4,11 @@ title: "About to Write"
 categories: post
 ---
 
+- Jekyll Search
+  - [Jekyll Instant Search in 3 simple steps! | Webjeda](https://blog.webjeda.com/instant-jekyll-search/)
+  - [The easiest search option for Jekyll | Webjeda](https://blog.webjeda.com/jekyll-search/)
+  - [Add instant search to your blog or documentation using our Jekyll plugin - Milliseconds Matter](https://blog.algolia.com/instant-search-blog-documentation-jekyll-plugin/)
+
 - WMF/EMF to XAML
   - [Paste2Xaml & ReaderWmf](https://www.ab4d.com/paste2xaml.aspx)
 

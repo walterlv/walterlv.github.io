@@ -6,39 +6,21 @@ sitemap: false
 ---
 
 <section id="one">
-    <div class="container" style="min-height: 20em">
-        <div id="home-search" class="home">
-            <script>
-                (function() {
-                    var cx = '[Your CSE Search ID]';
-                    var gcse = document.createElement('script');
-                    gcse.type = 'text/javascript';
-                    gcse.async = true;
-                    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-                    '//www.google.com/cse/cse.js?cx=' + cx;
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(gcse, s);
-                })();
-            </script>
-            <gcse:search queryParameterName="searchString"></gcse:search>
-        </div>
-        <div class="grid" id="searchBar">
-            <div>
-                <div id="search">
-                    <form role="search" method="get" action="{{ site.baseurl }}//search/">
-                        <input id="searchString" name="searchString"
-                               placeholder="Learn Ionic, Be a Better Developer, etc." type="text">
-                        <input id="searchButton" name="googleSearchName" type="button" value="Search">
-                    </form>
-                </div>
-      
-                <div id="archives">
-                    browse by <a title="The complete archive of {{ site.name }}'s Blog by category"
-                           href="{{ site.baseurl }}//categoryview">category</a>
-                    or <a title="The complete archive of {{ site.name }}'s Blog by month"
-                          href="{{ site.baseurl }}//monthview">date</a>
-                </div>
-            </div>
-        </div>
-    </div>
+<!-- Html Elements for Search -->
+<div id="search-container">
+<input type="text" id="search-input" placeholder="search...">
+<ul id="results-container"></ul>
+</div>
+
+<!-- Script pointing to search-script.js -->
+<script src="/js/search-script.js" type="text/javascript"></script>
+
+<!-- Configuration -->
+<script>
+SimpleJekyllSearch({
+  searchInput: document.getElementById('search-input'),
+  resultsContainer: document.getElementById('results-container'),
+  json: '/search.json'
+})
+</script>
 </section>
