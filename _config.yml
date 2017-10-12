@@ -24,6 +24,10 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
 
+collections:
+  article:
+    output: true
+
 # Content Template
 defaults:
   - scope:
@@ -33,4 +37,12 @@ defaults:
       layout: "post"
       author: "吕毅"
       categories: "post"
+      permalink: "/:categories/:title.html"
+  - scope:
+      path: "_article"
+      type: "article"
+    values:
+      layout: "post"
+      author: "吕毅"
+      categories: "article"
       permalink: "/:categories/:title.html"

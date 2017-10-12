@@ -1,0 +1,54 @@
+---
+title: Blogs
+layout: default
+sitemap: false
+---
+
+<section id="one" >
+    <div class="container">
+        {% for post in site.article limit:1 %}
+            <div>
+                <header>
+                    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                </header>
+                <section style="font-size: 0.8em">
+                    {{ post.date | date: "%Y-%m-%d %H:%M" }}
+                </section>
+                <section class="excerpt">
+                    {{ post.excerpt }}
+                </section>
+                <section class="special">
+                    <ul class="actions">
+                        <li><a href="{{ post.url }}" class="button special">Read More</a></li>
+                    </ul>
+                </section>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section id="two">
+    <div class="container">
+        <div class="features">
+        {% for post in site.article offset:1 %}
+            <div>
+                <section class="excerpt">
+                    <header>
+                        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                    </header>
+                    <section style="font-size: 0.75em">
+                        {{ post.date | date: "%Y-%m-%d %H:%M" }}
+                    </section>
+                    {{ post.excerpt }}
+                </section>
+                <footer>
+                    <ul class="actions">
+                        <li><a href="{{ post.url }}" class="button">Read More</a></li>
+                    </ul>
+                </footer>
+                <div class="clear"></div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</section>
