@@ -31,7 +31,7 @@ internal class NamedObject
     }
     public override string ToString()
     {
-        if (_name[0] != '{') _name = String.Format(CultureInfo.InvariantCulture, "{{{0}}}", _name);
+        if (_name[0] != '{') _name = String.Format(CultureInfo.InvariantCulture, "***", _name);
         return _name;
     }
     string _name;
