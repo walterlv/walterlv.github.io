@@ -16,13 +16,11 @@ description:
 
 而 Liquid 的 raw 就是用来解决这个问题的。
 
-{% raw %}
 ```liquid
 {{ openTag }} raw %}
-{% comment %} 这里是各种包含奇怪花括号 {{{0}}} 的地方 {% endcomment %}
+{% raw %}{% comment %} 这里是各种包含奇怪花括号 {{{0}}} 的地方 {% endcomment %}{% endraw %}
 {{ openTag }} endraw %}
 ```
-{% endraw %}
 
 #### 参考资料
 
