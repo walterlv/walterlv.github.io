@@ -4,20 +4,30 @@ sitemap: false
 ---
 
 <!-- One -->
-    <section id="one">
-        <div class="container">
-            <header class="major">
-                <h2>walterlv</h2>
-                <p>{{ site.description_detail }}</p>
-            </header>
-            <!-- <p>Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus col. Commodo id in arcu ante lorem ipsum sed accumsan erat praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo. Vis aliquet tortor ultricies non ante erat nunc integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum.</p> -->
-        </div>
-    </section>
+<section id="one">
+    <div class="container">
+        <header class="major">
+            <h2>walterlv</h2>
+            <p>{{ site.description_detail }}</p>
+        </header>
+        <!-- <p>Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus col. Commodo id in arcu ante lorem ipsum sed accumsan erat praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo. Vis aliquet tortor ultricies non ante erat nunc integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum.</p> -->
+    </div>
+</section>
 
 <!-- Two -->
 <section id="two">
     <div class="container">
-        {% for post in site.posts limit:5 %}
+        <!-- Concat posts and articles -->
+        {% assign all_posts = "" | split: "" %}
+        {% for article in site.article %}
+            {% assign all_posts = all_posts | push: article %}
+        {% endfor %}
+        {% for post in site.posts %}
+            {% assign all_posts = all_posts | push: post %}
+        {% endfor %}
+        {% assign all_posts = all_posts | sort: date | reverse %}
+
+        {% for post in all_posts limit:5 %}
             <div>
                 <header>
                     <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
@@ -36,7 +46,7 @@ sitemap: false
                 </footer>
             </div>
         {% endfor %}
-        {% for post in site.posts limit:10 offset:5 %}
+        {% for post in all_posts limit:10 offset:5 %}
             <p><a href="{{ post.url }}">{{ post.title }}</a></p>
         {% endfor %}
         <footer>
@@ -48,7 +58,7 @@ sitemap: false
 </section>
 
 <!-- Three -->
-    <section id="three">
-        <div class="container">
-        </div>
-    </section>
+<section id="three">
+    <div class="container">
+    </div>
+</section>
