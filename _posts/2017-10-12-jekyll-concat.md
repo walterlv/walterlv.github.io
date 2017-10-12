@@ -1,6 +1,6 @@
 ---
 title: "合并 Jekyll 多种类型的页面"
-date: 2017-10-12 23:21:31 +0800
+date: 2017-10-12 23:48:50 +0800
 categories: jekyll
 tags: jekyll concat liquid
 description: 
