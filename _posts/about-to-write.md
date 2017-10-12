@@ -4,6 +4,12 @@ title: "About to Write"
 categories: post
 ---
 
+- VirtualizingPanel not Working
+  - [wpf - VirtualizingStackPanel Is not working - Stack Overflow](https://stackoverflow.com/questions/3710993/virtualizingstackpanel-is-not-working)
+  - [c# - VirtualizingStackPanel refuses to virtualize - Stack Overflow](https://stackoverflow.com/questions/22405471/virtualizingstackpanel-refuses-to-virtualize)
+  - [wpf - VirtualizingStackPanel stops working when overriding the default control template for ScrollViewer - Stack Overflow](https://stackoverflow.com/questions/4219768/virtualizingstackpanel-stops-working-when-overriding-the-default-control-templat)
+  - [ListView Virtualization Not Working – This is what I did…](https://kupsidoo.wordpress.com/2013/08/25/listview-virtualization-not-working/)
+
 - Https Checker
   - [Why No Padlock? - Why is my SSL web page insecure? Find the culprit!](https://www.whynopadlock.com/)
 
