@@ -1,9 +1,8 @@
 ---
 title: "微软的性格，苹果的性格"
-date: 2017-10-12 21:08:58 +0800
+date: 2017-10-12 22:57:06 +0800
 categories: it
 tags: AR MR 人工智能 HoloLens iOS
-published: false
 ---
 
 微软比较在意大众对自己的看法，而苹果不 care。
