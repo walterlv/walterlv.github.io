@@ -21,6 +21,7 @@ public static readonly object UnsetValue = new NamedObject("DependencyProperty.U
 
 这是一个 `NamedObject`，而 `NamedObject` 又是什么呢？
 
+{% raw %}
 ```csharp
 internal class NamedObject
 {
@@ -31,12 +32,13 @@ internal class NamedObject
     }
     public override string ToString()
     {
-        if (_name[0] != '{') _name = String.Format(CultureInfo.InvariantCulture, "***", _name);
+        if (_name[0] != '{') _name = String.Format(CultureInfo.InvariantCulture, "{{{0}}}", _name);
         return _name;
     }
     string _name;
 }
 ```
+{% endraw %}
 
 好吧，其实这个类根本就没有什么用途，微软只是随便找了一个类，以便你在 Visual Studio 调试器或者你自己用代码输出值的时候能够显示一个预设好的字符串。真的只是起调试作用的啊！
 
