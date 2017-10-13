@@ -11,6 +11,11 @@
     "icon": "fa-commenting"
   },
   {
+    "text": "朋友",
+    "url": "/friends",
+    "icon": "fa-group"
+  },
+  {
     "text": "开源项目",
     "url": "/projects",
     "icon": "fa-github"
@@ -21,7 +26,7 @@
     "icon": "fa-info"
   },
   {
-    "text": "XML Feed",
+    "text": "RSS 订阅",
     "url": "/feed.xml",
     "icon": "fa-feed",
     "target": _blank

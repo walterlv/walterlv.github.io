@@ -10,9 +10,8 @@ title: Windows 应用开发者
           <i class="fa fa-sticky-note"></i>
         </div>
         <div class="row-content">
-          <div class="least-content">{{ post.date | date: "%Y-%m-%d %H:%M" }}</div>
           <h4 class="list-group-item-heading"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h4>
-
+          <p>{{ post.date | date: "%Y-%m-%d %H:%M" }}</p>
           <p class="list-group-item-text">{{ post.excerpt | strip_html }}</p>
         </div>
       </div>

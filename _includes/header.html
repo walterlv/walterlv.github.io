@@ -22,18 +22,18 @@
             <h2 class="blog-title-pro {% if site.allowsearch ==  true %}col-md-6 col-sm-12 col-xs-12 {% endif %}">{{ page.title }}</h2>
             {% if site.allowsearch ==  true %}
             <div class="col-md-6 col-sm-12 col-xs-12 searchcontrol" id="js-search">
-              <input class="form-control" type="text" id="js-search__input" placeholder="Search">
+              <input class="form-control" type="text" id="js-search__input" placeholder="搜索">
               <ul class="search__results" id="js-search__results"></ul>
             </div>
             {% endif %}
             </div>
             <p class="info">
               {% if page.date %}
-                <span class="time">{{ page.date | date_to_string }}</span>
+                <span class="time">{{ page.date | date: "%Y-%m-%d %H:%M" }}</span>
               {% endif %}
               {% if page.categories.size > 0 %}
                 <span class="categories">
-                  &raquo; 
+                  |
                   {% for category in page.categories %}
                     <a href="/category/{{ category }}">{{ category }}</a>
                     {% if forloop.last == false %}, {% endif %}
