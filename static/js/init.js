@@ -10,12 +10,12 @@
 	skel.init({
 		reset: 'full',
 		breakpoints: {
-			global: { href: '{{ site.baseurl }}/css/style.css', containers: '45em', grid: { gutters: ['2em', 0] } },
-			xlarge: { media: '(max-width: 1680px)', href: '{{ site.baseurl }}/css/style-xlarge.css' },
-			large: { media: '(max-width: 1280px)', href: '{{ site.baseurl }}/css/style-large.css', containers: '42em', grid: { gutters: ['1.5em', 0] }, viewport: { scalable: false } },
-			medium: { media: '(max-width: 1024px)', href: '{{ site.baseurl }}/css/style-medium.css', containers: '85%!' },
-			small: { media: '(max-width: 736px)', href: '{{ site.baseurl }}/css/style-small.css', containers: '90%!', grid: { gutters: ['1.25em', 0] } },
-			xsmall: { media: '(max-width: 480px)', href: '{{ site.baseurl }}/css/style-xsmall.css' }
+			global: { href: '{{ site.baseurl }}/static/css/style.css', containers: '45em', grid: { gutters: ['2em', 0] } },
+			xlarge: { media: '(max-width: 1680px)', href: '{{ site.baseurl }}/static/css/style-xlarge.css' },
+			large: { media: '(max-width: 1280px)', href: '{{ site.baseurl }}/static/css/style-large.css', containers: '42em', grid: { gutters: ['1.5em', 0] }, viewport: { scalable: false } },
+			medium: { media: '(max-width: 1024px)', href: '{{ site.baseurl }}/static/css/style-medium.css', containers: '85%!' },
+			small: { media: '(max-width: 736px)', href: '{{ site.baseurl }}/static/css/style-small.css', containers: '90%!', grid: { gutters: ['1.25em', 0] } },
+			xsmall: { media: '(max-width: 480px)', href: '{{ site.baseurl }}/static/css/style-xsmall.css' }
 		},
 		plugins: {
 			layers: {

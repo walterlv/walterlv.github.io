@@ -29,7 +29,7 @@
         {% if page.image %}
           <meta content="{{ page.image }}" property="og:image">
         {% else %}
-          <meta content="/images/banner.png" property="og:image">
+          <meta content="/static/img/banner.png" property="og:image">
         {% endif %}
         {% if page.categories %}
           {% for category in page.categories limit:1 %}
@@ -43,25 +43,25 @@
         {% endif %}
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="keywords" content="{{ page.keywords }}" />
-		<link rel="shortcut icon" href="/images/avatar.png">
+		<link rel="shortcut icon" href="/static/img/avatar.png">
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-		<script src="{{ site.baseurl }}/js/jquery.min.js"></script>
-		<script src="{{ site.baseurl }}/js/jquery.scrollzer.min.js"></script>
-		<script src="{{ site.baseurl }}/js/jquery.scrolly.min.js"></script>
-		<script src="{{ site.baseurl }}/js/skel.min.js"></script>
-		<script src="{{ site.baseurl }}/js/skel-layers.min.js"></script>
-    <script src="{{ site.baseurl }}/js/init.js"></script>
+		<script src="{{ site.baseurl }}/static/js/jquery.min.js"></script>
+		<script src="{{ site.baseurl }}/static/js/jquery.scrollzer.min.js"></script>
+		<script src="{{ site.baseurl }}/static/js/jquery.scrolly.min.js"></script>
+		<script src="{{ site.baseurl }}/static/js/skel.min.js"></script>
+		<script src="{{ site.baseurl }}/static/js/skel-layers.min.js"></script>
+    <script src="{{ site.baseurl }}/static/js/init.js"></script>
     <script>
       // 判断非本机且未使用 https 时，强制重定向到 https。
       if ((!window.location.host.startsWith("localhost")) && (window.location.protocol != "https:"))
         window.location = window.location.toString().replace(/^http:/, "https:");
     </script>
 		<noscript>
-			<link rel="stylesheet" href="{{ site.baseurl }}/css/skel.css" />
-			<link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" />
-			<link rel="stylesheet" href="{{ site.baseurl }}/css/style-xlarge.css" />
+			<link rel="stylesheet" href="{{ site.baseurl }}/static/css/skel.css" />
+			<link rel="stylesheet" href="{{ site.baseurl }}/static/css/style.css" />
+			<link rel="stylesheet" href="{{ site.baseurl }}/static/css/style-xlarge.css" />
 		</noscript>
-		<link rel="stylesheet" href="{{ site.baseurl }}/css/highlight.css" />
+		<link rel="stylesheet" href="{{ site.baseurl }}/static/css/highlight.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
 		
