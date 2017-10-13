@@ -79,6 +79,8 @@ defaults:
 
 此后，遍历以生成列表的时候使用 `all_posts` 集合即可。
 
+---
+
 #### 参考资料
 
 - [Concat arrays in Jekyll(liquid)](https://gist.github.com/BryanSchuetz/52012affd9318ba59e19a74639a8c16a)

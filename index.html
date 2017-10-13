@@ -1,64 +1,58 @@
 ---
 layout: default
-sitemap: false
+title: Windows 应用开发者
 ---
+<div class="well">
+    <div class="list-group">
+      {% for post in paginator.posts %}
+      <div class="list-group-item">
+        <div class="row-action-primary">
+          <i class="fa fa-sticky-note"></i>
+        </div>
+        <div class="row-content">
+          <div class="least-content">{{ post.date | date: "%Y-%m-%d %H:%M" }}</div>
+          <h4 class="list-group-item-heading"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h4>
 
-<!-- One -->
-<section id="one">
-    <div class="container">
-        <header class="major">
-            <h2>walterlv</h2>
-            <p>{{ site.description_detail }}</p>
-        </header>
-        <!-- <p>Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus col. Commodo id in arcu ante lorem ipsum sed accumsan erat praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo. Vis aliquet tortor ultricies non ante erat nunc integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum.</p> -->
+          <p class="list-group-item-text">{{ post.excerpt | strip_html }}</p>
+        </div>
+      </div>
+      <div class="list-group-separator"></div>
+      {% endfor %}
     </div>
-</section>
+   
 
-<!-- Two -->
-<section id="two">
-    <div class="container">
-        <!-- Concat posts and articles -->
-        {% assign all_posts = "" | split: "" %}
-        {% for article in site.article %}
-            {% assign all_posts = all_posts | push: article %}
-        {% endfor %}
-        {% for post in site.posts %}
-            {% assign all_posts = all_posts | push: post %}
-        {% endfor %}
-        {% assign all_posts = all_posts | sort: date | reverse %}
+    <!-- Pagination links -->
+    {% if paginator.total_pages > 1 %}
+    <ul class="pager">
+      {% if paginator.previous_page %}
+        <li class="previous">
+          <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">←</a>
+        </li>
+      {% else %}
+        <li class="previous disabled"><span aria-hidden="true">←</span></li>
+      {% endif %}
 
-        {% for post in all_posts limit:5 %}
-            <div>
-                <header>
-                    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-                </header>
-                <section style="font-size: 0.8em">
-                    {% if post.date_modified %}{{ post.date_modified | date: "%Y-%m-%d %H:%M" }}{% else %}{{ post.date | date: "%Y-%m-%d %H:%M" }}{% endif %}
-                </section>
-                <section class="post-content">
-                    {{ post.excerpt }}
-                </section>
-                <footer>
-                    <ul class="actions">
-                        <li><a href="{{ post.url }}" class="button">继续阅读</a></li>
-                        <li><a href="/blog" class="button special">所有博客</a></li>
-                    </ul>
-                </footer>
-            </div>
-        {% endfor %}
-        {% for post in all_posts limit:10 offset:5 %}
-            <p><a href="{{ post.url }}">{{ post.title }}</a></p>
-        {% endfor %}
-        <footer>
-            <ul class="actions">
-                <li><a href="/blog/page2" class="button special">其他博客</a></li>
-            </ul>
-        </footer>
-    </div>
-</section>
+      {% for page in (1..paginator.total_pages) %}
+        {% if page == paginator.page %}
+          <li class="active">
+             <a>{{ page }}<span class="sr-only">(current)</span></a>
+          </li>
+        {% elsif page == 1 %}
+          <li><a href="/">{{ page }}</a></li>
+        {% else %}
+          <li>
+            <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
 
-<!-- Three -->
-<section id="three">
-    <div class="container">
-    </div>
-</section>
+      {% if paginator.next_page %}
+        <li class="next">
+          <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">→</a>
+        </li>
+      {% else %}
+        <li class="next disabled"><span>→</span></li>
+      {% endif %}
+    </ul>
+    {% endif %}
+</div><!-- end #home -->

@@ -1,32 +1,38 @@
-# Site Metadata
 title: walterlv
-email: walterlv@outlook.com
 description: Windows 10 Developer
-description_detail: >
-  Write code for Windows 10, with UWP, WPF, Xamarin, Visual Studio, Visual Studio Code, iOS, html, TypeScript.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://walterlv.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+author: walterlv
+post_author: 吕毅
+logo: /static/img/avatar.png
+github: https://github.com/walterlv
+about: Windows 10 Developer
 
-# Social Info
-twitter_username: _lvyi_
-facebook_username: Xblero
-github_username:  walterlv
+baseurl: ""
+url: "walterlv.github.io"
 
-# Build Settings
-excerpt_separator: ---
+allowsearch: true
+
+analytics:
+  google: UA-108101550-1
+disqus:
+  name: walterlv
+
+share:
+  twitter_username: _lvyi_
+  fb_appid: 000000000000
+
+
+enableTags: true
+tagarray: []
+
 paginate: 15
-paginate_path: "/blog/page:num"
+per_page: 15
+paginate_path: "/blog/page:num/"
 markdown: kramdown
-theme: minima
-highlighter: rouge
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-paginate
+gems: [jekyll-paginate, jekyll-gist]
 
 # Content Collection
 collections:
-  article:
+  articles:
     output: true
 
 # Content Template
@@ -37,13 +43,11 @@ defaults:
     values:
       layout: "post"
       author: "吕毅"
-      categories: "post"
-      permalink: "/:categories/:title.html"
+      permalink: "/post/:title.html"
   - scope:
-      path: "_article"
-      type: "article"
+      path: "_articles"
+      type: "articles"
     values:
       layout: "post"
       author: "吕毅"
-      categories: "article"
-      permalink: "/:categories/:title.html"
+      permalink: "/article/:title.html"

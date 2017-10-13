@@ -75,6 +75,8 @@ internal class NamedObject
 1. 如果需要在 `CoerceValueCallback` 回调中验证值的合理性，当值不合理的时候，返回 `DependencyProperty.UnsetValue`。  
 这将告诉依赖属性系统阻止这次值的更改。
 
+---
+
 #### 参考资料
 - [Data binding in depth - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/data-binding/data-binding-in-depth)
 - [How to: Convert Bound Data - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/data/how-to-convert-bound-data)

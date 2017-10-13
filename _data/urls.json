@@ -1,0 +1,29 @@
+[
+  {
+    "text": "博客",
+    "url": "/",
+    "icon": "fa-book",
+    "layout": "post"
+  },
+  {
+    "text": "胡思乱想",
+    "url": "/mind",
+    "icon": "fa-commenting"
+  },
+  {
+    "text": "开源项目",
+    "url": "/projects",
+    "icon": "fa-github"
+  },
+  {
+    "text": "关于",
+    "url": "/about/",
+    "icon": "fa-info"
+  },
+  {
+    "text": "XML Feed",
+    "url": "/feed.xml",
+    "icon": "fa-feed",
+    "target": _blank
+  }
+]

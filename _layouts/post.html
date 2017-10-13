@@ -1,68 +1,51 @@
 ---
 layout: default
 ---
-<section>
-    <div class="container">
-        <header class="major">
-            <h2>{{ page.title }}</h2>
-            <p class="post-meta">
-                <span>{{ page.date | date: "%Y-%m-%d %H:%M" }}</span>
-                <span style="margin: 0 0 0 2em">{% if page.date_modified %}最后更新: {{ page.date_modified | date: "%Y-%m-%d %H:%M" }}{% endif %}</span>
-                <a href="{{ page.url }}#disqus_thread" class="float-right">评论</a>
-            </p>
-            <script id="dsq-count-scr" src="//walterlv.disqus.com/count.js" async></script>
-        </header>
+<div class="post-content well">
+<article class="content">
+    <div class="post">{{ content }}</div>
+    <hr />
+    {% include license.html %}
+    {% include share-page.html %}
+</article>
+<hr />
 
-        <section class="post-content">
-            {{ content }}
-            <p></p>
-            <p>
-                本文会经常更新，请阅读原文：
-                <a href="{{ page.url }}">{{ site.url }}{{ page.url }}</a>
-                ，以避免陈旧错误知识的误导，同时有更好的阅读体验。
-            </p>
-            <p>
-                <a rel="知识共享许可协议" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-                    <img alt="知识共享许可协议" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
-                </a>
-                本作品采用
-                <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
-                进行许可。欢迎转载、使用、重新发布，但务必保留文章署名吕毅（包含链接：
-                <a href="{{ site.url }}">{{ site.url }}</a>
-                ），不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请
-                <a href="mailto:walterlv@outlook.com">与我联系</a>
-                。
-            </p>
-            <p>
-                <span style="display:inline-block;width:111px;"><a style="float:left;text-decoration:none;" target="_blank" href="https://www.banquanyin.com/u/101709270007763"><img src="https://s1.banquanyin.com/c/icon-yin-32.png" title="更多授权" style="width:inherit;"/></a><a target="_blank" href="https://101709270007763.bqy.mobi"><img src="https://s1.banquanyin.com/c/icon-auth-cr-32.png" title="获取授权" style="width:inherit;"></a></span>
-            </p>
-        </section>
-        
-        <footer>
-            <br>
-            {% if page.previous %}
-            <a href="{{ page.previous.url }}" class="float-left">&larr; {{ page.previous.title }}</a> {% endif %}
-            {% if page.next %}
-            <a href="{{ page.next.url }}" class="float-right">{{ page.next.title }} &rarr;</a> {% endif %}
-        </footer>
-
-        <div style="margin-top: 1em">
-            <!-- Disqus Comment -->
-            <div id="disqus_thread"></div>
-            <script>
-            var disqus_config = function () {
-            this.page.url = "{{ site.url }}{{ page.url }}";  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = "{{ page.id }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            };
-            (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://walterlv.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-            <!-- End Disqus Comment -->
-        </div>
+{% assign hasSimilar = '' %}
+{% for post in site.posts  %}
+    {% assign postHasSimilar = false %}
+    {% for tag in post.categories %}
+        {% for thisTag in page.categories %}
+            {% if postHasSimilar == false and hasSimilar.size < 6 and post != page and tag == thisTag %}
+                {% if hasSimilar.size == 0 %}
+                <div class="panel-body">
+                <h4>Related Posts</h4>
+                <ul>
+                {% endif %}
+                <li class="relatedPost">
+                    <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+                    {% if post.categories %}
+                        <small>(Categories: {% for category in post.categories %}<a href="/category/{{ category }}">{{ category }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %})</small>
+                    {% endif %}
+                </li>
+                {% capture hasSimilar %}{{ hasSimilar }}*{% endcapture %}
+                {% assign postHasSimilar = true %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+{% endfor %}
+{% if hasSimilar.size > 0 %}
+    </ul>
     </div>
-</section>
+{% endif %}
+
+<div class="PageNavigation">
+    {% if page.previous.url %}
+        <a class="prev pull-left" href="{{ site.url }}{{ page.previous.url }}">&laquo; {{ page.previous.title }}</a>
+    {% endif %}
+    {% if page.next.url %}
+        <a class="next pull-right" href="{{ site.url }}{{ page.next.url }}">{{ page.next.title }} &raquo;</a>
+    {% endif %}
+</div>
+
+{% include comment.html %}
+</div>

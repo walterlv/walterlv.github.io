@@ -1,23 +1,47 @@
-<!-- Header -->
-<section id="header" class="skel-layers-fixed">
-    <header>
-        <span class="image avatar"><img src="/static/img/avatar.png" alt="" /></span>
-        <h1 id="logo"><a href="/">{{ site.github_username }}</a></h1>
-        <p>{{ site.description }}</p>
-    </header>
-    <nav id="nav">
-        <ul>
-            <li><a href="/">探索</a></li>
-            <li><a href="/blog">博客</a></li>
-            <li><a href="/article">胡思乱想</a></li>
-            <li><a href="/search">搜索</a></li>
-        </ul>
-    </nav>
-    <footer>
-        <ul class="icons">
-            <li><a href="https://twitter.com/{{ site.twitter_username }}/" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-            <li><a href="https://www.facebook.com/{{ site.facebook_username }}" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-            <li><a href="https://github.com/{{ site.github_username }}/" class="icon fa-github"><span class="label">Github</span></a></li>
-        </ul>
-    </footer>
-</section>
+<div class="header-panel shadow-z-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-4 col-xs-12">
+            <div class="row-picture">
+              <img id="about" class="logo-img" src="{{ site.logo }}" height="75px" width="75px">
+            </div>
+            <div class="row-details">
+              <h4 class="list-group-item-heading">{{ site.author }}</h4>
+              <p class="list-group-item-text">{{ site.post_author }} - {{ site.description }}</p>
+              {% include social_links.html %}
+            </div>
+            <div class="navbar-header pull-right">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <i class="fa fa-2x fa-bars"></i>
+              </button>
+            </div>
+          </div>
+          <div class="col-md-9 col-sm-8 col-xs-12">
+          <div class="row">
+            <h2 class="blog-title-pro {% if site.allowsearch ==  true %}col-md-6 col-sm-12 col-xs-12 {% endif %}">{{ page.title }}</h2>
+            {% if site.allowsearch ==  true %}
+            <div class="col-md-6 col-sm-12 col-xs-12 searchcontrol" id="js-search">
+              <input class="form-control" type="text" id="js-search__input" placeholder="Search">
+              <ul class="search__results" id="js-search__results"></ul>
+            </div>
+            {% endif %}
+            </div>
+            <p class="info">
+              {% if page.date %}
+                <span class="time">{{ page.date | date_to_string }}</span>
+              {% endif %}
+              {% if page.categories.size > 0 %}
+                <span class="categories">
+                  &raquo; 
+                  {% for category in page.categories %}
+                    <a href="/category/{{ category }}">{{ category }}</a>
+                    {% if forloop.last == false %}, {% endif %}
+                  {% endfor %}
+                </span>
+              {% endif %}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>

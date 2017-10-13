@@ -1,0 +1,16 @@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+{% if site.allowsearch ==  true %}
+<script src="/static/js/super-search.js"></script>
+{% endif %}
+<script src="/static/js/thickbox-compressed.js"></script>
+<script src="/static/js/material.min.js"></script>
+<script src="/static/js/main.js"></script>
+<script src="/static/js/projects.js"></script>
+<script>
+  // 判断非本机且未使用 https 时，强制重定向到 https。
+  if ((!window.location.host.startsWith("localhost")) && (window.location.protocol != "https:"))
+    window.location = window.location.toString().replace(/^http:/, "https:");
+</script>

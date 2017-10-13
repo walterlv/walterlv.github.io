@@ -23,6 +23,8 @@ description:
 - GitHub、Bitbucket 和码云（Gitee.com）选择 Pull Request 作为这项功能的名称
 - GitLab 和 Gitorious 选择 Merge Request 作为这项功能的名称
 
+---
+
 #### 参考资料
 
 - [GitLab Documentation](https://docs.gitlab.com/ce/workflow/gitlab_flow.html)
