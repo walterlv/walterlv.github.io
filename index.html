@@ -6,12 +6,9 @@ title: Windows 应用开发者
     <div class="list-group">
       {% for post in paginator.posts %}
       <div class="list-group-item">
-        <div class="row-action-primary">
-          <i class="fa fa-sticky-note"></i>
-        </div>
         <div class="row-content">
           <h4 class="list-group-item-heading"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h4>
-          <p>{{ post.date | date: "%Y-%m-%d %H:%M" }}</p>
+          <p style="font-size: 0.8em">{{ post.date | date: "%Y-%m-%d %H:%M" }}</p>
           <p class="list-group-item-text">{{ post.excerpt | strip_html }}</p>
         </div>
       </div>

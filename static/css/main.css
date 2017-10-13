@@ -37,6 +37,9 @@ p.info {
 p.info a {
     color: #fff;
 }
+.full {
+    padding: 0;
+}
 .full ul,.full ol {
     margin-left: 15px;
 }

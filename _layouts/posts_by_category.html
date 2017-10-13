@@ -24,9 +24,6 @@ layout: default
     <div class="list-group">
         {% for post in site.categories[page.categories] %}
         <div class="list-group-item">
-            <div class="row-action-primary">
-              <i class="fa fa-sticky-note"></i>
-            </div>
             <div class="row-content">
             {% capture post_year %}{{ post.date | date: '%Y' }}{% endcapture %}
             {% if forloop.first %}
