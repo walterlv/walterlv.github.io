@@ -14,9 +14,6 @@ categories: post
 - Https Checker
   - [Why No Padlock? - Why is my SSL web page insecure? Find the culprit!](https://www.whynopadlock.com/)
 
-- Yield
-  - [c# - Task.Yield - real usages? - Stack Overflow](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=c%23%20-%20Task.Yield%20-%20real%20usages%3F%20-%20Stack%20Overflow&uri=https://stackoverflow.com/questions/23431595/task-yield-real-usages)
-
 - Jekyll Search
   - [Jekyll Instant Search in 3 simple steps! | Webjeda](https://blog.webjeda.com/instant-jekyll-search/)
   - [The easiest search option for Jekyll | Webjeda](https://blog.webjeda.com/jekyll-search/)
