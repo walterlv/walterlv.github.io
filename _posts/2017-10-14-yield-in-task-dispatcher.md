@@ -1,6 +1,6 @@
 ---
 title: "出让执行权：Task.Yield, Dispathcer.Yield"
-date: 2017-10-14 16:03:52 +0800
+date: 2017-10-14 17:18:49 +0800
 categories: dotnet csharp wpf uwp
 description: 一个耗时的任务，可以通过 Task.Yield 或者 Dispathcer.Yield 来中断以便分割成多个小的任务片段执行。
 ---
@@ -86,7 +86,7 @@ foreach(var item in collection)
 
 效果与 `Dispatcher.Yield(DispatcherPriority.Normal)` 是一样的。因为 `Task` 调度回到线程上下文靠的是 `SynchronizationContext`，WPF UI 线程的 `SynchronizationContext` 被设置为了 `DispatcherSynchronizationContext`，使用 `Dispatcher` 调度；而 `DispatcherSynchronizationContext` 构造时传入的优先级默认是 `Normal`，WPF 并没有特殊传入一个别的值，所以 WPF UI 线程上使用 `Task.Yield()` 出让执行权后，恢复时使用的是 `Normal` 优先级，相当于 Dispatcher.Yield(DispatcherPriority.Normal)。
 
-希望了解 `Dispatcher` 和 `` 的区别可以阅读 [c# - Difference between Synchronization Context and Dispatcher - Stack Overflow](https://stackoverflow.com/a/24672061/6233938)。
+希望了解 `Dispatcher` 和 `SynchronizationContext` 的区别可以阅读 [c# - Difference between Synchronization Context and Dispatcher - Stack Overflow](https://stackoverflow.com/a/24672061/6233938)。
 
 `DispatcherSynchronizationContext` 执行 `await` 后续任务的上下文代码：
 
