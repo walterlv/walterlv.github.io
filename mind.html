@@ -5,7 +5,9 @@ permalink: /mind/
 ---
 <div class="well">
     <div class="list-group">
-      {% for post in site.articles %}
+      {% assign articles = site.articles %}
+      {% assign articles = articles | sort: date | reverse %}
+      {% for post in articles %}
       <div class="list-group-item">
         <div class="row-content">
           <h4 class="list-group-item-heading"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h4>
