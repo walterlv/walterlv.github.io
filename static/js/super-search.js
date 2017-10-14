@@ -13,8 +13,6 @@
         posts = [],
         sitemap = (baseurl || '') + '/sitemap.xml';
 
-        console.log(sitemap);
-    
     // Changes XML to JSON
     // Modified version from here: http://davidwalsh.name/convert-xml-json
     function xmlToJson(xml) {
