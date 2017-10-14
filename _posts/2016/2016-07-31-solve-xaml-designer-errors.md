@@ -14,7 +14,7 @@ permalink: /wpf/2016/07/31/solve-xaml-designer-errors.html
 但是，XAML 开发不总是那么幸运！
 因为我们总能在设计器中看到这样的一幕：
 
-![XAML 设计器错误](/assets/2016-07-31-exception-in-xaml-designer.png)
+![XAML 设计器错误](/static/posts/2016-07-31-exception-in-xaml-designer.png)
 
 如果你看完之后无奈又无助，那这篇文章正好将帮你分析 XAML 设计器出错的各种可能原因以及解决这些问题的思路。
 

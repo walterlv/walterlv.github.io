@@ -19,7 +19,7 @@ description: 优化 UWP 中图片的内存占用。
 
 ```xml
 <!-- 性能不好 -->
-<Image Source="ms-appx:///Assets/high-resolution-image.jpg" 
+<Image Source="ms-appx:///static/posts/high-resolution-image.jpg" 
        Width="300" Height="200"/>
 ```
 
@@ -27,7 +27,7 @@ description: 优化 UWP 中图片的内存占用。
 <!-- 性能不错 -->
 <Image>
     <Image.Source>
-        <BitmapImage UriSource="ms-appx:///Assets/high-resolution-image.jpg" 
+        <BitmapImage UriSource="ms-appx:///static/posts/high-resolution-image.jpg" 
                      DecodePixelWidth="300" DecodePixelHeight="200"/>
     </Image.Source>
 </Image>
@@ -63,13 +63,13 @@ description: 优化 UWP 中图片的内存占用。
 // 后台代码如果这样写就不错，因为先把 BitmapImage 放到了活动的 XAML 树上。
 var bitmapImage = new BitmapImage();
 myImage.Source = bitmapImage;
-bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
+bitmapImage.UriSource = new URI("ms-appx:///static/posts/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
 ```csharp
 // 然而这样写就不太推荐了，因为先设置了 UriSource，再把 BitmapImage 放到活动的 XAML 树上。
 var bitmapImage = new BitmapImage();
-bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
+bitmapImage.UriSource = new URI("ms-appx:///static/posts/cool-image.png", UriKind.RelativeOrAbsolute);
 myImage.Source = bitmapImage;
 ```
 

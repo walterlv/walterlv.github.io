@@ -13,9 +13,9 @@ permalink: /visualstudio/2016/08/01/share-code-with-add-as-link.html
 
 ## 链接的文件长这样
 
-![链接文件](/assets/2016-08-01-share-file-as-link.png)
+![链接文件](/static/posts/2016-08-01-share-file-as-link.png)
 
-如上图，链接文件其图标上会有一个小图标![图标](/assets/2016-08-01-link-icon.png)。图中的 A 和 B 两个项目都是应用程序项目（不是类库），所需的图标和数据库是需要共享的，于是将其设为了链接。
+如上图，链接文件其图标上会有一个小图标![图标](/static/posts/2016-08-01-link-icon.png)。图中的 A 和 B 两个项目都是应用程序项目（不是类库），所需的图标和数据库是需要共享的，于是将其设为了链接。
 
 ## 怎么创建链接文件？
 

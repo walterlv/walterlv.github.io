@@ -1,0 +1,5 @@
+{
+    "pasteImage.path": "${projectRoot}/static/posts",
+    "pasteImage.basePath": "${projectRoot}",
+    "pasteImage.prefix": "/"
+}

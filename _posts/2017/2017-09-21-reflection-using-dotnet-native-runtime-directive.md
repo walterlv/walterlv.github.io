@@ -29,17 +29,17 @@ var properties = type.GetTypeInfo().DeclaredProperties;
 
 但无论哪一种，DEBUG 下 `properties` 集合中有我们想要的属性集合，如下图：
 
-![DEBUG 下拿到的属性](/assets/2017-09-20-23-55-48.png)
+![DEBUG 下拿到的属性](/static/posts/2017-09-20-23-55-48.png)
 
 `type.GetTypeInfo().DeclaredProperties` 帮我们拿到了当前类的属性，`typeof(SomeType).GetProperties()` 帮我们拿到了当前类和其所有父类的属性。
 
 然而，RELEASE 下的结果却是这样的：
 
-![DEBUG 下拿到的属性](/assets/2017-09-21-00-00-12.png)
+![DEBUG 下拿到的属性](/static/posts/2017-09-21-00-00-12.png)
 
 其中后者虽然有两个实例，却是：
 
-![空和继承的属性](/assets/2017-09-21-00-02-54.png)
+![空和继承的属性](/static/posts/2017-09-21-00-02-54.png)
 
 这就诡异了，DEBUG 和 RELEASE 下到底有什么区别呢？
 
@@ -47,7 +47,7 @@ var properties = type.GetTypeInfo().DeclaredProperties;
 
 经过一番 Google，发现 RELEASE 下编译开启了 .NET 本机工具链选项，这使得 RELEASE 下生成的是静态的本机代码。
 
-![RELEASE 下的 .NET 本机工具链编译选项](/assets/2017-09-20-23-40-39.png)
+![RELEASE 下的 .NET 本机工具链编译选项](/static/posts/2017-09-20-23-40-39.png)
 
 试着去掉这个选项，果然以上的反射代码能够得到期望的属性集合。然而这样就丢失了 .NET Native 带给我们棒棒的性能优势了啊！
 
@@ -55,7 +55,7 @@ var properties = type.GetTypeInfo().DeclaredProperties;
 
 所以更推荐的做法是什么呢？微软为我们提供了设置 .NET Native 运行时指令的方法，展开解决方案项目的 Properties 文件夹，我们可以找到 `Default.rd.xml` 文件。
 
-![Default.rd.xml](/assets/2017-09-21-00-11-31.png)
+![Default.rd.xml](/static/posts/2017-09-21-00-11-31.png)
 
 查看里面的内容，微软为我们写了很详细的注释：
 

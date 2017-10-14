@@ -11,7 +11,7 @@ description: 对于 GitHub Pages，了解如何强制使用 https；对于码云
 
 一天晚上在手机上浏览自己的博客时，发现居然充斥着各种恶心的广告！顿时内心犹如一万只神兽呼啸而过，不过又能怪谁呢？！
 
-为避免引起读者不适，不贴图，只放链接，感兴趣自己点开看：[图 2](/assets/2017-09-17-ads-over-http-2.png)、[图 1](/assets/2017-09-17-ads-over-http-1.png)。
+为避免引起读者不适，不贴图，只放链接，感兴趣自己点开看：[图 2](/static/posts/2017-09-17-ads-over-http-2.png)、[图 1](/static/posts/2017-09-17-ads-over-http-1.png)。
 
 本文的重点其实是括号里的码云（gitee.io）。
 
@@ -21,7 +21,7 @@ description: 对于 GitHub Pages，了解如何强制使用 https；对于码云
 
 去自己的 GitHub Pages 仓库页找了找设置项（https://github.com/walterlv/walterlv.github.io/settings），果然发现了有强制 https 设置。
 
-![Enforce HTTPS](/assets/2017-09-17-15-44-17.png)
+![Enforce HTTPS](/static/posts/2017-09-17-15-44-17.png)
 
 开启后再打开 [walterlv.github.io](https://walterlv.github.io/)，果然 https 了。
 
@@ -31,7 +31,7 @@ GitHub Pages 设置得这么轻松，想必码云的 Pages 服务应该也不难
 
 去这里找：
 
-![Pages 服务](/assets/2017-09-17-15-49-03.png)
+![Pages 服务](/static/posts/2017-09-17-15-49-03.png)
 
 没有。去设置里找，还是没有……
 

@@ -101,7 +101,7 @@ public bool LimitPickerToCurrentAppAndAppUriHandlers { get; set; }
 
 如果打开程序自己内置的链接，通常置为 false，以便能直接打开。但有时程序需要处理用户输入的数据，这时就不一定真的是期望打开了。于是标记为不安全后，Windows 10 会为我们弹出一个提示款，告诉我们是否真的要切换应用。
 
-![Did you mean to switch apps](/assets/2017-09-25-00-18-22.png)
+![Did you mean to switch apps](/static/posts/2017-09-25-00-18-22.png)
 
 截图中的 MarkdownMail 是我的一个开源项目，可以前往 [markdown-mail @ github](https://github.com/walterlv/markdown-mail) 多多支持。
 

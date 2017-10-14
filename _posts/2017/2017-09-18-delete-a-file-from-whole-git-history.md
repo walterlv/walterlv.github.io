@@ -45,7 +45,7 @@ $ git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch pat
 
 把 `path-to-your-remove-file` 改成那个误传的文件后，写下命令准备运行……运行……运行……
 
-![高 CPU 占用](/assets/2017-09-18-git-for-windows-high-cpu.png)
+![高 CPU 占用](/static/posts/2017-09-18-git-for-windows-high-cpu.png)
 
 然后过了十多分钟还不到 5% 的进度……
 
@@ -105,7 +105,7 @@ git gc --prune=now
 
 如果本地没有基于之前的 `develop` 分支做新的修改，则以上命令足以将本地磁盘的空间收回。如下图：
 
-![回收空间](/assets/2017-09-18-23-31-57.png)
+![回收空间](/static/posts/2017-09-18-23-31-57.png)
 
 但如果本地还有新的提交，以上命令敲完前三条后就要暂停了。需要将新的提交 `cherry-pick` 到新的 `develop` 分支上；随后删除之前提交的那个分支，确保本地也没有任何分支包含误传文件的提交。随后继续敲后面的两条命令，也可以将本地的磁盘空间回收。
 

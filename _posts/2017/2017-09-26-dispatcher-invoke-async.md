@@ -127,7 +127,7 @@ public DispatcherOperation InvokeAsync(Action callback, DispatcherPriority prior
 1. 调用 `RequestProcessing`，直至最后向**某个隐藏窗口**发送了一条消息。
 1. **那个隐藏窗口**接收到了这条消息，然后从 `PriorityQueue<DispatcherOperation>` 队列中取出一条任务执行（真实情况复杂一点，后面会谈到）。
 
-![InvokeAsync 的实现原理图](/assets/2017-09-26-01-20-05.png)
+![InvokeAsync 的实现原理图](/static/posts/2017-09-26-01-20-05.png)
 
 上面第 3 点的消息是这样发的：
 

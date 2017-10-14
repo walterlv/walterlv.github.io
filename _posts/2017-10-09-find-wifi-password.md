@@ -20,7 +20,7 @@ description: 了解如何查询已连接 Wi-Fi 的密码
 netsh wlan show profiles
 ```
 
-![netsh wlan show profiles](/assets/2017-10-09-20-48-55.png)
+![netsh wlan show profiles](/static/posts/2017-10-09-20-48-55.png)
 
 上图是第一条命令执行的结果，其实我们只是为了得到已记住的所有 Wi-Fi 名称而已，如果你知道名称，这一步可以省略。
 
@@ -28,7 +28,7 @@ netsh wlan show profiles
 netsh wlan show profiles name="walterlv" key=Clear
 ```
 
-![netsh wlan show profiles name="walterlv" key=Clear](/assets/2017-10-09-20-51-53.png)
+![netsh wlan show profiles name="walterlv" key=Clear](/static/posts/2017-10-09-20-51-53.png)
 
 第二条命令就是查看 `walterlv` 网络的信息。其中 `name` 换成你想查看的任何已记住的网络，`key` 设置为 `Clear` 是为了明文显示密码。我的 Wi-Fi 密码在图中可以看得到，被设置成了 `lvyi1009`。
 
@@ -38,15 +38,15 @@ netsh wlan show profiles name="walterlv" key=Clear
 
 打开网路和共享中心，然后点击正在连接的网络名称。
 
-![打开网络和共享中心](/assets/2017-10-09-19-48-43.png)
+![打开网络和共享中心](/static/posts/2017-10-09-19-48-43.png)
 
-![点击正在连接的网络名称](/assets/2017-10-09-20-41-55.png)
+![点击正在连接的网络名称](/static/posts/2017-10-09-20-41-55.png)
 
 点击“无线属性”。
 
-![无线属性](/assets/2017-10-09-20-54-39.png)
+![无线属性](/static/posts/2017-10-09-20-54-39.png)
 
-![无线网络属性](/assets/2017-10-09-20-58-19.png)
+![无线网络属性](/static/posts/2017-10-09-20-58-19.png)
 
 显示字符就能看到密码了。
 

@@ -99,7 +99,7 @@ description: 了解 .Net Framework 的公共语言运行时版本，这与 .Net 
 
 也就是说，**无论我们在开发时指定目标框架的版本是 4.x 的哪一个，在运行时，CLR 环境都是 4.0**。但是新的 .Net Framework 会带来更新版本的 CLR，这个 CLR 会直接替换掉旧的 CLR。[.NET 4.5 is an in-place replacement for .NET 4.0](https://weblog.west-wind.com/posts/2012/Mar/13/NET-45-is-an-inplace-replacement-for-NET-40) 文章中 .Net Framework 基础库也是就地更新的；但我实际实验的情况是每一个不同的 .Net Framework 基础库有自己单独的文件夹，目前尚不清楚这个改变是从 .Net Framework 的哪一个版本开始的，但一定是 4.5.1、4.5.2、4.6 这三个版本中的一个。
 
-![每一个不同的 .Net Framework 基础库有自己单独的文件夹](/assets/2017-09-22-21-39-42.png)
+![每一个不同的 .Net Framework 基础库有自己单独的文件夹](/static/posts/2017-09-22-21-39-42.png)
 
 ### 解决一开始的疑问
 

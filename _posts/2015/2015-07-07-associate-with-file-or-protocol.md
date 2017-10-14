@@ -16,6 +16,6 @@ permalink: /windows/2015/07/07/associate-with-file-or-protocol.html
 HKEY_CLASSES_ROOT\XXX\shell\open\command
 ```
 
-![关联到文件](/assets/2015-07-07-file.png)
+![关联到文件](/static/posts/2015-07-07-file.png)
 
-![关联到协议](/assets/2015-07-07-protocol.png)
+![关联到协议](/static/posts/2015-07-07-protocol.png)

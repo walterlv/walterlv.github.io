@@ -153,7 +153,7 @@ while(frame.Continue)
 
 如果 `frame.Continue` 一直保持为 `true` 呢？那就进入了“死循环”。可是这里我们需要保持清醒，因为“死循环”意味着阻塞，意味着无法在中间插入其它的 UI 代码。所以要么是 `GetMessage` 让我们能继续处理窗口消息，要么是 `TranslateAndDispatchMessage` 让我们能继续处理窗口消息。（至于为什么只要能处理消息就够了，我们上一篇说到过，`Dispatcher` 任务队列的处理就是利用了 Windows 的消息机制。）
 
-![消息循环](/assets/2017-09-26-03-33-28.png)
+![消息循环](/static/posts/2017-09-26-03-33-28.png)
 
 然而，这两个方法内部都调用到了非托管代码，很难通过阅读代码了解到它处理消息的原理。但是通过 .Net Framework 源码调试技术我发现 `TranslateAndDispatchMessage` 方法似乎并没有被调用到，`GetMessage` 始终在执行。我们有理由相信用于实现非阻塞等待的关键在 `GetMessage` 方法内部。.Net Framework 源码调试技术请参阅：[调试 ms 源代码 - 林德熙](http://lindexi.gitee.io/lindexi//post/%E8%B0%83%E8%AF%95-ms-%E6%BA%90%E4%BB%A3%E7%A0%81/)。
 
@@ -184,7 +184,7 @@ private void OnStylusDown(object sender, StylusDownEventArgs e)
 
 于是可以肯定，每一次 `PushFrame` 都将开启一个新的消息循环，由非托管代码开启。当 `ShowDialog` 出来的窗口关掉，或者 `Invoke` 执行完毕，或者其它会导致 `PushFrame` 退出循环的代码执行时，就会退出一次 `PushFrame` 带来的消息循环。于是，在上一次消息处理中被 `while` 阻塞的代码得以继续执行。一层层退出，直到最后 `Main` 函数退出时，程序结束。
 
-![PushFrame 的嵌套](/assets/2017-09-26-03-47-20.png)
+![PushFrame 的嵌套](/static/posts/2017-09-26-03-47-20.png)
 
 上图使用的是我在 GitHub 上的一款专门研究 WPF 触摸原理的测试项目：[https://github.com/walterlv/ManipulationDemo](https://github.com/walterlv/ManipulationDemo)。
 
