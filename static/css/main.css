@@ -1,7 +1,7 @@
 .main.outer {
     padding-top: 50px;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .main.outer {
         padding: 0 8px;
     }
@@ -38,9 +38,14 @@
     vertical-align: middle;
     color: #fff;
 }
-@media (max-width: 768px) {
-    .row-picture {
-        display: none;
+@media (max-width: 767px) {
+    .header-panel>.container>.row>.site-info-area {
+        background-color: #284888;
+    }
+    .row-picture>img {
+        width: 32px;
+        height: 32px;
+        margin: 8px -8px;
     }
     .row-details {
         display: none;
@@ -173,7 +178,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 .menu .list-group-item-heading, .menu .list-group-item-text{
     color:#fff!important;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     #portfolio-filter {
         margin-top: 0px;
     }
@@ -194,7 +199,7 @@ footer {
     bottom: 0;
     padding-bottom: 10px;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .footer {
         margin-left: 8px;
         margin-right: 8px;
@@ -208,7 +213,7 @@ footer {
     margin-top: 35px;
     margin-bottom: 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .searchcontrol {
         display: none;
     }
