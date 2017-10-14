@@ -1,4 +1,11 @@
-.main.outer{padding-top: 50px;}
+.main.outer {
+    padding-top: 50px;
+}
+@media (max-width: 768px) {
+    .main.outer {
+        padding: 0 8px;
+    }
+}
 .header-panel.shadow-z-2 {
     background-color: #4267b2;
     padding: 50px 0 15px 0;
@@ -30,6 +37,17 @@
     display: inline-block;
     vertical-align: middle;
     color: #fff;
+}
+@media (max-width: 768px) {
+    .row-picture {
+        display: none;
+    }
+    .row-details {
+        display: none;
+    }
+    .header-panel.shadow-z-2 {
+        padding: 0;
+    }
 }
 p.info {
     color: #fff;
@@ -159,6 +177,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
     #portfolio-filter {
         margin-top: 0px;
     }
+    .navbar-toggle {
+        margin: 0;
+        margin-right: -15px;
+    }
 }
 footer {
     border-top: 1px solid #C5C0C0;
@@ -172,6 +194,12 @@ footer {
     bottom: 0;
     padding-bottom: 10px;
 }
+@media (max-width: 768px) {
+    .footer {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+}
 .pager li.active a {
     background: rgba(126, 126, 126, 0.3);
 }
@@ -179,6 +207,11 @@ footer {
 .searchcontrol {
     margin-top: 35px;
     margin-bottom: 0;
+}
+@media (max-width: 768px) {
+    .searchcontrol {
+        display: none;
+    }
 }
 .searchcontrol input[type=text]{
     color:#fff;

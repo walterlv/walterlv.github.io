@@ -1,5 +1,6 @@
 ---
 layout: page
-title: 吕毅
+title: 关于吕毅
+display_title: 吕毅 - walterlv
 permalink: /about/
 ---

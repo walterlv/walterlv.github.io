@@ -19,7 +19,9 @@
           </div>
           <div class="col-md-9 col-sm-8 col-xs-12">
           <div class="row">
-            <h2 class="blog-title-pro {% if site.allowsearch ==  true %}col-md-6 col-sm-12 col-xs-12 {% endif %}">{{ page.title }}</h2>
+            <h2 class="blog-title-pro {% if site.allowsearch ==  true %}col-md-6 col-sm-12 col-xs-12 {% endif %}">
+              {% if page.display_title %}{{ page.display_title }}{% else %}{{ page.title }}{% endif %}
+            </h2>
             {% if site.allowsearch ==  true %}
             <div class="col-md-6 col-sm-12 col-xs-12 searchcontrol" id="js-search">
               <input class="form-control" type="text" id="js-search__input" placeholder="搜索">
