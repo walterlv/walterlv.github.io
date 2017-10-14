@@ -5,6 +5,7 @@ categories: post
 ---
 
 - VirtualizingPanel not Working
+  - http://www.cnblogs.com/kybs0/p/7649463.html
   - [wpf - VirtualizingStackPanel Is not working - Stack Overflow](https://stackoverflow.com/questions/3710993/virtualizingstackpanel-is-not-working)
   - [c# - VirtualizingStackPanel refuses to virtualize - Stack Overflow](https://stackoverflow.com/questions/22405471/virtualizingstackpanel-refuses-to-virtualize)
   - [wpf - VirtualizingStackPanel stops working when overriding the default control template for ScrollViewer - Stack Overflow](https://stackoverflow.com/questions/4219768/virtualizingstackpanel-stops-working-when-overriding-the-default-control-templat)

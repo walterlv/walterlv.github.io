@@ -43,7 +43,7 @@ defaults:
     values:
       layout: "post"
       author: "吕毅"
-      permalink: "/post/:categories/:title.html"
+      permalink: "/post/:title.html"
   - scope:
       path: "_articles"
       type: "articles"

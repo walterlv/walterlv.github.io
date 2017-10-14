@@ -5,7 +5,7 @@ date: 2017-10-02 00:14:07 +0800
 date_modified: 2017-10-02 09:00:45 +0800
 categories: win10 windows wpf
 permalink: /post/win10/2017/10/02/wpf-transparent-blur-in-windows-10.html
-keywords: WPF Windows Blur SetWindowCompositionAttribute
+tags: WPF Windows Blur SetWindowCompositionAttribute
 description: 
 ---
 

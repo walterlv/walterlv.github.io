@@ -2,6 +2,7 @@
 title: "DependencyProperty.UnsetValue 的正确打开方式"
 date: 2017-10-10 23:21:57 +0800
 categories: xaml
+permalink: /post/xaml/how-to-use-dependencyproperty-unsetvalue.html
 tags: DependencyProperty UnsetValue 依赖属性
 description: 为什么有时候在调试 XAML 程序（绑定或标记扩展）时会遇到 DependencyProperty.UnsetValue？DependencyProperty.UnsetValue 是什么？我们需要用 DependencyProperty.UnsetValue 吗？怎么用？
 ---
