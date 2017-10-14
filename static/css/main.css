@@ -63,9 +63,6 @@ p.info a {
 .full {
     padding: 0;
 }
-.full ul,.full ol {
-    margin-left: 15px;
-}
 .full img{
     display: block;
     max-width: 100%;
