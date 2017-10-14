@@ -87,8 +87,7 @@ p.info a {
     display: inline-block;
 }
 .icon:hover {
-    color: rgba(255, 255, 255, 0.63);
-    background: #4268b3;
+    background: white;
 }
 .menu ul li {
     list-style: none;
