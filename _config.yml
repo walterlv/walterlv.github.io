@@ -13,6 +13,7 @@ allowsearch: true
 
 analytics:
   google: UA-108101550-1
+  cnzz: cnzz_stat_icon_1264408226
 disqus:
   name: walterlv
 
