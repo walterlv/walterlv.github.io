@@ -4,6 +4,14 @@ title: "About to Write"
 categories: post
 ---
 
+- 后台线程异常
+  - [c# - How to prevent an exception in a background thread from terminating an application? - Stack Overflow](https://stackoverflow.com/questions/186854/how-to-prevent-an-exception-in-a-background-thread-from-terminating-an-applicati)
+  - [Exceptions in Managed Threads | Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/threading/exceptions-in-managed-threads)
+
+- Bounds of Visual3D
+  - [Transforming Bounds – WPF3D Team Blog](https://blogs.msdn.microsoft.com/wpf3d/2009/05/13/transforming-bounds/)
+  - [c# - Visible 2D content bounds of WPF ModelVisual3D - Stack Overflow](https://stackoverflow.com/questions/46740152/visible-2d-content-bounds-of-wpf-modelvisual3d)
+
 - VirtualizingPanel not Working
   - http://www.cnblogs.com/kybs0/p/7649463.html
   - [wpf - VirtualizingStackPanel Is not working - Stack Overflow](https://stackoverflow.com/questions/3710993/virtualizingstackpanel-is-not-working)
