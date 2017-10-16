@@ -5,12 +5,19 @@
 {% if site.allowsearch ==  true %}
 <script src="/static/js/super-search.js"></script>
 {% endif %}
-<script src="/static/js/thickbox-compressed.js"></script>
-<script src="/static/js/material.min.js"></script>
-<script src="/static/js/main.js"></script>
-<script src="/static/js/projects.js"></script>
+<script src="{{ site.baseurl }}/static/js/thickbox-compressed.js"></script>
+<script src="{{ site.baseurl }}/static/js/material.min.js"></script>
+<script src="{{ site.baseurl }}/static/js/main.js"></script>
+<script src="{{ site.baseurl }}/static/js/projects.js"></script>
+<script src="{{ site.baseurl }}/static/js/toc.js"></script>
 <script>
   // 判断非本机且未使用 https 时，强制重定向到 https。
   if ((!window.location.host.startsWith("localhost")) && (window.location.protocol != "https:"))
     window.location = window.location.toString().replace(/^http:/, "https:");
+</script>
+<script type="text/javascript">
+  // 生成目录。
+  $(document).ready(function() {
+    $('#toc').toc();
+  });
 </script>

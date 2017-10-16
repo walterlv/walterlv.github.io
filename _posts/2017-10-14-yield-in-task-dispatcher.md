@@ -9,6 +9,8 @@ description: 一个耗时的任务，可以通过 Task.Yield 或者 Dispathcer.Y
 
 ---
 
+<div id="toc"/>
+
 如果在阅读中发现对本文涉及到的一些概念不太明白，可以阅读：
 
 - [深入了解 WPF Dispatcher 的工作原理（Invoke/InvokeAsync 部分）](/post/dotnet/2017/09/26/dispatcher-invoke-async.html)
