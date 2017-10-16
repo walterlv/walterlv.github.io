@@ -6,7 +6,7 @@ categories: post
 
 - 后台线程异常
   - [c# - How to prevent an exception in a background thread from terminating an application? - Stack Overflow](https://stackoverflow.com/questions/186854/how-to-prevent-an-exception-in-a-background-thread-from-terminating-an-applicati)
-  - [Exceptions in Managed Threads | Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/threading/exceptions-in-managed-threads)
+  - [Exceptions in Managed Threads - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/threading/exceptions-in-managed-threads)
 
 - Bounds of Visual3D
   - [Transforming Bounds – WPF3D Team Blog](https://blogs.msdn.microsoft.com/wpf3d/2009/05/13/transforming-bounds/)
