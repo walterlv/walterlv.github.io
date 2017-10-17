@@ -10,7 +10,7 @@ permalink: /friends/
 - [gandalfliang http://gandalfliang.me/](http://gandalfliang.me/)  
   对 D3D 有很深的研究
 
-- [IIP.Easi](https://iip-easi.github.io/)  
+- [iip-easi](https://easiwin.github.io/)  
   这是我所在的组织
 
 - [晒太阳的猫](http://jgrass.cc/)
