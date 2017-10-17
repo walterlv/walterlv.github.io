@@ -4,6 +4,12 @@ title: "About to Write"
 categories: post
 ---
 
+- PushFrame locks the Window
+  - [c# - PushFrame locks up WPF window when user is moving window - Stack Overflow](https://stackoverflow.com/questions/19411613/pushframe-locks-up-wpf-window-when-user-is-moving-window)
+  - [WPF application intermittently hangs when using Dispatcher.Invoke and/or Dispatcher.PushFrame while user is resizing or draging window | Microsoft Connect](https://connect.microsoft.com/VisualStudio/feedback/details/807292/wpf-application-intermittently-hangs-when-using-dispatcher-invoke-and-or-dispatcher-pushframe-while-user-is-resizing-or-draging-window)
+  - [Threading Model - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/threading-model)
+  - [Await, and UI, and deadlocks! Oh my! | Parallel Programming with .NET](https://blogs.msdn.microsoft.com/pfxteam/2011/01/13/await-and-ui-and-deadlocks-oh-my/)
+
 - 后台线程异常
   - [c# - How to prevent an exception in a background thread from terminating an application? - Stack Overflow](https://stackoverflow.com/questions/186854/how-to-prevent-an-exception-in-a-background-thread-from-terminating-an-applicati)
   - [Exceptions in Managed Threads - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/threading/exceptions-in-managed-threads)
