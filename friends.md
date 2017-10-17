@@ -4,19 +4,19 @@ title: 朋友和收藏
 permalink: /friends/
 ---
 
-- [lindexi_gd https://lindexi.gitee.io/](https://lindexi.gitee.io/)
-  - 这是我的好朋友
+- [lindexi_gd https://lindexi.gitee.io/](https://lindexi.gitee.io/)  
+  这是我的好朋友
 
-- [gandalfliang http://gandalfliang.me/](http://gandalfliang.me/)
-  - 对 D3D 有很深的研究
+- [gandalfliang http://gandalfliang.me/](http://gandalfliang.me/)  
+  对 D3D 有很深的研究
 
-- [IIP.Easi](https://iip-easi.github.io/)
-  - 这是我所在的组织
+- [IIP.Easi](https://iip-easi.github.io/)  
+  这是我所在的组织
 
 - [晒太阳的猫](http://jgrass.cc/)
 
-- [郭施鑫 - frendguo](http://frendguo.top/)
-  - 我的好朋友，UWP 之家的开发者之一
+- [郭施鑫 - frendguo](http://frendguo.top/)  
+  我的好朋友，UWP 之家的开发者之一
 
 {% comment %}
 
@@ -26,8 +26,8 @@ permalink: /friends/
 
 ---
 
-- [叛逆者](https://www.zhihu.com/people/minmin.gong/activities)
-  - Microsoft Senior SDE（微软高级软件工程师），KlayGE开源游戏引擎创始人
+- [叛逆者](https://www.zhihu.com/people/minmin.gong/activities)  
+  Microsoft Senior SDE（微软高级软件工程师），KlayGE开源游戏引擎创始人
 
 - [Highway to Graphics](https://zhuanlan.zhihu.com/highwaytographics)
 
