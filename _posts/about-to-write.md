@@ -4,9 +4,14 @@ title: "About to Write"
 categories: post
 ---
 
+- 24核却动不了鼠标
+  - [24-core CPU and I can’t move my mouse | Random ASCII](https://randomascii.wordpress.com/2017/07/09/24-core-cpu-and-i-cant-move-my-mouse/)
+  - [如何看待“24核PC不能动鼠标”这篇文章？ - 知乎](https://www.zhihu.com/question/62543187)
+  - [安全和性能：24核却动不了鼠标之后续 - 知乎专栏](https://zhuanlan.zhihu.com/p/28740547)
+
 - PushFrame locks the Window
   - [c# - PushFrame locks up WPF window when user is moving window - Stack Overflow](https://stackoverflow.com/questions/19411613/pushframe-locks-up-wpf-window-when-user-is-moving-window)
-  - [WPF application intermittently hangs when using Dispatcher.Invoke and/or Dispatcher.PushFrame while user is resizing or draging window | Microsoft Connect](https://connect.microsoft.com/VisualStudio/feedback/details/807292/wpf-application-intermittently-hangs-when-using-dispatcher-invoke-and-or-dispatcher-pushframe-while-user-is-resizing-or-draging-window)
+  - [WPF application intermittently hangs when using Dispatcher.Invoke and/or Dispatcher.PushFrame while user is resizing or draging window - Microsoft Connect](https://connect.microsoft.com/VisualStudio/feedback/details/807292/wpf-application-intermittently-hangs-when-using-dispatcher-invoke-and-or-dispatcher-pushframe-while-user-is-resizing-or-draging-window)
   - [Threading Model - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/threading-model)
   - [Await, and UI, and deadlocks! Oh my! | Parallel Programming with .NET](https://blogs.msdn.microsoft.com/pfxteam/2011/01/13/await-and-ui-and-deadlocks-oh-my/)
 
