@@ -27,7 +27,9 @@ permalink: /friends/
 ---
 
 - [叛逆者](https://www.zhihu.com/people/minmin.gong/activities)
-  - 微软（Microsoft）Senior SDE（微软高级软件工程师），KlayGE开源游戏引擎创始人 
+  - Microsoft Senior SDE（微软高级软件工程师），KlayGE开源游戏引擎创始人
+
+- [Highway to Graphics](https://zhuanlan.zhihu.com/highwaytographics)
 
 - [Edi Wang](http://edi.wang/)
 
