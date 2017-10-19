@@ -2,7 +2,6 @@
 layout: post
 title:  "创建快捷方式"
 date:   2015-04-07 12:48:00 +0800
-date_modified: 2017-09-12 22:42:22 +0800
 categories: windows
 permalink: /windows/2015/04/07/create-shortcut.html
 ---
