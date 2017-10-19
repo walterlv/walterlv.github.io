@@ -30,11 +30,15 @@
             {% endif %}
             </div>
             <p class="info">
-              {% if page.date %}
+              {% if page.date_published %}
+                <span class="time">{{ page.date_published | date: "%Y-%m-%d %H:%M" }} - {{ page.date | date: "%Y-%m-%d %H:%M" }}</span>
+              {% else if page.date %}
                 <span class="time">{{ page.date | date: "%Y-%m-%d %H:%M" }}</span>
               {% endif %}
+              <br class="mobile-only"/>
               {% if page.categories.size > 0 %}
                 <span class="categories">
+                  <span class="desktop-only">|</span>
                   {% for category in page.categories %}
                     <a href="{{ site.baseurl }}/category/{{ category }}">{{ category }}</a>
                     {% if forloop.last == false %}, {% endif %}

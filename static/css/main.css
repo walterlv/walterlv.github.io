@@ -4,6 +4,22 @@ div.force-line-break {
 code {
     word-break: break-word;
 }
+.mobile-only {
+    display: none;
+}
+@media (max-width: 767px) {
+    .mobile-only {
+        display: inherit;
+    }
+}
+.desktop-only {
+    display: inherit;
+}
+@media (max-width: 767px) {
+    .desktop-only {
+        display: none;
+    }
+}
 .main.outer {
     padding-top: 50px;
 }
