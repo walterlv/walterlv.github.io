@@ -43,4 +43,5 @@ permalink: /friends/
 
 ---
 
+- [Targeting .NET Platforms](https://www.microsoft.com/net/targeting)
 - [Font Awesome Icons](http://fontawesome.io/icons/)
