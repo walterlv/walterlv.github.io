@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "彻底删除 Git 仓库中的文件避免占用大量磁盘空间"
-date: 2017-09-18 23:45:21 +0800
-date_modified: 2017-09-29 07:36:22 +0800
+date_published: 2017-09-18 23:45:21 +0800
+date: 2017-09-29 07:36:22 +0800
 categories: git
 permalink: /git/2017/09/18/delete-a-file-from-whole-git-history.html
 keywords: git filter-branch delete
