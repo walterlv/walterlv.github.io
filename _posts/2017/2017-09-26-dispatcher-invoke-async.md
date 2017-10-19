@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "深入了解 WPF Dispatcher 的工作原理（Invoke/InvokeAsync 部分）"
-date: 2017-09-26 02:02:24 +0800
-date_modified: 2017-09-29 07:38:24 +0800
+date_published: 2017-09-26 02:02:24 +0800
+date: 2017-10-19 21:13:30 +0800
 categories: dotnet
 permalink: /post/dotnet/2017/09/26/dispatcher-invoke-async.html
 keywords: dotnet dotnet dispatcher Invoke BeginInvoke InvokeAsync
@@ -222,6 +222,6 @@ public DispatcherOperationStatus Wait(TimeSpan timeout)
 - InvokeAsync
   - [Dispatcher.cs](http://referencesource.microsoft.com/#WindowsBase/Base/System/Windows/Threading/Dispatcher.cs)
 - WPF 消息机制
-  - [WPF message mechanism (two) - WPF inside the 5 window of the hidden message window - the grape city control technology team blog Blog Channel - PROG3.COM](http://prog3.com/sbdm/blog/powertoolsteam/article/details/6109036)
+  - [WPF的消息机制（二）- WPF内部的5个窗口之隐藏消息窗口 - 葡萄城控件技术团队博客 - CSDN博客](http://blog.csdn.net/powertoolsteam/article/details/6109036)
 - Awaiter
   - [How to write a custom awaiter – Lucian's VBlog](https://blogs.msdn.microsoft.com/lucian/2012/12/11/how-to-write-a-custom-awaiter/)
