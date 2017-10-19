@@ -12,6 +12,13 @@ categories: post
   - [c# - Listview virtualization and deselecting all items - Stack Overflow](https://stackoverflow.com/questions/7429931/listview-virtualization-and-deselecting-all-items)
   - [wpf - VirtualizingStackPanel + MVVM + multiple selection - Stack Overflow](https://stackoverflow.com/questions/1273659/virtualizingstackpanel-mvvm-multiple-selection/1723224#1723224)
 
+- VirtualizingPanel not Working
+  - http://www.cnblogs.com/kybs0/p/7649463.html
+  - [wpf - VirtualizingStackPanel Is not working - Stack Overflow](https://stackoverflow.com/questions/3710993/virtualizingstackpanel-is-not-working)
+  - [c# - VirtualizingStackPanel refuses to virtualize - Stack Overflow](https://stackoverflow.com/questions/22405471/virtualizingstackpanel-refuses-to-virtualize)
+  - [wpf - VirtualizingStackPanel stops working when overriding the default control template for ScrollViewer - Stack Overflow](https://stackoverflow.com/questions/4219768/virtualizingstackpanel-stops-working-when-overriding-the-default-control-templat)
+  - [ListView Virtualization Not Working – This is what I did…](https://kupsidoo.wordpress.com/2013/08/25/listview-virtualization-not-working/)
+
 - 24核却动不了鼠标
   - [24-core CPU and I can’t move my mouse - Random ASCII](https://randomascii.wordpress.com/2017/07/09/24-core-cpu-and-i-cant-move-my-mouse/)
   - [如何看待“24核PC不能动鼠标”这篇文章？ - 知乎](https://www.zhihu.com/question/62543187)
@@ -23,20 +30,9 @@ categories: post
   - [Threading Model - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/threading-model)
   - [Await, and UI, and deadlocks! Oh my! - Parallel Programming with .NET](https://blogs.msdn.microsoft.com/pfxteam/2011/01/13/await-and-ui-and-deadlocks-oh-my/)
 
-- 后台线程异常
-  - [c# - How to prevent an exception in a background thread from terminating an application? - Stack Overflow](https://stackoverflow.com/questions/186854/how-to-prevent-an-exception-in-a-background-thread-from-terminating-an-applicati)
-  - [Exceptions in Managed Threads - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/threading/exceptions-in-managed-threads)
-
 - Bounds of Visual3D
   - [Transforming Bounds – WPF3D Team Blog](https://blogs.msdn.microsoft.com/wpf3d/2009/05/13/transforming-bounds/)
   - [c# - Visible 2D content bounds of WPF ModelVisual3D - Stack Overflow](https://stackoverflow.com/questions/46740152/visible-2d-content-bounds-of-wpf-modelvisual3d)
-
-- VirtualizingPanel not Working
-  - http://www.cnblogs.com/kybs0/p/7649463.html
-  - [wpf - VirtualizingStackPanel Is not working - Stack Overflow](https://stackoverflow.com/questions/3710993/virtualizingstackpanel-is-not-working)
-  - [c# - VirtualizingStackPanel refuses to virtualize - Stack Overflow](https://stackoverflow.com/questions/22405471/virtualizingstackpanel-refuses-to-virtualize)
-  - [wpf - VirtualizingStackPanel stops working when overriding the default control template for ScrollViewer - Stack Overflow](https://stackoverflow.com/questions/4219768/virtualizingstackpanel-stops-working-when-overriding-the-default-control-templat)
-  - [ListView Virtualization Not Working – This is what I did…](https://kupsidoo.wordpress.com/2013/08/25/listview-virtualization-not-working/)
 
 - Https Checker
   - [Why No Padlock? - Why is my SSL web page insecure? Find the culprit!](https://www.whynopadlock.com/)
