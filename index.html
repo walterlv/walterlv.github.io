@@ -11,9 +11,9 @@ display_title: 吕毅 - walterlv
           <h4 class="list-group-item-heading"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h4>
           <p style="font-size: 0.8em">
             {% if post.date_published %}
-              于 {{ post.date_published | date: "%Y-%m-%d %H:%M" }} 发布，并修改于 {{ post.date | date: "%Y-%m-%d %H:%M" }}
+              {{ post.author }} 更新于 {{ post.date | date: "%Y-%m-%d %H:%M" }}，发布于 {{ post.date_published | date: "%Y-%m-%d %H:%M" }}
             {% else %}
-              {{ post.date | date: "%Y-%m-%d %H:%M" }}
+              {{ post.author }} 发布于 {{ post.date | date: "%Y-%m-%d %H:%M" }}
             {% endif %}
           </p>
           <p class="list-group-item-text">{{ post.excerpt }}</p>
