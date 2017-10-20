@@ -13,7 +13,11 @@ permalink: /friends/
 - [iip-easi](https://easiwin.github.io/)  
   这是我所在的组织
 
+- [niuyanjie's blog](http://niuyanjie.gitee.io/blog/)
+
 - [晒太阳的猫](http://jgrass.cc/)
+
+- [黄腾霄 - haungtengxiao](https://huangtengxiao.gitee.io/)
 
 - [郭施鑫 - frendguo](http://frendguo.top/)  
   我的好朋友，UWP 之家的开发者之一
@@ -33,7 +37,8 @@ permalink: /friends/
 
 - [Edi Wang](http://edi.wang/)
 
-- [是什么优化让 .NET Core 性能飙升？ - Windows软件开发 葡萄城产品技术社区](http://gcdn.gcpowertools.com.cn/showtopic-38305-1-1.html)
+- [是什么优化让 .NET Core 性能飙升？ - Windows软件开发 葡萄城产品技术社区](http://gcdn.gcpowertools.com.cn/showtopic-38305-1-1.html)  
+  [葡萄城产品技术社区](http://gcdn.gcpowertools.com.cn/forum.php)
 
 - [国内外 Windows 应用商店应用开发者博客收集 - h82258652 - 博客园](http://www.cnblogs.com/h82258652/p/4909957.html)
 
