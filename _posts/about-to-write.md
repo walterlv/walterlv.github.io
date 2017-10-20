@@ -4,6 +4,9 @@ title: "About to Write"
 categories: post
 ---
 
+- Build corefx
+  - [corefx/developer-guide.md at master · dotnet/corefx](https://github.com/dotnet/corefx/blob/master/Documentation/project-docs/developer-guide.md)
+
 - Type.IsAssignableFrom
   - [Type.IsAssignableFrom Method (System) - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/api/system.type.isassignablefrom?view=netframework-4.7.1)
 
