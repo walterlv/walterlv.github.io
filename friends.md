@@ -33,6 +33,8 @@ permalink: /friends/
 
 - [Edi Wang](http://edi.wang/)
 
+- [是什么优化让 .NET Core 性能飙升？ - Windows软件开发 葡萄城产品技术社区](http://gcdn.gcpowertools.com.cn/showtopic-38305-1-1.html)
+
 - [国内外 Windows 应用商店应用开发者博客收集 - h82258652 - 博客园](http://www.cnblogs.com/h82258652/p/4909957.html)
 
 - [vscode使用笔记 - 木杉的博客](http://mushanshitiancai.github.io/2017/01/07/tools/vscode%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/)
