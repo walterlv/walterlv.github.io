@@ -18,7 +18,7 @@ description: 一个耗时的任务，可以通过 Task.Yield 或者 Dispathcer.Y
 
 ### Dispatcher.Yield
 
-如果一个方法的实现比较耗时，为了不影响 UI 的响应，你会选择用什么方法呢？我之前介绍过的 [Invoke 和 InvokeAsync](http://localhost:4000/post/dotnet/2017/09/26/dispatcher-invoke-async.html) 可以解决，将后续耗时的任务分割成一个个小的片段以低于用户输入和渲染的优先级执行。
+如果一个方法的实现比较耗时，为了不影响 UI 的响应，你会选择用什么方法呢？我之前介绍过的 [Invoke 和 InvokeAsync](/post/dotnet/2017/09/26/dispatcher-invoke-async.html) 可以解决，将后续耗时的任务分割成一个个小的片段以低于用户输入和渲染的优先级执行。
 
 `Dispatcher.Yield` 也可以，其行为更加类似于 `Dispatcher.InvokeAsync`（即采用 `Dispatcher` 调度的方式，事实上后面会说到其实就是调用了 `InvokeAsync`），而非 `Dispatcher.Invoke`（即采用 `PushFrame` 新开消息循环的方式）。
 
