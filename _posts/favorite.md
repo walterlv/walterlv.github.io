@@ -6,6 +6,7 @@ sitemap: false
 ---
 
 - .Net Standard
+  - [.NET Standard - 揭秘 .NET Core 和 .NET Standard](https://msdn.microsoft.com/zh-cn/magazine/mt842506?f=255&MSPPError=-2147217396)
   - [揭秘 .NET Core 和 .NET Standard-码农很忙](https://www.coderbusy.com/archives/881.html)
 
 - 局部函数

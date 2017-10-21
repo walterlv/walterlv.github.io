@@ -44,6 +44,8 @@ permalink: /friends/
 
 - [vscode使用笔记 - 木杉的博客](http://mushanshitiancai.github.io/2017/01/07/tools/vscode%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/)
 
+- [简单的遗传算法（Genetic algorithms）-吃豆人 - CSDN博客](http://blog.csdn.net/u013564276/article/details/53470049)
+
 ---
 
 - [Microsoft .NET Blog](https://blogs.msdn.microsoft.com/dotnet/)
