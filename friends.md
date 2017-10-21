@@ -47,6 +47,9 @@ permalink: /friends/
 ---
 
 - [Microsoft .NET Blog](https://blogs.msdn.microsoft.com/dotnet/)
+- [Nicky Case: The Internet Experience™](http://ncase.me/)  
+  边玩边学的小游戏
+  - [信任的进化](https://www.sekai.co/trust/)
 
 ---
 
