@@ -111,7 +111,7 @@ public sealed class SampleTask : CommandTask
 
     public override int Run()
     {
-        // 当用户敲如的命令已准备好，上面的参数准备好，那么这个函数就会在这里执行啦。
+        // 当用户敲入的命令已准备好，上面的参数准备好，那么这个函数就会在这里执行啦。
         return 0;
     }
 }
