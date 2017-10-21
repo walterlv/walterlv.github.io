@@ -121,6 +121,8 @@ public sealed class SampleTask : CommandTask
 
 将以下这些文件放入自己的项目中即可立刻写出上面的代码（注意 `Main` 函数也是需要的，因为它启动了反射）：
 
+*如果发现这一行的后面不是代码，那么极有可能是被不小心屏蔽了，请手动访问：[gist.github.com](https://gist.github.com/walterlv/0a2257c30e8c175cae657b0058f5421c)。*
+
 <script src="https://gist.github.com/walterlv/0a2257c30e8c175cae657b0058f5421c.js"></script>
 
 ### 支持的平台
