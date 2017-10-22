@@ -32,7 +32,7 @@
             <p class="info">
               {% if page.date_published %}
                 <span class="time">{{ page.date_published | date: "%Y-%m-%d %H:%M" }} - {{ page.date | date: "%Y-%m-%d %H:%M" }}</span>
-              {% else if page.date %}
+              {% elsif page.date %}
                 <span class="time">{{ page.date | date: "%Y-%m-%d %H:%M" }}</span>
               {% endif %}
               <br class="mobile-only"/>
