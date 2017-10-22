@@ -1,8 +1,9 @@
-div.force-line-break {
+div {
     word-break: break-word;
 }
-code {
-    word-break: break-word;
+pre>code {
+    overflow-x: auto;
+    white-space: pre;
 }
 .mobile-only {
     display: none;
