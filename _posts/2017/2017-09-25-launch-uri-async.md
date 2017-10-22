@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "UWP 中的 LaunchUriAsync，使用默认浏览器或其他应用打开链接"
-date: 2017-09-25 00:39:53 +0800
+date_published: 2017-09-25 00:39:53 +0800
+date: 2017-10-22 15:48:59 +0800
 categories: uwp
 permalink: /uwp/2017/09/25/launch-uri-async.html
 keywords: uwp LaunchUriAsync windows 10
@@ -99,7 +100,7 @@ public bool LimitPickerToCurrentAppAndAppUriHandlers { get; set; }
 
 比如其中 `TreatAsUntrusted` 表示标记此次打开是不受信任的。
 
-如果打开程序自己内置的链接，通常置为 false，以便能直接打开。但有时程序需要处理用户输入的数据，这时就不一定真的是期望打开了。于是标记为不安全后，Windows 10 会为我们弹出一个提示款，告诉我们是否真的要切换应用。
+如果打开程序自己内置的链接，通常置为 false，以便能直接打开。但有时程序需要处理用户输入的数据，这时就不一定真的是期望打开了。于是标记为不安全后，Windows 10 会为我们弹出一个提示框，告诉我们是否真的要切换应用。
 
 ![Did you mean to switch apps](/static/posts/2017-09-25-00-18-22.png)
 
