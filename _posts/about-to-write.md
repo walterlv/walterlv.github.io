@@ -4,8 +4,6 @@ title: "About to Write"
 categories: post
 ---
 
-- `ExceptionDispatchInfo`
-
 - 加载等待动画背后的设计理念
 
 - 错误文案应该怎么写
