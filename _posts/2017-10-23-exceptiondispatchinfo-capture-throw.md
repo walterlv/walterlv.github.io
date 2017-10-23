@@ -137,7 +137,7 @@ else if(exceptions.Count > 1)
 
 使用这种方式，你看到的调用栈将是这样的：
 
-![使用 `ExceptionDispatchInfo` 的调用栈](/static/posts/2017-10-23-22-22-30.png)
+![使用 ExceptionDispatchInfo 的调用栈](/static/posts/2017-10-23-22-22-30.png)
 
 至于多个异常的情况，那就只能使用内部异常来处理了。
 
