@@ -1,6 +1,6 @@
 ---
 title: "错误提示文案，怎么写才好？"
-date: 2017-10-24 07:06:32 +0800
+date: 2017-10-25 20:44:45 +0800
 categories: ux
 published: false
 ---
