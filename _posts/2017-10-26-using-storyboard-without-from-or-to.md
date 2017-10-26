@@ -11,6 +11,8 @@ tags: Storyboard Animation From To
 
 ---
 
+本文涉及到的代码均在 GitHub 上以 MIT License 开源：[walterlv/sharing-demo at demo/storyboard-without-using-from-or-to](https://github.com/walterlv/sharing-demo/tree/demo/storyboard-without-using-from-or-to)。
+
 <div id="toc"></div>
 
 ### 预览效果
