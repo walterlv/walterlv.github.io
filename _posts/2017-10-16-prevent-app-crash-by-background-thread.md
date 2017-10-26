@@ -1,9 +1,10 @@
 ---
-title: "如何防止后台线程抛出的异常让程序崩溃退出"
-date: 2017-10-16 20:52:01 +0800
+title: "配置 legacyUnhandledExceptionPolicy 防止后台线程抛出的异常让程序崩溃退出"
+date_published: 2017-10-16 20:52:01 +0800
+date: 2017-10-26 18:51:12 +0800
 categories: dotnet wpf
 tags: AppDomain Application Dispatcher legacyUnhandledExceptionPolicy
-description: 如果某一个线程抛了异常，那么程序会退出；就算主线程 Handle 掉了这些异常，后台线程抛出异常程序也会退出。
+description: legacyUnhandledExceptionPolicy 可以防止程序在后台线程抛出异常后崩溃退出。
 ---
 
 如果你的程序抛了异常，你是怎么处理的呢？等待程序崩溃退出？还是进行补救？
