@@ -1,6 +1,7 @@
 ---
 title: "使用 ExceptionDispatchInfo 捕捉并重新抛出异常"
-date: 2017-10-23 22:22:43 +0800
+date_published: 2017-10-23 22:22:43 +0800
+date: 2017-10-27 07:38:48 +0800
 categories: dotnet dotnet-core dotnet-standard csharp
 ---
 
@@ -63,6 +64,7 @@ catch(Exception)
 Exception exception = null;
 DoSomething(() =>
 {
+    // 这个 try-catch 块将在另一个线程执行。
     try
     {
         DoButExceptionsMayOccur();
@@ -72,7 +74,7 @@ DoSomething(() =>
         exception = ex;
     }
 });
-if (exception == null)
+if (exception != null)
 {
     // 重新抛出异常。
 }
