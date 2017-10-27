@@ -23,7 +23,7 @@ categories: dotnet csharp
 
 死锁的原因：
 
-UWP、WPF、Windows Forms 程序的 UI 线程都是单线程的。为了让使用了 `async`/`await` 的代码像使用同步代码一样简单，WPF 程序的 `Application` 类在构造的时候会将主 UI 线程 `Task` 的同步上下文设置为 `DispatcherSynchronizationContext` 的实例，这在我的另一篇文章 [Task.Yield](https://walterlv.gitee.io/post/yield-in-task-dispatcher.html#taskyield) 中也有过说明。
+UWP、WPF、Windows Forms 程序的 UI 线程都是单线程的。为了让使用了 `async`/`await` 的代码像使用同步代码一样简单，WPF 程序的 `Application` 类在构造的时候会将主 UI 线程 `Task` 的同步上下文设置为 `DispatcherSynchronizationContext` 的实例，这在我的另一篇文章 [Task.Yield](https://walterlv.github.io/post/yield-in-task-dispatcher.html#taskyield) 中也有过说明。
 
 当 `Task` 的任务结束时，会从 `AsyncMethodStateMachine` 中调用 `Awaiter` 的 `OnComplete()` 方法，而 `await` 后续方法的执行靠的就是 `OnComplete()` 方法中一层层调用到 `DispatcherSynchronizationContext` 里的 `Post` 方法：
 
@@ -69,7 +69,7 @@ async Task DoAsync()
 
 是的，读写文件，访问网络，这些 IO 阻塞的操作执行时，里面**根本就没有线程**，详情请阅读：[There Is No Thread](http://blog.stephencleary.com/2013/11/there-is-no-thread.html)。
 
-还有另一些操作，也没有后台线程的参与，于是也不存在从后台线程回到主线程导致死锁的情况。如 [Task.Yield](https://walterlv.gitee.io/post/yield-in-task-dispatcher.html#taskyield)，还有 [InvokeAsync](https://walterlv.gitee.io/post/dotnet/2017/09/26/dispatcher-invoke-async.html)，它们也不会造成死锁。
+还有另一些操作，也没有后台线程的参与，于是也不存在从后台线程回到主线程导致死锁的情况。如 [Task.Yield](https://walterlv.github.io/post/yield-in-task-dispatcher.html#taskyield)，还有 [InvokeAsync](https://walterlv.github.io/post/dotnet/2017/09/26/dispatcher-invoke-async.html)，它们也不会造成死锁。
 
 另外，如果是控制台程序，或者一个普通的非 UI 线程，其 `SynchronizationContext` 为 null，那么异步任务执行完后不需要回到原有线程，也不会造成死锁。
 
