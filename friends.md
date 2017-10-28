@@ -35,6 +35,8 @@ permalink: /friends/
 
 - [Highway to Graphics](https://zhuanlan.zhihu.com/highwaytographics)
 
+- [陈皓 - 酷 壳 - CoolShell](https://coolshell.cn/articles/author/haoel)
+
 - [Edi Wang](http://edi.wang/)
 
 - [是什么优化让 .NET Core 性能飙升？ - Windows软件开发 葡萄城产品技术社区](http://gcdn.gcpowertools.com.cn/showtopic-38305-1-1.html)  
