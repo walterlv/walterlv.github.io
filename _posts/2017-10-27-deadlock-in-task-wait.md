@@ -1,6 +1,7 @@
 ---
 title: "使用 Task.Wait()？立刻死锁（deadlock）"
-date: 2017-10-27 23:54:46 +0800
+date_published: 2017-10-27 23:54:46 +0800
+date: 2017-10-28 13:10:43 +0800
 categories: dotnet csharp
 ---
 
@@ -8,10 +9,8 @@ categories: dotnet csharp
 
 ---
 
-那篇文章的来源：
+文章作者 [林德熙](https://lindexi.gitee.io/lindexi/) 已经修复了描述：
 - [win10 uwp 异步转同步](https://lindexi.gitee.io/lindexi/post/win10-uwp-%E5%BC%82%E6%AD%A5%E8%BD%AC%E5%90%8C%E6%AD%A5.html)
-
-我已联系作者进行修改。
 
 ---
 
