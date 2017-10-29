@@ -1,6 +1,6 @@
 ---
 title: "如何实现一个可以用 await 异步等待的 Awaiter"
-date: 2017-10-29 15:33:59 +0800
+date: 2017-10-29 16:38:57 +0800
 categories: dotnet csharp wpf uwp
 ---
 
@@ -9,6 +9,13 @@ categories: dotnet csharp wpf uwp
 问题就在于，有些“耗时”操作根本就无法放入后台线程，典型的莫过于“耗时”的 UI 操作。本文将通过实现一个适用于 UI 的可等待类型来解决这种 UI 的“耗时”等待问题。
 
 ---
+
+本文**代码较多**，阅读建议：
+
+1. 标注为“本文推荐的完整代码”的代码块可直接放入自己的项目中使用，也贴出了 GitHub 上我以 MIT 开源的源代码（可能 GitHub 上会经常更新）。
+1. 标注“此处为试验代码”的代码块表明此处代码并不完善，仅用于本文分析使用，不建议放到自己的项目中使用。
+1. 没有注释标注的代码块是用于研究的代码片段，不需要使用。
+1. 可点击下面的导航跳转到你希望的地方。
 
 <div id="toc"></div>
 
@@ -91,6 +98,7 @@ public class Test2
 现在我们一开始的 `DoAsync` 和辅助类型变成了这样：
 
 ```csharp
+// 注：此处为试验代码。
 private Test DoAsync()
 {
     return new Test();
@@ -127,6 +135,9 @@ public class Test2 : INotifyCompletion
 以下接口在 [Dixin's Blog - Understanding C# async / await (2) The Awaitable-Awaiter Pattern](https://weblogs.asp.net/dixin/understanding-c-sharp-async-await-2-awaitable-awaiter-pattern) 一文中已有原型；但我增加了更通用却更严格的泛型约束，使得这些接口更加通用，且使用者实现的过程中更加不容易出错。
 
 ```csharp
+// 此段代码为本文推荐的完整版本。
+// 可复制或前往我的 GitHub 页面下载：
+// https://github.com/walterlv/sharing-demo/blob/master/src/Walterlv.Core/Threading/AwaiterInterfaces.cs
 public interface IAwaitable<out TAwaiter> where TAwaiter : IAwaiter
 {
     TAwaiter GetAwaiter();
@@ -169,64 +180,53 @@ public interface ICriticalAwaiter<out TResult> : IAwaiter<TResult>, ICriticalNot
 不使用自定义的 `Awaiter`，使用现有的 `Task` 可以写出如下代码：
 
 ```csharp
+// 注：此处为试验代码。
 public static class UIDispatcher
 {
-    public static async Task<T> CreateElementAsync<T>(
-        [CanBeNull] Dispatcher dispatcher = null)
+    public static async Task<T> CreateElementAsync<T>()
         where T : Visual, new()
     {
-        return await CreateElementAsync(() => new T(), dispatcher);
+        return await CreateElementAsync(() => new T());
     }
 
-    public static async Task<T> CreateElementAsync<T>(
-        [NotNull] Func<T> @new, [CanBeNull] Dispatcher dispatcher = null)
+    public static async Task<T> CreateElementAsync<T>([NotNull] Func<T> @new)
         where T : Visual
     {
         if (@new == null)
             throw new ArgumentNullException(nameof(@new));
 
         var element = default(T);
-        if (dispatcher == null)
+        Exception exception = null;
+        var resetEvent = new AutoResetEvent(false);
+        var thread = new Thread(() =>
         {
-            Exception exception = null;
-            var resetEvent = new AutoResetEvent(false);
-            var thread = new Thread(() =>
+            try
             {
-                try
-                {
-                    SynchronizationContext.SetSynchronizationContext(
-                        new DispatcherSynchronizationContext(Dispatcher.CurrentDispatcher));
-                    element = @new();
-                    resetEvent.Set();
-                    Dispatcher.Run();
-                }
-                catch (Exception ex)
-                {
-                    exception = ex;
-                }
-            })
-            {
-                Name = $"{typeof(T).Name}",
-                IsBackground = true,
-            };
-            thread.SetApartmentState(ApartmentState.STA);
-            thread.Start();
-            await Task.Run(() =>
-            {
-                resetEvent.WaitOne();
-                resetEvent.Dispose();
-            });
-            if (exception != null)
-            {
-                ExceptionDispatchInfo.Capture(exception).Throw();
-            }
-        }
-        else
-        {
-            await dispatcher.InvokeAsync(() =>
-            {
+                SynchronizationContext.SetSynchronizationContext(
+                    new DispatcherSynchronizationContext(Dispatcher.CurrentDispatcher));
                 element = @new();
-            });
+                resetEvent.Set();
+                Dispatcher.Run();
+            }
+            catch (Exception ex)
+            {
+                exception = ex;
+            }
+        })
+        {
+            Name = $"{typeof(T).Name}",
+            IsBackground = true,
+        };
+        thread.SetApartmentState(ApartmentState.STA);
+        thread.Start();
+        await Task.Run(() =>
+        {
+            resetEvent.WaitOne();
+            resetEvent.Dispose();
+        });
+        if (exception != null)
+        {
+            ExceptionDispatchInfo.Capture(exception).Throw();
         }
         return element;
     }
@@ -259,8 +259,276 @@ await Task.Run(() =>
 
 于是，我们换自己实现的 `Awaiter`，节省这个线程的资源。取个名字，既然用于 UI 线程使用，那么就命名为 `DispatcherAsyncOperation` 好了。我打算让这个类同时实现 `IAwaitable` 和 `IAwaiter` 接口，因为我又不会去反复等待，只用一次。
 
+那么开始，既然要去掉 `Task.Run`，那么我们需要在后台线程真正完成任务的时候自动去执行接下来的任务，而不是在调用线程中去等待。
+
+经过反复修改，我的 `DispatcherAsyncOperation` 类如下：
+
+```csharp
+// 此段代码为本文推荐的完整版本。
+// 可复制或前往我的 GitHub 页面下载：
+// https://github.com/walterlv/sharing-demo/blob/master/src/Walterlv.Demo.Sharing/Utils/Threading/DispatcherAsyncOperation.cs
+namespace Walterlv.Demo.Utils.Threading
+{
+    public class DispatcherAsyncOperation<T> : DispatcherObject,
+        IAwaitable<DispatcherAsyncOperation<T>, T>, IAwaiter<T>
+    {
+        private DispatcherAsyncOperation()
+        {
+        }
+
+        public DispatcherAsyncOperation<T> GetAwaiter()
+        {
+            return this;
+        }
+
+        public bool IsCompleted { get; private set; }
+
+        public T Result { get; private set; }
+
+        public T GetResult()
+        {
+            if (_exception != null)
+            {
+                ExceptionDispatchInfo.Capture(_exception).Throw();
+            }
+            return Result;
+        }
+
+        public DispatcherAsyncOperation<T> ConfigurePriority(DispatcherPriority priority)
+        {
+            _priority = priority;
+            return this;
+        }
+
+        public void OnCompleted(Action continuation)
+        {
+            if (IsCompleted)
+            {
+                _continuation.Invoke();
+            }
+            else
+            {
+                _continuation = continuation;
+            }
+        }
+
+        private void ReportResult(T result, Exception ex)
+        {
+            Result = result;
+            _exception = ex;
+            IsCompleted = true;
+            Dispatcher.InvokeAsync(_continuation, _priority);
+        }
+
+        private Action _continuation;
+        private DispatcherPriority _priority = DispatcherPriority.Normal;
+        private Exception _exception;
+
+        public static DispatcherAsyncOperation<T> Create([NotNull] out Action<T, Exception> reportResult)
+        {
+            var asyncOperation = new DispatcherAsyncOperation<T>();
+            reportResult = asyncOperation.ReportResult;
+            return asyncOperation;
+        }
+    }
+}
+```
+
+解释一下：
+
+1. `Create()` 静态方法会返回一个可以等待的 `DispatcherAsyncOperation<T>` 实例，在写实现代码的地方当然不是用来等的，这个值是用来给外部使用 `await` 的开发者返回的。但是，它会 `out` 一个 `Action`，调用这个 `Action`，则可以报告操作已经结束。
+1. `OnCompleted` 方法会在主线程调用的代码结束后立即执行。参数中的 `continuation` 是对 `await` 后面代码的一层包装，调用它即可让 `await` 后面的代码开始执行。但是，我们却并不是立即就能得到后台线程的返回值。于是我们需要等到后台线程执行完毕，调用 `ReportResult` 方法的时候才执行。
+
+在有了新的 `DispatcherAsyncOperation` 的帮助下，我们的 `UIDispatcher` 改进成了如下模样：
+
+```csharp
+// 注：此处为试验代码。
+public static class UIDispatcher
+{
+    public static DispatcherAsyncOperation<T> CreateElementAsync<T>()
+        where T : Visual, new()
+    {
+        return CreateElementAsync(() => new T());
+    }
+
+    public static DispatcherAsyncOperation<T> CreateElementAsync<T>(
+        Func<T> @new)
+        where T : Visual
+    {
+        var awaitable = DispatcherAsyncOperation<T>.Create(out var reportResult);
+        var thread = new Thread(() =>
+        {
+            try
+            {
+                var dispatcher = Dispatcher.CurrentDispatcher;
+                SynchronizationContext.SetSynchronizationContext(
+                    new DispatcherSynchronizationContext(dispatcher));
+                var value = @new();
+                reportResult(value, null);
+                Dispatcher.Run();
+            }
+            catch (Exception ex)
+            {
+                reportResult(null, ex);
+            }
+        })
+        {
+            Name = $"{typeof(T).Name}",
+            IsBackground = true,
+        };
+        thread.SetApartmentState(ApartmentState.STA);
+        thread.Start();
+        return awaitable;
+    }
+}
+```
+
+为了让 `UIDispatcher` 更加通用，我们把后台线程创建 UI 控件的代码移除，现在 `UIDispatcher` 里面只剩下用于创建一个后台线程运行的 `Dispatcher` 的方法了。
+
+```csharp
+// 此段代码为本文推荐的完整版本。
+// 可复制或前往我的 GitHub 页面下载：
+// https://github.com/walterlv/sharing-demo/blob/master/src/Walterlv.Demo.WPF/Utils/Threading/UIDispatcher.cs
+namespace Walterlv.Demo
+{
+    public static class UIDispatcher
+    {
+        public static DispatcherAsyncOperation<Dispatcher> RunNewAsync([CanBeNull] string name = null)
+        {
+            var awaitable = DispatcherAsyncOperation<Dispatcher>.Create(out var reportResult);
+            var thread = new Thread(() =>
+            {
+                try
+                {
+                    var dispatcher = Dispatcher.CurrentDispatcher;
+                    SynchronizationContext.SetSynchronizationContext(
+                        new DispatcherSynchronizationContext(dispatcher));
+                    reportResult(dispatcher, null);
+                    Dispatcher.Run();
+                }
+                catch (Exception ex)
+                {
+                    reportResult(null, ex);
+                }
+            })
+            {
+                Name = name ?? "BackgroundUI",
+                IsBackground = true,
+            };
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
+            return awaitable;
+        }
+    }
+}
+```
+
+### 回顾完整的代码
+
+至此，我们得到了三个完整的代码文件：
+
+- [AwaiterInterfaces.cs](https://github.com/walterlv/sharing-demo/blob/master/src/Walterlv.Core/Threading/AwaiterInterfaces.cs) 用于定义一组完整的 `Awaitable`/`Awaiter` 接口，方便开发者实现自定义可等待对象。
+- [DispatcherAsyncOperation.cs](https://github.com/walterlv/sharing-demo/blob/master/src/Walterlv.Demo.Sharing/Utils/Threading/DispatcherAsyncOperation.cs) 一个自定义的，适用于 UI 的自定义可等待（`awaitable`）类；使用此类可以避免浪费一个线程用于等待 UI 操作的结束。
+- [UIDispatcher.cs](https://github.com/walterlv/sharing-demo/blob/master/src/Walterlv.Demo.WPF/Utils/Threading/UIDispatcher.cs) 用于在后台线程启动一个 `Dispatcher`，以便在这个 `Dispatcher` 中方便地创建控件。
 
 ### 回顾需求
+
+现在，在以上三个完整代码文件的帮助下，我们实现我们的那两个需求。（手动斜眼一下，我只说拿第 2 个需求当例子进行分析，并不是说只实现第 2 个。我们的目标是写出一份通用的组件来，方便实现大部分主流需求。）
+
+### 实现第 2 个需求
+
+后台创建一个 UI 控件：
+
+```csharp
+public async Task<T> CreateElementAsync<T>([CanBeNull] Dispatcher dispatcher = null)
+    where T : UIElement, new()
+{
+    return await CreateElementAsync(() => new T(), dispatcher);
+}
+
+public async Task<T> CreateElementAsync<T>(Func<T> @new, [CanBeNull] Dispatcher dispatcher = null)
+    where T : UIElement
+{
+    dispatcher = dispatcher ?? await UIDispatcher.RunNewAsync($"{typeof(T).Name}");
+    return await dispatcher.InvokeAsync(@new);
+}
+```
+
+可以这样用：
+
+```csharp
+var result = CreateElementAsync(() =>
+{
+    var box = new TextBox()
+    {
+        Text = "123",
+        Opacity = 0.5,
+        Margin = new Thickness(16),
+    };
+    return box;
+});
+```
+
+也可以这样用：
+
+```csharp
+var result = CreateElementAsync<Button>();
+```
+
+还可以不用新建线程和 `Dispatcher`，直接利用现成的：
+
+```csharp
+var result = CreateElementAsync<Button>(dispatcher);
+```
+
+### 实现第 1 个需求
+
+显示一个用户控件，等用户点击了确定后异步返回：
+
+```csharp
+private Action<bool, Exception> _reportResult;
+
+public DispatcherAsyncOperation<bool> ShowAsync()
+{
+    var awaiter = DispatcherAsyncOperation<bool>.Create(out _reportResult);
+    Host.Visibility = Visibility.Visible;
+    return awaiter;
+}
+
+private void OkButton_Click(object sender, RoutedEventArgs e)
+{
+    Host.Visibility = Visibility.Collapsed;
+    _reportResult(true, null);
+}
+
+private void CancelButton_Click(object sender, RoutedEventArgs e)
+{
+    Host.Visibility = Visibility.Collapsed;
+    _reportResult(false, null);
+}
+```
+
+可以这样用：
+
+```csharp
+var result = await someControl.ShowAsync();
+if (result)
+{
+    // 用户点了确定。
+}
+else
+{
+    // 用户点了取消。。
+}
+```
+
+### 全文总结
+
+读者读到此处，应该已经学会了如何自己实现一个自定义的异步等待类，也能明白某些场景下自己写一个这样的类代替原生 `Task` 的好处。不过不管是否明白，通过阅读本文还收获了三份代码文件呢！我已经把这些文件以 MIT 开源到了 [walterlv/sharing-demo](https://github.com/walterlv/sharing-demo) 中，大家可以随意使用。
+
+本文较长，如果阅读的过程中发现了任何不正确的地方，希望能回复帮我指出；如果有难以理解的地方，也请回复我，以便我能够调整我的语句，使之更易于理解。
+
+以上。
 
 ---
 
