@@ -1,6 +1,7 @@
 ---
 title: "如何实现一个可以用 await 异步等待的 Awaiter"
-date: 2017-10-29 16:38:57 +0800
+date_published: 2017-10-29 16:38:57 +0800
+date: 2017-10-29 20:17:35 +0800
 categories: dotnet csharp wpf uwp
 ---
 
@@ -304,11 +305,11 @@ namespace Walterlv.Demo.Utils.Threading
         {
             if (IsCompleted)
             {
-                _continuation.Invoke();
+                _continuation?.Invoke();
             }
             else
             {
-                _continuation = continuation;
+                _continuation += continuation;
             }
         }
 
@@ -317,7 +318,10 @@ namespace Walterlv.Demo.Utils.Threading
             Result = result;
             _exception = ex;
             IsCompleted = true;
-            Dispatcher.InvokeAsync(_continuation, _priority);
+            if (_continuation != null)
+            {
+                Dispatcher.InvokeAsync(_continuation, _priority);
+            }
         }
 
         private Action _continuation;
@@ -338,6 +342,8 @@ namespace Walterlv.Demo.Utils.Threading
 
 1. `Create()` 静态方法会返回一个可以等待的 `DispatcherAsyncOperation<T>` 实例，在写实现代码的地方当然不是用来等的，这个值是用来给外部使用 `await` 的开发者返回的。但是，它会 `out` 一个 `Action`，调用这个 `Action`，则可以报告操作已经结束。
 1. `OnCompleted` 方法会在主线程调用的代码结束后立即执行。参数中的 `continuation` 是对 `await` 后面代码的一层包装，调用它即可让 `await` 后面的代码开始执行。但是，我们却并不是立即就能得到后台线程的返回值。于是我们需要等到后台线程执行完毕，调用 `ReportResult` 方法的时候才执行。
+1. `_continuation += continuation;` 需要使用 “+=” 是因为这里的 `GetAwaiter()` 返回的是 `this`，也就是说，极有可能发生同一个实例被 `await` 多次的情况，需要将每次后面的任务都执行才行。
+1. `_continuation` 可能为空，是因为任务执行完毕的时候也没有任何地方 `await` 了此实例。
 
 在有了新的 `DispatcherAsyncOperation` 的帮助下，我们的 `UIDispatcher` 改进成了如下模样：
 
@@ -425,7 +431,7 @@ namespace Walterlv.Demo
 
 ### 回顾完整的代码
 
-至此，我们得到了三个完整的代码文件：
+至此，我们得到了三个完整的代码文件（在 GitHub 上，以下所有代码文件均有详尽的中文注释）：
 
 - [AwaiterInterfaces.cs](https://github.com/walterlv/sharing-demo/blob/master/src/Walterlv.Core/Threading/AwaiterInterfaces.cs) 用于定义一组完整的 `Awaitable`/`Awaiter` 接口，方便开发者实现自定义可等待对象。
 - [DispatcherAsyncOperation.cs](https://github.com/walterlv/sharing-demo/blob/master/src/Walterlv.Demo.Sharing/Utils/Threading/DispatcherAsyncOperation.cs) 一个自定义的，适用于 UI 的自定义可等待（`awaitable`）类；使用此类可以避免浪费一个线程用于等待 UI 操作的结束。
