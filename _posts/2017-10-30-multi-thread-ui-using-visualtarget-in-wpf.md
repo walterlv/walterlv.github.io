@@ -6,7 +6,9 @@ categories: wpf
 
 WPF 的 UI 逻辑只在同一个线程中，这是学习 WPF 开发中大家几乎都会学习到的经验。如果希望做不同线程的 UI，大家也会想到使用另一个窗口来实现，让每个窗口拥有自己的 UI 线程。然而，就不能让同一个窗口内部使用多个 UI 线程吗？
 
-答案其实是——可以的！使用 `VisualTarget` 即可。阅读本文将收获一份对 `VisualTarget` 的解读以及一份我封装好的跨线程 UI 控件 [DispatcherContainer.cs](https://github.com/walterlv/sharing-demo/blob/master/src/Walterlv.Demo.WPF/Utils/Threading/DispatcherContainer.cs)。
+答案其实是——可以的！使用 `VisualTarget` 即可。
+
+阅读本文将收获一份对 `VisualTarget` 的解读以及一份我封装好的跨线程 UI 控件 [DispatcherContainer.cs](https://github.com/walterlv/sharing-demo/blob/master/src/Walterlv.Demo.WPF/Utils/Threading/DispatcherContainer.cs)。
 
 ---
 
