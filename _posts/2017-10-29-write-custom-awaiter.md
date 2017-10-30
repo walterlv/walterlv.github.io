@@ -305,7 +305,7 @@ namespace Walterlv.Demo.Utils.Threading
         {
             if (IsCompleted)
             {
-                _continuation?.Invoke();
+                continuation?.Invoke();
             }
             else
             {
