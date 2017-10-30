@@ -431,7 +431,7 @@ namespace Walterlv.Demo
 
 ### 回顾完整的代码
 
-至此，我们得到了三个完整的代码文件（在 GitHub 上，以下所有代码文件均有详尽的中文注释）：
+至此，我们得到了三个完整的代码文件（在 **GitHub** 上，以下所有代码文件均有**详尽的中文注释**）：
 
 - [AwaiterInterfaces.cs](https://github.com/walterlv/sharing-demo/blob/master/src/Walterlv.Core/Threading/AwaiterInterfaces.cs) 用于定义一组完整的 `Awaitable`/`Awaiter` 接口，方便开发者实现自定义可等待对象。
 - [DispatcherAsyncOperation.cs](https://github.com/walterlv/sharing-demo/blob/master/src/Walterlv.Demo.Sharing/Utils/Threading/DispatcherAsyncOperation.cs) 一个自定义的，适用于 UI 的自定义可等待（`awaitable`）类；使用此类可以避免浪费一个线程用于等待 UI 操作的结束。
