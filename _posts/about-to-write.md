@@ -4,9 +4,8 @@ title: "About to Write"
 categories: post
 ---
 
-- WPF 跨线程 UI
-  - [WPF Round Table Part 2: Multi UI Threaded Control | //InterKnowlogy/ Blogs](http://blogs.interknowlogy.com/2014/12/03/wpf-round-table-part-2-multi-ui-threaded-control/)
-  - [Multithreaded UI: HostVisual – Presentation Source](https://blogs.msdn.microsoft.com/dwayneneed/2007/04/26/multithreaded-ui-hostvisual/)
+- PresentationSource
+  - [System.Windows.PresentationSource Class (System.Windows) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.windows.presentationsource?view=netframework-4.7)
 
 - 加载等待动画背后的设计理念
 
