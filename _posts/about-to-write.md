@@ -4,16 +4,32 @@ title: "About to Write"
 categories: post
 ---
 
+- ShaderEffect
+  - [Shazzam Shader Editor Site](http://www.shazzam-tool.com/)
+  - [Shader Effects in WPF - The basics - CodeProject](https://www.codeproject.com/Articles/994276/Shader-Effects-in-WPF-The-basics)
+
+- 提升 Visual Studio 编译速度
+  - [10 Tips to Improve Visual Studio Build Performance - CodeProject](https://www.codeproject.com/Tips/1042975/Tips-to-Improve-Visual-Studio-Build-Performance)
+  - [Optimizing the Visual Studio build time.](https://www.sitefinity.com/blogs/momchil-mitev%27s-blog/2014/05/16/how-to-speed-up-the-build-of-your-solution-in-visual-studio)
+  - [Speed Up Visual Studio Build Times - ardalis](https://ardalis.com/speed-up-visual-studio-build-times)
+
+- Latex
+
+- 程序员伤不起
+
+- D3DImage
+
+- TiltEffect
+  - [WPF Tilt Effect Behavior – Mareinsula](https://mareinsula.wordpress.com/2011/08/04/wpf-tilt-effect-behavior/)
+
+- VisualTarget.HitTest
+
 - PresentationSource
   - [System.Windows.PresentationSource Class (System.Windows) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.windows.presentationsource?view=netframework-4.7)
 
 - 加载等待动画背后的设计理念
 
 - 错误文案应该怎么写
-
-- 文件夹访问权限（小黄锁）
-  - [Why do some of the icons have small yellow locks and how can I get rid - Microsoft Community](https://answers.microsoft.com/en-us/windows/forum/windows_7-files/why-do-some-of-the-icons-have-small-yellow-locks/4c13a108-41cc-43b6-9d99-c4921e33de4a)
-  - [Why Is There a Lock (Padlock) Icon on Some Files and Folders in Windows 7? » Winhelponline](http://www.winhelponline.com/blog/lock-padlock-icon-files-folders-windows-7/)
 
 - Build corefx
   - [corefx/developer-guide.md at master · dotnet/corefx](https://github.com/dotnet/corefx/blob/master/Documentation/project-docs/developer-guide.md)
