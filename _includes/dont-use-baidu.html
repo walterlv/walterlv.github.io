@@ -7,13 +7,13 @@
         if ( url && (url.search("https://")>-1 || url.search("http://")>-1)) {
             var refurl =  url.match(/:\/\/(.[^/]+)/)[1];
             if(refurl.indexOf("baidu.com")>-1){
-                $('#nobaidu_dlg').bPopup();
+                $('#dont-use-baidu_dlg').bPopup();
             }
         }
     });
 })(jQuery);
 </script>
-<div id="nobaidu_dlg" style="background-color:#fff; border-radius:15px;color:#000;display:none;padding:20px;min-width:450px;min-height:180px;">
+<div id="dont-use-baidu_dlg" style="background-color:#fff; border-radius:15px;color:#000;display:none;padding:20px;min-width:450px;min-height:180px;">
     <img src="https://coolshell.cn/wp-content/themes/inove/img/nobaidu.jpg" align="left">
      <p style="margin-left:200px;margin-top: 20px; line-height: 30px;">
      检测到你还在使用百度这个搜索引擎，<br/>
