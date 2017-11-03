@@ -4,7 +4,7 @@
 ;(function($) {
     $(function() {
         var url=document.referrer;
-        if ( url && (url.search("https://")>-1 || url.search("http://")>-1) {
+        if ( url && (url.search("https://")>-1 || url.search("http://")>-1)) {
             var refurl =  url.match(/:\/\/(.[^/]+)/)[1];
             if(refurl.indexOf("baidu.com")>-1){
                 $('#nobaidu_dlg').bPopup();
