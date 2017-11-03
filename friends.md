@@ -58,4 +58,5 @@ permalink: /friends/
 ---
 
 - [Targeting .NET Platforms](https://www.microsoft.com/net/targeting)
+- [bPopup - A jQuery modal popup plugin](http://dinbror.dk/bpopup/)
 - [Font Awesome Icons](http://fontawesome.io/icons/)
