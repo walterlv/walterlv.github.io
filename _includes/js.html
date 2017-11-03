@@ -11,8 +11,15 @@
 <script src="{{ site.baseurl }}/static/js/projects.js"></script>
 <script src="{{ site.baseurl }}/static/js/toc.js"></script>
 <script>
+  var url=document.referrer;
+    if (url && (url.search("https://")>-1 || url.search("http://")>-1)) {
+      var refurl =  url.match(/:\/\/(.[^/]+)/)[1];
+      if(refurl.indexOf("baidu.com")>-1){
+        comefrombaidu = true;
+      }
+    }
   // 判断非本机且未使用 https 时，强制重定向到 https。
-  if ((!window.location.host.startsWith("localhost")) && (window.location.protocol != "https:"))
+  if (!comefrombaidu && (!window.location.host.startsWith("localhost")) && (window.location.protocol != "https:"))
     window.location = window.location.toString().replace(/^http:/, "https:");
 </script>
 <script type="text/javascript">

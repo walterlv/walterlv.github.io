@@ -7,7 +7,7 @@
         if ( url && (url.search("https://")>-1 || url.search("http://")>-1)) {
             var refurl =  url.match(/:\/\/(.[^/]+)/)[1];
             if(refurl.indexOf("baidu.com")>-1){
-                alert('检测到你还在使用百度这个搜索引擎，\n作为一个程序员，这是一种自暴自弃！');
+                $('#dont-use-baidu_dlg').bPopup();
             }
         }
     });
