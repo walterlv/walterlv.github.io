@@ -1,6 +1,7 @@
 ---
 title: "分享一个算法，计算能在任何背景色上清晰显示的前景色"
-date: 2017-11-04 22:51:33 +0800
+date_published: 2017-11-04 22:51:33 +0800
+date: 2017-11-05 16:24:33 +0800
 categories: algorithm wpf uwp dotnet csharp
 ---
 
@@ -77,6 +78,10 @@ private static Color GetReverseForegroundColor(double grayLevel) => grayLevel > 
 ```xml
 <TextBlock Foreground="{media:LuminancedForeground}" Text="我是前景 by walterlv"/>
 ```
+
+因为内部已经使用绑定来实现动态变化，所以，无需在颜色更改时再次更新：
+
+![支持动态的背景色](/static/posts/2017-11-05-reversing-background-to-foreground.gif)
 
 由于这份封装的 API 目前还在完善中，会经常改动，所以只贴出 GitHub 仓库地址，不放在这里：
 
