@@ -4,6 +4,12 @@ title: "About to Write"
 categories: post
 ---
 
+- 控制台外观
+  - [Necessary criteria for fonts to be available in a command window](https://support.microsoft.com/zh-cn/help/247815/necessary-criteria-for-fonts-to-be-available-in-a-command-window)
+  - [(58 条消息)为什么 Windows 下 cmd 和 PowerShell 不能方便地自定义字体？ - 知乎](https://www.zhihu.com/question/36344262)
+    - HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Console\TrueTypeFont
+  - [List of all colors available for powershell? - Stack Overflow](https://stackoverflow.com/questions/20541456/list-of-all-colors-available-for-powershell)
+
 - ShaderEffect
   - [Shazzam Shader Editor Site](http://www.shazzam-tool.com/)
   - [Shader Effects in WPF - The basics - CodeProject](https://www.codeproject.com/Articles/994276/Shader-Effects-in-WPF-The-basics)
