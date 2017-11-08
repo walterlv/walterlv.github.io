@@ -22,12 +22,6 @@ permalink: /friends/
 - [郭施鑫 - frendguo](http://frendguo.top/)  
   我的好朋友，UWP 之家的开发者之一
 
-{% comment %}
-
-- [储忠涛](https://ztchu.github.io/)
-
-{% endcomment %}
-
 ---
 
 - [叛逆者](https://www.zhihu.com/people/minmin.gong/activities)  
@@ -38,6 +32,9 @@ permalink: /friends/
 - [陈皓 - 酷 壳 - CoolShell](https://coolshell.cn/articles/author/haoel)
 
 - [Edi Wang](http://edi.wang/)
+
+- [Artech - 博客园](http://www.cnblogs.com/artech/)  
+  蒋金楠，Artech，知名 IT 博主, 微软多领域 MVP，畅销 IT 图书作者，著《WCF全面解析》、《ASP.NET MVC 4/5框架揭秘》、《ASP.NET Web API 2框架揭秘》等。
 
 - [是什么优化让 .NET Core 性能飙升？ - Windows软件开发 葡萄城产品技术社区](http://gcdn.gcpowertools.com.cn/showtopic-38305-1-1.html)  
   [葡萄城产品技术社区](http://gcdn.gcpowertools.com.cn/forum.php)
