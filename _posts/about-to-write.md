@@ -4,6 +4,12 @@ title: "About to Write"
 categories: post
 ---
 
+- 在 VirtualizingStackPanel 中抛出了 NullReferenceException
+  - [A NullReferenceException is thrown from VirtualizingStackPanel.MeasureChild - Microsoft Connect](https://connect.microsoft.com/VisualStudio/feedback/details/741583/a-nullreferenceexception-is-thrown-from-virtualizingstackpanel-measurechild)
+  - [T384193 - End User NullReferenceException in LayoutControl - DevExpress Support Center](https://www.devexpress.com/Support/Center/Question/Details/T384193/end-user-nullreferenceexception-in-layoutcontrol)
+  - [NullReferenceException in VirtualizingStackPanel when used in ComboBox - Microsoft Connect](https://connect.microsoft.com/VisualStudio/feedback/details/772518/nullreferenceexception-in-virtualizingstackpanel-when-used-in-combobox)
+  - [.net - How to debug NullReferenceException in PresentationFramework? - Stack Overflow](https://stackoverflow.com/questions/8979060/how-to-debug-nullreferenceexception-in-presentationframework)
+
 - 控制台外观
   - [Necessary criteria for fonts to be available in a command window](https://support.microsoft.com/zh-cn/help/247815/necessary-criteria-for-fonts-to-be-available-in-a-command-window)
   - [(58 条消息)为什么 Windows 下 cmd 和 PowerShell 不能方便地自定义字体？ - 知乎](https://www.zhihu.com/question/36344262)
