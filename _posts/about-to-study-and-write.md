@@ -1,8 +1,19 @@
 ---
 layout: post
-title: "About to Write"
+title: "About to Study and Write"
 categories: post
 ---
+
+### About to Study
+
+- D3DImage
+- CustomBrush
+- AsyncBrush
+- AsyncScroll
+- TouchPad
+- Latex
+
+### About to Write
 
 - 在 VirtualizingStackPanel 中抛出了 NullReferenceException
   - [A NullReferenceException is thrown from VirtualizingStackPanel.MeasureChild - Microsoft Connect](https://connect.microsoft.com/VisualStudio/feedback/details/741583/a-nullreferenceexception-is-thrown-from-virtualizingstackpanel-measurechild)
@@ -25,11 +36,7 @@ categories: post
   - [Optimizing the Visual Studio build time.](https://www.sitefinity.com/blogs/momchil-mitev%27s-blog/2014/05/16/how-to-speed-up-the-build-of-your-solution-in-visual-studio)
   - [Speed Up Visual Studio Build Times - ardalis](https://ardalis.com/speed-up-visual-studio-build-times)
 
-- Latex
-
 - 程序员伤不起
-
-- D3DImage
 
 - TiltEffect
   - [WPF Tilt Effect Behavior – Mareinsula](https://mareinsula.wordpress.com/2011/08/04/wpf-tilt-effect-behavior/)
