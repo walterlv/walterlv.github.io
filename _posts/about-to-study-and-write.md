@@ -12,8 +12,15 @@ categories: post
 - AsyncScroll
 - TouchPad
 - Latex
+- Castle
 
 ### About to Write
+
+- WPF 多进程 UI
+  - [ENikS/System.AddIn: Projects related to Microsoft System.AddIn](https://github.com/ENikS/System.AddIn)
+  - [WPF Add-Ins Overview - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/app-development/wpf-add-ins-overview)
+  - [Walkthrough: Creating an Extensible Application - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/add-ins/walkthrough-create-extensible-app)
+  - [Add-ins and Extensibility - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/add-ins/)
 
 - 在 VirtualizingStackPanel 中抛出了 NullReferenceException
   - [A NullReferenceException is thrown from VirtualizingStackPanel.MeasureChild - Microsoft Connect](https://connect.microsoft.com/VisualStudio/feedback/details/741583/a-nullreferenceexception-is-thrown-from-virtualizingstackpanel-measurechild)
