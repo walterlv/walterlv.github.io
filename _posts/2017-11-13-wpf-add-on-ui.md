@@ -14,6 +14,8 @@ categories: wpf
 
 相关资料较少，不过我在 GitHub 上找到了一个比较完善的例子程序 [ENikS/System.AddIn: Projects related to Microsoft System.AddIn](https://github.com/ENikS/System.AddIn)。
 
+正在研究中，未完待续……
+
 ---
 
 #### 参考资料
