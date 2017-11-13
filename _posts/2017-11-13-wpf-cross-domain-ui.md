@@ -1,7 +1,7 @@
 ---
 title: "WPF 跨应用程序域的 UI（Cross AppDomain UI）"
 date_published: 2017-11-13 00:36:28 +0800
-date: 2017-11-13 22:12:07 +0800
+date: 2017-11-13 23:04:08 +0800
 categories: wpf
 ---
 
