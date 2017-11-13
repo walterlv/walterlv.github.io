@@ -1,6 +1,7 @@
 ---
 title: "WPF 跨应用程序域的插件与 UI"
-date: 2017-11-13 00:36:28 +0800
+date_published: 2017-11-13 00:36:28 +0800
+date: 2017-11-13 13:22:01 +0800
 categories: wpf
 ---
 
@@ -14,7 +15,17 @@ categories: wpf
 
 相关资料较少，不过我在 GitHub 上找到了一个比较完善的例子程序 [ENikS/System.AddIn: Projects related to Microsoft System.AddIn](https://github.com/ENikS/System.AddIn)。
 
-正在研究中，未完待续……
+<div id="toc"></div>
+
+### 托管插件框架
+
+`System.AddIn` 程序集包含了微软的托管插件框架（MAF，Managed AddIn Framework）。
+
+### 限制
+
+MAF 框架对插件和宿主程序集所在的文件夹结构有要求。如果不按照约定放置文件夹，会发生如下错误：
+
+![](/static/posts/2017-11-13-13-23-53.png)
 
 ---
 
