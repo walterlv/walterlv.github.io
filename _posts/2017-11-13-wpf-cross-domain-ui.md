@@ -82,6 +82,7 @@ MAF 框架对插件和宿主程序集所在的文件夹结构有要求。这可�
 #### 参考资料
 
 - [ENikS/System.AddIn: Projects related to Microsoft System.AddIn](https://github.com/ENikS/System.AddIn)
+- [Add-In Performance: What can you expect as you cross an isolation boundary and how to make it better [Jesse Kaplan] – CLR Add-In Team Blog](https://blogs.msdn.microsoft.com/clraddins/2008/02/22/add-in-performance-what-can-you-expect-as-you-cross-an-isolation-boundary-and-how-to-make-it-better-jesse-kaplan/)
 - [WPF Add-Ins Overview - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/app-development/wpf-add-ins-overview)
 - [Walkthrough: Creating an Extensible Application - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/add-ins/walkthrough-create-extensible-app)
 - [Add-ins and Extensibility - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/add-ins/)
