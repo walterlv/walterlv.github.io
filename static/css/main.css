@@ -30,7 +30,7 @@ pre>code {
     }
 }
 .header-panel.shadow-z-2 {
-    background-color: #4267b2;
+    background-color: #007acc;
     padding: 50px 0 15px 0;
     width: 100%;
 }
@@ -103,7 +103,7 @@ p.info a {
     text-align: center;
     line-height: 20px;
     font-size: 20px;
-    color: #4268b3;
+    color: #007acc;
     padding: 5px;
     width: 30px;
     height: 30px;
@@ -118,7 +118,7 @@ p.info a {
 }
 
 .menu ul li a:hover, .menu ul li a:focus, li.current-menu-item > a{
-    background: #1c4a99;
+    background: #016ab1;
 }
 li.current-menu-item:before {
     content: "";
