@@ -1,6 +1,6 @@
 ---
 title: "将 UWP 的有效像素（Effective Pixels）引入 WPF"
-date: 2017-11-14 09:54:10 +0800
+date: 2017-11-14 11:26:33 +0800
 categories: wpf uwp xaml
 ---
 
