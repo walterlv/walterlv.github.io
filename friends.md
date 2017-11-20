@@ -7,13 +7,16 @@ permalink: /friends/
 - [lindexi_gd https://lindexi.gitee.io/](https://lindexi.gitee.io/)  
   这是我的好朋友
 
-- [gandalfliang http://gandalfliang.me/](http://gandalfliang.me/)  
-  对 D3D 有很深的研究
-
-- [iip-easi](https://easiwin.github.io/)  
+- [dotnet职业技术学院](https://easiwin.github.io/)  
   这是我所在的组织
 
 - [niuyanjie's blog](http://niuyanjie.gitee.io/blog/)
+
+- [Nero`s Blog](http://erdao123.gitee.io/nero/)  
+  单元测试造诣很深
+
+- [gandalfliang http://gandalfliang.me/](http://gandalfliang.me/)  
+  对 D3D 有很深的研究
 
 - [晒太阳的猫](http://jgrass.cc/)
 
