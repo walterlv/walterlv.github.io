@@ -1,6 +1,7 @@
 ---
 title: "从 Matrix 解构出 Translate/Scale/Rotate（平移/缩放/旋转）"
-date: 2017-11-21 00:20:36 +0800
+date_published: 2017-11-21 00:20:36 +0800
+date: 2017-11-22 21:24:08 +0800
 categories: xaml wpf uwp
 ---
 
@@ -116,7 +117,7 @@ private void OnLoaded(object sender, RoutedEventArgs args)
 ![](/static/posts/2017-11-21-00-01-43.png)  
 ▲ 没有被拉伸的追踪框
 
-<!-- ---
+---
 
 ### 更通用的方法
 
@@ -135,4 +136,139 @@ private void OnLoaded(object sender, RoutedEventArgs args)
 于是，追踪框不知道飞到哪里去了……
 
 ![](/static/posts/2017-11-21-00-14-25.png)  
-▲ 改变了变换中心 -->
+▲ 改变了变换中心
+
+这时，我们需要将变换中心导致的额外平移量考虑在内。
+
+如果 S 表示所求变换的缩放分量，R 表示所求变换的旋转分量，T 表示所求变换的平移分量；M 表示需要模拟的目标矩阵。那么，S 将可以通过缩放比和参数指定的缩放中心唯一确定；R 将可以通过旋转角度和参数指定的旋转中心唯一确定；T 不能确定，是我们要求的。
+
+由于我们按照缩放->旋转->平移的顺序模拟 M，所以：
+
+$$SRT=M$$
+
+即：
+
+$$T=S^{-1}R^{-1}M$$
+
+所以，我们在上面的之前成果的代码上再做些额外的处理，加上以上公式的推导结果：
+
+```csharp
+public static (Vector Scaling, double Rotation, Vector Translation) MatrixToGroup(Matrix matrix, CenterSpecification specifyCenter = null)
+{
+    // 生成一个单位矩形（0, 0, 1, 1），计算单位矩形经矩阵变换后形成的带旋转的矩形。
+    // 于是，我们将可以通过比较这两个矩形中点的数据来求出一个解。
+    var unitPoints = new[] {new Point(0, 0), new Point(1, 0), new Point(1, 1), new Point(0, 1)};
+    var transformedPoints = unitPoints.Select(matrix.Transform).ToArray();
+
+    // 测试单位矩形宽高的长度变化量，以求出缩放比（作为参数 specifyCenter 中变换中心的计算参考）。
+    var scaling = new Vector((transformedPoints[1] - transformedPoints[0]).Length, (transformedPoints[3] - transformedPoints[0]).Length);
+    // 测试单位向量的旋转变化量，以求出旋转角度。
+    var rotation = Vector.AngleBetween(new Vector(1, 0), transformedPoints[1] - transformedPoints[0]);
+    var translation = transformedPoints[0] - unitPoints[0];
+
+    // 如果指定了变换分量的变换中心点。
+    if (specifyCenter != null)
+    {
+        // 那么，就获取指定的变换中心点（缩放中心和旋转中心）。
+        var (scalingCenter, rotationCenter) = specifyCenter(scaling);
+
+        // 如果 S 表示所求变换的缩放分量，R 表示所求变换的旋转分量，T 表示所求变换的平移分量；M 表示传入的目标矩阵。
+        // 那么，S 将可以通过缩放比和参数指定的缩放中心唯一确定；R 将可以通过旋转角度和参数指定的旋转中心唯一确定。
+        // S = scaleMatrix; R = rotateMatrix.
+        var scaleMatrix = Matrix.Identity;
+        scaleMatrix.ScaleAt(scaling.X, scaling.Y, scalingCenter.X, scalingCenter.Y);
+        var rotateMatrix = Matrix.Identity;
+        rotateMatrix.RotateAt(rotation, rotationCenter.X, rotationCenter.Y);
+
+        // T 是不确定的，它会受到 S 和 T 的影响；但确定等式 SRT=M，即 T=S^{-1}R^{-1}M。
+        // T = translateMatrix; M = matrix.
+        scaleMatrix.Invert();
+        rotateMatrix.Invert();
+        var translateMatrix = Matrix.Multiply(rotateMatrix, scaleMatrix);
+        translateMatrix = Matrix.Multiply(translateMatrix, matrix);
+
+        // 用考虑了变换中心的平移量覆盖总的平移分量。
+        translation = new Vector(translateMatrix.OffsetX, translateMatrix.OffsetY);
+    }
+
+    // 按缩放、旋转、平移来返回变换分量。
+    return (scaling, rotation, translation);
+}
+```
+
+本来第二个参数是可以用 `Func` 的，但那样的意义解释起来太费劲，所以改成了委托的定义：
+
+```csharp
+/// <summary>
+/// 为 <see cref="MatrixToGroup"/> 方法提供变换中心的指定方法。
+/// </summary>
+/// <param name="scalingFactor">先进行缩放后进行旋转时，旋转中心的计算可能需要考虑前面缩放后的坐标。此参数可以得知缩放比。</param>
+/// <returns>绝对坐标的缩放中心和旋转中心。</returns>
+public delegate (Point ScalingCenter, Point RotationCenter) CenterSpecification(Vector scalingFactor);
+```
+
+这时我们就可以得到我们想要的 `TransformGroup`，而且 `RenderTransformOrigin` 随便设：
+
+```csharp
+private void OnLoaded(object sender, RoutedEventArgs args)
+{
+    var matrix = DisplayShape.RenderTransform.Value;
+    var (scaling, rotation, translation) = TransformMatrix.MatrixToGroup(matrix,
+        scalingFactor => (new Point(), new Point(
+            DisplayShape.ActualWidth * scalingFactor.X / 2,
+            DisplayShape.ActualHeight * scalingFactor.Y / 2)));
+    TraceShape.RenderTransform = ScaleAtZeroRotateAtCenter(scaling, rotation, translation, DisplayShape.RenderSize, TraceShape.RenderTransformOrigin);
+}
+
+public static TransformGroup ScaleAtZeroRotateAtCenter(Vector scaling, double rotation, Vector translation, Size originalSize, Point renderTransformOrigin = default(Point))
+{
+    var group = new TransformGroup();
+    var scaleTransform = new ScaleTransform
+    {
+        ScaleX = scaling.X,
+        ScaleY = scaling.Y,
+        CenterX = -originalSize.Width * renderTransformOrigin.X,
+        CenterY = -originalSize.Height * renderTransformOrigin.Y,
+    };
+    var rotateTransform = new RotateTransform
+    {
+        Angle = rotation,
+        CenterX = originalSize.Width * (scaling.X / 2 - renderTransformOrigin.X),
+        CenterY = originalSize.Height * (scaling.Y / 2 - renderTransformOrigin.Y),
+    };
+    group.Children.Add(scaleTransform);
+    group.Children.Add(rotateTransform);
+    group.Children.Add(new TranslateTransform {X = translation.X, Y = translation.Y});
+    return group;
+}
+```
+
+考虑到前面可以灵活地运用得到的变换分量，我们现在也这么用：
+
+```csharp
+private void OnLoaded(object sender, RoutedEventArgs args)
+{
+    var matrix = DisplayShape.RenderTransform.Value;
+    var (scaling, rotation, translation) = TransformMatrix.MatrixToGroup(matrix,
+        scalingFactor => (new Point(), new Point(
+            DisplayShape.ActualWidth * scalingFactor.X / 2,
+            DisplayShape.ActualHeight * scalingFactor.Y / 2)));
+    TraceShape.Width = DisplayShape.ActualWidth * scaling.X;
+    TraceShape.Height = DisplayShape.ActualHeight * scaling.Y;
+    TraceShape.RenderTransform = NoScaleButRotateAtOrigin(
+        rotation, translation, DisplayShape.RenderSize);
+}
+
+public static TransformGroup NoScaleButRotateAtOrigin(double rotation, Vector translation, Size originalSize)
+{
+    var group = new TransformGroup();
+    group.Children.Add(new RotateTransform {Angle = rotation});
+    group.Children.Add(new TranslateTransform {X = translation.X, Y = translation.Y});
+    return group;
+}
+```
+
+我们的 `RenderTransformOrigin` 是随意设的，效果也像下图一样稳定可用。为了直观，我把两种用法放到了一起比较：
+
+![](/static/posts/2017-11-22-traced.gif)
+▲ 设置了 `RenderTransformOrigin` 依然有用
