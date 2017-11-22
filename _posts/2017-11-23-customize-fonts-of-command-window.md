@@ -1,6 +1,6 @@
 ---
 title: "自定义 Windows PowerShell 和 cmd 的字体"
-date: 2017-11-22 23:14:33 +0800
+date: 2017-11-23 00:26:13 +0800
 categories: windows powershell
 ---
 
