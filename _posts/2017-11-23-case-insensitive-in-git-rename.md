@@ -1,12 +1,13 @@
 ---
 title: "解决 Git 重命名时遇到的大小写不敏感的问题"
-date: 2017-11-23 16:51:07 +0800
+date_published: 2017-11-23 16:51:07 +0800
+date: 2017-11-23 17:15:37 +0800
 categories: windows git
 ---
 
 Windows/MacOS 操作系统文件的大小写是不敏感的，不管文件路径是何种奇怪的大小写，我们始终可以以另一种大小写的方式访问到这个路径种的文件或者文件夹。Linux 操作系统文件的大小写却是敏感的，不同大小写意味着不同的路径。于是，Windows 下的 A 文件在 Docs 文件夹下，B 文件在 docs 文件夹下，最终效果是 A B 都在 docs 文件夹下；而同样的情况放到 Linux 中，A B 就在两个不同的文件夹。
 
-Git 却是大小写不敏感的，导致跨操作系统共享的 Git 仓库就会遇到上面的问题，导致链接的文件找不到！阅读本文将解决 Git 大小写不敏感导致重命名无效的问题。
+Git 是大小写不敏感的，导致跨操作系统共享的 Git 仓库就会遇到上面的情况。如果重命名的文件或文件夹只有大小写不同，那么对 Git  来说甚至都没有变化。阅读本文将解决 Git 大小写不敏感导致的重命名无效的问题。
 
 ---
 
@@ -26,9 +27,9 @@ Git 却是大小写不敏感的，导致跨操作系统共享的 Git 仓库就�
 
 ### 走的弯路
 
-这种问题怎么看都不像是我一个人会遇到的问题，堆栈网上讨论肯定肯多。这不，截至本文撰写时，[How do I commit case-sensitive only filename changes in Git?](https://stackoverflow.com/questions/17683458/how-do-i-commit-case-sensitive-only-filename-changes-in-git) 这篇帖子中问题已经得到了 600+ 个赞，回答累计得到 1400+ 个赞了……
+这种问题怎么看都不像是我一个人会遇到的问题，堆栈网上讨论肯定很多。至少截至本文发表时，[How do I commit case-sensitive only filename changes in Git?](https://stackoverflow.com/questions/17683458/how-do-i-commit-case-sensitive-only-filename-changes-in-git) 中问题已经得到了 600+ 个赞，回答累计得到 1400+ 个赞了……
 
-方法归结起来无非两个：
+里面探讨的方法归结起来两个：
 
 - `git mv -f OldFileNameCase newfilenamecase`
 - `git config core.ignorecase false`
