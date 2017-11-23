@@ -16,6 +16,11 @@ categories: post
 
 ### About to Write
 
+- 无障碍设计——色盲
+  - [无障碍设计：为色盲用户多走一步](https://zhuanlan.zhihu.com/p/31111004?utm_medium=social&utm_source=wechat_session)
+  - [Coblis — Color Blindness Simulator | Colblindor](http://www.color-blindness.com/coblis-color-blindness-simulator/)
+  - [Toptal Color Blind Filter](https://www.toptal.com/designers/colorfilter)
+
 - WPF 多进程 UI
   - [ENikS/System.AddIn: Projects related to Microsoft System.AddIn](https://github.com/ENikS/System.AddIn)
   - [Add-In Performance: What can you expect as you cross an isolation boundary and how to make it better [Jesse Kaplan] – CLR Add-In Team Blog](https://blogs.msdn.microsoft.com/clraddins/2008/02/22/add-in-performance-what-can-you-expect-as-you-cross-an-isolation-boundary-and-how-to-make-it-better-jesse-kaplan/)
@@ -28,12 +33,6 @@ categories: post
   - [T384193 - End User NullReferenceException in LayoutControl - DevExpress Support Center](https://www.devexpress.com/Support/Center/Question/Details/T384193/end-user-nullreferenceexception-in-layoutcontrol)
   - [NullReferenceException in VirtualizingStackPanel when used in ComboBox - Microsoft Connect](https://connect.microsoft.com/VisualStudio/feedback/details/772518/nullreferenceexception-in-virtualizingstackpanel-when-used-in-combobox)
   - [.net - How to debug NullReferenceException in PresentationFramework? - Stack Overflow](https://stackoverflow.com/questions/8979060/how-to-debug-nullreferenceexception-in-presentationframework)
-
-- 控制台外观
-  - [Necessary criteria for fonts to be available in a command window](https://support.microsoft.com/zh-cn/help/247815/necessary-criteria-for-fonts-to-be-available-in-a-command-window)
-  - [(58 条消息)为什么 Windows 下 cmd 和 PowerShell 不能方便地自定义字体？ - 知乎](https://www.zhihu.com/question/36344262)
-    - HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Console\TrueTypeFont
-  - [List of all colors available for powershell? - Stack Overflow](https://stackoverflow.com/questions/20541456/list-of-all-colors-available-for-powershell)
 
 - ShaderEffect
   - [Shazzam Shader Editor Site](http://www.shazzam-tool.com/)
