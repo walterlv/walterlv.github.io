@@ -16,6 +16,21 @@ categories: post
 
 ### About to Write
 
+- PNG 极限压缩
+  - [limitPNG | PNG 图片极限压缩工具](http://nullice.com/limitPNG/)
+  - [gluttonyPNG – 大批量 PNG 图片压缩工具 – 浅藏的宝藏](http://nullice.com/archives/1998)
+
+- MVVM
+  - [Recommendations and best practices for implementing MVVM and XAML/.NET applications « Rico Suter](https://blog.rsuter.com/recommendations-best-practices-implementing-mvvm-xaml-net-applications/)
+  - [MVVM standardization - W3Cgeek](http://w3cgeek.com/mvvm-standardization.html)
+
+
+- .gitattributes
+  - [Git - gitattributes Documentation](https://git-scm.com/docs/gitattributes)
+
+- WPF Notification
+  - [【wpf】在win10系统上弹出toast和notification - catshitone的专栏 - CSDN博客](http://blog.csdn.net/catshitone/article/details/78522931)
+
 - 无障碍设计——色盲
   - [无障碍设计：为色盲用户多走一步](https://zhuanlan.zhihu.com/p/31111004?utm_medium=social&utm_source=wechat_session)
   - [Coblis — Color Blindness Simulator | Colblindor](http://www.color-blindness.com/coblis-color-blindness-simulator/)
