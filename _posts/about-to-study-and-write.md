@@ -16,11 +16,6 @@ categories: post
 
 ### About to Write
 
-- MVVM
-  - [Recommendations and best practices for implementing MVVM and XAML/.NET applications « Rico Suter](https://blog.rsuter.com/recommendations-best-practices-implementing-mvvm-xaml-net-applications/)
-  - [MVVM standardization - W3Cgeek](http://w3cgeek.com/mvvm-standardization.html)
-
-
 - .gitattributes
   - [Git - gitattributes Documentation](https://git-scm.com/docs/gitattributes)
 
