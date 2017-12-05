@@ -1,6 +1,12 @@
 div {
     word-break: break-word;
 }
+.post>h3,h4,h5,h6 {
+    color: black;
+}
+.post>h4,h5,h6 {
+    font-weight: 400;
+}
 pre>code {
     overflow-x: auto;
     white-space: pre;
