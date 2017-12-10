@@ -34,7 +34,7 @@ categories: post
 
 - 无障碍设计——色盲
     - [无障碍设计：为色盲用户多走一步](https://zhuanlan.zhihu.com/p/31111004?utm_medium=social&utm_source=wechat_session)
-    - [Coblis — Color Blindness Simulator | Colblindor](http://www.color-blindness.com/coblis-color-blindness-simulator/)
+    - [Coblis — Color Blindness Simulator - Colblindor](http://www.color-blindness.com/coblis-color-blindness-simulator/)
     - [Toptal Color Blind Filter](https://www.toptal.com/designers/colorfilter)
 
 - WPF 多进程 UI
