@@ -32,11 +32,6 @@ categories: post
 - WPF Notification
     - [【wpf】在win10系统上弹出toast和notification - catshitone的专栏 - CSDN博客](http://blog.csdn.net/catshitone/article/details/78522931)
 
-- 无障碍设计——色盲
-    - [无障碍设计：为色盲用户多走一步](https://zhuanlan.zhihu.com/p/31111004?utm_medium=social&utm_source=wechat_session)
-    - [Coblis — Color Blindness Simulator - Colblindor](http://www.color-blindness.com/coblis-color-blindness-simulator/)
-    - [Toptal Color Blind Filter](https://www.toptal.com/designers/colorfilter)
-
 - WPF 多进程 UI
   - [ENikS/System.AddIn: Projects related to Microsoft System.AddIn](https://github.com/ENikS/System.AddIn)
   - [Add-In Performance: What can you expect as you cross an isolation boundary and how to make it better [Jesse Kaplan] – CLR Add-In Team Blog](https://blogs.msdn.microsoft.com/clraddins/2008/02/22/add-in-performance-what-can-you-expect-as-you-cross-an-isolation-boundary-and-how-to-make-it-better-jesse-kaplan/)
