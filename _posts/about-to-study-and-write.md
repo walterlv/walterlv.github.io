@@ -16,6 +16,12 @@ categories: post
 
 ### About to Write
 
+- VS Tools for AI
+    - [vs-tools-for-ai/docs at master · Microsoft/vs-tools-for-ai](https://github.com/Microsoft/vs-tools-for-ai/tree/master/docs)
+
+- .NET Compiler Platform ("Roslyn") Extensibility
+    - [Getting Started with Roslyn Analyzers - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/extensibility/getting-started-with-roslyn-analyzers)
+
 - Quantum
     - [如何使用 Q# - 林德熙](https://lindexi.oschina.io/lindexi/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Q.html)
 
