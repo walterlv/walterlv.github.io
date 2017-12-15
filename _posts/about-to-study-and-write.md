@@ -16,6 +16,9 @@ categories: post
 
 ### About to Write
 
+- Quantum
+    - [如何使用 Q# - 林德熙](https://lindexi.oschina.io/lindexi/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Q.html)
+
 - C# 契约式编程
     - [Code Contracts - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/debug-trace-profile/code-contracts)
     - [.NET 4.0 中的契约式编程 - Angel Lucifer - 博客园](http://www.cnblogs.com/lucifer1982/archive/2009/03/21/1418642.html)
