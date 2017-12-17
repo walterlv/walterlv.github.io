@@ -63,8 +63,6 @@ categories: post
     - [Optimizing the Visual Studio build time.](https://www.sitefinity.com/blogs/momchil-mitev%27s-blog/2014/05/16/how-to-speed-up-the-build-of-your-solution-in-visual-studio)
     - [Speed Up Visual Studio Build Times - ardalis](https://ardalis.com/speed-up-visual-studio-build-times)
 
-- 程序员伤不起
-
 - TiltEffect
     - [WPF Tilt Effect Behavior – Mareinsula](https://mareinsula.wordpress.com/2011/08/04/wpf-tilt-effect-behavior/)
 
