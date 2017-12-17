@@ -32,7 +32,7 @@ categories: post
 
 - Windows 10 Sets
     - [Sets in Windows 10 - YouTube](https://www.youtube.com/watch?v=3lEjuU-XFHg&feature=youtu.be)
-    - [Windows 10 'Sets' let users group apps and sites in one window with tabs | Windows Central](https://www.windowscentral.com/windows-10-sets-announcement)
+    - [Windows 10 'Sets' let users group apps and sites in one window with tabs - Windows Central](https://www.windowscentral.com/windows-10-sets-announcement)
     - [Tabs come to every window in Windows 10 “Sets” - Ars Technica](https://arstechnica.com/gadgets/2017/11/tabs-come-to-every-window-in-windows-10-sets/)
 
 - .gitattributes
