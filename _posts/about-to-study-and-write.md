@@ -16,6 +16,13 @@ categories: post
 
 ### About to Write
 
+- Nullable Reference
+    - [Nullable Reference Types Preview · dotnet/csharplang Wiki](https://github.com/dotnet/csharplang/wiki/Nullable-Reference-Types-Preview)
+    - [What's New In C# 7.1 And 7.2](http://www.c-sharpcorner.com/article/whats-new-in-c-sharp-7-1-and-7-2/)
+
+- 桌面程序使用 UWP API
+    - [Extend your desktop application with Windows 10 features using the new Visual Studio Application Packaging Project - Building Apps for WindowsBuilding Apps for Windows](https://blogs.windows.com/buildingapps/2017/12/04/extend-desktop-application-windows-10-features-using-new-visual-studio-application-packaging-project/)
+
 - TiltEffect
     - [WPF Tilt Effect Behavior – Mareinsula](https://mareinsula.wordpress.com/2011/08/04/wpf-tilt-effect-behavior/)
     - [【图像处理】透视变换 Perspective Transformation - CSDN博客](http://blog.csdn.net/xiaowei_cqu/article/details/26471527)
