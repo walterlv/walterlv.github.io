@@ -9,7 +9,7 @@ sitemap: false
     - [新CG儿 - 数字视觉分享平台 - AE模板_视频素材_免费下载](http://www.newcger.com/)
 
 - React-UWP + WinUI
-    - [Components - App Developer | Docs](https://www.react-uwp.com/components)
+    - [Components - App Developer - Docs](https://www.react-uwp.com/components)
     - [winui - 演示](http://www.win-ui.com/Demo/Desktop)
 
 - MIDI 文件结构
