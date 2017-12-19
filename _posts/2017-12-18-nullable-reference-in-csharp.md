@@ -1,6 +1,7 @@
 ---
 title: "迫不及待地体验了一把 C#8.0 中的可空引用类型（Nullable Reference）"
-date: 2017-12-18 21:41:56 +0800
+date_published: 2017-12-18 21:41:56 +0800
+date: 2017-12-19 08:36:41 +0800
 categories: csharp
 ---
 
@@ -16,7 +17,7 @@ categories: csharp
 
 扩展包下载地址：[2017年11月5日版本](https://roslyninfra.blob.core.windows.net/compilers/nonnull/Roslyn_Nullable_References_Preview_11152017.zip) - [最新版](https://github.com/dotnet/csharplang/wiki/Nullable-Reference-Types-Preview#installing)
 
-下载解压后直接双击 install.bat 安装即可体验（安装前退出所有 Visual Studio）。
+下载解压后直接双击 install.bat 安装即可体验（安装前退出所有 Visual Studio）。**这还是预览版，还有很多已知 BUG，修复后才会发布哦！**
 
 ![安装](/static/posts/2017-12-18-21-17-42.png)
 
