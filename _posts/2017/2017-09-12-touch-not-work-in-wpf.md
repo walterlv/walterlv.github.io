@@ -2,7 +2,7 @@
 layout: post
 title: "WPF 程序无法触摸操作"
 date_published: 2017-09-12 07:34:00 +0800
-date: 2017-09-12 07:34:00 +0800
+date: 2017-12-20 23:10:18 +0800
 categories: wpf
 permalink: /wpf/2017/09/12/touch-not-work-in-wpf.html
 description: WPF 程序可能出现各种各样的触摸失效的问题，这里进行了一些总结。
@@ -43,4 +43,4 @@ pimcManager.GetTabletCount(out count);
 
 ### 第三种情况
 
-如果 WPF 的 StylusUp 事件被阻断（例如 `e.Handled = true`，或者在 StylusUp 事件中弹出一个模态窗口），则下一次触摸时获取到的点坐标将是上一次被阻断时的点坐标。于是，阻断后的第一次点击必将点钟之前点的那个点，而不管现在点中了什么。如果阻断时点在新窗口外，则几乎相当于触摸失效。
+如果 WPF 的 StylusUp 事件被阻断（例如 `e.Handled = true`，或者在 StylusUp 事件中弹出一个模态窗口），则下一次触摸时获取到的点坐标将是上一次被阻断时的点坐标。于是，阻断后的第一次点击必将点中之前点的那个点，而不管现在点中了什么。如果阻断时点在新窗口外，则几乎相当于触摸失效。
