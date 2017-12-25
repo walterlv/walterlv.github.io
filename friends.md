@@ -32,6 +32,8 @@ permalink: /friends/
 
 - [Highway to Graphics](https://zhuanlan.zhihu.com/highwaytographics)
 
+- [YOYOFx - .NET Core & Microservices](http://blog.microservice4.net/)
+
 - [陈皓 - 酷 壳 - CoolShell](https://coolshell.cn/articles/author/haoel)
 
 - [Edi Wang](http://edi.wang/)
