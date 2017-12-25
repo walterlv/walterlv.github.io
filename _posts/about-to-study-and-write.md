@@ -32,11 +32,6 @@ categories: post
 - Quantum
     - [如何使用 Q# - 林德熙](https://lindexi.oschina.io/lindexi/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Q.html)
 
-- C# 契约式编程
-    - [Code Contracts - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/debug-trace-profile/code-contracts)
-    - [.NET 4.0 中的契约式编程 - Angel Lucifer - 博客园](http://www.cnblogs.com/lucifer1982/archive/2009/03/21/1418642.html)
-    - [C# 中参数验证方式的演变 -.net-火龙果软件工程](http://www.uml.org.cn/net/201510303.asp)
-
 - Windows 10 Sets
     - [Sets in Windows 10 - YouTube](https://www.youtube.com/watch?v=3lEjuU-XFHg&feature=youtu.be)
     - [Windows 10 'Sets' let users group apps and sites in one window with tabs - Windows Central](https://www.windowscentral.com/windows-10-sets-announcement)
