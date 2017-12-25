@@ -43,13 +43,6 @@ categories: post
 - WPF Notification
     - [【wpf】在win10系统上弹出toast和notification - catshitone的专栏 - CSDN博客](http://blog.csdn.net/catshitone/article/details/78522931)
 
-- WPF 多进程 UI
-  - [ENikS/System.AddIn: Projects related to Microsoft System.AddIn](https://github.com/ENikS/System.AddIn)
-  - [Add-In Performance: What can you expect as you cross an isolation boundary and how to make it better [Jesse Kaplan] – CLR Add-In Team Blog](https://blogs.msdn.microsoft.com/clraddins/2008/02/22/add-in-performance-what-can-you-expect-as-you-cross-an-isolation-boundary-and-how-to-make-it-better-jesse-kaplan/)
-  - [WPF Add-Ins Overview - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/app-development/wpf-add-ins-overview)
-  - [Walkthrough: Creating an Extensible Application - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/add-ins/walkthrough-create-extensible-app)
-  - [Add-ins and Extensibility - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/add-ins/)
-
 - 在 VirtualizingStackPanel 中抛出了 NullReferenceException
     - [A NullReferenceException is thrown from VirtualizingStackPanel.MeasureChild - Microsoft Connect](https://connect.microsoft.com/VisualStudio/feedback/details/741583/a-nullreferenceexception-is-thrown-from-virtualizingstackpanel-measurechild)
     - [T384193 - End User NullReferenceException in LayoutControl - DevExpress Support Center](https://www.devexpress.com/Support/Center/Question/Details/T384193/end-user-nullreferenceexception-in-layoutcontrol)
