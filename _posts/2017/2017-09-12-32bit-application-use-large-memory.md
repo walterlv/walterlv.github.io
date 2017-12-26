@@ -2,7 +2,7 @@
 layout: post
 title: "使 32 位程序使用大于 2GB 的内存"
 date_published: 2017-09-12 21:48:46 +0800
-date: 2017-09-14 21:47:09 +0800
+date: 2017-12-26 09:05:27 +0800
 categories: windows
 permalink: /windows/2017/09/12/32bit-application-use-large-memory.html
 keywords: Windows 32-bit 2GB largeaddressaware editbin dumpbin anycpu
@@ -13,10 +13,7 @@ description: 了解 Windows 系统上如何使 32 位应用程序使用大于 2G
 
 ---
 
-阅读本文，你将了解：
-1. 为什么 32 位程序只能使用最大 2GB 内存；
-1. 让 32 位程序使用大于 2GB 内存的两种方法；
-1. 声明支持大于 2GB 内存后，能使用多少内存。
+<div id="toc"></div>
 
 ### 为什么 32 位程序只能使用最大 2GB 内存？
 
@@ -63,7 +60,7 @@ editbin 改之前和改之后用 dumpbin 查看我们的程序头信息，得到
 
 ![AnyCPU (Prefer 32-bit)](/static/posts/2017-09-12-anycpu-with-32bit-preferred-build.png)
 
-至于 AnyCPU (Prefer 32-bit) 和 x86 两种生成方式的区别，请参见：[What is the purpose of the “Prefer 32-bit” setting in Visual Studio 2012 and how does it actually work?](https://stackoverflow.com/questions/12066638/what-is-the-purpose-of-the-prefer-32-bit-setting-in-visual-studio-2012-and-how)。
+至于 AnyCPU (Prefer 32-bit) 和 x86 两种生成方式的区别，请参见：[WPF 编译为 AnyCPU 和 x86 有什么区别 - 林德熙](https://lindexi.github.io/lindexi/post/WPF-%E7%BC%96%E8%AF%91%E4%B8%BA-AnyCPU-%E5%92%8C-x86-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB.html) 和 [What is the purpose of the “Prefer 32-bit” setting in Visual Studio 2012 and how does it actually work?](https://stackoverflow.com/questions/12066638/what-is-the-purpose-of-the-prefer-32-bit-setting-in-visual-studio-2012-and-how)。
 
 ### 声明支持大于 2GB 内存后，能使用多少内存？
 
@@ -73,18 +70,19 @@ editbin 改之前和改之后用 dumpbin 查看我们的程序头信息，得到
 
 ### 参考资料
 - AnyCPU (32bit preferred)
-  - [What is the purpose of the “Prefer 32-bit” setting in Visual Studio 2012 and how does it actually work?](https://stackoverflow.com/questions/12066638/what-is-the-purpose-of-the-prefer-32-bit-setting-in-visual-studio-2012-and-how)
+    - [What is the purpose of the “Prefer 32-bit” setting in Visual Studio 2012 and how does it actually work?](https://stackoverflow.com/questions/12066638/what-is-the-purpose-of-the-prefer-32-bit-setting-in-visual-studio-2012-and-how)
+    - [WPF 编译为 AnyCPU 和 x86 有什么区别 - 林德熙](https://lindexi.gitee.io/lindexi/post/WPF-%E7%BC%96%E8%AF%91%E4%B8%BA-AnyCPU-%E5%92%8C-x86-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB.html)
 - IMAGE_FILE_LARGE_ADDRESS_AWARE
-  - [Memory Limits for Windows and Windows Server Releases](https://msdn.microsoft.com/en-us/library/windows/desktop/aa366778(v=vs.85).aspx)
-  - [Getting 32-bit application to use more than 2GB on 64-bit Windows 7?](https://superuser.com/questions/176869/getting-32-bit-application-to-use-more-than-2gb-on-64-bit-windows-7)
-  - [/LARGEADDRESSAWARE (Handle Large Addresses)](https://msdn.microsoft.com/en-us/library/wz223b1z.aspx)
-  - [Why 2 GB memory limit when running in 64 bit Windows?](https://stackoverflow.com/questions/2740308/why-2-gb-memory-limit-when-running-in-64-bit-windows)
-  - [Pushing the Limits of Windows: Paged and Nonpaged Pool](https://blogs.technet.microsoft.com/markrussinovich/2009/03/10/pushing-the-limits-of-windows-paged-and-nonpaged-pool/)
-  - [Can a 32bit process access more memory on a 64bit windows OS?](https://stackoverflow.com/questions/570589/can-a-32bit-process-access-more-memory-on-a-64bit-windows-os)
+    - [Memory Limits for Windows and Windows Server Releases](https://msdn.microsoft.com/en-us/library/windows/desktop/aa366778(v=vs.85).aspx)
+    - [Getting 32-bit application to use more than 2GB on 64-bit Windows 7?](https://superuser.com/questions/176869/getting-32-bit-application-to-use-more-than-2gb-on-64-bit-windows-7)
+    - [/LARGEADDRESSAWARE (Handle Large Addresses)](https://msdn.microsoft.com/en-us/library/wz223b1z.aspx)
+    - [Why 2 GB memory limit when running in 64 bit Windows?](https://stackoverflow.com/questions/2740308/why-2-gb-memory-limit-when-running-in-64-bit-windows)
+    - [Pushing the Limits of Windows: Paged and Nonpaged Pool](https://blogs.technet.microsoft.com/markrussinovich/2009/03/10/pushing-the-limits-of-windows-paged-and-nonpaged-pool/)
+    - [Can a 32bit process access more memory on a 64bit windows OS?](https://stackoverflow.com/questions/570589/can-a-32bit-process-access-more-memory-on-a-64bit-windows-os)
 - /3GB
-  - [/3GB](https://msdn.microsoft.com/en-us/library/windows/hardware/ff556232(v=vs.85).aspx)
+    - [/3GB](https://msdn.microsoft.com/en-us/library/windows/hardware/ff556232(v=vs.85).aspx)
 - editbin/dumpbin
-  - `editbin /largeaddressaware xxx.exe`
-  - `dumpbin /headers xxx.exe | more`
-  - [verify if largeAddressAware is in effect?](https://stackoverflow.com/questions/3979624/verify-if-largeaddressaware-is-in-effect)
-  - [LargeAddressAware Visual Studio 2015 C#](https://stackoverflow.com/questions/31565532/largeaddressaware-visual-studio-2015-c-sharp)
+    - `editbin /largeaddressaware xxx.exe`
+    - `dumpbin /headers xxx.exe | more`
+    - [verify if largeAddressAware is in effect?](https://stackoverflow.com/questions/3979624/verify-if-largeaddressaware-is-in-effect)
+    - [LargeAddressAware Visual Studio 2015 C#](https://stackoverflow.com/questions/31565532/largeaddressaware-visual-studio-2015-c-sharp)
