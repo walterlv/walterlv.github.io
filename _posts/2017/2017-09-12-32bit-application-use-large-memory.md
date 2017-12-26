@@ -68,7 +68,9 @@ editbin 改之前和改之后用 dumpbin 查看我们的程序头信息，得到
 
 对于 64 位操作系统，Windows 将很豪放地将 4GB 全部贡献给这样的程序，因为系统自己已经有更多的内存寻址空间可以使用了，没必要跟 32 位应用程序抢占寻址空间。
 
-### 参考资料
+---
+
+#### 参考资料
 - AnyCPU (32bit preferred)
     - [What is the purpose of the “Prefer 32-bit” setting in Visual Studio 2012 and how does it actually work?](https://stackoverflow.com/questions/12066638/what-is-the-purpose-of-the-prefer-32-bit-setting-in-visual-studio-2012-and-how)
     - [WPF 编译为 AnyCPU 和 x86 有什么区别 - 林德熙](https://lindexi.gitee.io/lindexi/post/WPF-%E7%BC%96%E8%AF%91%E4%B8%BA-AnyCPU-%E5%92%8C-x86-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB.html)
