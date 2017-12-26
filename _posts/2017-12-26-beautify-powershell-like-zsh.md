@@ -94,7 +94,7 @@ Set-Theme
 
 比如下图是我用 vscode 中带的 PowerShell 的效果。
 
-![PowerShell in vscode](/static/posts/2017-12-26-14-56-42.png)
+![PowerShell in vscode](/static/posts/2017-12-26-15-01-52.png)
 
 推荐的其他 PowerShell：
 
