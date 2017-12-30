@@ -22,6 +22,9 @@ gitment:
   client_id: 9a8b44a07f269679e9b5
   client_secret: 3412cef75373074fd43b62462a7adef7ad1e2127
   repo: walterlv.github.io
+leancloud:
+  appid: 2NpLNUTfjU4ey5wOeWPPiXXL-gzGzoHsz
+  appkey: OeA2qCtXi7ifv96UbMQ4J1kn
 
 share:
   twitter_username: _lvyi_

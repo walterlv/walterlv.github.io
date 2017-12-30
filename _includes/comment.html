@@ -1,17 +1,17 @@
 <div class="disqus-comments">
-<div id="container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<div id="comment" style="margin-top: 50px"></div>
 <script>
-var gitment = new Gitment({
-id: '{{ page.id }}', // 可选。默认为 location.href
-owner: '{{ site.gitment.owner }}',
-repo: '{{ site.gitment.repo }}',
-oauth: {
-    client_id: '{{ site.gitment.client_id }}',
-    client_secret: '{{ site.gitment.client_secret }}',
-},
+var valine = new Valine();
+valine.init({
+    el: '#comment',
+    appId: '{{ site.leancloud.appid }}',
+    appKey: '{{ site.leancloud.appkey }}',
+    notify: true,
+    path: '{{ page.id }}',
+    placeholder: '',
+    verify: false
 })
-gitment.render('container')
 </script>
 </div>
