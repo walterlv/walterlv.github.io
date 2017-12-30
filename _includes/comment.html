@@ -5,11 +5,11 @@
 <script>
 var gitment = new Gitment({
 id: '{{ page.id }}', // 可选。默认为 location.href
-owner: '{{ gitment.owner }}',
-repo: '{{ gitment.repo }}',
+owner: '{{ site.gitment.owner }}',
+repo: '{{ site.gitment.repo }}',
 oauth: {
-    client_id: '{{ gitment.client_id }}',
-    client_secret: '{{ gitment.client_secret }}',
+    client_id: '{{ site.gitment.client_id }}',
+    client_secret: '{{ site.gitment.client_secret }}',
 },
 })
 gitment.render('container')
