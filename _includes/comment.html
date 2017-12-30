@@ -1,4 +1,19 @@
 <div class="disqus-comments">
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+id: '{{ page.id }}', // 可选。默认为 location.href
+owner: '{{ gitment.owner }}',
+repo: '{{ gitment.repo }}',
+oauth: {
+    client_id: '{{ gitment.client_id }}',
+    client_secret: '{{ gitment.client_secret }}',
+},
+})
+gitment.render('container')
+{% comment %} </script>
     <!-- Disqus Comment -->
     <div id="disqus_thread"></div>
     <script>
@@ -14,5 +29,5 @@
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <!-- End Disqus Comment -->
+    <!-- End Disqus Comment --> {% endcomment %}
 </div>

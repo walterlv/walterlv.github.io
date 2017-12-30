@@ -17,6 +17,11 @@ analytics:
   cnzz: cnzz_stat_icon_1264408226
 disqus:
   name: walterlv
+gitment:
+  owner: walterlv
+  client_id: 9a8b44a07f269679e9b5
+  client_secret: 3412cef75373074fd43b62462a7adef7ad1e2127
+  repo: https://github.com/walterlv/walterlv.github.io
 
 share:
   twitter_username: _lvyi_
