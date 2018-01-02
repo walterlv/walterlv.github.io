@@ -49,7 +49,7 @@ public T DoSomething<T>(T parent) where T : class
 
 ReSharper 并没有将其称之为“契约”，因为它真的只是“文档级别”的约束，只会在写代码的时候具备一定程度的静态分析能力以便给出提示，并不提供运行时的检查。不过，ReSharper 会为我们生成运行时检查的代码。只要是装了 ReSharper 插件并用它写过代码的，应该都见过 ReSharper Annotations 了，因为它会在我们试图添加契约代码时自动添加契约标记（Attribute）。
 
-![提示生成](/static/posts/2017-12-20-22-19-10.png)
+![提示生成](/static/posts/2017-12-20-22-19-10.png)  
 ▲ 生成 ReSharper Annotations
 
 如果错过了首次提示，可以在 ReSharper 的设置界面中生成 Annotations 的代码。（复制一份代码然后新建一个文件粘贴。）
