@@ -1,6 +1,7 @@
 ---
 title: "C#/.NET 中的契约"
-date: 2017-12-20 23:04:21 +0800
+date_published: 2017-12-20 23:04:21 +0800
+date: 2018-01-04 14:25:13 +0800
 categories: csharp dotnet
 ---
 
@@ -120,6 +121,8 @@ private T DoSomething<T>(T parent) where T : class
 ```
 
 在这里，`Requires` 是真的会抛出异常的，但 `Assume` 和 `EnsuresOnThrow` 是需要写条件编译符为 `CONTRACTS_FULL` 的。
+
+![前置条件失败](/static/posts/2018-01-04-14-26-42.png)
 
 或者，这样用普通的抛异常的方式。
 
