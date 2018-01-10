@@ -16,6 +16,12 @@ categories: post
 
 ### About to Write
 
+- 轻量级线程安全
+    - [Thread-Safe Collections - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/collections/thread-safe/)
+
+- 模拟接口
+    - [impromptu-interface/Impromptu.cs at master · ekonbenefits/impromptu-interface](https://github.com/ekonbenefits/impromptu-interface/blob/master/ImpromptuInterface/src/Impromptu.cs)
+
 - 用户体验
     - [需求分析神器Kano模型 - 简书](https://www.jianshu.com/p/3c32cd247892)
     - [如何衡量提升用户体验？Google新框架－HEART帮你解决！ – 学UI网](http://www.xueui.cn/experience/discussion/heart-new-framework-for-user-experience-of-google.html?ref=r)

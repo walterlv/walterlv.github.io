@@ -5,6 +5,9 @@ categories: favorite
 sitemap: false
 ---
 
+- 快速高斯模糊
+    - [Fastest Gaussian Blur (in linear time)](http://blog.ivank.net/fastest-gaussian-blur.html)
+
 - 单元测试
     - [单元测试 vs. 私有方法](http://www.infoq.com/cn/news/2009/02/unit-test-private-method)
     - [单元测试有毒 - HarlanC - 博客园](http://www.cnblogs.com/harlanc/p/6838155.html)
