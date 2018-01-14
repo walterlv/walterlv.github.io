@@ -1,17 +1,18 @@
 <div class="disqus-comments">
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<div id="comment" style="margin-top: 50px"></div>
-<script>
-var valine = new Valine();
-valine.init({
-    el: '#comment',
-    appId: '{{ site.leancloud.appid }}',
-    appKey: '{{ site.leancloud.appkey }}',
-    notify: true,
-    path: '{{ page.id }}',
-    placeholder: '',
-    verify: false
-})
-</script>
+    <!-- Disqus Comment -->
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_config = function () {
+    this.page.url = "{{ site.url }}{{ page.url }}";
+    this.page.identifier = "{{ page.id }}";
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//{{ site.disqus.name }}.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <!-- End Disqus Comment -->
 </div>
