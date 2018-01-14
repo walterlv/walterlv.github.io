@@ -2,7 +2,6 @@
 title: ".NET 中的轻量级线程安全"
 date: 2018-01-14 20:46:22 +0800
 categories: dotnet
-published: false
 ---
 
 对线程安全有要求的代码中，通常会使用锁（lock）。自 .NET 诞生以来就有锁，然而从 .NET Framework 4.0 开始，又诞生了 6 个轻量级的线程安全方案：`SpinLock`, `SpinWait`, `CountdownEvent`, `SemaphoreSlim`, `ManualResetEventSlim`, `Barrier`。
