@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "为 Visual Studio 使用通配符批量添加项目文件"
-date: 2017-09-26 21:12:15 +0800
+date_published: 2017-09-26 21:12:15 +0800
+date: 2018-01-15 23:52:36 +0800
 categories: visualstudio
 permalink: /post/vs/2017/09/26/wildcards-in-vs-projects.html
 keywords: visual studio wildcards
@@ -47,16 +48,17 @@ description: Visual Studio 的项目文件其实是支持使用通配符的，�
 </ItemGroup>
 ```
 
-但是，小心有坑，因为如果你的目录下是多个文件夹嵌套的话，需要在通配符中指定层级个数，有多少层加多少层：
+但是，小心有坑，因为如果你的目录下是多个文件夹嵌套的话，需要用两个星号来表示可能出现多层文件夹：
 
 ```xml
 <ItemGroup>
   <Content Include="Properties\Default.rd.xml" />
   <Content Include="Assets\*.png" />
-  <Content Include="Assets\*\*.png" />
-  <Content Include="Assets\*\*\*.png" />
+  <Content Include="Assets\**\*.png" />
 </ItemGroup>
 ```
+
+---
 
 #### 参考资料
 
