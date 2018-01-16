@@ -1,6 +1,7 @@
 ---
 title: "将 WPF、UWP 以及其他各种类型的旧样式的 csproj 文件迁移成新样式的 csproj 文件"
-date: 2018-01-16 00:04:28 +0800
+date_published: 2018-01-16 00:04:28 +0800
+date: 2018-01-16 08:44:27 +0800
 categories: visualstudio
 ---
 
@@ -188,6 +189,67 @@ UWP 项目已经是 .NET Core 了，然而它依然还在采用旧样式的 cspr
 
 #### WPF/UWP 项目迁移过程中的困难点
 
+对于 WPF 类库，使用以上的方法迁移之后，编译几乎必定是报错的：
+
+![WPF 项目迁移后编译不通过](/static/posts/2018-01-16-08-57-29.png)  
+▲ 此图中的 CSharpArgument 错误是因为缺少 Microsoft.CSharp 引用，添加即可解决。
+
+找不到 `InitializeComponent` 则几乎可以认定为 XAML 文件没有被编译成 .g.cs 文件，或者简单点儿说是 XAML 没有被有效识别。GitHub 上 dotnet 的几个项目都有与 XAML 支持相关的讨论，比如 [XAML files are not supported · Issue #1467 · dotnet/project-system](https://github.com/dotnet/project-system/issues/1467) 和 [XAML files are not supported · Issue #810 · dotnet/sdk](https://github.com/dotnet/sdk/issues/810)。
+
+庆幸的是，Stack Overflow 上 [stil](https://stackoverflow.com/users/1420356/stil) 较完整地整理了 XAML 支持的 csproj 文件改造方法。来自于 [c# - How-to migrate Wpf projects to the new VS2017 format - Stack Overflow](https://stackoverflow.com/a/44539088/6233938)。
+
+> ```xml
+> <Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+>   <PropertyGroup>
+>     <LanguageTargets>$(MSBuildExtensionsPath)\$(VisualStudioVersion)> \Bin\Microsoft.CSharp.targets</LanguageTargets>
+>     <TargetFramework>net47</TargetFramework>
+>     <OutputType>Exe</OutputType>> 
+>     <StartupObject />
+>   </PropertyGroup>
+> 
+>   <ItemGroup>
+>     <!-- App.xaml -->
+>     <ApplicationDefinition Include="App.xaml">
+>       <SubType>Designer</SubType>
+>       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+>     </ApplicationDefinition>
+> 
+>     <!-- XAML elements -->
+>     <Page Include="**\*.xaml" Exclude="App.xaml">
+>       <SubType>Designer</SubType>
+>       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+>     </Page>
+>     <Compile Update="**\*.xaml.cs" SubType="Code" DependentUpon="%(Filename)" />
+> 
+>     <!-- Resources -->
+>     <EmbeddedResource Update="Properties\Resources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="Resources.Designer.cs" />
+>     <Compile Update="Properties\Resources.Designer.cs" AutoGen="True" DependentUpon="Resources.resx" DesignTime="True" />
+> 
+>     <!-- Settings -->
+>     <None Update="Properties\Settings.settings" Generator="SettingsSingleFileGenerator" LastGenOutput="Settings.Designer.cs" />
+>     <Compile Update="Properties\Settings.Designer.cs" AutoGen="True" DependentUpon="Settings.settings" />
+> 
+>   </ItemGroup>
+> 
+>   <ItemGroup>
+>     <Reference Include="PresentationCore" />
+>     <Reference Include="PresentationFramework" />
+>     <Reference Include="System.Xaml" />
+>     <Reference Include="WindowsBase" />
+>   </ItemGroup>
+> </Project>
+> ```
+
+需要注意，`<OutputType />`、`<StartupObject />` 和 `<ApplicationDefinition />` 如果是类库则需要去掉。
+
+这样，再次编译后，错误窗口中则没有错误了。
+
+![没有错误的错误窗口](/static/posts/2018-01-16-09-48-56.png)
+
+**等等**！！！然而还是编译不通过！在输出窗口中我们可以看到另外的错误：
+
+![输出窗口中的错误](/static/posts/2018-01-16-09-51-22.png)
+
 困难点|细节
 -|-
 默认不支持 XAML|XAML 文件在编译中的默认行为是 None
@@ -205,7 +267,9 @@ XAML 文件在项目中不可见|设置了 Page 编译的 XAML 文件在项目�
 
 ### 迁移之后的劣势
 
-未完待续……
+迁移成新的 csproj 格式之后，新格式中不支持的配置会丢失。
+
+- **ProjectTypeGuid** 这个属性标志着此项目的类型，比如指定为 WPF 自定义控件库的项目新建文件的模板有自定义控件，而普通类库则不会有。
 
 ---
 
@@ -213,7 +277,6 @@ XAML 文件在项目中不可见|设置了 Page 编译的 XAML 文件在项目�
 
 - [Old csproj to new csproj: Visual Studio 2017 upgrade guide](http://www.natemcmaster.com/blog/2017/03/09/vs2015-to-vs2017-upgrade/)
 - [Using the new .Csproj without .Net core · Issue #1688 · Microsoft/msbuild](https://github.com/Microsoft/msbuild/issues/1688)
-- [c# - WPF App Using new csproj format - Stack Overflow](https://stackoverflow.com/questions/44140673/wpf-app-using-new-csproj-format)
 - [c# - WPF App Using new csproj format - Stack Overflow](https://stackoverflow.com/questions/44140673/wpf-app-using-new-csproj-format)
 - [XAML files are not supported · Issue #1467 · dotnet/project-system](https://github.com/dotnet/project-system/issues/1467)
 - [XAML files are not supported · Issue #810 · dotnet/sdk](https://github.com/dotnet/sdk/issues/810)
