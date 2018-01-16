@@ -1,7 +1,7 @@
 ---
 title: "将 WPF、UWP 以及其他各种类型的旧样式的 csproj 文件迁移成新样式的 csproj 文件"
 date_published: 2018-01-16 00:04:28 +0800
-date: 2018-01-16 08:44:27 +0800
+date: 2018-01-16 10:23:25 +0800
 categories: visualstudio
 ---
 
