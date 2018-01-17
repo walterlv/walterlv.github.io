@@ -288,3 +288,6 @@ XAML 文件在项目中不可见|设置了 Page 编译的 XAML 文件在项目�
 - [XAML files are not supported · Issue #810 · dotnet/sdk](https://github.com/dotnet/sdk/issues/810)
 - [c# - How-to migrate Wpf projects to the new VS2017 format - Stack Overflow](https://stackoverflow.com/questions/43693591/how-to-migrate-wpf-projects-to-the-new-vs2017-format)
 - [project.json doesn't have a runtimes section, add '“runtimes”: { “win”: { } }' to project.json · Issue #5931 · Microsoft/vsts-tasks](https://github.com/Microsoft/vsts-tasks/issues/5931)
+- [Ignore PROJECT.JSON when using .CSPROJ · Issue #394 · Microsoft/msbuild](https://github.com/Microsoft/msbuild/issues/394)
+- [dotnet build fails when referencing a project converted to PackageReference · Issue #6294 · dotnet/cli](https://github.com/dotnet/cli/issues/6294)
+- [Visual studio project.json does not have a runtime section - Stack Overflow](https://stackoverflow.com/questions/45614394/visual-studio-project-json-does-not-have-a-runtime-section)
