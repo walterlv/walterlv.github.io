@@ -16,6 +16,12 @@ categories: post
 
 ### About to Write
 
+- Action 和 Func<Task> 之间的二义性
+    - [C#: incorrectly distinguishes between Func<TArg, Task> and Action<TArg> when resolving generic extension methods · Issue #7681 · dotnet/roslyn](https://github.com/dotnet/roslyn/issues/7681)
+    - [c# - Peculiar overload resolution with while (true) - Stack Overflow](https://stackoverflow.com/questions/24316189/peculiar-overload-resolution-with-while-true)
+    - [c# - Overload resolution and async await - Stack Overflow](https://stackoverflow.com/questions/21579403/overload-resolution-and-async-await)
+    - [linq - Why doesn't C#'s overload resolution work between Func<T,T> and Action<T>? - Stack Overflow](https://stackoverflow.com/questions/11225125/why-doesnt-cs-overload-resolution-work-between-funct-t-and-actiont)
+
 - 轻量级线程安全
     - [Thread-Safe Collections - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/collections/thread-safe/)
 
