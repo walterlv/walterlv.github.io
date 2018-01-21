@@ -1,7 +1,7 @@
 ---
 title: "将 WPF、UWP 以及其他各种类型的旧样式的 csproj 文件迁移成新样式的 csproj 文件"
 date_published: 2018-01-16 00:04:28 +0800
-date: 2018-01-18 08:59:54 +0800
+date: 2018-01-21 11:13:39 +0800
 categories: visualstudio
 ---
 
@@ -123,6 +123,7 @@ categories: visualstudio
 1. 在版本管理中更容易解冲突
 1. NuGet 包的引用没有路径要求，这意味着开发者可以任意指定 NuGet 包的位置
 1. 嵌套的引用不需要重复指定（如果 A 引用了 B，B 引用了 C；那么 A 不需要显式引用 C 也能调用到 C）
+1. 可以一遍编辑 csproj 一边打开项目，互不影响
 1. 可以指定多个开发框架，详见 [让一个项目指定多个开发框架 - 吕毅的博客](/post/configure-projects-to-target-multiple-platforms.html)
 
 ### 迁移普通 .NET Framework 类库的项目文件
