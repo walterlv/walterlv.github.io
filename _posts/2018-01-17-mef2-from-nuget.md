@@ -1,6 +1,7 @@
 ---
 title: ".NET Core 和 .NET Framework 中的 MEF2"
-date: 2018-01-17 23:41:00 +0800
+date_published: 2018-01-17 23:41:00 +0800
+date: 2018-01-21 12:02:03 +0800
 categories: visualstudio dotnet
 ---
 
@@ -56,11 +57,13 @@ MEF 完全使用特性来管理容器中的依赖，微软称之为 Attributed P
 
 ##### Import/Export
 
-未完待续……
+在类型上标记 `[Export]` 可以让容器发现这个类型。`[Export]` 允许带两个参数，一个契约名称，一个契约类型。在 `[Import]` 的时候，相同的契约名称会被注入；与属性或字段的类型相同的契约类型会被注入。
 
 ##### IEnumerable/Lazy
 
-未完待续……
+如果属性或字段是集合类型，可以使用 [ImportMany] 来注入集合（如果 `Export` 有多个）。
+
+如果属性或字段是 `Lazy<T>` 类型，那么并不会立即注入，而是在访问到 `Lazy<T>.Value` 时才获取到实例（如果此时的创建过程由容器处理，那么第一次访问 `Value` 时才会创建）。
 
 #### 框架代码
 
@@ -88,9 +91,7 @@ var compositionHost = new ContainerConfiguration().WithAssemblies(new []
 
 这样，A/B/C/D 这四个类分别所在的程序集中，直接或间接加了 `[Export]` 特性的类都将被此依赖容器管理。
 
-未完待续……
-
-MEF2 之所以为 2，因为它除了能通过 `[Export]` 特性导出，还能直接在框架中发现而不必由业务开发者手动指定。比如我们可以将所有的 ViewModel 导出：
+MEF2 之所以为 2，因为它除了能通过 `[Export]` 特性导出，还能直接在框架中发现而不必由业务开发者手动指定。这在第三方代码或者不希望被 MEF 侵入的代码中非常有用。例如，我们将所有已有的 ViewModel 导出：
 
 ```csharp
 // 使用 ConventionBuilder 自动导出所有的 ViewModel。
@@ -109,7 +110,15 @@ var compositionHost = new ContainerConfiguration().WithAssemblies(new []
 }).WithDefaultConventions(convention).CreateContainer();;
 ```
 
-未完待续……
+注意，以上代码中的 `.Shared()` 目的是让导出的 `ViewModel` 共享实例（同一个类型的实例只有一个）。
+
+只初始化是不行的，还需要将这些依赖注入到目标实例中才行。使用 `SatisfyImports` 可以将传入的对象中的所有依赖注入进去。
+
+```csharp
+compositionHost.SatisfyImports(targetObject);
+```
+
+在框架设计中，对于不同模块中的类型，框架需要决定使用哪一个容器来注入，或者是否注入。所以上面这个代码会发生在使用 MEF2 框架中需要注入的任何一个部分。
 
 ---
 
