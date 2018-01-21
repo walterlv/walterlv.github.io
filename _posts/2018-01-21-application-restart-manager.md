@@ -1,13 +1,33 @@
 ---
 title: "在操作系统重启后恢复应用程序的工作状态"
-date: 2018-01-19 10:58:45 +0800
+date: 2018-01-21 21:29:01 +0800
 categories: csharp windows
 published: false
 ---
 
-
+Windows 10 创意者更新之后，默认开启了重启后恢复应用程序状态的功能。这是自 Vista 以来就提供的功能——Restart Manager。
 
 ---
+
+应用程序实现这一功能只需要调用 `RegisterApplicationRestart` 即可。传入两个参数：
+
+1. 重启后使用的命令行参数（例如当前正在打开的文件，以及正在阅读或编辑的位置）
+1. 决定是否进行重启的限制标记（任何时候都能重启还是在某些条件下关掉重启功能）
+
+我封装了以下这个函数的调用并将其放到 GitHub 上：[sharing-demo/ApplicationRestartManager.cs at master · walterlv/sharing-demo](https://github.com/walterlv/sharing-demo/blob/master/src/Walterlv.Demo.WPF/Utils/Windows/Interop/ApplicationRestartManager.cs)。
+
+调用代码如下：
+
+```csharp
+if (ApplicationRestartManager.IsRestartManagerSupported)
+{
+    ApplicationRestartManager.RegisterApplicationRestart(
+        currentOpeningFile,
+        ApplicationRestartFlags.None);
+}
+```
+
+**附**：封装的 `ApplicationRestartManager`：
 
 ```csharp
 using System;
@@ -114,8 +134,10 @@ namespace Walterlv.Win32
 
 #### 参考资料
 
+- [为何win10 1709（秋季创意更新） 重启会自动恢复一些程序为重启以前的工作状态？ - 蒋晟的回答 - 知乎](https://www.zhihu.com/question/67645160/answer/266972518)
 - [RegisterApplicationRestart function (Windows)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa373347)
 - [pinvoke.net: RegisterApplicationRestart (kernel32)](http://www.pinvoke.net/default.aspx/kernel32.RegisterApplicationRestart)
 - [Restart Manager Support For Windows Application - CodeProject](https://www.codeproject.com/Articles/772868/Restart-Manager-Support-For-Windows-Application)
 - [c# - Restart a crashed program with RegisterApplicationRestart without user prompt - Stack Overflow](https://stackoverflow.com/questions/32520036/restart-a-crashed-program-with-registerapplicationrestart-without-user-prompt)
 - [Vista Application Crash Recovery in C# - CodeProject](https://www.codeproject.com/Articles/17024/Vista-Application-Crash-Recovery-in-C)
+- [c# - Restart a crashed program with RegisterApplicationRestart without user prompt - Stack Overflow](https://stackoverflow.com/questions/32520036/restart-a-crashed-program-with-registerapplicationrestart-without-user-prompt/35765300)
