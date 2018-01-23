@@ -16,9 +16,6 @@ categories: post
 
 ### About to Write
 
-- 桌面应用程序中显式磁贴图标
-    - [How to customize Start screen tiles for desktop apps (Windows Runtime apps) - Microsoft Docs](https://docs.microsoft.com/en-us/previous-versions/windows/apps/dn449733)
-
 - Action 和 Func<Task> 之间的二义性
     - [C#: incorrectly distinguishes between Func<TArg, Task> and Action<TArg> when resolving generic extension methods · Issue #7681 · dotnet/roslyn](https://github.com/dotnet/roslyn/issues/7681)
     - [c# - Peculiar overload resolution with while (true) - Stack Overflow](https://stackoverflow.com/questions/24316189/peculiar-overload-resolution-with-while-true)
