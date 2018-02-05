@@ -1,5 +1,5 @@
 ---
-title: "应该抛出什么异常？（.NET/C#）"
+title: "应该抛出什么异常？不应该抛出什么异常？（.NET/C#）"
 date: 2018-02-04 21:25:51 +0800
 categories: dotnet csharp
 ---
