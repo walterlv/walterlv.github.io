@@ -182,4 +182,4 @@ namespace Walterlv.Demo
 }
 ```
 
-泛型的多参数版本可以使用泛型类型生成器生成，我在 [生成代码，从 <T> 到 <T1, T2, Tn> —— 自动生成多个类型的泛型 - 吕毅](https://walterlv.gitee.io/post/generate-code-of-generic-types.html) 一文中写了一个泛型生成器，可以稍加修改以便适应这种泛型类。
+泛型的多参数版本可以使用泛型类型生成器生成，我在 [生成代码，从 `<T>` 到 `<T1, T2, Tn>` —— 自动生成多个类型的泛型 - 吕毅](https://walterlv.gitee.io/post/generate-code-of-generic-types.html) 一文中写了一个泛型生成器，可以稍加修改以便适应这种泛型类。
