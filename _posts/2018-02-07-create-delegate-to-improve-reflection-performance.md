@@ -1,8 +1,7 @@
 ---
 title: ".NET Core/Framework 创建委托以大幅度提高反射调用的性能"
-date: 2018-02-07 18:53:58 +0800
+date: 2018-02-07 17:45:21 +0800
 categories: dotnet csharp
-published: false
 ---
 
 都知道反射伤性能，但不得不反射的时候又怎么办呢？当真的被问题逼迫的时候还是能找到解决办法的。
