@@ -1,7 +1,7 @@
 ---
 title: "C#/.NET 中的契约"
 date_published: 2017-12-20 23:04:21 +0800
-date: 2018-01-04 14:25:13 +0800
+date: 2018-02-09 15:31:11 +0800
 categories: csharp dotnet
 ---
 
@@ -100,7 +100,7 @@ private T DoSomething<T>(T parent) where T : class
 }
 ```
 
-以上代码中，型号（*）表示契约代码，其他表示方法内的普通代码。一个典型的例子如以下代码所示：
+以上代码中，星号（*）表示契约代码，其他表示方法内的普通代码。一个典型的例子如以下代码所示：
 
 ```csharp
 private T DoSomething<T>(T parent) where T : class
@@ -124,7 +124,7 @@ private T DoSomething<T>(T parent) where T : class
 
 ![前置条件失败](/static/posts/2018-01-04-14-26-42.png)
 
-或者，这样用普通的抛异常的方式。
+或者，这样用普通的抛异常的方式。如果使用普通方式抛出异常，需要遵循 `if-then-throw` 的模式，即有问题立刻就抛出异常。例如下面对 `null` 的判断就符合这样的模式。
 
 ```csharp
 private T DoSomething<T>(T parent) where T : class
@@ -144,6 +144,8 @@ private T DoSomething<T>(T parent) where T : class
     Contract.EnsuresOnThrow<InvalidOperationException>(Value != null);
 }
 ```
+
+当然也可以不止是这样简单的判断，也可以调用其他方法，但要求方法必须是 `[Pure]` 方法，即方法执行完之后，除了返回一个值之外，不改变应用程序的任何状态。
 
 对此契约的静态分析微软有提供工具：[Microsoft/CodeContracts: Source code for the CodeContracts tools for .NET](https://github.com/Microsoft/CodeContracts)，ReSharper 对此也有一丁点儿的支持。
 
