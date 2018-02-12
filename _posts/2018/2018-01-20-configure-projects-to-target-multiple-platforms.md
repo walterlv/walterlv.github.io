@@ -1,7 +1,7 @@
 ---
 title: "让一个 csproj 项目指定多个开发框架"
 date_published: 2018-01-21 11:28:55 +0800
-date: 2018-02-04 21:18:57 +0800
+date: 2018-02-12 15:16:27 +0800
 categories: visualstudio
 ---
 
@@ -11,10 +11,10 @@ categories: visualstudio
 
 看看拥有多个开发框架的项目长什么样吧！
 
-![多 SDK 的项目](/static/posts/2018-01-21-11-03-45.png)  
+![多 SDK 的项目](/static/posts/2018-02-12-15-17-26.png)  
 ▲ 多 SDK 项目
 
-是不是很激动？
+这个是我和 [erdao](https://github.com/erdao) 在 GitHub 上开源项目 [easiwin/MSTestEnhancer](https://github.com/easiwin/MSTestEnhancer) 的项目依赖截图。是不是很激动？
 
 <div id="toc"></div>
 
@@ -89,6 +89,17 @@ categories: visualstudio
 
 </Project>
 ```
+
+在 [easiwin/MSTestEnhancer](https://github.com/easiwin/MSTestEnhancer) 项目中，只有 .NET Framework 4.5 才需要引用 `System.ValueTuple`，于是加上了 `net45` 条件判断：
+
+```xml
+<!--EXTERNAL_PROPERTIES: TargetFramework-->
+<ItemGroup Condition="'$(TargetFramework)'=='net45'">
+  <PackageReference Include="System.ValueTuple" Version="4.4.0" />
+</ItemGroup>
+```
+
+那段注释的作用是告诉代码分析工具 `TargetFramework` 是外部属性，上下文环境中找不到这个属性是正常的。
 
 ---
 
