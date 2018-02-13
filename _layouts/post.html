@@ -9,9 +9,17 @@
 
             <article role="article" id="post" class="post-content" itemprop="articleBody">
                 <p itemprop="post-info" class="post-info">
-                    {% if page.date %}
+                    <svg id="date" class="icon-calendar"><use xlink:href="#icon-calendar"></use></svg>
+                    {% if page.date_published %}
+                        <time itemprop="datePublished" datetime="{{ page.date_published | date_to_xmlschema }}" class="date">
+                            发布于 {% include date.html date=page.date_published %}
+                        </time>
                         <svg id="date" class="icon-calendar"><use xlink:href="#icon-calendar"></use></svg>
-                        <time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}" class="date">
+                        <time itemprop="datePublished" datetime="{{ page.date_published | date_to_xmlschema }}" class="date">
+                            更新于 {% include date.html date=page.date %}
+                        </time>
+                    {% elsif page.date %}
+                        <time itemprop="dateUpdated" datetime="{{ page.date | date_to_xmlschema }}" class="date">
                             {% include date.html date=page.date %}
                         </time>
                     {% endif %}
