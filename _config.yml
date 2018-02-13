@@ -1,17 +1,26 @@
+# Basic Site Information
 title: walterlv
-description: Windows 10 Developer
 author: walterlv
 post_author: 吕毅
+# description: Windows 10 Developer
 mail: walterlv@outlook.com
-logo: /static/img/avatar.png
-github: https://github.com/walterlv
 about: Windows 10 Developer
 
+# Site Appearance
+logo: /static/img/avatar.png
+markdown: kramdown
+highlighter: rouge
+
+# Site Urls
 baseurl: ""
 url: "https://walterlv.github.io"
 
-allowsearch: true
+# Social Accounts
+github: https://github.com/walterlv
+share:
+  twitter_username: _lvyi_
 
+# Visit Analysis
 analytics:
   google: UA-108101550-1
   cnzz: cnzz_stat_icon_1264408226
@@ -26,26 +35,17 @@ leancloud:
   appid: 2NpLNUTfjU4ey5wOeWPPiXXL-gzGzoHsz
   appkey: OeA2qCtXi7ifv96UbMQ4J1kn
 
-share:
-  twitter_username: _lvyi_
-
-
 enableTags: true
 tagarray: []
 
+# Post Settings
 excerpt_separator: ---
 paginate: 15
 per_page: 15
 paginate_path: "/blog/page:num/"
-markdown: kramdown
-gems: [jekyll-paginate, jekyll-gist]
-
-# Content Collection
 collections:
   articles:
     output: true
-
-# Content Template
 defaults:
   - scope:
       path: "_posts"
@@ -61,3 +61,12 @@ defaults:
       layout: "post"
       author: "吕毅"
       permalink: "/article/:title.html"
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-gist
+  - jemoji
+
+# Others
+exclude: ['package.json', 'src', 'node_modules']

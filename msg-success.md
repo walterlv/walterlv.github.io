@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /404.html
+permalink: /contact/message-sent/
 ---
 
 <style type="text/css" media="screen">
@@ -13,7 +13,7 @@ permalink: /404.html
 </style>
 
 <div class="container">
-  <img src="/assets/img/404.gif" width="100%" alt="404 - Page not found">
-  <p><strong>Page not found :(</strong></p>
-  <p>I'm sorry. We couldn't find the page you are looking for.</p>
+  <img src="/assets/img/message.gif" width="540" alt="Message sent!">
+  <p><strong>Message sent!</strong></p>
+  <p>Thank you for sending me a message. I'm going to answer ASAP.</p>
 </div>

@@ -1,4 +1,11 @@
-<footer>
+<section class="author" itemprop="author">
+  <div class="details" itemscope itemtype="http://schema.org/Person">
+    <img itemprop="image" class="img-rounded" src="http://res.cloudinary.com/dm7h7e8xj/image/upload/c_fill,h_200,w_200/v1504971955/neo_ruqszk.jpg" alt="{{ site.name }}">
+    <p class="def">Author</p>
+    <h3 class="name">
+      <a itemprop="name" href="https://github.com/{{ site.github_username }}">{{ site.username }}</a>
+    </h3>
+    <p class="desc">{{ site.user_description }}</p>
     <p>
       {% if site.github_username %}
       <a itemprop="github" href="https://github.com/{{ site.github_username }}" title="Github">
@@ -31,13 +38,5 @@
       </a>
       {% endif %}
     </p>
-    <ul>
-        {% for link in site.links %}
-          <li><a href="{{ site.url }}{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a></li>
-        {% endfor %}
-        <li><a class="feed" href="{{ site.url }}{{site.baseurl}}/feed.xml" title="Atom/RSS feed">Feed</a></li>
-    </ul>
-    <p><span>Jekflix</span> was made with <svg class="love"><use xlink:href="#icon-heart"></use></svg> by <a href="http://www.rossener.com" target="_blank" class="creator">Thiago Rossener</a></p>
-</footer>
-<script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
-{% include stats.html %}
+  </div>
+</section>

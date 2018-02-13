@@ -1,55 +1,46 @@
----
-layout: default
----
-<div class="post-content well force-line-break">
-{% include dont-use-baidu.html %}
-<article class="content">
-    <!-- 生成目录 -->
-    <script type="text/javascript">$(document).ready(function() { $('#toc').toc(); });</script>
-    <!-- 文章正文 -->
-    <div class="post">{{ content }}</div>
-    <hr />
-    {% include license.html %}
-</article>
-{% include share-page.html %}
-<hr />
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/BlogPosting">
+    {% include head.html %}
+    <body class="has-push-menu">
+        {% include minutes-to-read.html %}
+        {% include svg-icons.html %}
+        {% include header.html %}
+        <section class="post">
 
-{% assign hasSimilar = '' %}
-{% for post in site.posts  %}
-    {% assign postHasSimilar = false %}
-    {% for tag in post.categories %}
-        {% for thisTag in page.categories %}
-            {% if postHasSimilar == false and hasSimilar.size < 6 and post != page and tag == thisTag %}
-                {% if hasSimilar.size == 0 %}
-                <div class="panel-body">
-                <h4>相关文章</h4>
-                <ul>
-                {% endif %}
-                <li class="relatedPost">
-                    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-                    {% if post.categories %}
-                        <small>({% for category in post.categories %}<a href="{{ site.baseurl }}/category/{{ category }}">{{ category }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %})</small>
+            <article role="article" id="post" class="post-content" itemprop="articleBody">
+                <p itemprop="post-info" class="post-info">
+                    {% if page.date %}
+                        <svg id="date" class="icon-calendar"><use xlink:href="#icon-calendar"></use></svg>
+                        <time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}" class="date">
+                            {% include date.html date=page.date %}
+                        </time>
                     {% endif %}
-                </li>
-                {% capture hasSimilar %}{{ hasSimilar }}*{% endcapture %}
-                {% assign postHasSimilar = true %}
-            {% endif %}
-        {% endfor %}
-    {% endfor %}
-{% endfor %}
-{% if hasSimilar.size > 0 %}
-    </ul>
-    </div>
-{% endif %}
+                    <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
+                    <span>{{ minutesText }}</span>
+                </p>
+                <h1 class="post-title" itemprop="name">{{ page.title }}</h1>
+                <p itemprop="description" class="subtitle">{{ page.description }}</p>
 
-<div class="PageNavigation">
-    {% if page.previous.url %}
-        <a class="prev pull-left" href="{{ site.baseurl }}{{ page.previous.url }}">&laquo; {{ page.previous.title }}</a>
-    {% endif %}
-    {% if page.next.url %}
-        <a class="next pull-right" href="{{ site.baseurl }}{{ page.next.url }}">{{ page.next.title }} &raquo;</a>
-    {% endif %}
-</div>
+                {% if page.image %}
+                    <img src="{{ page.image }}" alt="Imagem de capa" class="post-cover">
+                {% endif %}
 
-{% include comment.html %}
-</div>
+                {{ content }}
+            </article>
+
+            <div class="progress-bar" data-minutes="{{ totalMinutes }}">
+                <span class="time-completed"></span>
+                <span class="time-remaining"></span>
+                <div class="bar">
+                    <span class="completed" style="width:0%;"></span>
+                    <span class="remaining" style="width:100%;"></span>
+                </div>
+            </div>
+
+            {% include share.html %}
+            {% include author.html %}
+            {% include comments.html %}
+            {% include footer.html %}
+        </section>
+    </body>
+</html>
