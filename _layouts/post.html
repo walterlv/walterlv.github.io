@@ -24,8 +24,8 @@
                 {% if page.image %}
                     <img src="{{ page.image }}" alt="Imagem de capa" class="post-cover">
                 {% endif %}
-
                 {{ content }}
+                {% include license.html %}
             </article>
 
             <div class="progress-bar" data-minutes="{{ totalMinutes }}">
