@@ -20,7 +20,7 @@ categories: web ios
 
 对于我的博客，也就是这篇文章来说，我用了我的个人头像作为图标。
 
-![我的头像]({{ site.baseurl }}/static/img/avatar.png)
+![我的头像]({{ site.baseurl }}{{ site.logo }})
 
 最终固定到 iPhone 主屏幕的效果还不错！
 

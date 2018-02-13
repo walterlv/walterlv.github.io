@@ -10,10 +10,10 @@
     <meta name="keywords" content="{% if page.title %}{{ page.title }}, {{ site.title }}, {% for categ in page.categories %}{{ categ }}{% if forloop.last == false %}, {% endif %}{% endfor %}{% else %}{{ site.title }}, {% for category in site.categories %}{% capture categories_slug %}{{ category | first }}{% endcapture %}{% for categ in categories_slug %}{{ categ }}{% endfor %}{% if forloop.last == false %}, {% endif %}{% endfor %}{% endif %}" />
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ site.baseurl }}/static/img/avatar.png" />
+    <link rel="shortcut icon" href="{{ site.baseurl }}{{ site.logo }}" />
     
     <!-- Apple Touch Icons -->
-    <link rel="apple-touch-icon" href="{{ site.baseurl }}/static/img/avatar.png" />
+    <link rel="apple-touch-icon" href="{{ site.baseurl }}{{ site.logo }}" />
 
     <!-- Windows 8 Tile Icons -->
     <meta name="application-name" content="{{ site.post_author }} Blog">
@@ -50,11 +50,6 @@
     {% if page.date %}
         <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
         <meta content="{{ site.baseurl }}/about/" property="article:author">
-    {% endif %}
-    {% if page.image %}
-        <meta content="{{ site.baseurl }}/static/img/posts/{{ page.image }}" property="og:image">
-    {% else %}
-        <meta content="{{ site.baseurl }}/static/img/logo-high-resolution.png" property="og:image">
     {% endif %}
     {% if page.categories %}
         {% for category in page.categories limit:1 %}
