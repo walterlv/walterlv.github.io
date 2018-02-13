@@ -16,7 +16,15 @@ baseurl: ""
 url: "https://walterlv.github.io"
 
 # Social Accounts
-github: https://github.com/walterlv
+github:
+  username: walterlv
+  link: https://github.com/walterlv
+facebook:
+  username: Xblero
+twitter:
+  username: _lvyi_
+stackoverflow:
+  link: https://stackoverflow.com/users/6233938/walterlv
 share:
   twitter_username: _lvyi_
 
