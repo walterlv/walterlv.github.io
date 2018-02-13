@@ -3,22 +3,22 @@
     <img itemprop="image" class="img-rounded" src="{{ site.logo }}" alt="{{ site.name }}">
     <p class="def">Author</p>
     <h3 class="name">
-      <a itemprop="name" href="https://github.com/{{ site.github_username }}">{{ site.username }}</a>
+      <a itemprop="name" href="https://github.com/{{ site.github.username }}">{{ site.username }}</a>
     </h3>
     <p class="desc">{{ site.user_description }}</p>
     <p>
       {% if site.facebook.username %}
-      <a itemprop="facebook" href="https://www.facebook.com/{{ site.facebook_username }}" title="Facebook">
+      <a itemprop="facebook" href="https://www.facebook.com/{{ site.facebook.username }}" title="Facebook">
         <svg><use xlink:href="#icon-facebook"></use></svg>
       </a>
       {% endif %}
       {% if site.twitter.username %}
-      <a itemprop="twitter" href="https://twitter.com/{{ site.twitter_username }}" title="Twitter">
+      <a itemprop="twitter" href="https://twitter.com/{{ site.twitter.username }}" title="Twitter">
         <svg><use xlink:href="#icon-twitter"></use></svg>
       </a>
       {% endif %}
       {% if site.github.username %}
-      <a itemprop="github" href="https://github.com/{{ site.github_username }}" title="Github">
+      <a itemprop="github" href="https://github.com/{{ site.github.username }}" title="Github">
         <svg><use xlink:href="#icon-github"></use></svg>
       </a>
       {% endif %}

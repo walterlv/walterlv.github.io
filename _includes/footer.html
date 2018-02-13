@@ -1,33 +1,23 @@
 <footer>
     <p>
-      {% if site.github_username %}
-      <a itemprop="github" href="https://github.com/{{ site.github_username }}" title="Github">
-        <svg><use xlink:href="#icon-github"></use></svg>
-      </a>
-      {% endif %}
-      {% if site.facebook_username %}
-      <a itemprop="facebook" href="https://www.facebook.com/{{ site.facebook_username }}" title="Facebook">
+      {% if site.facebook.username %}
+      <a itemprop="facebook" href="https://www.facebook.com/{{ site.facebook.username }}" title="Facebook">
         <svg><use xlink:href="#icon-facebook"></use></svg>
       </a>
       {% endif %}
-      {% if site.twitter_username %}
-      <a itemprop="twitter" href="https://twitter.com/{{ site.twitter_username }}" title="Twitter">
+      {% if site.twitter.username %}
+      <a itemprop="twitter" href="https://twitter.com/{{ site.twitter.username }}" title="Twitter">
         <svg><use xlink:href="#icon-twitter"></use></svg>
       </a>
       {% endif %}
-      {% if site.medium_username %}
-      <a itemprop="medium" href="https://medium.com/@{{ site.medium_username }}" title="Twitter">
-        <svg><use xlink:href="#icon-medium"></use></svg>
+      {% if site.github.username %}
+      <a itemprop="github" href="https://github.com/{{ site.github.username }}" title="Github">
+        <svg><use xlink:href="#icon-github"></use></svg>
       </a>
       {% endif %}
-      {% if site.instagram_username %}
-      <a itemprop="instagram" href="https://www.instagram.com/{{ site.instagram_username }}" title="Instagram">
-        <svg><use xlink:href="#icon-instagram"></use></svg>
-      </a>
-      {% endif %}
-      {% if site.linkedin_username %}
-      <a itemprop="linkedin" href="https://www.linkedin.com/in/{{ site.linkedin_username }}" title="LinkedIn">
-        <svg><use xlink:href="#icon-linkedin"></use></svg>
+      {% if site.stackoverflow.link %}
+      <a itemprop="stackoverflow" href="{{ site.stackoverflow.link }}" title="Stack Overflow">
+        <svg><use xlink:href="#icon-stack-overflow"></use></svg>
       </a>
       {% endif %}
     </p>
@@ -37,7 +27,9 @@
         {% endfor %}
         <li><a class="feed" href="{{ site.url }}{{site.baseurl}}/feed.xml" title="Atom/RSS feed">Feed</a></li>
     </ul>
-    <p><span>Jekflix</span> was made with <svg class="love"><use xlink:href="#icon-heart"></use></svg> by <a href="http://www.rossener.com" target="_blank" class="creator">Thiago Rossener</a></p>
+    <p>© 2014-2018 <span>walterlv</span>, all rights reserved.
+    Powered by: <a href="http://jekyllcn.com/">Jekyll</a>
+    Theme by: <a href="http://www.rossener.com" target="_blank" class="creator">Thiago Rossener</a></p>
 </footer>
 <script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
 {% include stats.html %}
