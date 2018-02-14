@@ -43,9 +43,6 @@ leancloud:
   appid: 2NpLNUTfjU4ey5wOeWPPiXXL-gzGzoHsz
   appkey: OeA2qCtXi7ifv96UbMQ4J1kn
 
-enableTags: true
-tagarray: []
-
 # Post Settings
 excerpt_separator: ---
 paginate: 15
