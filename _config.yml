@@ -14,6 +14,17 @@ highlighter: rouge
 # Site Urls
 baseurl: ""
 url: "https://walterlv.github.io"
+links:
+  - title: 博客
+    url: /
+  - title: 胡思乱想
+    url: /mind
+  - title: 朋友
+    url: /friends
+  - title: 开源项目
+    url: /projects
+  - title: About
+    url: /about/
 
 # Social Accounts
 github:
