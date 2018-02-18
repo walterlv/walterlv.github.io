@@ -16,11 +16,6 @@ display_title: 吕毅 - walterlv
                 {{ post.title }}
               </h2>
             </a>
-            <div class="categories">
-              {% for category in post.categories %}
-                <a href="{{ site.baseurl}}/categories/#{{category | slugify }}">{{ category }}</a>
-              {% endfor %}
-            </div>
             <time itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}" class="date">
               {% include date.html date=post.date %}
             </time>
@@ -33,10 +28,10 @@ display_title: 吕毅 - walterlv
     {% endfor %}
   </div>
   
-  <div class="row pager">
+  <div class="pager">
   <!-- Pagination links -->
   {% if paginator.total_pages > 1 %}
-  <ul class="pager">
+  <ul class="row pager">
     {% if paginator.previous_page %}
       <li class="previous">
         <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">←</a>
@@ -47,9 +42,7 @@ display_title: 吕毅 - walterlv
 
     {% for page in (1..paginator.total_pages) %}
       {% if page == paginator.page %}
-        <li class="active">
-            <a>{{ page }}<span class="sr-only">(current)</span></a>
-        </li>
+        <li class="active">{{ page }}</li>
       {% elsif page == 1 %}
         <li><a href="/">{{ page }}</a></li>
       {% else %}
@@ -70,60 +63,3 @@ display_title: 吕毅 - walterlv
   {% endif %}
   </div>
 </main>
-
-{% comment %} <div class="well">
-    <div class="list-group">
-      {% for post in paginator.posts %}
-      <div class="list-group-item">
-        <div class="row-content">
-          <h4 class="list-group-item-heading"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h4>
-          <p style="font-size: 0.8em">
-            {% if post.date_published %}
-              {{ post.author }} 更新于 {{ post.date | date: "%Y-%m-%d %H:%M" }}，发布于 {{ post.date_published | date: "%Y-%m-%d %H:%M" }}
-            {% else %}
-              {{ post.author }} 发布于 {{ post.date | date: "%Y-%m-%d %H:%M" }}
-            {% endif %}
-          </p>
-          <p class="list-group-item-text">{{ post.excerpt }}</p>
-        </div>
-      </div>
-      <div class="list-group-separator"></div>
-      {% endfor %}
-    </div>
-   
-
-    <!-- Pagination links -->
-    {% if paginator.total_pages > 1 %}
-    <ul class="pager">
-      {% if paginator.previous_page %}
-        <li class="previous">
-          <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">←</a>
-        </li>
-      {% else %}
-        <li class="previous disabled"><span aria-hidden="true">←</span></li>
-      {% endif %}
-
-      {% for page in (1..paginator.total_pages) %}
-        {% if page == paginator.page %}
-          <li class="active">
-             <a>{{ page }}<span class="sr-only">(current)</span></a>
-          </li>
-        {% elsif page == 1 %}
-          <li><a href="/">{{ page }}</a></li>
-        {% else %}
-          <li>
-            <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-          </li>
-        {% endif %}
-      {% endfor %}
-
-      {% if paginator.next_page %}
-        <li class="next">
-          <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">→</a>
-        </li>
-      {% else %}
-        <li class="next disabled"><span>→</span></li>
-      {% endif %}
-    </ul>
-    {% endif %}
-</div><!-- end #home --> {% endcomment %}
