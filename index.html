@@ -37,7 +37,7 @@ display_title: 吕毅 - walterlv
         <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">←</a>
       </li>
     {% else %}
-      <li class="previous disabled"><span aria-hidden="true">←</span></li>
+      <li class="previous disabled">←</li>
     {% endif %}
 
     {% for page in (1..paginator.total_pages) %}
