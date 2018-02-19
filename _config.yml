@@ -26,10 +26,10 @@ links:
   - title: 关于
     url: /about/
 links-light:
-  - icon: 博客
+  - icon: book
     title: 博客
     url: /
-  - icon: 朋友
+  - icon: smile
     title: 朋友
     url: /friends
 
