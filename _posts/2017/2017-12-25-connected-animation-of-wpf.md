@@ -580,4 +580,4 @@ private async void BeginConnectedAnimation(UIElement source, UIElement destinati
 
 - [Connected animation - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/motion/connected-animation)
 - [UWP Connected Animations updates with Windows Creators release – Varun Shandilya](http://varunshandilya.com/uwp-connected-animations-updates-with-windows-creators-release/)
-- [实现Fluent Design中的Connected Animation - ^ _ ^ .io](https://lijiaxiang98.github.io/2017/09/08/%E5%AE%9E%E7%8E%B0Fluent-Design%E4%B8%AD%E7%9A%84Connected-Animation/)
+- [实现 Fluent Design 中的 Connected Animation - ^ _ ^ .io](https://lijiaxiang98.github.io/2017/09/08/%E5%AE%9E%E7%8E%B0Fluent-Design%E4%B8%AD%E7%9A%84Connected-Animation/)

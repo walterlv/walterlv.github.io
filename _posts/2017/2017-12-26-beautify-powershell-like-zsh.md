@@ -1,6 +1,7 @@
 ---
 title: "将美化进行到底，把 PowerShell 做成 oh-my-zsh 的样子"
-date: 2017-12-26 15:00:17 +0800
+date_published: 2017-12-26 15:00:17 +0800
+date: 2018-02-20 06:53:00 +0800
 categories: windows powershell
 ---
 
@@ -90,7 +91,7 @@ Set-Theme
 
 ### 安装字体/安装第三方 PowerShell
 
-！！！**重要说明：给 PowerrShell 定制字体是一件非常困难的事情，非常困难！！！** *可参见 [自定义 Windows PowerShell 和 cmd 的字体](/post/customize-fonts-of-command-window.html) 感受一下。* **所以，这里更倾向于在安装了字体的情况下使用第三方 PowerShell。**
+！！！**重要说明：给 PowerShell 定制字体是一件非常困难的事情，非常困难！！！** *可参见 [自定义 Windows PowerShell 和 cmd 的字体](/post/customize-fonts-of-command-window.html) 感受一下。* **所以，这里更倾向于在安装了字体的情况下使用第三方 PowerShell。**
 
 比如下图是我用 vscode 中带的 PowerShell 的效果。
 

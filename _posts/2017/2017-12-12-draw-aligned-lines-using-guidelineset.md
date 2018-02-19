@@ -1,7 +1,7 @@
 ---
 title: "WPF 绘制对齐像素的清晰显示的线条"
 date_published: 2017-12-12 21:49:53 +0800
-date: 2017-12-12 22:10:23 +0800
+date: 2018-02-20 06:50:53 +0800
 categories: wpf
 ---
 
@@ -49,7 +49,7 @@ categories: wpf
 
 它有一个好处，是像素对齐的情况下同时能够保证显示不足或超过 1 像素时，也能带一点儿透明或者超过一点像素。
 
-#### 方法三：使用 DrwingContext 绘制并配合 GuidelineSet
+#### 方法三：使用 DrawingContext 绘制并配合 GuidelineSet
 
 如果自己处理绘制，则可以在 `OnRender` 方法中使用 `DrawingContext` 来绘制各种各样的形状。`DrawingContext` 有方法 `PushGuidelineSet`，而 `PushGuidelineSet` 就是用来处理对齐的。
 

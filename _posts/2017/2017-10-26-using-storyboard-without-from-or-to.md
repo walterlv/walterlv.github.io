@@ -1,6 +1,7 @@
 ---
 title: "WPF 和 UWP 中，不用设置 From 或 To，Storyboard 即拥有更灵活的动画控制"
-date: 2017-10-26 12:55:27 +0800
+date_published: 2017-10-26 12:55:27 +0800
+date: 2018-02-20 06:41:52 +0800
 categories: wpf uwp
 tags: Storyboard Animation From To
 ---
@@ -62,7 +63,7 @@ XAML 是这样的（这里的 XAML，WPF 和 UWP 完全一样，可以互相使�
 <Page.Resources>
     <CircleEase x:Key="EasingFunction.Translate" EasingMode="EaseOut"/>
     <!-- 为了方便使用，在 UWP 中加上了 x:Name；WPF 代码请删除 x:Name -->
-    <Storyboard x:Name="TranlateStoryboard" x:Key="Storyboard.Translate">
+    <Storyboard x:Name="TranslateStoryboard" x:Key="Storyboard.Translate">
         <DoubleAnimation Storyboard.TargetName="TranslateTransform" Storyboard.TargetProperty="X" EasingFunction="{StaticResource EasingFunction.Translate}"/>
         <DoubleAnimation Storyboard.TargetName="TranslateTransform" Storyboard.TargetProperty="Y" EasingFunction="{StaticResource EasingFunction.Translate}"/>
     </Storyboard>

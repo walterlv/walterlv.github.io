@@ -2,7 +2,7 @@
 layout: post
 title: "在 Windows 10 上为 WPF 窗口添加模糊特效（就像开始菜单和操作中心那样）"
 date_published: 2017-10-02 00:14:07 +0800
-date: 2017-10-02 09:00:45 +0800
+date: 2018-02-20 06:31:10 +0800
 categories: win10 windows wpf
 permalink: /post/win10/2017/10/02/wpf-transparent-blur-in-windows-10.html
 tags: WPF Windows Blur SetWindowCompositionAttribute
@@ -109,7 +109,7 @@ WindowBlur.SetIsEnabled(this, true);
 - [调用未公开API SetWindowCompositionAttribute 在Win10下开启Aero - CSDN博客](http://blog.csdn.net/ysc3839/article/details/50451064)
 - [Windows 10 开始菜单的高斯模糊效果是如何实现的？ - 知乎](https://www.zhihu.com/question/54147239)
 - [从编程的角度来说，Windows 的开始菜单是如何实现的？ - 知乎](https://www.zhihu.com/question/53157092/answer/133772272?utm_source=qq&utm_medium=social)
-- [Windows 10 Creaters Update 新功能——画中画模式和窗口高斯模糊 - yinyue200 - 博客园](http://www.cnblogs.com/yinyue200/p/6623307.html)
+- [Windows 10 Creators Update 新功能——画中画模式和窗口高斯模糊 - yinyue200 - 博客园](http://www.cnblogs.com/yinyue200/p/6623307.html)
 - [Nukepayload2/sample-win10-aeroglass](https://github.com/Nukepayload2/sample-win10-aeroglass)
 
 ---

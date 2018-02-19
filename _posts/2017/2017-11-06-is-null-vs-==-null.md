@@ -1,7 +1,7 @@
 ---
 title: "从 “x is null 和 x == null” 的区别看 C# 7 模式匹配中常量和 null 的匹配"
 date_published: 2017-11-06 23:24:52 +0800
-date: 2017-11-06 23:29:21 +0800
+date: 2018-02-20 06:39:41 +0800
 categories: csharp msil dotnet decompile
 ---
 
@@ -96,7 +96,7 @@ public static int DiceSum5(IEnumerable<object> values)
 好了，回到正题。我们想说的是 `x is null` 和 `x == null`。为了得知它们的区别，我们写一段代码：
 
 ```csharp
-private void TestInWalterlvsDemo(object value)
+private void TestInWalterlvDemo(object value)
 {
     if (value is null)
     {
@@ -111,7 +111,7 @@ private void TestInWalterlvsDemo(object value)
 
 ```nasm
 .method private hidebysig instance void 
-    TestInWalterlvsDemo(
+    TestInWalterlvDemo(
       object 'value'
     ) cil managed 
 {
@@ -189,7 +189,7 @@ IL_000f: stloc.1      // V_1
 如果只是像上面那样，那这篇文章也太没营养了！现在我们把 `null` 换成其它常量：
 
 ```csharp
-private void TestInWalterlvsDemo(object value)
+private void TestInWalterlvDemo(object value)
 {
     if (value is 1)
     {
@@ -203,7 +203,7 @@ private void TestInWalterlvsDemo(object value)
 😲呀……编译不通过！改改……
 
 ```csharp
-private void TestInWalterlvsDemo(object value)
+private void TestInWalterlvDemo(object value)
 {
     if (value is 1)
     {

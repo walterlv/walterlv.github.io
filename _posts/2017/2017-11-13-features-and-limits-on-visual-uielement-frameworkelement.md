@@ -1,6 +1,7 @@
 ---
 title: "Visual->UIElement->FrameworkElement，带来更多功能的同时也带来了更多的限制"
-date: 2017-11-13 23:55:58 +0800
+date_published: 2017-11-13 23:55:58 +0800
+date: 2018-02-20 06:41:24 +0800
 categories: wpf uwp xaml
 ---
 
@@ -27,9 +28,9 @@ categories: wpf uwp xaml
 
 ```csharp
 /// <summary>
-/// This method supplies an additional (to the <seealso cref="Clip"/> property) clip geometry
-/// that is used to intersect Clip in case if <seealso cref="ClipToBounds"/> property is set to "true".
-/// Typcally, this is a size of layout space given to the UIElement.
+/// This method supplies an additional (to the <see cref="Clip"/> property) clip geometry
+/// that is used to intersect Clip in case if <see cref="ClipToBounds"/> property is set to "true".
+/// Typically, this is a size of layout space given to the UIElement.
 /// </summary>
 /// <returns>Geometry to use as additional clip if ClipToBounds=true</returns>
 protected virtual Geometry GetLayoutClip(Size layoutSlotSize)

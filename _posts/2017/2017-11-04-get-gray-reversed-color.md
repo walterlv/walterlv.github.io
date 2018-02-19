@@ -1,7 +1,7 @@
 ---
 title: "分享一个算法，计算能在任何背景色上清晰显示的前景色"
 date_published: 2017-11-04 22:51:33 +0800
-date: 2017-11-05 16:24:33 +0800
+date: 2018-02-20 06:37:19 +0800
 categories: algorithm wpf uwp dotnet csharp
 ---
 
@@ -76,7 +76,7 @@ private static Color GetReverseForegroundColor(double grayLevel) => grayLevel > 
 这是期望的最简用法：
 
 ```xml
-<TextBlock Foreground="{media:LuminancedForeground}" Text="我是前景 by walterlv"/>
+<TextBlock Foreground="{media:LuminanceForeground}" Text="我是前景 by walterlv"/>
 ```
 
 因为内部已经使用绑定来实现动态变化，所以，无需在颜色更改时再次更新：

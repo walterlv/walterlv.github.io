@@ -1,6 +1,7 @@
 ---
 title: "安利一款非常好用的命令行参数库：Microsoft.Extensions.CommandlineUtils"
-date: 2017-10-21 09:44:02 +0800
+date_published: 2017-10-21 09:44:02 +0800
+date: 2018-02-20 06:34:47 +0800
 categories: dotnet dotnet-core dotnet-standard
 description: 
 ---
@@ -72,7 +73,7 @@ static int Main(string[] args)
         var wordsArgument = command.Argument("[words]", "指定需要输出的文字。");
         var repeatOption = command.Option("-r|--repeat-count", "指定输出重复次数", CommandOptionType.SingleValue);
         var upperOption = command.Option("--upper", "指定是否全部大写", CommandOptionType.NoValue);
-        var seperatorOption = command.Option("-s|--seperator", "指定重复输出用户文字时重复之间应该使用的分隔符，可以指定多个，这将依次应用到每一次分割。", CommandOptionType.MultipleValue);
+        var separatorOption = command.Option("-s|--separator", "指定重复输出用户文字时重复之间应该使用的分隔符，可以指定多个，这将依次应用到每一次分割。", CommandOptionType.MultipleValue);
         command.OnExecute(() =>
         {
             // 在这里使用上面各种 Argument 和 Option 的 Value 或 Values 属性拿值。
@@ -85,7 +86,7 @@ static int Main(string[] args)
 
 #### 体验我封装的命令行参数配置
 
-原生库配置命令行参数已经非常方便了，几乎是一行一个功能，但 `lamda` 表达式嵌套太多是一个问题，会导致代码随着参数种类的增多变得急剧膨胀；于是我针对原生库做了一个基于反射的版本。于是，实现一个命令行参数只需要写这些代码就够啦：
+原生库配置命令行参数已经非常方便了，几乎是一行一个功能，但 `lambda` 表达式嵌套太多是一个问题，会导致代码随着参数种类的增多变得急剧膨胀；于是我针对原生库做了一个基于反射的版本。于是，实现一个命令行参数只需要写这些代码就够啦：
 
 ```csharp
 [CommandMetadata("echo", Description = "Output users command at specified format.")]
@@ -103,11 +104,11 @@ public sealed class SampleTask : CommandTask
         set => _repeatCount = value == null ? 1 : int.Parse(value);
     }
     
-    [CommandOption("--upper", Description = "Indicates that whether all words shoule be in upper case.")]
+    [CommandOption("--upper", Description = "Indicates that whether all words should be in upper case.")]
     public bool UpperCase { get; set; }
 
-    [CommandOption("-s|--seperator", Description = "Speficy a string to split each repeat.")]
-    public List<string> Seperators { get; set; }
+    [CommandOption("-s|--separator", Description = "Specify a string to split each repeat.")]
+    public List<string> Separators { get; set; }
 
     public override int Run()
     {
