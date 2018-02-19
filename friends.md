@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: 朋友和收藏
 permalink: /friends/
 ---
