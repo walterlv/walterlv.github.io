@@ -25,6 +25,13 @@ links:
     url: /projects
   - title: 关于
     url: /about/
+links-light:
+  - icon: 博客
+    title: 博客
+    url: /
+  - icon: 朋友
+    title: 朋友
+    url: /friends
 
 # Social Accounts
 github:
@@ -34,6 +41,8 @@ facebook:
   username: Xblero
 twitter:
   username: _lvyi_
+google-plus:
+  link: https://plus.google.com/u/0/108980119098403422702
 stackoverflow:
   link: https://stackoverflow.com/users/6233938/walterlv
 
