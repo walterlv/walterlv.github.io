@@ -1,7 +1,7 @@
 ---
 title: "生成代码，从 T 到 T1, T2, Tn —— 自动生成多个类型的泛型"
 date_published: 2018-01-31 13:38:11 +0800
-date: 2018-02-04 21:34:45 +0800
+date: 2018-02-20 06:58:40 +0800
 categories: csharp dotnet visualstudio
 ---
 
@@ -105,7 +105,7 @@ T4 模板编辑后一旦保存（Ctrl+S），代码立刻生成。
 
 这也不是本文的重点，于是感兴趣请阅读官方文档 [Custom Tools - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/custom-tools) 学习。
 
-#### 第三重：笨笨的编译生成事件
+#### 第三种：笨笨的编译生成事件
 
 这算是通常项目用得最多的方式了，因为它可以在不修改用户开发环境的情况下执行几乎任何任务。
 
