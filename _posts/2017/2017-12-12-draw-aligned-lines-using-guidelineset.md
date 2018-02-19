@@ -13,7 +13,7 @@ categories: wpf
 
 ![像素对齐](/static/posts/2017-12-12-19-37-12.png)
 
-<div id="toc"></div>
+<p id="toc"></p>
 
 ### 为什么要做像素对齐
 

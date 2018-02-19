@@ -16,7 +16,7 @@ categories: visualstudio
 
 这个是我和 [erdao](https://github.com/erdao) 在 GitHub 上开源项目 [easiwin/MSTestEnhancer](https://github.com/easiwin/MSTestEnhancer) 的项目依赖截图。是不是很激动？
 
-<div id="toc"></div>
+<p id="toc"></p>
 
 ### 新 csproj 文件
 

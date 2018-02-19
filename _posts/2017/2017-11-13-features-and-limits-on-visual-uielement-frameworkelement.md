@@ -10,7 +10,7 @@ categories: wpf uwp xaml
 
 ---
 
-<div id="toc"></div>
+<p id="toc"></p>
 
 ### 宽度和高度
 

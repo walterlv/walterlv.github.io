@@ -11,7 +11,7 @@ categories: csharp dotnet
 
 ---
 
-<div id="toc"></div>
+<p id="toc"></p>
 
 ## 契约式编程
 

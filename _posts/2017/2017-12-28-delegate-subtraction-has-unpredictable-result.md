@@ -13,7 +13,7 @@ categories: csharp dotnet
 ![委托的减法提示](/static/posts/2017-12-28-08-51-19.png)  
 ▲ 委托的减法可能出现非预期的结果
 
-<div id="toc"></div>
+<p id="toc"></p>
 
 ### ReSharper 的官方帮助文档
 

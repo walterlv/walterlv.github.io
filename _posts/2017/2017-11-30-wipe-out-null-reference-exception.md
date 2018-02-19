@@ -10,7 +10,7 @@ categories: csharp dotnet
 
 ---
 
-<div id="toc"></div>
+<p id="toc"></p>
 
 ### NullReferenceException 的可恨之处
 

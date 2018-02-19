@@ -11,7 +11,7 @@ categories: csharp msil dotnet decompile
 
 ---
 
-<div id="toc"></div>
+<p id="toc"></p>
 
 ---
 

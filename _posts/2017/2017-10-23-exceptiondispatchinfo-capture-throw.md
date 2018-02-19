@@ -15,7 +15,7 @@ categories: dotnet dotnet-core dotnet-standard csharp
 
 先探索为什么需要重新抛出异常，再了解如何最佳地重新抛出异常。如果你只希望了解 `ExceptionDispatchInfo`，请直接从以下导航中点击跳转到最后一节。
 
-<div id="toc"></div>
+<p id="toc"></p>
 
 ### 重新抛出异常
 

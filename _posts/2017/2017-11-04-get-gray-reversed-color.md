@@ -9,7 +9,7 @@ categories: algorithm wpf uwp dotnet csharp
 
 ---
 
-<div id="toc"></div>
+<p id="toc"></p>
 
 ### 灰度图的心理学公式
 

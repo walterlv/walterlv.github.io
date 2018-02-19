@@ -14,7 +14,7 @@ MVVM，当然三层——M-V-VM。就凭这个“三层”结构，WPF/UWP 开�
 
 答案：**MVVM 之外**。
 
-<div id="toc"></div>
+<p id="toc"></p>
 
 ---
 

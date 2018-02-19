@@ -21,7 +21,7 @@ description:
 
 ![黑底效果](/static/posts/2017-10-01-23-49-15.png)
 
-<div id="toc"></div>
+<p id="toc"></p>
 
 ### 为什么不推荐使用？
 

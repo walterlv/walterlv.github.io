@@ -11,7 +11,7 @@ description:
 
 ---
 
-<div id="toc"></div>
+<p id="toc"></p>
 
 ### 体验超级简洁的代码吧！
 

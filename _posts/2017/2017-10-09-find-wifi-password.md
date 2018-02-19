@@ -11,7 +11,7 @@ description: 了解如何查询已连接 Wi-Fi 的密码
 
 ---
 
-<div id="toc"></div>
+<p id="toc"></p>
 
 ### 进阶篇
 

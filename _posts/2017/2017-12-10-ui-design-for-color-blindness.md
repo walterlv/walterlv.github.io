@@ -14,7 +14,7 @@ categories: ux ui
 
 ---
 
-<div id="toc"></div>
+<p id="toc"></p>
 
 ### 没有色盲模拟器
 

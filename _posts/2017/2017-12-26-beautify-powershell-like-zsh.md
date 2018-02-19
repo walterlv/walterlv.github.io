@@ -12,7 +12,7 @@ categories: windows powershell
 
 Windows 下我们用 oh-my-posh 在 PowerShell 中实现这样的效果。分以下三步走：
 
-<div id="toc"></div>
+<p id="toc"></p>
 
 ### 安装 oh-my-posh
 

@@ -11,7 +11,7 @@ categories: csharp dotnet wpf
 
 ---
 
-<div id="toc"></div>
+<p id="toc"></p>
 
 ### 不恰当的异常处理会带来什么影响？
 

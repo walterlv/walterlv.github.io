@@ -13,7 +13,7 @@ Windows 10 的创造者更新为开发者们带来了 Connected Animation 连接
 ![Connected Animation](https://docs.microsoft.com/en-us/windows/uwp/design/motion/images/connected-animations/example.gif)  
 ▲ Connected Animation 连接动画
 
-<div id="toc"></div>
+<p id="toc"></p>
 
 ### 模拟 UWP 中的 API
 

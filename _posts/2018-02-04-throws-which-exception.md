@@ -8,7 +8,7 @@ categories: dotnet csharp
 
 ---
 
-<div id="toc"></div>
+<p id="toc"></p>
 
 ### 究竟是谁错了？
 
