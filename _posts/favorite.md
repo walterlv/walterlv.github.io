@@ -5,6 +5,10 @@ categories: favorite
 sitemap: false
 ---
 
+- Windows/Office 安装
+    - [如何使用Windows 10关联的数字权利激活新的电脑 - 蓝点网](https://www.landiannews.com/archives/44411.html)
+    - [Microsoft Office 2019早期预览版详细图文安装教程 - 蓝点网](https://www.landiannews.com/archives/45121.html?utm_sources=otp.landian.la&O17)
+
 - 快速高斯模糊
     - [Fastest Gaussian Blur (in linear time)](http://blog.ivank.net/fastest-gaussian-blur.html)
 
