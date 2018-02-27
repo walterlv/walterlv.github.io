@@ -40,7 +40,7 @@ Windows 10 自带的图标几乎都在 `%systemroot\system32\*.dll` 中，主要
     - `%systemroot\system32\mstscax.dll`
     - `%systemroot\system32\netcenter.dll`
 
-- Windows XP/2000/9X/3.X 风格
+- Windows 早期风格
     - `%systemroot\system32\compstui.dll`
     - `%systemroot\system32\mmcndmgr.dll`
     - `%systemroot\system32\moricons.dll`
@@ -103,7 +103,7 @@ Windows 10 自带的图标几乎都在 `%systemroot\system32\*.dll` 中，主要
 ![netcenter.dll](/static/posts/2018-02-27-22-29-57.png)  
 ▲ netcenter.dll Windows 7 风格的网络和共享中心所用图标
 
-#### Windows 早期 风格
+#### Windows XP/2000/9X/3.X 风格
 
 ![compstui.dll](/static/posts/2018-02-27-22-49-36.png)  
 ▲ compstui.dll
