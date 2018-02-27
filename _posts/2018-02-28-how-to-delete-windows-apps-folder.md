@@ -1,6 +1,6 @@
 ---
 title: "如何删除 Windows 10 系统生成的 WindowsApps 文件夹"
-date: 2018-02-27 23:27:48 +0800
+date: 2018-02-28 00:03:43 +0800
 categories: windows sysprep
 tags: Windows10 Win10
 ---
