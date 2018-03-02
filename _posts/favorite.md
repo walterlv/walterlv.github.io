@@ -5,6 +5,18 @@ categories: favorite
 sitemap: false
 ---
 
+- Visual Studio Gray Candidate Window with Number
+    - [Grey box with number sticks at top left corner of screen - Developer Community](https://developercommunity.visualstudio.com/content/problem/75736/grey-box-with-number-sticks-at-top-left-corner-of.html)
+    - [number in upper-left corner of screen - Developer Community](https://developercommunity.visualstudio.com/content/problem/118174/number-in-upper-left-corner-of-screen.html)
+    - [Visual Studio leaving numbers in tooltips on desktop - Developer Community](https://developercommunity.visualstudio.com/content/problem/190178/visual-studio-leaving-numbers-in-tooltips-on-deskt.html)
+    - [visual studio 2012 puts a small number in the top left corner of my screen - Stack Overflow](https://stackoverflow.com/questions/27101609/visual-studio-2012-puts-a-small-number-in-the-top-left-corner-of-my-screen)
+
+- .NET Core
+    - [Key Steps in Developing .NET Core Applications – Microsoft MVP Award Program Blog](https://blogs.msdn.microsoft.com/mvpawardprogram/2016/07/19/key-steps-in-developing-net-core-applications/)
+
+- 软硬链接
+    - [windows 文件文件夹映射junction和mklink，创建软硬链接 - - ITeye博客](http://happyqing.iteye.com/blog/2256875)
+
 - Windows/Office 安装
     - [如何使用Windows 10关联的数字权利激活新的电脑 - 蓝点网](https://www.landiannews.com/archives/44411.html)
     - [Microsoft Office 2019早期预览版详细图文安装教程 - 蓝点网](https://www.landiannews.com/archives/45121.html?utm_sources=otp.landian.la&O17)
