@@ -3,7 +3,6 @@
     {% include head.html %}
     <body class="has-push-menu">
         {% include script.html %}
-        {% include minutes-to-read.html %}
         {% include svg-icons.html %}
         {% include post-header.html %}
         <section class="post">
@@ -16,7 +15,7 @@
                             发布于 {% include date.html date=page.date_published %}
                         </time>
                         <br class="mobile-only">
-                        <svg id="date" class="icon-calendar"><use xlink:href="#icon-calendar"></use></svg>
+                        <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
                         <time itemprop="datePublished" datetime="{{ page.date_published | date_to_xmlschema }}" class="date">
                             更新于 {% include date.html date=page.date %}
                         </time>
@@ -25,24 +24,11 @@
                             {% include date.html date=page.date %}
                         </time>
                     {% endif %}
-                    <br class="mobile-only">
-                    <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                    <span>{{ minutesText }}</span>
                 </p>
                 <p itemprop="description" class="subtitle">{{ page.description }}</p>
                 {{ content }}
                 {% include license.html %}
             </article>
-
-            <div class="progress-bar" data-minutes="{{ totalMinutes }}">
-                <span class="time-completed"></span>
-                <span class="time-remaining"></span>
-                <div class="bar">
-                    <span class="completed" style="width:0%;"></span>
-                    <span class="remaining" style="width:100%;"></span>
-                </div>
-            </div>
-
             {% include share.html %}
             {% include comments.html %}
             {% include footer.html %}
