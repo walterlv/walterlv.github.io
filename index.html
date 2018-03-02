@@ -1,65 +1,71 @@
 ---
-layout: main
 title: 吕毅
 display_title: 吕毅's blog, Focus on Windows
 ---
 
-<main class="home" id="post" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
-  <div id="grid" class="row grid">
-    {% for post in paginator.posts %}
-      <article class="box-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
-        <div class="box-body">
-          <div class="box-info">
-            <meta itemprop="datePublished" content="{{ post.date | date_to_xmlschema }}">
-            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
-              <h2 class="post-title" itemprop="name">
-                {{ post.title }}
-              </h2>
-            </a>
-            <time itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}" class="date">
-              {% include date.html date=post.date %}
-            </time>
-            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
-              <p class="description">{{ post.excerpt }}</p>
-            </a>
-          </div>
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  {% include head.html %}
+  <body class="main-page has-push-menu">
+    {% include svg-icons.html %}
+    {% include header.html %}
+    <section class="content">
+      <main class="home" id="post" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+        <div id="grid" class="row grid">
+          {% for post in paginator.posts %}
+          <article class="box-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+            <div class="box-body">
+              <div class="box-info">
+                <meta itemprop="datePublished" content="{{ post.date | date_to_xmlschema }}">
+                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+                  <h2 class="post-title" itemprop="name">
+                    {{ post.title }}
+                  </h2>
+                </a>
+                <time itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}" class="date">
+                  {% include date.html date=post.date %}
+                </time>
+                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+                  <p class="description">{{ post.excerpt }}</p>
+                </a>
+              </div>
+            </div>
+          </article>
+          {% endfor %}
         </div>
-      </article>
-    {% endfor %}
-  </div>
-  
-  <div class="pager">
-  <!-- Pagination links -->
-  {% if paginator.total_pages > 1 %}
-  <ul class="row pager">
-    {% if paginator.previous_page %}
-      <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">←</a>
-      </li>
-    {% else %}
-      <li class="previous disabled">←</li>
-    {% endif %}
-
-    {% for page in (1..paginator.total_pages) %}
-      {% if page == paginator.page %}
-        <li class="active">{{ page }}</li>
-      {% elsif page == 1 %}
-        <li><a href="/">{{ page }}</a></li>
-      {% else %}
-        <li>
-          <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-        </li>
-      {% endif %}
-    {% endfor %}
-
-    {% if paginator.next_page %}
-      <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">→</a>
-      </li>
-    {% else %}
-      <li class="next disabled"><span>→</span></li>
-    {% endif %}
-  </ul>
-  {% endif %}
-  </div>
-</main>
+        <div class="pager">
+          {% if paginator.total_pages > 1 %}
+          <ul class="row pager">
+            {% if paginator.previous_page %}
+            <li class="previous">
+              <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">←</a>
+            </li>
+            {% else %}
+            <li class="previous disabled">←</li>
+            {% endif %}
+            {% for page in (1..paginator.total_pages) %}
+            {% if page == paginator.page %}
+            <li class="active">{{ page }}</li>
+            {% elsif page == 1 %}
+            <li><a href="/">{{ page }}</a></li>
+            {% else %}
+            <li>
+              <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+            {% if paginator.next_page %}
+            <li class="next">
+              <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">→</a>
+            </li>
+            {% else %}
+            <li class="next disabled"><span>→</span></li>
+            {% endif %}
+          </ul>
+          {% endif %}
+        </div>
+      </main>
+    </section>
+    {% include footer.html %}
+  </body>
+</html>
