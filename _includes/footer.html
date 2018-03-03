@@ -1,8 +1,12 @@
 <footer>
     {% include analytics.html %}
-    <p>© 2014-2018 <span>walterlv</span>, all rights reserved.
-    Powered by: <a href="http://jekyllcn.com/">Jekyll</a>
-    Theme by: <a href="http://www.rossener.com" target="_blank" class="creator">Thiago Rossener</a></p>
+    <p>© 2014-2018 <span class="bold">walterlv</span>, all rights reserved.
+    Powered by: <span class="bold"><a href="http://jekyllcn.com/">Jekyll</a></span>
+    Theme by:
+    <span class="tooltip">
+        <span class="bold"><a href="https://walterlv.github.io" target="_blank" class="creator">walterlv</a></span>
+        <span class="tooltiptext">Based on <a href="http://www.rossener.com" target="_blank" class="creator">Thiago Rossener</a></span>
+    </span></p>
 </footer>
 <script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
 {% include stats.html %}
