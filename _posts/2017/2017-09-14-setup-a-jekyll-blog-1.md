@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "[译] 搭建一个托管在 GitHub Pages 的 Jekyll 博客，并添加 Disqus 评论功能"
-date: 2017-09-15 20:50:20 +0800
+date_published: 2017-09-15 20:50:20 +0800
+date: 2018-03-04 12:12:45 +0800
 categories: jekyll
 permalink: /jekyll/2017/09/15/setup-a-jekyll-blog-1.html
 keywords: jekyll
@@ -39,7 +40,7 @@ description: 搭建一个博客，并且看起来还不错。
 gem install jekyll
 ```
 
-（译者注：然而 Windows 系统上复杂一点点，上面那个命令在 Windows 上其实是跑不起来的，如果你没有配好环境，请先阅读 [在 Windows 系统上安装 Jekyll 环境](2017-09-14-setup-a-jekyll-blog-on-windows.html)。）
+（译者注：然而 Windows 系统上复杂一点点，上面那个命令在 Windows 上其实是跑不起来的，如果你没有配好环境，请先阅读 [快速在 Windows 上搭建 Jekyll 开发环境](/post/setup-jekyll-in-windows.html)。）
 
 为了让 Jekyll 在你的电脑上跑起来，请阅读 [Jekyll 基本用法](http://jekyllcn.com/docs/usage/)。
 
