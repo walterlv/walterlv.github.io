@@ -36,8 +36,8 @@ jekyll serve
     - [MSYS2（虽然这不是必要的，但能大大提高配置环境的成功率和速度）](http://repo.msys2.org/distrib/x86_64/msys2-x86_64-20161025.exe)
 
 2. 加速源（感谢小伙伴[林德熙](https://lindexi.github.io/lindexi/)）
-    - [ruby（准备中……）](#)
-    - [MSYS2（准备中……）](#)
+    - [ruby](http://lindexi.ml:8080/index.php/s/L9LuTD14Y3pKadV)
+    - [MSYS2](http://lindexi.ml:8080/index.php/s/qn2EbO5xhy86xlf)
 
 #### 安装 Ruby 和 Jekyll
 
