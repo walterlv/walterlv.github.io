@@ -1,6 +1,7 @@
 ---
 title: "不再为命名而苦恼！使用 MSTestEnhancer 单元测试扩展，写契约就够了"
-date: 2018-02-22 19:52:20 +0800
+date_published: 2018-02-22 19:52:20 +0800
+date: 2018-03-05 14:39:28 +0800
 categories: csharp dotnet unittest
 ---
 
@@ -9,6 +10,9 @@ categories: csharp dotnet unittest
 立刻前往 [nuget.org](https://www.nuget.org/) 下载安装 [MSTestEnhancer](https://www.nuget.org/packages/MSTestEnhancer/) 即可解决命名的苦恼。
 
 ---
+
+本文同时编写了 [中文](/post/get-rid-or-naming-in-unit-test.html) 和 [英文](/post/introduce-mstest-enhancer.html) 两个版本。
+This article is written in both [English](/post/introduce-mstest-enhancer.html) and [Chinese](/post/get-rid-or-naming-in-unit-test.html).
 
 <div id="toc"></div>
 

@@ -10,6 +10,9 @@ MSTestEnhancer is a contract-style unit test extension for MSTestv2. You can wri
 
 ---
 
+本文同时编写了 [中文](/post/get-rid-or-naming-in-unit-test.html) 和 [英文](/post/introduce-mstest-enhancer.html) 两个版本。
+This article is written in both [English](/post/introduce-mstest-enhancer.html) and [Chinese](/post/get-rid-or-naming-in-unit-test.html).
+
 <div id="toc"></div>
 
 You'll get the test result like the picture shown below:
@@ -55,23 +58,23 @@ Now, let's start!
 Assuming that you want to test a class named `TheTestedClass` containing a method named `TheTestedMethod`. Then you can write unit tests like this:
 
 ```csharp
-[TestClass]
-public class TheTestedClassTest
-{
-    [ContractTestCase]
-    public void TheTestedMethod()
+    [TestClass]
+    public class TheTestedClassTest
     {
-        "When Xxx happens, results in Yyy.".Test(() =>
+        [ContractTestCase]
+        public void TheTestedMethod()
         {
-            // Write test case code here...
-        });
-        
-        "When Zzz happens, results in Www.".Test(() =>
-        {
-            // Write test case code here...
-        });
+            "When Xxx happens, results in Yyy.".Test(() =>
+            {
+                // Write test case code here...
+            });
+            
+            "When Zzz happens, results in Www.".Test(() =>
+            {
+                // Write test case code here...
+            });
+        }
     }
-}
 ```
 
 Notice that the name of class and method are almost the name of the tested class and tested method. As a result, we don't need to think about anything about naming unit test, nor to read the obscure name of the unit test.
