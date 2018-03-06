@@ -2,6 +2,10 @@
 title: "使 WPF 支持触摸板的横向滚动"
 date: 2017-11-23 21:25:40 +0800
 categories: windows wpf
+versions:
+  - current: 中文
+  - 中文: /post/handle-horizontal-scrolling-of-touchpad.html
+  - English: /post/handle-horizontal-scrolling-of-touchpad-en.html
 ---
 
 微软终于开始学苹果一样好好做触摸板了*（就是键盘空格键下面那一大块）*。然而鉴于以前没有好好做，以至于 WPF 程序甚至都没有对触摸板的横向滚动提供支持*（竖向滚动是直接使用了 `MouseWheel`，汗……）*。但有些功能真希望能够支持横向滚动！
@@ -10,8 +14,7 @@ categories: windows wpf
 
 ---
 
-本文同时编写了 [中文](/post/handle-horizontal-scrolling-of-touchpad.html) 和 [英文](/post/handle-horizontal-scrolling-of-touchpad-en.html) 两个版本。
-This article is written in both [English](/post/handle-horizontal-scrolling-of-touchpad-en.html) and [Chinese](/post/handle-horizontal-scrolling-of-touchpad.html).
+{% include post-version-selector.html %}
 
 ![](/static/posts/2017-11-23-21-19-52.png)  
 ▲ 精确式触摸板

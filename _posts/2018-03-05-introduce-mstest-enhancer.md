@@ -2,6 +2,10 @@
 title: "Introducing MSTestEnhancer to make unit test result easy to read"
 date: 2018-03-05 14:21:05 +0800
 categories: csharp dotnet unittest
+versions:
+  - current: English
+  - 中文: /post/get-rid-or-naming-in-unit-test.html
+  - English: /post/introduce-mstest-enhancer.html
 ---
 
 Don't you think that naming is very very hard? Especially naming for unit test method? Read this article for more data of naming: [Don’t go into programming if you don’t have a good thesaurus - ITworld](https://www.itworld.com/article/2833265/cloud-computing/don-t-go-into-programming-if-you-don-t-have-a-good-thesaurus.html).
@@ -10,8 +14,7 @@ MSTestEnhancer is a contract-style unit test extension for MSTestv2. You can wri
 
 ---
 
-本文同时编写了 [中文](/post/get-rid-or-naming-in-unit-test.html) 和 [英文](/post/introduce-mstest-enhancer.html) 两个版本。
-This article is written in both [English](/post/introduce-mstest-enhancer.html) and [Chinese](/post/get-rid-or-naming-in-unit-test.html).
+{% include post-version-selector.html %}
 
 <div id="toc"></div>
 

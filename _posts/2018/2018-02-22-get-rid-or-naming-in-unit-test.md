@@ -3,6 +3,10 @@ title: "不再为命名而苦恼！使用 MSTestEnhancer 单元测试扩展，�
 date_published: 2018-02-22 19:52:20 +0800
 date: 2018-03-05 14:39:28 +0800
 categories: csharp dotnet unittest
+versions:
+  - current: 中文
+  - 中文: /post/get-rid-or-naming-in-unit-test.html
+  - English: /post/introduce-mstest-enhancer.html
 ---
 
 有没有觉得命名太难？有没有觉得单元测试的命名更难？没错，你不是一个人！看看这个你就知道了：[程序员最头疼的事：命名](http://blog.jobbole.com/50708/#rd?sukey=fc78a68049a14bb285ac0d81ca56806ac10192f4946a780ea3f3dd630804f86056e6fcfe6fcaeddb3dc04830b7e3b3eb) 或它的英文原文 [Don’t go into programming if you don’t have a good thesaurus - ITworld](https://www.itworld.com/article/2833265/cloud-computing/don-t-go-into-programming-if-you-don-t-have-a-good-thesaurus.html)。
@@ -11,8 +15,7 @@ categories: csharp dotnet unittest
 
 ---
 
-本文同时编写了 [中文](/post/get-rid-or-naming-in-unit-test.html) 和 [英文](/post/introduce-mstest-enhancer.html) 两个版本。
-This article is written in both [English](/post/introduce-mstest-enhancer.html) and [Chinese](/post/get-rid-or-naming-in-unit-test.html).
+{% include post-version-selector.html %}
 
 <div id="toc"></div>
 
