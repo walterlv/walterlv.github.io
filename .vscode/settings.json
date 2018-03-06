@@ -2,6 +2,9 @@
     "pasteImage.path": "${projectRoot}/static/posts",
     "pasteImage.basePath": "${projectRoot}",
     "pasteImage.prefix": "/",
+    "files.associations": {
+        "post-*.md": "liquid"
+    },
     "cSpell.words": [
         "Aero",
         "Agnoster",

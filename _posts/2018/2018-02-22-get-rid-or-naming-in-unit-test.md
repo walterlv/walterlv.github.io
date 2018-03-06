@@ -5,6 +5,7 @@ date: 2018-03-05 14:39:28 +0800
 categories: csharp dotnet unittest
 versions:
   - current: 中文
+  - 中文: .
   - English: /post/introduce-mstest-enhancer.html
 ---
 
@@ -14,7 +15,7 @@ versions:
 
 ---
 
-{% include post-version-selector.html %}
+{% include post-version-selector.md %}
 
 <div id="toc"></div>
 

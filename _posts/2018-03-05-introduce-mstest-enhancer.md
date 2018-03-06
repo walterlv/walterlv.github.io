@@ -14,7 +14,7 @@ MSTestEnhancer is a contract-style unit test extension for MSTestv2. You can wri
 
 ---
 
-{% include post-version-selector.html %}
+{% include post-version-selector.md %}
 
 <div id="toc"></div>
 
