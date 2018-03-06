@@ -18,11 +18,11 @@
       {%- for version in version_hash -%}
         {%- assign key = version[0] -%}
         {%- assign value = version[1] -%}
-        {%- if key != 'current' -%}
-          {% comment %} 如果当前值等于 current_version，则选中此值。 {% endcomment %}
-          {%- if current_version == key -%}
-            <option value="{{ site.baseurl }}{{ page.url }}" selected="selected">{{ key }}</option>
-          {%- else -%}
+        {%- if key == 'current' -%}
+            {% comment %} 处理配置文件中默认省略当前版本的情况，默认在 current 位置添加当前页。 {% endcomment %}
+            <option value="{{ site.baseurl }}{{ page.url }}" selected="selected">{{ value }}</option>
+        {%- else -%}
+          {%- if current_version != key -%}
             <option value="{{ value }}">{{ key }}</option>
           {%- endif -%}
         {%- endif -%}
