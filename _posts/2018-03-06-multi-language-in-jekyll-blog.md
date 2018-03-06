@@ -21,7 +21,7 @@ published: false
 
 先来看看效果。现在，请选择一个阅读语言：
 
-{% include post-version-selector.md %}
+{% include post-version-selector.html %}
 
 不要惊讶：其实这里的每一种语言在内部都
 

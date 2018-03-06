@@ -14,7 +14,7 @@ versions:
 
 ---
 
-{% include post-version-selector.md %}
+{% include post-version-selector.html %}
 
 ![](/static/posts/2017-11-23-21-19-52.png)  
 ▲ 精确式触摸板

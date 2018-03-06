@@ -15,7 +15,7 @@ versions:
 
 ---
 
-{% include post-version-selector.md %}
+{% include post-version-selector.html %}
 
 <div id="toc"></div>
 

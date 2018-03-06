@@ -14,7 +14,7 @@ This article contains my method to support horizontal scrolling of touchpad in a
 
 ---
 
-{% include post-version-selector.md %}
+{% include post-version-selector.html %}
 
 ![](/static/posts/2017-11-23-21-52-22.png)  
 ▲ Precision Touchpad
