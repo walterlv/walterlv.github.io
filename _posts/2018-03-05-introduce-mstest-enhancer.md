@@ -2,10 +2,11 @@
 title: "Introducing MSTestEnhancer to make unit test result easy to read"
 date: 2018-03-05 14:21:05 +0800
 categories: csharp dotnet unittest
-versions:
+version:
   - current: English
+versions:
   - 中文: /post/get-rid-or-naming-in-unit-test.html
-  - English: .
+  - English: #
 ---
 
 Don't you think that naming is very very hard? Especially naming for unit test method? Read this article for more data of naming: [Don’t go into programming if you don’t have a good thesaurus - ITworld](https://www.itworld.com/article/2833265/cloud-computing/don-t-go-into-programming-if-you-don-t-have-a-good-thesaurus.html).

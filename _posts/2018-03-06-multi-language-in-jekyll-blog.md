@@ -2,14 +2,15 @@
 title: "为带有多种语言的 Jekyll 博客添加多语言选择"
 date: 2018-03-06 08:52:56 +0800
 categories: jekyll web html css
-versions:
+version:
   - current: 简体中文
-  - English: /post/multi-language-in-jekyll-blog.html
-  - русский: /post/multi-language-in-jekyll-blog.html
-  - 繁體中文: /post/multi-language-in-jekyll-blog.html
-  - 简体中文: /post/multi-language-in-jekyll-blog.html
-  - 日本語: /post/multi-language-in-jekyll-blog.html
-  - ไทย: /post/multi-language-in-jekyll-blog.html
+versions:
+  - English: #
+  - русский: #
+  - 繁體中文: #
+  - 简体中文: #
+  - 日本語: #
+  - ไทย: #
 published: false
 ---
 
@@ -19,11 +20,81 @@ published: false
 
 ---
 
-先来看看效果。现在，请选择一个阅读语言：
+先来看看效果。现在，请选择一个阅读语言：{% include post-version-selector.html %}
 
-{% include post-version-selector.html %}
+不要惊讶：其实这里的每一种语言都指向了你正在阅读的简体中文😜。
 
-不要惊讶：其实这里的每一种语言在内部都
+### 编写一个简单的语言选择器
+
+html 里可以用 `<select>` 来做选择器。当然，本文只是用 `<select>` 当作例子，你也可以做成表格型的、链接型的或者其他更多更炫酷的样子。
+
+`<select>` 的最简例子：
+
+> ```html
+> <select>
+>   <option value="/post/multi-language-in-jekyll-blog.html">English</option>
+>   <option value="/post/multi-language-in-jekyll-blog.html">中文</option>
+> </select>
+> ```
+
+来看看效果：
+<select style="{display:inline}">
+  <option value="#">English</option>
+  <option value="#">中文</option>
+</select>
+
+然而，我们希望在点击的时候自动跳转到对应的链接。于是，我们为 `select` 的 `onchange` 事件添加处理函数：
+
+> ```html
+> <select onchange="self.location.href=options[selectedIndex].value">
+>   <option value="/post/multi-language-in-jekyll-blog.html">English</option>
+>   <option value="/post/multi-language-in-jekyll-blog.html">中文</option>
+> </select>
+> ```
+
+再试试选择一下：
+<select style="{display:inline}" onchange="self.location.href=options[selectedIndex].value">
+  <option value="/post/multi-language-in-jekyll-blog.html">English</option>
+  <option value="/post/multi-language-in-jekyll-blog.html">中文</option>
+</select>
+
+{% raw %}
+```html
+{%- if page.versions -%}
+<p>
+  {%- comment -%} 从 page.versions 中查找 current 的值，并存到 current_version 中。 {%- endcomment -%}
+  {%- for version_hash in page.versions -%}
+    {%- for version in version_hash -%}
+      {%- assign key = version[0] -%}
+      {%- assign value = version[1] -%}
+      {%- if key == "current" -%}
+        {%- assign current_version = value -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endfor -%}
+
+  {%- comment -%} 从 page.versions 中遍历所有版本的值，并作为选项显示到 select 中。 {%- endcomment -%}
+  <select name="filter" id="filter" onchange="self.location.href=options[selectedIndex].value">
+    {%- for version_hash in page.versions -%}
+      {%- for version in version_hash -%}
+        {%- assign key = version[0] -%}
+        {%- assign value = version[1] -%}
+        {%- if key != 'current' -%}
+          {% comment %} 如果当前值等于 current_version，则选中此值。 {% endcomment %}
+          {%- if current_version == key -%}
+            <option value="{{ site.baseurl }}{{ page.url }}" selected="selected">{{ key }}</option>
+          {%- else -%}
+            <option value="{{ value }}">{{ key }}</option>
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endfor -%}
+  </select>
+</p>
+{%- endif -%}
+```
+{% endraw %}
 
 ---
 
