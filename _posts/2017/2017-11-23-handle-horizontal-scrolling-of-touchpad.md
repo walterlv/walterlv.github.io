@@ -4,6 +4,7 @@ date: 2017-11-23 21:25:40 +0800
 categories: windows wpf
 versions:
   - current: 中文
+  - 中文: .
   - English: /post/handle-horizontal-scrolling-of-touchpad-en.html
 ---
 
