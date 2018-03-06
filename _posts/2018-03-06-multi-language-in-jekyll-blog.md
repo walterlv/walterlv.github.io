@@ -77,7 +77,7 @@ html 里可以用 `<select>` 来做选择器。当然，本文只是用 `<select
 
 ### 制作布局文件
 
-为了更加通用，我在 `_layout` 文件夹中新建了 `post-version-selector.html` 的布局文件，然后在每一个需要引入语言选择器的地方加上 {% raw %}`{% include post-version-selector.html %}`{% endraw %}。*（比如本文一开始的那个语言选择器就是通过在那个地方加上了这句话生成的。）*
+为了更加通用，我在 `_include` 文件夹中新建了 `post-version-selector.html` 的布局文件，然后在每一个需要引入语言选择器的地方加上 {% raw %}`{% include post-version-selector.html %}`{% endraw %}。*（比如本文一开始的那个语言选择器就是通过在那个地方加上了这句话生成的。）*
 
 现在，我们把之前写的 `select` 搬到 `post-version-selector.html` 文件中，并引入页面中配置好的各语言路径。
 
