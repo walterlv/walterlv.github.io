@@ -5,7 +5,6 @@ categories: csharp dotnet unittest
 versions:
   - current: English
   - 中文: /post/get-rid-or-naming-in-unit-test.html
-  - English: /post/introduce-mstest-enhancer.html
 ---
 
 Don't you think that naming is very very hard? Especially naming for unit test method? Read this article for more data of naming: [Don’t go into programming if you don’t have a good thesaurus - ITworld](https://www.itworld.com/article/2833265/cloud-computing/don-t-go-into-programming-if-you-don-t-have-a-good-thesaurus.html).

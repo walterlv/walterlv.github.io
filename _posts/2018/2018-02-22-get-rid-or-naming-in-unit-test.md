@@ -5,7 +5,6 @@ date: 2018-03-05 14:39:28 +0800
 categories: csharp dotnet unittest
 versions:
   - current: 中文
-  - 中文: /post/get-rid-or-naming-in-unit-test.html
   - English: /post/introduce-mstest-enhancer.html
 ---
 
