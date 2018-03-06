@@ -1,16 +1,18 @@
-{%- if page.versions -%}
-{%- comment -%} 从 page.versions 中遍历所有版本的值，并作为选项显示到 select 中。 {%- endcomment -%}
+{% if page.versions %}
+{% comment %} 从 page.versions 中遍历所有版本的值，并作为选项显示到 select 中。 {% endcomment %}
+<div class="post-inline">
 <select onchange="self.location.href=options[selectedIndex].value">
-  {%- for version_hash in page.versions -%}
-    {%- for version in version_hash -%}
-      {%- assign key = version[0] -%}
-      {%- assign value = version[1] -%}
-      {%- if page.version.current == key -%}
+  {% for version_hash in page.versions %}
+    {% for version in version_hash %}
+      {% assign key = version[0] %}
+      {% assign value = version[1] %}
+      {% if page.version.current == key %}
         <option value="{{ site.baseurl }}{{ page.url }}" selected="selected">{{ key }}</option>
-      {%- else -%}
+      {% else %}
         <option value="{{ value }}">{{ key }}</option>
-      {%- endif -%}
-    {%- endfor -%}
-  {%- endfor -%}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
 </select>
-{%- endif -%}
+</div>
+{% endif %}
