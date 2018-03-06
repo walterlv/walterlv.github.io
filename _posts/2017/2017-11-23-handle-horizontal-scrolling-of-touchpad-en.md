@@ -3,7 +3,7 @@ title: "Support Horizontal Scrolling of TouchPad in WPF Application"
 date: 2017-11-23 22:09:42 +0800
 categories: windows wpf
 version:
-  - current: English
+  current: English
 versions:
   - 中文: /post/handle-horizontal-scrolling-of-touchpad.html
   - English: #

@@ -5,7 +5,7 @@
     {%- for version in version_hash -%}
       {%- assign key = version[0] -%}
       {%- assign value = version[1] -%}
-      {%- if page.version == key -%}
+      {%- if page.version.current == key -%}
         <option value="{{ site.baseurl }}{{ page.url }}" selected="selected">{{ key }}</option>
       {%- else -%}
         <option value="{{ value }}">{{ key }}</option>
