@@ -18,8 +18,6 @@ categories: post
 
 - tooltip for css
 
-- multi-language post
-
 - unit test fail
 
 - 生成事件执行的错误代码翻译
