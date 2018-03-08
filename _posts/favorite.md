@@ -5,6 +5,9 @@ categories: favorite
 sitemap: false
 ---
 
+- Project Type Guids
+    - [INFO: List of known project type Guids](https://www.mztools.com/Articles/2008/MZ2008017.aspx)
+
 - Visual Studio Gray Candidate Window with Number
     - [Grey box with number sticks at top left corner of screen - Developer Community](https://developercommunity.visualstudio.com/content/problem/75736/grey-box-with-number-sticks-at-top-left-corner-of.html)
     - [number in upper-left corner of screen - Developer Community](https://developercommunity.visualstudio.com/content/problem/118174/number-in-upper-left-corner-of-screen.html)
@@ -13,9 +16,6 @@ sitemap: false
 
 - .NET Core
     - [Key Steps in Developing .NET Core Applications – Microsoft MVP Award Program Blog](https://blogs.msdn.microsoft.com/mvpawardprogram/2016/07/19/key-steps-in-developing-net-core-applications/)
-
-- 软硬链接
-    - [windows 文件文件夹映射junction和mklink，创建软硬链接 - - ITeye博客](http://happyqing.iteye.com/blog/2256875)
 
 - Windows/Office 安装
     - [如何使用Windows 10关联的数字权利激活新的电脑 - 蓝点网](https://www.landiannews.com/archives/44411.html)
