@@ -5,6 +5,8 @@ categories: favorite
 sitemap: false
 ---
 
+- [重温.NET下Assembly的加载过程 - dax.net - 博客园](https://www.cnblogs.com/daxnet/archive/2018/03/07/8525249.html)
+
 - Project Type Guids
     - [INFO: List of known project type Guids](https://www.mztools.com/Articles/2008/MZ2008017.aspx)
 
