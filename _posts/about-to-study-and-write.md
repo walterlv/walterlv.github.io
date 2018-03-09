@@ -16,13 +16,7 @@ categories: post
 
 ### About to Write
 
-- tooltip for css
-
 - unit test fail
-
-- 生成事件执行的错误代码翻译
-    - 123：./Code/Build/CodeGenerator/bin/Debug/D:/CodeGenerator.exe: No such file or directory
-    - 3：                      
 
 - Action 和 Func<Task> 之间的二义性
     - [C#: incorrectly distinguishes between Func<TArg, Task> and Action<TArg> when resolving generic extension methods · Issue #7681 · dotnet/roslyn](https://github.com/dotnet/roslyn/issues/7681)
