@@ -22,3 +22,5 @@ PC 端的网页快照很容易找到并且点开：
 > ```
 > http://webcache.googleusercontent.com/search?cache:网址
 > ```
+
+多数时候我们能在缓存中访问到完整的网页，如果目标站点的域名挂掉，那么可能我们只能访问到支离破碎的纯 html 了。
