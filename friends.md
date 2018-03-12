@@ -52,6 +52,10 @@ permalink: /friends/
 
 ---
 
+- [快乐 就在你的心 的博客](https://kljzndx.github.io/My-Blog/)
+
+---
+
 - [Microsoft .NET Blog](https://blogs.msdn.microsoft.com/dotnet/)
 - [Nicky Case: The Internet Experience™](http://ncase.me/)  
   边玩边学的小游戏
