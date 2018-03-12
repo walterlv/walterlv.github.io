@@ -5,30 +5,30 @@ permalink: /friends/
 ---
 
 - [lindexi_gd https://lindexi.gitee.io/](https://lindexi.gitee.io/)  
-  这是我的好朋友
+    这是我的好朋友
 
 - [dotnet职业技术学院](https://easiwin.github.io/)  
-  这是我所在的组织
+    这是我所在的组织
 
 - [niuyanjie's blog](http://niuyanjie.gitee.io/blog/)
 
 - [Nero`s Blog](http://erdao123.gitee.io/nero/)  
-  单元测试造诣很深
+    单元测试造诣很深
 
 - [gandalfliang http://gandalfliang.me/](http://gandalfliang.me/)  
-  对 D3D 有很深的研究
+    对 D3D 有很深的研究
 
 - [晒太阳的猫](http://jgrass.cc/)
 
 - [黄腾霄 - haungtengxiao](https://huangtengxiao.gitee.io/)
 
 - [郭施鑫 - frendguo](http://frendguo.top/)  
-  我的好朋友，UWP 之家的开发者之一
+    我的好朋友，UWP 之家的开发者之一
 
 ---
 
 - [叛逆者](https://www.zhihu.com/people/minmin.gong/activities)  
-  Microsoft Senior SDE（微软高级软件工程师），KlayGE开源游戏引擎创始人
+    Microsoft Senior SDE（微软高级软件工程师），KlayGE开源游戏引擎创始人
 
 - [Highway to Graphics](https://zhuanlan.zhihu.com/highwaytographics)
 
@@ -39,7 +39,7 @@ permalink: /friends/
 - [Edi Wang](http://edi.wang/)
 
 - [Artech - 博客园](http://www.cnblogs.com/artech/)  
-  蒋金楠，Artech，知名 IT 博主, 微软多领域 MVP，畅销 IT 图书作者，著《WCF全面解析》、《ASP.NET MVC 4/5框架揭秘》、《ASP.NET Web API 2框架揭秘》等。
+    蒋金楠，Artech，知名 IT 博主, 微软多领域 MVP，畅销 IT 图书作者，著《WCF全面解析》、《ASP.NET MVC 4/5框架揭秘》、《ASP.NET Web API 2框架揭秘》等。
 
 - [是什么优化让 .NET Core 性能飙升？ - Windows软件开发 葡萄城产品技术社区](http://gcdn.gcpowertools.com.cn/showtopic-38305-1-1.html)  
   [葡萄城产品技术社区](http://gcdn.gcpowertools.com.cn/forum.php)
@@ -57,8 +57,10 @@ permalink: /friends/
 ---
 
 - [Microsoft .NET Blog](https://blogs.msdn.microsoft.com/dotnet/)
+    - [Performance Improvements in .NET Core - .NET Blog](https://blogs.msdn.microsoft.com/dotnet/2017/06/07/performance-improvements-in-net-core/)
+
 - [Nicky Case: The Internet Experience™](http://ncase.me/)  
-  边玩边学的小游戏
+    边玩边学的小游戏
   - [信任的进化](https://www.sekai.co/trust/)
 
 ---
