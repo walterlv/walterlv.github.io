@@ -5,6 +5,9 @@ categories: favorite
 sitemap: false
 ---
 
+- Telegram
+    - [为什么 Telegram 不默认开启端对端加密？ － 小专栏](https://xiaozhuanlan.com/topic/7914385206)
+
 - [重温.NET下Assembly的加载过程 - dax.net - 博客园](https://www.cnblogs.com/daxnet/archive/2018/03/07/8525249.html)
 
 - Project Type Guids
