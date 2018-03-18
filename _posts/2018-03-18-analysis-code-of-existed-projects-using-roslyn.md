@@ -129,6 +129,8 @@ class TypeParameterVisitor : CSharpSyntaxRewriter
 
 其实这段代码就是 `CSharpSyntaxRewriter` 基类中的代码，我把它贴出来可以帮助我们理解它。**你也依然需要将他放入到我们的项目中**，因为我们接下来的代码就开始要使用它了。
 
+如果你想了解更多语法节点，推荐另一篇入门文章：[Roslyn 入门：使用 Visual Studio 的语法可视化（Syntax Visualizer）窗格查看和了解代码的语法树](/post/roslyn-syntax-visualizer.html)。
+
 #### 访问泛型参数
 
 现在，我们继续在之前打开解决方案和项目文件的代码后面增添代码：
