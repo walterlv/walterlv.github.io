@@ -91,6 +91,10 @@ Assert.IsInstanceOfType($instance$, typeof($type$));
 
 ![Warning](/static/posts/2018-03-20-19-26-14.png)
 
+最后，**把这些规则保存到团队共享中，那么所有安装了 ReSharper 的此项目的团队成员都将遵循这一套规则**。
+
+![保存到团队](/static/posts/2018-03-20-20-05-57.png)
+
 ### 自己动手，发掘潜能
 
 Custom Pattern 功能只是为了给我们一个格式转换吗？才不止是这样哦！它能够帮助我们发现一些潜在的错误。
