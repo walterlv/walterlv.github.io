@@ -38,7 +38,7 @@ display_title: 吕毅's blog, Focus on Windows
           <ul class="row pager">
             {% if paginator.previous_page %}
             <li class="previous">
-              <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">←</a>
+              <a title="上一页" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">←</a>
             </li>
             {% else %}
             <li class="previous disabled">←</li>
@@ -47,16 +47,16 @@ display_title: 吕毅's blog, Focus on Windows
             {% if page == paginator.page %}
             <li class="active">{{ page }}</li>
             {% elsif page == 1 %}
-            <li><a href="/">{{ page }}</a></li>
+            <li><a title="第 {{ page | minus: 1 | times: site.paginate | plus: 1 }}-{{ page | times: site.paginate }} 篇" href="/">{{ page }}</a></li>
+            {% elsif page == paginator.total_pages %}
+            <li><a title="第 {{ page | minus: 1 | times: site.paginate | plus: 1 }}-{{ paginator.total_posts }} 篇" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
             {% else %}
-            <li>
-              <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-            </li>
+            <li><a title="第 {{ page | minus: 1 | times: site.paginate | plus: 1 }}-{{ page | times: site.paginate }} 篇" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
             {% endif %}
             {% endfor %}
             {% if paginator.next_page %}
             <li class="next">
-              <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">→</a>
+              <a title="下一页" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">→</a>
             </li>
             {% else %}
             <li class="next disabled"><span>→</span></li>
