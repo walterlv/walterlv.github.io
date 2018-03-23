@@ -4,7 +4,7 @@ date: 2018-03-23 21:54:20 +0800
 categories: dotnet
 ---
 
-我在 [使用 Task.Wait()？立刻死锁（deadlock）](https://walterlv.github.io/post/deadlock-in-task-wait.html) 一文中站在类库使用者的角度看 `async`/`await` 代码的死锁问题；而本文将站在类库设计者的角度来看死锁问题。
+我在 [使用 Task.Wait()？立刻死锁（deadlock）](/post/deadlock-in-task-wait.html) 一文中站在类库使用者的角度看 `async`/`await` 代码的死锁问题；而本文将站在类库设计者的角度来看死锁问题。
 
 阅读本文，我们将知道如何编写类库代码，来尽可能避免类库使用者出现那篇博客中描述的死锁问题。
 
@@ -37,7 +37,7 @@ private async Task RunAsync()
 > foo.RunAsync().Wait();
 > ```
 
-如果这段代码在 UI 线程执行，那么极有可能出现死锁，就是我在 [使用 Task.Wait()？立刻死锁（deadlock）](https://walterlv.github.io/post/deadlock-in-task-wait.html) 一文中说的那种死锁，详情可进去看原因。
+如果这段代码在 UI 线程执行，那么极有可能出现死锁，就是我在 [使用 Task.Wait()？立刻死锁（deadlock）](/post/deadlock-in-task-wait.html) 一文中说的那种死锁，详情可进去看原因。
 
 那么现在做一个调查，你认为下面三种 `RunAsync` 的实现中，哪些会在碰到这种不省心的类库使用者时发生死锁呢？
 
@@ -72,7 +72,7 @@ private async Task RunAsync()
 
 ### 原因
 
-对于第 2 种情况，下方“`await` 之后的代码”试图回到 UI 线程执行，但 UI 此时处于调用者 `foo.RunAsync().Wait();` 这段神奇代码的等待状态——所以死锁了。回到 UI 线程靠的是 `DispatcherSynchronizationContext`，我在 [使用 Task.Wait()？立刻死锁（deadlock）](https://walterlv.github.io/post/deadlock-in-task-wait.html) 一文中已有解释，建议前往了解更深层次的原因。
+对于第 2 种情况，下方“`await` 之后的代码”试图回到 UI 线程执行，但 UI 此时处于调用者 `foo.RunAsync().Wait();` 这段神奇代码的等待状态——所以死锁了。回到 UI 线程靠的是 `DispatcherSynchronizationContext`，我在 [使用 Task.Wait()？立刻死锁（deadlock）](/post/deadlock-in-task-wait.html) 一文中已有解释，建议前往了解更深层次的原因。
 
 > ```csharp
 > private async Task RunAsync1()
@@ -89,7 +89,7 @@ private async Task RunAsync()
 
 对第 1 种情况，由于并没有写 `async`/`await`，所以异步状态机 `AsyncMethodStateMachine` 此时并不执行。直接返回了 `Task`，这相当于此时创建的 `Task` 对象直接被调用者的 `foo.RunAsync().Wait();` 神奇代码等待了。也就是说，等待的 `Task` 是真正执行异步任务的 `Task`。
 
-`Task` 的 `Wait()` 方法内部通过自旋锁来实现等待，可以阅读 [.NET 中的轻量级线程安全 - walterlv](https://walterlv.github.io/post/lightweight-thread-safe-since-dotnet-4.html) 了解自旋锁，也可以前往 .NET Framework 源码 [Task.SpinWait](https://referencesource.microsoft.com/#mscorlib/system/threading/Tasks/Task.cs,b1c8bf867b403050,references) 了解 `Task.SpinWait()` 方法的具体实现。
+`Task` 的 `Wait()` 方法内部通过自旋锁来实现等待，可以阅读 [.NET 中的轻量级线程安全 - walterlv](/post/lightweight-thread-safe-since-dotnet-4.html) 了解自旋锁，也可以前往 .NET Framework 源码 [Task.SpinWait](https://referencesource.microsoft.com/#mscorlib/system/threading/Tasks/Task.cs,b1c8bf867b403050,references) 了解 `Task.SpinWait()` 方法的具体实现。
 
 > ```csharp
 > //spin only once if we are running on a single CPU
@@ -120,6 +120,6 @@ private async Task RunAsync()
 
 ### 预防
 
-建议安装 NuGet 包 [Microsoft.CodeAnalysis.FxCopAnalyzers](https://www.nuget.org/packages/Microsoft.CodeAnalysis.FxCopAnalyzers/)。这样，当你在代码中写出 `await` 时，分析器会提示你 [CA2007](https://walterlv.github.io/post/meaning-of-all-kind-of-stylecop.html) 警告，你必须显式设置 `ConfigureAwait(false)` 或 `ConfigureAwait(true)` 来提醒你是否需要使用默认的 `SynchronizationContext`。
+建议安装 NuGet 包 [Microsoft.CodeAnalysis.FxCopAnalyzers](https://www.nuget.org/packages/Microsoft.CodeAnalysis.FxCopAnalyzers/)。这样，当你在代码中写出 `await` 时，分析器会提示你 [CA2007](/post/meaning-of-all-kind-of-stylecop.html) 警告，你必须显式设置 `ConfigureAwait(false)` 或 `ConfigureAwait(true)` 来提醒你是否需要使用默认的 `SynchronizationContext`。
 
 如果你是类库的编写者，注意此问题能够一定程度上防止逗比使用者出现死锁问题后喷你的类库写得不好。
