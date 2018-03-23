@@ -1,6 +1,7 @@
 ---
 title: "（持续整理中）Visual Studio 中 C# 代码分析规则集中每一项的含义 (stylecop ruleset)"
-date: 2018-02-07 21:55:12 +0800
+date_published: 2018-02-07 21:55:12 +0800
+date: 2018-03-23 21:56:10 +0800
 categories: csharp visualstudio
 ---
 
@@ -54,6 +55,14 @@ CA1801|检查未使用的参数|如果方法中有声明的参数没有使用，
 CA1813|避免使用未密封的特性|自定义的 `Attribute` 应该是 `sealed` 的
 CA1822|将成员标记为 static|如果方法的实现中没有任何一个地方用到了 this，那么这个方法就应该标记成静态的
 CA1824|用 NeutralResourcesLanguage 标记程序集|如果程序集中包含资源，那么应该用此特性标记程序集以便提升第一次查找资源时的性能；`[assembly: NeutralResourcesLanguage("zh-CHS", UltimateResourceFallbackLocation.Satellite)]` 表示如果当前系统处于简体中文环境，那么就去此程序集查找资源，否则就去附属程序集查找；如果资源一定在此程序集，则指定为 `MainAssembly`
+
+#### 代码质量问题
+
+这部分的代码分析来自于 [Microsoft.CodeAnalysis.FxCopAnalyzers](https://www.nuget.org/packages/Microsoft.CodeAnalysis.FxCopAnalyzers/)，安装此 NuGet 包后将获得更多的代码分析。
+
+编号|名称|含义
+-|-|-
+CA2007|不应该直接 `await` 一个而不调用 `ConfigureAwait`|建议阅读 [在编写异步方法时，使用 ConfigureAwait(false) 避免使用者死锁](/post/using-configure-await-to-avoid-deadlocks.html) 了解这样提示的原因
 
 ---
 
