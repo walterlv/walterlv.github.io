@@ -16,6 +16,10 @@ categories: post
 
 ### About to Write
 
+- Task
+    - [Task.Run vs Task.Factory.StartNew - Parallel Programming with .NET](https://blogs.msdn.microsoft.com/pfxteam/2011/10/24/task-run-vs-task-factory-startnew/)
+    - [StartNew is Dangerous](https://blog.stephencleary.com/2013/08/startnew-is-dangerous.html)
+
 - unit test fail
 
 - Action 和 Func<Task> 之间的二义性
