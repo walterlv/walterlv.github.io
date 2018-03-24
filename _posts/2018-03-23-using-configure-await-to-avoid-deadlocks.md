@@ -1,6 +1,7 @@
 ---
 title: "在编写异步方法时，使用 ConfigureAwait(false) 避免使用者死锁"
-date: 2018-03-23 21:54:20 +0800
+date_published: 2018-03-23 21:54:20 +0800
+date: 2018-03-24 13:21:17 +0800
 categories: dotnet
 ---
 
@@ -35,6 +36,21 @@ private async Task RunAsync()
 
 > ```csharp
 > foo.RunAsync().Wait();
+> ```
+
+或者高级一些，使用 `AutoResetEvent` 和 `try`/`finally` 块的使用者：
+
+> ```csharp
+> // 这段代码如果在 foo.RunAsync() 第一次调用返回之前再调用一次，则可能死锁。
+> _autoResetEvent.WaitOne();
+> try
+> {
+>     await foo.RunAsync();
+> }
+> finally
+> {
+>     _autoResetEvent.Set();
+> }
 > ```
 
 如果这段代码在 UI 线程执行，那么极有可能出现死锁，就是我在 [使用 Task.Wait()？立刻死锁（deadlock）](/post/deadlock-in-task-wait.html) 一文中说的那种死锁，详情可进去看原因。
