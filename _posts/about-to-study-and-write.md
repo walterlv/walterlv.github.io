@@ -69,7 +69,7 @@ categories: post
     - [Git - gitattributes Documentation](https://git-scm.com/docs/gitattributes)
 
 - WPF Notification
-    - [【wpf】在win10系统上弹出toast和notification - catshitone的专栏 - CSDN博客](http://blog.csdn.net/catshitone/article/details/78522931)
+    - [【wpf】在 win10 系统上弹出 toast 和 notification - catshitone 的专栏 - CSDN博客](http://blog.csdn.net/catshitone/article/details/78522931)
 
 - 在 VirtualizingStackPanel 中抛出了 NullReferenceException
     - [A NullReferenceException is thrown from VirtualizingStackPanel.MeasureChild - Microsoft Connect](https://connect.microsoft.com/VisualStudio/feedback/details/741583/a-nullreferenceexception-is-thrown-from-virtualizingstackpanel-measurechild)
@@ -120,7 +120,7 @@ categories: post
 
 - PushFrame locks the Window
     - [c# - PushFrame locks up WPF window when user is moving window - Stack Overflow](https://stackoverflow.com/questions/19411613/pushframe-locks-up-wpf-window-when-user-is-moving-window)
-    - [WPF application intermittently hangs when using Dispatcher.Invoke and/or Dispatcher.PushFrame while user is resizing or draging window - Microsoft Connect](https://connect.microsoft.com/VisualStudio/feedback/details/807292/wpf-application-intermittently-hangs-when-using-dispatcher-invoke-and-or-dispatcher-pushframe-while-user-is-resizing-or-draging-window)
+    - [WPF application intermittently hangs when using Dispatcher.Invoke and/or Dispatcher.PushFrame while user is resizing or dragging window - Microsoft Connect](https://connect.microsoft.com/VisualStudio/feedback/details/807292/wpf-application-intermittently-hangs-when-using-dispatcher-invoke-and-or-dispatcher-pushframe-while-user-is-resizing-or-draging-window)
     - [Threading Model - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/threading-model)
     - [Await, and UI, and deadlocks! Oh my! - Parallel Programming with .NET](https://blogs.msdn.microsoft.com/pfxteam/2011/01/13/await-and-ui-and-deadlocks-oh-my/)
 
