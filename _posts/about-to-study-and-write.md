@@ -16,6 +16,12 @@ categories: post
 
 ### About to Write
 
+- AsyncAutoResetEvent
+    - [Building Async Coordination Primitives, Part 1: AsyncManualResetEvent - Parallel Programming with .NET](https://blogs.msdn.microsoft.com/pfxteam/2012/02/11/building-async-coordination-primitives-part-1-asyncmanualresetevent/)
+    - [Building Async Coordination Primitives, Part 2: AsyncAutoResetEvent - Parallel Programming with .NET](https://blogs.msdn.microsoft.com/pfxteam/2012/02/11/building-async-coordination-primitives-part-2-asyncautoresetevent/)
+    - [AsyncAutoResetEvent · StephenCleary/AsyncEx Wiki](https://github.com/StephenCleary/AsyncEx/wiki/AsyncAutoResetEvent)
+    - [c# - Awaitable AutoResetEvent - Stack Overflow](https://stackoverflow.com/questions/32654509/awaitable-autoresetevent)
+
 - Task
     - [Task.Run vs Task.Factory.StartNew - Parallel Programming with .NET](https://blogs.msdn.microsoft.com/pfxteam/2011/10/24/task-run-vs-task-factory-startnew/)
     - [StartNew is Dangerous](https://blog.stephencleary.com/2013/08/startnew-is-dangerous.html)
