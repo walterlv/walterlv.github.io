@@ -16,6 +16,12 @@ categories: post
 
 ### About to Write
 
+- this 的 null 检查
+    - [Observing a null this value](http://blog.paranoidcoding.com/2015/03/11/observing-a-null-this.html)
+
+- Roslyn 确定性构建
+    - [Deterministic builds in Roslyn](http://blog.paranoidcoding.com/2016/04/05/deterministic-builds-in-roslyn.html)
+
 - AsyncAutoResetEvent
     - [Building Async Coordination Primitives, Part 1: AsyncManualResetEvent - Parallel Programming with .NET](https://blogs.msdn.microsoft.com/pfxteam/2012/02/11/building-async-coordination-primitives-part-1-asyncmanualresetevent/)
     - [Building Async Coordination Primitives, Part 2: AsyncAutoResetEvent - Parallel Programming with .NET](https://blogs.msdn.microsoft.com/pfxteam/2012/02/11/building-async-coordination-primitives-part-2-asyncautoresetevent/)
