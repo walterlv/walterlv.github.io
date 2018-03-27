@@ -10,13 +10,16 @@ permalink: /friends/
 - [dotnet职业技术学院](https://easiwin.github.io/)  
     这是我所在的组织
 
-- [niuyanjie's blog](http://niuyanjie.gitee.io/blog/)
+- [gandalfliang http://gandalfliang.me/](http://gandalfliang.me/)  
+    对 D3D 有很深的研究
+
+- [离开](https://wolfleave.github.io/)
+    Web 大神
 
 - [Nero`s Blog](http://erdao123.gitee.io/nero/)  
     单元测试造诣很深
 
-- [gandalfliang http://gandalfliang.me/](http://gandalfliang.me/)  
-    对 D3D 有很深的研究
+- [niuyanjie's blog](http://niuyanjie.gitee.io/blog/)
 
 - [晒太阳的猫](http://jgrass.cc/)
 
