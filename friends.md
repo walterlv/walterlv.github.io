@@ -13,7 +13,7 @@ permalink: /friends/
 - [gandalfliang http://gandalfliang.me/](http://gandalfliang.me/)  
     对 D3D 有很深的研究
 
-- [离开](https://wolfleave.github.io/)
+- [离开](https://wolfleave.github.io/)  
     Web 大神
 
 - [Nero`s Blog](http://erdao123.gitee.io/nero/)  
