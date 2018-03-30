@@ -1,7 +1,7 @@
 ---
 title: "Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码"
 date_published: 2018-03-18 20:45:22 +0800
-date: 2018-03-30 09:08:23 +0800
+date: 2018-03-30 19:15:07 +0800
 categories: visualstudio dotnet csharp
 ---
 
@@ -48,10 +48,11 @@ Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。
 
 当然，如果你只是做一些特定的事情，当然不需要安装这么全的 NuGet 包，像 [Roslyn 静态分析 - 林德熙](https://lindexi.gitee.io/lindexi/post/Roslyn-%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90.html) 的 demo 中就不需要安装所有 NuGet 包。
 
-**特别注意**！！！如果前面你是通过 .NET Core 项目改过来的，那么**还需要额外安装以下两个 NuGet 包，否则运行时会无法打开解决方案和项目**。
+**特别注意**！！！如果前面你是通过 .NET Core 项目改过来的，那么**还需要额外安装以下三个 NuGet 包，否则运行时会无法打开解决方案和项目**。
 
 - `Microsoft.Build`
 - `Microsoft.Build.Tasks.Core`
+- `System.Threading.Tasks.Dataflow`
 
 ### 打开一个解决方案/项目和其中的文件
 
