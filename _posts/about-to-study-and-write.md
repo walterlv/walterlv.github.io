@@ -16,6 +16,15 @@ categories: post
 
 ### About to Write
 
+- AI School
+    - [AI School](https://aischool.microsoft.com/learning-paths)
+    - [Microsoft/Connect-keynote_AI_demos: This repo contains AI demos from recently concluded Connect() 2017 keynote demos!](https://github.com/Microsoft/Connect-keynote_AI_demos)
+    - [Custom Vision](https://customvision.ai/)
+
+- Visual Studio Spell Checker
+    - [Visual Studio Spell Checker (VS2017 and Later) - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=EWoodruff.VisualStudioSpellCheckerVS2017andLater)
+    - [Consider adding Roslyn code analyzers and/or code analysis rules for spell checking · Issue #111 · EWSoftware/VSSpellChecker](https://github.com/EWSoftware/VSSpellChecker/issues/111)
+
 - this 的 null 检查
     - [Observing a null this value](http://blog.paranoidcoding.com/2015/03/11/observing-a-null-this.html)
 
