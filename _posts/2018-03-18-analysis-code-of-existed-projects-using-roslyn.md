@@ -1,6 +1,7 @@
 ---
 title: "Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码"
-date: 2018-03-18 20:45:22 +0800
+date_published: 2018-03-18 20:45:22 +0800
+date: 2018-03-30 09:08:23 +0800
 categories: visualstudio dotnet csharp
 ---
 
@@ -23,10 +24,6 @@ Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。
 
 在目前（{% include date.html date=page.date %}），如果我们需要像本文一样分析现有的解决方案和项目，那么 **.NET Framework 是必须的**；如果只是分析单个文件，那么也可以选择 .NET Core。
 
-{% comment %}
-
-<!-- 很不推荐从 .NET Core 改装。 -->
-
 当然，如果你有一个现成的 .NET Core 项目，可以通过修改 .csproj 文件改成 .NET Framework 的：
 
 ![](/static/posts/2018-03-18-18-57-00.png)
@@ -35,12 +32,11 @@ Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <!-- 从 netcoreapp2.0 改成 net47 -->
-    <TargetFramework>net47</TargetFramework>
+    <!-- 从 netcoreapp2.0 改成 net471，因为 NuGet 包中的 ValueTuple 与 net47 不兼容，所以只能选择 net471 或以上  -->
+    <TargetFramework>net471</TargetFramework>
   </PropertyGroup>
 </Project>
 ```
-{% endcomment %}
 
 现在，我们有了一个可以开始写代码的 Program.cs 文件，接下来就可以正式开始入门了。
 
@@ -52,20 +48,10 @@ Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。
 
 当然，如果你只是做一些特定的事情，当然不需要安装这么全的 NuGet 包，像 [Roslyn 静态分析 - 林德熙](https://lindexi.gitee.io/lindexi/post/Roslyn-%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90.html) 的 demo 中就不需要安装所有 NuGet 包。
 
-{% comment %}
+**特别注意**！！！如果前面你是通过 .NET Core 项目改过来的，那么**还需要额外安装以下两个 NuGet 包，否则运行时会无法打开解决方案和项目**。
 
-<!-- 事实上以下方法根本就没有用！ -->
-
-如果前面你是通过 .NET Core 项目改过来的，那么还需要手动引用以下四个程序集：
-
-- Microsoft.Build.dll
-- Microsoft.Build.Framework.dll
-- Microsoft.Build.Tasks.Core.dll
-- Microsoft.Build.Utilities.Core.dll
-
-![](/static/posts/2018-03-18-19-41-37.png)
-
-{% endcomment %}
+- `Microsoft.Build`
+- `Microsoft.Build.Tasks.Core`
 
 ### 打开一个解决方案/项目和其中的文件
 
