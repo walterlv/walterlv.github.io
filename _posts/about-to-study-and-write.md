@@ -25,19 +25,6 @@ categories: post
     - [Visual Studio Spell Checker (VS2017 and Later) - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=EWoodruff.VisualStudioSpellCheckerVS2017andLater)
     - [Consider adding Roslyn code analyzers and/or code analysis rules for spell checking · Issue #111 · EWSoftware/VSSpellChecker](https://github.com/EWSoftware/VSSpellChecker/issues/111)
 
-- Roslyn 确定性构建
-    - [Deterministic builds in Roslyn](http://blog.paranoidcoding.com/2016/04/05/deterministic-builds-in-roslyn.html)
-
-- AsyncAutoResetEvent
-    - [Building Async Coordination Primitives, Part 1: AsyncManualResetEvent - Parallel Programming with .NET](https://blogs.msdn.microsoft.com/pfxteam/2012/02/11/building-async-coordination-primitives-part-1-asyncmanualresetevent/)
-    - [Building Async Coordination Primitives, Part 2: AsyncAutoResetEvent - Parallel Programming with .NET](https://blogs.msdn.microsoft.com/pfxteam/2012/02/11/building-async-coordination-primitives-part-2-asyncautoresetevent/)
-    - [AsyncAutoResetEvent · StephenCleary/AsyncEx Wiki](https://github.com/StephenCleary/AsyncEx/wiki/AsyncAutoResetEvent)
-    - [c# - Awaitable AutoResetEvent - Stack Overflow](https://stackoverflow.com/questions/32654509/awaitable-autoresetevent)
-
-- Task
-    - [Task.Run vs Task.Factory.StartNew - Parallel Programming with .NET](https://blogs.msdn.microsoft.com/pfxteam/2011/10/24/task-run-vs-task-factory-startnew/)
-    - [StartNew is Dangerous](https://blog.stephencleary.com/2013/08/startnew-is-dangerous.html)
-
 - unit test fail
 
 - Action 和 Func<Task> 之间的二义性
