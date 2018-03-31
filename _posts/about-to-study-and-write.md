@@ -25,9 +25,6 @@ categories: post
     - [Visual Studio Spell Checker (VS2017 and Later) - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=EWoodruff.VisualStudioSpellCheckerVS2017andLater)
     - [Consider adding Roslyn code analyzers and/or code analysis rules for spell checking · Issue #111 · EWSoftware/VSSpellChecker](https://github.com/EWSoftware/VSSpellChecker/issues/111)
 
-- this 的 null 检查
-    - [Observing a null this value](http://blog.paranoidcoding.com/2015/03/11/observing-a-null-this.html)
-
 - Roslyn 确定性构建
     - [Deterministic builds in Roslyn](http://blog.paranoidcoding.com/2016/04/05/deterministic-builds-in-roslyn.html)
 
