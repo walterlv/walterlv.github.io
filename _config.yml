@@ -53,6 +53,7 @@ analytics:
   cnzz: cnzz_stat_icon_1264408226
 disqus:
   name: walterlv
+  url: https://walterlv.github.io
 gitment:
   owner: walterlv
   client_id: 9a8b44a07f269679e9b5
