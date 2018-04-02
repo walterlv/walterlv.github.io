@@ -44,6 +44,7 @@ categories: post
     - [如何衡量提升用户体验？Google新框架－HEART帮你解决！ – 学UI网](http://www.xueui.cn/experience/discussion/heart-new-framework-for-user-experience-of-google.html?ref=r)
 
 - 桌面程序使用 UWP API
+    - - [How to customize Start screen tiles for desktop apps (Windows Runtime apps) - Microsoft Docs](https://docs.microsoft.com/en-us/previous-versions/windows/apps/dn449733(v=win.10))
     - [Extend your desktop application with Windows 10 features using the new Visual Studio Application Packaging Project - Building Apps for WindowsBuilding Apps for Windows](https://blogs.windows.com/buildingapps/2017/12/04/extend-desktop-application-windows-10-features-using-new-visual-studio-application-packaging-project/)
 
 - TiltEffect
