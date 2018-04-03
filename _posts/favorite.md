@@ -5,6 +5,9 @@ categories: favorite
 sitemap: false
 ---
 
+- 微软开发平台
+    - [从 Windows 8 回顾微软平台的各种技术_知识库_博客园](https://kb.cnblogs.com/page/126527/)
+
 - AsyncAutoResetEvent
     - [Building Async Coordination Primitives, Part 1: AsyncManualResetEvent - Parallel Programming with .NET](https://blogs.msdn.microsoft.com/pfxteam/2012/02/11/building-async-coordination-primitives-part-1-asyncmanualresetevent/)
     - [Building Async Coordination Primitives, Part 2: AsyncAutoResetEvent - Parallel Programming with .NET](https://blogs.msdn.microsoft.com/pfxteam/2012/02/11/building-async-coordination-primitives-part-2-asyncautoresetevent/)
