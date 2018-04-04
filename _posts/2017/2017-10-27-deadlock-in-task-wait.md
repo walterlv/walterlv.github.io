@@ -86,7 +86,7 @@ async Task DoAsync()
 把原来的代码改成这样，就不会死锁了：
 
 ```csharp
-await DoAsync().ConfigureAwait(false);
+await DoAsync();
 
 async Task DoAsync()
 {
@@ -99,6 +99,17 @@ async Task DoAsync()
 > Others have also noticed the spreading behavior of asynchronous programming and have called it “contagious” or compared it to a zombie virus.
 
 这句话的原文参见：[Async/Await - Best Practices in Asynchronous Programming](https://msdn.microsoft.com/en-us/magazine/jj991977.aspx)
+
+为了防止真的有代码的调用者使用 `Wait()`，我们也得写出防 SB 的代码来：
+
+```csharp
+async Task DoAsync()
+{
+    await Task.Run(() => { }).ConfigureAwait(false);
+}
+```
+
+这样，即便真的使用 `DoAsync().Wait()` 也不会发生死锁。注意，**整个方法调用链都需要使用** `.ConfigureAwait(false)` **才能够防止线程切换时，在调用方的** `Wait()` **方法中发生死锁**。详见我的另一篇博客 [在编写异步方法时，使用 ConfigureAwait(false) 避免使用者死锁](/post/using-configure-await-to-avoid-deadlocks.html)。）
 
 #### 参考资料
 - [There Is No Thread](http://blog.stephencleary.com/2013/11/there-is-no-thread.html)
