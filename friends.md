@@ -30,6 +30,8 @@ permalink: /friends/
 
 ---
 
+- [未来代码研究所](http://blog.atelier39.org/)
+
 - [叛逆者](https://www.zhihu.com/people/minmin.gong/activities)  
     Microsoft Senior SDE（微软高级软件工程师），KlayGE开源游戏引擎创始人
 
