@@ -16,10 +16,19 @@ categories: post
 
 ### About to Write
 
+- NuGet Recommendations
+    - [NuGet - Top 10 NuGet (Anti-) Patterns](https://msdn.microsoft.com/en-us/magazine/jj851071.aspx)
+
+- Semantic Versioning
+    - [Semantic Versioning 2.0.0 - Semantic Versioning](https://semver.org/)
+    - [Versioning NuGet packages in a continuous delivery world: part 1 – Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/2016/05/03/versioning-nuget-packages-cd-1/)
+    - [Semantic Versioning & auto-incremented NuGet package versions - Xavier Decoster](https://www.xavierdecoster.com/post/2013/04/29/semantic-versioning-auto-incremented-nuget-package-versions.html)
+
 - AI School
     - [AI School](https://aischool.microsoft.com/learning-paths)
     - [Microsoft/Connect-keynote_AI_demos: This repo contains AI demos from recently concluded Connect() 2017 keynote demos!](https://github.com/Microsoft/Connect-keynote_AI_demos)
     - [Custom Vision](https://customvision.ai/)
+    - [vs-tools-for-ai/docs at master · Microsoft/vs-tools-for-ai](https://github.com/Microsoft/vs-tools-for-ai/tree/master/docs)
 
 - Visual Studio Spell Checker
     - [Visual Studio Spell Checker (VS2017 and Later) - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=EWoodruff.VisualStudioSpellCheckerVS2017andLater)
@@ -50,9 +59,6 @@ categories: post
 - TiltEffect
     - [WPF Tilt Effect Behavior – Mareinsula](https://mareinsula.wordpress.com/2011/08/04/wpf-tilt-effect-behavior/)
     - [【图像处理】透视变换 Perspective Transformation - CSDN博客](http://blog.csdn.net/xiaowei_cqu/article/details/26471527)
-
-- VS Tools for AI
-    - [vs-tools-for-ai/docs at master · Microsoft/vs-tools-for-ai](https://github.com/Microsoft/vs-tools-for-ai/tree/master/docs)
 
 - .NET Compiler Platform ("Roslyn") Extensibility
     - [Getting Started with Roslyn Analyzers - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/extensibility/getting-started-with-roslyn-analyzers)
