@@ -38,7 +38,7 @@ UWP 才能使用的流畅设计效果好惊艳，写新的 UWP 程序可以做�
 ![我自己画的图，不忍直视，只好模糊掉作为背景了](/static/posts/2018-04-05-16-17-15.png)  
 ▲ 我自己画的图，不忍直视，只好模糊掉作为背景了
 
-### 话不多说，看源码
+### 话不多说看源码
 
 UWP 里的 CompositionBrush 是用一个 ShaderEffect 做出所有控件的所有效果的。正如 [叛逆者](https://www.zhihu.com/people/minmin.gong/activities) 在 [如何评价微软在 Build 2017 上提出的 Fluent Design System？ - 知乎](https://www.zhihu.com/question/59724483/answer/168191216?utm_medium=social&utm_source=wechat_session) 一文中说的，只需要极少的计算量就能完成。
 
