@@ -16,8 +16,11 @@ categories: post
 
 ### About to Write
 
+- Windows Runtime
+    - [Windows Runtime(WinRT) 揭秘 - 张善友 - 博客园](http://www.cnblogs.com/shanyou/archive/2011/09/17/WinRT.html)
+
 - .NET Core Performance
-    - [Performance Improvements in .NET Core | .NET Blog](https://blogs.msdn.microsoft.com/dotnet/2017/06/07/performance-improvements-in-net-core/)
+    - [Performance Improvements in .NET Core - .NET Blog](https://blogs.msdn.microsoft.com/dotnet/2017/06/07/performance-improvements-in-net-core/)
 
 - MSIX
     - [Microsoft announces new "MSIX" app packaging format - MSPoweruser](https://mspoweruser.com/microsoft-announces-new-msix-app-packaging-format/)
