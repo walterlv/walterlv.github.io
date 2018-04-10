@@ -10,23 +10,23 @@ permalink: /friends/
 - [dotnet职业技术学院](https://easiwin.github.io/)  
     这是我所在的组织
 
-- [gandalfliang http://gandalfliang.me/](http://gandalfliang.me/)  
+- [gandalfliang gandalfliang.github.io](https://gandalfliang.github.io/)  
     对 D3D 有很深的研究
 
-- [离开](https://wolfleave.github.io/)  
+- [离开 wolfleave.github.io](https://wolfleave.github.io/)  
     Web 大神
 
-- [Nero`s Blog](http://erdao123.gitee.io/nero/)  
+- [Nero`s Blog erdao123.gitee.io](http://erdao123.gitee.io/nero/)  
     单元测试造诣很深
 
 - [niuyanjie's blog](http://niuyanjie.gitee.io/blog/)
 
-- [晒太阳的猫](http://jgrass.cc/)
+- [晒太阳的猫 jgrass.cc](http://jgrass.cc/)
 
-- [黄腾霄 - haungtengxiao](https://huangtengxiao.gitee.io/)
+- [黄腾霄 huangtengxiao.gitee.io](https://huangtengxiao.gitee.io/)
 
-- [郭施鑫 - frendguo](http://frendguo.top/)  
-    我的好朋友，UWP 之家的开发者之一
+- [郭施鑫 frendguo.top](http://frendguo.top/)  
+    UWP 之家的开发者之一
 
 ---
 
