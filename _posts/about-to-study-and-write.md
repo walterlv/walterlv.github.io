@@ -16,6 +16,10 @@ categories: post
 
 ### About to Write
 
+- IntelliTest
+    - [Home · Z3Prover/z3 Wiki](https://github.com/Z3Prover/z3/wiki#background)
+    - [Smart Unit Tests – a mental model – Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/2014/12/11/smart-unit-tests-a-mental-model/)
+
 - NuGet Recommendations
     - [NuGet - Top 10 NuGet (Anti-) Patterns](https://msdn.microsoft.com/en-us/magazine/jj851071.aspx)
 
