@@ -16,6 +16,13 @@ categories: post
 
 ### About to Write
 
+- .NET Core Performance
+    - [Performance Improvements in .NET Core | .NET Blog](https://blogs.msdn.microsoft.com/dotnet/2017/06/07/performance-improvements-in-net-core/)
+
+- MSIX
+    - [Microsoft announces new "MSIX" app packaging format - MSPoweruser](https://mspoweruser.com/microsoft-announces-new-msix-app-packaging-format/)
+    - [Microsoft/msix-packaging: MSIX Packaging SDK](https://github.com/Microsoft/msix-packaging)
+
 - IntelliTest
     - [Home · Z3Prover/z3 Wiki](https://github.com/Z3Prover/z3/wiki#background)
     - [Smart Unit Tests – a mental model – Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/2014/12/11/smart-unit-tests-a-mental-model/)
