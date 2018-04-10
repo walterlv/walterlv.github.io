@@ -30,6 +30,8 @@ permalink: /friends/
 
 ---
 
+- [Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/)
+
 - [未来代码研究所](http://blog.atelier39.org/)
 
 - [叛逆者](https://www.zhihu.com/people/minmin.gong/activities)  
