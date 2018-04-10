@@ -40,7 +40,7 @@ permalink: /friends/
 - [YOYOFx - .NET Core & Microservices](http://blog.microservice4.net/)
 
 - [Nagisa](http://i.pcbeta.com/home.php?mod=space&uid=3887572&do=thread&type=reply&view=me&from=space)  
-    Windows Runtime [Nagisa 0.3 开发近况](http://bbs.pcbeta.com/viewthread-1778794-1-1.html)
+    Windows Runtime [Nagisa 0.3 开发近况](http://bbs.pcbeta.com/viewthread-1778794-1-1.html) [Project-Nagisa/Nagisa](https://github.com/Project-Nagisa/Nagisa)
 
 - [陈皓 - 酷 壳 - CoolShell](https://coolshell.cn/articles/author/haoel)
 
