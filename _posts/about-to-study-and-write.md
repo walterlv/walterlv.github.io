@@ -16,11 +16,6 @@ categories: post
 
 ### About to Write
 
-- Versioning NuGet packages
-    - [Versioning NuGet packages in a continuous delivery world: part 1 – Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/2016/05/03/versioning-nuget-packages-cd-1/)
-    - [Versioning NuGet packages in a continuous delivery world: part 2 – Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/2016/05/18/versioning-nuget-packages-cd-2/)
-    - [Versioning NuGet packages in a continuous delivery world: part 3 – Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/2016/05/26/versioning-nuget-packages-cd-3/)
-
 - Windows Runtime
     - [Windows Runtime(WinRT) 揭秘 - 张善友 - 博客园](http://www.cnblogs.com/shanyou/archive/2011/09/17/WinRT.html)
 
