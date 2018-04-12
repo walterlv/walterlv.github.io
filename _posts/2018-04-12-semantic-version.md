@@ -71,7 +71,7 @@ NuGet 4.3.0 以上，并且 Visual Studio 2017 的 15.3 以上版本开始支持
 
 当然，你还可以使用响应文件来简化参数，详情可阅读我的另一篇博客 [使用 MSBuild 响应文件 (rsp) 来指定 dotnet build 命令行编译时的大量参数](/post/msbuild-response-files.html)。
 
-如果希望自动化地在项目中生成语义版本号，可阅读我的另一篇博客 [使用 GitVersion 在编译或持续构建时自动使用语义版本号（Semantic Versioning） - walterlv](/post/automatically-semantic-versioning-using-git-version-task.html)。
+如果希望自动化地在项目中生成语义版本号，可阅读我的另一篇博客 [使用 GitVersion 在编译或持续构建时自动使用语义版本号（Semantic Versioning）](/post/automatically-semantic-versioning-using-git-version-task.html)。
 
 ---
 
