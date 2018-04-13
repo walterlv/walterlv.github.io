@@ -1,6 +1,7 @@
 ---
 title: "使用 GitVersion 在编译或持续构建时自动使用语义版本号（Semantic Versioning）"
-date: 2018-04-12 21:45:03 +0800
+date_published: 2018-04-12 21:45:03 +0800
+date: 2018-04-13 16:02:01 +0800
 categories: visualstudio nuget csharp dotnet
 ---
 
@@ -20,15 +21,112 @@ categories: visualstudio nuget csharp dotnet
 
 **请特别注意**：
 
-1. GitVersionTask 的**使用门槛有点高**，以上这个步骤只是开始（装完编译也不会让你看到任何变化的，甚至编译不通过）。
-2. 目前只有 [GitVersionTask **4.0 以上**的版本](https://www.nuget.org/packages/GitVersionTask/4.0.0-beta0012)（目前都是 beta）才支持 .NET Core 那样新格式的 csproj。
-3. 目前即便是最新测试版的 GitVersionTask 也**不支持使用基于 .NET Core 的** `dotnet build` 编译，原因和解决方案我已经提交给 GitTools 团队了（详见：[`dotnet build` command always fails with GitVersionTask 4.0.0-beta · Issue #1399 · GitTools/GitVersion](https://github.com/GitTools/GitVersion/issues/1399)），临时方案是使用 .NET Framework 版本的 `msbuild`。
+1. 目前只有 [GitVersionTask **4.0 以上**的版本](https://www.nuget.org/packages/GitVersionTask/4.0.0-beta0012)（目前都是 beta）才支持 .NET Core 那样新格式的 csproj。
+1. 目前即便是最新测试版的 GitVersionTask 也**不支持使用基于 .NET Core 的** `dotnet build` 编译，原因和解决方案我已经提交给 GitTools 团队了（详见：[`dotnet build` command always fails with GitVersionTask 4.0.0-beta · Issue #1399 · GitTools/GitVersion](https://github.com/GitTools/GitVersion/issues/1399)），临时方案是使用 .NET Framework 版本的 `msbuild`。
 
 ### 配置 GitVersion
 
-特别吐槽一下 GitVersion 的官方文档，完全是在得意洋洋地显摆自己多么强大，却忽视了最简单的入门教程。
+特别吐槽一下 GitVersion 的官方文档，把功能堆积得很多很强大，却忽视了面向新手的入门教程。
 
-（未完待续……*体现出阅读原文的好处了，可以及时得到更新*）
+GitVersion 的配置文件名为 `GitVersion.yml`，要求放到仓库的根目录下。官方文档对于配置文件的解释非常抽象，看完也不知道值应该写成什么样，也不知道每个值代表什么意义。于是我基本上是通过阅读它的源码来了解配置文件的实际含义的。
+
+经过一番折腾，我把配置文件莫改成了下面这样。
+
+```yml
+next-version: 1.0
+mode: ContinuousDelivery
+increment: Inherit
+tag-prefix: '[vV]'
+source-branches: ['master', 'develop', 'hotfix']
+ignore:
+  sha: []
+  commits-before: 2018-01-01T00:00:00
+branches:
+  master:
+    regex: master$
+    mode: ContinuousDelivery
+    tag: ''
+    increment: Patch
+    prevent-increment-of-merged-branch-version: true
+    track-merge-target: false
+    tracks-release-branches: false
+    is-release-branch: true
+  release:
+    regex: r(elease$|(eleases)?[-/])
+    mode: ContinuousDelivery
+    tag: beta
+    increment: Patch
+    prevent-increment-of-merged-branch-version: true
+    track-merge-target: false
+    tracks-release-branches: false
+    is-release-branch: true
+  feature:
+    regex: f(eatures)?[-/]
+    mode: ContinuousDeployment
+    tag: alpha
+    increment: Minor
+    prevent-increment-of-merged-branch-version: false
+    track-merge-target: false
+    tracks-release-branches: false
+    is-release-branch: false
+```
+
+▲ 别看这配置文件写得这么长，但其实官方的默认配置文件更长！
+
+好了不开玩笑了，这配置文件分两部分来看：1. `branches` 之前；2. `branches` 之后。
+
+写在 `branches` 之前的为全局配置，写在 `branches` 之后的是按分支分类的配置；它们的配置键值其实都是一样的。分支里的配置优先级高于全局配置。也就是说，如果编译打包的分支名能被 `regex` 正则表达式匹配上，那么就使用匹配的分支配置，否则使用全局配置。
+
+举例，假设我们现在的版本库是这样的：
+
+![版本库](/static/posts/2018-04-13-15-34-08.png)
+
+#### 分支名称匹配 `regex`
+
+那么当我们在 `release` 分支的 `f` 提交上编译，使用的配置将是 `release` 分支的配置。
+
+由于我将 `release` 分支的正则表达式写成了 `r(elease$|(eleases)?[-/])`（注意，我们不需要加行首标记 `^`，因为 GitVersionTask 里会为我们在最前面加一个），所以类似这样的分支名也是使用 `release` 分支的配置：
+
+- `r/1.2.0`
+- `releases/1.2.0`
+- `release`
+
+但是，这样的分支名将采用默认的全局配置（因为不符合正则表达式）：
+
+- `r`
+- `releases`
+
+以上配置中我只列举了三组分支，但其实在 [一个成功的 Git 分支流模型](http://nvie.com/posts/a-successful-git-branching-model/) 中，还有 `hotfix` `develop` 这样更多的分支。如果你的项目足够大，建议自己参考其他分支写出这两个分支的配置出来。
+
+#### 预发布标签 `tag`
+
+我们的 release 配置中，会为版本号加一个 `beta` 预发布标签，所以可能打出 `2.0.0-beta` 这样的包出来，或者 `2.0.0-beta+3`。但在全局配置下，默认打出的包会加一个以分支名命名的预发布标签；像这样 `2.0.0-r`（在 `r` 分支），或者 `2.0.0-temp-walterlv-custombranch`（在 `temp/walterlv/custombranch` 分支）。
+
+继续看以上的配置，在 `f/blog` 或 `features/new` 分支上将采用 `alpha` 预发布标签。
+
+我们在 `master` 分支的配置上
+
+#### 版本号递增规则 `increment`
+
+`increment` 这一项的可选值有 `Major`、`Minor`、`Patch`、`None` 和 `Inherit` 五种。
+
+- `Major` 如果此前在 Git 仓库此分支前有一个 1.2.0 的 Tag，那么现在将打出 2.0.0 的包来（无论此分支当前距离那个 Tag 有多少个提交，都只加 1）
+- `Minor` 如果此前在 Git 仓库此分支前有一个 1.2.0 的 Tag，那么现在将打出 1.3.0 的包来（无论此分支当前距离那个 Tag 有多少个提交，都只加 1）
+- `Patch` 如果此前在 Git 仓库此分支前有一个 1.2.0 的 Tag，那么现在将打出 1.2.1 的包来（无论此分支当前距离那个 Tag 有多少个提交，都只加 1）
+- `None` 如果此前在 Git 仓库此分支前有一个 1.2.0 的 Tag，那么现在将打出 1.2.0 的包来
+- `Inherit` 如果此分支上没有发现能够确认版本号的线索（例如一个 Tag），那么将自动寻找此分支的来源分支，继承来源分支的版本号递增规则。注意我在全局配置中加了一个 `source-branches` 配置，用于指定如果要自动寻找来源分支，请去这个集合中指定的分支名称里找。
+
+下图是 release 分支上打包的版本号。
+
+![](/static/posts/2018-04-13-16-27-11.png)
+
+#### 版本号递增的方式 `mode`
+
+`mode` 可选的值有三种：
+
+- `continuous-delivery` 持续交付，临近产品发布时使用，详细信息可阅读[Continous delivery - GitVersion](http://gitversion.readthedocs.io/en/stable/reference/continuous-delivery/)
+- `continuous-deployment` 持续部署，日常使用，详细信息可阅读[Continuous deployment - GitVersion](http://gitversion.readthedocs.io/en/stable/reference/continuous-deployment/)
+- `Mainline` 传统的（官方文档没有说明，代码中没有注释，但阅读代码发现其策略是从上一个 Tag 递增版本号）
 
 ### 语义版本号使用教程
 
