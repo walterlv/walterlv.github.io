@@ -100,7 +100,7 @@ Assert.IsInstanceOfType($instance$, typeof($type$));
 
 Custom Pattern 功能只是为了给我们一个格式转换吗？才不止是这样哦！它能够帮助我们发现一些潜在的错误。
 
-例如使用 [MSTestEnhancer](https://github.com/easiwin/MSTestEnhancer/) 进行单元测试时，如果使用了它推荐的单元测试风格，就应该配套使用 `ContractTestCase` 特性，如果不这么写，必定意味着错误。
+例如使用 [MSTestEnhancer](https://github.com/dotnet-campus/MSTestEnhancer/) 进行单元测试时，如果使用了它推荐的单元测试风格，就应该配套使用 `ContractTestCase` 特性，如果不这么写，必定意味着错误。
 
 于是，我们可以编写一个自定义模式来发现和修改这样的错误。
 

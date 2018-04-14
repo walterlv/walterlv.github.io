@@ -14,7 +14,7 @@ categories: visualstudio
 ![多 SDK 的项目](/static/posts/2018-02-12-15-17-26.png)  
 ▲ 多 SDK 项目
 
-这个是我和 [erdao](https://github.com/erdao) 在 GitHub 上开源项目 [easiwin/MSTestEnhancer](https://github.com/easiwin/MSTestEnhancer) 的项目依赖截图。是不是很激动？
+这个是我和 [erdao](https://github.com/erdao) 在 GitHub 上开源项目 [dotnet-campus/MSTestEnhancer](https://github.com/dotnet-campus/MSTestEnhancer) 的项目依赖截图。是不是很激动？
 
 <p id="toc"></p>
 
@@ -90,7 +90,7 @@ categories: visualstudio
 </Project>
 ```
 
-在 [easiwin/MSTestEnhancer](https://github.com/easiwin/MSTestEnhancer) 项目中，只有 .NET Framework 4.5 才需要引用 `System.ValueTuple`，于是加上了 `net45` 条件判断：
+在 [dotnet-campus/MSTestEnhancer](https://github.com/dotnet-campus/MSTestEnhancer) 项目中，只有 .NET Framework 4.5 才需要引用 `System.ValueTuple`，于是加上了 `net45` 条件判断：
 
 ```xml
 <!--EXTERNAL_PROPERTIES: TargetFramework-->

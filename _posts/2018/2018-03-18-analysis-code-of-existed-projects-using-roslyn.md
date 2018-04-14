@@ -56,10 +56,10 @@ Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。
 
 ### 打开一个解决方案/项目和其中的文件
 
-现在，我们使用这些代码打开解决方案。我以 [MSTestEnhancer](https://github.com/easiwin/MSTestEnhancer/) 为例：
+现在，我们使用这些代码打开解决方案。我以 [MSTestEnhancer](https://github.com/dotnet-campus/MSTestEnhancer/) 为例：
 
 ```csharp
-// 打开 MSTestEnhancer(https://github.com/easiwin/MSTestEnhancer/) 解决方案文件。
+// 打开 MSTestEnhancer(https://github.com/dotnet-campus/MSTestEnhancer/) 解决方案文件。
 // 注意这里的 MSBuildWorkspace.Create() 会返回 WorkSpace 的实例。
 // 虽然 WorkSpace 是跨平台的，但是 MSBuildWorkspace 仅在 Windows 下可用。
 var solution = await MSBuildWorkspace.Create().OpenSolutionAsync(

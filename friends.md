@@ -7,7 +7,7 @@ permalink: /friends/
 - [lindexi_gd https://lindexi.gitee.io/](https://lindexi.gitee.io/)  
     这是我的好朋友
 
-- [dotnet职业技术学院](https://easiwin.github.io/)  
+- [dotnet职业技术学院](https://dotnet-campus.github.io/)  
     这是我所在的组织
 
 - [gandalfliang gandalfliang.github.io](https://gandalfliang.github.io/)  

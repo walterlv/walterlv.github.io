@@ -12,7 +12,7 @@ categories: visualstudio dotnet csharp
 
 ![Syntax Visualizer](/static/posts/2018-03-18-20-51-14.png)
 
-正在分析的代码文件是 [MSTestEnhancer](https://github.com/easiwin/MSTestEnhancer/) 中的 `ContractTestContext.cs`；也就是我的另一篇文章 [Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码](/post/analysis-code-of-existed-projects-using-roslyn.html) 中所采用的例子。
+正在分析的代码文件是 [MSTestEnhancer](https://github.com/dotnet-campus/MSTestEnhancer/) 中的 `ContractTestContext.cs`；也就是我的另一篇文章 [Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码](/post/analysis-code-of-existed-projects-using-roslyn.html) 中所采用的例子。
 
 如果你是 Visual Studio 2017.6，并且在安装 Visual Studio 时选择了 Visual Studio 扩展，那么你什么都不用做就已经安装好了。否则，你需要去 [.NET Compiler Platform SDK - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=VisualStudioProductTeam.NETCompilerPlatformSDK) 下载安装。
 
