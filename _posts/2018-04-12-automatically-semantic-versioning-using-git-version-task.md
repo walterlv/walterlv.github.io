@@ -1,7 +1,7 @@
 ---
 title: "使用 GitVersion 在编译或持续构建时自动使用语义版本号（Semantic Versioning）"
 date_published: 2018-04-12 21:45:03 +0800
-date: 2018-04-13 17:32:57 +0800
+date: 2018-04-15 08:18:44 +0800
 categories: visualstudio nuget csharp dotnet
 ---
 
@@ -30,7 +30,7 @@ categories: visualstudio nuget csharp dotnet
 
 GitVersion 的配置文件名为 `GitVersion.yml`，要求放到仓库的根目录下。官方文档对于配置文件的解释非常抽象，看完也不知道值应该写成什么样，也不知道每个值代表什么意义。于是我基本上是通过阅读它的源码来了解配置文件的实际含义的。
 
-经过一番折腾，我把配置文件莫改成了下面这样。
+经过一番折腾，我把配置文件改成了下面这样。
 
 ```yml
 next-version: 1.0
