@@ -62,6 +62,8 @@ permalink: /friends/
 
 - [简单的遗传算法（Genetic algorithms）-吃豆人 - CSDN博客](http://blog.csdn.net/u013564276/article/details/53470049)
 
+- [.NET源码分析](https://zhuanlan.zhihu.com/sscli)
+
 ---
 
 - [快乐 就在你的心 的博客](https://kljzndx.github.io/My-Blog/)
