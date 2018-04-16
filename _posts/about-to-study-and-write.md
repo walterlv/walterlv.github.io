@@ -16,6 +16,9 @@ categories: post
 
 ### About to Write
 
+- Xamarin WPF
+    - [WPF Platform Setup - Xamarin - Microsoft Docs](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/platform/wpf)
+
 - WPF Notification
     - [【wpf】在 win10 系统上弹出 toast 和 notification - catshitone 的专栏 - CSDN博客](http://blog.csdn.net/catshitone/article/details/78522931)
     - [Send a local toast notification from desktop C# apps - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/send-local-toast-desktop)
@@ -25,6 +28,7 @@ categories: post
 
 - Composition
     - [Graphics and Animation - Windows Composition Turns 10](https://msdn.microsoft.com/en-us/magazine/mt590968)
+    - [How to use DirectComposition (Windows)](https://msdn.microsoft.com/zh-cn/library/windows/desktop/hh437376.aspx)
 
 - Windows Runtime
     - [Windows Runtime(WinRT) 揭秘 - 张善友 - 博客园](http://www.cnblogs.com/shanyou/archive/2011/09/17/WinRT.html)
