@@ -16,6 +16,16 @@ categories: post
 
 ### About to Write
 
+- WPF Notification
+    - [【wpf】在 win10 系统上弹出 toast 和 notification - catshitone 的专栏 - CSDN博客](http://blog.csdn.net/catshitone/article/details/78522931)
+    - [Send a local toast notification from desktop C# apps - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/send-local-toast-desktop)
+    - [WindowsNotifications/desktop-toasts: raw samples for desktop toasts using com activation](https://github.com/WindowsNotifications/desktop-toasts)
+    - [Toast content - UWP app developer - Microsoft Docs](https://docs.microsoft.com/zh-cn/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts)
+    - [Send a local toast notification - UWP app developer - Microsoft Docs](https://docs.microsoft.com/zh-cn/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)
+
+- Composition
+    - [Graphics and Animation - Windows Composition Turns 10](https://msdn.microsoft.com/en-us/magazine/mt590968)
+
 - Windows Runtime
     - [Windows Runtime(WinRT) 揭秘 - 张善友 - 博客园](http://www.cnblogs.com/shanyou/archive/2011/09/17/WinRT.html)
 
@@ -87,9 +97,6 @@ categories: post
 
 - .gitattributes
     - [Git - gitattributes Documentation](https://git-scm.com/docs/gitattributes)
-
-- WPF Notification
-    - [【wpf】在 win10 系统上弹出 toast 和 notification - catshitone 的专栏 - CSDN博客](http://blog.csdn.net/catshitone/article/details/78522931)
 
 - 在 VirtualizingStackPanel 中抛出了 NullReferenceException
     - [A NullReferenceException is thrown from VirtualizingStackPanel.MeasureChild - Microsoft Connect](https://connect.microsoft.com/VisualStudio/feedback/details/741583/a-nullreferenceexception-is-thrown-from-virtualizingstackpanel-measurechild)
