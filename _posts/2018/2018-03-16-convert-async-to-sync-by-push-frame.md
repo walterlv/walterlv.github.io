@@ -1,6 +1,7 @@
 ---
 title: "将 async/await 异步代码转换为安全的不会死锁的同步代码"
-date: 2018-03-16 11:58:10 +0800
+date_published: 2018-03-16 11:58:10 +0800
+date: 2018-04-18 07:41:33 +0800
 categories: dotnet csharp
 ---
 
@@ -56,7 +57,7 @@ public static TResult AwaitByPushFrame<TResult>(Task<TResult> task)
 }
 ```
 
-▲ 这就是全部代码了，仅适用于 Windows 平台（*如果使用 .NET Core，需要额外的 Windows 兼容 NuGet 包*）
+▲ 这就是全部代码了，仅适用于 Windows 平台（*如果使用 .NET Core，需要其他能够创建消息循环这种线程模型的方案。不过这通常是平台相关的，需要多种实现。例如 [Avalonia](https://github.com/AvaloniaUI/Avalonia) 在 Win32 平台上使用 GetMessage 实现等待；在 iOS 和 Android 平台上使用外部的全局循环；Mac 使用 MonoMac.AppKit 创建；Linux 下使用 GtkMainIteration 实现等待。*）
 
 ### 新方法的适用范围和优劣
 
