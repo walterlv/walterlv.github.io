@@ -1,18 +1,17 @@
 ---
-title: "使用 GitVersion 在编译或持续构建时自动使用语义版本号（Semantic Versioning）"
-date_published: 2018-04-12 21:45:03 +0800
-date: 2018-04-15 08:18:44 +0800
+title: "Automatically increase the semantic version using GitVersion"
+date: 2018-04-18 20:51:39 +0800
 categories: visualstudio nuget csharp dotnet
 version:
-  current: 中文
+  current: English
 versions:
-  - 中文: #
-  - English: /post/automatically-semantic-versioning-using-git-version-task.en.html
+  - 中文: /post/automatically-semantic-versioning-using-git-version-task.html
+  - English: #
 ---
 
-我们在之前谈过 [语义版本号（Semantic Versioning）](/post/semantic-version.html)，在项目中应用语义版本号能够帮助库的开发者在发布包时表明更多的语义信息。这是趋势，从微软的博客 [Versioning NuGet packages in a continuous delivery world](https://blogs.msdn.microsoft.com/devops/2016/05/03/versioning-nuget-packages-cd-1/) 三部曲中可以看出，从 NuGet 4.3.0 以及 Visual Studio 2017 15.3 以上版本开始支持语义版本号 2.0 也能看出。
+I wrote another post talking about [Semantic Versioning](/post/semantic-version.html) before (*but it is not in English*). Introducing the semantic version to a project can give library users more semantic information when library developers publishing packages. From the Microsoft blog [Versioning NuGet packages in a continuous delivery world](https://blogs.msdn.microsoft.com/devops/2016/05/03/versioning-nuget-packages-cd-1/) we could find that semantic versioning is the trend.
 
-本文将从持续集成的角度来说语义版本号，告诉大家如何自动生成包含语义的版本号，并在发布库时采用。
+This article will refer to the semantic versioning from the perspective of continuous integration, telling you how to automatically generate a version that contains semantic, and use it when publishing the library.
 
 ---
 
@@ -22,24 +21,20 @@ This post is written in **multiple languages**. Please select yours:
 
 <div id="toc"></div>
 
-### 安装 GitVersionTask
+### Install the GitVersionTask
 
-微软工程师在博客 [Versioning NuGet packages in a continuous delivery world: part 3 – Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/2016/05/26/versioning-nuget-packages-cd-3/) 中推荐的语义版本号生成工具是 GitVersion。从实际寻找来看，这似乎也是唯一一个能够让 NuGet 包支持语义版本号的工具。
+A Microsoft engineer recommend a semantic versioning tools named `GitVersion` on his blog [Versioning NuGet packages in a continuous delivery world: part 3 – Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/2016/05/26/versioning-nuget-packages-cd-3/). I tried to find more tools but unfortunately the GitVersion seems to be the only one that can add semantic version to a nuget package.
 
-去 [NuGet.org](https://www.nuget.org/) 上为我们的库项目安装 [GitVersionTask](https://www.nuget.org/packages/GitVersionTask) 即可开始我们的语义版本号。
+Go to [NuGet.org](https://www.nuget.org/) to install [GitVersionTask](https://www.nuget.org/packages/GitVersionTask) for our library project and then we will start our semantic versioning.
 
-**请特别注意**：
+**Attention**:
 
-1. 目前只有 [GitVersionTask **4.0 以上**的版本](https://www.nuget.org/packages/GitVersionTask/4.0.0-beta0012)（目前都是 beta）才支持 .NET Core 那样新格式的 csproj。
-1. 目前即便是最新测试版的 GitVersionTask 也**不支持使用基于 .NET Core 的** `dotnet build` 编译，原因和解决方案我已经提交给 GitTools 团队了（详见：[`dotnet build` command always fails with GitVersionTask 4.0.0-beta · Issue #1399 · GitTools/GitVersion](https://github.com/GitTools/GitVersion/issues/1399)），临时方案是使用 .NET Framework 版本的 `msbuild`。
+1. Only [GitVersionTask **4.0 or later**](https://www.nuget.org/packages/GitVersionTask/4.0.0-beta0012) (currently beta) supports new csproj format which is introduced from .NET Core.
+1. Currently even the latest beta version of GitVersionTask does not support the .NET Core-based compilation - `dotnet build`. I've submitted an issue to the GitTools team to explain the reason and the solution. (see: [`dotnet build` command always fails with GitVersionTask 4.0.0-beta · Issue #1399 · GitTools/GitVersion](https://github.com/GitTools/GitVersion/issues/1399)) The temporary fallback is to use a full .NET Framework version - `msbuild`.
 
-### 配置 GitVersion
+### GitVersion Configuration
 
-特别吐槽一下 GitVersion 的官方文档，把功能堆积得很多很强大，却忽视了面向新手的入门教程。
-
-GitVersion 的配置文件名为 `GitVersion.yml`，要求放到仓库的根目录下。官方文档对于配置文件的解释非常抽象，看完也不知道值应该写成什么样，也不知道每个值代表什么意义。于是我基本上是通过阅读它的源码来了解配置文件的实际含义的。
-
-经过一番折腾，我把配置文件改成了下面这样。
+GitVersion official documentation is not easy to read. I cannot find even detailed meaning of each configuration keys and values. But I read it's source code, and these are the meanings below.
 
 ```yml
 next-version: 1.0
@@ -80,7 +75,9 @@ branches:
     is-release-branch: false
 ```
 
-▲ 别看这配置文件写得这么长，但其实官方的默认配置文件更长！
+▲ It's long, but the official one is longer.
+
+// TODO: **Translation is interrupted and I'll translate below later.**
 
 好了不开玩笑了，这配置文件分两部分来看：1. `branches` 之前；2. `branches` 之后。
 
@@ -171,7 +168,7 @@ branches:
 
 ---
 
-#### 参考资料
+#### Related Links
 
 - [Versioning NuGet packages in a continuous delivery world: part 1 – Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/2016/05/03/versioning-nuget-packages-cd-1/)
 - [Versioning NuGet packages in a continuous delivery world: part 2 – Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/2016/05/18/versioning-nuget-packages-cd-2/)
