@@ -16,6 +16,10 @@ categories: post
 
 ### About to Write
 
+- OAuth
+    - [c# - SMTP and OAuth 2 - Stack Overflow](https://stackoverflow.com/questions/24195508/smtp-and-oauth-2)
+    - [Using OAuth 2.0 to Access Google APIs  -  Google Identity Platform  -  Google Developers](https://developers.google.com/identity/protocols/OAuth2)
+
 - Xamarin WPF
     - [WPF Platform Setup - Xamarin - Microsoft Docs](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/platform/wpf)
 
