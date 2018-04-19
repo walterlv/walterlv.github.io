@@ -16,6 +16,9 @@ categories: post
 
 ### About to Write
 
+- Overloadable Operators
+    - [Overloadable Operators (C# Programming Guide) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/overloadable-operators)
+
 - IAsyncOperation<TResult>.GetResult()
     - [exception - A method was called at an unexpected time - Stack Overflow](https://stackoverflow.com/questions/13096141/a-method-was-called-at-an-unexpected-time))
 
