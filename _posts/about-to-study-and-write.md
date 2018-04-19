@@ -23,6 +23,9 @@ categories: post
     - [exception - A method was called at an unexpected time - Stack Overflow](https://stackoverflow.com/questions/13096141/a-method-was-called-at-an-unexpected-time))
 
 - OAuth
+    - [Get Started with the Outlook REST APIs - Microsoft Docs](https://docs.microsoft.com/en-us/outlook/rest/get-started)
+    - [Azure AD v2.0 OAuth Authorization Code Flow - Microsoft Docs](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-protocols-oauth-code)
+    - [Get started with Azure Active Directory v2 Windows desktop - Microsoft Docs](https://docs.microsoft.com/en-us/azure/active-directory/develop/guidedsetups/active-directory-windesktop)
     - [Simple One Page RestSharp Based Console Application for the Box.com Cloud Service - CodeProject](https://www.codeproject.com/Articles/574319/Simple-One-Page-RestSharp-Based)
     - [c# - SMTP and OAuth 2 - Stack Overflow](https://stackoverflow.com/questions/24195508/smtp-and-oauth-2)
     - [Using OAuth 2.0 to Access Google APIs  -  Google Identity Platform  -  Google Developers](https://developers.google.com/identity/protocols/OAuth2)
