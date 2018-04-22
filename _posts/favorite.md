@@ -5,6 +5,12 @@ categories: favorite
 sitemap: false
 ---
 
+- GNU Octave
+    - [All Windows binaries with corresponding source code](https://ftp.gnu.org/gnu/octave/windows/)
+
+- API 变化
+    - [17639 > 17643 - Pastebin.com](https://pastebin.com/NPPAd6kB)
+
 - 微软开发平台
     - [从 Windows 8 回顾微软平台的各种技术_知识库_博客园](https://kb.cnblogs.com/page/126527/)
 
