@@ -1,6 +1,7 @@
 ---
 title: "如何快速编写和调试 Emit 生成 IL 的代码"
-date: 2018-04-22 20:23:26 +0800
+date_published: 2018-04-22 20:23:26 +0800
+date: 2018-04-23 07:11:42 +0800
 categories: dotnet csharp
 ---
 
@@ -255,9 +256,9 @@ il.Emit(castingCode, propertyType);
 
 现在运行，即可正常通过。如果你希望拥有完整的代码，可以自行将以上两句替换掉此前注释说明了 `注意：下一句代码会在文章后面被修改。` 的地方。
 
-### 更近一步
+### 更进一步
 
-- 如果要 Emit 的代码中存在 `if`-`else` 这样的非顺序结构怎么办？
+- 如果要 Emit 的代码中存在 `if`-`else` 这样的非顺序结构怎么办？*阅读 [使用 Emit 生成 IL 代码 - 吕毅](https://walterlv.github.io/post/generate-il-using-emit.html) 可以了解做法。*
 - 我们可以用 `int` 为 `double` 类型的属性赋值，但在本例代码中却不可行，如何解决这种隐式转换的问题？
 
 如果你尝试编写了 Emit 的代码，那么上面的问题应该难不倒你。
@@ -268,5 +269,3 @@ il.Emit(castingCode, propertyType);
 1. 通过 ReSharper 插件，我们可以实时查看生成的 IL 代码。
 1. 我们可以将 Emit 生成的代码输出到程序集文件。
 1. 通过 dotPeek，我们可以查看程序集中类型和方法的 IL 代码。
-
-
