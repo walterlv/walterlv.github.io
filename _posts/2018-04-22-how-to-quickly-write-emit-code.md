@@ -1,5 +1,5 @@
 ---
-title: "如何快速编写 Emit 生成 IL 代码"
+title: "如何快速编写和调试 Emit 生成 IL 的代码"
 date: 2018-04-22 20:23:26 +0800
 categories: dotnet csharp
 ---
