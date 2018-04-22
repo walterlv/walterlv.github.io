@@ -96,8 +96,8 @@ namespace Walterlv.Demo
 ```
 .method private hidebysig static void 
     SetPropertyValue(
-      object this, 
-      object 'value'
+        object this, 
+        object 'value'
     ) cil managed 
 {
     .maxstack 8
