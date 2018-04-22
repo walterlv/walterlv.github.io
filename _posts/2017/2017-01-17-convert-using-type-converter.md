@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "利用 TypeConverter，转换字符串和各种类型只需写一个函数"
-date: 2017-01-17 18:13:00 +0800
+date_published: 2017-01-17 18:13:00 +0800
+date: 2018-04-23 07:31:32 +0800
 categories: dotnet
 permalink: /dotnet/2017/01/17/convert-using-type-converter.html
 keywords: dotnet typeconverter
@@ -14,7 +15,7 @@ description: 使用 TypeConverter 实现字符串转各种类型。
 
 ---
 
-```CSharp
+```csharp
 // 注：`Configurator`是我的配置类，用于读写字符串的。
 public static int GetInt32(this Configurator config, string key)
 {
@@ -37,7 +38,7 @@ public static bool GetBoolean(this Configurator config, string key)
 
 这些方法都比较相似，于是自然而然想到了**泛型**，所以写出了这段代码：
 
-```CSharp
+```csharp
 public static T GetValue<T>(this Configurator config, string key) where T : struct
 {
     var @string = config[key];
@@ -55,7 +56,8 @@ public static T GetValue<T>(this Configurator config, string key) where T : stru
 另外想到一点，`Int32` 类型的 `TryParse` 中有 `out` 关键字修饰的参数，反射能否支持呢？[StackOverflow 上找到了答案](https://stackoverflow.com/questions/2438065/c-sharp-reflection-how-can-i-invoke-a-method-with-an-out-parameter)：
 
 > You invoke a method with an out parameter via reflection just like any other method. The difference is that the returned value will be copied back into the parameter array so you can access it from the calling function.
-> ```CSharp
+
+> ```csharp
 > object[] args = new object[] { address, request };
 > _DownloadDataInternal.Invoke(this, args);
 > request = (WebRequest)args[1];
@@ -69,7 +71,7 @@ public static T GetValue<T>(this Configurator config, string key) where T : stru
 
 最高票答案给出的回复是：
 
-> ```CSharp
+> ```csharp
 > using System.ComponentModel;
 > 
 > TypeConverter typeConverter = TypeDescriptor.GetConverter(propType);
@@ -78,7 +80,7 @@ public static T GetValue<T>(this Configurator config, string key) where T : stru
 
 这可打开了思路，原来 .NET Framework 内部已经有了这种转换机制和相关的方法。于是用这种方法修改我的方法，成了这样子：
 
-```CSharp
+```csharp
 public static T GetValue<T>(this Configurator config, string key) where T : struct
 {
     var @string = config[key];
