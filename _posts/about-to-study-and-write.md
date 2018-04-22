@@ -16,6 +16,13 @@ categories: post
 
 ### About to Write
 
+- Reflection to Compiled Expression
+    - [Why is reflection slow? · Performance is a Feature!](http://mattwarren.org/2016/12/14/Why-is-Reflection-slow/)
+    - [Code Snippets: Fast Runtime Property Access with Reflection – SLaks.Blog](https://blog.slaks.net/2015-06-26/code-snippets-fast-property-access-reflection/)
+    - [Expression Class (System.Linq.Expressions)](https://msdn.microsoft.com/en-us/library/system.linq.expressions.expression(v=vs.110).aspx)
+    - [Expression Based Property Getters and Setters - CodeProject](https://www.codeproject.com/Articles/584720/ExpressionplusbasedplusPropertyplusGettersplusandp)
+    - [How do I set a field/property value in an C# Expression tree in .NET 3.5? - Elvin Cheng](https://elvincheng.wordpress.com/2010/12/15/how-do-i-set-a-fieldproperty-value-in-an-c-expression-tree-in-net-3-5/)
+
 - Overloadable Operators
     - [Overloadable Operators (C# Programming Guide) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/overloadable-operators)
 
@@ -26,6 +33,7 @@ categories: post
     - [Get Started with the Outlook REST APIs - Microsoft Docs](https://docs.microsoft.com/en-us/outlook/rest/get-started)
     - [Azure AD v2.0 OAuth Authorization Code Flow - Microsoft Docs](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-protocols-oauth-code)
     - [Get started with Azure Active Directory v2 Windows desktop - Microsoft Docs](https://docs.microsoft.com/en-us/azure/active-directory/develop/guidedsetups/active-directory-windesktop)
+    - [Web authentication broker - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/security/web-authentication-broker)
     - [Simple One Page RestSharp Based Console Application for the Box.com Cloud Service - CodeProject](https://www.codeproject.com/Articles/574319/Simple-One-Page-RestSharp-Based)
     - [c# - SMTP and OAuth 2 - Stack Overflow](https://stackoverflow.com/questions/24195508/smtp-and-oauth-2)
     - [Using OAuth 2.0 to Access Google APIs  -  Google Identity Platform  -  Google Developers](https://developers.google.com/identity/protocols/OAuth2)
