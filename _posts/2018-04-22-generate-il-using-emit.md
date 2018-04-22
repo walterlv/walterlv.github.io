@@ -40,7 +40,7 @@ method.DefineParameter(2, ParameterAttributes.None, "value");
 
 ### 声明和初始化局部变量
 
-平时写 C# 的时候，可能一个方法里面没有定义任何一个局部变量，但 IL 可不一定这么认为。l
+平时写 C# 的时候，可能一个方法里面没有定义任何一个局部变量，但 IL 可不一定这么认为。
 
 例如：
 
