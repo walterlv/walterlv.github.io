@@ -1,7 +1,7 @@
 ---
 title: "如何快速编写和调试 Emit 生成 IL 的代码"
 date_published: 2018-04-22 20:23:26 +0800
-date: 2018-04-23 07:11:42 +0800
+date: 2018-04-23 09:46:33 +0800
 categories: dotnet csharp
 ---
 
@@ -204,7 +204,7 @@ public static void OutputPropertySetter(PropertyInfo propertyInfo)
     var module = assembly.DefineDynamicModule(assemblyName.Name, assemblyName.Name + ".dll");
     var type = module.DefineType("Temp", TypeAttributes.Public);
     var method = type.DefineMethod("<set_Property>",
-        MethodAttributes.Static | MethodAttributes.Public, CallingConventions.Standard,
+        MethodAttributes.Static - MethodAttributes.Public, CallingConventions.Standard,
         typeof(void), new[] { typeof(object), typeof(object) });
     var il = method.GetILGenerator();
     
@@ -269,3 +269,39 @@ il.Emit(castingCode, propertyType);
 1. 通过 ReSharper 插件，我们可以实时查看生成的 IL 代码。
 1. 我们可以将 Emit 生成的代码输出到程序集文件。
 1. 通过 dotPeek，我们可以查看程序集中类型和方法的 IL 代码。
+
+---
+
+#### 参考资料
+
++ 生成方法签名与元数据
+    - [ParameterBuilder Class (System.Reflection.Emit)](https://msdn.microsoft.com/en-us/library/system.reflection.emit.parameterbuilder(v=vs.110).aspx)
+    - [MethodBuilder.DefineParameter Method (Int32, ParameterAttributes, String) (System.Reflection.Emit)](https://msdn.microsoft.com/en-us/library/system.reflection.emit.methodbuilder.defineparameter(v=vs.110).aspx)
+    - [Defining a Parameter with Reflection Emit](https://msdn.microsoft.com/en-us/library/9zksbcwc(v=vs.100).aspx)
+    - [c# - How to set ".maxstack" with ILGenerator - Stack Overflow](https://stackoverflow.com/questions/33656409/how-to-set-maxstack-with-ilgenerator?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
++ 生成方法体
+    - [ILGenerator.DefineLabel Method (System.Reflection.Emit)](https://msdn.microsoft.com/en-us/library/system.reflection.emit.ilgenerator.definelabel(v=vs.110).aspx)
+    - [ILGenerator.MarkLabel Method (Label) (System.Reflection.Emit)](https://msdn.microsoft.com/en-us/library/system.reflection.emit.ilgenerator.marklabel(v=vs.110).aspx)
+    - [c# - Emit local variable and assign a value to it - Stack Overflow](https://stackoverflow.com/questions/15278566/emit-local-variable-and-assign-a-value-to-it?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
+    - [C# reflection: If ... else? - Stack Overflow](https://stackoverflow.com/questions/11139241/c-sharp-reflection-if-else?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
+    - [ILGenerator.Emit Method](https://msdn.microsoft.com/en-us/library/system.reflection.emit.ilgenerator.emit(v=vs.71).aspx)
+    - [ILGenerator.Emit Method (System.Reflection.Emit)](https://msdn.microsoft.com/en-us/library/system.reflection.emit.ilgenerator.emit(v=vs.110).aspx)
+    - [ILGenerator.Emit Method (OpCode, String) (System.Reflection.Emit)](https://msdn.microsoft.com/en-us/library/yf2s00wd(v=vs.110).aspx)
+    - [ILGenerator.Emit Method (OpCode, MethodInfo) (System.Reflection.Emit)](https://msdn.microsoft.com/en-us/library/xz8067x2(v=vs.110).aspx)
+    - [ILGenerator.EmitCall Method (OpCode, MethodInfo, Type[]) (System.Reflection.Emit)](https://msdn.microsoft.com/en-us/library/system.reflection.emit.ilgenerator.emitcall(v=vs.110).aspx)
+    - [.net - Call and Callvirt - Stack Overflow](https://stackoverflow.com/questions/193939/call-and-callvirt?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
++ IL 操作
+    - [OpCodes.Ldarg_0 Field (System.Reflection.Emit)](https://msdn.microsoft.com/en-us/library/system.reflection.emit.opcodes.ldarg_0(v=vs.110).aspx)
+    - [OpCodes.Brfalse_S Field (System.Reflection.Emit)](https://msdn.microsoft.com/en-us/library/system.reflection.emit.opcodes.brfalse_s(v=vs.110).aspx)
++ 输出程序集
+    - [c# - Is there a way to view the generated IL code of a DynamicMethod (in Sigil)? - Stack Overflow](https://stackoverflow.com/questions/29037961/is-there-a-way-to-view-the-generated-il-code-of-a-dynamicmethod-in-sigil?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
+    - [c# - Can I use Reflection.Emit for generating code and save generated codes in .cs files or I could use CodeDom? - Stack Overflow](https://stackoverflow.com/questions/6501224/can-i-use-reflection-emit-for-generating-code-and-save-generated-codes-in-cs-fi?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
+    - [AssemblyBuilder.Save Method (String) (System.Reflection.Emit)](https://msdn.microsoft.com/en-us/library/8zwdfdeh(v=vs.110).aspx)
++ 运行时错误
+    - [c# - Reflection.emit System.InvalidProgramException: Common Language Runtime detected an invalid program - Stack Overflow](https://stackoverflow.com/questions/16950272/reflection-emit-system-invalidprogramexception-common-language-runtime-detected?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
+    - ["Operation could destabilize the runtime." when using IL to create a DynamicMethod · Issue #14 · jbevain/mono.reflection](https://github.com/jbevain/mono.reflection/issues/14)
+    - [c# - Emit Operation could destabilize the runtime for incrementing field - Stack Overflow](https://stackoverflow.com/questions/21496490/emit-operation-could-destabilize-the-runtime-for-incrementing-field?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
+    - [.NET 4.5 : Operation could destabilize the runtime (yikes!) - ElegantCode](https://elegantcode.com/2012/08/23/net-4-5-operation-could-destabilize-the-runtime-yikes/)
+    - [c# - Operation could destabilize the runtime? - Stack Overflow](https://stackoverflow.com/questions/378895/operation-could-destabilize-the-runtime?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
++ 其他
+    - [Generating and Compiling Source Code from a CodeDOM Graph - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/reflection-and-codedom/generating-and-compiling-source-code-from-a-codedom-graph)

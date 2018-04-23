@@ -1,7 +1,7 @@
 ---
 title: "使用 Emit 生成 IL 代码"
 date_published: 2018-04-22 21:14:58 +0800
-date: 2018-04-23 07:13:55 +0800
+date: 2018-04-23 09:46:24 +0800
 categories: dotnet csharp
 ---
 
@@ -96,3 +96,18 @@ il.Emit(OpCodes.Nop);
 // 假设这里整个 if-else 结束了，于是将 endOfWholeIfElse 进行标记。
 il.MarkLabel(endOfWholeIfElse);
 ```
+
+---
+
+#### 参考资料
+
++ 生成方法签名与元数据
+    - [ParameterBuilder Class (System.Reflection.Emit)](https://msdn.microsoft.com/en-us/library/system.reflection.emit.parameterbuilder(v=vs.110).aspx)
+    - [MethodBuilder.DefineParameter Method (Int32, ParameterAttributes, String) (System.Reflection.Emit)](https://msdn.microsoft.com/en-us/library/system.reflection.emit.methodbuilder.defineparameter(v=vs.110).aspx)
+    - [Defining a Parameter with Reflection Emit](https://msdn.microsoft.com/en-us/library/9zksbcwc(v=vs.100).aspx)
+    - [c# - How to set ".maxstack" with ILGenerator - Stack Overflow](https://stackoverflow.com/questions/33656409/how-to-set-maxstack-with-ilgenerator?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
++ 生成方法体
+    - [ILGenerator.DefineLabel Method (System.Reflection.Emit)](https://msdn.microsoft.com/en-us/library/system.reflection.emit.ilgenerator.definelabel(v=vs.110).aspx)
+    - [ILGenerator.MarkLabel Method (Label) (System.Reflection.Emit)](https://msdn.microsoft.com/en-us/library/system.reflection.emit.ilgenerator.marklabel(v=vs.110).aspx)
+    - [c# - Emit local variable and assign a value to it - Stack Overflow](https://stackoverflow.com/questions/15278566/emit-local-variable-and-assign-a-value-to-it?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
+    - [C# reflection: If ... else? - Stack Overflow](https://stackoverflow.com/questions/11139241/c-sharp-reflection-if-else?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
