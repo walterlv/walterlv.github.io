@@ -1,7 +1,7 @@
 ---
 title: "如何快速编写和调试 Emit 生成 IL 的代码"
 date_published: 2018-04-22 20:23:26 +0800
-date: 2018-04-23 09:46:33 +0800
+date: 2018-04-23 14:12:54 +0800
 categories: dotnet csharp
 ---
 
@@ -56,7 +56,7 @@ categories: dotnet csharp
 - [ReSharper](https://www.jetbrains.com/resharper/) - *用于实时查看 IL 代码*
 - [dotPeek](https://www.jetbrains.com/decompiler/) - *免费，用于查看我们使用 Emit 生成的代码，便于对比分析*
 
-相比于原生 Visual Studio，有此工具帮助的情况下，IL 的编写速度和调试速度将得到质的提升。（当然，利用这些工具依然只是**手工操作**，存在瓶颈；如果你阅读完本文之后找到或编写一个新的工具，更块，欢迎与我探讨。）
+相比于原生 Visual Studio，有此工具帮助的情况下，IL 的编写速度和调试速度将得到质的提升。（当然，利用这些工具依然只是**手工操作**，存在瓶颈；如果你阅读完本文之后找到或编写一个新的工具，更快，欢迎与我探讨。）
 
 ReSharper 提供了 IL Viewer 窗格，从菜单依次进入 ReSharper->Windows->IL Viewer 可以打开。
 
