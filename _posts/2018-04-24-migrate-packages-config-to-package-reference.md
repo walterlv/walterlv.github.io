@@ -26,11 +26,13 @@ categories: dotnet visualstudio nuget
 
 ### 检查升级后的兼容性问题
 
-`packages.config` 的 NuGet 包的管理方式有些功能是 `PackageReference` 没有的。
+`packages.config` 的 NuGet 包的管理方式有些功能是 `PackageReference` 没有的。当然，没有这些功能是因为“不需要”，而不是“还没支持”；所以大部分的迁移都不会发生问题（除非发布包使用的是特别老旧的 nuget.exe，或者发布者利用了一些丧心病狂的黑科技）。
 
 #### install.ps1 脚本将失效
 
 使用 `PackageReference` 后，在安装和写在的过程中 `install.ps1` 脚本将不再执行。如果有一些行为依赖于此脚本，那么这个 NuGet 包的行为可能不正常。
+
+但是，不用担心！`install.ps1` 的存在是因为 `packages.config` 不支持 `PackageReference` 中的一些新特性（例如 NuGet 包中新的目录结构，例如包中自带的 msbuild targets）。所以，如果 NuGet 包在发布时满足目录要求，那么即便 `install.ps1` 不用执行也能保证包的行为正常。
 
 #### 使用 content 方式指定的内容资产将失效
 
