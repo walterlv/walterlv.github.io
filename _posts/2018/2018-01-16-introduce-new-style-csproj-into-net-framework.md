@@ -1,7 +1,7 @@
 ---
 title: "将 WPF、UWP 以及其他各种类型的旧样式的 csproj 文件迁移成新样式的 csproj 文件"
 date_published: 2018-01-16 00:04:28 +0800
-date: 2018-01-21 11:13:39 +0800
+date: 2018-04-24 17:28:08 +0800
 categories: visualstudio
 ---
 
@@ -180,7 +180,7 @@ categories: visualstudio
 
 #### 自动迁移
 
-在多次的迁移中，发现单元测试项目通常是最好迁移的。如果没有遇到什么坑，那么之前建议的五个步骤其实可以自动化完成。这里我并没有找到这样的迁移工具，但应该有大神已经做出来了。
+自动迁移的方法我写了一篇新的博客，请阅读 [自动将 NuGet 包的引用方式从 packages.config 升级为 PackageReference](/post/migrate-packages-config-to-package-reference.html)。当然，目前自动迁移还只是 NuGet 引用方式的改变，加上文件通配符的帮助，我们的 csproj 文件即使依然是旧格式，也能非常简洁。
 
 ### 迁移 WPF/UWP 这类 XAML UI 类库的项目文件
 
