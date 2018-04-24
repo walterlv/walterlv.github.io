@@ -1,6 +1,6 @@
 ---
 title: "自动将 NuGet 包的引用方式从 packages.config 升级为 PackageReference"
-date: 2018-04-24 17:29:30 +0800
+date: 2018-04-24 18:03:20 +0800
 categories: dotnet visualstudio nuget
 ---
 
@@ -51,6 +51,26 @@ categories: dotnet visualstudio nuget
 lib 文件夹内的程序集都应该按照目标框架建立子文件夹，例如 net45、netstandard2.0、netcoreapp2.0。`PackageReference` 要求只能引用在某个目标框架下的程序集。
 
 如果是使用默认的方式创建的 NuGet 包，基本上不会遇到这样的问题。除非你在创建 NuGet 包时有自定义操作在根目录放了程序集。
+
+### 解决升级后的编译
+
+最可能出现的编译问题是 NuGet 包引用的版本冲突。
+
+`packages.config` 方式的包引用要求在 csproj 文件中显式指定一个依赖的包的版本，于是无论依赖使用了哪个版本，最终都由显式指定的版本来指定。
+
+而 `PackageReference` 的引用方式是自动管理依赖版本的，只要每个包都在允许的版本范围之内，就自动选择版本，并显示在解决方案的引用中。
+
+`PackageReference` 出现依赖冲突的提示通常是这样的：
+
+```
+Version conflict detected for NuGet.Versioning. Reference the package directly from the project to resolve this issue.
+NuGet.Packaging 3.5.0 -> NuGet.Versioning (= 3.5.0)
+NuGet.Configuration 4.0.0 -> NuGet.Versioning (= 4.0.0)
+```
+
+也就是说，引用的两个不同的包要求依赖相同包的不同版本，于是 `PackageReference` 无法隐式推断依赖包的版本。这时需要将项目的依赖方式改为之前的方式。
+
+当然，在制作和发布 NuGet 包时，尽量使用非特定版本的依赖包，能够极大地避免这种问题带来的影响。关于如何指定非特定版本的依赖包，可以阅读 [Version ranges and wildcards 版本范围和通配符](https://docs.microsoft.com/en-us/nuget/reference/package-versioning#version-ranges-and-wildcards)。
 
 ---
 
