@@ -1,7 +1,7 @@
 ---
 title: "C#/.NET 中的契约"
 date_published: 2017-12-20 23:04:21 +0800
-date: 2018-02-09 15:31:11 +0800
+date: 2018-04-25 17:11:33 +0800
 categories: csharp dotnet
 ---
 
@@ -83,7 +83,9 @@ ReSharper 并没有将其称之为“契约”，因为它真的只是“文档�
 - 还有 100+ 个……
 
 - ContractAnnotation
-    * 详见 [Contract Annotations - Help - ReSharper](https://www.jetbrains.com/help/resharper/Contract_Annotations.html)，可以写出更复杂的契约。
+    * 详见 [Contract Annotations - Help - ReSharper](https://www.jetbrains.com/help/resharper/Contract_Annotations.html)，可以使用约定的语法写出更复杂的契约。
+
+我的朋友[林德熙](https://lindexi.github.io/lindexi/)在 [使用 Resharper 特性](https://lindexi.github.io/lindexi/post/%E4%BD%BF%E7%94%A8-Resharper-%E7%89%B9%E6%80%A7.html) 一文中有这些契约对编写代码的更详细的效果描述和截图。
 
 ### System.Diagnostics.Contracts
 
