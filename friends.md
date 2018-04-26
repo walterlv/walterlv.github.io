@@ -72,7 +72,7 @@ permalink: /friends/
 
 - [Microsoft .NET Blog](https://blogs.msdn.microsoft.com/dotnet/)
     - [Performance Improvements in .NET Core - .NET Blog](https://blogs.msdn.microsoft.com/dotnet/2017/06/07/performance-improvements-in-net-core/)
-
+- [Nate McMaster](https://www.natemcmaster.com/)
 - [Nicky Case: The Internet Experience™](http://ncase.me/)  
     边玩边学的小游戏
   - [信任的进化](https://www.sekai.co/trust/)
