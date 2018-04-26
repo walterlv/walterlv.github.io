@@ -1,7 +1,7 @@
 ---
 title: "使用 Emit 生成 IL 代码"
 date_published: 2018-04-22 21:14:58 +0800
-date: 2018-04-23 09:46:24 +0800
+date: 2018-04-27 07:10:34 +0800
 categories: dotnet csharp
 ---
 
@@ -11,7 +11,7 @@ categories: dotnet csharp
 
 ---
 
-在编写以下代码时如果遇到一些意料之外的错误，希望调试生成的 IL 代码，可以尝试阅读 [如何快速编写和调试 Emit 生成 IL 的代码 - walterlv](https://walterlv.github.io/post/how-to-quickly-write-emit-code.html) 了解如何调试和解决。
+在编写以下代码时如果遇到一些意料之外的错误，希望调试生成的 IL 代码，可以尝试阅读 [如何快速编写和调试 Emit 生成 IL 的代码](/post/how-to-quickly-write-emit-code.html) 了解如何调试和解决。
 
 <div id="toc"></div>
 
