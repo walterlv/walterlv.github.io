@@ -1,7 +1,7 @@
 ---
 title: "安利一款非常好用的命令行参数库：McMaster.Extensions.CommandLineUtils"
 date_published: 2017-10-21 09:44:02 +0800
-date: 2018-04-26 20:34:17 +0800
+date: 2018-04-26 20:39:31 +0800
 categories: dotnet dotnet-core dotnet-standard
 ---
 
@@ -13,11 +13,11 @@ categories: dotnet dotnet-core dotnet-standard
 
 **更新**：
 
-如果你之前阅读过我这篇博客，可能知道我之前推荐的是 `Microsoft.Extensions.CommandlineUtils`，是微软出品；不过微软官方已经在 GitHub 上将 `Microsoft.Extensions.CommandlineUtils` 重定向到了 `aspnet/Common`，原有的单独的命令行不复存在。
+如果你之前阅读过我这篇博客，可能知道我之前推荐的是 `Microsoft.Extensions.CommandlineUtils`，是微软出品；不过微软官方已经在 GitHub 上将此命令行项目重定向到了 `aspnet/Common`，原有的单独的命令行不复存在。
 
-`McMaster.Extensions.CommandLineUtils` 是 `Microsoft.Extensions.CommandlineUtils` 的官方指定的正统 Folk 版本。
+`McMaster.Extensions.CommandLineUtils` 是微软官方指定的命令行仓库的正统 Folk 版本。
 
-它的仓库的 NuGet 包：
+它的仓库和 NuGet 包：
 
  - GitHub: <https://github.com/natemcmaster/CommandLineUtils>
  - NuGet: <https://www.nuget.org/packages/McMaster.Extensions.CommandLineUtils>
@@ -100,7 +100,7 @@ static int Main(string[] args)
 
 原生库配置命令行参数已经非常方便了，几乎是一行一个功能，但 `lambda` 表达式嵌套太多是一个问题，会导致代码随着参数种类的增多变得急剧膨胀；于是我针对原生库做了一个基于反射的版本。于是，实现一个命令行参数只需要写这些代码就够啦：
 
-**更新**：`McMaster.Extensions.CommandLineUtils` 接手微软之后，也添加了给予 `Attribute` 的 API，使用方法与下面的大同小异。
+**更新**：`McMaster.Extensions.CommandLineUtils` 接手微软之后，也添加了 `Attribute` 的 API，使用方法与下面的大同小异。
 
 ```csharp
 [CommandMetadata("echo", Description = "Output users command at specified format.")]
