@@ -1,7 +1,7 @@
 ---
 title: "将 WPF、UWP 以及其他各种类型的旧样式的 csproj 文件迁移成新样式的 csproj 文件"
 date_published: 2018-01-16 00:04:28 +0800
-date: 2018-05-02 19:37:01 +0800
+date: 2018-05-02 19:39:35 +0800
 categories: visualstudio
 ---
 
@@ -198,60 +198,51 @@ UWP 项目已经是 .NET Core 了，然而它依然还在采用旧样式的 cspr
 </Page>
 ```
 
-#### WPF/UWP 项目迁移过程中的困难点
+于是，整个 csproj 文件看起来是这样：
 
-对于 WPF 类库，使用以上的方法迁移之后，编译几乎必定是报错的：
+```xml
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+  <PropertyGroup>
+    <LanguageTargets>$(MSBuildExtensionsPath)\$(VisualStudioVersion)> \Bin\Microsoft.CSharp.targets</LanguageTargets>
+    <TargetFramework>net47</TargetFramework>
+    <OutputType>Exe</OutputType>> 
+    <StartupObject />
+  </PropertyGroup>
 
-![WPF 项目迁移后编译不通过](/static/posts/2018-01-16-08-57-29.png)  
-▲ 此图中的 CSharpArgument 错误是因为缺少 Microsoft.CSharp 引用，添加即可解决。
+  <ItemGroup>
+    <!-- App.xaml -->
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
 
-找不到 `InitializeComponent` 则几乎可以认定为 XAML 文件没有被编译成 .g.cs 文件，或者简单点儿说是 XAML 没有被有效识别。GitHub 上 dotnet 的几个项目都有与 XAML 支持相关的讨论，比如 [XAML files are not supported · Issue #1467 · dotnet/project-system](https://github.com/dotnet/project-system/issues/1467) 和 [XAML files are not supported · Issue #810 · dotnet/sdk](https://github.com/dotnet/sdk/issues/810)。
+    <!-- XAML elements -->
+    <Page Include="**\*.xaml" Exclude="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Update="**\*.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile> 
 
-庆幸的是，Stack Overflow 上 [stil](https://stackoverflow.com/users/1420356/stil) 较完整地整理了 XAML 支持的 csproj 文件改造方法。来自于 [c# - How-to migrate Wpf projects to the new VS2017 format - Stack Overflow](https://stackoverflow.com/a/44539088/6233938)。
+    <!-- Resources -->
+    <EmbeddedResource Update="Properties\Resources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="Resources.Designer.cs" />
+    <Compile Update="Properties\Resources.Designer.cs" AutoGen="True" DependentUpon="Resources.resx" DesignTime="True" />
 
-> ```xml
-> <Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
->   <PropertyGroup>
->     <LanguageTargets>$(MSBuildExtensionsPath)\$(VisualStudioVersion)> \Bin\Microsoft.CSharp.targets</LanguageTargets>
->     <TargetFramework>net47</TargetFramework>
->     <OutputType>Exe</OutputType>> 
->     <StartupObject />
->   </PropertyGroup>
-> 
->   <ItemGroup>
->     <!-- App.xaml -->
->     <ApplicationDefinition Include="App.xaml">
->       <SubType>Designer</SubType>
->       <Generator>MSBuild:Compile</Generator>
->     </ApplicationDefinition>
-> 
->     <!-- XAML elements -->
->     <Page Include="**\*.xaml" Exclude="App.xaml">
->       <SubType>Designer</SubType>
->       <Generator>MSBuild:Compile</Generator>
->     </Page>
->     <Compile Update="**\*.xaml.cs">
->       <DependentUpon>%(Filename)</DependentUpon>
->     </Compile> 
-> 
->     <!-- Resources -->
->     <EmbeddedResource Update="Properties\Resources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="Resources.Designer.cs" />
->     <Compile Update="Properties\Resources.Designer.cs" AutoGen="True" DependentUpon="Resources.resx" DesignTime="True" />
-> 
->     <!-- Settings -->
->     <None Update="Properties\Settings.settings" Generator="SettingsSingleFileGenerator" LastGenOutput="Settings.Designer.cs" />
->     <Compile Update="Properties\Settings.Designer.cs" AutoGen="True" DependentUpon="Settings.settings" />
-> 
->   </ItemGroup>
-> 
->   <ItemGroup>
->     <Reference Include="PresentationCore" />
->     <Reference Include="PresentationFramework" />
->     <Reference Include="System.Xaml" />
->     <Reference Include="WindowsBase" />
->   </ItemGroup>
-> </Project>
-> ```
+    <!-- Settings -->
+    <None Update="Properties\Settings.settings" Generator="SettingsSingleFileGenerator" LastGenOutput="Settings.Designer.cs" />
+    <Compile Update="Properties\Settings.Designer.cs" AutoGen="True" DependentUpon="Settings.settings" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+</Project>
+```
 
 需要注意，`<OutputType />`、`<StartupObject />` 和 `<ApplicationDefinition />` 如果是类库则需要去掉。
 
