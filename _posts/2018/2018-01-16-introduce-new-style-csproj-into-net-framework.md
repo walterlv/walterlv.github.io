@@ -1,7 +1,7 @@
 ---
 title: "将 WPF、UWP 以及其他各种类型的旧样式的 csproj 文件迁移成新样式的 csproj 文件"
 date_published: 2018-01-16 00:04:28 +0800
-date: 2018-04-24 17:28:08 +0800
+date: 2018-05-02 19:37:01 +0800
 categories: visualstudio
 ---
 
@@ -146,7 +146,7 @@ categories: visualstudio
 </Project>
 ```
 
-**第二步：**修改目标 .NET Framework 框架版本号，比如 net45、net462、net471。
+**第二步：**修改目标 .NET Framework 框架版本号，比如 net45、net462、net472。
 
 **第三步：**安装此前已经安装好的 NuGet 包，或者把原来的 packages.config 文件里的 NuGet 配置复制到 csproj 文件中，并统一修改格式：
 
@@ -184,9 +184,19 @@ categories: visualstudio
 
 ### 迁移 WPF/UWP 这类 XAML UI 类库的项目文件
 
-UWP 项目已经是 .NET Core 了，然而它依然还在采用旧样式的 csproj 文件，一个让人感到失望的原因竟是——**不支持 XAML**！这简直不可思议，身为微软大力推广的项目类型和文件类型竟然在新格式里面属于不支持的类型！
+UWP 项目已经是 .NET Core 了，然而它依然还在采用旧样式的 csproj 文件，这让人感到不可思议。然而我并不知道是否是因为旧版本的 Visual Studio 2017 不支持在新 csproj 中编译 XAML。
 
-不过，毕竟是微软，虽没有原生支持，可新格式也依旧有些扩展性，可以变相的解决这一问题。
+包含 XAML 的 WPF/UWP 项目需要额外添加以下节点：
+
+```xml
+<Compile Update="**\*.xaml.cs">
+  <DependentUpon>%(Filename)</DependentUpon>
+</Compile> 
+<Page Include="**\*.xaml">
+  <SubType>Designer</SubType>
+  <Generator>MSBuild:Compile</Generator>
+</Page>
+```
 
 #### WPF/UWP 项目迁移过程中的困难点
 
@@ -212,15 +222,17 @@ UWP 项目已经是 .NET Core 了，然而它依然还在采用旧样式的 cspr
 >     <!-- App.xaml -->
 >     <ApplicationDefinition Include="App.xaml">
 >       <SubType>Designer</SubType>
->       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+>       <Generator>MSBuild:Compile</Generator>
 >     </ApplicationDefinition>
 > 
 >     <!-- XAML elements -->
 >     <Page Include="**\*.xaml" Exclude="App.xaml">
 >       <SubType>Designer</SubType>
->       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+>       <Generator>MSBuild:Compile</Generator>
 >     </Page>
->     <Compile Update="**\*.xaml.cs" SubType="Code" DependentUpon="%(Filename)" />
+>     <Compile Update="**\*.xaml.cs">
+>       <DependentUpon>%(Filename)</DependentUpon>
+>     </Compile> 
 > 
 >     <!-- Resources -->
 >     <EmbeddedResource Update="Properties\Resources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="Resources.Designer.cs" />
@@ -242,23 +254,6 @@ UWP 项目已经是 .NET Core 了，然而它依然还在采用旧样式的 cspr
 > ```
 
 需要注意，`<OutputType />`、`<StartupObject />` 和 `<ApplicationDefinition />` 如果是类库则需要去掉。
-
-这样，再次编译后，错误窗口中则没有错误了。
-
-![没有错误的错误窗口](/static/posts/2018-01-16-09-48-56.png)
-
-**等等**！！！然而还是编译不通过！在输出窗口中我们可以看到另外的错误：
-
-![输出窗口中的错误](/static/posts/2018-01-16-09-51-22.png)
-
-困难点|细节
--|-
-默认不支持 XAML|XAML 文件在编译中的默认行为是 None
-不能天然编译 XAML|即便引入了 XAML 文件，编译依然失败
-XAML 不支持智能感知提示|
-XAML 文件在项目中不可见|设置了 Page 编译的 XAML 文件在项目中不可见
-
-未完待续……
 
 #### 迁移中各种诡异的报错及其解决方法
 
