@@ -1,7 +1,7 @@
 ---
 title: "将 WPF、UWP 以及其他各种类型的旧样式的 csproj 文件迁移成新样式的 csproj 文件"
 date_published: 2018-01-16 00:04:28 +0800
-date: 2018-05-02 19:39:35 +0800
+date: 2018-05-02 22:10:12 +0800
 categories: visualstudio
 ---
 
@@ -266,6 +266,7 @@ UWP 项目已经是 .NET Core 了，然而它依然还在采用旧样式的 cspr
 
 #### 参考资料
 
+- [XAML files are not supported · Issue #810 · dotnet/sdk](https://github.com/dotnet/sdk/issues/810)
 - [Old csproj to new csproj: Visual Studio 2017 upgrade guide](http://www.natemcmaster.com/blog/2017/03/09/vs2015-to-vs2017-upgrade/)
 - [Using the new .Csproj without .Net core · Issue #1688 · Microsoft/msbuild](https://github.com/Microsoft/msbuild/issues/1688)
 - [c# - WPF App Using new csproj format - Stack Overflow](https://stackoverflow.com/questions/44140673/wpf-app-using-new-csproj-format)
