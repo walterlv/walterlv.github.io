@@ -1,7 +1,7 @@
 ---
 title: "将 WPF、UWP 以及其他各种类型的旧样式的 csproj 文件迁移成新样式的 csproj 文件"
 date_published: 2018-01-16 00:04:28 +0800
-date: 2018-05-02 22:14:01 +0800
+date: 2018-05-03 08:54:36 +0800
 categories: visualstudio
 ---
 
@@ -186,24 +186,29 @@ categories: visualstudio
 
 UWP 项目已经是 .NET Core 了，然而它依然还在采用旧样式的 csproj 文件，这让人感到不可思议。然而我并不知道是否是因为旧版本的 Visual Studio 2017 不支持在新 csproj 中编译 XAML。
 
-包含 XAML 的 WPF/UWP 项目需要额外添加以下节点：
+包含 XAML 的 WPF/UWP 项目需要额外添加以下至少三个节点（`LanguageTargets`、`Page.Generator`、`Compile.DependentUpon`）：
 
 ```xml
-<Compile Update="**\*.xaml.cs">
-  <DependentUpon>%(Filename)</DependentUpon>
-</Compile> 
-<Page Include="**\*.xaml">
-  <SubType>Designer</SubType>
-  <Generator>MSBuild:Compile</Generator>
-</Page>
+<PropertyGroup>
+  <LanguageTargets>$(MSBuildToolsPath)\Microsoft.CSharp.targets</LanguageTargets>
+</PropertyGroup>
+<ItemGroup>
+  <Compile Update="**\*.xaml.cs">
+    <DependentUpon>%(Filename)</DependentUpon>
+  </Compile> 
+  <Page Include="**\*.xaml">
+    <SubType>Designer</SubType>
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+</ItemGroup>
 ```
 
-于是，整个 csproj 文件看起来是这样：
+如果这只是一个简单的 WPF/UWP 类库，那么这些节点其实就足够了。不过，如果这是一个启动项目（`exe`），那么还需要添加应用程序定义 `ApplicationDefinition` 和其他启动属性。于是，整个 csproj 文件看起来是这样：
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
   <PropertyGroup>
-    <LanguageTargets>$(MSBuildExtensionsPath)\$(VisualStudioVersion)> \Bin\Microsoft.CSharp.targets</LanguageTargets>
+    <LanguageTargets>$(MSBuildToolsPath)\Microsoft.CSharp.targets</LanguageTargets>
     <TargetFramework>net47</TargetFramework>
     <OutputType>Exe</OutputType>> 
     <StartupObject />
