@@ -2,6 +2,11 @@
 title: "WPF/UWP 的 Grid 布局竟然有 Bug，还不止一个！了解 Grid 中那些未定义的布局规则"
 date: 2018-05-05 15:43:33 +0800
 categories: wpf uwp xaml
+version:
+  current: 中文
+versions:
+  - 中文: #
+  - English: /post/the-bugs-of-grid.en.html
 ---
 
 只要你用 XAML 写代码，我敢打赌你一定用各种方式使(nuè)用(dài)过 `Grid`。不知你有没有在此过程中看到过 `Grid` 那些匪夷所思的布局结果呢？
@@ -9,6 +14,10 @@ categories: wpf uwp xaml
 本文将带你来看看 `Grid` 布局中的 Bug。
 
 ---
+
+This post is written in **multiple languages**. Please select yours:
+
+{% include post-version-selector.html %}
 
 <div id="toc"></div>
 
@@ -31,7 +40,7 @@ categories: wpf uwp xaml
 </Canvas>
 ```
 
-第一列固定 100，第二列占 1 个比例的 *，第三列占 2 个比例的 *。你觉得最终的效果中，第二个 `Border` 和第三个 `Border` 的可见尺寸分别是多少呢？
+第一列固定 `100`，第二列占 1 个比例的 `*`，第三列占 2 个比例的 `*`。你觉得最终的效果中，第二个 `Border` 和第三个 `Border` 的可见尺寸分别是多少呢？
 
 <br>
 
@@ -98,7 +107,7 @@ F5
 
 竟然在左侧还有剩余空间的情况下，右侧就开始压缩元素空间了！我们能说那段丢失的一个 * 长度的空白到左边去了吗？显然不能。
 
-不过，我们能够猜测，压缩右侧元素开始于最小 1:2 的比例开始不足时出现。
+不过，我们能够猜测，压缩右侧元素开始于最小 1:2 的比例正好不足时出现。
 
 ### 刚好不够分的比例
 
