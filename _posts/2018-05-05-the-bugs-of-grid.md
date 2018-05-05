@@ -6,7 +6,7 @@ version:
   current: 中文
 versions:
   - 中文: #
-  - English: /post/the-bugs-of-grid.en.html
+  - English: /post/the-bugs-of-grid-en.html
 ---
 
 只要你用 XAML 写代码，我敢打赌你一定用各种方式使(nuè)用(dài)过 `Grid`。不知你有没有在此过程中看到过 `Grid` 那些匪夷所思的布局结果呢？
