@@ -1,6 +1,7 @@
 ---
 title: "The undefined behaviors of WPF Grid (the so-called bugs)"
-date: 2018-05-05 17:07:21 +0800
+date_published: 2018-05-05 17:07:21 +0800
+date: 2018-05-05 22:21:50 +0800
 categories: wpf uwp xaml
 version:
   current: English
@@ -9,7 +10,7 @@ versions:
   - English: #
 ---
 
-As long as you write code in XAML, I bet you must have used `Grid` in various ways. I wonder if you have seen any ridiculous layout results of `Grid`.
+As long as you write code in XAML, I bet you must have used `Grid` in various ways. I wonder if you have seen any strange layout results of `Grid`.
 
 I'll talk about the undefined behaviors of `Grid` layout in this post. I call them the bugs.
 
@@ -20,6 +21,8 @@ This post is written in **multiple languages**. Please select yours:
 {% include post-version-selector.html %}
 
 <div id="toc"></div>
+
+**Reading Tips:** All of the examples described in this article are not common usages for `Grid`. (Microsoft is a great company. It will never do strange things on common situation.)
 
 ### Star Unit on Infinite space
 
