@@ -1,6 +1,6 @@
 ---
 title: "WPF/UWP 的 Grid 布局竟然有 Bug，还不止一个！了解 Grid 中那些未定义的布局规则"
-date: 2018-05-05 15:39:28 +0800
+date: 2018-05-05 15:43:33 +0800
 categories: wpf uwp xaml
 ---
 
@@ -237,9 +237,7 @@ F5
 
 ### 总结 Grid 未定义的规则
 
-总而言之，言而总之，`Grid` 布局在特殊情况下是有一些不合常理的。我称之为“未定义的规则”。
-
-这些未定义的规则总结起来有以下三点：
+总而言之，言而总之，`Grid` 布局在特殊情况下是有一些不合常理的。我称之为“未定义的规则”。这些未定义的规则总结起来有以下三点：
 
 1. 在无穷大布局空间时的 * 的比例
 1. 在跨多列布局时 * 的比例
@@ -253,6 +251,6 @@ F5
 
 我阅读过 `Grid` 的布局源码，但没能全部理解，而且在阅读的过程中发现了一些微软官方承认的 Bug（我也没有能力去解决它）。
 
-不过，我花了整整三天的时间写出了一个全新的 `Grid` 布局算法（感谢 @[林德熙](https://lindexi.github.io/lindexi/) 抽出时间跟我探讨 `Grid` 的布局算法）。在新的算法中，对于微软公开的 `Grid` 布局行为，我跟它的表现是一样的。对于本文中提到的各种 Bug，我找不到手段得出跟它一模一样的布局结果，但是，我可以文档化地完全确定 `Grid` 整个布局的所有行为。包括以上所有我认为的“未定义的规则”。
+不过，我整整三天的时间写了一个全新的 `Grid` 布局算法（*感谢 @[林德熙](https://lindexi.github.io/lindexi/) 抽出时间跟我探讨 `Grid` 的布局算法*）。在新的算法中，对于微软公开的 `Grid` 布局行为，我跟它的表现是一样的。对于本文中提到的各种 Bug，我找不到手段实现跟它一模一样的布局结果，但是，我可以文档化地完全确定 `Grid` 整个布局的所有行为。包括以上所有我认为的“未定义的规则”。
 
 新 `Grid` 布局算法的源码在 GitHub 上，我提交给了 Avalonia：[A new grid layout algorithm to improve performance and fix some bugs by walterlv · Pull Request #1517 · AvaloniaUI/Avalonia](https://github.com/AvaloniaUI/Avalonia/pull/1517/files)。
