@@ -241,7 +241,7 @@ Wait! Where did the 39 come from? If the equal-size `Border` in the previous sec
 In summary, the `Grid` layout has some unreasonable behaviors under special circumstances. I call them "the undefined behaviors". These undefined behaviors are summarized in the following three points:
 
 1. Infinite layout space with * unit size
-1. * unit column/row with multiple-span elements
+1. `*` unit column/row with multiple-span elements
 1. Auto size in all column/row
 
 However, you may think that I use the `Grid` in incorrect ways. However, as an API that exposes the behaviors, the behavior itself is also a part of the API. It should have clear traceable and documentable behavior instead of being explored and guess and failed by the user.
