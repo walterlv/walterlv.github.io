@@ -131,46 +131,46 @@ xml 声明部分完全没有在此解释的必要了，为兼容性提供了方�
 
 先看看旧格式 csproj 文件中第一行一定会 `Import` 的那个 `Microsoft.Common.props`。
 
-```xml
-<!-- 文件太长，做了大量删减 -->
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <ImportByWildcardBeforeMicrosoftCommonProps Condition="'$(ImportByWildcardBeforeMicrosoftCommonProps)' == ''">true</ImportByWildcardBeforeMicrosoftCommonProps>
-    <ImportByWildcardAfterMicrosoftCommonProps Condition="'$(ImportByWildcardAfterMicrosoftCommonProps)' == ''">true</ImportByWildcardAfterMicrosoftCommonProps>
-    <ImportUserLocationsByWildcardBeforeMicrosoftCommonProps Condition="'$(ImportUserLocationsByWildcardBeforeMicrosoftCommonProps)' == ''">true</ImportUserLocationsByWildcardBeforeMicrosoftCommonProps>
-    <ImportUserLocationsByWildcardAfterMicrosoftCommonProps Condition="'$(ImportUserLocationsByWildcardAfterMicrosoftCommonProps)' == ''">true</ImportUserLocationsByWildcardAfterMicrosoftCommonProps>
-    <ImportDirectoryBuildProps Condition="'$(ImportDirectoryBuildProps)' == ''">true</ImportDirectoryBuildProps>
-  </PropertyGroup>
-</Project>
-<!-- 文件太长，做了大量删减 -->
-```
+> ```xml
+> <!-- 文件太长，做了大量删减 -->
+> <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+>   <PropertyGroup>
+>     <ImportByWildcardBeforeMicrosoftCommonProps Condition="'$(ImportByWildcardBeforeMicrosoftCommonProps)' == ''">true</ImportByWildcardBeforeMicrosoftCommonProps>
+>     <ImportByWildcardAfterMicrosoftCommonProps Condition="'$(ImportByWildcardAfterMicrosoftCommonProps)' == ''">true</ImportByWildcardAfterMicrosoftCommonProps>
+>     <ImportUserLocationsByWildcardBeforeMicrosoftCommonProps Condition="'$(ImportUserLocationsByWildcardBeforeMicrosoftCommonProps)' == ''">true</ImportUserLocationsByWildcardBeforeMicrosoftCommonProps>
+>     <ImportUserLocationsByWildcardAfterMicrosoftCommonProps Condition="'$(ImportUserLocationsByWildcardAfterMicrosoftCommonProps)' == ''">true</ImportUserLocationsByWildcardAfterMicrosoftCommonProps>
+>     <ImportDirectoryBuildProps Condition="'$(ImportDirectoryBuildProps)' == ''">true</ImportDirectoryBuildProps>
+>   </PropertyGroup>
+> </Project>
+> <!-- 文件太长，做了大量删减 -->
+> ```
 
 文件太长，做了大量删减，但也可以看到文件格式与 csproj 几乎是一样的。此文件中，根据其他属性的值有条件地定义了另一些属性。
 
 再看看另一个 MSTest 单元测试项目中被隐式 `Import` 进 csproj 文件中的 .props 文件。（*所谓隐式地 `Import`，只不过是被间接地引入，在 csproj 文件中看不到这个文件名而已。至于如何间接引入，因为涉及到 `Targets`，所以后面一起说明。*）
 
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup>
-    <Content Include="$(MSBuildThisFileDirectory)..\_common\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll">
-      <Link>Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Visible>False</Visible>
-    </Content>
-    <Content Include="$(MSBuildThisFileDirectory)..\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll">
-      <Link>Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Visible>False</Visible>
-    </Content>
-	<Content Include="$(MSBuildThisFileDirectory)..\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll">
-      <Link>Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Visible>False</Visible>
-    </Content>
-  </ItemGroup>
-</Project>
-```
+> ```xml
+> <?xml version="1.0" encoding="utf-8"?>
+> <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+>   <ItemGroup>
+>     <Content Include="$(MSBuildThisFileDirectory)..\_common\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll">
+>       <Link>Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll</Link>
+>       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+>       <Visible>False</Visible>
+>     </Content>
+>     <Content Include="$(MSBuildThisFileDirectory)..\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll">
+>       <Link>Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll</Link>
+>       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+>       <Visible>False</Visible>
+>     </Content>
+> 	<Content Include="$(MSBuildThisFileDirectory)..\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll">
+>       <Link>Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll</Link>
+>       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+>       <Visible>False</Visible>
+>     </Content>
+>   </ItemGroup>
+> </Project>
+> ```
 
 此文件中将三个 dll 文件从 MSTest 的 NuGet 包中以链接的形式包含到项目中，并且此文件在 Visual Studio 的解决方案列表中不可见。
 
@@ -178,7 +178,6 @@ xml 声明部分完全没有在此解释的必要了，为兼容性提供了方�
 
 那么，既然 csproj 文件中可以完全实现这样的功能，为何还要单独用 `props` 文件来存放呢？原因显而易见了——为了在多个项目中使用，**一处更新，到处生效**。所以有没有觉得很好玩——如果把版本号单独放到 props 文件中，就能做到一处更新版本号，到处更新版本号啦！
 
-##### Project
+##### Target
 
 所有的 csproj 文件都是以 `Project` 节点为根节点。对于传统的 csproj 格式来说
-
