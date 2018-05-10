@@ -1,7 +1,7 @@
 ---
 title: "理解 C# 项目 csproj 文件格式的本质和编译流程"
 date_published: 2018-05-10 08:13:43 +0800
-data: 2018-05-10 10:45:02 +0800
+data: 2018-05-10 16:31:15 +0800
 categories: visualstudio
 ---
 
@@ -220,7 +220,7 @@ xml 声明部分完全没有在此解释的必要了，为兼容性提供了方�
 
 注意到新格式中 `Project` 节点有 `Sdk` 属性吗？因为有此属性的存在，csproj 文件才能如此简洁。因为——所谓 Sdk，其实是一大波 `.targets` 文件的集合。它帮我们导入了公共的属性、公共的编译任务，还帮我们自动将项目文件夹下所有的 `**\*.cs` 文件都作为 `ItemGroup` 的项引入进来。
 
-如果你希望看看 `Microsoft.NET.Sdk` 都引入了哪些文件，可以去本机安装的 msbuild 或 dotnet 的目录下查看。我的地址：`C:\Program Files\dotnet\sdk\2.1.4\Sdks\Microsoft.NET.Sdk`。
+如果你希望看看 `Microsoft.NET.Sdk` 都引入了哪些文件，可以去本机安装的 msbuild 或 dotnet 的目录下查看。当我使用 Visual Studio 编译时，我的地址：`C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\Sdks\Microsoft.NET.Sdk\build`。比如你可以从此文件夹里的 `Microsoft.NET.GenerateAssemblyInfo.targets` 文件中发现 `AssemblyInfo.cs` 文件是如何自动生成及生效的。
 
 ### 编译器是如何将这些零散的部件组织起来的？
 
