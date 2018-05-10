@@ -1,7 +1,7 @@
 ---
 title: "项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦）"
 date_published: 2018-04-12 21:03:52 +0800
-date: 2018-05-10 12:57:46 +0800
+date: 2018-05-10 13:07:55 +0800
 categories: visualstudio nuget csharp dotnet
 ---
 
@@ -117,6 +117,8 @@ categories: visualstudio nuget csharp dotnet
 - `$(MSBuildBinPath)`: MSBuild 程序所在的路径
 - `$(MSBuildBinPath)`: MSBuild 程序所在的路径
 - `$(MSBuildBinPath)`: MSBuild 程序所在的路径
+
+如果希望了解在 csproj 中创建 NuGet 包时可用的属性，请参考我的另一篇博客：[项目文件中的已知 NuGet 属性（知道了这些，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅](/post/known-nuget-properties-in-csproj.html)。
 
 ---
 
