@@ -16,6 +16,12 @@ categories: post
 
 ### About to Write
 
+- Targets
+    - [MSBuild Reserved and Well-Known Properties](https://msdn.microsoft.com/en-us/library/ms164309.aspx)
+    - [How To: Implementing Custom Tasks – Part I – MSBuild Team Blog](https://blogs.msdn.microsoft.com/msbuild/2006/01/21/how-to-implementing-custom-tasks-part-i/)
+    - [How to Access MSBuild properties inside custom task](https://social.msdn.microsoft.com/Forums/vstudio/en-US/4ba7e9a0-76e6-4b1c-8536-fd76a5b96c79/how-to-access-msbuild-properties-inside-custom-task?forum=vsx)
+    - [visual studio - How to get property value of a project file using msbuild - Stack Overflow](https://stackoverflow.com/questions/39732729/how-to-get-property-value-of-a-project-file-using-msbuild)
+    
 - 渲染
     - [InkDesktopHost class (Windows)](https://msdn.microsoft.com/library/windows/desktop/mt622161.aspx)
     - [Ink presenter classes (Windows)](https://msdn.microsoft.com/zh-cn/library/windows/desktop/mt622166.aspx)
