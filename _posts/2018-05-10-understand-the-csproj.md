@@ -1,7 +1,7 @@
 ---
 title: "理解 C# 项目 csproj 文件格式的本质和编译流程"
 date_published: 2018-05-10 08:13:43 +0800
-data: 2018-05-10 16:34:55 +0800
+data: 2018-05-11 09:45:02 +0800
 categories: visualstudio
 ---
 
@@ -112,7 +112,7 @@ xml 声明部分完全没有在此解释的必要了，为兼容性提供了方�
 - `PackageReference` 引用某个 NuGet 包
 - `ProjectReference` 引用某个项目
 - `Compile` 常规的 C# 编译
-- `None` 没啥特别的编译选项，就为了执行一些通用的操作（或者是只是为了在 Visual Studio 列表中能够有一个显式）
+- `None` 没啥特别的编译选项，就为了执行一些通用的操作（或者是只是为了在 Visual Studio 列表中能够有一个显示）
 - `Folder` 一个空的文件夹，也没啥用（不过标了这个文件夹，Visual Studio 中就能有一个文件夹的显式，即便实际上这个文件夹可能不存在）
 
 `ItemGroup` 也可以放很多组，一样是为了提升可读性或者增加条件。
