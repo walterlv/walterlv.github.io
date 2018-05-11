@@ -305,9 +305,10 @@ targets 的文件结构与 csproj 是一样的，你可以阅读我的另一篇�
 
 #### 让我们自定义的 Task 开始工作，并能够进入断点
 
-最简单能够让 DemoTool 这个自定义的 Task 进入断电的方式当然是加上 `Debugger.Launch();` 了，就像这样：
+最简单能够让 DemoTool 这个自定义的 Task 进入断点的方式当然是加上 `Debugger.Launch();` 了，就像这样：
 
 ```csharp
+// DemoTool.cs
 using System.Diagnostics;
 using Microsoft.Build.Utilities;
 
@@ -333,7 +334,7 @@ namespace Walterlv.NuGetTool
 
 ![使用“调试配置”调试](/static/posts/2018-05-11-22-11-59.png)
 
-现在，我们去 Walterlv.Debug 目录下输入 `msbuild` 命令，在输出到如下部分的时候，就会进入我们的断电了：
+现在，我们去 Walterlv.Debug 目录下输入 `msbuild` 命令，在输出到如下部分的时候，就会进入我们的断点了：
 
 ![进入了断点](/static/posts/2018-05-11-22-15-56.png)
 
@@ -341,7 +342,180 @@ namespace Walterlv.NuGetTool
 
 当然，只要你记得去掉 `Debugger.Launch();`，或者加上 `#if DEBUG` 这样的条件编译，那么随时打包就是一个可以发布的跨平台 NuGet 工具包了。
 
+提示：**一旦调试环境搭建好，你可能会遇到编译 Walterlv.NuGetTool 项目时，发现 dll 被占用的情况，这时，打开任务管理器结束掉 msbuild.exe 进行即可。**
+
 ### 第五步：发挥你的想象力
+
+想象力是没有限制的，不过如果不知道 Task 能够为我们提供到底什么样的功能，也是无从下手的。这一节我会说一些 Task 在 C# 代码和 .targets 文件中的互相操作。
+
+#### .targets 向 Task 传参数
+
+.targets 向 Task 传参数只需要写一个属性赋值的句子就可以了：
+
+```xml
+<!-- Assets\build\Walterlv.NuGetTool.targets -->
+<Target Name="WalterlvDemo" BeforeTargets="CoreCompile">
+  <DemoTool IntermediateOutputPath="$(IntermediateOutputPath)" />
+</Target>
+```
+
+这里，`$(IntermediateOutputPath)` 是 msbuild 编译期间会自动设置的全局属性，代表此项目编译过程中临时文件的存放路径（也就是我们常见的 obj 文件夹）。当然，使用 `dotnet build` 或者 `dotnet msbuild` 也是有这样的全局属性的。我们为 `<DemoTool>` 节点也加了一个属性，名为 `IntermediateOutputPath`。
+
+在 DemoTool 的 C# 代码中，只需要写一个字符串属性即可接收这样的传参。
+
+```csharp
+// DemoTool.cs
+public class DemoTool : Task
+{
+    public string IntermediateOutputPath { get; set; }
+
+    public override bool Execute()
+    {
+        Debugger.Launch();
+        var intermediateOutputPath = IntermediateOutputPath;
+        return true;
+    }
+}
+```
+
+![在 DemoTool 中调试查看传进来的参数](/static/posts/2018-05-11-22-45-50.png)  
+▲ 在断点中我们能够看到传进来的参数的值
+
+你可以尽情发挥你的想象力，传入更多让人意想不到的参数，实现不可思议的功能。更多 MSBuild 全局参数，可以参考我的另一篇文章[项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - 吕毅](/post/known-properties-in-csproj.html)。
+
+#### Task 向 .targets 返回参数
+
+如果只是传入参数，那么我们顶多只能干一些不痛不痒的事情，或者就是两者互相约定了一些常量。什么？你说直接去改源代码？那万一你的代码不幸崩溃了，项目岂不被你破坏了！（当然，你去改了源码，还会破坏 MSBuild 的差量编译。）
+
+我们新定义一个属性，但在属性上面标记 `[Output]` 特性。这样，这个属性就会作为输出参数传到 .targets 里了。
+
+```csharp
+// DemoTool.cs
+using System.Diagnostics;
+using System.IO;
+using Microsoft.Build.Framework;
+using Microsoft.Build.Utilities;
+
+namespace Walterlv.NuGetTool
+{
+    public class DemoTool : Task
+    {
+        public string IntermediateOutputPath { get; set; }
+
+        [Output]
+        public string AdditionalCompileFile { get; set; }
+
+        public override bool Execute()
+        {
+            Debugger.Launch();
+            var intermediateOutputPath = IntermediateOutputPath;
+            var additional = Path.Combine(intermediateOutputPath, "DoubiClass.cs");
+            AdditionalCompileFile = Path.GetFullPath(additional);
+            File.WriteAllText(AdditionalCompileFile,
+                @"using System;
+namespace Walterlv.Debug
+{
+    public class Doubi
+    {
+        public string Name { get; }
+        private Doubi(string name) => Name = name;
+        public static Doubi Get() => new Doubi(""吕毅"");
+    }
+}");
+            return true;
+        }
+    }
+}
+```
+
+然后，我们在 .targets 里接收这个输出参数，生成一个属性：
+
+```xml
+<!-- Assets\build\Walterlv.NuGetTool.targets -->
+<Target Name="WalterlvDemo" BeforeTargets="CoreCompile">
+  <DemoTool IntermediateOutputPath="$(IntermediateOutputPath)">
+    <Output TaskParameter="AdditionalCompileFile" PropertyName="WalterlvDemo_AdditionalCompileFile" />
+  </DemoTool>
+
+  <ItemGroup>
+    <Compile Include="$(WalterlvDemo_AdditionalCompileFile)" />
+  </ItemGroup>
+</Target>
+```
+
+这样，我们生成的 Walterlv.Debug 调试项目在编译完成之后，还会额外多出一个“逗比”类。而且——我们甚至能够直接在 Walterlv.Debug 项目的中使用这个编译中生成的新类。
+
+![可以使用额外生成的类](/static/posts/2018-05-11-23-37-47.png)
+
+使用编译生成的新类既不会报错，也不会产生警告下划线，就像原生写的类一样。
+
+如果你要在编译期间替换一个类而不是新增一个类，例如将 Class1.cs 更换成新类，那么需要将其从编译列表中移除：
+
+```xml
+<!-- Assets\build\Walterlv.NuGetTool.targets -->
+<ItemGroup>
+  <Compile Remove="Class1.cs" />
+  <Compile Include="$(WalterlvDemo_AdditionalCompileFile)" />
+</ItemGroup>
+```
+
+需要注意：**编译期间才生成的项（`<ItemGroup>`）或者属性（`<PropertyGroup>`），需要写在 `<Target>` 节点的里面。**如果写在外面，则不是编译期间生效的，而是始终生效的。当写在外面时，要特别留意可能某些属性没有初始化完全，你应该只使用那些肯定能确认存在的属性或文件。
+
+#### 在 Target 里编写调试代码
+
+虽然说以上的每一个步骤我都是一边实操一边写的，但即便如此，本文都写了 500 多行了，如果你依然能够不出错地完成以上每一步，那也是万幸了！Task 里我能还能用断点调试，那么 Target 里面怎么办呢？
+
+我们可以用 `<Message>` 节点来输出一些信息：
+
+```xml
+<!-- Assets\build\Walterlv.NuGetTool.targets -->
+<Target Name="WalterlvDemo" BeforeTargets="CoreCompile">
+  <DemoTool IntermediateOutputPath="$(IntermediateOutputPath)">
+    <Output TaskParameter="AdditionalCompileFile" PropertyName="WalterlvDemo_AdditionalCompileFile" />
+  </DemoTool>
+
+  <Message Text="临时文件的路径为：$(WalterlvDemo_AdditionalCompileFile)" />
+
+  <ItemGroup>
+    <Compile Include="$(WalterlvDemo_AdditionalCompileFile)" />
+  </ItemGroup>
+</Target>
+```
+
+![输出信息](/static/posts/2018-05-11-23-50-41.png)
+
+#### 在 Task 输出错误或警告
+
+我们继承了 `Microsoft.Build.Utilities.Task`，此类有一个 `Log` 属性，可以用来输出信息。使用 `LogWarning` 方法可以输出警告，使用 `LogError` 可以输出错误。如果输出了错误，那么就会导致编译不通过。
+
+#### 本地测试 NuGet 包
+
+在发布 NuGet 包之前，我们可以先在本地安装测试。由于我们在 `C:\Users\lvyi\Desktop\Walterlv.NuGetTool\Walterlv.NuGetTool\bin\Debug` 输出路径下已经有了打包好的 nupkg 文件，所以可以加一个本地 NuGet 源。
+
+我们找一个其他的项目，然后在 Visual Studio 中设置 NuGet 源为我们那个 NuGet 工具项目的输出路径。
+
+![设置本地 NuGet 包源](/static/posts/2018-05-11-23-53-47.png)
+
+这时安装，编译完之后，我们就会发现我们的项目生成的 dll 中多出了一个“逗比(Doubi)”类，并且可以在那个项目中编写使用 `Doubi` 的代码了。
+
+### 总结
+
+不得不说，制作一个跨平台的基于 MSBuild Task 的 NuGet 工具包还是比较麻烦的，我们总结一下：
+
+1. 准备项目的基本配置（设置各种必要的项目属性，安装必要的 NuGet 依赖）
+1. 建立好 NuGet 的文件夹结构
+1. 编写 Task 和 Target
+1. 新增功能、调试和测试
+
+如果你在实践的过程中遇到了各种问题，欢迎在下面留言，一般我会在一天之内给予回复。
+
+如果在阅读这篇文章时存在一些概念理解上的问题，或者不知道如何扩展本文的功能，可能需要阅读下我的另一些文章：
+
+- [理解 C# 项目 csproj 文件格式的本质和编译流程 - 吕毅](断点/post/understand-the-csproj.html)
+- [项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - 吕毅](断点/post/known-properties-in-csproj.html)
+- [项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅](断点/post/known-nuget-properties-in-csproj.html)
+
+当然，还有一些正在编写，过一段时间可以阅读到。
 
 ---
 
@@ -364,4 +538,3 @@ namespace Walterlv.NuGetTool
 - [NuGet 2.7 Release Notes - Microsoft Docs](https://docs.microsoft.com/zh-cn/nuget/release-notes/nuget-2.7#Development-Only_Dependencies)
 - [PackageReference should support DevelopmentDependency metadata · Issue #4125 · NuGet/Home](https://github.com/NuGet/Home/issues/4125)
 - [debugging - How to debug MSBuild Customtask - Stack Overflow](https://stackoverflow.com/questions/357445/how-to-debug-msbuild-customtask?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
-- 
