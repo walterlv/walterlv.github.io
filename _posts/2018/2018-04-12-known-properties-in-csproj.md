@@ -120,6 +120,25 @@ categories: visualstudio nuget csharp dotnet
 
 如果希望了解在 csproj 中创建 NuGet 包时可用的属性，请参考我的另一篇博客：[项目文件中的已知 NuGet 属性（知道了这些，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅](/post/known-nuget-properties-in-csproj.html)。
 
+### Microsoft.NET.Sdk 配置属性
+
+这些属性是 Microsoft.NET.Sdk 中的各种 Target 使用的配置属性，设置这些属性可以影响到生成过程。
+
+```xml
+<Project>
+  <PropertyGroup>
+    <!-- 此程序集的版本，这是很多其他版本号未设置时的默认值。而此值的默认值是 1.0.0 -->
+    <Version>3.1.2-beta</Version>
+
+    <!-- 以下属性是当引用的 dll 出现版本冲突时，用于自动生成绑定重定向的。
+         详见：https://www.erikheemskerk.nl/transitive-nuget-dependencies-net-core-got-your-back/ -->
+
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+  </PropertyGroup>
+</Project>
+```
+
 ---
 
 #### 参考资料
