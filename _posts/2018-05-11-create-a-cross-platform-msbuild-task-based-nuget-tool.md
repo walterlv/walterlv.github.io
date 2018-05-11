@@ -149,7 +149,7 @@ namespace Walterlv.NuGetTool
 </ItemGroup>
 ```
 
-`None` 表示这一项要显示到 Visual Studio 解决方案中（其实对于不认识的文件，`None` 就是默认值）；`Include` 表示相对于项目文件的路径（支持通配符）；`Pack` 表示这一项要打包到 NuGet；`PackagePath` 表示这一项打包到 NuGet 中的路径。(*如果你想了解更多 csproj 中的 NuGet 属性，可以阅读我的另一篇文章：[项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅](http://localhost:4000/post/known-nuget-properties-in-csproj.html)*)
+`None` 表示这一项要显示到 Visual Studio 解决方案中（其实对于不认识的文件，`None` 就是默认值）；`Include` 表示相对于项目文件的路径（支持通配符）；`Pack` 表示这一项要打包到 NuGet；`PackagePath` 表示这一项打包到 NuGet 中的路径。(*如果你想了解更多 csproj 中的 NuGet 属性，可以阅读我的另一篇文章：[项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅](/post/known-nuget-properties-in-csproj.html)*)
 
 这样的一番设置，我们的 `build`、`buildMultiTargeting` 和 `readme.txt` 准备好了，但是 `tasks` 文件夹还没有。由于我们是把我们生成的 dll 放到 `tasks` 里面，第一个想到的当然是修改输出路径——然而这是不靠谱的，因为 NuGet 并不识别输出路径。事实上，我们还可以设置一个属性 `<BuildOutputTargetFolder>`，将值指定为 `tasks`，那么我们就能够将我们的输出文件打包到 NuGet 对应的 `tasks` 文件夹下了。
 
@@ -187,9 +187,46 @@ namespace Walterlv.NuGetTool
 
 ### 第三步：编写 Target
 
-### 第四部：打包成 NuGet
+.targets 文件是对项目功能进行扩展的关键文件，由于安装 NuGet 包会自动导入包中的此文件，所以它几乎相当于我们功能的入口。
 
-### 第五步：调试与发布
+现在，我们需要徒手编写这个文件了。
+
+```xml
+<Project>
+
+  <PropertyGroup>
+    <!-- 我们使用 $(MSBuildRuntimeType) 来判断编译器是 .NET Core 的还是 .NET Framework 的。
+         然后选用对应的文件夹。-->
+    <NuGetWalterlvTaskFolder Condition=" '$(MSBuildRuntimeType)' == 'Core'">$(MSBuildThisFileDirectory)..\tasks\netcoreapp2.0\</NuGetWalterlvTaskFolder>
+    <NuGetWalterlvTaskFolder Condition=" '$(MSBuildRuntimeType)' != 'Core'">$(MSBuildThisFileDirectory)..\tasks\net47\</NuGetWalterlvTaskFolder>
+  </PropertyGroup>
+
+  <UsingTask TaskName="Walterlv.NuGetTool.DemoTool" AssemblyFile="$(NuGetWalterlvTaskFolder)\Walterlv.NuGetTool.dll" />
+  <Target Name="WalterlvDemo" BeforeTargets="CoreCompile">
+    <DemoTool />
+  </Target>
+
+</Project>
+```
+
+targets 的文件结构与 csproj 是一样的，你可以阅读我的另一篇文章 [理解 C# 项目 csproj 文件格式的本质和编译流程 - 吕毅](/post/understand-the-csproj.html) 了解其结构。
+
+别忘了我们还有一个 `buildMultiTargeting` 文件夹，也要放一个几乎一样功能的 targets 文件；不过我们肯定不会傻到复制一个一样的。我们在 `buildMultiTargeting` 文件夹里的 targets 文件中写以下内容，这样我们的注意力便可以集中在前面的 targets 文件中了。
+
+```xml
+<Project>
+  <!-- 直接 Import 我们在 build 中写的那个 targets 文件。
+       NuGet 留下了为多框架项目提供特殊扩展的方案，其实有时候也是很有用的。-->
+  <Import Project="..\build\Walterlv.NuGetTool.targets" />
+</Project>
+```
+
+### 第四部：调试
+
+
+
+
+### 第五步：发挥你的想象力
 
 ---
 
