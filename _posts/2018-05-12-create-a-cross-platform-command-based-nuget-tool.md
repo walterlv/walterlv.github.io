@@ -331,16 +331,12 @@ namespace Walterlv.NuGetTool
         static void Main(string[] args)
         {
             Debugger.Launch();
-            var intermediateOutputPath = args[2];
+            var intermediateOutputPath = args[1];
             Console.WriteLine("Hello World!");
         }
     }
 }
-
 ```
-
-![在 DemoTool 中调试查看传进来的参数](/static/posts/2018-05-11-22-45-50.png)  
-▲ 在断点中我们能够看到传进来的参数的值
 
 你可以尽情发挥你的想象力，传入更多让人意想不到的参数，实现不可思议的功能。更多 MSBuild 全局参数，可以参考我的另一篇文章[项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - 吕毅](/post/known-properties-in-csproj.html)。
 
@@ -363,7 +359,7 @@ namespace Walterlv.NuGetTool
         static void Main(string[] args)
         {
             Debugger.Launch();
-            var additionalCompileFile = args[2];
+            var additionalCompileFile = args[1];
             File.WriteAllText(additionalCompileFile,
                 @"using System;
 namespace Walterlv.Debug
@@ -381,15 +377,19 @@ namespace Walterlv.Debug
 }
 ```
 
-然后，我们在 .targets 里接收这个输出参数，生成一个属性：
+然后，我们需要在 .targets 文件里接收这个输出参数。然而命令行调用与 [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包 - 吕毅](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html) 中所写的 Task 不同，命令行调用的后面是不能够立刻应用命令行调用的结果的，因为此时命令还没有结束。
+
+所以我们需要写一个新的 Target，来使用命令行程序执行后的结果。
 
 ```xml
 <!-- Assets\build\Walterlv.NuGetTool.targets -->
 <Target Name="WalterlvDemo" BeforeTargets="CoreCompile">
   <Exec Command="dotnet $(NuGetWalterlvToolPath) -i $(IntermediateOutputPath)Doubi.cs" />
+</Target>
 
+<Target Name="WalterlvDemoUseResult" AfterTargets="WalterlvDemo" BeforeTargets="CoreCompile">
   <ItemGroup>
-    <Compile Include="$(WalterlvDemo_AdditionalCompileFile)" />
+    <Compile Include="$(IntermediateOutputPath)Doubi.cs" />
   </ItemGroup>
 </Target>
 ```
