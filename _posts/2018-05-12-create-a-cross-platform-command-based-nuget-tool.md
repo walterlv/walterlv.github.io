@@ -1,11 +1,10 @@
 ---
-title: "如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包"
-date_published: 2018-05-12 00:04:14 +0800
-date: 2018-05-12 07:43:59 +0800
+title: "如何创建一个基于命令行工具的跨平台的 NuGet 工具包"
+date: 2018-05-12 08:57:01 +0800
 categories: visualstudio csharp dotnet
 ---
 
-MSBuild 的 Task 为我们扩展项目的编译过程提供了强大的扩展性，它使得我们可以用 C# 语言编写扩展；利用这种扩展性，我们可以为我们的项目定制一部分的编译细节。NuGet 为我们提供了一种自动导入 .props 和 .targets 的方法，同时还是一个 .NET 的包平台；我们可以利用 NuGet 发布我们的工具并自动启用这样的工具。
+命令行可是跨进程通信的一种非常方便的手段呢，只需启动一个进程传入一些参数即可完成一些很复杂的任务。NuGet 为我们提供了一种自动导入 .props 和 .targets 的方法，同时还是一个 .NET 的包平台；我们可以利用 NuGet 发布我们的工具并自动启用这样的工具。
 
 制作这样的一个跨平台 NuGet 工具，我们能够为安装此工具的项目提供自动的但定制化的编译细节——例如自动生成版本号，自动生成某些中间文件等。
 
@@ -24,31 +23,22 @@ MSBuild 的 Task 为我们扩展项目的编译过程提供了强大的扩展性
 
 ### 第一步：创建一个项目，用来写工具的核心逻辑
 
-为了方便制作跨平台的 NuGet 工具，新建项目时我们优先选用 .NET Core Library 项目或 .NET Standard Library 项目。
+为了方便制作跨平台的 NuGet 工具，新建项目时我们优先选用 .NET Core 控制台项目。
 
-![新建一个项目](/static/posts/2018-05-11-19-26-03.png)
+![新建一个项目](/static/posts/2018-05-12-07-46-48.png)
 
-紧接着，我们需要打开编辑此项目的 .csproj 文件，将目标框架改成多框架的，并填写必要的信息。
+紧接着，我们需要打开编辑此项目的 .csproj 文件，填写必要的信息（尤其是 `<GeneratePackageOnBuild>`，确保编译时会生成 NuGet 包）。
 
 ```xml
 <!-- Walterlv.NuGetTool.csproj -->
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <!-- 输出为 exe（其实对于 .NET Core 依然是 dll，除非进行发布）。 -->
+    <OutputType>Exe</OutputType>
     <!-- 给一个初始的版本号。 -->
     <Version>1.0.0-alpha</Version>
-    <!-- 使用 .NET Framework 4.7 和 .NET Core 2.0。
-      要点 1：
-        - 加入 net47 的支持是为了能让基于 .NET Framework 的 msbuild 能够使用此工具编译；
-        - 加入 netcoreapp2.0 的支持是为了能让基于 .NET Core 的 dotnet build (Roslyn) 能够使用此工具编译；
-        - 当然 net47 太新了，只适用于 Visual Studio 2017 的较新版本，如果你需要照顾到更多用户，建议使用 net46。
-      要点 2：
-        注意，我们使用 NuGet 包来依赖 Task 框架，但此 NuGet 包要求的最低 .NET Framework 版本为 4.6。
-        如果需要制作 .NET Framework 4.5 及以下版本，就必须改为引用以下程序集：
-        - Microsoft.Build
-        - Microsoft.Build.Framework
-        - Microsoft.Build.Tasks.v4.0
-        - Microsoft.Build.Utilities.v4.0 -->
-    <TargetFrameworks>net47;netcoreapp2.0</TargetFrameworks>
+    <!-- 由于 .NET Core 本身即具备跨平台的特性，所以我们直接基于 .NET Core 开发 -->
+    <TargetFramework>netcoreapp2.0</TargetFramework>
     <!-- 这个就是创建项目时使用的名称。 -->
     <AssemblyName>Walterlv.NuGetTool</AssemblyName>
     <!-- 此值设为 true，才会在编译之后生成 NuGet 包。 -->
@@ -59,40 +49,18 @@ MSBuild 的 Task 为我们扩展项目的编译过程提供了强大的扩展性
 </Project>
 ```
 
-然后，安装如下 NuGet 包：
-
-- Microsoft.Build.Framework: *提供了编写 `ITask` 的框架，有了这个才能写 `ITask`*
-- Microsoft.Build.Utilities.Core: *提供了 `ITask` 框架的基本实现，这样才能用更少的代码写完 `Task`*
-
-![安装 NuGet 包](/static/posts/2018-05-11-19-31-51.png)
-
-要特别注意：由于我们是一个 NuGet 工具，不需要被其他项目直接依赖，所以此项目的依赖包不应该传递到下一个项目中。所以**请将所有的 NuGet 包资产都声明成私有的**，方法是在 NuGet 包的引用后面加上 `PrivateAssets="All"`。想了解 `PrivateAssets` 的含义一起相关属性，可以阅读我的另一篇文章[项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅](/post/known-nuget-properties-in-csproj.html)。
-
-```xml
-<ItemGroup>
-  <PackageReference Include="Microsoft.Build.Framework" Version="15.6.85" />
-  <PackageReference Include="Microsoft.Build.Utilities.Core" Version="15.6.85" />
-  <PackageReference Update="@(PackageReference)" PrivateAssets="All" />
-</ItemGroup>
-```
-
-接下来就是取名字的时间了！为 `Class1` 类改一个名字。这个类将成为我们这个 NuGet 工具包的入口类。
-
-> 比如我们想做一个用 Git 提交信息来生成版本号的类，可以叫做 GitVersion；想做一个生成多语言文件的类，可以叫做 LangGenerator。在这里，为了示范而不是真正的实现功能，我取名为 DemoTool。
-
-取好名字之后，让这个类继承自 `Microsoft.Build.Utilities.Task`：
+接下来随便在 Program.cs 里写什么代码，这取决于你希望这个 NuGet 工具做什么。
 
 ```csharp
-// DemoTool.cs
-using Microsoft.Build.Utilities;
+using System;
 
 namespace Walterlv.NuGetTool
 {
-    public class DemoTool : Task
+    class Program
     {
-        public override bool Execute()
+        static void Main(string[] args)
         {
-            return true;
+            Console.WriteLine("Hello World!");
         }
     }
 }
@@ -100,11 +68,11 @@ namespace Walterlv.NuGetTool
 
 这时进行编译，我们的 NuGet 包就会出现在项目的输出目录 `bin\Debug` 下了。
 
-![输出目录下的 NuGet 包](/static/posts/2018-05-11-20-04-21.png)
+![输出目录下的 NuGet 包](/static/posts/2018-05-12-07-52-23.png)
 
 ### 第二步：组织 NuGet 目录
 
-刚刚生成的 NuGet 包还不能真正拿来用。事实上你也可以拿去安装，不过最终的效果只是加了一个毫无作用的引用程序集而已（顺便还带来一堆垃圾的间接引用）。
+刚刚生成的 NuGet 包还不能真正拿来用。事实上你也可以拿去安装，不过最终的效果只是加了一个毫无作用的引用程序集而已（事实上就是把你写的程序作为普通 dll 引用了）。
 
 所以，我们需要进行“一番配置”，使得这个项目编译成一个**NuGet 工具**，而不是一个**依赖包**。
 
@@ -133,7 +101,7 @@ namespace Walterlv.NuGetTool
 
 我们的初衷是做一个 NuGet 工具，所以我们需要选择合适的目录来存放我们的输出文件。
 
-我们要放一个 `Walterlv.NuGetTool.targets` 文件到 `build` 和 `buildMultiTargeting` 文件夹中，以便能够让我们定制编译流程。我们要让我们写的 dll（也就是那个 `Task`）能够工作，但是以上任何预定义的文件夹都不能满足我们的要求，于是我们建一个自定义的文件夹，取名为 `tasks`，这样 NuGet 便不会对我们的这个 dll 进行特殊处理，而将处理权全部交给我们。
+我们要放一个 `Walterlv.NuGetTool.targets` 文件到 `build` 和 `buildMultiTargeting` 文件夹中，以便能够让我们定制编译流程。我们要让我们写的 .NET Core 工具程序能够工作，所以我们将生成的输出程序放到 tools 目录下。
 
 于是我们自己的目录结构为：
 
@@ -142,19 +110,19 @@ namespace Walterlv.NuGetTool
     - Walterlv.NuGetTool.targets
 + buildMultiTargeting/
     - Walterlv.NuGetTool.targets
-+ tasks/
-    + net47/
-        - Walterlv.NuGetTool.dll
++ tools/
     + netcoreapp2.0/
         - Walterlv.NuGetTool.dll
 - readme.txt
 ```
 
+提醒一下，.NET Core 生成的程序，如果没有针对特定平台发布，输出的是 dll。
+
 那么，如何改造我们的项目才能够生成这样的 NuGet 目录结构呢？
 
 我们先在 Visual Studio 里建好文件夹：
 
-![Visual Studio 里的目录结构](/static/posts/2018-05-11-20-40-51.png)
+![Visual Studio 里的目录结构](/static/posts/2018-05-12-07-57-30.png)
 
 随后去编辑项目的 .csproj 文件，在最后的 `</Project>` 前面添加下面这些项：
 
@@ -169,7 +137,7 @@ namespace Walterlv.NuGetTool
 
 `None` 表示这一项要显示到 Visual Studio 解决方案中（其实对于不认识的文件，`None` 就是默认值）；`Include` 表示相对于项目文件的路径（支持通配符）；`Pack` 表示这一项要打包到 NuGet；`PackagePath` 表示这一项打包到 NuGet 中的路径。(*如果你想了解更多 csproj 中的 NuGet 属性，可以阅读我的另一篇文章：[项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅](/post/known-nuget-properties-in-csproj.html)*)
 
-这样的一番设置，我们的 `build`、`buildMultiTargeting` 和 `readme.txt` 准备好了，但是 `tasks` 文件夹还没有。由于我们是把我们生成的 dll 放到 `tasks` 里面，第一个想到的当然是修改输出路径——然而这是不靠谱的，因为 NuGet 并不识别输出路径。事实上，我们还可以设置一个属性 `<BuildOutputTargetFolder>`，将值指定为 `tasks`，那么我们就能够将我们的输出文件打包到 NuGet 对应的 `tasks` 文件夹下了。
+这样的一番设置，我们的 `build`、`buildMultiTargeting` 和 `readme.txt` 准备好了，但是 `tools` 文件夹还没有。由于我们是把我们生成的命令行工具放到 `tools` 里面，第一个想到的当然是修改输出路径——然而这是不靠谱的，因为 NuGet 并不识别输出路径。事实上，我们还可以设置一个属性 `<BuildOutputTargetFolder>`，将值指定为 `tools`，那么我们就能够将我们的输出文件打包到 NuGet 对应的 `tools` 文件夹下了。
 
 至此，我们的 .csproj 文件看起来像如下这样（为了减少行数，我已经去掉了注释）：
 
@@ -181,7 +149,7 @@ namespace Walterlv.NuGetTool
     <AssemblyName>Walterlv.NuGetTool</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <!-- ↓ 新增的属性 -->
-    <BuildOutputTargetFolder>tasks</BuildOutputTargetFolder>
+    <BuildOutputTargetFolder>tools</BuildOutputTargetFolder>
     <!-- ↓ 新增的属性 -->
     <NoPackageAnalysis>true</NoPackageAnalysis>
     <!-- ↓ 新增的属性 -->
@@ -189,13 +157,7 @@ namespace Walterlv.NuGetTool
     <Authors>walterlv</Authors>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Build.Framework" Version="15.6.85" />
-    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="15.6.85" />
-    <!-- ↓ 在第一步中不要忘了这一行 -->
-    <PackageReference Update="@(PackageReference)" PrivateAssets="All" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\tasks\" />
+    <Folder Include="Assets\tools\" />
   </ItemGroup>
   <ItemGroup>
     <!-- ↓ 新增的三项 -->
@@ -210,7 +172,7 @@ namespace Walterlv.NuGetTool
 
 现在再尝试编译一下我们的项目，去输出目录下解压查看 nupkg 文件，你就能看到期望的 NuGet 文件夹结构了；建议一个个点进去看，你可以看到我们准备好的空的 `Walterlv.NuGetTool.targets` 文件，也能看到我们生成的 `Walterlv.NuGetTool.dll`。
 
-![生成的 NuGet 包的目录结构](/static/posts/2018-05-11-20-54-45.png)
+![生成的 NuGet 包的目录结构](/static/posts/2018-05-12-08-03-01.png)
 
 ### 第三步：编写 Target
 
@@ -223,15 +185,11 @@ namespace Walterlv.NuGetTool
 <Project>
 
   <PropertyGroup>
-    <!-- 我们使用 $(MSBuildRuntimeType) 来判断编译器是 .NET Core 的还是 .NET Framework 的。
-         然后选用对应的文件夹。-->
-    <NuGetWalterlvTaskFolder Condition=" '$(MSBuildRuntimeType)' == 'Core'">$(MSBuildThisFileDirectory)..\tasks\netcoreapp2.0\</NuGetWalterlvTaskFolder>
-    <NuGetWalterlvTaskFolder Condition=" '$(MSBuildRuntimeType)' != 'Core'">$(MSBuildThisFileDirectory)..\tasks\net47\</NuGetWalterlvTaskFolder>
+    <NuGetWalterlvToolPath>$(MSBuildThisFileDirectory)..\tools\netcoreapp2.0\Walterlv.NuGetTool.dll</NuGetWalterlvToolPath>
   </PropertyGroup>
 
-  <UsingTask TaskName="Walterlv.NuGetTool.DemoTool" AssemblyFile="$(NuGetWalterlvTaskFolder)\Walterlv.NuGetTool.dll" />
   <Target Name="WalterlvDemo" BeforeTargets="CoreCompile">
-    <DemoTool />
+    <Exec Command="dotnet $(NuGetWalterlvToolPath)" />
   </Target>
 
 </Project>
@@ -260,25 +218,22 @@ targets 的文件结构与 csproj 是一样的，你可以阅读我的另一篇�
 
 #### 让我们的 Target 能够正确找到我们新生成的 dll
 
-你应该注意到，我们的 targets 文件在 `Assets\build` 目录下，而我们的 `Assets` 文件夹下并没有真实的 `tasks` 文件夹（里面是空的）。于是我们希望在调试状态下，dll 能够指向输出目录下。于是我们修改 targets 文件添加配置：
+你应该注意到，我们的 targets 文件在 `Assets\build` 目录下，而我们的 `Assets` 文件夹下并没有真实的 `tools` 文件夹（里面是空的）。于是我们希望在调试状态下，dll 能够指向输出目录下。于是我们修改 targets 文件添加配置：
 
 ```xml
 <!-- Assets\build\Walterlv.NuGetTool.targets -->
 <Project>
 
   <PropertyGroup Condition=" $(IsInDemoToolDebugMode) == 'True' ">
-    <NuGetWalterlvTaskFolder Condition=" '$(MSBuildRuntimeType)' == 'Core'">$(MSBuildThisFileDirectory)..\..\bin\$(Configuration)\netcoreapp2.0\</NuGetWalterlvTaskFolder>
-    <NuGetWalterlvTaskFolder Condition=" '$(MSBuildRuntimeType)' != 'Core'">$(MSBuildThisFileDirectory)..\..\bin\$(Configuration)\net47\</NuGetWalterlvTaskFolder>
+    <NuGetWalterlvToolPath>$(MSBuildThisFileDirectory)..\..\bin\$(Configuration)\netcoreapp2.0\Walterlv.NuGetTool.dll</NuGetWalterlvToolPath>
   </PropertyGroup>
 
   <PropertyGroup Condition=" $(IsInDemoToolDebugMode) != 'True' ">
-    <NuGetWalterlvTaskFolder Condition=" '$(MSBuildRuntimeType)' == 'Core'">$(MSBuildThisFileDirectory)..\tasks\netcoreapp2.0\</NuGetWalterlvTaskFolder>
-    <NuGetWalterlvTaskFolder Condition=" '$(MSBuildRuntimeType)' != 'Core'">$(MSBuildThisFileDirectory)..\tasks\net47\</NuGetWalterlvTaskFolder>
+    <NuGetWalterlvToolPath>$(MSBuildThisFileDirectory)..\tools\netcoreapp2.0\Walterlv.NuGetTool.dll</NuGetWalterlvToolPath>
   </PropertyGroup>
-  
-  <UsingTask TaskName="Walterlv.NuGetTool.DemoTool" AssemblyFile="$(NuGetWalterlvTaskFolder)\Walterlv.NuGetTool.dll" />
+
   <Target Name="WalterlvDemo" BeforeTargets="CoreCompile">
-    <DemoTool />
+    <Exec Command="dotnet $(NuGetWalterlvToolPath)" />
   </Target>
 
 </Project>
@@ -286,7 +241,7 @@ targets 的文件结构与 csproj 是一样的，你可以阅读我的另一篇�
 
 这样，我们就拥有了一个可以供用户设置的属性 `<IsInDemoToolDebugMode>` 了。
 
-#### 准备一个用于测试 Task 的测试项目
+#### 准备一个用于测试此命令行工具的测试项目
 
 接着，我们在解决方案中新建一个调试项目 `Walterlv.Debug`（我选用了 .NET Standard 2.0 框架）。然后在它的 csproj 中 `<Import>` 我们刚刚的 .targets 文件，并设置 `<IsInDemoToolDebugMode>` 属性为 `True`：
 
@@ -306,81 +261,82 @@ targets 的文件结构与 csproj 是一样的，你可以阅读我的另一篇�
 
 当准备好基本的调试环境之后，我们的解决方案看起来是下面这样的样子：
 
-![带有调试环境的解决方案](/static/posts/2018-05-11-22-02-57.png)
+![带有调试环境的解决方案](/static/posts/2018-05-12-08-13-03.png)
 
-#### 让我们自定义的 Task 开始工作，并能够进入断点
+#### 调试命令行项目
 
-最简单能够让 DemoTool 这个自定义的 Task 进入断点的方式当然是加上 `Debugger.Launch();` 了，就像这样：
+为了保持根兄弟文章的结构一致，我依然保留了“调试项目”这一部分内容，但其实大家都懂，不是吗？—— **一个控制台程序，谁不会调试啊**！！！
+
+但是——如果你希望能够在 MSBuild 或者 `dotnet build` 的环境下调试，就会发现，普通的调试方法并不能得到这样的环境——例如项目特定的参数。
+
+加一句 `Debugger.Launch();` 是最简单的方法了。
 
 ```csharp
-// DemoTool.cs
+// Program.cs
+using System;
 using System.Diagnostics;
-using Microsoft.Build.Utilities;
 
 namespace Walterlv.NuGetTool
 {
-    public class DemoTool : Task
+    class Program
     {
-        public override bool Execute()
+        static void Main(string[] args)
         {
             // 新增了启动调试器的代码。
             Debugger.Launch();
-            return true;
+            Console.WriteLine("Hello World!");
         }
     }
 }
 ```
 
-这样，一旦此函数开始执行，Windows 将显示一个选择调试器的窗口，我们选择当前打开的 Visual Studio 即可。
+这样，在使用 `msbuild` 或者 `dotnet build` 时，就会弹出一个调试器选择界面。
 
 ![选择调试器](/static/posts/2018-05-11-22-07-18.png)
 
 当然，也有一些比较正统的方法，为了使这篇文章尽可能简单，我只附一张图，如果有需要，可以自己去尝试：
 
-![使用“调试配置”调试](/static/posts/2018-05-11-22-11-59.png)
+![使用“调试配置”调试](/static/posts/2018-05-12-08-40-14.png)
 
-现在，我们去 Walterlv.Debug 目录下输入 `msbuild` 命令，在输出到如下部分的时候，就会进入我们的断点了：
-
-![进入了断点](/static/posts/2018-05-11-22-15-56.png)
-
-这下，我们的调试环境就全部搭建好了，你可以发挥你的想象力在 Task 里面随意挥洒你的代码！
-
-当然，只要你记得去掉 `Debugger.Launch();`，或者加上 `#if DEBUG` 这样的条件编译，那么随时打包就是一个可以发布的跨平台 NuGet 工具包了。
-
-提示：**一旦调试环境搭建好，你可能会遇到编译 Walterlv.NuGetTool 项目时，发现 dll 被占用的情况，这时，打开任务管理器结束掉 msbuild.exe 进行即可。**
+现在，即使我们去 Walterlv.Debug 目录下输入 `msbuild` 命令或 `dotnet build` 命令，也能进入我们的断点了：
 
 ### 第五步：发挥你的想象力
 
-想象力是没有限制的，不过如果不知道 Task 能够为我们提供到底什么样的功能，也是无从下手的。这一节我会说一些 Task 在 C# 代码和 .targets 文件中的互相操作。
+想象力是没有限制的，我们只需要在 .targets 文件里面向我们的控制台程序传入合适的参数，即可完成非常多的功能。
 
-#### .targets 向 Task 传参数
+#### .targets 向控制台程序传参数
 
-.targets 向 Task 传参数只需要写一个属性赋值的句子就可以了：
+.targets 向控制台程序传参数只需要按照普通控制台程序传参的方式就可以了：
 
 ```xml
 <!-- Assets\build\Walterlv.NuGetTool.targets -->
 <Target Name="WalterlvDemo" BeforeTargets="CoreCompile">
-  <DemoTool IntermediateOutputPath="$(IntermediateOutputPath)" />
+  <Exec Command="dotnet $(NuGetWalterlvToolPath) -i $(IntermediateOutputPath)" />
 </Target>
 ```
 
-这里，`$(IntermediateOutputPath)` 是 msbuild 编译期间会自动设置的全局属性，代表此项目编译过程中临时文件的存放路径（也就是我们常见的 obj 文件夹）。当然，使用 `dotnet build` 或者 `dotnet msbuild` 也是有这样的全局属性的。我们为 `<DemoTool>` 节点也加了一个属性，名为 `IntermediateOutputPath`。
+这里，`$(IntermediateOutputPath)` 是 msbuild 编译期间会自动设置的全局属性，代表此项目编译过程中临时文件的存放路径（也就是我们常见的 obj 文件夹）。当然，使用 `dotnet build` 或者 `dotnet msbuild` 也是有这样的全局属性的。
 
-在 DemoTool 的 C# 代码中，只需要写一个字符串属性即可接收这样的传参。
+在 Program.cs 中，只需要解析命令行参数即可接收这样的传参。
 
 ```csharp
-// DemoTool.cs
-public class DemoTool : Task
-{
-    public string IntermediateOutputPath { get; set; }
+// Program.cs
+using System;
+using System.Diagnostics;
 
-    public override bool Execute()
+namespace Walterlv.NuGetTool
+{
+    class Program
     {
-        Debugger.Launch();
-        var intermediateOutputPath = IntermediateOutputPath;
-        return true;
+        static void Main(string[] args)
+        {
+            Debugger.Launch();
+            var intermediateOutputPath = args[2];
+            Console.WriteLine("Hello World!");
+        }
     }
 }
+
 ```
 
 ![在 DemoTool 中调试查看传进来的参数](/static/posts/2018-05-11-22-45-50.png)  
@@ -388,35 +344,27 @@ public class DemoTool : Task
 
 你可以尽情发挥你的想象力，传入更多让人意想不到的参数，实现不可思议的功能。更多 MSBuild 全局参数，可以参考我的另一篇文章[项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - 吕毅](/post/known-properties-in-csproj.html)。
 
-#### Task 向 .targets 返回参数
+#### 使用命令执行完之后的结果
 
-如果只是传入参数，那么我们顶多只能干一些不痛不痒的事情，或者就是两者互相约定了一些常量。什么？你说直接去改源代码？那万一你的代码不幸崩溃了，项目岂不被你破坏了！（当然，你去改了源码，还会破坏 MSBuild 的差量编译。）
+如果只是传入参数，那么我们顶多只能干一些不痛不痒的事情，我们应该使用我们的控制台程序做一些什么。什么？你说直接去改源代码？那万一你的代码不幸崩溃了，项目岂不被你破坏了！（当然，你去改了源码，还会破坏 MSBuild 的差量编译。）
 
-我们新定义一个属性，但在属性上面标记 `[Output]` 特性。这样，这个属性就会作为输出参数传到 .targets 里了。
+所以，我们应该建立一种约定，要求控制台程序生成一些什么，然后在 .targets 里面取出使用。
 
 ```csharp
-// DemoTool.cs
+// Program.cs
+using System;
 using System.Diagnostics;
 using System.IO;
-using Microsoft.Build.Framework;
-using Microsoft.Build.Utilities;
 
 namespace Walterlv.NuGetTool
 {
-    public class DemoTool : Task
+    class Program
     {
-        public string IntermediateOutputPath { get; set; }
-
-        [Output]
-        public string AdditionalCompileFile { get; set; }
-
-        public override bool Execute()
+        static void Main(string[] args)
         {
             Debugger.Launch();
-            var intermediateOutputPath = IntermediateOutputPath;
-            var additional = Path.Combine(intermediateOutputPath, "DoubiClass.cs");
-            AdditionalCompileFile = Path.GetFullPath(additional);
-            File.WriteAllText(AdditionalCompileFile,
+            var additionalCompileFile = args[2];
+            File.WriteAllText(additionalCompileFile,
                 @"using System;
 namespace Walterlv.Debug
 {
@@ -427,7 +375,7 @@ namespace Walterlv.Debug
         public static Doubi Get() => new Doubi(""吕毅"");
     }
 }");
-            return true;
+            Console.WriteLine("Hello World!");
         }
     }
 }
@@ -438,9 +386,7 @@ namespace Walterlv.Debug
 ```xml
 <!-- Assets\build\Walterlv.NuGetTool.targets -->
 <Target Name="WalterlvDemo" BeforeTargets="CoreCompile">
-  <DemoTool IntermediateOutputPath="$(IntermediateOutputPath)">
-    <Output TaskParameter="AdditionalCompileFile" PropertyName="WalterlvDemo_AdditionalCompileFile" />
-  </DemoTool>
+  <Exec Command="dotnet $(NuGetWalterlvToolPath) -i $(IntermediateOutputPath)Doubi.cs" />
 
   <ItemGroup>
     <Compile Include="$(WalterlvDemo_AdditionalCompileFile)" />
@@ -460,38 +406,11 @@ namespace Walterlv.Debug
 <!-- Assets\build\Walterlv.NuGetTool.targets -->
 <ItemGroup>
   <Compile Remove="Class1.cs" />
-  <Compile Include="$(WalterlvDemo_AdditionalCompileFile)" />
+  <Compile Include="$(IntermediateOutputPath)Doubi.cs" />
 </ItemGroup>
 ```
 
 需要注意：**编译期间才生成的项（`<ItemGroup>`）或者属性（`<PropertyGroup>`），需要写在 `<Target>` 节点的里面。**如果写在外面，则不是编译期间生效的，而是始终生效的。当写在外面时，要特别留意可能某些属性没有初始化完全，你应该只使用那些肯定能确认存在的属性或文件。
-
-#### 在 Target 里编写调试代码
-
-虽然说以上的每一个步骤我都是一边实操一边写的，但即便如此，本文都写了 500 多行了，如果你依然能够不出错地完成以上每一步，那也是万幸了！Task 里我能还能用断点调试，那么 Target 里面怎么办呢？
-
-我们可以用 `<Message>` 节点来输出一些信息：
-
-```xml
-<!-- Assets\build\Walterlv.NuGetTool.targets -->
-<Target Name="WalterlvDemo" BeforeTargets="CoreCompile">
-  <DemoTool IntermediateOutputPath="$(IntermediateOutputPath)">
-    <Output TaskParameter="AdditionalCompileFile" PropertyName="WalterlvDemo_AdditionalCompileFile" />
-  </DemoTool>
-
-  <Message Text="临时文件的路径为：$(WalterlvDemo_AdditionalCompileFile)" />
-
-  <ItemGroup>
-    <Compile Include="$(WalterlvDemo_AdditionalCompileFile)" />
-  </ItemGroup>
-</Target>
-```
-
-![输出信息](/static/posts/2018-05-11-23-50-41.png)
-
-#### 在 Task 输出错误或警告
-
-我们继承了 `Microsoft.Build.Utilities.Task`，此类有一个 `Log` 属性，可以用来输出信息。使用 `LogWarning` 方法可以输出警告，使用 `LogError` 可以输出错误。如果输出了错误，那么就会导致编译不通过。
 
 #### 本地测试 NuGet 包
 
@@ -505,11 +424,11 @@ namespace Walterlv.Debug
 
 ### 总结
 
-不得不说，制作一个跨平台的基于 MSBuild Task 的 NuGet 工具包还是比较麻烦的，我们总结一下：
+制作一个跨平台的基于控制台的 NuGet 工具包虽然无关步骤比较多，但总体还算不太难，我们总结一下：
 
-1. 准备项目的基本配置（设置各种必要的项目属性，安装必要的 NuGet 依赖）
+1. 准备项目的基本配置（设置各种必要的项目属性）
 1. 建立好 NuGet 的文件夹结构
-1. 编写 Task 和 Target
+1. 编写 Target
 1. 新增功能、调试和测试
 
 如果你在实践的过程中遇到了各种问题，欢迎在下面留言，一般我会在一天之内给予回复。
@@ -528,18 +447,14 @@ namespace Walterlv.Debug
 
 - [NuGet pack and restore as MSBuild targets - Microsoft Docs](https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets)
 - [Bundling .NET build tools in NuGet](https://www.natemcmaster.com/blog/2017/11/11/build-tools-in-nuget/)
-- [Shipping a cross-platform MSBuild task in a NuGet package](https://www.natemcmaster.com/blog/2017/07/05/msbuild-task-in-nuget/)
 - [MSBuild Reserved and Well-Known Properties](https://msdn.microsoft.com/en-us/library/ms164309.aspx)
 - [build process - How does MSBuild check whether a target is up to date or not? - Stack Overflow](https://stackoverflow.com/questions/6982372/how-does-msbuild-check-whether-a-target-is-up-to-date-or-not?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
 - [How to: Build Incrementally](https://msdn.microsoft.com/en-us/library/ms171483.aspx)
-- [How To: Implementing Custom Tasks – Part I – MSBuild Team Blog](https://blogs.msdn.microsoft.com/msbuild/2006/01/21/how-to-implementing-custom-tasks-part-i/)
+- [Exec Task](https://msdn.microsoft.com/en-us/library/x8zx72cd.aspx)
 - [Overwrite properties with MSBuild - Stack Overflow](https://stackoverflow.com/questions/1366840/overwrite-properties-with-msbuild?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
-- [How to Access MSBuild properties inside custom task](https://social.msdn.microsoft.com/Forums/vstudio/en-US/4ba7e9a0-76e6-4b1c-8536-fd76a5b96c79/how-to-access-msbuild-properties-inside-custom-task?forum=vsx)
 - [visual studio - How to get property value of a project file using msbuild - Stack Overflow](https://stackoverflow.com/questions/39732729/how-to-get-property-value-of-a-project-file-using-msbuild)
 - [davidfowl/NuGetPowerTools: A bunch of powershell modules that make it even easier to work with nuget](https://github.com/davidfowl/NuGetPowerTools)
 - [MSBuild and Skipping target "<TargetName>" because it has no outputs - Stack Overflow](https://stackoverflow.com/questions/27377095/msbuild-and-skipping-target-targetname-because-it-has-no-outputs)
-- [WriteCodeFragment Task](https://msdn.microsoft.com/en-us/library/ff598685.aspx)
 - [Don't include dependencies from packages.config file when creating NuGet package - Stack Overflow](https://stackoverflow.com/questions/15012963/dont-include-dependencies-from-packages-config-file-when-creating-nuget-package?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
 - [NuGet 2.7 Release Notes - Microsoft Docs](https://docs.microsoft.com/zh-cn/nuget/release-notes/nuget-2.7#Development-Only_Dependencies)
 - [PackageReference should support DevelopmentDependency metadata · Issue #4125 · NuGet/Home](https://github.com/NuGet/Home/issues/4125)
-- [debugging - How to debug MSBuild Customtask - Stack Overflow](https://stackoverflow.com/questions/357445/how-to-debug-msbuild-customtask?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
