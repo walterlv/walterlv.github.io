@@ -58,32 +58,36 @@ categories: visualstudio nuget
 
 ```xml
 <!-- Walterlv.NuGetDemo.targets 文件 -->
-<Target Name="WalterlvNuGetDemo" BeforeTargets="AfterCompile">
-  <ItemGroup>
-    <BinCopyItems Include="..\..\packages\Walterlv.NuGetDemo.1.2.3.0\tools\bin\*.*" />
-    <x64CopyItems Include="..\..\packages\Walterlv.NuGetDemo.1.2.3.0\tools\bin_x64\*.*" />
-    <x86CopyItems Include="..\..\packages\Walterlv.NuGetDemo.1.2.3.0\tools\bin_x86\*.*" />
-  </ItemGroup>
-  <Copy SourceFiles="@(BinCopyItems)" DestinationFolder="$(OutputPath)" SkipUnchangedFiles="True" />
-  <Copy SourceFiles="@(x86CopyItems)" DestinationFolder="$(OutputPath)x86" SkipUnchangedFiles="True" />
-  <Copy SourceFiles="@(x64CopyItems)" DestinationFolder="$(OutputPath)x64" SkipUnchangedFiles="True" />
-</Target>
+<Project>
+  <Target Name="WalterlvNuGetDemo" BeforeTargets="AfterCompile">
+    <ItemGroup>
+      <BinCopyItems Include="..\..\packages\Walterlv.NuGetDemo.1.2.3.0\tools\bin\*.*" />
+      <x64CopyItems Include="..\..\packages\Walterlv.NuGetDemo.1.2.3.0\tools\bin_x64\*.*" />
+      <x86CopyItems Include="..\..\packages\Walterlv.NuGetDemo.1.2.3.0\tools\bin_x86\*.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(BinCopyItems)" DestinationFolder="$(OutputPath)" SkipUnchangedFiles="True" />
+    <Copy SourceFiles="@(x86CopyItems)" DestinationFolder="$(OutputPath)x86" SkipUnchangedFiles="True" />
+    <Copy SourceFiles="@(x64CopyItems)" DestinationFolder="$(OutputPath)x64" SkipUnchangedFiles="True" />
+  </Target>
+</Project>
 ```
 
 然后，修改其中的路径，将相对于安装项目路径的地方更换成相对于此 targets 文件的路径：
 
 ```xml
 <!-- Walterlv.NuGetDemo.targets 文件 -->
-<Target Name="WalterlvNuGetDemo" BeforeTargets="AfterCompile">
-  <ItemGroup>
-    <BinCopyItems Include="$(MSBuildThisFileDirectory)..\tools\bin\*.*" />
-    <x64CopyItems Include="$(MSBuildThisFileDirectory)..\tools\bin_x64\*.*" />
-    <x86CopyItems Include="$(MSBuildThisFileDirectory)..\tools\bin_x86\*.*" />
-  </ItemGroup>
-  <Copy SourceFiles="@(BinCopyItems)" DestinationFolder="$(OutputPath)" SkipUnchangedFiles="True" />
-  <Copy SourceFiles="@(x86CopyItems)" DestinationFolder="$(OutputPath)x86" SkipUnchangedFiles="True" />
-  <Copy SourceFiles="@(x64CopyItems)" DestinationFolder="$(OutputPath)x64" SkipUnchangedFiles="True" />
-</Target>
+<Project>
+  <Target Name="WalterlvNuGetDemo" BeforeTargets="AfterCompile">
+    <ItemGroup>
+      <BinCopyItems Include="$(MSBuildThisFileDirectory)..\tools\bin\*.*" />
+      <x64CopyItems Include="$(MSBuildThisFileDirectory)..\tools\bin_x64\*.*" />
+      <x86CopyItems Include="$(MSBuildThisFileDirectory)..\tools\bin_x86\*.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(BinCopyItems)" DestinationFolder="$(OutputPath)" SkipUnchangedFiles="True" />
+    <Copy SourceFiles="@(x86CopyItems)" DestinationFolder="$(OutputPath)x86" SkipUnchangedFiles="True" />
+    <Copy SourceFiles="@(x64CopyItems)" DestinationFolder="$(OutputPath)x64" SkipUnchangedFiles="True" />
+  </Target>
+</Project>
 ```
 
 #### 第二步：修改 nuspec 文件，加入 targets
