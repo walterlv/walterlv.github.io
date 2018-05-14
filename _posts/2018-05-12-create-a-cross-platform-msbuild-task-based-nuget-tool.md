@@ -1,7 +1,7 @@
 ---
 title: "如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包"
 date_published: 2018-05-12 00:04:14 +0800
-date: 2018-05-12 07:43:59 +0800
+date: 2018-05-14 15:57:51 +0800
 categories: visualstudio csharp dotnet
 ---
 
@@ -492,6 +492,10 @@ namespace Walterlv.Debug
 #### 在 Task 输出错误或警告
 
 我们继承了 `Microsoft.Build.Utilities.Task`，此类有一个 `Log` 属性，可以用来输出信息。使用 `LogWarning` 方法可以输出警告，使用 `LogError` 可以输出错误。如果输出了错误，那么就会导致编译不通过。
+
+#### 加入差量编译支持
+
+如果你觉得你自己写的 `Task` 执行非常耗时，那么建议加入差量编译的支持。关于加入差量编译，可以参考我的另一篇文章[每次都要重新编译？太慢！让跨平台的 MSBuild/dotnet build 的 Target 支持差量编译](/post/msbuild-incremental-build.html)。
 
 #### 本地测试 NuGet 包
 
