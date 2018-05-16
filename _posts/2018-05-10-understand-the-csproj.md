@@ -1,7 +1,7 @@
 ---
 title: "理解 C# 项目 csproj 文件格式的本质和编译流程"
 date_published: 2018-05-10 08:13:43 +0800
-data: 2018-05-11 09:45:02 +0800
+data: 2018-05-16 20:55:06 +0800
 categories: visualstudio
 ---
 
@@ -35,8 +35,8 @@ categories: visualstudio
 
 如果你此前也阅读过我的其他博客，会发现我一直在试图推荐使用新的 csproj 格式：
 
-- [将 WPF、UWP 以及其他各种类型的旧样式的 csproj 文件迁移成新样式的 csproj 文件](https://walterlv.github.io/post/introduce-new-style-csproj-into-net-framework.html)
-- [让一个 csproj 项目指定多个开发框架](https://walterlv.github.io/post/configure-projects-to-target-multiple-platforms.html)
+- [将 WPF、UWP 以及其他各种类型的旧样式的 csproj 文件迁移成新样式的 csproj 文件](/post/introduce-new-style-csproj-into-net-framework.html)
+- [让一个 csproj 项目指定多个开发框架](/post/configure-projects-to-target-multiple-platforms.html)
 
 那么新格式和旧格式究竟有哪些不同使得新的格式如此简洁？
 
@@ -186,7 +186,12 @@ xml 声明部分完全没有在此解释的必要了，为兼容性提供了方�
 
 一般来说，`Target` 节点写在 csproj 文件的末尾，但这个并不是强制的。Targets 是一种非常强大的功能扩展方式，支持 msbuild 预定义的一些指令，支持命令行，甚至支持使用 C# 直接编写（当然编译成 dll 会更方便些），还支持这些的排列组合和顺序安排。而我们实质上的编译过程便全部由这些 Targets 来完成。我们甚至可以直接说——**编译过程就是靠这些 `Target` 的组合来完成的**。
 
-如果你希望全面了解 Targets，推荐直接阅读微软的官方文档 [MSBuild Targets](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-targets)，而本文只会对其进行一些简单的概述（我即将用另一篇博客来详细讲解，不然这篇就太长了）。
+如果你希望全面了解 Targets，推荐直接阅读微软的官方文档 [MSBuild Targets](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-targets)，而本文只会对其进行一些简单的概述。当然如果你非常感兴趣，还可以阅读我另外几篇关于 Target 使用相关的文章：
+
+- [如何创建一个基于命令行工具的跨平台的 NuGet 工具包 - 吕毅](/post/create-a-cross-platform-command-based-nuget-tool.html)
+- [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包 - 吕毅](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html)
+- [每次都要重新编译？太慢！让跨平台的 MSBuild/dotnet build 的 Target 支持差量编译 - 吕毅](/post/msbuild-incremental-build.html)
+- [如何最快速地将旧的 NuGet 包 (2.x, packages.config) 升级成新的 NuGet 包 (4.x, PackageReference) - 吕毅](/post/migrate-nuget-package-from-powershell-to-props-and-targets.html)
 
 不过，为了简单地理解 `Target`，我依然需要借用官方文档的例子作为开头。
 
