@@ -8,6 +8,10 @@
       <span class="desktop-only">{{ link.title }}</span>
     </a>
   {% endfor %}
+  <a id="theme" class="navigation" title="切换黑白主题 (beta)" onclick="document.body.classList.toggle('dark-theme');">
+    <svg class="icon-menu mobile-only"><use xlink:href="#icon-menu"></use></svg>
+    <span class="desktop-only">切换黑白主题 (beta)</span>
+  </a>
   <a id="search" class="dosearch">
     <svg class="icon-search"><use xlink:href="#icon-search"></use></svg>
   </a>
