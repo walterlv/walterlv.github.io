@@ -1,7 +1,7 @@
 ---
 title: "如何创建一个基于命令行工具的跨平台的 NuGet 工具包"
 date_published: 2018-05-12 09:09:02 +0800
-date: 2018-05-14 15:58:09 +0800
+date: 2018-05-19 08:04:10 +0800
 categories: visualstudio csharp dotnet
 ---
 
@@ -440,9 +440,9 @@ namespace Walterlv.Debug
 
 如果在阅读这篇文章时存在一些概念理解上的问题，或者不知道如何扩展本文的功能，可能需要阅读下我的另一些文章：
 
-- [理解 C# 项目 csproj 文件格式的本质和编译流程 - 吕毅](断点/post/understand-the-csproj.html)
-- [项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - 吕毅](断点/post/known-properties-in-csproj.html)
-- [项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅](断点/post/known-nuget-properties-in-csproj.html)
+- [理解 C# 项目 csproj 文件格式的本质和编译流程 - 吕毅](/post/understand-the-csproj.html)
+- [项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - 吕毅](/post/known-properties-in-csproj.html)
+- [项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅](/post/known-nuget-properties-in-csproj.html)
 
 当然，还有一些正在编写，过一段时间可以阅读到。
 
