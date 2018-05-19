@@ -15,6 +15,10 @@ body {
     margin: 0
 }
 
+body.dark-theme {
+    background: #282c34
+}
+
 article, aside, footer, header, nav, section {
     display: block
 }
@@ -63,13 +67,17 @@ b, strong {
     font-weight: inherit
 }
 
+body.dark-theme b, body.dark-theme strong {
+    color: #dbdbdb
+}
+
 b, strong {
     font-weight: bolder
 }
 
 code, kbd, samp {
     font-family: 'Monaco', 'Consolas', 'Menlo', monospace;
-    font-size: 1em
+    font-size: .8em
 }
 
 dfn {
@@ -998,7 +1006,6 @@ ul.pager li a:hover {
 .post {
     position: relative;
     top: 1.875rem;
-    background: #fff;
 }
 
 @media only screen and (min-width:37.5rem) {
@@ -1013,7 +1020,7 @@ ul.pager li a:hover {
 
 .post-content img {
     max-width: 100%;
-    margin: 10px auto;
+    margin: 0;
     display: block;
 }
 
@@ -1060,6 +1067,19 @@ ul.pager li a:hover {
     overflow-wrap: break-word
 }
 
+body.dark-theme .post-content p,
+body.dark-theme .post-content h1,
+body.dark-theme .post-content h2,
+body.dark-theme .post-content h3,
+body.dark-theme .post-content h4,
+body.dark-theme .post-content h5,
+body.dark-theme .post-content ul,
+body.dark-theme .post-content ol,
+body.dark-theme .post-content iframe,
+body.dark-theme .post-content div.post-inline {
+    color: white
+}
+
 .post-content p::after, .post-content h1::after, .post-content h2::after, .post-content h3::after, .post-content h4::after, .post-content ul::after, .post-content ol::after, .post-content iframe::after {
     content: '';
     display: table;
@@ -1103,6 +1123,10 @@ ul.pager li a:hover {
     line-height: 1.25rem
 }
 
+body.dark-theme .post-content p.post-info {
+    color: #828488
+}
+
 .post-content p.post-info span, .post-content p.post-info time {
     vertical-align: middle
 }
@@ -1126,13 +1150,22 @@ ul.pager li a:hover {
     text-align: justify;
 }
 
+body.dark-theme .post-content p,
+body.dark-theme .post-content li {
+    color: #bbbbbb
+}
+
 .post-content p>code, .post-content li>code {
     color: #dd5145;
     word-wrap: break-word;
-    background: #f9f2f4;
     padding: .188rem .313rem;
     border-radius: 3px;
     font-size: 0.95rem
+}
+
+body.dark-theme .post-content p>code,
+body.dark-theme .post-content li>code {
+    color: #7cc060
 }
 
 .post-content p pre, .post-content li pre {
@@ -1141,7 +1174,18 @@ ul.pager li a:hover {
 
 .post-content a {
     color: #007ACC;
-    text-decoration: none
+    text-decoration: none;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+body.dark-theme .post-content a {
+    color: #80b6fc
+}
+
+body.dark-theme .post-content a:hover {
+    color: #9fd4fc;
+    text-decoration: underline;
 }
 
 .post-content iframe {
@@ -1153,6 +1197,14 @@ ul.pager li a:hover {
     font-family: 'Titillium Web', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 700;
     font-style: normal
+}
+
+body.dark-theme .post-content h1,
+body.dark-theme .post-content h2,
+body.dark-theme .post-content h3,
+body.dark-theme .post-content h4,
+body.dark-theme .post-content h5 {
+    font-weight: 200
 }
 
 .post-content h1 {
@@ -1231,6 +1283,10 @@ ul.pager li a:hover {
     margin: 0;
 }
 
+body.dark-theme .post-content blockquote p {
+    color: #878d9b
+}
+
 @media only screen and (max-width:37.5rem) {
     .post-content blockquote p {
         font-size: 1rem;
@@ -1252,6 +1308,10 @@ ul.pager li a:hover {
     border-style: solid;
     border-color: #e3e3e3;
     margin: 20px auto
+}
+
+body.dark-theme .post-content hr {
+    border-color: #3b4048
 }
 
 .post-content hr::after {
@@ -1510,20 +1570,15 @@ article .share {
 
 pre {
     background: #222;
-    width: 100%;
-    padding: 1.25rem 0;
+    max-width: 50rem;
     color: #fff;
-    margin: 1.875rem 0;
-    font-size: .875rem;
+    margin: 1.5rem auto;
+    font-size: .8rem;
 }
 
-@media only screen and (min-width:37.5rem) {
-    pre {
-        font-size: 1rem;
-        margin: 3.125rem 0
-    }
+body.dark-theme pre {
+    background: #1d1f23
 }
-
 pre code {
     width: auto;
     max-width: 50rem;
@@ -1531,9 +1586,8 @@ pre code {
     display: block;
     margin-right: auto;
     margin-left: auto;
-    padding-left: 0;
-    padding-right: 0;
-    padding: 0 1.25rem;
+    padding: .5rem 1rem;
+    overflow-x: auto
 }
 
 pre code::after {
@@ -1542,19 +1596,9 @@ pre code::after {
     clear: both
 }
 
-@media only screen and (max-width:37.5rem) {
-    pre code {
-        overflow-x: scroll
-    }
-}
-
 pre span {
     line-height: 1.5rem;
     font-family: 'Monaco', 'Consolas', 'Menlo', monospace
-}
-
-.highlight {
-    margin: 0
 }
 
 @media only screen and (min-width:37.5rem) {
@@ -1823,14 +1867,17 @@ footer {
     margin-left: auto;
     padding-left: 0;
     padding-right: 0;
-    border-top: 1px solid #e6e6e6;
-    background: #fff;
+    border-top: 1px solid #e3e3e3;
     padding: 1.25rem 1.563rem;
     margin-top: 1rem;
     margin-bottom: 0;
     font-family: 'Titillium Web', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 300;
     font-style: normal;
+}
+
+body.dark-theme footer {
+    border-top: 1px solid #3b4048
 }
 
 footer::after {
