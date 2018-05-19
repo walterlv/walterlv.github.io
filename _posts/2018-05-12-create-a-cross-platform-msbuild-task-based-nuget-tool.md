@@ -1,7 +1,7 @@
 ---
 title: "如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包"
 date_published: 2018-05-12 00:04:14 +0800
-date: 2018-05-19 08:05:43 +0800
+date: 2018-05-19 15:16:14 +0800
 categories: visualstudio csharp dotnet
 ---
 
@@ -541,7 +541,7 @@ namespace Walterlv.Debug
 - [How to Access MSBuild properties inside custom task](https://social.msdn.microsoft.com/Forums/vstudio/en-US/4ba7e9a0-76e6-4b1c-8536-fd76a5b96c79/how-to-access-msbuild-properties-inside-custom-task?forum=vsx)
 - [visual studio - How to get property value of a project file using msbuild - Stack Overflow](https://stackoverflow.com/questions/39732729/how-to-get-property-value-of-a-project-file-using-msbuild)
 - [davidfowl/NuGetPowerTools: A bunch of powershell modules that make it even easier to work with nuget](https://github.com/davidfowl/NuGetPowerTools)
-- [MSBuild and Skipping target "<TargetName>" because it has no outputs - Stack Overflow](https://stackoverflow.com/questions/27377095/msbuild-and-skipping-target-targetname-because-it-has-no-outputs)
+- [MSBuild and Skipping target `"<TargetName>"` because it has no outputs - Stack Overflow](https://stackoverflow.com/questions/27377095/msbuild-and-skipping-target-targetname-because-it-has-no-outputs)
 - [WriteCodeFragment Task](https://msdn.microsoft.com/en-us/library/ff598685.aspx)
 - [Don't include dependencies from packages.config file when creating NuGet package - Stack Overflow](https://stackoverflow.com/questions/15012963/dont-include-dependencies-from-packages-config-file-when-creating-nuget-package?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
 - [NuGet 2.7 Release Notes - Microsoft Docs](https://docs.microsoft.com/zh-cn/nuget/release-notes/nuget-2.7#Development-Only_Dependencies)
