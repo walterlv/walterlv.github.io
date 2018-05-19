@@ -1045,6 +1045,7 @@ ul.pager li a:hover {
     width: auto;
     max-width: 50rem;
     float: none;
+    color: #4F4F4F;
     display: block;
     padding-left: 0;
     padding-right: 0;
@@ -1054,7 +1055,7 @@ ul.pager li a:hover {
     font-size: 1.125rem;
     line-height: 1.75rem;
     padding: 0 1.25rem;
-    margin: 0 auto 1.25rem;
+    margin: 0.9rem auto 0.9rem;
     letter-spacing: .05rem;
     overflow-wrap: break-word
 }
@@ -1067,23 +1068,15 @@ ul.pager li a:hover {
 
 @media only screen and (min-width:37.5rem) {
     .post-content p, .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content ul, .post-content ol, .post-content iframe {
-        font-size: 1.125rem;
-        line-height: 2rem;
-        margin: 0.75rem auto 0.75rem
+        font-size: 1rem;
+        line-height: 1.65rem;
     }
 }
 
 .post-content h1.post-title {
     line-height: 2rem;
-    font-size: 1.5rem;
+    font-size: 1.47rem;
     margin: .5rem auto
-}
-
-@media only screen and (min-width:37.5rem) {
-    .post-content h1.post-title {
-        line-height: 2.5rem;
-        font-size: 2rem
-    }
 }
 
 .post-content p.subtitle {
@@ -1103,17 +1096,11 @@ ul.pager li a:hover {
     font-family: 'Titillium Web', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 300;
     font-style: normal;
-    font-size: .813rem;
+    font-size: .8rem;
     letter-spacing: 0;
     color: #a9a9a9;
-    margin: 0 auto;
+    margin: 1rem auto -0.5rem;
     line-height: 1.25rem
-}
-
-@media only screen and (min-width:37.5rem) {
-    .post-content p.post-info {
-        font-size: 1rem
-    }
 }
 
 .post-content p.post-info span, .post-content p.post-info time {
@@ -1135,16 +1122,17 @@ ul.pager li a:hover {
 }
 
 .post-content p, .post-content li {
-    color: #333;
+    color: #4f4f4f;
+    text-align: justify;
 }
 
 .post-content p>code, .post-content li>code {
-    color: #bf616a;
+    color: #dd5145;
     word-wrap: break-word;
-    background: #f2f2f2;
+    background: #f9f2f4;
     padding: .188rem .313rem;
     border-radius: 3px;
-    font-size: 1.125rem
+    font-size: 0.95rem
 }
 
 .post-content p pre, .post-content li pre {
@@ -1152,7 +1140,7 @@ ul.pager li a:hover {
 }
 
 .post-content a {
-    color: #00e;
+    color: #007ACC;
     text-decoration: none
 }
 
@@ -1184,14 +1172,17 @@ ul.pager li a:hover {
 }
 
 .post-content h3 {
-    font-size: 1.25rem;
-    line-height: 1.4;
+    font-size: 1.35rem;
+    line-height: 1.5;
 }
 
-@media only screen and (min-width:37.5rem) {
-    .post-content h3 {
-        font-size: 1.688rem
-    }
+.post-content h4 {
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+.post-content h5 {
+    margin: 0.5rem auto 0.5rem
 }
 
 .post-content ul, .post-content ol {
@@ -1257,7 +1248,9 @@ ul.pager li a:hover {
     margin-left: auto;
     padding-left: 0;
     padding-right: 0;
-    border: 1px solid #f2f2f2;
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: #e3e3e3;
     margin: 20px auto
 }
 
