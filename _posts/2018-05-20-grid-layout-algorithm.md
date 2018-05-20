@@ -136,7 +136,6 @@ Grid 算是 WPF/UWP 入门中非常重要的一个布局容器了。面对它那
 // +-----------------------------------------------------------+
 // | min | max |     |           | min |     |  min max  | max |
 // |#fix#| fix |#fix#| fix | fix | fix | fix |   #fix#   |#fix#|
-// Note: This table will be stored as the final result into the MeasureResult.
 ```
 
 #### 布局算法的代码
