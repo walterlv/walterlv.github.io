@@ -81,9 +81,6 @@ categories: post
     - [Expression Based Property Getters and Setters - CodeProject](https://www.codeproject.com/Articles/584720/ExpressionplusbasedplusPropertyplusGettersplusandp)
     - [How do I set a field/property value in an C# Expression tree in .NET 3.5? - Elvin Cheng](https://elvincheng.wordpress.com/2010/12/15/how-do-i-set-a-fieldproperty-value-in-an-c-expression-tree-in-net-3-5/)
 
-- Overloadable Operators
-    - [Overloadable Operators (C# Programming Guide) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/overloadable-operators)
-
 - IAsyncOperation<TResult>.GetResult()
     - [exception - A method was called at an unexpected time - Stack Overflow](https://stackoverflow.com/questions/13096141/a-method-was-called-at-an-unexpected-time))
 
