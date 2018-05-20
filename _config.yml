@@ -26,9 +26,6 @@ links:
   - title: 关于
     url: /about/
 links-light:
-  - icon: home
-    title: 博客
-    url: /
   - icon: users
     title: 朋友
     url: /friends

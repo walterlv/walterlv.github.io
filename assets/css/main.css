@@ -622,19 +622,15 @@ html, body {
 }
 
 .bar-header {
-    background: #141414;
-    padding: .625rem .938rem;
+    background: #21252b;
+    color: #cccccc;
     position: fixed;
     width: 100%;
+    height: 3rem;
+    line-height: 3rem;
     z-index: 10;
     -webkit-transition: top .5s;
     transition: top .5s;
-}
-
-@media only screen and (min-width:37.5rem) {
-    .bar-header {
-        padding: .938rem 0
-    }
 }
 
 .bar-header a {
@@ -646,10 +642,6 @@ html, body {
 
 .bar-header h1 a {
     line-height: 1.5rem
-}
-
-.bar-header a.navigation {
-    margin: 0 1rem
 }
 
 .bar-header .logo {
@@ -671,41 +663,83 @@ html, body {
     text-decoration: none
 }
 
+.bar-header ul {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+}
+
+.bar-header ul li {
+    list-style-type: none;
+    margin: 0 1rem;
+}
+
+.bar-header ul li:first-child {
+    margin: 0
+}
+
+@media only screen and (max-width:37.5rem) {
+    .bar-header ul li {
+        margin: 0;
+    }
+}
+
 .bar-header .icon-menu {
     float: left;
     cursor: pointer;
-    margin: .313rem 1.25rem .313rem 0;
+    margin: .875rem;
     width: 1.25rem;
     height: 1.25rem;
     fill: #fff;
 }
 
-@media only screen and (min-width:37.5rem) {
-    .bar-header .icon-menu {
-        margin: .313rem 1.25rem .313rem 1.563rem
+@media only screen and (max-width:37.5rem) {
+    .bar-header .site-title {
+        margin: 0 1rem 0 0;
     }
 }
 
 .bar-header .dosearch {
     float: right;
     display: inline-block;
-    width: 1.875rem;
-    height: 1.875rem;
-    cursor: pointer;
-    margin: 0 0 0 0;
+    margin: 0;
 }
 
-@media only screen and (min-width:37.5rem) {
-    .bar-header .dosearch {
-        margin: 0 1.25rem 0 0
-    }
+.bar-header .search-box {
+    background: #586067;
+    width: 16rem;
+    height: 2rem;
+    margin: .5rem 2rem .5rem;
+    padding: 0 0 0 .5rem;
+    cursor: text;
 }
 
 .bar-header .icon-search {
+    float: right;
     width: 1.25rem;
     height: 1.25rem;
-    fill: #fff;
-    margin: .313rem
+    margin: .375rem;
+    fill: #cccccc;
+}
+
+@media only screen and (min-width:50rem) {
+    .search-mobile-only {
+        display: none
+    }
+}
+
+@media only screen and (max-width:50rem) {
+    .search-desktop-only {
+        display: none
+    }
+}
+
+@media only screen and (max-width:50rem) {
+    .bar-header .dosearch {
+        margin: .625rem;
+        width: 1.75rem;
+        height: 1.75rem;
+    }
 }
 
 body.main-page {
@@ -1270,12 +1304,6 @@ body.dark-theme .post-content h5 {
     content: '';
     display: table;
     clear: both
-}
-
-@media only screen and (max-width:37.5rem) {
-    .post-content blockquote {
-        width: 90%
-    }
 }
 
 .post-content blockquote p {
