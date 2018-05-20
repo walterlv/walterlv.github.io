@@ -8,6 +8,7 @@ about: Windows 10 Developer
 
 # Site Appearance
 logo: /assets/img/avatar.png
+default-theme: light
 markdown: kramdown
 highlighter: rouge
 
