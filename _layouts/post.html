@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="http://schema.org/BlogPosting">
-    {% include head.html %}
-    <body class="has-push-menu dark-theme">
-        {% include script.html %}
-        {% include svg-icons.html %}
-        {% include post-header.html %}
-        <section class="post">
-            <article role="article" id="post" class="post-content" itemprop="articleBody">
-                <h1 class="post-title" itemprop="name">{{ page.title }}</h1>
-                <p itemprop="post-info" class="post-info">
-                    <svg id="date" class="icon-calendar"><use xlink:href="#icon-calendar"></use></svg>
-                    {% if page.date_published %}
-                        <time itemprop="datePublished" datetime="{{ page.date_published | date_to_xmlschema }}" class="date">
-                            发布于 {% include date.html date=page.date_published %}
-                        </time>
-                        <br class="mobile-only">
-                        <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                        <time itemprop="datePublished" datetime="{{ page.date_published | date_to_xmlschema }}" class="date">
-                            更新于 {% include date.html date=page.date %}
-                        </time>
-                    {% elsif page.date %}
-                        <time itemprop="dateUpdated" datetime="{{ page.date | date_to_xmlschema }}" class="date">
-                            {% include date.html date=page.date %}
-                        </time>
-                    {% endif %}
-                </p>
-                <p itemprop="description" class="subtitle">{{ page.description }}</p>
-                {{ content }}
-                {% include license.html %}
-            </article>
-            {% include comments.html %}
-            {% include footer.html %}
-        </section>
-    </body>
+  {% include head.html %}
+  <body class="has-push-menu dark-theme">
+    {% include script.html %}
+    {% include svg-icons.html %}
+    {% include post-header.html %}
+    <section class="post">
+      <article role="article" id="post" class="post-content" itemprop="articleBody">
+        <h1 class="post-title" itemprop="name">{{ page.title }}</h1>
+        <p itemprop="post-info" class="post-info">
+          <svg id="date" class="icon-calendar"><use xlink:href="#icon-calendar"></use></svg>
+          {% if page.date_published %}
+            <time itemprop="datePublished" datetime="{{ page.date_published | date_to_xmlschema }}" class="date">
+              发布于 {% include date.html date=page.date_published %}
+            </time>
+            <br class="mobile-only">
+            <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
+            <time itemprop="datePublished" datetime="{{ page.date_published | date_to_xmlschema }}" class="date">
+              更新于 {% include date.html date=page.date %}
+            </time>
+          {% elsif page.date %}
+            <time itemprop="dateUpdated" datetime="{{ page.date | date_to_xmlschema }}" class="date">
+              {% include date.html date=page.date %}
+            </time>
+          {% endif %}
+        </p>
+        <p itemprop="description" class="subtitle">{{ page.description }}</p>
+        {{ content }}
+        {% include license.html %}
+      </article>
+      {% include comments.html %}
+      {% include footer.html %}
+    </section>
+  </body>
 </html>
