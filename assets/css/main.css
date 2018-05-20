@@ -253,6 +253,10 @@ h1, h2, h3, h4 {
     background: #fdfeff
 }
 
+body.dark-theme .grid article.box-item {
+    background: #282c34
+}
+
 article.animate {
     -webkit-animation: moveUp .65s;
     animation: moveUp .65s;
@@ -746,6 +750,10 @@ body.main-page {
     background: #eaecef
 }
 
+body.main-page.dark-theme {
+    background: #21252b
+}
+
 body.main-page .bar-header {
     background-color: rgba(0, 0, 0, 0.7)
 }
@@ -912,10 +920,19 @@ main {
     line-height: 1.5rem;
 }
 
+body.dark-theme .box-item .box-body h2 {
+    color: white;
+    font-weight: 200
+}
+
 .box-item .box-body p {
     color: #999;
     font-size: 0.75rem;
     line-height: 1rem
+}
+
+body.dark-theme .box-item .box-body p {
+    color: #bbbbbb;
 }
 
 .box-item .box-body .categories a {
@@ -1035,6 +1052,16 @@ ul.pager li a {
 ul.pager li a:hover {
     background: #107a9b;
     color: white
+}
+
+body.dark-theme div.pager,
+body.dark-theme ul.pager li {
+    border-color: #3b4048
+}
+
+body.dark-theme ul.pager li.active {
+    background: #3b4048;
+    color: #666
 }
 
 .post {
@@ -1997,15 +2024,6 @@ footer ul a {
 
 footer ul a:hover {
     text-decoration: underline
-}
-
-.main-page footer {
-    background: #eaecef;
-    border: 0
-}
-
-.main-page footer p {
-    color: #141414
 }
 
 .tooltip {
