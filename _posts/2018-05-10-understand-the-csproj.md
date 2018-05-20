@@ -1,7 +1,7 @@
 ---
 title: "理解 C# 项目 csproj 文件格式的本质和编译流程"
 date_published: 2018-05-10 08:13:43 +0800
-data: 2018-05-16 20:55:06 +0800
+data: 2018-05-20 19:01:45 +0800
 categories: visualstudio
 ---
 
@@ -188,6 +188,7 @@ xml 声明部分完全没有在此解释的必要了，为兼容性提供了方�
 
 如果你希望全面了解 Targets，推荐直接阅读微软的官方文档 [MSBuild Targets](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-targets)，而本文只会对其进行一些简单的概述。当然如果你非常感兴趣，还可以阅读我另外几篇关于 Target 使用相关的文章：
 
+- [如何编写基于 Microsoft.NET.Sdk 的跨平台的 MSBuild Target - 吕毅](/post/write-msbuild-target.html)
 - [如何创建一个基于命令行工具的跨平台的 NuGet 工具包 - 吕毅](/post/create-a-cross-platform-command-based-nuget-tool.html)
 - [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包 - 吕毅](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html)
 - [每次都要重新编译？太慢！让跨平台的 MSBuild/dotnet build 的 Target 支持差量编译 - 吕毅](/post/msbuild-incremental-build.html)
