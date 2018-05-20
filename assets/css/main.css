@@ -108,13 +108,28 @@ sup {
     top: -.5em
 }
 
-audio, video {
+audio {
     display: inline-block
 }
 
 audio:not([controls]) {
     display: none;
     height: 0
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 50%;
+}
+
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 img {
