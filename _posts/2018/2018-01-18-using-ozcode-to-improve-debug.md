@@ -1,6 +1,7 @@
 ---
 title: "推荐近乎免费的调试神器——OzCode"
-date: 2018-01-18 08:43:27 +0800
+date_published: 2018-01-18 08:43:27 +0800
+date: 2018-05-22 09:47:14 +0800
 categories: visualstudio
 ---
 
@@ -29,7 +30,7 @@ OzCode 有这些非常吸引我的地方：
 ![搜索属性](/static/posts/2018-01-18-08-40-44.png)  
 ▲ 搜索属性（图片来源于官网）
 
-官网下载的时候会看到提示——**一个月免费试用**。但事实上，每次 Visual Studio 更新，OzCode 都会重置试用天数。事实上 Visual Studio 2017 开始，更新间隔基本上都在一个月以内。也就是说——**只要勤更新 VS，OzCode 几乎一只免费**！
+官网下载的时候会看到提示——**一个月免费试用**。但事实上，每次 Visual Studio 更新，OzCode 都会重置试用天数。事实上 Visual Studio 2017 开始，更新间隔基本上都在一个月以内。也就是说——**只要勤更新 VS，OzCode 几乎一直免费**！
 
 ![近乎免费](/static/posts/2018-01-10-09-05-27.png)  
 ▲ 每次更新 Visual Studio 之后，OzCode 都会重置
