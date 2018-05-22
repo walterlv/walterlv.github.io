@@ -1,7 +1,7 @@
 ---
 title: "将 WPF、UWP 以及其他各种类型的旧样式的 csproj 文件迁移成新样式的 csproj 文件"
 date_published: 2018-01-16 00:04:28 +0800
-date: 2018-05-20 14:13:32 +0800
+date: 2018-05-22 14:24:25 +0800
 categories: visualstudio
 ---
 
@@ -10,6 +10,10 @@ categories: visualstudio
 然而组织传统 .NET Framework 类库的 csproj 文件却极其庞大且难以理解。而本文将提供一种迁移方法，帮助你完成这样的迁移，以便体验新 csproj 文件带来的诸多好处。
 
 ---
+
+**更新**：
+
+感谢小伙伴 [KodamaSakuno (神樹桜乃)](https://github.com/KodamaSakuno) 的指导，我们可以有第三方的解决方案 MSBuild.Sdk.Extras 来更简单地完成迁移。阅读 [MSBuild.Sdk.Extras](/post/use-msbuild-sdk-extras-for-wpf-and-uwp.html) 来了解更多。
 
 <p id="toc"></p>
 
@@ -269,6 +273,10 @@ UWP 项目已经是 .NET Core 了，然而它依然还在采用旧样式的 cspr
 
 - **ProjectTypeGuid** 这个属性标志着此项目的类型，比如指定为 WPF 自定义控件库的项目新建文件的模板有自定义控件，而普通类库则不会有。
 - 特别注意！WPF 或者 UWP 项目迁移成新项目之后，默认新建的 XAML 文件会不可见，每次都需要手工去 csproj 中删掉自动增加的错误的 XAML 编译类型。
+
+### 什么都不用管的第三方迁移方案
+
+感谢小伙伴 [KodamaSakuno (神樹桜乃)](https://github.com/KodamaSakuno) 的指导，我们可以有第三方的解决方案 MSBuild.Sdk.Extras 来更简单地完成迁移。阅读 [MSBuild.Sdk.Extras](/post/use-msbuild-sdk-extras-for-wpf-and-uwp.html) 来了解更多。相比于以上全文的迁移以及带来的劣势，第三方方案并没有发现明显的缺陷，推荐使用！
 
 ---
 
