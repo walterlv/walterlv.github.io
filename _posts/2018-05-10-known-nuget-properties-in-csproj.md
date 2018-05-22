@@ -1,6 +1,7 @@
 ---
 title: "项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦）"
-date: 2018-05-10 21:49:21 +0800
+date_published: 2018-05-10 21:49:21 +0800
+date: 2018-05-22 21:22:47 +0800
 categories: visualstudio nuget csharp dotnet
 ---
 
@@ -66,28 +67,28 @@ NuGet 相关的属性也分为全局属性和项属性两类。不过，我更�
   <PropertyGroup>
 
     <!-- 此程序集不可打包，通常在单元测试项目中设置此属性。 -->
-    <IsPackable>false<IsPackable>
-    <Description><Description>
-    <DevelopmentDependency><DevelopmentDependency>
-    <PackageOutputPath><PackageOutputPath>
+    <IsPackable>false</IsPackable>
+    <Description></Description>
+    <DevelopmentDependency></DevelopmentDependency>
+    <PackageOutputPath></PackageOutputPath>
     <!-- 如果指定为 true，那么还会额外生成 PackageId.symbols.nupkg 包，
          除了原有包的内容外，还额外包含全部的输出文件，以及源码和项目文件，用于调试。 -->
-    <IncludeSymbols>true<IncludeSymbols>
+    <IncludeSymbols>true</IncludeSymbols>
     <!-- 大致与 IncludeSymbols 相同，不过只会额外把 pdb 和 Compile 类型的文件打包到 NuGet 包中。
          如果使用 ProjectReference 引用的项目没有指定 TreatAsPackageReference=false，也会一起被打包。 -->
-    <IncludeSource>true<IncludeSource>
-    <PackageTypes><PackageTypes>
+    <IncludeSource>true</IncludeSource>
+    <PackageTypes></PackageTypes>
     <!-- 如果指定为 true，那么生成的 dll 将拷贝到 NuGet 包的 tools 目录下。 -->
-    <IsTool>true<IsTool>
+    <IsTool>true</IsTool>
     <!-- 如果 lib/**/*dll 中没有发现 dll，NuGet 打包过程中会有警告；
          将这个属性设为 true 可以禁用警告；这在制作纯工具型 NuGet 包是非常有用。 -->
-    <NoPackageAnalysis>true<NoPackageAnalysis>
-    <MinClientVersion><MinClientVersion>
-    <IncludeContentInPack><IncludeContentInPack>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+    <MinClientVersion></MinClientVersion>
+    <IncludeContentInPack></IncludeContentInPack>
     <!-- 默认情况下，项目输出的 dll 会被打包到 lib 目录下；
          设置了此属性后，就可以打包到其他目录下了。此例打包到 task 目录下 -->
-    <BuildOutputTargetFolder>tasks<BuildOutputTargetFolder>
-    <ContentTargetFolders><ContentTargetFolders>
+    <BuildOutputTargetFolder>tasks</BuildOutputTargetFolder>
+    <ContentTargetFolders></ContentTargetFolders>
     
     <!-- 以下属性都是为了使用单独的 nuspec 文件而准备的；如果不使用 nuspec 文件，通常无需设置这些属性。 -->
 
@@ -95,14 +96,14 @@ NuGet 相关的属性也分为全局属性和项属性两类。不过，我更�
          但设置此值为 true 后，就会像 nuget.exe 那样不进行编译了。 -->
     <NoBuild>true</NoBuild>
     <!-- 默认是 true，如果指定为 false，那么项目编译输出的 dll 文件将不会被打包到 NuGet 包中。 -->
-    <IncludeBuildOutput>false<IncludeBuildOutput>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
     <!-- 如果需要额外手工编写 nuspec 文件，那么使用此属性指定绝对或相对路径。 -->
-    <NuspecFile>Walterlv.Demo.nuspec<NuspecFile>
+    <NuspecFile>Walterlv.Demo.nuspec</NuspecFile>
     <!-- 生成的属性可以时 nuspec 文件中的占位符生效，
          例如 <file src="$SampleProperty$" target="src/" />  -->
-    <NuspecProperties>SampleProperty=Program.cs<NuspecProperties>
+    <NuspecProperties>SampleProperty=Program.cs</NuspecProperties>
     <!-- 如果 NuspecFile 使用相对路径，那么就会相对于此路径；通常不需要指定。 -->
-    <NuspecBasePath><NuspecBasePath>
+    <NuspecBasePath></NuspecBasePath>
 
   </PropertyGroup>
 </Project>
