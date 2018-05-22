@@ -32,6 +32,10 @@ permalink: /friends/
 
 - [Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/)
 
+- [Bean.Hsiang - 博客园](http://www.cnblogs.com/BeanHsiang/)
+
+- [Kinfey - CSDN博客](https://blog.csdn.net/kinfey)
+
 - [未来代码研究所](http://blog.atelier39.org/)
 
 - [叛逆者](https://www.zhihu.com/people/minmin.gong/activities)  
@@ -55,6 +59,8 @@ permalink: /friends/
   [葡萄城产品技术社区](http://gcdn.gcpowertools.com.cn/forum.php)
 
 - [shaomeng - 博客园](http://www.cnblogs.com/shaomeng)
+
+- [沨沄的博客 - FoxGeeker Blog](http://ifoxfactory.com/)
 
 - [国内外 Windows 应用商店应用开发者博客收集 - h82258652 - 博客园](http://www.cnblogs.com/h82258652/p/4909957.html)
 
