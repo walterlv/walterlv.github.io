@@ -13,17 +13,18 @@ permalink: /friends/
 - [gandalfliang gandalfliang.github.io](https://gandalfliang.github.io/)  
     对 D3D 有很深的研究
 
-- [离开 wolfleave.github.io](https://wolfleave.github.io/)  
-    Web 大神
-
 - [Nero`s Blog erdao123.gitee.io](http://erdao123.gitee.io/nero/)  
     单元测试造诣很深
 
-- [niuyanjie's blog](http://niuyanjie.gitee.io/blog/)
+- [黄腾霄 huangtengxiao.gitee.io](https://huangtengxiao.gitee.io/)  
+    可以了解更多关于单元测试 Mock 框架的内容
+
+- [离开 wolfleave.github.io](https://wolfleave.github.io/)  
+    Web 大神
 
 - [晒太阳的猫 jgrass.cc](http://jgrass.cc/)
 
-- [黄腾霄 huangtengxiao.gitee.io](https://huangtengxiao.gitee.io/)
+- [niuyanjie's blog](http://niuyanjie.gitee.io/blog/)
 
 - [郭施鑫 frendguo.top](http://frendguo.top/)  
     UWP 之家的开发者之一
