@@ -32,7 +32,8 @@ permalink: /friends/
 
 - [Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/)
 
-- [Bean.Hsiang - 博客园](http://www.cnblogs.com/BeanHsiang/)
+- [Bean.Hsiang - 博客园](http://www.cnblogs.com/BeanHsiang/)  
+    如果你想学习机器学习 ML.NET，他真的很接地气
 
 - [Kinfey - CSDN博客](https://blog.csdn.net/kinfey)
 
