@@ -1,7 +1,7 @@
 ---
 title: "WPF 绘制对齐像素的清晰显示的线条"
 date_published: 2017-12-12 21:49:53 +0800
-date: 2018-02-20 06:50:53 +0800
+date: 2018-05-25 12:51:58 +0800
 categories: wpf
 ---
 
@@ -11,7 +11,7 @@ categories: wpf
 
 ---
 
-![像素对齐](/static/posts/2017-12-12-19-37-12.png)
+[![像素对齐](/static/posts/2018-05-25-12-51-28.png)](https://r302.cc/B99pXz)
 
 <p id="toc"></p>
 
