@@ -1,7 +1,7 @@
 ---
 title: "生成代码，从 T 到 T1, T2, Tn —— 自动生成多个类型的泛型"
 date_published: 2018-01-31 13:38:11 +0800
-date: 2018-03-04 22:25:43 +0800
+date: 2018-05-25 20:33:37 +0800
 categories: csharp dotnet visualstudio
 ---
 
@@ -159,7 +159,7 @@ $@"//---------------------------------------------------------------------------
         {
             var toolName = _toolName;
             var toolVersion = "1.0";
-            var generatedattribute = $"[System.CodeDom.Compiler.GeneratedCode(\"{toolName}\", \"{toolVersion}\")]";
+            var GeneratedAttribute = $"[System.CodeDom.Compiler.GeneratedCode(\"{toolName}\", \"{toolVersion}\")]";
 
             var content = _genericTemplate
                 // 替换泛型。
@@ -172,7 +172,6 @@ $@"//---------------------------------------------------------------------------
                 .Replace(", t)", FromTemplate(", {0})", "t{n}", ", ", genericCount))
                 .Replace("return (t, ", FromTemplate("return ({0}, ", "t{n}", ", ", genericCount))
                 .Replace("<T>", FromTemplate("<{0}>", "T{n}", ", ", genericCount))
-                .Replace("{T}", FromTemplate("{{{0}}}", "T{n}", ", ", genericCount))
                 .Replace("(T value)", FromTemplate("(({0}) value)", "T{n}", ", ", genericCount))
                 .Replace("(T t)", FromTemplate("({0})", "T{n} t{n}", ", ", genericCount))
                 .Replace("(t)", FromTemplate("({0})", "t{n}", ", ", genericCount))
@@ -180,15 +179,16 @@ $@"//---------------------------------------------------------------------------
                 .Replace(" T ", FromTemplate(" ({0}) ", "T{n}", ", ", genericCount))
                 .Replace(" t;", FromTemplate(" ({0});", "t{n}", ", ", genericCount))
                 // 生成 [GeneratedCode]。
-                .Replace("    public interface ", $"    {generatedattribute}{NewLine}    public interface ")
-                .Replace("    public class ", $"    {generatedattribute}{NewLine}    public class ");
+                .Replace("    public interface ", $"    {GeneratedAttribute}{NewLine}    public interface ")
+                .Replace("    public class ", $"    {GeneratedAttribute}{NewLine}    public class ")
+                .Replace("    public sealed class ", $"    {GeneratedAttribute}{NewLine}    public sealed class ");
             return GeneratedHeader + NewLine + content.Trim() + NewLine + GeneratedFooter;
         }
 
-        private static string FromTemplate(string template, string part, string seperator, int count)
+        private static string FromTemplate(string template, string part, string separator, int count)
         {
             return string.Format(template,
-                string.Join(seperator, Enumerable.Range(1, count).Select(x => part.Replace("{n}", x.ToString()))));
+                string.Join(separator, Enumerable.Range(1, count).Select(x => part.Replace("{n}", x.ToString()))));
         }
     }
 }
