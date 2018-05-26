@@ -1,6 +1,7 @@
 ---
 title: "如何让 .NET Core 命令行程序接受密码的输入而不显示密码明文"
-date: 2018-05-26 16:51:02 +0800
+date_published: 2018-05-26 16:51:02 +0800
+date: 2018-05-26 22:26:12 +0800
 categories: dotnet
 ---
 
@@ -92,9 +93,44 @@ private static string ConvertToString(SecureString value)
 }
 ```
 
+也可以间接使用 `NetworkCredential` 完成：
+
+```csharp
+private static string ConvertToString(SecureString secureString)
+{
+    return new NetworkCredential(string.Empty, secureString).Password;
+}
+```
+
+因为 `NetworkCredential` 的内部其实也是使用类似的方式获取到字符串的（详见 [SecureStringHelper.CreateString - Reference Source](https://referencesource.microsoft.com/#System/net/System/Net/UnsafeNativeMethods.cs,182c88988a485cda,references)）。
+
+```csharp
+internal static string CreateString(SecureString secureString)
+{
+    string plainString;
+    IntPtr bstr = IntPtr.Zero;
+
+    if (secureString == null || secureString.Length == 0)
+        return String.Empty;
+
+    try
+    {
+        bstr = Marshal.SecureStringToBSTR(secureString);
+        plainString = Marshal.PtrToStringBSTR(bstr);
+    }
+    finally
+    {
+        if (bstr != IntPtr.Zero)
+            Marshal.ZeroFreeBSTR(bstr);
+    }
+    return plainString;
+}
+```
+
 ---
 
 #### 参考资料
 
 - [c# - Password masking console application - Stack Overflow](https://stackoverflow.com/questions/3404421/password-masking-console-application?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
 - [c# - How to convert SecureString to System.String? - Stack Overflow](https://stackoverflow.com/questions/818704/how-to-convert-securestring-to-system-string?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
+- [SecureStringHelper.CreateString - Reference Source](https://referencesource.microsoft.com/#System/net/System/Net/UnsafeNativeMethods.cs,182c88988a485cda,references)
