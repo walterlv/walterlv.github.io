@@ -15,7 +15,7 @@ GEM
       http_parser.rb (~> 0.6.0)
     eventmachine (1.2.7)
     eventmachine (1.2.7-x64-mingw32)
-    faraday (0.15.1)
+    faraday (0.15.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.23)
     ffi (1.9.23-x64-mingw32)
