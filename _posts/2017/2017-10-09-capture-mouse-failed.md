@@ -13,7 +13,7 @@ description: 了解 Mouse.Capture 和 Stylus.Capture 方法的调用可能返回
 
 在调试一个项目代码的时候，我就发现了这种失败，观察返回值确实是 `false`，然而为什么呢？
 
-查看 [.Net Framework 的源码](http://referencesource.microsoft.com/#PresentationCore/Core/CSharp/System/Windows/Input/Mouse.cs,679caaf70ff0c397) 我们发现，`CaptureMouse` 最终调到了 `Mouse.Capture` 方法：
+查看 [.NET Framework 的源码](http://referencesource.microsoft.com/#PresentationCore/Core/CSharp/System/Windows/Input/Mouse.cs,679caaf70ff0c397) 我们发现，`CaptureMouse` 最终调到了 `Mouse.Capture` 方法：
 
 ```csharp
 public static bool Capture(IInputElement element)

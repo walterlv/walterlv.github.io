@@ -41,7 +41,7 @@ description:
 
 ### 调查
 
-.Net Standard 统一了 `ObservableCollection<T>` 的 API，所以 UWP 和 WPF 这些基本的 API 是一样的。由于 .Net Framework 发布了源代码，.Net Core 直接开源，所以这两者的代码我们都能翻出来。
+.Net Standard 统一了 `ObservableCollection<T>` 的 API，所以 UWP 和 WPF 这些基本的 API 是一样的。由于 .NET Framework 发布了源代码，.Net Core 直接开源，所以这两者的代码我们都能翻出来。
 
 这是 [Net Framework 版的 ObservableCollection<T>.MoveItem](http://referencesource.microsoft.com/#System/compmod/system/collections/objectmodel/observablecollection.cs,270a83d222656b02)
 

@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "试图在 Windows 10 上安装 .Net Framework 3.5 时提示错误 0x800F081F"
+title: "试图在 Windows 10 上安装 .NET Framework 3.5 时提示错误 0x800F081F"
 date: 2017-09-23 00:15:46 +0800
 categories: dotnet
 permalink: /dotnet/2017/09/23/install-dotnet35-on-windows-10.html
 keywords: dotnet 0x800F081F windows 10
-description: 如果在 Windows 10 上在线安装 .Net Framework 3.5 时提示错误 0x800F081F，可以考虑修复 Windows Update 服务后重试。
+description: 如果在 Windows 10 上在线安装 .NET Framework 3.5 时提示错误 0x800F081F，可以考虑修复 Windows Update 服务后重试。
 ---
 
-说到在 Windows 10 上安装 .Net Framework 3.5，想必已经没什么可以多说的了，直接去“启用或关闭 Windows 功能”界面给“.NET Framework 3.5”打个勾就好了。
+说到在 Windows 10 上安装 .NET Framework 3.5，想必已经没什么可以多说的了，直接去“启用或关闭 Windows 功能”界面给“.NET Framework 3.5”打个勾就好了。
 
 但今天帮助一位朋友安装时却在上述步骤之后出现了错误：0x800F081F。
 
@@ -16,7 +16,7 @@ description: 如果在 Windows 10 上在线安装 .Net Framework 3.5 时提示�
 
 正常安装步骤：
 
-![在 Windows 10 上安装 .Net Framework 3.5](/static/posts/2017-09-22-23-53-09.png)
+![在 Windows 10 上安装 .NET Framework 3.5](/static/posts/2017-09-22-23-53-09.png)
 
 错误：
 
@@ -50,6 +50,6 @@ DISM /Online /Enable-Feature /FeatureName:NetFx3 /All /LimitAccess /Source:E:\so
 
 
 #### 参考资料
-- [How to instal .Net Framework 3.5 on Windows 10 - Microsoft Community](https://answers.microsoft.com/en-us/insider/forum/insider_wintp-insider_install/how-to-instal-net-framework-35-on-windows-10/450b3ba6-4d19-45ae-840e-78519f36d7a4)
+- [How to instal .NET Framework 3.5 on Windows 10 - Microsoft Community](https://answers.microsoft.com/en-us/insider/forum/insider_wintp-insider_install/how-to-instal-net-framework-35-on-windows-10/450b3ba6-4d19-45ae-840e-78519f36d7a4)
 - [.NET Framework 3.5 installation error: 0x800F0906, 0x800F081F, 0x800F0907](https://support.microsoft.com/en-us/help/2734782/net-framework-3-5-installation-error-0x800f0906--0x800f081f--0x800f09)
 - [Net 3.5 framework, cannot install 0x800F081F. Solved - Windows 10 Forums](https://www.tenforums.com/software-apps/16594-net-3-5-framework-cannot-install-0x800f081f.html)

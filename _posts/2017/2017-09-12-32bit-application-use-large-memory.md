@@ -56,7 +56,7 @@ editbin 改之前和改之后用 dumpbin 查看我们的程序头信息，得到
 
 #### 编译成 AnyCPU (Prefer 32-bit)
 
-这是本文更推荐的做法，也是最简单的做法。方法是打开入口程序集的属性页，将“目标平台”选为“AnyCPU”，然后勾选“首选 32 位”。需要注意的是，这种生成方式是 .Net Framework 4.5 及以上版本才提供的。
+这是本文更推荐的做法，也是最简单的做法。方法是打开入口程序集的属性页，将“目标平台”选为“AnyCPU”，然后勾选“首选 32 位”。需要注意的是，这种生成方式是 .NET Framework 4.5 及以上版本才提供的。
 
 ![AnyCPU (Prefer 32-bit)](/static/posts/2017-09-12-anycpu-with-32bit-preferred-build.png)
 

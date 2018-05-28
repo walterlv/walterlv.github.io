@@ -9,7 +9,7 @@ keywords: dotnet dotnet dispatcher Invoke BeginInvoke InvokeAsync
 description: 了解 Dispatcher.BeginInvoke 和 Dispatcher.InvokeAsync 的不同之处，并且学习它们的工作原理。
 ---
 
-深耕 WPF 开发的各位程序员大大们一定避不开使用 Dispatcher。跨线程访问 UI 当然免不了用到它，将某个任务延迟到当前任务之后执行也会用到它。Dispatcher.Invoke、Dispatcher.BeginInvoke 是过去大家经常使用的方法，而 .Net Framework 4.5 中微软为我们带来了 Dispatcher.InvokeAsync 方法，它和前面两个有何不同？
+深耕 WPF 开发的各位程序员大大们一定避不开使用 Dispatcher。跨线程访问 UI 当然免不了用到它，将某个任务延迟到当前任务之后执行也会用到它。Dispatcher.Invoke、Dispatcher.BeginInvoke 是过去大家经常使用的方法，而 .NET Framework 4.5 中微软为我们带来了 Dispatcher.InvokeAsync 方法，它和前面两个有何不同？
 
 阅读本文将更深入地了解 Dispatcher 的工作机制。
 
@@ -22,9 +22,9 @@ description: 了解 Dispatcher.BeginInvoke 和 Dispatcher.InvokeAsync 的不同�
 
 ### 回顾老旧的 BeginInvoke，看看新的 InvokeAsync
 
-微软自 .Net Framework 3.0 为我们引入了 `Dispatcher` 之后，`BeginInvoke` 方法就已存在。不过，看这名字的 `Begin` 前缀，有没有一种年代感？没错！这是微软在 .Net Framework 1.1 时代就推出的 `Begin`/`End` 异步编程模型（APM，[Asynchronous Programming Model](https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm)）。虽说 `Dispatcher.BeginInvoke` 并不完全按照 APM 模型来实现（毕竟没有对应的 `End`，也没有返回 `IAsyncResult`），但这个类型毕竟也是做线程相关的事情，而且这个方法的签名明显还带着那个年代的影子。不止名字上带着 `Begin` 表示异步的执行，而且参数列表中还存在着 `Delegate` 和 `object` 这样古老的类型。要知道，现代化的方法可是 `Action`/`Func` 加泛型啊！
+微软自 .NET Framework 3.0 为我们引入了 `Dispatcher` 之后，`BeginInvoke` 方法就已存在。不过，看这名字的 `Begin` 前缀，有没有一种年代感？没错！这是微软在 .NET Framework 1.1 时代就推出的 `Begin`/`End` 异步编程模型（APM，[Asynchronous Programming Model](https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm)）。虽说 `Dispatcher.BeginInvoke` 并不完全按照 APM 模型来实现（毕竟没有对应的 `End`，也没有返回 `IAsyncResult`），但这个类型毕竟也是做线程相关的事情，而且这个方法的签名明显还带着那个年代的影子。不止名字上带着 `Begin` 表示异步的执行，而且参数列表中还存在着 `Delegate` 和 `object` 这样古老的类型。要知道，现代化的方法可是 `Action`/`Func` 加泛型啊！
 
-大家应该还对 .Net Framework 4.5 带给我们的重磅更新——`async`/`await` 异步模式感到兴奋，因为它让我们的异步代码变得跟同步代码一样写了。这是微软新推荐的异步编程模式，叫做 TAP（[Task-based Asynchronous Pattern](https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)）。既然异步编程模式都换了，同为线程服务的 `Dispatcher.BeginInvoke` 怎能不改呢？于是，微软真的改了，就是从 .Net Framework 4.5 版本开始。
+大家应该还对 .NET Framework 4.5 带给我们的重磅更新——`async`/`await` 异步模式感到兴奋，因为它让我们的异步代码变得跟同步代码一样写了。这是微软新推荐的异步编程模式，叫做 TAP（[Task-based Asynchronous Pattern](https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)）。既然异步编程模式都换了，同为线程服务的 `Dispatcher.BeginInvoke` 怎能不改呢？于是，微软真的改了，就是从 .NET Framework 4.5 版本开始。
 
 **它叫做——`Dispatcher.InvokeAsync`。**
 
@@ -112,7 +112,7 @@ public DispatcherOperation InvokeAsync(Action callback, DispatcherPriority prior
 
 你发现了什么？这与那个被遗弃的 `LegacyBeginInvokeImpl` 长得非常像。不，就是一模一样！你总不能说参数名称不同也要算吧……甚至……返回值类型也是一样的。
 
-既然这样，我们总算是明白微软到底在做些什么了。其实微软在 .Net Framework 4.5 中已经把 `BeginInvoke` 的实现改造成了 TAP 异步模式，但方法名字和老旧的参数列表却始终是微软的一块心病，于是痛下决心新增了 6 个更加现代的方法免得产生兼容性问题。不过由于里面的实现一模一样，并没有额外带来什么 BUG，所以微软也不好意思标记为 `[Obsolete]` 已过时了。
+既然这样，我们总算是明白微软到底在做些什么了。其实微软在 .NET Framework 4.5 中已经把 `BeginInvoke` 的实现改造成了 TAP 异步模式，但方法名字和老旧的参数列表却始终是微软的一块心病，于是痛下决心新增了 6 个更加现代的方法免得产生兼容性问题。不过由于里面的实现一模一样，并没有额外带来什么 BUG，所以微软也不好意思标记为 `[Obsolete]` 已过时了。
 
 既然两个方法一样，后文我也就没必要两个都说了，一切以新款的 `InvokeAsync` 为主。
 
@@ -208,7 +208,7 @@ public DispatcherOperationStatus Wait(TimeSpan timeout)
 
 ### 总结
 
-1. 进入了 .Net Framework 4.5 及以上的开发者们，建议使用 `InvokeAsync` 代替 `BeginInvoke`；
+1. 进入了 .NET Framework 4.5 及以上的开发者们，建议使用 `InvokeAsync` 代替 `BeginInvoke`；
 1. `Dispatcher` 通过创建一个隐藏的消息窗口来让一个个 `Invoke` 到此线程的任务按照优先级执行；
 1. `Invoke` 使用 `PushFrame` 做到了不阻塞 UI 线程的等待。
 

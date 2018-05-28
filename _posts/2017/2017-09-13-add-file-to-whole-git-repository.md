@@ -8,7 +8,7 @@ keywords: git
 description: 提交了很多次之后，突然发现一开始就忘记提交了某个重要文件（比如 .gitignore），本文将教你如何将这个文件补上。
 ---
 
-微软在 [Reference Source](https://referencesource.microsoft.com/) 里开放了 .Net Framework 多个版本的源码。为了更方便地阅读这些源码，我们把每一个版本都下载下来后按顺序提交到 git 仓库中。
+微软在 [Reference Source](https://referencesource.microsoft.com/) 里开放了 .NET Framework 多个版本的源码。为了更方便地阅读这些源码，我们把每一个版本都下载下来后按顺序提交到 git 仓库中。
 
 但是！！！居然忘了在第一次提交之前放一个 .gitignore 文件！如果没有这个文件，那我们每次打开源码查看都会带来一大堆不明所以的修改文件。那么多的源码，绝对不会想重新挨个版本再提交一次。于是找到了一条可以解决这个问题的 git 命令。
 

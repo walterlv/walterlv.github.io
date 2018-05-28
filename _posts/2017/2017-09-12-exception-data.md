@@ -30,7 +30,7 @@ public virtual IDictionary Data {
 
 *别问我为什么把括号放最右边，那是微软自己写的源码* [点击这里查看](https://referencesource.microsoft.com/#mscorlib/system/exception.cs,150)
 
-最近在调试 .Net Framework 内部代码的异常时就发现微软就是使用这个属性储存异常的更多细节的：
+最近在调试 .NET Framework 内部代码的异常时就发现微软就是使用这个属性储存异常的更多细节的：
 
 ```csharp
 internal void RegisterStylusDeviceCore(StylusDevice stylusDevice)
@@ -52,6 +52,6 @@ internal void RegisterStylusDeviceCore(StylusDevice stylusDevice)
 }
 ```
 
-*以上代码出自 .Net Framework 4.6 的* `System.Windows.Input.StylusLogic` *类型，https://referencesource.microsoft.com 里 .Net Framework 4.7 中找不到。*
+*以上代码出自 .NET Framework 4.6 的* `System.Windows.Input.StylusLogic` *类型，https://referencesource.microsoft.com 里 .NET Framework 4.7 中找不到。*
 
 需要注意的是，`Exception` 的 `ToString()` 方法并不会把这个字典转成字符串的任意一个部分；所以，如果需要在日志中记录程序中全局捕获的异常，需要自己去遍历异常中的 `Data` 的每一项。不过，为了解决掉更多的程序错误，我们记录日志的时候不已经写了更多的信息（比如 `InnerException`）了吗？

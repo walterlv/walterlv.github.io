@@ -7,13 +7,13 @@ permalink: /post/dotnet/2017/09/30/app-context.html
 keywords: dotnet AppContext
 ---
 
-还记得微软在 [Mitigation: Pointer-based Touch and Stylus Support](https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/mitigation-pointer-based-touch-and-stylus-support) 中告诉大家如何在 .Net Framework 4.7 中迁移 WPF 的触控到基于 Pointer 消息？记得关键的 `<AppContextSwitchOverrides value="Switch.System.Windows.Input.Stylus.EnablePointerSupport=true"/>` 这一句吗？
+还记得微软在 [Mitigation: Pointer-based Touch and Stylus Support](https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/mitigation-pointer-based-touch-and-stylus-support) 中告诉大家如何在 .NET Framework 4.7 中迁移 WPF 的触控到基于 Pointer 消息？记得关键的 `<AppContextSwitchOverrides value="Switch.System.Windows.Input.Stylus.EnablePointerSupport=true"/>` 这一句吗？
 
 有没有好奇为何这一句话能用来控制微软基础类库中某一块功能的行为呢？阅读本文将了解微软为开发者提供的一套类库更新的兼容性解决方案——`AppContext`。
 
 ---
 
-这是微软自 .Net Framework 4.6 开始为开发者们提供的方案。
+这是微软自 .NET Framework 4.6 开始为开发者们提供的方案。
 
 比如你打算为你的类库增加了一个功能——指定一个文件夹名称用于存放文件。你写出了这样的代码：
 
@@ -125,4 +125,4 @@ AppContext.SetSwitch(string, bool);
 
 ### 一点坑
 
-在从 .Net Framework 4.6 升级到 4.7 后，注册表的方式貌似失效了。参考：[FIX: AppContext switch overrides are not applied to applications that run on the .NET Framework 4.7](https://support.microsoft.com/en-us/help/4036977/fix-appcontext-switch-overrides-are-not-applied-to-applications-that-r)
+在从 .NET Framework 4.6 升级到 4.7 后，注册表的方式貌似失效了。参考：[FIX: AppContext switch overrides are not applied to applications that run on the .NET Framework 4.7](https://support.microsoft.com/en-us/help/4036977/fix-appcontext-switch-overrides-are-not-applied-to-applications-that-r)

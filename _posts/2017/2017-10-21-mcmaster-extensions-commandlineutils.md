@@ -142,7 +142,7 @@ public sealed class SampleTask : CommandTask
 
 ### 支持的平台
 
-支持 .Net Standard 1.3，这意味着 .Net Core 可以使用，.Net Framework 4.5.1 及以上即可使用。这意味着可以很随意地跨全平台。
+支持 .Net Standard 1.3，这意味着 .Net Core 可以使用，.NET Framework 4.5.1 及以上即可使用。这意味着可以很随意地跨全平台。
 
 ---
 
