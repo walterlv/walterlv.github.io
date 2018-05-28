@@ -1,7 +1,7 @@
 ---
 title: "项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦）"
 date_published: 2018-05-10 21:49:21 +0800
-date: 2018-05-22 21:22:47 +0800
+date: 2018-05-28 16:50:03 +0800
 categories: visualstudio nuget csharp dotnet
 ---
 
@@ -70,6 +70,7 @@ NuGet 相关的属性也分为全局属性和项属性两类。不过，我更�
     <IsPackable>false</IsPackable>
     <Description></Description>
     <DevelopmentDependency></DevelopmentDependency>
+    <!-- 单独指定 NuGet 包应该输出到哪个目录（可以跟项目文件的输出目录不一样）。 -->
     <PackageOutputPath></PackageOutputPath>
     <!-- 如果指定为 true，那么还会额外生成 PackageId.symbols.nupkg 包，
          除了原有包的内容外，还额外包含全部的输出文件，以及源码和项目文件，用于调试。 -->
