@@ -1,6 +1,7 @@
 ---
 title: "流畅设计 Fluent Design System 中的光照效果 RevealBrush，WPF 也能模拟实现啦！"
-date: 2018-04-05 16:34:42 +0800
+date_published: 2018-04-05 16:34:42 +0800
+date: 2018-05-29 20:56:39 +0800
 categories: wpf xaml uwp
 ---
 
@@ -86,7 +87,7 @@ namespace Walterlv.Demo
             // 如果没有服务，则直接返回。
             if (!(serviceProvider.GetService(typeof(IProvideValueTarget)) is IProvideValueTarget service)) return null;
             // MarkupExtension 在样式模板中，返回 this 以延迟提供值。
-            if (service.TargetObject.ToString().EndsWith("SharedDp")) return this;
+            if (service.TargetObject.GetType().Name.EndsWith("SharedDp")) return this;
             if (!(service.TargetObject is FrameworkElement element)) return this;
             if (DesignerProperties.GetIsInDesignMode(element)) return new SolidColorBrush(FallbackColor);
 
