@@ -15,6 +15,9 @@ categories: post
 - Castle
 
 ### About to Write
+
+- Fastest Gaussian Blur 
+    - [Fastest Gaussian Blur (in linear time)](http://blog.ivank.net/fastest-gaussian-blur.html)
     
 - 渲染
     - [InkDesktopHost class (Windows)](https://msdn.microsoft.com/library/windows/desktop/mt622161.aspx)
