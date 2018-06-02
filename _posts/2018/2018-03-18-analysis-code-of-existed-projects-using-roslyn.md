@@ -1,8 +1,8 @@
 ---
 title: "Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码"
 date_published: 2018-03-18 20:45:22 +0800
-date: 2018-05-25 19:56:26 +0800
-categories: visualstudio dotnet csharp
+date: 2018-06-02 09:26:14 +0800
+categories: visualstudio dotnet csharp roslyn
 ---
 
 Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。以至于我们只需要编写很少量的代码便能够分析我们的项目文件。

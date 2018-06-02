@@ -1,7 +1,8 @@
 ---
 title: "Roslyn 入门：使用 .NET Core 版本的 Roslyn 编译并执行跨平台的静态的源码"
-date: 2018-05-25 21:24:08 +0800
-categories: visualstudio dotnet csharp
+date_published: 2018-05-25 21:24:08 +0800
+date: 2018-06-02 09:26:33 +0800
+categories: visualstudio dotnet csharp roslyn
 ---
 
 Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。以至于我们只需要编写很少量的代码便能够编译并执行我们的代码。

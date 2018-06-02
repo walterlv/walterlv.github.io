@@ -1,8 +1,8 @@
 ---
 title: "Roslyn 入门：使用 Visual Studio 的语法可视化（Syntax Visualizer）窗格查看和了解代码的语法树"
 date_published: 2018-03-18 20:50:09 +0800
-date: 2018-05-25 20:01:31 +0800
-categories: visualstudio dotnet csharp
+date: 2018-06-02 09:26:06 +0800
+categories: visualstudio dotnet csharp roslyn
 ---
 
 使用 Visual Studio 提供的 Syntax Visualizer，我们可以实时看到一个代码文件中的语法树。这对我们基于 Roslyn 编写静态分析和修改工具非常有帮助。本文将介绍如何安装它和使用它。
