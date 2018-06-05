@@ -1,6 +1,7 @@
 ---
 title: "关闭模态窗口后，父窗口居然跑到了其他窗口的后面"
-date: 2018-02-05 13:58:49 +0800
+date_published: 2018-02-05 13:58:49 +0800
+date: 2018-06-05 10:55:19 +0800
 categories: dotnet csharp windows
 ---
 
@@ -74,4 +75,4 @@ public ChildModalWindow()
 
 #### 参考资料
 
-- 《伟大的产品 —— Windows 进化启示录》by 微软软件工程师 Raymond Chen
+- 《伟大的产品：Windows 进化启示录》by 微软软件工程师 Raymond Chen (2016 年 3 月第 1 版，第 112 页)
