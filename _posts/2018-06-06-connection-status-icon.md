@@ -56,3 +56,4 @@ categories: windows
 - [NLM_CONNECTIVITY enumeration (Windows)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa370795%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396)
 - [msftconnecttest.com - Microsoft Community](https://answers.microsoft.com/en-us/windows/forum/windows_10-networking/msftconnecttestcom/54cd5060-dbd3-4c82-b958-1a8706184a88?auth=1)
 - [http://www.msftconnecttest.com/redirect](https://social.technet.microsoft.com/Forums/windows/en-US/5a696f31-04a8-4852-8050-780208263a0c/httpwwwmsftconnecttestcomredirect?forum=win10itpronetworking)
+- [Appendix K: Network Connectivity Status Indicator and Resulting Internet Communication in Windows Vista - Microsoft Docs](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-vista/cc766017(v=ws.10))
