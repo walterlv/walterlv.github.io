@@ -1,7 +1,7 @@
 ---
 title: "理解 C# 项目 csproj 文件格式的本质和编译流程"
 date_published: 2018-05-10 08:13:43 +0800
-data: 2018-05-20 19:01:45 +0800
+data: 2018-06-11 20:17:44 +0800
 categories: visualstudio
 ---
 
@@ -97,10 +97,10 @@ xml 声明部分完全没有在此解释的必要了，为兼容性提供了方�
 
 > ```xml
 > <ItemGroup>
->   <Foo>walterlv is a 逗比</Foo>
->   <Foo>walterlv is a 天才</Foo>
->   <Foo>天才向左，逗比向右</Foo>
->   <Foo>逗比属性额外加成</Foo>
+>   <Foo Include="walterlv is a 逗比" />
+>   <Foo Include="walterlv is a 天才" />
+>   <Foo Include="天才向左，逗比向右" />
+>   <Foo Include="逗比属性额外加成" />
 > </ItemGroup>
 > ```
 
