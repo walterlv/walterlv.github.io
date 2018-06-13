@@ -18,7 +18,7 @@ C#程序中的 Dispose 方法，一旦被调用了该方法的对象，虽然还
 
 毫无例外地，如果我们的类型使用到了非托管资源，或者需要显式释放的托管资源，那么，就需要让类型继承接口 `IDisposable`。这相当于是告诉调用者，该类型是需要显式释放资源的，你需要调用我的 `Dispose` 方法。
 
-不过，这一切并不这么简单，一个标准的继承了 IDisposable 接口的类型应该像下面这样去实现。这种实现我们称之为 Dispose 模式：
+不过，这一切并不这么简单，一个标准的继承了 `IDisposable` 接口的类型应该像下面这样去实现。这种实现我们称之为 `Dispose` 模式：
 
 ```csharp
 public class DisposableObject : IDisposable
