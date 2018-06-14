@@ -16,6 +16,9 @@ categories: post
 
 ### About to Write
 
+- Remote Session
+    - [Connect devices through remote sessions - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/remote-sessions)
+
 - Fastest Gaussian Blur 
     - [Fastest Gaussian Blur (in linear time)](http://blog.ivank.net/fastest-gaussian-blur.html)
     
