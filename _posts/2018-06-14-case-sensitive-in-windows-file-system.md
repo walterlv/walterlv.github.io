@@ -1,6 +1,7 @@
 ---
 title: "Windows 10 四月更新，文件夹名称也能区分大小写？"
-date: 2018-06-14 08:02:24 +0800
+date_published: 2018-06-14 08:02:24 +0800
+date: 2018-06-14 09:08:15 +0800
 categories: windows
 ---
 
@@ -30,7 +31,7 @@ fsutil.exe file SetCaseSensitiveInfo C:\Users\walterlv\GitDemo enable
 fsutil.exe file SetCaseSensitiveInfo C:\Users\walterlv\GitDemo disable
 ```
 
-![](/static/posts/2018-06-14-07-55-53.png)
+![](/static/posts/2018-06-14-09-07-45.png)
 
 看！以上就是在 Windows 10 系统级开启了大小写敏感的我的一个 Git 仓库，这下可以让跨平台的 Git 工作起来在各个系统都一样了。
 
