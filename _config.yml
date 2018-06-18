@@ -63,8 +63,8 @@ leancloud:
 
 # Post Settings
 excerpt_separator: ---
-paginate: 16
-per_page: 16
+paginate: 17
+per_page: 17
 paginate_path: "/blog/page:num/"
 collections:
   articles:
