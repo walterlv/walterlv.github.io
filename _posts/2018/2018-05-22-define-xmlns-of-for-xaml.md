@@ -1,6 +1,7 @@
 ---
-title: "让你编写的控件库在 XAML 中有一个漂亮的命名空间（xmlns）和命名空间前缀"
-date: 2018-05-22 21:21:22 +0800
+title: "让你编写的控件库在 XAML 中有一个统一的漂亮的命名空间（xmlns）和命名空间前缀"
+date_published: 2018-05-22 21:21:22 +0800
+date: 2018-06-21 07:53:31 +0800
 categories: dotnet xaml wpf
 ---
 
@@ -39,6 +40,15 @@ categories: dotnet xaml wpf
     </Grid>
 </UserControl>
 ```
+
+当然，好处不止是更清爽，还有更多，总结起来是这三个：
+
+1. 利于 API 的升级  
+    例如你写了一个库提供了一些可以在 XAML 中使用的控件，但是后来随着功能的强大你把程序集拆分成了多个。这时，如果没有这样的命名空间定义，那就意味着使用你的库的大量开发者需要手工修改 XAML 中的命名空间前缀定义。而使用了这样的命名空间定义的方法后，开发者只需要重新编译一遍即可。
+1. 简化命名空间前缀  
+    如果你的库有多个命名空间下都提供控件，那么可以使用命名空间定义将这些 C#/.NET 命名空间都映射到同一个 url 下，使得 XAML 中的命名空间声明可以更少。
+1. 更加清晰的命名空间声明 
+    可以通过将命名空间前缀定义得更加清晰，更有效地利用每一个字符，而不是一些结构化的 `clr-namespace` 和 `assembly`。
 
 ### 这是怎么做到的呢？
 
@@ -88,3 +98,14 @@ using System.Windows.Markup;
 ```
 
 这在项目内为一些几乎侵染全部代码的标记扩展是很棒的一波语法糖。例如——自己实现的本地化标记扩展。
+
+### 一些限制
+
+值得注意的是，XAML 命名空间的定义只会在外部程序集生效。这是说，如果你在 A 程序集中定义了命名空间，那么只有引用了 A 程序集的 B 或者 C 才可以使用到新定义的命名空间；A 程序集自身是没有办法使用此命名空间的。
+
+---
+
+### 参考资料
+
+- [wpf - How to make XmlnsDefinition work on the local assembly? - Stack Overflow](https://stackoverflow.com/questions/2760504/how-to-make-xmlnsdefinition-work-on-the-local-assembly)
+- [XmlnsDefinition doesn't work in the same assembly](https://social.msdn.microsoft.com/Forums/vstudio/en-US/7e7a032a-dad3-4e02-9e5a-d73e346b75ed/xmlnsdefinition-doesnt-work-in-the-same-assembly)
