@@ -1,7 +1,7 @@
 ---
 title: "自动将 NuGet 包的引用方式从 packages.config 升级为 PackageReference"
 date: 2018-04-24 18:03:20 +0800
-categories: dotnet visualstudio nuget
+categories: dotnet visualstudio nuget msbuild
 ---
 
 在前段时间我写了一篇迁移 csproj 格式的博客 [将 WPF、UWP 以及其他各种类型的旧样式的 csproj 文件迁移成新样式的 csproj 文件](/post/introduce-new-style-csproj-into-net-framework.html)，不过全过程是手工进行的，而且到最后处理 XAML 问题也非常头疼。

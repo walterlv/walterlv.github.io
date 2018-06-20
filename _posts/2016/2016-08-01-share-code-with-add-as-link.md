@@ -2,7 +2,7 @@
 layout: post
 title:  "使用链接共享 Visual Studio 中的代码文件"
 date:   2016-08-01 11:04:42 +0800
-categories: visualstudio
+categories: visualstudio msbuild
 permalink: /visualstudio/2016/08/01/share-code-with-add-as-link.html
 ---
 

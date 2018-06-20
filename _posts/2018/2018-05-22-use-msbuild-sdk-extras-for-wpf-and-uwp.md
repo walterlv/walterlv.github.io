@@ -1,7 +1,7 @@
 ---
 title: "新 csproj 对 WPF/UWP 支持不太好？有第三方 SDK 可以用！MSBuild.Sdk.Extras"
 date: 2018-05-22 15:07:22 +0800
-categories: visualstudio dotnet csharp
+categories: visualstudio dotnet csharp msbuild
 ---
 
 自从微软推出 .NET Core 以来，新的项目文件格式以其优秀的可扩展性正吸引着更多项目采用。然而——微软官方的 WPF/UWP 项目模板依然还在采用旧的 csproj 格式！

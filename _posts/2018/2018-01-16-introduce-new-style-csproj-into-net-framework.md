@@ -2,7 +2,7 @@
 title: "将 WPF、UWP 以及其他各种类型的旧样式的 csproj 文件迁移成新样式的 csproj 文件"
 date_published: 2018-01-16 00:04:28 +0800
 date: 2018-05-22 14:24:25 +0800
-categories: visualstudio
+categories: visualstudio msbuild
 ---
 
 写过 .NET Standard 类库或者 .NET Core 程序的你一定非常喜欢微软为他们新开发的项目文件（对于 C#，则是 csproj 文件）。这种文件非常简洁，组织一个庞大的项目也只需要聊聊二三十行；也非常易读，你可以轻易地修改其代码而不用经过过多的提前学习。当然，微软曾经尝试过用 project.json 来组织项目文件，不过只有短短的预览版阶段用过，此后就废弃了。

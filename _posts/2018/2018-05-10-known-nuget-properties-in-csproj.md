@@ -2,7 +2,7 @@
 title: "项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦）"
 date_published: 2018-05-10 21:49:21 +0800
 date: 2018-05-28 16:50:03 +0800
-categories: visualstudio nuget csharp dotnet
+categories: visualstudio nuget csharp dotnet msbuild
 ---
 
 知道了 csproj 文件中的一些常用 NuGet 属性，创建 NuGet 包时就可以充分发挥新 Sdk 自动生成 NuGet 包的优势，不需要 nuspec 文件啦。（毕竟 nuspec 文件没有 .csproj 和 .targets 文件强大而又有扩展性。）

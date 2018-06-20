@@ -1,7 +1,7 @@
 ---
 title: "将 .NET Core 项目打一个最简单的 NuGet 源码包，安装此包就像直接把源码放进项目一样"
 date: 2018-06-20 09:22:34 +0800
-categories: dotnet visualstudio nuget
+categories: dotnet visualstudio nuget msbuild
 ---
 
 NuGet 原本就提供了生成源码包的功能。不过，NuGet 原生的源码包仅用于调试时自带调试信息和调试源码。

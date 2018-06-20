@@ -1,7 +1,7 @@
 ---
 title: "如何使用 MSBuild Target（Exec）中的控制台输出"
 date: 2018-06-13 08:08:06 +0800
-categories: dotnet
+categories: dotnet msbuild
 ---
 
 我曾经写过一篇文章 [如何创建一个基于命令行工具的跨平台的 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool.html)，通过编写一个控制台程序来参与编译过程。但是，相比于 [基于 Task 的方式](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html)，可控制的因素还是太少了。

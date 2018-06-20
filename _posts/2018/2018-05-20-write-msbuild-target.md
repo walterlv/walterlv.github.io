@@ -1,7 +1,7 @@
 ---
 title: "如何编写基于 Microsoft.NET.Sdk 的跨平台的 MSBuild Target"
 date: 2018-05-20 19:00:34 +0800
-categories: visualstudio
+categories: visualstudio msbuild
 ---
 
 我之前写过一篇 [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj.html)，其中，`Target` 节点就是负责编译流程的最关键的节点。但因为篇幅限制，那篇文章不便详说。于是，我在本文说说 `Target` 节点。

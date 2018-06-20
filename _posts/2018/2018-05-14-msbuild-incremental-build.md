@@ -1,7 +1,7 @@
 ---
 title: "每次都要重新编译？太慢！让跨平台的 MSBuild/dotnet build 的 Target 支持差量编译"
 date: 2018-05-14 15:46:50 +0800
-categories: visualstudio
+categories: visualstudio msbuild
 ---
 
 如果你干预到了项目的编译过程，可能就需要考虑到差量编译了。不然——当你的项目大起来的时候，就会感受到每次都重新编译时，每次重复调试的过程都要进行漫长等待时的绝望和无奈。
