@@ -1,8 +1,7 @@
 ---
-title: "使用 Desktop App Converter (Desktop Bridge) 将 Win32 程序转制成 UWP"
-date: 2018-06-24 09:48:01 +0800
+title: "使用 Visual Studio (Desktop Bridge) 将 Win32 程序转制成 UWP"
+date: 2018-06-24 10:38:44 +0800
 categories: dotnet
-published: false
 ---
 
 能上架 Windows 应用商店的并不一定必须是 UWP 应用程序或者 PWA 程序，也可以是普通的 Win32 应用程序。典型的上架应用商店的应用有微信、Telegram、Snipaste 等。使用 Desktop Bridge，我们即可以为我们的普通 Win32 应用程序做一个 UWP 的包来。
@@ -19,7 +18,7 @@ published: false
 - **Telegram Desktop** <https://www.microsoft.com/store/productId/9NZTWSQNTD0S>
 - **Snipaste** <https://www.microsoft.com/store/productId/9P1WXPKB68KX>
 
-### Desktop Bridge
+### 了解 Desktop Bridge
 
 Desktop Bridge，可能还可以叫做“桌面桥”，它存在的目的便是将已有的 WPF 程序、Windows Forms 程序和其他 Win32 应用转换成应用商店应用。而桌面桥提供了一种与 UWP 一致的 Windows 应用包，使用这种 Windows 应用包，普通的 Win32 应用也能访问 UWP 的 API。
 
@@ -27,7 +26,7 @@ Desktop Bridge，可能还可以叫做“桌面桥”，它存在的目的便是
 
 当然，并不是所有的 Win32 应用程序都支持直接转制到 UWP，如果应用会动态加载不在安装包中的 dll 或者会试图修改系统文件和配置，那么必须去掉这些代码才能完成转制。如果希望了解更多不支持的类型，建议阅读官方文档：[Prepare to package an app (Desktop Bridge) - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-prepare)。
 
-### 转制前的准备
+<!-- ### 转制前的准备
 
 我们需要提前下载好转制工具和 SDK：
 
@@ -54,7 +53,7 @@ Desktop App Converter 基础系统镜像下载完后随便放到某个地方，�
 > DesktopAppConverter.exe -Setup -BaseImage .\BaseImage-1XXXX.wim -Verbose
 ```
 
-如果提示需要重启计算机，那么重启即可。
+如果提示需要重启计算机，那么重启即可。 -->
 
 ### 在 Visual Studio 中创建 Windows 应用打包工程
 
@@ -64,11 +63,31 @@ Desktop App Converter 基础系统镜像下载完后随便放到某个地方，�
 
 在选择 SDK 时，目标版本我选择了 17134，但注意最低版本必须是 14393 或以上。
 
-![选择 SDK 版本](/static/posts/2018-06-23-20-41-37.png)
+![选择 SDK 版本](/static/posts/2018-06-24-10-04-34.png)
 
+稍等片刻，我们便能看到 Visual Studio 已经为我们准备好的应用程序包工程。
 
+![Whitman.Package 工程](/static/posts/2018-06-24-10-07-51.png)
 
-![](/static/posts/2018-06-23-20-43-51.png)
+在 Applications（应用程序）一栏我们右击选择添加引用。
+
+![添加引用](/static/posts/2018-06-23-20-43-51.png)
+
+![选择我们此前的程序](/static/posts/2018-06-24-10-09-49.png)
+
+随后展开 Applications（应用程序）一栏，将我们的 Win32 程序右击设为入口点。
+
+![设置入口点](/static/posts/2018-06-24-10-10-40.png)
+
+编译刚刚设置好的打包项目。如果之前的项目能够编译通过，那么这个新的打包项目理论上也是能编译通过的。
+
+将这个新项目设置为启动项目，启动它即可进行正常的调试，能够正常断点、单步等等。
+
+### 修改包清单并发布应用
+
+转制的应用和原生的 UWP 应用一样，发布之前也需要为应用设计图标，设置应用显示名称、包名称、关联应用商店。
+
+![调试部署的 Whitman](/static/posts/2018-06-24-10-37-43.png)
 
 ---
 
