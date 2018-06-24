@@ -1,6 +1,6 @@
 ---
 title: "使用 Visual Studio (Desktop Bridge) 将 Win32 程序转制成 UWP"
-date: 2018-06-24 13:43:51 +0800
+date: 2018-06-24 14:39:10 +0800
 categories: dotnet
 ---
 
@@ -95,8 +95,15 @@ Desktop App Converter 基础系统镜像下载完后随便放到某个地方，�
 
 ![](/static/posts/2018-06-24-13-41-05.png)
 
+需要注意，在 <https://dev.windows.com> 上发布应用时，由于我们是转制的应用，所以 runFullTrust 是必选项。如果你在提交应用时遇到了以下提示框，微软的官方文档提示无需写明理由。
+
+> This capability is also required for any desktop application that is delivered as an appx package (as with the Desktop Bridge), and it will automatically appear in your manifest when packaging these apps using the Desktop App Converter (DAC) or Visual Studio. You won’t need to request approval to use this capability if you already received permission using our form.
+
+![](/static/posts/2018-06-24-14-36-50.png)
+
 ---
 
 #### 参考资料
 
 - [Desktop Bridge - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root)
+- [App capability declarations - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations)
