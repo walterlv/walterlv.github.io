@@ -1,7 +1,7 @@
 ---
 title: "将 WPF、UWP 以及其他各种类型的旧样式的 csproj 文件迁移成新样式的 csproj 文件"
 date_published: 2018-01-16 00:04:28 +0800
-date: 2018-05-22 14:24:25 +0800
+date: 2018-06-27 14:36:40 +0800
 categories: visualstudio msbuild
 ---
 
@@ -197,13 +197,8 @@ UWP 项目已经是 .NET Core 了，然而它依然还在采用旧样式的 cspr
   <LanguageTargets>$(MSBuildToolsPath)\Microsoft.CSharp.targets</LanguageTargets>
 </PropertyGroup>
 <ItemGroup>
-  <Compile Update="**\*.xaml.cs">
-    <DependentUpon>%(Filename)</DependentUpon>
-  </Compile> 
-  <Page Include="**\*.xaml">
-    <SubType>Designer</SubType>
-    <Generator>MSBuild:Compile</Generator>
-  </Page>
+  <Compile Update="**\*.xaml.cs" DependentUpon="%(Filename)" />
+  <Page Include="**\*.xaml" SubType="Designer" Generator="MSBuild:Compile" />
 </ItemGroup>
 ```
 
@@ -214,25 +209,22 @@ UWP 项目已经是 .NET Core 了，然而它依然还在采用旧样式的 cspr
   <PropertyGroup>
     <LanguageTargets>$(MSBuildToolsPath)\Microsoft.CSharp.targets</LanguageTargets>
     <TargetFramework>net47</TargetFramework>
-    <OutputType>Exe</OutputType>> 
+
+    <!-- 如果没有跨平台要求，且想去掉控制台窗口，则设为 WinExe -->
+    <OutputType>Exe</OutputType>
+    <!-- <OutputType>WinExe</OutputType> -->
+    
+    <!-- 设置为 App.xaml 的类名（含命名空间） -->
     <StartupObject />
   </PropertyGroup>
 
   <ItemGroup>
     <!-- App.xaml -->
-    <ApplicationDefinition Include="App.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </ApplicationDefinition>
+    <ApplicationDefinition Include="App.xaml" SubType="Designer" Generator="MSBuild:Compile" />
 
     <!-- XAML elements -->
-    <Page Include="**\*.xaml" Exclude="App.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Compile Update="**\*.xaml.cs">
-      <DependentUpon>%(Filename)</DependentUpon>
-    </Compile> 
+    <Page Include="**\*.xaml" Exclude="App.xaml" SubType="Designer" Generator="MSBuild:Compile" />
+    <Compile Update="**\*.xaml.cs" DependentUpon="%(Filename)" />
 
     <!-- Resources -->
     <EmbeddedResource Update="Properties\Resources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="Resources.Designer.cs" />
