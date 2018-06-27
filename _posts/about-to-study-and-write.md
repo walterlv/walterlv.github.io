@@ -16,6 +16,12 @@ categories: post
 
 ### About to Write
 
+- 缺少程序集在 Roslyn 编译期间
+    - 最终原因是打出来的包中缺少 App.config 文件
+    - [System.Collections.Immutable error when running from net461 test project · Issue #59 · toddams/RazorLight](https://github.com/toddams/RazorLight/issues/59)
+    - ["unknown error" and missing "system.collection.immutable" when analyzing net45 project · Issue #471 · Microsoft/dotnet-apiport](https://github.com/Microsoft/dotnet-apiport/issues/471)
+    [Could not load file or assembly 'System.Collections.Immutable' after upgrading ASP.NET to 1.1 · Issue #5539 · aspnet/Mvc](https://github.com/aspnet/Mvc/issues/5539)
+
 - XPath
     - [使用 XPath 导航选择节点 - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/standard/data/xml/select-nodes-using-xpath-navigation)
     - [使用 Visual C# .NET 通过 XPath 表达式查询 XML - CSDN博客](https://blog.csdn.net/gooddasenlin/article/details/1882086)
