@@ -12,9 +12,7 @@ categories: dotnet visualstudio nuget
 
 ---
 
-如果你只关心结果，请直接前往最后一节：
-
-<div id="toc"></div>
+如果你只关心结果，请直接前往[最后一节：终极解决方案](#%E6%9C%80%E7%BB%88%E8%A7%A3%E5%86%B3)
 
 ### 准备工作
 
