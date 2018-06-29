@@ -1,7 +1,7 @@
 ---
-title: "将 WPF、UWP 以及其他各种类型的旧样式的 csproj 文件迁移成新样式的 csproj 文件"
+title: "将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj"
 date_published: 2018-01-16 00:04:28 +0800
-date: 2018-06-27 14:36:40 +0800
+date: 2018-06-29 16:41:09 +0800
 categories: visualstudio msbuild
 ---
 

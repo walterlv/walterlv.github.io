@@ -1,7 +1,7 @@
 ---
 title: "让一个 csproj 项目指定多个开发框架"
 date_published: 2018-01-21 11:28:55 +0800
-date: 2018-02-12 15:16:27 +0800
+date: 2018-06-29 16:51:42 +0800
 categories: visualstudio
 ---
 
@@ -26,7 +26,7 @@ categories: visualstudio
 
 新的 csproj 文件能够指定多个开发框架。这样，我们便能同时编写适用于 .NET Framework 4.5 的和 .NET Standard 2.0 的代码，同时还能够得到 Visual Studio 和扩展插件较好的支持。
 
-.NET Standard 和 .NET Core 项目在创建之时就已经是新的 csproj 格式了，但 .NET Framework 项目、UWP/WPF 项目依然使用旧风格的 csproj 文件。对于 .NET Framework 项目，可以通过 [将 WPF、UWP 以及其他各种类型的旧样式的 csproj 文件迁移成新样式的 csproj 文件 - walterlv](/post/introduce-new-style-csproj-into-net-framework.html) 一文进行迁移。不过**对于 WPF/UWP 项目，根本就没有跨多个 SDK 的必要，就不要改了**……
+.NET Standard 和 .NET Core 项目在创建之时就已经是新的 csproj 格式了，但 .NET Framework 项目、UWP/WPF 项目依然使用旧风格的 csproj 文件。对于 .NET Framework 项目，可以通过 [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj - walterlv](/post/introduce-new-style-csproj-into-net-framework.html) 一文进行迁移。不过**对于 WPF/UWP 项目，根本就没有跨多个 SDK 的必要，就不要改了**……
 
 如果是新开项目——强烈建议先按照 .NET Standard 项目类型建好，再修改成多开发框架。
 

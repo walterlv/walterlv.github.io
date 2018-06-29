@@ -1,7 +1,7 @@
 ---
 title: "项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦）"
 date_published: 2018-04-12 21:03:52 +0800
-date: 2018-05-10 21:36:06 +0800
+date: 2018-06-29 16:51:48 +0800
 categories: visualstudio nuget csharp dotnet msbuild
 ---
 
@@ -14,7 +14,7 @@ categories: visualstudio nuget csharp dotnet msbuild
 - 本文：[项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - 吕毅](/post/known-properties-in-csproj.html)
 - [项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅](/post/known-nuget-properties-in-csproj.html)
 
-什么？你的 csproj 文件太长不想看？说明你用了旧格式的 csproj，阅读我的另一篇文章 [将 WPF、UWP 以及其他各种类型的旧样式的 csproj 文件迁移成新样式的 csproj 文件](/post/introduce-new-style-csproj-into-net-framework.html) 将它转为新格式之后，你就会觉得这么简短精炼的 csproj 文件，真不忍将它写杂。
+什么？你的 csproj 文件太长不想看？说明你用了旧格式的 csproj，阅读我的另一篇文章 [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj](/post/introduce-new-style-csproj-into-net-framework.html) 将它转为新格式之后，你就会觉得这么简短精炼的 csproj 文件，真不忍将它写杂。
 
 比如通过以下写法，可以将所有的 *.xaml.cs 文件折叠到对应的 *.xaml 文件下，而不需要像旧 csproj 格式那样每个文件都写一份：
 

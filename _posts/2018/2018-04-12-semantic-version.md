@@ -1,6 +1,7 @@
 ---
 title: "语义版本号（Semantic Versioning）"
-date: 2018-04-12 20:20:39 +0800
+date_published: 2018-04-12 20:20:39 +0800
+date: 2018-06-29 16:52:01 +0800
 categories: visualstudio nuget csharp dotnet
 ---
 
@@ -46,7 +47,7 @@ NuGet 4.3.0 以上，并且 Visual Studio 2017 的 15.3 以上版本开始支持
 
 ### 如何在项目中使用语义版本号？
 
-如果你希望方便，在执行 `dotnet build` 或 `dotnet pack` 命令之后能够直接得到使用语义版本号的 NuGet 包，那么你必须拥有一个新格式的 csproj，就是 .NET Core 带来的那种新格式。如果你的格式是旧的，可以阅读我的另一篇文章 [将 WPF、UWP 以及其他各种类型的旧样式的 csproj 文件迁移成新样式的 csproj 文件](/post/introduce-new-style-csproj-into-net-framework.html) 迁移成新格式。
+如果你希望方便，在执行 `dotnet build` 或 `dotnet pack` 命令之后能够直接得到使用语义版本号的 NuGet 包，那么你必须拥有一个新格式的 csproj，就是 .NET Core 带来的那种新格式。如果你的格式是旧的，可以阅读我的另一篇文章 [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj](/post/introduce-new-style-csproj-into-net-framework.html) 迁移成新格式。
 
 这样，在 csproj 文件中将版本号写为以下方式即可：
 

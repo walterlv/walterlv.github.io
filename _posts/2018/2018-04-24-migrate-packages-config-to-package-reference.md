@@ -1,10 +1,11 @@
 ---
 title: "自动将 NuGet 包的引用方式从 packages.config 升级为 PackageReference"
-date: 2018-04-24 18:03:20 +0800
+date_published: 2018-04-24 18:03:20 +0800
+date: 2018-06-29 16:52:10 +0800
 categories: dotnet visualstudio nuget msbuild
 ---
 
-在前段时间我写了一篇迁移 csproj 格式的博客 [将 WPF、UWP 以及其他各种类型的旧样式的 csproj 文件迁移成新样式的 csproj 文件](/post/introduce-new-style-csproj-into-net-framework.html)，不过全过程是手工进行的，而且到最后处理 XAML 问题也非常头疼。
+在前段时间我写了一篇迁移 csproj 格式的博客 [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj](/post/introduce-new-style-csproj-into-net-framework.html)，不过全过程是手工进行的，而且到最后处理 XAML 问题也非常头疼。
 
 现在，我们可以利用工具自动地完成这个过程。当然，工具并不将 csproj 格式进行迁移，而是在不迁移格式的情况下，使用到 `PackageReference` 方式 NuGet 引用带来的好处。
 
@@ -22,7 +23,7 @@ categories: dotnet visualstudio nuget msbuild
 
 紧接着，稍微等待一下，即可完成一个项目的迁移。如果有多个项目，则每个项目都这么操作即可。
 
-相比于之前写的手工迁移，自动迁移方式没有改变 csproj 的格式，而只是将 NuGet 的引用方式改成了 `PackageReference`。具体有哪些好处，可以阅读 [将 WPF、UWP 以及其他各种类型的旧样式的 csproj 文件迁移成新样式的 csproj 文件](/post/introduce-new-style-csproj-into-net-framework.html)。
+相比于之前写的手工迁移，自动迁移方式没有改变 csproj 的格式，而只是将 NuGet 的引用方式改成了 `PackageReference`。具体有哪些好处，可以阅读 [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj](/post/introduce-new-style-csproj-into-net-framework.html)。
 
 ### 检查升级后的兼容性问题
 

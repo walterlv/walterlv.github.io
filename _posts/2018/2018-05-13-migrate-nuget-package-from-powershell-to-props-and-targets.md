@@ -1,7 +1,7 @@
 ---
 title: "如何最快速地将旧的 NuGet 包 (2.x, packages.config) 升级成新的 NuGet 包 (4.x, PackageReference) "
 date_published: 2018-05-13 17:07:23 +0800
-date: 2018-05-13 20:51:10 +0800
+date: 2018-06-29 16:52:22 +0800
 categories: visualstudio nuget msbuild
 ---
 
@@ -15,7 +15,7 @@ categories: visualstudio nuget msbuild
 
 ### 回顾遇到的问题
 
-如果你之前迁移过 csproj 文件，可能会遇到问题。关于迁移 csproj 文件，可以阅读：[将 WPF、UWP 以及其他各种类型的旧样式的 csproj 文件迁移成新样式的 csproj 文件 - 吕毅](/post/introduce-new-style-csproj-into-net-framework.html)。
+如果你之前迁移过 csproj 文件，可能会遇到问题。关于迁移 csproj 文件，可以阅读：[将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj - 吕毅](/post/introduce-new-style-csproj-into-net-framework.html)。
 
 如果你并没有迁移过 csproj 文件，只是升级了 NuGet 的包管理方式，也可能会遇到问题。关于自动迁移 NuGet 包管理方式，可以阅读：[自动将 NuGet 包的引用方式从 packages.config 升级为 PackageReference - 吕毅](/post/migrate-packages-config-to-package-reference.html)。
 
