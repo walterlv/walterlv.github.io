@@ -1,6 +1,7 @@
 ---
 title: "Reading the Source Code of Microsoft.NET.Sdk, Writing the Creative Extension of Compiling"
-date: 2018-06-30 20:27:54 +0800
+date_published: 2018-06-30 20:27:54 +0800
+date: 2018-06-30 21:11:11 +0800
 categories: dotnet visualstudio nuget msbuild
 version:
   current: English
@@ -23,12 +24,12 @@ This post is written in **multiple languages**. Please select yours:
 
 ### Where to find the source code of Microsoft.NET.Sdk
 
-Search `Microsoft.NET.Sdk` using [Everything](https://www.voidtools.com/) or [Wox](https://github.com/Wox-launcher/Wox), I find that multiple versions are installed in my computer. As I've installed the .NET Core 2.1, the location of my latest version is `C:\Program Files\dotnet\sdk\2.1.201\Sdks`. The official document [How to: Reference an MSBuild Project SDK](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-use-project-sdk) says that if you implement your own Sdk, you can also push it to <nuget.org>.
+Search `Microsoft.NET.Sdk` using [Everything](https://www.voidtools.com/) or [Wox](https://github.com/Wox-launcher/Wox), I find that multiple versions are installed in my computer. As I've installed the .NET Core 2.1, the location of my latest version is `C:\Program Files\dotnet\sdk\2.1.300\Sdks`. The official document [How to: Reference an MSBuild Project SDK](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-use-project-sdk) says that if you implement your own Sdk, you can also push it to <nuget.org>.
 
-![Search Microsoft.NET.Sdk](/static/posts/2018-06-29-19-57-54.png)  
+![Search Microsoft.NET.Sdk](/static/posts/2018-06-30-21-06-06.png)  
 ▲ Search Microsoft.NET.Sdk
 
-![the Sdk folder](/static/posts/2018-06-29-19-58-54.png)  
+![The Sdk folder](/static/posts/2018-06-30-21-08-25.png)  
 ▲ The Sdk folder on my computer
 
 The NuGet part of `Microsoft.NET.Sdk` is on GitHub:
@@ -39,7 +40,7 @@ The NuGet part of `Microsoft.NET.Sdk` is on GitHub:
 
 When clicking into the `Microsoft.NET.Sdk` folder, we can find that the folder structure is very similar to the NuGet folder structure.
 
-![The folder structure of Microsoft.NET.Sdk](/static/posts/2018-06-30-12-50-14.png)
+![The folder structure of Microsoft.NET.Sdk](/static/posts/2018-06-30-21-09-29.png)
 
 I've written some posts talking about the NuGet folder structure but unfortunately they are all not in English:
 
@@ -50,7 +51,7 @@ Microsoft have some official document talking about the NuGet folder structure [
 
 **But** there exists an extra `Sdk` folder for the `Sdk` kind of NuGet package.
 
-![The extra Sdk folder](/static/posts/2018-06-30-13-13-05.png)
+![The extra Sdk folder](/static/posts/2018-06-30-21-10-19.png)
 
 The `Sdk.props` file and the `Sdj.targets` file will be imported by default and Microsoft's official document also mentions it here: [How to: Reference an MSBuild Project SDK - Visual Studio](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-use-project-sdk). It says that the two code blocks are actually the same:
 
