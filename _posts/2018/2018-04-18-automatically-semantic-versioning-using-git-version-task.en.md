@@ -1,6 +1,7 @@
 ---
 title: "Automatically increase the semantic version using GitVersion"
-date: 2018-04-18 20:51:39 +0800
+date_published: 2018-04-18 20:51:39 +0800
+date: 2018-06-30 16:04:29 +0800
 categories: visualstudio nuget csharp dotnet
 version:
   current: English
@@ -168,7 +169,7 @@ branches:
 
 ---
 
-#### Related Links
+#### References
 
 - [Versioning NuGet packages in a continuous delivery world: part 1 – Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/2016/05/03/versioning-nuget-packages-cd-1/)
 - [Versioning NuGet packages in a continuous delivery world: part 2 – Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/2016/05/18/versioning-nuget-packages-cd-2/)

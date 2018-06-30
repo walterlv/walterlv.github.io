@@ -1,6 +1,7 @@
 ---
 title: "Support Horizontal Scrolling of TouchPad in WPF Application"
-date: 2017-11-23 22:09:42 +0800
+date_published: 2017-11-23 22:09:42 +0800
+date: 2018-06-30 16:04:41 +0800
 categories: windows wpf
 version:
   current: English
@@ -91,7 +92,7 @@ By the way, Microsoft Sculpt Comfort Mouse support horizontal scrolling also, an
 
 ![](https://blogswin.blob.core.windows.net/win/sites/2/2013/05/2_5F00_77B60B43.jpg)
 
-#### Related Links
+#### References
 
 - [c# - WPF - Two Finger Horizontal scrolling on Macbook pro trackpad - Stack Overflow](https://stackoverflow.com/questions/21146183/wpf-two-finger-horizontal-scrolling-on-macbook-pro-trackpad/47457389#47457389)  
 That's my answer!
