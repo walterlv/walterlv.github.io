@@ -7,7 +7,6 @@ categories: jekyll
 permalink: /jekyll/2017/09/15/setup-a-jekyll-blog.html
 keywords: jekyll
 description: 了解如何用 Jekyll 搭建一个基于 GitHub Pages 博客，并且让博客支持评论和分享；了解如何优化搜索引擎对此博客内容的搜索（SEO）。
-published: false
 ---
 
 GitHub Pages 为个人、组织和项目提供了展示一些页面的方式，GitHub 帮助页的 [User, Organization, and Project Pages](https://help.github.com/articles/user-organization-and-project-pages/) 页面就有说明。这里，我们使用 GitHub Pages 来搭建自己的博客，正好也是里面说的给 User 用作展示的页面的用途。当然，GitHub 甚至直接在官方页面中告诉大家，你可以用来当作你的博客使用，就是这句 [Create a blog and spread your ideas. Whatever you want!](https://github.com/blog/272-github-pages)（译：创建一个博客来传播你的想法，反正想做什么都行！）
