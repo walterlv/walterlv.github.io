@@ -1,7 +1,13 @@
 ---
 title: "解读 Microsoft.NET.Sdk 的源码，你能定制各种奇怪而富有创意的编译过程"
-date: 2018-06-30 13:55:39 +0800
+date_published: 2018-06-30 13:55:39 +0800
+date: 2018-06-30 20:27:50 +0800
 categories: dotnet visualstudio nuget msbuild
+version:
+  current: 中文
+versions:
+  - 中文: #
+  - English: /post/read-microsoft-net-sdk.html
 ---
 
 在 csproj 中，`Project` 中的 `Sdk` 属性是 MSBuild 15.0 开始支持的，也就是 Visual Studio 2017 开始支持。有了 Sdk 属性的存在，MSBuild 编译过程能够扩展得非常强大，而不止是过去 `Import` 的一个 `props` 和 `targets` 文件。
@@ -9,6 +15,10 @@ categories: dotnet visualstudio nuget msbuild
 本文将介绍 Microsoft.NET.Sdk 的源码，以及利用源码中的一些线索来完成官方文档中没有提及的功能扩展。
 
 ---
+
+This post is written in **multiple languages**. Please select yours:
+
+{% include post-version-selector.html %}
 
 <div id="toc"></div>
 
@@ -25,7 +35,6 @@ categories: dotnet visualstudio nuget msbuild
 Sdk 中的 NuGet 部分在 GitHub 上的仓库地址：
 
 - [NuGet.Client/src/NuGet.Core at dev · NuGet/NuGet.Client](https://github.com/NuGet/NuGet.Client/tree/dev/src/NuGet.Core)
-
 
 ### Microsoft.NET.Sdk 的目录结构
 
@@ -102,7 +111,7 @@ Sdk 中的 NuGet 部分在 GitHub 上的仓库地址：
 </Target>
 ```
 
-▲ 这是我另外写的一篇文章：[阻止某个 NuGet 包意外升级](http://localhost:4000/post/prevent-nuget-package-upgrade.html)
+▲ 这是我另外写的一篇文章：[阻止某个 NuGet 包意外升级](/post/prevent-nuget-package-upgrade.html)
 
 ---
 
