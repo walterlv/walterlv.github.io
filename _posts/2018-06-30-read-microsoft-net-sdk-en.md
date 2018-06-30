@@ -5,7 +5,7 @@ categories: dotnet visualstudio nuget msbuild
 version:
   current: English
 versions:
-  - 中文: /post/read-microsoft-net-sdk-en.html
+  - 中文: /post/read-microsoft-net-sdk.html
   - English: #
 ---
 
