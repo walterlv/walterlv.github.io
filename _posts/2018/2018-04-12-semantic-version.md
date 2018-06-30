@@ -1,7 +1,7 @@
 ---
 title: "语义版本号（Semantic Versioning）"
 date_published: 2018-04-12 20:20:39 +0800
-date: 2018-06-29 16:52:01 +0800
+date: 2018-06-30 09:19:24 +0800
 categories: visualstudio nuget csharp dotnet
 ---
 
@@ -73,6 +73,10 @@ NuGet 4.3.0 以上，并且 Visual Studio 2017 的 15.3 以上版本开始支持
 当然，你还可以使用响应文件来简化参数，详情可阅读我的另一篇博客 [使用 MSBuild 响应文件 (rsp) 来指定 dotnet build 命令行编译时的大量参数](/post/msbuild-response-files.html)。
 
 如果希望自动化地在项目中生成语义版本号，可阅读我的另一篇博客 [使用 GitVersion 在编译或持续构建时自动使用语义版本号（Semantic Versioning）](/post/automatically-semantic-versioning-using-git-version-task.html)。
+
+### 如何用 C#/.NET 支持语义版本号？
+
+可参考林德熙的博客：[C# 使用转换语义版本号](https://lindexi.github.io/lindexi/post/C-%E4%BD%BF%E7%94%A8%E8%BD%AC%E6%8D%A2%E8%AF%AD%E4%B9%89%E7%89%88%E6%9C%AC%E5%8F%B7.html)。
 
 ---
 
