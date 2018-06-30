@@ -1,7 +1,7 @@
 ---
 title: "项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦）"
 date_published: 2018-05-10 21:49:21 +0800
-date: 2018-05-28 16:50:03 +0800
+date: 2018-06-30 09:25:11 +0800
 categories: visualstudio nuget csharp dotnet msbuild
 ---
 
@@ -170,6 +170,107 @@ NuGet 相关的属性也分为全局属性和项属性两类。不过，我更�
 ```
 
 如果你希望了解 `Reference` `PackageReference` 以及上面 `@` 的含义，可以阅读我的另一篇文章：[理解 C# 项目 csproj 文件格式的本质和编译流程 - walterlv](/post/understand-the-csproj.html)。
+
+### 可能没有开放的内部属性
+
+在 Microsoft.NET.Sdk 中，NuGet 包的打包主要靠的是 `NuGet.Build.Tasks.Pack.targets` 文件中一个名为 `PackTask` 的任务来完成的，它是一个使用了非常多参数的 `Task`。
+
+```xml
+<PackTask PackItem="$(PackProjectInputFile)"
+          PackageFiles="@(_PackageFiles)"
+          PackageFilesToExclude="@(_PackageFilesToExclude)"
+          PackageVersion="$(PackageVersion)"
+          PackageId="$(PackageId)"
+          Title="$(Title)"
+          Authors="$(Authors)"
+          Description="$(PackageDescription)"
+          Copyright="$(Copyright)"
+          RequireLicenseAcceptance="$(PackageRequireLicenseAcceptance)"
+          LicenseUrl="$(PackageLicenseUrl)"
+          ProjectUrl="$(PackageProjectUrl)"
+          IconUrl="$(PackageIconUrl)"
+          ReleaseNotes="$(PackageReleaseNotes)"
+          Tags="$(PackageTags)"
+          DevelopmentDependency="$(DevelopmentDependency)"
+          BuildOutputInPackage="@(_BuildOutputInPackage)"
+          ProjectReferencesWithVersions="@(_ProjectReferencesWithVersions)"
+          TargetPathsToSymbols="@(_TargetPathsToSymbols)"
+          TargetFrameworks="@(_TargetFrameworks)"
+          AssemblyName="$(AssemblyName)"
+          PackageOutputPath="$(PackageOutputAbsolutePath)"
+          IncludeSymbols="$(IncludeSymbols)"
+          IncludeSource="$(IncludeSource)"
+          PackageTypes="$(PackageType)"
+          IsTool="$(IsTool)"
+          RepositoryUrl="$(RepositoryUrl)"
+          RepositoryType="$(RepositoryType)"
+          SourceFiles="@(_SourceFiles->Distinct())"
+          NoPackageAnalysis="$(NoPackageAnalysis)"
+          MinClientVersion="$(MinClientVersion)"
+          Serviceable="$(Serviceable)"
+          FrameworkAssemblyReferences="@(_FrameworkAssemblyReferences)"
+          ContinuePackingAfterGeneratingNuspec="$(ContinuePackingAfterGeneratingNuspec)"
+          NuspecOutputPath="$(NuspecOutputAbsolutePath)"
+          IncludeBuildOutput="$(IncludeBuildOutput)"
+          BuildOutputFolder="$(BuildOutputTargetFolder)"
+          ContentTargetFolders="$(ContentTargetFolders)"
+          RestoreOutputPath="$(RestoreOutputAbsolutePath)"
+          NuspecFile="$(NuspecFileAbsolutePath)"
+          NuspecBasePath="$(NuspecBasePath)"
+          NuspecProperties="$(NuspecProperties)"
+          AllowedOutputExtensionsInPackageBuildOutputFolder="$(AllowedOutputExtensionsInPackageBuildOutputFolder)"
+          AllowedOutputExtensionsInSymbolsPackageBuildOutputFolder="$(AllowedOutputExtensionsInSymbolsPackageBuildOutputFolder)"/>
+</Target>
+```
+
+所以总结起来我们还有这些 NuGet 的属性还可以配置（想必下划线开头的属性或集合是 NuGet 内部不愿意公开的属性了）：
+
+```xml
+$(PackProjectInputFile)
+@(_PackageFiles)
+@(_PackageFilesToExclude)
+$(PackageVersion)
+$(PackageId)
+$(Title)
+$(Authors)
+$(PackageDescription)
+$(Copyright)
+$(PackageRequireLicenseAcceptance)
+$(PackageLicenseUrl)
+$(PackageProjectUrl)
+$(PackageIconUrl)
+$(PackageReleaseNotes)
+$(PackageTags)
+$(DevelopmentDependency)
+@(_BuildOutputInPackage)
+@(_ProjectReferencesWithVersions)
+@(_TargetPathsToSymbols)
+@(_TargetFrameworks)
+$(AssemblyName)
+$(PackageOutputAbsolutePath)
+$(IncludeSymbols)
+$(IncludeSource)
+$(PackageType)
+$(IsTool)
+$(RepositoryUrl)
+$(RepositoryType)
+@(_SourceFiles->Distinct())
+$(NoPackageAnalysis)
+$(MinClientVersion)
+$(Serviceable)
+@(_FrameworkAssemblyReferences)
+$(ContinuePackingAfterGeneratingNuspec)
+$(NuspecOutputAbsolutePath)
+$(IncludeBuildOutput)
+$(BuildOutputTargetFolder)
+$(ContentTargetFolders)
+$(RestoreOutputAbsolutePath)
+$(NuspecFileAbsolutePath)
+$(NuspecBasePath)
+$(NuspecProperties)
+$(AllowedOutputExtensionsInPackageBuildOutputFolder)
+$(AllowedOutputExtensionsInSymbolsPackageBuildOutputFolder)
+```
 
 ---
 
