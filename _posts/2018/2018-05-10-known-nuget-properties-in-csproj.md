@@ -1,7 +1,7 @@
 ---
 title: "项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦）"
 date_published: 2018-05-10 21:49:21 +0800
-date: 2018-06-30 09:25:11 +0800
+date: 2018-06-30 09:30:19 +0800
 categories: visualstudio nuget csharp dotnet msbuild
 ---
 
@@ -225,52 +225,52 @@ NuGet 相关的属性也分为全局属性和项属性两类。不过，我更�
 
 所以总结起来我们还有这些 NuGet 的属性还可以配置（想必下划线开头的属性或集合是 NuGet 内部不愿意公开的属性了）：
 
-```xml
-$(PackProjectInputFile)
-@(_PackageFiles)
-@(_PackageFilesToExclude)
-$(PackageVersion)
-$(PackageId)
-$(Title)
-$(Authors)
-$(PackageDescription)
-$(Copyright)
-$(PackageRequireLicenseAcceptance)
-$(PackageLicenseUrl)
-$(PackageProjectUrl)
-$(PackageIconUrl)
-$(PackageReleaseNotes)
-$(PackageTags)
-$(DevelopmentDependency)
-@(_BuildOutputInPackage)
-@(_ProjectReferencesWithVersions)
-@(_TargetPathsToSymbols)
-@(_TargetFrameworks)
-$(AssemblyName)
-$(PackageOutputAbsolutePath)
-$(IncludeSymbols)
-$(IncludeSource)
-$(PackageType)
-$(IsTool)
-$(RepositoryUrl)
-$(RepositoryType)
-@(_SourceFiles->Distinct())
-$(NoPackageAnalysis)
-$(MinClientVersion)
-$(Serviceable)
-@(_FrameworkAssemblyReferences)
-$(ContinuePackingAfterGeneratingNuspec)
-$(NuspecOutputAbsolutePath)
-$(IncludeBuildOutput)
-$(BuildOutputTargetFolder)
-$(ContentTargetFolders)
-$(RestoreOutputAbsolutePath)
-$(NuspecFileAbsolutePath)
-$(NuspecBasePath)
-$(NuspecProperties)
-$(AllowedOutputExtensionsInPackageBuildOutputFolder)
-$(AllowedOutputExtensionsInSymbolsPackageBuildOutputFolder)
-```
+- `$(PackProjectInputFile)`
+- `@(_PackageFiles)`
+- `@(_PackageFilesToExclude)`
+- `$(PackageVersion)`
+- `$(PackageId)`
+- `$(Title)`
+- `$(Authors)`
+- `$(PackageDescription)`
+- `$(Copyright)`
+- `$(PackageRequireLicenseAcceptance)`
+- `$(PackageLicenseUrl)`
+- `$(PackageProjectUrl)`
+- `$(PackageIconUrl)`
+- `$(PackageReleaseNotes)`
+- `$(PackageTags)`
+- `$(DevelopmentDependency)`
+- `@(_BuildOutputInPackage)`
+- `@(_ProjectReferencesWithVersions)`
+- `@(_TargetPathsToSymbols)`
+- `@(_TargetFrameworks)`
+- `$(AssemblyName)`
+- `$(PackageOutputAbsolutePath)`
+- `$(IncludeSymbols)`
+- `$(IncludeSource)`
+- `$(PackageType)`
+- `$(IsTool)`
+- `$(RepositoryUrl)`
+- `$(RepositoryType)`
+- `@(_SourceFiles->Distinct())`
+- `$(NoPackageAnalysis)`
+- `$(MinClientVersion)`
+- `$(Serviceable)`
+- `@(_FrameworkAssemblyReferences)`
+- `$(ContinuePackingAfterGeneratingNuspec)`
+- `$(NuspecOutputAbsolutePath)`
+- `$(IncludeBuildOutput)`
+- `$(BuildOutputTargetFolder)`
+- `$(ContentTargetFolders)`
+- `$(RestoreOutputAbsolutePath)`
+- `$(NuspecFileAbsolutePath)`
+- `$(NuspecBasePath)`
+- `$(NuspecProperties)`
+- `$(AllowedOutputExtensionsInPackageBuildOutputFolder)`
+- `$(AllowedOutputExtensionsInSymbolsPackageBuildOutputFolder)`
+
+这是 .NET Core 2.1 中自带的 NuGet 的打包属性，比 .NET Core 2.0 中多了个 `@(_SourceFiles->Distinct())`。
 
 ---
 
