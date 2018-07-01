@@ -1,7 +1,8 @@
 ---
-layout: post
 title: "About to Study and Write"
+date: 2018-07-01 08:53:47 +0800
 categories: post
+published: false
 ---
 
 ### About to Study
