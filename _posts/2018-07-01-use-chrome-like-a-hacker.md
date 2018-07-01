@@ -1,6 +1,7 @@
 ---
-title: "像黑客一样！Chrome 完全键盘操作指南（原生 + Vimium 插件）"
-date: 2018-07-01 19:56:51 +0800
+title: "像黑客一样！Chrome 完全键盘操作指南（原生快捷键 + Vimium 插件）"
+date_published: 2018-07-01 19:56:51 +0800
+date: 2018-07-02 07:10:57 +0800
 categories: windows
 ---
 
