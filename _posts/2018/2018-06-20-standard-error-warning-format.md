@@ -1,6 +1,7 @@
 ---
 title: "如何在 MSBuild Target（Exec）中报告编译错误和编译警告"
-date: 2018-06-20 13:17:32 +0800
+date_published: 2018-06-20 13:17:32 +0800
+date: 2018-07-02 20:49:55 +0800
 categories: dotnet msbuild
 ---
 
@@ -48,6 +49,24 @@ namespace Walterlv.Demo
     <Exec Command="$(OutputPath)$(AssemblyName).exe" />
   </Target>
 </Project>
+```
+
+### 更复杂的错误和警告控制
+
+实际上，上面的 `warning`、`error` 只是省略的格式，而完整的部分是这样的：
+
+```
+file_path(line_start,column_start,line_end,column_end): error_or_warning key: message
+```
+
+- file_path 是文件的绝对路径或相对于项目文件的路径，这样的输出之后在 Visual Studio 中双击之后可以定位到文件。
+- line_start、column_start、line_end、column_end 控制双击之后选中文件的开始和结束行列。
+- error_or_warning 可选为 error 或者 warning。
+- key 是一个唯一标识符，如果用户认为可以忽略这样的错误，则可以使用这个唯一的 key 来禁止某一特定项的警告。
+- message 则是普通的消息提示内容。
+
+```
+Demo.cs(344,59,344,78): warning CS0067: The event 'WalterlvClass.Foo' is never used.
 ```
 
 ### 阻止编译错误和编译警告的格式化识别

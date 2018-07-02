@@ -20,6 +20,8 @@ published: false
 - 窗口与子窗口
     - [窗口之间的主从关系与Z-Order - 中华一猿 - 博客园](https://www.cnblogs.com/dhatbj/p/3288152.html)
     - [Win32 窗口的层级和样式 - CSDN博客](https://blog.csdn.net/see11see/article/details/4513736)
+    - [The relation between the window and Z-Order](https://www.programering.com/a/MjNxITNwATI.html)
+    - [winapi - Win32 window Owner vs window Parent? - Stack Overflow](https://stackoverflow.com/questions/507848/win32-window-owner-vs-window-parent)
 
 - UWP 快捷键
     - [Keyboard accelerators - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/input/keyboard-accelerators)
