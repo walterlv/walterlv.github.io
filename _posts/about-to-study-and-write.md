@@ -1,6 +1,6 @@
 ---
 title: "About to Study and Write"
-date: 2018-07-01 08:53:47 +0800
+date: 2018-07-02 08:54:01 +0800
 categories: post
 published: false
 ---
@@ -16,6 +16,13 @@ published: false
 - Castle
 
 ### About to Write
+
+- 窗口与子窗口
+    - [窗口之间的主从关系与Z-Order - 中华一猿 - 博客园](https://www.cnblogs.com/dhatbj/p/3288152.html)
+    - [Win32 窗口的层级和样式 - CSDN博客](https://blog.csdn.net/see11see/article/details/4513736)
+
+- UWP 快捷键
+    - [Keyboard accelerators - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/input/keyboard-accelerators)
 
 - 缺少程序集在 Roslyn 编译期间
     - 最终原因是打出来的包中缺少 App.config 文件
