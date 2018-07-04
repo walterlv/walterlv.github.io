@@ -1,7 +1,7 @@
 ---
 title: "将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj"
 date_published: 2018-01-16 00:04:28 +0800
-date: 2018-06-29 16:41:09 +0800
+date: 2018-07-04 21:07:56 +0800
 categories: visualstudio msbuild
 ---
 
@@ -253,11 +253,17 @@ UWP 项目已经是 .NET Core 了，然而它依然还在采用旧样式的 cspr
 
 对于带 XAML 的项目，如果在迁移过程中放弃了，试图恢复成原来的方案，那么在编译时会发生一个诡异的错误：
 
+> Your project.json doesn't have a runtimes section. You should add '"runtimes": { "win": { } }' to your project.json and then re-run NuGet restore.
+
 ![错误](/static/posts/2018-01-15-13-05-29.png)
 
 ![错误](/static/posts/2018-01-16-10-49-49.png)
 
-就是试图迁移的那个项目！无论依赖了谁还是被谁依赖，都是此项目发生“NuGet”错误。而要解决此问题，需要几乎重置 git 仓库，然后重新还原 NuGet 包。
+就是试图迁移的那个项目！无论依赖了谁还是被谁依赖，都是此项目发生“NuGet”错误。
+
+其实这是只有新的项目文件才会出现的编译错误，而错误原因是 NuGet 的缓存文件中与包引用相关的信息已经不正确了，需要运行 `nuget restore` 或者 `dotnet restore` 重新更新此文件才行。但是，只有使用了 `Microsoft.NET.Sdk` 的新 csproj 文件才会在执行了此命令后重新生成正确的包引用缓存文件；原来的格式并不会生成此文件，也就是说，无法修复。
+
+唯一的解决办法就是清除项目中的所有 NuGet 缓存，使用 `git clean -xdf`。
 
 ### 迁移之后的劣势
 
