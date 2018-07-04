@@ -1,7 +1,7 @@
 ---
 title: "项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦）"
 date_published: 2018-04-12 21:03:52 +0800
-date: 2018-06-29 16:51:48 +0800
+date: 2018-07-04 20:14:19 +0800
 categories: visualstudio nuget csharp dotnet msbuild
 ---
 
@@ -64,6 +64,25 @@ categories: visualstudio nuget csharp dotnet msbuild
     - 文件最近被访问的时间，例如: `2018-04-12 21:02:15.4132476`
 
 ### 全局属性
+
+* 配置
+    - `$(EnableDefaultItems)` 默认为 `true`，如果指定为 `false`，那么就不糊自动将 .cs 和 .resx 文件引入。
+
+下面是 Microsoft.NET.Sdk 中的一部分源码，在 Microsoft.NET.Sdk.DefaultItems.props 文件中，可以发现还有更多与控制自动引入文件相关的属性。
+
+```xml
+<ItemGroup Condition=" '$(EnableDefaultItems)' == 'true' ">
+  <Compile Include="**/*$(DefaultLanguageSourceExtension)" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+  <EmbeddedResource Include="**/*.resx" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" Condition=" '$(EnableDefaultEmbeddedResourceItems)' == 'true' " />
+</ItemGroup>
+<ItemGroup Condition=" '$(EnableDefaultItems)' == 'true' And '$(EnableDefaultNoneItems)' == 'true' ">
+  <None Include="**/*" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+  <None Remove="**/*$(DefaultLanguageSourceExtension)" />
+  <None Remove="**/*.resx" />
+</ItemGroup>
+```
+
+可以阅读 [解读 Microsoft.NET.Sdk 的源码，你能定制各种奇怪而富有创意的编译过程](/post/read-microsoft-net-sdk.html) 和  [Reading the Source Code of Microsoft.NET.Sdk, Writing the Creative Extension of Compiling](/post/read-microsoft-net-sdk-en.html) 了解更多 Microsoft.NET.Sdk 源码。
 
 * 项目文件
     + `$(MSBuildProjectFullPath)`
