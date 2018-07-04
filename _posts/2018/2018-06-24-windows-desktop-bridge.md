@@ -1,7 +1,7 @@
 ---
 title: "使用 Visual Studio (Desktop Bridge) 将 Win32 程序转制成 UWP"
 date_published: 2018-06-24 14:39:10 +0800
-date: 2018-06-30 09:02:38 +0800
+date: 2018-07-04 18:46:30 +0800
 categories: dotnet
 ---
 
@@ -122,3 +122,4 @@ Desktop App Converter 基础系统镜像下载完后随便放到某个地方，�
 
 - [Desktop Bridge - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root)
 - [App capability declarations - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations)
+- [“Package acceptance validation error” when you submit a UWP + Desktop Bridge app on the Store – App Consult Team](https://blogs.msdn.microsoft.com/appconsult/2018/02/20/package-acceptance-validation-error-when-you-submit-a-uwp-desktop-bridge-app-on-the-store/)
