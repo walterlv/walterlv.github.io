@@ -12,8 +12,8 @@
     }
   }
   // 判断非本机且未使用 https 时，强制重定向到 https。
-  // if (!comefrombaidu && (!window.location.host.startsWith("localhost")) && (window.location.protocol != "https:"))
-  //   window.location = window.location.toString().replace(/^http:/, "https:");
+  if (!comefrombaidu && (!window.location.host.startsWith("localhost")) && (window.location.protocol != "https:"))
+    window.location = window.location.toString().replace(/^http:/, "https:");
 </script>
 <script type="text/javascript">
   // 生成目录。
