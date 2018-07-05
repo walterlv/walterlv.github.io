@@ -1,6 +1,6 @@
 ---
 title: "About to Study and Write"
-date: 2018-07-02 08:54:01 +0800
+date: 2018-07-05 16:20:35 +0800
 categories: post
 published: false
 ---
@@ -16,6 +16,10 @@ published: false
 - Castle
 
 ### About to Write
+
+- Assembly.GetEntryAssembly()
+    - [Assembly.GetEntryAssembly Method (System.Reflection)](https://msdn.microsoft.com/en-us/library/system.reflection.assembly.getentryassembly.aspx)
+    - [c# - I need an alternative to `Assembly.GetEntryAssembly()` that never returns null - Stack Overflow](https://stackoverflow.com/questions/14165785/i-need-an-alternative-to-assembly-getentryassembly-that-never-returns-null)
 
 - 窗口与子窗口
     - [窗口之间的主从关系与Z-Order - 中华一猿 - 博客园](https://www.cnblogs.com/dhatbj/p/3288152.html)
