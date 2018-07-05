@@ -39,14 +39,8 @@ namespace Walterlv.ComponentModel
                     var assembly = Assembly.GetEntryAssembly();
                     if (assembly == null)
                     {
-                        var frames = new StackTrace().GetFrames();
-                        if (frames == null)
-                        {
-                            // 由于调用 GetFrames 的 StackTrace 实例没有跳过任何帧，所以 frames 一定不为 null。
-                            throw new NotSupportedException();
-                        }
-
-                        assembly = frames.Last().GetMethod().Module.Assembly;
+                        // 由于调用 GetFrames 的 StackTrace 实例没有跳过任何帧，所以 GetFrames() 一定不为 null。
+                        assembly = new StackTrace().GetFrames().Last().GetMethod().Module.Assembly;
                     }
 
                     var debuggableAttribute = assembly.GetCustomAttribute<DebuggableAttribute>();
