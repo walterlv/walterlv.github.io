@@ -1,7 +1,7 @@
 ---
 title: "如何创建一个基于命令行工具的跨平台的 NuGet 工具包"
 date_published: 2018-05-12 09:09:02 +0800
-date: 2018-05-19 08:04:10 +0800
+date: 2018-07-10 10:27:11 +0800
 categories: visualstudio csharp dotnet msbuild
 ---
 
@@ -340,6 +340,17 @@ namespace Walterlv.NuGetTool
 ```
 
 你可以尽情发挥你的想象力，传入更多让人意想不到的参数，实现不可思议的功能。更多 MSBuild 全局参数，可以参考我的另一篇文章[项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - 吕毅](/post/known-properties-in-csproj.html)。
+
+#### 控制台程序向 .targets 返回数据
+
+控制台程序的输出（也就是 `Console.WriteLine()` 那个）是能够直接和 MSBuild 的 Target 进行数据交换的。
+
+有两种不同的方式：
+
+1. 直接传数据，这些数据可以被捕获成属性或者项，具体可以阅读我的另一篇博客：
+    - [如何使用 MSBuild Target（Exec）中的控制台输出](/post/exec-task-of-msbuild-target.html)
+1. 报告编译警告和编译错误，具体可以阅读我的另一篇博客：
+    - [如何在 MSBuild Target（Exec）中报告编译错误和编译警告](/post/standard-error-warning-format.html)
 
 #### 使用命令执行完之后的结果
 
