@@ -1,6 +1,7 @@
 ---
-title: "如何编写基于 Microsoft.NET.Sdk 的跨平台的 MSBuild Target"
-date: 2018-05-20 19:00:34 +0800
+title: "如何编写基于 Microsoft.NET.Sdk 的跨平台的 MSBuild Target（附各种自带的 Task）"
+date_published: 2018-05-20 19:00:34 +0800
+date: 2018-07-11 10:44:03 +0800
 categories: visualstudio msbuild
 ---
 
@@ -43,7 +44,7 @@ categories: visualstudio msbuild
 
 有 Microsoft.NET.Sdk 的帮助，我们可以很容易地编写自己的 Target，因为很多功能它都帮我们实现好了，我们排列组合一下就好。
 
-- `Copy` 复制文件 [Copy Task](https://docs.microsoft.com/en-us/visualstudio/msbuild/copy-task)
+- `Copy` 复制文件 [Rosyln 如何使用 MSBuild Copy 复制文件](https://lindexi.oschina.io/lindexi/post/Rosyln-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-MSBuild-Copy-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6.html)
 - `Move` 移动文件 [Move Task](https://docs.microsoft.com/en-us/visualstudio/msbuild/move-task)
 - `Delete` 删除文件
 - `Message` 显示一个输出信息（我在 [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html) 中利用这个进行调试）
