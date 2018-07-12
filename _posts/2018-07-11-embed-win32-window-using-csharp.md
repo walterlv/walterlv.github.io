@@ -1,6 +1,7 @@
 ---
 title: "WPF 同一窗口内的多线程/多进程 UI（使用 SetParent 嵌入另一个窗口）"
-date: 2018-07-11 21:35:58 +0800
+date_published: 2018-07-11 21:35:58 +0800
+date: 2018-07-12 19:44:57 +0800
 categories: wpf dotnet csharp windows
 ---
 
@@ -66,7 +67,7 @@ var backgroundWindow = await dispatcher.InvokeAsync(() =>
 });
 ```
 
-在代码中，我们监听了 `SourceInitialized` 事件。这是 WPF 窗口刚刚获得 Windows 窗口句柄的实际，在此事件中，我们可以最早地拿到窗口句柄以便进行 Win32 函数调用。
+在代码中，我们监听了 `SourceInitialized` 事件。这是 WPF 窗口刚刚获得 Windows 窗口句柄的时机，在此事件中，我们可以最早地拿到窗口句柄以便进行 Win32 函数调用。
 
 ```csharp
 private void OnSourceInitialized(object sender, EventArgs e)
