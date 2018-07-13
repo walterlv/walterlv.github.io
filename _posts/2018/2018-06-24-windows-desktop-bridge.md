@@ -88,19 +88,28 @@ Desktop App Converter 基础系统镜像下载完后随便放到某个地方，�
 
 ### 修改包清单并发布应用
 
-需要注意，在发布桌面桥应用之前，你的开发者账号需要申请发布桌面桥应用的资格。这里是这份资格说明的文档：[使用 Visual Studio 打包应用（桌面桥）](https://docs.microsoft.com/zh-cn/windows/uwp/porting/desktop-to-uwp-packaging-dot-net#first-consider-how-youll-distribute-your-app)。
+#### 通过认证
 
-具体来说，是填写一份表单：
+如果没有接受 Centennial Program Addendum，那么提交是不被允许的。之前会在认证之后告诉开发者，现在在上传 appxupload 的时候就会开始提示了：
 
-![申请发布桌面桥应用的资格](/static/posts/2018-06-30-09-01-38.png)
+> Package acceptance validation error: You need to accept the [Centennial Program Addendum](https://go.microsoft.com/fwlink/?linkid=873135) before you can submit this app.
 
-**特别注意，这个链接现在点击进去会被跳转，以至于无法申请！正在等待解决方案。**
+![Centennial Program Addendum](/static/posts/2018-07-12-16-26-57.png)  
+▲ You need to accept the Centennial Program Addendum before you can submit this app.
 
-如果开发者账号没有资格，那么认证将会失败，并提示：
+然而链接点击进去后确是：
+
+![Page Not Found](/static/posts/2018-07-13-08-32-31.png)
+
+如果提交上去了，那么认证将会失败，并提示：
 
 > **Notes To Developer**
 > 
 > Your developer account has not been approved to submit apps converted with the Desktop Bridge as you have not yet accepted the Centennial Program Addendum. Please resubmit your request for approval.
+
+不过，据说 **目前暂时不接受新的提交申请，也就是说，以前没有申请的现就不能提交了**。
+
+#### 其他元数据
 
 另外，转制的应用和原生的 UWP 应用一样，发布之前也需要为应用设计图标，设置应用显示名称、包名称、关联应用商店。
 
