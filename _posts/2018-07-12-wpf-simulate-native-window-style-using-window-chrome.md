@@ -1,6 +1,7 @@
 ---
 title: "WPF 使用 WindowChrome，在自定义窗口标题栏的同时最大程度保留原生窗口样式（类似 UWP/Chrome）"
-date: 2018-07-12 15:57:30 +0800
+date_published: 2018-07-12 15:57:30 +0800
+date: 2018-07-13 08:36:25 +0800
 categories: wpf dotnet windows
 ---
 
