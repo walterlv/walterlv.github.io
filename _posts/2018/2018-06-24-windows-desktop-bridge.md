@@ -132,3 +132,5 @@ Desktop App Converter 基础系统镜像下载完后随便放到某个地方，�
 - [Desktop Bridge - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root)
 - [App capability declarations - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations)
 - [“Package acceptance validation error” when you submit a UWP + Desktop Bridge app on the Store – App Consult Team](https://blogs.msdn.microsoft.com/appconsult/2018/02/20/package-acceptance-validation-error-when-you-submit-a-uwp-desktop-bridge-app-on-the-store/)
+- [Preparing a Desktop Bridge application for the Store submission – App Consult Team](https://blogs.msdn.microsoft.com/appconsult/2017/09/25/preparing-a-desktop-bridge-application-for-the-store-submission/)
+- [Publish your packaged desktop app to a Windows store or sideload it onto one or more devices. - UWP app developer | Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-distribute)
