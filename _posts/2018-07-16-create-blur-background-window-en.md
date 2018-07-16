@@ -39,11 +39,11 @@ We have three ways to blurring background on Windows 10 and each has its advanta
 Calling `SetWindowCompositionAttribute` API is not very easy, so I've written a wrapper class for easier usage. You can use my class by writing only a simple line in the XAML file **or** in the cs file.
 
 ```xml
-<Window x:Class="CGTransparent.Window1"
+<Window x:Class="Walterlv.Demo.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:interop="clr-namespace:Walterlv.Demo.Interop"
-    mc:Ignorable="d" Title="AboutDlg" Height="350" Width="525"
+    mc:Ignorable="d" Title="MainWindow" Height="350" Width="525"
     interop:WindowBlur.IsEnabled="True"
     Background="Transparent">
 </Window>
@@ -52,9 +52,9 @@ Calling `SetWindowCompositionAttribute` API is not very easy, so I've written a 
 Or you can use it in the cs file like this:
 
 ```csharp
-public class Window1 : Window
+public class MainWindow : Window
 {
-    public Window1()
+    public MainWindow()
     {
         InitializeComponent();
         WindowBlur.SetIsEnabled(this, true);
@@ -84,8 +84,8 @@ Just set the Effect property of a WPF UIElement.
         </Image>
         <Border CornerRadius="60" Margin="30" Background="#7F000000">
             <TextBlock Foreground="White"
-                        FontSize="20" FontWeight="Light" TextAlignment="Center"
-                        HorizontalAlignment="Center" VerticalAlignment="Center">
+                       FontSize="20" FontWeight="Light" TextAlignment="Center"
+                       HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Run Text="Hello World" FontSize="48"/>
                 <LineBreak/>
                 <Run Text="walterlv.github.io"/>
@@ -130,4 +130,4 @@ You can also add a `RectangleGeometry` to clip your UIElement into a rounded rec
 
 ### UWP AcyclicBrush
 
-You can read Microsoft's documents [Acrylic material - UWP app developer | Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/style/acrylic) for more details about how to write an `AcylicBrush`.
+You can read Microsoft's documents [Acrylic material - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/style/acrylic) for more details about how to write an `AcylicBrush`.
