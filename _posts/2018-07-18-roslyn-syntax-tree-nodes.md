@@ -1,8 +1,7 @@
 ---
 title: "Roslyn 语法树中的各种语法节点及每个节点的含义"
-date: 2018-07-18 09:18:43 +0800
+date: 2018-07-18 20:24:00 +0800
 categories: roslyn dotnet csharp
-published: false
 ---
 
 使用 Roslyn 进行源码分析时，我们会对很多不同种类的语法节点进行分析。如果能够一次性了解到各种不同种类的语法节点，并明白其含义和结构，那么在源码分析的过程中将会更加得心应手。
@@ -48,11 +47,31 @@ namespace Walterlv.Demo
 
 分别是 C# 的各种关键字：`using`, `namespace`, `public`, `internal`, `private`, `protected`, `static`, `class`, `interface`, `struct`。
 
+**InKeyword**、**OutKeyword**、**RefKeyword**、**ReturnKeyword**、**ConstKeyword**、**DefaultKeyword**。
+
+分别是 C# 的另一波关键字 `in`、`out`、`ref`、`return`、`const`、`default`。
+
+**ByteKeyword**、**CharKeyword**、**IntKeyword**、**LongKeyword**、**BoolKeyword**、**FloatKeyword**、**DoubleKeyword**、**DecimalKeyword**。
+
+分别是 C# 中的基元类型关键字`byte`、`char`、`int`、`long`、`bool`、`float`、`double`、`decimal`。需要注意的是，`var` 和 `dynamic` 并不是基元类型关键字，在语法节点中，它是 IdentifierName。
+
+**AsyncKeyword**、**AwaitKeyword**。
+
+分别是 `async`、`await` 关键字。
+
+**TrueKeyword**、**FalseKeyword**。
+
+分别是 `true` 和 `false` 关键字。
+
+**LockKeyword**、**CheckedKeyword**、**UncheckedKeyword**、**UnsafeKeyword**、**FixedKeyword**。
+
+分别是 `lock`、`checked`、`unchecked`、`unsafe`、`fixed` 关键字。
+
 #### 符号
 
-**DotToken**、**SemicolonToken**、**OpenBraceToken**、**CloseBraceToken**、**LessThanToken**、**GreaterThanToken**。
+**DotToken**、**SemicolonToken**、**OpenBraceToken**、**CloseBraceToken**、**LessThanToken**、**GreaterThanToken**、**OpenParenToken**、**CloseParenToken**。
 
-分别是 C# 中的各种符号：`.`, `;`, `{`, `}`, `<`, `>`。
+分别是 C# 中的各种符号：`.`, `;`, `{`, `}`, `<`, `>`, `(`, `)`。
 
 #### 空白
 
@@ -102,32 +121,6 @@ namespace Walterlv.Demo
 
 一个允许添加特性的地方，如果添加了特性，那么可以得到 AttributeList 节点，内部包含了多个 Attribute 子节点。
 
-#### C# 内建类型
-
-**NullableType**、**TupleType**、**ArrayType**。
-
-这三个分别是 C# 中语法级别支持的类型，分别是可空类型、元组类型和数组类型。
-
-- NullableType
-    - 即 `bool?` 这种用于创建 `Nullable<bool>` 的语法。
-- TupleType
-    - 即 `(bool, string)` 这种用于创建 `ValueTuple<bool, string>` 的语法。
-- ArrayType
-    - 即 `[]` 这种用于创建数组类型的语法。
-
-#### 子句（Clause）
-
-**EqualsValueClause**，即等号子句，或者我们经常称之为“赋值”语句。
-
-#### 表达式
-
-- **EqualsExpression**
-    - 相等判断表达式，即 `a == b`。
-- **InvocationExpression**
-    - 调用表达式，即 `Class.Method(xxx)` 或 `instance.Method(xxx)` 这种完整的调用。
-- **SimpleMemberAccessExpression**
-    - 这是 InvocationExpression 的子节点，是方法调用除去参数列表的部分，即 `Class.Method` 或 `instance.Method`。
-
 #### 形参和实参
 
 形参是 parameter，实参是 argument。前者是定义的参数，后者是实际传入的参数。
@@ -150,3 +143,85 @@ namespace Walterlv.Demo
     - 泛型实参列表，出现在使用泛型参数的地方，例如 `this.Foo<T1, T2>()` 中的 `<T1, T2>` 部分。
 - **TypeArgument**
     - 泛型实参，即以上例子中的 `T1` 和 `T2` 部分。
+
+#### 语句块
+
+- **Block**
+    - 即用 `{` 和 `}` 包裹的语句代码。
+    - 当然并不是所有 `{` 和 `}` 包裹的都是语句（例如类型声明就不是），里面真正有代码时才是语句。
+- **EqualsValueClause**
+    - 等号子句，例如 `= null`。我们经常称之为“赋值”语句。
+
+#### 语句
+
+一个语句是指包含分号在内的实际执行的句子。
+
+- **LocalDeclarationStatement**
+    - 本地变量声明语句，即 `var a = 0;` 这样的句子；其中，去掉分号的部分即前面我们提到的变量声明 VariableDeclaration。
+    - 一个本地变量声明的语句也可以不包含赋值。
+- **ExpressionStatement**
+    - 表达式语句，即 `this.Foo();` 这样的一次方法调用。如果去掉分号，剩下的部分是表达式（Expression）。
+- **IfStatement**
+    - if 语句，即一个完整的 `if`-`else if`-`else`。
+- **ForStatement**
+    - for 语句。
+- **ForEachStatement**
+    - for 语句。
+- **WhileStatement**
+    - while 语句，即一个完整的 `while`。
+- **DoStatement**
+    - do-while 语句。
+- **DefaultStatement**
+    - `default();` 语句。
+- **ReturnStatement**
+    - return 语句。
+- **CheckedStatement**
+    - checked 语句。
+- **UncheckedStatement**
+    - checked 语句。
+- **UnsafeStatement**
+    - unsafe 语句。
+- **FixedStatement**
+    - unsafe 语句。
+
+#### 表达式
+
+- **EqualsExpression**
+    - 相等判断表达式，即 `a == b`。
+- **InvocationExpression**
+    - 调用表达式，即 `Class.Method(xxx)` 或 `instance.Method(xxx)` 这种完整的调用。
+- **SimpleMemberAccessExpression**
+    - 这是 InvocationExpression 的子节点，是方法调用除去参数列表的部分，即 `Class.Method` 或 `instance.Method`。
+    - 如果是获取属性（没有参数列表），那么也是这个节点。
+- **AwaitExpression**
+    - await 表达式，即 `await this.Foo()` 这样的调用。
+- **DefaultExpression**
+    - `default()` 表达式。
+- **TrueLiteralExpression**
+    - `true` 表达式。
+- **FalseLiteralExpression**
+    - `false` 表达式。
+- **ParenthesizedLambdaExpression**
+    - 带括号的 lambda 表达式，例如：
+    - `() => xxx`、`(a) => xxx`、`(a, b) => xxx`、`(int a, string b) => xxx`
+    - `() => { }`、`(a) => { }`、`(a, b) => { }`、`(int a, string b) => { }`
+- **SimpleLambdaExpression**
+    - 不带括号的 lambda 表达式，例如：
+    - `a => xxx`、`a => { }`
+
+#### 基元类型
+
+**PredefinedType** 是所有基元类型的节点。它的子节点可能是 BoolKeyword、StringKeyword 或其它基元类型的关键字。
+
+#### C# 内建类型
+
+**NullableType**、**TupleType**、**ArrayType**。
+
+这三个分别是 C# 中语法级别支持的类型，分别是可空类型、元组类型和数组类型。
+
+- NullableType
+    - 即 `bool?` 这种用于创建 `Nullable<bool>` 的语法。
+- TupleType
+    - 即 `(bool, string)` 这种用于创建 `ValueTuple<bool, string>` 的语法。
+- ArrayType
+    - 即 `[]` 这种用于创建数组类型的语法。
