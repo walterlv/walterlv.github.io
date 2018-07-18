@@ -1,11 +1,13 @@
 ---
-title: "Roslyn 语法树中各种语法节点的含义"
+title: "Roslyn 语法树中的各种语法节点及每个节点的含义"
 date: 2018-07-18 09:18:43 +0800
 categories: roslyn dotnet csharp
 published: false
 ---
 
-使用 Roslyn 进行源码分析时，我们会对很多不同种类的语法节点进行分析。那么有哪些种类的语法节点，各种语法节点的含义是什么呢？
+使用 Roslyn 进行源码分析时，我们会对很多不同种类的语法节点进行分析。如果能够一次性了解到各种不同种类的语法节点，并明白其含义和结构，那么在源码分析的过程中将会更加得心应手。
+
+本文将介绍 Roslyn 中各种不同的语法节点、每个节点的含义，以及这些节点之间的关系和语法树结构。
 
 ---
 
@@ -34,32 +36,117 @@ namespace Walterlv.Demo
 
 接下来，我们会介绍 Roslyn 语法树中各种不同种类的节点，以及其含义。
 
-### CompilationUnit
-### UsingDirectives
-### NamespaceDeclaration
-### NamespaceKeyword
-### PublicKeyword
-### InternalKeyword
-### StaticKeyword
-### ClassKeyword
-### QualifiedName
-### IdentifierName
-### IdentifierToken
-### AttributeList
-### Attribute
-### ClassDeclaration
-### MethodDeclaration
-### PropertyDeclaration
-### AccessorList
-### GetAccessorDeclaration
-### SetAccessorDeclaration
-### ArrayType
-### ArrayRankSpecifier
-### OmittedArraySizeExpression
+### 语法节点
 
-### DotToken
-### 
-### OpenBraceToken
-### CloseBraceToken
-### EndOfLineTrivia
-### WhitespaceTrivia
+#### 语法树
+
+**CompilationUnit**，是语法树的根节点。
+
+#### 关键字
+
+**UsingKeyword**、**NamespaceKeyword**、**PublicKeyword**、**InternalKeyword**、**PrivateKeyword**、**ProtectedKeyword**、**StaticKeyword**、**ClassKeyword**、**InterfaceKeyword**、**StructKeyword**。
+
+分别是 C# 的各种关键字：`using`, `namespace`, `public`, `internal`, `private`, `protected`, `static`, `class`, `interface`, `struct`。
+
+#### 符号
+
+**DotToken**、**SemicolonToken**、**OpenBraceToken**、**CloseBraceToken**、**LessThanToken**、**GreaterThanToken**。
+
+分别是 C# 中的各种符号：`.`, `;`, `{`, `}`, `<`, `>`。
+
+#### 空白
+
+**EndOfLineTrivia** 表示换行，**WhitespaceTrivia** 表示空格，**EndOfFileToken** 表示文件的末尾。
+
+通常，这两个语法节点会在另一个节点的里面，作为另一个节点的最后一部分。比如 `using Walterlv.Demo;` 是一个 UsingDirective，它的最后一个节点 Semicolon 中就会包含换行符 EndOfLineTrivia。
+
+#### 指令
+
+**UsingDirective** 是 `using` 指令。一个 `using` 指令包含一个 UsingKeyword，一个 QualifiedName 和一个 Semicolon（`;`）。
+
+#### 声明
+
+**NamespaceDeclaration**、**ClassDeclaration**、**MethodDeclaration**、**PropertyDeclaration**、**FieldDeclaration**、**VariableDeclaration**。
+
+分别是命名空间、类型、方法、属性、。
+
+其中，属性声明包含一个 **AccessorList**，即属性访问器列表，访问期列表可以包含 **GetAccessorDeclaration**（属性 get）、**SetAccessorDeclaration**（属性 set）的声明。
+
+这些声明通常是嵌套存在的。例如一个常规的文件的第 0、1 级语法节点通常是这样的：
+
++ CompilationUnit
+    - UsingDirective
+    - UsingDirective
+    - NamespaceDeclaration
+    - EndOfFileToken
+
+类型声明是命名空间声明的子节点，类型成员的声明是类型声明的子节点。
+
+#### 名称和标识符
+
+- **QualifiedName**
+    - 限定名称，可以理解为完整的名称。
+    - 例如命名空间 Walterlv.DemoTool 的限定名称就是这个全称 Walterlv.DemoTool；类型 Walterlv.DemoTool.Foo 的限定名称也是这个全程 Walterlv.DemoTool.Foo。
+- **IdentifierName**
+    - 标识名称，当前上下文下的唯一名称。
+    - 例如 Walterlv 和 DemoTool 都是 Walterlv.DemoTool 这个命名空间的标识符。
+- **IdentifierToken**
+    - 标识符，具体决定 IdentifierName 的一个字符串。
+    - 这其实与 IdentifierName 是一样的意思，但是在语法树上的不同节点。
+- **GenericName**
+    - 泛型名称，即 Foo<T> 这种。
+
+#### 特性
+
+**AttributeList**、**Attribute**。
+
+一个允许添加特性的地方，如果添加了特性，那么可以得到 AttributeList 节点，内部包含了多个 Attribute 子节点。
+
+#### C# 内建类型
+
+**NullableType**、**TupleType**、**ArrayType**。
+
+这三个分别是 C# 中语法级别支持的类型，分别是可空类型、元组类型和数组类型。
+
+- NullableType
+    - 即 `bool?` 这种用于创建 `Nullable<bool>` 的语法。
+- TupleType
+    - 即 `(bool, string)` 这种用于创建 `ValueTuple<bool, string>` 的语法。
+- ArrayType
+    - 即 `[]` 这种用于创建数组类型的语法。
+
+#### 子句（Clause）
+
+**EqualsValueClause**，即等号子句，或者我们经常称之为“赋值”语句。
+
+#### 表达式
+
+- **EqualsExpression**
+    - 相等判断表达式，即 `a == b`。
+- **InvocationExpression**
+    - 调用表达式，即 `Class.Method(xxx)` 或 `instance.Method(xxx)` 这种完整的调用。
+- **SimpleMemberAccessExpression**
+    - 这是 InvocationExpression 的子节点，是方法调用除去参数列表的部分，即 `Class.Method` 或 `instance.Method`。
+
+#### 形参和实参
+
+形参是 parameter，实参是 argument。前者是定义的参数，后者是实际传入的参数。
+
+语法节点中有两种不同的形参和实参，一个是泛型，一个是普通参数。
+
+- **ParameterList**
+    - 形参列表，出现在方法声明中，即 `void Foo(string a, bool b)` 中的 `(string a, bool b)` 部分。
+- **Parameter**
+    - 形参，即以上例子中的 `string a` 和 `bool b` 部分。
+- **ArgumentList**
+    - 实参列表，出现在方法调用中，即 `this.Foo(a, b)` 中的 `(a, b)` 部分。
+- **Argument**
+    - 实参，即以上例子中的 `a` 和 `b` 部分。
+- **TypeParameterList**
+    - 泛型形参列表，出现在类型声明或者方法声明中，即 `void Foo<T1, T2>(string a)` 中的 `<T1, T2>` 部分。
+- **TypeParameter**
+    - 泛型形参，即以上例子中的 `T1` 和 `T2` 部分。
+- **TypeArgumentList**
+    - 泛型实参列表，出现在使用泛型参数的地方，例如 `this.Foo<T1, T2>()` 中的 `<T1, T2>` 部分。
+- **TypeArgument**
+    - 泛型实参，即以上例子中的 `T1` 和 `T2` 部分。
