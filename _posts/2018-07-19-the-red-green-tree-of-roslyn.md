@@ -19,6 +19,29 @@ Roslyn 的 API 是非常易用的。即便如此复杂的 C# 语法，建立的�
 ![调试时看到的绿树](/static/posts/2018-07-19-20-07-50.png)  
 ▲ 调试时看到的绿树
 
+```csharp
+protected T GetRed<T>(ref T field, int slot) where T : SyntaxNode
+{
+    var result = field;
+
+    if (result == null)
+    {
+        var green = this.Green.GetSlot(slot);
+        if (green != null)
+        {
+            Interlocked.CompareExchange(ref field, (T)green.CreateRed(this, this.GetChildPosition(slot)), null);
+            result = field;
+        }
+    }
+
+    return result;
+}
+```
+
+▲ Roslyn 中获取红树的源代码
+
+源代码摘抄自：[roslyn/SyntaxNode.cs at master · dotnet/roslyn](https://github.com/dotnet/roslyn/blob/master/src/Compilers/Core/Portable/Syntax/SyntaxNode.cs)。
+
 ### Roslyn 的设计理念
 
 Roslyn 一开始就将漂亮的 API 作为目标的一部分，同时还要非常高的性能；所以 Roslyn 的开发团队需要找到一种特殊的数据结构来描述语言（如 C#）的语法。这种数据结构要满足这些期望的要求：
