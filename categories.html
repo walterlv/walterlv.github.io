@@ -18,7 +18,7 @@ title: 按类别查找博客
 </div>
 
 {% for category in site.categories  %}
-    <span class="category-title" id="{{ category[0] | slugify }}">{{ category[0] }}</span>
+    <span class="category-title" id="{{ category[0] | slugify }}">{{ category[0] | capitalize }} ({{ category[1].size }})</span>
     <ul class="post-list">
         {% assign pages_list = category[1] %}
         {% for post in pages_list reversed %}
