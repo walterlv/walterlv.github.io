@@ -32,17 +32,6 @@ published: false
     - ["unknown error" and missing "system.collection.immutable" when analyzing net45 project · Issue #471 · Microsoft/dotnet-apiport](https://github.com/Microsoft/dotnet-apiport/issues/471)
     [Could not load file or assembly 'System.Collections.Immutable' after upgrading ASP.NET to 1.1 · Issue #5539 · aspnet/Mvc](https://github.com/aspnet/Mvc/issues/5539)
 
-- XPath
-    - [使用 XPath 导航选择节点 - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/standard/data/xml/select-nodes-using-xpath-navigation)
-    - [使用 Visual C# .NET 通过 XPath 表达式查询 XML - CSDN博客](https://blog.csdn.net/gooddasenlin/article/details/1882086)
-    - [XML中的XPath查询语法 - CSDN博客](https://blog.csdn.net/luyifeiniu/article/details/626202)
-    - [.Net那点事儿系列：C#操作Xml：通过XmlDocument读写Xml文档 - 玉开 - 博客园](http://www.cnblogs.com/yukaizhao/archive/2011/07/19/csharp_xmldocument_access_xml.html)
-    - [java使用dom4j和XPath解析XML与.net 操作XML小结 - 小顾问 - 博客园](http://www.cnblogs.com/panjun-Donet/archive/2009/07/17/1525432.html)
-    - [ASP.NET利用xpath來取得單一(SelectSingleNode)或多個(SelectNodes)xml node的運用 - F6 Team - 點部落](https://dotblogs.com.tw/puma/2008/08/13/4877)
-    - [.net – 如何使用XPath与XElement或LINQ？ - 代码日志](https://codeday.me/bug/20170715/40193.html)
-    - [.net - 如何与XElement或LINQ一起使用XPath？ xml - CODE Examples [中文(简体)]](https://code-examples.net/zh-CN/q/3795cd)
-    - [.NET(C#)：使用XPath查询带有命名空间(有xmlns)的XML - Mgen](https://www.mgenware.com/blog/?p=596)
-
 - Remote Session
     - [Connect devices through remote sessions - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/remote-sessions)
 
