@@ -33,6 +33,9 @@ links-light:
   - icon: smile
     title: 关于
     url: /about
+  - icon: rss
+    title: RSS
+    url: /feed.xml
 
 # Social Accounts
 github:
