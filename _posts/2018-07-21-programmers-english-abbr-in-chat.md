@@ -1,7 +1,7 @@
 ---
 title: "程序员与英语：即时聊天中的英语缩写 lol / lmao / idk"
 date: 2018-07-21 15:00:23 +0800
-categories: english
+categories: miscellaneous
 ---
 
 经常混迹各大英文开发者社区的你，是否会遇到一些奇怪的英文缩写呢？本文整理一些即时聊天中常用的缩写。
