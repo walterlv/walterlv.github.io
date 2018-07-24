@@ -1,7 +1,7 @@
 ---
 title: "新 csproj 对 WPF/UWP 支持不太好？有第三方 SDK 可以用！MSBuild.Sdk.Extras"
 date_published: 2018-05-22 15:07:22 +0800
-date: 2018-06-29 16:52:31 +0800
+date: 2018-07-24 19:56:12 +0800
 categories: visualstudio dotnet csharp msbuild
 ---
 
@@ -30,12 +30,12 @@ categories: visualstudio dotnet csharp msbuild
 
 ### 如何使用 MSBuild.Sdk.Extras
 
-虽说是第三方 SDK，但实际使用的方便程度却如官方般简洁！只需要将 SDK 替换成 `MSBuild.Sdk.Extras/1.5.4` 即可。1.5.4 是目前 MSBuild.Sdk.Extras 在 NuGet 上的最新版本，建议访问 [NuGet Gallery - MSBuild.Sdk.Extras](https://www.nuget.org/packages/MSBuild.Sdk.Extras/) 使用最新稳定版本。
+虽说是第三方 SDK，但实际使用的方便程度却如官方般简洁！只需要将 SDK 替换成 `MSBuild.Sdk.Extras/1.6.41` 即可。1.6.41 是目前 MSBuild.Sdk.Extras 在 NuGet 上的最新版本，建议访问 [NuGet Gallery - MSBuild.Sdk.Extras](https://www.nuget.org/packages/MSBuild.Sdk.Extras/) 使用最新稳定版本。
 
 以下是最简同时支持 WPF 和 UWP 双框架的代码：
 
 ```xml
-<Project Sdk="MSBuild.Sdk.Extras/1.5.4">
+<Project Sdk="MSBuild.Sdk.Extras/1.6.41">
   <PropertyGroup>
     <TargetFrameworks>net47;uap10.0</TargetFrameworks>
   </PropertyGroup>
