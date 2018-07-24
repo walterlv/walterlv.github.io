@@ -1,6 +1,7 @@
 ---
 title: ".NET/C# 使窗口永不获得焦点"
-date: 2018-07-24 14:19:56 +0800
+date_published: 2018-07-24 14:19:56 +0800
+date: 2018-07-24 16:48:36 +0800
 categories: windows dotnet csharp
 ---
 
@@ -20,7 +21,9 @@ SetWindowLong(handle, GWL_EXSTYLE, exstyle | WS_EX_NOACTIVATE);
 
 当然，这里需要用到 P/Invoke 平台调用，可以阅读 [使用 PInvoke.net Visual Studio Extension 辅助编写 Win32 函数签名](/post/pinvoke-net-visual-studio-extension.html) 了解快速生成平台调用方法签名的方法。
 
-于是，我们将完整的窗口代码写完，是下面这样：
+于是，我们将完整的窗口代码写完，是下面这样。
+
+注意 64 位系统中需调用 `GetWindowLongPtr` 和 `SetWindowLongPtr`，而 32 位系统中是没有这两个方法的；在任何版本的 Windows 中都是这样。当然，64 位系统会为其上运行的 32 位进程模拟 32 位系统的环境。
 
 ```csharp
 using System;
@@ -45,14 +48,38 @@ namespace Walterlv.Demo
             SetWindowLong(handle, GWL_EXSTYLE, exstyle | WS_EX_NOACTIVATE);
         }
 
+        #region Native Methods
+
         private const int WS_EX_NOACTIVATE = 0x08000000;
         private const int GWL_EXSTYLE = -20;
 
-        [DllImport("user32.dll", EntryPoint="GetWindowLong")]
-        private static extern int GetWindowLong(IntPtr hWnd, int nIndex);
+        public static IntPtr GetWindowLong(IntPtr hWnd, int nIndex)
+        {
+            return Environment.Is64BitProcess
+                ? GetWindowLong64(hWnd, nIndex)
+                : GetWindowLong32(hWnd, nIndex);
+        }
+
+        public static IntPtr SetWindowLong(IntPtr hWnd, int nIndex, IntPtr dwNewLong)
+        {
+            return Environment.Is64BitProcess
+                ? SetWindowLong64(hWnd, nIndex, dwNewLong)
+                : SetWindowLong32(hWnd, nIndex, dwNewLong.ToInt32());
+        }
+
+        [DllImport("user32.dll", EntryPoint = "GetWindowLong")]
+        private static extern IntPtr GetWindowLong32(IntPtr hWnd, int nIndex);
+
+        [DllImport("user32.dll", EntryPoint = "GetWindowLongPtr")]
+        private static extern IntPtr GetWindowLong64(IntPtr hWnd, int nIndex);
 
         [DllImport("user32.dll", EntryPoint = "SetWindowLong")]
-        private static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
+        private static extern IntPtr SetWindowLong32(IntPtr hWnd, int nIndex, int dwNewLong);
+
+        [DllImport("user32.dll", EntryPoint = "SetWindowLongPtr")]
+        private static extern IntPtr SetWindowLong64(IntPtr hWnd, int nIndex, IntPtr dwNewLong);
+
+        #endregion
     }
 }
 ```
