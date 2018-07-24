@@ -17,6 +17,9 @@ published: false
 
 ### About to Write
 
+- Output Type
+    - [-target (C# Compiler Options) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/target-compiler-option)
+
 - 窗口与子窗口
     - [窗口之间的主从关系与Z-Order - 中华一猿 - 博客园](https://www.cnblogs.com/dhatbj/p/3288152.html)
     - [Win32 窗口的层级和样式 - CSDN博客](https://blog.csdn.net/see11see/article/details/4513736)
