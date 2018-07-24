@@ -1,6 +1,7 @@
 ---
 title: "使用 Microsoft.UI.Xaml 解决 UWP 控件和对老版本 Windows 10 的兼容性问题"
-date: 2018-07-21 21:51:05 +0800
+date_published: 2018-07-21 21:51:05 +0800
+date: 2018-07-24 08:27:07 +0800
 categories: uwp windows
 ---
 
@@ -16,7 +17,8 @@ categories: uwp windows
 
 在创建 UWP 应用的时候，我们可以选择目标版本和最低版本。目标版本决定了我们能使用的最新 API，最低版本决定了我们需要支持的最低版本的 Windows 10。
 
-![选择目标版本和最低版本](/static/posts/2018-07-21-21-16-05.png)
+![选择目标版本和最低版本](/static/posts/2018-07-21-21-16-05.png)  
+▲ 图中目标版本为 17134，最低版本为 14393。事实上，目标版本必须是 17134，最低只能支持到 14393。
 
 然而，每一次新版本 Windows 10 的推出，都带来大量新的开发 API。可以去官方文档 [Choose a UWP version - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/updates-and-versions/choose-a-uwp-version) 了解各个版本 Windows 10 新增的功能简介。
 
@@ -28,11 +30,15 @@ Windows 10 也在各个版本新增了一些控件。那么问题来了，要支
 
 ### Microsoft.UI.Xaml 库
 
-于是微软就推出了在 <nuget.org> 上推出了 NuGet 包 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)。官方对此包的描述为：
+于是微软就推出了在 <nuget.org> 上推出了 NuGet 包 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)。
+
+使用此包，你需要将 UWP 的 **目标版本设为 17134**，支持的 **最低版本只能到 14393**，不能更低。
+
+官方对此包的描述为：
 
 > This package provides backward-compatible versions of Windows UI features including UWP XAML controls, and Fluent styles and materials. It is part of the Windows UI Library.
 
-即提供各种 Windows UI 功能的向后兼容性，包括 UWP XAML 控件、Fluent 流畅设计样式和画刷。
+即提供各种 Windows UI 功能的向后兼容性，包括 UWP XAML 控件、Fluent 流畅设计样式和画刷。当然，不支持亚克力效果的系统版本虽然画刷能用，不崩溃，但也没有效果的。
 
 ![安装 Microsoft.UI.Xaml](/static/posts/2018-07-21-21-37-52.png)
 
