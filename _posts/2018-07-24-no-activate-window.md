@@ -40,12 +40,12 @@ namespace Walterlv.Demo
             InitializeComponent();
             SourceInitialized += OnSourceInitialized;
         }
-
+        
         private void OnSourceInitialized(object sender, EventArgs e)
         {
             var handle = new WindowInteropHelper(this).Handle;
             var exstyle = GetWindowLong(handle, GWL_EXSTYLE);
-            SetWindowLong(handle, GWL_EXSTYLE, exstyle | WS_EX_NOACTIVATE);
+            SetWindowLong(handle, GWL_EXSTYLE, new IntPtr(exstyle.ToInt32() | WS_EX_NOACTIVATE));
         }
 
         #region Native Methods
@@ -53,14 +53,14 @@ namespace Walterlv.Demo
         private const int WS_EX_NOACTIVATE = 0x08000000;
         private const int GWL_EXSTYLE = -20;
 
-        public static int GetWindowLong(IntPtr hWnd, int nIndex)
+        public static IntPtr GetWindowLong(IntPtr hWnd, int nIndex)
         {
             return Environment.Is64BitProcess
                 ? GetWindowLong64(hWnd, nIndex)
                 : GetWindowLong32(hWnd, nIndex);
         }
 
-        public static int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong)
+        public static IntPtr SetWindowLong(IntPtr hWnd, int nIndex, IntPtr dwNewLong)
         {
             return Environment.Is64BitProcess
                 ? SetWindowLong64(hWnd, nIndex, dwNewLong)
@@ -68,16 +68,16 @@ namespace Walterlv.Demo
         }
 
         [DllImport("user32.dll", EntryPoint = "GetWindowLong")]
-        private static extern int GetWindowLong32(IntPtr hWnd, int nIndex);
+        private static extern IntPtr GetWindowLong32(IntPtr hWnd, int nIndex);
 
         [DllImport("user32.dll", EntryPoint = "GetWindowLongPtr")]
-        private static extern int GetWindowLong64(IntPtr hWnd, int nIndex);
+        private static extern IntPtr GetWindowLong64(IntPtr hWnd, int nIndex);
 
         [DllImport("user32.dll", EntryPoint = "SetWindowLong")]
-        private static extern int SetWindowLong32(IntPtr hWnd, int nIndex, int dwNewLong);
+        private static extern IntPtr SetWindowLong32(IntPtr hWnd, int nIndex, IntPtr dwNewLong);
 
         [DllImport("user32.dll", EntryPoint = "SetWindowLongPtr")]
-        private static extern int SetWindowLong64(IntPtr hWnd, int nIndex, int dwNewLong);
+        private static extern IntPtr SetWindowLong64(IntPtr hWnd, int nIndex, IntPtr dwNewLong);
 
         #endregion
     }
@@ -94,3 +94,5 @@ namespace Walterlv.Demo
 
 - [c# - Not take focus, but allow interaction? - Stack Overflow](https://stackoverflow.com/questions/6804251/not-take-focus-but-allow-interaction)
 - [Extended Window Styles - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/winmsg/extended-window-styles)
+- [GetWindowLongPtr function (Windows)](https://msdn.microsoft.com/en-us/library/windows/desktop/ms633585%28v=vs.85%29.aspx)
+- [SetWindowLongPtr function (Windows)](https://msdn.microsoft.com/en-us/library/windows/desktop/ms644898(v=vs.85).aspx)
