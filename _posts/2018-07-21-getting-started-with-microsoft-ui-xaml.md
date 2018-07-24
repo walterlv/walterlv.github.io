@@ -1,7 +1,7 @@
 ---
 title: "使用 Microsoft.UI.Xaml 解决 UWP 控件和对老版本 Windows 10 的兼容性问题"
 date_published: 2018-07-21 21:51:05 +0800
-date: 2018-07-24 08:27:07 +0800
+date: 2018-07-24 09:11:57 +0800
 categories: uwp windows
 ---
 
@@ -110,3 +110,23 @@ xmlns:controls="using:Microsoft.UI.Xaml.Controls"
 于是，一些广泛使用的 UWP 应用终于不用各种自己写控件来兼容低版本的 Windows 10 了。
 
 当然除了在 XAML 中，也可以在 C# 代码中使用库中的新 API。
+
+### 解决意料之外的错误
+
+一切可以那么顺利？不一定，你可能在刚刚把 `<XamlControlsResources />` 加入之后，就会发现程序启动即崩溃了……
+
+然后提示：
+
+> System.Runtime.InteropServices.COMException
+>   HResult=0x80004005
+>   Message=Error HRESULT E_FAIL has been returned from a call to a COM component.
+>   Source=<Cannot evaluate the exception source>
+>   StackTrace:
+> <Cannot evaluate the exception stack trace>
+
+
+![启动异常](/static/posts/2018-07-24-09-05-10.png)
+
+不得不说，微软再一次把内部错误暴露了出去。实际的错误原因是 —— **目标 SDK 需要设置为 17134** —— 这是必须的！
+
+![设置为 17134](/static/posts/2018-07-24-09-10-43.png)
