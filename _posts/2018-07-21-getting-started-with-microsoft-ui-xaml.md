@@ -1,7 +1,7 @@
 ---
 title: "使用 Microsoft.UI.Xaml 解决 UWP 控件和对老版本 Windows 10 的兼容性问题"
 date_published: 2018-07-21 21:51:05 +0800
-date: 2018-07-24 09:11:57 +0800
+date: 2018-07-24 09:17:41 +0800
 categories: uwp windows
 ---
 
@@ -130,3 +130,5 @@ xmlns:controls="using:Microsoft.UI.Xaml.Controls"
 不得不说，微软再一次把内部错误暴露了出去。实际的错误原因是 —— **目标 SDK 需要设置为 17134** —— 这是必须的！
 
 ![设置为 17134](/static/posts/2018-07-24-09-10-43.png)
+
+当然，这个版本号并不是跟随系统的，而是跟随 Microsoft.UI.Xaml 库的。库如果更新有新系统的控件，那么你更新库之后就需要再次更新目标 SDK 版本了。
