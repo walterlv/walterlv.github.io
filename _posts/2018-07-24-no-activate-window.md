@@ -66,3 +66,4 @@ namespace Walterlv.Demo
 #### 参考资料
 
 - [c# - Not take focus, but allow interaction? - Stack Overflow](https://stackoverflow.com/questions/6804251/not-take-focus-but-allow-interaction)
+- [Extended Window Styles - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/winmsg/extended-window-styles)
