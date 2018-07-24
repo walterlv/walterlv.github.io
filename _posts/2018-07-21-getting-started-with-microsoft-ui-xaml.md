@@ -117,11 +117,11 @@ xmlns:controls="using:Microsoft.UI.Xaml.Controls"
 
 然后提示：
 
-> System.Runtime.InteropServices.COMException
->   HResult=0x80004005
->   Message=Error HRESULT E_FAIL has been returned from a call to a COM component.
->   Source=<Cannot evaluate the exception source>
->   StackTrace:
+> System.Runtime.InteropServices.COMException  
+>   HResult=0x80004005  
+>   Message=Error HRESULT E_FAIL has been returned from a call to a COM component.  
+>   Source=<Cannot evaluate the exception source>  
+>   StackTrace:  
 > <Cannot evaluate the exception stack trace>
 
 
