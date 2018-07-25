@@ -21,7 +21,7 @@ categories: uwp
 
 ### 启动应用
 
-在上一篇文章中的末尾，我们成功启动了程序并进入了 Main 函数的断点，但实际上运行会报错；提示进程已启动，但应用尚未运行。
+在上一篇文章中的末尾，我们成功启动了程序并进入了 Main 函数的断点，但实际上运行会报错。我们能看见一个窗口显示出来，随后提示进程已启动，但应用尚未运行。
 
 > The Walterlv.Demo.ZeroUwp.exe process started, but the activation request failed with error 'The app didn't start'.
 
