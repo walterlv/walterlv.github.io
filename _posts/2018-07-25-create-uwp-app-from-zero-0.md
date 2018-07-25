@@ -1,6 +1,6 @@
 ---
 title: "(1/2) 为了理解 UWP 的启动流程，我从零开始创建了一个 UWP 程序"
-date: 2018-07-25 09:17:31 +0800
+date: 2018-07-25 09:27:23 +0800
 categories: uwp
 ---
 
@@ -202,6 +202,12 @@ UWP 程序的输出类型是 `AppContainerExe`，而不是一般的 Library 或�
 - uap:VisualElements/uap:DefaultTile@Wide310x150Logo
 
 这是 XPath 语法，详见：[XML 的 XPath 语法](/post/xml-xpath.html)
+
+同时，我们还真的需要相应的图片：
+
+![UWP 程序所需的最少 Logo](/static/posts/2018-07-25-09-27-08.png)
+
+建议从 UWP 程序模板中复制，也可以去这里下载：[UWP 程序所需的最少 Logo 资源-CSDN下载](https://download.csdn.net/download/wpwalter/10562268)。
 
 补充完毕之后，完整的文件如下：
 
