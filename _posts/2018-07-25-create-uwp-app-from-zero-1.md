@@ -1,6 +1,6 @@
 ---
 title: "(2/2) 为了理解 UWP 的启动流程，我从零开始创建了一个 UWP 程序"
-date: 2018-07-25 14:15:24 +0800
+date: 2018-07-25 21:20:36 +0800
 categories: uwp
 ---
 
@@ -113,3 +113,96 @@ public void Uninitialize() { }
 
 ### 启动窗口
 
+注意到以上所有方法都留空之后，应用程序很快就退出了。这与我们开发传统 Win32 应用时的效果是一致的 —— 是的，我们缺一个消息循环。我们需要一个不断处理的消息循环用来阻断主线程的退出，同时又能够不断响应消息。而这样的方法需要写到 `Run()` 方法里面。
+
+UWP 中开启一个消息循环是非常容易的，不过我们需要一个 `CoreDispatcher` 对象。在我们目前的接口实现中，`CoreDispatcher` 对象可以从 `CoreWindow` 中获取到。所以我们需要在 `SetWindow` 方法中拿到 `CoreWindow` 的实例，然后在 `Run` 中使用它开启窗口消息循环。
+
+```csharp
+public void SetWindow(CoreWindow window)
+{
+    _window = window;
+}
+
+public void Run()
+{
+    _window.Activate();
+    _window.Dispatcher.ProcessEvents(CoreProcessEventsOption.ProcessUntilQuit);
+}
+
+private CoreWindow _window;
+```
+
+![开启消息循环](/static/posts/2018-07-25-15-19-57.png)  
+▲ 开启了消息循环之后，应用不会直接退出了
+
+### 在窗口中显示点东西
+
+我们使用 `CompositionAPI` 可以在窗口中创建 `Visual` 并显示出来。
+
+```csharp
+public void SetWindow(CoreWindow window)
+{
+    _window = window;
+
+    var compositor = new Compositor();
+    var root = compositor.CreateContainerVisual();
+    var compositionTarget = compositor.CreateTargetForCurrentView();
+    compositionTarget.Root = root;
+
+    var child = compositor.CreateSpriteVisual();
+    child.Size = new Vector2(100f, 100f);
+    child.Brush = compositor.CreateColorBrush(Color.FromArgb(0xFF, 0x00, 0x80, 0xFF));
+    root.Children.InsertAtTop(child);
+}
+```
+
+![窗口中新增的 Visual](/static/posts/2018-07-25-20-44-19.png)
+
+### 在窗口中做一些交互
+
+`CoreWindow` 除了为我们提供了消息循环之外，也可以提供交互。监听 `PointerMoved` 事件，我们可以做一些简单的交互。
+
+下面我用 Git 标准差异比较的方式添加了交互的代码 `PointerMoved`：
+
+```diff
+  public void SetWindow(CoreWindow window)
+  {
+      _window = window;
++     _window.PointerMoved += OnPointerMoved;
+  
+      var compositor = new Compositor();
+-     var root = compositor.CreateContainerVisual();
++     _root = compositor.CreateContainerVisual();
+      var compositionTarget = compositor.CreateTargetForCurrentView();
+-     compositionTarget.Root = _root;
++     compositionTarget.Root = _root;
+  
+      var child = compositor.CreateSpriteVisual();
+      child.Size = new Vector2(100f, 100f);
+      child.Brush = compositor.CreateColorBrush(Color.FromArgb(0xFF, 0x00, 0x80, 0xFF));
+-     root.Children.InsertAtTop(child);
++     _root.Children.InsertAtTop(child);
+  }
+
++ private void OnPointerMoved(CoreWindow sender, PointerEventArgs args)
++ {
++     var visual = _root.Children.First();
++     var position = args.CurrentPoint.Position;
++     visual.Offset = new Vector3((float) (position.X - 50f), (float) (position.Y - 50f), 0f);
++ }
+
+  private CoreWindow _window;
++ private ContainerVisual _root;
+```
+
+能够完成一些简单的交互。
+
+![窗口内的交互](/static/posts/2018-07-25-interaction.gif)
+
+### 总结
+
+在本文中，我们了解到 UWP 的应用程序启动中也一样需要有窗口消息循环。不过 UWP 中创建消息循环还是非常简单的。
+
+我们使用 CompositionAPI 进行了一些界面显示和简单的交互。了解到即便是如此复杂的 UWP 程序，其启动流程也没有那么复杂。
+
+不过，如果你阅读了前面一篇 [(1/2) 为了理解 UWP 的启动流程，我从零开始创建了一个 UWP 程序](/post/create-uwp-app-from-zero-0.html)，会发现复杂的部分都在项目文件和系统的部分。
