@@ -1,7 +1,7 @@
 ---
 title: "新 csproj 对 WPF/UWP 支持不太好？有第三方 SDK 可以用！MSBuild.Sdk.Extras"
 date_published: 2018-05-22 15:07:22 +0800
-date: 2018-07-25 10:27:37 +0800
+date: 2018-07-26 07:21:12 +0800
 categories: visualstudio dotnet csharp msbuild
 ---
 
@@ -37,18 +37,36 @@ categories: visualstudio dotnet csharp msbuild
 ```xml
 <Project Sdk="MSBuild.Sdk.Extras/1.6.41">
   <PropertyGroup>
-    <TargetFrameworks>net47;uap10.0.17134</TargetFrameworks>
+    <TargetFrameworks>net471;uap10.0.17134</TargetFrameworks>
   </PropertyGroup>
 </Project>
 ```
 
 ▲ 在刚刚指定完 uap10.0.17134 之后，等待 Visual Studio 还原需要等待好几分钟。
 
+另外，从 1.6.0 版本开始，为 WPF 和 Windows Forms 分别新增了一个属性，用于默认引用 WPF 或 Windows Forms 所需的程序集。
+
+```xml
+<Project Sdk="MSBuild.Sdk.Extras/1.6.41">
+  <PropertyGroup>
+    <TargetFramework>net471</TargetFramework>
+    <!-- 以下是默认引用 WPF 相关依赖的属性 -->
+    <ExtrasEnableWpfProjectSetup>true</ExtrasEnableWpfProjectSetup>
+    <!-- 以下是默认引用 Windows Forms 相关依赖的属性 -->
+    <!-- <ExtrasEnableWinFormsProjectSetup >true</ExtrasEnableWinFormsProjectSetup> -->
+  </PropertyGroup>
+</Project>
+```
+
+从下图我们可以看出，设置 `ExtrasEnableWpfProjectSetup` 为 `true` 后，WPF 的类型将直接可用，而无需额外引用。（当然，不设置也是可以的，只是需要手动引用。）
+
+![](/static/posts/2018-07-26-07-15-26.png)
+
 没错，真的如此简单！在我们猜测的 .NET Core 3 支持 WPF/UWP 项目格式之前，这应该算是最简单的迁移方案了！
 
-至于项目结构的效果，可以看下图所示：
+至于项目结构的效果，可以看下图所示（包含 UWP 的多目标）：
 
-![net47 和 uap10.0](/static/posts/2018-05-22-15-00-04.png)
+![net471 和 uap10.0.171341](/static/posts/2018-07-26-07-18-49.png)
 
 相比于此前的手工迁移，使用此新格式创建出来的 XAML 文件是可见的，而且 .xaml.cs 也是折叠在 .xaml 之下，且能正常编译！（当然，咱们还得考虑 UWP 和 WPF 在 XAML 书写上的细微差异）
 
