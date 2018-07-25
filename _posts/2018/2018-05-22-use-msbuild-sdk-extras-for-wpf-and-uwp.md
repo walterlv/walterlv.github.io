@@ -1,7 +1,7 @@
 ---
 title: "新 csproj 对 WPF/UWP 支持不太好？有第三方 SDK 可以用！MSBuild.Sdk.Extras"
 date_published: 2018-05-22 15:07:22 +0800
-date: 2018-07-24 19:56:12 +0800
+date: 2018-07-25 10:27:37 +0800
 categories: visualstudio dotnet csharp msbuild
 ---
 
@@ -37,10 +37,12 @@ categories: visualstudio dotnet csharp msbuild
 ```xml
 <Project Sdk="MSBuild.Sdk.Extras/1.6.41">
   <PropertyGroup>
-    <TargetFrameworks>net47;uap10.0</TargetFrameworks>
+    <TargetFrameworks>net47;uap10.0.17134</TargetFrameworks>
   </PropertyGroup>
 </Project>
 ```
+
+▲ 在刚刚指定完 uap10.0.17134 之后，等待 Visual Studio 还原需要等待好几分钟。
 
 没错，真的如此简单！在我们猜测的 .NET Core 3 支持 WPF/UWP 项目格式之前，这应该算是最简单的迁移方案了！
 
