@@ -1,8 +1,8 @@
 ---
 title: "(2/2) 为了理解 UWP 的启动流程，我从零开始创建了一个 UWP 程序"
 date_published: 2018-07-25 21:20:36 +0800
-date: 2018-07-26 08:46:30 +0800
-categories: uwp
+date: 2018-07-27 07:24:37 +0800
+categories: uwp dotnet csharp
 ---
 
 每次使用 Visual Studio 的模板创建一个 UWP 程序，我们会在项目中发现大量的项目文件、配置、应用启动流程代码和界面代码。然而这些文件在 UWP 程序中到底是如何工作起来的？

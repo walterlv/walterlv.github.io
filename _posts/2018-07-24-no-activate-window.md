@@ -1,8 +1,8 @@
 ---
 title: ".NET/C# 使窗口永不获得焦点"
 date_published: 2018-07-24 14:19:56 +0800
-date: 2018-07-24 16:55:30 +0800
-categories: windows dotnet csharp
+date: 2018-07-27 07:24:42 +0800
+categories: windows dotnet csharp wpf
 ---
 
 有些窗口天生就是为了辅助其它程序而使用的，典型的如“输入法窗口”。这些窗口不希望抢夺其它窗口的焦点。
