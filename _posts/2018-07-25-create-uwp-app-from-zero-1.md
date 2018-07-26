@@ -1,6 +1,7 @@
 ---
 title: "(2/2) 为了理解 UWP 的启动流程，我从零开始创建了一个 UWP 程序"
-date: 2018-07-25 21:20:36 +0800
+date_published: 2018-07-25 21:20:36 +0800
+date: 2018-07-26 08:46:30 +0800
 categories: uwp
 ---
 
@@ -70,7 +71,7 @@ namespace Walterlv.Demo.ZeroUwp
 }
 ```
 
-因此，我们需要理解这些方法的执行实际以及含义才能正确实现这些方法。庆幸的是，这些方法的含义都能在官方文档中找到（其实就是平时看到的注释）：
+因此，我们需要理解这些方法的执行时机以及含义才能正确实现这些方法。庆幸的是，这些方法的含义都能在官方文档中找到（其实就是平时看到的注释）：
 
 - [IFrameworkView.Initialize(CoreApplicationView)](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.core.iframeworkview.initialize)
 - [IFrameworkView.Load(String)](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.core.iframeworkview.load)
