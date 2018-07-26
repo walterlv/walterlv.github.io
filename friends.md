@@ -43,6 +43,8 @@ permalink: /friends/
 - [叛逆者](https://www.zhihu.com/people/minmin.gong/activities)  
     Microsoft Senior SDE（微软高级软件工程师），KlayGE开源游戏引擎创始人
 
+- [老赵点滴 - 追求编程之美](http://blog.zhaojie.me/)
+
 - [Highway to Graphics](https://zhuanlan.zhihu.com/highwaytographics)
 
 - [YOYOFx - .NET Core & Microservices](http://blog.microservice4.net/)
