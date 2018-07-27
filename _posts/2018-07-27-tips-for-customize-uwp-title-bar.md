@@ -1,6 +1,7 @@
 ---
 title: "UWP 扩展/自定义标题栏的方法，一些概念和一些注意事项"
-date: 2018-07-27 14:17:44 +0800
+date_published: 2018-07-27 14:17:44 +0800
+date: 2018-07-27 18:25:22 +0800
 categories: uwp
 ---
 
@@ -65,7 +66,7 @@ titleBar.ButtonBackgroundColor = Colors.Transparent;
 Window.Current.SetTitleBar(TitleBar);
 ```
 
-![设置了一个标题栏](/static/posts/2018-07-27-not-interactive.gif)  
+![设置了一个标题栏](/static/posts/2018-07-27-set-titlebar.gif)  
 ▲ 按钮在标题栏区域现在可以交互了
 
 特别说明一下，`SetTitleBar` 传入的是 `UIElement` 类型的实例，也就是说这也是 XAML 交互的一部分。我们需要使用 `Window` 的实例，而不是 `CoreWindow` 的实例。
@@ -76,7 +77,7 @@ Window.Current.SetTitleBar(TitleBar);
 
 实际看来，无论它多大，都能响应标题栏事件；但被遮挡的部分就真的被遮挡了，没有标题栏响应。
 
-![更高的标题栏，或者被遮挡](/static/posts/2018-07-27-not-interactive.gif)  
+![更高的标题栏，或者被遮挡](/static/posts/2018-07-27-titlebar-been-covered.gif)  
 ▲ 更高的标题栏，或者被遮挡
 
 事实上，指定为标题栏的控件可以在界面的任何地方，不需要一定在顶部。只不过，绝大多数不作死的应用都不会这样设置吧！
