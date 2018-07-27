@@ -14,7 +14,7 @@ Rouge 是一款基于 Ruby 的语法高亮工具，能为你的代码生成漂�
 
 Jekyll 中的 `__config.yml` 文件记录了 Jekyll 的最核心配置。其中，`markdown` 字段的值表示使用哪一款插件来将 Markdown 文本转换为 HTML 页面结构。
 
-GitHub 推荐使用的 Jekyll 的 Markdown 插件为 kramdown。kramdown 是一个强大且高性能的文本转换引擎，你可以通过阅读 [kramdown 和 markdown 较大的差异比较 -| Hom](http://gohom.win/2015/11/06/Kramdown-note/) 了解 kramdown 的强大之处。
+GitHub 推荐使用的 Jekyll 的 Markdown 插件为 kramdown。kramdown 是一个强大且高性能的文本转换引擎，你可以通过阅读 [kramdown 和 markdown 较大的差异比较 - Hom](http://gohom.win/2015/11/06/Kramdown-note/) 了解 kramdown 的强大之处。
 
 不过，我们现在关系的是它可以使用的语法高亮工具 —— Rouge。在 Jekyll 的配置文件中这样配置它们：
 
