@@ -1,7 +1,7 @@
 ---
 title: "如何创建一个基于命令行工具的跨平台的 NuGet 工具包"
 date_published: 2018-05-12 09:09:02 +0800
-date: 2018-07-10 10:27:11 +0800
+date: 2018-07-27 10:23:57 +0800
 categories: visualstudio csharp dotnet msbuild
 ---
 
@@ -340,6 +340,8 @@ namespace Walterlv.NuGetTool
 ```
 
 你可以尽情发挥你的想象力，传入更多让人意想不到的参数，实现不可思议的功能。更多 MSBuild 全局参数，可以参考我的另一篇文章[项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - 吕毅](/post/known-properties-in-csproj.html)。
+
+需要注意，控制台传参数是有字符数量限制的，要解决传参字符数量限制问题，可以参考 [Roslyn 使用 WriteLinesToFile 解决参数过长无法传入](https://lindexi.gitee.io/post/Roslyn-%E4%BD%BF%E7%94%A8-WriteLinesToFile-%E8%A7%A3%E5%86%B3%E5%8F%82%E6%95%B0%E8%BF%87%E9%95%BF%E6%97%A0%E6%B3%95%E4%BC%A0%E5%85%A5.html)。
 
 #### 控制台程序向 .targets 返回数据
 
