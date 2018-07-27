@@ -10,7 +10,9 @@ about: Windows 10 Developer
 logo: /assets/img/avatar.png
 default-theme: light
 markdown: kramdown
-highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 # Site Urls
 baseurl: ""
