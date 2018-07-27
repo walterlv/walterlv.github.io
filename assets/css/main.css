@@ -1684,55 +1684,6 @@ pre span {
     }
 }
 
-.highlight .hll {
-    background-color: #333
-}
-
-.highlight .c, .highlight .cm, .highlight .cp, .highlight .c1, .highlight .cs {
-    color: #75715e
-}
-
-.highlight .err {
-    color: #960050;
-    background-color: #1e0010
-}
-
-.highlight .k, .highlight .kc, .highlight .kd, .highlight .kp, .highlight .kr, .highlight .kt, .highlight .no {
-    color: #66d9ef
-}
-
-.highlight .l, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .mo, .highlight .se, .highlight .il {
-    color: #ae81ff
-}
-
-.highlight .o, .highlight .p {
-    color: #f7f7f2
-}
-
-.highlight .m, .highlight .n, .highlight .nb, .highlight .ni, .highlight .nl, .highlight .nn, .highlight .py, .highlight .nv, .highlight .w, .highlight .bp, .highlight .vc, .highlight .vg, .highlight .vi {
-    color: #a4d043
-}
-
-.highlight .kn, .highlight .nt, .highlight .ow {
-    color: #f92672
-}
-
-.highlight .ge {
-    font-style: italic
-}
-
-.highlight .gs {
-    font-weight: bold
-}
-
-.highlight .ld, .highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .si, .highlight .sx, .highlight .sr, .highlight .s1, .highlight .ss {
-    color: #e6db74
-}
-
-.highlight .na, .highlight .nc, .highlight .nd, .highlight .ne, .highlight .nf, .highlight .nx {
-    color: #a6e22e
-}
-
 .contact-form {
     font-family: 'Titillium Web', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 700;
