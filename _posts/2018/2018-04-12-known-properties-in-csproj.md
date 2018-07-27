@@ -1,7 +1,7 @@
 ---
 title: "项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦）"
 date_published: 2018-04-12 21:03:52 +0800
-date: 2018-07-04 20:14:19 +0800
+date: 2018-07-27 12:36:48 +0800
 categories: visualstudio nuget csharp dotnet msbuild
 ---
 
@@ -26,7 +26,76 @@ categories: visualstudio nuget csharp dotnet msbuild
 
 <div id="toc"></div>
 
-### 项属性
+### 编译上下文
+
+以下属性是基本的输出路径属性，可以在 Microsoft.NET.DefaultOutputPaths.targets 找到。
+
++ `$(Configuration)`
+    - 这就是我们传说中决定 Debug 还是 Release 的属性。如果没有指定，默认是 Debug。本身没有什么意义，因为各种其他行为判断了这个属性的值，于是就有了编译差别。
++ `$(Platform)`
+    - 默认是 `AnyCPU`，还可以是 `x86`、`x64` 或者 `ARM`。
+
++ `$(BaseOutputPath)`
+    - 输出路径的起始位置。如果没有指定，就是 `bin\`。修改这个属性可以间接修改 `OutputPath`。
++ `$(OutputPath)`
+    - 输出路径，默认有两种可能的值。如果 `AnyCPU` 编译，就是 `$(BaseOutputPath)$(Configuration)\`；否则就是 `$(BaseOutputPath)$(PlatformName)\$(Configuration)\`
+    
++ `$(BaseIntermediateOutputPath)`
+    - 临时生成路径的起始位置。如果没有指定，就是 `obj\`。修改这个属性可以间接修改 `IntermediateOutputPath`。
++ `$(IntermediateOutputPath)`
+    - 临时生成路径，默认有两种可能的值。如果 `AnyCPU` 编译，就是 `$(BaseIntermediateOutputPath)$(Configuration)\`；否则就是 `$(BaseIntermediateOutputPath)$(PlatformName)\$(Configuration)\`
+
+---
+
+以下属性控制哪些文件应该被默认包含在编译中，可以在 Microsoft.NET.TargetFrameworkInference.targets 找到。
+
++ `$(EnableDefaultItems)`
+    - 默认为 `true`，如果指定为 `false`，那么就不自动将 .cs 和 .resx 文件引入。
++ `$(DefaultItemExcludes)`
+    - 默认为输出路径（`OutputPath`）和临时生成路径（`IntermediateOutputPath`）下的所有文件。
++ `$(AppendTargetFrameworkToOutputPath)`
+    - 默认我们生成路径会包含 `net47` 或者 `netcoreapp2.1` 这样的一层文件夹，如果指定为 `false`，这一层文件夹就不会生成了。
+
+---
+
+下面是 Microsoft.NET.Sdk 中的一部分源码，在 Microsoft.NET.Sdk.DefaultItems.props 文件中，可以发现还有更多与控制自动引入文件相关的属性。
+
+```xml
+<ItemGroup Condition=" '$(EnableDefaultItems)' == 'true' ">
+  <Compile Include="**/*$(DefaultLanguageSourceExtension)" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+  <EmbeddedResource Include="**/*.resx" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" Condition=" '$(EnableDefaultEmbeddedResourceItems)' == 'true' " />
+</ItemGroup>
+<ItemGroup Condition=" '$(EnableDefaultItems)' == 'true' And '$(EnableDefaultNoneItems)' == 'true' ">
+  <None Include="**/*" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+  <None Remove="**/*$(DefaultLanguageSourceExtension)" />
+  <None Remove="**/*.resx" />
+</ItemGroup>
+```
+
+---
+
+以下属性是 Microsoft.NET.Sdk 中的各种 Target 使用的配置属性，设置这些属性也影响到生成过程。
+
+```xml
+<Project>
+  <PropertyGroup>
+    <!-- 此程序集的版本，这是很多其他版本号未设置时的默认值。而此值的默认值是 1.0.0 -->
+    <Version>3.1.2-beta</Version>
+
+    <!-- 以下属性是当引用的 dll 出现版本冲突时，用于自动生成绑定重定向的。
+         详见：https://www.erikheemskerk.nl/transitive-nuget-dependencies-net-core-got-your-back/ -->
+
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+  </PropertyGroup>
+</Project>
+```
+
+可以阅读 [解读 Microsoft.NET.Sdk 的源码，你能定制各种奇怪而富有创意的编译过程](/post/read-microsoft-net-sdk.html) 和  [Reading the Source Code of Microsoft.NET.Sdk, Writing the Creative Extension of Compiling](/post/read-microsoft-net-sdk-en.html) 了解更多 Microsoft.NET.Sdk 源码。
+
+### 文件路径
+
+#### 项路径
 
 写在 csproj 文件中 ItemGroup 组中的每一个元素即“项”。
 
@@ -63,26 +132,7 @@ categories: visualstudio nuget csharp dotnet msbuild
 + `%(AccessedTime)`
     - 文件最近被访问的时间，例如: `2018-04-12 21:02:15.4132476`
 
-### 全局属性
-
-* 配置
-    - `$(EnableDefaultItems)` 默认为 `true`，如果指定为 `false`，那么就不糊自动将 .cs 和 .resx 文件引入。
-
-下面是 Microsoft.NET.Sdk 中的一部分源码，在 Microsoft.NET.Sdk.DefaultItems.props 文件中，可以发现还有更多与控制自动引入文件相关的属性。
-
-```xml
-<ItemGroup Condition=" '$(EnableDefaultItems)' == 'true' ">
-  <Compile Include="**/*$(DefaultLanguageSourceExtension)" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
-  <EmbeddedResource Include="**/*.resx" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" Condition=" '$(EnableDefaultEmbeddedResourceItems)' == 'true' " />
-</ItemGroup>
-<ItemGroup Condition=" '$(EnableDefaultItems)' == 'true' And '$(EnableDefaultNoneItems)' == 'true' ">
-  <None Include="**/*" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
-  <None Remove="**/*$(DefaultLanguageSourceExtension)" />
-  <None Remove="**/*.resx" />
-</ItemGroup>
-```
-
-可以阅读 [解读 Microsoft.NET.Sdk 的源码，你能定制各种奇怪而富有创意的编译过程](/post/read-microsoft-net-sdk.html) 和  [Reading the Source Code of Microsoft.NET.Sdk, Writing the Creative Extension of Compiling](/post/read-microsoft-net-sdk-en.html) 了解更多 Microsoft.NET.Sdk 源码。
+#### 全局路径
 
 * 项目文件
     + `$(MSBuildProjectFullPath)`
@@ -138,25 +188,6 @@ categories: visualstudio nuget csharp dotnet msbuild
 - `$(MSBuildBinPath)`: MSBuild 程序所在的路径
 
 如果希望了解在 csproj 中创建 NuGet 包时可用的属性，请参考我的另一篇博客：[项目文件中的已知 NuGet 属性（知道了这些，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅](/post/known-nuget-properties-in-csproj.html)。
-
-### Microsoft.NET.Sdk 配置属性
-
-这些属性是 Microsoft.NET.Sdk 中的各种 Target 使用的配置属性，设置这些属性可以影响到生成过程。
-
-```xml
-<Project>
-  <PropertyGroup>
-    <!-- 此程序集的版本，这是很多其他版本号未设置时的默认值。而此值的默认值是 1.0.0 -->
-    <Version>3.1.2-beta</Version>
-
-    <!-- 以下属性是当引用的 dll 出现版本冲突时，用于自动生成绑定重定向的。
-         详见：https://www.erikheemskerk.nl/transitive-nuget-dependencies-net-core-got-your-back/ -->
-
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
-  </PropertyGroup>
-</Project>
-```
 
 ---
 
