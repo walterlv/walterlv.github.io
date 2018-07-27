@@ -1,7 +1,7 @@
 ---
 title: "(2/2) 为了理解 UWP 的启动流程，我从零开始创建了一个 UWP 程序"
 date_published: 2018-07-25 21:20:36 +0800
-date: 2018-07-27 07:24:37 +0800
+date: 2018-07-27 09:19:06 +0800
 categories: uwp dotnet csharp
 ---
 
@@ -135,6 +135,8 @@ private CoreWindow _window;
 
 ![开启消息循环](/static/posts/2018-07-25-15-19-57.png)  
 ▲ 开启了消息循环之后，应用不会直接退出了
+
+你可以通过阅读 [理解 UWP 视图的概念，让 UWP 应用显示多个窗口（多视图）](/post/show-multiple-views-for-an-uwp-app.html) 一文来了解 UWP 应用（`CoreApplication`）、应用视图（`CoreApplicationView`）、窗口（`CoreWindow`/`Window`）、线程调度模型（`CoreDispatcher`）之间的关系。
 
 ### 在窗口中显示点东西
 
