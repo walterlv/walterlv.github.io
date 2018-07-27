@@ -45,13 +45,19 @@
   color: #960050;
 }
 .highlight .gd {
-  color: #49483e;
+  color: #bbbbbb;
+  background: #473832;
+  display: block;
 }
 .highlight .gi {
-  color: #49483e;
+  color: #bbbbbb;
+  background: #343b24;
+  display: block;
 }
 .highlight .ge {
-  color: #49483e;
+  color: #bbbbbb;
+  background: #3d3e39;
+  display: block;
 }
 .highlight .kc {
   color: #66d9ef;
