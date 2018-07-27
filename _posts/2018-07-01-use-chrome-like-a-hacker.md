@@ -1,7 +1,7 @@
 ---
 title: "像黑客一样！Chrome 完全键盘操作指南（原生快捷键 + Vimium 插件）"
 date_published: 2018-07-01 19:56:51 +0800
-date: 2018-07-02 07:10:57 +0800
+date: 2018-07-28 07:40:40 +0800
 categories: windows
 ---
 
@@ -34,7 +34,7 @@ Chrome 原生快捷键估计多数人都能说出其中的一部分出来，例�
 
 配合 Vimium，你可以操作 Chrome 界面上的所有按钮了：
 
-![看得见的快捷键](/static/posts/2018-07-01-19-10-09.png)  
+![看得见的快捷键](/static/posts/2018-07-28-07-39-24.png)  
 ▲ 蓝色表示 Chrome 原生快捷键，橙色表示 Vimium 快捷键
 
 更多 Chrome 快捷键可以去官网上查阅：[Chrome 键盘快捷键 - Google Chrome帮助](https://support.google.com/chrome/answer/157179?hl=zh-Hans)。
@@ -99,7 +99,7 @@ Vimium 不止是快捷键，你应该页注意到上面的 “快速启动框”
 
 而这么多的快捷键中唯一一个能被别人看出来你是在用 Vimium 的只有 `f` 和 `F` 了，因为按下后网页上会显示每个链接的快捷键，按下屏幕上新显示的快捷键能够打开链接（或在新标签页中打开链接）。
 
-![按下 F 后准备跳转页面](/static/posts/2018-07-01-20-01-18.png)
+![按下 F 后准备跳转页面](/static/posts/2018-07-28-07-40-20.png)
 
 ### 摆脱鼠标，像黑客一样操作 Chrome
 
