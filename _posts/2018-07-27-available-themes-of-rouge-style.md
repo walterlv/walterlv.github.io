@@ -1,6 +1,6 @@
 ---
 title: "语法高亮不够漂亮？这里有你想要的 Rouge 主题"
-date: 2018-07-27 22:10:28 +0800
+date: 2018-07-27 22:15:25 +0800
 categories: jekyll
 ---
 
@@ -26,6 +26,8 @@ kramdown:
 ```
 
 其中，`input: GFM` 指的是 [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)。
+
+Rouge 支持的语言可以前往此处查看：[Rouge](http://rouge.jneen.net/)
 
 ### 生成 Rouge 语法高亮样式
 
@@ -133,3 +135,4 @@ $ rougify style github > assets/css/syntax.css
 - [kramdown 和 markdown 较大的差异比较 - Hom](http://gohom.win/2015/11/06/Kramdown-note/)
 - [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
 - [jneen/rouge: A pure-ruby code highlighter that is compatible with pygments http://rouge.jneen.net/](https://github.com/jneen/rouge)
+- [Rouge](http://rouge.jneen.net/)
