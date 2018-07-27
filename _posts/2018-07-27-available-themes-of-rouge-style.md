@@ -1,6 +1,6 @@
 ---
 title: "语法高亮不够漂亮？这里有你想要的 Rouge 主题"
-date: 2018-07-27 21:03:35 +0800
+date: 2018-07-27 22:10:28 +0800
 categories: jekyll
 ---
 
@@ -114,6 +114,16 @@ $ rougify style github > assets/css/syntax.css
 
 ![base16](/static/posts/2018-07-27-21-29-40.png)  
 ▲ base16
+
+### 我修改的样式
+
+我发现我以前的样式与 monokai.sublime 是很接近的。这应该算是巧合，因为此前我是仿我的 VSCode 主题 [One Dark Pro Vivid](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme)。
+
+既然如此，我就直接基于 monokai.sublime 修改好了。我将默认文字颜色从白色 `#ffffff` 改成了 `#bbbbbb`，然后将 diff 的颜色也修改成 monokai 的样式。
+
+![monokai 的diff](/static/posts/2018-07-27-22-07-36.png)
+
+[点击下载 syntax.monokai.sublime.css](/assets/css/syntax.css)
 
 ---
 
