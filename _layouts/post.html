@@ -29,11 +29,7 @@
         {{ content }}
         {% include license.html %}
       </article>
-      <div id="image-cover-modal" class="image-cover-modal">
-        <img id="image-cover-image" class="image-cover-modal-content">
-        <div id="image-cover-caption"></div>
-      </div>
-      <script src='{{ "/assets/js/clickable-image.js" | prepend: site.baseurl }}'></script>
+      {% include clickable-image.html %}
       {% include comments.html %}
       {% include footer.html %}
     </section>
