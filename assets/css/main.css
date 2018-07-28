@@ -1106,6 +1106,13 @@ body.dark-theme ul.pager li.active {
     max-width: 100%;
     margin: 0;
     display: block;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.post-content img:hover {
+    filter: drop-shadow(0px 0px 4px);
+    transform: scale(1.01);
 }
 
 .post-content img.emoji {
@@ -1420,6 +1427,69 @@ body.dark-theme .post-content hr {
 .post-content td.gutter.gl {
     padding-right: 1.563rem;
     line-height: 1.5rem
+}
+
+.image-cover-modal {
+    display: none;
+    opacity: 0;
+    position: fixed;
+    z-index: 30;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+    transition: 0.3s;
+}
+
+.image-cover-modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+}
+
+#image-cover-caption {
+    margin: auto;
+    display: block;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+.image-cover-modal-content, #image-cover-caption { 
+    animation-name: zoom;
+    animation-duration: 0.3s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0.8)} 
+    to {transform:scale(1)}
+}
+
+.image-cover-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.image-cover-close:hover, .image-cover-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 45rem){
+    .image-cover-modal-content {
+        width: 100%;
+    }
 }
 
 .progress-bar {
