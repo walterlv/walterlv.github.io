@@ -42,11 +42,8 @@
         var span = document.getElementsByClassName("image-cover-close")[0];
 
         // When the user clicks on <span> (x), close the modal
-        modal.onclick = function() { 
-          modal.style.opacity = 0;
-          setTimeout(function() {
-            modal.style.display = "none";
-          }, 300);
+        modal.onclick = function() {
+          this.classList.remove("model-shown");
         }
         
         var i;
@@ -56,11 +53,7 @@
           var img = document.images[i];
 
           img.onclick = function(){
-            modal.style.display = "block";
-            modal.style.opacity = 0;
-            setTimeout(function() {
-              modal.style.opacity = 1;
-            }, 0);
+            modal.classList.add("model-shown");
             modalImg.src = this.src;
             captionText.innerHTML = this.alt;
           }

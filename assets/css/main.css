@@ -1430,8 +1430,8 @@ body.dark-theme .post-content hr {
 }
 
 .image-cover-modal {
-    display: none;
-    opacity: 1;
+    display: block;
+    opacity: 0;
     position: fixed;
     z-index: 30;
     padding-top: 100px;
@@ -1443,31 +1443,35 @@ body.dark-theme .post-content hr {
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.9);
     transition: opacity ease 0.3s;
+    pointer-events: none;
+}
+
+.model-shown {
+    pointer-events: all;
+    opacity: 1;
 }
 
 .image-cover-modal-content {
-    margin: auto;
     display: block;
-    width: 80%;
+    position: absolute;
+    max-width: 80%;
+    max-height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all ease 0.3s;
 }
 
 #image-cover-caption {
-    margin: auto;
     display: block;
+    position: absolute;
+    width: 100%;
+    height: 3rem;
+    bottom: 0;
+    line-height: 3rem;
     text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    height: 150px;
-}
-
-.image-cover-modal-content, #image-cover-caption { 
-    animation-name: zoom;
-    animation-duration: 0.3s;
-}
-
-@keyframes zoom {
-    from {transform:scale(0.8)} 
-    to {transform:scale(1)}
+    color: #fff;
+    background: rgba(255, 255, 255, 0.33);
 }
 
 .image-cover-close {
@@ -1488,7 +1492,8 @@ body.dark-theme .post-content hr {
 
 @media only screen and (max-width: 45rem){
     .image-cover-modal-content {
-        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
     }
 }
 
