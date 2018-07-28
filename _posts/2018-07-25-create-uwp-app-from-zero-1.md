@@ -1,7 +1,7 @@
 ---
 title: "(2/2) 为了理解 UWP 的启动流程，我从零开始创建了一个 UWP 程序"
 date_published: 2018-07-25 21:20:36 +0800
-date: 2018-07-27 09:19:06 +0800
+date: 2018-07-28 19:50:08 +0800
 categories: uwp dotnet csharp
 ---
 
@@ -201,6 +201,18 @@ public void SetWindow(CoreWindow window)
 能够完成一些简单的交互。
 
 ![窗口内的交互](/static/posts/2018-07-25-interaction.gif)
+
+### 特别注意 GC
+
+如果你真的按照以上步骤写出了一个 UWP 程序并且跑起来了，你会发现过一会儿就炸了。
+
+![ObjectDisposedException](/static/posts/2018-07-28-19-40-03.png)
+
+这是因为 `compositor` 我们是作为变量放到方法中的，很容易就被 GC 掉。最好将它放到字段中储存起来，避免被 GC。
+
+```csharp
+private Compositor _compositor;
+```
 
 ### 总结
 
