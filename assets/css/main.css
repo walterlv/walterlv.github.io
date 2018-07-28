@@ -1473,22 +1473,6 @@ body.dark-theme .post-content hr {
     background: rgba(255, 255, 255, 0.33);
 }
 
-.image-cover-close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 2rem;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.image-cover-close:hover, .image-cover-close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-
 @media only screen and (max-width: 45rem){
     .image-cover-modal-content {
         max-width: 100%;
