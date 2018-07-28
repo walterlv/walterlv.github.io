@@ -1031,7 +1031,8 @@ div.pager {
     margin: 0;
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: center;
+    overflow-x: auto;
 }
 
 ul.pager {
