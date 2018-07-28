@@ -32,9 +32,6 @@ links-light:
   - icon: users
     title: 朋友
     url: /friends
-  - icon: smile
-    title: 关于
-    url: /about
   - icon: rss
     title: RSS
     url: /feed.xml
