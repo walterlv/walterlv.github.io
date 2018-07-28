@@ -1431,11 +1431,12 @@ body.dark-theme .post-content hr {
 }
 
 .image-cover-modal {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     opacity: 0;
     position: fixed;
     z-index: 30;
-    padding-top: 100px;
     left: 0;
     top: 0;
     width: 100%;
@@ -1454,11 +1455,8 @@ body.dark-theme .post-content hr {
 
 .image-cover-modal-content {
     display: block;
-    position: absolute;
     max-width: 80%;
     max-height: 80%;
-    top: 50%;
-    left: 50%;
 }
 
 #image-cover-caption {
