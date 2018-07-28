@@ -54,7 +54,13 @@
 
           img.onclick = function(){
             modal.classList.add("model-shown");
+            modalImg.style['display'] = 'none';
             modalImg.src = this.src;
+            modalImg.onload = function() {
+              modalImg.style['margin-left'] = -(modalImg.width / 2) + 'px';
+              modalImg.style['margin-top'] = -(modalImg.height / 2) + 'px';
+              modalImg.style['display'] = 'block';
+            }
             captionText.innerHTML = this.alt;
           }
         }
