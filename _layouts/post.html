@@ -57,9 +57,9 @@
             modalImg.style['display'] = 'none';
             modalImg.src = this.src;
             modalImg.onload = function() {
-              modalImg.style['margin-left'] = -(modalImg.width / 2) + 'px';
-              modalImg.style['margin-top'] = -(modalImg.height / 2) + 'px';
-              modalImg.style['display'] = 'block';
+              this.style['display'] = 'block';
+              this.style['margin-left'] = -(parseInt(window.getComputedStyle(modalImg).width) / 2) + 'px';
+              this.style['margin-top'] = -(parseInt(window.getComputedStyle(modalImg).height) / 2) + 'px';
             }
             captionText.innerHTML = this.alt;
           }
