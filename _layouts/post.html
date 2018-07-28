@@ -43,8 +43,10 @@
 
         // When the user clicks on <span> (x), close the modal
         modal.onclick = function() { 
-          modal.style.display = "none";
           modal.style.opacity = 0;
+          setTimeout(function() {
+            modal.style.display = "none";
+          }, 300);
         }
         
         var i;
@@ -55,7 +57,10 @@
 
           img.onclick = function(){
             modal.style.display = "block";
-            modal.style.opacity = 1;
+            modal.style.opacity = 0;
+            setTimeout(function() {
+              modal.style.opacity = 1;
+            }, 0);
             modalImg.src = this.src;
             captionText.innerHTML = this.alt;
           }

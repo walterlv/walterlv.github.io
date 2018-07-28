@@ -1431,7 +1431,7 @@ body.dark-theme .post-content hr {
 
 .image-cover-modal {
     display: none;
-    opacity: 0;
+    opacity: 1;
     position: fixed;
     z-index: 30;
     padding-top: 100px;
@@ -1442,7 +1442,7 @@ body.dark-theme .post-content hr {
     overflow: auto;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.9);
-    transition: 0.3s;
+    transition: opacity ease 0.3s;
 }
 
 .image-cover-modal-content {
