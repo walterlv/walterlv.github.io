@@ -1,7 +1,7 @@
 ---
 title: "图片点击放大，你的网页也能做到！"
 date_published: 2018-07-28 13:27:40 +0800
-date: 2018-07-29 12:40:53 +0800
+date: 2018-07-29 12:45:53 +0800
 categories: jekyll
 ---
 
@@ -114,7 +114,7 @@ for (i = 0; i < document.images.length; i++) {
 如果你使用 Jekyll 搭建静态网页，那么只需要修改 3 个地方：
 
 - 在 main.css 中添加前面的 css 片段。
-- 在你想要添加放大图片的页面布局（例如 post.html）中添加 `{% include clickable-image.html %}`。
+- 在你想要添加放大图片的页面布局（例如 post.html）中添加 {% raw %}`{% include clickable-image.html %}`{% endraw %}。
 - 在 _includes 文件夹中添加一个 clickable-image.html 文件，存放以下内容。
 
 ```html
