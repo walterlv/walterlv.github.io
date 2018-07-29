@@ -1,6 +1,7 @@
 ---
 title: "理解 UWP 视图的概念，让 UWP 应用显示多个窗口（多视图）"
-date: 2018-07-27 09:19:14 +0800
+date_published: 2018-07-27 09:19:14 +0800
+date: 2018-07-30 07:53:47 +0800
 categories: uwp
 ---
 
@@ -25,9 +26,11 @@ UWP 应用多是一个窗口完成所有业务的，事实上我也推荐使用�
 
 在学习如何编写 UWP 多窗口之前，我们需要了解一些 UWP 视图（View）的概念。
 
-`CoreApplication` 管理一个 UWP 应用中的所有视图（View），而 `CoreApplication` 直接管理的视图是 `CoreApplicationView`；也就是说，UWP 应用 `CoreApplication` 管理所有的应用视图 `CoreApplicationView`。而一个 `CoreApplicationView` 包含一个窗口和一个线程调度模型，即 `CoreWindow` 和 `CoreDispatcher`。
+在 [CoreApplication/Application、CoreWindow/Window 之间的区别](/post/core-application-window-of-uwp.html) 一文中，我描述了 UWP 视图的一些概念：
 
-`CoreWindow` 就是我们所理解的窗口。为了方便使用，`Windows.UI.XAML.Window` 类型封装了这个 `CoreWindow`。`CoreDispatcher` 是基于消息循环的线程调度模型，正是因为有了消息循环，所以此窗口才能一直显示而不被销毁。
+> `CoreApplication` 管理一个 UWP 应用中的所有视图（View），而 `CoreApplication` 直接管理的视图是 `CoreApplicationView`；也就是说，UWP 应用 `CoreApplication` 管理所有的应用视图 `CoreApplicationView`。而一个 `CoreApplicationView` 包含一个窗口和一个线程调度模型，即 `CoreWindow` 和 `CoreDispatcher`。
+> 
+> `CoreWindow` 就是我们所理解的窗口。为了方便使用，`Windows.UI.XAML.Window` 类型封装了这个 `CoreWindow`。`CoreDispatcher` 是基于消息循环的线程调度模型，正是因为有了消息循环，所以此窗口才能一直显示而不被销毁。
 
 在 [为了理解 UWP 的启动流程，我从零开始创建了一个 UWP 程序](/post/create-uwp-app-from-zero-1.html) 一文中，我们也能体会到 `CoreApplication` 和 `CoreWindow` 之间的关系，了解消息循环在应用中的作用。
 

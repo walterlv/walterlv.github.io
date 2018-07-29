@@ -1,7 +1,7 @@
 ---
 title: "UWP 扩展/自定义标题栏的方法，一些概念和一些注意事项"
 date_published: 2018-07-27 14:17:44 +0800
-date: 2018-07-27 18:25:22 +0800
+date: 2018-07-30 07:56:45 +0800
 categories: uwp
 ---
 
@@ -34,15 +34,17 @@ titleBar.ButtonBackgroundColor = Colors.Transparent;
 
 那么问题来了，为什么前者需要拿到 `CoreApplicationView` 的实例，后者需要拿到 `ApplicationView` 的实例？它们到底是什么区别？
 
-在 [理解 UWP 视图的概念](/post/show-multiple-views-for-an-uwp-app.html) 一文中，我提到过 `CoreApplication`、`CoreWindow` 和 `CoreDispatcher` 之间的关系。继续借用那篇文章中的图：
+我在 [CoreApplication/Application、CoreWindow/Window 之间的区别](/post/core-application-window-of-uwp.html) 一文中提到过 `CoreApplication`、`CoreWindow` 和 `CoreDispatcher` 之间的关系。继续借用那篇文章中的图：
 
 ![UWP 创建应用视图](/static/posts/2018-07-27-08-48-53.png)
 
 其中，`Window` 是对 `CoreWindow` 的封装，提供了更多与 XAML 相关的功能。这里的 `ApplicationView` 也是这样，是对 `CoreApplication` 的封装，提供了 XAML 相关的功能。
 
-具体来说，`CoreWindow` 是与操作系统、与整个应用打交道的类型，提供了诸如窗口的尺寸、位置、输入状态等设置或调用；`Window` 是与应用内 UI 打交道的类型，比如可以设置窗口内显示的 UI，设置内部哪个控件属于标题栏，获取此窗口内的 `Compositor`。与之对应的，`CoreApplicationView` 是应用与操作系统交互，与窗口消息循环机制协同工作的类型，包含窗口客户区和非客户区设置；`ApplicationView` 也是与应用内 UI 打交道的类型，它可以使用 XAML 相关的类型对应用程序视图进行更方便的设置。
+那篇文章中详细描述了这几个概念之间的关系和区别。考虑到阅读的一致性，我摘抄过来：
 
-总结起来，`CoreWindow` 和 `CoreApplicationView` 提供更加核心的操作系统或应用底层功能，而 `Window` 和 `ApplicationView` 对前者进行了封装，使得我们能够使用 `Windows.UI.Xaml` 命名空间下的类型对窗口和应用视图进行控制。
+> 具体来说，`CoreWindow` 是与操作系统、与整个应用打交道的类型，提供了诸如窗口的尺寸、位置、输入状态等设置或调用；`Window` 是与应用内 UI 打交道的类型，比如可以设置窗口内显示的 UI，设置内部哪个控件属于标题栏，获取此窗口内的 `Compositor`。与之对应的，`CoreApplicationView` 是应用与操作系统交互，与窗口消息循环机制协同工作的类型，包含窗口客户区和非客户区设置；`ApplicationView` 也是与应用内 UI 打交道的类型，它可以使用 XAML 相关的类型对应用程序视图进行更方便的设置。
+> 
+> 总结起来，`CoreWindow` 和 `CoreApplicationView` 提供更加核心的操作系统或应用底层功能，而 `Window` 和 `ApplicationView` 对前者进行了封装，使得我们能够使用 `Windows.UI.Xaml` 命名空间下的类型对窗口和应用视图进行控制。
 
 于是，我们便能够理解为什么扩展标题栏和设置标题栏颜色会使用到两个不一样的类型了。
 
