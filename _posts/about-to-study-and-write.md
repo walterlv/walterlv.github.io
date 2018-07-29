@@ -17,6 +17,9 @@ published: false
 
 ### About to Write
 
+- Win32 PE
+    - [深入理解 Win32 PE 文件格式 - 国立秀才 - 博客园](https://www.cnblogs.com/guolixiucai/p/4809820.html)
+
 - Output Type
     - [-target (C# Compiler Options) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/target-compiler-option)
 
