@@ -1,6 +1,7 @@
 ---
 title: "图片点击放大，你的网页也能做到！"
-date: 2018-07-28 13:27:40 +0800
+date_published: 2018-07-28 13:27:40 +0800
+date: 2018-07-29 12:40:53 +0800
 categories: jekyll
 ---
 
@@ -17,9 +18,10 @@ categories: jekyll
 
 ### 创建一个用于放图片的 HTML 节点
 
+如果你是普通的 HTML 网页，可以将下面的片段放入到你的页面中。
+
 ```html
 <div id="image-cover-modal" class="image-cover-modal">
-  <span class="image-cover-close">&times;</span>
   <img id="image-cover-image" class="image-cover-modal-content">
   <div id="image-cover-caption"></div>
 </div>
@@ -31,10 +33,12 @@ categories: jekyll
 
 ```css
 .image-cover-modal {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
     position: fixed;
     z-index: 30;
-    padding-top: 100px;
     left: 0;
     top: 0;
     width: 100%;
@@ -42,52 +46,37 @@ categories: jekyll
     overflow: auto;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.9);
+    transition: opacity ease 0.3s;
+    pointer-events: none;
+}
+
+.model-shown {
+    pointer-events: all;
+    opacity: 1;
 }
 
 .image-cover-modal-content {
-    margin: auto;
     display: block;
-    width: 80%;
+    max-width: 80%;
+    max-height: 80%;
 }
 
 #image-cover-caption {
-    margin: auto;
     display: block;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    height: 150px;
-}
-
-.image-cover-modal-content, #image-cover-caption { 
-    animation-name: zoom;
-    animation-duration: 0.3s;
-}
-
-@keyframes zoom {
-    from {transform:scale(0)} 
-    to {transform:scale(1)}
-}
-
-.image-cover-close {
     position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 2rem;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.image-cover-close:hover, .image-cover-close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
+    width: 100%;
+    height: 3rem;
+    bottom: 0;
+    line-height: 3rem;
+    text-align: center;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.33);
 }
 
 @media only screen and (max-width: 45rem){
     .image-cover-modal-content {
-        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
     }
 }
 ```
@@ -95,31 +84,76 @@ categories: jekyll
 ### 添加放大图片的 JS 脚本
 
 ```js
-// 获取所需的 DOM 节点。
+// Get the DOM
 var modal = document.getElementById('image-cover-modal');
 var modalImg = document.getElementById("image-cover-image");
 var captionText = document.getElementById("image-cover-caption");
 var span = document.getElementsByClassName("image-cover-close")[0];
 
-// 为关闭按钮添加功能（事实上是点击任何地方都关闭）。
-modal.onclick = function() { 
-  modal.style.display = "none";
+// When the user clicks on <span> (x), close the modal
+modal.onclick = function() {
+    this.classList.remove("model-shown");
 }
 
-// 遍历页面中的每一张图片，为其添加点击事件，点击放大。
 var i;
 for (i = 0; i < document.images.length; i++) {
 
-  // Get the image and insert it inside the modal - use its "alt" text as a caption
-  var img = document.images[i];
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.images[i];
 
-  img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-  }
+    img.onclick = function(){
+        modal.classList.add("model-shown");
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
 }
 ```
+
+### 专为 Jekyll 设计的简化版本
+
+如果你使用 Jekyll 搭建静态网页，那么只需要修改 3 个地方：
+
+- 在 main.css 中添加前面的 css 片段。
+- 在你想要添加放大图片的页面布局（例如 post.html）中添加 `{% include clickable-image.html %}`。
+- 在 _includes 文件夹中添加一个 clickable-image.html 文件，存放以下内容。
+
+```html
+<div id="image-cover-modal" class="image-cover-modal">
+  <img id="image-cover-image" class="image-cover-modal-content">
+  <div id="image-cover-caption"></div>
+</div>
+<script>
+// Get the DOM
+var modal = document.getElementById('image-cover-modal');
+var modalImg = document.getElementById("image-cover-image");
+var captionText = document.getElementById("image-cover-caption");
+var span = document.getElementsByClassName("image-cover-close")[0];
+
+// When the user clicks on <span> (x), close the modal
+modal.onclick = function() {
+    this.classList.remove("model-shown");
+}
+
+var i;
+for (i = 0; i < document.images.length; i++) {
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.images[i];
+
+    img.onclick = function(){
+        modal.classList.add("model-shown");
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+}
+</script>
+```
+
+你可以参考我的文件：
+
+- [/_includes/clickable-image.html](https://github.com/walterlv/walterlv.github.io/blob/master/_includes/clickable-image.html)
+- [/_layouts/post.html](https://github.com/walterlv/walterlv.github.io/blob/eb07c3b685f94d8ce3963fb9f4a71f6346190355/_layouts/post.html#L32)
+- [/assets/css/main.css at master · walterlv/walterlv.github.io](https://github.com/walterlv/walterlv.github.io/blob/master/assets/css/main.css)
 
 ---
 
