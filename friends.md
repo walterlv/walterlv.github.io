@@ -66,7 +66,7 @@ permalink: /friends/
 
 - [沨沄的博客 - FoxGeeker Blog](http://ifoxfactory.com/)
 
-- [VALID VOID](https://validvoid.net/)
+- [VALID VOID](https://validvoid.net/)  
     void_CE void² void²ⁿ⁻¹
 
 - [国内外 Windows 应用商店应用开发者博客收集 - h82258652 - 博客园](http://www.cnblogs.com/h82258652/p/4909957.html)
@@ -85,7 +85,12 @@ permalink: /friends/
 
 - [Microsoft .NET Blog](https://blogs.msdn.microsoft.com/dotnet/)
     - [Performance Improvements in .NET Core - .NET Blog](https://blogs.msdn.microsoft.com/dotnet/2017/06/07/performance-improvements-in-net-core/)
+
+- [Nick Waggoner – Thoughs and Inishgts on Software, Leadership, Business, & Effectiveness](http://www.nickwaggoner.com/)  
+    Nick Waggoner 供职于微软 native Windows UI platform
+
 - [Nate McMaster](https://www.natemcmaster.com/)
+
 - [Nicky Case: The Internet Experience™](http://ncase.me/)  
     边玩边学的小游戏
   - [信任的进化](https://www.sekai.co/trust/)
