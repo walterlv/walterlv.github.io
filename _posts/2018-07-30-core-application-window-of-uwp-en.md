@@ -1,6 +1,6 @@
 ---
-title: "UWP 应用中 CoreApplication/Application、CoreWindow/Window 之间的区别"
-date: 2018-07-30 07:59:06 +0800
+title: "UWP CoreApplication/Application Vs CoreApplicationView/ApplicationView Vs CoreWindow/Window"
+date: 2018-07-30 09:21:58 +0800
 categories: uwp
 version:
   current: English
@@ -9,9 +9,7 @@ versions:
   - English: #
 ---
 
-在 StackOverflow 上看到有小伙伴询问 `CoreApplication`、`CoreApplicationView`、`Application`、`CoreWindow`、`Window` 它们的含义以及它们之间的区别。
-
-于是我整理了这篇文章。
+I find a question on Stack Overflow [CoreApplicationView vs CoreWindow vs ApplicationView](https://stackoverflow.com/questions/33680631/coreapplicationview-vs-corewindow-vs-applicationview), so I write this post for the answer.
 
 ---
 
@@ -19,13 +17,11 @@ This post is written in **multiple languages**. Please select yours:
 
 {% include post-version-selector.html %}
 
-StackOverflow 上的地址：[c# - CoreApplicationView vs CoreWindow vs ApplicationView - Stack Overflow](https://stackoverflow.com/questions/33680631/coreapplicationview-vs-corewindow-vs-applicationview)。
-
 <div id="toc"></div>
 
-### 命名空间
+### The namespace
 
-类的完整含义经常需要配合其命名空间查看，所以我们有必要将这几个类的完整名称拿出来看：
+Sometimes we have to view the full class names with namespaces to determine their meanings.
 
 - `Windows.ApplicationModel.Core.CoreApplication`
 - `Windows.ApplicationModel.Core.CoreApplicationView`
@@ -33,51 +29,56 @@ StackOverflow 上的地址：[c# - CoreApplicationView vs CoreWindow vs Applicat
 - `Windows.UI.Core.CoreWindow`
 - `Windows.UI.Xaml.Window`
 
-额外的，如果你关心标题栏，还有：
+Extra, if you're interested in the titlebar,
 
 - `Windows.ApplicationModel.Core.CoreApplicationViewTitleBar`
 - `Windows.UI.ViewManagement.ApplicationViewTitleBar`
 
-再额外的，如果你关心线程模型，还有：
+Extra, if you're interested in the threading model,
 
 - `Windows.UI.Core.CoreDispatcher`
 - `Windows.UI.Xaml.DispatcherTimer`
 
-可以看到，大的命名空间分类有 `Windows.ApplicationModel` 和 `Windows.UI` 两类。也就是说，`CoreApplication` 和 `CoreApplicationView` 是管理应用程序模型的，而 `Application`、`CoreWindow` 和 `Window` 是管理应用内 UI 的。小的命名空间分类有 `Core` 和 `Xaml` 两类。也就是说，`CoreApplication`、`CoreApplicationView` 和 `CoreWindow` 是管理核心功能，而 `Application` 和 `Window` 是管理 XAML UI 的。
+We can split them into `Windows.ApplicationModel` and `Windows.UI`, or split them into `Core` and `Xaml`.
 
-### 自顶向下
+The `CoreApplication` and `CoreApplicationView` manage the application model, and the `Application`, `CoreWindow` and `Window` manage the application inner UI. The `CoreApplication`, `CoreApplicationView` and `CoreWindow` manages the core functions, but the `Application` and `Window` manage the XAML UI.
 
-`Application` 到 `Window` 到 XAML 内容，很明显地就能直到其是自顶向下的关系，应用内包含窗口，窗口内包含 XAML 内容。那么它们之间的关系呢？
+### From top to bottom
 
-`CoreApplication` 管理一个 UWP 应用中的所有视图（View），而 `CoreApplication` 直接管理的视图是 `CoreApplicationView`；也就是说，UWP 应用 `CoreApplication` 管理所有的应用视图 `CoreApplicationView`。而一个 `CoreApplicationView` 包含一个窗口和一个线程调度模型，即 `CoreWindow` 和 `CoreDispatcher`。
+From top to bottom is from `Application` to `Window`, then to XAML. It's obvious that the application contains windows and the window contains the inner XAML UI. Then, what's the real relationship?
 
-![UWP 应用视图](/static/posts/2018-07-27-08-37-42.png)  
-▲ UWP 应用视图
+The `CoreApplication` manages all the views of a UWP application and the `CoreApplicationView` is the view that it manages directly. A `CoreApplicationView` contains a `CoreWindow` as the window and a `CoreDispatcher` as the threading model.
 
-在 [让 UWP 应用显示多个窗口（多视图）](/post/show-multiple-views-for-an-uwp-app.html) 一文中，由于一个应用对应多个视图，所以可以更容易地理解它们之间的关系。
+![UWP application view](/static/posts/2018-07-27-08-37-42.png)  
+▲ UWP application view
 
-`CoreWindow` 就是我们所理解的窗口。为了方便使用，`Windows.UI.XAML.Window` 类型封装了这个 `CoreWindow`。`CoreDispatcher` 是基于消息循环的线程调度模型，正是因为有了消息循环，所以此窗口才能一直显示而不被销毁。
+You can read [Show multiple views for an app - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/layout/show-multiple-views) to learn how to write multiple views applications. You'll know more about the relationship between the `CoreApplication` and the `CoreApplicationView`.
 
-### 对外，还是对内？
+`CoreWindow` is the window that we are all familiar with. 
+`Windows.UI.XAML.Window` encapsulate the `CoreWindow` for easier usage. `CoreDispatcher` is the threading model based on the windows message loop. It's the `CoreDispatcher` that keeps the window to show all the time without being disposed.
 
-我们是站在 UWP 普通开发者的角度来思考这个问题的，普通 UWP 开发者是从 `MainPage` 开始写 UWP 应用的。所以在这里，“外” 指的是页面之外，或者叫做我们直接编写的 XAML 内容之外，那些非 XAML 内容；而 “内” 指的是页面之内，也就是我们通常写的 XAML 内容。
+### For outer or for inner
 
-对外的部分有 `CoreApplication`、`CoreApplicationView` 和 `CoreWindow`，对内的部分有 `Application` 和 `Window`。其中，`Window` 是对 `CoreWindow` 的封装，提供了更多与 XAML 相关的功能。这里的 `ApplicationView` 也是这样，是对 `CoreApplication` 的封装，提供了 XAML 相关的功能。
+Most UWP developers are normal developers, so we should stand on their side to think about the outer and the inner. Normal UWP developers start writing code from `MainPage`, so the outer is out of the page and the inner is the XAML content of the page.
 
-具体来说，`CoreWindow` 是与操作系统、与整个应用打交道的类型，提供了诸如窗口的尺寸、位置、输入状态等设置或调用；`Window` 是与应用内 UI 打交道的类型，比如可以设置窗口内显示的 UI，设置内部哪个控件属于标题栏，获取此窗口内的 `Compositor`。与之对应的，`CoreApplicationView` 是应用与操作系统交互，与窗口消息循环机制协同工作的类型，包含窗口客户区和非客户区设置；`ApplicationView` 也是与应用内 UI 打交道的类型，它可以使用 XAML 相关的类型对应用程序视图进行更方便的设置。
+The outer part contains `CoreApplication`, `CoreApplicationView` and `CoreWindow` while the inner part contains `Application` and `Window`. Is it strange that the `Application` and the `Window` are the inner part? The reason is that they manage the XAML part of the application and the window.
 
-总结起来，`CoreWindow` 和 `CoreApplicationView` 提供更加核心的操作系统或应用底层功能，而 `Window` 和 `ApplicationView` 对前者进行了封装，使得我们能够使用 `Windows.UI.Xaml` 命名空间下的类型对窗口和应用视图进行控制。
+The `Window` is the encapsulation of the `CoreWindow` to provide extra XAML UI functions. The same to the `ApplicationView`, it is the encapsulation of the `CoreApplication` providing extra XAML UI functions.
 
-### 关于这些概念的更多应用
+In details, the `CoreWindow` is the class that interop with the Windows Operating System and the UWP application model. It provide those functions such as the window size, location, the input status, etc. The `Window` is the class that provides the ability to use XAML UI for the window, such as setting the XAML content of the window, setting the titlebar of the window, or getting the `Compositor` of the window. The `CoreApplicationView` is the class that interop with the Windows Operating System and provides the mechanism of windows message loop and the ability to change the client area and the non-client area. The `ApplicationView` is the same as the `Window`, provides the ability to use XAML UI for the application.
 
-我有另外一些文章用到了这些概念：
+In conclusion, the `CoreWindow` and the `CoreApplicationView` provide the low-level core functions of the operating system and the application model. The `Window` and the `ApplicationView` encapsulates them for XAML usage.
 
-- [从零开始创建一个 UWP 程序](/post/create-uwp-app-from-zero-1.html)
-- [让 UWP 应用显示多个窗口（多视图）](/post/show-multiple-views-for-an-uwp-app.html)
-- [UWP 扩展/自定义标题栏](/post/tips-for-customize-uwp-title-bar.html)
+### Some usages of these concepts
+
+I've written some other posts about UWP that take advantages of these concepts. Unfortunately, they are all not in English.
+
+- [Create a UWP application from zero.](/post/create-uwp-app-from-zero-1.html)
+- [Show multiple views for a UWP application](/post/show-multiple-views-for-an-uwp-app.html)
+- [Extends the titlebar of a UWP application](/post/tips-for-customize-uwp-title-bar.html)
 
 ---
 
-#### 参考资料
+#### References
 
 - [Title bar customization - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/shell/title-bar)
