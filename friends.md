@@ -77,8 +77,6 @@ permalink: /friends/
 
 - [.NET源码分析](https://zhuanlan.zhihu.com/sscli)
 
----
-
 - [快乐 就在你的心 的博客](https://kljzndx.github.io/My-Blog/)
 
 ---
@@ -93,7 +91,11 @@ permalink: /friends/
 
 - [Nicky Case: The Internet Experience™](http://ncase.me/)  
     边玩边学的小游戏
-  - [信任的进化](https://www.sekai.co/trust/)
+    - [信任的进化](https://www.sekai.co/trust/)
+
+- [Hacker News](https://news.ycombinator.com/)
+    - [Hacker Newsletter 每周精选](https://www.hackernewsletter.com/)
+    - [Hacker News 与 Reddit 的算法比较 - 旁观者 - 博客园](http://www.cnblogs.com/zhengyun_ustc/archive/2010/12/15/amir.html)
 
 ---
 
