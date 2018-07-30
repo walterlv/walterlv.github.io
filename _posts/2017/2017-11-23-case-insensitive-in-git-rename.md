@@ -1,7 +1,7 @@
 ---
 title: "解决 Git 重命名时遇到的大小写不敏感的问题"
 date_published: 2017-11-23 16:51:07 +0800
-date: 2018-07-30 20:06:03 +0800
+date: 2018-07-30 20:33:53 +0800
 categories: windows git
 ---
 
@@ -110,6 +110,8 @@ $ git push
 ```
 
 随后，你可以像一般重命名一样去修改文件夹名称，然后像普通提交一样去 git commit。直接能生成一个仅修改文件夹名称大小写的新提交。
+
+如果你在执行以上命令时出现了问题，请移步至 [Windows 10 四月更新，文件夹名称也能区分大小写？](/post/case-sensitive-in-windows-file-system.html) 统一寻找解决方法。
 
 ---
 
