@@ -30,6 +30,7 @@ StackOverflow 上的地址：[c# - CoreApplicationView vs CoreWindow vs Applicat
 - `Windows.ApplicationModel.Core.CoreApplication`
 - `Windows.ApplicationModel.Core.CoreApplicationView`
 - `Windows.UI.Xaml.Application`
+- `Windows.UI.ViewManagement.ApplicationView`
 - `Windows.UI.Core.CoreWindow`
 - `Windows.UI.Xaml.Window`
 
