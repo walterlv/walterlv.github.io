@@ -1,7 +1,7 @@
 ---
-title: ".NET Standard / dotnet-core / net472 —— .NET 究竟应该如何大小写，前面的 “.” 应该何去何从？"
+title: ".NET 三个字母究竟应该如何大小写？前面的 “.” 什么时候能够去掉？（.NET Standard / dotnet-core / net472）"
 date_published: 2018-05-28 16:23:49 +0800
-date: 2018-05-31 20:17:47 +0800
+date: 2018-07-30 19:47:02 +0800
 categories: dotnet
 ---
 
