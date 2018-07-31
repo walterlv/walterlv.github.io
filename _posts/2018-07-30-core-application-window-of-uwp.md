@@ -1,6 +1,7 @@
 ---
-title: "UWP 应用中 CoreApplication/Application、CoreWindow/Window 之间的区别"
-date: 2018-07-30 07:51:34 +0800
+title: "UWP 应用中 CoreApplication / Application, CoreWindow / Window 之间的区别"
+date_published: 2018-07-30 07:51:34 +0800
+date: 2018-07-31 08:00:31 +0800
 categories: uwp
 version:
   current: 中文
@@ -9,7 +10,7 @@ versions:
   - English: /post/core-application-window-of-uwp-en.html
 ---
 
-在 StackOverflow 上看到有小伙伴询问 `CoreApplication`、`CoreApplicationView`、`Application`、`ApplicationView`、`CoreWindow`、`Window` 它们的含义以及它们之间的区别。
+在 StackOverflow 上看到有小伙伴询问 `CoreApplication`, `CoreApplicationView`, `Application`, `ApplicationView`, `CoreWindow`, `Window` 它们的含义以及它们之间的区别。
 
 于是我整理了这篇文章。
 
