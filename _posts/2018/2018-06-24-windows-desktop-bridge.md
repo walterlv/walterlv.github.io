@@ -1,5 +1,5 @@
 ---
-title: "使用 Visual Studio (Desktop Bridge) 将 Win32 程序转制成 UWP"
+title: "签署 Centennial Program Addendum，使用 Desktop Bridge 将 Win32 应用转制成 UWP"
 date_published: 2018-06-24 14:39:10 +0800
 date: 2018-08-04 07:09:34 +0800
 categories: dotnet
