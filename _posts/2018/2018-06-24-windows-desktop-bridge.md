@@ -1,7 +1,7 @@
 ---
 title: "使用 Visual Studio (Desktop Bridge) 将 Win32 程序转制成 UWP"
 date_published: 2018-06-24 14:39:10 +0800
-date: 2018-07-13 08:35:55 +0800
+date: 2018-08-04 07:09:34 +0800
 categories: dotnet
 ---
 
@@ -88,28 +88,7 @@ Desktop App Converter 基础系统镜像下载完后随便放到某个地方，�
 
 ### 修改包清单并发布应用
 
-#### 通过认证
-
-如果没有接受 Centennial Program Addendum，那么提交是不被允许的。之前会在认证之后告诉开发者，现在在上传 appxupload 的时候就会开始提示了：
-
-> Package acceptance validation error: You need to accept the [Centennial Program Addendum](https://go.microsoft.com/fwlink/?linkid=873135) before you can submit this app.
-
-![Centennial Program Addendum](/static/posts/2018-07-12-16-26-57.png)  
-▲ You need to accept the Centennial Program Addendum before you can submit this app.
-
-然而链接点击进去后确是：
-
-![Page Not Found](/static/posts/2018-07-13-08-32-31.png)
-
-如果提交上去了，那么认证将会失败，并提示：
-
-> **Notes To Developer**
-> 
-> Your developer account has not been approved to submit apps converted with the Desktop Bridge as you have not yet accepted the Centennial Program Addendum. Please resubmit your request for approval.
-
-不过，据说 **目前暂时不接受新的提交申请，也就是说，以前没有申请的现就不能提交了**。
-
-#### 其他元数据
+#### 各种元数据
 
 另外，转制的应用和原生的 UWP 应用一样，发布之前也需要为应用设计图标，设置应用显示名称、包名称、关联应用商店。
 
@@ -124,6 +103,49 @@ Desktop App Converter 基础系统镜像下载完后随便放到某个地方，�
 > This capability is also required for any desktop application that is delivered as an appx package (as with the Desktop Bridge), and it will automatically appear in your manifest when packaging these apps using the Desktop App Converter (DAC) or Visual Studio. You won’t need to request approval to use this capability if you already received permission using our form.
 
 ![](/static/posts/2018-06-24-14-36-50.png)
+
+建议在给审核人员的提示中，写明我们是转制应用，以引起审核人员的注意。
+
+![](/static/posts/2018-08-04-07-04-03.png)
+
+#### 通过认证
+
+如果没有接受 Centennial Program Addendum，那么提交是不被允许的，并且在上传 appxupload 的时候会有警告开始提示了：
+
+> Package acceptance validation warning: You must contact <partnerops@microsoft.com> and get approval before you can submit this app.
+
+当然，你可以忽略这样的警告继续提交，但那样的话最终认证会失败，并提示：
+
+> **Notes To Developer**
+> 
+> Your developer account has not been approved to submit apps converted with the Desktop Bridge as you have not yet accepted the Centennial Program Addendum. Please resubmit your request for approval.
+
+如果无视警告，那么下次提交提示就会变成错误而不是警告了：
+
+> Package acceptance validation error: You need to accept the [Centennial Program Addendum](https://go.microsoft.com/fwlink/?linkid=873135) before you can submit this app.
+
+![Centennial Program Addendum](/static/posts/2018-07-12-16-26-57.png)  
+▲ You need to accept the Centennial Program Addendum before you can submit this app.
+
+提示要求我们必须同意 Centennial Program Addendum 协议，然而我们在 <https://partner.microsoft.com/en-us/dashboard/windows/overview> 的设置中点进去 Agreements 是找不到这项协议的。
+
+![Agreements](/static/posts/2018-08-04-06-59-21.png)
+
+![已签署协议](/static/posts/2018-08-04-07-01-01.png)
+
+**以下划重点**！！！
+
+你需要先提交应用，并时常关注 <https://partner.microsoft.com/en-us/dashboard/account/agreements> 中是否会新增一项协议提示，就是下图这个：
+
+![Centennial Program Addendum 协议](/static/posts/2018-08-04-06-58-13.png)
+
+当出现时，点击接受即可。**这项协议在微软商店发给你的三天之内才会出现，超过三天还没有同意，这项协议就会自动移除**。在我的实际提交中，等待邮件通知之时，三天基本上都过完了，所以稍微不及时收邮件，这项协议就点不开了，就只能看到下面这张图片感叹一声 —— 又要重来！
+
+![Page Not Found](/static/posts/2018-07-13-08-32-31.png)
+
+在同意了协议之后，你的协议列表中就会额外出现 Centennial Program Addendum 协议了。以后你可以继续提交转制应用。
+
+![签署的开发者协议](/static/posts/2018-08-04-07-08-31.png)
 
 ---
 
