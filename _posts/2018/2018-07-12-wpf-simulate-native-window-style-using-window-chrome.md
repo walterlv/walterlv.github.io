@@ -1,8 +1,8 @@
 ---
 title: "WPF 使用 WindowChrome，在自定义窗口标题栏的同时最大程度保留原生窗口样式（类似 UWP/Chrome）"
 date_published: 2018-07-12 15:57:30 +0800
-date: 2018-07-13 08:36:25 +0800
-categories: wpf dotnet windows
+date: 2018-08-04 17:05:33 +0800
+categories: wpf uwp dotnet windows
 ---
 
 WPF 自定义窗口样式有多种方式，不过基本核心实现都是在修改 Win32 窗口样式。然而，Windows 上的应用就应该有 Windows 应用的样子嘛，在保证自定义的同时也能与其他窗口样式保持一致当然能最大程度保证 Windows 操作系统上的体验一致性。
@@ -242,6 +242,10 @@ WPF 自定义窗口可是非常容易的，完全自定义样式、异形都不�
 我们发现，在以上所有方法尝试完成后，还剩下右上角的三颗按钮的背景色无法定制。如果依然采用非客户区控件覆盖的方法，这三个按钮就会被遮挡，只能自己区模拟了，那是不小的工作量。
 
 然而我们还发现，Google Chrome 是定制了这三个按钮的背景色的，正在研究它的做法。
+
+不过 Win32 原生的方法顶多只支持修改标题栏按钮的背景色，而不支持让标题栏按钮全透明。也就是说，Win32 原生方法也许能达到 Google Chrome 的效果，但不可能达到 UWP 中的效果。
+
+为了完全模拟 UWP，标题栏上的按钮只能自绘了。关于自绘标题栏按钮以模拟 UWP 原生按钮，可以阅读我的另一篇文章（代码太长，还是分开了好）：[WPF 应用完全模拟 UWP 的标题栏按钮](http://localhost:4000/post/wpf-simulate-native-window-title-bar-buttons.html)。
 
 ### 原生 Windows 窗口体验
 
