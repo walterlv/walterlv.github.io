@@ -1113,7 +1113,6 @@ body.dark-theme ul.pager li.active {
 
 .post-content img:hover {
     filter: drop-shadow(0px 0px 4px);
-    transform: scale(1.01);
 }
 
 .post-content img.emoji {
