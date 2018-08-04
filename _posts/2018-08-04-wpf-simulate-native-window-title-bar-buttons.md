@@ -1,6 +1,6 @@
 ---
 title: "WPF 应用完全模拟 UWP 的标题栏按钮"
-date: 2018-08-04 17:05:38 +0800
+date: 2018-08-04 17:35:09 +0800
 categories: wpf uwp dotnet windows
 ---
 
@@ -134,10 +134,10 @@ WPF 自定义窗口样式有多种方式，不过基本核心实现都是在修�
                                             <Setter.Value>
                                                 <ControlTemplate TargetType="Button">
                                                     <Border Name="OverBorder" BorderThickness="0 1 0 0" Background="{TemplateBinding Background}">
-                                                        <Path x:Name="MinimizeIcon"
-                                                              Fill="{TemplateBinding Foreground}" Data="{TemplateBinding Content}"
-                                                              Width="16" Height="16" SnapsToDevicePixels="True"
-                                                              HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                        <TextBlock x:Name="MinimizeIcon"
+                                                                   Foreground="{TemplateBinding Foreground}" Text="{TemplateBinding Content}"
+                                                                   FontSize="10" FontFamily="Segoe MDL2 Assets"
+                                                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                                     </Border>
                                                 </ControlTemplate>
                                             </Setter.Value>
@@ -208,18 +208,10 @@ WPF 自定义窗口样式有多种方式，不过基本核心实现都是在修�
                                            Margin="12 0 156 0" VerticalAlignment="Center" Foreground="{StaticResource Brush.TitleBar.Foreground}" />
                                 <StackPanel x:Name="TitleBarButtonPanel" Orientation="Horizontal"
                                             Margin="0 -1 0 0" HorizontalAlignment="Right">
-                                    <Button x:Name="MinimizeButton" themes:UniversalWindowStyle.TitleBarButtonState="Minimized">
-                                        <StreamGeometry>M 3,8 L 3,9 L 13,9 L 13,8 Z</StreamGeometry>
-                                    </Button>
-                                    <Button x:Name="RestoreButton" themes:UniversalWindowStyle.TitleBarButtonState="Normal">
-                                        <StreamGeometry>M 3,3 L 3,4 L 13,4 L 13,3 Z M 3,12 L 3,13 L 13,13 L 13,12 Z M 3,4 L 3,12 L 4,12 L 4,4 Z M 12,4 L 12,12 L 13,12 L 13,4 Z</StreamGeometry>
-                                    </Button>
-                                    <Button x:Name="MaximizeButton" themes:UniversalWindowStyle.TitleBarButtonState="Maximized">
-                                        <StreamGeometry>M 3,3 L 3,4 L 13,4 L 13,3 Z M 3,12 L 3,13 L 13,13 L 13,12 Z M 3,4 L 3,12 L 4,12 L 4,4 Z M 12,4 L 12,12 L 13,12 L 13,4 Z</StreamGeometry>
-                                    </Button>
-                                    <Button x:Name="CloseButton" Style="{StaticResource Style.Button.Close}" themes:UniversalWindowStyle.IsTitleBarCloseButton="True">
-                                        <StreamGeometry>M 3,3 L 3,4 L 4,4 L 4,3 Z M 5,5 L 5,6 L 6,6 L 6,5 Z M 7,7 L 7,9 L 9,9 L 9,7 Z M 9,9 L 9,10 L 10,10 L 10,9 Z M 11,11 L 11,12 L 12,12 L 12,11 Z M 4,4 L 4,5 L 5,5 L 5,4 Z M 6,6 L 6,7 L 7,7 L 7,6 Z M 12,3 L 12,4 L 13,4 L 13,3 Z M 10,10 L 10,11 L 11,11 L 11,10 Z M 12,12 L 12,13 L 13,13 L 13,12 Z M 11,4 L 11,5 L 12,5 L 12,4 Z M 10,5 L 10,6 L 11,6 L 11,5 Z M 9,6 L 9,7 L 10,7 L 10,6 Z M 6,9 L 6,10 L 7,10 L 7,9 Z M 5,10 L 5,11 L 6,11 L 6,10 Z M 4,11 L 4,12 L 5,12 L 5,11 Z M 3,12 L 3,13 L 4,13 L 4,12 Z</StreamGeometry>
-                                    </Button>
+                                    <Button x:Name="MinimizeButton" Content="&#xE921;" themes:UniversalWindowStyle.TitleBarButtonState="Minimized" />
+                                    <Button x:Name="RestoreButton" Content="&#xE923;" themes:UniversalWindowStyle.TitleBarButtonState="Normal" />
+                                    <Button x:Name="MaximizeButton" Content="&#xE922;" themes:UniversalWindowStyle.TitleBarButtonState="Maximized" />
+                                    <Button x:Name="CloseButton" Content="&#xE106;" Style="{StaticResource Style.Button.Close}" themes:UniversalWindowStyle.IsTitleBarCloseButton="True" />
                                 </StackPanel>
                             </Grid>
                             <AdornerDecorator>
