@@ -1,8 +1,7 @@
 ---
 title: "帮助官方 NuGet 解掉 Bug，制作绝对不会传递依赖的 NuGet 包"
-date: 2018-07-30 19:41:18 +0800
+date: 2018-08-05 21:22:12 +0800
 categories: nuget msbuild
-published: false
 ---
 
 如果你希望做一个 NuGet 工具包，那么这个包一定不能作为依赖传递给下一个包。典型的例子，做一个生成版本号的工具 NuGet 包，或者做一个代码分析器。
@@ -45,9 +44,106 @@ published: false
 
 官方提供了 `IsTool` 属性可以使用，但这依然不能阻止 B 安装了 A 包之后，C 包被迫安装 A 包的问题。
 
-### 我提供的强力解决方案
+### 我试图寻找的解决方案
 
 我们创建一个项目 Walterlv.PackageDemo.A 模拟前面提到的包 A，创建一个项目 Walterlv.PackageDemo.B 模拟前面提到的包 B，创建一个项目 Walterlv.ProjectDemo.C 模拟前面的项目 C。注意，实际场景中，这三个项目通常在不同的仓库中，由不同的开发者开发。
 
 ![创建项目 A、B、C](/static/posts/2018-07-30-19-52-46.png)
 
+不过，为了方便起见，我打算直接在一个解决方案中模拟这样的效果：
+
+![在一个解决方案中模拟](/static/posts/2018-08-05-20-40-37.png)
+
+我在 A 中试图创建一个 build\Walterlv.PackageDemo.A.props 文件，并在里面写一些阻止 A 被依赖的代码。
+
+```xml
+<Project>
+
+  <ItemGroup>
+    <PackageReference Update="Walterlv.PackageDemo.A" PrivateAssets="All" />
+  </ItemGroup>
+
+</Project>
+```
+
+当这段代码被 Visual Studio 编译的时候，一切符合预期。然而使用命令行编译的时候，就不按照预期工作了。
+
+### 我提供的强力解决方案
+
+#### 为 A 项目添加强力去除依赖
+
+我们需要为 A 项目添加一个 build\Walterlv.PackageDemo.A.targets 文件。这份文件会在其他项目安装 A 并且编译的时候执行。
+
+里面的内容为：
+
+```xml
+<Project>
+
+  <Target Name="ForceWalterlvDemoPrivateAssets" BeforeTargets="CollectPackageReferences">
+    <ItemGroup>
+      <PackageReference Update="Walterlv.PackageDemo.A" PrivateAssets="All" />
+    </ItemGroup>
+  </Target>
+
+</Project>
+```
+
+就是在 `CollectPackageReferences` 之前，即 MSBuild 开始编译之前收集 NuGet 引用之前执行。将 Walterlv.PackageDemo.A 的所有内容设为私有依赖。
+
+最关键的就是 `PrivateAssets="All"` 这一句，将所有内容设为私有依赖。阅读 [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html) 可以了解更多关于 NuGet 打包相关的知识。
+
+![Package.targets 文件](/static/posts/2018-08-05-21-05-18.png)  
+▲ 项目的结构
+
+为了通用一点，我取名为 Package.targets 文件，并在 A 项目编译的时候改名为 Walterlv.PackageDemo.A.targets。
+
+以下是 A 项目的 csproj 文件，包含将 Package.targets 在打包 NuGet 包时改名的部分。
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Assets\build\Package.targets" Pack="True" PackagePath="build\$(PackageId).targets" />
+  </ItemGroup>
+
+</Project>
+```
+
+#### 在 B 项目中进行测试
+
+本地调试当然用不着推送到 <https://nuget.org>。我们本地新建一个源，专门用于调试。
+
+在 “工具 -> 选项 -> NuGet 包管理器” 中，我们可以设置 NuGet 源：
+
+![添加调试用的 NuGet 源](/static/posts/2018-08-05-21-02-07.png)  
+▲ 添加调试用的 NuGet 源
+
+我们把刚刚 A 项目的输出目录填进去添加一个新的源。于是我们就能在 B 项目中安装 A 包了。
+
+于是 B 项目的 csproj 文件全文内容如下：
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Walterlv.PackageDemo.A" Version="1.0.0" />
+  </ItemGroup>
+
+</Project>
+```
+
+现在编译 B 项目，我们能得到 B 的 NuGet 包。打开 B 项目的 NuGet 包后，我们发现其中没有对 A 的依赖。这种情况下其他项目安装 B 是不会出现 A 项目的额外引用的。
+
+![B 项目的 NuGet 包](/static/posts/2018-08-05-21-15-42.png)
+
+使用 Visual Studio 编译和命令行编译效果是一样的。至此，我们的问题就是真的解决了。
