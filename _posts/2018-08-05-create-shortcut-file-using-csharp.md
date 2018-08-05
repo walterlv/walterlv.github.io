@@ -1,7 +1,7 @@
 ---
 title: "使用 C# 代码创建快捷方式文件"
 date_published: 2015-04-07 12:48:00 +0800
-date: 2018-08-05 20:34:17 +0800
+date: 2018-08-05 20:38:49 +0800
 categories: windows csharp dotnet
 ---
 
@@ -35,8 +35,8 @@ private static void CreateShortcut(string lnkFilePath, string args = "")
 
 以上代码为当前正在运行的程序创建一个快捷方式。当然，如果你希望给其他文件创建快捷方式，就改一改里面的代码吧，将 `TargetPath` 和 `WorkingDirectory` 改为其他参数。
 
-![快捷方式属性](/static/posts/2018-08-05-20-29-42.png)  
-▲ 快捷方式属性
+![快捷方式属性](/static/posts/2018-08-05-20-37-14.png)  
+▲ 快捷方式属性（其中 Target 等同于上面的 `TargetPath` 和 `Arguments` 一起，Start in 等同于上面的 `WorkingDirectory`）
 
 #### 引用 COM 组件
 
