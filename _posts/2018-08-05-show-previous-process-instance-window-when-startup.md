@@ -1,6 +1,6 @@
 ---
 title: "Win32 程序在启动时激活前一个启动程序的窗口"
-date: 2018-08-05 20:18:16 +0800
+date: 2018-08-05 21:48:50 +0800
 categories: windows wpf
 ---
 
@@ -21,7 +21,7 @@ UWP 程序天生单实例。当然，新 API （10.0.17134）开始也提供了�
 static void Main(string[] args)
 {
     var current = Process.GetCurrentProcess();
-    var process = Process.GetProcessesByName(current.ProcessName).Where(x => x.Id != current.Id).FirstOrDefault();
+    var process = Process.GetProcessesByName(current.ProcessName).FirstOrDefault(x => x.Id != current.Id);
     if (process != null)
     {
         var hwnd = process.MainWindowHandle;
