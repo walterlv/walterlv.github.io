@@ -1,6 +1,7 @@
 ---
 title: "Win32 程序在启动时激活前一个启动程序的窗口"
-date: 2018-08-05 21:48:50 +0800
+date_published: 2018-08-05 21:48:50 +0800
+date: 2018-08-05 21:54:09 +0800
 categories: windows wpf
 ---
 
@@ -42,6 +43,21 @@ private static extern int ShowWindow(IntPtr hwnd, uint nCmdShow);
 - 1 `Minimized`
 - 2 `Maximized`
 - 9 `Restore`
+
+另外，找到的窗口此时可能并不处于激活状态。例如在 Windows 10 中，此窗口可能在其他桌面上。那么我们需要添加额外的代码将其显示出来。
+
+在前面的 `ShowWindow` 之后，再调用一下 `SetForegroundWindow` 即可将其激活到最前面来。如果在其他桌面，则会切换到对应的桌面。
+
+```csharp
+[DllImport("USER32.DLL")]
+public static extern bool SetForegroundWindow(IntPtr hWnd);
+```
+
+```csharp
+var hwnd = process.MainWindowHandle;
+ShowWindow(hwnd, 9);
+SetForegroundWindow(hwnd);
+```
 
 ### 找到并激活窗口
 
