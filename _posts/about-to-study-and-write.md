@@ -1,6 +1,6 @@
 ---
 title: "About to Study and Write"
-date: 2018-07-21 22:27:33 +0800
+date: 2018-08-06 14:43:37 +0800
 categories: post
 published: false
 ---
@@ -16,6 +16,12 @@ published: false
 - Castle
 
 ### About to Write
+
+- Windows Sysinternals
+    - [Windows Sysinternals - Windows Sysinternals - Microsoft Docs](https://docs.microsoft.com/en-us/sysinternals/)
+
+- .NET Framework Tools
+    - [.NET Framework Tools - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/tools/)
 
 - Win32 PE
     - [深入理解 Win32 PE 文件格式 - 国立秀才 - 博客园](https://www.cnblogs.com/guolixiucai/p/4809820.html)
