@@ -1,7 +1,7 @@
 ---
 title: "使用 C# 代码创建快捷方式文件"
 date_published: 2015-04-07 12:48:00 +0800
-date: 2018-08-05 20:38:49 +0800
+date: 2018-08-11 09:58:29 +0800
 categories: windows csharp dotnet
 ---
 
@@ -55,7 +55,7 @@ private static void CreateShortcut(string lnkFilePath, string args = "")
 ```
 #### 兼容 .NET 3.5 或早期版本
 
-如果你还在使用 .NET Framework 3.5 或更早期版本，那真的很麻烦。同情你以下，不过也贴一段代码：
+如果你还在使用 .NET Framework 3.5 或更早期版本，那真的很麻烦。同情你一下，不过也贴一段代码：
 
 ```csharp
 private static void CreateShortcut(string lnkFilePath, string args = "")
