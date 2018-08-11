@@ -1,6 +1,6 @@
 ---
 title: "About to Study and Write"
-date: 2018-08-06 14:43:37 +0800
+date: 2018-08-11 09:58:59 +0800
 categories: post
 published: false
 ---
@@ -22,6 +22,9 @@ published: false
 
 - .NET Framework Tools
     - [.NET Framework Tools - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/tools/)
+
+- Microsoft Message Analyzer
+    - [Microsoft Message Analyzer Operating Guide - Message Analyzer - Microsoft Docs](https://docs.microsoft.com/en-us/message-analyzer/microsoft-message-analyzer-operating-guide)
 
 - Win32 PE
     - [深入理解 Win32 PE 文件格式 - 国立秀才 - 博客园](https://www.cnblogs.com/guolixiucai/p/4809820.html)
