@@ -6,13 +6,13 @@
         {
             "label": "Init Metadata",
             "type": "shell",
-            "command": "mdinit.ps1",
+            "command": "${workspaceRoot}\\build\\mdinit.ps1",
             "problemMatcher": []
         },
         {
             "label": "Update Metadata",
             "type": "shell",
-            "command": "mdupdate.ps1",
+            "command": "${workspaceRoot}\\build\\mdupdate.ps1",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
