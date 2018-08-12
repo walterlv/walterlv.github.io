@@ -1,8 +1,8 @@
 ---
 layout: post
 title: ".NET Framework 4.x 程序到底运行在哪个 CLR 版本之上"
-date_created: 2017-09-22 18:05:00 +0800
-date: 2017-09-22 21:42:14 +0800
+date_published: 2017-09-22 18:05:00 +0800
+date: 2018-08-12 16:00:37 +0800
 categories: dotnet
 permalink: /dotnet/2017/09/22/dotnet-version.html
 keywords: dotnet version sku runtime

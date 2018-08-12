@@ -1,9 +1,10 @@
 ---
 title: "Introducing MSTestEnhancer to make unit test result easy to read"
-date: 2018-03-05 14:21:05 +0800
+date_published: 2018-03-05 14:21:05 +0800
+date: 2018-08-12 16:03:10 +0800
 categories: csharp dotnet unittest
 version:
-  current: English
+  - current: English
 versions:
   - 中文: /post/get-rid-or-naming-in-unit-test.html
   - English: #

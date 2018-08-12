@@ -1,10 +1,10 @@
 ---
 title: "使用 GitVersion 在编译或持续构建时自动使用语义版本号（Semantic Versioning）"
 date_published: 2018-04-12 21:45:03 +0800
-date: 2018-04-15 08:18:44 +0800
+date: 2018-08-12 16:03:37 +0800
 categories: visualstudio nuget csharp dotnet
 version:
-  current: 中文
+  - current: 中文
 versions:
   - 中文: #
   - English: /post/automatically-semantic-versioning-using-git-version-task.en.html

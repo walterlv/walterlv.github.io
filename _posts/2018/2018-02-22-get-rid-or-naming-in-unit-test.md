@@ -1,10 +1,10 @@
 ---
 title: "不再为命名而苦恼！使用 MSTestEnhancer 单元测试扩展，写契约就够了"
 date_published: 2018-02-22 19:52:20 +0800
-date: 2018-03-05 14:39:28 +0800
+date: 2018-08-12 16:02:57 +0800
 categories: csharp dotnet unittest
 version:
-  current: 中文
+  - current: 中文
 versions:
   - 中文: #
   - English: /post/introduce-mstest-enhancer.html
