@@ -1,6 +1,6 @@
 ---
 title: "(2/2) 为了理解 UWP 的启动流程，我从零开始创建了一个 UWP 程序"
-date_published: 2018-07-25 21:20:36 +0800
+publishDate: 2018-07-25 21:20:36 +0800
 date: 2018-07-28 19:50:08 +0800
 categories: uwp dotnet csharp
 ---

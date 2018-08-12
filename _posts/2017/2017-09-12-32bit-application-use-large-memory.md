@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "使 32 位程序使用大于 2GB 的内存"
-date_published: 2017-09-12 21:48:46 +0800
+publishDate: 2017-09-12 21:48:46 +0800
 date: 2017-12-26 09:05:27 +0800
 categories: windows
 permalink: /windows/2017/09/12/32bit-application-use-large-memory.html

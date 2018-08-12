@@ -1,6 +1,6 @@
 ---
 title: ".NET Core 和 .NET Framework 中的 MEF2"
-date_published: 2018-01-17 23:41:00 +0800
+publishDate: 2018-01-17 23:41:00 +0800
 date: 2018-01-21 12:02:03 +0800
 categories: visualstudio dotnet
 ---

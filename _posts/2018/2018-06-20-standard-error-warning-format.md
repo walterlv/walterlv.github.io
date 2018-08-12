@@ -1,6 +1,6 @@
 ---
 title: "如何在 MSBuild Target（Exec）中报告编译错误和编译警告"
-date_published: 2018-06-20 13:17:32 +0800
+publishDate: 2018-06-20 13:17:32 +0800
 date: 2018-07-02 20:49:55 +0800
 categories: dotnet msbuild
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "UWP 中的 LaunchUriAsync，使用默认浏览器或其他应用打开链接"
-date_published: 2017-09-25 00:39:53 +0800
+publishDate: 2017-09-25 00:39:53 +0800
 date: 2017-10-22 15:48:59 +0800
 categories: uwp
 permalink: /uwp/2017/09/25/launch-uri-async.html

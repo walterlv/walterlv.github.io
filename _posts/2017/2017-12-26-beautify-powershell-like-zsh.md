@@ -1,6 +1,6 @@
 ---
 title: "将美化进行到底，把 PowerShell 做成 oh-my-zsh 的样子"
-date_published: 2017-12-26 15:00:17 +0800
+publishDate: 2017-12-26 15:00:17 +0800
 date: 2018-02-20 06:53:00 +0800
 categories: windows powershell
 ---

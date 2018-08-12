@@ -1,6 +1,6 @@
 ---
 title: "如何创建一个基于命令行工具的跨平台的 NuGet 工具包"
-date_published: 2018-05-12 09:09:02 +0800
+publishDate: 2018-05-12 09:09:02 +0800
 date: 2018-07-27 10:23:57 +0800
 categories: visualstudio csharp dotnet msbuild
 ---

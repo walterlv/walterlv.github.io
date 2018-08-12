@@ -1,6 +1,6 @@
 ---
 title: "命令“\"xxx.exe\" xxx”已退出，代码为 3/123/9009。VS 的这些编译错误代码代表了什么意思？"
-date_published: 2018-03-09 08:44:08 +0800
+publishDate: 2018-03-09 08:44:08 +0800
 date: 2018-04-16 18:56:22 +0800
 categories: visualstudio
 ---

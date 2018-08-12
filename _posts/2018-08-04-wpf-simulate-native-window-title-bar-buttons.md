@@ -1,6 +1,6 @@
 ---
 title: "WPF 应用完全模拟 UWP 的标题栏按钮"
-date_published: 2018-08-04 17:35:09 +0800
+publishDate: 2018-08-04 17:35:09 +0800
 date: 2018-08-05 10:21:51 +0800
 categories: wpf uwp dotnet windows
 ---

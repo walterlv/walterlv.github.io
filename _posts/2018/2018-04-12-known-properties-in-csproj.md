@@ -1,6 +1,6 @@
 ---
 title: "项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦）"
-date_published: 2018-04-12 21:03:52 +0800
+publishDate: 2018-04-12 21:03:52 +0800
 date: 2018-07-27 12:36:48 +0800
 categories: visualstudio nuget csharp dotnet msbuild
 ---

@@ -1,6 +1,6 @@
 ---
 title: "WPF 和 UWP 中，不用设置 From 或 To，Storyboard 即拥有更灵活的动画控制"
-date_published: 2017-10-26 12:55:27 +0800
+publishDate: 2017-10-26 12:55:27 +0800
 date: 2018-02-20 06:41:52 +0800
 categories: wpf uwp
 tags: Storyboard Animation From To

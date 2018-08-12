@@ -1,6 +1,6 @@
 ---
 title: "语法高亮不够漂亮？这里有你想要的 Rouge 主题"
-date_published: 2018-07-27 22:15:25 +0800
+publishDate: 2018-07-27 22:15:25 +0800
 date: 2018-08-12 14:51:50 +0800
 categories: site
 ---

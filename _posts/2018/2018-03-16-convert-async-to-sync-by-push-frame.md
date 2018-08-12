@@ -1,6 +1,6 @@
 ---
 title: "将 async/await 异步代码转换为安全的不会死锁的同步代码"
-date_published: 2018-03-16 11:58:10 +0800
+publishDate: 2018-03-16 11:58:10 +0800
 date: 2018-04-18 07:41:33 +0800
 categories: dotnet csharp
 ---

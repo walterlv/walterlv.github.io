@@ -1,6 +1,6 @@
 ---
 title: "使用 ExceptionDispatchInfo 捕捉并重新抛出异常"
-date_published: 2017-10-23 22:22:43 +0800
+publishDate: 2017-10-23 22:22:43 +0800
 date: 2017-10-27 07:38:48 +0800
 categories: dotnet dotnet-core dotnet-standard csharp
 ---

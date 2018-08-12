@@ -1,6 +1,6 @@
 ---
 title: "关闭模态窗口后，父窗口居然跑到了其他窗口的后面"
-date_published: 2018-02-05 13:58:49 +0800
+publishDate: 2018-02-05 13:58:49 +0800
 date: 2018-06-05 10:55:19 +0800
 categories: dotnet csharp windows
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Roslyn 入门：使用 Visual Studio 的语法可视化（Syntax Visualizer）窗格查看和了解代码的语法树"
-date_published: 2018-03-18 20:50:09 +0800
+publishDate: 2018-03-18 20:50:09 +0800
 date: 2018-06-02 09:26:06 +0800
 categories: visualstudio dotnet csharp roslyn
 ---

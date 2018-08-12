@@ -1,6 +1,6 @@
 ---
 title: ".NET/C# 建议的异常处理原则"
-date_published: 2017-12-03 16:20:20 +0800
+publishDate: 2017-12-03 16:20:20 +0800
 date: 2018-02-04 21:19:06 +0800
 categories: csharp dotnet wpf
 ---

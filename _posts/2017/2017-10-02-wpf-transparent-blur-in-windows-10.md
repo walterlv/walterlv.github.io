@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "在 Windows 10 上为 WPF 窗口添加模糊特效（就像开始菜单和操作中心那样）"
-date_published: 2017-10-02 00:14:07 +0800
+publishDate: 2017-10-02 00:14:07 +0800
 date: 2018-02-20 06:31:10 +0800
 categories: win10 windows wpf
 permalink: /post/win10/2017/10/02/wpf-transparent-blur-in-windows-10.html

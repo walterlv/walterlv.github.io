@@ -1,6 +1,6 @@
 ---
 title: "如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包"
-date_published: 2018-05-12 00:04:14 +0800
+publishDate: 2018-05-12 00:04:14 +0800
 date: 2018-05-19 15:16:14 +0800
 categories: visualstudio csharp dotnet msbuild
 ---

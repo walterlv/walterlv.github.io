@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "让 GitHub Pages 强制使用 HTTPS（含码云的 gitee/oschina.io）"
-date_published: 2017-09-17 16:01:34 +0800
+publishDate: 2017-09-17 16:01:34 +0800
 date: 2018-08-12 14:48:47 +0800
 categories: site git github
 permalink: /jekyll/2017/09/17/force-https-for-github-pages.html

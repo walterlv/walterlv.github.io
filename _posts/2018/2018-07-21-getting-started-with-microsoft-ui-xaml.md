@@ -1,6 +1,6 @@
 ---
 title: "使用 Microsoft.UI.Xaml 解决 UWP 控件和对老版本 Windows 10 的兼容性问题"
-date_published: 2018-07-21 21:51:05 +0800
+publishDate: 2018-07-21 21:51:05 +0800
 date: 2018-07-24 09:17:41 +0800
 categories: uwp windows
 ---

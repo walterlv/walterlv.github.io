@@ -1,6 +1,6 @@
 ---
 title: "安利一款非常好用的命令行参数库：McMaster.Extensions.CommandLineUtils"
-date_published: 2017-10-21 09:44:02 +0800
+publishDate: 2017-10-21 09:44:02 +0800
 date: 2018-04-26 20:39:31 +0800
 categories: dotnet dotnet-core dotnet-standard
 ---

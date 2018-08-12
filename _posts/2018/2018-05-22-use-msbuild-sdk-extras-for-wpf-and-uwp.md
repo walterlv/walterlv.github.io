@@ -1,6 +1,6 @@
 ---
 title: "新 csproj 对 WPF/UWP 支持不太好？有第三方 SDK 可以用！MSBuild.Sdk.Extras"
-date_published: 2018-05-22 15:07:22 +0800
+publishDate: 2018-05-22 15:07:22 +0800
 date: 2018-07-26 07:21:12 +0800
 categories: visualstudio dotnet csharp msbuild
 ---

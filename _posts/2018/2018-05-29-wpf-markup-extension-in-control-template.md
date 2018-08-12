@@ -1,6 +1,6 @@
 ---
 title: "如何编写 WPF 的标记扩展 MarkupExtension，即便在 ControlTemplate/DataTemplate 中也能生效"
-date_published: 2018-05-29 20:56:46 +0800
+publishDate: 2018-05-29 20:56:46 +0800
 date: 2018-05-30 09:34:41 +0800
 categories: xaml wpf
 ---

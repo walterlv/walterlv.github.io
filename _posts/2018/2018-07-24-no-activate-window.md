@@ -1,6 +1,6 @@
 ---
 title: ".NET/C# 使窗口永不获得焦点"
-date_published: 2018-07-24 14:19:56 +0800
+publishDate: 2018-07-24 14:19:56 +0800
 date: 2018-07-27 07:24:42 +0800
 categories: windows dotnet csharp wpf
 ---

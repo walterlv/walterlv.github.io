@@ -1,6 +1,6 @@
 ---
 title: "解决 Git 重命名时遇到的大小写不敏感的问题"
-date_published: 2017-11-23 16:51:07 +0800
+publishDate: 2017-11-23 16:51:07 +0800
 date: 2018-07-30 20:33:53 +0800
 categories: windows git
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "深入了解 WPF Dispatcher 的工作原理（Invoke/InvokeAsync 部分）"
-date_published: 2017-09-26 02:02:24 +0800
+publishDate: 2017-09-26 02:02:24 +0800
 date: 2017-10-19 21:13:30 +0800
 categories: dotnet
 permalink: /post/dotnet/2017/09/26/dispatcher-invoke-async.html

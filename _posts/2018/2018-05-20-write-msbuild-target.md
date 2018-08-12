@@ -1,6 +1,6 @@
 ---
 title: "如何编写基于 Microsoft.NET.Sdk 的跨平台的 MSBuild Target（附各种自带的 Task）"
-date_published: 2018-05-20 19:00:34 +0800
+publishDate: 2018-05-20 19:00:34 +0800
 date: 2018-07-11 10:44:03 +0800
 categories: visualstudio msbuild
 ---

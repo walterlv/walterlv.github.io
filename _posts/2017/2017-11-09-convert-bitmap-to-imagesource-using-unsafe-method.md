@@ -1,6 +1,6 @@
 ---
 title: "使用不安全代码将 Bitmap 位图转为 WPF 的 ImageSource 以获得高性能和持续小的内存占用"
-date_published: 2017-11-09 23:25:41 +0800
+publishDate: 2017-11-09 23:25:41 +0800
 date: 2017-11-10 14:42:45 +0800
 categories: wpf
 ---

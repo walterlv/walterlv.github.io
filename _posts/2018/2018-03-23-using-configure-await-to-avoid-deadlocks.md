@@ -1,6 +1,6 @@
 ---
 title: "在编写异步方法时，使用 ConfigureAwait(false) 避免使用者死锁"
-date_published: 2018-03-23 21:54:20 +0800
+publishDate: 2018-03-23 21:54:20 +0800
 date: 2018-03-24 13:21:17 +0800
 categories: dotnet
 ---

@@ -1,6 +1,6 @@
 ---
 title: "让你编写的控件库在 XAML 中有一个统一的漂亮的命名空间（xmlns）和命名空间前缀"
-date_published: 2018-05-22 21:21:22 +0800
+publishDate: 2018-05-22 21:21:22 +0800
 date: 2018-06-21 07:53:31 +0800
 categories: dotnet xaml wpf
 ---

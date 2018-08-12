@@ -1,6 +1,6 @@
 ---
 title: "Visual->UIElement->FrameworkElement，带来更多功能的同时也带来了更多的限制"
-date_published: 2017-11-13 23:55:58 +0800
+publishDate: 2017-11-13 23:55:58 +0800
 date: 2018-02-20 06:41:24 +0800
 categories: wpf uwp xaml
 ---

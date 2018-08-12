@@ -1,6 +1,6 @@
 ---
 title: "（持续整理中）Visual Studio 中 C# 代码分析规则集中每一项的含义 (stylecop ruleset)"
-date_published: 2018-02-07 21:55:12 +0800
+publishDate: 2018-02-07 21:55:12 +0800
 date: 2018-03-23 21:56:10 +0800
 categories: csharp visualstudio
 ---

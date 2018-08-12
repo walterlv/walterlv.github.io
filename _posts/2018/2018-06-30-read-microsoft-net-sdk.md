@@ -1,6 +1,6 @@
 ---
 title: "解读 Microsoft.NET.Sdk 的源码，你能定制各种奇怪而富有创意的编译过程"
-date_published: 2018-06-30 13:55:39 +0800
+publishDate: 2018-06-30 13:55:39 +0800
 date: 2018-08-12 16:05:23 +0800
 categories: dotnet visualstudio nuget msbuild
 version:

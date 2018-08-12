@@ -1,6 +1,6 @@
 ---
 title: "如何快速编写和调试 Emit 生成 IL 的代码"
-date_published: 2018-04-22 20:23:26 +0800
+publishDate: 2018-04-22 20:23:26 +0800
 date: 2018-04-23 14:12:54 +0800
 categories: dotnet csharp
 ---

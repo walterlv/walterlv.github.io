@@ -1,6 +1,6 @@
 ---
 title: "Roslyn 入门：使用 .NET Core 版本的 Roslyn 编译并执行跨平台的静态的源码"
-date_published: 2018-05-25 21:24:08 +0800
+publishDate: 2018-05-25 21:24:08 +0800
 date: 2018-06-02 09:26:33 +0800
 categories: visualstudio dotnet csharp roslyn
 ---

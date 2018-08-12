@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WPF 程序无法触摸操作？我们一起来找原因和解决方法！"
-date_published: 2017-09-12 07:34:00 +0800
+publishDate: 2017-09-12 07:34:00 +0800
 date: 2018-03-19 19:30:45 +0800
 categories: wpf
 permalink: /wpf/2017/09/12/touch-not-work-in-wpf.html

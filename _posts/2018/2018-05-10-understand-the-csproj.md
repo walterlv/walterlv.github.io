@@ -1,6 +1,6 @@
 ---
 title: "理解 C# 项目 csproj 文件格式的本质和编译流程"
-date_published: 2018-05-10 08:13:43 +0800
+publishDate: 2018-05-10 08:13:43 +0800
 date: 2018-08-12 16:11:05 +0800
 categories: visualstudio msbuild
 ---

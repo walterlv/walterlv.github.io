@@ -1,6 +1,6 @@
 ---
 title: "WPF 同一窗口内的多线程/多进程 UI（使用 SetParent 嵌入另一个窗口）"
-date_published: 2018-07-11 21:35:58 +0800
+publishDate: 2018-07-11 21:35:58 +0800
 date: 2018-07-12 19:44:57 +0800
 categories: wpf dotnet csharp windows
 ---

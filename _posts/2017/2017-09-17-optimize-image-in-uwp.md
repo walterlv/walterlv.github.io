@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "优化 UWP 中图片的内存占用"
-date_published: 2017-09-17 12:44:45 +0800
+publishDate: 2017-09-17 12:44:45 +0800
 date: 2017-09-29 07:36:02 +0800
 categories: uwp
 permalink: /uwp/2017/09/17/optimize-image-in-uwp.html

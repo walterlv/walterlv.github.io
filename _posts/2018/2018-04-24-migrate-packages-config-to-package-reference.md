@@ -1,6 +1,6 @@
 ---
 title: "自动将 NuGet 包的引用方式从 packages.config 升级为 PackageReference"
-date_published: 2018-04-24 18:03:20 +0800
+publishDate: 2018-04-24 18:03:20 +0800
 date: 2018-06-29 16:52:10 +0800
 categories: dotnet visualstudio nuget msbuild
 ---

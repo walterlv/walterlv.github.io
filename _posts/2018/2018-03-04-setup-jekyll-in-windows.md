@@ -1,6 +1,6 @@
 ---
 title: "快速在 Windows 上搭建 Jekyll 开发环境"
-date_published: 2018-03-04 13:30:14 +0800
+publishDate: 2018-03-04 13:30:14 +0800
 date: 2018-08-12 14:50:26 +0800
 categories: site
 ---

@@ -1,6 +1,6 @@
 ---
 title: "C#/.NET 匿名函数会捕获变量，并延长对象的生命周期"
-date_published: 2018-01-05 09:26:40 +0800
+publishDate: 2018-01-05 09:26:40 +0800
 date: 2018-02-20 06:53:49 +0800
 categories: csharp dotnet
 ---

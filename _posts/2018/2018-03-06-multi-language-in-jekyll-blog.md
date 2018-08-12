@@ -1,6 +1,6 @@
 ---
 title: "为带有多种语言的 Jekyll 博客添加多语言选择"
-date_published: 2018-03-06 14:47:40 +0800
+publishDate: 2018-03-06 14:47:40 +0800
 date: 2018-08-12 16:03:22 +0800
 categories: site web html css
 version:

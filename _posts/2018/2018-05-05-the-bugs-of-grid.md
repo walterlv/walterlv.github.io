@@ -1,6 +1,6 @@
 ---
 title: "WPF/UWP 的 Grid 布局竟然有 Bug，还不止一个！了解 Grid 中那些未定义的布局规则"
-date_published: 2018-05-05 15:43:33 +0800
+publishDate: 2018-05-05 15:43:33 +0800
 date: 2018-08-12 16:04:15 +0800
 categories: wpf uwp xaml
 version:

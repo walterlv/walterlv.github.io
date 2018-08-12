@@ -1,6 +1,6 @@
 ---
 title: "为博客或个人站点的 Markdown 添加 LaTeX 公式支持"
-date_published: 2018-05-26 10:20:16 +0800
+publishDate: 2018-05-26 10:20:16 +0800
 date: 2018-08-12 14:51:35 +0800
 categories: site web vscode
 ---

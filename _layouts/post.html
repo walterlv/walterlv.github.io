@@ -10,13 +10,13 @@
         <h1 class="post-title" itemprop="name">{{ page.title }}</h1>
         <p itemprop="post-info" class="post-info">
           <svg id="date" class="icon-calendar"><use xlink:href="#icon-calendar"></use></svg>
-          {% if page.date_published %}
-            <time itemprop="datePublished" datetime="{{ page.date_published | date_to_xmlschema }}" class="date">
-              发布于 {% include date.html date=page.date_published %}
+          {% if page.publishDate %}
+            <time itemprop="datePublished" datetime="{{ page.publishDate | date_to_xmlschema }}" class="date">
+              发布于 {% include date.html date=page.publishDate %}
             </time>
             <br class="mobile-only">
             <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-            <time itemprop="datePublished" datetime="{{ page.date_published | date_to_xmlschema }}" class="date">
+            <time itemprop="datePublished" datetime="{{ page.publishDate | date_to_xmlschema }}" class="date">
               更新于 {% include date.html date=page.date %}
             </time>
           {% elsif page.date %}

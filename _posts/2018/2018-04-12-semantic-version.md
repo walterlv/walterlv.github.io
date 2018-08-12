@@ -1,6 +1,6 @@
 ---
 title: "语义版本号（Semantic Versioning）"
-date_published: 2018-04-12 20:20:39 +0800
+publishDate: 2018-04-12 20:20:39 +0800
 date: 2018-06-30 09:19:24 +0800
 categories: visualstudio nuget csharp dotnet
 ---

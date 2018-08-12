@@ -1,6 +1,6 @@
 ---
 title: "理解 UWP 视图的概念，让 UWP 应用显示多个窗口（多视图）"
-date_published: 2018-07-27 09:19:14 +0800
+publishDate: 2018-07-27 09:19:14 +0800
 date: 2018-07-30 07:53:47 +0800
 categories: uwp
 ---

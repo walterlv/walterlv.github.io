@@ -1,6 +1,6 @@
 ---
 title: "Win32 程序在启动时激活前一个启动程序的窗口"
-date_published: 2018-08-05 21:48:50 +0800
+publishDate: 2018-08-05 21:48:50 +0800
 date: 2018-08-05 21:54:09 +0800
 categories: windows wpf
 ---

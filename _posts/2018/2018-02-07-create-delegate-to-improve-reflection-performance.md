@@ -1,6 +1,6 @@
 ---
 title: ".NET Core/Framework 创建委托以大幅度提高反射调用的性能"
-date_published: 2018-02-07 17:45:21 +0800
+publishDate: 2018-02-07 17:45:21 +0800
 date: 2018-02-27 19:58:33 +0800
 categories: dotnet csharp
 ---

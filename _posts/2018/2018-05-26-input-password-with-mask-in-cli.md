@@ -1,6 +1,6 @@
 ---
 title: "如何让 .NET Core 命令行程序接受密码的输入而不显示密码明文"
-date_published: 2018-05-26 16:51:02 +0800
+publishDate: 2018-05-26 16:51:02 +0800
 date: 2018-05-26 22:26:12 +0800
 categories: dotnet
 ---

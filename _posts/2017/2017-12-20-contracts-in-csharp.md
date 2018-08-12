@@ -1,6 +1,6 @@
 ---
 title: "C#/.NET 中的契约"
-date_published: 2017-12-20 23:04:21 +0800
+publishDate: 2017-12-20 23:04:21 +0800
 date: 2018-04-25 17:11:33 +0800
 categories: csharp dotnet
 ---

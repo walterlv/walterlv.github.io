@@ -1,6 +1,6 @@
 ---
 title: "用动画的方式画出任意的路径（直线、曲线、折现）"
-date_published: 2017-11-20 08:49:55 +0800
+publishDate: 2017-11-20 08:49:55 +0800
 date: 2017-11-20 09:07:07 +0800
 categories: xaml wpf uwp
 ---

@@ -1,6 +1,6 @@
 ---
 title: "每次都要重新编译？太慢！让跨平台的 MSBuild/dotnet build 的 Target 支持差量编译"
-date_published: 2018-05-14 15:46:50 +0800
+publishDate: 2018-05-14 15:46:50 +0800
 date: 2018-07-28 17:52:22 +0800
 categories: visualstudio msbuild
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "深入了解 WPF Dispatcher 的工作原理（PushFrame 部分）"
-date_published: 2017-09-26 03:49:41 +0800
+publishDate: 2017-09-26 03:49:41 +0800
 date: 2017-09-29 07:35:25 +0800
 categories: dotnet
 permalink: /post/dotnet/2017/09/26/dispatcher-push-frame.html

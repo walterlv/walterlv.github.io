@@ -1,6 +1,6 @@
 ---
 title: "使用 C# 代码创建快捷方式文件"
-date_published: 2015-04-07 12:48:00 +0800
+publishDate: 2015-04-07 12:48:00 +0800
 date: 2018-08-11 09:58:29 +0800
 categories: windows csharp dotnet
 ---

@@ -1,6 +1,6 @@
 ---
 title: "如何实现一个可以用 await 异步等待的 Awaiter"
-date_published: 2017-10-29 16:38:57 +0800
+publishDate: 2017-10-29 16:38:57 +0800
 date: 2017-10-30 22:01:52 +0800
 categories: dotnet csharp wpf uwp
 ---

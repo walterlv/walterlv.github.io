@@ -1,6 +1,6 @@
 ---
 title: "各个版本 Windows 10 系统中自带的 .NET Framework 版本"
-date_published: 2017-10-17 10:49:40 +0800
+publishDate: 2017-10-17 10:49:40 +0800
 date: 2018-06-06 10:00:31 +0800
 categories: windows dotnet
 tags: Windows .Net

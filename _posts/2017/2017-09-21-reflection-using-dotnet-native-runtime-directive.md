@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "设置 .NET Native 运行时指令以支持反射（尤其适用于 UWP）"
-date_published: 2017-09-21 00:38:17 +0800
+publishDate: 2017-09-21 00:38:17 +0800
 date: 2017-09-21 07:35:41 +0800
 categories: uwp
 permalink: /uwp/2017/09/21/reflection-using-dotnet-native-runtime-directive.html

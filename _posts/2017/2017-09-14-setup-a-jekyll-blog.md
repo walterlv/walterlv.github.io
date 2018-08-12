@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "如何搭建一个基于 GitHub Pages 的 Jekyll 静态博客（目录）"
-date_published: 2017-09-14 13:38:04 +0800
+publishDate: 2017-09-14 13:38:04 +0800
 date: 2018-08-12 14:48:37 +0800
 categories: site
 permalink: /jekyll/2017/09/15/setup-a-jekyll-blog.html

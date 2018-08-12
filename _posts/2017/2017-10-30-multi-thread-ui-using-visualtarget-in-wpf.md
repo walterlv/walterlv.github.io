@@ -1,6 +1,6 @@
 ---
 title: "WPF 同一窗口内的多线程 UI（VisualTarget）"
-date_published: 2017-10-30 23:38:21 +0800
+publishDate: 2017-10-30 23:38:21 +0800
 date: 2018-07-11 20:10:54 +0800
 categories: wpf dotnet csharp
 ---

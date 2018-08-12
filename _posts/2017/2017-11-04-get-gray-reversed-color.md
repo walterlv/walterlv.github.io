@@ -1,6 +1,6 @@
 ---
 title: "分享一个算法，计算能在任何背景色上清晰显示的前景色"
-date_published: 2017-11-04 22:51:33 +0800
+publishDate: 2017-11-04 22:51:33 +0800
 date: 2018-02-20 06:37:19 +0800
 categories: algorithm wpf uwp dotnet csharp
 ---

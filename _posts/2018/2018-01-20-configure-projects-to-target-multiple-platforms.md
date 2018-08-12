@@ -1,6 +1,6 @@
 ---
 title: "让一个 csproj 项目指定多个开发框架"
-date_published: 2018-01-21 11:28:55 +0800
+publishDate: 2018-01-21 11:28:55 +0800
 date: 2018-06-29 16:51:42 +0800
 categories: visualstudio
 ---

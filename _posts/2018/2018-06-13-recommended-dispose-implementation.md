@@ -1,6 +1,6 @@
 ---
 title: "C#/.NET 中推荐的 Dispose 模式的实现"
-date_published: 2015-02-05 10:10:00 +0800
+publishDate: 2015-02-05 10:10:00 +0800
 date: 2018-06-13 11:02:37 +0800
 categories: csharp dotnet
 ---

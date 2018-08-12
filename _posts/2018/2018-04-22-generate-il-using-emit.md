@@ -1,6 +1,6 @@
 ---
 title: "使用 Emit 生成 IL 代码"
-date_published: 2018-04-22 21:14:58 +0800
+publishDate: 2018-04-22 21:14:58 +0800
 date: 2018-04-27 07:10:34 +0800
 categories: dotnet csharp
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ".NET Framework 4.x 程序到底运行在哪个 CLR 版本之上"
-date_published: 2017-09-22 18:05:00 +0800
+publishDate: 2017-09-22 18:05:00 +0800
 date: 2018-08-12 16:00:37 +0800
 categories: dotnet
 permalink: /dotnet/2017/09/22/dotnet-version.html

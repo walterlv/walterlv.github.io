@@ -1,6 +1,6 @@
 ---
 title: "为博客添加可切换的暗色和亮色主题"
-date_published: 2018-05-19 21:42:23 +0800
+publishDate: 2018-05-19 21:42:23 +0800
 date: 2018-08-12 14:50:56 +0800
 categories: site html javascript css
 ---

@@ -1,6 +1,6 @@
 ---
 title: "如何最快速地将旧的 NuGet 包 (2.x, packages.config) 升级成新的 NuGet 包 (4.x, PackageReference) "
-date_published: 2018-05-13 17:07:23 +0800
+publishDate: 2018-05-13 17:07:23 +0800
 date: 2018-06-29 16:52:22 +0800
 categories: visualstudio nuget msbuild
 ---

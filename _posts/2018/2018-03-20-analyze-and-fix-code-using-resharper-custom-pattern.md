@@ -1,6 +1,6 @@
 ---
 title: "利用 ReSharper 自定义代码中的错误模式，在代码审查之前就发现并修改错误"
-date_published: 2018-03-20 19:54:40 +0800
+publishDate: 2018-03-20 19:54:40 +0800
 date: 2018-03-20 20:35:30 +0800
 categories: visualstudio csharp resharper
 ---

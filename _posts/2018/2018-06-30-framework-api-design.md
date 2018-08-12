@@ -1,6 +1,6 @@
 ---
 title: "好的框架需要好的 API 设计 —— API 设计的六个原则"
-date_published: 2018-06-30 17:23:45 +0800
+publishDate: 2018-06-30 17:23:45 +0800
 date: 2018-08-12 16:04:37 +0800
 categories: dotnet framework
 version:
