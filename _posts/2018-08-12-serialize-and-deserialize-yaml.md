@@ -1,6 +1,7 @@
 ---
 title: "C#/.NET 序列化和反序列化 YAML 元数据"
-date: 2018-08-12 20:44:50 +0800
+date_published: 2018-08-12 20:44:50 +0800
+date: 2018-08-13 05:47:27 +0800
 categories: dotnet csharp
 ---
 
@@ -67,9 +68,6 @@ public sealed class YamlFrontMeta
     [YamlMember(Alias = "description", ApplyNamingConventions = false)]
     public string Description { get; set; }
 
-    [YamlMember(Alias = "version", ApplyNamingConventions = false)]
-    public List<VersionInfo> Version { get; set; }
-
     [YamlMember(Alias = "versions", ApplyNamingConventions = false)]
     public List<VersionsInfo> Versions { get; set; }
 
@@ -92,8 +90,6 @@ title: "Good Framework Rely on Good Api —— Six API Design Principles"
 date_published: 2018-06-30 19:09:53 +0800
 date: 2018-08-12 16:04:26 +0800
 categories: dotnet framework
-version:
-  current: English
 versions:
   - 中文: /post/framework-api-design.html
   - English: #
