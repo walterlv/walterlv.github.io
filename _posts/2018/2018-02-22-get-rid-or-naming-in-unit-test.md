@@ -4,7 +4,7 @@ publishDate: 2018-02-22 19:52:20 +0800
 date: 2018-08-12 16:02:57 +0800
 categories: csharp dotnet unittest
 version:
-  - current: 中文
+  current: 中文
 versions:
   - 中文: #
   - English: /post/introduce-mstest-enhancer.html

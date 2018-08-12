@@ -4,7 +4,7 @@ publishDate: 2018-07-16 19:44:07 +0800
 date: 2018-08-12 16:05:47 +0800
 categories: windows wpf uwp dotnet
 version:
-  - current: 中文
+  current: 中文
 versions:
   - 中文: #
   - English: /post/create-blur-background-window-en.html

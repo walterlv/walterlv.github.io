@@ -4,7 +4,7 @@ publishDate: 2018-06-30 17:23:45 +0800
 date: 2018-08-12 16:04:37 +0800
 categories: dotnet framework
 version:
-  - current: 中文
+  current: 中文
 versions:
   - 中文: #
   - English: /post/framework-api-design-en.html

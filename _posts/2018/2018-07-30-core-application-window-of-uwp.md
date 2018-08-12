@@ -4,7 +4,7 @@ publishDate: 2018-07-30 07:51:34 +0800
 date: 2018-08-12 16:06:07 +0800
 categories: uwp
 version:
-  - current: 中文
+  current: 中文
 versions:
   - 中文: #
   - English: /post/core-application-window-of-uwp-en.html

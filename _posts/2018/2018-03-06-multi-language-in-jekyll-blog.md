@@ -4,7 +4,7 @@ publishDate: 2018-03-06 14:47:40 +0800
 date: 2018-08-12 16:03:22 +0800
 categories: site web html css
 version:
-  - current: 简体中文
+  current: 简体中文
 versions:
   - English: #
   - русский: #
@@ -68,7 +68,7 @@ html 里可以用 `<select>` 来做选择器。当然，本文只是用 `<select
 
 > ```yml
 > version:
->   - current: 简体中文
+>   current: 简体中文
 > versions:
 >   - English: /post/multi-language-in-jekyll-blog.html
 >   - 中文: /post/multi-language-in-jekyll-blog.html

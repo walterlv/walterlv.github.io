@@ -4,7 +4,7 @@ publishDate: 2018-06-30 13:55:39 +0800
 date: 2018-08-12 16:05:23 +0800
 categories: dotnet visualstudio nuget msbuild
 version:
-  - current: 中文
+  current: 中文
 versions:
   - 中文: #
   - English: /post/read-microsoft-net-sdk-en.html
