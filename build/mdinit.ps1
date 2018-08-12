@@ -1,0 +1,1 @@
+dotnet .\.vscode\mdmeta\mdmeta.dll winit

@@ -4,9 +4,16 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "taskName": "build",
+            "label": "Init Metadata",
             "type": "shell",
-            "command": "bundle exec jekyll build",
+            "command": "mdinit.ps1",
+            "problemMatcher": []
+        },
+        {
+            "label": "Update Metadata",
+            "type": "shell",
+            "command": "mdupdate.ps1",
+            "problemMatcher": [],
             "group": {
                 "kind": "build",
                 "isDefault": true
