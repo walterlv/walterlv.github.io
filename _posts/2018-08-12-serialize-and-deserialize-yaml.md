@@ -1,6 +1,6 @@
 ---
 title: "C#/.NET 序列化和反序列化 YAML 元数据"
-date: 2018-08-12 20:15:32 +0800
+date: 2018-08-12 20:44:50 +0800
 categories: dotnet csharp
 ---
 
