@@ -124,6 +124,7 @@
         "setupapi",
         "stil",
         "stloc",
+        "submodule",
         "sysprep",
         "typeconverter",
         "typeof",
@@ -135,6 +136,7 @@
         "wmploc",
         "wpdshext",
         "wpfuwp",
+        "wupdate",
         "xmlns",
         "yinyue",
         "zerouwp"
