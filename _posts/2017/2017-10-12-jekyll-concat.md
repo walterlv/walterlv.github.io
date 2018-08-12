@@ -1,7 +1,8 @@
 ---
 title: "合并 Jekyll 多种类型的页面"
-date: 2017-10-12 23:48:50 +0800
-categories: jekyll
+date_published: 2017-10-12 23:48:50 +0800
+date: 2018-08-12 14:49:01 +0800
+categories: site
 permalink: post/jekyll/jekyll-concat.html
 tags: jekyll concat liquid
 description: 
