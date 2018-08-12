@@ -1,1 +1,1 @@
-dotnet .\.vscode\mdmeta\mdmeta.dll wupdate --ignore-in-hour 8
+dotnet .\mdmeta\mdmeta.dll wupdate --ignore-in-hour 6

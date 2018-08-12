@@ -1,1 +1,1 @@
-dotnet .\.vscode\mdmeta\mdmeta.dll winit
+dotnet .\mdmeta\mdmeta.dll winit
