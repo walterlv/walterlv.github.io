@@ -1,11 +1,10 @@
 ---
-title: "通过解读 WPF 触摸源码，分析 WPF 插拔设备触摸失效的问题"
-date: 2018-08-14 11:39:29 +0800
-categories: wpf
-published: false
+title: "通过解读 WPF 触摸源码，分析 WPF 插拔设备触摸失效的问题（问题篇）"
+date: 2018-08-14 14:26:21 +0800
+categories: wpf windows
 ---
 
-在 .NET Framework 4.7 以前，WPF 程序的触摸处理是基于操作系统组件但又自成一套的，这其实也为其各种各样的触摸失效问题埋下了伏笔。再加上它出现得比较早，触摸失效问题也变得更加难以解决。
+在 .NET Framework 4.7 以前，WPF 程序的触摸处理是基于操作系统组件但又自成一套的，这其实也为其各种各样的触摸失效问题埋下了伏笔。再加上它出现得比较早，触摸失效问题也变得更加难以解决。即便是 .NET Framework 4.7 以后也需要开发者手动开启 `Pointer` 消息，并且存在兼容性问题。
 
 本文将通过解读 WPF 触摸部分的源码，分析 WPF 插拔设备触摸失效的问题。随后，会给微软报这个 Bug。
 
@@ -17,10 +16,7 @@ published: false
 
 - 本文与 [林德熙](https://lindexi.gitee.io/lindexi/) 的 [WPF 插拔触摸设备触摸失效](https://lindexi.gitee.io/post/WPF-%E6%8F%92%E6%8B%94%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87%E8%A7%A6%E6%91%B8%E5%A4%B1%E6%95%88.html) 所述的是同一个问题。那篇文章会更多的偏向于源码解读，而本文更多地偏向于分析触摸失效的过程。
 
-本文所有的 .NET Framework 源码均由 [dnSpy](https://github.com/0xd4d/dnSpy) 反编译得出，分析过程也基本是借助 dnSpy 的无 pdb 调试特性进行。关于 dnSpy 的更多使用，可以阅读：
-
-- [断点调试 Windows 源代码 - lindexi](https://lindexi.gitee.io/post/%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95-Windows-%E6%BA%90%E4%BB%A3%E7%A0%81.html)
-- [神器如 dnSpy，无需源码也能修改 .NET 程序 - walterlv](https://walterlv.github.io/post/edit-and-recompile-assembly-using-dnspy.html)
+---
 
 <div id="toc"></div>
 
@@ -30,17 +26,17 @@ published: false
 
 具体需要的条件为：
 
-1. 运行任意的 WPF 程序
-1. 插拔带有触摸的 HID 设备（可以是物理插拔，也可以是驱动或软件层面的插拔）
+1. 运行 **任意的 WPF 程序**
+1. **插拔带有触摸的 HID 设备**（可以是物理插拔，也可以是驱动或软件层面的插拔）
 
 以上虽说是必要条件，但如果要提高触摸失效的复现概率，需要制造一个较高的 CPU 占用：
 
-1. 当前系统中有较高的 CPU 占用率
+- 当前系统中有 **较高的 CPU 占用率**
 
 可能还有一些尚不确定的条件：
 
-1. 是否对 .NET Framework 的版本有要求？
-1. 是否对 Windows 操作系统的版本有要求？
+- 是否对 .NET Framework 的版本有要求？
+- 是否对 Windows 操作系统的版本有要求？
 
 将以上所有条件组合起来，对于触摸失效的问题描述为：
 
@@ -130,4 +126,16 @@ catch(ArgumentException)
 
 1. 重新插拔触摸设备（如果你的触摸框是通过 USB 连接可以手工插拔的话）
 
-### 解读 WPF 触摸相关的源码
+### 触摸失效问题的分析过程
+
+以上结论的得出，离不开对 .NET Framework 源码的解读和调试。
+
+由于 WPF 的触摸原理涉及到较多类型和源码，需要大量篇幅描述，所以不在本文中说明。阅读以下文章可以更加深入地了解这个触摸失效的问题：
+
+- [WPF 插拔触摸设备触摸失效 - lindexi](https://lindexi.gitee.io/post/WPF-%E6%8F%92%E6%8B%94%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87%E8%A7%A6%E6%91%B8%E5%A4%B1%E6%95%88.html)
+- [通过解读 WPF 触摸源码，分析 WPF 插拔设备触摸失效的问题（分析篇） - walterlv](/post/analyze-wpf-losting-touch-when-tablet-device-changed.html)
+
+本文所有的 .NET Framework 源码均由 [dnSpy](https://github.com/0xd4d/dnSpy) 反编译得出，分析过程也基本是借助 dnSpy 的无 pdb 调试特性进行。关于 dnSpy 的更多使用，可以阅读：
+
+- [断点调试 Windows 源代码 - lindexi](https://lindexi.gitee.io/post/%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95-Windows-%E6%BA%90%E4%BB%A3%E7%A0%81.html)
+- [神器如 dnSpy，无需源码也能修改 .NET 程序 - walterlv](https://walterlv.github.io/post/edit-and-recompile-assembly-using-dnspy.html)
