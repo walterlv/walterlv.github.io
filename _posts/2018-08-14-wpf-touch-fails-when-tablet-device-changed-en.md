@@ -1,11 +1,11 @@
 ---
 title: "WPF Applications Stop Responding to Touches after Adding or Removing Tablet Devices"
-date: 2018-08-15 15:34:02 +0800
+date: 2018-08-15 15:42:00 +0800
 categories: wpf windows
 version:
   current: English
 versions:
-  - 中文: /post/wpf-lost-touch-when-tablet-device-changed.html
+  - 中文: /post/wpf-touch-fails-when-tablet-device-changed.html
   - English: #
 ---
 

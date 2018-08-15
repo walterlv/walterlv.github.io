@@ -1,12 +1,12 @@
 ---
 title: "通过解读 WPF 触摸源码，分析 WPF 插拔设备触摸失效的问题（问题篇）"
-date: 2018-08-15 14:37:04 +0800
+date: 2018-08-15 15:42:08 +0800
 categories: wpf windows
 version:
   current: 中文
 versions:
   - 中文: #
-  - English: /post/wpf-lost-touch-when-tablet-device-changed-en.html
+  - English: /post/wpf-touch-fails-when-tablet-device-changed-en.html
 ---
 
 在 .NET Framework 4.7 以前，WPF 程序的触摸处理是基于操作系统组件但又自成一套的，这其实也为其各种各样的触摸失效问题埋下了伏笔。再加上它出现得比较早，触摸失效问题也变得更加难以解决。即便是 .NET Framework 4.7 以后也需要开发者手动开启 `Pointer` 消息，并且存在兼容性问题。
