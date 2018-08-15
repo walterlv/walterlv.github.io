@@ -1,6 +1,6 @@
 ---
 title: "WPF Applications Stop Responding to Touches after Adding or Removing Tablet Devices"
-date: 2018-08-15 14:38:02 +0800
+date: 2018-08-15 15:34:02 +0800
 categories: wpf windows
 version:
   current: English
@@ -70,12 +70,12 @@ while(There are two loops in real)
     // The `break` below only exit one loop, not two.
     if (this._handles.Length == 1)
     {
-        if (!GetPenEvent(this._handles[0], 其他参数))
+        if (!GetPenEvent(this._handles[0], otherArgs))
         {
             break;
         }
     }
-    else if (!GetPenEventMultiple(this._handles, 其他参数))
+    else if (!GetPenEventMultiple(this._handles, otherArgs))
     {
         break;
     }
