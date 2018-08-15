@@ -110,7 +110,7 @@ After inferring the preliminary reason, there are only two fundamental solutions
 
 1. Fix the bug of WPF
     - Only Microsoft can fix this kind of bugs because we cannot rebuild WPF all by our selves.
-    - Of course, this kind of patch can be introduced in .NET Framework, or be introcuded in the WPF on .NET Core 3.
+    - Of course, this kind of patch can be introduced in .NET Framework, or be introduced in the WPF on .NET Core 3.
 1. Fix the bug of Windows
     - The COM components provided for WPF may need an update to fix the thread-safety issue or other tablet devices issues.
 
