@@ -1,6 +1,6 @@
 ---
 title: "通过解读 WPF 触摸源码，分析 WPF 插拔设备触摸失效的问题（问题篇）"
-date: 2018-08-14 20:05:57 +0800
+date: 2018-08-15 14:37:04 +0800
 categories: wpf windows
 version:
   current: 中文
@@ -64,9 +64,9 @@ WPF 从收集设备触摸到大多数开发者所熟知的 `Stylus` 和 `Mouse` 
 - LBUTTONDOWN, LBUTTONUP
 - DEVICECHANGE, TABLETADDED, TABLETREMOVED
 
-StylusInput 线程主要由 `PenThreadWorker` 类创建，在线程循环中使用 `GetPenEvent` 和 `GetPenEventMultiple` 这两个函数来获取整个触摸设备中的触摸事件，并将触摸的原始信息向 WPF 的其他触摸处理模块传递。传递的其中一个模块是 `WorkerOperationGetTabletsInfo` 类，其的 `OnDoWork` 方法中会通过 COM 组件获取触摸设备个数。
+Stylus Input 线程主要由 `PenThreadWorker` 类创建，在线程循环中使用 `GetPenEvent` 和 `GetPenEventMultiple` 这两个函数来获取整个触摸设备中的触摸事件，并将触摸的原始信息向 WPF 的其他触摸处理模块传递。传递的其中一个模块是 `WorkerOperationGetTabletsInfo` 类，其的 `OnDoWork` 方法中会通过 COM 组件获取触摸设备个数。
 
-而导致触摸失效的错误代码就发生在以上 `StylusInput` 线程的处理中。
+而导致触摸失效的错误代码就发生在以上 Stylus Input 线程的处理中。
 
 1. `PenThreadWorker` 的 `GetPenEventMultiple` 方法传入的 `_handles` 为空数组，这会导致进行无限的等待。
 1. `WorkerOperationGetTabletsInfo` 的 `OnDoWork` 因为 COM 组件错误出现 `COMException` 或因为线程安全问题出现 `ArgumentException`；此时方法内部会 `catch` 然后返回空数组，这使得即时存在触摸设备也会因此而识别为不存在。
