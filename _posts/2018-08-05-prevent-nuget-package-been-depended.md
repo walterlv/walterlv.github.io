@@ -1,6 +1,7 @@
 ---
 title: "帮助官方 NuGet 解掉 Bug，制作绝对不会传递依赖的 NuGet 包"
-date: 2018-08-05 21:22:12 +0800
+date_published: 2018-08-05 21:22:12 +0800
+date: 2018-08-16 17:33:03 +0800
 categories: nuget msbuild
 ---
 
@@ -46,6 +47,8 @@ categories: nuget msbuild
 
 ### 我试图寻找的解决方案
 
+#### 为 A 项目添加去除依赖的代码
+
 我们创建一个项目 Walterlv.PackageDemo.A 模拟前面提到的包 A，创建一个项目 Walterlv.PackageDemo.B 模拟前面提到的包 B，创建一个项目 Walterlv.ProjectDemo.C 模拟前面的项目 C。注意，实际场景中，这三个项目通常在不同的仓库中，由不同的开发者开发。
 
 ![创建项目 A、B、C](/static/posts/2018-07-30-19-52-46.png)
@@ -54,7 +57,7 @@ categories: nuget msbuild
 
 ![在一个解决方案中模拟](/static/posts/2018-08-05-20-40-37.png)
 
-我在 A 中试图创建一个 build\Walterlv.PackageDemo.A.props 文件，并在里面写一些阻止 A 被依赖的代码。
+我在 A 中试图创建一个 build\Walterlv.PackageDemo.A.props 或 build\Walterlv.PackageDemo.A.targets 文件，并在里面写一些阻止 A 被依赖的代码。
 
 ```xml
 <Project>
@@ -66,36 +69,10 @@ categories: nuget msbuild
 </Project>
 ```
 
-当这段代码被 Visual Studio 编译的时候，一切符合预期。然而使用命令行编译的时候，就不按照预期工作了。
-
-### 我提供的强力解决方案
-
-#### 为 A 项目添加强力去除依赖
-
-我们需要为 A 项目添加一个 build\Walterlv.PackageDemo.A.targets 文件。这份文件会在其他项目安装 A 并且编译的时候执行。
-
-里面的内容为：
-
-```xml
-<Project>
-
-  <Target Name="ForceWalterlvDemoPrivateAssets" BeforeTargets="CollectPackageReferences">
-    <ItemGroup>
-      <PackageReference Update="Walterlv.PackageDemo.A" PrivateAssets="All" />
-    </ItemGroup>
-  </Target>
-
-</Project>
-```
-
-就是在 `CollectPackageReferences` 之前，即 MSBuild 开始编译之前收集 NuGet 引用之前执行。将 Walterlv.PackageDemo.A 的所有内容设为私有依赖。
-
-最关键的就是 `PrivateAssets="All"` 这一句，将所有内容设为私有依赖。阅读 [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html) 可以了解更多关于 NuGet 打包相关的知识。
+为了通用一点，我取名为 Package.targets 文件，并在 A 项目编译的时候改名为 Walterlv.PackageDemo.A.targets。
 
 ![Package.targets 文件](/static/posts/2018-08-05-21-05-18.png)  
 ▲ 项目的结构
-
-为了通用一点，我取名为 Package.targets 文件，并在 A 项目编译的时候改名为 Walterlv.PackageDemo.A.targets。
 
 以下是 A 项目的 csproj 文件，包含将 Package.targets 在打包 NuGet 包时改名的部分。
 
@@ -142,8 +119,46 @@ categories: nuget msbuild
 </Project>
 ```
 
-现在编译 B 项目，我们能得到 B 的 NuGet 包。打开 B 项目的 NuGet 包后，我们发现其中没有对 A 的依赖。这种情况下其他项目安装 B 是不会出现 A 项目的额外引用的。
+#### 令人遗憾的结果
+
+当以上 A 和 B 项目被 Visual Studio 编译的时候，一切符合预期；就像下图这样，B 项目中没有声明对 A 的依赖：
 
 ![B 项目的 NuGet 包](/static/posts/2018-08-05-21-15-42.png)
+
+然而使用命令行编译的时候，就不按照预期工作了；如下图这样，B 项目中出现了对 A 的依赖。
+
+![B 项目的 NuGet 包，有依赖](/static/posts/2018-08-16-16-37-56.png)
+
+命令行编译时使用这些命令效果都是一样的不管用。
+
+```powershell
+nuget restore
+msbuild
+```
+
+```powershell
+dotnet restore
+dotnet build
+```
+
+不过，令人难以置信的时，如果此时 Visual Studio 打开了此项目，命令行编译却能符合预期。
+
+另外，我还尝试将 Package.targets 中的所有内容放到 `<Target />` 里面以获得延迟到编译期执行的效果，但结论依然与上面一致，即仅能在 Visual Studio 中正常工作。
+
+```xml
+<Project>
+
+  <Target Name="ForceWalterlvDemoPrivateAssets" BeforeTargets="CollectPackageReferences">
+    <ItemGroup>
+      <PackageReference Update="Walterlv.PackageDemo.A" PrivateAssets="All" />
+    </ItemGroup>
+  </Target>
+
+</Project>
+```
+
+### 一个真的能解决依赖问题的方案
+
+// 需要真正的解决方案。
 
 使用 Visual Studio 编译和命令行编译效果是一样的。至此，我们的问题就是真的解决了。
