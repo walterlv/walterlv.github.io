@@ -52,6 +52,9 @@ permalink: /friends/
 - [Nagisa](http://i.pcbeta.com/home.php?mod=space&uid=3887572&do=thread&type=reply&view=me&from=space)  
     Windows Runtime [Nagisa 0.3 开发近况](http://bbs.pcbeta.com/viewthread-1778794-1-1.html) [Project-Nagisa/Nagisa](https://github.com/Project-Nagisa/Nagisa)
 
+- [普通的地球人 - 博客园](https://www.cnblogs.com/tsliwei/default.html?page=1)  
+    很多炫酷的 WPF 效果
+
 - [陈皓 - 酷 壳 - CoolShell](https://coolshell.cn/articles/author/haoel)
 
 - [Edi Wang](http://edi.wang/)
