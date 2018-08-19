@@ -1,6 +1,6 @@
 ---
 title: ".NET 中各种混淆（Obfuscation）的含义、原理、实际效果和不同级别的差异（使用 SmartAssembly）"
-date: 2018-08-19 16:10:41 +0800
+date: 2018-08-19 19:20:57 +0800
 categories: dotnet csharp
 ---
 
@@ -389,7 +389,7 @@ public unsafe string Generate(bool pascal)
 
 我们发现，4 级已经开始使用没有含义的指针来转换我们的内部实现了。这时除了外部调用以外，代码基本已无法解读其含义了。
 
-### 动态代理
+### 动态代理 References Dynamic Proxy
 
 还是以上一节中我们 Generate 方法作为示例，在开启了动态代理之后（仅开启动态代理，其他都关掉），方法变成了下面这样：
 
@@ -455,9 +455,9 @@ internal sealed class \u0001 : MulticastDelegate
 }
 ```
 
-### 字符串编码与加密
+### 字符串编码与加密 Strings Encoding
 
-#### 字符串统一收集编码
+#### 字符串统一收集编码 Encode
 
 字符串编码将程序集中的字符串都统一收集起来，存为一个资源；然后提供一个辅助类统一获取这些字符串。
 
@@ -599,9 +599,9 @@ public class Strings
 
 生成字符串获取辅助类后，原本写着字符串的地方就会被替换为 `Strings.Get(int)` 方法的调用。
 
-#### 字符串加密
+#### 字符串压缩加密 Compress
 
-前面那份统一收集的字符串依然还是明文存储为资源，但还可以进行二进制加密。这时，Resources 中的那份字符串资源现在是二进制文件（截取前 256 字节）：
+前面那份统一收集的字符串依然还是明文存储为资源，但还可以进行压缩。这时，Resources 中的那份字符串资源现在是二进制文件（截取前 256 字节）：
 
 ```
 00000000:	7b7a	7d02	efbf	bdef	bfbd	4def	bfbd	efbf
@@ -622,9 +622,9 @@ public class Strings
 000000f0:	d986	141c	2bef	bfbd	efbf	bdef	bfbd	1fef
 ```
 
-这份加密的字符串在程序启动的时候会进行一次解密，随后就直接读取解密后的字符串了。所以会占用启动时间（虽然不长），但不会占用太多运行时时间。
+这份压缩的字符串在程序启动的时候会进行一次解压，随后就直接读取解压后的字符串了。所以会占用启动时间（虽然不长），但不会占用太多运行时时间。
 
-为了能够解密出这些加密的字符串，之前的 `Strings` 类会在读取后进行一次解压缩（解密）。可以看下面我额外标注出的 `Strings` 类新增的一行。
+为了能够解压出这些压缩的字符串，`Strings` 类相比于之前会在读取后进行一次解压缩（解密）。可以看下面我额外标注出的 `Strings` 类新增的一行。
 
 ```diff
    using (Stream manifestResourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("{4f639d09-ce0f-4092-b0c7-b56c205d48fd}"))
@@ -641,3 +641,53 @@ public class Strings
 
 ![3000+ 行的解压与解密类](/static/posts/2018-08-19-18-34-18.png)
 
+#### 字符串缓存 UseCache
+
+与其他的缓存策略一样，每次获取字符串都太消耗计算资源的话，就可以拿内存空间进行缓存。
+
+在实际混淆中，我发现无论我是否开启了字符串缓存，实际 `Strings.Get` 方法都会缓存字符串。你可以回到上面去重新阅读 `Strings.Get` 方法的代码，发现其本来就已带缓存。这可能是 SmartAssembly 的 Bug。
+
+#### 使用类的内部委托获取字符串 UseImprovedEncoding
+
+之前的混淆都会在原来有字符串地方使用 `Strings.Get` 来获取字符串。而如果开启了这一选项，那么 `Strings.Get` 就不是全局调用的了，而是在类的内部调用一个委托字段。
+
+比如从 `Strings.Get` 调用修改为 `\u0010(),`，而 `\u0010` 是我们自己的类 `RandomIdentifier` 内部的被额外加进去的一个字段 `internal static GetString \u0010;`。
+
+### 防止 MSIL Disassembler 对其进行反编译 MSIL Disassembler Protection
+
+这其实是个没啥用的选项，因为我们程序集只会多出一个全局的特性：
+
+```csharp
+[assembly: SuppressIldasm]
+```
+
+只有 MSIL Disassembler 和基于 MSIL Disassembler 的工具认这个特性。真正想逆向程序集的，根本不会在乎 MSIL Disassembler 被禁掉。
+
+dnSpy 和 dotPeek 实际上都忽略了这个特性，依然能毫无障碍地反编译。
+
+dnSpy 可以做挺多事儿的，比如：
+
+- [断点调试 Windows 源代码 - lindexi](https://lindexi.gitee.io/post/%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95-Windows-%E6%BA%90%E4%BB%A3%E7%A0%81.html)
+- [神器如 dnSpy，无需源码也能修改 .NET 程序 - walterlv](/post/edit-and-recompile-assembly-using-dnspy.html)
+
+### 密封
+
+在 `OtherOptimizations` 选项中，有一项 `SealClasses` 可以将所有可以密封的类进行密封（当然，此操作不会修改 API）。
+
+在上面的例子中，由于 `RandomIdentifier` 是公有类，可能被继承，所以只有预先写的内部的 `UnusedClass` 被其标记为密封了。
+
+```csharp
+// Token: 0x02000003 RID: 3
+internal sealed class UnusedClass
+{
+    // Token: 0x06000007 RID: 7 RVA: 0x000026D0 File Offset: 0x000008D0
+    internal void Run()
+    {
+    }
+
+    // Token: 0x06000008 RID: 8 RVA: 0x000026D4 File Offset: 0x000008D4
+    internal async Task RunAsync()
+    {
+    }
+}
+```
