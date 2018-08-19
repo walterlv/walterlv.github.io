@@ -22,6 +22,12 @@ UWP 程序有 .NET Native 可以将程序集编译为本机代码，逆向的难
 
 ![准备程序集](/static/posts/2018-08-19-15-14-44.png)
 
+额外想吐槽一下，SmartAssembly 的公司 Red Gate 一定不喜欢这款软件，因为界面做成下面这样竟然还长期不更新：
+
+![无力吐槽的界面](/static/posts/2018-08-19-16-24-01.png)
+
+而且，如果要成功编译，还得用上同为 Red Gate 家出品的 SQL Server，如果不装，软件到处弹窗报错。只是报告错误而已，干嘛还要开发者装一个那么重量级的 SQL Server 啊！详见：[Why is SQL Server required — Redgate forums](https://forum.red-gate.com/discussion/83290/why-is-sql-server-required)。
+
 ### SmartAssembly
 
 SmartAssembly 本质上是保护应用程序不被逆向或恶意篡改。目前我使用的版本是 6，它提供了对 .NET Framework 程序的多种保护方式：
