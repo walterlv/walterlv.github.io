@@ -1,6 +1,6 @@
 ---
 title: ".NET 中各种混淆（Obfuscation）的含义、原理、实际效果和不同级别的差异（使用 SmartAssembly）"
-date: 2018-08-19 20:15:28 +0800
+date: 2018-08-19 20:33:02 +0800
 categories: dotnet csharp
 ---
 
@@ -14,7 +14,7 @@ UWP 程序有 .NET Native 可以将程序集编译为本机代码，逆向的难
 
 本文不会讲 SmartAssembly 的用法，因为你只需打开它就能明白其基本的使用。
 
-感兴趣可以先下载：[.NET Obfuscator, Error Reporting, DLL Merging - SmartAssembly](https://www.red-gate.com/products/dotnet-development/smartassembly/index)
+感兴趣可以先下载：[.NET Obfuscator, Error Reporting, DLL Merging - SmartAssembly](https://www.red-gate.com/products/dotnet-development/smartassembly/index)。
 
 <div id="toc"></div>
 
@@ -123,9 +123,9 @@ private static readonly Dictionary<int, int> \u0001 = new Dictionary<int, int>()
 
 需要 **特别小心如果有 `InternalsVisibleTo` 或者依据名称的反射调用，这种混淆下极有可能挂掉**！！！**请充分测试你的软件，切记**！！！
 
-#### Method Parent Obfuscation
+#### 转移方法 ChangeMethodParent
 
-// 内容填充中
+如果开启了 ChangeMethodParent，那么混淆可能会将一个类中的方法转移到另一个类中，这使得逆向时对类型含义的解读更加匪夷所思。
 
 #### 排除特定的命名空间
 
