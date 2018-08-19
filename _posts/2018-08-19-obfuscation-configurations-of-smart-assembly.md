@@ -1,6 +1,6 @@
 ---
 title: ".NET 中各种混淆（Obfuscation）的含义、原理、实际效果和不同级别的差异（使用 SmartAssembly）"
-date: 2018-08-19 19:20:57 +0800
+date: 2018-08-19 19:48:25 +0800
 categories: dotnet csharp
 ---
 
@@ -79,6 +79,53 @@ SmartAssembly 本质上是保护应用程序不被逆向或恶意篡改。目前
 ▲ 没用到的类将消失
 
 特别注意，如果标记了 `InternalsVisibleTo`，尤其注意不要不小心被误删了。
+
+### 名称混淆 Obfuscation
+
+#### 类/方法名与字段名的混淆
+
+名称混淆中，类名和方法名的混淆有三个不同级别：
+
+- 等级 1 是使用 ASCII 字符集
+- 等级 2 是使用不可见的 Unicode 字符集
+- 等级 3 是使用高级重命名算法的不可见的 Unicode 字符集
+
+需要注意：对于部分程序集，**类与方法名（NameMangling）的等级只能选为 3，否则混淆程序会无法完成编译**。
+
+字段名的混淆有三个不同级别：
+
+- 等级 1 是源码中字段名称和混淆后字段名称一一对应
+- 等级 2 是在一个类中的不同字段使用不同名称即可（这不废话吗，不过 SmartAssembly 应该是为了强调与等级 1 和等级 3 的不同，必须写一个描述）
+- 等级 3 是允许不同类中的字段使用相同的名字（这样能够更加让人难以理解）
+
+需要注意：对于部分程序集，**字段名（FieldsNameMangling）的等级只能选为 2 或 3，否则混淆程序会无法完成编译**。
+
+实际试验中，以上各种组合经常会出现无法编译的情况。
+
+下面是 Whitman 中 `RandomIdentifier` 类中的部分字段在混淆后的效果：
+
+```csharp
+// Token: 0x04000001 RID: 1
+[CompilerGenerated]
+[DebuggerBrowsable(DebuggerBrowsableState.Never)]
+private int \u0001;
+
+// Token: 0x04000002 RID: 2
+private readonly Random \u0001 = new Random();
+
+// Token: 0x04000003 RID: 3
+private static readonly Dictionary<int, int> \u0001 = new Dictionary<int, int>();
+```
+
+这部分的原始代码可以在 [冷算法：自动生成代码标识符（类名、方法名、变量名）](/post/algorithm-of-generating-random-identifiers.html) 找到。
+
+如果你需要在混淆时使用名称混淆，你只需要在以上两者的组合中找到一个能够编译通过的组合即可，不需要特别在意等级 1~3 的区别，因为实际上都做了混淆，1~3 的差异对逆向来说难度差异非常小的。
+
+需要 **特别小心如果有 `InternalsVisibleTo` 或者依据名称的反射调用，这种混淆下极有可能挂掉**！！！**请充分测试你的软件，切记**！！！
+
+#### Method Parent Obfuscation
+
+// 内容填充中
 
 ### 流程混淆 Control Flow Obfuscation
 
