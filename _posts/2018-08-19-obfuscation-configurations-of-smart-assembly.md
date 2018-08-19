@@ -1,6 +1,6 @@
 ---
 title: ".NET 中各种混淆（Obfuscation）的含义、原理、实际效果和不同级别的差异（使用 SmartAssembly）"
-date: 2018-08-19 20:33:02 +0800
+date: 2018-08-19 20:39:27 +0800
 categories: dotnet csharp
 ---
 
@@ -743,7 +743,7 @@ internal sealed class UnusedClass
 }
 ```
 
-### 实际项目中，我该如何选择？
+### 实际项目中，我该如何选择
 
 既然你希望选择“混淆”，那么你肯定是希望能进行最大程度的保护。在保证你没有额外产生 Bug，性能没有明显损失的情况下，能混淆得多厉害就混淆得多厉害。
 
@@ -786,3 +786,14 @@ internal sealed class UnusedClass
     - 并不会对逆向造成障碍，防君子不防小人
 - 密封类
     - 声称可以提升性能，但这点性能提升微乎其微
+
+SmartAssembly 的官方文档写得还是太简单了，很难得到每一个设置项的含义和实际效果。
+
+以上这些信息的得出，离不开 [dnSpy](https://github.com/0xd4d/dnSpy) 的反编译。
+
+---
+
+#### 参考资料
+
+- [SmartAssembly 6 documentation - SmartAssembly 6 - Product Documentation](https://documentation.red-gate.com/sa6)
+- [Obfuscating code with name mangling - SmartAssembly 6 - Product Documentation](https://documentation.red-gate.com/sa6/obfuscating-your-code-with-smartassembly/obfuscating-code-with-name-mangling)
