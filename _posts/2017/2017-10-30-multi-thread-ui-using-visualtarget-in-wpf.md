@@ -1,7 +1,7 @@
 ---
 title: "WPF 同一窗口内的多线程 UI（VisualTarget）"
 publishDate: 2017-10-30 23:38:21 +0800
-date: 2018-07-11 20:10:54 +0800
+date: 2018-08-19 19:08:09 +0800
 categories: wpf dotnet csharp
 ---
 
@@ -137,7 +137,7 @@ await Host.SetChildAsync(control);
 - [DispatcherAsyncOperation](https://github.com/walterlv/sharing-demo/blob/master/src/Walterlv.Demo.Sharing/Utils/Threading/DispatcherAsyncOperation.cs) 此类型只是为了让 `UIDispatcher` 中的方法更好写一些。
 - [AwaiterInterfaces](https://github.com/walterlv/sharing-demo/blob/master/src/Walterlv.Core/Threading/AwaiterInterfaces.cs) 这是一组可有可无的接口；给 `DispatcherAsyncOperation` 继承的接口，但是不继承也没事，一样能跑。
 
-这些辅助型代码的含义可以查看我的另一篇博客：[如何实现一个可以用 await 异步等待的 Awaiter - walterlv](https://walterlv.github.io/post/write-custom-awaiter.html)。
+这些辅助型代码的含义可以查看我的另一篇博客：[如何实现一个可以用 await 异步等待的 Awaiter - walterlv](/post/write-custom-awaiter.html)。
 
 ---
 

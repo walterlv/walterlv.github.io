@@ -1,6 +1,7 @@
 ---
 title: "如何在单元测试中使用 Dispatcher.Invoke/InvokeAsync？"
-date: 2017-11-07 21:02:54 +0800
+publishDate: 2017-11-07 21:02:54 +0800
+date: 2018-08-19 19:08:16 +0800
 categories: wpf unittest
 ---
 
@@ -35,7 +36,7 @@ private void RunInDispatcher(Action action)
 
 这个方法借鉴了此前我和我朋友研究过的 WPF DoEvents（虽然已被弃用）：
 
-- [深入了解 WPF Dispatcher 的工作原理（PushFrame 部分） - walterlv](https://walterlv.github.io/post/dotnet/2017/09/26/dispatcher-push-frame.html)
+- [深入了解 WPF Dispatcher 的工作原理（PushFrame 部分） - walterlv](/post/dotnet/2017/09/26/dispatcher-push-frame.html)
 - [wpf DoEvents - 林德熙](https://lindexi.gitee.io/lindexi/post/wpf-DoEvents.html)
 
 ---
@@ -60,7 +61,7 @@ public void TestSomething_SomethingHappened()
 }
 ```
 
-*`Yield` 的意思可以参见我的另一篇博客 [出让执行权：Task.Yield, Dispathcer.Yield - walterlv](https://walterlv.github.io/post/yield-in-task-dispatcher.html)。*
+*`Yield` 的意思可以参见我的另一篇博客 [出让执行权：Task.Yield, Dispathcer.Yield - walterlv](/post/yield-in-task-dispatcher.html)。*
 
 以上。
 

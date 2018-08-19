@@ -1,7 +1,7 @@
 ---
 title: "为修改了链接地址的博客进行重定向"
 publishDate: 2017-11-14 01:05:37 +0800
-date: 2018-08-12 14:49:56 +0800
+date: 2018-08-19 19:09:39 +0800
 categories: site
 ---
 
@@ -38,7 +38,7 @@ permalink: /post/wpf-add-on-ui.html
 </script>
 ```
 
-可以在这个链接中尝试重定向：[https://walterlv.github.io/post/wpf-add-on-ui.html](https://walterlv.github.io/post/wpf-add-on-ui.html)
+可以在这个链接中尝试重定向：<https://walterlv.github.io/post/wpf-add-on-ui.html>
 
 ### 附那些盗版
 
