@@ -1,6 +1,7 @@
 ---
 title: ".NET 中各种混淆（Obfuscation）的含义、原理、实际效果和不同级别的差异（使用 SmartAssembly）"
-date: 2018-08-19 20:42:42 +0800
+publishDate: 2018-08-19 20:42:42 +0800
+date: 2018-08-21 07:54:50 +0800
 categories: dotnet csharp
 ---
 
@@ -520,7 +521,15 @@ internal sealed class \u0001 : MulticastDelegate
 在我的项目中，统一收集的字符串可以形成下面这份字符串（也即是上图中 Resources 文件夹中的那个文件内容）：
 
 ```
-cQ==dw==cg==dA==eQ==cA==cw==ZA==Zg==Zw==aA==ag==aw==bA==eg==eA==Yw==dg==Yg==bg==bQ==dHI=ZHI=Y2g=d2g=c3Q=YQ==ZQ==aQ==bw==dQ==YXI=YXM=YWk=YWlyYXk=YWw=YWxsYXc=ZWU=ZWE=ZWFyZW0=ZXI=ZWw=ZXJlaXM=aXI=b3U=b3I=b28=b3c=dXI=MjAxOC0wOC0yNlQxODoxMDo0Mw==`VGhpcyBhc3NlbWJseSBoYXMgYmVlbiBidWlsdCB3aXRoIFNtYXJ0QXNzZW1ibHkgezB9LCB3aGljaCBoYXMgZXhwaXJlZC4=RXZhbHVhdGlvbiBWZXJzaW9uxVGhpcyBhc3NlbWJseSBoYXMgYmVlbiBidWlsdCB3aXRoIFNtYXJ0QXNzZW1ibHkgezB9LCBhbmQgdGhlcmVmb3JlIGNhbm5vdCBiZSBkaXN0cmlidXRlZC4=IA==Ni4xMi41Ljc5OQ==U21hcnRBc3NlbWJseQ==UGF0aA==U29mdHdhcmVcUmVkIEdhdGVc(U29mdHdhcmVcV293NjQzMk5vZGVcUmVkIEdhdGVc
+cQ==dw==cg==dA==eQ==cA==cw==ZA==Zg==Zw==aA==ag==aw==bA==eg==eA==
+Yw==dg==Yg==bg==bQ==dHI=ZHI=Y2g=d2g=c3Q=YQ==ZQ==aQ==bw==dQ==YXI=
+YXM=YWk=YWlyYXk=YWw=YWxsYXc=ZWU=ZWE=ZWFyZW0=ZXI=ZWw=ZXJlaXM=aXI=
+b3U=b3I=b28=b3c=dXI=MjAxOC0wOC0yNlQxODoxMDo0Mw==`VGhpcyBhc3NlbWJseSBoYXMgY
+mVlbiBidWlsdCB3aXRoIFNtYXJ0QXNzZW1ibHkgezB9LCB3aGljaCBoYXMgZXhwaXJlZC4=RXZhbHVh
+dGlvbiBWZXJzaW9uxVGhpcyBhc3NlbWJseSBoYXMgYmVlbiBidWlsdCB3aXRoIFNtYXJ0QXNzZW1ibHk
+gezB9LCBhbmQgdGhlcmVmb3JlIGNhbm5vdCBiZSBkaXN0cmlidXRlZC4=IA==Ni4xMi41Ljc5OQ==
+U21hcnRBc3NlbWJseQ==UGF0aA==U29mdHdhcmVcUmVkIEdhdGVc(U29mdHdhcmVcV293NjQzMk5vZ
+GVcUmVkIEdhdGVc
 ```
 
 虽然字符串难以读懂，但其实我原本就是这么写的；给你看看我的原始代码就知道了（来自 [冷算法：自动生成代码标识符（类名、方法名、变量名）](/post/algorithm-of-generating-random-identifiers.html)）：
