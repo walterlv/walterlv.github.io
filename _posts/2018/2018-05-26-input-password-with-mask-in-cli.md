@@ -1,7 +1,7 @@
 ---
 title: "如何让 .NET Core 命令行程序接受密码的输入而不显示密码明文"
 publishDate: 2018-05-26 16:51:02 +0800
-date: 2018-08-28 09:56:12 +0800
+date: 2018-08-28 10:06:40 +0800
 categories: dotnet
 ---
 
@@ -72,6 +72,8 @@ public static SecureString ReadPassword(string mask = "*")
 
 ![有掩码的输入](/static/posts/2018-05-26-16-49-03.png)
 
+需要注意的是，在 `password` 返回之前，我们调用了 `SecureString.MakeReadOnly()` 方法，将字符串设为只读，确保返回之后不会再被外面修改。
+
 ### 转换密码
 
 当然，只有对安全级别比较高的库才会接受 `SecureString` 类型的字符串作为密码；一些简单的库只接受字符串类型的密码。那么在这些简单的库中我们如何才能得到普通的字符串呢？
@@ -134,4 +136,5 @@ internal static string CreateString(SecureString secureString)
 
 - [c# - Password masking console application - Stack Overflow](https://stackoverflow.com/questions/3404421/password-masking-console-application?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
 - [c# - How to convert SecureString to System.String? - Stack Overflow](https://stackoverflow.com/questions/818704/how-to-convert-securestring-to-system-string?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
+- [SecureString.MakeReadOnly Method (System.Security) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.security.securestring.makereadonly?redirectedfrom=MSDN&view=netframework-4.7.2#System_Security_SecureString_MakeReadOnly)
 - [SecureStringHelper.CreateString - Reference Source](https://referencesource.microsoft.com/#System/net/System/Net/UnsafeNativeMethods.cs,182c88988a485cda,references)
