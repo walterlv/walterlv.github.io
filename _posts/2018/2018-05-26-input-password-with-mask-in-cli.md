@@ -1,7 +1,7 @@
 ---
 title: "如何让 .NET Core 命令行程序接受密码的输入而不显示密码明文"
 publishDate: 2018-05-26 16:51:02 +0800
-date: 2018-05-26 22:26:12 +0800
+date: 2018-08-28 09:56:12 +0800
 categories: dotnet
 ---
 
@@ -61,6 +61,7 @@ public static SecureString ReadPassword(string mask = "*")
             Console.Write(mask);
         }
     }
+    password.MakeReadOnly();
     return password;
 }
 ```
