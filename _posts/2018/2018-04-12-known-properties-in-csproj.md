@@ -1,7 +1,7 @@
 ---
 title: "项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦）"
 publishDate: 2018-04-12 21:03:52 +0800
-date: 2018-07-27 12:36:48 +0800
+date: 2018-08-29 09:36:41 +0800
 categories: visualstudio nuget csharp dotnet msbuild
 ---
 
@@ -44,6 +44,11 @@ categories: visualstudio nuget csharp dotnet msbuild
     - 临时生成路径的起始位置。如果没有指定，就是 `obj\`。修改这个属性可以间接修改 `IntermediateOutputPath`。
 + `$(IntermediateOutputPath)`
     - 临时生成路径，默认有两种可能的值。如果 `AnyCPU` 编译，就是 `$(BaseIntermediateOutputPath)$(Configuration)\`；否则就是 `$(BaseIntermediateOutputPath)$(PlatformName)\$(Configuration)\`
+
+额外的，如果你试图在编译期间使用 dll，你可能需要判断运行时环境：
+
++ `$(MSBuildRuntimeType)`
+    - 例如你可以使用 `Condition=" '$(MSBuildRuntimeType)' == 'Core'"` 来判断当前编译环境是否是 .NET Core。
 
 ---
 
