@@ -1,6 +1,6 @@
 ---
 title: "About to Study and Write"
-date: 2018-08-11 09:58:59 +0800
+date: 2018-08-30 09:46:57 +0800
 categories: post
 published: false
 ---
@@ -16,6 +16,23 @@ published: false
 - Castle
 
 ### About to Write
+
+- DisableProcessWindowsGhosting
+    - [DisableProcessWindowsGhosting function - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-disableprocesswindowsghosting)
+
+- WM_Paint
+    - [Drawing Without the WM\_PAINT Message - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/gdi/drawing-without-the-wm-paint-message)
+
+- Microsoft Interface Definition Language
+    - [#ifdef WINDOWS 的 Twitter: “MIDL 3 deep dive with @osterman is out now https://t.co/LxvMQBaOAm #windowsdev”](https://twitter.com/ifdefwindows/status/1034116042547589120?s=21)
+    - [Introduction to Microsoft Interface Definition Language 3.0 - UWP app developer | Microsoft Docs](https://docs.microsoft.com/en-us/uwp/midl-3/intro)
+
+- 捕获变量
+    - [C#/.NET 匿名函数会捕获变量，并延长对象的生命周期 - walterlv](https://walterlv.gitee.io/post/anonymous-function-extends-lifetime-of-variable.html#comment-4061605207)
+    - [c# - GC doesn't collect when WeakReference references a delegate? - Stack Overflow](https://stackoverflow.com/questions/14007569/gc-doesnt-collect-when-weakreference-references-a-delegate)
+
+- HTTPS
+    - [FreeSSL.org - 一个申请免费HTTPS证书的网站](https://freessl.org/)
 
 - Windows Sysinternals
     - [Windows Sysinternals - Windows Sysinternals - Microsoft Docs](https://docs.microsoft.com/en-us/sysinternals/)
