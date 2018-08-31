@@ -1,7 +1,7 @@
 ---
-title: ".NET/C# 使窗口永不获得焦点"
+title: ".NET/C# 使窗口永不激活（No Activate 永不获得焦点）"
 publishDate: 2018-07-24 14:19:56 +0800
-date: 2018-07-27 07:24:42 +0800
+date: 2018-08-31 11:09:11 +0800
 categories: windows dotnet csharp wpf
 ---
 
