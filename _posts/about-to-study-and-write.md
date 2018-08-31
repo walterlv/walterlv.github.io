@@ -1,6 +1,6 @@
 ---
 title: "About to Study and Write"
-date: 2018-08-30 09:46:57 +0800
+date: 2018-08-30 09:47:02 +0800
 categories: post
 published: false
 ---
@@ -16,6 +16,11 @@ published: false
 - Castle
 
 ### About to Write
+
+- 反射
+    - [c# - Check if a class is derived from a generic class - Stack Overflow](https://stackoverflow.com/questions/457676/check-if-a-class-is-derived-from-a-generic-class)
+    - [out, ref and InvokeMember !!! - CodeProject](https://www.codeproject.com/Articles/97728/out-ref-and-InvokeMember)
+    - [c# - How to pass a parameter as a reference with MethodInfo.Invoke - Stack Overflow](https://stackoverflow.com/questions/8779731/how-to-pass-a-parameter-as-a-reference-with-methodinfo-invoke)
 
 - DisableProcessWindowsGhosting
     - [DisableProcessWindowsGhosting function - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-disableprocesswindowsghosting)
