@@ -1,6 +1,7 @@
 ---
 title: "（C#）if (this == null)？你在逗我，this 怎么可能为 null！用 IL 编译和反编译看穿一切"
-date: 2018-03-31 08:26:39 +0800
+publishDate: 2018-03-31 08:26:39 +0800
+date: 2018-09-01 08:12:18 +0800
 categories: dotnet msil
 tags: ilasm ildasm
 ---
@@ -127,6 +128,6 @@ namespace Walterlv.Demo
 #### 参考资料
 
 - [Easy way to modify IL code – I know the answer (it's 42)](https://blogs.msdn.microsoft.com/abhinaba/2007/07/26/easy-way-to-modify-il-code/)
-- [.net - Call and Callvirt - Stack Overflow](https://stackoverflow.com/questions/193939/call-and-callvirt)
+- [.net - Call and Callvirt - Stack Overflow](https://stackoverflow.com/a/193952/6233938)
 - [Observing a null this value](http://blog.paranoidcoding.com/2015/03/11/observing-a-null-this.html)
 <!-- - [用CIL写程序:从“call vs callvirt”看方法调用 - 陈嘉栋 - 博客园](http://www.cnblogs.com/murongxiaopifu/p/4298167.html) -->

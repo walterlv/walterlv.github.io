@@ -1,7 +1,7 @@
 ---
 title: "Windows 10 应用创建模糊背景窗口的三种方法"
 publishDate: 2018-07-16 19:44:07 +0800
-date: 2018-08-12 16:05:47 +0800
+date: 2018-09-01 07:59:52 +0800
 categories: windows wpf uwp dotnet
 version:
   current: 中文
@@ -20,7 +20,7 @@ This post is written in **multiple languages**. Please select yours:
 
 {% include post-version-selector.html %}
 
-最早我是在 StackOverflow 上回答一位网友的提问时写了一份非常长的答案，后来小伙伴建议我将答案改写成博客，于是我就改了。StackOverflow 上的答案在这里：[colors - WPF: How to Style my form with Transparency levels - Stack Overflow](https://stackoverflow.com/questions/51257442/wpf-how-to-style-my-form-with-transperancy-levels/51257595#51257595)。
+最早我是在 StackOverflow 上回答一位网友的提问时写了一份非常长的答案，后来小伙伴建议我将答案改写成博客，于是我就改了。StackOverflow 上的答案在这里：[colors - WPF: How to Style my form with Transparency levels - Stack Overflow](https://stackoverflow.com/a/51257595/6233938)。
 
 <div id="toc"></div>
 

@@ -1,6 +1,7 @@
 ---
 title: "如何根据一个绝对文件路径生成一个相对文件路径"
-date: 2018-06-07 19:30:24 +0800
+publishDate: 2018-06-07 19:30:24 +0800
+date: 2018-09-01 08:04:03 +0800
 categories: dotnet
 ---
 
@@ -71,4 +72,4 @@ public static string MakeRelativePath(string fromPath, string toPath)
 
 #### 参考资料
 
-- [.net - How to get relative path from absolute path - Stack Overflow](https://stackoverflow.com/questions/275689/how-to-get-relative-path-from-absolute-path)
+- [.net - How to get relative path from absolute path - Stack Overflow](https://stackoverflow.com/q/275689/6233938)

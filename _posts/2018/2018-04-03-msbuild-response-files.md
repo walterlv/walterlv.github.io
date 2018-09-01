@@ -1,6 +1,7 @@
 ---
 title: "使用 MSBuild 响应文件 (rsp) 来指定 dotnet build 命令行编译时的大量参数"
-date: 2018-04-03 19:51:04 +0800
+publishDate: 2018-04-03 19:51:04 +0800
+date: 2018-09-01 08:12:03 +0800
 categories: visualstudio msbuild
 ---
 
@@ -56,5 +57,5 @@ categories: visualstudio msbuild
 #### 参考资料
 
 - [MSBuild Response Files - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-response-files)
-- [Default or specify msbuild properties in an external file - Stack Overflow](https://stackoverflow.com/questions/20414122/default-or-specify-msbuild-properties-in-an-external-file)
+- [Default or specify msbuild properties in an external file - Stack Overflow](https://stackoverflow.com/a/20414366/6233938)
 - [How to use MSBuild.rsp or otherwise specify default Visual Studio MSBuild.exe command line switches - Super User](https://superuser.com/questions/764631/how-to-use-msbuild-rsp-or-otherwise-specify-default-visual-studio-msbuild-exe-co)

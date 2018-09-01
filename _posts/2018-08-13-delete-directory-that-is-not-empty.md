@@ -1,6 +1,7 @@
 ---
 title: "Windows 无法删除文件夹 —— 访问被拒绝 / 因为目录不是空的"
-date: 2018-08-13 17:21:04 +0800
+publishDate: 2018-08-13 17:21:04 +0800
+date: 2018-09-01 08:14:59 +0800
 categories: windows
 ---
 
@@ -49,8 +50,8 @@ categories: windows
 
 在网上搜索“目录不是空的”能得到不少结果，而且提供了不少解决方案：
 
-- [windows - Batch - Getting "The directory is not empty" on rmdir command - Stack Overflow](https://stackoverflow.com/questions/22948189/batch-getting-the-directory-is-not-empty-on-rmdir-command)
-- [powershell - Cannot remove item. The directory is not empty - Stack Overflow](https://stackoverflow.com/questions/38141528/cannot-remove-item-the-directory-is-not-empty)
+- [windows - Batch - Getting "The directory is not empty" on rmdir command - Stack Overflow](https://stackoverflow.com/q/22948189/6233938)
+- [powershell - Cannot remove item. The directory is not empty - Stack Overflow](https://stackoverflow.com/q/38141528/6233938)
 - 还有更多……
 
 然而，无论敲入什么样的命令，都没有用。这时我抱着试一试的心态去搜索框（小娜）中搜索“资源监视器”或直接输入 resmon 命令打开资源监视器。在“关联的句柄”中我输入了无法删除的文件夹名称，才终于找到了根本原因：

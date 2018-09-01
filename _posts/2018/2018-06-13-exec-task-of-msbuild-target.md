@@ -1,6 +1,7 @@
 ---
 title: "如何使用 MSBuild Target（Exec）中的控制台输出"
-date: 2018-06-13 08:08:06 +0800
+publishDate: 2018-06-13 08:08:06 +0800
+date: 2018-09-01 08:03:39 +0800
 categories: dotnet msbuild
 ---
 
@@ -73,8 +74,8 @@ MSBuild 还自带了一个 `Task`，名为 `CreateItem`，就是从一段字符�
 
 #### 参考资料
 
-- [How get exec task output with msbuild - Stack Overflow](https://stackoverflow.com/questions/8938679/how-get-exec-task-output-with-msbuild)
+- [How get exec task output with msbuild - Stack Overflow](https://stackoverflow.com/q/8938679/6233938)
 - [Exec Task - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/exec-task)
-- [Empty an MSBuild ItemGroup - Stack Overflow](https://stackoverflow.com/questions/7909825/empty-an-msbuild-itemgroup)
+- [Empty an MSBuild ItemGroup - Stack Overflow](https://stackoverflow.com/q/7909825/6233938)
 - [What's New in MSBuild 15 - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/what-s-new-in-msbuild-15-0#updates)
 - [Item Element (MSBuild) - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/item-element-msbuild)

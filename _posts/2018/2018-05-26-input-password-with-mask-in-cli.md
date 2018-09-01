@@ -1,7 +1,7 @@
 ---
 title: "如何让 .NET Core 命令行程序接受密码的输入而不显示密码明文"
 publishDate: 2018-05-26 16:51:02 +0800
-date: 2018-08-28 10:06:40 +0800
+date: 2018-09-01 08:04:38 +0800
 categories: dotnet
 ---
 
@@ -134,7 +134,7 @@ internal static string CreateString(SecureString secureString)
 
 #### 参考资料
 
-- [c# - Password masking console application - Stack Overflow](https://stackoverflow.com/questions/3404421/password-masking-console-application?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
-- [c# - How to convert SecureString to System.String? - Stack Overflow](https://stackoverflow.com/questions/818704/how-to-convert-securestring-to-system-string?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
+- [c# - Password masking console application - Stack Overflow](https://stackoverflow.com/q/3404421/6233938)
+- [c# - How to convert SecureString to System.String? - Stack Overflow](https://stackoverflow.com/q/818704/6233938)
 - [SecureString.MakeReadOnly Method (System.Security) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.security.securestring.makereadonly?redirectedfrom=MSDN&view=netframework-4.7.2#System_Security_SecureString_MakeReadOnly)
 - [SecureStringHelper.CreateString - Reference Source](https://referencesource.microsoft.com/#System/net/System/Net/UnsafeNativeMethods.cs,182c88988a485cda,references)

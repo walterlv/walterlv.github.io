@@ -1,7 +1,7 @@
 ---
 title: "如何创建一个基于命令行工具的跨平台的 NuGet 工具包"
 publishDate: 2018-05-12 09:09:02 +0800
-date: 2018-07-27 10:23:57 +0800
+date: 2018-09-01 08:16:29 +0800
 categories: visualstudio csharp dotnet msbuild
 ---
 
@@ -466,13 +466,13 @@ namespace Walterlv.Debug
 - [NuGet pack and restore as MSBuild targets - Microsoft Docs](https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets)
 - [Bundling .NET build tools in NuGet](https://www.natemcmaster.com/blog/2017/11/11/build-tools-in-nuget/)
 - [MSBuild Reserved and Well-Known Properties](https://msdn.microsoft.com/en-us/library/ms164309.aspx)
-- [build process - How does MSBuild check whether a target is up to date or not? - Stack Overflow](https://stackoverflow.com/questions/6982372/how-does-msbuild-check-whether-a-target-is-up-to-date-or-not?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
+- [build process - How does MSBuild check whether a target is up to date or not? - Stack Overflow](https://stackoverflow.com/a/6982575/6233938)
 - [How to: Build Incrementally](https://msdn.microsoft.com/en-us/library/ms171483.aspx)
 - [Exec Task](https://msdn.microsoft.com/en-us/library/x8zx72cd.aspx)
-- [Overwrite properties with MSBuild - Stack Overflow](https://stackoverflow.com/questions/1366840/overwrite-properties-with-msbuild?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
-- [visual studio - How to get property value of a project file using msbuild - Stack Overflow](https://stackoverflow.com/questions/39732729/how-to-get-property-value-of-a-project-file-using-msbuild)
+- [Overwrite properties with MSBuild - Stack Overflow](https://stackoverflow.com/a/1367309/6233938)
+- [visual studio - How to get property value of a project file using msbuild - Stack Overflow](https://stackoverflow.com/a/39745383/6233938)
 - [davidfowl/NuGetPowerTools: A bunch of powershell modules that make it even easier to work with nuget](https://github.com/davidfowl/NuGetPowerTools)
-- [MSBuild and Skipping target "<TargetName>" because it has no outputs - Stack Overflow](https://stackoverflow.com/questions/27377095/msbuild-and-skipping-target-targetname-because-it-has-no-outputs)
-- [Don't include dependencies from packages.config file when creating NuGet package - Stack Overflow](https://stackoverflow.com/questions/15012963/dont-include-dependencies-from-packages-config-file-when-creating-nuget-package?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
+- [MSBuild and Skipping target "<TargetName>" because it has no outputs - Stack Overflow](https://stackoverflow.com/q/27377095/6233938)
+- [Don't include dependencies from packages.config file when creating NuGet package - Stack Overflow](https://stackoverflow.com/q/15012963/6233938)
 - [NuGet 2.7 Release Notes - Microsoft Docs](https://docs.microsoft.com/zh-cn/nuget/release-notes/nuget-2.7#Development-Only_Dependencies)
 - [PackageReference should support DevelopmentDependency metadata · Issue #4125 · NuGet/Home](https://github.com/NuGet/Home/issues/4125)

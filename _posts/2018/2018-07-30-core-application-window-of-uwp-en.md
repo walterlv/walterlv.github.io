@@ -1,7 +1,7 @@
 ---
 title: "UWP CoreApplication / Application Vs CoreApplicationView / ApplicationView Vs CoreWindow / Window"
 publishDate: 2018-07-30 09:21:58 +0800
-date: 2018-08-12 16:05:57 +0800
+date: 2018-09-01 07:58:04 +0800
 categories: uwp
 version:
   current: English
@@ -10,7 +10,7 @@ versions:
   - English: #
 ---
 
-I find a question on Stack Overflow [CoreApplicationView vs CoreWindow vs ApplicationView](https://stackoverflow.com/questions/33680631/coreapplicationview-vs-corewindow-vs-applicationview), so I write this post for the answer.
+I find a question on Stack Overflow [CoreApplicationView vs CoreWindow vs ApplicationView](https://stackoverflow.com/a/51585979/6233938), so I write this post for the answer.
 
 ---
 

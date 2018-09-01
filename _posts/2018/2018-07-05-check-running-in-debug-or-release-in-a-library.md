@@ -1,6 +1,7 @@
 ---
 title: "如何在 .NET 库的代码中判断当前程序运行在 Debug 下还是 Release 下"
-date: 2018-07-05 19:39:00 +0800
+publishDate: 2018-07-05 19:39:00 +0800
+date: 2018-09-01 08:00:29 +0800
 categories: dotnet
 ---
 
@@ -178,5 +179,5 @@ var assembly = new StackTrace().GetFrames().Last().GetMethod().Module.Assembly;
 #### 参考资料
 
 - [Assembly.GetEntryAssembly Method (System.Reflection)](https://msdn.microsoft.com/en-us/library/system.reflection.assembly.getentryassembly.aspx?f=255&MSPPError=-2147217396)
-- [c# - I need an alternative to `Assembly.GetEntryAssembly()` that never returns null - Stack Overflow](https://stackoverflow.com/questions/14165785/i-need-an-alternative-to-assembly-getentryassembly-that-never-returns-null)
+- [c# - I need an alternative to `Assembly.GetEntryAssembly()` that never returns null - Stack Overflow](https://stackoverflow.com/a/14165787/6233938)
 - [StackTrace.GetFrames](https://referencesource.microsoft.com/#mscorlib/system/diagnostics/stacktrace.cs,84f88e3b241d29e3,references)

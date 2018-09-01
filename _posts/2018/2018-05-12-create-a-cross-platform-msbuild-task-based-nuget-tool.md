@@ -1,7 +1,7 @@
 ---
 title: "如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包"
 publishDate: 2018-05-12 00:04:14 +0800
-date: 2018-08-19 19:11:13 +0800
+date: 2018-09-01 08:07:43 +0800
 categories: visualstudio csharp dotnet msbuild
 ---
 
@@ -534,16 +534,16 @@ namespace Walterlv.Debug
 - [Bundling .NET build tools in NuGet](https://www.natemcmaster.com/blog/2017/11/11/build-tools-in-nuget/)
 - [Shipping a cross-platform MSBuild task in a NuGet package](https://www.natemcmaster.com/blog/2017/07/05/msbuild-task-in-nuget/)
 - [MSBuild Reserved and Well-Known Properties](https://msdn.microsoft.com/en-us/library/ms164309.aspx)
-- [build process - How does MSBuild check whether a target is up to date or not? - Stack Overflow](https://stackoverflow.com/questions/6982372/how-does-msbuild-check-whether-a-target-is-up-to-date-or-not?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
+- [build process - How does MSBuild check whether a target is up to date or not? - Stack Overflow](https://stackoverflow.com/a/6982575/6233938)
 - [How to: Build Incrementally](https://msdn.microsoft.com/en-us/library/ms171483.aspx)
 - [How To: Implementing Custom Tasks – Part I – MSBuild Team Blog](https://blogs.msdn.microsoft.com/msbuild/2006/01/21/how-to-implementing-custom-tasks-part-i/)
-- [Overwrite properties with MSBuild - Stack Overflow](https://stackoverflow.com/questions/1366840/overwrite-properties-with-msbuild?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
+- [Overwrite properties with MSBuild - Stack Overflow](https://stackoverflow.com/a/1367309/6233938)
 - [How to Access MSBuild properties inside custom task](https://social.msdn.microsoft.com/Forums/vstudio/en-US/4ba7e9a0-76e6-4b1c-8536-fd76a5b96c79/how-to-access-msbuild-properties-inside-custom-task?forum=vsx)
-- [visual studio - How to get property value of a project file using msbuild - Stack Overflow](https://stackoverflow.com/questions/39732729/how-to-get-property-value-of-a-project-file-using-msbuild)
+- [visual studio - How to get property value of a project file using msbuild - Stack Overflow](https://stackoverflow.com/a/39745383/6233938)
 - [davidfowl/NuGetPowerTools: A bunch of powershell modules that make it even easier to work with nuget](https://github.com/davidfowl/NuGetPowerTools)
-- [MSBuild and Skipping target `"<TargetName>"` because it has no outputs - Stack Overflow](https://stackoverflow.com/questions/27377095/msbuild-and-skipping-target-targetname-because-it-has-no-outputs)
+- [MSBuild and Skipping target `"<TargetName>"` because it has no outputs - Stack Overflow](https://stackoverflow.com/q/27377095/6233938)
 - [WriteCodeFragment Task](https://msdn.microsoft.com/en-us/library/ff598685.aspx)
-- [Don't include dependencies from packages.config file when creating NuGet package - Stack Overflow](https://stackoverflow.com/questions/15012963/dont-include-dependencies-from-packages-config-file-when-creating-nuget-package?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
+- [Don't include dependencies from packages.config file when creating NuGet package - Stack Overflow](https://stackoverflow.com/q/15012963/6233938)
 - [NuGet 2.7 Release Notes - Microsoft Docs](https://docs.microsoft.com/zh-cn/nuget/release-notes/nuget-2.7#Development-Only_Dependencies)
 - [PackageReference should support DevelopmentDependency metadata · Issue #4125 · NuGet/Home](https://github.com/NuGet/Home/issues/4125)
-- [debugging - How to debug MSBuild Customtask - Stack Overflow](https://stackoverflow.com/questions/357445/how-to-debug-msbuild-customtask?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
+- [debugging - How to debug MSBuild Customtask - Stack Overflow](https://stackoverflow.com/q/357445/6233938)

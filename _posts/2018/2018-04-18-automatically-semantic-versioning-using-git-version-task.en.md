@@ -1,7 +1,7 @@
 ---
 title: "Automatically increase the semantic version using GitVersion"
 publishDate: 2018-04-18 20:51:39 +0800
-date: 2018-08-12 16:03:45 +0800
+date: 2018-09-01 08:11:36 +0800
 categories: visualstudio nuget csharp dotnet
 version:
   current: English
@@ -174,7 +174,7 @@ branches:
 - [Versioning NuGet packages in a continuous delivery world: part 1 – Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/2016/05/03/versioning-nuget-packages-cd-1/)
 - [Versioning NuGet packages in a continuous delivery world: part 2 – Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/2016/05/18/versioning-nuget-packages-cd-2/)
 - [Versioning NuGet packages in a continuous delivery world: part 3 – Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/2016/05/26/versioning-nuget-packages-cd-3/)
-- [C#/.NET - How to generate and increase package version automatically especially via CI? - Stack Overflow](https://stackoverflow.com/questions/49765756/c-net-how-to-generate-and-increase-package-version-automatically-especially)
+- [C#/.NET - How to generate and increase package version automatically especially via CI? - Stack Overflow](https://stackoverflow.com/q/49765756/6233938)
 - [GitTools/GitVersion: Easy Semantic Versioning (http://semver.org) for projects using Git](https://github.com/GitTools/GitVersion)
 - [GitVersion](http://gitversion.readthedocs.io/en/latest/)
 - [Gitversion Task for VS2017-style csproj · Issue #1349 · GitTools/GitVersion](https://github.com/GitTools/GitVersion/issues/1349)

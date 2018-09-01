@@ -1,6 +1,7 @@
 ---
 title: "屏幕上那个灰色带有数字的框是什么？看着好难受！"
-date: 2018-03-16 13:40:41 +0800
+publishDate: 2018-03-16 13:40:41 +0800
+date: 2018-09-01 08:12:39 +0800
 categories: dotnet csharp
 ---
 
@@ -73,4 +74,4 @@ categories: dotnet csharp
 - [Grey box with number sticks at top left corner of screen - Developer Community](https://developercommunity.visualstudio.com/content/problem/75736/grey-box-with-number-sticks-at-top-left-corner-of.html)
 - [number in upper-left corner of screen - Developer Community](https://developercommunity.visualstudio.com/content/problem/118174/number-in-upper-left-corner-of-screen.html)
 - [Visual Studio leaving numbers in tooltips on desktop - Developer Community](https://developercommunity.visualstudio.com/content/problem/190178/visual-studio-leaving-numbers-in-tooltips-on-deskt.html)
-- [visual studio 2012 puts a small number in the top left corner of my screen - Stack Overflow](https://stackoverflow.com/questions/27101609/visual-studio-2012-puts-a-small-number-in-the-top-left-corner-of-my-screen)
+- [visual studio 2012 puts a small number in the top left corner of my screen - Stack Overflow](https://stackoverflow.com/q/27101609/6233938)

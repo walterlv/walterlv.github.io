@@ -1,7 +1,7 @@
 ---
 title: ".NET/C# 使窗口永不激活（No Activate 永不获得焦点）"
 publishDate: 2018-07-24 14:19:56 +0800
-date: 2018-08-31 11:09:11 +0800
+date: 2018-09-01 07:58:45 +0800
 categories: windows dotnet csharp wpf
 ---
 
@@ -92,7 +92,7 @@ namespace Walterlv.Demo
 
 #### 参考资料
 
-- [c# - Not take focus, but allow interaction? - Stack Overflow](https://stackoverflow.com/questions/6804251/not-take-focus-but-allow-interaction)
+- [c# - Not take focus, but allow interaction? - Stack Overflow](https://stackoverflow.com/q/6804251/6233938)
 - [Extended Window Styles - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/winmsg/extended-window-styles)
 - [GetWindowLongPtr function (Windows)](https://msdn.microsoft.com/en-us/library/windows/desktop/ms633585%28v=vs.85%29.aspx)
 - [SetWindowLongPtr function (Windows)](https://msdn.microsoft.com/en-us/library/windows/desktop/ms644898(v=vs.85).aspx)

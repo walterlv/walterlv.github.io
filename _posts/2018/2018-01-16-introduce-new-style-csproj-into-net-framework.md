@@ -1,7 +1,7 @@
 ---
 title: "将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj"
 publishDate: 2018-01-16 00:04:28 +0800
-date: 2018-08-31 16:49:45 +0800
+date: 2018-09-01 08:14:17 +0800
 categories: visualstudio msbuild
 ---
 
@@ -284,11 +284,11 @@ UWP 项目已经是 .NET Core 了，然而它依然还在采用旧样式的 cspr
 - [XAML files are not supported · Issue #1467 · dotnet/project-system](https://github.com/dotnet/project-system/issues/1467)
 - [Old csproj to new csproj: Visual Studio 2017 upgrade guide](http://www.natemcmaster.com/blog/2017/03/09/vs2015-to-vs2017-upgrade/)
 - [Using the new .Csproj without .Net core · Issue #1688 · Microsoft/msbuild](https://github.com/Microsoft/msbuild/issues/1688)
-- [c# - WPF App Using new csproj format - Stack Overflow](https://stackoverflow.com/questions/44140673/wpf-app-using-new-csproj-format)
+- [c# - WPF App Using new csproj format - Stack Overflow](https://stackoverflow.com/q/44140673/6233938)
 - [XAML files are not supported · Issue #1467 · dotnet/project-system](https://github.com/dotnet/project-system/issues/1467)
 - [XAML files are not supported · Issue #810 · dotnet/sdk](https://github.com/dotnet/sdk/issues/810)
-- [c# - How-to migrate Wpf projects to the new VS2017 format - Stack Overflow](https://stackoverflow.com/questions/43693591/how-to-migrate-wpf-projects-to-the-new-vs2017-format)
+- [c# - How-to migrate Wpf projects to the new VS2017 format - Stack Overflow](https://stackoverflow.com/a/50550063/6233938)
 - [project.json doesn't have a runtimes section, add '“runtimes”: { “win”: { } }' to project.json · Issue #5931 · Microsoft/vsts-tasks](https://github.com/Microsoft/vsts-tasks/issues/5931)
 - [Ignore PROJECT.JSON when using .CSPROJ · Issue #394 · Microsoft/msbuild](https://github.com/Microsoft/msbuild/issues/394)
 - [dotnet build fails when referencing a project converted to PackageReference · Issue #6294 · dotnet/cli](https://github.com/dotnet/cli/issues/6294)
-- [Visual studio project.json does not have a runtime section - Stack Overflow](https://stackoverflow.com/questions/45614394/visual-studio-project-json-does-not-have-a-runtime-section)
+- [Visual studio project.json does not have a runtime section - Stack Overflow](https://stackoverflow.com/q/45614394/6233938)

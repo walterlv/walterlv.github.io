@@ -1,6 +1,7 @@
 ---
 title: "让控制台支持 ANSI 转义序列，输出下划线、修改颜色或其他控制"
-date: 2018-08-05 14:24:11 +0800
+publishDate: 2018-08-05 14:24:11 +0800
+date: 2018-09-01 08:15:48 +0800
 categories: windows dotnet csharp
 ---
 
@@ -89,5 +90,5 @@ Console.WriteLine($"Some {UNDERLINE}underlined{RESET} and {RED}red{RESET} text")
 - [Win10 New Console: Enable ENABLE_VIRTUAL_TERMINAL_PROCESSING by default (or with a flag) · Issue #92 · rprichard/winpty](https://github.com/rprichard/winpty/issues/92)
 - [(Re?)enable ENABLE_VIRTUAL_TERMINAL_PROCESSING by default – Welcome to the Windows developer feedback site!](https://wpdev.uservoice.com/forums/266908-command-prompt-console-windows-subsystem-for-l/suggestions/15617610--re-enable-enable-virtual-terminal-processing-by)
 - [ANSI escape code - Wikipedia](https://en.wikipedia.org/wiki/ANSI_escape_code)
-- [c# - adding text decorations to console output - Stack Overflow](https://stackoverflow.com/questions/5237666/adding-text-decorations-to-console-output)
+- [c# - adding text decorations to console output - Stack Overflow](https://stackoverflow.com/q/5237666/6233938)
 - [Windows 10 Command Prompt: New Console vs. Legacy Console - Password Recovery](https://www.top-password.com/blog/windows-10-command-prompt-new-console-vs-legacy-console/)

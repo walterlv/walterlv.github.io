@@ -1,7 +1,7 @@
 ---
 title: ".NET Core 和 .NET Framework 中的 MEF2"
 publishDate: 2018-01-17 23:41:00 +0800
-date: 2018-01-21 12:02:03 +0800
+date: 2018-09-01 08:13:33 +0800
 categories: visualstudio dotnet
 ---
 
@@ -126,6 +126,6 @@ compositionHost.SatisfyImports(targetObject);
 
 - [MEF in .NET 4.5 - CodeProject](https://www.codeproject.com/Tips/488513/MEF-in-NET)
 - [Managed Extensibility Framework(MEF) 2 框架新特性介绍 - PetterLiu - 博客园](http://www.cnblogs.com/wintersun/archive/2013/01/16/2863405.html)
-- [Is MEF or MEF2 baked into the .NET Framework? - Stack Overflow](https://stackoverflow.com/questions/33484403/is-mef-or-mef2-baked-into-the-net-framework)
+- [Is MEF or MEF2 baked into the .NET Framework? - Stack Overflow](https://stackoverflow.com/a/33522249/6233938)
 - [vs-mef/why.md at master · Microsoft/vs-mef](https://github.com/Microsoft/vs-mef/blob/master/doc/why.md)
 - [mef/Home.md at master · MicrosoftArchive/mef](https://github.com/MicrosoftArchive/mef/blob/master/Wiki/Home.md)

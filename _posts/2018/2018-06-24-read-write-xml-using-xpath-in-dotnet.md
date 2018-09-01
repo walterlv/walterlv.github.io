@@ -1,6 +1,7 @@
 ---
 title: ".NET 使用 XPath 来读写 XML 文件"
-date: 2018-06-24 21:10:08 +0800
+publishDate: 2018-06-24 21:10:08 +0800
+date: 2018-09-01 08:02:18 +0800
 categories: dotnet
 ---
 
@@ -171,4 +172,4 @@ navigator.Matches("../group/@targetFramework='.NETStandard2.0'");
 - [Process XML Data Using the XPath Data Model - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/data/xml/process-xml-data-using-the-xpath-data-model)
 - [XPath Queries and Namespaces - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/data/xml/xpath-queries-and-namespaces)
 - [.NET(C#)：使用XPath查询带有命名空间(有xmlns)的XML - Mgen](https://www.mgenware.com/blog/?p=596)
-- [.net - How to use XPath with XElement or LINQ? - Stack Overflow](https://stackoverflow.com/questions/3642829/how-to-use-xpath-with-xelement-or-linq)
+- [.net - How to use XPath with XElement or LINQ? - Stack Overflow](https://stackoverflow.com/q/3642829/6233938)

@@ -1,7 +1,7 @@
 ---
 title: "3 Ways to create a window with blurring background on Windows 10"
 publishDate: 2018-07-16 19:14:59 +0800
-date: 2018-08-12 16:05:30 +0800
+date: 2018-09-01 08:00:03 +0800
 categories: windows wpf uwp dotnet
 version:
   current: English
@@ -10,7 +10,7 @@ versions:
   - English: #
 ---
 
-This post is an answer from [Stack Overflow](https://stackoverflow.com/questions/51257442/wpf-how-to-style-my-form-with-transperancy-levels/51257595#51257595) and introduce some methods to create a window with blurring background.
+This post is an answer from [Stack Overflow](https://stackoverflow.com/a/51257595/6233938) and introduce some methods to create a window with blurring background.
 
 ---
 

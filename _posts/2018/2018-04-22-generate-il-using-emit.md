@@ -1,7 +1,7 @@
 ---
 title: "使用 Emit 生成 IL 代码"
 publishDate: 2018-04-22 21:14:58 +0800
-date: 2018-04-27 07:10:34 +0800
+date: 2018-09-01 08:11:23 +0800
 categories: dotnet csharp
 ---
 
@@ -105,9 +105,9 @@ il.MarkLabel(endOfWholeIfElse);
     - [ParameterBuilder Class (System.Reflection.Emit)](https://msdn.microsoft.com/en-us/library/system.reflection.emit.parameterbuilder(v=vs.110).aspx)
     - [MethodBuilder.DefineParameter Method (Int32, ParameterAttributes, String) (System.Reflection.Emit)](https://msdn.microsoft.com/en-us/library/system.reflection.emit.methodbuilder.defineparameter(v=vs.110).aspx)
     - [Defining a Parameter with Reflection Emit](https://msdn.microsoft.com/en-us/library/9zksbcwc(v=vs.100).aspx)
-    - [c# - How to set ".maxstack" with ILGenerator - Stack Overflow](https://stackoverflow.com/questions/33656409/how-to-set-maxstack-with-ilgenerator?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
+    - [c# - How to set ".maxstack" with ILGenerator - Stack Overflow](https://stackoverflow.com/q/33656409/6233938)
 + 生成方法体
     - [ILGenerator.DefineLabel Method (System.Reflection.Emit)](https://msdn.microsoft.com/en-us/library/system.reflection.emit.ilgenerator.definelabel(v=vs.110).aspx)
     - [ILGenerator.MarkLabel Method (Label) (System.Reflection.Emit)](https://msdn.microsoft.com/en-us/library/system.reflection.emit.ilgenerator.marklabel(v=vs.110).aspx)
-    - [c# - Emit local variable and assign a value to it - Stack Overflow](https://stackoverflow.com/questions/15278566/emit-local-variable-and-assign-a-value-to-it?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
-    - [C# reflection: If ... else? - Stack Overflow](https://stackoverflow.com/questions/11139241/c-sharp-reflection-if-else?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
+    - [c# - Emit local variable and assign a value to it - Stack Overflow](https://stackoverflow.com/a/15279066/6233938)
+    - [C# reflection: If ... else? - Stack Overflow](https://stackoverflow.com/q/11139241/6233938)

@@ -1,7 +1,7 @@
 ---
 title: "让你编写的控件库在 XAML 中有一个统一的漂亮的命名空间（xmlns）和命名空间前缀"
 publishDate: 2018-05-22 21:21:22 +0800
-date: 2018-06-21 07:53:31 +0800
+date: 2018-09-01 08:04:53 +0800
 categories: dotnet xaml wpf
 ---
 
@@ -107,5 +107,5 @@ using System.Windows.Markup;
 
 ### 参考资料
 
-- [wpf - How to make XmlnsDefinition work on the local assembly? - Stack Overflow](https://stackoverflow.com/questions/2760504/how-to-make-xmlnsdefinition-work-on-the-local-assembly)
+- [wpf - How to make XmlnsDefinition work on the local assembly? - Stack Overflow](https://stackoverflow.com/a/2778489/6233938)
 - [XmlnsDefinition doesn't work in the same assembly](https://social.msdn.microsoft.com/Forums/vstudio/en-US/7e7a032a-dad3-4e02-9e5a-d73e346b75ed/xmlnsdefinition-doesnt-work-in-the-same-assembly)

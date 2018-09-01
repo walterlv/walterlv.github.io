@@ -1,7 +1,7 @@
 ---
 title: "Windows 10 四月更新，文件夹名称也能区分大小写了"
 publishDate: 2018-06-14 08:02:24 +0800
-date: 2018-07-30 20:05:07 +0800
+date: 2018-09-01 08:03:09 +0800
 categories: windows
 ---
 
@@ -143,4 +143,4 @@ wim             Transparent wim hosting management
 #### 参考资料
 
 - [fsutil setCaseSensitiveInfo · Issue #977 · MicrosoftDocs/windowsserverdocs](https://github.com/MicrosoftDocs/windowsserverdocs/issues/977)
-- [windows - fsutil - The request is not supported after setCaseSensitiveInfo - Stack Overflow](https://stackoverflow.com/questions/50839623/fsutil-the-request-is-not-supported-after-setcasesensitiveinfo)
+- [windows - fsutil - The request is not supported after setCaseSensitiveInfo - Stack Overflow](https://stackoverflow.com/q/50839623/6233938)

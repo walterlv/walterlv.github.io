@@ -1,6 +1,7 @@
 ---
 title: "git subtree 不断增加的推送时间，解不玩的冲突！这篇文章应该能救你"
-date: 2018-06-26 10:32:21 +0800
+publishDate: 2018-06-26 10:32:21 +0800
+date: 2018-09-01 08:01:01 +0800
 categories: git
 ---
 
@@ -77,6 +78,6 @@ $ git subtree split --rejoin --prefix=Dependencies/Cvte.Paint/ HEAD
 
 #### 参考资料
 
-- [git-subtree pull merge conflict - Stack Overflow](https://stackoverflow.com/questions/25294227/git-subtree-pull-merge-conflict)
-- [git - Reduce increasing time to push a subtree - Stack Overflow](https://stackoverflow.com/questions/16134975/reduce-increasing-time-to-push-a-subtree)
+- [git-subtree pull merge conflict - Stack Overflow](https://stackoverflow.com/q/25294227/6233938)
+- [git - Reduce increasing time to push a subtree - Stack Overflow](https://stackoverflow.com/q/16134975/6233938)
 - [git-subtree/git-subtree.txt at master · apenwarr/git-subtree](https://github.com/apenwarr/git-subtree/blob/master/git-subtree.txt)

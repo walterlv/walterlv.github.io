@@ -1,6 +1,7 @@
 ---
 title: "Git 更安全的强制推送，--force-with-lease"
-date: 2018-05-07 19:16:42 +0800
+publishDate: 2018-05-07 19:16:42 +0800
+date: 2018-09-01 08:08:01 +0800
 categories: git
 ---
 
@@ -80,6 +81,6 @@ Git 官方文档对 `rebase` 有如下描述：
 #### 参考资料
 
 - [Git - git-push Documentation](https://git-scm.com/docs/git-push)
-- [How do I properly force a Git push? - Stack Overflow](https://stackoverflow.com/questions/5509543/how-do-i-properly-force-a-git-push)
+- [How do I properly force a Git push? - Stack Overflow](https://stackoverflow.com/q/5509543/6233938)
 - [Force-with-lease: an alternative to force push - Weiqing](http://weiqingtoh.github.io/force-with-lease/)
 - [--force considered harmful; understanding git's --force-with-lease - Atlassian Developers](https://developer.atlassian.com/blog/2015/04/force-with-lease/)

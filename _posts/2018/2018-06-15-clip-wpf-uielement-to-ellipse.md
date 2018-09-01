@@ -1,6 +1,7 @@
 ---
 title: "WPF 中使用附加属性，将任意 UI 元素或控件裁剪成圆形（椭圆）"
-date: 2018-06-15 09:22:29 +0800
+publishDate: 2018-06-15 09:22:29 +0800
+date: 2018-09-01 08:02:42 +0800
 categories: xaml wpf
 ---
 
@@ -137,4 +138,4 @@ public static class EllipseClipper
 
 ![裁剪成椭圆](/static/posts/2018-06-15-ellipse-clip.gif)
 
-这篇博客的核心代码我也贴在了 StackOverflow 上：[c# - WPF displaying a gif in an ellipse - Stack Overflow](https://stackoverflow.com/questions/50851677/wpf-displaying-a-gif-in-an-ellipse)
+这篇博客的核心代码我也贴在了 StackOverflow 上：[c# - WPF displaying a gif in an ellipse - Stack Overflow](https://stackoverflow.com/a/50867867/6233938)
