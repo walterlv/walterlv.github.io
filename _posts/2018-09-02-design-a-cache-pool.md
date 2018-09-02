@@ -1,5 +1,6 @@
 ---
-title: ".NET/C# 推荐一个我设计的缓存类型"
+title: ".NET/C# 推荐一个我设计的缓存类型（适合缓存反射等耗性能的操作，附用法）"
+publishDate: 2018-09-02 22:27:47 +0800
 date: 2018-09-02 15:59:05 +0800
 categories: dotnet csharp
 ---
