@@ -1,5 +1,5 @@
 html {
-    font-family: sans-serif;
+    font-family: "SF Pro Display",Roboto,Noto,Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
     line-height: 1.15;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%
@@ -13,7 +13,6 @@ html {
 
 body {
     margin: 0;
-    font-family: "SF Pro Display",Roboto,Noto,Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
 }
 
 body.dark-theme {
@@ -150,7 +149,6 @@ svg:not(:root) {
 }
 
 button, input, optgroup, select, textarea {
-    font-family: sans-serif;
     font-size: 100%;
     line-height: 1.15;
     margin: 0
@@ -251,7 +249,6 @@ a {
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Titillium Web', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 700;
     font-style: normal
 }
@@ -425,7 +422,6 @@ aside.open {
 
 aside h2 {
     margin: 0 1.25rem 0;
-    font-family: 'Titillium Web', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 1.125rem;
@@ -464,7 +460,6 @@ aside nav li a {
     width: 100%;
     display: block;
     padding: .938rem 1.25rem;
-    font-family: 'Titillium Web', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 300;
     font-style: normal;
     color: #141414;
@@ -517,7 +512,6 @@ aside nav svg {
     width: 100%;
     height: 2.5rem;
     line-height: 1.875rem;
-    font-family: 'Titillium Web', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 300;
     font-style: normal;
     font-size: 1.25rem;
@@ -545,7 +539,6 @@ aside nav svg {
 .search-form .search-list {
     position: absolute;
     width: 100%;
-    font-family: 'Titillium Web', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 300;
     font-style: normal;
     display: none;
@@ -809,7 +802,6 @@ body.main-page .bar-header {
 }
 
 main {
-    font-family: 'Titillium Web', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 400;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
@@ -938,7 +930,6 @@ main {
 .box-item .box-body h2 {
     margin: .625rem 0;
     font-size: 1.25rem;
-    font-family: 'Titillium Web', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 600;
     font-style: normal;
     line-height: 1.5rem;
@@ -1135,7 +1126,6 @@ body.dark-theme ul.pager li.active {
     display: block;
     color: #a9a9a9;
     text-align: center;
-    font-family: 'Titillium Web', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 300;
     font-style: normal
 }
@@ -1148,7 +1138,6 @@ body.dark-theme ul.pager li.active {
     display: block;
     padding-left: 0;
     padding-right: 0;
-    font-family: 'Titillium Web', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 1.125rem;
@@ -1205,7 +1194,6 @@ body.dark-theme .post-content div.post-inline {
 }
 
 .post-content p.post-info {
-    font-family: 'Titillium Web', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 300;
     font-style: normal;
     font-size: .8rem;
@@ -1285,7 +1273,6 @@ body.dark-theme .post-content a:hover {
 }
 
 .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5 {
-    font-family: 'Titillium Web', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 700;
     font-style: normal
 }
@@ -1542,7 +1529,6 @@ body.dark-theme .post-content hr {
     margin-left: auto;
     padding-left: 0;
     padding-right: 0;
-    font-family: 'Titillium Web', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 1.125rem;
@@ -1585,7 +1571,6 @@ body.dark-theme .post-content hr {
 }
 
 .post-content .category-title {
-    font-family: 'Titillium Web', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 300;
     font-style: normal;
     font-size: 2.375rem;
@@ -1741,7 +1726,6 @@ pre span {
 }
 
 .contact-form {
-    font-family: 'Titillium Web', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 700;
     font-style: normal;
     padding: .625rem;
@@ -1869,7 +1853,6 @@ pre span {
 .author .def {
     color: #808080;
     font-size: 1.125rem;
-    font-family: 'Titillium Web', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 300;
     font-style: normal;
     margin: .625rem;
@@ -1886,7 +1869,6 @@ pre span {
 }
 
 .author .name a {
-    font-family: 'Titillium Web', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 700;
     font-style: normal;
     text-decoration: none;
@@ -1905,7 +1887,6 @@ pre span {
 }
 
 .author .desc {
-    font-family: 'Titillium Web', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 300;
     font-style: normal;
     margin: .625rem;
@@ -1960,7 +1941,6 @@ footer {
     padding: 1.25rem 1.563rem;
     margin-top: 1rem;
     margin-bottom: 0;
-    font-family: 'Titillium Web', 'Helvetica Neue', Helvetica, sans-serif;
     font-weight: 300;
     font-style: normal;
 }
