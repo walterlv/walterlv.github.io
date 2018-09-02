@@ -16,7 +16,7 @@ kramdown:
 
 # Site Urls
 baseurl: ""
-url: "https://walterlv.github.io"
+url: "https://walterlv.com"
 links:
   - title: 博客
     url: /
@@ -53,7 +53,7 @@ analytics:
   cnzz: cnzz_stat_icon_1264408226
 disqus:
   name: walterlv
-  url: https://walterlv.github.io
+  url: https://walterlv.com
 gitment:
   owner: walterlv
   client_id: 9a8b44a07f269679e9b5
