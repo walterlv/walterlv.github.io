@@ -12,7 +12,8 @@ html {
 }
 
 body {
-    margin: 0
+    margin: 0;
+    font-family: "SF Pro Display",Roboto,Noto,Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
 }
 
 body.dark-theme {
