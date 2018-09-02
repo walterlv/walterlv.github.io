@@ -1,6 +1,6 @@
 ---
 title: "About to Study and Write"
-date: 2018-09-02 15:06:32 +0800
+date: 2018-09-02 15:06:42 +0800
 categories: post
 published: false
 ---
