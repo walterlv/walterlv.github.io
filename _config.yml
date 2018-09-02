@@ -7,7 +7,7 @@ mail: walterlv@outlook.com
 about: Windows 10 Developer
 
 # Site Appearance
-logo: /assets/img/avatar.png
+logo: /assets/img/logo.png
 default-theme: light
 markdown: kramdown
 kramdown:
