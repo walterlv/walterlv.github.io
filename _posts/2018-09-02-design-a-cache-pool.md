@@ -1,6 +1,6 @@
 ---
 title: ".NET/C# 推荐一个我设计的缓存类型"
-date: 2018-09-02 15:44:44 +0800
+date: 2018-09-02 15:59:05 +0800
 categories: dotnet csharp
 ---
 
@@ -61,87 +61,28 @@ private readonly Func<TSource, TCache> _convert;
 
 代码我放到了 [gist.github.com](https://gist.github.com/walterlv)，[walterlv/CachePool.cs](https://gist.github.com/walterlv/85c43ce2c064e7a2bd2b70756b968cd5)。
 
+你可以直接点击以上链接查看。为了不影响本文的阅读，我把实际的代码放到了最后。
+
+### 用法
+
+#### 高性能创建对象
+
+比如你认为反射创建对象是一个耗时的操作，那么可以将构造函数的调用创建成一个委托，然后把这个委托缓存下来。这样，下次创建相同对象的时候就不需要反射调用构造函数了，而是直接调用委托拿到对象的新实例。
+
 ```csharp
-using System;
-using System.Collections.Generic;
-using Walterlv.Annotations;
-
-namespace Walterlv
-{
-    /// <summary>
-    /// 如果获取 <typeparamref name="TSource"/> 对应信息的过程比较耗时（例如反射），
-    /// 则可使用 <see cref="CachePool{TSource,TCache}"/> 对此过程进行缓存。
-    /// </summary>
-    /// <typeparam name="TSource">为了获取信息所需的源对象。</typeparam>
-    /// <typeparam name="TCache">获取的信息将会储存在此类型的缓存对象中。</typeparam>
-    public sealed class CachePool<TSource, TCache>
-    {
-        /// <summary>
-        /// 使用特定的转换器创建 <see cref="CachePool{TSource,TCache}"/> 的新实例。
-        /// </summary>
-        /// <param name="conversion">从源对象到目标对象的转换方法，此方法仅执行一次。</param>
-        /// <param name="threadSafe">如果获取缓存的过程可能在不同线程，则设置此值为 true，以便让缓存过程是线程安全的。</param>
-        public CachePool([NotNull] Func<TSource, TCache> conversion, bool threadSafe = false)
-        {
-            _convert = conversion ?? throw new ArgumentNullException(nameof(conversion));
-            _locker = threadSafe ? new object() : null;
-        }
-
-        /// <summary>
-        /// 从缓存池中获取缓存的信息，如果从未获取过信息，则将会执行一次
-        /// 从 <typeparamref name="TSource"/> 到 <typeparamref name="TCache"/> 的转换。
-        /// </summary>
-        /// <param name="source">为了获取信息所需的源对象。</param>
-        /// <returns>缓存的对象。</returns>
-        public TCache this[TSource source] => GetOrCacheValue(source);
-
-        /// <summary>
-        /// 获取锁，如果此值为 null，说明无需加锁。
-        /// </summary>
-        [CanBeNull]
-        private readonly object _locker;
-
-        /// <summary>
-        /// 获取转换对象的方法。
-        /// </summary>
-        private readonly Func<TSource, TCache> _convert;
-
-        /// <summary>
-        /// 获取缓存了 <typeparamref name="TCache"/> 的字典。
-        /// </summary>
-        private readonly Dictionary<TSource, TCache> _cacheDictionary =
-            new Dictionary<TSource, TCache>();
-
-        /// <summary>
-        /// 从缓存池中获取缓存的信息，如果从未获取过信息，则将会执行一次
-        /// 从 <typeparamref name="TSource"/> 到 <typeparamref name="TCache"/> 的转换。
-        /// </summary>
-        private TCache GetOrCacheValue(TSource source)
-        {
-            // 如果不需要加锁，则直接返回值。
-            if (_locker == null)
-            {
-                return GetOrCacheValue();
-            }
-
-            // 如果需要加锁，则加锁后返回值。
-            lock (_locker)
-            {
-                return GetOrCacheValue();
-            }
-
-            // 如果存在缓存，则获取缓存；否则从源值转换成缓存。
-            TCache GetOrCacheValue()
-            {
-                if (!_cacheDictionary.TryGetValue(source, out var cache))
-                {
-                    cache = _convert(source);
-                    _cacheDictionary[source] = cache;
-                }
-
-                return cache;
-            }
-        }
-    }
-}
+private static readonly CachePool<Type, Func<object>> ConstructorCache =
+    new CachePool<Type, Func<object>>(x =>
+        Expression.Lambda<Func<object>>(Expression.New(x)).Compile());
 ```
+
+#### 高性能为属性赋值
+
+我在 [如何快速编写和调试 Emit 生成 IL 的代码](/post/how-to-quickly-write-emit-code.html) 一文中创建了可以为属性赋值的委托，你也可以使用此方法将委托缓存下来，以便每次给相同类型的相同属性赋值时能有不那么差的性能。
+
+#### 高性能“反射”调用函数
+
+调用函数所得的结果可是不一样的，所以直接缓存函数结果是不靠谱的，不过我们依然可以将反射调用缓存为委托的调用。我在 [.NET Core/Framework 创建委托以大幅度提高反射调用的性能](/post/create-delegate-to-improve-reflection-performance.html) 一文中有介绍。
+
+### 附代码
+
+<script src="https://gist.github.com/walterlv/85c43ce2c064e7a2bd2b70756b968cd5.js"></script>
