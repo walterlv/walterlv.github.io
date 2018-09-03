@@ -36,6 +36,9 @@ permalink: /friends/
 - [Bean.Hsiang - 博客园](http://www.cnblogs.com/BeanHsiang/)  
     如果你想学习机器学习 ML.NET，他真的很接地气
 
+- [LiesAuer's Blog](http://www.liesauer.net/blog/)  
+    生命不息，折腾不止
+
 - [Kinfey - CSDN博客](https://blog.csdn.net/kinfey)
 
 - [未来代码研究所](http://blog.atelier39.org/)
