@@ -479,7 +479,7 @@ aside nav li a {
 
 aside nav li a:hover {
     color: #fff;
-    background: #107a9b
+    background: #1570a6
 }
 
 .search-wrapper {
@@ -498,7 +498,7 @@ aside nav p {
 }
 
 aside nav svg {
-    fill: #107a9b
+    fill: #1570a6
 }
 
 .search-wrapper.active {
@@ -584,7 +584,7 @@ aside nav svg {
 
 .search-form .search-list .entry-category {
     text-transform: uppercase;
-    background-color: #107a9b;
+    background-color: #1570a6;
     margin-right: .313rem;
     height: 1.25rem;
     border-radius: .625rem;
@@ -606,7 +606,7 @@ aside nav svg {
 }
 
 .search-form .search-list a:hover {
-    color: #107a9b;
+    color: #1570a6;
 }
 
 .search-form .search-list a:hover .entry-category {
@@ -622,7 +622,7 @@ aside nav svg {
     height: 1.625rem;
     padding: .313rem;
     fill: #fff;
-    background-color: #107a9b;
+    background-color: #1570a6;
     border-radius: 13px;
     margin: .438rem;
     cursor: pointer;
@@ -935,7 +935,7 @@ body.dark-theme .box-item .box-body p {
     height: 1.25rem;
     font-size: 0.75rem;
     line-height: 1.25rem;
-    color: #107a9b;
+    color: #1570a6;
     background: white;
     padding: 0 .625rem;
     display: inline-block;
@@ -953,7 +953,7 @@ body.dark-theme .box-item .box-body p {
     content: 'New post';
     text-transform: uppercase;
     display: inline-block;
-    background: #107a9b;
+    background: #1570a6;
     color: #fff;
     font-size: .813rem;
     font-weight: 700;
@@ -1047,7 +1047,7 @@ ul.pager li a {
 }
 
 ul.pager li a:hover {
-    background: #107a9b;
+    background: #1570a6;
     color: white
 }
 
@@ -1320,7 +1320,7 @@ body.dark-theme .post-content h5 {
     max-width: 45.625rem;
     float: none;
     display: block;
-    border-left: .25rem solid #107a9b;
+    border-left: .25rem solid #1570a6;
     padding: 0 0.5rem;
     margin: 0.25rem auto;
 }
@@ -1471,7 +1471,7 @@ body.dark-theme .post-content hr {
     float: left;
     display: block;
     height: 8px;
-    background-color: #107a9b
+    background-color: #1570a6
 }
 
 .progress-bar .remaining {
@@ -1538,7 +1538,7 @@ body.dark-theme .post-content hr {
     display: inline-block;
     padding: 0 1.2rem;
     margin-right: .25rem;
-    background: #107a9b;
+    background: #1570a6;
     line-height: 2rem;
     text-decoration: none;
     -webkit-transition: all .3s;
@@ -1602,7 +1602,7 @@ body.dark-theme .post-content hr {
 }
 
 .post-content .post-list a:hover {
-    border-bottom: 1px solid #107a9b
+    border-bottom: 1px solid #1570a6
 }
 
 .post-content .post-list .entry-date {
@@ -1752,7 +1752,7 @@ pre span {
     display: block;
     padding: 19px 39px 18px 39px;
     color: #fff;
-    background: #107a9b;
+    background: #1570a6;
     font-size: 1.125rem;
     width: 100%;
     border: 1px solid #ba0009;
@@ -1814,7 +1814,7 @@ pre span {
 }
 
 .author a:hover {
-    fill: #107a9b
+    fill: #1570a6
 }
 
 .author img {
@@ -1969,7 +1969,7 @@ aside svg, footer svg {
 footer svg.love {
     width: 20px;
     height: 20px;
-    fill: #107a9b;
+    fill: #1570a6;
     margin-top: -.125rem;
     margin-left: .188rem;
     margin-right: .188rem
@@ -1987,7 +1987,7 @@ body.dark-theme footer a {
 }
 
 footer a:hover {
-    fill: #107a9b
+    fill: #1570a6
 }
 
 body.dark-theme footer a:hover {
