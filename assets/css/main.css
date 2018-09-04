@@ -708,10 +708,6 @@ html, body {
     margin: 0 1rem;
 }
 
-.bar-header ul li:first-child {
-    margin: 0
-}
-
 @media only screen and (max-width:37.5rem) {
     .bar-header ul li {
         margin: 0;
