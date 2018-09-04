@@ -8,6 +8,11 @@ about: Windows 10 Developer
 
 # Site Appearance
 logo: /assets/img/logo.png
+avatar:
+  img: /assets/img/mvp.png
+  alt: Microsoft MVP
+  url: https://mvp.microsoft.com/en-us/PublicProfile/5003225
+  hint: 查看我的微软 MVP 主页
 default-theme: light
 markdown: kramdown
 kramdown:
