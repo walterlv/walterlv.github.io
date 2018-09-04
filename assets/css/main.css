@@ -414,15 +414,14 @@ aside {
     background-color: #fff;
 }
 
+aside img.avatar-logo {
+    width: calc(100% - 2px);
+    margin: 1px;
+}
+
 @media only screen and (max-width:1200px) {
     aside {
         left: -300px;
-    }
-}
-
-@media only screen and (min-width:37.5rem) {
-    aside {
-        padding: .625rem 0 0
     }
 }
 
