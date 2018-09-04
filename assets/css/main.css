@@ -1911,7 +1911,7 @@ body.dark-theme .comments {
     font-size: 1.875rem
 }
 
-footer {
+footer>div {
     width: auto;
     max-width: 50rem;
     float: none;
