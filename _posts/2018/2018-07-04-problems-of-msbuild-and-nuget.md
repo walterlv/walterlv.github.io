@@ -1,6 +1,7 @@
 ---
 title: "MSBuild/Roslyn 和 NuGet 的 100 个坑"
-date: 2018-07-04 21:29:29 +0800
+publishDate: 2018-07-04 21:29:29 +0800
+date: 2018-09-04 21:08:05 +0800
 categories: msbuild nuget visualstudio dotnet
 ---
 
@@ -87,6 +88,12 @@ MSBuild 15.0 为项目文件的根节点 `Project` 带来了 `Sdk` 属性，也�
 其实这是只有新的项目文件才会出现的编译错误，而错误原因是 NuGet 的缓存文件中与包引用相关的信息已经不正确了，需要运行 `nuget restore` 或者 `dotnet restore` 重新更新此文件才行。但是，只有使用了 `Microsoft.NET.Sdk` 的新 csproj 文件才会在执行了此命令后重新生成正确的包引用缓存文件；原来的格式并不会生成此文件，也就是说，无法修复。
 
 唯一的解决办法就是清除项目中的所有 NuGet 缓存，使用 `git clean -xdf`。
+
+#### 依赖的项目会自动转为依赖的 NuGet 包
+
+如果你给一个项目 A 打 NuGet 包，但这个项目引用此解决方案中的另一个项目 B。那么这时打包，NuGet 会认为 A 包依赖于 B 包。
+
+事实上，B 包极有可能是不存在的，也就是说，你打的 A 包并没有办法给大家正常使用。
 
 #### .nuget.g.props 和 .nuget.g.targets
 
