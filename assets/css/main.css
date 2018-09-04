@@ -408,7 +408,7 @@ body.has-push-menu {
 aside {
     position: fixed;
     width: 300px;
-    height: 100%;
+    height: calc(100% - 3rem);
     top: 0;
     left: -300px;
     background-color: #fff;
