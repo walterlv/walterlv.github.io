@@ -409,16 +409,15 @@ aside {
     position: fixed;
     width: 300px;
     height: calc(100% - 3rem);
-    top: 0;
-    left: -300px;
+    left: 0;
+    top: 3rem;
     background-color: #fff;
     z-index: 20;
 }
 
-@media only screen and (max-width:360px) {
+@media only screen and (max-width:1200px) {
     aside {
-        width: 240px;
-        left: -240px
+        left: -300px;
     }
 }
 
@@ -428,9 +427,11 @@ aside {
     }
 }
 
-aside.open {
-    left: 0;
-    top: 3rem;
+@media only screen and (max-width:360px) {
+    aside {
+        width: 240px;
+        left: -240px
+    }
 }
 
 aside h2 {
@@ -711,6 +712,9 @@ html, body {
 @media only screen and (max-width:37.5rem) {
     .bar-header ul li {
         margin: 0;
+    }
+    .bar-header ul:first-child li:first-child {
+        margin: 0 0 0 1rem;
     }
 }
 
