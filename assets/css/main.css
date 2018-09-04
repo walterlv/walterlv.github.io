@@ -23,15 +23,17 @@ article, aside, footer, header, nav, section {
     display: block
 }
 
-article, footer, section {
+body>section, body>footer {
     left: 300px;
     width: calc(100% - 300px);
+    position: relative;
 }
 
 @media only screen and (max-width:1200px) {
-    article, footer, section {
+    body>section, body>footer {
         left: 0;
         width: 100%;
+        position: unset;
     }
 }
 
