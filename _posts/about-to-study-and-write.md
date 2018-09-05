@@ -17,6 +17,11 @@ published: false
 
 ### About to Write
 
+- WPF PageFunction
+    - [wpf - What is a "Page Function"? - Stack Overflow](https://stackoverflow.com/questions/8733308/what-is-a-page-function)
+    - [How to use PageFunction to create dialog behavior in WPF? – Martha Amirzadeh's Blog (Mahta)](https://blogs.msdn.microsoft.com/marthami/2007/10/02/how-to-use-pagefunction-to-create-dialog-behavior-in-wpf/)
+    - [WPF Navigation - Paul Stovell](http://paulstovell.com/blog/wpf-navigation)
+
 - DisableProcessWindowsGhosting
     - [DisableProcessWindowsGhosting function - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-disableprocesswindowsghosting)
 
