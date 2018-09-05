@@ -1,7 +1,7 @@
 ---
 title: "WPF 同一窗口内的多线程 UI（VisualTarget）"
 publishDate: 2017-10-30 23:38:21 +0800
-date: 2018-08-19 19:08:09 +0800
+date: 2018-09-05 13:47:01 +0800
 categories: wpf dotnet csharp
 ---
 
@@ -14,7 +14,7 @@ WPF 的 UI 逻辑只在同一个线程中，这是学习 WPF 开发中大家几�
 WPF 同一个窗口中跨线程访问 UI 有多种方法：
 
 - [使用 VisualTarget (本文)](/post/multi-thread-ui-using-visualtarget-in-wpf.html)
-- [使用 SetParent 嵌入另一个窗口](http://localhost:4000/post/embed-win32-window-using-csharp.html)
+- [使用 SetParent 嵌入另一个窗口](/post/embed-win32-window-using-csharp.html)
 
 前者使用的是 WPF 原生方式，做出来的跨线程 UI 可以和原来的 UI 相互重叠遮挡。后者使用的是 Win32 的方式，实际效果非常类似 `WindowsFormsHost`，新线程中的 UI 在原来的所有 WPF 控件上面遮挡。另外，后者不止可以是跨线程，还可以跨进程。
 
