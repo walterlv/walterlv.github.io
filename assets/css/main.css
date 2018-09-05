@@ -285,7 +285,13 @@ h1, h2, h3, h4 {
 }
 
 .grid article.box-item {
-    background: #fdfeff
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: #e5e5e5;
+}
+
+body.dark-theme .grid article.box-item {
+    border-color: #383c44;
 }
 
 body.dark-theme .grid article.box-item {
@@ -413,7 +419,12 @@ aside {
     height: calc(100% - 3rem);
     left: 0;
     top: 3rem;
-    background-color: #fff;
+    background-color: #f3f6f8;
+}
+
+body.dark-theme aside {
+    color: white;
+    background-color: #27303c;
 }
 
 aside img.avatar-logo {
@@ -439,8 +450,6 @@ aside h2 {
     font-weight: 400;
     font-style: normal;
     font-size: 1.125rem;
-    color: #141414;
-    border-bottom: 1px solid #141414;
     line-height: 50px;
 }
 
@@ -453,6 +462,7 @@ aside h2 {
 aside nav ul {
     padding: 0;
     margin: .313rem 0;
+    border-top: 1px solid #c4d6e1;
 }
 
 @media only screen and (min-width:37.5rem) {
@@ -479,6 +489,10 @@ aside nav li a {
     color: #141414;
 }
 
+body.dark-theme aside nav li a {
+    color: white;
+}
+
 aside nav li a:hover {
     color: #fff;
     background: #1570a6
@@ -501,6 +515,10 @@ aside nav p {
 
 aside nav svg {
     fill: #1570a6
+}
+
+body.dark-theme aside nav svg {
+    fill: white
 }
 
 .search-wrapper.active {
@@ -776,14 +794,6 @@ html, body {
     }
 }
 
-body.main-page {
-    background: #eaecef
-}
-
-body.main-page.dark-theme {
-    background: #21252b
-}
-
 main {
     font-weight: 400;
     font-style: normal;
@@ -847,7 +857,7 @@ main {
 @media only screen and (min-width:37.5rem) {
     .box-item {
         max-width: 50rem;
-        margin: 0 auto 1rem
+        margin: 0 auto 0
     }
 }
 
