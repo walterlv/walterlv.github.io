@@ -1,7 +1,7 @@
 ---
 title: "都是用 DllImport？有没有考虑过自己写一个 extern 方法？"
 publishDate: 2018-09-06 21:58:49 +0800
-date: 2018-09-06 23:00:31 +0800
+date: 2018-09-06 23:04:40 +0800
 categories: dotnet csharp roslyn msbuild
 ---
 
@@ -204,6 +204,8 @@ class Demo
 } // end of method Walterlv::FindWindow
 ```
 
+至于实际执行时的执行细节，可以阅读 [c# - How does DllImport really work? - Stack Overflow](https://stackoverflow.com/a/14471704/6233938) 了解更多。
+
 如果去看看我们写的 `Foo` 的 IL，就完全不一样了：
 
 ```csharp
@@ -226,3 +228,9 @@ class Demo
 这其实就是我们在 Demo.implement.cs 中写的那个函数的实现。这是当然，毕竟我们编译时偷偷把这个函数换成了那个隐藏的文件实现了。
 
 关于如何迅速查看 C# 代码对应的 IL，可以阅读我的另一篇博客：[如何快速编写和调试 Emit 生成 IL 的代码](https://walterlv.com/post/how-to-quickly-write-emit-code.html#%E5%BF%AB%E9%80%9F%E7%BC%96%E5%86%99-emit)。
+
+---
+
+#### 参考资料
+
+- [c# - How does DllImport really work? - Stack Overflow](https://stackoverflow.com/a/14471704/6233938)
