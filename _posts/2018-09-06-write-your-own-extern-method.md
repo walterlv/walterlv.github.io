@@ -1,6 +1,7 @@
 ---
 title: "都是用 DllImport？有没有考虑过自己写一个 extern 方法？"
-date: 2018-09-06 21:58:49 +0800
+publishDate: 2018-09-06 21:58:49 +0800
+date: 2018-09-06 23:00:31 +0800
 categories: dotnet csharp roslyn msbuild
 ---
 
@@ -183,3 +184,45 @@ class Demo
 
 - `extern` 是 C# 的一个语法而已，谁都可以用，但最终编译时的 C# 文件必须都有实现。
 - 我们可以在编译时修改编译的文件来为这些未实现的方法添加实现。
+
+### 原理
+
+看完上面的方法，是不是觉得写一个把实现藏起来的 `extern` 方法很简单？
+
+但如果你认为 `DllImport` 也是这么做的那就不对了。
+
+还记得我们一开始写的 `FindWindow` 方法吗？我们查看其编译后的 IL 代码，可以发现其外部调用已经写到了 IL 里面了，并且其实现使用了 `pinvokeimpl` 关键字。也就是说，具体的调用是 JIT 编译器去做的事儿。
+
+```csharp
+.method public hidebysig static pinvokeimpl ( "user32.dll" unicode winapi )native int 
+    FindWindow(
+      string lpClassName, 
+      string lpWindowName
+    ) cil managed preservesig 
+{
+    // Can't find a body
+} // end of method Walterlv::FindWindow
+```
+
+如果去看看我们写的 `Foo` 的 IL，就完全不一样了：
+
+```csharp
+.method assembly hidebysig static void 
+    Foo() cil managed 
+{
+    .custom instance void WalterlvHiddenMethodAttribute::.ctor() 
+      = (01 00 00 00 )
+    .maxstack 8
+
+    IL_0000: nop          
+    IL_0001: ldstr        "我就是一个外部方法。"
+    IL_0006: call         void [mscorlib]System.Console::WriteLine(string)
+    IL_000b: nop          
+    IL_000c: ret          
+
+} // end of method Demo::Foo
+```
+
+这其实就是我们在 Demo.implement.cs 中写的那个函数的实现。这是当然，毕竟我们编译时偷偷把这个函数换成了那个隐藏的文件实现了。
+
+关于如何迅速查看 C# 代码对应的 IL，可以阅读我的另一篇博客：[如何快速编写和调试 Emit 生成 IL 的代码](https://walterlv.com/post/how-to-quickly-write-emit-code.html#%E5%BF%AB%E9%80%9F%E7%BC%96%E5%86%99-emit)。
