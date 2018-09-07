@@ -1,7 +1,7 @@
 ---
 title: "都是用 DllImport？有没有考虑过自己写一个 extern 方法？"
 publishDate: 2018-09-06 21:58:49 +0800
-date: 2018-09-06 23:04:40 +0800
+date: 2018-09-06 23:04:53 +0800
 categories: dotnet csharp roslyn msbuild
 ---
 

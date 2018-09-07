@@ -1,7 +1,7 @@
 ---
 title: "将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj"
 publishDate: 2018-01-16 00:04:28 +0800
-date: 2018-09-01 08:14:17 +0800
+date: 2018-09-07 12:40:50 +0800
 categories: visualstudio msbuild
 ---
 
@@ -247,7 +247,7 @@ UWP 项目已经是 .NET Core 了，然而它依然还在采用旧样式的 cspr
 
 需要注意，`<OutputType />`、`<StartupObject />` 和 `<ApplicationDefinition />` 如果是类库则需要去掉。
 
-特别注意！**WPF 或者 UWP 项目迁移成新项目之后，默认新建的 XAML 文件会不可见，每次都需要手工去 csproj 中删掉自动增加的错误的 XAML 编译类型。**
+特别注意！你 **必须将 Visual Studio 升级到 15.8 以上的版本**，否则WPF 或者 UWP 项目迁移成新项目之后，默认新建的 XAML 文件会不可见，每次都需要手工去 csproj 中删掉自动增加的错误的 XAML 编译类型。
 
 #### 迁移中各种诡异的报错及其解决方法
 
