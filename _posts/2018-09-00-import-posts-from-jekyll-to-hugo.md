@@ -1,6 +1,6 @@
 ---
 title: "从 Jekyll 博客迁移到 Hugo 博客"
-date: 2018-09-01 08:18:30 +0800
+date: 2018-09-09 20:37:55 +0800
 categories: site
 published: false
 ---
