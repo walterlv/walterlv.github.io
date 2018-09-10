@@ -1,7 +1,7 @@
 ---
 title: "使用 Postman 调试 ASP.NET Core 开发的 API"
 publishDate: 2018-09-09 20:38:19 +0800
-date: 2018-09-10 13:12:25 +0800
+date: 2018-09-10 13:19:34 +0800
 categories: dotnet csharp asp
 ---
 
@@ -159,5 +159,3 @@ Postman 的安装是极简的，没有任何设置。当启动后，注册或登
 ### 关于本文调试的 ASP.NET 程序 Rssman
 
 [Rssman](https://github.com/walterlv/rssman) 是用来管理 RSS 订阅的 ASP.NET 程序，目前正在开发中。
-
-我的博客即将搬运同步至腾讯云+社区，邀请大家一同入驻：https://cloud.tencent.com/developer/support-plan?invite_code=14r47hbgb0amq
