@@ -1,6 +1,7 @@
 ---
 title: "C# 中那些可以被重载的操作符，以及使用它们的那些丧心病狂的语法糖"
-date: 2018-05-19 23:20:52 +0800
+publishDate: 2018-05-19 23:20:52 +0800
+date: 2018-09-15 21:13:53 +0800
 categories: csharp
 ---
 
@@ -68,6 +69,8 @@ _popupRoot = new PopupRoot(DependencyResolver)
 ### 不可被重载的操作符
 
 `=`, `.`, `?:`, `??`, `->`, `=>`, `as`, `checked`, `unchecked`, `default`, `delegate`, `is`, `new`, `sizeof`, `typeof`
+
+以上虽然 `??` 不可被重载，但可以间接修改其行为，阅读 [C# 空合并操作符（??）不可重载？其实有黑科技可以间接重载！](https://walterlv.com/post/overload-null-coalescing-operator-in-csharp.html) 就可以了解如何实现啦！
 
 ---
 
