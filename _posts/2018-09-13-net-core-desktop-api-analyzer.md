@@ -1,6 +1,6 @@
 ---
 title: "分析现有 WPF / Windows Forms 程序能否顺利迁移到 .NET Core 3.0（使用 .NET Core 3.0 Desktop API Analyzer ）"
-date: 2018-09-13 20:59:18 +0800
+date: 2018-09-13 21:00:09 +0800
 categories: dotnet wpf
 ---
 
