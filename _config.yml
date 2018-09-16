@@ -8,6 +8,7 @@ about: Windows 10 Developer
 
 # Site Appearance
 logo: /assets/img/logo.png
+icon: /favicon.ico
 avatar:
   img: /assets/img/mvp.png
   alt: Microsoft MVP

@@ -10,7 +10,7 @@
     <meta name="keywords" content="{% if page.title %}{{ page.title }}, {{ site.title }}, {% for categ in page.categories %}{{ categ }}{% if forloop.last == false %}, {% endif %}{% endfor %}{% else %}{{ site.title }}, {% for category in site.categories %}{% capture categories_slug %}{{ category | first }}{% endcapture %}{% for categ in categories_slug %}{{ categ }}{% endfor %}{% if forloop.last == false %}, {% endif %}{% endfor %}{% endif %}" />
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ site.baseurl }}{{ site.logo }}" />
+    <link rel="shortcut icon" href="{{ site.baseurl }}{{ site.icon }}" />
     
     <!-- Apple Touch Icons -->
     <link rel="apple-touch-icon" href="{{ site.baseurl }}{{ site.logo }}" />
