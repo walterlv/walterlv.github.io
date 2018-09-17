@@ -1,6 +1,7 @@
 ---
 title: "再也不用克隆多个仓库啦！git worktree 一个 git 仓库可以连接多个工作目录"
-date: 2018-01-19 09:20:06 +0800
+publishDate: 2018-01-19 09:20:06 +0800
+date: 2018-09-17 18:45:12 +0800
 categories: git
 ---
 
@@ -27,6 +28,18 @@ git worktree add -b t/walterlv/bugfix-100 ../Demo.bugfix master
 这样，原本的仓库文件夹的同级目录下会出现一个 Demo.bugfix 文件夹（当然名字随便取）。这个仓库里只有一个 .git 文件用来记录这是主仓库的一个工作目录。
 
 自此，这两个工作目录在工作上看起来就像两个独立的仓库一样，都可以运行各种命令，包括切换分支。
+
+另外，你也可以不使用 `-b`，以便直接使用现有的分支，而不创建新的分支：
+
+```bash
+git worktree add <新路径> <从此分支创建>
+```
+
+例如，你正在某个 `feature` 分支开发，希望回到 master 分支解决某个紧急的 BUG：
+
+```bash
+git worktree add ../Demo.bugfix master
+```
 
 相比于克隆多个仓库，使用这种方法创建的多个目录，有诸多好处：
 
