@@ -1,6 +1,6 @@
 ---
 title: "只有你能 new 出来！.NET 隐藏构造函数的 n 种方法（Builder Pattern / 构造器模式）"
-date: 2018-09-20 20:53:17 +0800
+date: 2018-09-20 20:53:37 +0800
 categories: dotnet csharp
 ---
 
