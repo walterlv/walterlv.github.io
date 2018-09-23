@@ -1,8 +1,7 @@
 ---
 title: "使用并解析 OPML 格式的订阅列表来转移自己的 RSS 订阅（概念篇）"
-date: 2018-09-23 18:40:34 +0800
+date: 2018-09-23 19:29:39 +0800
 categories: dotnet csharp uwp
-published: false
 ---
 
 OPML 全称是 **Outline Processor Markup Language** ，即 **大纲处理标记语言**。目前流行于收集博客的 RSS 源，便于用户转移自己的订阅项目。
@@ -79,19 +78,77 @@ OPML 官网对其作用的描述为：
 `head` 节点可包含 0 个或多个元素：
 
 - `title`
+    - 这就是 OPML 文档标题
 - `dateCreated`
+    - 文档创建时间
 - `dateModified`
+    - 文档修改时间
 - `ownerName`
+    - 文档作者
 - `ownerEmail`
+    - 文档作者的邮箱
 - `ownerId`
+    - 文档作者的 url，要求不存在相同 Id 的两个作者
 - `docs`
-- `expansionState`
-- `vertScrollState`
-- `windowTop`
-- `windowLeft`
-- `windowBottom`
-- `windowRight`
+    - 描述此文档的文档的 url
+
+当然，这些都是可选的。
+
+额外的，还有 `expansionState`, `vertScrollState`, `windowTop`, `windowLeft`, `windowBottom`, `windowRight`。
 
 #### body 节点
 
 `body` 节点包含一个或多个 `outline` 元素。
+
+#### outline（普通）
+
+outline 元素组成一个树状结构。也就是说，如果我们使用 OPML 储存 RSS 订阅列表，那么可以存为树状结构。在前面的例子中，我把自己的 RSS 订阅独立开来，把朋友和微软的 RSS 订阅分成了单独的组。
+
+`outline` 必须有 `text` 属性，其他都是可选的。而 `text` 属性就是 RSS 订阅的显示文字，如果没有这个属性，那么 RSS 的订阅列表中将会是空白一片。
+
+于是，我们解析 `text` 属性便可以得到可以显示出来的 RSS 订阅列表。对于前面的例子对应的 RSS 订阅列表就可以显示成下面这样：
+
+```
+- walterlv
+- Team
+    - 林德熙
+- Microsoft
+    - Microsoft .NET Blog
+    - Microsoft The Visual Studio Blog
+```
+
+`outline` 还有其他可选属性：
+
+- `type`
+    - 指示此 `outline` 节点应该如何解析
+- `isComment`
+    - 布尔值，为 `true` 或 `false`；如果为 `true`，那么次 `outline` 就只是注释而已
+- `isBreakpoint`
+    - 适用于脚本，执行时可下断点
+- `created`
+    - 一个时间，表示此节点的创建时间
+- `category`
+    - 逗号分隔的类别：如果表示分类，则要用 `/` 分隔子类别；如果表示标签，则不加 `/`
+    - 例如：`/Boston/Weather`, `/Harvard/Berkman,/Politics`（例子来源于[官方规范](http://dev.opml.org/spec2.html)）
+
+#### outline（RSS 专属）
+
+当 `type` 是 `rss` 时，还有一些 RSS 专属属性。这时，必要属性就有三个了：
+
+- `type`
+- `text`
+- `xmlUrl`
+
+其中，`xmlUrl` 就指的是订阅源的 url 地址了。在官方规范中，规定解析器不应该总认为 `text` 存在，相比之下，`xmlUrl` 显得更加重要。
+
+还有一些可选属性：
+
+- `description`
+- `htmlUrl`
+- `language`
+- `title`
+- `version`
+
+### OPML 的解析
+
+在了解了 OPML 的格式组成之后，便可以很容易的地解析此文件了。当然，我也写了一份 OPML 的解析，请参阅本文的第二部分，[解析篇](/post/deserialize-opml-using-dotnet.html)。
