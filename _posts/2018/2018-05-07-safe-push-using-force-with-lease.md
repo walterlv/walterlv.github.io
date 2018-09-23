@@ -1,7 +1,7 @@
 ---
 title: "Git 更安全的强制推送，--force-with-lease"
 publishDate: 2018-05-07 19:16:42 +0800
-date: 2018-09-01 08:08:01 +0800
+date: 2018-09-23 12:32:11 +0800
 categories: git
 ---
 
@@ -16,6 +16,14 @@ categories: git
 #### 那么 `git push --force` 命令有什么安全问题？
 
 `--force` 会使用本地分支的提交覆盖远端推送分支的提交。也就是说，如果其他人在相同的分支推送了新的提交，你的这一举动将“删除”他的那些提交！就算在强制推送之前先 `fetch` 并且 `merge` 或 `rebase` 了也是不安全的，因为这些操作到推送之间依然存在时间差，别人的提交可能发生在这个时间差之内。
+
+如果你对这样的危险没有什么直观的感觉，可以看看这则新闻：
+
+- [还在用 Git 的 -f 参数强推仓库，你这是在作死！](https://my.oschina.net/javayou/blog/2206650)
+- [因代码不规范，码农枪击4名同事，一人情况危急](https://mp.weixin.qq.com/s/WwQPn_881H3Knen7KVqsxw)
+
+![git push -f 致使枪杀](/static/posts/2018-09-23-12-31-26.png)  
+▲ git push -f 致使枪杀
 
 #### `--force-with-lease` 将解决这种安全问题
 
