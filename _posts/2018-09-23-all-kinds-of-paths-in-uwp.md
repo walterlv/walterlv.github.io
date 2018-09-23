@@ -39,4 +39,29 @@ ApplicationData 提供应用程序自己创建的数据的读写能力。它包�
 ![ApplicationData 的智能感知提示](/static/posts/2018-09-23-14-55-08.png)  
 ▲ ApplicationData 的智能感知提示
 
+这些不同的文件夹有着不同建议的用途。Local 文件夹，用来储存用户产生的数据（例如用户创建的文档等）；这部分数据在进行备份的时候会被备份下来。相比之下，LocalCache 和 Temporary 是不受备份影响的。
 
+额外的，
+
+### Package.InstalledLocation
+
+应用程序可以访问安装后程序包所在的路径，使用 `Package.InstalledLocation` 即可获取到应用程序包所在路径。
+
+当然，这部分的路径有更多的快捷访问方式，比如 Uri 以 `/` 开头，就是访问程序包所在路径：
+
+```csharp
+var uri = new Windows.Foundation.Uri("/samples/logo.png");
+```
+
+还可以以 `ms-appx:///` 协议开头：
+
+```csharp
+var uri = new Windows.Foundation.Uri("ms-appx:///samples/logo.png");
+var file = Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(uri);
+```
+
+### 特殊文件夹
+
+特殊文件夹可以通过 `KnownFolders` 类型获取，可以获取到照片、图片、音乐、视频等文件夹。
+
+- [KnownFolders Class (Windows.Storage) - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/uwp/api/windows.storage.knownfolders)
