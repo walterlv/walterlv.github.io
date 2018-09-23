@@ -1,6 +1,6 @@
 ---
 title: "UWP 中的各种文件路径（用户、缓存、漫游、安装……）"
-date: 2018-09-23 14:02:59 +0800
+date: 2018-09-23 15:48:56 +0800
 categories: dotnet uwp
 published: false
 ---
@@ -45,7 +45,7 @@ ApplicationData 提供应用程序自己创建的数据的读写能力。它包�
 
 ### Package.InstalledLocation
 
-应用程序可以访问安装后程序包所在的路径，使用 `Package.InstalledLocation` 即可获取到应用程序包所在路径。
+应用程序可以访问安装后程序包所在的路径，使用 `Package.Current.InstalledLocation` 即可获取到应用程序包所在路径。
 
 当然，这部分的路径有更多的快捷访问方式，比如 Uri 以 `/` 开头，就是访问程序包所在路径：
 
