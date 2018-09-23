@@ -1,6 +1,6 @@
 ---
 title: "About to Study and Write"
-date: 2018-09-20 20:19:33 +0800
+date: 2018-09-23 12:32:49 +0800
 categories: post
 published: false
 ---
@@ -16,6 +16,9 @@ published: false
 - Castle
 
 ### About to Write
+
+- WPF Popup 打字 Bug
+    - [Cannot input Chinese in the Textbox of Popup](https://social.msdn.microsoft.com/Forums/vstudio/en-US/3ed11dbe-7b30-46ff-8ce4-4d1096eb5628/cannot-input-chinese-in-the-textbox-of-popup?forum=wpf)
 
 - 工具
     - [Windows Sysinternals - Windows Sysinternals - Microsoft Docs](https://docs.microsoft.com/en-us/sysinternals/)
