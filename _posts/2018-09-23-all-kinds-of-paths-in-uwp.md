@@ -34,4 +34,9 @@ ApplicationData 提供应用程序自己创建的数据的读写能力。它包�
 - Roaming: 对于同一个用户，会存在于安装了此应用的所用设备中
 - Temporary: 允许操作系统在任何时刻删除的临时文件
 
+在智能感知提示的帮助下，你也可以找到对应的这几个文件夹：
+
+![ApplicationData 的智能感知提示](/static/posts/2018-09-23-14-55-08.png)  
+▲ ApplicationData 的智能感知提示
+
 
