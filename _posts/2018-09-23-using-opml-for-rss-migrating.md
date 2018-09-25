@@ -1,6 +1,6 @@
 ---
 title: "使用并解析 OPML 格式的订阅列表来转移自己的 RSS 订阅（概念篇）"
-date: 2018-09-23 19:29:39 +0800
+date: 2018-09-23 20:01:47 +0800
 categories: dotnet csharp uwp
 ---
 
