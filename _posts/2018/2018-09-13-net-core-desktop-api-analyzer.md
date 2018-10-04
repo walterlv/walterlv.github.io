@@ -1,6 +1,7 @@
 ---
 title: "分析现有 WPF / Windows Forms 程序能否顺利迁移到 .NET Core 3.0（使用 .NET Core 3.0 Desktop API Analyzer ）"
-date: 2018-09-13 21:00:09 +0800
+publishDate: 2018-09-13 21:00:09 +0800
+date: 2018-10-05 6:40:51 +0800
 categories: dotnet wpf
 ---
 
@@ -123,3 +124,7 @@ Cannot locate assembly information for System.Object. Microsoft assemblies found
 [Announcing the Windows Compatibility Pack for .NET Core - .NET Blog](https://blogs.msdn.microsoft.com/dotnet/2017/11/16/announcing-the-windows-compatibility-pack-for-net-core/)
 
 迁移到 .NET Core 并不会为这些程序带来跨平台特性，只是能够充分利用到 .NET Core 带来的诸多好处而已。比如更高的性能，更方便的部署，及时的更新。当然还有 MIT 开源，我们能够和社区一起修复 Bug。
+
+关于 .NET Framework 迁移到 .NET Core 的好处，以及 .NET Framework 未来的支持情况，可以阅读微软的另一篇博客了解：
+
+[Update on .NET Core 3.0 and .NET Framework 4.8 - .NET Blog](https://blogs.msdn.microsoft.com/dotnet/2018/10/04/update-on-net-core-3-0-and-net-framework-4-8/)
