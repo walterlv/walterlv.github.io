@@ -39,6 +39,9 @@ permalink: /friends/
 - [Bean.Hsiang - 博客园](http://www.cnblogs.com/BeanHsiang/)  
     如果你想学习机器学习 ML.NET，他真的很接地气
 
+- [Edi Wang](http://edi.wang/)  
+    国内.net 的大神，有很多的文章，有WPF、UWP还有其他的linux……
+
 - [LiesAuer's Blog](http://www.liesauer.net/)  
     生命不息，折腾不止
 
@@ -62,8 +65,6 @@ permalink: /friends/
     很多炫酷的 WPF 效果
 
 - [陈皓 - 酷 壳 - CoolShell](https://coolshell.cn/articles/author/haoel)
-
-- [Edi Wang](http://edi.wang/)
 
 - [Artech - 博客园](http://www.cnblogs.com/artech/)  
     蒋金楠，Artech，知名 IT 博主, 微软多领域 MVP，畅销 IT 图书作者，著《WCF全面解析》、《ASP.NET MVC 4/5框架揭秘》、《ASP.NET Web API 2框架揭秘》等。
