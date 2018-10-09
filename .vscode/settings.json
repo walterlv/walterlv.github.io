@@ -28,6 +28,8 @@
         "Kotlin",
         "LBUTTONDOWN",
         "LBUTTONUP",
+        "LTSB",
+        "LTSC",
         "Luma",
         "Mareinsula",
         "NTFS",
