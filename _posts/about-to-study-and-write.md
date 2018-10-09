@@ -1,6 +1,7 @@
 ---
 title: "About to Study and Write"
-date: 2018-09-25 08:58:11 +0800
+publishDate: 2018-09-25 08:58:11 +0800
+date: 2018-10-09 15:12:00 +0800
 categories: post
 published: false
 ---
@@ -16,6 +17,10 @@ published: false
 - Castle
 
 ### About to Write
+
+- AggregateException
+    - [c# - Flattening of AggregateExceptions for Processing - Stack Overflow](https://stackoverflow.com/questions/22872995/flattening-of-aggregateexceptions-for-processing)
+    - [AggregateException.Flatten Method (System) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.aggregateexception.flatten?view=netframework-4.7.2)
 
 - WPF Render
      - [WPF Graphics Rendering Overview - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview)
