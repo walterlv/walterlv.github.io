@@ -1,6 +1,7 @@
 ---
-title: "LTS（Long-term Support）是怎样的一种支持方式"
-date: 2018-07-04 21:29:29 +0800
+title: "长期支持 LTS（Long-term Support）是怎样的一种支持方式"
+publishDate: 2018-07-04 21:29:29 +0800
+date: 2018-10-09 14:44:06 +0800
 categories: dotnet
 ---
 
@@ -22,3 +23,14 @@ LTS 是 long-term support 的缩写，意为长期支持。
 - 后续替代此 release 的另一个新的 release 发布之后一年
 
 如果某个库承诺进行长期支持，那么至少数年之内使用这个库都是安全的。这段时间也足够多数开发者进行新库的准备和升级了。
+
+---
+
+当然也有机构采用 ESR 作为长期支持版本的称呼，ESR 全称为 Extended Support Release。
+
+例如 Firefox 的长期支持版本：
+
+![Firefox ESR Release Overview](https://www.mozilla.org/media/img/firefox/organizations/release-overview.d8ca18efe06f.png)  
+▲ Firefox ESR Release Overview
+
+详见：[Firefox Extended Support Release for Your Organization, Business, Enterprise — Mozilla](https://www.mozilla.org/en-US/firefox/organizations/)。
