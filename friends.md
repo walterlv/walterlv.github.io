@@ -42,7 +42,7 @@ permalink: /friends/
 - [Edi Wang](http://edi.wang/)  
     国内.net 的大神，有很多的文章，有WPF、UWP还有其他的linux……
 
-- [蓝火火](https://blog.ultrabluefire.cn/)  
+- [蓝火火](https://blog.ultrabluefire.cn/) [叫我蓝火火](https://www.cnblogs.com/blue-fire/)  
     UWP 大神，Composition API 大神，Win2D 大神
 
 - [LiesAuer's Blog](http://www.liesauer.net/)  
