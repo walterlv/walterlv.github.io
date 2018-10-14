@@ -1,6 +1,7 @@
 ---
 title: "WPF 的 ElementName 在 ContextMenu 中无法绑定成功？试试使用 x:Reference！"
-date: 2018-10-13 21:38:01 +0800
+publishDate: 2018-10-13 21:38:01 +0800
+date: 2018-10-14 11:11:53 +0800
 categories: wpf dotnet
 ---
 
@@ -31,7 +32,7 @@ categories: wpf dotnet
 
 在代码中，我们为一段文字中的一个部分绑定了主窗口的的一个属性，于是我们使用 `ElementName` 来指定绑定源为 `WalterlvWindow`。
 
-![使用普通的 ElementName 绑定](/static/posts/2018-10-13-20-48-58.png)  
+![使用普通的 ElementName 绑定](/static/posts/2018-10-14-11-11-23.png)  
 ▲ 使用普通的 ElementName 绑定
 
 ### 以下代码就无法正常工作了
@@ -60,7 +61,7 @@ categories: wpf dotnet
 
 注意，`MenuItem` 的 `Header` 属性设置为和 `Run` 的 `Text` 属性一模一样的绑定字符串。不过运行之后的截图显示，右键菜单中并没有如预期般出现绑定的字符串。
 
-![在 ContextMenu 中使用了 ElementName 绑定](/static/posts/2018-10-13-20-51-38.png)
+![在 ContextMenu 中使用了 ElementName 绑定](/static/posts/2018-10-14-11-10-17.png)
 
 ### 使用 x:Reference 代替 ElementName 能够解决
 
@@ -151,7 +152,7 @@ public sealed class BindingProxy : Freezable
 
 现在运行，右键菜单已经正常完成了绑定。
 
-![右键菜单完成了绑定](/static/posts/2018-10-13-21-19-56.png)  
+![右键菜单完成了绑定](/static/posts/2018-10-14-11-09-13.png)  
 ▲ 右键菜单已经正常完成了绑定
 
 ---
