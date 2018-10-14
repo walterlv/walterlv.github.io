@@ -1,6 +1,6 @@
 ---
 title: "WPF 中的 NameScope"
-date: 2018-10-14 11:12:22 +0800
+date: 2018-10-14 12:23:40 +0800
 categories: dotnet wpf
 ---
 
@@ -8,7 +8,7 @@ categories: dotnet wpf
 
 实现 `INameScope` 接口可以定义一个名称范围。无论你使用 `Name` 属性还是使用 `x:Name` 特性都可以在一个名称范围内指定某个元素的名称。绑定时就在此名称范围内查找，于是可以找到你需要的对象。
 
-本文将介绍 WPF 中 NameScope 的查找规则。
+本文将介绍 WPF 中 NameScope 的查找规则。（额外的，资源 / 资源字典的查找方式与 NameScope 的方式是一样的，所以本文分析过程同样使用与资源的查找。）
 
 ---
 
@@ -81,4 +81,93 @@ XAML 解析器（BamlRecordReader）注册名字的时候并没有去爬可视�
 
 ### NameScope 的名称查找规则
 
+在本文一开始贴出 `NameScope` 依赖项属性的时候，你应该注意到这只是一个普通的属性，并没有使用到什么可以用可视化树继承这样的高级元数据。事实上也不应该有这样的高级元数据，因为 NameScope 的抽象级别低于可视化树或者逻辑树。
 
+但是，实际上 `NameScope` 的查找却是依赖于逻辑树的 —— 这是 `FrameworkElement` 的功能：
+
+```csharp
+internal static INameScope FindScope(DependencyObject d, out DependencyObject scopeOwner)
+{
+    while (d != null)
+    {
+        INameScope nameScope = NameScope.NameScopeFromObject(d);
+        if (nameScope != null)
+        {
+            scopeOwner = d;
+            return nameScope;
+        }
+
+        DependencyObject parent = LogicalTreeHelper.GetParent(d);
+
+        d = (parent != null) ? parent : Helper.FindMentor(d.InheritanceContext);
+    }
+
+    scopeOwner = null;
+    return null;
+}
+```
+
+非常明显，`FindScope` 是期望使用逻辑树来查找名称范围的。
+
+不过值得注意的是，当一个元素没有逻辑父级的时候，会试图使用 `Helper.FindMentor` 来查找另一个对象。那这是什么方法，又试图寻找什么对象呢？
+
+Mentor 是名词，意为 “导师，指导”。于是我们需要阅读以下 `Helper.FindMentor` 方法的实现来了解其意图：
+
+提示：*以下注释中的 FE 代表 FrameworkElement，而 FCE 代表 FrameworkContentElement。*
+
+```csharp
+/// <summary>
+///     This method finds the mentor by looking up the InheritanceContext
+///     links starting from the given node until it finds an FE/FCE. This
+///     mentor will be used to do a FindResource call while evaluating this
+///     expression.
+/// </summary>
+/// <remarks>
+///     This method is invoked by the ResourceReferenceExpression
+///     and BindingExpression
+/// </remarks>
+internal static DependencyObject FindMentor(DependencyObject d)
+{
+    // Find the nearest FE/FCE InheritanceContext
+    while (d != null)
+    {
+        FrameworkElement fe;
+        FrameworkContentElement fce;
+        Helper.DowncastToFEorFCE(d, out fe, out fce, false);
+
+        if (fe != null)
+        {
+            return fe;
+        }
+        else if (fce != null)
+        {
+            return fce;
+        }
+        else
+        {
+            d = d.InheritanceContext;
+        }
+    }
+
+    return null;
+}
+```
+
+具体来说，是不断查找 `InheritanceContext`，如果找到了 FrameworkElement 或者 FrameworkContentElement，那么就返回这个 FE 或者 FCE；如果到最终也没有找到，则返回 null。
+
+这是个 `virtual` 属性，基类 `DependencyObject` 中只返回 `null`，而子类重写它时，返回父级。`Freezable`, `FrameworkElement`, `FrameworkContentElement` 等重写了这个属性。
+
+对于 `FrameworkElement`，重写时只是单纯的返回了一个内部管理的字段而已：
+
+```csharp
+internal override DependencyObject InheritanceContext
+{
+    get { return InheritanceContextField.GetValue(this); }
+}
+```
+
+此字段在调用 `DependencyObject.AddInheritanceContext` 的时候会赋值。而对于可视化树或逻辑树的建立，此方法不会被调用，所以此属性并不会对可视化树或逻辑树有影响。但是，`Freezable`, `InputBinding`, `Visual3D`, `GridViewColumn`, `ViewBase`, `CollectionViewSource`, `ResourceDictionary`, `TriggerAction`, `TriggerBase` 等会在属性赋值的时候调用此方法。于是我们能够在以上这些属性的设置中找到名称。
+
+特别说明，只有那些重写了 `InheritanceContext` 的类型才会在查找名称的时候找得到 NameScope；只有以上这些调用了 `DependencyObject.AddInheritanceContext` 方法的属性才会在赋值是能够找得到 NameScope。
+
+所以，我另一篇文章中所说的 ContextMenu 是找不到对应的 NameScope 的。[WPF 的 ElementName 在 ContextMenu 中无法绑定成功？试试使用 x:Reference！](http://localhost:4000/post/fix-wpf-binding-issues-in-context-menu.html)。此文中 `ContextMenu` 找到的 NameScope 是 `null`。
