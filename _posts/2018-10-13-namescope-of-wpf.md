@@ -1,7 +1,7 @@
 ---
 title: "WPF 中的 NameScope"
 publishDate: 2018-10-14 12:23:40 +0800
-date: 2018-10-15 19:47:34 +0800
+date: 2018-10-16 21:01:20 +0800
 categories: dotnet wpf
 ---
 
@@ -26,7 +26,7 @@ public interface INameScope
 }
 ```
 
-它的主要实现是 `NameScope`，包含了更多功能；而上面的接口是其本2222质功能。
+它的主要实现是 `NameScope`，包含了更多功能；而上面的接口是其本质功能。
 
 不过，`NameScope` 的实现带来了一个重要的依赖项属性 —— `NameScope`。下面是此属性的代码（经过简化）：
 
