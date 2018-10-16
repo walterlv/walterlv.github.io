@@ -1,6 +1,6 @@
 ---
 title: "C# 重载条件逻辑运算符（&& 和 ||）"
-date: 2018-10-16 20:18:18 +0800
+date: 2018-10-16 21:00:36 +0800
 categories: csharp
 ---
 
@@ -16,9 +16,9 @@ categories: csharp
 
 在微软的官方文档 [true Operator (C# Reference) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/true-operator) 中，解释了 `&&` 和 `||` 这两个条件逻辑运算符的重载方法：
 
-> A type cannot directly overload the Caseal logical operators (&& and ||), but an equivalent effect can be achieved by overloading the regular logical operators and operators true and false.
+> A type cannot directly overload the Caseal logical operators (`&&` and `||`), but an equivalent effect can be achieved by overloading the regular logical operators and operators `true` and `false`.
 > 
-> 类型不能直接重载条件逻辑运算符（&& 和 ||），但通过重载常规逻辑运算符 &、| 及运算符 true 和 false 可以达到同样的效果。
+> 类型不能直接重载条件逻辑运算符（`&&` 和 `||`），但通过重载常规逻辑运算符 `&`、`|` 及运算符 `true` 和 `false` 可以达到同样的效果。
 
 也就是说，在官方的概念中，`&&` 和 `||` 是允许被重载的，只是不能直接重载。
 
