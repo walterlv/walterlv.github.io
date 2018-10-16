@@ -1,6 +1,6 @@
 ---
 title: "C# 重载条件逻辑运算符（&& 和 ||）"
-date: 2018-10-16 21:00:36 +0800
+date: 2018-10-16 21:04:28 +0800
 categories: csharp
 ---
 
@@ -57,7 +57,7 @@ if (a && b)
 
 > Error CS0217: In order to be applicable as a short circuit operator a user-defined logical operator ('Case.operator &(Case, Case)') must have the same return type and parameter types
 > 
-> Error CS0217: 为了可以像短路运算符一样应用，用户定义的逻辑运算符(“aa.operator &(aa, aa)”)的返回类型和参数类型必须相同
+> Error CS0217: 为了可以像短路运算符一样应用，用户定义的逻辑运算符(“Case.operator &(Case, Case)”)的返回类型和参数类型必须相同
  
 也就是说，本身重载 `&` 运算符的时候允许返回不同的类型；但如果希望 `&&` 运算符在此重载下也生效，就必须确保 `&` 的返回类型与参数中的类型相同。
 
