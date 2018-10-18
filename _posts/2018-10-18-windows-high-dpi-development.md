@@ -1,7 +1,7 @@
 ---
 title: "Windows 下的高 DPI 应用开发（UWP / WPF / Windows Forms / Win32）"
 publishDate: 2018-10-18 10:06:11 +0800
-date: 2018-10-18 10:18:19 +0800
+date: 2018-10-18 14:47:12 +0800
 categories: windows dotnet wpf uwp
 ---
 
@@ -161,6 +161,5 @@ Microsoft PowerPoint 的演示页面使用的是屏幕 DPI 感知级别：
 
 #### 参考资料
 
-- [Developing a Per-Monitor DPI-Aware WPF Application - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/hidpi/declaring-managed-apps-dpi-aware)
 - [High DPI Desktop Application Development on Windows - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/hidpi/high-dpi-desktop-application-development-on-windows)
 - [WPF-Samples/Developer Guide - Per Monitor DPI - WPF Preview.docx at master · Microsoft/WPF-Samples](https://github.com/Microsoft/WPF-Samples/blob/master/PerMonitorDPI/Developer%20Guide%20-%20Per%20Monitor%20DPI%20-%20WPF%20Preview.docx)
