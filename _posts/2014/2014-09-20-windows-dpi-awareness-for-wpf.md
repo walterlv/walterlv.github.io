@@ -10,6 +10,15 @@ permalink: /windows/2014/09/20/windows-dpi-awareness-for-wpf.html
 
 ---
 
+本文知识已经陈旧，你可以阅读这两篇文章来了解更新的 Windows DPI 应用知识：
+
+- [Windows 下的高 DPI 应用开发（UWP / WPF / Windows Forms / Win32） - walterlv](/post/windows-high-dpi-development.html)
+- [支持 Windows 10 最新 PerMonitorV2 特性的 WPF 高 DPI 应用开发 - walterlv](/post/windows-high-dpi-development-for-wpf.html)
+
+---
+
+原文内容：
+
 ```xml
  <asmv3:application xmlns:asmv3="urn:schemas-microsoft-com:asm.v3">
     <asmv3:windowsSettings xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings">
