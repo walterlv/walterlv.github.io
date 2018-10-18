@@ -1,6 +1,7 @@
 ---
 title: "Windows 下的高 DPI 应用开发（UWP / WPF / Windows Forms / Win32）"
-date: 2018-10-18 10:06:11 +0800
+publishDate: 2018-10-18 10:06:11 +0800
+date: 2018-10-18 10:18:19 +0800
 categories: windows dotnet wpf uwp
 ---
 
@@ -121,6 +122,33 @@ Windows 10 (1604) 开始引入顶级窗口（Top-level Window）级别的 DPI �
 在创建一个窗口的前后分别调用 [SetThreadDpiAwarenessContext](https://docs.microsoft.com/en-us/windows/desktop/api/Winuser/nf-winuser-setthreaddpiawarenesscontext) 函数可以让创建的这个窗口具有单独的 DPI 感知级别。前一次是为了让窗口在创建时有一个对此线程的新的 DPI 感知级别，而后一次调用是恢复此线程的 DPI 感知级别。
 
 关于混合 DPI 感知级别的其他内容，可以阅读官网：[Mixed-Mode DPI Scaling and DPI-aware APIs - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/hidpi/high-dpi-improvements-for-desktop-applications)。
+
+微软的 Office 系列就是典型的使用了混合 DPI 感知级别的应用。在以下实验中，我组成了一个 96 DPI 的主屏和 144 DPI 的副屏，先在 96 DPI 的屏幕上截一张图，再将窗口移动到 144 DPI 的屏幕中再截一张图。
+
+Microsoft PowerPoint 使用的是系统 DPI 感知级别：
+
+![96 DPI 下的主界面](/static/posts/2018-10-18-10-10-29.png)  
+▲ 96 DPI 下的主界面
+
+![144 DPI 下的主界面](/static/posts/2018-10-18-10-11-03.png)  
+▲ 144 DPI 下的主界面
+
+你可以通过点开图片查看原图来比较这两幅图在原图尺寸下的模糊程度。
+
+Microsoft PowerPoint 的演示页面使用的是屏幕 DPI 感知级别：
+
+![96 DPI 下的演示页面](/static/posts/2018-10-18-10-13-43.png)  
+▲ 96 DPI 下的演示页面
+
+![144 DPI 下的演示页面](/static/posts/2018-10-18-10-14-09.png)  
+▲ 144 DPI 下的演示页面
+
+可以看到，演示页面在多屏 DPI 下是没有产生缩放的模糊，即采用了屏幕 DPI 感知级别。
+
+而以上的主界面和演示页面属于同一个进程。
+
+![只有一个 PowerPoint 进程](/static/posts/2018-10-18-10-17-29.png)  
+▲ 只有一个 PowerPoint 进程
 
 ### DPI 相关的 Windows API 的迁移
 
