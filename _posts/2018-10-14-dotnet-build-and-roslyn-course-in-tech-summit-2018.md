@@ -1,7 +1,7 @@
 ---
-title: "预编译框架，开发高性能应用 - 课程 - 微软技术暨生态大会 2018"
+title: "课程 预编译框架，开发高性能应用 - 微软技术暨生态大会 2018"
 publishDate: 2018-10-14 21:16:48 +0800
-date: 2018-10-15 08:39:08 +0800
+date: 2018-10-18 14:29:23 +0800
 categories: dotnet csharp msbuild roslyn visualstudio nuget
 ---
 
@@ -17,6 +17,10 @@ categories: dotnet csharp msbuild roslyn visualstudio nuget
 
 ### 关于课程《预编译框架 - 开发高性能应用》
 
+时间：2018 年 10 月 27 日 11:00-11:45
+代号：DEV306
+难度：L300
+
 利用 Roslyn 在编译期间提前完成收集和修改所需的各种信息，我们能将 .NET 的反射耗时降低到近乎为 0！
 当前大多数的框架都离不开反射的支持，但是 .NET 的反射很伤性能，而不用反射又很难支撑大型应用；基于 Roslyn 的预编译框架旨在解决这些性能问题。
 
@@ -28,11 +32,9 @@ categories: dotnet csharp msbuild roslyn visualstudio nuget
 4. 如何开发自己的预编译框架
 5. 制作源代码引用 NuGet 包（而不是 dll 引用 NuGet 包）
 
-其实此课程的计划课程内容有 2.5 小时，毕竟博客都有好几十篇了呢。算上跟我一起研究这项技术的 [林德熙的与 Roslyn 相关的博客](https://lindexi.gitee.io/lindexi/post/roslyn.html)，那就更多了，而且还在持续增加中。
+其实此课程的计划课程内容有 2.5 小时，毕竟博客都有好几十篇了呢。算上跟我一起研究这项技术的 [林德熙的与 Roslyn 相关的博客](https://lindexi.gitee.io/lindexi/post/roslyn.html)，那就更多了，而且还在持续增加中。不过实际分会场课程中内容众多，留给每个讲师的时间只有 45 分钟，必须减少和压缩课程内容。
 
-不过实际分会场课程中内容众多，留给每个讲师的时间只有 20 分钟或者 45 分钟。我有幸获得了 45 分钟时长的课程，所以虽然已经算长的了，却也必须减少和压缩课程内容。
-
-于是，实际课程会以入门为主，进阶内容将作为资料线下学习。注意：即便是“入门”，难度也依然是 300（难度范围为 0-400），所以你必须拥有一定的 .NET 开发知识和一些应用开发经验才会理解课程内容。如果你的经验更偏客户端应用开发，那么更能体会本课程内容的目的。
+于是，实际课程会以入门为主，进阶内容将作为资料线下学习。注意：即便是“入门”，难度也依然是 L300（难度范围为 L100-L400），所以你必须拥有一定的 .NET 开发知识和一些应用开发经验才会理解课程内容。如果你的经验更偏客户端应用开发，那么更能体会本课程内容的目的。
 
 ### 课程大纲
 
@@ -97,8 +99,6 @@ categories: dotnet csharp msbuild roslyn visualstudio nuget
 
 ![希沃白板 5](/static/posts/2018-10-14-20-33-17.png)
 
----
-
 ### 相关链接
 
 #### SourceYard 源码包
@@ -161,3 +161,10 @@ categories: dotnet csharp msbuild roslyn visualstudio nuget
 - [使用 GitVersion 在编译或持续构建时自动使用语义版本号（Semantic Versioning） - 吕毅](https://walterlv.com/post/automatically-semantic-versioning-using-git-version-task.html)
 - [Automatically increase the semantic version using GitVersion - 吕毅](https://walterlv.com/post/automatically-semantic-versioning-using-git-version-task.en.html)
 - [Reading the Source Code of Microsoft.NET.Sdk, Writing the Creative Extension of Compiling - 吕毅](https://walterlv.com/post/read-microsoft-net-sdk-en.html)
+
+### 更多课程
+
+- [Microsoft Tech Summit 2018 课程简述：利用 Windows 新特性开发出更好的手绘视频应用 - shaomeng - 博客园](http://www.cnblogs.com/shaomeng/p/9769270.html)
+    - 时间：2018 年 10 月 27 日 17:00-17:45
+    - 讲师：邵猛
+    - 代号：NUE204
