@@ -16,11 +16,11 @@ SourceYard 通过将公共组件的源代码和产品源代码合并来提升性
 
 以下是这部分的性能数据：
 
-- [C# 程序集数量对软件启动性能的影响](https://lindexi.gitee.io/lindexi/post/C-%E7%A8%8B%E5%BA%8F%E9%9B%86%E6%95%B0%E9%87%8F%E5%AF%B9%E8%BD%AF%E4%BB%B6%E5%90%AF%E5%8A%A8%E6%80%A7%E8%83%BD%E7%9A%84%E5%BD%B1%E5%93%8D.html)
+- [C# 程序集数量对软件启动性能的影响 - 林德熙](https://lindexi.gitee.io/lindexi/post/C-%E7%A8%8B%E5%BA%8F%E9%9B%86%E6%95%B0%E9%87%8F%E5%AF%B9%E8%BD%AF%E4%BB%B6%E5%90%AF%E5%8A%A8%E6%80%A7%E8%83%BD%E7%9A%84%E5%BD%B1%E5%93%8D.html)
 
 不过，程序集中的类的数量对启动性能没有影响：
 
-- [C# 直接创建多个类和使用反射创建类的性能](https://lindexi.gitee.io/lindexi/post/C-%E7%9B%B4%E6%8E%A5%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E7%B1%BB%E5%92%8C%E4%BD%BF%E7%94%A8%E5%8F%8D%E5%B0%84%E5%88%9B%E5%BB%BA%E7%B1%BB%E7%9A%84%E6%80%A7%E8%83%BD.html)
+- [C# 直接创建多个类和使用反射创建类的性能 - 林德熙](https://lindexi.gitee.io/lindexi/post/C-%E7%9B%B4%E6%8E%A5%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E7%B1%BB%E5%92%8C%E4%BD%BF%E7%94%A8%E5%8F%8D%E5%B0%84%E5%88%9B%E5%BB%BA%E7%B1%BB%E7%9A%84%E6%80%A7%E8%83%BD.html)
 
 ### SourceFusion 性能数据
 
@@ -28,11 +28,11 @@ SourceFusion 的其中一个用途是收集原本会通过反射收集的类型�
 
 以下是这部分的性能数据：
 
-- [C# 性能分析 反射 VS 配置文件 VS 预编译](https://lindexi.gitee.io/lindexi/post/C-%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90-%E5%8F%8D%E5%B0%84-VS-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-VS-%E9%A2%84%E7%BC%96%E8%AF%91.html)
+- [C# 性能分析 反射 VS 配置文件 VS 预编译 - 林德熙](https://lindexi.gitee.io/lindexi/post/C-%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90-%E5%8F%8D%E5%B0%84-VS-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-VS-%E9%A2%84%E7%BC%96%E8%AF%91.html)
 
 额外的，如果不是收集而单单只是使用的话，这里是性能数据：
 
-- [C# 直接创建多个类和使用反射创建类的性能](https://lindexi.gitee.io/lindexi/post/C-%E7%9B%B4%E6%8E%A5%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E7%B1%BB%E5%92%8C%E4%BD%BF%E7%94%A8%E5%8F%8D%E5%B0%84%E5%88%9B%E5%BB%BA%E7%B1%BB%E7%9A%84%E6%80%A7%E8%83%BD.html)
+- [C# 直接创建多个类和使用反射创建类的性能 - 林德熙](https://lindexi.gitee.io/lindexi/post/C-%E7%9B%B4%E6%8E%A5%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E7%B1%BB%E5%92%8C%E4%BD%BF%E7%94%A8%E5%8F%8D%E5%B0%84%E5%88%9B%E5%BB%BA%E7%B1%BB%E7%9A%84%E6%80%A7%E8%83%BD.html)
 
 ### dotnet build 基础
 
