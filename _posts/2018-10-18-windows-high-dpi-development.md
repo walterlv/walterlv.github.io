@@ -1,7 +1,7 @@
 ---
 title: "Windows 下的高 DPI 应用开发（UWP / WPF / Windows Forms / Win32）"
 publishDate: 2018-10-18 10:06:11 +0800
-date: 2018-10-22 15:39:04 +0800
+date: 2018-10-22 15:49:40 +0800
 categories: windows dotnet wpf uwp
 ---
 
@@ -88,6 +88,13 @@ Windows 的 DPI 感知级别经过历代升级，已经有四种了。
         - 非客户区（Non-client Area）
         - 系统通用控件中的位图（comctl32V6）
         - 对话框（[CreateDialog](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-createdialoga)）
+
+在 Windows 10 19H1 中（对现在来说还是预览版），可以直接在任务管理器中查看到进程的 DPI Awareness：
+
+![在任务管理器中查看 DPI Awareness](/static/posts/2018-10-22-15-47-00.png)  
+▲ 在任务管理器中查看 DPI Awareness
+
+方法是在任务管理器中 Details 的标题栏右键，选择列，然后找到 DPI Awareness。
 
 ### 不同 UI 框架对 DPI 的支持情况
 
