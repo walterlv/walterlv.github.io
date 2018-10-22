@@ -1,6 +1,6 @@
 ---
 title: "支持 Windows 10 最新 PerMonitorV2 特性的 WPF 多屏高 DPI 应用开发"
-date: 2018-10-22 18:00:41 +0800
+date: 2018-10-22 18:04:01 +0800
 categories: windows dotnet wpf
 ---
 
@@ -197,7 +197,7 @@ Windows 10 自 1703 开始引入第二代的多屏 DPI 机制（PerMonitor V2）
 
 由于 Windows 8.1 操作系统用户存量不多，主要是 Windows 7 和 Windows 10。所以我们要么兼容完全不支持 Per-Monitor 的 Windows 7，要么使用具有新特性的 Windows 10 即可获得最佳的开发成本平衡。**使用以上的 DPI 缩放方法足以让你的 WPF 应用在任何一个 .NET Framework 版本下获得针对屏幕的 DPI 清晰缩放（Per-Monitor DPI Awareness）。**
 
-所以仅针对 Windows 8.1 做特殊的 DPI 缩放是不值得的，但也有相关文档，你可以阅读 [Developing a Per-Monitor DPI-Aware WPF Application - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/hidpi/declaring-managed-apps-dpi-aware) 了解实现方法。具体是使用 `DisableDpiAwareness` 特性和 [Windows Per-Monitor Aware WPF Sample](https://code.msdn.microsoft.com/windowsdesktop/Per-Monitor-Aware-WPF-e43cde33) 中的源码。
+所以仅针对 Windows 8.1 做特殊的 DPI 缩放是不值得的，把 Windows 8.1 当做 Windows 7 来做那种不支持 Per-Monitor 的处理就好了。当然你硬要支持也有相关文档可以看：[Developing a Per-Monitor DPI-Aware WPF Application - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/hidpi/declaring-managed-apps-dpi-aware) 了解实现方法。具体是使用 `DisableDpiAwareness` 特性和 [Windows Per-Monitor Aware WPF Sample](https://code.msdn.microsoft.com/windowsdesktop/Per-Monitor-Aware-WPF-e43cde33) 中的源码。
 
 ---
 
