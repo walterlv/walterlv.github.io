@@ -1,7 +1,7 @@
 ---
 title: "支持 Windows 10 最新 PerMonitorV2 特性的 WPF 多屏高 DPI 应用开发"
 publishDate: 2018-10-22 18:04:01 +0800
-date: 2018-10-23 10:38:17 +0800
+date: 2018-10-23 10:40:01 +0800
 categories: windows dotnet wpf
 ---
 
@@ -96,7 +96,7 @@ Windows 10 自 1703 开始引入第二代的多屏 DPI 机制（PerMonitor V2）
 
 注意：**只有 Windows 10 (1607) 及以上版本才会识别此节点的 DPI 设置**。如果你设置了 `dpiAwareness` 节点，那么 `dpiAware` 就会被忽略。
 
-与你你可以两个节点都指定，于是既可以使用到 Windows 10 1607 的新特性，又可以兼容老版本的 Windows 操作系统。
+建议你可以两个节点都指定，这样既可以使用到 Windows 10 1607 的新特性，又可以兼容老版本的 Windows 操作系统。
 
 `dpiAwareness` 节点支持设置一个或多个 DPI 感知级别，用逗号分隔。如果你指定了多个，那么操作系统会从第一个开始识别，如果能识别就使用，否则会找第二个。用这种方式，未来的应用可以指定当前系统不支持的 DPI 感知级别。
 
