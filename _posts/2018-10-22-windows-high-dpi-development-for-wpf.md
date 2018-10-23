@@ -1,6 +1,7 @@
 ---
 title: "支持 Windows 10 最新 PerMonitorV2 特性的 WPF 多屏高 DPI 应用开发"
-date: 2018-10-22 18:04:01 +0800
+publishDate: 2018-10-22 18:04:01 +0800
+date: 2018-10-23 10:38:17 +0800
 categories: windows dotnet wpf
 ---
 
@@ -81,7 +82,7 @@ Windows 10 自 1703 开始引入第二代的多屏 DPI 机制（PerMonitor V2）
     - 在 Windows Vista / 7 / 8 中，与什么都不填的效果是一样的。
     - 在 Windows 8.1 / 10 中，当前进程设置为不感知 DPI（Unaware），就算你调用了 [SetProcessDpiAwareness](https://docs.microsoft.com/en-us/windows/desktop/api/shellscalingapi/nf-shellscalingapi-setprocessdpiawareness) 和 [SetProcessDPIAware](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-setprocessdpiaware) 也是没有用的。
 
-说明一下，[SetProcessDpiAwareness](https://docs.microsoft.com/en-us/windows/desktop/api/shellscalingapi/nf-shellscalingapi-setprocessdpiawareness) 是新 DPI，的最低系统版本是 Windows 8.1，调用这个才能指定为 Per-Monitor 的 DPI 感知。而 [SetProcessDPIAware](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-setprocessdpiaware) 是 Vista 开始引入的老 API，没有参数可以传。
+说明一下，[SetProcessDpiAwareness](https://docs.microsoft.com/en-us/windows/desktop/api/shellscalingapi/nf-shellscalingapi-setprocessdpiawareness) 是新 API，要求的最低系统版本是 Windows 8.1，调用这个才能指定为 Per-Monitor 的 DPI 感知。而 [SetProcessDPIAware](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-setprocessdpiaware) 是 Vista 开始引入的老 API，没有参数可以传。
 
 #### DpiAwareness
 
