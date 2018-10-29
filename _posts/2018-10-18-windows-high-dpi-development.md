@@ -1,7 +1,7 @@
 ---
 title: "Windows 下的高 DPI 应用开发（UWP / WPF / Windows Forms / Win32）"
 publishDate: 2018-10-18 10:06:11 +0800
-date: 2018-10-22 15:54:16 +0800
+date: 2018-10-28 11:07:00 +0800
 categories: windows dotnet wpf uwp
 ---
 
@@ -59,9 +59,13 @@ Windows 7 中还额外提供了传统 Windows XP 风格 DPI 缩放比例的选�
 
 对于 Windows 8.1 及以上的系统，注销通常也是必要的。虽然屏幕 DPI 值已经更新，并且已向应用窗口发送了 Dpi Change 消息，但系统 DPI 值依然没变。应用必须处理 Dpi Change 消息才会正常渲染。如果应用不支持屏幕 DPI 感知，那么使用的就是系统 DPI 值，于是一样的会被系统进行位图缩放。
 
-额外的，对于 Windows 8.1 及以上的系统，系统 DPI 值等于主屏在系统启动时的屏幕 DPI 值。
+但事情到 Windows 10 (1803) 之后，事情又有了转机。现在，你可以通过在设置中打开一个开关，使得无需注销，只要重新打开应用即可让此应用获取到最新的系统 DPI 的值。
 
-谁能保证所有的应用都能适配最新的系统特性呢？不能，所以注销通常是免不了的。
+![Windows 10 (1803) 中新增的“不模糊”设置项](/static/posts/2018-10-28-11-03-11.png)
+
+方法是：打开“设置” -> “系统” -> “显示器” -> “高级缩放设置”，在“高级缩放设置”上，打开“允许 Windows 尝试修复应用，使其不模糊”。
+
+额外的，对于 Windows 8.1 及以上的系统，系统 DPI 值等于主屏在系统启动时的屏幕 DPI 值。
 
 ### 对 Windows 应用而言的 DPI 感知级别（Dpi Awareness）
 
@@ -174,3 +178,5 @@ Microsoft PowerPoint 的演示页面使用的是屏幕 DPI 感知级别：
 
 - [High DPI Desktop Application Development on Windows - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/hidpi/high-dpi-desktop-application-development-on-windows)
 - [WPF-Samples/Developer Guide - Per Monitor DPI - WPF Preview.docx at master · Microsoft/WPF-Samples](https://github.com/Microsoft/WPF-Samples/blob/master/PerMonitorDPI/Developer%20Guide%20-%20Per%20Monitor%20DPI%20-%20WPF%20Preview.docx)
+- [在 Windows 10 中修复显示模糊的应用 - Windows Help](https://support.microsoft.com/zh-cn/help/4091364/windows-10-fix-blurry-apps)
+- [Fix apps that appear blurry in Windows 10 - Windows Help](https://support.microsoft.com/en-us/help/4091364/windows-10-fix-blurry-apps)
