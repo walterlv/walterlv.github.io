@@ -1,7 +1,7 @@
 ---
 title: "出让执行权：Task.Yield, Dispatcher.Yield"
 publishDate: 2017-10-14 17:18:49 +0800
-date: 2018-02-20 06:31:28 +0800
+date: 2018-10-29 13:03:35 +0800
 categories: dotnet csharp wpf uwp
 description: 一个耗时的任务，可以通过 Task.Yield 或者 Dispatcher.Yield 来中断以便分割成多个小的任务片段执行。
 ---
@@ -109,6 +109,8 @@ public override void Post(SendOrPostCallback d, Object state)
 ```
 
 既然是 `Normal` 优先级，那么在 UI 线程上的效果自然不如 `Dispatcher.Yield`。但是，`Task.Yield` 适用于任何线程，因为 `SynchronizationContext` 本身是与 `Dispatcher` 无关的，适用于任何线程。这样，于如果一个 `Task` 内部的任务太耗时，用 `Task.Yield` 则可以做到将此任务分成很多个片段执行。
+
+如果觉得 `Task.Yield()` 的用途难以理解，可以参考 [dudu](https://www.cnblogs.com/dudu/) 的博客 [终于明白了 C# 中 Task.Yield 的用途 - dudu - 博客园](https://www.cnblogs.com/dudu/p/task-yield.html)。
 
 ---
 

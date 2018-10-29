@@ -1,7 +1,7 @@
 ---
 title: "Windows 下的高 DPI 应用开发（UWP / WPF / Windows Forms / Win32）"
 publishDate: 2018-10-18 10:06:11 +0800
-date: 2018-10-28 11:07:00 +0800
+date: 2018-10-29 08:52:47 +0800
 categories: windows dotnet wpf uwp
 ---
 
