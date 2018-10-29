@@ -36,6 +36,9 @@ permalink: /friends/
 
 - [Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/)
 
+- [吴波 - 叹为观止](http://blog.vichamp.com/)  
+    PowerShell 技能
+
 - [Bean.Hsiang - 博客园](http://www.cnblogs.com/BeanHsiang/)  
     如果你想学习机器学习 ML.NET，他真的很接地气
 
