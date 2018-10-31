@@ -1,0 +1,1 @@
+dotnet build\mdmeta\mdmeta.dll wcsdn _posts/2018-10-31-tech-summit-2018.md -b .
