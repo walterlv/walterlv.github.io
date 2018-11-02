@@ -1,7 +1,7 @@
 ---
 title: "About to Study and Write"
-publishDate: 2018-09-25 08:58:11 +0800
-date: 2018-10-09 15:12:00 +0800
+publishDate: 2018-10-31 16:15:26 +0800
+date: 2018-11-02 14:56:05 +0800
 categories: post
 published: false
 ---
@@ -17,6 +17,11 @@ published: false
 - Castle
 
 ### About to Write
+
+- ML.NET
+    - TextFeaturizer
+    - 结巴分词
+    - 现成的经典模型
 
 - AggregateException
     - [c# - Flattening of AggregateExceptions for Processing - Stack Overflow](https://stackoverflow.com/questions/22872995/flattening-of-aggregateexceptions-for-processing)

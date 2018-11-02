@@ -1,7 +1,7 @@
 ---
 title: "支持 Windows 10 最新 PerMonitorV2 特性的 WPF 多屏高 DPI 应用开发"
 publishDate: 2018-10-22 18:04:01 +0800
-date: 2018-10-23 10:43:22 +0800
+date: 2018-10-23 10:44:08 +0800
 categories: windows dotnet wpf
 ---
 
