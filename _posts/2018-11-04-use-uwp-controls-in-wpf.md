@@ -1,6 +1,6 @@
 ---
 title: "WindowsXamlHost：在 WPF 中使用 UWP 的控件（Windows Community Toolkit）"
-date: 2018-11-04 10:57:13 +0800
+date: 2018-11-04 11:47:23 +0800
 categories: uwp wpf dotnet
 ---
 
@@ -148,6 +148,14 @@ private void UwpButton_Click(object sender, RoutedEventArgs e)
 关于如何在 WPF 下开启 PerMonitorV2 级别的 DPI 感知可以参见：
 
 - [支持 Windows 10 最新 PerMonitorV2 特性的 WPF 多屏高 DPI 应用开发 - walterlv](https://walterlv.com/post/windows-high-dpi-development-for-wpf.html)
+
+### 更复杂的 UWP 控件嵌入
+
+如果希望将更多的 WPF 窗口内的 UI 部分交给 UWP 来做，那么就不能只是仅仅初始化一个 `Button` 就完了。
+
+你需要引入一个 UWP 控件库。阅读以下文章了解更多：
+
+- [WindowsXamlHost：在 WPF 中使用 UWP 控件库中的控件 - walterlv](https://walterlv.com/post/use-uwp-control-library-in-wpf.html)
 
 ---
 
