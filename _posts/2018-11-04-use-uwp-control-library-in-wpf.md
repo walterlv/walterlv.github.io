@@ -1,6 +1,6 @@
 ---
 title: "WindowsXamlHost：在 WPF 中使用 UWP 控件库中的控件"
-date: 2018-11-04 11:55:49 +0800
+date: 2018-11-04 12:14:24 +0800
 categories: uwp wpf dotnet
 ---
 
@@ -106,6 +106,76 @@ categories: uwp wpf dotnet
 ▲ 添加项目依赖
 
 现在，编译 WPF 项目的时候，会将 UWP 项目编译后的源码也一起编译到 WPF 项目中；相当于间接使用了 UWP 的控件库。
+
+特别的，如果你的项目被 git 进行版本管理，你可能需要忽略 UWP 控件库项目中的文件。方法是在 WPF 项目内生成的 UWP 文件夹下添加一个 .gitignore 文件，填写所有内容忽略：
+
+```
+*.*
+```
+
+![忽略所有内容](/static/posts/2018-11-04-11-59-37.png)
+
+但记得需要额外通过 `git add ./Whitman.Wpf/Whitman.Uwp/.gitignore` 把这个文件添加到版本管理中，不然其他人不会生效。
+
+### 在 WPF 项目中使用 UWP 控件库中的控件
+
+这时，在 `WindowsXamlHost` 中就可以添加 UWP 控件库中的 MainPage 了。
+
+```xml
+<XamlHost:WindowsXamlHost InitialTypeName="Walterlv.Whitman.Universal.MainPage" />
+```
+
+于是，你可以在局部获得 UWP 完整 Page 的支持。或者你整个界面都是用 UWP 开发都没问题，并且还能获得 .NET Framework 的完全访问支持。（当然，未来一定是 .NET Core。）
+
+![运行后的效果](/static/posts/2018-11-04-12-12-14.png)  
+▲ 运行后的效果
+
+可以使用 UWP 的 Page，并且也能弹出 UWP 的 `MessageDialog`。
+
+而 MainPage 就是普通的 UWP MainPage：
+
+```xml
+<Page
+    x:Class="Walterlv.Whitman.Universal.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Walterlv.Whitman.Universal"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel Width="400" VerticalAlignment="Center">
+        <TextBlock>
+            <Run Text="欢迎访问 吕毅的博客" />
+            <LineBreak />
+            <Run Text="https://walterlv.com" />
+        </TextBlock>
+        <Button Content="Click" Click="DemoButton_Click" />
+    </StackPanel>
+</Page>
+```
+
+```csharp
+using System;
+using Windows.UI.Popups;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+
+namespace Walterlv.Whitman.Universal
+{
+    public sealed partial class MainPage : Page
+    {
+        public MainPage() => InitializeComponent();
+
+        private async void DemoButton_Click(object sender, RoutedEventArgs e)
+        {
+            var button = (Button) sender;
+            await new MessageDialog("UWP 的消息框，在 WPF 的窗口中。", "walterlv").ShowAsync();
+        }
+    }
+}
+```
 
 ---
 
