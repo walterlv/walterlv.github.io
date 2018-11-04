@@ -1,13 +1,14 @@
 ---
 title: "各个版本 Windows 10 系统中自带的 .NET Framework 版本"
 publishDate: 2017-10-17 10:49:40 +0800
-date: 2018-06-06 10:00:31 +0800
+date: 2018-11-04 08:21:15 +0800
 categories: windows dotnet
 tags: Windows .Net
 ---
 
 Windows 名称 | Windows 版本 | 自带的 .NET Framework 版本
--|-|-
+:-|:-|:-
+Windows 10 October 2018 Update | 10.0.17176 | .NET Framework 4.7.3
 Windows 10 April 2018 Update | 10.0.17134 (1803) | .NET Framework 4.7.2
 Windows 10 Fall Creators Update | 10.0.16299 (1709) | .NET Framework 4.7.1
 Windows 10 Creators Update | 10.0.15063 (1703) | .NET Framework 4.7
