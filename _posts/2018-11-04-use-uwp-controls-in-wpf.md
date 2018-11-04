@@ -1,5 +1,5 @@
 ---
-title: "Windows Community Toolkit：在 WPF 中使用 UWP 的控件"
+title: "WindowsXamlHost：在 WPF 中使用 UWP 的控件（Windows Community Toolkit）"
 date: 2018-11-04 9:32:51 +0800
 categories: uwp wpf dotnet
 ---
@@ -64,3 +64,58 @@ Windows Community Toolkit 再次更新到 5.0。以前可以在 WPF 中使用有
 
 ![添加 Windows.Foundation.FoundationContract.winmd](/static/posts/2018-11-04-09-58-54.png)  
 ▲ 添加 Windows.Foundation.FoundationContract.winmd
+
+### 开始在 WPF 中使用 UWP 的控件
+
+你可以像使用普通 WPF 控件一样将 WindowsXamlHost 添加到你的 WPF 界面中：
+
+- 拖拽到界面设计器中
+- 拖拽到 XAML 代码行中
+- 直接在 XAML 代码中写
+
+![添加 WindowsXamlHost 控件](/static/posts/2018-11-04-10-17-54.png)  
+▲ 添加 WindowsXamlHost 控件
+
+接着，指定 `InitialTypeName` 属性为 UWP 中的控件的名称（带命名空间）。这样，当 WindowsXamlHost 初始化的时候，也会初始化一个 UWP 的控件。
+
+这里为了简单，我初始化一个 UWP 的按钮。但必须得为 UWP 的按钮进行一些初始化，所以我监听了 `ChangedChanged` 事件：
+
+```xml
+<XamlHost:WindowsXamlHost Grid.Column="1"
+    InitialTypeName="Windows.UI.Xaml.Controls.Button"
+    ChildChanged="WindowsXamlHost_ChildChanged" />
+```
+
+```csharp
+private void WindowsXamlHost_ChildChanged(object sender, EventArgs e)
+{
+    var host = (WindowsXamlHost) sender;
+    var button = (Windows.UI.Xaml.Controls.Button) host.Child;
+    button.Width = 120;
+    button.Height = 40;
+    button.Content = "walterlv.com";
+    button.Click += UwpButton_Click;
+}
+
+private void UwpButton_Click(object sender, RoutedEventArgs e)
+{
+}
+```
+
+### 可以忽略的错误
+
+在启动的时候，你可能会遇到一些异常。比如下面这个：
+
+![没有 Application](/static/posts/2018-11-04-10-33-27.png)
+
+因为我们不是原生的 UWP，而是 Host 在 WPF 中的 UWP 控件，所以会没有 `Application`。这在 UWP 控件初始化内部已经 `catch` 了，所以你可以忽略。
+
+### 最终效果
+
+当将程序跑起来之后，你就能看到 WPF 窗口中的 UWP 控件了。
+
+![运行效果](/static/posts/2018-11-04-uwp-button-in-wpf-window.gif)
+
+### 值得注意的地方
+
+
