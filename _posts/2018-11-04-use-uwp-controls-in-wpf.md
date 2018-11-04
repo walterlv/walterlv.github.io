@@ -1,6 +1,6 @@
 ---
 title: "WindowsXamlHost：在 WPF 中使用 UWP 的控件（Windows Community Toolkit）"
-date: 2018-11-04 9:32:51 +0800
+date: 2018-11-04 10:52:04 +0800
 categories: uwp wpf dotnet
 ---
 
@@ -118,4 +118,40 @@ private void UwpButton_Click(object sender, RoutedEventArgs e)
 
 ### 值得注意的地方
 
+1. 目前 WindowsXamlHost 还不够稳定，会出现一些闪退
+    - 这点就需要为 WindowsCommunityToolkit 贡献 Issues 或代码了
+1. Host 的 UWP 控件是一个新的 HwndSource，这相当于 UWP 的控件是通过子窗口的形式与 WPF 窗口放在一起的
+    - 于是，只能指定一个矩形区域完全属于 UWP，在这个区域 WPF 控件无法与其获得交互或渲染叠加
 
+### 关于 DPI 适配
+
+为了让 UWP 控件能够在 WPF 窗口中获得正确的 Per-Monitor 的 DPI 适配效果，你需要设置为 PerMonitorV2 的 DPI 感知级别。
+
+在 PerMonitorV2 的 DPI 感知级别下，UWP 控件能够正常获得 DPI 缩放。
+
+在 100% DPI 的屏幕下：
+
+![100% DPI 下](/static/posts/2018-11-04-10-46-46.png)
+
+在 150% DPI 的屏幕下：
+
+![PerMonitorV2 感知级别 150% DPI 下](/static/posts/2018-11-04-10-46-49.png)
+
+而如果只是指定为 PerMonitor，那么切换 DPI 或者切换屏幕的时候，只有 WPF 部分会缩放，而 UWP 部分不会变化。
+
+![PerMonitor 感知级别 150% DPI 下](/static/posts/2018-11-04-10-48-07.png)
+
+关于 PerMonitorV2 和 PerMonitor 的理解和区别，可以参见：
+
+- [Windows 下的高 DPI 应用开发（UWP / WPF / Windows Forms / Win32） - walterlv](https://walterlv.com/post/windows-high-dpi-development.html)
+
+关于如何在 WPF 下开启 PerMonitorV2 级别的 DPI 感知可以参见：
+
+- [支持 Windows 10 最新 PerMonitorV2 特性的 WPF 多屏高 DPI 应用开发 - walterlv](https://walterlv.com/post/windows-high-dpi-development-for-wpf.html)
+
+---
+
+#### 参考资料
+
+- [WindowsXAMLHost control - Windows Community Toolkit | Microsoft Docs](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)
+- [Enhance your desktop application for Windows 10 - UWP app developer | Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)
