@@ -1,7 +1,7 @@
 ---
 title: "使用 Task.Wait()？立刻死锁（deadlock）"
 publishDate: 2017-10-27 23:54:46 +0800
-date: 2018-04-04 08:44:18 +0800
+date: 2018-11-05 10:20:50 +0800
 categories: dotnet csharp
 ---
 
@@ -18,7 +18,7 @@ categories: dotnet csharp
 
 调用 `Task.Wait()` 或者 `Task.Result` 立刻产生死锁的充分条件：
 1. 调用 `Wait()` 或 `Result` 的代码位于 UI 线程；
-1. `Task` 的实际执行在其他线程。
+1. `Task` 的实际执行在其他线程，且需要返回 UI 线程。
 
 死锁的原因：
 
@@ -108,6 +108,8 @@ async Task DoAsync()
     await Task.Run(() => { }).ConfigureAwait(false);
 }
 ```
+
+这一句的目的是防止执行上下文切换回 UI 线程。
 
 这样，即便真的使用 `DoAsync().Wait()` 也不会发生死锁。注意，**整个方法调用链都需要使用** `.ConfigureAwait(false)` **才能够防止线程切换时，在调用方的** `Wait()` **方法中发生死锁**。详见我的另一篇博客 [在编写异步方法时，使用 ConfigureAwait(false) 避免使用者死锁](/post/using-configure-await-to-avoid-deadlocks.html)。）
 
