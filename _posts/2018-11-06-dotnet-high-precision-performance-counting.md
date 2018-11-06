@@ -1,6 +1,6 @@
 ---
 title: ".NET/C# 在代码中测量代码执行耗时的建议（比较系统性能计数器和系统时间）"
-date: 2018-11-06 15:32:06 +0800
+date: 2018-11-06 15:33:54 +0800
 categories: dotnet csharp
 ---
 
@@ -12,7 +12,7 @@ categories: dotnet csharp
 
 <div id="toc"></div>
 
-### 计时
+### 基本的计时
 
 计时一般采用下面这种方式，在方法执行之前获取一次时间，在方法结束之后再取得一次时间。
 
@@ -30,7 +30,7 @@ Foo();
 - [C# 标准性能测试高级用法 - 林德熙](https://lindexi.gitee.io/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95.html)
 - [.NET/C# 反射的的性能数据，以及高性能开发建议（反射获取 Attribute 和反射调用方法） - 吕毅](https://walterlv.com/post/dotnet-high-performance-reflection-suggestions.html)
 
-### 使用什么方法计时？
+### 结论：使用什么方法计时
 
 先说结论：`System.Diagnostics` 命名空间下有一个 `Stopwatch` 类。如果你要为你方法的执行时间进行统计，那么就使用这个类。
 
@@ -47,9 +47,9 @@ var elapsed = watch.Elapsed;
 
 当然，你也可以直接使用 `Stopwatch` 的构造函数，`new` 出来之后再 `Start`，不过 `StartNew` 静态方法可以将两句合并为一句。
 
-### 其他方法
+### 各种计时 API 及其比较
 
-计时还有很多其他的方法，当然你可以针对不同需求场景使用不同的方法。不过，如果你根本没有了解过其他方法的话，那么建议直接使用上面的 `Stopwatch`，不要想太多。
+计时还有很多的方法，你可以针对不同需求场景使用不同的方法。不过，如果你根本没有了解过其他方法的话，那么建议直接使用上面的 `Stopwatch`，不要想太多。
 
 现在，我们看看 Windows 下的计时还有哪些 API：
 
