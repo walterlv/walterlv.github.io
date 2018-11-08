@@ -2,7 +2,7 @@
 layout: post
 title: "深入了解 WPF Dispatcher 的工作原理（PushFrame 部分）"
 publishDate: 2017-09-26 03:49:41 +0800
-date: 2017-09-29 07:35:25 +0800
+date: 2018-11-08 10:36:44 +0800
 categories: dotnet
 permalink: /post/dotnet/2017/09/26/dispatcher-push-frame.html
 keywords: dotnet dotnet dispatcher PushFrame
@@ -200,18 +200,34 @@ private void OnStylusDown(object sender, StylusDownEventArgs e)
 1. 当所有的 `PushFrame` 都退出后，程序结束。
 1. `PushFrame` 的 `while` 循环是真的阻塞着主线程，但循环内部会处理消息循环，以至于能够不断地处理新的消息，看起来就像没有阻塞一样。（这与我们平时随便写代码阻塞主线程导致无法处理消息还是有区别的。）
 
+### PushFrame 的已知缺陷
+
+`PushFrame` 使用通过开启一个新的消息循环使得 UI 线程能够在新的消息循环中处理消息，以便 UI “不卡”，同时使得调用 `PushFrame` 的代码能够 “阻塞”。
+
+这种实现方式也带来了一些问题：
+
+1. 调用代码被虽然被阻塞，但又不像常规线程阻塞一样 —— 它会发生 “意料之外” 的重入问题，即单个线程也会遇到并发问题。
+    - 关于重入，可以阅读：[异步任务中的重新进入（Reentrancy）](https://walterlv.com/post/reentrancy-in-async-method.html)
+1. `PushFrame` 使用 Windows 消息循环机制，而多重消息循环机制可能出现其他 Bug，例如：
+    - 当你在用鼠标拖拽窗口调整位置或大小的时候，如果触发了一次 `PushFrame`，那么此窗口会卡住
+        - [c# - PushFrame locks up WPF window when user is moving window - Stack Overflow](https://stackoverflow.com/q/19411613/6233938)
+
+---
+
 #### 参考资料
 
 - PushFrame/DispatcherFrame
-  - [Dispatcher.cs](http://referencesource.microsoft.com/#WindowsBase/Base/System/Windows/Threading/Dispatcher.cs)
-  - [c# - WPF DispatcherFrame magic - how and why this works? - Stack Overflow](https://stackoverflow.com/questions/33002966/wpf-dispatcherframe-magic-how-and-why-this-works)
-  - [c# - For what is PushFrame needed? - Stack Overflow](https://stackoverflow.com/questions/41759665/for-what-is-pushframe-needed)
-  - [multithreading - WPF - Dispatcher PushFrame() - Stack Overflow](https://stackoverflow.com/questions/2665191/wpf-dispatcher-pushframe)
-  - [DispatcherFrame Class (System.Windows.Threading)](https://msdn.microsoft.com/en-us/library/system.windows.threading.dispatcherframe.aspx)
-  - [DispatcherFrame. Look in-Depth - CodeProject](https://www.codeproject.com/Articles/152137/DispatcherFrame-Look-in-Depth)
+    - [Dispatcher.cs](http://referencesource.microsoft.com/#WindowsBase/Base/System/Windows/Threading/Dispatcher.cs)
+    - [c# - WPF DispatcherFrame magic - how and why this works? - Stack Overflow](https://stackoverflow.com/questions/33002966/wpf-dispatcherframe-magic-how-and-why-this-works)
+    - [c# - For what is PushFrame needed? - Stack Overflow](https://stackoverflow.com/questions/41759665/for-what-is-pushframe-needed)
+    - [multithreading - WPF - Dispatcher PushFrame() - Stack Overflow](https://stackoverflow.com/questions/2665191/wpf-dispatcher-pushframe)
+    - [DispatcherFrame Class (System.Windows.Threading)](https://msdn.microsoft.com/en-us/library/system.windows.threading.dispatcherframe.aspx)
+    - [DispatcherFrame. Look in-Depth - CodeProject](https://www.codeproject.com/Articles/152137/DispatcherFrame-Look-in-Depth)
 - Windows 消息循环
-  - [Message loop in Microsoft Windows - Wikipedia](https://en.wikipedia.org/wiki/Message_loop_in_Microsoft_Windows)
-  - [c# - Understanding the Dispatcher Queue - Stack Overflow](https://stackoverflow.com/questions/11417216/understanding-the-dispatcher-queue/11419762)
-  - [详解WPF线程模型和Dispatcher - 踏雪无痕 - CSDN博客](http://blog.csdn.net/royyeah/article/details/4785473)
+    - [Message loop in Microsoft Windows - Wikipedia](https://en.wikipedia.org/wiki/Message_loop_in_Microsoft_Windows)
+    - [c# - Understanding the Dispatcher Queue - Stack Overflow](https://stackoverflow.com/questions/11417216/understanding-the-dispatcher-queue/11419762)
+    - [详解WPF线程模型和Dispatcher - 踏雪无痕 - CSDN博客](http://blog.csdn.net/royyeah/article/details/4785473)
 - 调试 .NET Framework 源码
-  - [调试 ms 源代码 - 林德熙](http://lindexi.gitee.io/lindexi//post/%E8%B0%83%E8%AF%95-ms-%E6%BA%90%E4%BB%A3%E7%A0%81/)
+    - [调试 ms 源代码 - 林德熙](http://lindexi.gitee.io/lindexi//post/%E8%B0%83%E8%AF%95-ms-%E6%BA%90%E4%BB%A3%E7%A0%81/)
+- 已知缺陷
+    - [c# - PushFrame locks up WPF window when user is moving window - Stack Overflow](https://stackoverflow.com/q/19411613/6233938)
