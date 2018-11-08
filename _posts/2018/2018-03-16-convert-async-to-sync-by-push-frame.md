@@ -1,7 +1,7 @@
 ---
-title: "将 async/await 异步代码转换为安全的不会死锁的同步代码"
+title: "将 async/await 异步代码转换为安全的不会死锁的同步代码（使用 PushFrame）"
 publishDate: 2018-03-16 11:58:10 +0800
-date: 2018-08-19 19:10:44 +0800
+date: 2018-11-08 10:38:08 +0800
 categories: dotnet csharp
 ---
 
@@ -24,6 +24,8 @@ categories: dotnet csharp
 传统方法的坑在于 UI 线程无响应和死锁问题。既要解决无响应问题，又要阻塞调用方，可选的方法就是 Windows 消息循环了。在使用消息循环时还要避免使用 `async`/`await` 的同步上下文（`SynchronizationContext`），这样才能避免 UI 线程的死锁问题。
 
 所以，我考虑使用 `PushFrame` 来阻塞当前线程并创建一个新的消息循环。使用 `Task.ContinueWith` 来恢复阻塞，而不使用 `Task` 中默认同步所采用的同步上下文。
+
+关于 `PushFrame`，可以阅读 [深入了解 WPF Dispatcher 的工作原理（PushFrame 部分）](https://walterlv.com/post/dotnet/2017/09/26/dispatcher-push-frame.html) 了解更多。
 
 代码如下：
 
