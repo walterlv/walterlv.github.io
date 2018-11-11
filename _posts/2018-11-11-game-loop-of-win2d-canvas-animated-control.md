@@ -1,6 +1,6 @@
 ---
 title: "Win2D 中的游戏循环：CanvasAnimatedControl"
-date: 2018-11-11 20:37:02 +0800
+date: 2018-11-11 21:09:41 +0800
 categories: dotnet win2d uwp
 ---
 
@@ -16,7 +16,7 @@ Win2D 是 DirectX 的一个高层封装，提供了极大 DirectX 性能的同�
 
 我在 GitHub 上开源了我正在做的一个基于 Win2D 的小游戏 —— GravityMaze，可以翻译为重力迷宫。本意是使用手机的重力感应器借助于自然重力的方式玩这款游戏，不过考虑到 Windows 10 Mobile 的手机太少，用户数量太少，其实我还是直接展示 UWP 桌面版好了。使用方向键可以控制桌面的倾斜角度，以便间接控制小球的运动方向。
 
-当然，我自己是有一部 Lumia 950XL 的，你可以在另一篇使用重力感应器的文章中看到它的身影。
+当然，我自己是有一部 Lumia 950XL 的，你可以在 [使用 Windows 10 中的加速度计（Accelerometer，重力传感器）](/post/uwp-accelerometer.html) 一文中看到它的身影。
 
 ![重力迷宫](/static/posts/2018-11-11-walterlv-gravity-maze.gif)  
 ▲ 重力迷宫
