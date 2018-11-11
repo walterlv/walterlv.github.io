@@ -1,6 +1,6 @@
 ---
 title: "Win2D 中的游戏循环：CanvasAnimatedControl"
-date: 2018-11-11 21:09:41 +0800
+date: 2018-11-11 21:35:58 +0800
 categories: dotnet win2d uwp
 ---
 
@@ -120,7 +120,7 @@ private void OnDraw(ICanvasAnimatedControl sender, CanvasAnimatedDrawEventArgs e
 }
 ```
 
-事实上你在上面动图看到的球并不是一个毫无生机的灰球，而是一个具有特效的半透明塑料弹球。你可以阅读另一篇博客了解如何绘制这样的塑料弹球。
+事实上你在上面动图看到的球并不是一个毫无生机的灰球，而是一个具有特效的半透明塑料弹球。你可以阅读 [使用 Win2D 绘制带图片纹理的圆（或椭圆）](/post/draw-ellipse-with-bitmap-texture-using-win2d.html) 了解如何绘制这样的塑料弹球。
 
 ### CanvasAnimatedControl 中 CreateResources 事件
 
