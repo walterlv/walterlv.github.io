@@ -1,6 +1,7 @@
 ---
 title: "使用 Windows 10 中的加速度计（Accelerometer，重力传感器）"
-date: 2018-11-11 21:29:36 +0800
+publishDate: 2018-11-11 21:29:36 +0800
+date: 2018-11-12 09:03:53 +0800
 categories: uwp
 ---
 
@@ -14,7 +15,15 @@ Windows 10 UWP 中的加速度计使用非常简单，只需要简单几句代�
 
 ### 重力迷宫游戏
 
-视频正在上传中……
+这里有一个利用加速度计的好玩的例子：
+
+![用 Lumia 950XL 玩重力迷宫](/static/posts/2018-11-12-playing-gravity-maze-with-lumia950xl.gif)  
+▲ 用 Lumia 950XL 玩重力迷宫
+
+画质太渣了？确实太渣了。那就看看桌面版吧…… 反正是 UWP，两边看起来是一样的。
+
+![重力迷宫桌面版画面（高清版）](/static/posts/2018-11-11-walterlv-gravity-maze.gif)  
+▲ 重力迷宫桌面版画面（高清版）
 
 ### 初始化 Accelerometer
 
