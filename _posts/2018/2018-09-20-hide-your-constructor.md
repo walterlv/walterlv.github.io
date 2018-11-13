@@ -1,6 +1,7 @@
 ---
 title: "只有你能 new 出来！.NET 隐藏构造函数的 n 种方法（Builder Pattern / 构造器模式）"
-date: 2018-09-20 20:53:37 +0800
+publishDate: 2018-09-20 20:53:37 +0800
+date: 2018-11-13 14:30:01 +0800
 categories: dotnet csharp
 ---
 
@@ -78,12 +79,10 @@ Console.WriteLine(fantastic);
 
 以上代码的输出是 ` is fantastic` 字符串。呃……前面有个空格。
 
-<!-- 如果要实现一个这样的类，我们需要定义一个 `struct`。注意：不能是 `class`，因为一旦定义为 `class`，那么当你从 `null` 转换的时候，它就真的是 `null` 了，不会执行类型定义的显式转换的代码。 -->
-
 ```csharp
 namespace Walterlv.Demo.Patterns
 {
-    public struct Fantastic
+    public class Fantastic
     {
         private readonly IFantastic _value;
         private Fantastic(IFantastic value) => _value = value;
