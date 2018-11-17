@@ -1,7 +1,6 @@
 ---
 title: "未知的编译错误：“已添加具有相同键的项。Unknown build error, 'An item with the same key has already been added.'”"
-publishDate: 2015-06-30 20:13:00 +0800
-date: 2018-11-17 21:02:24 +0800
+date: 2015-06-30 20:13:00 +0800
 categories: visualstudio
 ---
 
@@ -21,8 +20,8 @@ Unknown build error, 'An item with the same key has already been added.'
 
 ```xml
 <ItemGroup>
-    <Resource Include="Resources\SelectorFrame\Icon\Clear.png" />
-    <Resource Include="Resources\SelectorFrame\Icon\Clear.png" />
+    <Resource Include="Walterlv\Demo\Icon\Clear.png" />
+    <Resource Include="Walterlv\Demo\Icon\Clear.png" />
 </ItemGroup>
 ```
 
