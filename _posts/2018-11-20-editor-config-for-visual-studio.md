@@ -1,6 +1,6 @@
 ---
 title: "在 Visual Studio 中使用 EditorConfig 统一代码风格（含原生与插件）"
-date: 2018-11-20 11:15:05 +0800
+date: 2018-11-20 11:50:03 +0800
 categories: visualstudio csharp dotnet
 ---
 
@@ -66,6 +66,18 @@ Visual Studio 支持 EditorConfig 对编程规范的约束。对于多数开发�
 
 ![生成规范](/static/posts/2018-11-20-11-10-20.png)  
 ▲ 生成规范
+
+### 在 Visual Studio 中开启 EditorConfig 支持
+
+实际上，Visual Studio 一旦检测到 .editorconfig 文件的存在，格式约定就会自动生效。
+
+### 在 ReSharper 中开启 EditorConfig 支持
+
+一样的，ReSharper 默认是开启了 EditorConfig 配置的检测的，也就是说只要存在 .editorconfig 文件，那么 EditorConfig 也会在 ReSharper 的格式化中生效。
+
+![ReSharper 中的 EditorConfig 配置支持](/static/posts/2018-11-20-11-46-25.png)
+
+ReSharper 对于 EditorConfig 的支持情况可以参考：[Using EditorConfig - Help - ReSharper](https://www.jetbrains.com/help/resharper/Using_EditorConfig.html)。
 
 #### 附 EditorConfig Language Service 生成的属性集
 
