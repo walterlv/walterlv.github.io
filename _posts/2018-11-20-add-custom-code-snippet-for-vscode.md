@@ -1,6 +1,6 @@
 ---
 title: "在 Visual Studio Code 中添加自定义的代码片段"
-date: 2018-11-20 09:53:45 +0800
+date: 2018-11-20 10:19:28 +0800
 categories: visualstudio
 ---
 
@@ -157,7 +157,7 @@ categories: visualstudio
 
 ```json
 {
-	"Insert a post": {
+	"Insert a post for walterlv.com": {
 		"scope": "markdown",
 		"prefix": "post",
 		"body": [
