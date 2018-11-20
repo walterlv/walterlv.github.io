@@ -2,6 +2,9 @@
     "pasteImage.path": "${projectRoot}/static/posts",
     "pasteImage.basePath": "${projectRoot}",
     "pasteImage.prefix": "/",
+    "[markdown]": {
+        "editor.quickSuggestions": true
+    },
     "cSpell.words": [
         "Aero",
         "Agnoster",

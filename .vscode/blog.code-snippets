@@ -1,0 +1,35 @@
+{
+	"Insert a post": {
+		"scope": "markdown",
+		"prefix": "post",
+		"body": [
+			"---",
+			"title: \"${1:在此处添加标题}\"",
+			"date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND} +0800",
+			"categories: ${2|dotnet,csharp,uwp|}",
+			"---",
+			"",
+			"${0:在此处编辑 walterlv.com 的博客摘要}",
+			"",
+			"---",
+			"",
+			"<div id=\"toc\"></div>",
+			"",
+			"### 标题",
+			"",
+			"---",
+			"",
+			"#### 参考资料"
+		],
+		"description": "使用 walterlv.com 专用的博客模板"
+	},
+	"Add toc to post": {
+		"scope": "markdown",
+		"prefix": "toc",
+		"body": [
+			"${author:walterlv}",
+			"欢迎访问 ${author}.com 的博客"
+		],
+		"description": "添加 walterlv 的博客的目录"
+	}
+}
