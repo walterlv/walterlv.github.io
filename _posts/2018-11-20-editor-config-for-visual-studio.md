@@ -1,6 +1,6 @@
 ---
 title: "在 Visual Studio 中使用 EditorConfig 统一代码风格（含原生与插件）"
-date: 2018-11-20 11:50:03 +0800
+date: 2018-11-20 12:17:50 +0800
 categories: visualstudio csharp dotnet
 ---
 
@@ -78,6 +78,78 @@ Visual Studio 支持 EditorConfig 对编程规范的约束。对于多数开发�
 ![ReSharper 中的 EditorConfig 配置支持](/static/posts/2018-11-20-11-46-25.png)
 
 ReSharper 对于 EditorConfig 的支持情况可以参考：[Using EditorConfig - Help - ReSharper](https://www.jetbrains.com/help/resharper/Using_EditorConfig.html)。
+
+### 效果体验
+
+我们来看一段风格十分混乱不忍直视的代码：
+
+```csharp
+using System;
+using System.Threading.Tasks;
+
+namespace Walterlv.Demo
+{
+    public static class Program
+    {
+        [STAThread]
+        private static int Main(string[] args)
+        {
+            var logger = (ILogger)   new Logger();
+            var   logger2 = (ILogger)new Logger();
+            var managerTask = Task.Run(  () => 
+                {
+                    var manager = new Manager(logger);
+                    manager.Run();
+                    return manager;
+                });
+            var app = new App(managerTask) {
+
+            };
+                app.InitializeComponent();
+                app.Run();
+                return 0;
+        }
+    }
+}
+```
+
+无论你是使用什么方式，最终都能格式化成下面这样：
+
+- 你可以直接输入，在遇到 `}` 和 `;` 的时候就会格式化
+- 你可以 Ctrl+V 粘贴，粘贴后直接就是格式化后的代码
+- 你可以按下 Ctrl+Alt+Enter（ReSharper），这样整份文档就会格式化
+- 你可以按下 Ctrl+K, D（Visual Studio 的 Cleanup），这样也能格式化
+
+```csharp
+using System;
+using System.Threading.Tasks;
+
+namespace Walterlv.Demo
+{
+    public static class Program
+    {
+        [STAThread]
+        private static int Main(string[] args)
+        {
+            var logger = (ILogger)new Logger();
+            var logger2 = (ILogger)new Logger();
+            var managerTask = Task.Run(() =>
+            {
+                var manager = new Manager(logger);
+                manager.Run();
+                return manager;
+            });
+            var app = new App(managerTask)
+            {
+
+            };
+            app.InitializeComponent();
+            app.Run();
+            return 0;
+        }
+    }
+}
+```
 
 #### 附 EditorConfig Language Service 生成的属性集
 
