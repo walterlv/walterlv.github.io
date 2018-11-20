@@ -1,7 +1,6 @@
 ---
 title: "在 Visual Studio Code 中添加自定义的代码片段"
-publishDate: 2018-11-19 20:33:19 +0800
-date: 2018-11-20 09:52:27 +0800
+date: 2018-11-20 09:53:45 +0800
 categories: visualstudio
 ---
 
