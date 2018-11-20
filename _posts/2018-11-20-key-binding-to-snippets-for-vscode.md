@@ -1,6 +1,6 @@
 ---
 title: "在 Visual Studio Code 中为代码片段（Code Snippets）添加快捷键"
-date: 2018-11-20 10:20:02 +0800
+date: 2018-11-20 10:32:28 +0800
 categories: visualstudio
 ---
 
@@ -61,8 +61,11 @@ Visual Studio Code 默认是关闭了 Markdown 的智能感知提示的（因为
 
 这样，也不需要事先定义代码片段了。
 
+额外提及以下，Visual Studio Code 快捷键只能设置全局的而不能设置仅工作区生效，详情请看 [load keybindings.json from .vscode dir if there is any ? · Issue #10708 · Microsoft/vscode](https://github.com/Microsoft/vscode/issues/10708)。
+
 ---
 
 #### 参考资料
 
 - [Creating your own snippets in Visual Studio Code](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
+- [load keybindings.json from .vscode dir if there is any ? · Issue #10708 · Microsoft/vscode](https://github.com/Microsoft/vscode/issues/10708)
