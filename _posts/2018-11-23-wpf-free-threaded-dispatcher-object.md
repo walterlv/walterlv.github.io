@@ -221,18 +221,33 @@ public void VerifyAccess()
 <Page 
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-  xmlns:PresentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options" 
+  xmlns:PresentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   mc:Ignorable="PresentationOptions">
+  <!-- 如果你的 mc:Ignorable 有多个，请用空格隔开。 -->
   <Page.Resources>
-    <!-- 此 SolidColorBrush 会被 Freeze -->
+    <!-- 注意，在 Resource 中的 SolidColorBrush 默认情况下是不会自动 Freeze 的， -->
+    <!--      但是，你可以通过指定 PresentationOptions:Freeze 特性使得它在创建完后 Freeze。 -->
+    <!-- 对象在 Resources 中不会自动创建，它会在第一次被使用的时候创建， -->
+    <!--      也就是说，你如果要验证它的跨线程访问，需要使用两个不同的线程访问它。 -->
     <SolidColorBrush x:Key="Walterlv.Brush.Demo" PresentationOptions:Freeze="True" Color="Red" />
   </Page.Resources>
 </Page>
 ```
+
+对于以上代码，有一些是需要说明的：
+
+1. 如果你的 mc:Ignorable 有多个，请用空格隔开。
+1. 在 Resource 中的 SolidColorBrush 默认情况下是不会自动 Freeze 的；但是，你可以通过指定 PresentationOptions:Freeze 特性使得它在创建完后 Freeze。
+1. 对象在 Resources 中不会自动创建，它会在第一次被使用的时候创建；也就是说，你如果要验证它的跨线程访问，需要使用两个不同的线程访问它（仅仅用一个后台线程去验证它，你会发现后台线程依然能够正常访问它的依赖项属性的值）。
+
+#### Style
+
+
 
 ---
 
 #### 参考资料
 
 - [Freezable Objects Overview - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/freezable-objects-overview)
+- [mc:Ignorable Attribute - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/mc-ignorable-attribute)
