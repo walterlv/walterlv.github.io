@@ -193,13 +193,13 @@ public void VerifyAccess()
 通过查找 `DetachFromDispatcher` 的引用，我找到了以下类型：
 
 - `Freezable`
-- `ResourceDictionary`
 - `Style`
 - `StyleHelper`
 - `TriggerBase`
 - `BeginStoryboard`
+- `ResourceDictionary`
 
-也就是说，这些类型的实例会在某种特定的条件下从单线程访问权限变为可被任意跨线程访问。
+也就是说，这些类型的实例会在某种特定的条件下从单线程访问权限变为可被任意跨线程访问。（实际上 `ResourceDictionary` 并不是一个 `DispatcherObject`，不过它会访问 `Owner`，这是一个 `DependencyObject`；所以也会涉及到一点跨线程问题。）
 
 而查找 `MakeSentinel` 的引用，又可以找到：
 
@@ -219,19 +219,19 @@ public void VerifyAccess()
 
 ```xml
 <Page 
-  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-  xmlns:PresentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
-  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-  mc:Ignorable="PresentationOptions">
-  <!-- 如果你的 mc:Ignorable 有多个，请用空格隔开。 -->
-  <Page.Resources>
-    <!-- 注意，在 Resource 中的 SolidColorBrush 默认情况下是不会自动 Freeze 的， -->
-    <!--      但是，你可以通过指定 PresentationOptions:Freeze 特性使得它在创建完后 Freeze。 -->
-    <!-- 对象在 Resources 中不会自动创建，它会在第一次被使用的时候创建， -->
-    <!--      也就是说，你如果要验证它的跨线程访问，需要使用两个不同的线程访问它。 -->
-    <SolidColorBrush x:Key="Walterlv.Brush.Demo" PresentationOptions:Freeze="True" Color="Red" />
-  </Page.Resources>
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:PresentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="PresentationOptions">
+    <!-- 如果你的 mc:Ignorable 有多个，请用空格隔开。 -->
+    <Page.Resources>
+        <!-- 注意，在 Resource 中的 SolidColorBrush 默认情况下是不会自动 Freeze 的， -->
+        <!--     但是，你可以通过指定 PresentationOptions:Freeze 特性使得它在创建完后 Freeze。 -->
+        <!-- 对象在 Resources 中不会自动创建，它会在第一次被使用的时候创建， -->
+        <!--     也就是说，你如果要验证它的跨线程访问，需要使用两个不同的线程访问它。 -->
+        <SolidColorBrush x:Key="Walterlv.Brush.Demo" PresentationOptions:Freeze="True" Color="Red" />
+    </Page.Resources>
 </Page>
 ```
 
@@ -242,6 +242,180 @@ public void VerifyAccess()
 1. 对象在 Resources 中不会自动创建，它会在第一次被使用的时候创建；也就是说，你如果要验证它的跨线程访问，需要使用两个不同的线程访问它（仅仅用一个后台线程去验证它，你会发现后台线程依然能够正常访问它的依赖项属性的值）。
 
 #### Style
+
+`Style` 是直接继承自 `DispatcherObject` 的类型，并没有 `Freeze` 相关的方法。不过这不重要，因为重要的是能够访问到内部的 `DetachFromDispatcher` 方法。
+
+`Style` 访问 `DetachFromDispatcher` 的代码在 `public` 的 `Seal` 方法中，这是继承自 `internal` 的 `ISealable` 接口的方法。
+
+```
+internal interface ISealable
+{
+    bool CanSeal { get; }
+    void Seal();
+    bool IsSealed { get; }
+}
+```
+
+为了方便理解，我把 `Seal` 方法进行简化后贴在下面：
+
+```csharp
+/// <summary>
+/// This Style and all factories/triggers are now immutable
+/// </summary>
+public void Seal()
+{
+    // Verify Context Access
+    VerifyAccess();
+
+    // 99% case - Style is already sealed.
+    if (_sealed) return;
+
+    // 省略一些验证代码。
+
+    // Seal setters
+    if (_setters != null) _setters.Seal();
+
+    // Seal triggers
+    if (_visualTriggers != null) _visualTriggers.Seal();
+
+    // Will throw InvalidOperationException if we find a loop of
+    //  BasedOn references.  (A.BasedOn = B, B.BasedOn = C, C.BasedOn = A)
+    CheckForCircularBasedOnReferences();
+
+    // Seal BasedOn Style chain
+    if (_basedOn != null) _basedOn.Seal();
+
+    // Seal the ResourceDictionary
+    if (_resources != null) _resources.IsReadOnly = true;
+
+    //
+    // Build shared tables
+    //
+
+    // Process all Setters set on the selfStyle. This stores all the property
+    // setters on the current styles into PropertyValues list, so it can be used
+    // by ProcessSelfStyle in the next step. The EventSetters for the current
+    // and all the basedOn styles are merged into the EventHandlersStore on the
+    // current style.
+    ProcessSetters(this);
+
+    // Add an entry in the EventDependents list for
+    // the TargetType's EventHandlersStore. Notice
+    // that the childIndex is 0.
+    StyleHelper.AddEventDependent(0, this.EventHandlersStore, ref EventDependents);
+
+    // Process all PropertyValues (all are "Self") in the Style
+    // chain (base added first)
+    ProcessSelfStyles(this);
+
+    // Process all TriggerBase PropertyValues ("Self" triggers
+    // and child triggers) in the Style chain last (highest priority)
+    ProcessVisualTriggers(this);
+
+    // Sort the ResourceDependents, to help avoid duplicate invalidations
+    StyleHelper.SortResourceDependents(ref ResourceDependents);
+
+    // All done, seal self and call it a day.
+    _sealed = true;
+
+    // Remove thread affinity so it can be accessed across threads
+    DetachFromDispatcher();
+}
+```
+
+具体来说，就是将 `Style` 中的所有属性进行 `Seal`，将资源设为只读；然后，将自己的 `Dispatcher` 属性设为 `null`。
+
+#### Template
+
+不过，我们通常使用 `Style` 的方式都是在 `Style` 中写控件模板。如果控件模板不支持 `Seal`，那么 `Style` 即便 `Seal`，多数情况下也是没有用的。
+
+在 `StyleHelper` 类型中，处理了控件模板的 `Seal`。
+
+它处理的是 `FrameworkTemplate`，这是控件模板的基类，具体来说，有这些类型：
+
+- `ControlTemplate`
+- `DataTemplate`
+- `ItemsPanelTemplate`
+- `ItemContainerTemplate`
+- HierarchicalDataTemplate
+- ContentPresenter.DefaultTemplate
+- ContentPresenter.UseContentTemplate
+
+以下是 `StyleHelper.SealTemplate` 方法。这里原本是 `FrameworkTemplate` 内部的 `Seal` 方法的实现，不过 `Seal` 内部调到了 `StyleHelper.SealTemplate` 静态方法了。
+
+为了便于理解，我也对其进行了精简。
+
+```csharp
+internal static void SealTemplate(
+    FrameworkTemplate                                           frameworkTemplate,
+    ref bool                                                    isSealed,
+    FrameworkElementFactory                                     templateRoot,
+    TriggerCollection                                           triggers,
+    ResourceDictionary                                          resources,
+    HybridDictionary                                            childIndexFromChildID,
+    ref FrugalStructList<ChildRecord>                           childRecordFromChildIndex,
+    ref FrugalStructList<ItemStructMap<TriggerSourceRecord>>    triggerSourceRecordFromChildIndex,
+    ref FrugalStructList<ContainerDependent>                    containerDependents,
+    ref FrugalStructList<ChildPropertyDependent>                resourceDependents,
+    ref ItemStructList<ChildEventDependent>                     eventDependents,
+    ref HybridDictionary                                        triggerActions,
+    ref HybridDictionary                                        dataTriggerRecordFromBinding,
+    ref bool                                                    hasInstanceValues,
+    ref EventHandlersStore                                      eventHandlersStore)
+{
+    // This template has already been sealed. There is no more to do.
+    if (isSealed) return;
+
+    // Seal template nodes (if exists)
+
+    if (frameworkTemplate != null) frameworkTemplate.ProcessTemplateBeforeSeal();
+
+    if (templateRoot != null) templateRoot.Seal(frameworkTemplate);
+
+    // Seal triggers
+    if (triggers != null) triggers.Seal();
+
+    // Seal Resource Dictionary
+    if (resources != null) resources.IsReadOnly = true;
+
+    //  Build shared tables
+
+    StyleHelper.ProcessTemplateTriggers(
+        triggers,
+        frameworkTemplate,
+        ref childRecordFromChildIndex,
+        ref triggerSourceRecordFromChildIndex, ref containerDependents, ref resourceDependents, ref eventDependents,
+        ref dataTriggerRecordFromBinding, childIndexFromChildID, ref hasInstanceValues,
+        ref triggerActions, templateRoot, ref eventHandlersStore,
+        ref frameworkTemplate.PropertyTriggersWithActions,
+        ref frameworkTemplate.DataTriggersWithActions,
+        ref hasHandler );
+
+    frameworkTemplate.HasLoadedChangeHandler = hasHandler;
+
+    frameworkTemplate.SetResourceReferenceState();
+
+    // All done, seal self and call it a day.
+    isSealed = true;
+
+    // Remove thread affinity so it can be accessed across threads
+    frameworkTemplate.DetachFromDispatcher();
+}
+```
+
+其中，`frameworkTemplate.DetachFromDispatcher()` 方法即调用基类 `DispatcherObject` 中的 `DetachFromDispatcher` 方法。
+
+方法内部也是对各种属性进行了 `Seal` 和只读化处理。最后，将自己的 `Dispatcher` 属性设为 `null`。
+
+#### Style 和 Template
+
+由于每次应用模板的时候，都是创建新的 UI 控件，所以实际上通过模板创建的 UI 对象并不会产生跨线程访问的问题。也就是说，当 `Style` 和 `Template` 设置为可跨线程访问之后，是可以被多个线程同时访问创建控件而不会产生跨线程访问的问题。
+
+写在 XAML 中的 `ISealable` 在创建的时候就会执行 `Seal()`。也就是说，你只要在 XAML 中写下了这个对象，那么就会在创建完后 `Seal`。这点跟 `Freezable` 是不一样的，`Freezable` 是需要自己主动编写 XAML 或 C# 代码进行 `Freeze` 的。
+
+从这里可以推论出，你在 XAML 中写的样式，可以被跨线程访问而不会出现线程安全问题。
+
+### 强制让一个 DispatcherObject 跨线程访问
 
 
 
