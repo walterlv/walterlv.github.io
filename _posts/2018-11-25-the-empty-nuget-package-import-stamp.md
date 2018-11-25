@@ -1,6 +1,6 @@
 ---
 title: "csproj 文件中那个空的 NuGetPackageImportStamp 是干什么的？"
-date: 2018-11-25 21:45:39 +0800
+date: 2018-11-25 21:48:07 +0800
 categories: visualstudio nuget
 ---
 
@@ -122,6 +122,8 @@ NuGetPackageImportStamp 节点只会出现在传统的 csproj 文件中。如果
 这是为了让 Visual Studio 运行的时候，能够检测到 csproj 文件改变，以便重新加载这个项目，因为需要 Import 新的内容。在以前的 Visual Studio 版本中，会随机写下一段字符串；在新的版本中，它是个空字符串。
 
 由于新的 csproj 文件能够识别到外部 Import 文件的改变，所以其实并不需要这样的机制来让 Visual Studio 感知到文件的改变。
+
+在 Visual Studio 2017（工具版本 15.0）中，这个值会设为空，而在较低版本（14.0 及以下）这个值会设为一个随机的 guid。
 
 以下是 NuGet 客户端设置此值的代码：
 
