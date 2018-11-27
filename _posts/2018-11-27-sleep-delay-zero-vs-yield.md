@@ -1,6 +1,6 @@
 ---
 title: "C#/.NET 中 Thread.Sleep(0), Task.Delay(0), Thread.Yield(), Task.Yield() 不同的执行效果和用法建议"
-date: 2018-11-27 13:08:55 +0800
+date: 2018-11-27 13:12:13 +0800
 categories: dotnet csharp
 ---
 
@@ -252,7 +252,7 @@ Console.WriteLine($"Thread.Sleep(0) : {elapsed}");
 
 `Thread.Sleep(0)` 和 `Thread.Yield` 在线程调度的效果上是相同的，`Thread.Sleep(int)` 是带有超时的等待，本质上也是线程调度。如果你希望通过放弃当前线程时间片以便给其他线程一些执行实际，那么考虑 `Thread.Sleep(0)` 或者 `Thread.Yield`；如果希望进行线程调度级别的等待（效果类似于阻塞线程），那么使用 `Thread.Sleep(int)`。
 
-如果你允许有一个异步上下文，可以使用 `async/await`，那么可以使用 `Task.Delay(0)` 或者 `Task.Yield()`。
+如果你允许有一个异步上下文，可以使用 `async/await`，那么可以使用 `Task.Delay(0)` 或者 `Task.Yield()`。另外，如果等待时使用 `Task.Delay` 而不是 `Thread.Sleep`，那么你可以节省一个线程的资源，尤其是在一个线程池的线程中 `Sleep` 的话，会使得线程池中更多的线程被进行无意义的占用，对其他任务在线程池中的调度不利。
 
 ---
 
