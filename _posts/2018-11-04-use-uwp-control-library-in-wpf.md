@@ -1,10 +1,11 @@
 ---
 title: "WindowsXamlHost：在 WPF 中使用 UWP 控件库中的控件"
-date: 2018-11-04 12:14:24 +0800
+publishDate: 2018-11-04 12:14:24 +0800
+date: 2018-11-27 13:08:55 +0800
 categories: uwp wpf dotnet
 ---
 
-在 [WindowsXamlHost：在 WPF 中使用 UWP 的控件（Windows Community Toolkit）](https://walterlv.com/post/use-uwp-controls-in-wpf.html) 一文中，我们说到了在 WPF 中引入简单的 UWP 控件以及相关的注意事项。不过，通常更有实际价值的是更复杂的 UWP 控件的引入，通常是一整个 Page。
+在 [WindowsXamlHost：在 WPF 中使用 UWP 的控件（Windows Community Toolkit）](/post/use-uwp-controls-in-wpf.html) 一文中，我们说到了在 WPF 中引入简单的 UWP 控件以及相关的注意事项。不过，通常更有实际价值的是更复杂的 UWP 控件的引入，通常是一整个 Page。
 
 本文将介绍如何在 WPF 项目中引用 UWP 的控件库。
 
@@ -24,7 +25,7 @@ categories: uwp wpf dotnet
 
 ### 对 WPF 项目的准备工作
 
-你依然需要阅读 [WindowsXamlHost：在 WPF 中使用 UWP 的控件（Windows Community Toolkit）](https://walterlv.com/post/use-uwp-controls-in-wpf.html) 一文，以便将你的 WPF 项目改造成可以访问 UWP 类型的项目。
+你依然需要阅读 [WindowsXamlHost：在 WPF 中使用 UWP 的控件（Windows Community Toolkit）](/post/use-uwp-controls-in-wpf.html) 一文，以便将你的 WPF 项目改造成可以访问 UWP 类型的项目。
 
 ### 不方便的引入方式
 
@@ -40,7 +41,7 @@ categories: uwp wpf dotnet
 
 是的，你需要手工编写 UWP 的项目文件。
 
-如果你阅读过 [(1/2) 为了理解 UWP 的启动流程，我从零开始创建了一个 UWP 程序](https://walterlv.com/post/create-uwp-app-from-zero-0.html) 这篇文章，或者已经 [理解了 C# 项目 csproj 文件格式的本质和编译流程](https://walterlv.com/post/understand-the-csproj.html)，那么对这里 csproj 文件的编辑应该不会感觉到陌生或者害怕。当然，即便你没有编辑过或者不理解 csproj 也不用担心，你只需要按照本文要求进行操作即可。
+如果你阅读过 [(1/2) 为了理解 UWP 的启动流程，我从零开始创建了一个 UWP 程序](/post/create-uwp-app-from-zero-0.html) 这篇文章，或者已经 [理解了 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj.html)，那么对这里 csproj 文件的编辑应该不会感觉到陌生或者害怕。当然，即便你没有编辑过或者不理解 csproj 也不用担心，你只需要按照本文要求进行操作即可。
 
 现在，右击卸载项目，再右击编辑项目文件：
 

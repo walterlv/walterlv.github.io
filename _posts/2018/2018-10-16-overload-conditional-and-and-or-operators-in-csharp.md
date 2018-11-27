@@ -1,6 +1,7 @@
 ---
 title: "C# 重载条件逻辑运算符（&& 和 ||）"
-date: 2018-10-16 21:04:28 +0800
+publishDate: 2018-10-16 21:04:28 +0800
+date: 2018-11-27 13:08:55 +0800
 categories: csharp
 ---
 
@@ -171,6 +172,6 @@ Console.WriteLine(a || b);
 
 #### 参考资料
 
-- [C# 中那些可以被重载的操作符 - walterlv - 请阅读文章末尾的评论](https://walterlv.com/post/overridable-operators-in-csharp.html#comment-4147325525)
+- [C# 中那些可以被重载的操作符 - walterlv - 请阅读文章末尾的评论](/post/overridable-operators-in-csharp.html#comment-4147325525)
 - [true Operator (C# Reference) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/true-operator)
 - [JavaScript: Truthy? Falsy? - 格物致知](https://amobiz.github.io/2015/09/28/javascript-truthy-falsy/)

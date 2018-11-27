@@ -1,7 +1,7 @@
 ---
 title: "只有你能 new 出来！.NET 隐藏构造函数的 n 种方法（Builder Pattern / 构造器模式）"
 publishDate: 2018-09-20 20:53:37 +0800
-date: 2018-11-13 14:30:01 +0800
+date: 2018-11-27 13:08:55 +0800
 categories: dotnet csharp
 ---
 
@@ -119,5 +119,5 @@ Console.WriteLine(full);
 
 关于运算符重载的更多内容，可以参考我的另外两篇文章：
 
-- [C# 中那些可以被重载的操作符，以及使用它们的那些丧心病狂的语法糖 - walterlv](https://walterlv.com/post/overridable-operators-in-csharp.html)
-- [C# 空合并操作符（??）不可重载？其实有黑科技可以间接重载！ - walterlv](https://walterlv.com/post/overload-null-coalescing-operator-in-csharp.html)
+- [C# 中那些可以被重载的操作符，以及使用它们的那些丧心病狂的语法糖 - walterlv](/post/overridable-operators-in-csharp.html)
+- [C# 空合并操作符（??）不可重载？其实有黑科技可以间接重载！ - walterlv](/post/overload-null-coalescing-operator-in-csharp.html)

@@ -1,7 +1,7 @@
 ---
 title: "将 async/await 异步代码转换为安全的不会死锁的同步代码（使用 PushFrame）"
 publishDate: 2018-03-16 11:58:10 +0800
-date: 2018-11-08 10:38:08 +0800
+date: 2018-11-27 13:08:55 +0800
 categories: dotnet csharp
 ---
 
@@ -25,7 +25,7 @@ categories: dotnet csharp
 
 所以，我考虑使用 `PushFrame` 来阻塞当前线程并创建一个新的消息循环。使用 `Task.ContinueWith` 来恢复阻塞，而不使用 `Task` 中默认同步所采用的同步上下文。
 
-关于 `PushFrame`，可以阅读 [深入了解 WPF Dispatcher 的工作原理（PushFrame 部分）](https://walterlv.com/post/dotnet/2017/09/26/dispatcher-push-frame.html) 了解更多。
+关于 `PushFrame`，可以阅读 [深入了解 WPF Dispatcher 的工作原理（PushFrame 部分）](/post/dotnet/2017/09/26/dispatcher-push-frame.html) 了解更多。
 
 代码如下：
 

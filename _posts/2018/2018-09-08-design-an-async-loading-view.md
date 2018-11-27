@@ -1,6 +1,7 @@
 ---
 title: "WPF 多线程 UI：设计一个异步加载 UI 的容器"
-date: 2018-09-08 20:53:03 +0800
+publishDate: 2018-09-08 20:53:03 +0800
+date: 2018-11-27 13:08:55 +0800
 categories: wpf dotnet csharp
 ---
 
@@ -10,7 +11,7 @@ No！WPF 一个窗口可以不止一个 UI 线程，本文将设计一个异步�
 
 ---
 
-本文是对我另一篇博客 [WPF 同一窗口内的多线程 UI（VisualTarget）](https://walterlv.com/post/multi-thread-ui-using-visualtarget-in-wpf.html) 的一项应用。阅读本文，你将得到一个 UI 控件 `AsyncBox`，放入其中的控件即便卡住主线程，也依然会有一个加载动画缓解用户的焦虑情绪。
+本文是对我另一篇博客 [WPF 同一窗口内的多线程 UI（VisualTarget）](/post/multi-thread-ui-using-visualtarget-in-wpf.html) 的一项应用。阅读本文，你将得到一个 UI 控件 `AsyncBox`，放入其中的控件即便卡住主线程，也依然会有一个加载动画缓解用户的焦虑情绪。
 
 <div id="toc"></div>
 

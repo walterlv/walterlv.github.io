@@ -1,6 +1,7 @@
 ---
 title: ".NET/C# 在代码中测量代码执行耗时的建议（比较系统性能计数器和系统时间）"
-date: 2018-11-06 15:33:54 +0800
+publishDate: 2018-11-06 15:33:54 +0800
+date: 2018-11-27 13:08:55 +0800
 categories: dotnet csharp
 ---
 
@@ -28,7 +29,7 @@ Foo();
 
 - [C# 标准性能测试 - 林德熙](https://lindexi.gitee.io/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95.html)
 - [C# 标准性能测试高级用法 - 林德熙](https://lindexi.gitee.io/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95.html)
-- [.NET/C# 反射的的性能数据，以及高性能开发建议（反射获取 Attribute 和反射调用方法） - 吕毅](https://walterlv.com/post/dotnet-high-performance-reflection-suggestions.html)
+- [.NET/C# 反射的的性能数据，以及高性能开发建议（反射获取 Attribute 和反射调用方法） - 吕毅](/post/dotnet-high-performance-reflection-suggestions.html)
 
 ### 结论：使用什么方法计时
 

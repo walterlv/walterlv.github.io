@@ -1,7 +1,7 @@
 ---
 title: ".NET/C# 反射的的性能数据，以及高性能开发建议（反射获取 Attribute 和反射调用方法）"
 publishDate: 2018-11-03 15:25:17 +0800
-date: 2018-11-05 10:37:10 +0800
+date: 2018-11-27 13:08:55 +0800
 categories: dotnet csharp
 ---
 
@@ -121,12 +121,12 @@ if (isDefined)
 
 除了使用 `Expression` 创建，你还可以使用 `Emit` 创建，不过这也要求能够访问到类型：
 
-- [使用 Emit 生成 IL 代码 - 吕毅](https://walterlv.com/post/generate-il-using-emit.html)
+- [使用 Emit 生成 IL 代码 - 吕毅](/post/generate-il-using-emit.html)
 
 对于缓存，可以参考：
 
-- [.NET Core/Framework 创建委托以大幅度提高反射调用的性能 - 吕毅](https://walterlv.com/post/create-delegate-to-improve-reflection-performance.html)
-- [.NET/C# 推荐一个我设计的缓存类型（适合缓存反射等耗性能的操作，附用法） - 吕毅](https://walterlv.com/post/design-a-cache-pool.html)
+- [.NET Core/Framework 创建委托以大幅度提高反射调用的性能 - 吕毅](/post/create-delegate-to-improve-reflection-performance.html)
+- [.NET/C# 推荐一个我设计的缓存类型（适合缓存反射等耗性能的操作，附用法） - 吕毅](/post/design-a-cache-pool.html)
 
 对于创建对象更多的性能数据，可以参考：
 
@@ -153,14 +153,14 @@ if (isDefined)
 
 关于缓存：
 
-- [.NET Core/Framework 创建委托以大幅度提高反射调用的性能 - 吕毅](https://walterlv.com/post/create-delegate-to-improve-reflection-performance.html)
-- [.NET/C# 推荐一个我设计的缓存类型（适合缓存反射等耗性能的操作，附用法） - 吕毅](https://walterlv.com/post/design-a-cache-pool.html)
+- [.NET Core/Framework 创建委托以大幅度提高反射调用的性能 - 吕毅](/post/create-delegate-to-improve-reflection-performance.html)
+- [.NET/C# 推荐一个我设计的缓存类型（适合缓存反射等耗性能的操作，附用法） - 吕毅](/post/design-a-cache-pool.html)
 
 #### 使用预编译框架
 
 使用预编译框架，你可以在编译期间将那些耗时的反射操作编译成类似 `new` 和属性 `get` 这样的简单 CLR 调用，性能差距近乎于最开始图表中第二张图和第五张图那样，具有数千倍的差距。
 
-- [课程 预编译框架，开发高性能应用 - 微软技术暨生态大会 2018 - walterlv](https://walterlv.com/post/dotnet-build-and-roslyn-course-in-tech-summit-2018.html)
+- [课程 预编译框架，开发高性能应用 - 微软技术暨生态大会 2018 - walterlv](/post/dotnet-build-and-roslyn-course-in-tech-summit-2018.html)
 - [dotnet-campus/SourceFusion: SourceFusion is a pre-compile framework based on Roslyn. It helps you to build high-performance .NET code.](https://github.com/dotnet-campus/SourceFusion)
 
 ### 附本文性能测试所用的代码

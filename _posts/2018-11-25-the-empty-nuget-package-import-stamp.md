@@ -1,6 +1,7 @@
 ---
 title: "csproj 文件中那个空的 NuGetPackageImportStamp 是干什么的？"
-date: 2018-11-25 21:48:07 +0800
+publishDate: 2018-11-25 21:48:07 +0800
+date: 2018-11-27 13:08:55 +0800
 categories: visualstudio nuget
 ---
 
@@ -14,7 +15,7 @@ categories: visualstudio nuget
 
 ### 空的 NuGetPackageImportStamp 节点
 
-NuGetPackageImportStamp 节点只会出现在传统的 csproj 文件中。如果你不清楚我这里指的传统的和新的 csproj 文件格式，那么可以阅读我的另一篇文章来了了解它们的区别：[将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj](https://walterlv.com/post/introduce-new-style-csproj-into-net-framework.html)。
+NuGetPackageImportStamp 节点只会出现在传统的 csproj 文件中。如果你不清楚我这里指的传统的和新的 csproj 文件格式，那么可以阅读我的另一篇文章来了了解它们的区别：[将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj](/post/introduce-new-style-csproj-into-net-framework.html)。
 
 简单说来，在 `Project` 根节点中可以指定 `Sdk` 特性的 csproj 文件格式是新的 csproj 格式。由于 `Sdk` 特性的存在，使得很多的项目文件的功能得以有一个默认的实现。
 

@@ -1,6 +1,6 @@
 ---
 title: "C#/.NET 中 Thread.Sleep(0), Task.Delay(0), Thread.Yield(), Task.Yield() 不同的执行效果和用法建议"
-date: 2018-11-27 13:07:30 +0800
+date: 2018-11-27 13:08:55 +0800
 categories: dotnet csharp
 ---
 
@@ -85,7 +85,7 @@ public static bool Yield()
 
 其中，Nothing 表示没有写任何代码。
 
-测量使用的是 `Stopwatch`，你可以通过阅读 [.NET/C# 在代码中测量代码执行耗时的建议（比较系统性能计数器和系统时间）](https://walterlv.com/post/dotnet-high-precision-performance-counting.html) 了解 `Stopwatch` 测量的原理和精度。
+测量使用的是 `Stopwatch`，你可以通过阅读 [.NET/C# 在代码中测量代码执行耗时的建议（比较系统性能计数器和系统时间）](/post/dotnet-high-precision-performance-counting.html) 了解 `Stopwatch` 测量的原理和精度。
 
 ```csharp
 var stopwatch = Stopwatch.StartNew();
@@ -171,7 +171,7 @@ public static Task Delay(int millisecondsDelay, CancellationToken cancellationTo
 
 有两个分支，如果指定了 `SynchronizationContext`，那么就会使用 `SynchronizationContext` 自带的 `Post` 方法来执行异步任务的下一个步骤。调用 `continuation` 就是执行异步状态机中的下一个步骤以进入下一个异步状态；不过，为了简化理解，你可以认为这就是调用 `await` 后面的那段代码。
 
-WPF UI 线程的 `SynchronizationContext` 被设置为了 `DispatcherSynchronizationContext`，它的 `Post` 方法本质上是用消息循环来实现的。其他线程如果没有特殊设置，则是 `null`。这一部分知识可以看参见：[出让执行权：Task.Yield, Dispatcher.Yield](https://walterlv.com/post/yield-in-task-dispatcher.html)。
+WPF UI 线程的 `SynchronizationContext` 被设置为了 `DispatcherSynchronizationContext`，它的 `Post` 方法本质上是用消息循环来实现的。其他线程如果没有特殊设置，则是 `null`。这一部分知识可以看参见：[出让执行权：Task.Yield, Dispatcher.Yield](/post/yield-in-task-dispatcher.html)。
 
 如果没有指定 `SynchronizationContext` 或者当前的 `SynchronizationContext` 就是 `SynchronizationContext` 类型基类，那么就会执行后面 `else` 中的逻辑。主要就是在线程池中寻找一个线程然后执行代码，或者再次启动一个 `Task` 任务并加入队列；这取决于 `TaskScheduler.Current` 的设置。
 
@@ -235,7 +235,7 @@ static extern bool ChangeAppDomainTimer(AppDomainTimerSafeHandle handle, uint du
 
 其中，Nothing 表示没有写任何代码。
 
-测量使用的是 `Stopwatch`，你依然可以通过阅读 [.NET/C# 在代码中测量代码执行耗时的建议（比较系统性能计数器和系统时间）](https://walterlv.com/post/dotnet-high-precision-performance-counting.html) 了解 `Stopwatch` 测量的原理和精度。
+测量使用的是 `Stopwatch`，你依然可以通过阅读 [.NET/C# 在代码中测量代码执行耗时的建议（比较系统性能计数器和系统时间）](/post/dotnet-high-precision-performance-counting.html) 了解 `Stopwatch` 测量的原理和精度。
 
 ```csharp
 var stopwatch = Stopwatch.StartNew();

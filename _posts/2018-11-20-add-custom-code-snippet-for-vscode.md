@@ -1,6 +1,7 @@
 ---
 title: "在 Visual Studio Code 中添加自定义的代码片段"
-date: 2018-11-20 10:19:28 +0800
+publishDate: 2018-11-20 10:19:28 +0800
+date: 2018-11-27 13:08:55 +0800
 categories: visualstudio
 ---
 
@@ -130,7 +131,7 @@ categories: visualstudio
 
 现在，我们来做一个更复杂的例子，以便了解 Visual Studio Code 中代码片段定义的更多内容。
 
-输入 `post` 以便插入 [walterlv.com](https://walterlv.com/) 专用的博客模板：
+输入 `post` 以便插入 [walterlv.com](/) 专用的博客模板：
 
 ![插入博客](/static/posts/2018-11-20-08-34-19.png)
 

@@ -1,10 +1,11 @@
 ---
 title: "编写 Target 检测 MSBuild / dotnet build 此次编译是否是差量编译"
-date: 2018-11-07 21:24:56 +0800
+publishDate: 2018-11-07 21:24:56 +0800
+date: 2018-11-27 13:08:55 +0800
 categories: visualstudio msbuild
 ---
 
-MSBuild 或 Roslyn 编译项目时均支持差量编译，毕竟为了性能。我在 [每次都要重新编译？太慢！让跨平台的 MSBuild/dotnet build 的 Target 支持差量编译](https://walterlv.com/post/msbuild-incremental-build.html) 一文中介绍了如何使一个 Target 支持差量编译。在那篇文章中我说到差量编译会导致 Target 不执行；也就是说，如果一个 Target 对后续的编译会产生影响，那么一定不能设置为差量编译。
+MSBuild 或 Roslyn 编译项目时均支持差量编译，毕竟为了性能。我在 [每次都要重新编译？太慢！让跨平台的 MSBuild/dotnet build 的 Target 支持差量编译](/post/msbuild-incremental-build.html) 一文中介绍了如何使一个 Target 支持差量编译。在那篇文章中我说到差量编译会导致 Target 不执行；也就是说，如果一个 Target 对后续的编译会产生影响，那么一定不能设置为差量编译。
 
 不过，真的会写出一些非常耗时的 Target，但是它会对后续的编译产生影响。这些 Target 如果要做差量编译，那么就不能直接使用原生的差量编译方案了。本文将介绍如何处理这样的情况。
 
@@ -37,7 +38,7 @@ SourceFusion 是一个预编译框架，它在你编译期间对你的代码做�
 
 上面的 Target 中，`_WalterlvDemoRebuildingTest` 是我给这个差量编译测试 Target 取的名字，`WalterlvDemoCoreTarget` 是那个耗时的 Target。
 
-根据我在 [每次都要重新编译？太慢！让跨平台的 MSBuild/dotnet build 的 Target 支持差量编译](https://walterlv.com/post/msbuild-incremental-build.html) 一文中的差量编译的做法，我使用 `$(MSBuildProjectFullPath)` 也就是 csproj 文件的改变来决定差量检测的输入，用一个临时的文件 `RebuildingTest.txt` 来决定差量编译的输出。
+根据我在 [每次都要重新编译？太慢！让跨平台的 MSBuild/dotnet build 的 Target 支持差量编译](/post/msbuild-incremental-build.html) 一文中的差量编译的做法，我使用 `$(MSBuildProjectFullPath)` 也就是 csproj 文件的改变来决定差量检测的输入，用一个临时的文件 `RebuildingTest.txt` 来决定差量编译的输出。
 
 在这里，我们一定需要一个文件来输出，这样 MSBuild 或者 Roslyn 检测差量的时候才能正确完成。这样，为了得到这个文件，我们实际上需要通过这个 Target 真的写一个文件出来，所以我们用了 `WriteLinesToFile`。
 

@@ -1,6 +1,7 @@
 ---
 title: "C# 空合并操作符（??）不可重载？其实有黑科技可以间接重载！"
-date: 2018-09-15 14:59:10 +0800
+publishDate: 2018-09-15 14:59:10 +0800
+date: 2018-11-27 13:08:55 +0800
 categories: csharp
 ---
 
@@ -14,7 +15,7 @@ categories: csharp
 
 ### 运算符重载
 
-你可以阅读 [C# 中那些可以被重载的操作符，以及使用它们的那些丧心病狂的语法糖](https://walterlv.com/post/overridable-operators-in-csharp.html) 了解 C# 中提供的所有可以重载的操作符。在此文中，`??` 被明确定义为不可重载。
+你可以阅读 [C# 中那些可以被重载的操作符，以及使用它们的那些丧心病狂的语法糖](/post/overridable-operators-in-csharp.html) 了解 C# 中提供的所有可以重载的操作符。在此文中，`??` 被明确定义为不可重载。
 
 你更可以在微软官方文档中找到这样的说法：
 
