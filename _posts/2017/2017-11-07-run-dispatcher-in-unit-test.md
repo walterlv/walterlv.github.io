@@ -1,7 +1,7 @@
 ---
 title: "如何在单元测试中使用 Dispatcher.Invoke/InvokeAsync？"
 publishDate: 2017-11-07 21:02:54 +0800
-date: 2018-08-19 19:08:16 +0800
+date: 2018-11-27 13:10:18 +0800
 categories: wpf unittest
 ---
 
@@ -13,7 +13,7 @@ categories: wpf unittest
 
 我第一个想到的是在当前函数中执行 `Dispatcher.Run`，但是 `Run` 之后就阻塞了，我还怎么测试呢？
 
-于是我又想到我上个月写的辅助方法 `UIDispatcher.RunNewAsync()`，在后台创建一个运行起来的 `Dispatcher`。参见我博客 [如何实现一个可以用 await 异步等待的 Awaiter - walterlv](https://walterlv.gitee.io/post/write-custom-awaiter.html) 中 `UIDispatcher` 的实现。
+于是我又想到我上个月写的辅助方法 `UIDispatcher.RunNewAsync()`，在后台创建一个运行起来的 `Dispatcher`。参见我博客 [如何实现一个可以用 await 异步等待的 Awaiter - walterlv](/post/write-custom-awaiter.html) 中 `UIDispatcher` 的实现。
 
 ![UIDispatcher](/static/posts/2017-11-07-20-49-51.png)
 

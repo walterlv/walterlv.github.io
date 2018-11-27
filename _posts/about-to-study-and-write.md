@@ -1,7 +1,7 @@
 ---
 title: "About to Study and Write"
 publishDate: 2018-10-31 16:15:26 +0800
-date: 2018-11-02 14:56:05 +0800
+date: 2018-11-27 13:10:18 +0800
 categories: post
 published: false
 ---
@@ -56,7 +56,7 @@ published: false
     - [Introduction to Microsoft Interface Definition Language 3.0 - UWP app developer | Microsoft Docs](https://docs.microsoft.com/en-us/uwp/midl-3/intro)
 
 - 捕获变量
-    - [C#/.NET 匿名函数会捕获变量，并延长对象的生命周期 - walterlv](https://walterlv.gitee.io/post/anonymous-function-extends-lifetime-of-variable.html#comment-4061605207)
+    - [C#/.NET 匿名函数会捕获变量，并延长对象的生命周期 - walterlv](/post/anonymous-function-extends-lifetime-of-variable.html#comment-4061605207)
     - [c# - GC doesn't collect when WeakReference references a delegate? - Stack Overflow](https://stackoverflow.com/questions/14007569/gc-doesnt-collect-when-weakreference-references-a-delegate)
 
 - HTTPS
