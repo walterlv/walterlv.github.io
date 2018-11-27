@@ -1,6 +1,6 @@
 ---
 title: "C#/.NET 中 Thread.Sleep(0), Task.Delay(0), Thread.Yield(), Task.Yield() 不同的执行效果和用法建议"
-date: 2018-11-27 13:12:13 +0800
+date: 2018-11-27 13:14:07 +0800
 categories: dotnet csharp
 ---
 
@@ -260,3 +260,6 @@ Console.WriteLine($"Thread.Sleep(0) : {elapsed}");
 
 - [Thread.Sleep(0) vs Sleep(1) vs Yeild - stg609 - 博客园](http://www.cnblogs.com/stg609/p/3857242.html)
 - [c# - Task.Delay(<ms>).Wait(); sometimes causing a 15ms delay in messaging system - Stack Overflow](https://stackoverflow.com/q/41830216/6233938)
+- [c# - When to use Task.Delay, when to use Thread.Sleep? - Stack Overflow](https://stackoverflow.com/q/20082221/6233938)
+- [c# - Should I always use Task.Delay instead of Thread.Sleep? - Stack Overflow](https://stackoverflow.com/q/29356139/6233938)
+- [What's the difference between Thread.Sleep(0) and Thread,Yield()?](https://social.msdn.microsoft.com/Forums/en-US/d7071ba4-8962-43c6-975a-28cdbce51548/whats-the-difference-between-threadsleep0-and-threadyield?forum=csharplanguage)
