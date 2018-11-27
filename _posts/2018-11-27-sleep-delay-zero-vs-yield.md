@@ -1,6 +1,6 @@
 ---
 title: "C#/.NET 中 Thread.Sleep(0), Task.Delay(0), Thread.Yield(), Task.Yield() 不同的执行效果和用法建议"
-date: 2018-11-27 12:53:44 +0800
+date: 2018-11-27 13:07:30 +0800
 categories: dotnet csharp
 ---
 
@@ -78,10 +78,10 @@ public static bool Yield()
 
 `Thread.Sleep(1)` 会使得当前线程挂起一个指定的超时时间，这里设置为 1ms。于是，在这个等待的超时时间段内，你的当前线程处于不可被调度的状态。那么即便当前剩余的可以被调度的线程其优先级比这个更低，也可以得到调度。
 
-下面是针对这三个方法执行时间的一个试验结果：
+下面是针对这三个方法执行时间的一个实验结果：
 
-![Thread 不同方法的耗时试验结果](/static/posts/2018-11-27-11-10-43.png)  
-▲ Thread 不同方法的耗时试验结果
+![Thread 不同方法的耗时实验结果](/static/posts/2018-11-27-11-10-43.png)  
+▲ Thread 不同方法的耗时实验结果
 
 其中，Nothing 表示没有写任何代码。
 
@@ -93,10 +93,6 @@ Thread.Sleep(0);
 var elapsed = stopwatch.Elapsed;
 Console.WriteLine($"Thread.Sleep(0) : {elapsed}");
 ```
-
-<!-- 在 [c# - Task.Delay(<ms>).Wait(); sometimes causing a 15ms delay in messaging system - Stack Overflow](https://stackoverflow.com/q/41830216/6233938) 上有个说法，说操作系统的时钟中断有时间间隔，而 Windows 操作系统上这个时间间隔的默认值大约在 15ms，所以实际上你写等待 1ms，实际等待时间也会接近 15ms。不过从实际的试验结果上，并没有得到佐证。
-
-> You're seeing an artifact of the Windows interrupt rate, which is (by default) approx every 15ms. Thus if you ask for 1-15ms, you'll get an approx 15ms delay. ~16-30 will yield 30ms... so on. -->
 
 #### Task.Delay(0)
 
@@ -232,10 +228,10 @@ else
 static extern bool ChangeAppDomainTimer(AppDomainTimerSafeHandle handle, uint dueTime);
 ```
 
-相比于 `Thread` 相关方法仅涉及到当前线程的调度，`Task` 相关的方法会涉及到线程池的调度，耗时更加不可控：
+相比于 `Thread` 相关方法仅涉及到当前线程的调度，`Task` 相关的方法会涉及到线程池的调度，并且使用 `System.Threading.Timer` 来进行计时，耗时更加不可控：
 
-![Task 不同方法的耗时试验结果](/static/posts/2018-11-27-12-51-30.png)  
-▲ Task 不同方法的耗时试验结果
+![Task 不同方法的耗时实验结果](/static/posts/2018-11-27-12-51-30.png)  
+▲ Task 不同方法的耗时实验结果（三次不同的实验结果）
 
 其中，Nothing 表示没有写任何代码。
 
@@ -248,9 +244,15 @@ var elapsed = stopwatch.Elapsed;
 Console.WriteLine($"Thread.Sleep(0) : {elapsed}");
 ```
 
+在 [c# - Task.Delay(<ms>).Wait(); sometimes causing a 15ms delay in messaging system - Stack Overflow](https://stackoverflow.com/q/41830216/6233938) 上有个说法，说操作系统的时钟中断有时间间隔，而 Windows 操作系统上这个时间间隔的默认值大约在 15ms，所以实际上你写等待 1ms，实际等待时间也会接近 15ms。
+
+> You're seeing an artifact of the Windows interrupt rate, which is (by default) approx every 15ms. Thus if you ask for 1-15ms, you'll get an approx 15ms delay. ~16-30 will yield 30ms... so on.
+
 ### 用法区别
 
+`Thread.Sleep(0)` 和 `Thread.Yield` 在线程调度的效果上是相同的，`Thread.Sleep(int)` 是带有超时的等待，本质上也是线程调度。如果你希望通过放弃当前线程时间片以便给其他线程一些执行实际，那么考虑 `Thread.Sleep(0)` 或者 `Thread.Yield`；如果希望进行线程调度级别的等待（效果类似于阻塞线程），那么使用 `Thread.Sleep(int)`。
 
+如果你允许有一个异步上下文，可以使用 `async/await`，那么可以使用 `Task.Delay(0)` 或者 `Task.Yield()`。
 
 ---
 
