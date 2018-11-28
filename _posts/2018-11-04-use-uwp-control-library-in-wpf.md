@@ -1,4 +1,4 @@
-﻿---
+---
 title: "WindowsXamlHost：在 WPF 中使用 UWP 控件库中的控件"
 publishDate: 2018-11-04 12:14:24 +0800
 date: 2018-11-27 13:08:55 +0800
@@ -11,18 +11,16 @@ categories: uwp wpf dotnet
 
 ---
 
-@[TOC](本文内容)
+<div id="toc"></div>
 
 ### 创建一个 UWP 控件库
 
 建议专门为你复杂的 UWP 控件创建一个 UWP 控件库。在这个控件库中的开发就像普通 UWP 应用一样。这样比较容易创建出更复杂的 UWP 控件出来，而不会与 WPF 项目产生太多的影响。
 
-<!-- ![创建一个 UWP 控件库](/static/posts/2018-11-04-11-05-48.png) -->
-![创建一个 UWP 控件库](https://i.loli.net/2018/11/28/5bfe44a9500e2.png)  
+![创建一个 UWP 控件库](/static/posts/2018-11-04-11-05-48.png)  
 ▲ 创建一个 UWP 控件库
 
-<!-- ![选择 SDK 版本](/static/posts/2018-11-04-11-06-45.png) -->
-![选择 SDK 版本](https://i.loli.net/2018/11/28/5bfe44aaad5de.png)  
+![选择 SDK 版本](/static/posts/2018-11-04-11-06-45.png)  
 ▲ 选择 SDK 版本
 
 ### 对 WPF 项目的准备工作
@@ -33,8 +31,7 @@ categories: uwp wpf dotnet
 
 你如果直接让 WPF 项目添加 UWP 项目的引用，将会得到一个错误提示：
 
-<!-- ![不能引用](/static/posts/2018-11-04-11-49-27.png) -->
-![不能引用](https://i.loli.net/2018/11/28/5bfe44aabde76.png)
+![不能引用](/static/posts/2018-11-04-11-49-27.png)
 
 也就是说并不能直接完成这样的引用。
 
@@ -48,8 +45,7 @@ categories: uwp wpf dotnet
 
 现在，右击卸载项目，再右击编辑项目文件：
 
-<!-- ![编辑项目文件](/static/posts/2018-11-04-11-08-09.png) -->
-![编辑项目文件](https://i.loli.net/2018/11/28/5bfe44ab0d882.png)  
+![编辑项目文件](/static/posts/2018-11-04-11-08-09.png)  
 ▲ 编辑项目文件
 
 找到 `Import` targets 的哪一行，你需要在那一行前面的任意位置添加以下特别标注为新增的几行：
@@ -95,22 +91,19 @@ categories: uwp wpf dotnet
 
 现在，重新加载那个 UWP 控件库，将其编译，以便将 UWP 项目的生成文件复制到 WPF 目录下。
 
-<!-- ![生成的文件已复制到 WPF 目录下](/static/posts/2018-11-04-11-38-28.png) -->
-![生成的文件已复制到 WPF 目录下](https://i.loli.net/2018/11/28/5bfe44ab1eb7a.png)  
+![生成的文件已复制到 WPF 目录下](/static/posts/2018-11-04-11-38-28.png)  
 ▲ 生成的文件已复制到 WPF 目录下
 
 ### 在 WPF 项目中间接引用 UWP 控件库
 
 现在，在 WPF 项目中开启所有文件夹的显示，然后将 UWP 项目中生成的文件添加到 WPF 项目中：
 
-<!-- ![在 WPF 项目中添加 UWP 的控件库](/static/posts/2018-11-04-11-39-36.png) -->
-![在 WPF 项目中添加 UWP 的控件库](https://i.loli.net/2018/11/28/5bfe44b500d33.png)  
+![在 WPF 项目中添加 UWP 的控件库](/static/posts/2018-11-04-11-39-36.png)  
 ▲ 在 WPF 的项目中添加 UWP 的控件库
 
 为了能够在每次编译 WPF 项目的时候确保 UWP 项目先编译，需要为 WPF 项目设置项目依赖。在依赖对话框中将 UWP 项目设为依赖。
 
-<!-- ![添加项目依赖](/static/posts/2018-11-04-11-41-19.png) -->
-![添加项目依赖](https://i.loli.net/2018/11/28/5bfe44b544713.png)  
+![添加项目依赖](/static/posts/2018-11-04-11-41-19.png)  
 ▲ 添加项目依赖
 
 现在，编译 WPF 项目的时候，会将 UWP 项目编译后的源码也一起编译到 WPF 项目中；相当于间接使用了 UWP 的控件库。
@@ -121,8 +114,7 @@ categories: uwp wpf dotnet
 *.*
 ```
 
-<!-- ![忽略所有内容](/static/posts/2018-11-04-11-59-37.png) -->
-![忽略所有内容](https://i.loli.net/2018/11/28/5bfe44b55b455.png)
+![忽略所有内容](/static/posts/2018-11-04-11-59-37.png)
 
 但记得需要额外通过 `git add ./Whitman.Wpf/Whitman.Uwp/.gitignore` 把这个文件添加到版本管理中，不然其他人不会生效。
 
@@ -136,8 +128,7 @@ categories: uwp wpf dotnet
 
 于是，你可以在局部获得 UWP 完整 Page 的支持。或者你整个界面都是用 UWP 开发都没问题，并且还能获得 .NET Framework 的完全访问支持。（当然，未来一定是 .NET Core。）
 
-<!-- ![运行后的效果](/static/posts/2018-11-04-12-12-14.png) -->
-![运行后的效果](https://i.loli.net/2018/11/28/5bfe44b6b1ee7.png)  
+![运行后的效果](/static/posts/2018-11-04-12-12-14.png)  
 ▲ 运行后的效果
 
 可以使用 UWP 的 Page，并且也能弹出 UWP 的 `MessageDialog`。

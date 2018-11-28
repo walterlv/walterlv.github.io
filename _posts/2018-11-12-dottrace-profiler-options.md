@@ -1,4 +1,4 @@
-﻿---
+---
 title: "用 dotTrace 进行性能分析时，各种不同性能分析选项的含义和用途"
 date: 2018-11-12 16:14:37 +0800
 categories: dotnet
@@ -8,7 +8,7 @@ categories: dotnet
 
 ---
 
-@[TOC](本文内容)
+<div id="toc"></div>
 
 ### dotTrace 的性能分析选项
 
@@ -16,8 +16,7 @@ categories: dotnet
 
 本文要说的就是下图右边的那四个选项，在启动一个进程进行性能分析之前可以看得见的。
 
-<!-- ![dotTrace 启动进程进行性能分析的界面](/static/posts/2018-11-12-15-29-04.png) -->
-![dotTrace 启动进程进行性能分析的界面](https://i.loli.net/2018/11/28/5bfe49af9ea11.png)  
+![dotTrace 启动进程进行性能分析的界面](/static/posts/2018-11-12-15-29-04.png)  
 ▲ dotTrace 启动进程进行性能分析的界面
 
 有四个选项：

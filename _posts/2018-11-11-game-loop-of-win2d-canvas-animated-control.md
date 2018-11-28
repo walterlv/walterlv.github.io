@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Win2D 中的游戏循环：CanvasAnimatedControl"
 date: 2018-11-11 21:35:58 +0800
 categories: dotnet win2d uwp
@@ -10,7 +10,7 @@ Win2D 是 DirectX 的一个高层封装，提供了极大 DirectX 性能的同�
 
 ---
 
-@[TOC](本文内容)
+<div id="toc"></div>
 
 ### 使用 Win2D 做出来的游戏
 
@@ -88,8 +88,7 @@ private void OnDraw(ICanvasAnimatedControl sender, CanvasAnimatedDrawEventArgs e
 1. 正常情况下 `Update` 调用一次之后，`Draw` 就会调用一次；但如果当前运行缓慢，那么多次 `Update` 调用之后才会调用一次 `Draw`。
 1. 如果 UWP 窗口最小化了，那么只会调用 `Update` 方法，而不会调用 `Draw` 方法。
 
-<!-- ![线程](/static/posts/2018-11-11-20-14-26.png) -->
-![线程](https://i.loli.net/2018/11/28/5bfe489535229.png)  
+![线程](/static/posts/2018-11-11-20-14-26.png)  
 ▲ 线程
 
 在 GravityMaze 重力迷宫中，主要是 `Player` 也就是你在上面动图中看到的那个小球需要在 `Update` 中更新数据，其他其实只需要画就好了。`Update` 中我需要计算速度、加速度以及进行碰撞检测。
