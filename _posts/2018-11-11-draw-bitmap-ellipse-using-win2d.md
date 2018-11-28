@@ -1,4 +1,4 @@
----
+﻿---
 title: "使用 Win2D 绘制带图片纹理的圆（或椭圆）"
 date: 2018-11-11 21:50:09 +0800
 categories: dotnet win2d uwp
@@ -8,7 +8,7 @@ categories: dotnet win2d uwp
 
 ---
 
-<div id="toc"></div>
+@[TOC](本文内容)
 
 ### 重力迷宫小球
 
@@ -54,7 +54,8 @@ using (var list = new CanvasCommandList(creator))
 }
 ```
 
-![带图片纹理的椭圆](/static/posts/2018-11-11-21-44-05.png)  
+<!-- ![带图片纹理的椭圆](/static/posts/2018-11-11-21-44-05.png) -->
+![带图片纹理的椭圆](https://i.loli.net/2018/11/28/5bfe482adf01a.png)  
 ▲ 带图片纹理的椭圆
 
 现在，如果你希望获得本文一开始获得的那种奇妙的效果，可以添加更多的特效：

@@ -1,4 +1,4 @@
----
+﻿---
 title: ".NET/C# 异常处理：写一个空的 try 块代码，而把重要代码写到 finally 中（Constrained Execution Regions）"
 publishDate: 2018-11-02 21:14:25 +0800
 date: 2018-11-23 20:53:46 +0800
@@ -11,7 +11,7 @@ categories: dotnet csharp
 
 ---
 
-<div id="toc"></div>
+@[TOC](本文内容)
 
 ### 空的 try 块
 

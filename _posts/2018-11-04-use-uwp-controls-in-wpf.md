@@ -1,4 +1,4 @@
----
+﻿---
 title: "WindowsXamlHost：在 WPF 中使用 UWP 的控件（Windows Community Toolkit）"
 publishDate: 2018-11-04 11:47:23 +0800
 date: 2018-11-27 13:08:55 +0800
@@ -13,21 +13,24 @@ Windows Community Toolkit 再次更新到 5.0。以前可以在 WPF 中使用有
 
 - [WPF 使用 Edge 浏览器 - 林德熙](https://lindexi.gitee.io/post/WPF-%E4%BD%BF%E7%94%A8-Edge-%E6%B5%8F%E8%A7%88%E5%99%A8.html)
 
-<div id="toc"></div>
+@[TOC](本文内容)
 
 ### 安装 NuGet 包
 
 你需要做的第一步，是在你的 WPF 项目中安装 Microsoft.Toolkit.Wpf.UI.XamlHost。建议直接在 项目的 NuGet 管理器中搜索并安装。
 
-![安装 Microsoft.Toolkit.Wpf.UI.XamlHost](/static/posts/2018-11-04-09-34-39.png)
+<!-- ![安装 Microsoft.Toolkit.Wpf.UI.XamlHost](/static/posts/2018-11-04-09-34-39.png) -->
+![安装 Microsoft.Toolkit.Wpf.UI.XamlHost](https://i.loli.net/2018/11/28/5bfe45c3c7ba9.png)
 
-![安装好 NuGet 包后查看引用](/static/posts/2018-11-04-09-43-24.png)
+<!-- ![安装好 NuGet 包后查看引用](/static/posts/2018-11-04-09-43-24.png) -->
+![安装好 NuGet 包后查看引用](https://i.loli.net/2018/11/28/5bfe45c84efff.png)
 
 ### 配置 WPF 项目能访问 UWP 的类型
 
 因为我们即将开始使用到 UWP 中的控件类型，所以需要配置项目能够访问到 Windows Runtime 的类型。
 
-![添加引用](/static/posts/2018-11-04-09-56-19.png)  
+<!-- ![添加引用](/static/posts/2018-11-04-09-56-19.png) -->
+![添加引用](https://i.loli.net/2018/11/28/5bfe45c85e9c5.png)  
 ▲ 添加引用
 
 你需要在你的 WPF 项目中添加以下 6 个引用才能访问 UWP 的类型：
@@ -49,21 +52,27 @@ Windows Community Toolkit 再次更新到 5.0。以前可以在 WPF 中使用有
                 
 在你添加完这些引用之后，还需要选中这些引用，右击属性，把所有的 “复制到本地” 选项设置为 “否”。
 
-![不要复制到本地](/static/posts/2018-11-04-10-10-16.png)
+<!-- ![不要复制到本地](/static/posts/2018-11-04-10-10-16.png) -->
+![不要复制到本地](https://i.loli.net/2018/11/28/5bfe45c8a3ecb.png)
 
-![添加 Windows Runtime 的 .NET Framework 类型引用](/static/posts/2018-11-04-09-57-03.png)  
+<!-- ![添加 Windows Runtime 的 .NET Framework 类型引用](/static/posts/2018-11-04-09-57-03.png) -->
+![添加 Windows Runtime 的 .NET Framework 类型引用](https://i.loli.net/2018/11/28/5bfe45c92ccc5.png)  
 ▲ 添加 Windows Runtime 的 .NET Framework 类型引用
 
-![添加 Windows.WinMD 的引用](/static/posts/2018-11-04-09-57-44.png)  
+<!-- ![添加 Windows.WinMD 的引用](/static/posts/2018-11-04-09-57-44.png) -->
+![添加 Windows.WinMD 的引用](https://i.loli.net/2018/11/28/5bfe45c995f5a.png)  
 ▲ 添加 Windows.WinMD 的引用
 
-![在添加引用时注意选择 SDK 的版本号](/static/posts/2018-11-04-09-58-07.png)  
+<!-- ![在添加引用时注意选择 SDK 的版本号](/static/posts/2018-11-04-09-58-07.png) -->
+![在添加引用时注意选择 SDK 的版本号](https://i.loli.net/2018/11/28/5bfe45ca6daae.png)  
 ▲ 在添加引用时注意选择 SDK 的版本号
 
-![添加 Windows.Foundation.UniversalApiContract.winmd](/static/posts/2018-11-04-09-58-41.png)  
+<!-- ![添加 Windows.Foundation.UniversalApiContract.winmd](/static/posts/2018-11-04-09-58-41.png) -->
+![添加 Windows.Foundation.UniversalApiContract.winmd](https://i.loli.net/2018/11/28/5bfe45cc0e667.png)  
 ▲ 添加 Windows.Foundation.UniversalApiContract.winmd
 
-![添加 Windows.Foundation.FoundationContract.winmd](/static/posts/2018-11-04-09-58-54.png)  
+<!-- ![添加 Windows.Foundation.FoundationContract.winmd](/static/posts/2018-11-04-09-58-54.png) -->
+![添加 Windows.Foundation.FoundationContract.winmd](https://i.loli.net/2018/11/28/5bfe45cc56e3d.png)  
 ▲ 添加 Windows.Foundation.FoundationContract.winmd
 
 ### 开始在 WPF 中使用 UWP 的控件
@@ -74,7 +83,8 @@ Windows Community Toolkit 再次更新到 5.0。以前可以在 WPF 中使用有
 - 拖拽到 XAML 代码行中
 - 直接在 XAML 代码中写
 
-![添加 WindowsXamlHost 控件](/static/posts/2018-11-04-10-17-54.png)  
+<!-- ![添加 WindowsXamlHost 控件](/static/posts/2018-11-04-10-17-54.png) -->
+![添加 WindowsXamlHost 控件](https://i.loli.net/2018/11/28/5bfe45cc7704c.png)  
 ▲ 添加 WindowsXamlHost 控件
 
 接着，指定 `InitialTypeName` 属性为 UWP 中的控件的名称（带命名空间）。这样，当 WindowsXamlHost 初始化的时候，也会初始化一个 UWP 的控件。
@@ -107,7 +117,8 @@ private void UwpButton_Click(object sender, RoutedEventArgs e)
 
 在启动的时候，你可能会遇到一些异常。比如下面这个：
 
-![没有 Application](/static/posts/2018-11-04-10-33-27.png)
+<!-- ![没有 Application](/static/posts/2018-11-04-10-33-27.png) -->
+![没有 Application](https://i.loli.net/2018/11/28/5bfe4642a25ed.png)
 
 因为我们不是原生的 UWP，而是 Host 在 WPF 中的 UWP 控件，所以会没有 `Application`。这在 UWP 控件初始化内部已经 `catch` 了，所以你可以忽略。
 
@@ -132,15 +143,18 @@ private void UwpButton_Click(object sender, RoutedEventArgs e)
 
 在 100% DPI 的屏幕下：
 
-![100% DPI 下](/static/posts/2018-11-04-10-46-46.png)
+<!-- ![100% DPI 下](/static/posts/2018-11-04-10-46-46.png) -->
+![100% DPI 下](https://i.loli.net/2018/11/28/5bfe4643612f4.png)
 
 在 150% DPI 的屏幕下：
 
-![PerMonitorV2 感知级别 150% DPI 下](/static/posts/2018-11-04-10-46-49.png)
+<!-- ![PerMonitorV2 感知级别 150% DPI 下](/static/posts/2018-11-04-10-46-49.png) -->
+![PerMonitorV2 感知级别 150% DPI 下](https://i.loli.net/2018/11/28/5bfe4644beae4.png)
 
 而如果只是指定为 PerMonitor，那么切换 DPI 或者切换屏幕的时候，只有 WPF 部分会缩放，而 UWP 部分不会变化。
 
-![PerMonitor 感知级别 150% DPI 下](/static/posts/2018-11-04-10-48-07.png)
+<!-- ![PerMonitor 感知级别 150% DPI 下](/static/posts/2018-11-04-10-48-07.png) -->
+![PerMonitor 感知级别 150% DPI 下](https://i.loli.net/2018/11/28/5bfe4644e9ec6.png)
 
 关于 PerMonitorV2 和 PerMonitor 的理解和区别，可以参见：
 
