@@ -1,6 +1,7 @@
 ---
 title: "使用 Win2D 绘制带图片纹理的圆（或椭圆）"
-date: 2018-11-11 21:50:09 +0800
+publishDate: 2018-11-11 21:50:09 +0800
+date: 2018-11-28 16:25:46 +0800
 categories: dotnet win2d uwp
 ---
 
