@@ -1,7 +1,8 @@
 ---
 title: "使用 ReSharper，输入即遵循 StyleCop 的代码格式化规范"
-date: 2018-12-01 12:28:00 +0800
+date: 2018-12-01 12:36:27 +0800
 categories: visualstudio csharp dotnet
+position: starter
 ---
 
 StyleCop 可以帮助强制执行代码格式化规范，ReSharper 可以帮助你更高效地编写代码。把两者结合起来，你便能高效地编写符合团队强制格式化规范的代码来。
