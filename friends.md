@@ -95,6 +95,8 @@ permalink: /friends/
 
 - [快乐 就在你的心 的博客](https://kljzndx.github.io/My-Blog/)
 
+- [我是bug](https://bug.ge/)
+
 ---
 
 - [Microsoft .NET Blog](https://blogs.msdn.microsoft.com/dotnet/)
