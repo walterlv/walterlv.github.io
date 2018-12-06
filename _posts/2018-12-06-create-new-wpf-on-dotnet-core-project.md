@@ -1,6 +1,6 @@
 ---
 title: "如何创建一个基于 .NET Core 3 的 WPF 项目"
-date: 2018-12-06 10:31:03 +0800
+date: 2018-12-06 11:11:05 +0800
 categories: dotnet wpf
 position: starter
 ---
@@ -18,6 +18,8 @@ position: starter
 前往官网下载：[.NET Core 3.0 downloads for Linux, macOS, and Windows](https://dotnet.microsoft.com/download/dotnet-core/3.0)。
 
 然后安装。
+
+如果你没有安装 Visual Studio 2019 Preview，请前往下载：[Visual Studio 2019](https://visualstudio.microsoft.com/vs/preview/)。
 
 ### 运行新建命令
 
