@@ -1,6 +1,6 @@
 ---
 title: "将基于 .NET Framework 的 WPF 项目迁移到基于 .NET Core 3"
-date: 2018-12-06 09:01:48 +0800
+date: 2018-12-06 10:02:08 +0800
 categories: dotnet wpf
 position: starter
 ---
@@ -155,6 +155,14 @@ position: starter
 ```
 
 如果你觉得这一步骤比较繁琐，那么可以在本文一开始就按照这篇博客的方式进行操作：[自动将 NuGet 包的引用方式从 packages.config 升级为 PackageReference - walterlv](/post/migrate-packages-config-to-package-reference.html)。
+
+### 编译、运行和修复其他错误
+
+对于比较简单的项目，在经过以上步骤之后，你可能已经可以可以直接跑起来了。
+
+![运行](/static/posts/2018-12-06-10-00-06.png)
+
+对于复杂一些的项目，你可能会遇到其他的编译或运行错误，你需要适当进行一些修复。而产生这些错误的原因是 csproj 文件中删除了太多的东西。你需要将 `<ItemGroup />` 中的一些没有默认添加进来的文件加入进来。
 
 ### 更多
 
