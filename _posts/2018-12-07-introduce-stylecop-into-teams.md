@@ -1,8 +1,10 @@
 ---
 title: "在 Visual Studio 中使用 StyleCop 来约束团队代码规范"
-date: 2018-12-01 12:40:50 +0800
+publishDate: 2018-12-01 12:40:50 +0800
+date: 2018-12-06 09:01:41 +0800
 categories: visualstudio csharp dotnet
 position: starter
+published: false
 ---
 
 
