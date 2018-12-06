@@ -44,7 +44,3 @@ dotnet new wpf -o WalterlvWpfApp
 ### 更多
 
 如果你希望将现有基于 .NET Framework 的 WPF 项目迁移到 .NET Core 3，那么请阅读我的另一篇博客：[将基于 .NET Framework 的 WPF 项目迁移到基于 .NET Core 3](/post/migrate-wpf-project-from-dotnet-framework-to-dotnet-core.html)。
-
----
-
-#### 参考资料
