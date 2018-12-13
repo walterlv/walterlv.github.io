@@ -1,6 +1,6 @@
 ---
 title: "了解 .NET 的默认 TaskScheduler 和线程池（ThreadPool）设置，避免让 Task.Run 的性能急剧降低"
-date: 2018-12-13 18:16:02 +0800
+date: 2018-12-13 18:41:33 +0800
 categories: dotnet
 position: knowledge
 ---
@@ -12,6 +12,14 @@ position: knowledge
 ---
 
 <div id="toc"></div>
+
+### 如何使用 Task.Run？
+
+1. 对于 IO 操作，尽量使用原生提供的 `Async` 方法（不要自己使用 `Task.Run` 调用一个同步的版本占用线程池资源）；
+1. 对于没有 `Async` 版本的 IO 操作，如果可能耗时很长，则指定 `CreateOptions` 为 `LongRunning`。
+1. 其他短时间执行的任务才推荐使用 `Task.Run`。
+
+接下来分析原因：
 
 ### 示例程序和示例代码
 
