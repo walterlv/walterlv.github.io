@@ -1,6 +1,6 @@
 ---
 title: "了解 .NET 的默认 TaskScheduler 和线程池（ThreadPool）设置，避免让 Task.Run 的性能急剧降低"
-date: 2018-12-13 18:14:30 +0800
+date: 2018-12-13 18:16:02 +0800
 categories: dotnet
 position: knowledge
 ---
@@ -81,7 +81,7 @@ Task 使用 `TaskScheduler` 来决定何时执行一个异步任务，如果你�
 
 了解到 `ThreadPoolTaskScheduler` 的默认行为之后，我们可以做这些事情来充分利用线程池带来的优势：
 
-1. 对于 IO 操作，尽量使用原生提供的 `Async` 方法（而不要自己使用 `Task.Run` 占用线程池资源）；
+1. 对于 IO 操作，尽量使用原生提供的 `Async` 方法，这些方法使用的是 IO 完成端口，占用线程池中的 IO 线程而不是普通线程（不要自己使用 `Task.Run` 占用线程池资源）；
 1. 对于没有 `Async` 版本的 IO 操作，如果可能耗时很长，则指定 `CreateOptions` 为 `LongRunning`（这样便会直接开一个新线程，而不是使用线程池）。
 1. 其他短时间执行的任务才推荐使用 `Task.Run`。
 
