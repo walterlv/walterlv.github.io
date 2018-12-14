@@ -1,7 +1,7 @@
 ---
 title: "C# 重载条件逻辑运算符（&& 和 ||）"
 publishDate: 2018-10-16 21:04:28 +0800
-date: 2018-11-27 13:08:55 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: csharp
 ---
 
@@ -15,7 +15,7 @@ categories: csharp
 
 ### 条件逻辑运算符是可以重载的
 
-在微软的官方文档 [true Operator (C# Reference) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/true-operator) 中，解释了 `&&` 和 `||` 这两个条件逻辑运算符的重载方法：
+在微软的官方文档 [true Operator (C# Reference) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/true-operator?wt.mc_id=MVP) 中，解释了 `&&` 和 `||` 这两个条件逻辑运算符的重载方法：
 
 > A type cannot directly overload the Caseal logical operators (`&&` and `||`), but an equivalent effect can be achieved by overloading the regular logical operators and operators `true` and `false`.
 > 
@@ -173,5 +173,5 @@ Console.WriteLine(a || b);
 #### 参考资料
 
 - [C# 中那些可以被重载的操作符 - walterlv - 请阅读文章末尾的评论](/post/overridable-operators-in-csharp.html#comment-4147325525)
-- [true Operator (C# Reference) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/true-operator)
+- [true Operator (C# Reference) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/true-operator?wt.mc_id=MVP)
 - [JavaScript: Truthy? Falsy? - 格物致知](https://amobiz.github.io/2015/09/28/javascript-truthy-falsy/)

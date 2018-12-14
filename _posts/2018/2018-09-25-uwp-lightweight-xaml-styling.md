@@ -1,7 +1,7 @@
 ---
 title: "UWP 轻量级样式定义（Lightweight Styling）"
 publishDate: 2018-09-26 09:17:07 +0800
-date: 2018-10-16 16:54:12 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: dotnet csharp uwp
 ---
 
@@ -31,7 +31,7 @@ categories: dotnet csharp uwp
 </Page.Resources>
 ```
 
-本段代码摘抄自 [XAML Lightweight styling - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/xaml-styles#lightweight-styling)
+本段代码摘抄自 [XAML Lightweight styling - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/xaml-styles#lightweight-styling?wt.mc_id=MVP)
 
 ![按钮的颜色定制](/static/posts/2018-09-25-20-00-48.png)  
 ▲ 按钮的颜色定制
@@ -63,7 +63,7 @@ categories: dotnet csharp uwp
 
 前面我们知道了如何定制轻量级样式，但实际做 UI 的时候，我怎么知道有哪些样式主题资源的值可以使用呢？
 
-一种方法是直接看微软官方文档，比如这里 [XAML theme resources](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/xaml-theme-resources)；你可以在这篇文章中找到很多通用的主题资源的 Key 用来重写。不过实际上由于 [Windows Community Toolkit](https://docs.microsoft.com/en-us/windows/communitytoolkit/) 以及各种第三方控件库的存在，所以没有什么文档是可以把这些 Key 写全的；所以更重要的方法是我们能自己找到有哪些 Key 可以使用。
+一种方法是直接看微软官方文档，比如这里 [XAML theme resources](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/xaml-theme-resources)；你可以在这篇文章中找到很多通用的主题资源的 Key 用来重写。不过实际上由于 [Windows Community Toolkit](https://docs.microsoft.com/en-us/windows/communitytoolkit/?wt.mc_id=MVP) 以及各种第三方控件库的存在，所以没有什么文档是可以把这些 Key 写全的；所以更重要的方法是我们能自己找到有哪些 Key 可以使用。
 
 找到 Key 的方法和定义一个全新的 Style / Template 一样，都可以通过 Visual Studio 的设计器视图（或者 Blend）实现。
 

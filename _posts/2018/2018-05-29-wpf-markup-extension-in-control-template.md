@@ -1,7 +1,7 @@
 ---
 title: "如何编写 WPF 的标记扩展 MarkupExtension，即便在 ControlTemplate/DataTemplate 中也能生效"
 publishDate: 2018-05-29 20:56:46 +0800
-date: 2018-05-30 09:34:41 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: xaml wpf
 ---
 
@@ -11,7 +11,7 @@ WPF 的标记扩展为 WPF 带来了强大的扩展性。利用自定义的标�
 
 ---
 
-本文并不会详细讲解如何编写 WPF 的标记扩展，如果你想了解相关的知识，建议阅读官网：[Markup Extensions and WPF XAML - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/markup-extensions-and-wpf-xaml)。
+本文并不会详细讲解如何编写 WPF 的标记扩展，如果你想了解相关的知识，建议阅读官网：[Markup Extensions and WPF XAML - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/markup-extensions-and-wpf-xaml?wt.mc_id=MVP)。
 
 <div id="toc"></div>
 

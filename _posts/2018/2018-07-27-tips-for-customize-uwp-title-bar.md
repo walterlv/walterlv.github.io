@@ -1,7 +1,7 @@
 ---
 title: "UWP 扩展/自定义标题栏的方法，一些概念和一些注意事项"
 publishDate: 2018-07-27 14:17:44 +0800
-date: 2018-07-30 07:56:45 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: uwp
 ---
 
@@ -98,4 +98,4 @@ Window.Current.SetTitleBar(TitleBar);
 
 #### 参考资料
 
-- [Title bar customization - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/shell/title-bar)
+- [Title bar customization - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/shell/title-bar?wt.mc_id=MVP)

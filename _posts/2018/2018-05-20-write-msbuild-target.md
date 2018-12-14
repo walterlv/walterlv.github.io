@@ -1,7 +1,7 @@
 ---
 title: "如何编写基于 Microsoft.NET.Sdk 的跨平台的 MSBuild Target（附各种自带的 Task）"
 publishDate: 2018-05-20 19:00:34 +0800
-date: 2018-07-11 10:44:03 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: visualstudio msbuild
 ---
 
@@ -45,20 +45,20 @@ categories: visualstudio msbuild
 有 Microsoft.NET.Sdk 的帮助，我们可以很容易地编写自己的 Target，因为很多功能它都帮我们实现好了，我们排列组合一下就好。
 
 - `Copy` 复制文件 [Rosyln 如何使用 MSBuild Copy 复制文件](https://lindexi.oschina.io/lindexi/post/Rosyln-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-MSBuild-Copy-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6.html)
-- `Move` 移动文件 [Move Task](https://docs.microsoft.com/en-us/visualstudio/msbuild/move-task)
+- `Move` 移动文件 [Move Task](https://docs.microsoft.com/en-us/visualstudio/msbuild/move-task?wt.mc_id=MVP)
 - `Delete` 删除文件
 - `Message` 显示一个输出信息（我在 [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html) 中利用这个进行调试）
 - `Warning` 显示一个警告信息
 - `Error` 报错（这样，编译就会以错误结束）
 - `CombinePath`, `ConvertToAbsolutePath` 拼接路径，转成绝对路径
 - `CreateItem`, `CreateProperty` 创建项或者属性
-- `Csc` 调用 csc.exe 编译 [Csc Task](https://docs.microsoft.com/en-us/visualstudio/msbuild/csc-task)
-- `MSBuild` 编译一个项目 [MSBuild Task](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-task)
+- `Csc` 调用 csc.exe 编译 [Csc Task](https://docs.microsoft.com/en-us/visualstudio/msbuild/csc-task?wt.mc_id=MVP)
+- `MSBuild` 编译一个项目 [MSBuild Task](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-task?wt.mc_id=MVP)
 - `Exec` 执行一个外部命令（我在 [如何创建一个基于命令行工具的跨平台的 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool.html) 一文中利用到了这个 Task 执行命令）
-- `WriteCodeFragment` 生成一段代码 [WriteCodeFragment Task](https://docs.microsoft.com/en-us/visualstudio/msbuild/writecodefragment-task)
-- `WriteLinesToFile` 向文件中写文字 [WriteLinesToFile Task](https://docs.microsoft.com/en-us/visualstudio/msbuild/writelinestofile-task)
+- `WriteCodeFragment` 生成一段代码 [WriteCodeFragment Task](https://docs.microsoft.com/en-us/visualstudio/msbuild/writecodefragment-task?wt.mc_id=MVP)
+- `WriteLinesToFile` 向文件中写文字 [WriteLinesToFile Task](https://docs.microsoft.com/en-us/visualstudio/msbuild/writelinestofile-task?wt.mc_id=MVP)
 
-提供的 Task 还有更多，如果上面不够你写出想要的功能，可以移步至官方文档翻阅：[MSBuild Task Reference - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-task-reference)。
+提供的 Task 还有更多，如果上面不够你写出想要的功能，可以移步至官方文档翻阅：[MSBuild Task Reference - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-task-reference?wt.mc_id=MVP)。
 
 ### 使用自己写的 Task
 
@@ -72,5 +72,5 @@ categories: visualstudio msbuild
 
 #### 参考资料
 
-- [Target Build Order - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/target-build-order)
-- [MSBuild Task Reference - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-task-reference)
+- [Target Build Order - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/target-build-order?wt.mc_id=MVP)
+- [MSBuild Task Reference - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-task-reference?wt.mc_id=MVP)

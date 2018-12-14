@@ -1,7 +1,7 @@
 ---
 title: "理解 UWP 视图的概念，让 UWP 应用显示多个窗口（多视图）"
 publishDate: 2018-07-27 09:19:14 +0800
-date: 2018-07-30 07:53:47 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: uwp
 ---
 
@@ -93,4 +93,4 @@ await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);
 
 #### 参考资料
 
-- [Show multiple views for an app - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/layout/show-multiple-views)
+- [Show multiple views for an app - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/layout/show-multiple-views?wt.mc_id=MVP)

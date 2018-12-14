@@ -1,7 +1,7 @@
 ---
 title: "C#/.NET 匿名函数会捕获变量，并延长对象的生命周期"
 publishDate: 2018-01-05 09:26:40 +0800
-date: 2018-09-01 08:14:33 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: csharp dotnet
 ---
 
@@ -92,4 +92,4 @@ private void OnLoaded(object sender, RoutedEventArgs e)
 
 - [c# - .NET Do lambdas prevent garbage collection of external references used in them? - Stack Overflow](https://stackoverflow.com/a/31729713/6233938)
 - [C# Language Specification 5.0](http://www.c-sharpcorner.com/ebooks/csharp-language-specification_5)
-- [C# 6.0 draft Language Specification - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/)
+- [C# 6.0 draft Language Specification - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/?wt.mc_id=MVP)

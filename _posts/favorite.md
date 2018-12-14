@@ -78,7 +78,7 @@ sitemap: false
     - [揭秘 .NET Core 和 .NET Standard-码农很忙](https://www.coderbusy.com/archives/881.html)
 
 - 局部函数
-    - [Local functions vs. lambda expressions - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/local-functions-vs-lambdas)
+    - [Local functions vs. lambda expressions - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/local-functions-vs-lambdas?wt.mc_id=MVP)
     - [C# 7 局部函数剖析 - Sweet-Tang - 博客园](http://www.cnblogs.com/tdfblog/archive/2017/10/10/dissecting-the-local-functions-in-c-7.html )
 
 - 平方根速算法

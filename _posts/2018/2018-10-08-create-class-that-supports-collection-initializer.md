@@ -1,6 +1,7 @@
 ---
 title: ".NET 中创建支持集合初始化器的类型"
-date: 2018-10-08 16:34:13 +0800
+publishDate: 2018-10-08 16:34:13 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: dotnet
 ---
 
@@ -171,5 +172,5 @@ var collection = new WalterlvCollection
 
 事实上微软的官方文档中并没有对集合初始化器的最简实现有多少描述，所以以下的参考实际上并没有用。
 
-- 英文：[Object and Collection Initializers (C# Programming Guide) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/object-and-collection-initializers)
-- 中文：[对象和集合初始值设定项（C# 编程指南） - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/object-and-collection-initializers)
+- 英文：[Object and Collection Initializers (C# Programming Guide) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/object-and-collection-initializers?wt.mc_id=MVP)
+- 中文：[对象和集合初始值设定项（C# 编程指南） - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/object-and-collection-initializers?wt.mc_id=MVP)

@@ -1,7 +1,7 @@
 ---
 title: "流畅设计 Fluent Design System 中的光照效果 RevealBrush，WPF 也能模拟实现啦！"
 publishDate: 2018-04-05 16:34:42 +0800
-date: 2018-05-29 20:56:39 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: wpf xaml uwp
 ---
 
@@ -133,4 +133,4 @@ namespace Walterlv.Demo
 
 #### 参考资料
 
-- [突出显示 - UWP app developer - Microsoft Docs](https://docs.microsoft.com/zh-cn/windows/uwp/design/style/reveal)
+- [突出显示 - UWP app developer - Microsoft Docs](https://docs.microsoft.com/zh-cn/windows/uwp/design/style/reveal?wt.mc_id=MVP)

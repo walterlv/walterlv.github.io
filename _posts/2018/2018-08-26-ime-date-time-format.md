@@ -1,6 +1,7 @@
 ---
 title: "常用输入法快速输入自定义格式的时间和日期（搜狗/QQ/微软拼音）"
-date: 2018-08-26 16:48:08 +0800
+publishDate: 2018-08-26 16:48:08 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: ime windows
 ---
 
@@ -42,7 +43,7 @@ categories: ime windows
 %yyyy%-%MM%-%dd% %HH%:%mm%:%ss%
 ```
 
-更多自定义请参阅：[自定义日期和时间格式字符串 - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/standard/base-types/custom-date-and-time-format-strings)
+更多自定义请参阅：[自定义日期和时间格式字符串 - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/standard/base-types/custom-date-and-time-format-strings?wt.mc_id=MVP)
 
 ### 搜狗拼音输入法
 

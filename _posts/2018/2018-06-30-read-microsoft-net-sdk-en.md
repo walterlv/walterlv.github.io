@@ -1,7 +1,7 @@
 ---
 title: "Reading the Source Code of Microsoft.NET.Sdk, Writing the Creative Extension of Compiling"
 publishDate: 2018-06-30 20:27:54 +0800
-date: 2018-08-12 16:05:05 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: dotnet visualstudio nuget msbuild
 version:
   current: English
@@ -24,7 +24,7 @@ This post is written in **multiple languages**. Please select yours:
 
 ### Where to find the source code of Microsoft.NET.Sdk
 
-Search `Microsoft.NET.Sdk` using [Everything](https://www.voidtools.com/) or [Wox](https://github.com/Wox-launcher/Wox), I find that multiple versions are installed in my computer. As I've installed the .NET Core 2.1, the location of my latest version is `C:\Program Files\dotnet\sdk\2.1.300\Sdks`. The official document [How to: Reference an MSBuild Project SDK](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-use-project-sdk) says that if you implement your own Sdk, you can also push it to <nuget.org>.
+Search `Microsoft.NET.Sdk` using [Everything](https://www.voidtools.com/) or [Wox](https://github.com/Wox-launcher/Wox), I find that multiple versions are installed in my computer. As I've installed the .NET Core 2.1, the location of my latest version is `C:\Program Files\dotnet\sdk\2.1.300\Sdks`. The official document [How to: Reference an MSBuild Project SDK](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-use-project-sdk?wt.mc_id=MVP) says that if you implement your own Sdk, you can also push it to <nuget.org>.
 
 ![Search Microsoft.NET.Sdk](/static/posts/2018-06-30-21-06-06.png)  
 ▲ Search Microsoft.NET.Sdk
@@ -47,13 +47,13 @@ I've written some posts talking about the NuGet folder structure but unfortunate
 - [How to Write a Cross-Platform NuGet Tool Package Base on MSBuild Task](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html)
 - [How to Write a Cross-Platform NuGet Tool Package Base on Command Line Application](/post/create-a-cross-platform-command-based-nuget-tool.html)
 
-Microsoft have some official document talking about the NuGet folder structure [How to create a NuGet package from a convention-based working directory](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package#from-a-convention-based-working-directory).
+Microsoft have some official document talking about the NuGet folder structure [How to create a NuGet package from a convention-based working directory](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package#from-a-convention-based-working-directory?wt.mc_id=MVP).
 
 **But** there exists an extra `Sdk` folder for the `Sdk` kind of NuGet package.
 
 ![The extra Sdk folder](/static/posts/2018-06-30-21-10-19.png)
 
-The `Sdk.props` file and the `Sdj.targets` file will be imported by default and Microsoft's official document also mentions it here: [How to: Reference an MSBuild Project SDK - Visual Studio](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-use-project-sdk). It says that the two code blocks are actually the same:
+The `Sdk.props` file and the `Sdj.targets` file will be imported by default and Microsoft's official document also mentions it here: [How to: Reference an MSBuild Project SDK - Visual Studio](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-use-project-sdk?wt.mc_id=MVP). It says that the two code blocks are actually the same:
 
 > ```xml
 > <Project Sdk="Microsoft.NET.Sdk">
@@ -119,4 +119,4 @@ I also find some creative `Target` that inspires me:
 
 #### References
 
-- [How to: Reference an MSBuild Project SDK - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-use-project-sdk)
+- [How to: Reference an MSBuild Project SDK - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-use-project-sdk?wt.mc_id=MVP)

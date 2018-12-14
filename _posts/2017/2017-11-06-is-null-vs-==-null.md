@@ -1,7 +1,7 @@
 ---
 title: "从 “x is null 和 x == null” 的区别看 C# 7 模式匹配中常量和 null 的匹配"
 publishDate: 2017-11-06 23:24:52 +0800
-date: 2018-02-20 06:39:41 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: csharp msil dotnet decompile
 ---
 
@@ -17,7 +17,7 @@ categories: csharp msil dotnet decompile
 
 ### 🤓 C# 7 的模式匹配
 
-说到 C# 中新增的模式匹配，想必大家一定不会忘了变量的匹配。以下例子来自于微软官方 C# 7.0 的介绍文档 [What's New in C# 7 - C# Guide - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-7)：
+说到 C# 中新增的模式匹配，想必大家一定不会忘了变量的匹配。以下例子来自于微软官方 C# 7.0 的介绍文档 [What's New in C# 7 - C# Guide - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-7?wt.mc_id=MVP)：
 
 ```csharp
 public static int DiceSum2(IEnumerable<object> values)
@@ -254,7 +254,7 @@ IL_001c: stloc.1      // V_1
 ---
 
 #### 参考资料
-- [What's New in C# 7 - C# Guide - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-7)
+- [What's New in C# 7 - C# Guide - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-7?wt.mc_id=MVP)
 - [Dissecting the pattern matching in C# 7 – Dissecting the code](https://blogs.msdn.microsoft.com/seteplia/2017/10/16/dissecting-the-pattern-matching-in-c-7/)
 - [c# - What is the difference between "x is null" and "x == null"? - Stack Overflow](https://stackoverflow.com/questions/40676426/what-is-the-difference-between-x-is-null-and-x-null)
 - [C# 7.0 语言新特性 - 技术翻译 - 开源中国社区](https://www.oschina.net/translate/whats-new-in-csharp-7-0)

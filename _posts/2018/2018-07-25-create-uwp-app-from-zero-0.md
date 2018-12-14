@@ -1,7 +1,7 @@
 ---
 title: "(1/2) 为了理解 UWP 的启动流程，我从零开始创建了一个 UWP 程序"
 publishDate: 2018-07-25 09:27:23 +0800
-date: 2018-07-27 07:23:44 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: uwp msbuild
 ---
 
@@ -187,8 +187,8 @@ UWP 程序的输出类型是 `AppContainerExe`，而不是一般的 Library 或�
 
 可以阅读这些文档了解如何完成这份文件的编写：
 
-- [Identity (Windows 10) - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/uapmanifestschema/element-identity)
-- [pm:PhoneIdentity (Windows 10) - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/uapmanifestschema/element-pm-phoneidentity)
+- [Identity (Windows 10) - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/uapmanifestschema/element-identity?wt.mc_id=MVP)
+- [pm:PhoneIdentity (Windows 10) - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/uapmanifestschema/element-pm-phoneidentity?wt.mc_id=MVP)
 
 具体来说，`<Identity />` 是此程序包的标识符，需要在整个应用商店范围内唯一（如果将此包与应用商店关联，这个值会自动更新，所以不用在意填成什么）。`<mp:PhoneIdentity />` 是此程序包在移动设备上的标识符，应用的更新会依据此标识符的 GUID 来唯一确定，格式必须是 GUID。
 

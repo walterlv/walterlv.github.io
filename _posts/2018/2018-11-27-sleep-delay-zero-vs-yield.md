@@ -1,6 +1,7 @@
 ---
 title: "C#/.NET 中 Thread.Sleep(0), Task.Delay(0), Thread.Yield(), Task.Yield() 不同的执行效果和用法建议"
-date: 2018-11-27 13:14:07 +0800
+publishDate: 2018-11-27 13:14:07 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: dotnet csharp
 ---
 
@@ -96,7 +97,7 @@ Console.WriteLine($"Thread.Sleep(0) : {elapsed}");
 
 #### Task.Delay(0)
 
-`Task.Delay` 是 `Task` 系列的线程模型（TAP）中的方法。关于 TAP 可参见 [Task-based Asynchronous Pattern (TAP)  Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)。
+`Task.Delay` 是 `Task` 系列的线程模型（TAP）中的方法。关于 TAP 可参见 [Task-based Asynchronous Pattern (TAP)  Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap?wt.mc_id=MVP)。
 
 这是一套基于异步状态机（AsyncStateMachine）实现的线程模型，这也是与 `Thread` 系列方法最大的不同。
 

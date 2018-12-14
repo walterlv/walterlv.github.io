@@ -2,7 +2,7 @@
 layout: post
 title: "为 Visual Studio 使用通配符批量添加项目文件"
 publishDate: 2017-09-26 21:12:15 +0800
-date: 2018-01-15 23:52:36 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: visualstudio msbuild
 permalink: /post/vs/2017/09/26/wildcards-in-vs-projects.html
 keywords: visual studio wildcards
@@ -62,4 +62,4 @@ description: Visual Studio 的项目文件其实是支持使用通配符的，�
 
 #### 参考资料
 
-- [How to: Select the Files to Build - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-select-the-files-to-build)
+- [How to: Select the Files to Build - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-select-the-files-to-build?wt.mc_id=MVP)

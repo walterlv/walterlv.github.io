@@ -1,6 +1,7 @@
 ---
 title: "在 Visual Studio 中使用 EditorConfig 统一代码风格（含原生与插件）"
-date: 2018-11-20 12:17:50 +0800
+publishDate: 2018-11-20 12:17:50 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: visualstudio csharp dotnet
 ---
 
@@ -47,7 +48,7 @@ Visual Studio 2017 开始添加了对 EditorConfig 的原生支持（你当然�
 
 也就是说，当你的项目中存在 EditorConfig 的配置文件 .editorconfig 的时候，Visual Studio 就会应用 EditorConfig 的设置，而且可以适用于多数情况下的编程约定。
 
-Visual Studio 中 .NET 相关语言（C# VB）的 EditorConfig 属性，可以参考 [.NET coding convention settings For EditorConfig](https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference?view=vs-2017)。
+Visual Studio 中 .NET 相关语言（C# VB）的 EditorConfig 属性，可以参考 [.NET coding convention settings For EditorConfig](https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference?view=vs-2017?wt.mc_id=MVP)。
 
 ### 在 Visual Studio 中添加 EditorConfig 配置
 
@@ -60,7 +61,7 @@ Visual Studio 支持 EditorConfig 对编程规范的约束。对于多数开发�
 ![添加 .editorconfig 文件](/static/posts/2018-11-20-10-58-33.png)  
 ▲ 添加 .editorconfig 文件
 
-当然，也许你会发现在我的图中，两个插件都能生成 .editorconfig 文件。EditorConfig Language Service 生成的 .editorconfig 文件是空的，而 IntelliCode 一经添加便提供了丰富的 C# 语言约定的属性设置。不过，IntelliCode 提供的设置多少取决于你目前解决方案中的项目类型，这些属性是从 [这里](https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference?view=vs-2017) 推断的。
+当然，也许你会发现在我的图中，两个插件都能生成 .editorconfig 文件。EditorConfig Language Service 生成的 .editorconfig 文件是空的，而 IntelliCode 一经添加便提供了丰富的 C# 语言约定的属性设置。不过，IntelliCode 提供的设置多少取决于你目前解决方案中的项目类型，这些属性是从 [这里](https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference?view=vs-2017?wt.mc_id=MVP) 推断的。
 
 如果你使用 EditorConfig Language Service 生成了 .editorconfig 文件，则可以继续点击小灯泡生成按照微软约定的编程规范：
 
@@ -351,5 +352,5 @@ dotnet_style_qualification_for_property = false:suggestion
 
 #### 参考资料
 
-- [Using EditorConfig settings in Visual Studio - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/ide/create-portable-custom-editor-options?view=vs-2017)
-- [.NET coding convention settings For EditorConfig - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference?view=vs-2017#formatting-conventions)
+- [Using EditorConfig settings in Visual Studio - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/ide/create-portable-custom-editor-options?view=vs-2017?wt.mc_id=MVP)
+- [.NET coding convention settings For EditorConfig - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference?view=vs-2017#formatting-conventions?wt.mc_id=MVP)

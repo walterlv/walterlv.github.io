@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "用微软拼音快速输入自定义格式的时间和日期"
-date: 2017-09-18 21:58:58 +0800
+publishDate: 2017-09-18 21:58:58 +0800
+date: 2018-12-14 09:54:33 +0800
 categories: ime
 permalink: /ime/2017/09/18/date-time-format-using-microsoft-pinyin.html
 keywords: Micosoft Pinyin IME date time format
@@ -48,7 +49,7 @@ HH|2 位小时（24 小时制）
 mm|2 位分钟数
 ss|2 位秒数
 
-更多格式化变量请参考：[Custom Date and Time Format Strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)
+更多格式化变量请参考：[Custom Date and Time Format Strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings?wt.mc_id=MVP)
 
 ### 重要的说明
 

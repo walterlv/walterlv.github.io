@@ -1,7 +1,7 @@
 ---
 title: "迫不及待地体验了一把 C#8.0 中的可空引用类型（Nullable Reference）"
 publishDate: 2017-12-18 21:41:56 +0800
-date: 2017-12-19 08:36:41 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: csharp
 ---
 
@@ -57,7 +57,7 @@ categories: csharp
 
 很明显，`string.IsNullOrEmpty` 是接受 `null` 值的，然而改不了现有程序集，于是这样的标记也没有用。
 
-从现在看来，我们只能把它当作 [Code Contracts](https://docs.microsoft.com/en-us/dotnet/framework/debug-trace-profile/code-contracts) 的语法版本。
+从现在看来，我们只能把它当作 [Code Contracts](https://docs.microsoft.com/en-us/dotnet/framework/debug-trace-profile/code-contracts?wt.mc_id=MVP) 的语法版本。
 
 ---
 

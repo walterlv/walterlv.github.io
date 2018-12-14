@@ -1,7 +1,7 @@
 ---
 title: "Windows 10 应用创建模糊背景窗口的三种方法"
 publishDate: 2018-07-16 19:44:07 +0800
-date: 2018-09-01 07:59:52 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: windows wpf uwp dotnet
 version:
   current: 中文
@@ -139,4 +139,4 @@ WPF 的 `UIElement` 都有 `Effect` 属性，将其设置为 `BlurEffect` 即可
 
 ### UWP AcyclicBrush
 
-微软的官方文档 [Acrylic material - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/style/acrylic) 讲解了如何使用亚克力效果。
+微软的官方文档 [Acrylic material - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/style/acrylic?wt.mc_id=MVP) 讲解了如何使用亚克力效果。

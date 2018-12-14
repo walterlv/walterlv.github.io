@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "WPF/UWP 绑定中的 UpdateSourceTrigger"
-date: 2017-09-25 01:20:35 +0800
+publishDate: 2017-09-25 01:20:35 +0800
+date: 2018-12-14 09:54:33 +0800
 categories: uwp
 permalink: /uwp/2017/09/25/binding-update-source-trigger.html
 keywords: uwp wpf binding UpdateSourceTrigger TextBox Text
@@ -65,9 +66,9 @@ public enum UpdateSourceTrigger
 没错，就是加这半句就好了。
 
 #### 参考资料
-- [How to: Control When the TextBox Text Updates the Source - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/data/how-to-control-when-the-textbox-text-updates-the-source)
+- [How to: Control When the TextBox Text Updates the Source - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/data/how-to-control-when-the-textbox-text-updates-the-source?wt.mc_id=MVP)
 - [c# - WPF two-way binding not working - Stack Overflow](https://stackoverflow.com/questions/22253211/wpf-two-way-binding-not-working)
 - [The UpdateSourceTrigger property - The complete WPF tutorial](http://www.wpf-tutorial.com/data-binding/the-update-source-trigger-property/)
-- [UpdateSourceTrigger Enum (Windows.UI.Xaml.Data) - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.updatesourcetrigger)
-- [UpdateSourceTrigger Enum (System.Windows.Data) - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/api/system.windows.data.updatesourcetrigger?view=netframework-4.7)
-- [TextBox.Text Property (System.Windows.Controls) - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/api/system.windows.controls.textbox.text?view=netframework-4.7#System_Windows_Controls_TextBox_Text)
+- [UpdateSourceTrigger Enum (Windows.UI.Xaml.Data) - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.updatesourcetrigger?wt.mc_id=MVP)
+- [UpdateSourceTrigger Enum (System.Windows.Data) - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/api/system.windows.data.updatesourcetrigger?wt.mc_id=MVP)
+- [TextBox.Text Property (System.Windows.Controls) - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/api/system.windows.controls.textbox.text#System_Windows_Controls_TextBox_Text?wt.mc_id=MVP)

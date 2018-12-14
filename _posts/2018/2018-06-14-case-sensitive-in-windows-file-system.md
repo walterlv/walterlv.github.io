@@ -1,7 +1,7 @@
 ---
 title: "Windows 10 四月更新，文件夹名称也能区分大小写了"
 publishDate: 2018-06-14 08:02:24 +0800
-date: 2018-09-01 08:03:09 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: windows
 ---
 
@@ -70,7 +70,7 @@ The request is not supported.
 
 这个问题在 MicrosoftDocs 的 GitHub 仓库中被提到了：[fsutil setCaseSensitiveInfo · Issue #977 · MicrosoftDocs/windowsserverdocs](https://github.com/MicrosoftDocs/windowsserverdocs/issues/977)。
 
-安装 Linux 子系统的方法可以参考微软官方文档：[Install Windows Subystem for Linux (WSL) on on Windows 10](https://docs.microsoft.com/zh-cn/windows/wsl/install-win10)。如果英文阅读有压力，可以参考毒逆天的博客：[Win10 安装 Linux子系统 Ubuntu18.04 / Kali Linux 的体验](https://www.cnblogs.com/dunitian/p/9159897.html)。
+安装 Linux 子系统的方法可以参考微软官方文档：[Install Windows Subystem for Linux (WSL) on on Windows 10](https://docs.microsoft.com/zh-cn/windows/wsl/install-win10)。如果英文阅读有压力，可以参考毒逆天的博客：[Win10 安装 Linux子系统 Ubuntu18.04 / Kali Linux 的体验](https://www.cnblogs.com/dunitian/p/9159897.html?wt.mc_id=MVP)。
 
 简单点，就是管理员权限 PowerShell 敲个命令：
 

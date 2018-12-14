@@ -1,7 +1,7 @@
 ---
 title: "WPF 跨应用程序域的 UI（Cross AppDomain UI）"
 publishDate: 2017-11-13 00:36:28 +0800
-date: 2017-11-13 23:04:08 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: wpf
 ---
 
@@ -83,6 +83,6 @@ MAF 框架对插件和宿主程序集所在的文件夹结构有要求。这可�
 
 - [ENikS/System.AddIn: Projects related to Microsoft System.AddIn](https://github.com/ENikS/System.AddIn)
 - [Add-In Performance: What can you expect as you cross an isolation boundary and how to make it better [Jesse Kaplan] – CLR Add-In Team Blog](https://blogs.msdn.microsoft.com/clraddins/2008/02/22/add-in-performance-what-can-you-expect-as-you-cross-an-isolation-boundary-and-how-to-make-it-better-jesse-kaplan/)
-- [WPF Add-Ins Overview - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/app-development/wpf-add-ins-overview)
-- [Walkthrough: Creating an Extensible Application - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/add-ins/walkthrough-create-extensible-app)
-- [Add-ins and Extensibility - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/add-ins/)
+- [WPF Add-Ins Overview - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/app-development/wpf-add-ins-overview?wt.mc_id=MVP)
+- [Walkthrough: Creating an Extensible Application - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/add-ins/walkthrough-create-extensible-app?wt.mc_id=MVP)
+- [Add-ins and Extensibility - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/add-ins/?wt.mc_id=MVP)

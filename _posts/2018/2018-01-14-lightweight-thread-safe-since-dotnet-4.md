@@ -1,6 +1,7 @@
 ---
 title: ".NET 中的轻量级线程安全"
-date: 2018-01-14 20:46:22 +0800
+publishDate: 2018-01-14 20:46:22 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: dotnet
 ---
 
@@ -10,7 +11,7 @@ categories: dotnet
 
 ### SpinLock, SpinWait
 
-SpinLock 被称之为“自旋锁”，SpinWait 称为“自旋等待”，适合在非常轻量的计算中使用。它与普通 lock 的区别在于普通 lock 使用 Win32 内核态对象来实现等待，[Overview of Synchronization Primitives](https://docs.microsoft.com/en-us/dotnet/standard/threading/overview-of-synchronization-primitives) 中描述为：
+SpinLock 被称之为“自旋锁”，SpinWait 称为“自旋等待”，适合在非常轻量的计算中使用。它与普通 lock 的区别在于普通 lock 使用 Win32 内核态对象来实现等待，[Overview of Synchronization Primitives](https://docs.microsoft.com/en-us/dotnet/standard/threading/overview-of-synchronization-primitives?wt.mc_id=MVP) 中描述为：
 
 > you can use synchronization primitives that provide fast performance by avoiding expensive reliance on Win32 kernel objects such as wait handles whenever possible.
 
@@ -34,11 +35,11 @@ SpinLock 被称之为“自旋锁”，SpinWait 称为“自旋等待”，适�
 
 #### 参考资料
 
-- [Overview of Synchronization Primitives - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/threading/overview-of-synchronization-primitives)
-- [Thread-Safe Collections - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/collections/thread-safe/)
+- [Overview of Synchronization Primitives - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/threading/overview-of-synchronization-primitives?wt.mc_id=MVP)
+- [Thread-Safe Collections - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/collections/thread-safe/?wt.mc_id=MVP)
 - [.net 4.0新特性-自旋锁(SpinLock) - CSDN博客](http://blog.csdn.net/clingingboy/article/details/5662735)
 - [.net 4.0新特性-CountDownEvent - CSDN博客](http://blog.csdn.net/clingingboy/article/details/5662734)
 - [Atomicity, volatility and immutability are different, part three – Fabulous Adventures In Coding](https://blogs.msdn.microsoft.com/ericlippert/2011/06/16/atomicity-volatility-and-immutability-are-different-part-three/)
-- [How to: Enable Thread-Tracking Mode in SpinLock - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/threading/how-to-enable-thread-tracking-mode-in-spinlock)
+- [How to: Enable Thread-Tracking Mode in SpinLock - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/threading/how-to-enable-thread-tracking-mode-in-spinlock?wt.mc_id=MVP)
 - [C# SpinWait 实现 - 程序园](http://www.voidcn.com/article/p-pbnmpkmu-bqz.html)
 - [C#并行编程 (Barrier,CountdownEvent,ManualResetEventSlim,SemaphoreSlim,SpinLock,SpinWait )--Thread,Ant,ICP,index,ConsoleWriteLine,CookTasks,cook,particpants](http://www.bijishequ.com/detail/359812?p=13-67)

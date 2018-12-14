@@ -1,7 +1,7 @@
 ---
 title: "如何创建一个基于命令行工具的跨平台的 NuGet 工具包"
 publishDate: 2018-05-12 09:09:02 +0800
-date: 2018-09-01 08:16:29 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: visualstudio csharp dotnet msbuild
 ---
 
@@ -96,7 +96,7 @@ namespace Walterlv.NuGetTool
 + tools/
 ```
 
-▲ 以上结构可以去官网翻阅原文 [How to create a NuGet package - Microsoft Docs](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package)，不过我这里额外写了一个预设目录 `buildMultiTargeting`，官方文档却没有说。
+▲ 以上结构可以去官网翻阅原文 [How to create a NuGet package - Microsoft Docs](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package?wt.mc_id=MVP)，不过我这里额外写了一个预设目录 `buildMultiTargeting`，官方文档却没有说。
 
 > 注意到我们的 csproj 文件中的 `<TargetFrameworks>` 节点吗？如果指定为单个框架，则自动导入的是 `build` 目录下的；如果指定为多个框架，则自动导入的是 `buildMultiTargeting` 目录下的。
 
@@ -463,7 +463,7 @@ namespace Walterlv.Debug
 
 #### 参考资料
 
-- [NuGet pack and restore as MSBuild targets - Microsoft Docs](https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets)
+- [NuGet pack and restore as MSBuild targets - Microsoft Docs](https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets?wt.mc_id=MVP)
 - [Bundling .NET build tools in NuGet](https://www.natemcmaster.com/blog/2017/11/11/build-tools-in-nuget/)
 - [MSBuild Reserved and Well-Known Properties](https://msdn.microsoft.com/en-us/library/ms164309.aspx)
 - [build process - How does MSBuild check whether a target is up to date or not? - Stack Overflow](https://stackoverflow.com/a/6982575/6233938)
@@ -474,5 +474,5 @@ namespace Walterlv.Debug
 - [davidfowl/NuGetPowerTools: A bunch of powershell modules that make it even easier to work with nuget](https://github.com/davidfowl/NuGetPowerTools)
 - [MSBuild and Skipping target "<TargetName>" because it has no outputs - Stack Overflow](https://stackoverflow.com/q/27377095/6233938)
 - [Don't include dependencies from packages.config file when creating NuGet package - Stack Overflow](https://stackoverflow.com/q/15012963/6233938)
-- [NuGet 2.7 Release Notes - Microsoft Docs](https://docs.microsoft.com/zh-cn/nuget/release-notes/nuget-2.7#Development-Only_Dependencies)
+- [NuGet 2.7 Release Notes - Microsoft Docs](https://docs.microsoft.com/zh-cn/nuget/release-notes/nuget-2.7#Development-Only_Dependencies?wt.mc_id=MVP)
 - [PackageReference should support DevelopmentDependency metadata · Issue #4125 · NuGet/Home](https://github.com/NuGet/Home/issues/4125)

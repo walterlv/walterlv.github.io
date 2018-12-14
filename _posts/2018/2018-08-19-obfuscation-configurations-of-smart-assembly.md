@@ -1,7 +1,7 @@
 ---
 title: ".NET 中各种混淆（Obfuscation）的含义、原理、实际效果和不同级别的差异（使用 SmartAssembly）"
 publishDate: 2018-08-19 20:42:42 +0800
-date: 2018-08-21 07:58:54 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: dotnet csharp
 ---
 
@@ -38,8 +38,8 @@ SmartAssembly 本质上是保护应用程序不被逆向或恶意篡改。目前
 - *强签名 Strong Name Signing*
     - 强签名可以确保程序之间的依赖关系是严格确定的，如果对其中的一个依赖进行篡改，将导致无法加载正确的程序集。
     - 微软提供了强签名工具，所以可以无需使用 SmartAssembly 的：
-        - [Sn.exe (Strong Name Tool) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/tools/sn-exe-strong-name-tool)
-        - [How to: Sign an Assembly with a Strong Name - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name)
+        - [Sn.exe (Strong Name Tool) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/tools/sn-exe-strong-name-tool?wt.mc_id=MVP)
+        - [How to: Sign an Assembly with a Strong Name - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name?wt.mc_id=MVP)
 - *自动错误上报 Automated Error Reporting*
     - SmartAssembly 会自动向 exe 程序注入异常捕获与上报的逻辑。
 - *功能使用率上报 Feature Usage Reporting*

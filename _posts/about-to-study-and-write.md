@@ -1,7 +1,7 @@
 ---
 title: "About to Study and Write"
 publishDate: 2018-10-31 16:15:26 +0800
-date: 2018-11-27 13:10:18 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: post
 published: false
 ---
@@ -25,16 +25,16 @@ published: false
 
 - AggregateException
     - [c# - Flattening of AggregateExceptions for Processing - Stack Overflow](https://stackoverflow.com/questions/22872995/flattening-of-aggregateexceptions-for-processing)
-    - [AggregateException.Flatten Method (System) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.aggregateexception.flatten?view=netframework-4.7.2)
+    - [AggregateException.Flatten Method (System) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.aggregateexception.flatten?view=netframework-4.7.2?wt.mc_id=MVP)
 
 - WPF Render
-     - [WPF Graphics Rendering Overview - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview)
+     - [WPF Graphics Rendering Overview - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview?wt.mc_id=MVP)
 
 - WPF Popup 打字 Bug
     - [Cannot input Chinese in the Textbox of Popup](https://social.msdn.microsoft.com/Forums/vstudio/en-US/3ed11dbe-7b30-46ff-8ce4-4d1096eb5628/cannot-input-chinese-in-the-textbox-of-popup?forum=wpf)
 
 - 工具
-    - [Windows Sysinternals - Windows Sysinternals - Microsoft Docs](https://docs.microsoft.com/en-us/sysinternals/)
+    - [Windows Sysinternals - Windows Sysinternals - Microsoft Docs](https://docs.microsoft.com/en-us/sysinternals/?wt.mc_id=MVP)
     - [微软极品工具箱-Sysinternals Suite - 赵青青 - 博客园](https://www.cnblogs.com/zhaoqingqing/p/5641934.html)
 
 - Lottie
@@ -46,14 +46,14 @@ published: false
     - [WPF Navigation - Paul Stovell](http://paulstovell.com/blog/wpf-navigation)
 
 - DisableProcessWindowsGhosting
-    - [DisableProcessWindowsGhosting function - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-disableprocesswindowsghosting)
+    - [DisableProcessWindowsGhosting function - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-disableprocesswindowsghosting?wt.mc_id=MVP)
 
 - WM_Paint
-    - [Drawing Without the WM\_PAINT Message - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/gdi/drawing-without-the-wm-paint-message)
+    - [Drawing Without the WM\_PAINT Message - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/gdi/drawing-without-the-wm-paint-message?wt.mc_id=MVP)
 
 - Microsoft Interface Definition Language
     - [#ifdef WINDOWS 的 Twitter: “MIDL 3 deep dive with @osterman is out now https://t.co/LxvMQBaOAm #windowsdev”](https://twitter.com/ifdefwindows/status/1034116042547589120?s=21)
-    - [Introduction to Microsoft Interface Definition Language 3.0 - UWP app developer | Microsoft Docs](https://docs.microsoft.com/en-us/uwp/midl-3/intro)
+    - [Introduction to Microsoft Interface Definition Language 3.0 - UWP app developer | Microsoft Docs](https://docs.microsoft.com/en-us/uwp/midl-3/intro?wt.mc_id=MVP)
 
 - 捕获变量
     - [C#/.NET 匿名函数会捕获变量，并延长对象的生命周期 - walterlv](/post/anonymous-function-extends-lifetime-of-variable.html#comment-4061605207)
@@ -63,19 +63,19 @@ published: false
     - [FreeSSL.org - 一个申请免费HTTPS证书的网站](https://freessl.org/)
 
 - Windows Sysinternals
-    - [Windows Sysinternals - Windows Sysinternals - Microsoft Docs](https://docs.microsoft.com/en-us/sysinternals/)
+    - [Windows Sysinternals - Windows Sysinternals - Microsoft Docs](https://docs.microsoft.com/en-us/sysinternals/?wt.mc_id=MVP)
 
 - .NET Framework Tools
-    - [.NET Framework Tools - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/tools/)
+    - [.NET Framework Tools - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/tools/?wt.mc_id=MVP)
 
 - Microsoft Message Analyzer
-    - [Microsoft Message Analyzer Operating Guide - Message Analyzer - Microsoft Docs](https://docs.microsoft.com/en-us/message-analyzer/microsoft-message-analyzer-operating-guide)
+    - [Microsoft Message Analyzer Operating Guide - Message Analyzer - Microsoft Docs](https://docs.microsoft.com/en-us/message-analyzer/microsoft-message-analyzer-operating-guide?wt.mc_id=MVP)
 
 - Win32 PE
     - [深入理解 Win32 PE 文件格式 - 国立秀才 - 博客园](https://www.cnblogs.com/guolixiucai/p/4809820.html)
 
 - Output Type
-    - [-target (C# Compiler Options) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/target-compiler-option)
+    - [-target (C# Compiler Options) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/target-compiler-option?wt.mc_id=MVP)
 
 - 窗口与子窗口
     - [窗口之间的主从关系与Z-Order - 中华一猿 - 博客园](https://www.cnblogs.com/dhatbj/p/3288152.html)
@@ -84,7 +84,7 @@ published: false
     - [winapi - Win32 window Owner vs window Parent? - Stack Overflow](https://stackoverflow.com/questions/507848/win32-window-owner-vs-window-parent)
 
 - UWP 快捷键
-    - [Keyboard accelerators - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/input/keyboard-accelerators)
+    - [Keyboard accelerators - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/input/keyboard-accelerators?wt.mc_id=MVP)
 
 - 缺少程序集在 Roslyn 编译期间
     - 最终原因是打出来的包中缺少 App.config 文件
@@ -93,7 +93,7 @@ published: false
     [Could not load file or assembly 'System.Collections.Immutable' after upgrading ASP.NET to 1.1 · Issue #5539 · aspnet/Mvc](https://github.com/aspnet/Mvc/issues/5539)
 
 - Remote Session
-    - [Connect devices through remote sessions - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/remote-sessions)
+    - [Connect devices through remote sessions - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/remote-sessions?wt.mc_id=MVP)
 
 - Fastest Gaussian Blur 
     - [Fastest Gaussian Blur (in linear time)](http://blog.ivank.net/fastest-gaussian-blur.html)
@@ -124,10 +124,10 @@ published: false
     - [DirectComposition reference (Windows)](https://msdn.microsoft.com/zh-cn/library/windows/desktop/hh449188.aspx)
     - [DirectComposition samples (Windows)](https://msdn.microsoft.com/zh-cn/library/windows/desktop/hh437367.aspx)
     - [DirectComposition glossary (Windows)](https://msdn.microsoft.com/zh-cn/library/windows/desktop/hh437370.aspx)
-    - [InkPresenter.ActivateCustomDrying Method (Windows.UI.Input.Inking) - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkpresenter.activatecustomdrying#Windows_UI_Input_Inking_InkPresenter_ActivateCustomDrying)
-    - [Win32 and COM APIs for UWP apps - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/uwp/win32-and-com/win32-and-com-for-uwp-apps)
+    - [InkPresenter.ActivateCustomDrying Method (Windows.UI.Input.Inking) - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkpresenter.activatecustomdrying#Windows_UI_Input_Inking_InkPresenter_ActivateCustomDrying?wt.mc_id=MVP)
+    - [Win32 and COM APIs for UWP apps - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/uwp/win32-and-com/win32-and-com-for-uwp-apps?wt.mc_id=MVP)
     - [Tutorial 22: Render to Texture](http://www.rastertek.com/dx11tut22.html)
-    - [Getting Started with Ink - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/getting-started-with-ink)
+    - [Getting Started with Ink - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/getting-started-with-ink?wt.mc_id=MVP)
     - [InkCanvas - 2,000 Things You Should Know About WPF](https://wpf.2000things.com/tag/inkcanvas/)
     - [WPF based on DirectX - Google Search](https://www.google.com.hk/search?q=WPF+based+on+DirectX&newwindow=1&safe=strict&source=lnt&tbs=qdr:y&sa=X&ved=0ahUKEwjHq6DR2L3aAhUF0xQKHTD0CPIQpwUIIA&biw=1396&bih=668)
     - [Native DirectX 11 support for WPF – Welcome to the Windows developer feedback site!](https://wpdev.uservoice.com/forums/427690-windows-presentation-foundation-wpf/suggestions/4083793-native-directx-11-support-for-wpf)
@@ -167,23 +167,23 @@ published: false
     - [exception - A method was called at an unexpected time - Stack Overflow](https://stackoverflow.com/questions/13096141/a-method-was-called-at-an-unexpected-time))
 
 - OAuth
-    - [Get Started with the Outlook REST APIs - Microsoft Docs](https://docs.microsoft.com/en-us/outlook/rest/get-started)
-    - [Azure AD v2.0 OAuth Authorization Code Flow - Microsoft Docs](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-protocols-oauth-code)
-    - [Get started with Azure Active Directory v2 Windows desktop - Microsoft Docs](https://docs.microsoft.com/en-us/azure/active-directory/develop/guidedsetups/active-directory-windesktop)
-    - [Web authentication broker - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/security/web-authentication-broker)
+    - [Get Started with the Outlook REST APIs - Microsoft Docs](https://docs.microsoft.com/en-us/outlook/rest/get-started?wt.mc_id=MVP)
+    - [Azure AD v2.0 OAuth Authorization Code Flow - Microsoft Docs](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-protocols-oauth-code?wt.mc_id=MVP)
+    - [Get started with Azure Active Directory v2 Windows desktop - Microsoft Docs](https://docs.microsoft.com/en-us/azure/active-directory/develop/guidedsetups/active-directory-windesktop?wt.mc_id=MVP)
+    - [Web authentication broker - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/security/web-authentication-broker?wt.mc_id=MVP)
     - [Simple One Page RestSharp Based Console Application for the Box.com Cloud Service - CodeProject](https://www.codeproject.com/Articles/574319/Simple-One-Page-RestSharp-Based)
     - [c# - SMTP and OAuth 2 - Stack Overflow](https://stackoverflow.com/questions/24195508/smtp-and-oauth-2)
     - [Using OAuth 2.0 to Access Google APIs  -  Google Identity Platform  -  Google Developers](https://developers.google.com/identity/protocols/OAuth2)
 
 - Xamarin WPF
-    - [WPF Platform Setup - Xamarin - Microsoft Docs](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/platform/wpf)
+    - [WPF Platform Setup - Xamarin - Microsoft Docs](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/platform/wpf?wt.mc_id=MVP)
 
 - WPF Notification
     - [【wpf】在 win10 系统上弹出 toast 和 notification - catshitone 的专栏 - CSDN博客](http://blog.csdn.net/catshitone/article/details/78522931)
-    - [Send a local toast notification from desktop C# apps - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/send-local-toast-desktop)
+    - [Send a local toast notification from desktop C# apps - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/send-local-toast-desktop?wt.mc_id=MVP)
     - [WindowsNotifications/desktop-toasts: raw samples for desktop toasts using com activation](https://github.com/WindowsNotifications/desktop-toasts)
-    - [Toast content - UWP app developer - Microsoft Docs](https://docs.microsoft.com/zh-cn/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts)
-    - [Send a local toast notification - UWP app developer - Microsoft Docs](https://docs.microsoft.com/zh-cn/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)
+    - [Toast content - UWP app developer - Microsoft Docs](https://docs.microsoft.com/zh-cn/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts?wt.mc_id=MVP)
+    - [Send a local toast notification - UWP app developer - Microsoft Docs](https://docs.microsoft.com/zh-cn/windows/uwp/design/shell/tiles-and-notifications/send-local-toast?wt.mc_id=MVP)
 
 - Composition
     - [Graphics and Animation - Windows Composition Turns 10](https://msdn.microsoft.com/en-us/magazine/mt590968)
@@ -230,7 +230,7 @@ published: false
     - [linq - Why doesn't C#'s overload resolution work between Func<T,T> and Action<T>? - Stack Overflow](https://stackoverflow.com/questions/11225125/why-doesnt-cs-overload-resolution-work-between-funct-t-and-actiont)
 
 - 轻量级线程安全
-    - [Thread-Safe Collections - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/collections/thread-safe/)
+    - [Thread-Safe Collections - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/collections/thread-safe/?wt.mc_id=MVP)
 
 - 模拟接口
     - [impromptu-interface/Impromptu.cs at master · ekonbenefits/impromptu-interface](https://github.com/ekonbenefits/impromptu-interface/blob/master/ImpromptuInterface/src/Impromptu.cs)
@@ -240,7 +240,7 @@ published: false
     - [如何衡量提升用户体验？Google新框架－HEART帮你解决！ – 学UI网](http://www.xueui.cn/experience/discussion/heart-new-framework-for-user-experience-of-google.html?ref=r)
 
 - 桌面程序使用 UWP API
-    - - [How to customize Start screen tiles for desktop apps (Windows Runtime apps) - Microsoft Docs](https://docs.microsoft.com/en-us/previous-versions/windows/apps/dn449733(v=win.10))
+    - - [How to customize Start screen tiles for desktop apps (Windows Runtime apps) - Microsoft Docs](https://docs.microsoft.com/en-us/previous-versions/windows/apps/dn449733(v=win.10)?wt.mc_id=MVP)
     - [Extend your desktop application with Windows 10 features using the new Visual Studio Application Packaging Project - Building Apps for WindowsBuilding Apps for Windows](https://blogs.windows.com/buildingapps/2017/12/04/extend-desktop-application-windows-10-features-using-new-visual-studio-application-packaging-project/)
 
 - TiltEffect
@@ -248,7 +248,7 @@ published: false
     - [【图像处理】透视变换 Perspective Transformation - CSDN博客](http://blog.csdn.net/xiaowei_cqu/article/details/26471527)
 
 - .NET Compiler Platform ("Roslyn") Extensibility
-    - [Getting Started with Roslyn Analyzers - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/extensibility/getting-started-with-roslyn-analyzers)
+    - [Getting Started with Roslyn Analyzers - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/extensibility/getting-started-with-roslyn-analyzers?wt.mc_id=MVP)
 
 - Quantum
     - [如何使用 Q# - 林德熙](https://lindexi.oschina.io/lindexi/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Q.html)
@@ -279,7 +279,7 @@ published: false
 - VisualTarget.HitTest
 
 - PresentationSource
-    - [System.Windows.PresentationSource Class (System.Windows) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.windows.presentationsource?view=netframework-4.7)
+    - [System.Windows.PresentationSource Class (System.Windows) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.windows.presentationsource?view=netframework-4.7?wt.mc_id=MVP)
 
 - 加载等待动画背后的设计理念
 
@@ -289,7 +289,7 @@ published: false
     - [corefx/developer-guide.md at master · dotnet/corefx](https://github.com/dotnet/corefx/blob/master/Documentation/project-docs/developer-guide.md)
 
 - Type.IsAssignableFrom
-    - [Type.IsAssignableFrom Method (System) - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/api/system.type.isassignablefrom?view=netframework-4.7.1)
+    - [Type.IsAssignableFrom Method (System) - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/api/system.type.isassignablefrom?view=netframework-4.7.1?wt.mc_id=MVP)
 
 - Select/Unselect items in VirtualizingPanel of ListBox
     - [WPF Listview - Select items outside 'field of view' - Stack Overflow](https://stackoverflow.com/questions/2809557/wpf-listview-select-items-outside-field-of-view)
@@ -311,7 +311,7 @@ published: false
 - PushFrame locks the Window
     - [c# - PushFrame locks up WPF window when user is moving window - Stack Overflow](https://stackoverflow.com/questions/19411613/pushframe-locks-up-wpf-window-when-user-is-moving-window)
     - [WPF application intermittently hangs when using Dispatcher.Invoke and/or Dispatcher.PushFrame while user is resizing or dragging window - Microsoft Connect](https://connect.microsoft.com/VisualStudio/feedback/details/807292/wpf-application-intermittently-hangs-when-using-dispatcher-invoke-and-or-dispatcher-pushframe-while-user-is-resizing-or-draging-window)
-    - [Threading Model - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/threading-model)
+    - [Threading Model - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/threading-model?wt.mc_id=MVP)
     - [Await, and UI, and deadlocks! Oh my! - Parallel Programming with .NET](https://blogs.msdn.microsoft.com/pfxteam/2011/01/13/await-and-ui-and-deadlocks-oh-my/)
 
 - Bounds of Visual3D

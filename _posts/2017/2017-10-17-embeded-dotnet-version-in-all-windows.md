@@ -1,7 +1,7 @@
 ---
 title: "各个版本 Windows 10 系统中自带的 .NET Framework 版本"
 publishDate: 2017-10-17 10:49:40 +0800
-date: 2018-11-04 08:21:15 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: windows dotnet
 tags: Windows .Net
 ---
@@ -19,6 +19,6 @@ Windows 10 | 10.0.10240 (1507) | .NET Framework 4.6
 ---
 
 #### 参考资料
-- [How to: Determine which .NET Framework versions are installed -Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed)
+- [How to: Determine which .NET Framework versions are installed -Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed?wt.mc_id=MVP)
 - [Windows 10 release information - current branch, build history](https://technet.microsoft.com/en-us/windows/release-info.aspx)
 - [Windows 10 version history - Wikipedia](https://en.wikipedia.org/wiki/Windows_10_version_history)

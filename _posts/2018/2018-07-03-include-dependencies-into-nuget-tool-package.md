@@ -1,6 +1,7 @@
 ---
 title: "在制作跨平台的 NuGet 工具包时，如何将工具（exe/dll）的所有依赖一并放入包中"
-date: 2018-07-03 21:30:25 +0800
+publishDate: 2018-07-03 21:30:25 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: msbuild nuget visualstudio dotnet
 ---
 
@@ -20,7 +21,7 @@ NuGet 提供了工具类型的包支持，生成一个基于 .NET Core 的 dll �
 
 ### 探索
 
-[官方关于 NuGet 的文档](https://docs.microsoft.com/en-us/nuget/) 并没有提及任何关于额外添加依赖文件的方法，擅长 NuGet 的大神 [Nate McMaster](https://natemcmaster.com/) 虽然有一篇关于加入 NuGet 依赖的博客 [MSBuild tasks with dependencies](https://natemcmaster.com/blog/2017/11/11/msbuild-task-with-dependencies/)，但依然没有很简单地解决。
+[官方关于 NuGet 的文档](https://docs.microsoft.com/en-us/nuget/) 并没有提及任何关于额外添加依赖文件的方法，擅长 NuGet 的大神 [Nate McMaster](https://natemcmaster.com/) 虽然有一篇关于加入 NuGet 依赖的博客 [MSBuild tasks with dependencies](https://natemcmaster.com/blog/2017/11/11/msbuild-task-with-dependencies/?wt.mc_id=MVP)，但依然没有很简单地解决。
 
 尝试找一个实际将这些依赖 Include 进来，但是不知道什么时机合适。太早了依赖文件还没有生成，太晚了 NuGet 包中即将打的文件早已确认，Include 了也没用。
 

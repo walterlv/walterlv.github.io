@@ -1,6 +1,7 @@
 ---
 title: "UWP 流畅设计中的光照效果（容易的 RevealBorderBrush 和不那么容易的 RevealBackgroundBrush）"
-date: 2018-04-15 09:37:14 +0800
+publishDate: 2018-04-15 09:37:14 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: uwp xaml
 ---
 
@@ -54,7 +55,7 @@ categories: uwp xaml
 
 ![只有边框光照效果](/static/posts/2018-04-15-reveal-border-worked.gif)
 
-然而官方文档对于 `RevealBackgroundBrush` 的实现竟然没有提及，也是挺奇怪的。比如：[Reveal highlight - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/style/reveal) 和 [RevealBackgroundBrush Class (Windows.UI.Xaml.Media) - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.revealbackgroundbrush) 。
+然而官方文档对于 `RevealBackgroundBrush` 的实现竟然没有提及，也是挺奇怪的。比如：[Reveal highlight - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/style/reveal) 和 [RevealBackgroundBrush Class (Windows.UI.Xaml.Media) - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.revealbackgroundbrush?wt.mc_id=MVP) 。
 
 注意到 `RevealBackgroundBrush` 有一个附加属性 `RevealBrush.State`，设置到控件上用于指定采用哪一种光照效果：`RevealBrush.State="Pressed"`。直接将其设置到控件上，发现依然是没有效果的：
 

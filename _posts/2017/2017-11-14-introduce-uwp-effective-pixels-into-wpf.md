@@ -1,7 +1,7 @@
 ---
 title: "将 UWP 的有效像素（Effective Pixels）引入 WPF"
 publishDate: 2017-11-14 11:26:33 +0800
-date: 2017-11-14 12:49:45 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: wpf uwp xaml
 ---
 
@@ -60,7 +60,7 @@ WPF 曾经说自己用的是“设备无关单位”（DIP），愿景是在所�
 具体说来，对于手机和平板电脑（笔记本、Surface）这些近距离观看的设备，其物理尺寸可以更小；对于客厅摆放的大屏幕电视，观看距离较远，物理尺寸应该更大。相同的界面元素在不同设备上显示时，呈现出来的效果在视野角度上是相近的，这才是人眼观看比较舒适的尺寸概念的设计。
 
 ![视野角度相近](/static/posts/2017-11-14-09-48-42.png)  
-▲ 图片来自于微软 UWP 设计指导文档 [Introduction to Universal Windows Platform (UWP) app design (Windows apps)](https://docs.microsoft.com/en-us/windows/uwp/design/basics/design-and-ui-intro)
+▲ 图片来自于微软 UWP 设计指导文档 [Introduction to Universal Windows Platform (UWP) app design (Windows apps)](https://docs.microsoft.com/en-us/windows/uwp/design/basics/design-and-ui-intro?wt.mc_id=MVP)
 
 可以看出，有效像素的出现解决了我在 [以上吐槽](#%E5%90%90%E6%A7%BD-dip) 中列举出无法自圆其说的第 2 点。认识到一个优秀的屏幕显示单位并不是按物理尺寸定义，而是根据不同的使用场景有所不同。第 1 点也部分得到了缓解——接受 DPI 缩放的特性，放弃承认物理尺寸相同的设定。
 

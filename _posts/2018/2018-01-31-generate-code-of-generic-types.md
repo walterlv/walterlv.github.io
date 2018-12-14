@@ -1,7 +1,7 @@
 ---
 title: "生成代码，从 T 到 T1, T2, Tn —— 自动生成多个类型的泛型"
 publishDate: 2018-01-31 13:38:11 +0800
-date: 2018-05-25 20:33:37 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: csharp dotnet visualstudio
 ---
 
@@ -91,7 +91,7 @@ T4 模板编辑后一旦保存（Ctrl+S），代码立刻生成。
 
 有没有觉得这代码着色很恐怖？呃……根本就没有代码着色好吗！即便如此，T4 本身也是非常强悍的代码生成方式。
 
-这不是本文的重点，于是感兴趣请阅读官方文档 [Code Generation and T4 Text Templates - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/modeling/code-generation-and-t4-text-templates) 学习。
+这不是本文的重点，于是感兴趣请阅读官方文档 [Code Generation and T4 Text Templates - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/modeling/code-generation-and-t4-text-templates?wt.mc_id=MVP) 学习。
 
 #### 第二种：文件属性中的自定义工具
 
@@ -103,7 +103,7 @@ T4 模板编辑后一旦保存（Ctrl+S），代码立刻生成。
 
 那么 Key 从哪里来？这货居然是从注册表拿的！也就是说，如果要在团队使用，还需要写一个注册表项！即便如此，自定义工具本身也是非常强悍的代码生成方式。
 
-这也不是本文的重点，于是感兴趣请阅读官方文档 [Custom Tools - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/custom-tools) 学习。
+这也不是本文的重点，于是感兴趣请阅读官方文档 [Custom Tools - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/custom-tools?wt.mc_id=MVP) 学习。
 
 #### 第三种：笨笨的编译生成事件
 
@@ -272,5 +272,5 @@ class Program
 
 #### 参考资料
 
-- [Code Generation and T4 Text Templates - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/modeling/code-generation-and-t4-text-templates)
-- [Custom Tools - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/custom-tools)
+- [Code Generation and T4 Text Templates - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/modeling/code-generation-and-t4-text-templates?wt.mc_id=MVP)
+- [Custom Tools - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/custom-tools?wt.mc_id=MVP)

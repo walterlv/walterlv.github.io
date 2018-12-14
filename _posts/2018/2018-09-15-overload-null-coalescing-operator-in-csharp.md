@@ -1,7 +1,7 @@
 ---
 title: "C# 空合并操作符（??）不可重载？其实有黑科技可以间接重载！"
 publishDate: 2018-09-15 14:59:10 +0800
-date: 2018-11-27 13:08:55 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: csharp
 ---
 
@@ -19,8 +19,8 @@ categories: csharp
 
 你更可以在微软官方文档中找到这样的说法：
 
-- [Overloadable operators (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/overloadable-operators)
-- [可重载运算符（C# 编程指南）](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/statements-expressions-operators/overloadable-operators)
+- [Overloadable operators (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/overloadable-operators?wt.mc_id=MVP)
+- [可重载运算符（C# 编程指南）](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/statements-expressions-operators/overloadable-operators?wt.mc_id=MVP)
 
 > =, ., ?:, ??, ->, =>, f(x), as, checked, unchecked, default, delegate, is, new, sizeof, typeof  
 > These operators cannot be overloaded.  

@@ -1,7 +1,7 @@
 ---
 title: ".NET/C# 异常处理：写一个空的 try 块代码，而把重要代码写到 finally 中（Constrained Execution Regions）"
 publishDate: 2018-11-02 21:14:25 +0800
-date: 2018-11-28 16:25:46 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: dotnet csharp
 ---
 
@@ -99,9 +99,9 @@ internal void RestoreExceptionDispatchInfo(System.Runtime.ExceptionServices.Exce
 
 ### 受约束的执行区域（Constrained Execution Regions）
 
-这种现象在微软官方文档 [可靠性最佳做法](https://docs.microsoft.com/zh-cn/dotnet/framework/performance/reliability-best-practices#protect-critical-operations-with-constrained-execution-regions-and-reliability-contracts) 中有介绍。
+这种现象在微软官方文档 [可靠性最佳做法](https://docs.microsoft.com/zh-cn/dotnet/framework/performance/reliability-best-practices#protect-critical-operations-with-constrained-execution-regions-and-reliability-contracts?wt.mc_id=MVP) 中有介绍。
 
-> Doing so instructs the just-in-time compiler to prepare all the code in the finally block before running the `try` block. This guarantees that the code in the finally block is built and will run in all cases. It is not uncommon in a CER to have an empty `try` block. Using a CER protects against asynchronous thread aborts and out-of-memory exceptions. See [ExecuteCodeWithGuaranteedCleanup](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.compilerservices.runtimehelpers.executecodewithguaranteedcleanup) for a form of a CER that additionally handles stack overflows for exceedingly deep code.
+> Doing so instructs the just-in-time compiler to prepare all the code in the finally block before running the `try` block. This guarantees that the code in the finally block is built and will run in all cases. It is not uncommon in a CER to have an empty `try` block. Using a CER protects against asynchronous thread aborts and out-of-memory exceptions. See [ExecuteCodeWithGuaranteedCleanup](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.compilerservices.runtimehelpers.executecodewithguaranteedcleanup?wt.mc_id=MVP) for a form of a CER that additionally handles stack overflows for exceedingly deep code.
 
 使用 `try`-`finally` 形成一个受约束的执行区域，使得 `finally` 中的代码被可靠地执行。
 
@@ -109,8 +109,8 @@ internal void RestoreExceptionDispatchInfo(System.Runtime.ExceptionServices.Exce
 
 #### 参考资料
 
-- [可靠性最佳做法 - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/framework/performance/reliability-best-practices#protect-critical-operations-with-constrained-execution-regions-and-reliability-contracts)
-- [受约束的执行区域 - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/framework/performance/constrained-execution-regions#noninterruptible-regions)
+- [可靠性最佳做法 - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/framework/performance/reliability-best-practices#protect-critical-operations-with-constrained-execution-regions-and-reliability-contracts?wt.mc_id=MVP)
+- [受约束的执行区域 - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/framework/performance/constrained-execution-regions#noninterruptible-regions?wt.mc_id=MVP)
 - [exception.cs - Reference Source](https://referencesource.microsoft.com/#mscorlib/system/exception.cs,a445c4e8ae46b283)
 - [RestoreExceptionDispatchInfo](https://source.dot.net/#System.Private.CoreLib/src/System/Exception.cs,a445c4e8ae46b283,references)
 - [The empty try block mystery - Some Creativity](http://web.archive.org/web/20130523155042/http://blog.somecreativity.com/2008/04/10/the-empty-try-block-mystery/)

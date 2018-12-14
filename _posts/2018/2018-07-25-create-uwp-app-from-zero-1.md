@@ -1,7 +1,7 @@
 ---
 title: "(2/2) 为了理解 UWP 的启动流程，我从零开始创建了一个 UWP 程序"
 publishDate: 2018-07-25 21:20:36 +0800
-date: 2018-07-28 19:50:08 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: uwp dotnet csharp
 ---
 
@@ -73,11 +73,11 @@ namespace Walterlv.Demo.ZeroUwp
 
 因此，我们需要理解这些方法的执行时机以及含义才能正确实现这些方法。庆幸的是，这些方法的含义都能在官方文档中找到（其实就是平时看到的注释）：
 
-- [IFrameworkView.Initialize(CoreApplicationView)](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.core.iframeworkview.initialize)
-- [IFrameworkView.Load(String)](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.core.iframeworkview.load)
-- [IFrameworkView.Run](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.core.iframeworkview.run)
-- [IFrameworkView.SetWindow(CoreWindow)](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.core.iframeworkview.setwindow)
-- [IFrameworkView.Uninitialize](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.core.iframeworkview.uninitialize)
+- [IFrameworkView.Initialize(CoreApplicationView)](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.core.iframeworkview.initialize?wt.mc_id=MVP)
+- [IFrameworkView.Load(String)](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.core.iframeworkview.load?wt.mc_id=MVP)
+- [IFrameworkView.Run](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.core.iframeworkview.run?wt.mc_id=MVP)
+- [IFrameworkView.SetWindow(CoreWindow)](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.core.iframeworkview.setwindow?wt.mc_id=MVP)
+- [IFrameworkView.Uninitialize](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.core.iframeworkview.uninitialize?wt.mc_id=MVP)
 
 为了方便查看，我将其整理到这些方法上作为注释。
 

@@ -1,7 +1,7 @@
 ---
 title: "语义版本号（Semantic Versioning）"
 publishDate: 2018-04-12 20:20:39 +0800
-date: 2018-06-30 09:19:24 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: visualstudio nuget csharp dotnet
 ---
 
@@ -13,7 +13,7 @@ categories: visualstudio nuget csharp dotnet
 
 ### 传统的版本号
 
-如果你只是知道传统版本号由四个部分组成，那么建议去官方文档 [Assembly Versioning](https://docs.microsoft.com/en-us/dotnet/framework/app-domains/assembly-versioning) 了解一下这种版本号的定义。它分为 `主版本号`.`次版本号`.`构建号`.`修订号` 四个部分，但是后面的一个或多个部分可以省略。
+如果你只是知道传统版本号由四个部分组成，那么建议去官方文档 [Assembly Versioning](https://docs.microsoft.com/en-us/dotnet/framework/app-domains/assembly-versioning?wt.mc_id=MVP) 了解一下这种版本号的定义。它分为 `主版本号`.`次版本号`.`构建号`.`修订号` 四个部分，但是后面的一个或多个部分可以省略。
 
 ![AssemblyVersion](/static/posts/2018-04-12-19-48-26.png)
 
@@ -27,7 +27,7 @@ categories: visualstudio nuget csharp dotnet
 
 ### 语义版本号
 
-语义版本号由五个部分组成 `主版本号`、`次版本号`、`补丁号`、`预发布版本标签` 和 `构建号`。举例看看语义版本号是什么样的吧（摘自 [NuGet Package Version Reference](https://docs.microsoft.com/en-us/nuget/reference/package-versioning)）：
+语义版本号由五个部分组成 `主版本号`、`次版本号`、`补丁号`、`预发布版本标签` 和 `构建号`。举例看看语义版本号是什么样的吧（摘自 [NuGet Package Version Reference](https://docs.microsoft.com/en-us/nuget/reference/package-versioning?wt.mc_id=MVP)）：
 
 - 1.0.1
 - 1.0.1-rc
@@ -84,8 +84,8 @@ NuGet 4.3.0 以上，并且 Visual Studio 2017 的 15.3 以上版本开始支持
 
 - [Semantic Versioning 2.0.0 - Semantic Versioning](https://semver.org/)
 - [Semantic Versioning & auto-incremented NuGet package versions - Xavier Decoster](https://www.xavierdecoster.com/post/2013/04/29/semantic-versioning-auto-incremented-nuget-package-versions.html)
-- [NuGet Package Version Reference - Microsoft Docs](https://docs.microsoft.com/en-us/nuget/reference/package-versioning)
-- [Pre-release versions in NuGet packages - Microsoft Docs](https://docs.microsoft.com/en-us/nuget/create-packages/prerelease-packages)
+- [NuGet Package Version Reference - Microsoft Docs](https://docs.microsoft.com/en-us/nuget/reference/package-versioning?wt.mc_id=MVP)
+- [Pre-release versions in NuGet packages - Microsoft Docs](https://docs.microsoft.com/en-us/nuget/create-packages/prerelease-packages?wt.mc_id=MVP)
 - [Versioning NuGet packages in a continuous delivery world: part 1 – Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/2016/05/03/versioning-nuget-packages-cd-1/)
 - [Versioning NuGet packages in a continuous delivery world: part 3 – Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/2016/05/26/versioning-nuget-packages-cd-3/)
 - [Supporting Semantic Versioning 2.0.0](https://blog.nuget.org/20140924/supporting-semver-2.0.0.html)

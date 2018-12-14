@@ -1,7 +1,7 @@
 ---
 title: ".NET/C# 反射的的性能数据，以及高性能开发建议（反射获取 Attribute 和反射调用方法）"
 publishDate: 2018-11-03 15:25:17 +0800
-date: 2018-11-27 13:08:55 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: dotnet csharp
 ---
 
@@ -334,7 +334,7 @@ namespace Walterlv.Demo.Reflection
 #### 参考资料
 
 - [c# - Is there a benefit of using IsDefined over GetCustomAttributes - Stack Overflow](https://stackoverflow.com/a/14719740/6233938)
-- [Accessing Attributes by Using Reflection (C#) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection)
+- [Accessing Attributes by Using Reflection (C#) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection?wt.mc_id=MVP)
 - [win10 uwp 反射](https://lindexi.gitee.io/post/win10-uwp-%E5%8F%8D%E5%B0%84.html)
 - [Reference Source](https://referencesource.microsoft.com/#mscorlib/system/rttype.cs,a4aa0f217732eb81)
 - [A Super-Fast C# Extension Method using Expression Trees to Create an instance from a Type](http://geekswithblogs.net/mrsteve/archive/2012/02/19/a-fast-c-sharp-extension-method-using-expression-trees-create-instance-from-type-again.aspx)

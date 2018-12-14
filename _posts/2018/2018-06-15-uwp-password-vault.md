@@ -1,6 +1,7 @@
 ---
 title: "PasswordVault —— 在 UWP 应用中安全地保存密码"
-date: 2018-06-15 21:43:08 +0800
+publishDate: 2018-06-15 21:43:08 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: uwp
 ---
 
@@ -16,7 +17,7 @@ categories: uwp
 
 后两者的成本较高，采用操作系统自带的凭据管理器是成本较低的方案。于是我找到了 `PasswordVault`。
 
-微软官网对 `PasswordVault` 有全面的介绍：[PasswordVault Class (Windows.Security.Credentials) - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/uwp/api/windows.security.credentials.passwordvault)，使用起来也是非常简单的。通过 `Add(PasswordCredential)` 方法完成密码的保存，使用 `Retrieve(String, String)` 完成密码的读取。
+微软官网对 `PasswordVault` 有全面的介绍：[PasswordVault Class (Windows.Security.Credentials) - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/uwp/api/windows.security.credentials.passwordvault)，使用起来也是非常简单的。通过 `Add(PasswordCredential)` 方法完成密码的保存，使用 `Retrieve(String, String?wt.mc_id=MVP)` 完成密码的读取。
 
 每一个 UWP 应用之间的 `PasswordVault` 是独立且互相不可访问的，普通用户也无法直接获取到密码；对于黑客，如果无法黑掉用户账户，也是无法解密出密码的，所以在一般使用场景下，安全性是够的。
 

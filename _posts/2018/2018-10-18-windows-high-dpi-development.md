@@ -1,7 +1,7 @@
 ---
 title: "Windows 下的高 DPI 应用开发（UWP / WPF / Windows Forms / Win32）"
 publishDate: 2018-10-18 10:06:11 +0800
-date: 2018-10-29 08:52:47 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: windows dotnet wpf uwp
 ---
 
@@ -91,7 +91,7 @@ Windows 的 DPI 感知级别经过历代升级，已经有四种了。
     - 以下 UI 元素也会在 DPI 改变时缩放
         - 非客户区（Non-client Area）
         - 系统通用控件中的位图（comctl32V6）
-        - 对话框（[CreateDialog](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-createdialoga)）
+        - 对话框（[CreateDialog](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-createdialoga?wt.mc_id=MVP)）
 
 在 Windows 10 19H1 中（对现在来说还是预览版），可以直接在任务管理器中查看到进程的 DPI Awareness：
 
@@ -134,9 +134,9 @@ Windows Forms 也是在 .NET Framework 4.7 才开始支持屏幕级 DPI 感知�
 
 Windows 10 (1604) 开始引入顶级窗口（Top-level Window）级别的 DPI 感知，而 Windows 10 (1703) 开始引入每一个 HWND 的 DPI 感知，包括顶级窗口和非顶级窗口。这里的顶级窗口指的是没有父级的窗口，指的是 Parent，而不是 Owner。
 
-在创建一个窗口的前后分别调用 [SetThreadDpiAwarenessContext](https://docs.microsoft.com/en-us/windows/desktop/api/Winuser/nf-winuser-setthreaddpiawarenesscontext) 函数可以让创建的这个窗口具有单独的 DPI 感知级别。前一次是为了让窗口在创建时有一个对此线程的新的 DPI 感知级别，而后一次调用是恢复此线程的 DPI 感知级别。
+在创建一个窗口的前后分别调用 [SetThreadDpiAwarenessContext](https://docs.microsoft.com/en-us/windows/desktop/api/Winuser/nf-winuser-setthreaddpiawarenesscontext?wt.mc_id=MVP) 函数可以让创建的这个窗口具有单独的 DPI 感知级别。前一次是为了让窗口在创建时有一个对此线程的新的 DPI 感知级别，而后一次调用是恢复此线程的 DPI 感知级别。
 
-关于混合 DPI 感知级别的其他内容，可以阅读官网：[Mixed-Mode DPI Scaling and DPI-aware APIs - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/hidpi/high-dpi-improvements-for-desktop-applications)。
+关于混合 DPI 感知级别的其他内容，可以阅读官网：[Mixed-Mode DPI Scaling and DPI-aware APIs - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/hidpi/high-dpi-improvements-for-desktop-applications?wt.mc_id=MVP)。
 
 微软的 Office 系列就是典型的使用了混合 DPI 感知级别的应用。在以下实验中，我组成了一个 96 DPI 的主屏和 144 DPI 的副屏，先在 96 DPI 的屏幕上截一张图，再将窗口移动到 144 DPI 的屏幕中再截一张图。
 
@@ -176,7 +176,7 @@ Microsoft PowerPoint 的演示页面使用的是屏幕 DPI 感知级别：
 
 #### 参考资料
 
-- [High DPI Desktop Application Development on Windows - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/hidpi/high-dpi-desktop-application-development-on-windows)
+- [High DPI Desktop Application Development on Windows - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/hidpi/high-dpi-desktop-application-development-on-windows?wt.mc_id=MVP)
 - [WPF-Samples/Developer Guide - Per Monitor DPI - WPF Preview.docx at master · Microsoft/WPF-Samples](https://github.com/Microsoft/WPF-Samples/blob/master/PerMonitorDPI/Developer%20Guide%20-%20Per%20Monitor%20DPI%20-%20WPF%20Preview.docx)
 - [在 Windows 10 中修复显示模糊的应用 - Windows Help](https://support.microsoft.com/zh-cn/help/4091364/windows-10-fix-blurry-apps)
 - [Fix apps that appear blurry in Windows 10 - Windows Help](https://support.microsoft.com/en-us/help/4091364/windows-10-fix-blurry-apps)

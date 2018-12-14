@@ -1,6 +1,7 @@
 ---
 title: "WPF 自定义键盘焦点样式（FocusVisualStyle）"
-date: 2017-12-17 15:34:26 +0800
+publishDate: 2017-12-17 15:34:26 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: wpf uwp
 ---
 
@@ -16,7 +17,7 @@ WPF 自带的键盘焦点样式是与传统控件样式搭配的，但 WPF 凭�
 ![UWP 暗主题键盘焦点样式](/static/posts/2017-12-17-uwp-dark-focus-visual-style.gif)  
 ▲ UWP 暗主题键盘焦点样式
 
-其实微软官方文档 [Styling for Focus in Controls, and FocusVisualStyle - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle) 有说明 `FocusVisualStyle`，但是——**完全没有讲自定义**好吗！
+其实微软官方文档 [Styling for Focus in Controls, and FocusVisualStyle - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle?wt.mc_id=MVP) 有说明 `FocusVisualStyle`，但是——**完全没有讲自定义**好吗！
 
 所以，我试着写一个样式以覆盖默认的样式：
 
@@ -75,6 +76,6 @@ StackOverflow 上也有人说了这件事：[xaml - How to redefine FocusVisualS
 
 #### 参考资料
 
-- [Styling for Focus in Controls, and FocusVisualStyle - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle)
+- [Styling for Focus in Controls, and FocusVisualStyle - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle?wt.mc_id=MVP)
 - [xaml - How to redefine FocusVisualStyle for a WPF user control - Stack Overflow](https://stackoverflow.com/questions/29101942/how-to-redefine-focusvisualstyle-for-a-wpf-user-control)
 - [wpf - Change the FocusVisualStyle in the entire application - Stack Overflow](https://stackoverflow.com/questions/1879526/change-the-focusvisualstyle-in-the-entire-application)

@@ -1,7 +1,7 @@
 ---
 title: "如何使用 MSBuild Target（Exec）中的控制台输出"
 publishDate: 2018-06-13 08:08:06 +0800
-date: 2018-09-01 08:03:39 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: dotnet msbuild
 ---
 
@@ -15,7 +15,7 @@ categories: dotnet msbuild
 
 ### 捕获控制台输出
 
-如果你喜爱阅读文档，那么答案已经不陌生了，在微软的官方文档 [Exec Task](https://docs.microsoft.com/en-us/visualstudio/msbuild/exec-task) 中就已经提及了属性 `ConsoleToMSBuild`。将此属性设置为 `True`，将能够捕获控制台输出到 MSBuild 中。（*不过据说典型的程序员是不爱看文档的*）
+如果你喜爱阅读文档，那么答案已经不陌生了，在微软的官方文档 [Exec Task](https://docs.microsoft.com/en-us/visualstudio/msbuild/exec-task?wt.mc_id=MVP) 中就已经提及了属性 `ConsoleToMSBuild`。将此属性设置为 `True`，将能够捕获控制台输出到 MSBuild 中。（*不过据说典型的程序员是不爱看文档的*）
 
 那么，捕获的输出去了哪里呢？
 
@@ -75,7 +75,7 @@ MSBuild 还自带了一个 `Task`，名为 `CreateItem`，就是从一段字符�
 #### 参考资料
 
 - [How get exec task output with msbuild - Stack Overflow](https://stackoverflow.com/q/8938679/6233938)
-- [Exec Task - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/exec-task)
+- [Exec Task - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/exec-task?wt.mc_id=MVP)
 - [Empty an MSBuild ItemGroup - Stack Overflow](https://stackoverflow.com/q/7909825/6233938)
-- [What's New in MSBuild 15 - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/what-s-new-in-msbuild-15-0#updates)
-- [Item Element (MSBuild) - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/item-element-msbuild)
+- [What's New in MSBuild 15 - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/what-s-new-in-msbuild-15-0#updates?wt.mc_id=MVP)
+- [Item Element (MSBuild) - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/item-element-msbuild?wt.mc_id=MVP)

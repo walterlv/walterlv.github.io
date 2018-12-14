@@ -1,7 +1,7 @@
 ---
 title: "（持续整理中）Visual Studio 中 C# 代码分析规则集中每一项的含义 (stylecop ruleset)"
 publishDate: 2018-02-07 21:55:12 +0800
-date: 2018-03-23 21:56:10 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: csharp visualstudio
 ---
 
@@ -21,7 +21,7 @@ categories: csharp visualstudio
 
 编号|名称|含义
 -|-|-
-CA1004|泛型方法应提供类型参数|如果泛型方法的参数列表中没有用到声明的所有泛型，那么就会出现此提示（这是因为此时泛型不能被隐式推断，库使用者的学习成本会提高，详见：[CA1004](https://docs.microsoft.com/en-us/visualstudio/code-quality/ca1004-generic-methods-should-provide-type-parameter)）
+CA1004|泛型方法应提供类型参数|如果泛型方法的参数列表中没有用到声明的所有泛型，那么就会出现此提示（这是因为此时泛型不能被隐式推断，库使用者的学习成本会提高，详见：[CA1004](https://docs.microsoft.com/en-us/visualstudio/code-quality/ca1004-generic-methods-should-provide-type-parameter?wt.mc_id=MVP)）
 CA1005|避免泛型类型的参数过多|如果写泛型的时候有超过 2 个泛型类型，就会出现此提示
 CA1006|不要将泛型类型嵌套在成员签名中|如果出现类似 `Func<Task<T>` 这样的嵌套泛型出现在方法参数签名中，则会出现此提示
 CA1018|用 AttributeUsageAttribute 标记特性|如果继承自一个已有的 `Attribute`，即便基类已经写了 `AttributeUsage`，此类型也应该再写一遍，以提高代码可读性和便于文档制作
@@ -68,5 +68,5 @@ CA2007|不应该直接 `await` 一个而不调用 `ConfigureAwait`|建议阅读 
 
 #### 参考资料
 
-- [Code Analysis for Managed Code Warnings - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/code-quality/code-analysis-for-managed-code-warnings)
-- [C# Compiler Errors - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/)
+- [Code Analysis for Managed Code Warnings - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/code-quality/code-analysis-for-managed-code-warnings?wt.mc_id=MVP)
+- [C# Compiler Errors - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/?wt.mc_id=MVP)

@@ -1,7 +1,7 @@
 ---
 title: "Visual->UIElement->FrameworkElement，带来更多功能的同时也带来了更多的限制"
 publishDate: 2017-11-13 23:55:58 +0800
-date: 2018-02-20 06:41:24 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: wpf uwp xaml
 ---
 
@@ -102,4 +102,4 @@ protected virtual Geometry GetLayoutClip(Size layoutSlotSize)
 ---
 
 #### 参考资料
-- [WPF Architecture - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/wpf-architecture)
+- [WPF Architecture - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/wpf-architecture?wt.mc_id=MVP)

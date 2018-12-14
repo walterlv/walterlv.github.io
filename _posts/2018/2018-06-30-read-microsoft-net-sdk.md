@@ -1,7 +1,7 @@
 ---
 title: "解读 Microsoft.NET.Sdk 的源码，你能定制各种奇怪而富有创意的编译过程"
 publishDate: 2018-06-30 13:55:39 +0800
-date: 2018-08-12 16:05:23 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: dotnet visualstudio nuget msbuild
 version:
   current: 中文
@@ -24,7 +24,7 @@ This post is written in **multiple languages**. Please select yours:
 
 ### Microsoft.NET.Sdk 源码的位置
 
-在计算机上全局搜索 `Microsoft.NET.Sdk` 可以找到不同版本的多个 Sdk 目录，由于我安装了 .NET Core 2.1，所以找到的目录是：`C:\Program Files\dotnet\sdk\2.1.300\Sdks`。当然，按照官网 [How to: Reference an MSBuild Project SDK](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-use-project-sdk) 的描述，如果自己实现了一套 Sdk，也可以以 NuGet 包的形式发布。
+在计算机上全局搜索 `Microsoft.NET.Sdk` 可以找到不同版本的多个 Sdk 目录，由于我安装了 .NET Core 2.1，所以找到的目录是：`C:\Program Files\dotnet\sdk\2.1.300\Sdks`。当然，按照官网 [How to: Reference an MSBuild Project SDK](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-use-project-sdk?wt.mc_id=MVP) 的描述，如果自己实现了一套 Sdk，也可以以 NuGet 包的形式发布。
 
 ![Search Microsoft.NET.Sdk](/static/posts/2018-06-30-21-06-06.png)  
 ▲ 搜索 Microsoft.NET.Sdk
@@ -47,13 +47,13 @@ Sdk 中的 NuGet 部分在 GitHub 上的仓库地址：
 - [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html)
 - [如何创建一个基于命令行工具的跨平台的 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool.html)
 
-官方对 NuGet 的目录结构也有介绍：[How to create a NuGet package from a convention-based working directory](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package#from-a-convention-based-working-directory)。
+官方对 NuGet 的目录结构也有介绍：[How to create a NuGet package from a convention-based working directory](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package#from-a-convention-based-working-directory?wt.mc_id=MVP)。
 
 不过，Sdk 类型的 NuGet 包会多一个 `Sdk` 文件夹。
 
 ![The extra Sdk folder](/static/posts/2018-06-30-21-10-19.png)
 
-`Sdk` 文件夹中的 `Sdk.props` 和 `Sdk.targets` 是会被默认 `Import` 的，这一点在官方文档 [How to: Reference an MSBuild Project SDK - Visual Studio](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-use-project-sdk) 中是有说明的，以下两段代码的含义相同：
+`Sdk` 文件夹中的 `Sdk.props` 和 `Sdk.targets` 是会被默认 `Import` 的，这一点在官方文档 [How to: Reference an MSBuild Project SDK - Visual Studio](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-use-project-sdk?wt.mc_id=MVP) 中是有说明的，以下两段代码的含义相同：
 
 > ```xml
 > <Project Sdk="Microsoft.NET.Sdk">
@@ -117,4 +117,4 @@ Sdk 中的 NuGet 部分在 GitHub 上的仓库地址：
 
 #### 参考资料
 
-- [How to: Reference an MSBuild Project SDK - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-use-project-sdk)
+- [How to: Reference an MSBuild Project SDK - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-use-project-sdk?wt.mc_id=MVP)

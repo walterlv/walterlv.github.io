@@ -1,7 +1,7 @@
 ---
 title: "3 Ways to create a window with blurring background on Windows 10"
 publishDate: 2018-07-16 19:14:59 +0800
-date: 2018-09-01 08:00:03 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: windows wpf uwp dotnet
 version:
   current: English
@@ -131,4 +131,4 @@ You can also add a `RectangleGeometry` to clip your UIElement into a rounded rec
 
 ### UWP AcyclicBrush
 
-You can read Microsoft's documents [Acrylic material - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/style/acrylic) for more details about how to write an `AcylicBrush`.
+You can read Microsoft's documents [Acrylic material - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/style/acrylic?wt.mc_id=MVP) for more details about how to write an `AcylicBrush`.

@@ -1,7 +1,7 @@
 ---
 title: "使用 Microsoft.UI.Xaml 解决 UWP 控件和对老版本 Windows 10 的兼容性问题"
 publishDate: 2018-07-21 21:51:05 +0800
-date: 2018-10-18 17:01:10 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: uwp windows
 ---
 
@@ -20,7 +20,7 @@ categories: uwp windows
 ![选择目标版本和最低版本](/static/posts/2018-07-21-21-16-05.png)  
 ▲ 图中目标版本为 17134，最低版本为 14393。事实上，目标版本必须是 17134，最低只能支持到 14393。
 
-然而，每一次新版本 Windows 10 的推出，都带来大量新的开发 API。可以去官方文档 [Choose a UWP version - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/updates-and-versions/choose-a-uwp-version) 了解各个版本 Windows 10 新增的功能简介。
+然而，每一次新版本 Windows 10 的推出，都带来大量新的开发 API。可以去官方文档 [Choose a UWP version - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/updates-and-versions/choose-a-uwp-version?wt.mc_id=MVP) 了解各个版本 Windows 10 新增的功能简介。
 
 微软在 Windows 10 16299 版本带来了 XAML 条件编译，用以在 XAML 中兼容不同版本的 Windows 10，然而这意味着必须选择 16299 作为最低 API 版本才能正常使用此功能。当然，XAML 条件编译还是带来了不少方便的特性呢，阅读 [win10 uwp xaml 兼容多个版本条件编译 - 林德熙](https://lindexi.gitee.io/post/win10-uwp-xaml-%E5%85%BC%E5%AE%B9%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91.html) 可以了解 XAML 条件编译的使用方法，顺便收获一只猫。
 
@@ -54,7 +54,7 @@ Windows 10 也在各个版本新增了一些控件。那么问题来了，要支
 > 
 > See <http://aka.ms/winui> for more information.
 
-即我们需要在 App.xaml 文件中添加 `<XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>` 作为应用程序的全局资源。不过，官方文档 [Getting started with the Windows UI library](https://docs.microsoft.com/en-us/uwp/toolkits/winui/getting-started) 中有对此更详细的描述。
+即我们需要在 App.xaml 文件中添加 `<XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>` 作为应用程序的全局资源。不过，官方文档 [Getting started with the Windows UI library](https://docs.microsoft.com/en-us/uwp/toolkits/winui/getting-started?wt.mc_id=MVP) 中有对此更详细的描述。
 
 如果我们是新 UWP 程序，这样写是没问题的：
 

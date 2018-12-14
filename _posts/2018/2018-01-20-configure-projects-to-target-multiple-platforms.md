@@ -1,7 +1,7 @@
 ---
 title: "让一个 csproj 项目指定多个开发框架"
 publishDate: 2018-01-21 11:28:55 +0800
-date: 2018-08-31 17:56:49 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: visualstudio
 ---
 
@@ -59,7 +59,7 @@ categories: visualstudio
 
 ### 多框架项目的坑以及如何避坑
 
-微软的官方文档 [How to: Configure Projects to Target Multiple Platforms - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/ide/how-to-configure-projects-to-target-multiple-platforms) 中只说了如何指定多个目标框架，并没有提及指定了多框架以后的坑。
+微软的官方文档 [How to: Configure Projects to Target Multiple Platforms - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/ide/how-to-configure-projects-to-target-multiple-platforms?wt.mc_id=MVP) 中只说了如何指定多个目标框架，并没有提及指定了多框架以后的坑。
 
 如果多开发框架中包含了低版本的 .NET Framework，例如 4.0/4.5 等，那么这些坑才比较容易凸显——因为这些版本的 .NET Framework 与 .NET Standard 的第三方库差异较大。所以，我们需要有方法来解决其第三方库引用的差异。这时需要在 csproj 文件中指定包含条件。例如：
 
@@ -106,4 +106,4 @@ categories: visualstudio
 #### 参考资料
 
 - [impromptu-interface/ImpromptuInterface.csproj at master · ekonbenefits/impromptu-interface](https://github.com/ekonbenefits/impromptu-interface/blob/master/ImpromptuInterface/ImpromptuInterface.csproj)
-- [How to: Configure Projects to Target Multiple Platforms - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/ide/how-to-configure-projects-to-target-multiple-platforms)
+- [How to: Configure Projects to Target Multiple Platforms - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/ide/how-to-configure-projects-to-target-multiple-platforms?wt.mc_id=MVP)

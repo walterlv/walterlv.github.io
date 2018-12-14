@@ -1,7 +1,7 @@
 ---
 title: "长期支持 LTS（Long-term Support）是怎样的一种支持方式"
 publishDate: 2018-07-04 21:29:29 +0800
-date: 2018-10-09 15:11:52 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: dotnet
 ---
 
@@ -34,9 +34,9 @@ LTS 是 long-term support 的缩写，意为长期支持。
 
 例如 Windows 操作系统使用的 LTSC（Long-Term Servicing Channel）：
 
-- [Overview of System Center LTSC and SAC releases - Microsoft Docs](https://docs.microsoft.com/en-us/system-center/ltsc-and-sac-overview#long-term-servicing-channel-ltsc)
-- [Windows Server Semi-Annual Channel overview - Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/get-started/semi-annual-channel-overview#long-term-servicing-channel-ltsc)
-- [Windows Server release information - Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
+- [Overview of System Center LTSC and SAC releases - Microsoft Docs](https://docs.microsoft.com/en-us/system-center/ltsc-and-sac-overview#long-term-servicing-channel-ltsc?wt.mc_id=MVP)
+- [Windows Server Semi-Annual Channel overview - Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/get-started/semi-annual-channel-overview#long-term-servicing-channel-ltsc?wt.mc_id=MVP)
+- [Windows Server release information - Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info?wt.mc_id=MVP)
 
 还有已经不怎么使用的 LTSB（Long-Term Servicing Branch）：
 

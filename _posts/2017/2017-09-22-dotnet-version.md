@@ -2,7 +2,7 @@
 layout: post
 title: ".NET Framework 4.x 程序到底运行在哪个 CLR 版本之上"
 publishDate: 2017-09-22 18:05:00 +0800
-date: 2018-08-12 16:00:37 +0800
+date: 2018-12-14 09:54:33 +0800
 categories: dotnet
 permalink: /dotnet/2017/09/22/dotnet-version.html
 keywords: dotnet version sku runtime
@@ -35,7 +35,7 @@ description: 了解 .NET Framework 的公共语言运行时版本，这与 .NET 
 1. 为什么我们基于 .NET Framework 4.7 开发的程序运行时版本是 4.0？
 1. sku 是什么？
 
-微软的官方文档给了我们解答：[supportedRuntime Element](https://docs.microsoft.com/en-us/dotnet/framework/configure-apps/file-schema/startup/supportedruntime-element)。
+微软的官方文档给了我们解答：[supportedRuntime Element](https://docs.microsoft.com/en-us/dotnet/framework/configure-apps/file-schema/startup/supportedruntime-element?wt.mc_id=MVP)。
 
 - `version`：用于指定此应用程序支持的公共语言运行时（CLR）的版本。
 - `sku`：stock-keeping unit（官方中文为“库存单位”，然而依然不懂这个词的意思），用于指定此应用程序支持的 .NET Framework 发行版本。
@@ -77,7 +77,7 @@ description: 了解 .NET Framework 的公共语言运行时版本，这与 .NET 
 
 我们需要寻找到 .NET Framework 的本质，不然如此错综复杂的版本号系统真把我搞懵了。
 
-微软在 [.NET Framework Versions and Dependencies](https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies) 中说到：
+微软在 [.NET Framework Versions and Dependencies](https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies?wt.mc_id=MVP) 中说到：
 
 > 每个版本的 .NET Framework 都包含公共语言运行时 (CLR)、基础库和其他托管库。 
 
@@ -91,7 +91,7 @@ description: 了解 .NET Framework 的公共语言运行时版本，这与 .NET 
 
 然而，不相信微软的 CLR 可以完全没有 BUG，既然 CLR 版本都是 4.0，那么微软对 CLR 运行时的更新怎么处理？安装了 .NET Framework 4.5/4.6/4.7 会如何提升 CLR 的稳定性和安全性？
 
-在 [Targeting and Running .NET Framework apps for version 4.5 and later](https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#targeting-and-running-net-framework-apps-for-version-45-and-later) 中，解释了 CLR 的更新机制——就地更新（in-place update）。这篇文章 [.NET 4.5 is an in-place replacement for .NET 4.0](https://weblog.west-wind.com/posts/2012/Mar/13/NET-45-is-an-inplace-replacement-for-NET-40) 对这种就地更新方式有比官方文档更详细的解释，并且还附带自己的一些试验（含代码）。不过文章是 2012 年写的，部分结论现在看来已经过时（因为在我的 Windows 10 配 .NET Framework 4.7 上结论已经不一样），不过对我理解就地更新本身非常有帮助，也为后续调查提供了更清晰的思路。
+在 [Targeting and Running .NET Framework apps for version 4.5 and later](https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#targeting-and-running-net-framework-apps-for-version-45-and-later?wt.mc_id=MVP) 中，解释了 CLR 的更新机制——就地更新（in-place update）。这篇文章 [.NET 4.5 is an in-place replacement for .NET 4.0](https://weblog.west-wind.com/posts/2012/Mar/13/NET-45-is-an-inplace-replacement-for-NET-40?wt.mc_id=MVP) 对这种就地更新方式有比官方文档更详细的解释，并且还附带自己的一些试验（含代码）。不过文章是 2012 年写的，部分结论现在看来已经过时（因为在我的 Windows 10 配 .NET Framework 4.7 上结论已经不一样），不过对我理解就地更新本身非常有帮助，也为后续调查提供了更清晰的思路。
 
 微软对 .NET Framework 4.x 框架就地更新的说明是：
 
@@ -112,8 +112,8 @@ description: 了解 .NET Framework 的公共语言运行时版本，这与 .NET 
 
 #### 参考资料
 
-- [supportedRuntime Element - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/configure-apps/file-schema/startup/supportedruntime-element)
-- [.NET Framework Versions and Dependencies - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#targeting-and-running-net-framework-apps-for-version-45-and-later)
+- [supportedRuntime Element - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/configure-apps/file-schema/startup/supportedruntime-element?wt.mc_id=MVP)
+- [.NET Framework Versions and Dependencies - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#targeting-and-running-net-framework-apps-for-version-45-and-later?wt.mc_id=MVP)
 - [.NET 4.5 is an in-place replacement for .NET 4.0 - Rick Strahl's Web Log](https://weblog.west-wind.com/posts/2012/Mar/13/NET-45-is-an-inplace-replacement-for-NET-40)
 - [app config - What does "SKU" (attribute) mean in C#? - Stack Overflow](https://stackoverflow.com/questions/17148496/what-does-sku-attribute-mean-in-c)
 - [.net - What happens if I remove the auto added supportedRuntime element? - Stack Overflow](https://stackoverflow.com/questions/21566528/what-happens-if-i-remove-the-auto-added-supportedruntime-element)

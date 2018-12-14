@@ -1,13 +1,14 @@
 ---
 layout: post
 title: "用 AppContext 解决类库的更新兼容问题"
-date: 2017-09-30 23:45:25 +0800
+publishDate: 2017-09-30 23:45:25 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: dotnet
 permalink: /post/dotnet/2017/09/30/app-context.html
 keywords: dotnet AppContext
 ---
 
-还记得微软在 [Mitigation: Pointer-based Touch and Stylus Support](https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/mitigation-pointer-based-touch-and-stylus-support) 中告诉大家如何在 .NET Framework 4.7 中迁移 WPF 的触控到基于 Pointer 消息？记得关键的 `<AppContextSwitchOverrides value="Switch.System.Windows.Input.Stylus.EnablePointerSupport=true"/>` 这一句吗？
+还记得微软在 [Mitigation: Pointer-based Touch and Stylus Support](https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/mitigation-pointer-based-touch-and-stylus-support?wt.mc_id=MVP) 中告诉大家如何在 .NET Framework 4.7 中迁移 WPF 的触控到基于 Pointer 消息？记得关键的 `<AppContextSwitchOverrides value="Switch.System.Windows.Input.Stylus.EnablePointerSupport=true"/>` 这一句吗？
 
 有没有好奇为何这一句话能用来控制微软基础类库中某一块功能的行为呢？阅读本文将了解微软为开发者提供的一套类库更新的兼容性解决方案——`AppContext`。
 

@@ -1,6 +1,7 @@
 ---
 title: "Roslyn 的确定性构建"
-date: 2018-03-31 17:22:19 +0800
+publishDate: 2018-03-31 17:22:19 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: visualstudio dotnet csharp roslyn msbuild
 ---
 
@@ -46,7 +47,7 @@ categories: visualstudio dotnet csharp roslyn msbuild
 
 #### 参考资料
 
-- [Customize your build - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build)
+- [Customize your build - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build?wt.mc_id=MVP)
 - [roslyn/Deterministic Inputs.md at master · dotnet/roslyn](https://github.com/dotnet/roslyn/blob/master/docs/compilers/Deterministic%20Inputs.md)
 - [Deterministic Builds in C#](https://gist.github.com/aelij/b20271f4bd0ab1298e49068b388b54ae)
 - [[Umbrella] Compilers should be deterministic: same inputs generate same outputs · Issue #372 · dotnet/roslyn](https://github.com/dotnet/roslyn/issues/372)

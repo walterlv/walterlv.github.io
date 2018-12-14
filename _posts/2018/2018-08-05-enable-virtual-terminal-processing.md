@@ -1,7 +1,7 @@
 ---
 title: "让控制台支持 ANSI 转义序列，输出下划线、修改颜色或其他控制"
 publishDate: 2018-08-05 14:24:11 +0800
-date: 2018-09-01 08:15:48 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: windows dotnet csharp
 ---
 
@@ -86,7 +86,7 @@ Console.WriteLine($"Some {UNDERLINE}underlined{RESET} and {RED}red{RESET} text")
 
 #### 参考资料
 
-- [SetConsoleMode function - Windows Console - Microsoft Docs](https://docs.microsoft.com/en-us/windows/console/setconsolemode)
+- [SetConsoleMode function - Windows Console - Microsoft Docs](https://docs.microsoft.com/en-us/windows/console/setconsolemode?wt.mc_id=MVP)
 - [Win10 New Console: Enable ENABLE_VIRTUAL_TERMINAL_PROCESSING by default (or with a flag) · Issue #92 · rprichard/winpty](https://github.com/rprichard/winpty/issues/92)
 - [(Re?)enable ENABLE_VIRTUAL_TERMINAL_PROCESSING by default – Welcome to the Windows developer feedback site!](https://wpdev.uservoice.com/forums/266908-command-prompt-console-windows-subsystem-for-l/suggestions/15617610--re-enable-enable-virtual-terminal-processing-by)
 - [ANSI escape code - Wikipedia](https://en.wikipedia.org/wiki/ANSI_escape_code)

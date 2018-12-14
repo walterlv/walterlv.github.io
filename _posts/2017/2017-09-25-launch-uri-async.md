@@ -2,7 +2,7 @@
 layout: post
 title: "UWP 中的 LaunchUriAsync，使用默认浏览器或其他应用打开链接"
 publishDate: 2017-09-25 00:39:53 +0800
-date: 2017-10-22 15:48:59 +0800
+date: 2018-12-14 09:54:33 +0800
 categories: uwp
 permalink: /uwp/2017/09/25/launch-uri-async.html
 keywords: uwp LaunchUriAsync windows 10
@@ -26,7 +26,7 @@ ms-store:|应用商店
 
 于是，只要 URI 带这些协议头，就能够用表格中的那些应用打开相应的功能了。
 
-如果想知道 `ms-settings` 里有哪些可用，请参见：[启动 Windows 设置应用 - UWP app developer](https://docs.microsoft.com/zh-cn/windows/uwp/launch-resume/launch-settings-app)；想知道 `ms-store` 可以如何帮助我们前往商店的具体页面，请参见：[启动 Windows 应用商店应用 - UWP app developer](https://docs.microsoft.com/zh-cn/windows/uwp/launch-resume/launch-store-app)。
+如果想知道 `ms-settings` 里有哪些可用，请参见：[启动 Windows 设置应用 - UWP app developer](https://docs.microsoft.com/zh-cn/windows/uwp/launch-resume/launch-settings-app)；想知道 `ms-store` 可以如何帮助我们前往商店的具体页面，请参见：[启动 Windows 应用商店应用 - UWP app developer](https://docs.microsoft.com/zh-cn/windows/uwp/launch-resume/launch-store-app?wt.mc_id=MVP)。
 
 ### LaunchUriAsync
 
@@ -109,6 +109,6 @@ public bool LimitPickerToCurrentAppAndAppUriHandlers { get; set; }
 我们还可以指定推荐用哪个应用打开（设置 `PreferredApplicationPackageFamilyName`），指定期望显示的窗口大小（设置 `DesiredRemainingView`，不过不是具体的大小，而是几种选项），指定只打开自己当前这款应用（设置 `LimitPickerToCurrentAppAndAppUriHandlers`）。具体查看注释是能够了解的。
 
 #### 参考资料
-- [启动 URI 的默认应用 - UWP app developer](https://docs.microsoft.com/zh-cn/windows/uwp/launch-resume/launch-default-app)
-- [启动 Windows 设置应用 - UWP app developer](https://docs.microsoft.com/zh-cn/windows/uwp/launch-resume/launch-settings-app)
-- [启动 Windows 应用商店应用 - UWP app developer](https://docs.microsoft.com/zh-cn/windows/uwp/launch-resume/launch-store-app)
+- [启动 URI 的默认应用 - UWP app developer](https://docs.microsoft.com/zh-cn/windows/uwp/launch-resume/launch-default-app?wt.mc_id=MVP)
+- [启动 Windows 设置应用 - UWP app developer](https://docs.microsoft.com/zh-cn/windows/uwp/launch-resume/launch-settings-app?wt.mc_id=MVP)
+- [启动 Windows 应用商店应用 - UWP app developer](https://docs.microsoft.com/zh-cn/windows/uwp/launch-resume/launch-store-app?wt.mc_id=MVP)

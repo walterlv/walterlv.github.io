@@ -2,7 +2,7 @@
 layout: post
 title: "优化 UWP 中图片的内存占用"
 publishDate: 2017-09-17 12:44:45 +0800
-date: 2017-09-29 07:36:02 +0800
+date: 2018-12-14 09:54:33 +0800
 categories: uwp
 permalink: /uwp/2017/09/17/optimize-image-in-uwp.html
 keywords: uwp image thumbnail GetThumbnailAsync UriSource
@@ -43,7 +43,7 @@ description: 优化 UWP 中图片的内存占用。
 1. 使用异步解码（如 `SetSource`）解码图像。
 1. 把图像或父控件的 `Opacity` 设成了 0，或者 `Visibility` 设为 `Collapsed`
 1. `ImageBrush` 的 `Strech` 设成了 `None`
-1. 图像用作点九图（参见 [NineGrid](https://docs.microsoft.com/zh-cn/uwp/api/Windows.UI.Xaml.Controls.Image#Windows_UI_Xaml_Controls_Image_NineGrid)）
+1. 图像用作点九图（参见 [NineGrid](https://docs.microsoft.com/zh-cn/uwp/api/Windows.UI.Xaml.Controls.Image#Windows_UI_Xaml_Controls_Image_NineGrid?wt.mc_id=MVP)）
 1. 给图像或父控件设置了 `CacheMode="BitmapCache"`
 1. `ImageBrush` 绘制到不是矩形的地方 (试过画到文字上或形状上吗？)
 

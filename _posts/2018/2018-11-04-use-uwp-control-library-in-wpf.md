@@ -1,7 +1,7 @@
 ---
 title: "WindowsXamlHost：在 WPF 中使用 UWP 控件库中的控件"
 publishDate: 2018-11-04 12:14:24 +0800
-date: 2018-11-28 16:25:46 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: uwp wpf dotnet
 ---
 
@@ -182,5 +182,5 @@ namespace Walterlv.Whitman.Universal
 
 #### 参考资料
 
-- [WindowsXAMLHost control - Windows Community Toolkit - Microsoft Docs](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)
-- [Enhance your desktop application for Windows 10 - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)
+- [WindowsXAMLHost control - Windows Community Toolkit - Microsoft Docs](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost?wt.mc_id=MVP)
+- [Enhance your desktop application for Windows 10 - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project?wt.mc_id=MVP)

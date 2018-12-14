@@ -1,7 +1,7 @@
 ---
 title: "如何快速编写和调试 Emit 生成 IL 的代码"
 publishDate: 2018-04-22 20:23:26 +0800
-date: 2018-09-01 08:10:32 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: dotnet csharp
 ---
 
@@ -304,4 +304,4 @@ il.Emit(castingCode, propertyType);
     - [.NET 4.5 : Operation could destabilize the runtime (yikes!) - ElegantCode](https://elegantcode.com/2012/08/23/net-4-5-operation-could-destabilize-the-runtime-yikes/)
     - [c# - Operation could destabilize the runtime? - Stack Overflow](https://stackoverflow.com/q/378895/6233938)
 + 其他
-    - [Generating and Compiling Source Code from a CodeDOM Graph - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/reflection-and-codedom/generating-and-compiling-source-code-from-a-codedom-graph)
+    - [Generating and Compiling Source Code from a CodeDOM Graph - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/reflection-and-codedom/generating-and-compiling-source-code-from-a-codedom-graph?wt.mc_id=MVP)

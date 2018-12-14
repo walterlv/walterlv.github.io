@@ -1,7 +1,7 @@
 ---
 title: ".NET 使用 XPath 来读写 XML 文件"
 publishDate: 2018-06-24 21:10:08 +0800
-date: 2018-09-01 08:02:18 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: dotnet
 ---
 
@@ -59,7 +59,7 @@ namespaceManager.AddNamespace("d", "http://schemas.microsoft.com/packaging/2012/
 navigator.Select("/d:package/d:metadata/d:id", namespaceManager);
 ```
 
-这里其实略微奇怪，因为命名 `package`、`id` 等都在默认的命名空间下，我们却必须显式加一个命名空间前缀。微软对此的解释是如果不指定命名空间前缀，默认都是 `null`，而不是 XML 声明的那个默认命名空间。[这里是原文](https://docs.microsoft.com/en-us/dotnet/standard/data/xml/xpath-queries-and-namespaces#the-default-namespace)：
+这里其实略微奇怪，因为命名 `package`、`id` 等都在默认的命名空间下，我们却必须显式加一个命名空间前缀。微软对此的解释是如果不指定命名空间前缀，默认都是 `null`，而不是 XML 声明的那个默认命名空间。[这里是原文](https://docs.microsoft.com/en-us/dotnet/standard/data/xml/xpath-queries-and-namespaces#the-default-namespace?wt.mc_id=MVP)：
 
 > XPath treats the empty prefix as the `null` namespace. In other words, only prefixes mapped to namespaces can be used in XPath queries. This means that if you want to query against a namespace in an XML document, even if it is the default namespace, you need to define a prefix for it.
 
@@ -168,8 +168,8 @@ navigator.Matches("../group/@targetFramework='.NETStandard2.0'");
 
 #### 参考资料
 
-- [使用 XPath 导航选择节点 - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/standard/data/xml/select-nodes-using-xpath-navigation)
-- [Process XML Data Using the XPath Data Model - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/data/xml/process-xml-data-using-the-xpath-data-model)
-- [XPath Queries and Namespaces - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/data/xml/xpath-queries-and-namespaces)
+- [使用 XPath 导航选择节点 - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/standard/data/xml/select-nodes-using-xpath-navigation?wt.mc_id=MVP)
+- [Process XML Data Using the XPath Data Model - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/data/xml/process-xml-data-using-the-xpath-data-model?wt.mc_id=MVP)
+- [XPath Queries and Namespaces - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/data/xml/xpath-queries-and-namespaces?wt.mc_id=MVP)
 - [.NET(C#)：使用XPath查询带有命名空间(有xmlns)的XML - Mgen](https://www.mgenware.com/blog/?p=596)
 - [.net - How to use XPath with XElement or LINQ? - Stack Overflow](https://stackoverflow.com/q/3642829/6233938)

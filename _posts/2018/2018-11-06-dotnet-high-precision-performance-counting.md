@@ -1,7 +1,7 @@
 ---
 title: ".NET/C# 在代码中测量代码执行耗时的建议（比较系统性能计数器和系统时间）"
 publishDate: 2018-11-06 15:33:54 +0800
-date: 2018-11-28 16:25:46 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: dotnet csharp
 ---
 
@@ -111,12 +111,12 @@ internal static extern long GetSystemTimeAsFileTime();
 
 #### 参考资料
 
-- [Acquiring high-resolution time stamps - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/sysinfo/acquiring-high-resolution-time-stamps)
+- [Acquiring high-resolution time stamps - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/sysinfo/acquiring-high-resolution-time-stamps?wt.mc_id=MVP)
 - [How accurate are the various Windows time-querying functions? – The Old New Thing](https://blogs.msdn.microsoft.com/oldnewthing/20170921-00/?p=97057)
 - [windows平台时间函数性能比较QueryPerformanceCounter，GetTickCount，ftime，time,GetLocalTime，GetSystemTimeAsFileTime - 小 楼 一 夜 听 春 雨 - 博客园](http://www.cnblogs.com/kex1n/p/3297607.html)
 - [c# - Is DateTime.Now the best way to measure a function's performance? - Stack Overflow](https://stackoverflow.com/a/28648/6233938)
 - [c# - How do I measure how long a function is running? - Stack Overflow](https://stackoverflow.com/q/10107140/6233938)
 - [c# - Calculate the execution time of a method - Stack Overflow](https://stackoverflow.com/q/14019510/6233938)
-- [Stopwatch.IsHighResolution Field (System.Diagnostics) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch.ishighresolution?redirectedfrom=MSDN&view=netframework-4.7.2)
+- [Stopwatch.IsHighResolution Field (System.Diagnostics) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch.ishighresolution?redirectedfrom=MSDN&view=netframework-4.7.2?wt.mc_id=MVP)
 - [Stopwatch.cs](https://referencesource.microsoft.com/#System/services/monitoring/system/diagnosticts/Stopwatch.cs,ceb0ba9cc88de82e)
 - [timespan.cs](https://referencesource.microsoft.com/#mscorlib/system/timespan.cs,865ef7b89f41b632)

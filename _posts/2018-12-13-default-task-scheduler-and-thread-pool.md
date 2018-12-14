@@ -1,6 +1,7 @@
 ---
 title: "了解 .NET 的默认 TaskScheduler 和线程池（ThreadPool）设置，避免让 Task.Run 的性能急剧降低"
-date: 2018-12-13 18:41:33 +0800
+publishDate: 2018-12-13 18:41:33 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: dotnet
 position: knowledge
 ---
@@ -74,7 +75,7 @@ Task 使用 `TaskScheduler` 来决定何时执行一个异步任务，如果你�
 
 通过 `ThreadPool.GetMinThreads` 可以获得最小的线程数和异步 IO 完成线程数；通过 `ThreadPool.GetMaxThreads` 来获得其最大值。通过对应的 `set` 方法来设置最小值和最大值。
 
-在 [ThreadPool.GetMinThreads(Int32, Int32) Method (System.Threading) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.threading.threadpool.getminthreads)
+在 [ThreadPool.GetMinThreads(Int32, Int32) Method (System.Threading) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.threading.threadpool.getminthreads?wt.mc_id=MVP)
 
 - 线程池按需提供新的工作线程或 I/O 完成线程直到它达到每个类别的最小值。
 - 默认情况下，最小线程数设置为在系统上的处理器数。
@@ -97,9 +98,9 @@ Task 使用 `TaskScheduler` 来决定何时执行一个异步任务，如果你�
 
 #### 参考资料
 
-- [TaskScheduler Class (System.Threading.Tasks) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.taskscheduler)
-- [TaskCreationOptions Enum (System.Threading.Tasks) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.taskcreationoptions)
-- [Parallel Tasks - Microsoft Docs](https://docs.microsoft.com/en-us/previous-versions/msp-n-p/ff963549(v=pandp.10))
-- [Attached and Detached Child Tasks - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/parallel-programming/attached-and-detached-child-tasks)
-- 在 [ThreadPool.GetMinThreads(Int32, Int32) Method (System.Threading) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.threading.threadpool.getminthreads)
-- [Managed Threading Best Practices - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/threading/managed-threading-best-practices)
+- [TaskScheduler Class (System.Threading.Tasks) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.taskscheduler?wt.mc_id=MVP)
+- [TaskCreationOptions Enum (System.Threading.Tasks) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.taskcreationoptions?wt.mc_id=MVP)
+- [Parallel Tasks - Microsoft Docs](https://docs.microsoft.com/en-us/previous-versions/msp-n-p/ff963549(v=pandp.10)?wt.mc_id=MVP)
+- [Attached and Detached Child Tasks - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/parallel-programming/attached-and-detached-child-tasks?wt.mc_id=MVP)
+- 在 [ThreadPool.GetMinThreads(Int32, Int32) Method (System.Threading) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.threading.threadpool.getminthreads?wt.mc_id=MVP)
+- [Managed Threading Best Practices - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/threading/managed-threading-best-practices?wt.mc_id=MVP)

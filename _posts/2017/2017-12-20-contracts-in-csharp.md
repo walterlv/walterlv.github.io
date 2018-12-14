@@ -1,7 +1,7 @@
 ---
 title: "C#/.NET 中的契约"
 publishDate: 2017-12-20 23:04:21 +0800
-date: 2018-04-25 17:11:33 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: csharp dotnet
 ---
 
@@ -167,7 +167,7 @@ Roslyn 相比于任何第三方契约的优势在于它甚至能在语法层面�
 
 ### 参考资料
 
-- [Code Contracts - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/debug-trace-profile/code-contracts)
+- [Code Contracts - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/debug-trace-profile/code-contracts?wt.mc_id=MVP)
 - [.NET 4.0 中的契约式编程 - Angel Lucifer - 博客园](http://www.cnblogs.com/lucifer1982/archive/2009/03/21/1418642.html)
 - [C# 中参数验证方式的演变 -.net-火龙果软件工程](http://www.uml.org.cn/net/201510303.asp)
 - [Contract Annotations - Help - ReSharper](https://www.jetbrains.com/help/resharper/Contract_Annotations.html)

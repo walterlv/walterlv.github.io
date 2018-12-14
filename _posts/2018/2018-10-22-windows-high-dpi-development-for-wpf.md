@@ -1,7 +1,7 @@
 ---
 title: "支持 Windows 10 最新 PerMonitorV2 特性的 WPF 多屏高 DPI 应用开发"
 publishDate: 2018-10-22 18:04:01 +0800
-date: 2018-11-27 13:08:55 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: windows dotnet wpf
 ---
 
@@ -66,12 +66,12 @@ Windows 10 自 1703 开始引入第二代的多屏 DPI 机制（PerMonitor V2）
 
 - 什么都不填
     - 如果你额外也没做什么 DPI 相关的操作，那么就是 Unaware。
-    - 如果你在程序启动的时候调用了 [SetProcessDpiAwareness](https://docs.microsoft.com/en-us/windows/desktop/api/shellscalingapi/nf-shellscalingapi-setprocessdpiawareness) 或 [SetProcessDPIAware](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-setprocessdpiaware) 函数，那么就会按照调用此函数的效果来感知 DPI。
+    - 如果你在程序启动的时候调用了 [SetProcessDpiAwareness](https://docs.microsoft.com/en-us/windows/desktop/api/shellscalingapi/nf-shellscalingapi-setprocessdpiawareness) 或 [SetProcessDPIAware](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-setprocessdpiaware?wt.mc_id=MVP) 函数，那么就会按照调用此函数的效果来感知 DPI。
 - 包含 `true` 字符串
     - 当前进程设置为系统级 DPI 感知（System DPI Awareness）。
 - 包含 `false` 字符串
     - 在 Windows Vista / 7 / 8 中，与什么都不填的效果是一样的。
-    - 在 Windows 8.1 / 10 中，当前进程设置为不感知 DPI（Unaware），就算你调用了 [SetProcessDpiAwareness](https://docs.microsoft.com/en-us/windows/desktop/api/shellscalingapi/nf-shellscalingapi-setprocessdpiawareness) 和 [SetProcessDPIAware](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-setprocessdpiaware) 也是没有用的。
+    - 在 Windows 8.1 / 10 中，当前进程设置为不感知 DPI（Unaware），就算你调用了 [SetProcessDpiAwareness](https://docs.microsoft.com/en-us/windows/desktop/api/shellscalingapi/nf-shellscalingapi-setprocessdpiawareness) 和 [SetProcessDPIAware](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-setprocessdpiaware?wt.mc_id=MVP) 也是没有用的。
 - 包含 `true/pm` 字符串
     - 在 Windows Vista / 7 / 8 中，当前进程设置为系统级 DPI 感知（System DPI Awareness）。
     - 在 Windows 8.1 / 10 中，当前进程设置为屏幕级 DPI 感知（Per-Monitor DPI Awareness）。
@@ -80,9 +80,9 @@ Windows 10 自 1703 开始引入第二代的多屏 DPI 机制（PerMonitor V2）
     - 在 Windows 8.1 / 10 中，当前进程设置为屏幕级 DPI 感知（Per-Monitor DPI Awareness）。
 - 其他任何字符串
     - 在 Windows Vista / 7 / 8 中，与什么都不填的效果是一样的。
-    - 在 Windows 8.1 / 10 中，当前进程设置为不感知 DPI（Unaware），就算你调用了 [SetProcessDpiAwareness](https://docs.microsoft.com/en-us/windows/desktop/api/shellscalingapi/nf-shellscalingapi-setprocessdpiawareness) 和 [SetProcessDPIAware](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-setprocessdpiaware) 也是没有用的。
+    - 在 Windows 8.1 / 10 中，当前进程设置为不感知 DPI（Unaware），就算你调用了 [SetProcessDpiAwareness](https://docs.microsoft.com/en-us/windows/desktop/api/shellscalingapi/nf-shellscalingapi-setprocessdpiawareness) 和 [SetProcessDPIAware](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-setprocessdpiaware?wt.mc_id=MVP) 也是没有用的。
 
-说明一下，[SetProcessDpiAwareness](https://docs.microsoft.com/en-us/windows/desktop/api/shellscalingapi/nf-shellscalingapi-setprocessdpiawareness) 是新 API，要求的最低系统版本是 Windows 8.1，调用这个才能指定为 Per-Monitor 的 DPI 感知。而 [SetProcessDPIAware](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-setprocessdpiaware) 是 Vista 开始引入的老 API，没有参数可以传。
+说明一下，[SetProcessDpiAwareness](https://docs.microsoft.com/en-us/windows/desktop/api/shellscalingapi/nf-shellscalingapi-setprocessdpiawareness) 是新 API，要求的最低系统版本是 Windows 8.1，调用这个才能指定为 Per-Monitor 的 DPI 感知。而 [SetProcessDPIAware](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-setprocessdpiaware?wt.mc_id=MVP) 是 Vista 开始引入的老 API，没有参数可以传。
 
 #### DpiAwareness
 
@@ -108,7 +108,7 @@ Windows 10 自 1703 开始引入第二代的多屏 DPI 机制（PerMonitor V2）
     - 按 `dpiAware` 节点的结果来
 - 整个逗号分隔的序列都没有能识别的 DPI 感知级别
     - 如果你额外也没做什么 DPI 相关的操作，那么就是 Unaware。
-    - 如果你在程序启动的时候调用了 [SetProcessDpiAwareness](https://docs.microsoft.com/en-us/windows/desktop/api/shellscalingapi/nf-shellscalingapi-setprocessdpiawareness) 或 [SetProcessDPIAware](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-setprocessdpiaware) 函数，那么就会按照调用此函数的效果来感知 DPI。
+    - 如果你在程序启动的时候调用了 [SetProcessDpiAwareness](https://docs.microsoft.com/en-us/windows/desktop/api/shellscalingapi/nf-shellscalingapi-setprocessdpiawareness) 或 [SetProcessDPIAware](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-setprocessdpiaware?wt.mc_id=MVP) 函数，那么就会按照调用此函数的效果来感知 DPI。
 - 第一个能识别的感知级别是 `system`
     - 当前进程设置为系统级 DPI 感知（System DPI Awareness）。
 - 第一个能识别的感知级别是 `permonitor`
@@ -117,7 +117,7 @@ Windows 10 自 1703 开始引入第二代的多屏 DPI 机制（PerMonitor V2）
     - 当前进程设置为第二代屏幕级 DPI 感知（Per-Monitor V2 DPI Awareness）。
     - 仅在 Windows 10 (1703) 及以上版本才可被识别
 - 第一个能识别的感知级别是 `unaware`
-    - 当前进程设置为不感知 DPI（Unaware），就算你调用了 [SetProcessDpiAwareness](https://docs.microsoft.com/en-us/windows/desktop/api/shellscalingapi/nf-shellscalingapi-setprocessdpiawareness) 和 [SetProcessDPIAware](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-setprocessdpiaware) 也是没有用的。
+    - 当前进程设置为不感知 DPI（Unaware），就算你调用了 [SetProcessDpiAwareness](https://docs.microsoft.com/en-us/windows/desktop/api/shellscalingapi/nf-shellscalingapi-setprocessdpiawareness) 和 [SetProcessDPIAware](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-setprocessdpiaware?wt.mc_id=MVP) 也是没有用的。
 
 ### 使 WPF 程序支持 Per-Monitor V2 级 DPI 感知
 
@@ -195,12 +195,12 @@ Windows 10 自 1703 开始引入第二代的多屏 DPI 机制（PerMonitor V2）
 
 由于 Windows 8.1 操作系统用户存量不多，主要是 Windows 7 和 Windows 10。所以我们要么兼容完全不支持 Per-Monitor 的 Windows 7，要么使用具有新特性的 Windows 10 即可获得最佳的开发成本平衡。**使用以上的 DPI 缩放方法足以让你的 WPF 应用在任何一个 .NET Framework 版本下获得针对屏幕的 DPI 清晰缩放（Per-Monitor DPI Awareness）。**
 
-所以仅针对 Windows 8.1 做特殊的 DPI 缩放是不值得的，把 Windows 8.1 当做 Windows 7 来做那种不支持 Per-Monitor 的处理就好了。当然你硬要支持也有相关文档可以看：[Developing a Per-Monitor DPI-Aware WPF Application - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/hidpi/declaring-managed-apps-dpi-aware) 了解实现方法。具体是使用 `DisableDpiAwareness` 特性和 [Windows Per-Monitor Aware WPF Sample](https://code.msdn.microsoft.com/windowsdesktop/Per-Monitor-Aware-WPF-e43cde33) 中的源码。
+所以仅针对 Windows 8.1 做特殊的 DPI 缩放是不值得的，把 Windows 8.1 当做 Windows 7 来做那种不支持 Per-Monitor 的处理就好了。当然你硬要支持也有相关文档可以看：[Developing a Per-Monitor DPI-Aware WPF Application - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/hidpi/declaring-managed-apps-dpi-aware) 了解实现方法。具体是使用 `DisableDpiAwareness` 特性和 [Windows Per-Monitor Aware WPF Sample](https://code.msdn.microsoft.com/windowsdesktop/Per-Monitor-Aware-WPF-e43cde33?wt.mc_id=MVP) 中的源码。
 
 ---
 
 #### 参考资料
 
-- [Developing a Per-Monitor DPI-Aware WPF Application - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/hidpi/declaring-managed-apps-dpi-aware)
+- [Developing a Per-Monitor DPI-Aware WPF Application - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/hidpi/declaring-managed-apps-dpi-aware?wt.mc_id=MVP)
 - [WPF-Samples/Developer Guide - Per Monitor DPI - WPF Preview.docx at master · Microsoft/WPF-Samples](https://github.com/Microsoft/WPF-Samples/blob/master/PerMonitorDPI/Developer%20Guide%20-%20Per%20Monitor%20DPI%20-%20WPF%20Preview.docx)
-- [Application Manifests - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/sbscs/application-manifests)
+- [Application Manifests - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/sbscs/application-manifests?wt.mc_id=MVP)

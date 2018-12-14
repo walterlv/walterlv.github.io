@@ -1,7 +1,7 @@
 ---
 title: ".NET Core 和 .NET Framework 中的 MEF2"
 publishDate: 2018-01-17 23:41:00 +0800
-date: 2018-09-01 08:13:33 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: visualstudio dotnet
 ---
 
@@ -26,8 +26,8 @@ MEF，Managed Extensibility Framework，现在已经发布了三个版本了，�
 
 对于 .NET Framework 4.5 里引入的 MEF2，性能上没能改进多少，倒是使用起来功能更多。详细资料和使用方法请参考微软官方的文档：
 
-- [Managed Extensibility Framework (MEF) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/mef/)
-- [Attributed Programming Model Overview (MEF) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/mef/attributed-programming-model-overview-mef)
+- [Managed Extensibility Framework (MEF) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/mef/?wt.mc_id=MVP)
+- [Attributed Programming Model Overview (MEF) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/mef/attributed-programming-model-overview-mef?wt.mc_id=MVP)
 
 而本文主要说的 MEF2 是微软后来以 NuGet 包形式发布的 MEF2；适用于 .NET Framework 4.5 及以上、.NET Core 和各种 .NET 移动平台。它的接口相比于 .NET Framework 中原生带的已经变了，中文和英文的参考资料很少，几乎都是参考微软官方发布的文档才能使用。所以本文将为大家提供其中文的使用方法指导。
 

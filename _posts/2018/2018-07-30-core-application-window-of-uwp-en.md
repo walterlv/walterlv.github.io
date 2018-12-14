@@ -1,7 +1,7 @@
 ---
 title: "UWP CoreApplication / Application Vs CoreApplicationView / ApplicationView Vs CoreWindow / Window"
 publishDate: 2018-07-30 09:21:58 +0800
-date: 2018-09-01 07:58:04 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: uwp
 version:
   current: English
@@ -53,7 +53,7 @@ The `CoreApplication` manages all the views of a UWP application and the `CoreAp
 ![UWP application view](/static/posts/2018-07-27-08-37-42.png)  
 ▲ UWP application view
 
-You can read [Show multiple views for an app - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/layout/show-multiple-views) to learn how to write multiple views applications. You'll know more about the relationship between the `CoreApplication` and the `CoreApplicationView`.
+You can read [Show multiple views for an app - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/layout/show-multiple-views?wt.mc_id=MVP) to learn how to write multiple views applications. You'll know more about the relationship between the `CoreApplication` and the `CoreApplicationView`.
 
 `CoreWindow` is the window that we are all familiar with. 
 `Windows.UI.XAML.Window` encapsulate the `CoreWindow` for easier usage. `CoreDispatcher` is the threading model based on the windows message loop. It's the `CoreDispatcher` that keeps the window to show all the time without being disposed.
@@ -82,4 +82,4 @@ I've written some other posts about UWP that take advantages of these concepts. 
 
 #### References
 
-- [Title bar customization - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/shell/title-bar)
+- [Title bar customization - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/shell/title-bar?wt.mc_id=MVP)

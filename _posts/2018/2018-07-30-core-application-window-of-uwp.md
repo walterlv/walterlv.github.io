@@ -1,7 +1,7 @@
 ---
 title: "UWP 应用中 CoreApplication / Application, CoreWindow / Window 之间的区别"
 publishDate: 2018-07-30 07:51:34 +0800
-date: 2018-09-01 07:57:44 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: uwp
 version:
   current: 中文
@@ -82,4 +82,4 @@ StackOverflow 上的地址：[c# - CoreApplicationView vs CoreWindow vs Applicat
 
 #### 参考资料
 
-- [Title bar customization - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/shell/title-bar)
+- [Title bar customization - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/shell/title-bar?wt.mc_id=MVP)

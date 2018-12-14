@@ -1,6 +1,7 @@
 ---
 title: "DependencyProperty.UnsetValue 的正确打开方式"
-date: 2017-10-10 23:21:57 +0800
+publishDate: 2017-10-10 23:21:57 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: xaml
 permalink: /post/xaml/how-to-use-dependencyproperty-unsetvalue.html
 tags: DependencyProperty UnsetValue 依赖属性
@@ -70,19 +71,19 @@ internal class NamedObject
 微软官方对于 `DependencyProperty.UnsetValue` 的介绍，专门的文档中只有一个说法，就是用来表示“不合理”的值，却并没有说明什么情况下为合理，什么情况下为不合理。但好在微软将一些推荐写法散落在了多个不同的文章中。这里整理在一起，以便为大家对 `DependencyProperty.UnsetValue` 的正确使用提供指导。
 
 1. 在注册依赖项属性的时候，不要使用 `DependencyProperty.UnsetValue` 作为默认值。  
-这个值本意其实并不是在说“未设置”，而是代表“不合理”。默认值必须是“合理地”才行。微软官方文档 [Custom dependency properties](https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/custom-dependency-properties) 对此的解释是，如果默认值设置为 `UnsetValue`，则会在大家使用其值的时候产生混淆，并不能区分到底是依赖属性（的绑定系统）提供值的时候出错了还是因为只是默认没设置。
+这个值本意其实并不是在说“未设置”，而是代表“不合理”。默认值必须是“合理地”才行。微软官方文档 [Custom dependency properties](https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/custom-dependency-properties?wt.mc_id=MVP) 对此的解释是，如果默认值设置为 `UnsetValue`，则会在大家使用其值的时候产生混淆，并不能区分到底是依赖属性（的绑定系统）提供值的时候出错了还是因为只是默认没设置。
 1. 微软推荐在写绑定的转换器的时候，如果转换有错误，不应该抛出异常，而是应该返回一个 `DependencyProperty.UnsetValue`，以便阻止绑定中继续传递值。不过我认为错误应该更及时地被发现才能避免错误的继续蔓延，所以建议在 DEBUG 下依然抛出异常，而在发布的版本里返回 `UnsetValue`。  
-微软的推荐出自于 [Data binding in depth](https://docs.microsoft.com/en-us/windows/uwp/data-binding/data-binding-in-depth)，在 [How to: Convert Bound Data](https://docs.microsoft.com/en-us/dotnet/framework/wpf/data/how-to-convert-bound-data) 中给出了这种推荐的示例代码。
+微软的推荐出自于 [Data binding in depth](https://docs.microsoft.com/en-us/windows/uwp/data-binding/data-binding-in-depth)，在 [How to: Convert Bound Data](https://docs.microsoft.com/en-us/dotnet/framework/wpf/data/how-to-convert-bound-data?wt.mc_id=MVP) 中给出了这种推荐的示例代码。
 1. 如果需要在 `CoerceValueCallback` 回调中验证值的合理性，当值不合理的时候，返回 `DependencyProperty.UnsetValue`。  
 这将告诉依赖属性系统阻止这次值的更改。
 
 ---
 
 #### 参考资料
-- [Data binding in depth - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/data-binding/data-binding-in-depth)
-- [How to: Convert Bound Data - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/data/how-to-convert-bound-data)
-- [Custom dependency properties - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/custom-dependency-properties)
-- [Dependency Property Callbacks and Validation - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/dependency-property-callbacks-and-validation)
+- [Data binding in depth - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/data-binding/data-binding-in-depth?wt.mc_id=MVP)
+- [How to: Convert Bound Data - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/data/how-to-convert-bound-data?wt.mc_id=MVP)
+- [Custom dependency properties - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/custom-dependency-properties?wt.mc_id=MVP)
+- [Dependency Property Callbacks and Validation - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/dependency-property-callbacks-and-validation?wt.mc_id=MVP)
 - [c# - Why do I get a DependencyProperty.UnsetValue when converting a value in a MultiBinding? - Stack Overflow](https://stackoverflow.com/questions/2811405/why-do-i-get-a-dependencyproperty-unsetvalue-when-converting-a-value-in-a-multib)
 - [DependencyProperty.UnsetValue Field (System.Windows)](https://msdn.microsoft.com/en-us/library/system.windows.dependencyproperty.unsetvalue(v=vs.110).aspx)
 - [UnsetValue](http://referencesource.microsoft.com/#WindowsBase/Base/System/Windows/DependencyProperty.cs,ee7f3b3d5828e7ab)

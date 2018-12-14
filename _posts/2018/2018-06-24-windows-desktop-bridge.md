@@ -1,7 +1,7 @@
 ---
 title: "签署 Centennial Program Addendum，使用 Desktop Bridge 将 Win32 应用转制成 UWP"
 publishDate: 2018-06-24 14:39:10 +0800
-date: 2018-08-04 07:09:34 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: dotnet
 ---
 
@@ -25,7 +25,7 @@ Desktop Bridge，可能还可以叫做“桌面桥”，它存在的目的便是
 
 需要注意的是，Desktop Bridge 要求的 Windows 系统最低版本为 1607。也就是说，如果要选择 SDK 的版本，需要选择 10.0.14393 或以上版本。
 
-当然，并不是所有的 Win32 应用程序都支持直接转制到 UWP，如果应用会动态加载不在安装包中的 dll 或者会试图修改系统文件和配置，那么必须去掉这些代码才能完成转制。如果希望了解更多不支持的类型，建议阅读官方文档：[Prepare to package an app (Desktop Bridge) - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-prepare)。
+当然，并不是所有的 Win32 应用程序都支持直接转制到 UWP，如果应用会动态加载不在安装包中的 dll 或者会试图修改系统文件和配置，那么必须去掉这些代码才能完成转制。如果希望了解更多不支持的类型，建议阅读官方文档：[Prepare to package an app (Desktop Bridge) - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-prepare?wt.mc_id=MVP)。
 
 <!-- ### 转制前的准备
 
@@ -151,8 +151,8 @@ Desktop App Converter 基础系统镜像下载完后随便放到某个地方，�
 
 #### 参考资料
 
-- [Desktop Bridge - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root)
-- [App capability declarations - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations)
+- [Desktop Bridge - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root?wt.mc_id=MVP)
+- [App capability declarations - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations?wt.mc_id=MVP)
 - [“Package acceptance validation error” when you submit a UWP + Desktop Bridge app on the Store – App Consult Team](https://blogs.msdn.microsoft.com/appconsult/2018/02/20/package-acceptance-validation-error-when-you-submit-a-uwp-desktop-bridge-app-on-the-store/)
 - [Preparing a Desktop Bridge application for the Store submission – App Consult Team](https://blogs.msdn.microsoft.com/appconsult/2017/09/25/preparing-a-desktop-bridge-application-for-the-store-submission/)
-- [Publish your packaged desktop app to a Windows store or sideload it onto one or more devices. - UWP app developer | Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-distribute)
+- [Publish your packaged desktop app to a Windows store or sideload it onto one or more devices. - UWP app developer | Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-distribute?wt.mc_id=MVP)

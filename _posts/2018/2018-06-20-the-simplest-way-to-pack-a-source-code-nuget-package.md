@@ -1,6 +1,7 @@
 ---
 title: "将 .NET Core 项目打一个最简单的 NuGet 源码包，安装此包就像直接把源码放进项目一样"
-date: 2018-06-20 09:22:34 +0800
+publishDate: 2018-06-20 09:22:34 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: dotnet visualstudio nuget msbuild
 ---
 
@@ -52,7 +53,7 @@ NuGet 原本就提供了生成源码包的功能。不过，NuGet 原生的源�
 
 ![](/static/posts/2018-06-20-08-36-11.png)
 
-这种带后缀形式的包在只是 NuGet 的辅助包而已，不是主包。在 [How to create NuGet symbol packages - Microsoft Docs](https://docs.microsoft.com/en-us/nuget/create-packages/symbol-packages) 中说明这种 symbols 的包只是用于调试的。然而，我们需要的是将其作为直接引用的主包。这种情况下，Walterlv.Demo.nupkg 因为不能满足我们的目的，所以我们并不能使用它。所以，我们需要做的是，将 Walterlv.Demo.1.0.0.symbols.nupkg 变成主包。
+这种带后缀形式的包在只是 NuGet 的辅助包而已，不是主包。在 [How to create NuGet symbol packages - Microsoft Docs](https://docs.microsoft.com/en-us/nuget/create-packages/symbol-packages?wt.mc_id=MVP) 中说明这种 symbols 的包只是用于调试的。然而，我们需要的是将其作为直接引用的主包。这种情况下，Walterlv.Demo.nupkg 因为不能满足我们的目的，所以我们并不能使用它。所以，我们需要做的是，将 Walterlv.Demo.1.0.0.symbols.nupkg 变成主包。
 
 于是，我们编写一个 `<Target />` 将 symbols 包替换主包：
 

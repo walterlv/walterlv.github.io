@@ -1,11 +1,11 @@
 ---
 title: "将 async/await 异步代码转换为安全的不会死锁的同步代码（使用 PushFrame）"
 publishDate: 2018-03-16 11:58:10 +0800
-date: 2018-11-27 13:08:55 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: dotnet csharp
 ---
 
-在 `async`/`await` 异步模型（即 TAP [Task-based Asynchronous Pattern](https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)）出现以前，有大量的同步代码存在于代码库中，以至于这些代码全部迁移到 `async`/`await` 可能有些困难。这里就免不了将一部分异步代码修改为同步代码。然而传统的迁移方式存在或多或少的问题。本文将总结这些传统方法的坑，并推出一款异步转同步的新方法，解决传统方法的这些坑。
+在 `async`/`await` 异步模型（即 TAP [Task-based Asynchronous Pattern](https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap?wt.mc_id=MVP)）出现以前，有大量的同步代码存在于代码库中，以至于这些代码全部迁移到 `async`/`await` 可能有些困难。这里就免不了将一部分异步代码修改为同步代码。然而传统的迁移方式存在或多或少的问题。本文将总结这些传统方法的坑，并推出一款异步转同步的新方法，解决传统方法的这些坑。
 
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: "UWP 中的各种文件路径（用户、缓存、漫游、安装……）"
-date: 2018-09-23 20:01:28 +0800
+publishDate: 2018-09-23 20:01:28 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: dotnet uwp
 ---
 
@@ -16,11 +17,11 @@ UWP 提供了多种不同文件路径访问方式，对应到不同的文件路�
 
 UWP 中可访问的路径有这些：
 
-- [ApplicationData](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdata)
+- [ApplicationData](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdata?wt.mc_id=MVP)
     - 用于储存应用的各种数据
-- [Package.InstalledLocation](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.package.installedlocation#Windows_ApplicationModel_Package_InstalledLocation)
+- [Package.InstalledLocation](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.package.installedlocation#Windows_ApplicationModel_Package_InstalledLocation?wt.mc_id=MVP)
     - 提供对应用程序包中各种文件的访问
-- [特殊文件夹](https://docs.microsoft.com/en-us/uwp/api/windows.storage.appdatapaths)
+- [特殊文件夹](https://docs.microsoft.com/en-us/uwp/api/windows.storage.appdatapaths?wt.mc_id=MVP)
     - 提供用户文档、用户收藏夹等特殊文件夹的访问
 
 ### ApplicationData
@@ -63,4 +64,4 @@ var file = Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(uri);
 
 特殊文件夹可以通过 `KnownFolders` 类型获取，可以获取到照片、图片、音乐、视频等文件夹。
 
-- [KnownFolders Class (Windows.Storage) - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/uwp/api/windows.storage.knownfolders)
+- [KnownFolders Class (Windows.Storage) - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/uwp/api/windows.storage.knownfolders?wt.mc_id=MVP)

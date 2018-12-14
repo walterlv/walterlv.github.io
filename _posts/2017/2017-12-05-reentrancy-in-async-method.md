@@ -1,6 +1,7 @@
 ---
 title: "异步任务中的重新进入（Reentrancy）"
-date: 2017-12-05 22:10:04 +0800
+publishDate: 2017-12-05 22:10:04 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: csharp dotnet
 ---
 
@@ -48,7 +49,7 @@ private async Task DoSomethingAsync()
 
 ### 重新进入的五种方式
 
-微软在 [Handling Reentrancy in Async Apps (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/handling-reentrancy-in-async-apps) 一文中给出了重新进入的三种方式：
+微软在 [Handling Reentrancy in Async Apps (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/handling-reentrancy-in-async-apps?wt.mc_id=MVP) 一文中给出了重新进入的三种方式：
 
 > 1. 禁用“开始”按钮
 > 1. 取消和重启操作
@@ -96,5 +97,5 @@ Button.IsEnabled = true;
 
 #### 参考资料
 
-- [Handling Reentrancy in Async Apps (C#) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/handling-reentrancy-in-async-apps)
-- [处理异步应用中的重新进入 (C#) - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/concepts/async/handling-reentrancy-in-async-apps)
+- [Handling Reentrancy in Async Apps (C#) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/handling-reentrancy-in-async-apps?wt.mc_id=MVP)
+- [处理异步应用中的重新进入 (C#) - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/concepts/async/handling-reentrancy-in-async-apps?wt.mc_id=MVP)

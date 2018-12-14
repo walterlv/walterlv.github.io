@@ -1,7 +1,7 @@
 ---
 title: "自动将 NuGet 包的引用方式从 packages.config 升级为 PackageReference"
 publishDate: 2018-04-24 18:03:20 +0800
-date: 2018-06-29 16:52:10 +0800
+date: 2018-12-14 09:54:00 +0800
 categories: dotnet visualstudio nuget msbuild
 ---
 
@@ -71,11 +71,11 @@ NuGet.Configuration 4.0.0 -> NuGet.Versioning (= 4.0.0)
 
 也就是说，引用的两个不同的包要求依赖相同包的不同版本，于是 `PackageReference` 无法隐式推断依赖包的版本。这时需要将项目的依赖方式改为之前的方式。
 
-当然，在制作和发布 NuGet 包时，尽量使用非特定版本的依赖包，能够极大地避免这种问题带来的影响。关于如何指定非特定版本的依赖包，可以阅读 [Version ranges and wildcards 版本范围和通配符](https://docs.microsoft.com/en-us/nuget/reference/package-versioning#version-ranges-and-wildcards)。
+当然，在制作和发布 NuGet 包时，尽量使用非特定版本的依赖包，能够极大地避免这种问题带来的影响。关于如何指定非特定版本的依赖包，可以阅读 [Version ranges and wildcards 版本范围和通配符](https://docs.microsoft.com/en-us/nuget/reference/package-versioning#version-ranges-and-wildcards?wt.mc_id=MVP)。
 
 ---
 
 #### 参考资料
 
-- [Migrating from package.config to PackageReference formats - Microsoft Docs](https://docs.microsoft.com/en-us/nuget/reference/migrate-packages-config-to-package-reference)
+- [Migrating from package.config to PackageReference formats - Microsoft Docs](https://docs.microsoft.com/en-us/nuget/reference/migrate-packages-config-to-package-reference?wt.mc_id=MVP)
 - [packages.config (PC) to PackageReference (PR) Migrator · NuGet/Home Wiki](https://github.com/NuGet/Home/wiki/packages.config-(PC)-to-PackageReference-(PR)-Migrator)
