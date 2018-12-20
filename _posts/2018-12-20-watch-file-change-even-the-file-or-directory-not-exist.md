@@ -1,6 +1,6 @@
 ---
 title: "文件和文件夹不存在的时候，FileSystemWatcher 监听不到文件的改变？如果递归地监听就可以了"
-date: 2018-12-20 09:57:19 +0800
+date: 2018-12-20 10:05:38 +0800
 categories: dotnet windows
 position: problem
 ---
@@ -224,6 +224,7 @@ private void OnFileChanged(object sender, EventArgs e)
 
 #### 参考资料
 
+- [FileSystemWatcher Class (System.IO) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2)
 - [c# - How can i use FileSystemWatcher to watch directory if directory not exist? - Stack Overflow](https://stackoverflow.com/a/29602014/6233938)
 - [FileSystemWatcher - Pure Chaos (Part 1 of 2) - CodeProject](https://www.codeproject.com/Articles/58740/FileSystemWatcher-Pure-Chaos-Part-1-of-2)
 - [FileSystemWatcher - Pure Chaos (Part 2 of 2) - CodeProject](https://www.codeproject.com/Articles/58741/FileSystemWatcher-Pure-Chaos-Part-2-of-2)
