@@ -1,6 +1,6 @@
 ---
 title: "不要使用 Dispatcher.Invoke，因为它可能在你的延迟初始化 Lazy<T> 中导致死锁"
-date: 2018-12-21 10:19:07 +0800
+date: 2018-12-21 10:23:37 +0800
 categories: dotnet wpf
 position: knowledge
 ---
@@ -53,6 +53,8 @@ class Walterlv
     }
 }
 ```
+
+这里的 `Application.Current.Dispatcher` 并不一定必须是 `Application.Current`，只要是两个不同线程拿到的 `Dispatcher` 的实例是同一个，就会死锁。
 
 ### 此死锁的触发条件
 
