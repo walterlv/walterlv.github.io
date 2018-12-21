@@ -1,7 +1,7 @@
 ---
 title: ".NET 中小心嵌套等待的 Task，它可能会耗尽你线程池的现有资源，出现类似死锁的情况"
 publishDate: 2018-12-13 19:21:25 +0800
-date: 2018-12-15 15:22:03 +0800
+date: 2018-12-21 16:38:11 +0800
 categories: dotnet
 position: problem
 ---
@@ -95,3 +95,17 @@ class Program
 去掉这里本来多余的 `Task.Run` 问题便可以解决。或者一直 `async`/`await` 中间不要转换为同步代码，那么问题也能解决。
 
 我会遇到以上代码，是因为在库中写了类似 `DoAsync` 那样的方法。同时为了方便使用，封装了一个同步等待的属性。在业务使用方，觉得获取此属性可能比较耗时，于是用了 `Task.Run` 在后台线程调用。同时由于这是一个可能大量并发的操作，于是造成了以上悲剧。
+
+### 更多死锁问题
+
+死锁问题：
+
+- [使用 Task.Wait()？立刻死锁（deadlock） - walterlv](/post/deadlock-in-task-wait.html)
+- [不要使用 Dispatcher.Invoke，因为它可能在你的延迟初始化 Lazy<T> 中导致死锁 - walterlv](/post/deadlock-of-invoke-in-lazy.html)
+- [在有 UI 线程参与的同步锁（如 AutoResetEvent）内部使用 await 可能导致死锁](/post/deadlock-if-await-in-ui-lock-context.html)
+- [.NET 中小心嵌套等待的 Task，它可能会耗尽你线程池的现有资源，出现类似死锁的情况 - walterlv](/post/task-wait-may-cause-long-time-waiting.html)
+
+解决方法：
+
+- [在编写异步方法时，使用 ConfigureAwait(false) 避免使用者死锁 - walterlv](/post/using-configure-await-to-avoid-deadlocks.html)
+- [将 async/await 异步代码转换为安全的不会死锁的同步代码（使用 PushFrame） - walterlv](/post/convert-async-to-sync-by-push-frame.html)

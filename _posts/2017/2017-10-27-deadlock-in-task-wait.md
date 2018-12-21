@@ -1,7 +1,7 @@
 ---
 title: "使用 Task.Wait()？立刻死锁（deadlock）"
 publishDate: 2017-10-27 23:54:46 +0800
-date: 2018-11-05 10:20:50 +0800
+date: 2018-12-21 16:37:39 +0800
 categories: dotnet csharp
 ---
 
@@ -113,6 +113,21 @@ async Task DoAsync()
 
 这样，即便真的使用 `DoAsync().Wait()` 也不会发生死锁。注意，**整个方法调用链都需要使用** `.ConfigureAwait(false)` **才能够防止线程切换时，在调用方的** `Wait()` **方法中发生死锁**。详见我的另一篇博客 [在编写异步方法时，使用 ConfigureAwait(false) 避免使用者死锁](/post/using-configure-await-to-avoid-deadlocks.html)。）
 
+### 更多死锁问题
+
+死锁问题：
+
+- [使用 Task.Wait()？立刻死锁（deadlock） - walterlv](/post/deadlock-in-task-wait.html)
+- [不要使用 Dispatcher.Invoke，因为它可能在你的延迟初始化 Lazy<T> 中导致死锁 - walterlv](/post/deadlock-of-invoke-in-lazy.html)
+- [在有 UI 线程参与的同步锁（如 AutoResetEvent）内部使用 await 可能导致死锁](/post/deadlock-if-await-in-ui-lock-context.html)
+- [.NET 中小心嵌套等待的 Task，它可能会耗尽你线程池的现有资源，出现类似死锁的情况 - walterlv](/post/task-wait-may-cause-long-time-waiting.html)
+
+解决方法：
+
+- [在编写异步方法时，使用 ConfigureAwait(false) 避免使用者死锁 - walterlv](/post/using-configure-await-to-avoid-deadlocks.html)
+- [将 async/await 异步代码转换为安全的不会死锁的同步代码（使用 PushFrame） - walterlv](/post/convert-async-to-sync-by-push-frame.html)
+
 #### 参考资料
+
 - [There Is No Thread](http://blog.stephencleary.com/2013/11/there-is-no-thread.html)
 - [Async/Await - Best Practices in Asynchronous Programming](https://msdn.microsoft.com/en-us/magazine/jj991977.aspx)

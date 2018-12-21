@@ -1,7 +1,7 @@
 ---
 title: "在编写异步方法时，使用 ConfigureAwait(false) 避免使用者死锁"
 publishDate: 2018-03-23 21:54:20 +0800
-date: 2018-03-24 13:21:17 +0800
+date: 2018-12-21 16:38:25 +0800
 categories: dotnet
 ---
 
@@ -139,3 +139,17 @@ private async Task RunAsync()
 建议安装 NuGet 包 [Microsoft.CodeAnalysis.FxCopAnalyzers](https://www.nuget.org/packages/Microsoft.CodeAnalysis.FxCopAnalyzers/)。这样，当你在代码中写出 `await` 时，分析器会提示你 [CA2007](/post/meaning-of-all-kind-of-stylecop.html) 警告，你必须显式设置 `ConfigureAwait(false)` 或 `ConfigureAwait(true)` 来提醒你是否需要使用默认的 `SynchronizationContext`。
 
 如果你是类库的编写者，注意此问题能够一定程度上防止逗比使用者出现死锁问题后喷你的类库写得不好。
+
+### 更多死锁问题
+
+死锁问题：
+
+- [使用 Task.Wait()？立刻死锁（deadlock） - walterlv](/post/deadlock-in-task-wait.html)
+- [不要使用 Dispatcher.Invoke，因为它可能在你的延迟初始化 Lazy<T> 中导致死锁 - walterlv](/post/deadlock-of-invoke-in-lazy.html)
+- [在有 UI 线程参与的同步锁（如 AutoResetEvent）内部使用 await 可能导致死锁](/post/deadlock-if-await-in-ui-lock-context.html)
+- [.NET 中小心嵌套等待的 Task，它可能会耗尽你线程池的现有资源，出现类似死锁的情况 - walterlv](/post/task-wait-may-cause-long-time-waiting.html)
+
+解决方法：
+
+- [在编写异步方法时，使用 ConfigureAwait(false) 避免使用者死锁 - walterlv](/post/using-configure-await-to-avoid-deadlocks.html)
+- [将 async/await 异步代码转换为安全的不会死锁的同步代码（使用 PushFrame） - walterlv](/post/convert-async-to-sync-by-push-frame.html)
