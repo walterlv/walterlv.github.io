@@ -1,6 +1,6 @@
 ---
 title: "使用 WPF 开发一个 Windows 屏幕保护程序"
-date: 2018-12-22 10:21:02 +0800
+date: 2018-12-22 10:24:33 +0800
 categories: windows wpf
 position: starter
 ---
@@ -81,6 +81,8 @@ public partial class MainWindow : Window
 ![屏幕保护程序参数](/static/posts/2018-12-22-10-15-32.png)
 
 实际上屏幕保护程序开始和预览是不同的。预览的时候，只会启动你的程序；而实际开始的时候，Windows 会先为你创建一个白色的背景，覆盖所有的屏幕，然后你的屏幕保护程序窗口显示在那个白色的背景之上。
+
+![实际上运行时，后面有白色的背景](/static/posts/2018-12-22-10-24-22.png)
 
 ### 请预防一些坑
 
