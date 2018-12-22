@@ -1,7 +1,7 @@
 ---
-title: "如何实现一个可以用 await 异步等待的 Awaiter"
+title: "在 WPF/UWP 中实现一个可以用 await 异步等待 UI 交互操作的 Awaiter"
 publishDate: 2017-10-29 16:38:57 +0800
-date: 2017-10-30 22:01:52 +0800
+date: 2018-12-22 14:23:59 +0800
 categories: dotnet csharp wpf uwp
 ---
 
@@ -11,14 +11,16 @@ categories: dotnet csharp wpf uwp
 
 ---
 
+<div id="toc"></div>
+
+### 本文阅读建议
+
 本文**代码较多**，阅读建议：
 
 1. 标注为“**本文推荐的完整代码**”的代码块可直接放入自己的项目中使用，也贴出了 GitHub 上我以 MIT 开源的源代码（可能 GitHub 上会经常更新）。
 1. 标注“**此处为试验代码**”的代码块表明此处代码并不完善，仅用于本文分析使用，不建议放到自己的项目中使用。
 1. 没有注释标注的代码块是用于研究的代码片段，不需要使用。
 1. 可点击下面的导航跳转到你希望的地方。
-
-<p id="toc"></p>
 
 ### 我们的需求
 
@@ -28,149 +30,6 @@ categories: dotnet csharp wpf uwp
 1. 我们需要在后台线程创建一个控件，创建完毕之后在原线程返回。这样我们就能得到一个在后台线程创建的控件了。
 
 本文将以实现第 2 条为目标，一步步完善我们的代码，并做出一个非常通用的 UI 可等待类出来。最终你会发现，我们的代码也能轻松应对第 1 条的需求。
-
-### 什么样的类是可等待的？
-
-我们已经知道 `Task` 是可等待的，但是去看看 `Task` 类的实现，几乎找不到哪个基类、接口或者方法属性能够告诉我们与 `await` 相关。所以，`await` 的实现可能是隐式的。
-
-幸运的是，[Dixin's Blog - Understanding C# async / await (2) The Awaitable-Awaiter Pattern](https://weblogs.asp.net/dixin/understanding-c-sharp-async-await-2-awaitable-awaiter-pattern) 一文解决了我们的疑惑。`async`/`await` 是给编译器用的，只要我们的类包含一个 `GetAwaiter` 方法，并返回合适的对象，我们就能让这个类的实例被 `await` 使用了。
-
-既然需要一个 `GetAwaiter` 方法，那我们先随便写个方法探索一下：
-
-```csharp
-Test DoAsync()
-{
-    return new Test();
-}
-class Test
-{
-    void GetAwaiter()
-    {
-    }
-}
-```
-
-尝试调用：
-
-```csharp
-await DoAsync();
-```
-
-编译器告诉我们：
-
-> Test.GetAwaiter() 不可访问，因为它具有一定的保护级别。
-
-原来 GetAwaiter 方法需要是可以被调用方访问到的才行。
-
-于是我们将 `GetAwaiter` 前面的访问修饰符改成 `public`。现在提示变成了：
-
-> await 要求类型 Test 包含适当的 GetAwaiter 方法。
-
-考虑到一定要获取到某个对象才可能有用，于是我们返回一个 Test2 对象：
-
-```csharp
-public class Test
-{
-    public Test2 GetAwaiter()
-    {
-        return new Test2();
-    }
-}
-
-public class Test2
-{
-}
-```
-
-这时编译器又告诉我们：
-
-> Test2 未包含 IsCompleted 的定义。
-
-加上 `public bool IsCompleted { get; }`，编译器又说：
-
-> Test2 不实现 INotifyCompletion。
-
-于是我们实现之，编译器又告诉我们：
-
-> Test2 未包含 GetResult 的定义。
-
-于是我们加上一个空的 `GetResult` 方法，现在编译器终于不报错了。
-
-现在我们一开始的 `DoAsync` 和辅助类型变成了这样：
-
-```csharp
-// 注：此处为试验代码。
-private Test DoAsync()
-{
-    return new Test();
-}
-
-public class Test
-{
-    public Test2 GetAwaiter()
-    {
-        return new Test2();
-    }
-}
-
-public class Test2 : INotifyCompletion
-{
-    public bool IsCompleted { get; }
-    public void GetResult() { }
-    public void OnCompleted(Action continuation) { }
-}
-```
-
-总结起来，要想使一个方法可被 `await` 等待，必须具备以下条件：
-
-1. 这个方法返回一个类 A 的实例，这个类 A 必须满足后面的条件。
-1. 此类 A 有一个可被访问到的 `GetAwaiter` 方法（扩展方法也行，这算是黑科技吗？），方法返回类 B 的实例，这个类 B 必须满足后面的条件；
-1. 此类 B 实现 `INotifyCompletion` 接口，且拥有 `bool IsCompleted { get; }` 属性、`GetResult()` 方法、`void OnCompleted(Action continuation)` 方法。
-
-### 定义抽象的 Awaiter/Awaitable
-
-这里我们发现一个神奇的现象——明明那些属性和方法都是不可缺少的，却并没有接口来约束它们，而是靠着编译器来约束。
-
-然而作为团队开发者的一员，我们不可能让每一位开发者都去探索一遍编译器究竟希望我们怎么来实现 `await`，于是我们自己来定义接口。方便我们自己后续再实现自己的可等待类型。
-
-以下接口在 [Dixin's Blog - Understanding C# async / await (2) The Awaitable-Awaiter Pattern](https://weblogs.asp.net/dixin/understanding-c-sharp-async-await-2-awaitable-awaiter-pattern) 一文中已有原型；但我增加了更通用却更严格的泛型约束，使得这些接口更加通用，且使用者实现的过程中更加不容易出错。
-
-```csharp
-// 此段代码为本文推荐的完整版本。
-// 可复制或前往我的 GitHub 页面下载：
-// https://github.com/walterlv/sharing-demo/blob/master/src/Walterlv.Core/Threading/AwaiterInterfaces.cs
-public interface IAwaitable<out TAwaiter> where TAwaiter : IAwaiter
-{
-    TAwaiter GetAwaiter();
-}
-
-public interface IAwaitable<out TAwaiter, out TResult> where TAwaiter : IAwaiter<TResult>
-{
-    TAwaiter GetAwaiter();
-}
-
-public interface IAwaiter : INotifyCompletion
-{
-    bool IsCompleted { get; }
-
-    void GetResult();
-}
-
-public interface ICriticalAwaiter : IAwaiter, ICriticalNotifyCompletion
-{
-}
-
-public interface IAwaiter<out TResult> : INotifyCompletion
-{
-    bool IsCompleted { get; }
-
-    TResult GetResult();
-}
-
-public interface ICriticalAwaiter<out TResult> : IAwaiter<TResult>, ICriticalNotifyCompletion
-{
-}
-```
 
 ### 实现目标 DispatcherAsyncOperation<T>
 
