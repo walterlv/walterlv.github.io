@@ -1,6 +1,6 @@
 ---
 title: ".NET 中什么样的类是可使用 await 异步等待的？"
-date: 2018-12-22 14:22:33 +0800
+date: 2018-12-22 19:52:17 +0800
 categories: dotnet
 position: knowledge
 ---
@@ -104,6 +104,19 @@ public class Test2 : INotifyCompletion
 1. 这个方法返回一个类 A 的实例，这个类 A 必须满足后面的条件。
 1. 此类 A 有一个可被访问到的 `GetAwaiter` 方法（扩展方法也行，这算是黑科技吗？），方法返回类 B 的实例，这个类 B 必须满足后面的条件；
 1. 此类 B 实现 `INotifyCompletion` 接口，且拥有 `bool IsCompleted { get; }` 属性、`GetResult()` 方法、`void OnCompleted(Action continuation)` 方法。
+
+更多编写自定义 Awaiter 的文章可以阅读：
+
+入门篇：
+
+- [.NET 中什么样的类是可使用 await 异步等待的？](/post/what-is-an-awaiter.html)
+- [定义一组抽象的 Awaiter 的实现接口，你下次写自己的 await 可等待对象时将更加方便](/post/abstract-awaitable-and-awaiter.html)
+- [.NET 除了用 Task 之外，如何自己写一个可以 await 的对象？](/post/understand-and-write-custom-awaiter.html)
+
+实战篇：
+
+- [在 WPF/UWP 中实现一个可以用 await 异步等待 UI 交互操作的 Awaiter](/post/write-dispatcher-awaiter-for-ui.html)
+- [.NET 编写一个可以异步等待循环中任何一个部分的 Awaiter](/post/write-an-awaiter-that-await-part-of-a-loop.html)
 
 ---
 

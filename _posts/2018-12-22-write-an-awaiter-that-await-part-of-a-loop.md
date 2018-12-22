@@ -1,6 +1,6 @@
 ---
 title: ".NET 编写一个可以异步等待循环中任何一个部分的 Awaiter"
-date: 2018-12-22 19:50:40 +0800
+date: 2018-12-22 19:50:54 +0800
 categories: dotnet csharp
 position: problem
 ---
