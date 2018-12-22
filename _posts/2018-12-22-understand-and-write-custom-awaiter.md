@@ -1,11 +1,11 @@
 ---
 title: ".NET 除了用 Task 之外，如何自己写一个可以 await 的对象？"
-date: 2018-12-22 13:42:39 +0800
+date: 2018-12-22 14:01:21 +0800
 categories: dotnet csharp
 position: starter
 ---
 
-.NET 中的 `async` / `await` 写异步代码用起来真的很爽，就像写同步一样。我们可以在各种各样的异步代码中看到 `Task` 返回值，这样大家便可以使用 `await` 等待这个方法。不过，有时需要写一些特别的异步方法，这是需要自己来实现一个可以异步等待的对象。
+.NET 中的 `async` / `await` 写异步代码用起来真的很爽，就像写同步一样。我们可以在各种各样的异步代码中看到 `Task` 返回值，这样大家便可以使用 `await` 等待这个方法。不过，有时需要写一些特别的异步方法，这时需要自己来实现一个可以异步等待的对象。
 
 本文将讲述如何实现一个可等待对象，一个自定义的 Awaiter。
 
@@ -63,6 +63,22 @@ public class WalterlvAwaiter : INotifyCompletion
 必须实现 `INotifyCompletion` 接口，此接口带来了 `OnCompleted` 方法。另外两个方法不是接口带来的，但是也是实现一个自定义的 `Awaiter` 必要的方法。
 
 在你编写完以上两段代码之后，你的 `await` 就可以编译通过了。
+
+额外说明一下，`GetResult` 方法是可以修改返回值的，只要返回值不是 `void`，那么 `await` 等待的地方将可以在 `await` 完成之后获得一个返回值。
+
+```csharp
+public class WalterlvAwaiter : INotifyCompletion
+{
+    public bool IsCompleted { get; }
+    public string GetResult() { }
+    public void OnCompleted(Action continuation) { }
+}
+```
+
+```csharp
+// 于是你可以拿到一个字符串类型的返回值。
+string result = await CallWalterlvAsync("写博客");
+```
 
 ### 实现基本的 Awaiter
 
