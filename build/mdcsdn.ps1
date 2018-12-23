@@ -1,1 +1,1 @@
-dotnet build\mdmeta\mdmeta.dll wcsdn _posts/2018-10-31-tech-summit-2018.md -b .
+dotnet build\mdmeta\mdmeta.dll wcsdn _posts/此处填充文件名.md -b . -s https://walterlv.com
