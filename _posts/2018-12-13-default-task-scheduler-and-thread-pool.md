@@ -1,7 +1,7 @@
 ---
 title: "了解 .NET 的默认 TaskScheduler 和线程池（ThreadPool）设置，避免让 Task.Run 的性能急剧降低"
 publishDate: 2018-12-13 18:41:33 +0800
-date: 2018-12-14 09:54:00 +0800
+date: 2018-12-23 14:53:39 +0800
 categories: dotnet
 position: knowledge
 ---
@@ -26,7 +26,7 @@ position: knowledge
 
 在开始之前，我们先准备一个测试程序。这个程序一开始就使用 `Task.Run` 跑起来 10 个异步任务，每一个里面都等待 5 秒。
 
-![使用 Task.Run 跑起来的异步代码](/static/posts/2018-12-13-16-42-33.png)
+![使用 Task.Run 跑起来的异步代码](/static/posts/2018-12-23-14-53-33.png)
 
 可以发现，虽然我们是同一时间启动的 10 个异步任务，但任务的实际开始时间并不相同 —— 前面 8 个任务立刻开始了，而后面每隔一秒才会启动一个新的异步任务。
 
