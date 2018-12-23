@@ -1,6 +1,7 @@
 ---
 title: ".NET 除了用 Task 之外，如何自己写一个可以 await 的对象？"
-date: 2018-12-22 19:53:10 +0800
+publishDate: 2018-12-22 19:53:10 +0800
+date: 2018-12-23 15:17:09 +0800
 categories: dotnet csharp
 position: starter
 ---

@@ -1,6 +1,7 @@
 ---
 title: "定义一组抽象的 Awaiter 的实现接口，你下次写自己的 await 可等待对象时将更加方便"
-date: 2018-12-22 19:52:44 +0800
+publishDate: 2018-12-22 19:52:44 +0800
+date: 2018-12-23 15:17:04 +0800
 categories: dotnet csharp
 position: knowledge
 ---

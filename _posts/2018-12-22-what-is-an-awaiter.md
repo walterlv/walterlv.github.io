@@ -1,6 +1,7 @@
 ---
 title: ".NET 中什么样的类是可使用 await 异步等待的？"
-date: 2018-12-22 19:52:17 +0800
+publishDate: 2018-12-22 19:52:17 +0800
+date: 2018-12-23 15:17:11 +0800
 categories: dotnet
 position: knowledge
 ---

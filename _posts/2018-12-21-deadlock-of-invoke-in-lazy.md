@@ -1,6 +1,7 @@
 ---
 title: "不要使用 Dispatcher.Invoke，因为它可能在你的延迟初始化 Lazy<T> 中导致死锁"
-date: 2018-12-21 14:47:30 +0800
+publishDate: 2018-12-21 14:47:30 +0800
+date: 2018-12-23 15:17:02 +0800
 categories: dotnet wpf
 position: knowledge
 ---
