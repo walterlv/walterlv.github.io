@@ -1,7 +1,7 @@
 ---
 title: "编写 Target 检测 MSBuild / dotnet build 此次编译是否是差量编译"
 publishDate: 2018-11-07 21:24:56 +0800
-date: 2018-12-24 11:56:28 +0800
+date: 2018-12-24 11:59:14 +0800
 categories: visualstudio msbuild
 ---
 
@@ -81,3 +81,11 @@ SourceFusion 是一个预编译框架，它在你编译期间对你的代码做�
 MSBuild 在计算属性的时候，不同的 csproj 格式、不同版本的计算情况不同。实际上在不断的试验中我并没有找到哪些情况下差量 Target 的属性会被计算哪些情况不会被计算。所以最好的办法是 —— 不要依赖于这些不确定的属性变化。
 
 所以我们写一个新的 Target，Target 执行则属性赋值，不执行则不赋值，非常确定。
+
+---
+
+#### 参考资料
+
+- [CallTarget Task - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/calltarget-task)
+- [How to: Build Incrementally - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-build-incrementally)
+- [Property Functions - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/property-functions)
