@@ -1,7 +1,7 @@
 ---
 title: "编写 Target 检测 MSBuild / dotnet build 此次编译是否是差量编译"
 publishDate: 2018-11-07 21:24:56 +0800
-date: 2018-12-24 11:59:14 +0800
+date: 2018-12-24 11:59:45 +0800
 categories: visualstudio msbuild
 ---
 
@@ -24,6 +24,7 @@ SourceFusion 是一个预编译框架，它在你编译期间对你的代码做�
 解决方案是，我们写一个前置的 Target，这个 Target 支持差量编译。于是我们可以利用它的差量编译特性得知当前是否处于差量编译的状态。
 
 ```xml
+
 <Target Name="_WalterlvDemoRebuildingTest" BeforeTargets="WalterlvDemoCoreTarget"
         Inputs="$(MSBuildProjectFullPath)" Outputs="$(WalterlvDemoFolder)RebuildingTest.txt">
   <ItemGroup>
@@ -32,11 +33,13 @@ SourceFusion 是一个预编译框架，它在你编译期间对你的代码做�
   <CallTarget Targets="_WalterlvDemoRebuildingTestInitialize" />
   <WriteLinesToFile File="$(WalterlvDemoFolder)RebuildingTest.txt" Lines="@(RebuildingTestLine)" Overwrite="True" />
 </Target>
+
 <Target Name="_WalterlvDemoRebuildingTestInitialize">
   <PropertyGroup>
     <WalterlvDemoRebuildRequired>true</SourceFusionRebuildRequired>
   </PropertyGroup>
 </Target>
+
 ```
 
 随后再写一个新的 Target。这个新的 Target 没有任何 `BeforeTargets` 或者 `AfterTargets` 的设置。也就是说，如果没有显式地去执行它或者将它设置为默认的 Target，它将完全不会执行。而我们在这个 Target 里面会设置一个属性，标记此时正在处于“重新编译”的状态（即不是差量状态）。
