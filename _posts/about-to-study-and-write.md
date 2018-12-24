@@ -25,10 +25,6 @@ published: false
     - [深入了解异步 | Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/standard/async-in-depth)
     - [.NET 中的并行处理、并发和异步编程 | Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/standard/parallel-processing-and-concurrency)
 
-- CommandLineParser
-    - [Home · commandlineparser/commandline Wiki](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Home%20%C2%B7%20commandlineparser%2Fcommandline%20Wiki&pos=7100&uri=https://github.com/commandlineparser/commandline/wiki)
-    - [The week in .NET – Command Line Parser Library, .NET South East | .NET Blog](https://blogs.msdn.microsoft.com/dotnet/2017/07/18/the-week-in-net-command-line-parser-library-net-south-east/)
-
 - Introducing the Universal CRT
     - [Introducing the Universal CRT | Visual C++ Team Blog](https://blogs.msdn.microsoft.com/vcblog/2015/03/03/introducing-the-universal-crt/)
 
