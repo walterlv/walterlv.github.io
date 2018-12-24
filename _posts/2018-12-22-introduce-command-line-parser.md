@@ -1,7 +1,7 @@
 ---
 title: "C#/.NET 使用 CommandLineParser 来标准化地解析命令行"
 publishDate: 2018-12-22 23:22:41 +0800
-date: 2018-12-24 12:00:43 +0800
+date: 2018-12-24 19:45:53 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -68,6 +68,26 @@ dotnet demo.dll -f C:\Users\lvyi\Desktop\Test.txt
 ![在命令行中使用命令](/static/posts/2018-12-22-22-56-11.png)
 
 由于我们标记 `Files` 是必要属性，所以如果此参数没有指定，将返回命令行的使用说明。此使用说明中就包含了我们在 `Option` 参数中编写的 `HelpText`。
+
+如果你的 `Options` 类中单次是多单词的短语，那么建议在指定名称的时候为每一个单词之间添加一个空格。这样参数就不会让多个单词连成一片难以辨认。
+
+例如：
+
+```csharp
+public class Options
+{
+    [Option("long-name", Required = true, HelpText = "需要处理的文件。")]
+    public string LongName { get; set; }
+}
+```
+
+那么命令是：
+
+```powershell
+dotnet demo.dll --long-name xxx
+```
+
+如果不指定，那么就是 `--longname`，这显然不好看。
 
 ### 包含多个方法的命令行解析
 
