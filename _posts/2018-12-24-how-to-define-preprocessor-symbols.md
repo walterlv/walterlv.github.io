@@ -1,6 +1,7 @@
 ---
 title: ".NET/C# 项目如何优雅地设置条件编译符号？"
-date: 2018-12-24 22:17:53 +0800
+publishDate: 2018-12-24 22:17:53 +0800
+date: 2018-12-25 08:15:22 +0800
 categories: csharp dotnet visualstudio msbuild
 position: starter
 ---
@@ -62,10 +63,31 @@ position: starter
 
 ### 旧格式推荐：在 Visual Studio 项目属性中设置
 
-注意：
+你可以在项目属性的“生成”页中找到条件编译符号的设置。
 
-你可以在项目属性的“生成”页中找到。我自己用的 Visual Studio 是英文版的，但是也感谢小伙伴 [林德熙](https://lindexi.gitee.io/) 帮我截了一张中文版的图。
+我自己用的 Visual Studio 是英文版的，但是也感谢小伙伴 [林德熙](https://lindexi.gitee.io/) 帮我截了一张中文版的图。
 
 ![Conditional Compilation Symbols](/static/posts/2018-12-24-21-34-59.png)  
 
 ![条件编译符号](/static/posts/2018-12-24-21-34-54.png)
+
+你需要特别注意：
+
+- 设置条件编译符号需要在各种配置下都设置，因为各种配置都是不一样的；具体来说是 Debug 下要设，Release 下也要设，x86 下要设，x64 下也要设。
+
+### 关于配置（Configuration）和条件编译符号（Conditional Compilation Symbols）
+
+你可能在你的代码中同时看到 Pascal 命名规则的 Debug 和全部大写的 DEBUG，或者看到 Release 和 RELEASE。这是两个不同的概念。
+
+Debug 和 Release 的名称来自于配置（Configuration）。你的项目有 Debug 配置和 Release 配置，或者你自己定义的其他配置。你的项目编译过程默认根据 Debug 和 Release 配置做了很多不同的编译选项。例如 Debug 下会禁用优化而 Release 下会开启优化。
+
+而 DEBUG 和 RELEASE 这样的全大写名称来自于条件编译符号（Conditional Compilation Symbols），是真正在 C# 代码中使用的符号。而这全大写符号的定义是分别在 Debug 和 Release 配置下设置了不同的值来实现的。
+
+所以这两个是不同的概念，不要弄混淆了。
+
+同时这也带来了一些命名建议：
+
+1. 条件编译符号使用全大写命名
+    - 例如：DEBUG, RELEASE, NET47, NETCOREAPP2_1
+1. 配置使用 Pascal 命名
+    - 例如：Debug, Release
