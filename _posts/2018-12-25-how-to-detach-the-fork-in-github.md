@@ -1,6 +1,6 @@
 ---
 title: "出于迁移项目的考虑，GitHub 中 Fork 出来的项目，如何与原项目断开 Fork 关系？"
-date: 2018-12-25 09:51:34 +0800
+date: 2018-12-25 11:36:23 +0800
 categories: github git
 position: problem
 ---
