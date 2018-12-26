@@ -1,6 +1,6 @@
 ---
 title: "只需 5 秒钟，你就能取到 WPF 程序的超高分辨率超高清截图"
-date: 2018-12-26 12:05:33 +0800
+date: 2018-12-26 12:53:00 +0800
 categories: wpf
 position: problem
 ---
@@ -14,6 +14,8 @@ position: problem
 ### 第一步：打开 Snoop
 
 ![Snoop 的界面](/static/posts/2018-12-26-12-01-34.png)
+
+如果你没有 Snoop，请前往下载：[Release Snoop 2.10.0 · cplotts/snoopwpf](https://github.com/cplotts/snoopwpf/releases/tag/2.10.0)。
 
 ### 第二步：使用 Snoop 的放大功能
 
@@ -30,3 +32,11 @@ position: problem
 ![需要最大化](/static/posts/2018-12-26-12-05-03.png)
 
 你就能看到 WPF 应用的超高清版本了。使用鼠标滚轮可以继续放大或缩小。
+
+### 查看效果
+
+比如一个按钮，现在可以放到这么大来看了。截图可以截出高清版本。
+
+实际上前面的 Snoop 界面也是这样放大的，注意到了吗？
+
+![放大之后的同步按钮](/static/posts/2018-12-26-12-50-52.png)
