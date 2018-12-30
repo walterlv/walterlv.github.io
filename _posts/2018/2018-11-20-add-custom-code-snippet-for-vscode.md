@@ -1,8 +1,8 @@
 ---
 title: "在 Visual Studio Code 中添加自定义的代码片段"
 publishDate: 2018-11-20 10:19:28 +0800
-date: 2018-11-27 13:08:55 +0800
-categories: visualstudio
+date: 2018-12-30 17:01:11 +0800
+categories: vscode
 ---
 
 无论是那个编辑器，如果能够添加一些自定义代码片段，能够大大提升代码的输入效率。

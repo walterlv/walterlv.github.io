@@ -1,7 +1,8 @@
 ---
 title: "在 Visual Studio Code 中为代码片段（Code Snippets）添加快捷键"
-date: 2018-11-20 10:32:28 +0800
-categories: visualstudio
+publishDate: 2018-11-20 10:32:28 +0800
+date: 2018-12-30 17:00:32 +0800
+categories: vscode
 ---
 
 Visual Studio Code 默认是关闭了 Markdown 的智能感知提示的（因为真的是不好用，尤其是其没有中文分词的情况下）。那么在没有智能感知提示的情况下如何快速插入代码片段呢？
