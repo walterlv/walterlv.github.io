@@ -1,7 +1,7 @@
 ---
 title: "C#/.NET 使用 CommandLineParser 来标准化地解析命令行"
 publishDate: 2018-12-22 23:22:41 +0800
-date: 2018-12-24 19:45:53 +0800
+date: 2018-12-30 16:10:22 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -17,7 +17,7 @@ position: knowledge
 ### NuGet 包和 GitHub 开源仓库
 
 - NuGet 包：[CommandLineParser](https://www.nuget.org/packages/CommandLineParser/)
-- GitHub 开源仓库：
+- GitHub 开源仓库：[commandlineparser/commandline](https://github.com/commandlineparser/commandline)
 
 ### 最简单的命令行解析
 
