@@ -429,7 +429,6 @@ body.dark-theme aside {
 
 aside img.avatar-logo {
     width: calc(100% - 2px);
-    margin: 1px;
 }
 
 @media only screen and (max-width:1200px) {
@@ -684,6 +683,7 @@ html, body {
     z-index: 10;
     -webkit-transition: top .5s;
     transition: top .5s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 -1px 0 rgba(0, 0, 0, 0.1) inset;
 }
 
 .bar-header a {
