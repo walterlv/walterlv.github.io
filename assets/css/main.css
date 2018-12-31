@@ -428,7 +428,7 @@ body.dark-theme aside {
 }
 
 aside img.avatar-logo {
-    width: calc(100% - 2px);
+    width: 100%;
 }
 
 @media only screen and (max-width:1200px) {
