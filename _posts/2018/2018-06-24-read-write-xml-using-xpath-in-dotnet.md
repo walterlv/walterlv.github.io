@@ -1,7 +1,7 @@
 ---
-title: ".NET 使用 XPath 来读写 XML 文件"
+title: ".NET 使用 XPath 来读写 XML 文件（顺带解决 XML 命名空间的问题）"
 publishDate: 2018-06-24 21:10:08 +0800
-date: 2018-12-14 09:54:00 +0800
+date: 2019-01-01 11:34:30 +0800
 categories: dotnet
 ---
 
