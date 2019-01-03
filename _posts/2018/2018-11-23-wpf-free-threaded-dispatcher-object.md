@@ -1,7 +1,7 @@
 ---
 title: "WPF 中那些可跨线程访问的 DispatcherObject（WPF Free Threaded Dispatcher Object）"
 publishDate: 2018-11-23 13:15:12 +0800
-date: 2018-12-14 09:54:00 +0800
+date: 2019-01-03 09:03:45 +0800
 categories: wpf dotnet
 ---
 
