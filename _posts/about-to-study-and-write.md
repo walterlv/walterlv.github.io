@@ -1,7 +1,6 @@
 ---
 title: "About to Study and Write"
-publishDate: 2018-10-31 16:15:26 +0800
-date: 2018-12-20 08:19:15 +0800
+date: 2019-01-05 11:08:36 +0800
 categories: post
 published: false
 ---
@@ -17,6 +16,9 @@ published: false
 - Castle
 
 ### About to Write
+
+- Stylus Pen Protocol
+    - [Required HID Top-Level Collections - Microsoft Docs](https://docs.microsoft.com/en-us/windows-hardware/design/component-guidelines/required-hid-top-level-collections)
 
 - C# Basic LINQ Query Operations
     - [Basic LINQ Query Operations (C#) | Microsoft Docs](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Basic%20LINQ%20Query%20Operations%20(C%23)%20%7C%20Microsoft%20Docs&pos=2600&uri=https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/basic-linq-query-operations)
