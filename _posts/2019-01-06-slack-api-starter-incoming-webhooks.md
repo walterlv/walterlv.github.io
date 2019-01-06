@@ -1,6 +1,6 @@
 ---
 title: "Slack 开发入门之 Incoming Webhooks：往 Slack 的 Channel 中发消息"
-date: 2019-01-06 14:40:39 +0800
+date: 2019-01-06 15:24:44 +0800
 categories: slack web
 position: starter
 ---
@@ -14,6 +14,8 @@ position: starter
 <div id="toc"></div>
 
 ### 创建一个新 Slack 应用
+
+如果你已经创建了一个 Slack 应用，可以跳过这一节。
 
 在这里 <https://api.slack.com/apps/new> 创建一个新的 Slack 应用：
 
@@ -40,11 +42,13 @@ position: starter
     - Configure permissions to allow your app to interact with the Slack API.
     - 管理你的应用与 Slack API 之间的权限。
 
-![五中不同的应用类型](/static/posts/2019-01-06-14-16-48.png)
+![五种不同的应用类型](/static/posts/2019-01-06-14-16-48.png)
 
 ### 创建 Webhooks 应用
 
 本文，我们选中 Incoming Webhooks。
+
+或者在左边的列表中选择 Incoming Webhooks。
 
 ### 激活 Incoming Webhooks
 
@@ -87,6 +91,14 @@ position: starter
 于是我的 Slack 通道中收到了一条来自这个应用发来消息：
 
 ![看看新发送的消息](/static/posts/2019-01-06-14-38-26.png)
+
+### 你可以用这个来做什么？
+
+当你可以随时向 Slack 的某个通道发送消息之后，你可以用来做什么呢？
+
+你可以定时发送团队的代码审查发送发现的问题，可以发送自动化编译失败的信息，可以发送每周的任务计划和总结，等等。
+
+当然，Slack 上本身就提供了大量的应用可以直接下载安装，自己做开发是解决更定制化的需求。
 
 ---
 
