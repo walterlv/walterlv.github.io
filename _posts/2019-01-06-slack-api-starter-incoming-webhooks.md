@@ -1,6 +1,6 @@
 ---
 title: "Slack 开发入门之 Incoming Webhooks：往 Slack 的 Channel 中发消息"
-date: 2019-01-06 15:24:44 +0800
+date: 2019-01-06 15:29:19 +0800
 categories: slack web
 position: starter
 ---
@@ -48,13 +48,15 @@ position: starter
 
 本文，我们选中 Incoming Webhooks。
 
-或者在左边的列表中选择 Incoming Webhooks。
+或者如果这已经是你创建好的应用了，可以左边的列表中选择 Incoming Webhooks。
 
-### 激活 Incoming Webhooks
-
-按一下右上角的激活按钮，使得 Incoming Webhooks 功能激活。
+然后按一下右上角的激活按钮，使得 Incoming Webhooks 功能激活。
 
 ![激活](/static/posts/2019-01-06-14-23-21.png)
+
+如果顶部有提示因为权限问题需要重新安装，那么就点进去重新安装。
+
+![提示重新安装](/static/posts/2019-01-06-15-28-41.png)
 
 ### 添加一个 Webhook Url
 
