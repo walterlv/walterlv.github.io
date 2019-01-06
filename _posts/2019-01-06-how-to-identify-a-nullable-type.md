@@ -1,6 +1,6 @@
 ---
 title: "int? 竟然真的可以是 null！.NET/C# 确定可空值类型 Nullable<T> 实例的真实类型"
-date: 2019-01-06 20:28:17 +0800
+date: 2019-01-06 20:41:50 +0800
 categories: csharp dotnet
 position: knowledge
 ---
@@ -97,7 +97,19 @@ public class Program
 
 > When you call the [Object.GetType](https://docs.microsoft.com/en-us/dotnet/api/system.object.gettype) method on an instance of a nullable type, the instance is [boxed](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/nullable-types/using-nullable-types#boxing-and-unboxing) to [Object](https://docs.microsoft.com/en-us/dotnet/api/system.object). As boxing of a non-null instance of a nullable type is equivalent to boxing of a value of the underlying type, [GetType](https://docs.microsoft.com/en-us/dotnet/api/system.object.gettype) returns a [Type](https://docs.microsoft.com/en-us/dotnet/api/system.type) object that represents the underlying type of a nullable type.
 
-意思是说，当你对一个可空值类型 `Nullable<T>` 调用 `Object.GetType()` 方法的时候，这个实例会被装箱，会被隐式转换为一个 `object` 对象。然而对可空值类型的装箱与对值类型本身的装箱是等同的操作，所以调用 `GetType()` 的时候都是返回这个对象对应的实际基础类型。例如对一个 `int?` 进行装箱和对 `int` 装箱得到的 `object` 对象是一样的，于是 `GetType()` 实际上是不能区分这两种情况的。
+意思是说，当你对一个可空值类型 `Nullable<T>` 调用 `Object.GetType()` 方法的时候，这个实例会被装箱，会被隐式转换为一个 `object` 对象。然而对可空值类型的装箱与对值类型本身的装箱是同样的操作，所以调用 `GetType()` 的时候都是返回这个对象对应的实际基础类型。例如对一个 `int?` 进行装箱和对 `int` 装箱得到的 `object` 对象是一样的，于是 `GetType()` 实际上是不能区分这两种情况的。
+
+那什么样的装箱会使得两个不同的类型被装箱为同一个了呢？
+
+[另一篇文档](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/nullable-types/using-nullable-types)描述了 `Nullable<T>` 装箱的过程：
+
+> - If HasValue returns false, the null reference is produced.
+> - If HasValue returns true, a value of the underlying value type T is boxed, not the instance of Nullable<T>.
+
+- 如果 `HasValue` 返回 `false`，那么就装箱一个 `null`
+- 如果 `HasValue` 返回 `true`，那么就将 `Nullable<T>` 中的 `T` 进行装箱，而不是 `Nullable<T>` 的实例。
+
+这才是为什么 `GetType()` 会得到以上结果的原因。
 
 同样的，也不能使用 `is` 运算符来确定这个类型到底是不是可空值类型：
 
@@ -159,3 +171,4 @@ public class Program
 
 - [c# - Nullable type is not a nullable type? - Stack Overflow](https://stackoverflow.com/q/785358/6233938)
 - [How to: Identify a nullable type - C# Programming Guide - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/nullable-types/how-to-identify-a-nullable-type)
+- [Using nullable types - C# Programming Guide | Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/nullable-types/using-nullable-types)
