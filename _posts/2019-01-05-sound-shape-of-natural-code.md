@@ -1,6 +1,6 @@
 ---
 title: "自然码的形码"
-date: 2019-01-05 17:23:48 +0800
+date: 2019-01-05 17:27:08 +0800
 categories: ime
 position: knowledge
 ---
