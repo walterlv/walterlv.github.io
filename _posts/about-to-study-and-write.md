@@ -17,6 +17,10 @@ published: false
 
 ### About to Write
 
+- Profile notification of event Load for component {B31118B2-1F49-48E5-B6F5-BC21CAEC56FB} failed, error code is See Tracelogging for error details.
+    - [New 1809 update now shows this in Event Viewer - Windows 10 Forums](https://www.tenforums.com/general-support/118976-new-1809-update-now-shows-event-viewer.html)
+    - [User Profile Service Event 1534](https://social.technet.microsoft.com/Forums/en-US/50a24520-2ea6-47e7-995b-c2de46d2401d/user-profile-service-event-1534?forum=win10itpronetworking)
+
 - Stylus Pen Protocol
     - [Required HID Top-Level Collections - Microsoft Docs](https://docs.microsoft.com/en-us/windows-hardware/design/component-guidelines/required-hid-top-level-collections)
 
