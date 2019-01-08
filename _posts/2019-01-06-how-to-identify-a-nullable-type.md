@@ -1,6 +1,7 @@
 ---
 title: "int? 竟然真的可以是 null！.NET/C# 确定可空值类型 Nullable<T> 实例的真实类型"
-date: 2019-01-06 20:41:50 +0800
+publishDate: 2019-01-06 20:41:50 +0800
+date: 2019-01-08 18:01:14 +0800
 categories: csharp dotnet
 position: knowledge
 ---
@@ -171,4 +172,4 @@ public class Program
 
 - [c# - Nullable type is not a nullable type? - Stack Overflow](https://stackoverflow.com/q/785358/6233938)
 - [How to: Identify a nullable type - C# Programming Guide - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/nullable-types/how-to-identify-a-nullable-type)
-- [Using nullable types - C# Programming Guide | Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/nullable-types/using-nullable-types)
+- [Using nullable types - C# Programming Guide - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/nullable-types/using-nullable-types)
