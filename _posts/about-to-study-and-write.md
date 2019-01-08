@@ -1,6 +1,6 @@
 ---
 title: "About to Study and Write"
-date: 2019-01-05 11:08:36 +0800
+date: 2019-01-08 18:01:25 +0800
 categories: post
 published: false
 ---
@@ -25,11 +25,11 @@ published: false
     - [Required HID Top-Level Collections - Microsoft Docs](https://docs.microsoft.com/en-us/windows-hardware/design/component-guidelines/required-hid-top-level-collections)
 
 - C# Basic LINQ Query Operations
-    - [Basic LINQ Query Operations (C#) | Microsoft Docs](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Basic%20LINQ%20Query%20Operations%20(C%23)%20%7C%20Microsoft%20Docs&pos=2600&uri=https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/basic-linq-query-operations)
+    - [Basic LINQ Query Operations (C#) - Microsoft Docs](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Basic%20LINQ%20Query%20Operations%20(C%23)%20%7C%20Microsoft%20Docs&pos=2600&uri=https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/basic-linq-query-operations)
 
 - .NET 异步和并发
-    - [深入了解异步 | Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/standard/async-in-depth)
-    - [.NET 中的并行处理、并发和异步编程 | Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/standard/parallel-processing-and-concurrency)
+    - [深入了解异步 - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/standard/async-in-depth)
+    - [.NET 中的并行处理、并发和异步编程 - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/standard/parallel-processing-and-concurrency)
 
 - Introducing the Universal CRT
     - [Introducing the Universal CRT | Visual C++ Team Blog](https://blogs.msdn.microsoft.com/vcblog/2015/03/03/introducing-the-universal-crt/)
@@ -72,7 +72,7 @@ published: false
 
 - Microsoft Interface Definition Language
     - [#ifdef WINDOWS 的 Twitter: “MIDL 3 deep dive with @osterman is out now https://t.co/LxvMQBaOAm #windowsdev”](https://twitter.com/ifdefwindows/status/1034116042547589120?s=21)
-    - [Introduction to Microsoft Interface Definition Language 3.0 - UWP app developer | Microsoft Docs](https://docs.microsoft.com/en-us/uwp/midl-3/intro?wt.mc_id=MVP)
+    - [Introduction to Microsoft Interface Definition Language 3.0 - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/uwp/midl-3/intro?wt.mc_id=MVP)
 
 - 捕获变量
     - [C#/.NET 匿名函数会捕获变量，并延长对象的生命周期 - walterlv](/post/anonymous-function-extends-lifetime-of-variable.html#comment-4061605207)
