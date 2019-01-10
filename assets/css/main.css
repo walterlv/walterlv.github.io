@@ -1389,12 +1389,6 @@ body.dark-theme .post-content hr {
     margin: 3.125rem auto;
 }
 
-@media only screen and (max-width:37.5rem) {
-    .post-content>table {
-        display: none
-    }
-}
-
 .post-content>table th, .post-content>table td {
     border: .125rem solid #ccc;
     padding: .313rem
