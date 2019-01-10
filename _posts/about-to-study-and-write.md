@@ -1,6 +1,7 @@
 ---
 title: "About to Study and Write"
-date: 2019-01-08 18:01:25 +0800
+publishDate: 2019-01-08 18:01:25 +0800
+date: 2019-01-09 19:12:32 +0800
 categories: post
 published: false
 ---
@@ -16,6 +17,9 @@ published: false
 - Castle
 
 ### About to Write
+
+- GPU 渲染管线
+    - [【《Real-Time Rendering 3rd》 提炼总结】(三) 第三章 · GPU渲染管线与可编程着色器 - 知乎](https://zhuanlan.zhihu.com/p/26894962)
 
 - Profile notification of event Load for component {B31118B2-1F49-48E5-B6F5-BC21CAEC56FB} failed, error code is See Tracelogging for error details.
     - [New 1809 update now shows this in Event Viewer - Windows 10 Forums](https://www.tenforums.com/general-support/118976-new-1809-update-now-shows-event-viewer.html)
