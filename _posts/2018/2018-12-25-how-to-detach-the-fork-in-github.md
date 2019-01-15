@@ -1,6 +1,7 @@
 ---
 title: "出于迁移项目的考虑，GitHub 中 Fork 出来的项目，如何与原项目断开 Fork 关系？"
-date: 2018-12-25 11:36:23 +0800
+publishDate: 2018-12-25 11:36:23 +0800
+date: 2019-01-15 19:50:33 +0800
 categories: github git
 position: problem
 ---
@@ -21,9 +22,13 @@ position: problem
 
 ![填写请求](/static/posts/2018-12-25-09-50-53.png)
 
-填写完之后，等待 GitHub 官方人员处理即可：
+填写完之后，等待 GitHub 官方人员处理：
 
 ![保持联系](/static/posts/2018-12-25-09-51-27.png)
+
+当 GitHub 官方人员处理完之后，会给出回复邮件，告知 Fork 关系已经反转：
+
+![主仓库已经改变](/static/posts/2019-01-15-19-50-26.png)
 
 ---
 
