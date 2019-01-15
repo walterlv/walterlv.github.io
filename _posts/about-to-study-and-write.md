@@ -1,7 +1,7 @@
 ---
 title: "About to Study and Write"
 publishDate: 2019-01-08 18:01:25 +0800
-date: 2019-01-09 19:12:32 +0800
+date: 2019-01-15 09:14:12 +0800
 categories: post
 published: false
 ---
@@ -17,6 +17,9 @@ published: false
 - Castle
 
 ### About to Write
+
+- 0.30000000000000004
+    - [0.30000000000000004.com](http://0.30000000000000004.com/)
 
 - GPU 渲染管线
     - [【《Real-Time Rendering 3rd》 提炼总结】(三) 第三章 · GPU渲染管线与可编程着色器 - 知乎](https://zhuanlan.zhihu.com/p/26894962)
