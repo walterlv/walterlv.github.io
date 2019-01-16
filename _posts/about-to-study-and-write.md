@@ -1,7 +1,6 @@
 ---
 title: "About to Study and Write"
-publishDate: 2019-01-08 18:01:25 +0800
-date: 2019-01-15 09:14:12 +0800
+date: 2019-01-16 21:33:00 +0800
 categories: post
 published: false
 ---
@@ -17,6 +16,11 @@ published: false
 - Castle
 
 ### About to Write
+
+- Roslyn
+    - [The .NET Compiler Platform SDK (Roslyn APIs) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/roslyn-sdk/)
+    - [.NET Compiler Platform SDK (Roslyn API) - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/csharp/roslyn-sdk/)
+    - [Microsoft.CodeAnalysis.FindSymbols Namespace - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/microsoft.codeanalysis.findsymbols)
 
 - 0.30000000000000004
     - [0.30000000000000004.com](http://0.30000000000000004.com/)
