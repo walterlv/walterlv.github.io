@@ -1,6 +1,6 @@
 ---
 title: "About to Study and Write"
-date: 2019-01-16 21:33:00 +0800
+date: 2019-01-17 19:17:43 +0800
 categories: post
 published: false
 ---
@@ -16,6 +16,10 @@ published: false
 - Castle
 
 ### About to Write
+
+- 远程桌面支持多个会话
+    - [How to Allow Multiple RDP Sessions in Windows 10 - Windows OS Hub](http://woshub.com/how-to-allow-multiple-rdp-sessions-in-windows-10/)
+    - [Multiple RDP (Remote Desktop) sessions in Windows 10](https://www.mysysadmintips.com/windows/clients/545-multiple-rdp-remote-desktop-sessions-in-windows-10)
 
 - Roslyn
     - [The .NET Compiler Platform SDK (Roslyn APIs) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/roslyn-sdk/)
