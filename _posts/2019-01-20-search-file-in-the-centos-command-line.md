@@ -1,6 +1,6 @@
 ---
 title: "CentOS 的终端中如何搜索文件"
-date: 2019-01-20 15:03:19 +0800
+date: 2019-01-20 15:05:40 +0800
 categories: linux
 position: starter
 ---
@@ -35,8 +35,14 @@ CentOS 中搜索文件可以使用 find 命令。
 
 返回了两个 `dotnet` 文件夹。
 
+也可以使用通配符：
+
+```bash
+~$ find / -name *.cs
+```
+
 ---
 
 #### 参考资料
 
-- [linux - How to search for a file in the CentOS command line - Stack Overflow](https://stackoverflow.com/questions/21046354/how-to-search-for-a-file-in-the-centos-command-line)
+- [linux - How to search for a file in the CentOS command line - Stack Overflow](https://stackoverflow.com/a/21046448/6233938)
