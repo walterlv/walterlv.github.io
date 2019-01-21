@@ -1,6 +1,7 @@
 ---
 title: "About to Study and Write"
-date: 2019-01-17 19:17:43 +0800
+publishDate: 2019-01-17 19:17:43 +0800
+date: 2019-01-21 15:06:27 +0800
 categories: post
 published: false
 ---
@@ -16,6 +17,10 @@ published: false
 - Castle
 
 ### About to Write
+
+- 正则表达式最佳实践
+    - [Best Practices for Regular Expressions in .NET | Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/base-types/best-practices)
+    - [Optimizing Regular Expression Performance, Part II: Taking Charge of Backtracking [Ron Petrusha] – BCL Team Blog](https://blogs.msdn.microsoft.com/bclteam/2010/08/03/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha/)
 
 - 远程桌面支持多个会话
     - [How to Allow Multiple RDP Sessions in Windows 10 - Windows OS Hub](http://woshub.com/how-to-allow-multiple-rdp-sessions-in-windows-10/)
