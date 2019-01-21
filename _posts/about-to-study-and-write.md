@@ -17,6 +17,9 @@ published: false
 
 ### About to Write
 
+- Xamarin
+    - [ios - Make HTTP Request from Custom Keyboard App Extension - Stack Overflow](https://stackoverflow.com/questions/42301827/make-http-request-from-custom-keyboard-app-extension)
+
 - 正则表达式最佳实践
     - [Best Practices for Regular Expressions in .NET | Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/base-types/best-practices)
     - [Optimizing Regular Expression Performance, Part II: Taking Charge of Backtracking [Ron Petrusha] – BCL Team Blog](https://blogs.msdn.microsoft.com/bclteam/2010/08/03/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha/)
