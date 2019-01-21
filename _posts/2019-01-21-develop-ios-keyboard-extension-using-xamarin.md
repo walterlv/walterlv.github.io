@@ -1,6 +1,6 @@
 ---
 title: "使用 Xamarin 开发 iOS 键盘扩展（含网络访问）"
-date: 2019-01-21 22:24:05 +0800
+date: 2019-01-21 22:32:48 +0800
 categories: xamarin dotnet csharp xaml ios
 position: starter
 ---
@@ -272,3 +272,6 @@ public enum UIReturnKeyType : long
 - [ios - Transport security has blocked a cleartext HTTP - Stack Overflow](https://stackoverflow.com/questions/31254725/transport-security-has-blocked-a-cleartext-http)
 - [iOS - 输入框有值时才能点击键盘上的returnkey(enablesReturnKeyA... - 简书](https://www.jianshu.com/p/0e345aec3689)
 - [objective c - Handling Return key in iOS 8 keyboard extension - Stack Overflow](https://stackoverflow.com/questions/25739312/handling-return-key-in-ios-8-keyboard-extension)
+- [objective c - Handling Return key in iOS 8 keyboard extension - Stack Overflow](https://stackoverflow.com/questions/25739312/handling-return-key-in-ios-8-keyboard-extension)
+- [iphone - iOS keyboard with "Go" button instead of return - Stack Overflow](https://stackoverflow.com/questions/4489879/ios-keyboard-with-go-button-instead-of-return)
+- [Custom Keyboards - Extensions - iOS - Human Interface Guidelines - Apple Developer](https://developer.apple.com/design/human-interface-guidelines/ios/extensions/custom-keyboards/)
