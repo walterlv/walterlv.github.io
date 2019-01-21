@@ -1,6 +1,6 @@
 ---
 title: "使用 Xamarin 开发 iOS 键盘扩展（含网络访问）"
-date: 2019-01-21 22:22:31 +0800
+date: 2019-01-21 22:24:05 +0800
 categories: xamarin dotnet csharp xaml ios
 position: starter
 ---
@@ -175,6 +175,7 @@ while (TextDocumentProxy.HasText)
 我还没有找到办法直接完成文本的输入，例如执行确认按钮的逻辑。而确认按钮有这么些不同的情况：
 
 ```csharp
+// 我当然是写 C# 语言版本的枚举，而不是 Object-C 版本的啦。
 public enum UIReturnKeyType : long
 {
     Default,
