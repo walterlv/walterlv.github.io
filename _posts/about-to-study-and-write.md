@@ -1,6 +1,6 @@
 ---
 title: "About to Study and Write"
-date: 2019-01-21 17:32:49 +0800
+date: 2019-01-21 22:34:20 +0800
 categories: post
 published: false
 ---
@@ -16,6 +16,10 @@ published: false
 - Castle
 
 ### About to Write
+
+- POST with empty body
+    - [rest - Is it considered bad practice to perform HTTP POST without entity body? - Stack Overflow](https://stackoverflow.com/questions/4191593/is-it-considered-bad-practice-to-perform-http-post-without-entity-body)
+    - [POST with empty body from Darrel Miller on 2010-09-02 (ietf-http-wg@w3.org from July to September 2010)](http://lists.w3.org/Archives/Public/ietf-http-wg/2010JulSep/0272.html)
 
 - Xamarin
     - [ios - Make HTTP Request from Custom Keyboard App Extension - Stack Overflow](https://stackoverflow.com/questions/42301827/make-http-request-from-custom-keyboard-app-extension)
