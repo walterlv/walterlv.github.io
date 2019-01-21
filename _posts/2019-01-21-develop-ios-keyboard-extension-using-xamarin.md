@@ -1,6 +1,6 @@
 ---
 title: "使用 Xamarin 开发 iOS 键盘扩展（含网络访问）"
-date: 2019-01-21 21:22:47 +0800
+date: 2019-01-21 21:41:18 +0800
 categories: xamarin dotnet csharp xaml ios
 position: starter
 ---
@@ -128,8 +128,71 @@ iOS 应用的包信息存储在 plist 中。所以在这一节，你需要正确
 
 ### 添加键盘的网络访问支持
 
+#### 允许完全访问（包括网络）
 
+纯本地的键盘很难在打字速度上获得优势，各种主流的输入法也通常借助网络来提高自身的输入准确度。
 
+用户需要在键盘设置里面开启键盘的“允许完全访问”才能让对应的输入法获得网络访问的权限。如果用户没有给权限，那么网络访问的时候键盘扩展就会出现异常，然后闪退。
+
+![允许完全访问](/static/posts/2019-01-21-21-26-33.png)
+
+然而如果你去我们刚刚开发的输入法中看，你会发现我们的输入法没有提供这样的选项可以设置。那么如何能够添加这个设置以便进行网络访问呢？
+
+方法是修改键盘扩展项目的 Info.plist 文件。这个时候的修改，我们就不能使用 Visual Studio 中自带的 plist 编辑器了，我们需要使用文本编辑器来编辑 plist 文件。
+
+在你的 Info.plist 文件中找到 `RequestsOpenAccess` 属性，然后将它分值从 `false` 改为 `true`：
+
+```diff
+    <key>RequestsOpenAccess</key>
+--  <false/>
+++  <true/>
+```
+
+这个属性设为 `true` 之后，再次部署，你将可以在你的键盘设置里面看到“允许完全访问”的设置项。开启之后，你就能在你的键盘里面访问网络了。
+
+#### 允许访问 http 不安全网络
+
+一般来说你不用阅读这一小节的内容。因为现在基本上各种服务都已经是 https 了，http 基本已经绝迹。但是如果你需要临时部署一个服务，没来得及申请 https 证书的话，那么就需要使用本小结的内容让你的键盘支持 http 的访问。
+
+继续打开你的键盘扩展项目的 Info.plist 文件，在根字典的最后添加一个完整的字典属性 `NSAppTransportSecurity`：
+
+```xml
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+    <key>NSExceptionDomains</key>
+    <dict>
+        <key>walterlv.com</key>
+        <dict>
+            <key>NSExceptionAllowsInsecureHTTPLoads</key>
+            <true/>
+            <key>NSIncludesSubdomains</key>
+            <true/>
+        </dict>
+    </dict>
+</dict>
+```
+
+特别注意，里面的 `walterlv.com` 需要换成你自己的域名。是域名，不用包含端口号。
+
+这样，你就能在键盘中访问 [http://walterlv.com](https://walterlv.com) 了。
+
+### 本文总结
+
+1. 本文介绍了使用 Xamarin 开发 iOS 键盘插件的背景知识。
+    - 必须了解这些知识才不会在一些不太重要的坑上耗费太长时间。
+1. 本文教大家如何开发 iOS 键盘插件，主要是项目组织以及写代码。
+    - 至少，使用文本编写出来的代码（实际上我们什么代码都没写），能够在不作任何修改的情况下部署到真机。
+1. 本文不涉及到搭建开发环境，不涉及如何连接真机调试。
+    - 你可能需要配合这些博客才能完成部署以及调试：
+    - [Xamarin开发(Mac开发)环境搭建 - 简书](https://www.jianshu.com/p/abb9ae9df631)
+    - [vs2017开发IOS（vs2017 xamarin 连接mac） - ManGo.XYZ - CSDN博客](https://blog.csdn.net/qq756288646/article/details/78967532)
+
+如果你还遇到了一些其他诡异的问题：
+
+- 欢迎阅读 [使用 Xamarin 开发 iOS 应用中需要注意的若干个问题](https://walterlv.com/post/tips-for-developing-xamarin-ios-app.html)。
+- 欢迎在评论区评论或者向我发邮件。
 
 ---
 
