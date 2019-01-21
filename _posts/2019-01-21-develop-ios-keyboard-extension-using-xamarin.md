@@ -1,6 +1,6 @@
 ---
 title: "使用 Xamarin 开发 iOS 键盘扩展（含网络访问）"
-date: 2019-01-21 21:41:18 +0800
+date: 2019-01-21 22:22:31 +0800
 categories: xamarin dotnet csharp xaml ios
 position: starter
 ---
@@ -126,6 +126,72 @@ iOS 应用的包信息存储在 plist 中。所以在这一节，你需要正确
 
 当然这是 Mac 版本的（毕竟我在 Windows 上实际也没有成功真机调试过，我是 git 同步到 Mac 上用 Visual Studio for Mac 来真机调试的）。
 
+只是你需要注意做这些内容：
+
+1. 你需要同意一份开发者证书（不然打不开应用）：
+    - 设置 -> 通用 -> 设备管理 -> [自己的开发者账号] -> 信任
+1. 还需要打开这个键盘（不然看不到键盘）：
+    - 设置 -> 通用 -> 键盘 -> 添加新键盘... -> [选择我们刚刚开发的键盘]
+
+下面是我部署到真机上之后，在亮暗两种不同的界面下的键盘截图（就是上面的项目，没有改任何代码）：
+
+![键盘真机部署后的运行效果](/static/posts/2019-01-21-22-07-21.png)
+
+### 处理键盘的文字输入、退格和确定
+
+我们把 Walterlv.CloudKeyboard.iOS.Extension 也就是那个键盘扩展项目删除得只剩下 KeyboardViewController.cs 了，我们也只需要在这个类中写代码而已。
+
+要控制文字输入，就是使用 `TextDocumentProxy` 实例。我们的 `KeyboardViewController` 继承自 `UIInputViewController`，于是我们能够在类中直接使用 `TextDocumentProxy` 实例。
+
+在光标处插入文字：
+
+```csharp
+TextDocumentProxy.InsertText("walterlv");
+```
+
+如果要插入换行，则使用：
+
+```csharp
+TextDocumentProxy.InsertText("\n");
+```
+
+在光标处删除前一个字：
+
+```csharp
+TextDocumentProxy.DeleteBackward();
+```
+
+如果想要清空文本，则可以循环删除：
+
+```csharp
+while (TextDocumentProxy.HasText)
+{
+    TextDocumentProxy.DeleteBackward();
+}
+```
+
+你没有办法删除后一个字，也不能获取到用户输入的任何内容。
+
+我还没有找到办法直接完成文本的输入，例如执行确认按钮的逻辑。而确认按钮有这么些不同的情况：
+
+```csharp
+public enum UIReturnKeyType : long
+{
+    Default,
+    Go,
+    Google,
+    Join,
+    Next,
+    Route,
+    Search,
+    Send,
+    Yahoo,
+    Done,
+    EmergencyCall,
+    Continue,
+}
+```
+
 ### 添加键盘的网络访问支持
 
 #### 允许完全访问（包括网络）
@@ -183,7 +249,7 @@ iOS 应用的包信息存储在 plist 中。所以在这一节，你需要正确
 1. 本文介绍了使用 Xamarin 开发 iOS 键盘插件的背景知识。
     - 必须了解这些知识才不会在一些不太重要的坑上耗费太长时间。
 1. 本文教大家如何开发 iOS 键盘插件，主要是项目组织以及写代码。
-    - 至少，使用文本编写出来的代码（实际上我们什么代码都没写），能够在不作任何修改的情况下部署到真机。
+    - 至少，使用文本编写出来的代码，能够在不作任何修改的情况下部署到真机。（实际上我们只在 KeyboardViewController.cs 中加了寥寥几行代码。）
 1. 本文不涉及到搭建开发环境，不涉及如何连接真机调试。
     - 你可能需要配合这些博客才能完成部署以及调试：
     - [Xamarin开发(Mac开发)环境搭建 - 简书](https://www.jianshu.com/p/abb9ae9df631)
