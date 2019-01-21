@@ -1,6 +1,6 @@
 ---
 title: "使用 Xamarin 开发 iOS 键盘扩展（含网络访问）"
-date: 2019-01-21 20:11:03 +0800
+date: 2019-01-21 21:22:47 +0800
 categories: xamarin dotnet csharp xaml ios
 position: starter
 ---
@@ -90,6 +90,44 @@ position: starter
 ![可以编译通过](/static/posts/2019-01-21-20-10-58.png)
 
 ### 配置包信息
+
+iOS 应用的包信息存储在 plist 中。所以在这一节，你需要正确配置两个项目的 plist。
+
+没错！是两个项目。还记得前面背景知识里面我们说到容器项目和扩展项目就是两个不同的应用吗？
+
+配置 plist 的方法，就是在 Visual Studio 里面双击这个文件。
+
+按照下图这样配置：
+
+![配置两个项目的 plist 文件](/static/posts/2019-01-21-21-02-57.png)
+
+说明：
+
+1. Application Name 对应 plist 中的 CFBundleDisplayName 属性，也就是应用的显示名称。
+    - 对于容器应用，就是 iOS 图标下面的名称，对于键盘，就是切换键盘的时候所用的名称。
+    - 下图中 iOS 应用图标下面的名称 CloudKeyboard 就是我在 [Walterlv.CloudKeyboard](https://github.com/walterlv/Walterlv.CloudKeyboard) 项目中的容器应用的名称。
+    - 下图中在 iOS 切换键盘时，Cloud 就是我在 [Walterlv.CloudKeyboard](https://github.com/walterlv/Walterlv.CloudKeyboard) 项目中的键盘名称。
+1. 扩展项目的 Bundle Identifier 名称必须以容器项目的 Bundle Identifier 名称作为前缀。
+    - 如果不满足要求，部署时扩展将不会生效。
+
+![iOS 应用图标](/static/posts/2019-01-21-20-58-48.png)
+
+![iOS 上切换键盘](/static/posts/2019-01-21-20-56-47.png)
+
+至此，你的项目可以直接编译了。如果你有真机部署环境，都可以直接部署到真机上看效果了。
+
+### 真机部署调试
+
+本文不会花篇幅来讲如何真机部署调试，不然这篇文章就没有重点。
+
+但是你可以阅读：
+
+- [Xamarin Studio 中的 iPhone 真机调试 - 简书](https://www.jianshu.com/p/4143d2a51c72)
+
+当然这是 Mac 版本的（毕竟我在 Windows 上实际也没有成功真机调试过，我是 git 同步到 Mac 上用 Visual Studio for Mac 来真机调试的）。
+
+### 添加键盘的网络访问支持
+
 
 
 
