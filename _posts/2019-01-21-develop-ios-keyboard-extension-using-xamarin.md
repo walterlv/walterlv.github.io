@@ -1,6 +1,7 @@
 ---
 title: "使用 Xamarin 开发 iOS 键盘扩展（含网络访问）"
-date: 2019-01-21 22:32:48 +0800
+publishDate: 2019-01-21 22:32:48 +0800
+date: 2019-01-22 09:11:56 +0800
 categories: xamarin dotnet csharp xaml ios
 position: starter
 ---
@@ -24,7 +25,7 @@ position: starter
 1. 安装调试工具：Mac 部分 [Xamarin开发(Mac开发)环境搭建 - 简书](https://www.jianshu.com/p/abb9ae9df631)
 1. 安装调试工具：Windows 部分 [vs2017开发IOS（vs2017 xamarin 连接mac） - ManGo.XYZ - CSDN博客](https://blog.csdn.net/qq756288646/article/details/78967532)
 1. 申请开发者账号：<https://developer.apple.com/register/>，[阅读这里了解坑](https://walterlv.com/post/tips-for-developing-xamarin-ios-app.html)
-1. 准备一根 Type-C 到 Lightning 的数据线，用于 Mac 聪 Mac 部署到真机进行调试
+1. 准备一根 Type-C 到 Lightning 的数据线，用于 Mac 从 Mac 部署到真机进行调试
 
 ### 你需要了解的 iOS 键盘扩展的背景知识
 

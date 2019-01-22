@@ -1,11 +1,12 @@
 ---
 title: "使用 Xamarin 开发 iOS 应用中需要注意的若干个问题"
-date: 2019-01-21 15:21:29 +0800
+publishDate: 2019-01-21 15:21:29 +0800
+date: 2019-01-22 09:11:53 +0800
 categories: xamarin ios
 position: knowledge
 ---
 
-在此处编辑 walterlv.com 的博客摘要
+本文收集整理使用 Xamarin 开发 iOS 应用时可能会遇到的各种问题。
 
 ---
 
