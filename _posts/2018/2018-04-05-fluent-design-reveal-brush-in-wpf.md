@@ -1,7 +1,7 @@
 ---
 title: "流畅设计 Fluent Design System 中的光照效果 RevealBrush，WPF 也能模拟实现啦！"
 publishDate: 2018-04-05 16:34:42 +0800
-date: 2018-12-14 09:54:00 +0800
+date: 2019-01-22 22:23:19 +0800
 categories: wpf xaml uwp
 ---
 
@@ -99,7 +99,7 @@ namespace Walterlv.Demo
 
         private Brush CreateBrush(Window window, FrameworkElement element)
         {
-            var brush = new RadialGradientBrush(Colors.White, Colors.Transparent)
+            var brush = new RadialGradientBrush(Color, Colors.Transparent)
             {
                 MappingMode = BrushMappingMode.Absolute,
                 RadiusX = Radius,
@@ -107,6 +107,7 @@ namespace Walterlv.Demo
                 Opacity = Opacity,
                 Transform = Transform,
                 RelativeTransform = RelativeTransform,
+                Center = new Point(double.NegativeInfinity, double.NegativeInfinity),
             };
             window.MouseMove += OnMouseMove;
             window.Closed += OnClosed;
