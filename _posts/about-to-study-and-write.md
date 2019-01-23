@@ -17,6 +17,9 @@ published: false
 
 ### About to Write
 
+- Windows WIC
+    - [Windows Imaging Component Overview - Windows applications - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/wic/-wic-about-windows-imaging-codec)
+
 - 跨平台
     - [跨平台、跨语言应用开发工具，Elements 介绍 - dotNET跨平台 - CSDN博客](https://blog.csdn.net/sD7O95O/article/details/86582073#commentBox)
 
