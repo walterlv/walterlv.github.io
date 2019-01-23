@@ -17,6 +17,9 @@ published: false
 
 ### About to Write
 
+- 跨平台
+    - [跨平台、跨语言应用开发工具，Elements 介绍 - dotNET跨平台 - CSDN博客](https://blog.csdn.net/sD7O95O/article/details/86582073#commentBox)
+
 - Linux 后台命令
     - [Linux后台运行命令，nohup和&的区别 - 宇的季节 - 博客园](https://www.cnblogs.com/chenkeyu/p/8544289.html)
 
