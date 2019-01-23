@@ -1,7 +1,7 @@
 ---
 title: "使用 Xamarin 开发 iOS 键盘扩展（含网络访问）"
 publishDate: 2019-01-21 22:32:48 +0800
-date: 2019-01-22 09:11:56 +0800
+date: 2019-01-23 09:45:08 +0800
 categories: xamarin dotnet csharp xaml ios
 position: starter
 ---
@@ -276,3 +276,4 @@ public enum UIReturnKeyType : long
 - [objective c - Handling Return key in iOS 8 keyboard extension - Stack Overflow](https://stackoverflow.com/questions/25739312/handling-return-key-in-ios-8-keyboard-extension)
 - [iphone - iOS keyboard with "Go" button instead of return - Stack Overflow](https://stackoverflow.com/questions/4489879/ios-keyboard-with-go-button-instead-of-return)
 - [Custom Keyboards - Extensions - iOS - Human Interface Guidelines - Apple Developer](https://developer.apple.com/design/human-interface-guidelines/ios/extensions/custom-keyboards/)
+- [Creating a Custom Keyboard In IOS… – Swift India – Medium](https://medium.com/swift-india/creating-a-custom-keyboard-in-ios-a75e7d5cc5ef)
