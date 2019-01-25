@@ -1,6 +1,7 @@
 ---
 title: ".NET/C# 编译期间能确定的相同字符串，在运行期间是相同的实例"
-date: 2019-01-21 15:03:23 +0800
+publishDate: 2019-01-21 15:03:23 +0800
+date: 2019-01-25 15:47:13 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -39,6 +40,12 @@ private const string Z = X + Y;
 错误提示为：常量的初始化必须使用编译期间能够确定的常量。
 
 然而，这段代码不能在编译期间确定吗？实际上我们有理由认为编译器其实是能够确定的，只是编译器这个阶段没有这么去做而已。
+
+实际上在 2017 年就有人在 GitHub 上提出了这个问题，你可以在这里看讨论：
+
+- [[Discussion] Constant string interpolation · Issue #2077 · dotnet/csharplang](https://github.com/dotnet/csharplang/issues/2077)
+- [String interpolation constants · Issue #384 · dotnet/csharplang](https://github.com/dotnet/csharplang/issues/384)
+- [[Discussion] Constant string interpolation · Issue #11259 · dotnet/roslyn](https://github.com/dotnet/roslyn/issues/11259)
 
 但是，我们写一个程序来验证这是否是同一个实例：
 
@@ -156,3 +163,6 @@ Walterlv is a 逗比
 #### 参考资料
 
 - [$ - string interpolation - C# Reference - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated)
+- [[Discussion] Constant string interpolation · Issue #2077 · dotnet/csharplang](https://github.com/dotnet/csharplang/issues/2077)
+- [String interpolation constants · Issue #384 · dotnet/csharplang](https://github.com/dotnet/csharplang/issues/384)
+- [[Discussion] Constant string interpolation · Issue #11259 · dotnet/roslyn](https://github.com/dotnet/roslyn/issues/11259)
