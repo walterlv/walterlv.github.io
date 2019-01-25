@@ -1,7 +1,7 @@
 ---
 title: "使用 Xamarin 开发 iOS 键盘扩展（含网络访问）"
 publishDate: 2019-01-21 22:32:48 +0800
-date: 2019-01-23 09:45:08 +0800
+date: 2019-01-25 14:20:02 +0800
 categories: xamarin dotnet csharp xaml ios
 position: starter
 ---
@@ -150,7 +150,7 @@ iOS 应用的包信息存储在 plist 中。所以在这一节，你需要正确
 TextDocumentProxy.InsertText("walterlv");
 ```
 
-如果要插入换行，则使用：
+如果要插入换行或者确认输入，则使用：
 
 ```csharp
 TextDocumentProxy.InsertText("\n");
@@ -173,6 +173,9 @@ while (TextDocumentProxy.HasText)
 
 你没有办法删除后一个字，也不能获取到用户输入的任何内容。
 
+**关于换行，特别注意：**如果文本框被设置为发送或者其他非换行的功能，那么使用 `InsertText` 单独插入换行时才能正常执行这些功能。如果调用此代码之前还有其他的插入文字，那么最终就只会是换行，而不会执行其他的功能。实际上我在这一点上踩了坑，导致在 QQ 或者其他工具中只能实现换行，而无法发送消息。
+
+iOS 的键盘有不同种类的确认，需要键盘针对 `TextDocumentProxy.`
 我还没有找到办法直接完成文本的输入，例如执行确认按钮的逻辑。而确认按钮有这么些不同的情况：
 
 ```csharp
