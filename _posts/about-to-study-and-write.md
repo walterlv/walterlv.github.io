@@ -1,6 +1,7 @@
 ---
 title: "About to Study and Write"
-date: 2019-01-21 22:37:02 +0800
+publishDate: 2019-01-21 22:37:02 +0800
+date: 2019-01-23 17:32:27 +0800
 categories: post
 published: false
 ---
@@ -16,6 +17,9 @@ published: false
 - Castle
 
 ### About to Write
+
+- .NET 技术栈
+    - [Dot Net Stack](https://rawgit.com/unruledboy/DotNetStack/master/ux/DotNetStack.htm)
 
 - Windows WIC
     - [Windows Imaging Component Overview - Windows applications - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/wic/-wic-about-windows-imaging-codec)
