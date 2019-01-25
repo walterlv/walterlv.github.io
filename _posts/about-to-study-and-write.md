@@ -1,7 +1,7 @@
 ---
 title: "About to Study and Write"
 publishDate: 2019-01-21 22:37:02 +0800
-date: 2019-01-23 17:32:27 +0800
+date: 2019-01-25 14:18:11 +0800
 categories: post
 published: false
 ---
@@ -17,6 +17,10 @@ published: false
 - Castle
 
 ### About to Write
+
+- WCF
+    - [关于.NET Core是否应该支持WCF Hosting的争论_IT新闻_博客园](https://news.cnblogs.com/n/606754/)
+    - [The Argument for WCF Hosting in .NET Core](https://www.infoq.com/articles/WCF-Net-Core-Debate)
 
 - .NET 技术栈
     - [Dot Net Stack](https://rawgit.com/unruledboy/DotNetStack/master/ux/DotNetStack.htm)
