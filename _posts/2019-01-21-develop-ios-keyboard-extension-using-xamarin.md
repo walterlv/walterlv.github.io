@@ -1,7 +1,7 @@
 ---
 title: "使用 Xamarin 开发 iOS 键盘扩展（含网络访问）"
 publishDate: 2019-01-21 22:32:48 +0800
-date: 2019-01-25 14:20:02 +0800
+date: 2019-01-27 21:19:12 +0800
 categories: xamarin dotnet csharp xaml ios
 position: starter
 ---
@@ -121,9 +121,7 @@ iOS 应用的包信息存储在 plist 中。所以在这一节，你需要正确
 
 本文不会花篇幅来讲如何真机部署调试，不然这篇文章就没有重点。
 
-但是你可以阅读：
-
-- [Xamarin Studio 中的 iPhone 真机调试 - 简书](https://www.jianshu.com/p/4143d2a51c72)
+但是你可以阅读：[使用 Xamarin 在 iOS 真机上部署应用进行调试](/post/deploy-and-debug-ios-app-using-xamarin.html)
 
 当然这是 Mac 版本的（毕竟我在 Windows 上实际也没有成功真机调试过，我是 git 同步到 Mac 上用 Visual Studio for Mac 来真机调试的）。
 
