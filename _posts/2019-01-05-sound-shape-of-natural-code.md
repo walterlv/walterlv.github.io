@@ -1,6 +1,7 @@
 ---
 title: "自然码的形码"
-date: 2019-01-05 17:27:08 +0800
+publishDate: 2019-01-05 17:27:08 +0800
+date: 2019-01-27 13:49:39 +0800
 categories: ime
 position: knowledge
 ---
@@ -11,7 +12,7 @@ position: knowledge
 
 ---
 
-<div id="tov"></div>
+<div id="toc"></div>
 
 ### 输入法的选择
 
