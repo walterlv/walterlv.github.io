@@ -1,7 +1,6 @@
 ---
 title: "About to Study and Write"
-publishDate: 2019-01-21 22:37:02 +0800
-date: 2019-01-25 14:18:11 +0800
+date: 2019-01-28 09:15:40 +0800
 categories: post
 published: false
 ---
@@ -17,6 +16,9 @@ published: false
 - Castle
 
 ### About to Write
+
+- NuGet 源
+    - [华为云提供针对Nuget包管理器的缓存加速服务测试 - dotNET跨平台 - CSDN博客](https://blog.csdn.net/sD7O95O/article/details/86662880)
 
 - WCF
     - [关于.NET Core是否应该支持WCF Hosting的争论_IT新闻_博客园](https://news.cnblogs.com/n/606754/)
