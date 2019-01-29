@@ -26,7 +26,7 @@ Necessary conditions:
     - In fact, two are enough, one is the main UI thread with the App class we usually write; a background UI thread, for example, to display the UI thread that starts the splash screen.
     - If you use two threads, you need a lot of repetitive trials to reproduce; and by creating more threads you can greatly improve the probability of a single recurrence
 2. These UI threads all display WPF windows
-3. This issue will occur in both WPF on .NET Core 3 and WPF on .NET Framework4.7.2.
+3. This issue will occur in both WPF on .NET Core 3 and WPF on .NET Framework 4.7.2.
 
 phenomenon:
 
@@ -111,7 +111,3 @@ SynchronizationContext.SetSynchronizationContext(
     new DispatcherSynchronizationContext(
         Dispatcher.CurrentDispatcher));
 ```
-
-### Analysis the Issue
-
-Analyzing...
