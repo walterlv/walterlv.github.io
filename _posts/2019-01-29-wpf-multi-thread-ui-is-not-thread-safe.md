@@ -1,6 +1,6 @@
 ---
 title: "WPF 支持的多线程 UI 并不是线程安全的"
-date: 2019-01-29 11:25:00 +0800
+date: 2019-01-29 12:02:50 +0800
 categories: wpf dotnet
 position: problem
 version:
@@ -102,4 +102,12 @@ namespace Walterlv.Bugs.MultiThreadedUI
         }
     }
 }
+```
+
+说明：即便在 `new SplashWindow` 代码之前调用以下方法修改 `SynchronizationContext` 也依然会发生异常。
+
+```csharp
+SynchronizationContext.SetSynchronizationContext(
+    new DispatcherSynchronizationContext(
+        Dispatcher.CurrentDispatcher));
 ```

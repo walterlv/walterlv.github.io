@@ -1,6 +1,6 @@
 ---
 title: "WPF's multi-threaded UI is not thread safe"
-date: 2019-01-29 11:24:54 +0800
+date: 2019-01-29 12:02:09 +0800
 categories: wpf dotnet
 position: problem
 version:
@@ -102,6 +102,14 @@ namespace Walterlv.Bugs.MultiThreadedUI
         }
     }
 }
+```
+
+Remarks: Even if you add this code just before the Splash Window creating, this exception still occurs.
+
+```csharp
+SynchronizationContext.SetSynchronizationContext(
+    new DispatcherSynchronizationContext(
+        Dispatcher.CurrentDispatcher));
 ```
 
 ### Analysis the Issue
