@@ -1,6 +1,7 @@
 ---
 title: "如何创建一个基于 .NET Core 3 的 WPF 项目"
-date: 2018-12-06 11:11:05 +0800
+publishDate: 2018-12-06 11:11:05 +0800
+date: 2019-01-29 14:45:00 +0800
 categories: dotnet wpf
 position: starter
 ---
@@ -46,3 +47,5 @@ dotnet new wpf -o WalterlvWpfApp
 ### 更多
 
 如果你希望将现有基于 .NET Framework 的 WPF 项目迁移到 .NET Core 3，那么请阅读我的另一篇博客：[将基于 .NET Framework 的 WPF 项目迁移到基于 .NET Core 3](/post/migrate-wpf-project-from-dotnet-framework-to-dotnet-core.html)。
+
+可以持续关注官方 WPF on .NET Core 的例子：[samples/wpf/WPF-WinRT at master · dotnet/samples](https://github.com/dotnet/samples/tree/master/wpf/WPF-WinRT)。
