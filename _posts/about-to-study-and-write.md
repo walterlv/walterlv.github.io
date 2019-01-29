@@ -17,6 +17,9 @@ published: false
 
 ### About to Write
 
+- null of C# 8.0
+    - [C# 8 & No More NullReferenceExceptions – What about legacy code? – csharp.christiannagel.com](https://csharp.christiannagel.com/2018/06/20/nonnullablereferencetypes/)
+
 - NuGet 源
     - [华为云提供针对Nuget包管理器的缓存加速服务测试 - dotNET跨平台 - CSDN博客](https://blog.csdn.net/sD7O95O/article/details/86662880)
 
