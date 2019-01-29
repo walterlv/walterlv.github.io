@@ -1,6 +1,6 @@
 ---
 title: "WPF's multi-threaded UI is not thread safe"
-date: 2019-01-29 12:02:09 +0800
+date: 2019-01-29 12:10:56 +0800
 categories: wpf dotnet
 position: problem
 version:
