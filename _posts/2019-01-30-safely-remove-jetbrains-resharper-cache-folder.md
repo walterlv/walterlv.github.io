@@ -1,6 +1,6 @@
 ---
 title: "ReSharper 在 C 盘占用了太多空间了，本文告诉你如何安全地删除或转移这些文件"
-date: 2019-01-30 20:18:41 +0800
+date: 2019-01-30 20:23:46 +0800
 categories: dotnet resharper windows
 position: problem
 ---
@@ -17,7 +17,7 @@ position: problem
 
 SSD 很贵的，看看都满成什么样儿了……我一个 SSD 分成了 C 和 D 两个分区，都满了。
 
-![近乎满了的 SSD](/static/posts/2019-01-30-20-04-11.png)
+![近乎满了的 SSD](/static/posts/2019-01-30-20-23-31.png)
 
 你可以使用 SpaceSniffer 来快速调查占用你大量 C 盘空间的到底是些什么文件。我之前写过一篇文章介绍如何使用它：
 
