@@ -1,7 +1,7 @@
 ---
 title: "About to Study and Write"
 publishDate: 2019-01-28 09:15:40 +0800
-date: 2019-01-29 11:46:56 +0800
+date: 2019-01-30 22:57:54 +0800
 categories: post
 published: false
 ---
@@ -17,6 +17,9 @@ published: false
 - Castle
 
 ### About to Write
+
+- 私有源 NuGet
+    - [Browse Private Feeds in MyGet Gallery - MyGet](https://dotnet.myget.org/gallery)
 
 - null of C# 8.0
     - [C# 8 & No More NullReferenceExceptions – What about legacy code? – csharp.christiannagel.com](https://csharp.christiannagel.com/2018/06/20/nonnullablereferencetypes/)
