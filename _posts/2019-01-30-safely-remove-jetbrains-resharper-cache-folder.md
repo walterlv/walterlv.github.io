@@ -1,6 +1,6 @@
 ---
 title: "ReSharper 在 C 盘占用了太多空间了，本文告诉你如何安全地删除或转移这些文件"
-date: 2019-01-30 20:23:46 +0800
+date: 2019-01-30 20:34:19 +0800
 categories: dotnet resharper windows
 position: problem
 ---
@@ -43,6 +43,10 @@ Transient 意思跟 Temporary 差不多，就是短暂使用的文件。不过 R
 
 删除掉这个文件夹不影响 ReSharper 及其他 JetBrains 全家桶的正常运行。
 
+ReSharper 在设置中提供了清除缓存的按钮，但那个按钮点了其实释放不了多少空间的，本文最后一句将说明这个问题。
+
+![删除 Transient 目录](/static/posts/2019-01-30-20-34-07.png)
+
 ### 转移 ReSharper 的缓存目录
 
 1. 从 Visual Studio 的菜单中进入 ReSharper 的设置界面：ReSharper -> Options；
@@ -51,6 +55,12 @@ Transient 意思跟 Temporary 差不多，就是短暂使用的文件。不过 R
 在这里可以修改 ReSharper 缓存文件的存储位置。
 
 不过可得提醒你一下，ReSharper 这么耗性能的插件，还是老老实实放 SSD 里面吧，SSD 再怎么贵比起你的时间来说可便宜多了呀！
+
+![ReSharper Options](/static/posts/2019-01-30-20-27-21.png)
+
+![更改缓存目录](/static/posts/2019-01-30-20-28-18.png)
+
+可以在这个界面中看到，ReSharper 其实是提供了清除缓存的按钮（Clear）的，但是这个按钮点击之后其实只是会删除当前项目的缓存。而实际上 ReSharper 在你的电脑上积攒久了是众多缓存文件一起占用的太多空间，只删除最近正在使用的这个项目其实根本释放不了多少空间的。（比如我打开我的 Walterlv.CloudKeyboard 项目清除结果只删掉了不到 100M 的空间。）
 
 ---
 
