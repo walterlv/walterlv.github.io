@@ -18,6 +18,15 @@ published: false
 
 ### About to Write
 
+- NET Standard 2.1
+
+```csharp
+Console.WriteLine("EntryPoint");
+var intptr = Marshal.StringToCoTaskMemUTF8("e");
+Marshal.ZeroFreeCoTaskMemUTF8(intptr);
+Console.ReadKey();
+```
+
 - 私有源 NuGet
     - [Browse Private Feeds in MyGet Gallery - MyGet](https://dotnet.myget.org/gallery)
 
