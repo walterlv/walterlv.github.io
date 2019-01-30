@@ -1,7 +1,7 @@
 ---
 title: "将 .NET Core 项目打一个最简单的 NuGet 源码包，安装此包就像直接把源码放进项目一样"
 publishDate: 2018-06-20 09:22:34 +0800
-date: 2018-12-14 09:54:00 +0800
+date: 2019-01-30 22:33:24 +0800
 categories: dotnet visualstudio nuget msbuild
 ---
 
@@ -38,7 +38,7 @@ NuGet 原本就提供了生成源码包的功能。不过，NuGet 原生的源�
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSource>True</IncludeSource>
     <NoPackageAnalysis>true</NoPackageAnalysis>
