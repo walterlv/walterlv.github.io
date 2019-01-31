@@ -1,6 +1,6 @@
 ---
 title: "WPF 让普通 CLR 属性支持 XAML 绑定（非依赖属性），这样 MarkupExtension 中定义的属性也能使用绑定了"
-date: 2019-02-01 00:49:46 +0800
+date: 2019-02-01 01:01:18 +0800
 categories: wpf dotnet csharp xaml
 position: problem
 ---
@@ -99,7 +99,7 @@ private readonly DependencyObject _dependencyObject = new DependencyObject();
 
 为了解决这两个问题，我必须自己写一个代理的依赖对象，用于帮助做属性的变更通知，以及处理绑定产生的 `Binding` 对象。在正常的依赖对象和依赖属性中，这些本来都不需要我们自己来处理。
 
-## 方案
+### 方案
 
 于是我写了一个代理的依赖对象，我把它命名为 `ClrBindingExchanger`，意思是将 CLR 属性和依赖属性的绑定进行交换。
 
