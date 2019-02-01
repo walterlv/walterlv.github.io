@@ -1,6 +1,6 @@
 ---
 title: "About to Study and Write"
-date: 2019-01-31 23:52:55 +0800
+date: 2019-02-01 10:37:53 +0800
 categories: post
 published: false
 ---
@@ -17,14 +17,11 @@ published: false
 
 ### About to Write
 
-- NET Standard 2.1
+- 减少 .NET Core 程序的体积
+    - [Reducing the size of self-contained .NET Core applications](https://ianqvist.blogspot.com/2018/01/reducing-size-of-self-contained-net.html)
 
-```csharp
-Console.WriteLine("EntryPoint");
-var intptr = Marshal.StringToCoTaskMemUTF8("e");
-Marshal.ZeroFreeCoTaskMemUTF8(intptr);
-Console.ReadKey();
-```
+- NET Standard 2.1
+    - [walterlv/Walterlv.Demo.NETStandardPreview](https://github.com/walterlv/Walterlv.Demo.NETStandardPreview)
 
 - 私有源 NuGet
     - [Browse Private Feeds in MyGet Gallery - MyGet](https://dotnet.myget.org/gallery)
