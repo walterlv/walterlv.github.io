@@ -1,7 +1,7 @@
 ---
 title: "使用 Visual Studio 自定义外部命令 (External Tools) 快速打开 git bash 等各种工具"
 publishDate: 2017-03-23 10:01:40 +0800
-date: 2019-02-02 11:02:33 +0800
+date: 2019-02-02 11:07:12 +0800
 categories: visualstudio
 position: knowledge
 ---
@@ -40,11 +40,11 @@ Visual Studio 支持自定义的外部命令，于是即便 Visual Studio 原生
     - [Arguments] `--cd="$(SolutionDir)\."`
     - [InitialDirectory] `"$(SolutionDir)"`
 
-<!-- 1. 用于一键打开 Git Bash，以便快速输入 git 命令
-    - [Title] `打开 Git Bash`
-    - [Command] `C:\Program Files\Git\usr\bin\mintty.exe`
-    - [Arguments] `--nodaemon -o AppID=GitForWindows.Bash -o AppLaunchCmd="C:\Program Files\Git\git-bash.exe" -o AppName="Git Bash" -i "C:\Program Files\Git\git-bash.exe" --store-taskbar-properties -- /usr/bin/bash --login -i`
-    - [InitialDirectory] `"$(SolutionDir)"` -->
+    <!-- 1. 用于一键打开 Git Bash，以便快速输入 git 命令
+        - [Title] `打开 Git Bash`
+        - [Command] `C:\Program Files\Git\usr\bin\mintty.exe`
+        - [Arguments] `--nodaemon -o AppID=GitForWindows.Bash -o AppLaunchCmd="C:\Program Files\Git\git-bash.exe" -o AppName="Git Bash" -i "C:\Program Files\Git\git-bash.exe" --store-taskbar-properties -- /usr/bin/bash --login -i`
+        - [InitialDirectory] `"$(SolutionDir)"` -->
 
 1. 用于快速打开解决方案所在的文件夹（通常这也是 git 仓库的根目录）
     - [Title] `在资源管理器中查看此解决方案`
