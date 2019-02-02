@@ -1,7 +1,7 @@
 ---
 title: "使用 Visual Studio 自定义外部命令 (External Tools) 快速打开 git bash 等各种工具"
 publishDate: 2017-03-23 10:01:40 +0800
-date: 2019-02-02 10:52:36 +0800
+date: 2019-02-02 11:02:33 +0800
 categories: visualstudio
 position: knowledge
 ---
@@ -35,46 +35,46 @@ Visual Studio 支持自定义的外部命令，于是即便 Visual Studio 原生
 为了方便，我把我自己正在用的几个外部命令分享给大家：
 
 1. 用于一键打开 Git Bash，以便快速输入 git 命令
-    - [Title] 打开 Git Bash
-    - [Command] C:\Program Files\Git\git-bash.exe
-    - [Arguments] --cd="$(SolutionDir)\."
-    - [InitialDirectory] "$(SolutionDir)"
+    - [Title] `打开 Git Bash`
+    - [Command] `C:\Program Files\Git\git-bash.exe`
+    - [Arguments] `--cd="$(SolutionDir)\."`
+    - [InitialDirectory] `"$(SolutionDir)"`
 
 <!-- 1. 用于一键打开 Git Bash，以便快速输入 git 命令
-    - [Title] 打开 Git Bash
-    - [Command] C:\Program Files\Git\usr\bin\mintty.exe
-    - [Arguments] --nodaemon -o AppID=GitForWindows.Bash -o AppLaunchCmd="C:\Program Files\Git\git-bash.exe" -o AppName="Git Bash" -i "C:\Program Files\Git\git-bash.exe" --store-taskbar-properties -- /usr/bin/bash --login -i
-    - [InitialDirectory] "$(SolutionDir)" -->
+    - [Title] `打开 Git Bash`
+    - [Command] `C:\Program Files\Git\usr\bin\mintty.exe`
+    - [Arguments] `--nodaemon -o AppID=GitForWindows.Bash -o AppLaunchCmd="C:\Program Files\Git\git-bash.exe" -o AppName="Git Bash" -i "C:\Program Files\Git\git-bash.exe" --store-taskbar-properties -- /usr/bin/bash --login -i`
+    - [InitialDirectory] `"$(SolutionDir)"` -->
 
 1. 用于快速打开解决方案所在的文件夹（通常这也是 git 仓库的根目录）
-    - [Title] 在资源管理器中查看此解决方案
-    - [Command] C:\Windows\explorer.exe
-    - [Arguments] /select,"$(SolutionFileName)"
-    - [InitialDirectory] "$(SolutionDir)"
+    - [Title] `在资源管理器中查看此解决方案`
+    - [Command] `C:\Windows\explorer.exe`
+    - [Arguments] `/select,"$(SolutionFileName)"`
+    - [InitialDirectory] `"$(SolutionDir)"`
 
 1. 用于快速打开当前正在编辑的文件所在的文件夹
-    - [Title] 在资源管理器中查看此文件
-    - [Command] C:\Windows\explorer.exe
-    - [Arguments] /select,"$(ItemPath)"
-    - [InitialDirectory] "$(ItemDir)"
+    - [Title] `在资源管理器中查看此文件`
+    - [Command] `C:\Windows\explorer.exe`
+    - [Arguments] `/select,"$(ItemPath)"`
+    - [InitialDirectory] `"$(ItemDir)"`
 
 1. 使用 VSCode 打开此解决方案（这可以用来快速编辑某些 VS 中不方便编辑的文件）
-    - [Title] 使用 VSCode 编辑
-    - [Command] %LocalAppData%\Programs\Microsoft VS Code\Code.exe
-    - [Arguments] "$(SolutionDir)"
-    - [InitialDirectory] "$(SolutionDir)"
+    - [Title] `使用 VSCode 编辑`
+    - [Command] `%LocalAppData%\Programs\Microsoft VS Code\Code.exe`
+    - [Arguments] `"$(SolutionDir)"`
+    - [InitialDirectory] `"$(SolutionDir)"`
 
 1. 使用 TortoiseGit 来 Blame 此文件（而且还会自动定位到当前行）
-    - [Title] 追溯此文件
-    - [Command] C:\Program Files\TortoiseGit\bin\TortoiseGitBlame.exe
-    - [Arguments] "$(ItemPath)" /line:$(CurLine)
-    - [InitialDirectory] "$(ItemDir)"
+    - [Title] `追溯此文件`
+    - [Command] `C:\Program Files\TortoiseGit\bin\TortoiseGitBlame.exe`
+    - [Arguments] `"$(ItemPath)" /line:$(CurLine)`
+    - [InitialDirectory] `"$(ItemDir)"`
 
 1. 使用 TortoiseGit 来查看此文件的 git 日志
-    - [Title] 查看此文件的历史记录
-    - [Command] C:\Program Files\TortoiseGit\bin\TortoiseGitProc.exe
-    - [Arguments] /command:log /path:"$(ItemPath)"
-    - [InitialDirectory] "$(ItemDir)"
+    - [Title] `查看此文件的历史记录`
+    - [Command] `C:\Program Files\TortoiseGit\bin\TortoiseGitProc.exe`
+    - [Arguments] `/command:log /path:"$(ItemPath)"`
+    - [InitialDirectory] `"$(ItemDir)"`
 
 ### 第二步：自定义工具条按钮
 
