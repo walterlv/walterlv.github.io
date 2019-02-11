@@ -1,7 +1,7 @@
 ---
 title: "从 “x is null 和 x == null” 的区别看 C# 7 模式匹配中常量和 null 的匹配"
 publishDate: 2017-11-06 23:24:52 +0800
-date: 2018-12-14 09:54:00 +0800
+date: 2019-02-11 16:41:33 +0800
 categories: csharp msil dotnet decompile
 ---
 
@@ -239,6 +239,59 @@ IL_001c: stloc.1      // V_1
 现在已经不一样了，前者再比较时用的是 `call`，调用了 `bool [mscorlib]System.Object::Equals(object, object)` 方法；而后者依然用的是 `ceq`。
 
 区别已经很明显了，前者会根据具体类型具体判断相等，也就是说引用类型会调用引用类型自己的方法判断相等，值类型也会调用值类型的方法判断相等。而后者依然是比较评估栈中的两个值是否相等。关键是这两者均出现了装箱！也就是说——因为装箱的存在，对后者而言，`ceq` 会压入 `0`，即永远返回 `false`，这就是 BUG 所在。这就是不一样的地方！
+
+### 🧐如果重写了 `==` 或者 `Equals` 呢？
+
+```csharp
+using System;
+
+namespace Walterlv.EqualsTest
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var foo = new Foo();
+            Console.WriteLine(foo == null);
+            Console.WriteLine(foo.Equals(null));
+            Console.WriteLine(foo is null);
+            Console.WriteLine(Equals(foo, null));
+            Console.ReadLine();
+        }
+    }
+
+    public class Foo
+    {
+        public override bool Equals(object obj)
+        {
+            return true;
+        }
+
+        public static bool operator ==(Foo left, Foo right)
+        {
+            return true;
+        }
+
+        public static bool operator !=(Foo left, Foo right)
+        {
+            return !(left == right);
+        }
+    }
+}
+```
+
+这段代码的执行结果是：
+
+```text
+True
+True
+False
+False
+```
+
+也就是说在空判断中，使用 `==` 和直接调用 `Equals` 方法会使用我们重写的运算符和方法，而使用 `is` 和 `Object` 的 `Equals` 静态方法依然可以正常完成判空。
+
+你可以阅读 [Object.Equals Method (System) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.object.equals) 了解到静态 `Equals` 方法的实现。
 
 ---
 
