@@ -1,7 +1,7 @@
 ---
 title: "从 “x is null 和 x == null” 的区别看 C# 7 模式匹配中常量和 null 的匹配"
 publishDate: 2017-11-06 23:24:52 +0800
-date: 2019-02-11 16:41:33 +0800
+date: 2019-02-11 16:48:45 +0800
 categories: csharp msil dotnet decompile
 ---
 
@@ -289,7 +289,32 @@ False
 False
 ```
 
-也就是说在空判断中，使用 `==` 和直接调用 `Equals` 方法会使用我们重写的运算符和方法，而使用 `is` 和 `Object` 的 `Equals` 静态方法依然可以正常完成判空。
+他们的 IL 代码如下。可以看到 `==` 和 `Equals` 会调用重载的运算符和方法；而使用 `is` 判断和前面是一样的，不受重载影响，可以和 `Object` 的 `Equals` 静态方法一样正常完成判空。
+
+```nasm
+// foo == null
+IL_0005: dup
+IL_0006: ldnull
+IL_0007: call         bool Walterlv.EqualsTest.Foo::op_Equality(class Walterlv.EqualsTest.Foo, class Walterlv.EqualsTest.Foo)
+IL_000c: call         void [System.Console]System.Console::WriteLine(bool)
+
+// foo.Equals(null)
+IL_0011: dup
+IL_0012: ldnull
+IL_0013: callvirt     instance bool [System.Runtime]System.Object::Equals(object)
+IL_0018: call         void [System.Console]System.Console::WriteLine(bool)
+
+// foo is null
+IL_001d: dup
+IL_001e: ldnull
+IL_001f: ceq
+IL_0021: call         void [System.Console]System.Console::WriteLine(bool)
+
+// Equals(foo, null)
+IL_0026: ldnull
+IL_0027: call         bool [System.Runtime]System.Object::Equals(object, object)
+IL_002c: call         void [System.Console]System.Console::WriteLine(bool)
+```
 
 你可以阅读 [Object.Equals Method (System) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.object.equals) 了解到静态 `Equals` 方法的实现。
 
