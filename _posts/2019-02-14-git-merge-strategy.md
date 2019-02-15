@@ -1,7 +1,7 @@
 ---
 title: "git 合并策略"
 publishDate: 2019-02-14 22:13:36 +0800
-date: 2019-02-15 14:21:50 +0800
+date: 2019-02-15 14:31:09 +0800
 categories: git
 position: knowledge
 ---
@@ -64,6 +64,12 @@ $ git merge 要合并进来的分支名 --strategy=合并策略 -X diff-algorith
 
 ```bash
 $ git merge origin/master -s recursive -X diff-algorithm=patience
+```
+
+由于 `recursive` 是默认的合并策略，所以可以简化成：
+
+```bash
+$ git merge origin/master -X diff-algorithm=patience
 ```
 
 #### ours
@@ -174,3 +180,5 @@ Merge with strategy octopus failed.
 - [diff - Any example to use git merge patience strategy? - Stack Overflow](https://stackoverflow.com/questions/47146379/any-example-to-use-git-merge-patience-strategy?noredirect=1&lq=1)
 - [Git - merge-strategies Documentation](https://git-scm.com/docs/merge-strategies)
 - [When would you use the different git merge strategies? - Stack Overflow](https://stackoverflow.com/a/366940/6233938)
+- [`-X patience` vs `-X diff-algorithm=patience` with `git merge-recursive` - Stack Overflow](https://stackoverflow.com/a/50359017/6233938)
+- [Git diff --patience not working - Stack Overflow](https://stackoverflow.com/q/23870235/6233938)
