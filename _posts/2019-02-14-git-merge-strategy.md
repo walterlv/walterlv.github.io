@@ -1,6 +1,7 @@
 ---
 title: "git 合并策略"
-date: 2019-02-14 22:13:36 +0800
+publishDate: 2019-02-14 22:13:36 +0800
+date: 2019-02-15 14:21:50 +0800
 categories: git
 position: knowledge
 ---
@@ -56,19 +57,13 @@ $ git merge origin/master -s resolve
 当指定为此策略时，可以额外指定下面的这些参数，方法是：
 
 ```bash
-$ git merge 要合并进来的分支名 --strategy=合并策略 参数
+$ git merge 要合并进来的分支名 --strategy=合并策略 -X diff-algorithm=参数
 ```
 
 例如：
 
 ```bash
-$ git merge origin/master --strategy=recursive patience
-```
-
-或者：
-
-```bash
-$ git merge origin/master -s recursive patience
+$ git merge origin/master -s recursive -X diff-algorithm=patience
 ```
 
 #### ours
