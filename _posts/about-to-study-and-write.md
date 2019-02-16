@@ -17,6 +17,11 @@ published: false
 
 ### About to Write
 
+- 生成汇编代码执行
+    - [c# - How can I get CPU name in .NET Core? - Stack Overflow](https://stackoverflow.com/questions/47254573/how-can-i-get-cpu-name-in-net-core)
+    - [C# inline-asm / 嵌入x86汇编 - 苏璃 - CSDN博客](https://blog.csdn.net/u012395622/article/details/46801475?tdsourcetag=s_pctim_aiomsg)
+    - [C# 远过程外部调用 LoadLibrary、GetModuleHandle、GetProcAddress、FreeLibrary - 苏璃 - CSDN博客](https://blog.csdn.net/u012395622/article/details/49884217?tdsourcetag=s_pctim_aiomsg)
+
 - 减少 .NET Core 程序的体积
     - [Reducing the size of self-contained .NET Core applications](https://ianqvist.blogspot.com/2018/01/reducing-size-of-self-contained-net.html)
 
