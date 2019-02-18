@@ -17,6 +17,9 @@ published: false
 
 ### About to Write
 
+- 获取硬件信息
+    - [How To Get Hardware Information (CPU ID, MainBoard Info, Hard Disk Serial, System Information , ...) - CodeProject](https://www.codeproject.com/Articles/17973/How-To-Get-Hardware-Information-CPU-ID-MainBoard-I)
+
 - 生成汇编代码执行
     - [c# - How can I get CPU name in .NET Core? - Stack Overflow](https://stackoverflow.com/questions/47254573/how-can-i-get-cpu-name-in-net-core)
     - [C# inline-asm / 嵌入x86汇编 - 苏璃 - CSDN博客](https://blog.csdn.net/u012395622/article/details/46801475?tdsourcetag=s_pctim_aiomsg)
