@@ -1,6 +1,6 @@
 ---
 title: ".NET/C# 获取一个正在运行的进程的命令行参数"
-date: 2019-02-19 21:31:27 +0800
+date: 2019-02-19 21:51:19 +0800
 categories: dotnet csharp windows
 position: knowledge
 ---
@@ -88,6 +88,10 @@ namespace Walterlv
     }
 }
 ```
+
+使用此方法得到的命令行参数是一个字符串，而不是我们通常使用字符串时的字符串数组。如果你需要将其转换为字符串数组，可以使用我在另一篇博客中使用的方法：
+
+- [.NET/C# 将一个命令行参数字符串转换为命令行参数数组 args](/post/convert-command-line-string-to-args-array.html)
 
 ---
 
