@@ -1,6 +1,6 @@
 ---
 title: ".NET/C# 获取一个正在运行的进程的命令行参数"
-date: 2019-02-19 21:24:36 +0800
+date: 2019-02-19 21:26:05 +0800
 categories: dotnet csharp windows
 position: knowledge
 ---
@@ -20,6 +20,15 @@ position: knowledge
 实际上方法是有的，不过这个方法是 Windows 上的专属方法。
 
 对于 .NET Framework，需要引用程序集 `System.Management`；对于 .NET Core 需要引用 `Microsoft.Windows.Compatibility` 这个针对 Windows 系统准备的兼容包（不过这个兼容包目前还是预览版本）。
+
+```xml
+<ItemGroup Condition="$(TargetFramework) == 'netcoreapp2.1'">
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="2.1.0-preview.19073.11" />
+</ItemGroup>
+<ItemGroup Condition="$(TargetFramework) == 'net472'">
+    <Reference Include="System.Management" />
+</ItemGroup>
+```
 
 然后，我们使用 `ManagementObjectSearcher` 和 `ManagementBaseObject` 来获取命令行参数。
 
