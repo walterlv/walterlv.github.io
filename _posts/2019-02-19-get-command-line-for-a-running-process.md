@@ -1,6 +1,6 @@
 ---
 title: ".NET/C# 获取一个正在运行的进程的命令行参数"
-date: 2019-02-19 21:26:05 +0800
+date: 2019-02-19 21:31:27 +0800
 categories: dotnet csharp windows
 position: knowledge
 ---
@@ -80,7 +80,8 @@ namespace Walterlv
                     "SELECT CommandLine FROM Win32_Process WHERE ProcessId = " + process.Id))
                 using (var objects = searcher.Get())
                 {
-                    return objects.Cast<ManagementBaseObject>().SingleOrDefault()?["CommandLine"]?.ToString() ?? "";
+                    var @object = objects.Cast<ManagementBaseObject>().SingleOrDefault();
+                    return @object?["CommandLine"]?.ToString() ?? "";
                 }
             }
         }
