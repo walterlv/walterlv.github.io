@@ -4,7 +4,7 @@ title: 朋友和收藏
 permalink: /friends/
 ---
 
-- [lindexi_gd https://blog.lindexi.com/](https://blog.lindexi.com/)  
+- [林德熙 https://blog.lindexi.com/](https://blog.lindexi.com/)  
     这是我的好朋友
 
 - [dotnet职业技术学院](https://dotnet-campus.github.io/)  
