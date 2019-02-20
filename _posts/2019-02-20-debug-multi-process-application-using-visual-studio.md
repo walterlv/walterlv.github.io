@@ -1,6 +1,6 @@
 ---
 title: "使用 Visual Studio 调试多进程的程序"
-date: 2019-02-20 22:51:40 +0800
+date: 2019-02-20 22:58:12 +0800
 categories: dotnet visualstudio
 position: knowledge
 ---
@@ -14,6 +14,19 @@ position: knowledge
 <div id="toc"></div>
 
 ### Visual Studio 多启动项目（推荐）
+
+在 Visual Studio 的解决方案上点击右键，属性。在公共属性节点中选择启动项目。
+
+在这里，你可以给多个项目都设置成启动项目，就像下图这样：
+
+![设置多启动项目](/static/posts/2019-02-20-22-53-42.png)
+
+当然，这些项目都必须要是能够启动的才行（不一定是可执行程序）。
+
+此方案的好处是 Visual Studio 原生支持。但此方案的使用必须满足两个前提：
+
+1. 要调试的多个进程必须是不同的项目编译出来的；
+1. 这些项目之间的启动顺序不能有明显的依赖关系（所以你可能需要修改你的代码使得这两个进程之间可以互相唤起）。
 
 ### Microsoft Child Process Debugging Power Tool 插件（推荐）
 
