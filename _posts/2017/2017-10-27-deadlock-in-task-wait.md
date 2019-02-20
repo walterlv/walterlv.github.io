@@ -1,7 +1,7 @@
 ---
 title: "使用 Task.Wait()？立刻死锁（deadlock）"
 publishDate: 2017-10-27 23:54:46 +0800
-date: 2018-12-21 16:37:39 +0800
+date: 2019-02-20 19:30:39 +0800
 categories: dotnet csharp
 ---
 
