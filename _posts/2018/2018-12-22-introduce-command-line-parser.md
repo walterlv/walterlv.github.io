@@ -170,5 +170,5 @@ Value 是命令行的无名参数，它是靠在命令行谓词后面的参数�
 
 - [commandlineparser/commandline: The best C# command line parser that brings standardized *nix getopt style, for .NET. Includes F# support](https://github.com/commandlineparser/commandline)
 - [Home · commandlineparser/commandline Wiki](https://github.com/commandlineparser/commandline/wiki)
-- [C＃命令行解析工具 - 林德熙](https://lindexi.gitee.io/post/C-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7.html)
+- [C＃命令行解析工具 - 林德熙](https://blog.lindexi.com/post/C-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7.html)
 - [The week in .NET – Command Line Parser Library, .NET South East - .NET Blog](https://blogs.msdn.microsoft.com/dotnet/2017/07/18/the-week-in-net-command-line-parser-library-net-south-east/)

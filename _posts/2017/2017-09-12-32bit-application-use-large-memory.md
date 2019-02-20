@@ -73,7 +73,7 @@ editbin 改之前和改之后用 dumpbin 查看我们的程序头信息，得到
 #### 参考资料
 - AnyCPU (32bit preferred)
     - [What is the purpose of the “Prefer 32-bit” setting in Visual Studio 2012 and how does it actually work?](https://stackoverflow.com/questions/12066638/what-is-the-purpose-of-the-prefer-32-bit-setting-in-visual-studio-2012-and-how)
-    - [WPF 编译为 AnyCPU 和 x86 有什么区别 - 林德熙](https://lindexi.gitee.io/lindexi/post/WPF-%E7%BC%96%E8%AF%91%E4%B8%BA-AnyCPU-%E5%92%8C-x86-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB.html)
+    - [WPF 编译为 AnyCPU 和 x86 有什么区别 - 林德熙](https://blog.lindexi.com/post/WPF-%E7%BC%96%E8%AF%91%E4%B8%BA-AnyCPU-%E5%92%8C-x86-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB.html)
 - IMAGE_FILE_LARGE_ADDRESS_AWARE
     - [Memory Limits for Windows and Windows Server Releases](https://msdn.microsoft.com/en-us/library/windows/desktop/aa366778(v=vs.85).aspx)
     - [Getting 32-bit application to use more than 2GB on 64-bit Windows 7?](https://superuser.com/questions/176869/getting-32-bit-application-to-use-more-than-2gb-on-64-bit-windows-7)

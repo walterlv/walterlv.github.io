@@ -76,7 +76,7 @@ internal sealed class WalterlvHiddenMethodAttribute : Attribute
 
 这里，我们需要用到 MSBuild/Roslyn 相关的知识：
 
-- [Roslyn 通过 Target 修改编译的文件 - 林德熙](https://lindexi.gitee.io/post/Roslyn-%E9%80%9A%E8%BF%87-Target-%E4%BF%AE%E6%94%B9%E7%BC%96%E8%AF%91%E7%9A%84%E6%96%87%E4%BB%B6.html)
+- [Roslyn 通过 Target 修改编译的文件 - 林德熙](https://blog.lindexi.com/post/Roslyn-%E9%80%9A%E8%BF%87-Target-%E4%BF%AE%E6%94%B9%E7%BC%96%E8%AF%91%E7%9A%84%E6%96%87%E4%BB%B6.html)
 
 当你读完上面那篇文章，你就明白我想干啥了。没错，在编译期间将其替换成一个拥有实现的函数。
 

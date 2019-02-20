@@ -4,7 +4,7 @@ date: 2017-12-10 18:58:07 +0800
 categories: ux ui
 ---
 
-我给博客改了主题色，从 [这样的](https://lindexi.gitee.io/) 改成了 [这样的](http://walterlv.gitee.io/)；然而我问小伙伴看看效果他却并没有发现改变。
+我给博客改了主题色，从 [这样的](https://blog.lindexi.com/) 改成了 [这样的](http://walterlv.gitee.io/)；然而我问小伙伴看看效果他却并没有发现改变。
 
 ![前后主题色差异](/static/posts/2017-12-09-16-20-39.png)
 

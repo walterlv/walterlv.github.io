@@ -15,9 +15,9 @@ categories: visualstudio dotnet csharp msbuild
 
 ### 为什么要使用第三方的 SDK？
 
-关于项目文件格式的迁移，我和 [林德熙](https://lindexi.gitee.io/) 都写过文章：
+关于项目文件格式的迁移，我和 [林德熙](https://blog.lindexi.com/) 都写过文章：
 
-- [从以前的项目格式迁移到 VS2017 新项目格式 - 林德熙](https://lindexi.gitee.io/lindexi/post/%E4%BB%8E%E4%BB%A5%E5%89%8D%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E8%BF%81%E7%A7%BB%E5%88%B0-VS2017-%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F.html)
+- [从以前的项目格式迁移到 VS2017 新项目格式 - 林德熙](https://blog.lindexi.com/post/%E4%BB%8E%E4%BB%A5%E5%89%8D%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E8%BF%81%E7%A7%BB%E5%88%B0-VS2017-%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F.html)
 - [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj - 吕毅](/post/introduce-new-style-csproj-into-net-framework.html)
 
 不过，这两篇文章中的迁移方法都是手动或半自动迁移的。而且迁移完毕之后，对新增的 WPF/UWP XAML 文件的支持非常不友好——**新增的 XAML 文件是看不见的，除非手工去 csproj 文件中去掉自动生成的 Remove XAML 的代码。**

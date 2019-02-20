@@ -107,4 +107,4 @@ using (var list = new CanvasCommandList(creator))
 
 上面的例子中，我们是用到了 `CanvasCommandList`。它可以帮助我们将绘制命令先绘制到一个缓存的上下文中，以便被其他绘制上下文进行统一的处理。
 
-阅读林德熙的博客了解更多 `CanvasCommandList` 的资料：[win2d CanvasCommandList 使用方法 - 林德熙](https://lindexi.gitee.io/lindexi/post/win2d-CanvasCommandList-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.html)。
+阅读林德熙的博客了解更多 `CanvasCommandList` 的资料：[win2d CanvasCommandList 使用方法 - 林德熙](https://blog.lindexi.com/post/win2d-CanvasCommandList-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.html)。

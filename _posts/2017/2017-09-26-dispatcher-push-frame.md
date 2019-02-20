@@ -155,7 +155,7 @@ while(frame.Continue)
 
 ![消息循环](/static/posts/2017-09-26-03-33-28.png)
 
-然而，这两个方法内部都调用到了非托管代码，很难通过阅读代码了解到它处理消息的原理。但是通过 .NET Framework 源码调试技术我发现 `TranslateAndDispatchMessage` 方法似乎并没有被调用到，`GetMessage` 始终在执行。我们有理由相信用于实现非阻塞等待的关键在 `GetMessage` 方法内部。.NET Framework 源码调试技术请参阅：[调试 ms 源代码 - 林德熙](http://lindexi.gitee.io/lindexi//post/%E8%B0%83%E8%AF%95-ms-%E6%BA%90%E4%BB%A3%E7%A0%81/)。
+然而，这两个方法内部都调用到了非托管代码，很难通过阅读代码了解到它处理消息的原理。但是通过 .NET Framework 源码调试技术我发现 `TranslateAndDispatchMessage` 方法似乎并没有被调用到，`GetMessage` 始终在执行。我们有理由相信用于实现非阻塞等待的关键在 `GetMessage` 方法内部。.NET Framework 源码调试技术请参阅：[调试 ms 源代码 - 林德熙](http://blog.lindexi.com/lindexi//post/%E8%B0%83%E8%AF%95-ms-%E6%BA%90%E4%BB%A3%E7%A0%81/)。
 
 于是去 `GetMessage` 方法内，找到了 `UnsafeNativeMethods.ITfMessagePump` 类型的变量 `messagePump`。这是 Windows 消息循环中的重要概念。看到这里，似乎需要更了解消息循环才能明白实现非阻塞等待的关键。不过我们可以再次通过调试 .NET Framework 的源码来了解消息循环在其中做的重要事情。
 
@@ -228,6 +228,6 @@ private void OnStylusDown(object sender, StylusDownEventArgs e)
     - [c# - Understanding the Dispatcher Queue - Stack Overflow](https://stackoverflow.com/questions/11417216/understanding-the-dispatcher-queue/11419762)
     - [详解WPF线程模型和Dispatcher - 踏雪无痕 - CSDN博客](http://blog.csdn.net/royyeah/article/details/4785473)
 - 调试 .NET Framework 源码
-    - [调试 ms 源代码 - 林德熙](http://lindexi.gitee.io/lindexi//post/%E8%B0%83%E8%AF%95-ms-%E6%BA%90%E4%BB%A3%E7%A0%81/)
+    - [调试 ms 源代码 - 林德熙](http://blog.lindexi.com/lindexi//post/%E8%B0%83%E8%AF%95-ms-%E6%BA%90%E4%BB%A3%E7%A0%81/)
 - 已知缺陷
     - [c# - PushFrame locks up WPF window when user is moving window - Stack Overflow](https://stackoverflow.com/q/19411613/6233938)

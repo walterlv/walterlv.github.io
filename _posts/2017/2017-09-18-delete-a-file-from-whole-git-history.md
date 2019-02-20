@@ -29,7 +29,7 @@ description: 如果不小心向 Git 仓库中上传了一个不需要的超大�
 
 ### 推荐的方法
 
-感谢小伙伴 [林德熙](http://lindexi.gitee.io/) 的帮助，帮我找到了一篇非常有价值的博客：[Git如何永久删除文件(包括历史记录) - shines77 - 博客园](http://www.cnblogs.com/shines77/p/3460274.html)。
+感谢小伙伴 [林德熙](http://blog.lindexi.com/) 的帮助，帮我找到了一篇非常有价值的博客：[Git如何永久删除文件(包括历史记录) - shines77 - 博客园](http://www.cnblogs.com/shines77/p/3460274.html)。
 
 **强烈推荐只阅读上面那篇文章而不要阅读本文，因为本文真正用到的方法比上面的更 low。**
 
@@ -84,7 +84,7 @@ $ git branch -d <branch_name>
 
 这样，远端服务器上的任何分支都不存在包含误传文件的提交了。理论上新克隆的本地仓库将不再有 2000+M 的大小，实测也是如此。但已经克隆并且包含那次提交的小伙伴该怎么办？
 
-小伙伴 [林德熙](http://lindexi.gitee.io/) 再次提供了一组命令，我和他一起简化后整理如下：
+小伙伴 [林德熙](http://blog.lindexi.com/) 再次提供了一组命令，我和他一起简化后整理如下：
 
 ```bash
 git fetch -f -p
@@ -94,7 +94,7 @@ git reflog expire --expire=now --all
 git gc --prune=now
 ```
 
-命令的解释小伙伴 [林德熙有详细介绍](http://lindexi.gitee.io/lindexi/post/%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4%E9%94%99%E8%AF%AF%E6%8F%90%E4%BA%A4%E7%9A%84-git-%E5%A4%A7%E6%96%87%E4%BB%B6/)。大体为：
+命令的解释小伙伴 [林德熙有详细介绍](http://blog.lindexi.com/lindexi/post/%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4%E9%94%99%E8%AF%AF%E6%8F%90%E4%BA%A4%E7%9A%84-git-%E5%A4%A7%E6%96%87%E4%BB%B6/)。大体为：
 - 提取远端服务器上最新的提交（这样本地仓库才会包含我修复的那些提交）
 - 切换到 `develop` 分支（避免影响到小伙伴当前的工作分支，防止丢失工作）
 - 将本地 `develop` 分支强制重置成远端的 `develop` 分支（以便丢掉本地有问题的那些提交）

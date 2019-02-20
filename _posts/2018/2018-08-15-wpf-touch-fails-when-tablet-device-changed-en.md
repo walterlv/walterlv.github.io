@@ -131,7 +131,7 @@ The above conclusions come from the reading and debugging of the .NET Framework 
 
 Since WPF touch details involve more types and source code which requires a lot of descriptions, so it is not explained in this article. Read the following article to get a deeper understanding of the touch failure (all of the links are under translating):
 
-- [WPF 插拔触摸设备触摸失效 - lindexi](https://lindexi.gitee.io/post/WPF-%E6%8F%92%E6%8B%94%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87%E8%A7%A6%E6%91%B8%E5%A4%B1%E6%95%88.html)
+- [WPF 插拔触摸设备触摸失效 - lindexi](https://blog.lindexi.com/post/WPF-%E6%8F%92%E6%8B%94%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87%E8%A7%A6%E6%91%B8%E5%A4%B1%E6%95%88.html)
 - [通过解读 WPF 触摸源码，分析 WPF 插拔设备触摸失效的问题（分析篇） - walterlv](/post/analyze-wpf-losting-touch-when-tablet-device-changed.html)
 
 All of the .NET Framework source code in this article is decompiled by [dnSpy](https://github.com/0xd4d/dnSpy), and the analysis process is basically based on the dnSpy's no-PDB debugging feature.

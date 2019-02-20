@@ -130,8 +130,8 @@ if (isDefined)
 
 对于创建对象更多的性能数据，可以参考：
 
-- [C# 直接创建多个类和使用反射创建类的性能 - 林德熙](https://lindexi.gitee.io/post/C-%E7%9B%B4%E6%8E%A5%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E7%B1%BB%E5%92%8C%E4%BD%BF%E7%94%A8%E5%8F%8D%E5%B0%84%E5%88%9B%E5%BB%BA%E7%B1%BB%E7%9A%84%E6%80%A7%E8%83%BD.html)
-- [C# 性能分析 反射 VS 配置文件 VS 预编译 - 林德熙](https://lindexi.gitee.io/post/C-%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90-%E5%8F%8D%E5%B0%84-VS-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-VS-%E9%A2%84%E7%BC%96%E8%AF%91.html)
+- [C# 直接创建多个类和使用反射创建类的性能 - 林德熙](https://blog.lindexi.com/post/C-%E7%9B%B4%E6%8E%A5%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E7%B1%BB%E5%92%8C%E4%BD%BF%E7%94%A8%E5%8F%8D%E5%B0%84%E5%88%9B%E5%BB%BA%E7%B1%BB%E7%9A%84%E6%80%A7%E8%83%BD.html)
+- [C# 性能分析 反射 VS 配置文件 VS 预编译 - 林德熙](https://blog.lindexi.com/post/C-%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90-%E5%8F%8D%E5%B0%84-VS-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-VS-%E9%A2%84%E7%BC%96%E8%AF%91.html)
 
 #### 反射获取 Attribute
 
@@ -148,8 +148,8 @@ if (isDefined)
 
 关于私有方法的反射：
 
-- [C# 使用反射获取私有属性的方法](https://lindexi.gitee.io/post/C-%E4%BD%BF%E7%94%A8%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7%E7%9A%84%E6%96%B9%E6%B3%95.html)
-- [C# 反射调用私有事件](https://lindexi.gitee.io/post/C-%E5%8F%8D%E5%B0%84%E8%B0%83%E7%94%A8%E7%A7%81%E6%9C%89%E4%BA%8B%E4%BB%B6.html)
+- [C# 使用反射获取私有属性的方法](https://blog.lindexi.com/post/C-%E4%BD%BF%E7%94%A8%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7%E7%9A%84%E6%96%B9%E6%B3%95.html)
+- [C# 反射调用私有事件](https://blog.lindexi.com/post/C-%E5%8F%8D%E5%B0%84%E8%B0%83%E7%94%A8%E7%A7%81%E6%9C%89%E4%BA%8B%E4%BB%B6.html)
 
 关于缓存：
 
@@ -171,7 +171,7 @@ if (isDefined)
 BenchmarkRunner.Run<Reflections>();
 ```
 
-你可以阅读 [C# 标准性能测试 - 林德熙](https://lindexi.gitee.io/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95.html) 了解基准性能测试的基本用法，在 [C# 标准性能测试高级用法 - 林德熙](https://lindexi.gitee.io/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95.html) 中了解到更多基准测试方法的使用。
+你可以阅读 [C# 标准性能测试 - 林德熙](https://blog.lindexi.com/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95.html) 了解基准性能测试的基本用法，在 [C# 标准性能测试高级用法 - 林德熙](https://blog.lindexi.com/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95.html) 中了解到更多基准测试方法的使用。
 
 #### 所有反射相关方法
 
@@ -335,7 +335,7 @@ namespace Walterlv.Demo.Reflection
 
 - [c# - Is there a benefit of using IsDefined over GetCustomAttributes - Stack Overflow](https://stackoverflow.com/a/14719740/6233938)
 - [Accessing Attributes by Using Reflection (C#) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection?wt.mc_id=MVP)
-- [win10 uwp 反射](https://lindexi.gitee.io/post/win10-uwp-%E5%8F%8D%E5%B0%84.html)
+- [win10 uwp 反射](https://blog.lindexi.com/post/win10-uwp-%E5%8F%8D%E5%B0%84.html)
 - [Reference Source](https://referencesource.microsoft.com/#mscorlib/system/rttype.cs,a4aa0f217732eb81)
 - [A Super-Fast C# Extension Method using Expression Trees to Create an instance from a Type](http://geekswithblogs.net/mrsteve/archive/2012/02/19/a-fast-c-sharp-extension-method-using-expression-trees-create-instance-from-type-again.aspx)
 - [Retrieving Custom Attributes Using Reflection - Scott Dorman](https://scottdorman.github.io/2010/05/16/retrieving-custom-attributes-using-reflection/)

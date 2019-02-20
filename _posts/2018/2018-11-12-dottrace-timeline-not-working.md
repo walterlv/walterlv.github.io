@@ -72,7 +72,7 @@ dotTrace 启动性能分析的选项有四个，你可以阅读 [用 dotTrace �
 ![将自己添加到用户组中](/static/posts/2018-11-12-16-35-51.png)  
 ▲ 将自己添加到用户组中
 
-感谢 [林德熙](https://lindexi.gitee.io/lindexi/) 再次帮我截到一张中文版的图片：
+感谢 [林德熙](https://blog.lindexi.com/) 再次帮我截到一张中文版的图片：
 
 ![中文版的添加](/static/posts/2018-11-12-16-36-39.png)  
 ▲ 中文版的添加

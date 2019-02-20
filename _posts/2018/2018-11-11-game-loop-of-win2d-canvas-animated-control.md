@@ -26,7 +26,7 @@ Win2D 是 DirectX 的一个高层封装，提供了极大 DirectX 性能的同�
 
 ### 准备工作
 
-要使用 Win2D 进行简单的游戏开发，你需要先配置好一些 UWP 的开发环境，并且在你的项目中安装 Win2D.uwp 的 NuGet 包。阅读 [win10 uwp win2d 入门 看这一篇就够了 - 林德熙](https://lindexi.gitee.io/post/win10-uwp-win2d-%E5%85%A5%E9%97%A8-%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html) 了解如何在你的项目中安装 Win2D，并且了解 Win2D 基本的知识。
+要使用 Win2D 进行简单的游戏开发，你需要先配置好一些 UWP 的开发环境，并且在你的项目中安装 Win2D.uwp 的 NuGet 包。阅读 [win10 uwp win2d 入门 看这一篇就够了 - 林德熙](https://blog.lindexi.com/post/win10-uwp-win2d-%E5%85%A5%E9%97%A8-%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html) 了解如何在你的项目中安装 Win2D，并且了解 Win2D 基本的知识。
 
 ### Win2D 中的画布控件
 
@@ -181,6 +181,6 @@ private async void OnCreateResources(CanvasAnimatedControl sender, CanvasCreateR
 
 #### 参考资料
 
-- [win10 uwp win2d 入门 看这一篇就够了 - 林德熙](https://lindexi.gitee.io/post/win10-uwp-win2d-%E5%85%A5%E9%97%A8-%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html)
-- [win10 uwp win2d CanvasVirtualControl 与 CanvasAnimatedControl - 林德熙](https://lindexi.gitee.io/lindexi/post/win10-uwp-win2d-CanvasVirtualControl-%E4%B8%8E-CanvasAnimatedControl.html)
-- [win10 uwp 萤火虫效果 - 林德熙](https://lindexi.gitee.io/post/win10-uwp-%E8%90%A4%E7%81%AB%E8%99%AB%E6%95%88%E6%9E%9C.html)
+- [win10 uwp win2d 入门 看这一篇就够了 - 林德熙](https://blog.lindexi.com/post/win10-uwp-win2d-%E5%85%A5%E9%97%A8-%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html)
+- [win10 uwp win2d CanvasVirtualControl 与 CanvasAnimatedControl - 林德熙](https://blog.lindexi.com/post/win10-uwp-win2d-CanvasVirtualControl-%E4%B8%8E-CanvasAnimatedControl.html)
+- [win10 uwp 萤火虫效果 - 林德熙](https://blog.lindexi.com/post/win10-uwp-%E8%90%A4%E7%81%AB%E8%99%AB%E6%95%88%E6%9E%9C.html)

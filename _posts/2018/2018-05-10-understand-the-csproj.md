@@ -242,7 +242,7 @@ xml 声明部分完全没有在此解释的必要了，为兼容性提供了方�
 
 相信读完前面两个部分之后，你应该已经了解到在格式本身上，新旧格式之间其实并没有什么差异。或者更严格来说，差异只有一条——新格式在 Project 上指定了 `Sdk`。真正造成新旧格式在行为上的差别来源于默认为我们项目 `Import` 进来的那些 .props 和 .targets 不同。新格式通过 `Microsoft.NET.Sdk` 为我们导入了更现代化的 .props 和 .targets，而旧格式需要考虑到兼容性压力，只能引入旧的那些 .targets。
 
-新的 `Microsoft.NET.Sdk` 以不兼容的方式支持了各种新属性，例如新的 `TargetFrameworks` 代替旧的 `TargetFrameworkVersion`，使得我们的 C# 项目可以脱离 .NET Framework，引入其他各种各样的目标框架，例如 netstandard2.0、net472、uap10.0 等（可以参考 [从以前的项目格式迁移到 VS2017 新项目格式 - 林德熙](https://lindexi.gitee.io/post/%E4%BB%8E%E4%BB%A5%E5%89%8D%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E8%BF%81%E7%A7%BB%E5%88%B0-VS2017-%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F.html#%E5%A4%9A%E4%B8%AA%E6%A1%86%E6%9E%B6)）了解可以使用那些目标框架。
+新的 `Microsoft.NET.Sdk` 以不兼容的方式支持了各种新属性，例如新的 `TargetFrameworks` 代替旧的 `TargetFrameworkVersion`，使得我们的 C# 项目可以脱离 .NET Framework，引入其他各种各样的目标框架，例如 netstandard2.0、net472、uap10.0 等（可以参考 [从以前的项目格式迁移到 VS2017 新项目格式 - 林德熙](https://blog.lindexi.com/post/%E4%BB%8E%E4%BB%A5%E5%89%8D%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E8%BF%81%E7%A7%BB%E5%88%B0-VS2017-%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F.html#%E5%A4%9A%E4%B8%AA%E6%A1%86%E6%9E%B6)）了解可以使用那些目标框架。
 
 新的 `Microsoft.NET.Sdk` 以不兼容的方式原生支持了 NuGet 包管理。也就是说我们可以在不修改 csproj 的情况之下通过 NuGet 包来扩展 csproj 的功能。而旧的格式需要在 csproj 文件的末尾添加如下代码才可以获得其中一个 NuGet 包功能的支持：
 

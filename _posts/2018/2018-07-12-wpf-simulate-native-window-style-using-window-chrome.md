@@ -251,7 +251,7 @@ WPF 自定义窗口可是非常容易的，完全自定义样式、异形都不�
 
 UWP 应用对窗口样式的定制能力是非常小的，远远小于传统 Win32 应用。但因为其与系统原生集成，如果要求保证原生窗口体验，UWP 的定制能力又是各种方法里面最大的，而且 API 非常简单。
 
-如果你正在使用 UWP 开发应用，可参考林德熙的博客 [win10 uwp 标题栏](https://lindexi.gitee.io/post/win10-uwp-%E6%A0%87%E9%A2%98%E6%A0%8F.html) 来定制标题栏。
+如果你正在使用 UWP 开发应用，可参考林德熙的博客 [win10 uwp 标题栏](https://blog.lindexi.com/post/win10-uwp-%E6%A0%87%E9%A2%98%E6%A0%8F.html) 来定制标题栏。
 
 ---
 

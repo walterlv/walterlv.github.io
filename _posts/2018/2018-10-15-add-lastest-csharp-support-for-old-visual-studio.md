@@ -55,7 +55,7 @@ Microsoft.Net.Compilers 对项目本身没有什么要求，但需要编译项�
 <LangVersion>Latest</LangVersion>
 ```
 
-如果不知道如何添加，可以阅读 [VisualStudio 使用三个方法启动最新 C# 功能 - 林德熙](https://lindexi.gitee.io/post/VisualStudio-%E4%BD%BF%E7%94%A8%E4%B8%89%E4%B8%AA%E6%96%B9%E6%B3%95%E5%90%AF%E5%8A%A8%E6%9C%80%E6%96%B0-C-%E5%8A%9F%E8%83%BD.html)。
+如果不知道如何添加，可以阅读 [VisualStudio 使用三个方法启动最新 C# 功能 - 林德熙](https://blog.lindexi.com/post/VisualStudio-%E4%BD%BF%E7%94%A8%E4%B8%89%E4%B8%AA%E6%96%B9%E6%B3%95%E5%90%AF%E5%8A%A8%E6%9C%80%E6%96%B0-C-%E5%8A%9F%E8%83%BD.html)。
 
 #### 开始使用最新版本的 C# 特性
 

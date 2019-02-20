@@ -104,4 +104,4 @@ Image img = new Image();
 img.Source = bmp;
 ```
 
-关于 `GetThumbnailAsync` 的详细用法，我的好朋友林德熙有更详细的说明，参见：[win10 uwp 获得缩略图](https://lindexi.gitee.io/lindexi//post/win10-uwp-%E8%8E%B7%E5%BE%97%E7%BC%A9%E7%95%A5%E5%9B%BE.html)。
+关于 `GetThumbnailAsync` 的详细用法，我的好朋友林德熙有更详细的说明，参见：[win10 uwp 获得缩略图](https://blog.lindexi.com//post/win10-uwp-%E8%8E%B7%E5%BE%97%E7%BC%A9%E7%95%A5%E5%9B%BE.html)。

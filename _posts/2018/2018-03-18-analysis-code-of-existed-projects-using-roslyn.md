@@ -52,7 +52,7 @@ Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。
 
 ![Microsoft.CodeAnalysis](/static/posts/2018-03-18-19-00-19.png)
 
-当然，如果你只是做一些特定的事情，当然不需要安装这么全的 NuGet 包，像 [Roslyn 静态分析 - 林德熙](https://lindexi.gitee.io/lindexi/post/Roslyn-%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90.html) 的 demo 和 [Roslyn 编译与执行 - 吕毅](/post/compile-and-invoke-code-using-roslyn.html) 中的教程就不需要安装所有 NuGet 包。
+当然，如果你只是做一些特定的事情，当然不需要安装这么全的 NuGet 包，像 [Roslyn 静态分析 - 林德熙](https://blog.lindexi.com/post/Roslyn-%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90.html) 的 demo 和 [Roslyn 编译与执行 - 吕毅](/post/compile-and-invoke-code-using-roslyn.html) 中的教程就不需要安装所有 NuGet 包。
 
 **特别注意**！！！如果前面你是通过 .NET Core 项目改过来的，那么**还需要额外安装以下三个 NuGet 包，否则运行时会无法打开解决方案和项目**。
 

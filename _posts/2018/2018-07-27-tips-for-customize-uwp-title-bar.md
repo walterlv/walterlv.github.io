@@ -92,7 +92,7 @@ Window.Current.SetTitleBar(TitleBar);
 
 ### 适配移动设备
 
-移动设备上并不是标题栏，而是状态了和虚拟按键。关于扩展视图到这些区域，可以阅读 [win10 uwp 标题栏 - 林德熙](https://lindexi.gitee.io/post/win10-uwp-%E6%A0%87%E9%A2%98%E6%A0%8F.html)。
+移动设备上并不是标题栏，而是状态了和虚拟按键。关于扩展视图到这些区域，可以阅读 [win10 uwp 标题栏 - 林德熙](https://blog.lindexi.com/post/win10-uwp-%E6%A0%87%E9%A2%98%E6%A0%8F.html)。
 
 ---
 

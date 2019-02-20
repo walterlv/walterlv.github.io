@@ -65,7 +65,7 @@ position: starter
 
 你可以在项目属性的“生成”页中找到条件编译符号的设置。
 
-我自己用的 Visual Studio 是英文版的，但是也感谢小伙伴 [林德熙](https://lindexi.gitee.io/) 帮我截了一张中文版的图。
+我自己用的 Visual Studio 是英文版的，但是也感谢小伙伴 [林德熙](https://blog.lindexi.com/) 帮我截了一张中文版的图。
 
 ![Conditional Compilation Symbols](/static/posts/2018-12-24-21-34-59.png)  
 

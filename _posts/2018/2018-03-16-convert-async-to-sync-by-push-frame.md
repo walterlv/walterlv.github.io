@@ -16,7 +16,7 @@ categories: dotnet csharp
 1. 为什么有些方法不容易迁移到 `async`/`await`？
     - 参见微软的博客 `async`/`await` 最佳实践 [Async/Await - Best Practices in Asynchronous Programming](https://msdn.microsoft.com/en-us/magazine/jj991977.aspx)。如果某个方法从同步方法修改为异步方法（例如从 `var content = file.Read()` 修改为 `var content = await file.ReadAsync()`），那么调用此方法的整个调用链全部都要改成 `async`/`await` 才能让返回值在调用链中成功传递。
 1. 传统的异步转同步的方法有哪些？有什么坑？
-    - 参见我的好朋友[林德熙](https://lindexi.gitee.io/lindexi/)的博客 [win10 uwp 异步转同步](https://lindexi.gitee.io/post/win10-uwp-%E5%BC%82%E6%AD%A5%E8%BD%AC%E5%90%8C%E6%AD%A5.html)。文章里使用 `Task.Wait()` 或者 `Task.Result` 来获取异步方法的返回值。
+    - 参见我的好朋友[林德熙](https://blog.lindexi.com/)的博客 [win10 uwp 异步转同步](https://blog.lindexi.com/post/win10-uwp-%E5%BC%82%E6%AD%A5%E8%BD%AC%E5%90%8C%E6%AD%A5.html)。文章里使用 `Task.Wait()` 或者 `Task.Result` 来获取异步方法的返回值。
     - 这种方法会阻塞调用线程。如果调用线程是 UI 线程，那么 UI 将会无响应；更严重地，如果 UI 线程使用 `DispatcherSynchronizationContext`（参见我的另一篇文章 [DispatcherSynchronizationContext - walterlv](/post/yield-in-task-dispatcher.html)）进行线程上下文的同步，那么极有可能会造成死锁（参见我的另一篇文章 [使用 Task.Wait()？立刻死锁（deadlock） - walterlv](/post/deadlock-in-task-wait.html)）。
 
 ### 安全的方法

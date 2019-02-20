@@ -727,7 +727,7 @@ dnSpy 和 dotPeek 实际上都忽略了这个特性，依然能毫无障碍地�
 
 dnSpy 可以做挺多事儿的，比如：
 
-- [断点调试 Windows 源代码 - lindexi](https://lindexi.gitee.io/post/%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95-Windows-%E6%BA%90%E4%BB%A3%E7%A0%81.html)
+- [断点调试 Windows 源代码 - lindexi](https://blog.lindexi.com/post/%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95-Windows-%E6%BA%90%E4%BB%A3%E7%A0%81.html)
 - [神器如 dnSpy，无需源码也能修改 .NET 程序 - walterlv](/post/edit-and-recompile-assembly-using-dnspy.html)
 
 ### 密封

@@ -66,7 +66,7 @@ gem install jekyll bundler
 
 可能你的博客来源于这些地方：
 - 从 [Jekyll Themes](http://jekyllthemes.org/) 挑选并下载了一款主题；
-- 克隆了[自己或别人的博客站点](https://lindexi.gitee.io/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E6%9C%AC%E6%A8%A1%E6%9D%BF%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2.html)，准备改改自己用；
+- 克隆了[自己或别人的博客站点](https://blog.lindexi.com/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E6%9C%AC%E6%A8%A1%E6%9D%BF%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2.html)，准备改改自己用；
 
 那么我们开始。首先在博客的根目录打开命令行，接下来的操作都在命令行中。
 

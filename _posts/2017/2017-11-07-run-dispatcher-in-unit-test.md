@@ -37,7 +37,7 @@ private void RunInDispatcher(Action action)
 这个方法借鉴了此前我和我朋友研究过的 WPF DoEvents（虽然已被弃用）：
 
 - [深入了解 WPF Dispatcher 的工作原理（PushFrame 部分） - walterlv](/post/dotnet/2017/09/26/dispatcher-push-frame.html)
-- [wpf DoEvents - 林德熙](https://lindexi.gitee.io/lindexi/post/wpf-DoEvents.html)
+- [wpf DoEvents - 林德熙](https://blog.lindexi.com/post/wpf-DoEvents.html)
 
 ---
 

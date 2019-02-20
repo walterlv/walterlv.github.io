@@ -158,7 +158,7 @@ public class WalterlvCollection : IEnumerable
 var collection = new WalterlvCollection
 {
     ["吕毅"] = "https://walterlv.com/",
-    ["林德熙"] = "https://lindexi.gitee.io/"
+    ["林德熙"] = "https://blog.lindexi.com/"
 };
 ```
 

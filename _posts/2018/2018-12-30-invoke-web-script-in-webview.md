@@ -92,4 +92,4 @@ await LoginWebView.InvokeScriptAsync("eval", new[]
 #### 参考资料
 
 - [JavaScript eval() 函数](http://www.w3school.com.cn/js/jsref_eval.asp)
-- [win10 uwp 模拟网页输入](https://lindexi.gitee.io/lindexi/post/win10-uwp-%E6%A8%A1%E6%8B%9F%E7%BD%91%E9%A1%B5%E8%BE%93%E5%85%A5.html)
+- [win10 uwp 模拟网页输入](https://blog.lindexi.com/post/win10-uwp-%E6%A8%A1%E6%8B%9F%E7%BD%91%E9%A1%B5%E8%BE%93%E5%85%A5.html)

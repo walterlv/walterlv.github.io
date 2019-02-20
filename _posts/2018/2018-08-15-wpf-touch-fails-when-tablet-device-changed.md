@@ -24,7 +24,7 @@ This post is written in **multiple languages**. Please select yours:
 
 - 本文所述的“触摸失效问题”我在 [WPF 程序无法触摸操作](/wpf/2017/09/12/touch-not-work-in-wpf.html) 一文中有所提及，但本文偏向于分析其内部发生的原因。
 
-- 本文与 [林德熙](https://lindexi.gitee.io/lindexi/) 的 [WPF 插拔触摸设备触摸失效](https://lindexi.gitee.io/post/WPF-%E6%8F%92%E6%8B%94%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87%E8%A7%A6%E6%91%B8%E5%A4%B1%E6%95%88.html) 所述的是同一个问题。那篇文章会更多的偏向于源码解读，而本文更多地偏向于分析触摸失效的过程。
+- 本文与 [林德熙](https://blog.lindexi.com/) 的 [WPF 插拔触摸设备触摸失效](https://blog.lindexi.com/post/WPF-%E6%8F%92%E6%8B%94%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87%E8%A7%A6%E6%91%B8%E5%A4%B1%E6%95%88.html) 所述的是同一个问题。那篇文章会更多的偏向于源码解读，而本文更多地偏向于分析触摸失效的过程。
 
 ---
 
@@ -142,10 +142,10 @@ catch(ArgumentException)
 
 由于 WPF 的触摸原理涉及到较多类型和源码，需要大量篇幅描述，所以不在本文中说明。阅读以下文章可以更加深入地了解这个触摸失效的问题：
 
-- [WPF 插拔触摸设备触摸失效 - lindexi](https://lindexi.gitee.io/post/WPF-%E6%8F%92%E6%8B%94%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87%E8%A7%A6%E6%91%B8%E5%A4%B1%E6%95%88.html)
+- [WPF 插拔触摸设备触摸失效 - lindexi](https://blog.lindexi.com/post/WPF-%E6%8F%92%E6%8B%94%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87%E8%A7%A6%E6%91%B8%E5%A4%B1%E6%95%88.html)
 - [通过解读 WPF 触摸源码，分析 WPF 插拔设备触摸失效的问题（分析篇） - walterlv](/post/analyze-wpf-losting-touch-when-tablet-device-changed.html)
 
 本文所有的 .NET Framework 源码均由 [dnSpy](https://github.com/0xd4d/dnSpy) 反编译得出，分析过程也基本是借助 dnSpy 的无 pdb 调试特性进行。关于 dnSpy 的更多使用，可以阅读：
 
-- [断点调试 Windows 源代码 - lindexi](https://lindexi.gitee.io/post/%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95-Windows-%E6%BA%90%E4%BB%A3%E7%A0%81.html)
+- [断点调试 Windows 源代码 - lindexi](https://blog.lindexi.com/post/%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95-Windows-%E6%BA%90%E4%BB%A3%E7%A0%81.html)
 - [神器如 dnSpy，无需源码也能修改 .NET 程序 - walterlv](/post/edit-and-recompile-assembly-using-dnspy.html)

@@ -52,7 +52,7 @@ OPML 官网对其作用的描述为：
     <outline text="walterlv" title="walterlv" type="rss" xmlUrl="https://walterlv.com/feed.xml" htmlUrl="https://walterlv.com/" />
 
     <outline title="Team" text="Team">
-      <outline text="林德熙" title="林德熙" type="rss" xmlUrl="https://lindexi.gitee.io/lindexi/feed.xml" htmlUrl="https://lindexi.gitee.io/" />
+      <outline text="林德熙" title="林德熙" type="rss" xmlUrl="https://blog.lindexi.com/feed.xml" htmlUrl="https://blog.lindexi.com/" />
     </outline>
 
     <outline title="Microsoft" text="Microsoft">

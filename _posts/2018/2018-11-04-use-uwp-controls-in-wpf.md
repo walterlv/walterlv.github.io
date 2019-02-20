@@ -11,7 +11,7 @@ Windows Community Toolkit 再次更新到 5.0。以前可以在 WPF 中使用有
 
 关于 Windows Community Toolkit 早期版本的 Xaml Bridge，可以参见：
 
-- [WPF 使用 Edge 浏览器 - 林德熙](https://lindexi.gitee.io/post/WPF-%E4%BD%BF%E7%94%A8-Edge-%E6%B5%8F%E8%A7%88%E5%99%A8.html)
+- [WPF 使用 Edge 浏览器 - 林德熙](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-Edge-%E6%B5%8F%E8%A7%88%E5%99%A8.html)
 
 <div id="toc"></div>
 

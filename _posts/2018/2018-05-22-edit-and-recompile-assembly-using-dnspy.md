@@ -10,7 +10,7 @@ categories: dotnet
 
 ---
 
-dnSpy 的主打功能是无需源码的调试，[林德熙](https://lindexi.gitee.io/lindexi/) 有一篇文章 [断点调试 Windows 源代码](https://lindexi.gitee.io/post/%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95-Windows-%E6%BA%90%E4%BB%A3%E7%A0%81.html) 介绍了这个方法。而本文主要说其另一项强大的功能 —— 修改程序集。
+dnSpy 的主打功能是无需源码的调试，[林德熙](https://blog.lindexi.com/) 有一篇文章 [断点调试 Windows 源代码](https://blog.lindexi.com/post/%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95-Windows-%E6%BA%90%E4%BB%A3%E7%A0%81.html) 介绍了这个方法。而本文主要说其另一项强大的功能 —— 修改程序集。
 
 <div id="toc"></div>
 

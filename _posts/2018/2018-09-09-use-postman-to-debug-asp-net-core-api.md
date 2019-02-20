@@ -15,7 +15,7 @@ categories: dotnet csharp asp
 
 ### 简单的 ASP.NET Core 程序
 
-如果你还不清楚如何编写一个 ASP.NET Core 程序，可以阅读 [win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序](https://lindexi.gitee.io/post/win10-uwp-%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E4%BD%BF%E7%94%A8-asp-dotnet-core-%E5%81%9A-cs-%E7%A8%8B%E5%BA%8F.html) 学习做一个最简单的版本。
+如果你还不清楚如何编写一个 ASP.NET Core 程序，可以阅读 [win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序](https://blog.lindexi.com/post/win10-uwp-%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E4%BD%BF%E7%94%A8-asp-dotnet-core-%E5%81%9A-cs-%E7%A8%8B%E5%BA%8F.html) 学习做一个最简单的版本。
 
 我们的重点不是写一个 ASP.NET Core 程序，所以我只贴出最简单的路由地址的处理。
 
@@ -95,8 +95,8 @@ namespace Walterlv.WebApi.Rssman.Controllers
     {
         "id": 2,
         "name": "lindexi",
-        "feedUrl": "https://lindexi.gitee.io/lindexi/feed.xml",
-        "siteUrl": "https://lindexi.gitee.io/"
+        "feedUrl": "https://blog.lindexi.com/feed.xml",
+        "siteUrl": "https://blog.lindexi.com/"
     }
 ]
 ```

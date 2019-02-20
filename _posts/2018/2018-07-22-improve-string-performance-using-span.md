@@ -74,4 +74,4 @@ namespace Walterlv.Demo.StringSpan
 
 - [Welcome to C# 7.2 and Span - .NET Blog](https://blogs.msdn.microsoft.com/dotnet/2017/11/15/welcome-to-c-7-2-and-span/)
 - [C# 7.2: Understanding Span - Connect(); 2017 - Channel 9](https://channel9.msdn.com/Events/Connect/2017/T125)
-- [C# Span 入门](https://lindexi.gitee.io/post/C-Span-%E5%85%A5%E9%97%A8.html)
+- [C# Span 入门](https://blog.lindexi.com/post/C-Span-%E5%85%A5%E9%97%A8.html)

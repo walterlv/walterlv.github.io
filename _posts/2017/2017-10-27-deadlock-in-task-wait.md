@@ -9,8 +9,8 @@ categories: dotnet csharp
 
 ---
 
-文章作者 [林德熙](https://lindexi.gitee.io/lindexi/) 已经修复了描述：
-- [win10 uwp 异步转同步](https://lindexi.gitee.io/lindexi/post/win10-uwp-%E5%BC%82%E6%AD%A5%E8%BD%AC%E5%90%8C%E6%AD%A5.html)
+文章作者 [林德熙](https://blog.lindexi.com/) 已经修复了描述：
+- [win10 uwp 异步转同步](https://blog.lindexi.com/post/win10-uwp-%E5%BC%82%E6%AD%A5%E8%BD%AC%E5%90%8C%E6%AD%A5.html)
 
 ---
 
@@ -60,7 +60,7 @@ async Task DoAsync()
 
 ### 什么情况下不会产生死锁？
 
-阅读了本文一开始说的那篇文章 [win10 uwp 异步转同步](https://lindexi.gitee.io/lindexi/post/win10-uwp-%E5%BC%82%E6%AD%A5%E8%BD%AC%E5%90%8C%E6%AD%A5.html) 后，你一定好奇为什么此文的情况不会产生死锁。
+阅读了本文一开始说的那篇文章 [win10 uwp 异步转同步](https://blog.lindexi.com/post/win10-uwp-%E5%BC%82%E6%AD%A5%E8%BD%AC%E5%90%8C%E6%AD%A5.html) 后，你一定好奇为什么此文的情况不会产生死锁。
 
 那是因为，它不满足本文提到的充分条件——`StorageFolder.GetFolderFromPathAsync("")` 和 `StorageFolder.GetFolderFromPathAsync("")` 这两个方法**并不会在后台线程执行**！
 
