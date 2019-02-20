@@ -1,7 +1,7 @@
 ---
 title: ".NET 中创建支持集合初始化器的类型"
 publishDate: 2018-10-08 16:34:13 +0800
-date: 2018-12-14 09:54:00 +0800
+date: 2019-02-20 19:23:47 +0800
 categories: dotnet
 ---
 
@@ -87,7 +87,7 @@ public class WalterlvCollection : IEnumerable
 var collection = new WalterlvCollection
 {
     "https://walterlv.com/",
-    "https://blog.csdn.net/wpwalter",
+    "https://walterlv.blog.csdn.net/",
 };
 ```
 
@@ -110,7 +110,7 @@ public class WalterlvCollection : IEnumerable
 var collection = new WalterlvCollection
 {
     { "https://walterlv.com/", true },
-    { "https://blog.csdn.net/wpwalter", true },
+    { "https://walterlv.blog.csdn.net/", true },
 };
 ```
 
@@ -130,7 +130,7 @@ public class WalterlvCollection : IEnumerable
 var collection = new WalterlvCollection
 {
     { "https://walterlv.com/", true, "walterlv" },
-    { "https://blog.csdn.net/wpwalter", true, "walterlv" },
+    { "https://walterlv.blog.csdn.net/", true, "walterlv" },
 };
 ```
 
