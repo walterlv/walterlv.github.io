@@ -1,6 +1,6 @@
 ---
 title: "将 svn 仓库迁移到 git 仓库"
-date: 2019-02-20 10:21:06 +0800
+date: 2019-02-20 10:22:31 +0800
 categories: git
 position: starter
 ---
@@ -24,6 +24,8 @@ position: starter
 ![版本库浏览器](/static/posts/2019-02-20-10-11-00.png)
 
 我们所要做的只有一件事——复制顶部那个 url。
+
+得到了这个 url 后，像我这种洁癖就卸载 TortoiseSVN 了。
 
 ### 将 svn 仓库迁移到 git 仓库
 
