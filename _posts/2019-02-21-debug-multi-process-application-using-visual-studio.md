@@ -1,6 +1,6 @@
 ---
 title: "使用 Visual Studio 调试多进程的程序"
-date: 2019-02-21 11:15:19 +0800
+date: 2019-02-21 11:16:03 +0800
 categories: dotnet visualstudio
 position: knowledge
 ---
@@ -113,9 +113,9 @@ namespace Walterlv.Debugging
 
 对于此方法，我的建议是平常不要在团队项目中使用（这会让团队中的其他人不方便）。但是由于代码简单不需要配置，所以临时使用的话还是非常建议的。
 
-<!-- ### 在代码中调用 Visual Studio 的 COM 组件 API
+### 在代码中调用 Visual Studio 的 COM 组件 API
 
-编写中…… -->
+编写中……
 
 ### 总结
 
