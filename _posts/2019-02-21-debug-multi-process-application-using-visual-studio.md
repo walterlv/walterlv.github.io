@@ -1,6 +1,6 @@
 ---
 title: "使用 Visual Studio 调试多进程的程序"
-date: 2019-02-21 08:22:09 +0800
+date: 2019-02-21 11:15:19 +0800
 categories: dotnet visualstudio
 position: knowledge
 ---
@@ -113,9 +113,20 @@ namespace Walterlv.Debugging
 
 对于此方法，我的建议是平常不要在团队项目中使用（这会让团队中的其他人不方便）。但是由于代码简单不需要配置，所以临时使用的话还是非常建议的。
 
-### 在代码中调用 Visual Studio 的 COM 组件 API
+<!-- ### 在代码中调用 Visual Studio 的 COM 组件 API
+
+编写中…… -->
 
 ### 总结
+
+综上，虽然我给出了 4 种不同的方法，但实际上没有任何一种方法能够像我们调试单个原生托管程序那样方便。每一种方法都各有优劣，一般情况下建议你使用我标注了“推荐”的方法；不过也建议针对不同的情况采用不同的方案。
+
+1. 简单的个人项目，希望快速开始多进程/子进程调试
+    - **使用附加调试器**
+1. 你有多个项目组成的多进程，并且这些进程恰好可以互相唤起，它们之间的启动顺序不影响父子进程的组成
+    - **使用 Visual Studio 的多启动项目**
+1. 你只有单个项目组成的多进程，或者多个进程之间依赖于启动顺序来组成父子进程
+    - **安装插件 [Microsoft Child Process Debugging Power Tool](https://marketplace.visualstudio.com/items?itemName=vsdbgplat.MicrosoftChildProcessDebuggingPowerTool)**
 
 ---
 
