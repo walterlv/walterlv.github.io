@@ -1,6 +1,6 @@
 ---
 title: "使用 Visual Studio 调试多进程的程序"
-date: 2019-02-21 11:16:03 +0800
+date: 2019-02-21 15:24:56 +0800
 categories: dotnet visualstudio
 position: knowledge
 ---
@@ -132,6 +132,8 @@ namespace Walterlv.Debugging
 
 #### 参考资料
 
+- [Azure DevOps Blog - Introducing the Child Process Debugging Power Tool](https://devblogs.microsoft.com/devops/introducing-the-child-process-debugging-power-tool/)
+- [Microsoft Child Process Debugging Power Tool - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=vsdbgplat.MicrosoftChildProcessDebuggingPowerTool)
 - [attach a process to current visual studio debugger silently using command line ..](https://social.msdn.microsoft.com/Forums/vstudio/en-US/337c252e-98b3-4e88-b380-e9a58d88a706/attach-a-process-to-current-visual-studio-debugger-silently-using-command-line-?forum=vsdebug)
 - [How to get DTE from Visual Studio process ID? – Kirill Osenkov](https://blogs.msdn.microsoft.com/kirillosenkov/2011/08/10/how-to-get-dte-from-visual-studio-process-id/)
 - [How to start Visual Studio programmatically – Kirill Osenkov](https://blogs.msdn.microsoft.com/kirillosenkov/2009/03/03/how-to-start-visual-studio-programmatically/)
