@@ -1,7 +1,7 @@
 ---
 title: "项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦）"
 publishDate: 2018-04-12 21:03:52 +0800
-date: 2018-08-29 09:36:41 +0800
+date: 2019-02-21 18:48:37 +0800
 categories: visualstudio nuget csharp dotnet msbuild
 ---
 
@@ -49,6 +49,8 @@ categories: visualstudio nuget csharp dotnet msbuild
 
 + `$(MSBuildRuntimeType)`
     - 例如你可以使用 `Condition=" '$(MSBuildRuntimeType)' == 'Core'"` 来判断当前编译环境是否是 .NET Core。
+
+关于输出路径的更多说明，可以阅读我的另一篇博客：[如何更精准地设置 C# / .NET Core 项目的输出路径？（包括添加和删除各种前后缀）](/post/the-properties-that-affetcs-project-output-path.html)
 
 ---
 
