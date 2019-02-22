@@ -3,6 +3,7 @@ title: "为 WPF 程序添加 Windows 跳转列表的支持"
 date: 2019-02-21 21:54:11 +0800
 categories: windows wpf dotnet csharp
 position: knowledge
+published: false
 ---
 
 Windows 跳转列表是自 Windows 7 时代就带来的功能，这一功能是跟随 Windows 7 的任务栏而发布的。当时应用程序要想用上这样的功能需要调用 shell 提供的一些 API。
