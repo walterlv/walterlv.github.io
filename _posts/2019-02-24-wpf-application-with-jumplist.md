@@ -1,6 +1,6 @@
 ---
 title: "为 WPF 程序添加 Windows 跳转列表的支持"
-date: 2019-02-24 15:12:07 +0800
+date: 2019-02-24 16:40:50 +0800
 categories: windows wpf dotnet csharp
 position: knowledge
 ---
@@ -52,10 +52,26 @@ Windows 跳转列表是自 Windows 7 时代就带来的功能，这一功能是�
 
 ### 定制跳转列表的功能
 
-编写中……
+`JumpList` 有两个属性 `ShowRecentCategory` 和 `ShowFrequentCategory`，如果指定为 `true` 则表示操作系统会自动为我们保存此程序最近使用的文件的最频繁使用的文件。
+
+Windows 的跳转列表有两种不同的列表项，一种是“任务”，另一种是文件。至于这两种不同的列表项如何在跳转列表中安排，则是操作系统的事情。
+
+这两种不同的列表项对应的类型分别是：
+
+- `JumpTask`
+- `JumpPath`
+
+`JumpTask` 可以理解为这就是一个应用程序的快捷方式，可以指定应用程序的路径（`ApplicationPath`）、工作目录（`WorkingDirectory`）、启动参数（`Arguments`）和图标（`IconResourcePath`、`IconResourceIndex`）。如果不指定路径，那么就默认为当前程序。也可以指定显示的名称（`Title`）和鼠标移上去可以看的描述（`Description`）。
+
+`JumpPath` 则是一个路径，可以是文件或者文件夹的路径。通常用来作为最近使用文件的展示。**特别说明**：你必须关联某种文件类型这种类型的文件才会显示到 `JumpPath` 中。
+
+另外，`JumpTask` 和 `JumpPath` 都有一个 `CustomCategory` 属性可以指定类别。对于 `JumpTask`，如果不指定类别，那么就会在默认的“任务”（Task）类别中。对于 `JumpPath`，如果不指定类别，就在最近的文件中。
+
+`JumpTask` 如果不指定 `Title` 和 `CustomCategory` 属性，那么他会成为一个分隔符。
 
 ---
 
 #### 参考资料
 
 - [JumpList Class (System.Windows.Shell) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.windows.shell.jumplist)
+- [Taskbar Extensions - Windows applications - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/shell/taskbar-extensions)
