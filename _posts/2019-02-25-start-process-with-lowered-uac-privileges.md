@@ -1,6 +1,6 @@
 ---
 title: "在 Windows 系统上降低 UAC 权限运行程序（从管理员权限降权到普通用户权限）"
-date: 2019-02-24 22:24:06 +0800
+date: 2019-02-25 07:28:19 +0800
 categories: windows dotnet csharp
 position: problem
 ---
