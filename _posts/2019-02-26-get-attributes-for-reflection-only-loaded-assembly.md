@@ -1,6 +1,6 @@
 ---
 title: "仅反射加载（ReflectionOnlyLoadFrom）的 .NET 程序集，如何反射获取它的 Attribute 元数据呢？"
-date: 2019-02-26 21:20:39 +0800
+date: 2019-02-26 21:28:08 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -36,21 +36,23 @@ foreach (CustomAttributeData data in customAttributesData)
 }
 ```
 
-比如我们要获取这个程序集的版本号，正常我们写 `assembly.GetCustomAttribute<AssemblyVersionAttribute>().Version`，但是这里我们无法生成 `AssemblyVersionAttribute` 的实例，我们只能这么写：
+比如我们要获取这个程序集的版本号，正常我们写 `assembly.GetCustomAttribute<AssemblyFileVersionAttribute>().Version`，但是这里我们无法生成 `AssemblyFileVersionAttribute` 的实例，我们只能这么写：
 
 ```csharp
 var versionString = assembly.GetCustomAttributesData()
-    .FirstOrDefault(x => x.AttributeType.FullName == typeof(AssemblyVersionAttribute).FullName)
+    .FirstOrDefault(x => x.AttributeType.FullName == typeof(AssemblyFileVersionAttribute).FullName)
     ?.ConstructorArguments[0].Value as string ?? "0.0";
 var version = new Version(versionString);
 ```
 
 代码解读是这样的：
 
-1. 我们从拿到的所有的 `Attribute` 元数据中找到第一个名称与 `AssemblyVersionAttribute` 相同的数据；
-1. 从数据的构造函数参数中找到传入的参数值，而这个值就是我们定义 `AssemblyVersionAttribute` 时传入的参数的实际值。
+1. 我们从拿到的所有的 `Attribute` 元数据中找到第一个名称与 `AssemblyFileVersionAttribute` 相同的数据；
+1. 从数据的构造函数参数中找到传入的参数值，而这个值就是我们定义 `AssemblyFileVersionAttribute` 时传入的参数的实际值。
 
-因为我们知道 `AssemblyVersionAttribute` 的构造函数只有一个，所以我们确信可以从第一个参数中拿到我们想要的值。
+因为我们知道 `AssemblyFileVersionAttribute` 的构造函数只有一个，所以我们确信可以从第一个参数中拿到我们想要的值。
+
+顺便一提，我们使用 `AssemblyFileVersionAttribute` 而不是使用 `AssemblyVersionAttribute` 是因为使用 .NET Core 新格式（基于 Microsoft.NET.Sdk）编译出来的程序集默认是不带 `AssemblyVersionAttribute` 的。详见：[语义版本号（Semantic Versioning） - walterlv](https://walterlv.com/post/semantic-version.html)。
 
 ---
 
