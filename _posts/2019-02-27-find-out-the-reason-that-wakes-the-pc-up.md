@@ -1,6 +1,6 @@
 ---
 title: "电脑总是意外从睡眠状态唤醒，可以找出原因然后解决"
-date: 2019-02-24 16:41:14 +0800
+date: 2019-02-26 20:43:15 +0800
 categories: windows
 position: problem
 published: false
