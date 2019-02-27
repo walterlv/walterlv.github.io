@@ -1,6 +1,6 @@
 ---
 title: "About to Study and Write"
-date: 2019-02-20 08:16:34 +0800
+date: 2019-02-27 11:14:50 +0800
 categories: post
 published: false
 ---
@@ -31,14 +31,8 @@ published: false
 - NET Standard 2.1
     - [walterlv/Walterlv.Demo.NETStandardPreview](https://github.com/walterlv/Walterlv.Demo.NETStandardPreview)
 
-- 私有源 NuGet
-    - [Browse Private Feeds in MyGet Gallery - MyGet](https://dotnet.myget.org/gallery)
-
 - null of C# 8.0
     - [C# 8 & No More NullReferenceExceptions – What about legacy code? – csharp.christiannagel.com](https://csharp.christiannagel.com/2018/06/20/nonnullablereferencetypes/)
-
-- NuGet 源
-    - [华为云提供针对Nuget包管理器的缓存加速服务测试 - dotNET跨平台 - CSDN博客](https://blog.csdn.net/sD7O95O/article/details/86662880)
 
 - WCF
     - [关于.NET Core是否应该支持WCF Hosting的争论_IT新闻_博客园](https://news.cnblogs.com/n/606754/)
