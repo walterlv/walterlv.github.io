@@ -39,3 +39,4 @@ position: knowledge
 呃……这部分只是 NuGet 网站而已，你可以在这里浏览 NuGet 包的各种信息，但是它不提供源。
 
 - [FuGet Gallery - https://www.fuget.org/](https://www.fuget.org/)
+    - 此项目开源：[praeclarum/FuGetGallery: An alternative web UI for browsing nuget packages](https://github.com/praeclarum/FuGetGallery)
