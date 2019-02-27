@@ -1,6 +1,6 @@
 ---
 title: "我收集的各种公有 NuGet 源"
-date: 2019-02-27 11:33:39 +0800
+date: 2019-02-27 12:27:27 +0800
 categories: dotnet nuget
 position: knowledge
 ---
@@ -10,6 +10,12 @@ position: knowledge
 ---
 
 <div id="toc"></div>
+
+### 如何添加本文介绍的 NuGet 源？
+
+请参见：
+
+- [全局或为单独的项目添加自定义的 NuGet 源](/post/add-custom-nuget-source.html)
 
 ### 官方 NuGet 源
 
