@@ -1,6 +1,6 @@
 ---
 title: "我收集的各种公有 NuGet 源"
-date: 2019-02-27 11:14:37 +0800
+date: 2019-02-27 11:33:39 +0800
 categories: dotnet nuget
 position: knowledge
 ---
@@ -30,9 +30,14 @@ position: knowledge
 
 ### 其他 NuGet 源
 
-- MyGet <https://dotnet.myget.org/gallery>
+- [MyGet](https://dotnet.myget.org/gallery)
     - 这是一个很激进的 NuGet 源，包含各种日构建包（其中包括 .NET Standard 或者 .NET Core 等库的日构建版本），所以如果你希望尝试最新的 API 最新的功能，最好设置此 NuGet 源。
     - <https://dotnet.myget.org/F/dotnet-core/api/v3/index.json>
+
+### 私有 NuGet 源
+
+- [Installing private NuGet packages · Gemfury Dev Center](https://gemfury.com/help/nuget-server/)
+    - 这是私有 NuGet 源，你可以在上面取得独立的 NuGet 链接，上面只有自己私有的 NuGet 包
 
 ### NuGet 网站
 
