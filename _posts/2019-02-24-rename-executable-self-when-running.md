@@ -1,6 +1,7 @@
 ---
 title: "Windows 上的应用程序在运行期间可以给自己改名（可以做 OTA 自我更新）"
-date: 2019-02-24 20:15:05 +0800
+publishDate: 2019-02-24 20:15:05 +0800
+date: 2019-02-27 10:22:06 +0800
 categories: windows dotnet csharp
 position: knowledge
 ---
@@ -28,6 +29,12 @@ position: knowledge
 ![已经成功改名](/static/posts/2019-02-24-17-28-14.png)
 
 值得注意的是，你不能跨驱动器移动此文件。
+
+### 不止是 exe 文件，dll 文件也是可以改名的
+
+实际上，不止是 exe 文件，在 exe 程序运行期间，即使用到了某些 dll 文件，这些 dll 文件也是可以改名的。
+
+当然，一个 exe 的运行不一定在启动期间就加载好了所有的 dll，所以如果你在 exe 启动之后，某个 dll 加载之前改了那个 dll 的名称，那么会出现找不到 dll 的情况，可能导致程序崩溃。
 
 ### 为什么 Windows 上的可执行程序可以在运行期间改名？
 
