@@ -1,6 +1,7 @@
 ---
 title: "在 Windows 系统上降低 UAC 权限运行程序（从管理员权限降权到普通用户权限）"
-date: 2019-02-25 07:28:19 +0800
+publishDate: 2019-02-25 07:28:19 +0800
+date: 2019-02-27 08:58:48 +0800
 categories: windows dotnet csharp
 position: problem
 ---
@@ -35,6 +36,8 @@ if (principal.IsInRole(WindowsBuiltInRole.Administrator))
     // 当前正在以管理员权限运行。
 }
 ```
+
+此代码如果在 .NET Core 中编写，需要额外安装 Windows 兼容包：[Microsoft.Windows.Compatibility](https://www.nuget.org/packages/Microsoft.Windows.Compatibility)。
 
 ### 方法一：使用 explorer.exe 代理运行程序（推荐）
 
