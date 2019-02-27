@@ -1,6 +1,6 @@
 ---
 title: "在 MSBuild 编译项目时阻止输出所有的警告信息"
-date: 2019-02-27 17:23:10 +0800
+date: 2019-02-27 17:35:48 +0800
 categories: msbuild dotnet visualstudio
 position: knowledge
 ---
@@ -10,6 +10,8 @@ position: knowledge
 ---
 
 在使用 msbuild 命令编译项目的时候，如果存在大量的警告，输出量会非常多。如果我们使用 msbuild 命令编译来定位项目的编译错误，那么这些警告将会导致我们准确查找错误的效率明显降低。
+
+当然，**这种问题的首选解决方案是 —— 真的修复掉这些警告**！！！
 
 那么可以用什么方式临时关闭 msbuild 命令编译时的警告呢？可以输入如下命令：
 
