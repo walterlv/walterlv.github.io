@@ -1,7 +1,7 @@
 ---
 title: "项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦）"
 publishDate: 2018-05-10 21:49:21 +0800
-date: 2019-02-28 10:44:54 +0800
+date: 2019-02-28 10:47:02 +0800
 categories: visualstudio nuget csharp dotnet msbuild
 ---
 
