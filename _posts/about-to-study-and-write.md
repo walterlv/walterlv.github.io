@@ -17,6 +17,9 @@ published: false
 
 ### About to Write
 
+- .NET Framework 启动性能
+    - [multicore - Does ProfileOptimization actually work? - Stack Overflow](https://stackoverflow.com/questions/12968029/does-profileoptimization-actually-work?tdsourcetag=s_pctim_aiomsg)
+
 - 获取硬件信息
     - [How To Get Hardware Information (CPU ID, MainBoard Info, Hard Disk Serial, System Information , ...) - CodeProject](https://www.codeproject.com/Articles/17973/How-To-Get-Hardware-Information-CPU-ID-MainBoard-I)
 
