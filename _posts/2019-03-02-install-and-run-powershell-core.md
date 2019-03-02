@@ -1,6 +1,6 @@
 ---
 title: "安装和运行 .NET Core 版本的 PowerShell"
-date: 2019-03-02 17:06:04 +0800
+date: 2019-03-02 17:11:02 +0800
 categories: dotnet powershell
 position: knowledge
 ---
@@ -39,4 +39,4 @@ Windows 平台上建议下载 msi 格式的安装包，这样它可以帮助你�
 
 如果你要在其他的终端使用 PowerShell Core，那么可以参考我的另一篇博客：
 
-- [用四种方法让你的 Windows 应用程序在任意路径也能够直接通过文件名执行 - 吕毅](/post/run-your-application-without-full-executable-path.html)
+- [让你的 Windows 应用程序在任意路径也能够直接通过文件名执行 - 吕毅](/post/run-your-application-without-full-executable-path.html)
