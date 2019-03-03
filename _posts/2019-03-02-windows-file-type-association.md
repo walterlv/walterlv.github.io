@@ -1,7 +1,7 @@
 ---
 title: "如何为你的 Windows 应用程序关联一种或多种文件类型"
 publishDate: 2019-03-02 21:22:40 +0800
-date: 2019-03-03 13:22:06 +0800
+date: 2019-03-03 14:01:48 +0800
 categories: dotnet windows csharp
 position: knowledge
 ---
@@ -74,6 +74,10 @@ HKEY_CURRENT_USER\Software\Classes
 前面的 `.walv` 和 `lvyi` 是我自己定义的两种文件类型，我将它们的 `(Default)` 值设置成 `Walterlv.Foo.1`；而 `Walterlv.Foo.1` 就是前面说的应用程序标识符（ProgID）。后面的又新建了一个 `Walterlv.Foo.1` 的键，其 `(Default)` 值设置成了我们这个应用关联时使用的名称，也就是资源管理器中显示这个文件的时候使用的名称。
 
 ![在注册表中的 Walterlv.Foo.1](/static/posts/2019-03-02-20-51-54.png)
+
+只要我们完成了以上的步骤，我们就能在资源管理器中看到我们的文件关联（虽然双击打不开）：
+
+![在资源管理器中看到的文件关联](/static/posts/2019-03-03-14-01-09.png)
 
 **关于注册表路径的说明**：
 
