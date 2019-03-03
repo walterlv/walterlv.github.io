@@ -1,7 +1,7 @@
 ---
 title: "如何为你的 Windows 应用程序关联一种或多种文件类型"
 publishDate: 2019-03-02 21:22:40 +0800
-date: 2019-03-03 14:05:49 +0800
+date: 2019-03-03 14:17:27 +0800
 categories: dotnet windows csharp
 position: knowledge
 ---
@@ -67,7 +67,7 @@ HKEY_CURRENT_USER\Software\Classes
         shell
             open
                 command
-                    (Default) = C:\Users\lvyi\AppData\Local\Walterlv.Foo\walterlv.exe "%1"
+                    (Default) = "C:\Users\lvyi\AppData\Local\Walterlv.Foo\walterlv.exe" "%1"
                       
 ```
 
@@ -97,7 +97,7 @@ Walterlv.Foo.1
     shell
         Open
             Command
-                (Default) = C:\Users\lvyi\AppData\Local\Walterlv.Foo\walterlv.exe "%1"
+                (Default) = "C:\Users\lvyi\AppData\Local\Walterlv.Foo\walterlv.exe" -f "%1"
 ```
 
 其中路径后面的 `"%1"` 是文件资源管理器传入的参数，其实就是文件的完整路径。我们加上了引号是避免解析命令行的时候把包含空格的路径拆成了多个参数。
@@ -111,10 +111,10 @@ Walterlv.Foo.1
     shell
         Open
             Command
-                (Default) = "C:\Users\lvyi\AppData\Local\Walterlv.Foo\walterlv.exe" "%1"
-        Edit
+                (Default) = "C:\Users\lvyi\AppData\Local\Walterlv.Foo\walterlv.exe" open -f "%1"
+        用逗比的方式打开
             Command
-                (Default) = C:\Users\lvyi\AppData\Local\Walterlv.Foo\walterlv.exe "%1" --edit
+                (Default) = "C:\Users\lvyi\AppData\Local\Walterlv.Foo\walterlv.exe" open -f "%1" --doubi
 ```
 
 ### 反注册文件类型
@@ -139,13 +139,19 @@ HKEY_CLASSES_ROOT
         shell
             Open
                 Command
-                    (Default) = "C:\Users\lvyi\AppData\Local\Walterlv.Foo\walterlv.exe" "%1"
-        Edit
-            Command
-                (Default) = C:\Users\lvyi\AppData\Local\Walterlv.Foo\walterlv.exe "%1" --edit
-        用逗比的方式打开
-            Command
-                (Default) = C:\Users\lvyi\AppData\Local\Walterlv.Foo\walterlv.exe "%1" --doubi
+                    (Default) = "C:\Users\lvyi\AppData\Local\Walterlv.Foo\walterlv.exe" open -f "%1"
+            用逗比的方式打开
+                Command
+                    (Default) = "C:\Users\lvyi\AppData\Local\Walterlv.Foo\walterlv.exe" open -f "%1" --doubi
+            Edit
+                Command
+                    (Default) = "C:\Users\lvyi\AppData\Local\Walterlv.Foo\walterlv.exe" edit -f "%1"
+            print
+                command
+                    (Default) = "C:\Users\lvyi\AppData\Local\Walterlv.Foo\walterlv.exe" print -f "%1"
+            printto
+                command
+                    (Default) = "C:\Users\lvyi\AppData\Local\Walterlv.Foo\walterlv.exe" print -f "%1" -t "%2"
 ```
 
 ---
