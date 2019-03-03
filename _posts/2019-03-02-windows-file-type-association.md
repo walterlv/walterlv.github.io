@@ -1,6 +1,7 @@
 ---
 title: "如何为你的 Windows 应用程序关联一种或多种文件类型"
-date: 2019-03-02 21:22:40 +0800
+publishDate: 2019-03-02 21:22:40 +0800
+date: 2019-03-03 13:22:06 +0800
 categories: dotnet windows csharp
 position: knowledge
 ---
@@ -18,6 +19,8 @@ position: knowledge
 Windows 上的文件关联是通过文件的扩展名来实现的。有些文件类型是被广泛使用的公共类型，例如 .txt、.png、.mp4 文件；有些则是你自己的应用程序使用的私有类型，例如我自己定义一个 .lvyi 扩展名的文件类型。
 
 我们会关联这些广泛使用的类型可能是因为我们自己写了一个自己的文本编辑器，于是我们会关联 .txt 或者 .md 类型。而我们关联自定义的文件类型是因为我们需要为我们自己的应用生态产生一些文件数据。
+
+那么问题来了，我怎么知道我现在准备使用的扩展名是不是已经被广泛使用的公共类型呢？请进入此网站查看：[Media Types](http://www.iana.org/assignments/media-types/media-types.xhtml)。
 
 ### 注册一个文件类型
 
@@ -147,3 +150,4 @@ HKEY_CLASSES_ROOT
 
 - [File Types and File Associations - Windows applications - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/shell/fa-intro)
 - [Programmatic Identifiers - Windows applications - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/shell/fa-progids)
+- [Media Types](http://www.iana.org/assignments/media-types/media-types.xhtml)
