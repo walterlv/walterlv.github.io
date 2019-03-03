@@ -1,7 +1,7 @@
 ---
 title: "如何为你的 Windows 应用程序关联一种或多种文件类型"
 publishDate: 2019-03-02 21:22:40 +0800
-date: 2019-03-03 14:17:27 +0800
+date: 2019-03-03 14:27:21 +0800
 categories: dotnet windows csharp
 position: knowledge
 ---
@@ -123,6 +123,8 @@ Walterlv.Foo.1
 
 微软推荐我们只删除 ProgID 的键，而不删除文件扩展名的键；因为其他的程序可能已经关联了我们的文件扩展名。就算我们使用的是私有的格式，也有可能是我们程序的未来版本会关联这个扩展名。
 
+总之，你需要做的，只是删除 ProgID 的键，文件扩展名的键不要去动它，Windows 自己会处理好 ProgID 删除之后文件关联的问题的。
+
 ### 一个完整的文件关联示例
 
 ```text
@@ -133,9 +135,10 @@ HKEY_CLASSES_ROOT
         (Default) = Walterlv.Foo.1
         Content Type = text/xml
     Walterlv.Foo.1
-        (Default) = 吕毅的示例文件
+        (Default) = Walterlv Foo
         AlwaysShowExt = 1
         DefaultIcon = "C:\Users\lvyi\AppData\Local\Walterlv.Foo\lvyi-icon.ico"
+        FriendlyTypeName = 吕毅的示例文件
         shell
             Open
                 Command
