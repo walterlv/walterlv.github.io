@@ -1,6 +1,6 @@
 ---
 title: "如何为你的 Windows 应用程序关联 URL 协议，以便在浏览器中也能打开你的应用"
-date: 2019-03-03 16:11:30 +0800
+date: 2019-03-03 16:28:12 +0800
 categories: windows
 position: knowledge
 ---
