@@ -1,7 +1,7 @@
 ---
 title: "自动将 NuGet 包的引用方式从 packages.config 升级为 PackageReference"
 publishDate: 2018-04-24 18:03:20 +0800
-date: 2018-12-14 09:54:00 +0800
+date: 2019-03-03 16:30:28 +0800
 categories: dotnet visualstudio nuget msbuild
 ---
 
@@ -15,7 +15,9 @@ categories: dotnet visualstudio nuget msbuild
 
 ### 自动升级
 
-下载安装 Visual Studio 插件 [NuGet PackageReference Upgrader](https://marketplace.visualstudio.com/items?itemName=CloudNimble.NuGetPackageReferenceUpgrader)。在安装完成之后，再次启动 Visual Studio，则可以开始迁移。
+~~下载安装 Visual Studio 插件 [NuGet PackageReference Upgrader](https://marketplace.visualstudio.com/items?itemName=CloudNimble.NuGetPackageReferenceUpgrader)。在安装完成之后，再次启动 Visual Studio，则可以开始迁移。~~
+
+更新：自 Visual Studio 2017 的 15.7 版本开始，迁移工具已经自带到 Visual Studio 中。
 
 **只有一个步骤**：在 `packages.config` 文件上点击右键，选择 `Upgrade to PackageReference`。
 
