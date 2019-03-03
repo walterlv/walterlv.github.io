@@ -1,7 +1,7 @@
 ---
 title: "如何为你的 Windows 应用程序关联一种或多种文件类型"
 publishDate: 2019-03-02 21:22:40 +0800
-date: 2019-03-03 14:01:48 +0800
+date: 2019-03-03 14:05:49 +0800
 categories: dotnet windows csharp
 position: knowledge
 ---
@@ -77,7 +77,7 @@ HKEY_CURRENT_USER\Software\Classes
 
 只要我们完成了以上的步骤，我们就能在资源管理器中看到我们的文件关联（虽然双击打不开）：
 
-![在资源管理器中看到的文件关联](/static/posts/2019-03-03-14-01-09.png)
+![在资源管理器中看到的文件关联](/static/posts/2019-03-03-14-05-37.png)
 
 **关于注册表路径的说明**：
 
