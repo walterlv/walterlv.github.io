@@ -1,7 +1,7 @@
 ---
 title: "自动将 NuGet 包的引用方式从 packages.config 升级为 PackageReference"
 publishDate: 2018-04-24 18:03:20 +0800
-date: 2019-03-03 16:30:28 +0800
+date: 2019-03-03 17:02:10 +0800
 categories: dotnet visualstudio nuget msbuild
 ---
 
@@ -17,19 +17,23 @@ categories: dotnet visualstudio nuget msbuild
 
 ~~下载安装 Visual Studio 插件 [NuGet PackageReference Upgrader](https://marketplace.visualstudio.com/items?itemName=CloudNimble.NuGetPackageReferenceUpgrader)。在安装完成之后，再次启动 Visual Studio，则可以开始迁移。~~
 
-更新：自 Visual Studio 2017 的 15.7 版本开始，迁移工具已经自带到 Visual Studio 中。
+更新：自 Visual Studio 2017 的 15.7 版本开始，迁移工具已经自带到 Visual Studio 中。详情请参见：[Migrating from package.config to PackageReference formats | Microsoft Docs](https://docs.microsoft.com/en-us/nuget/reference/migrate-packages-config-to-package-reference)。
 
 **只有一个步骤**：在 `packages.config` 文件上点击右键，选择 `Upgrade to PackageReference`。
 
-![Upgrade to PackageReference](/static/posts/2018-04-24-16-03-17.png)
+![Migrate packages.config to PackageReference](/static/posts/2019-03-03-16-40-10.png)
 
-紧接着，稍微等待一下，即可完成一个项目的迁移。如果有多个项目，则每个项目都这么操作即可。
+<!-- ![Upgrade to PackageReference](/static/posts/2018-04-24-16-03-17.png) -->
+
+在弹出的界面中，选择包的版本，确定即可完成一个项目的迁移。
 
 相比于之前写的手工迁移，自动迁移方式没有改变 csproj 的格式，而只是将 NuGet 的引用方式改成了 `PackageReference`。具体有哪些好处，可以阅读 [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj](/post/introduce-new-style-csproj-into-net-framework.html)。
 
 ### 检查升级后的兼容性问题
 
 `packages.config` 的 NuGet 包的管理方式有些功能是 `PackageReference` 没有的。当然，没有这些功能是因为“不需要”，而不是“还没支持”；所以大部分的迁移都不会发生问题（除非发布包使用的是特别老旧的 nuget.exe，或者发布者利用了一些丧心病狂的黑科技）。
+
+在 Visual Studio 2017 的 15.7 版本以上自带的迁移工具中，会自动列出可能的兼容性问题。
 
 #### install.ps1 脚本将失效
 
