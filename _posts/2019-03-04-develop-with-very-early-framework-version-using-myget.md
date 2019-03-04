@@ -1,6 +1,6 @@
 ---
 title: "如何使用 MyGet 这个激进的 NuGet 源体验日构建版本的 .NET Standard / .NET Core"
-date: 2019-03-04 22:23:01 +0800
+date: 2019-03-04 22:29:23 +0800
 categories: dotnet csharp visualstudio msbuild nuget
 position: starter
 ---
@@ -51,6 +51,12 @@ position: starter
 
 然而实际上的使用方法很简单，就是直接用正常的方法安装对应的 NuGet 包：
 
+```
+PM> Install-Package NETStandard.Library -Version 2.1.0-preview1-27119-01
+```
+
+或者直接去 csproj 中添加 `PackageReference`。
+
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
 
@@ -64,5 +70,7 @@ position: starter
   
 </Project>
 ```
+
+至于版本号如何确定，请直接前往 MyGet 网站查看：[dotnet-core - NETStandard.Library | MyGet](https://dotnet.myget.org/feed/dotnet-core/package/nuget/NETStandard.Library)。
 
 这个时候，.NET Standard 的预览版标准库会使用以替换 .NET Standard 2.0 的正式版本库。
