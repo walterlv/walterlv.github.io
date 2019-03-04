@@ -1,6 +1,7 @@
 ---
 title: "通过重写预定义的 Target 来扩展 MSBuild / Visual Studio 的编译过程"
-date: 2019-01-08 19:19:58 +0800
+publishDate: 2019-01-08 19:19:58 +0800
+date: 2019-03-04 22:15:06 +0800
 categories: dotnet msbuild visualstudio
 position: knowledge
 ---
@@ -23,7 +24,7 @@ MSBuild 的编译过程提供了一些可以被重写的 Target，通过重写�
 - `BeforeResolveReference`, `AfterResolveReferences`
 - `BeforeResGen`, `AfterResGen`
 
-你可以[在 Microsoft.NET.Sdk 中找到各种富有创意的 Target 用来扩展](https://walterlv.com/post/read-microsoft-net-sdk.html)，以上这些也是 Microsoft.NET.Sdk 的一部分，在那个文件夹的 Microsoft.Common.targets 或者 Microsoft.Common.CurrentVersion.targets 中。
+你可以[在 Microsoft.NET.Sdk 中找到各种富有创意的 Target 用来扩展](/post/read-microsoft-net-sdk.html)，以上这些也是 Microsoft.NET.Sdk 的一部分，在那个文件夹的 Microsoft.Common.targets 或者 Microsoft.Common.CurrentVersion.targets 中。
 
 而写法是这样的：
 

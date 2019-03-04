@@ -1,6 +1,7 @@
 ---
 title: "在 Target 中获取项目引用的所有依赖（dll/NuGet/Project）的路径"
-date: 2019-01-14 15:38:10 +0800
+publishDate: 2019-01-14 15:38:10 +0800
+date: 2019-03-04 22:15:01 +0800
 categories: msbuild visualstudio
 position: knowledge
 ---
@@ -186,7 +187,7 @@ C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4
 
 ### 解读原因
 
-解析引用的 dll 的路径的 Task 是 `ResolveAssemblyReference`，你可以在 [Microsoft.NET.Sdk 文件夹](/post/read-microsoft-net-sdk.html) 中找到它。如果想知道 Task 是什么意思，可以阅读：[理解 C# 项目 csproj 文件格式的本质和编译流程](https://walterlv.com/post/understand-the-csproj.html)。
+解析引用的 dll 的路径的 Task 是 `ResolveAssemblyReference`，你可以在 [Microsoft.NET.Sdk 文件夹](/post/read-microsoft-net-sdk.html) 中找到它。如果想知道 Task 是什么意思，可以阅读：[理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj.html)。
 
 ```xml
 <ResolveAssemblyReference

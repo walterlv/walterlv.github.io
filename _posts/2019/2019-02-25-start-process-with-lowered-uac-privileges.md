@@ -1,7 +1,7 @@
 ---
 title: "在 Windows 系统上降低 UAC 权限运行程序（从管理员权限降权到普通用户权限）"
 publishDate: 2019-02-25 07:28:19 +0800
-date: 2019-02-27 08:58:48 +0800
+date: 2019-03-04 22:14:01 +0800
 categories: windows dotnet csharp
 position: problem
 ---
@@ -83,7 +83,7 @@ var processInfo = new ProcessStartInfo
 Process.Start(processInfo);
 ```
 
-上面的 `ReadPassword` 函数来自我的另一篇博客：[如何让 .NET Core 命令行程序接受密码的输入而不显示密码明文 - walterlv](https://walterlv.com/post/input-password-with-mask-in-cli.html)。
+上面的 `ReadPassword` 函数来自我的另一篇博客：[如何让 .NET Core 命令行程序接受密码的输入而不显示密码明文 - walterlv](/post/input-password-with-mask-in-cli.html)。
 
 然而，此方法最大的问题在于——产品级的程序，不可能也不应该知道用户的密码！所以实际上这样的方法并不实用。
 

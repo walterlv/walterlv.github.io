@@ -1,6 +1,7 @@
 ---
 title: ".NET/C# 获取一个正在运行的进程的命令行参数"
-date: 2019-02-19 21:51:19 +0800
+publishDate: 2019-02-19 21:51:19 +0800
+date: 2019-03-04 22:14:31 +0800
 categories: dotnet csharp windows
 position: knowledge
 ---
@@ -11,7 +12,7 @@ position: knowledge
 
 ---
 
-进程内部获取传入参数的方法，可以参见我的另一篇博客：[.NET 命令行参数包含应用程序路径吗？](https://walterlv.com/post/when-will-the-command-line-args-contain-the-executable-path.html)。
+进程内部获取传入参数的方法，可以参见我的另一篇博客：[.NET 命令行参数包含应用程序路径吗？](/post/when-will-the-command-line-args-contain-the-executable-path.html)。
 
 .NET Framework / .NET Core 框架内部是不包含获取其他进程命令行参数的方法的，但是我们可以在任务管理器中看到，说明肯定存在这样的方法。
 
