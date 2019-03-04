@@ -1,6 +1,7 @@
 ---
 title: "三种方法获取可执行程序的文件路径（.NET Core / .NET Framework）"
-date: 2019-03-03 19:51:29 +0800
+publishDate: 2019-03-03 19:51:29 +0800
+date: 2019-03-04 17:45:41 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -68,3 +69,5 @@ var executablePath = Process.GetCurrentProcess().MainModule.FileName;
 1. 如果我们需要获取到可执行程序的完整路径
     - 先通过进程的方式获取 `Process.GetCurrentProcess().MainModule.FileName`
     - 如果得到的进程是 `dotnet.exe`，那么再通过程序集信息获取 `Assembly.GetEntryAssembly().Location`
+
+另外，关于以上方法的性能对比，你可以参阅林德熙的博客：[dotnet 获取路径各种方法的性能对比](https://blog.lindexi.com/post/dotnet-%E8%8E%B7%E5%8F%96%E7%A8%8B%E5%BA%8F%E6%89%80%E5%9C%A8%E8%B7%AF%E5%BE%84%E7%9A%84%E6%96%B9%E6%B3%95.html)。
