@@ -1,6 +1,7 @@
 ---
 title: "为什么 C# 的 string.Empty 是一个静态只读字段，而不是一个常量呢？"
-date: 2019-03-04 23:29:47 +0800
+publishDate: 2019-03-04 23:29:47 +0800
+date: 2019-03-05 13:10:31 +0800
 categories: dotnet csharp
 position: principle
 ---
@@ -77,13 +78,25 @@ OBJECTREF* pEmptyStringHandle = (OBJECTREF*)
 SetObjectReference( pEmptyStringHandle, StringObject::GetEmptyString(), this );
 ```
 
-### 能否反射修改 string.Empty 的值？
+### 总结：为什么 string.Empty 需要是一个静态只读字段而不是常量？
+
+从上文中 `string.Empty` 的注释描述中可以知道：
+
+1. 编译器会将 C# 语言编译成中间语言 MSIL；
+1. 如果这是一个常量，那么编译器在不做特殊处理的情况下，就会生成 `ldstr ""`，而这种方式不会调用到 `String` 类的构造函数（注意不是静态构造函数，`String` 类的静态构造函数是特殊处理不会调用的）；
+1. 而如果这是一个静态字段，那么编译器可以在不做特殊处理的情况下，生成 `ldsfld string [mscorlib]System.String::Empty`，这在首次执行时会触发 `String` 类的构造函数，并在本机代码（非托管代码）中完成初始化。
+
+当然，事实上编译器也可以针对此场景做特殊处理，但为什么不是在编译这一层进行特殊处理，我已经找不到出处了。
+
+### 本文引申的其他问题
+
+#### 能否反射修改 string.Empty 的值？
 
 不行！
 
 实际上，在 .NET Framework 4.0 及以前是可以反射修改其值的，这会造成相当多的基础组件不能正常工作，在 .NET Framework 4.5 和以后的版本，以及 .NET Core 中，CLR 运行时已经不允许你做出这么出格儿的事了。
 
-### 所以 `""` 和 `string.Empty` 到底有什么区别？
+#### `""` 和 `string.Empty` 到底有什么区别？
 
 从前文你可以得知，在运行时级别，这两者 **没有任何区别**。
 
