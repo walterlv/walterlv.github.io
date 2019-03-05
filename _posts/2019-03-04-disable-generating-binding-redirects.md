@@ -1,6 +1,7 @@
 ---
 title: ".NET 应用启用与禁用自动生成绑定重定向 (bindingRedirect)，解决不同版本 dll 的依赖问题"
-date: 2019-03-04 21:37:58 +0800
+publishDate: 2019-03-04 21:37:58 +0800
+date: 2019-03-05 09:09:10 +0800
 categories: dotnet visualstudio msbuild
 position: knowledge
 ---
