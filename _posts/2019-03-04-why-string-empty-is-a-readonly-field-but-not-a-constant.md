@@ -1,7 +1,7 @@
 ---
 title: "为什么 C# 的 string.Empty 是一个静态只读字段，而不是一个常量呢？"
 publishDate: 2019-03-04 23:29:47 +0800
-date: 2019-03-05 13:10:31 +0800
+date: 2019-03-05 23:54:05 +0800
 categories: dotnet csharp
 position: principle
 ---
@@ -95,6 +95,11 @@ SetObjectReference( pEmptyStringHandle, StringObject::GetEmptyString(), this );
 不行！
 
 实际上，在 .NET Framework 4.0 及以前是可以反射修改其值的，这会造成相当多的基础组件不能正常工作，在 .NET Framework 4.5 和以后的版本，以及 .NET Core 中，CLR 运行时已经不允许你做出这么出格儿的事了。
+
+不过，如果你使用不安全代码（`unsafe`）来修改这个字段的值就当我没说。关于使用不安全代码转换字符串的方法可以参见：
+
+- [C＃ 字符串首字符大写 - 林德熙](https://lindexi.gitee.io/post/C-%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%A6%96%E5%AD%97%E7%AC%A6%E5%A4%A7%E5%86%99.html)
+- [.NET/C# 编译期间能确定的相同字符串，在运行期间是相同的实例 - 吕毅](/post/same-strings-at-compile-time-are-the-same-instances-at-runtime.html)
 
 #### `""` 和 `string.Empty` 到底有什么区别？
 
