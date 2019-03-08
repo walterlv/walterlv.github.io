@@ -1,13 +1,17 @@
 ---
-title: "C#/.NET 中的契约"
+title: "C#/.NET 中的契约式编程，以及 ReSharper 为我们提供的契约特性"
 publishDate: 2017-12-20 23:04:21 +0800
-date: 2019-03-08 14:28:30 +0800
+date: 2019-03-08 14:33:41 +0800
 categories: csharp dotnet
 ---
 
 > 将文档放到代码里面，文档才会及时地更新！
 
-微软从 .NET Framework 4.0 开始，增加了 `System.Diagnostics.Contracts` 命名空间，用来把契约文档融入代码。然而后面一直不冷不热，Visual Studio 都没天然支持。ReSharper 不知何时加入了 ReSharper Annotations，在 ReSharper 插件工作的情况下能够进行静态契约的验证。C#8.0 的可空引用类型是 Roslyn 对 null 的验证，本以为会带来编译级别的警告，没想到也只是契约。
+微软从 .NET Framework 4.0 开始，增加了 `System.Diagnostics.Contracts` 命名空间，用来把契约文档融入代码。然而后面一直不冷不热，Visual Studio 都没天然支持。
+
+ReSharper 也提供了 ReSharper Annotations，在 ReSharper 插件工作的情况下能够进行静态契约的验证。
+
+C#8.0 的可空引用类型是 Roslyn 对 null 的验证，这个可能更加强大，既可以是编译警告，也可以是编译错误。
 
 ---
 
