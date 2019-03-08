@@ -1,7 +1,7 @@
 ---
 title: "C#/.NET 中的契约"
 publishDate: 2017-12-20 23:04:21 +0800
-date: 2018-12-14 09:54:00 +0800
+date: 2019-03-08 14:28:30 +0800
 categories: csharp dotnet
 ---
 
@@ -61,13 +61,15 @@ ReSharper 并没有将其称之为“契约”，因为它真的只是“文档�
 #### ReSharper 中常用的契约 Attribute
 
 - CanBeNull
-    * 表示参数或返回值可能为 null。
+    * 表示参数或返回值可能为 `null`。
 - CannotApplyEqualityOperator
-    * 表示某个类型的相等比较不应该用 == 或 !=，而应该用 Equals。
+    * 表示某个类型的相等比较不应该用 `==` 或 `!=`，而应该用 `Equals`。
 - ItemCanBeNull
-    * 表示集合参数或集合返回值里某一项可能为 null。
+    * 表示集合参数或集合返回值里某一项可能为 `null`。
+    * 或者表示 `Task<T>` 返回值中的 `T` 可能为 `null`。
 - ItemNotNull
-    * 表示集合参数或集合返回值里每一项都不为 null。
+    * 表示集合参数或集合返回值里每一项都不为 `null`。
+    * 或者表示 `Task<T>` 返回值中的 `T` 不为 `null`。
 - LinqTunnel
     * 表示某个方法就像 linq 方法一样。
 - LocalizationRequired
