@@ -1,12 +1,4 @@
-# Redirect legacy urls to new urls
-/post/wpf-add-on-ui.html /post/wpf-cross-domain-ui.html 301!
-/windows/2015/04/07/create-shortcut.html /post/create-shortcut-file-using-csharp.html 301!
-/post/microsoft-extensions-commandlineutils.html /post/mcmaster-extensions-commandlineutils.html 301!
-/post/write-custom-awaiter.html /post/write-dispatcher-awaiter-for-ui.html 301!
-
-# Redirect to recommended urls
+# Redirect default Netlify subdomain to primary domain
 https://walterlv.com/* https://blog.walterlv.com/:splat 301
 https://www.walterlv.com/* https://blog.walterlv.com/:splat 301
-
-# Redirect default Netlify subdomain to primary domain
 https://walterlv.netlify.com/* https://blog.walterlv.com/:splat 301!
