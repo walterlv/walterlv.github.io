@@ -1,7 +1,7 @@
 ---
 title: "WindowsXamlHost：在 WPF 中使用 UWP 的控件（Windows Community Toolkit）"
 publishDate: 2018-11-04 11:47:23 +0800
-date: 2018-12-14 09:54:00 +0800
+date: 2019-03-09 09:09:02 +0800
 categories: uwp wpf dotnet
 ---
 
@@ -94,7 +94,7 @@ private void WindowsXamlHost_ChildChanged(object sender, EventArgs e)
     var button = (Windows.UI.Xaml.Controls.Button) host.Child;
     button.Width = 120;
     button.Height = 40;
-    button.Content = "walterlv.com";
+    button.Content = "blog.walterlv.com";
     button.Click += UwpButton_Click;
 }
 

@@ -1,7 +1,7 @@
 ---
 title: "使用 Postman 调试 ASP.NET Core 开发的 API"
 publishDate: 2018-09-09 20:38:19 +0800
-date: 2018-09-10 13:19:34 +0800
+date: 2019-03-09 09:07:59 +0800
 categories: dotnet csharp asp
 ---
 
@@ -89,8 +89,8 @@ namespace Walterlv.WebApi.Rssman.Controllers
     {
         "id": 1,
         "name": "walterlv",
-        "feedUrl": "https://walterlv.com/feed.xml",
-        "siteUrl": "https://walterlv.com/"
+        "feedUrl": "https://blog.walterlv.com/feed.xml",
+        "siteUrl": "https://blog.walterlv.com/"
     },
     {
         "id": 2,

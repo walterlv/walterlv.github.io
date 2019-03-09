@@ -1,6 +1,7 @@
 ---
 title: "UWP 在 WebView 中执行 JavaScript 代码（用于模拟用户输入等）"
-date: 2018-12-30 22:08:37 +0800
+publishDate: 2018-12-30 22:08:37 +0800
+date: 2019-03-09 09:10:11 +0800
 categories: uwp javascript
 position: starter
 ---
@@ -21,7 +22,7 @@ UWP 中使用 WebView 时可以在网页中额外执行一些代码。于是你�
 
 ```csharp
 WebView.NavigationCompleted += OnNavigationCompleted;
-WebView.Navigate(new Uri("https://walterlv.com"));
+WebView.Navigate(new Uri("https://blog.walterlv.com"));
 ```
 
 ```csharp

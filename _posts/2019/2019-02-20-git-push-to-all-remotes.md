@@ -1,6 +1,7 @@
 ---
 title: "使用一句 git 命令将仓库的改动推送到所有的远端"
-date: 2019-02-20 11:26:00 +0800
+publishDate: 2019-02-20 11:26:00 +0800
+date: 2019-03-09 09:12:32 +0800
 categories: git
 position: problem
 ---
@@ -68,7 +69,7 @@ git push all
 我现在自己的博客仓库就是这样的推送方式。于是你可以在以下多个地址打开阅读我的博客：
 
 - <https://walterlv.com/>
+- <https://blog.walterlv.com/>
 - <https://walterlv.github.io/>
 - <https://walterlv.gitee.io/>
 - <https://walterlv.oschina.io/>
-- <https://blog.walterlv.com/> *构建中，点开会没有证书*

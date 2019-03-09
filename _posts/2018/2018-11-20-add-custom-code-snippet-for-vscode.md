@@ -1,7 +1,7 @@
 ---
 title: "在 Visual Studio Code 中添加自定义的代码片段"
 publishDate: 2018-11-20 10:19:28 +0800
-date: 2018-12-30 17:01:11 +0800
+date: 2019-03-09 09:09:59 +0800
 categories: vscode
 ---
 
@@ -131,7 +131,7 @@ categories: vscode
 
 现在，我们来做一个更复杂的例子，以便了解 Visual Studio Code 中代码片段定义的更多内容。
 
-输入 `post` 以便插入 [walterlv.com](/) 专用的博客模板：
+输入 `post` 以便插入 [blog.walterlv.com](/) 专用的博客模板：
 
 ![插入博客](/static/posts/2018-11-20-08-34-19.png)
 
@@ -158,7 +158,7 @@ categories: vscode
 
 ```json
 {
-	"Insert a post for walterlv.com": {
+	"Insert a post for blog.walterlv.com": {
 		"scope": "markdown",
 		"prefix": "post",
 		"body": [
@@ -168,7 +168,7 @@ categories: vscode
 			"categories: ${2|dotnet,csharp,uwp|}",
 			"---",
 			"",
-			"${0:在此处编辑 walterlv.com 的博客摘要}",
+			"${0:在此处编辑 blog.walterlv.com 的博客摘要}",
 			"",
 			"---",
 			"",
@@ -180,7 +180,7 @@ categories: vscode
 			"",
 			"### 参考资料"
 		],
-		"description": "使用 walterlv.com 专用的博客模板"
+		"description": "使用 blog.walterlv.com 专用的博客模板"
 	}
 }
 ```
@@ -203,7 +203,7 @@ categories: vscode
 
 占位符可以嵌套，例如 `${1:walterlv 的 ${2:嵌套占位符}}`。这时，光标会首先选中所有的文字，随后按下 Tab 之后选中后面那一部分。
 
-在前面那个比较复杂的博客代码片段中，`${1:在此处添加标题}` 就是一个占位符，而 `${0:在此处编辑 walterlv.com 的博客摘要}` 就是光标的最终停留点。
+在前面那个比较复杂的博客代码片段中，`${1:在此处添加标题}` 就是一个占位符，而 `${0:在此处编辑 blog.walterlv.com 的博客摘要}` 就是光标的最终停留点。
 
 #### 下拉选项
 

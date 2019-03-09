@@ -1,12 +1,12 @@
 ---
 title: "四种方法获取可执行程序的文件路径（.NET Core / .NET Framework）"
 publishDate: 2019-03-03 19:51:29 +0800
-date: 2019-03-06 22:55:04 +0800
+date: 2019-03-09 09:10:45 +0800
 categories: dotnet csharp
 position: knowledge
 ---
 
-在此处编辑 walterlv.com 的博客摘要
+本文介绍四种不同的获取可执行程序文件路径的方法。适用于 .NET Core 以及 .NET Framework。
 
 ---
 

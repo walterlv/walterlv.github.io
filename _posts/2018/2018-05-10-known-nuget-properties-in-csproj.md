@@ -1,7 +1,7 @@
 ---
 title: "项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦）"
 publishDate: 2018-05-10 21:49:21 +0800
-date: 2019-02-28 10:47:02 +0800
+date: 2019-03-09 09:07:32 +0800
 categories: visualstudio nuget csharp dotnet msbuild
 ---
 
@@ -69,7 +69,7 @@ NuGet 相关的属性也分为全局属性和项属性两类。不过，我更�
     <!-- 此程序集不可打包，通常在单元测试项目中设置此属性。 -->
     <IsPackable>false</IsPackable>
     <Description></Description>
-    <!-- 这是一个仅开发阶段使用的 NuGet 包，详情请参见 https://walterlv.com/post/prevent-nuget-package-been-depended.html。 -->
+    <!-- 这是一个仅开发阶段使用的 NuGet 包，详情请参见 https://blog.walterlv.com/post/prevent-nuget-package-been-depended.html。 -->
     <DevelopmentDependency>true</DevelopmentDependency>
     <!-- 单独指定 NuGet 包应该输出到哪个目录（可以跟项目文件的输出目录不一样）。 -->
     <PackageOutputPath></PackageOutputPath>
@@ -111,7 +111,7 @@ NuGet 相关的属性也分为全局属性和项属性两类。不过，我更�
 </Project>
 ```
 
-其中，`DevelopmentDependency` 的设置可参见：[帮助官方 NuGet 解掉 Bug，制作绝对不会传递依赖的 NuGet 包 - walterlv](https://walterlv.com/post/prevent-nuget-package-been-depended.html)。
+其中，`DevelopmentDependency` 的设置可参见：[帮助官方 NuGet 解掉 Bug，制作绝对不会传递依赖的 NuGet 包 - walterlv](/post/prevent-nuget-package-been-depended.html)。
 
 以上没有设置值和注释的属性，我正在查阅资料。
 

@@ -10,7 +10,7 @@
 			"position: ${2|starter,knowledge,principle,problem|}",
 			"---",
 			"",
-			"${0:在此处编辑 walterlv.com 的博客摘要}",
+			"${0:在此处编辑 blog.walterlv.com 的博客摘要}",
 			"",
 			"---",
 			"",
@@ -22,7 +22,7 @@
 			"",
 			"#### 参考资料"
 		],
-		"description": "使用 walterlv.com 专用的博客模板"
+		"description": "使用 blog.walterlv.com 专用的博客模板"
 	},
 	"Add toc to post": {
 		"scope": "markdown",

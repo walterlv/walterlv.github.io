@@ -1,6 +1,7 @@
 ---
 title: "使用并解析 OPML 格式的订阅列表来转移自己的 RSS 订阅（概念篇）"
-date: 2018-09-23 20:01:47 +0800
+publishDate: 2018-09-23 20:01:47 +0800
+date: 2019-03-09 09:08:10 +0800
 categories: dotnet csharp uwp
 ---
 
@@ -49,7 +50,7 @@ OPML 官网对其作用的描述为：
     <title>walterlv</title>
   </head>
   <body>
-    <outline text="walterlv" title="walterlv" type="rss" xmlUrl="https://walterlv.com/feed.xml" htmlUrl="https://walterlv.com/" />
+    <outline text="walterlv" title="walterlv" type="rss" xmlUrl="https://blog.walterlv.com/feed.xml" htmlUrl="https://blog.walterlv.com/" />
 
     <outline title="Team" text="Team">
       <outline text="林德熙" title="林德熙" type="rss" xmlUrl="https://blog.lindexi.com/feed.xml" htmlUrl="https://blog.lindexi.com/" />

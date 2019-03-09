@@ -1,7 +1,7 @@
 ---
 title: "在 Visual Studio Code 中为代码片段（Code Snippets）添加快捷键"
 publishDate: 2018-11-20 10:32:28 +0800
-date: 2018-12-30 17:00:32 +0800
+date: 2019-03-09 09:10:05 +0800
 categories: vscode
 ---
 
@@ -33,7 +33,7 @@ Visual Studio Code 默认是关闭了 Markdown 的智能感知提示的（因为
     "when": "editorTextFocus",
     "args": {
       "langId": "markdown",
-      "name": "Insert a post for walterlv.com"
+      "name": "Insert a post for blog.walterlv.com"
     }
   }
 ]

@@ -1,7 +1,7 @@
 ---
 title: "WindowsXamlHost：在 WPF 中使用 UWP 控件库中的控件"
 publishDate: 2018-11-04 12:14:24 +0800
-date: 2018-12-14 09:54:00 +0800
+date: 2019-03-09 09:09:25 +0800
 categories: uwp wpf dotnet
 ---
 
@@ -150,7 +150,7 @@ categories: uwp wpf dotnet
         <TextBlock>
             <Run Text="欢迎访问 吕毅的博客" />
             <LineBreak />
-            <Run Text="https://walterlv.com" />
+            <Run Text="https://blog.walterlv.com" />
         </TextBlock>
         <Button Content="Click" Click="DemoButton_Click" />
     </StackPanel>

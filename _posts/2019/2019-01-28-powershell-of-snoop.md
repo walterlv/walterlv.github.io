@@ -1,6 +1,7 @@
 ---
 title: "在 Snoop 中使用 PowerShell 脚本进行更高级的 UI 调试"
-date: 2019-01-28 23:01:02 +0800
+publishDate: 2019-01-28 23:01:02 +0800
+date: 2019-03-09 09:11:47 +0800
 categories: wpf dotnet powershell
 position: knowledge
 ---
@@ -66,7 +67,7 @@ $selected.Visual.Content = $null
 
 ```powershell
 # 创建对象
-$button = New-Object System.Windows.Controls.Button -property @{ Content = "欢迎访问 walterlv.com" }
+$button = New-Object System.Windows.Controls.Button -property @{ Content = "欢迎访问 blog.walterlv.com" }
 ```
 
 ![创建一个 Button](/static/posts/2019-01-28-22-53-34.png)
@@ -84,7 +85,7 @@ $selected.Visual.Children.Add($button)
 调用静态方法用的是 `[类名]::方法名(参数)`
 
 ```powershell
-$button.Content = [System.Environment]::Version.ToString() + " running for walterlv.com"
+$button.Content = [System.Environment]::Version.ToString() + " running for blog.walterlv.com"
 ```
 
 ![调用静态方法](/static/posts/2019-01-28-22-59-55.png)

@@ -1,7 +1,7 @@
 ---
 title: "WPF 多线程 UI：设计一个异步加载 UI 的容器"
 publishDate: 2018-09-08 20:53:03 +0800
-date: 2018-11-27 13:08:55 +0800
+date: 2019-03-09 09:09:12 +0800
 categories: wpf dotnet csharp
 ---
 
@@ -45,7 +45,7 @@ No！WPF 一个窗口可以不止一个 UI 线程，本文将设计一个异步�
         xmlns:local="clr-namespace:Walterlv.Demo"
         xmlns:ww="clr-namespace:Walterlv.Windows;assembly=Walterlv.Windows"
         xmlns:demo="clr-namespace:Walterlv.Demo"
-        Title="walterlv.com" Height="450" Width="800"
+        Title="blog.walterlv.com" Height="450" Width="800"
         Background="Black">
     <Grid>
         <ww:AsyncBox LoadingViewType="demo:LoadingView">
@@ -68,7 +68,7 @@ No！WPF 一个窗口可以不止一个 UI 线程，本文将设计一个异步�
              d:DesignHeight="450" d:DesignWidth="800"
              FontSize="48" FontFamily="Monaco">
     <Grid>
-        <Button Content="walterlv.com" Click="DelayButton_Click" />
+        <Button Content="blog.walterlv.com" Click="DelayButton_Click" />
     </Grid>
 </UserControl>
 ```

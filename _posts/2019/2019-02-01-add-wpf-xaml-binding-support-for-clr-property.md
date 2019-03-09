@@ -1,6 +1,7 @@
 ---
 title: "WPF 让普通 CLR 属性支持 XAML 绑定（非依赖属性），这样 MarkupExtension 中定义的属性也能使用绑定了"
-date: 2019-02-01 01:01:18 +0800
+publishDate: 2019-02-01 01:01:18 +0800
+date: 2019-03-09 09:12:06 +0800
 categories: wpf dotnet csharp xaml
 position: problem
 ---
@@ -38,13 +39,13 @@ public class WalterlvExtension : MarkupExtension
 可以在 XAML 中直接赋值：
 
 ```xml
-<Button Content="{local:Walterlv Value=walterlv.com" />
+<Button Content="{local:Walterlv Value=blog.walterlv.com" />
 ```
 
 但不能绑定：
 
 ```xml
-<TextBox x:Name="SourceTextBox" Text="walterlv.com" />
+<TextBox x:Name="SourceTextBox" Text="blog.walterlv.com" />
 <Button Content="{local:Walterlv Value={Binding Text, Source={x:Reference SourceTextBox}}}" />
 ```
 
