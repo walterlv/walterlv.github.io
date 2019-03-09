@@ -52,6 +52,8 @@ published: false
 
 - Linux 后台命令
     - [Linux后台运行命令，nohup和&的区别 - 宇的季节 - 博客园](https://www.cnblogs.com/chenkeyu/p/8544289.html)
+    - `nohup /usr/share/dotnet/dotnet Walterlv.CloudKeyboard/Walterlv.CloudKeyboard.WebApi.dll`
+    - 
 
 - POST with empty body
     - [rest - Is it considered bad practice to perform HTTP POST without entity body? - Stack Overflow](https://stackoverflow.com/questions/4191593/is-it-considered-bad-practice-to-perform-http-post-without-entity-body)
