@@ -18,6 +18,9 @@ published: false
 
 ### About to Write
 
+- WPF 程序使用 UWP 通知
+    - [从桌面 C# 应用发送本地 toast 通知 - Microsoft Docs](https://docs.microsoft.com/zh-cn/windows/uwp/design/shell/tiles-and-notifications/send-local-toast-desktop)
+
 - .NET Framework 启动性能
     - [multicore - Does ProfileOptimization actually work? - Stack Overflow](https://stackoverflow.com/questions/12968029/does-profileoptimization-actually-work?tdsourcetag=s_pctim_aiomsg)
 
