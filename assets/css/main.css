@@ -133,7 +133,7 @@ audio:not([controls]) {
 
 .video-container {
     position: relative;
-    max-width: 50rem;
+    max-width: 60rem;
     margin: 0 auto;
     height: 28.125rem;
 }
@@ -774,19 +774,19 @@ html, body {
     fill: #cccccc;
 }
 
-@media only screen and (min-width:50rem) {
+@media only screen and (min-width:60rem) {
     .search-mobile-only {
         display: none
     }
 }
 
-@media only screen and (max-width:50rem) {
+@media only screen and (max-width:60rem) {
     .search-desktop-only {
         display: none
     }
 }
 
-@media only screen and (max-width:50rem) {
+@media only screen and (max-width:60rem) {
     .bar-header .dosearch {
         margin: .625rem;
         width: 1.75rem;
@@ -856,7 +856,7 @@ main {
 
 @media only screen and (min-width:37.5rem) {
     .box-item {
-        max-width: 50rem;
+        max-width: 60rem;
         margin: 0 auto 0
     }
 }
@@ -886,7 +886,7 @@ main {
 
 .box-item a {
     text-decoration: none;
-    color: #333
+    color: #1570a6
 }
 
 .box-item .category {
@@ -923,7 +923,7 @@ main {
 .box-item .box-body h2 {
     margin: .625rem 0;
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: 400;
     font-style: normal;
     line-height: 1.5rem;
 }
@@ -934,9 +934,9 @@ body.dark-theme .box-item .box-body h2 {
 }
 
 .box-item .box-body p {
-    color: #999;
-    font-size: 0.75rem;
-    line-height: 1rem
+    color: #888;
+    font-size: 1rem;
+    line-height: 1.25rem
 }
 
 body.dark-theme .box-item .box-body p {
@@ -1007,24 +1007,25 @@ body.dark-theme .box-item .box-body p {
 }
 
 .box-item .box-info {
-    padding: .938rem
+    padding: 0.8rem 2rem 0;
 }
 
 div.pager {
-    border: solid #ccc;
-    border-width: 1px 0;
     margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow-x: auto;
+    margin-top: 1rem;
 }
 
 ul.pager {
     margin: 0;
     display: flex;
     list-style-type: none;
-    padding: 0
+    padding: 0;
+    border: solid #ccc;
+    border-width: 0.1px;
 }
 
 ul.pager li {
@@ -1085,7 +1086,7 @@ body.dark-theme ul.pager li.active {
 }
 
 .post-content {
-    padding: 2.5rem 0;
+    padding: 2.5rem 0 0 0;
 }
 
 .post-content img {
@@ -1125,16 +1126,16 @@ body.dark-theme ul.pager li.active {
 
 .post-content p, .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content ul, .post-content ol, .post-content iframe, .post-content div.post-inline {
     width: auto;
-    max-width: 50rem;
+    max-width: 60rem;
     float: none;
-    color: #4F4F4F;
+    color: #666;
     display: block;
     padding-left: 0;
     padding-right: 0;
     font-weight: 400;
     font-style: normal;
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+    font-size: 1rem;
+    line-height: 1.4rem;
     padding: 0 1.25rem;
     margin: 0.9rem auto 0.9rem;
     letter-spacing: .05rem;
@@ -1160,17 +1161,12 @@ body.dark-theme .post-content div.post-inline {
     clear: both
 }
 
-@media only screen and (min-width:37.5rem) {
-    .post-content p, .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content ul, .post-content ol, .post-content iframe {
-        font-size: 1rem;
-        line-height: 1.65rem;
-    }
-}
-
 .post-content h1.post-title {
-    line-height: 2rem;
-    font-size: 1.47rem;
-    margin: .5rem auto
+    line-height: 2.4rem;
+    font-size: 1.8rem;
+    margin: 0 auto;
+    color: #1570a6;
+    font-weight: 400;
 }
 
 .post-content p.subtitle {
@@ -1219,7 +1215,6 @@ body.dark-theme .post-content p.post-info {
 }
 
 .post-content p, .post-content li {
-    color: #4f4f4f;
     text-align: justify;
 }
 
@@ -1229,11 +1224,15 @@ body.dark-theme .post-content li {
 }
 
 .post-content p>code, .post-content li>code {
-    color: #dd5145;
+    color: #ef5966;
+    background: #f3f6f8;
+    border: solid #c4d6e1;
+    border-width: 1px;
     word-wrap: break-word;
-    padding: .188rem .313rem;
-    border-radius: 3px;
-    font-size: 0.95rem
+    padding: .1rem .5rem;
+    border-radius: 2px;
+    font-size: .9rem;
+    font-weight: 400;
 }
 
 body.dark-theme .post-content p>code,
@@ -1266,7 +1265,7 @@ body.dark-theme .post-content a:hover {
 }
 
 .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5 {
-    font-weight: 700;
+    font-weight: 300;
     font-style: normal
 }
 
@@ -1275,7 +1274,7 @@ body.dark-theme .post-content h2,
 body.dark-theme .post-content h3,
 body.dark-theme .post-content h4,
 body.dark-theme .post-content h5 {
-    font-weight: 200
+    font-weight: 300
 }
 
 .post-content h1 {
@@ -1284,33 +1283,29 @@ body.dark-theme .post-content h5 {
 }
 
 .post-content h2 {
-    font-size: 1.5rem;
-    line-height: 1.4;
-}
-
-@media only screen and (min-width:37.5rem) {
-    .post-content h2 {
-        font-size: 2.313rem
-    }
+    font-size: 1.8rem;
+    line-height: 1.8rem;
 }
 
 .post-content h3 {
-    font-size: 1.35rem;
-    line-height: 1.5;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
 }
 
 .post-content h4 {
-    font-size: 1.25rem;
-    line-height: 1.5;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
 }
 
 .post-content h5 {
-    margin: 0.5rem auto 0.5rem
+    font-size: 1.2rem;
+    line-height: 1.2rem;
 }
 
 .post-content ul, .post-content ol {
     padding-left: 2.5rem;
     margin: 0 auto;
+    line-height: 1.5rem;
 }
 
 .post-content ul.post-list {
@@ -1319,12 +1314,6 @@ body.dark-theme .post-content h5 {
 
 .post-content ul.post-list.svg-serie p {
     padding: 0
-}
-
-@media only screen and (max-width:37.5rem) {
-    .post-content ul.post-list {
-        padding: 0 1.25rem
-    }
 }
 
 .post-content blockquote {
@@ -1362,7 +1351,7 @@ body.dark-theme .post-content blockquote p {
 
 .post-content hr {
     width: auto;
-    max-width: 47.5rem;
+    max-width: 60rem;
     float: none;
     display: block;
     margin-right: auto;
@@ -1402,6 +1391,10 @@ body.dark-theme .post-content hr {
 .post-content td.gutter.gl {
     padding-right: 1.563rem;
     line-height: 1.5rem
+}
+
+.comments .utterances {
+    max-width: 60rem;
 }
 
 .image-cover-modal {
@@ -1509,7 +1502,7 @@ body.dark-theme .post-content hr {
 
 .post-content .categories {
     width: auto;
-    max-width: 50rem;
+    max-width: 60rem;
     float: none;
     display: block;
     margin-right: auto;
@@ -1563,7 +1556,7 @@ body.dark-theme .post-content hr {
     font-size: 2.375rem;
     margin-top: 3.75rem;
     width: auto;
-    max-width: 50rem;
+    max-width: 60rem;
     float: none;
     display: block;
     margin-right: auto;
@@ -1675,7 +1668,7 @@ article .share {
 
 pre {
     background: #222;
-    max-width: 50rem;
+    max-width: 60rem;
     color: #fff;
     margin: 1.5rem auto;
     font-size: .8rem;
@@ -1686,7 +1679,7 @@ body.dark-theme pre {
 }
 pre code {
     width: auto;
-    max-width: 50rem;
+    max-width: 60rem;
     float: none;
     display: block;
     margin-right: auto;
@@ -1795,7 +1788,7 @@ pre span {
 
 .author .details {
     margin: auto;
-    max-width: 50rem;
+    max-width: 60rem;
     padding: 0 1.25rem;
 }
 
@@ -1889,7 +1882,7 @@ pre span {
 
 .comments {
     width: auto;
-    max-width: 50rem;
+    max-width: 60rem;
     float: none;
     display: block;
     margin-right: auto;
@@ -1917,7 +1910,7 @@ body.dark-theme .comments {
 
 footer>div {
     width: auto;
-    max-width: 50rem;
+    max-width: 60rem;
     float: none;
     display: block;
     margin-right: auto;
