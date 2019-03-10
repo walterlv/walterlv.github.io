@@ -1,6 +1,6 @@
 ---
 title: "在 csproj 文件中使用系统环境变量的值"
-date: 2019-03-10 19:00:28 +0800
+date: 2019-03-10 22:05:55 +0800
 categories: dotnet csharp visualstudio msbuild
 position: starter
 ---
@@ -15,7 +15,7 @@ Windows 系统以及很多应用程序会考虑使用系统的环境变量来传
 
 ## 遇到的问题
 
-在 Windows 资源管理器中，我们可以使用 `%AppData%` 进入到用户的漫游路径。我正在为 [希沃白板5 为互动教学而生 | 课件制作神器](http://easinote.seewo.com/) 编写插件，于是需要将插件放到指定目录：
+在 Windows 资源管理器中，我们可以使用 `%AppData%` 进入到用户的漫游路径。我正在为 [希沃白板5 为互动教学而生 - 课件制作神器](http://easinote.seewo.com/) 编写插件，于是需要将插件放到指定目录：
 
 ```powershell
 %AppData%\Seewo\EasiNote5\Walterlv.Presentation
