@@ -43,6 +43,6 @@ CentOS 中搜索文件可以使用 find 命令。
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [linux - How to search for a file in the CentOS command line - Stack Overflow](https://stackoverflow.com/a/21046448/6233938)

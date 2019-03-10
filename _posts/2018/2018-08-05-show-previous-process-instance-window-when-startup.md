@@ -13,7 +13,7 @@ UWP 程序天生单实例。当然，新 API （10.0.17134）开始也提供了�
 
 <div id="toc"></div>
 
-### 激活之前进程的窗口
+## 激活之前进程的窗口
 
 我们可以通过进程名称找到此前已经启动过的进程实例，如果发现，就激活它的窗口。
 
@@ -59,7 +59,7 @@ ShowWindow(hwnd, 9);
 SetForegroundWindow(hwnd);
 ```
 
-### 找到并激活窗口
+## 找到并激活窗口
 
 以上方法适用于普通的主窗口。然而当窗口并不是进程的主窗口，或者 `ShowInTaskBar` 设为了 `false` 的时候就不生效了（此时窗口句柄会改变）。
 
@@ -85,7 +85,7 @@ public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Controlling Window State Of Other Applications using C#](https://www.c-sharpcorner.com/article/controlling-window-state-of-other-applications-using-C-Sharp/)
 - [c# - How to show/hide an application with Visible and ShowInTaskBar as false - Stack Overflow](https://stackoverflow.com/q/8935985/6233938)

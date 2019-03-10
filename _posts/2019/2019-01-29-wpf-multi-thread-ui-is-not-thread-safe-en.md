@@ -18,7 +18,7 @@ There is a very low probability that WPF application will crash when you creatin
 
 <div id="toc"></div>
 
-### The Issue
+## The Issue
 
 Necessary conditions:
 
@@ -51,7 +51,7 @@ The following image is an exception caught in WPF on .NET Core 3 that is shown i
 
 ![The exception](/static/posts/2019-01-29-11-04-38.png)
 
-### How to Reproduce
+## How to Reproduce
 
 1. Create a new WPF project (either .NET Core 3 or .NET Framework 4.7.2)
 2. Keep the automatically generated `App` and `MainWindow` unchanged, we create a new window `SplashWindow`.

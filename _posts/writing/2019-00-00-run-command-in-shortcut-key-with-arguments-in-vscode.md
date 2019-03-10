@@ -14,7 +14,7 @@ published: false
 
 <div id="toc"></div>
 
-### 安装插件 Shell
+## 安装插件 Shell
 
 安装插件 Shell：[Shell - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=bbenoist.shell)。
 
@@ -30,13 +30,13 @@ published: false
 
 ![Shell 命令带来的几个插件](/static/posts/2018-12-30-17-11-00.png)
 
-### Shell 插件的基本使用
+## Shell 插件的基本使用
 
 实际上本文并不想说 Shell 插件的基本使用，因为你可以在插件的官方 README 中找到所有的使用方法。
 
 [Shell - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=bbenoist.shell)
 
-### 为命令绑定快捷键
+## 为命令绑定快捷键
 
 ![打开 VSCode 的快捷键设置](/static/posts/2018-12-30-17-12-49.png)
 

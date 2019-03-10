@@ -15,7 +15,7 @@ categories: visualstudio msbuild
 
 <div id="toc"></div>
 
-### 一个差量编译的例子
+## 一个差量编译的例子
 
 先看一个 `Target` 的例子，这里例子来源于我的另一篇文章[如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包 - 吕毅](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html)。在例子中，我没有加入任何的差量编译支持。
 
@@ -33,7 +33,7 @@ categories: visualstudio msbuild
 - [理解 C# 项目 csproj 文件格式的本质和编译流程 - 吕毅](/post/understand-the-csproj.html)
 - [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包 - 吕毅](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html)
 
-### 差量编译的关键
+## 差量编译的关键
 
 每一个 `Target` 都有 `Inputs` 和 `Outputs` 属性，可以设置，也可以不用设置。
 
@@ -48,7 +48,7 @@ categories: visualstudio msbuild
 
 假设我们指定 `Inputs` 为 `@(Compile)`，`Outputs` 指定为某个 xxx.exe 生成的临时文件的位置（在 [如何创建一个基于命令行工具的跨平台的 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool.html) 一文中，我假定为了 `$(IntermediateOutputPath)Doubi.cs`），那么 MSBuild 就会在执行此 Target 之前检查所有这些输入输出文件。如果所有 `<Compile>` 节点中对应的文件都没有改变，而且 `$(IntermediateOutputPath)Doubi.cs` 存在且没改变，那么此 `Target` 将不需要执行。任何一个文件不满足此条件，则 `Target` 都将重新执行。
 
-### 不是所有的 Target 都适合差量编译
+## 不是所有的 Target 都适合差量编译
 
 注意！**不是所有的 `Target` 都适合设置 `Inputs` 和 `Outputs` 属性**！
 

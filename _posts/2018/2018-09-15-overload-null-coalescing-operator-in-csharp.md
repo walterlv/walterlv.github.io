@@ -13,7 +13,7 @@ categories: csharp
 
 <div id="toc"></div>
 
-### 运算符重载
+## 运算符重载
 
 你可以阅读 [C# 中那些可以被重载的操作符，以及使用它们的那些丧心病狂的语法糖](/post/overridable-operators-in-csharp.html) 了解 C# 中提供的所有可以重载的操作符。在此文中，`??` 被明确定义为不可重载。
 
@@ -26,7 +26,7 @@ categories: csharp
 > These operators cannot be overloaded.  
 > 这些运算符无法进行重载。
 
-### 编写 NullableString 的 ?? 重载
+## 编写 NullableString 的 ?? 重载
 
 我们先写一个空壳子。连构造函数都是 `private` 的，这个类当然几乎不可用啦。
 
@@ -129,7 +129,7 @@ namespace Walterlv
 
 注释就你自己添加吧。
 
-### 一些注意事项
+## 一些注意事项
 
 这里有一些好玩的事情需要分享。比如我们写出如下代码：
 

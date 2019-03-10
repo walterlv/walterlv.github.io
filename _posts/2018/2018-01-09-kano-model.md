@@ -22,7 +22,7 @@ categories: ux
 
 产品的稳定性和性能属于“必备特性”，做到极致时用户感知不到我们对产品稳定性所做的努力，但做不好时却会让体验明显下降。
 
-#### 参考资料
+**参考资料**
 
 - [什么是卡诺KANO模型？ - 知乎](https://www.zhihu.com/question/22989667)
 - [KANO模型 - MBA智库百科](http://wiki.mbalib.com/wiki/KANO%E6%A8%A1%E5%9E%8B)

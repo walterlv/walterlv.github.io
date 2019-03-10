@@ -13,11 +13,11 @@ NuGet 原本就提供了生成源码包的功能。不过，NuGet 原生的源�
 
 <div id="toc"></div>
 
-### 准备工作
+## 准备工作
 
 我们需要一个可以用来打 NuGet 包的 .NET Core 项目，只需要在 Visual Studio 中新建一个即可。在本例中，我的项目名字是 Walterlv.Demo。
 
-### 将源码加入 NuGet 包
+## 将源码加入 NuGet 包
 
 在 [项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦）](/post/known-nuget-properties-in-csproj.html) 中，我说到了项目文件中的各种 NuGet 属性。在本文中，我们将使用到其中的一部分。
 
@@ -70,7 +70,7 @@ NuGet 原本就提供了生成源码包的功能。不过，NuGet 原生的源�
 
 ![生成的包](/static/posts/2018-06-20-09-15-55.png)
 
-### 安装 NuGet 包时引入源码
+## 安装 NuGet 包时引入源码
 
 为了让源码能随着包的安装加入到目标项目，我们需要 targets 文件来将源码引入。
 

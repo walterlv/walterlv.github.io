@@ -16,7 +16,7 @@ categories: site
 
 <div id="toc"></div>
 
-### 创建一个用于放图片的 HTML 节点
+## 创建一个用于放图片的 HTML 节点
 
 如果你是普通的 HTML 网页，可以将下面的片段放入到你的页面中。
 
@@ -29,7 +29,7 @@ categories: site
 
 最外层是容器，里面包含一个关闭按钮，一张图片和一个图片标题。
 
-### 为图片的 HTML 节点添加 CSS 样式
+## 为图片的 HTML 节点添加 CSS 样式
 
 ```css
 .image-cover-modal {
@@ -81,7 +81,7 @@ categories: site
 }
 ```
 
-### 添加放大图片的 JS 脚本
+## 添加放大图片的 JS 脚本
 
 ```js
 // Get the DOM
@@ -109,7 +109,7 @@ for (i = 0; i < document.images.length; i++) {
 }
 ```
 
-### 专为 Jekyll 设计的简化版本
+## 专为 Jekyll 设计的简化版本
 
 如果你使用 Jekyll 搭建静态网页，那么只需要修改 3 个地方：
 
@@ -157,6 +157,6 @@ for (i = 0; i < document.images.length; i++) {
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [How To Create Modal Images](https://www.w3schools.com/howto/howto_css_modal_images.asp)

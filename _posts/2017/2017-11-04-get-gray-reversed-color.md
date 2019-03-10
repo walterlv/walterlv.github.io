@@ -11,7 +11,7 @@ categories: algorithm wpf uwp dotnet csharp
 
 <p id="toc"></p>
 
-### 灰度图的心理学公式
+## 灰度图的心理学公式
 
 红绿蓝三色是非常不直观的颜色表示的方法，如果不经过训练，人类几乎没有办法直接通过 RGB 的值来猜出大概的颜色来。而 HSB 是用来解决人眼感知问题的，它将颜色用色相、饱和度、明度来表示。
 
@@ -35,7 +35,7 @@ categories: algorithm wpf uwp dotnet csharp
 
 > 灰度 = 红×0.299 + 绿×0.587 + 蓝×0.114
 
-### 在灰度背景色上决定前景色
+## 在灰度背景色上决定前景色
 
 一个图像的每一个像素经过上面的公式计算得到的新的图像，即是人眼感知亮度的灰度图。
 
@@ -43,7 +43,7 @@ categories: algorithm wpf uwp dotnet csharp
 
 当然，如果你喜欢，可以将一段黑色或接近于黑色的灰度色作为浅色背景的前景；将一段白色或颉俊宇白色的灰度色作为深色背景的前景。
 
-### 代码实现
+## 代码实现
 
 为了实现这个效果，我们先写一个灰度/亮度的计算函数：
 
@@ -69,7 +69,7 @@ private static Color GetReverseForegroundColor(double grayLevel) => grayLevel > 
 ![测试 Teal 颜色](/static/posts/2017-11-04-22-42-45.png)
 ![测试 YellowGreen 颜色](/static/posts/2017-11-04-22-43-28.png)
 
-### 我封装的方便的 API
+## 我封装的方便的 API
 
 不过，总是写后台代码来计算，对于 XAML 类的程序来说还是麻烦了些，于是我写了一些用于 XAML 的标记扩展，方便让一些文字自动根据背景色改变颜色。
 
@@ -91,6 +91,6 @@ private static Color GetReverseForegroundColor(double grayLevel) => grayLevel > 
 
 ---
 
-#### 参考资料
+**参考资料**
 - [Luma (video) - Wikipedia](https://en.wikipedia.org/wiki/Luma_(video))
 - [从RGB色转为灰度色算法（转） - carekee - 博客园](http://www.cnblogs.com/carekee/articles/3629964.html)

@@ -14,28 +14,28 @@ permalink: /wpf/2015/03/31/run-desktop-application-above-windows-application.htm
 
 做到这些，需要四个步骤，缺一不可：
 
-#### 修改 Manifest
+### 修改 Manifest
 ```xml
 <requestedExecutionLevel level="asInvoker" uiAccess="true" />
 ```
 
-#### 修改窗口属性
+### 修改窗口属性
 ```csharp
 ShowInTaskbar=true
 TopMost=true
 ```
 
-#### 为程序签名
+### 为程序签名
 [参见此处](/windows/wpf/2015/03/31/sign-for-desktop-application.html)
 
-#### 将程序放到受信任的目录下
+### 将程序放到受信任的目录下
 ```
 C:\program files
 C:\program files x86
 C:\Windows\system32
 ```
 
-#### 参考资料
+**参考资料**
 
 How to make Windows 8 desktop apps shown in Metro UI (like Task Manager)?  
 [https://stackoverflow.com/questions/12873323/how-to-make-windows-8-desktop-apps-shown-in-metro-ui-like-task-manager](https://stackoverflow.com/questions/12873323/how-to-make-windows-8-desktop-apps-shown-in-metro-ui-like-task-manager)

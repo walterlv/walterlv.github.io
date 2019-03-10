@@ -13,7 +13,7 @@ categories: vscode
 
 <div id="toc"></div>
 
-### Visual Studio Code 的代码片段设置
+## Visual Studio Code 的代码片段设置
 
 你可以在 Visual Studio Code 的菜单中找到代码片段的设置入口，在 File -> Preferences -> User Snippets 中。
 
@@ -39,7 +39,7 @@ categories: vscode
 ![指定代码片段的名称](/static/posts/2018-11-19-21-11-08.png)  
 ▲ 指定代码片段的名称
 
-### 编写代码片段
+## 编写代码片段
 
 无论你使用哪种方式新建代码片段，Visual Studio Code 都会帮你打开这个代码片段文件。整个文件一开始是被注释的状态，就像下面这样：
 
@@ -87,7 +87,7 @@ categories: vscode
 }
 ```
 
-### 插入代码片段
+## 插入代码片段
 
 那么现在按下 F1 打开快捷命令输入框进入 Insert Snippet 命令，输入 `toc` 可以看到我们刚刚加入的代码片段：
 
@@ -127,7 +127,7 @@ categories: vscode
 }
 ```
 
-### 一个更复杂的例子
+## 一个更复杂的例子
 
 现在，我们来做一个更复杂的例子，以便了解 Visual Studio Code 中代码片段定义的更多内容。
 
@@ -187,17 +187,17 @@ categories: vscode
 
 接下来我们就来说说这是怎么做出来的。
 
-### 关于代码片段编写的更多细节
+## 关于代码片段编写的更多细节
 
-#### 关于文件名称
+### 关于文件名称
 
 在阅读前面的博客内容时，你可能注意到了：添加全局代码片段的时候，文件扩展名为 `.code-snippets`，例如 blog.code-snippets；添加语言特定的代码片段的时候，扩展名为 `.json`，如 markdown.json。这个规则无论在全局还是在工作区，都是一样适用的。
 
-#### 光标停留点（Tabstop）
+### 光标停留点（Tabstop）
 
 使用 `$1` `$2` 这些可以作为按下 Tab 键时的光标停留位置，而 `$0` 无论出现在代码片段的哪个地方，都会是最后一个光标位置。
 
-#### 占位符
+### 占位符
 
 `${1:占位符 Id}` 可以表示一个占位符。当你插入此代码片段的时候，会出现 `占位符 Id` 字样，然后光标会选中这几个字以便你进行修改。
 
@@ -205,13 +205,13 @@ categories: vscode
 
 在前面那个比较复杂的博客代码片段中，`${1:在此处添加标题}` 就是一个占位符，而 `${0:在此处编辑 blog.walterlv.com 的博客摘要}` 就是光标的最终停留点。
 
-#### 下拉选项
+### 下拉选项
 
 使用 `${1|选项 1,选项 2,选项 3|}` 可以创建三个选项的下拉框。
 
 在前面的博客代码片段中，`${2|dotnet,csharp,uwp|}` 就是一个下拉选框，帮助我选择常用的一些博客类别。
 
-#### 变量
+### 变量
 
 使用 `$变量名` 或者 `${变量名:变量的默认值}` 可以创建变量。
 
@@ -266,6 +266,6 @@ categories: vscode
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Creating your own snippets in Visual Studio Code](https://code.visualstudio.com/docs/editor/userdefinedsnippets)

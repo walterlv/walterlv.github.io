@@ -12,7 +12,7 @@ categories: windows dotnet csharp
 
 <div id="toc"></div>
 
-### 相关类型
+## 相关类型
 
 .NET 中提供了两个不同的设置创建和修改时间的入口：
 
@@ -27,7 +27,7 @@ categories: windows dotnet csharp
 
 很明显，使用 `FileInfo` 类可以使用属性直接获取和赋值，用法上会比 `File` 方便，不过需要一个 `FileInfo` 的实例。
 
-### 修改时间
+## 修改时间
 
 我期待能够读取文件的创建和修改时间来获知博客文章的发布和修改时间。不过在此之前，我需要先根据 Markdown 文件元数据更新文件时间。
 
@@ -45,7 +45,7 @@ private void FixFileDate(FileInfo file, DateTimeOffset createdTime, DateTimeOffs
 
 至于如何获取 Markdown 文件元数据中的时间，可以使用 [YamlDotNet](https://www.nuget.org/packages/YamlDotNet/)（当然，需要自己提取 YAML 元数据头）。
 
-### 读取时间
+## 读取时间
 
 当此后需要使用文件的创建时间来更新 YAML 元数据时，只需要读取这几个属性即可。
 
@@ -60,6 +60,6 @@ void UpdateMetaTime(FileInfo file, DateTimeOffset publishDate, DateTimeOffset da
 }
 ```
 
-### 关于 UTC 时间
+## 关于 UTC 时间
 
 也许你注意到以上我使用的时间类型都是 `DateTimeOffset` 而不是 `DateTime`，这是因为 `DateTimeOffset` 中记录了时区信息，不至于在使用的过程中丢掉时区信息，出现重复时间转换，发生时间错误。

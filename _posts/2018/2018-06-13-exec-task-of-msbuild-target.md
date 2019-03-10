@@ -13,7 +13,7 @@ categories: dotnet msbuild
 
 <div id="toc"></div>
 
-### 捕获控制台输出
+## 捕获控制台输出
 
 如果你喜爱阅读文档，那么答案已经不陌生了，在微软的官方文档 [Exec Task](https://docs.microsoft.com/en-us/visualstudio/msbuild/exec-task?wt.mc_id=MVP) 中就已经提及了属性 `ConsoleToMSBuild`。将此属性设置为 `True`，将能够捕获控制台输出到 MSBuild 中。（*不过据说典型的程序员是不爱看文档的*）
 
@@ -27,7 +27,7 @@ categories: dotnet msbuild
 </Exec>
 ```
 
-### PropertyGroup 转 ItemGroup
+## PropertyGroup 转 ItemGroup
 
 如果你需要的只是一个字符串，那看完上一节就已经够了。但如果你希望得到的是一组值（例如新增了一组需要编译的文件），那么需要得到的是 `ItemGroup` 中的多个值，而不是 `PropertyGroup` 中的单个值。（如果不太明白 `ItemGroup` 和 `PropertyGroup` 之间的差别，不要紧，可以阅读 [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj.html)。）
 
@@ -62,7 +62,7 @@ MSBuild 还自带了一个 `Task`，名为 `CreateItem`，就是从一段字符�
 </Project>
 ```
 
-### CreateItem 的转换分隔符
+## CreateItem 的转换分隔符
 
 `CreateItem` 从属性或字符串转到项是根据分隔符来区分的。由于使用 `@(Item)` 来获取项时，会得到一个用 `;` 分隔的字符串，所以不难想到我们控制台输出的字符串使用 `;` 分隔即能满足我们的转换需求。**但事实上这是不行的！**
 
@@ -72,7 +72,7 @@ MSBuild 还自带了一个 `Task`，名为 `CreateItem`，就是从一段字符�
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [How get exec task output with msbuild - Stack Overflow](https://stackoverflow.com/q/8938679/6233938)
 - [Exec Task - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/exec-task?wt.mc_id=MVP)

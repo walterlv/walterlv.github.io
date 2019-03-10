@@ -14,7 +14,7 @@ position: knowledge
 
 <div id="toc"></div>
 
-### 一段正常的同步上下文的代码
+## 一段正常的同步上下文的代码
 
 先看看一段非常简单的代码：
 
@@ -91,7 +91,7 @@ finally
 
 我们设置了线程池最小线程数为 100，这样在使用 `Task.Run` 进行并发的时候，一次能够开启 100 个线程来执行 `Do` 方法。同时 UI 线程也执行 100 次，与后台线程竞争输出。
 
-### 一个微调即会死锁
+## 一个微调即会死锁
 
 现在我们微调一下刚刚的代码：
 
@@ -185,7 +185,7 @@ private async Task DoCoreAsync()
 
 每次运行时，停下来的次数都不相同，这也正符合多线程坑的特点。
 
-### 此死锁的触发条件
+## 此死锁的触发条件
 
 实际上，以上这段代码如果没有 WPF / UWP 的 UI 线程的参与，是 **不会出现死锁** 的。
 
@@ -198,13 +198,13 @@ DoAsync();
 
 只是这样的调用，你会看到值输出一次 —— 这就已经死锁了！
 
-### 此死锁的原因
+## 此死锁的原因
 
 WPF / UWP 等 UI 线程会使用 `DispatcherSynchronizationContext` 作为线程同步上下文，我在 [出让执行权：Task.Yield, Dispatcher.Yield - walterlv](/post/yield-in-task-dispatcher.html) 一问中有说到它的原理。
 
 在 `await` 等待完成之后，会调用 `BeginInvoke` 回到 UI 线程。然而，此时 UI 线程正卡死在 `_resetEvent.WaitOne();`，于是根本没有办法执行 `BeginInvoke` 中的操作，也就是 `await` 之后的代码。然而释放锁的代码 `_resetEvent.Set();` 就在 `await` 之后，所以不会执行，于是死锁。
 
-### 更多死锁问题
+## 更多死锁问题
 
 死锁问题：
 

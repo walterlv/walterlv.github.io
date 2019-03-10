@@ -14,7 +14,7 @@ position: starter
 
 <div id="toc"></div>
 
-### 安装 .NET Core 3.0 Preview SDK
+## 安装 .NET Core 3.0 Preview SDK
 
 前往官网下载：[.NET Core 3.0 downloads for Linux, macOS, and Windows](https://dotnet.microsoft.com/download/dotnet-core/3.0)。
 
@@ -22,7 +22,7 @@ position: starter
 
 如果你没有安装 Visual Studio 2019 Preview，请前往下载：[Visual Studio 2019](https://visualstudio.microsoft.com/vs/preview/)。
 
-### 编辑 csproj 文件
+## 编辑 csproj 文件
 
 卸载你原有的 WPF 项目，然后右键“编辑 csproj 文件”。将里面所有的内容改为以下代码：
 
@@ -55,7 +55,7 @@ position: starter
 </Project>
 ```
 
-### 编辑 AssemblyInfo.cs 文件
+## 编辑 AssemblyInfo.cs 文件
 
 由于在 .NET Core 中，程序集相关的信息是自动生成的，所以原有 AssemblyInfo.cs 中的大量程序集信息是需要删掉的，不然会出现重复 Attribute 的错误。
 
@@ -119,7 +119,7 @@ position: starter
 --  [assembly: AssemblyFileVersion("1.0.0.0")]
 ```
 
-### 恢复 NuGet 包
+## 恢复 NuGet 包
 
 打开你原有项目的 packages.config 文件。这里记录了你的项目中已经安装的 NuGet 包。
 
@@ -159,7 +159,7 @@ position: starter
 
 如果你觉得这一步骤比较繁琐，那么可以在本文一开始就按照这篇博客的方式进行操作：[自动将 NuGet 包的引用方式从 packages.config 升级为 PackageReference - walterlv](/post/migrate-packages-config-to-package-reference.html)。
 
-### 编译、运行和修复其他错误
+## 编译、运行和修复其他错误
 
 对于比较简单的项目，在经过以上步骤之后，你可能已经可以可以直接跑起来了。
 
@@ -167,7 +167,7 @@ position: starter
 
 对于复杂一些的项目，你可能会遇到其他的编译或运行错误，你需要适当进行一些修复。而产生这些错误的原因是 csproj 文件中删除了太多的东西。你需要将 `<ItemGroup />` 中的一些没有默认添加进来的文件加入进来。
 
-### 更多
+## 更多
 
 如果你只是希望创建基于 .NET Core 3 的新 WPF 项目，那么请阅读我的另一篇博客：[如何创建一个基于 .NET Core 3 的 WPF 项目](/post/create-new-wpf-on-dotnet-core-project.html)。
 

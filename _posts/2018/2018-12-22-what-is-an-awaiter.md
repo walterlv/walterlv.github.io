@@ -121,6 +121,6 @@ public class Test2 : INotifyCompletion
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Dixin's Blog - Understanding C# async / await (2) The Awaitable-Awaiter Pattern](https://weblogs.asp.net/dixin/understanding-c-sharp-async-await-2-awaitable-awaiter-pattern)

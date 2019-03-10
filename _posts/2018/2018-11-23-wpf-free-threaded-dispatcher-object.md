@@ -13,11 +13,11 @@ categories: wpf dotnet
 
 <div id="toc"></div>
 
-### 什么样的 DispatcherObject 可以跨线程访问？
+## 什么样的 DispatcherObject 可以跨线程访问？
 
 要了解什么样的 `DispatcherObject` 可以跨线程访问，需要知道 WPF 是如何限制对象的跨线程访问的。
 
-#### Dispatcher 属性
+### Dispatcher 属性
 
 `DispatcherObject` 类有一个 `Dispatcher` 属性，它长下面这样：
 
@@ -41,7 +41,7 @@ protected DispatcherObject()
 }
 ```
 
-#### CheckAccess 和 VerifyAccess
+### CheckAccess 和 VerifyAccess
 
 `DispatcherObject` 提供了两种验证 `Dispatcher` 的方法，`CheckAccess` 和 `VerifyAccess`；他们内部的实现是调用 `Dispatcher` 类型的 `CheckAccess` 和 `VerifyAccess` 方法。
 
@@ -91,7 +91,7 @@ public void VerifyAccess()
 
 只不过，WPF 封装的大多对象和属性都调用了 `VerifyAccess`（例如依赖项属性），所以很大程度上限制了 WPF UI 的线程访问权限。
 
-#### _dispatcher 的重新赋值
+### _dispatcher 的重新赋值
 
 `Dispatcher` 属性的获取实际上就是在拿 `_dispatcher` 字段的值。于是我们现在仔细寻找 `_dispatcher` 的所有赋值代码，只有三处，就是下面这三个方法：
 
@@ -142,7 +142,7 @@ private static Dispatcher EnsureSentinelDispatcher()
 
 于是我们发现，实际上 `Dispatcher` 属性虽然在 `DispatcherObject` 对象创建的时候会赋值，但实际上提供了多种方法来修改值。有的是修改成另一个线程的 `Dispatcher`，而有的就是粗暴地赋值为 `null`。
 
-#### _dispatcher 赋值为 null
+### _dispatcher 赋值为 null
 
 无论是 `CheckAccess` 还是 `VerifyAccess` 方法，实际上都对 `null` 进行了判断。
 
@@ -185,7 +185,7 @@ public void VerifyAccess()
 
 也就是说，如果一个 `DispatcherObject` 对象没有任何被关联的 `Dispatcher`，那么就被认为这个 `DispatcherObject` 没有线程访问限制，此对象将允许被任何线程访问。
 
-### 哪些 DispatcherObject 是可以跨线程访问的？
+## 哪些 DispatcherObject 是可以跨线程访问的？
 
 通过阅读 `DispatcherObject` 的源码，我们可以知道 `DispatcherObject` 其实是允许跨线程访问的，它只是在刚刚创建的时候如果没有其他额外的方法调用使得 `Dispatcher` 属性改变，那么就只能被创建它的线程访问。
 
@@ -208,7 +208,7 @@ public void VerifyAccess()
 
 也就是说，`ItemsControl` 类在某种情况下提供了一种在一个线程中创建对象，在另外一个线程中使用的特性。
 
-#### Freezable
+### Freezable
 
 `Freezable` 是继承自 `DispatcherObject` 的一个抽象类，其出现的主要目的就是解决 WPF 单线程模型带来的负面性能影响。
 
@@ -242,7 +242,7 @@ public void VerifyAccess()
 1. 在 Resource 中的 SolidColorBrush 默认情况下是不会自动 Freeze 的；但是，你可以通过指定 PresentationOptions:Freeze 特性使得它在创建完后 Freeze。
 1. 对象在 Resources 中不会自动创建，它会在第一次被使用的时候创建；也就是说，你如果要验证它的跨线程访问，需要使用两个不同的线程访问它（仅仅用一个后台线程去验证它，你会发现后台线程依然能够正常访问它的依赖项属性的值）。
 
-#### Style
+### Style
 
 `Style` 是直接继承自 `DispatcherObject` 的类型，并没有 `Freeze` 相关的方法。不过这不重要，因为重要的是能够访问到内部的 `DetachFromDispatcher` 方法。
 
@@ -326,7 +326,7 @@ public void Seal()
 
 具体来说，就是将 `Style` 中的所有属性进行 `Seal`，将资源设为只读；然后，将自己的 `Dispatcher` 属性设为 `null`。
 
-#### Template
+### Template
 
 不过，我们通常使用 `Style` 的方式都是在 `Style` 中写控件模板。如果控件模板不支持 `Seal`，那么 `Style` 即便 `Seal`，多数情况下也是没有用的。
 
@@ -408,7 +408,7 @@ internal static void SealTemplate(
 
 方法内部也是对各种属性进行了 `Seal` 和只读化处理。最后，将自己的 `Dispatcher` 属性设为 `null`。
 
-#### Style 和 Template
+### Style 和 Template
 
 由于每次应用模板的时候，都是创建新的 UI 控件，所以实际上通过模板创建的 UI 对象并不会产生跨线程访问的问题。也就是说，当 `Style` 和 `Template` 设置为可跨线程访问之后，是可以被多个线程同时访问创建控件而不会产生跨线程访问的问题。
 
@@ -416,7 +416,7 @@ internal static void SealTemplate(
 
 从这里可以推论出，你在 XAML 中写的样式，可以被跨线程访问而不会出现线程安全问题。
 
-### 强制让一个 DispatcherObject 跨线程访问
+## 强制让一个 DispatcherObject 跨线程访问
 
 从前面的各种源码分析来看，使用常规方法让任意一个对象进行跨线程访问几乎是不可能的了。剩下的就只是做一些邪恶的事情了，比如 —— 反射。
 
@@ -470,7 +470,7 @@ namespace Walterlv.Windows.Threading
 }
 ```
 
-### 总结
+## 总结
 
 1. 为什么 `DispatcherObject` 可以限制跨线程访问？
     - 因为内部有 `CheckAccess` 和 `VerifyAccess` 方法检查线程的访问权限
@@ -494,7 +494,7 @@ namespace Walterlv.Windows.Threading
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Freezable Objects Overview - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/freezable-objects-overview?wt.mc_id=MVP)
 - [mc:Ignorable Attribute - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/mc-ignorable-attribute?wt.mc_id=MVP)

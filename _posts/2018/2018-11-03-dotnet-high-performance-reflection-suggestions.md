@@ -13,7 +13,7 @@ categories: dotnet csharp
 
 <div id="toc"></div>
 
-### 反射各方法的性能数据
+## 反射各方法的性能数据
 
 我使用 [BenchmarkDotNet](https://benchmarkdotnet.org/) 基准性能测试来评估反射各个方法的性能。测试的程序基于 .NET Core 2.1 开发。
 
@@ -105,9 +105,9 @@ if (isDefined)
 
 咋看之下似乎与 `GetCustomAttribute` 方法重复，而且如果先判断再获取，可能总时间更长。不过这种方法就是适用于一次性对大量类型进行判断，如果只有少量类型定义了某种 `Attribute`，那么提前使用 `IsDefined` 判断可以获得总体更加的性能。
 
-### 反射的高性能开发建议
+## 反射的高性能开发建议
 
-#### 创建类型的实例
+### 创建类型的实例
 
 如果你能访问到类型：
 
@@ -133,14 +133,14 @@ if (isDefined)
 - [C# 直接创建多个类和使用反射创建类的性能 - 林德熙](https://blog.lindexi.com/post/C-%E7%9B%B4%E6%8E%A5%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E7%B1%BB%E5%92%8C%E4%BD%BF%E7%94%A8%E5%8F%8D%E5%B0%84%E5%88%9B%E5%BB%BA%E7%B1%BB%E7%9A%84%E6%80%A7%E8%83%BD.html)
 - [C# 性能分析 反射 VS 配置文件 VS 预编译 - 林德熙](https://blog.lindexi.com/post/C-%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90-%E5%8F%8D%E5%B0%84-VS-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-VS-%E9%A2%84%E7%BC%96%E8%AF%91.html)
 
-#### 反射获取 Attribute
+### 反射获取 Attribute
 
 获取 `Attribute` 也是耗时的操作。
 
 - 如果你只是获取极少数类型的 `Attribute`，建议直接调用 `GetCustomAttribute` 扩展方法。
 - 如果你需要判断大量类型的 `Attribute`，建议先使用 `IsDefined` 判断是否存在，如果存在才使用 `GetCustomAttribute` 方法获取真实实例。
 
-#### 反射调用公共 / 私有方法
+### 反射调用公共 / 私有方法
 
 反射调用方法与构造方法几乎是一样的，不同之处就在于公共方法可以创建出委托缓存，而私有方法却不行。
 
@@ -156,14 +156,14 @@ if (isDefined)
 - [.NET Core/Framework 创建委托以大幅度提高反射调用的性能 - 吕毅](/post/create-delegate-to-improve-reflection-performance.html)
 - [.NET/C# 推荐一个我设计的缓存类型（适合缓存反射等耗性能的操作，附用法） - 吕毅](/post/design-a-cache-pool.html)
 
-#### 使用预编译框架
+### 使用预编译框架
 
 使用预编译框架，你可以在编译期间将那些耗时的反射操作编译成类似 `new` 和属性 `get` 这样的简单 CLR 调用，性能差距近乎于最开始图表中第二张图和第五张图那样，具有数千倍的差距。
 
 - [课程 预编译框架，开发高性能应用 - 微软技术暨生态大会 2018 - walterlv](/post/dotnet-build-and-roslyn-course-in-tech-summit-2018.html)
 - [dotnet-campus/SourceFusion: SourceFusion is a pre-compile framework based on Roslyn. It helps you to build high-performance .NET code.](https://github.com/dotnet-campus/SourceFusion)
 
-### 附本文性能测试所用的代码
+## 附本文性能测试所用的代码
 
 本文性能测试使用 [BenchmarkDotNet](https://benchmarkdotnet.org/)，在 `Main` 函数中调用以下代码跑起来：
 
@@ -173,7 +173,7 @@ BenchmarkRunner.Run<Reflections>();
 
 你可以阅读 [C# 标准性能测试 - 林德熙](https://blog.lindexi.com/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95.html) 了解基准性能测试的基本用法，在 [C# 标准性能测试高级用法 - 林德熙](https://blog.lindexi.com/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95.html) 中了解到更多基准测试方法的使用。
 
-#### 所有反射相关方法
+### 所有反射相关方法
 
 ```csharp
 using BenchmarkDotNet.Attributes;
@@ -295,7 +295,7 @@ namespace Walterlv.Demo.Reflection
 }
 ```
 
-#### IsDefined 和 GetCustomAttribute 的专项比较
+### IsDefined 和 GetCustomAttribute 的专项比较
 
 ```csharp
 using System;
@@ -331,7 +331,7 @@ namespace Walterlv.Demo.Reflection
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [c# - Is there a benefit of using IsDefined over GetCustomAttributes - Stack Overflow](https://stackoverflow.com/a/14719740/6233938)
 - [Accessing Attributes by Using Reflection (C#) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection?wt.mc_id=MVP)

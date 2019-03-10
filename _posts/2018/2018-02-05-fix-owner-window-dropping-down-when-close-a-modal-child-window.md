@@ -11,7 +11,7 @@ categories: dotnet csharp windows
 
 ---
 
-### 这是什么 BUG？
+## 这是什么 BUG？
 
 ![弹出模态窗口](/static/posts/2018-02-05-13-28-37.png)
 
@@ -42,7 +42,7 @@ categories: dotnet csharp windows
 
 ![不符合预期的结果](/static/posts/2018-02-05-13-48-18.png)
 
-### 解释和解决方法
+## 解释和解决方法
 
 在《Windows 进化启示录》书中，微软有说到：
 
@@ -73,6 +73,6 @@ public ChildModalWindow()
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - 《伟大的产品：Windows 进化启示录》by 微软软件工程师 Raymond Chen (2016 年 3 月第 1 版，第 112 页)

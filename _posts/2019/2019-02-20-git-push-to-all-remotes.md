@@ -14,7 +14,7 @@ git 支持一个本地仓库包含多个远端（remote），这对于开源社�
 
 我的博客同时发布在 GitHub 仓库 <https://github.com/walterlv/walterlv.github.io> 和 Gitee 仓库 <http://gitee.com/walterlv/walterlv>。由于这两个远端的 Pages 服务没有打通，所以我总是需要同时将博客推送到两个不同的远端中。
 
-### 第一步：设置多个远端（remote）
+## 第一步：设置多个远端（remote）
 
 使用你平常使用的方法添加多个 git 远端。
 
@@ -45,7 +45,7 @@ git remote add github https://github.com/walterlv/walterlv.github.io.git --no-ta
 	tagopt = --no-tags
 ```
 
-### 第二步：添加一个名为 all 的新远端
+## 第二步：添加一个名为 all 的新远端
 
 现在，我们要添加一个名为 all 的新远端，并且在里面添加两个 url。由于这个步骤没有 git 命令行的帮助，所以你需要手工修改 config 文件中的内容。
 
@@ -58,7 +58,7 @@ git remote add github https://github.com/walterlv/walterlv.github.io.git --no-ta
 
 如果你有更多需要同步的远端，那么就在里面添加更多的 url。
 
-### 开始使用一个命令同步所有的仓库
+## 开始使用一个命令同步所有的仓库
 
 现在，你可以使用一句命令将本地的修改推送到所有的远端了。
 

@@ -24,19 +24,19 @@ This post is written in **multiple languages**. Please select yours:
 
 <div id="toc"></div>
 
-### API 是什么？
+## API 是什么？
 
 如果要解释 API 这个英文缩写，那一定要说出它的英文原文来：Application Programming Interface，即应用编程接口。虽然[维基百科上有它的定义](https://zh.wikipedia.org/zh-hans/%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%8E%A5%E5%8F%A3)，不过还是太复杂了。
 
 在 .NET 中，我们认为 API 包括了所有公开的类、接口、属性、字段、方法，以及类库提供的配置文件（包括格式）、协议等。
 
-### API 设计原则
+## API 设计原则
 
 即便没有学习过任何 API 设计，也没有阅读过设计或重构相关的书籍，只要你有一些编程经验，应该都能够或多或少地评估一组 API 设计得是好是坏。因为——我们都是 API 的使用者，用的 API 多了，也便能体会到各种不同 API 带给我们的不同体验。
 
 所以，在下面总结的 API 设计原则中，前面四个都是站在使用者的角度来考虑的。
 
-#### 可理解性
+### 可理解性
 
 通常使用者希望使用到某个 API 的时候，为了正确使用这个 API，需要学习一些与这个 API 相关的新知识。而需要新学习的知识越多，我们认为“可理解性”就越低。
 
@@ -51,7 +51,7 @@ This post is written in **multiple languages**. Please select yours:
 
 关于防止误用的一个优秀案例，要属单元测试模拟 Moq 了；可以参考 [Moq 基础系列教程](https://huangtengxiao.gitee.io/post/Moq%E5%9F%BA%E7%A1%80-%E4%B8%80.html) 并上手编写，体验它对防止误用上做出的努力。
 
-#### 可见性
+### 可见性
 
 我们大多数人的开发工具是功能齐全，傻瓜也能使用的 IDE（集成开发环境），这其实是 IDE 可理解性较好的一个体现。
 
@@ -79,13 +79,13 @@ This post is written in **multiple languages**. Please select yours:
 1. 对于多数常用功能，尽量少提供独立的类；
 1. 对于高级功能，尽量与简单功能隔离。
 
-#### 一致性
+### 一致性
 
 当多个相似功能的 API 之间有相似的使用方法时，使用者只需要很少的迁移成本便可以轻松学会新 API 的正确用法。
 
 比如 LINQ 带来了集合的便捷操作，其中的 `Select` 方法用于查找和转换集合每一项的信息。而 LINQ to XML 虽然不是在操作集合而是在操作 XML，但其也有 `Select` 等方法完成节点的查找和选择。于是，使用者可以通过智能感知提示大致了解到 `Select`/`SelectSingleNode` 的基本正确用法。这便是良好的一致性带来的快速入门体验。
 
-#### 简单性
+### 简单性
 
 可能有些 API 在经过修改满足了以上可理解性、可见性、一致性之后，极有可能导致一个类或者一组相关类包含了太多方法可用。于是，简单而正确的使用可能就隐藏在众多的 API 中。当然，从面向对象的原则中我们可以说这通常违反了“单一职责原则”。
 
@@ -115,13 +115,13 @@ This post is written in **multiple languages**. Please select yours:
 > inkCanvas.InkPresenter.UpdateDefaultDrawingAttributes(drawingAttributes);
 > ```
 
-#### 可测性
+### 可测性
 
 API 内部本身需要被测试（单元测试、基准测试等）；然而，API 的使用者也应该具备可测性。
 
 典型的反例，比如获取某个配置文件的配置信息的方法是静态方法 `Config.Get("SomeKey")`。那么使用这个 API 的开发者就很难写出能够被单元测试的方法，因为找不到有效的方案来模拟这样的静态方法。
 
-#### 兼容性
+### 兼容性
 
 良好的 API 设计利于未来的版本升级——升级带来的用户兼容性成本较低，或者框架开发者的兼容性包袱较轻。
 
@@ -141,7 +141,7 @@ API 内部本身需要被测试（单元测试、基准测试等）；然而，A
 1. 应该有明确的 API 迁移说明
     - 如果某个 API 过时了，也不建议删除它；应该标记为过时，并告诉使用者新的 API 是什么。当然如果这个 API 会导致出现不可接受的问题，也可以标记它无法通过编译。
 
-### 框架设计
+## 框架设计
 
 *Practical API Design* 一书认为框架和 API 是等同的。不过从实际行业上的描述来看，框架是更大层面的 API，可以理解为用于完整解决某类问题而开发的一整套 API。
 
@@ -151,6 +151,6 @@ API 内部本身需要被测试（单元测试、基准测试等）；然而，A
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - *Practical API Design*, NetBeans 创始人 Jaroslav Tulach 著

@@ -11,7 +11,7 @@ categories: dotnet csharp
 
 <div id="toc"></div>
 
-### 背景问题和传统方法
+## 背景问题和传统方法
 
 1. 为什么有些方法不容易迁移到 `async`/`await`？
     - 参见微软的博客 `async`/`await` 最佳实践 [Async/Await - Best Practices in Asynchronous Programming](https://msdn.microsoft.com/en-us/magazine/jj991977.aspx)。如果某个方法从同步方法修改为异步方法（例如从 `var content = file.Read()` 修改为 `var content = await file.ReadAsync()`），那么调用此方法的整个调用链全部都要改成 `async`/`await` 才能让返回值在调用链中成功传递。
@@ -19,7 +19,7 @@ categories: dotnet csharp
     - 参见我的好朋友[林德熙](https://blog.lindexi.com/)的博客 [win10 uwp 异步转同步](https://blog.lindexi.com/post/win10-uwp-%E5%BC%82%E6%AD%A5%E8%BD%AC%E5%90%8C%E6%AD%A5.html)。文章里使用 `Task.Wait()` 或者 `Task.Result` 来获取异步方法的返回值。
     - 这种方法会阻塞调用线程。如果调用线程是 UI 线程，那么 UI 将会无响应；更严重地，如果 UI 线程使用 `DispatcherSynchronizationContext`（参见我的另一篇文章 [DispatcherSynchronizationContext - walterlv](/post/yield-in-task-dispatcher.html)）进行线程上下文的同步，那么极有可能会造成死锁（参见我的另一篇文章 [使用 Task.Wait()？立刻死锁（deadlock） - walterlv](/post/deadlock-in-task-wait.html)）。
 
-### 安全的方法
+## 安全的方法
 
 传统方法的坑在于 UI 线程无响应和死锁问题。既要解决无响应问题，又要阻塞调用方，可选的方法就是 Windows 消息循环了。在使用消息循环时还要避免使用 `async`/`await` 的同步上下文（`SynchronizationContext`），这样才能避免 UI 线程的死锁问题。
 
@@ -61,7 +61,7 @@ public static TResult AwaitByPushFrame<TResult>(Task<TResult> task)
 
 ▲ 这就是全部代码了，仅适用于 Windows 平台（*如果使用 .NET Core，需要其他能够创建消息循环这种线程模型的方案。不过这通常是平台相关的，需要多种实现。例如 [Avalonia](https://github.com/AvaloniaUI/Avalonia) 在 Win32 平台上使用 GetMessage 实现等待；在 iOS 和 Android 平台上使用外部的全局循环；Mac 使用 MonoMac.AppKit 创建；Linux 下使用 GtkMainIteration 实现等待。*）
 
-### 新方法的适用范围和优劣
+## 新方法的适用范围和优劣
 
 事实上，虽然我们使用了消息循环，但其实也适用于控制台程序，适用于各种各样奇奇怪怪的线程 —— **无论是 UI 线程还是非 UI 线程，无论是 STA 还是 MTA**。
 
@@ -118,11 +118,11 @@ namespace Walterlv.Demo
 
 不过我们也要认识到，由于使用了消息循环，这意味着此方法不像 `Task.Wait()` 或 `Task.Result` 方法那样在全平台通用。不过，消息循环方法的出现便主要是用来解决 UI 的无响应和死锁问题。
 
-### 总结
+## 总结
 
 我们使用消息循环的方式完成了异步方法转同步方法，这样的方式不止能解决传统 `Task.Wait()`/`Task.Result` 导致 UI 线程无响应或死锁问题之外，也适用于非 UI 线程，不止能在 STA 线程使用，也能在 MTA 线程使用。
 
-### 更多死锁问题
+## 更多死锁问题
 
 死锁问题：
 

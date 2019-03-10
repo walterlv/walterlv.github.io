@@ -16,7 +16,7 @@ position: starter
 
 <div id="toc"></div>
 
-### 搭建环境
+## 搭建环境
 
 本文不会花篇幅来讲如何搭建 Xamarin iOS 开发的环境，不然这篇文章就没有重点。
 
@@ -27,7 +27,7 @@ position: starter
 1. 申请开发者账号：<https://developer.apple.com/register/>，[阅读这里了解坑](/post/tips-for-developing-xamarin-ios-app.html)
 1. 准备一根 Type-C 到 Lightning 的数据线，用于 Mac 从 Mac 部署到真机进行调试
 
-### 你需要了解的 iOS 键盘扩展的背景知识
+## 你需要了解的 iOS 键盘扩展的背景知识
 
 了解以下背景知识，有助于我们接下来开发的时候少踩一些坑。*当然我不会在这里说 iOS 应用开发的所有背景知识，只会说与 iOS 键盘扩展相关的部分。*
 
@@ -39,9 +39,9 @@ position: starter
     - 如果真的要共享数据，就需要像其他两款不同应用共享数据一样的处理方式
 1. iOS 键盘扩展默认是不能访问网络的，你需要声明允许访问网络，并获得用户的同意才行。
 
-### 创建 iOS 键盘扩展项目
+## 创建 iOS 键盘扩展项目
 
-#### 第一步：创建 Xamarin.Forms 项目。
+### 第一步：创建 Xamarin.Forms 项目。
 
 这个不用太在意里面的实现，因为它只是我们的“容器项目”（前面有介绍）。实际上在本文我们完全不会碰这个项目里面的代码，只是为了配置我们的 iOS 应用包而已。未来你可以在这个容器应用里面做键盘的个性化设置。
 
@@ -53,7 +53,7 @@ position: starter
 
 ![我们只选择 iOS 平台](/static/posts/2019-01-21-19-48-09.png)
 
-#### 第二步：创建 iOS 键盘扩展项目
+### 第二步：创建 iOS 键盘扩展项目
 
 ![创建新项目](/static/posts/2019-01-21-19-50-52.png)
 
@@ -67,7 +67,7 @@ position: starter
 
 于是，Main 和 AppDelegate 这两个文件是可以删除的。如果你强迫症，就删掉吧。当然不删掉也不影响，不过我删掉了。
 
-#### 第三步：引用 iOS 键盘扩展项目
+### 第三步：引用 iOS 键盘扩展项目
 
 在 iOS 容器应用上面添加键盘扩展项目作为引用。
 
@@ -90,7 +90,7 @@ position: starter
 
 ![可以编译通过](/static/posts/2019-01-21-20-10-58.png)
 
-### 配置包信息
+## 配置包信息
 
 iOS 应用的包信息存储在 plist 中。所以在这一节，你需要正确配置两个项目的 plist。
 
@@ -117,7 +117,7 @@ iOS 应用的包信息存储在 plist 中。所以在这一节，你需要正确
 
 至此，你的项目可以直接编译了。如果你有真机部署环境，都可以直接部署到真机上看效果了。
 
-### 真机部署调试
+## 真机部署调试
 
 本文不会花篇幅来讲如何真机部署调试，不然这篇文章就没有重点。
 
@@ -136,7 +136,7 @@ iOS 应用的包信息存储在 plist 中。所以在这一节，你需要正确
 
 ![键盘真机部署后的运行效果](/static/posts/2019-01-21-22-07-21.png)
 
-### 处理键盘的文字输入、退格和确定
+## 处理键盘的文字输入、退格和确定
 
 我们把 Walterlv.CloudKeyboard.iOS.Extension 也就是那个键盘扩展项目删除得只剩下 KeyboardViewController.cs 了，我们也只需要在这个类中写代码而已。
 
@@ -195,9 +195,9 @@ public enum UIReturnKeyType : long
 }
 ```
 
-### 添加键盘的网络访问支持
+## 添加键盘的网络访问支持
 
-#### 允许完全访问（包括网络）
+### 允许完全访问（包括网络）
 
 纯本地的键盘很难在打字速度上获得优势，各种主流的输入法也通常借助网络来提高自身的输入准确度。
 
@@ -219,7 +219,7 @@ public enum UIReturnKeyType : long
 
 这个属性设为 `true` 之后，再次部署，你将可以在你的键盘设置里面看到“允许完全访问”的设置项。开启之后，你就能在你的键盘里面访问网络了。
 
-#### 允许访问 http 不安全网络
+### 允许访问 http 不安全网络
 
 一般来说你不用阅读这一小节的内容。因为现在基本上各种服务都已经是 https 了，http 基本已经绝迹。但是如果你需要临时部署一个服务，没来得及申请 https 证书的话，那么就需要使用本小结的内容让你的键盘支持 http 的访问。
 
@@ -247,7 +247,7 @@ public enum UIReturnKeyType : long
 
 这样，你就能在键盘中访问 [http://walterlv.com](https://walterlv.com) 了。
 
-### 本文总结
+## 本文总结
 
 1. 本文介绍了使用 Xamarin 开发 iOS 键盘插件的背景知识。
     - 必须了解这些知识才不会在一些不太重要的坑上耗费太长时间。
@@ -265,7 +265,7 @@ public enum UIReturnKeyType : long
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [iOS Extensions in Xamarin.iOS - Xamarin - Microsoft Docs](https://docs.microsoft.com/en-us/xamarin/ios/platform/extensions)
 - [iOS 8 Custom Keyboard Tutorial: How to Create A Third-Party Keyboard Extension | iPhone and iOS App UI Design Templates](http://www.appdesignvault.com/ios-8-custom-keyboard-extension/#a_aid=mdev)

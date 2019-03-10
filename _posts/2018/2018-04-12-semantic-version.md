@@ -11,7 +11,7 @@ categories: visualstudio nuget csharp dotnet
 
 <div id="toc"></div>
 
-### 传统的版本号
+## 传统的版本号
 
 如果你只是知道传统版本号由四个部分组成，那么建议去官方文档 [Assembly Versioning](https://docs.microsoft.com/en-us/dotnet/framework/app-domains/assembly-versioning?wt.mc_id=MVP) 了解一下这种版本号的定义。它分为 `主版本号`.`次版本号`.`构建号`.`修订号` 四个部分，但是后面的一个或多个部分可以省略。
 
@@ -25,7 +25,7 @@ categories: visualstudio nuget csharp dotnet
 
 传统的版本号记录不了这些信息，于是我们不得不用一些额外的方式来记录，这就增加了维护成本。
 
-### 语义版本号
+## 语义版本号
 
 语义版本号由五个部分组成 `主版本号`、`次版本号`、`补丁号`、`预发布版本标签` 和 `构建号`。举例看看语义版本号是什么样的吧（摘自 [NuGet Package Version Reference](https://docs.microsoft.com/en-us/nuget/reference/package-versioning?wt.mc_id=MVP)）：
 
@@ -45,7 +45,7 @@ NuGet 4.3.0 以上，并且 Visual Studio 2017 的 15.3 以上版本开始支持
 - 1.0.0-beta.5+4
     - 表示这是准备发布 1.0.0 的第 5/6 个 beta 版本之后，又新增了 4 个 git 提交。（是不是意义更加明确？）
 
-### 如何在项目中使用语义版本号？
+## 如何在项目中使用语义版本号？
 
 如果你希望方便，在执行 `dotnet build` 或 `dotnet pack` 命令之后能够直接得到使用语义版本号的 NuGet 包，那么你必须拥有一个新格式的 csproj，就是 .NET Core 带来的那种新格式。如果你的格式是旧的，可以阅读我的另一篇文章 [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj](/post/introduce-new-style-csproj-into-net-framework.html) 迁移成新格式。
 
@@ -74,13 +74,13 @@ NuGet 4.3.0 以上，并且 Visual Studio 2017 的 15.3 以上版本开始支持
 
 如果希望自动化地在项目中生成语义版本号，可阅读我的另一篇博客 [使用 GitVersion 在编译或持续构建时自动使用语义版本号（Semantic Versioning）](/post/automatically-semantic-versioning-using-git-version-task.html)。
 
-### 如何用 C#/.NET 支持语义版本号？
+## 如何用 C#/.NET 支持语义版本号？
 
 可参考林德熙的博客：[C# 使用转换语义版本号](https://lindexi.github.io/lindexi/post/C-%E4%BD%BF%E7%94%A8%E8%BD%AC%E6%8D%A2%E8%AF%AD%E4%B9%89%E7%89%88%E6%9C%AC%E5%8F%B7.html)。
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Semantic Versioning 2.0.0 - Semantic Versioning](https://semver.org/)
 - [Semantic Versioning & auto-incremented NuGet package versions - Xavier Decoster](https://www.xavierdecoster.com/post/2013/04/29/semantic-versioning-auto-incremented-nuget-package-versions.html)

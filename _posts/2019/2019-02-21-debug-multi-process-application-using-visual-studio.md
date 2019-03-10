@@ -13,7 +13,7 @@ position: knowledge
 
 <div id="toc"></div>
 
-### Visual Studio 多启动项目（推荐）
+## Visual Studio 多启动项目（推荐）
 
 在 Visual Studio 的解决方案上点击右键，属性。在公共属性节点中选择启动项目。
 
@@ -28,9 +28,9 @@ position: knowledge
 1. 要调试的多个进程必须是不同的项目编译出来的；
 1. 这些项目之间的启动顺序不能有明显的依赖关系（所以你可能需要修改你的代码使得这两个进程之间可以互相唤起）。
 
-### Microsoft Child Process Debugging Power Tool 插件（推荐）
+## Microsoft Child Process Debugging Power Tool 插件（推荐）
 
-#### 安装和配置插件
+### 安装和配置插件
 
 请先安装 [Microsoft Child Process Debugging Power Tool](https://marketplace.visualstudio.com/items?itemName=vsdbgplat.MicrosoftChildProcessDebuggingPowerTool) 插件。
 
@@ -42,13 +42,13 @@ position: knowledge
 
 ![设置子进程调试](/static/posts/2019-02-20-21-52-07.png)
 
-#### 配置项目启动选项
+### 配置项目启动选项
 
 但是，子进程要能够调试，你还必须开启混合模式调试，开启方法请参见我的另一篇博客：[在 Visual Studio 新旧不同的 csproj 项目格式中启用混合模式调试程序（开启本机代码调试） - walterlv](/post/visual-studio-enable-native-code-debugging.html)。
 
 现在，你只需要开始调试你的程序，那么你程序中启动的新的子进程都将可以自动加入调试。
 
-#### 例子源码和效果
+### 例子源码和效果
 
 现在，我们拿下面这段代码作为例子来尝试子进程的调试。下面的代码中，`if` 中的代码会运行在子进程中，而 `else` 中的代码会运行在主进程中。
 
@@ -90,7 +90,7 @@ namespace Walterlv.Debugging
 
 值得注意的是，只要启动了本机代码调试，就不能在程序暂停之后修改代码了（像平时调试纯托管代码那样）。
 
-### 在代码中编写“附加调试器”
+## 在代码中编写“附加调试器”
 
 调用 `Debugger.Launch()` 可以启动一个调试器来调试此进程。于是我们可以在我们被调试的程序中写下如下代码：
 
@@ -113,11 +113,11 @@ namespace Walterlv.Debugging
 
 对于此方法，我的建议是平常不要在团队项目中使用（这会让团队中的其他人不方便）。但是由于代码简单不需要配置，所以临时使用的话还是非常建议的。
 
-### 在代码中调用 Visual Studio 的 COM 组件 API
+## 在代码中调用 Visual Studio 的 COM 组件 API
 
 编写中……
 
-### 总结
+## 总结
 
 综上，虽然我给出了 4 种不同的方法，但实际上没有任何一种方法能够像我们调试单个原生托管程序那样方便。每一种方法都各有优劣，一般情况下建议你使用我标注了“推荐”的方法；不过也建议针对不同的情况采用不同的方案。
 
@@ -130,7 +130,7 @@ namespace Walterlv.Debugging
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Azure DevOps Blog - Introducing the Child Process Debugging Power Tool](https://devblogs.microsoft.com/devops/introducing-the-child-process-debugging-power-tool/)
 - [Microsoft Child Process Debugging Power Tool - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=vsdbgplat.MicrosoftChildProcessDebuggingPowerTool)

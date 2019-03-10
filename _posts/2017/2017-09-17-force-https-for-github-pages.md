@@ -17,7 +17,7 @@ description: 对于 GitHub Pages，了解如何强制使用 https；对于码云
 
 ---
 
-### GitHub Pages
+## GitHub Pages
 
 去自己的 GitHub Pages 仓库页找了找设置项（https://github.com/walterlv/walterlv.github.io/settings），果然发现了有强制 https 设置。
 
@@ -25,7 +25,7 @@ description: 对于 GitHub Pages，了解如何强制使用 https；对于码云
 
 开启后再打开 [walterlv.github.io](https://walterlv.github.io/)，果然 https 了。
 
-### 码云的 Pages 服务
+## 码云的 Pages 服务
 
 GitHub Pages 设置得这么轻松，想必码云的 Pages 服务应该也不难吧……
 

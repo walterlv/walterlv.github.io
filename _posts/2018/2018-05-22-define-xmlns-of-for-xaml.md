@@ -13,7 +13,7 @@ categories: dotnet xaml wpf
 
 <div id="toc"></div>
 
-### 达到什么样的效果？
+## 达到什么样的效果？
 
 ```xml
 <UserControl
@@ -50,7 +50,7 @@ categories: dotnet xaml wpf
 1. 更加清晰的命名空间声明 
     可以通过将命名空间前缀定义得更加清晰，更有效地利用每一个字符，而不是一些结构化的 `clr-namespace` 和 `assembly`。
 
-### 这是怎么做到的呢？
+## 这是怎么做到的呢？
 
 在 `System.Windows.Markup` 命名空间下，有两个程序集级别的 `Attribute`，分别是 `XmlnsDefinition` 和 `XmlnsPrefix`。`XmlnsDefinition` 定义某个 C# 命名空间和一段命名空间字符串是等意的，`XmlnsPrefix` 定义此命名空间的默认前缀（只是默认而已）。
 
@@ -65,7 +65,7 @@ using System.Windows.Markup;
 
 如果你用工具（例如 ReSharper）自动生成命名空间前缀时，才会使用这样默认的命名空间前缀，否则，你随便填。
 
-### 还有什么更高级的玩法吗？
+## 还有什么更高级的玩法吗？
 
 也许你注意到 WPF 有一些一开始就帮你生成好的命名空间前缀，例如这些：
 
@@ -99,13 +99,13 @@ using System.Windows.Markup;
 
 这在项目内为一些几乎侵染全部代码的标记扩展是很棒的一波语法糖。例如——自己实现的本地化标记扩展。
 
-### 一些限制
+## 一些限制
 
 值得注意的是，XAML 命名空间的定义只会在外部程序集生效。这是说，如果你在 A 程序集中定义了命名空间，那么只有引用了 A 程序集的 B 或者 C 才可以使用到新定义的命名空间；A 程序集自身是没有办法使用此命名空间的。
 
 ---
 
-### 参考资料
+## 参考资料
 
 - [wpf - How to make XmlnsDefinition work on the local assembly? - Stack Overflow](https://stackoverflow.com/a/2778489/6233938)
 - [XmlnsDefinition doesn't work in the same assembly](https://social.msdn.microsoft.com/Forums/vstudio/en-US/7e7a032a-dad3-4e02-9e5a-d73e346b75ed/xmlnsdefinition-doesnt-work-in-the-same-assembly)

@@ -18,7 +18,7 @@ WPF 支持创建多个 UI 线程，跨窗口的或者窗口内的都是可以的
 
 <div id="toc"></div>
 
-### 简述这个线程安全问题
+## 简述这个线程安全问题
 
 必要条件：
 
@@ -51,7 +51,7 @@ System.NullReferenceException: Object reference not set to an instance of an obj
 
 ![异常](/static/posts/2019-01-29-11-04-38.png)
 
-### 复现步骤
+## 复现步骤
 
 1. 创建一个新的 WPF 项目（无论是 .NET Framework 4.7.2 还是 .NET Core 3）
 2. 保持自动生成的 `App` 和 `MainWindow` 不变，我们额外创建一个窗口 `SplashWindow`。

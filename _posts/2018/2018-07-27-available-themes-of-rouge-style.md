@@ -11,7 +11,7 @@ Rouge 是一款基于 Ruby 的语法高亮工具，能为你的代码生成漂�
 
 ---
 
-### 在 Jekyll 中使用 Rouge 语法高亮插件
+## 在 Jekyll 中使用 Rouge 语法高亮插件
 
 Jekyll 中的 `__config.yml` 文件记录了 Jekyll 的最核心配置。其中，`markdown` 字段的值表示使用哪一款插件来将 Markdown 文本转换为 HTML 页面结构。
 
@@ -30,7 +30,7 @@ kramdown:
 
 Rouge 支持的语言可以前往此处查看：[Rouge](http://rouge.jneen.net/)
 
-### 生成 Rouge 语法高亮样式
+## 生成 Rouge 语法高亮样式
 
 当然，以上配置只是告诉 kramdown 转换引擎在转换 Markdown 为 HTML 的时候，使用 rouge 格式的样式（具体只语法高亮所用的 css 的 class）。我们需要另外使用 rougify 工具生成对应的样式文件才行。
 
@@ -77,7 +77,7 @@ $ rougify style github > assets/css/syntax.css
 ```
 {% endraw %}
 
-### Rouge 自带语法高亮主题预览
+## Rouge 自带语法高亮主题预览
 
 虽然 Rouge 自带了很多种不同的语法高亮样式，但都没有办法直接看到语法高亮的效果。于是我尝试了一些，并贴出了我的 C# 代码在 Rouge 自带语法高亮主题下的效果。
 
@@ -118,7 +118,7 @@ $ rougify style github > assets/css/syntax.css
 ![base16](/static/posts/2018-07-27-21-29-40.png)  
 ▲ base16
 
-### 我修改的样式
+## 我修改的样式
 
 我发现我以前的样式与 monokai.sublime 是很接近的。这应该算是巧合，因为此前我是仿我的 VSCode 主题 [One Dark Pro Vivid](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme)。
 
@@ -130,7 +130,7 @@ $ rougify style github > assets/css/syntax.css
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Plugins - Jekyll • Simple, blog-aware, static sites](https://jekyllrb.com/docs/plugins/)
 - [kramdown 和 markdown 较大的差异比较 - Hom](http://gohom.win/2015/11/06/Kramdown-note/)

@@ -12,7 +12,7 @@ Windows 系统下的命令行界面，字体要么是点阵字体，要么是宋
 
 <p id="toc"></p>
 
-### 对字体要求
+## 对字体要求
 
 当然，安装了 git 后，会自动帮我们安装 mintty，bash 风格，自定义方便，着色也很棒。如果可能，我还是更希望用 mintty。可是，总有免不了要用 cmd 的时候，或者虽然强大但很丑的 PowerShell……
 
@@ -45,7 +45,7 @@ Windows 系统下的命令行界面，字体要么是点阵字体，要么是宋
 
 这还真不是一般字体能够满足的……
 
-### 推荐可用的字体
+## 推荐可用的字体
 
 我找了好几款字体，然而只发现下面两款字体是真正可以在 PowerShell 或 cmd 里面用的：
 
@@ -69,7 +69,7 @@ Inziu 字体族较多，实测有些有效有些无效：
 ![](/static/posts/2017-11-22-23-14-57.png)  
 ▲ cmd
 
-### 控制台字体设置方法
+## 控制台字体设置方法
 
 对于上面推荐的两款字体，直接安装就可以了，下次打开 PowerShell 或者 cmd 时，属性界面里面就可以找到新安装的字体，就可以选择了。
 
@@ -81,7 +81,7 @@ Inziu 字体族较多，实测有些有效有些无效：
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Necessary criteria for fonts to be available in a command window](https://support.microsoft.com/zh-cn/help/247815/necessary-criteria-for-fonts-to-be-available-in-a-command-window)
 - [为什么 Windows 下 cmd 和 PowerShell 不能方便地自定义字体？ - 知乎](https://www.zhihu.com/question/36344262)

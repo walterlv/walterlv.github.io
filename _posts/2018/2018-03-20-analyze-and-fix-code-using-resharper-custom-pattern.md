@@ -15,7 +15,7 @@ categories: visualstudio csharp resharper
 
 <div id="toc"></div>
 
-### 预览效果
+## 预览效果
 
 我们团队中自定义了一个代码风格规范，在单元测试中 `Assert.AreEqual(foo.GetType(), typeof(Foo));` 应该被换成 `Assert.IsInstanceOfType(foo, typeof(Foo));`。于是，ReSharper 会给出警告，并给出推荐的写法；如果遵循 ReSharper 的建议，ReSharper 将自动为我们修改代码。
 
@@ -28,7 +28,7 @@ categories: visualstudio csharp resharper
 ![然后代码就被修改成我们建议的写法了](/static/posts/2018-03-20-18-53-27.png)  
 ▲ 然后代码就被修改成我们建议的写法了
 
-### 开始编写自定义模式
+## 开始编写自定义模式
 
 我们需要打开 ReSharper 的选项窗口，然后在里面找到“自定义模式”：
 
@@ -96,7 +96,7 @@ Assert.IsInstanceOfType($instance$, typeof($type$));
 
 ![保存到团队](/static/posts/2018-03-20-20-05-57.png)
 
-### 自己动手，发掘潜能
+## 自己动手，发掘潜能
 
 Custom Pattern 功能只是为了给我们一个格式转换吗？才不止是这样哦！它能够帮助我们发现一些潜在的错误。
 

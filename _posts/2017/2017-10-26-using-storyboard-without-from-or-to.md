@@ -16,7 +16,7 @@ tags: Storyboard Animation From To
 
 <p id="toc"></p>
 
-### 预览效果
+## 预览效果
 
 下面是本文期望实现的基本效果：
 
@@ -25,7 +25,7 @@ tags: Storyboard Animation From To
 - 在 UWP 中的动画效果  
 ![UWP 动画随机移动](/static/posts/2017-10-26-uwp-move-to-randomly.gif)
 
-### 预备代码
+## 预备代码
 
 为了让读者能够最快速地搭建一个可供试验的 DEMO，我这里贴出界面部分核心代码。
 
@@ -89,11 +89,11 @@ private Point NextRandomPosition()
 }
 ```
 
-### 探索动画
+## 探索动画
 
 由于我们期望元素从当前所在的位置开始动画，到我们指定的另一个随机位置，所以直接在 XAML 中指定 `From` 和 `To` 是一个艰难的行为。我们只好在 .xaml.cs 文件中指定。
 
-#### WPF
+### WPF
 
 在 WPF 中，如果我们没有指定动画的 `From`，那么动画将从当前值开始；如果我们没有指定动画的 `To`，那么动画将到当前值结束。从这个角度上说，似乎不设置 `From` 和 `To` 将导致动画保持在当前值不变，不会有动画效果。
 
@@ -159,7 +159,7 @@ private void BeginStoryboard2_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-#### UWP
+### UWP
 
 UWP 的情况就不如 WPF 那么灵活了。在 UWP 中，如果不给动画指定 `To` 值，那么动画根本就会直接朝 `0` 位置执行。
 
@@ -182,7 +182,7 @@ private void BeginStoryboard_Click(object sender, RoutedEventArgs e)
 
 在这样的写法下，灵活性与 WPF 相当，但 WPF 中支持在动画没有播放的时候随时设置元素位置，而这种方式则不行（其值会被动画保持）。
 
-### 完整的后台代码
+## 完整的后台代码
 
 ```csharp
 public partial class StoryboardPage : Page
@@ -252,7 +252,7 @@ public partial class StoryboardPage : Page
 }
 ```
 
-### 总结
+## 总结
 
 1. 在 WPF 中，可以不通过 `From` 和 `To` 来指定动画的起始值和终止值；但如果真的不指定 `From` 和 `To`，需要提前播放一次动画以确保动画能保持住元素状态；
 1. 在 WPF 中，如果没有指定 `From` 和 `To`，那么动画结束后依然能直接为元素属性复制，且会立刻生效（正常情况下需要先清除动画）；

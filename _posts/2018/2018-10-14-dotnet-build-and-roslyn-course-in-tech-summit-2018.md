@@ -15,7 +15,7 @@ categories: dotnet csharp msbuild roslyn visualstudio nuget
 
 进入 [微软技术暨生态大会](https://www.microsoft.com/china/techsummit/2018/) 官网可以了解更多内容。如果你和我一样对微软技术富有热情，那么也欢迎你 [买票](http://www.mstechsummit.cn/Ticket/BuyTicket) 一起去上海。
 
-### 关于课程《预编译框架 - 开发高性能应用》
+## 关于课程《预编译框架 - 开发高性能应用》
 
 时间：2018 年 10 月 27 日 11:00-11:45
 代号：DEV306
@@ -38,7 +38,7 @@ categories: dotnet csharp msbuild roslyn visualstudio nuget
 
 额外的，彩排在 26 号 9:40-10:00。
 
-### 课程大纲
+## 课程大纲
 
 课程大纲是为 2 小时的课程而设计的。所以实际上我只会讲大部分内容，以下所有动手实验和演示的地方都会略过，代之以提前运行和编写的结果。
 
@@ -80,7 +80,7 @@ categories: dotnet csharp msbuild roslyn visualstudio nuget
     - 回顾 dotnet build 的编译过程和 Roslyn 分析源码
     - SourceYard 和 SourceFusion 的开源仓库，欢迎加入
 
-### 关于讲师 —— 吕毅
+## 关于讲师 —— 吕毅
 
 你可以进入 [微软技术暨生态大会 - 大会日程](https://www.mstechsummit.cn/SpeakerSession/Index) 页面，然后点击 “演讲嘉宾”。
 
@@ -90,7 +90,7 @@ categories: dotnet csharp msbuild roslyn visualstudio nuget
 
 ![讲师页面](/static/posts/2018-10-14-20-24-49.png)
 
-### 欢迎你的加入
+## 欢迎你的加入
 
 最后，欢迎你一起参加微软技术暨生态大会，我们一起去与微软大咖，各位微软 MVP，社区技术牛人交流技术。
 
@@ -101,13 +101,13 @@ categories: dotnet csharp msbuild roslyn visualstudio nuget
 
 ![希沃白板 5](/static/posts/2018-10-14-20-33-17.png)
 
-### 相关链接
+## 相关链接
 
 由于相关文章太多，所以重新整理到以下新的文章中：
 
 - [从零开始学习 dotnet 编译过程和 Roslyn 源码分析 - 吕毅](/post/posts-for-learning-dotnet-build-nuget-roslyn.html)
 
-### 更多课程
+## 更多课程
 
 - [Microsoft Tech Summit 2018 课程简述：利用 Windows 新特性开发出更好的手绘视频应用 - shaomeng - 博客园](http://www.cnblogs.com/shaomeng/p/9769270.html)
     - 时间：2018 年 10 月 27 日 17:00-17:45

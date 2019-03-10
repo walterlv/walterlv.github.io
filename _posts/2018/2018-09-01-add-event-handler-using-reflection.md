@@ -12,7 +12,7 @@ categories: dotnet csharp
 
 <div id="toc"></div>
 
-### 不使用反射
+## 不使用反射
 
 例如，我们希望反射的类型是这样的：
 
@@ -36,7 +36,7 @@ public void Walterlv_BlogPublished(object sender, EventHandler handler)
 }
 ```
 
-### 使用反射
+## 使用反射
 
 而如果使用反射，则是：
 
@@ -57,7 +57,7 @@ public void AddHandler<T>(T instance, string eventName, EventHandler handler)
 }
 ```
 
-### 安全地使用反射
+## 安全地使用反射
 
 虽然以上方式使用了反射成功注册了事件，但实际上我们的参数中传入了一个特定类型的委托 `EventHandler`。实际上事件的委托种类非常多。
 
@@ -97,6 +97,6 @@ public void Walterlv_BlogPublished(object sender, EventHandler handler)
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [c# - AddEventHandler using reflection - Stack Overflow](https://stackoverflow.com/a/1121489/6233938)

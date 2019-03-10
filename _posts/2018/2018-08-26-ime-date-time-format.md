@@ -33,7 +33,7 @@ categories: ime windows
 2018-08-26 15:58:05
 ```
 
-### 微软拼音输入法
+## 微软拼音输入法
 
 微软拼音输入法自定义短语的方法请前往：[用微软拼音快速输入自定义格式的时间和日期](/ime/2017/09/18/date-time-format-using-microsoft-pinyin.html)。
 
@@ -45,7 +45,7 @@ categories: ime windows
 
 更多自定义请参阅：[自定义日期和时间格式字符串 - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/standard/base-types/custom-date-and-time-format-strings?wt.mc_id=MVP)
 
-### 搜狗拼音输入法
+## 搜狗拼音输入法
 
 搜狗输入法的自定义短语入口在这里：
 
@@ -85,7 +85,7 @@ categories: ime windows
 - `$second` *40*
 - `$second_cn` *四十*
 
-### QQ 拼音输入法
+## QQ 拼音输入法
 
 QQ 拼音输入法的自定义短语入口在这里：
 
@@ -98,7 +98,7 @@ QQ 拼音输入法的自定义短语入口在这里：
 $(Year)-$(month)-$(date) $(hour):$(minute):$(second)
 ```
 
-### 手心输入法
+## 手心输入法
 
 ![手心输入法自定义短语](/static/posts/2018-12-28-13-09-44.png)  
 ▲ 手心输入法自定义短语

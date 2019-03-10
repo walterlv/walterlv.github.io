@@ -11,7 +11,7 @@ position: knowledge
 
 <div id="toc"></div>
 
-### 算法
+## 算法
 
 对于算法，我只是搬运工，可以随意搜索到。算法详情请查看：[Alpha compositing - Wikipedia](https://en.wikipedia.org/wiki/Alpha_compositing)。
 
@@ -23,7 +23,7 @@ float r = (foreground.r * alpha) + (background.r * (1.0 - alpha));
 
 这是红色。然后绿色 `g` 和蓝色 `b` 通道进行一样的计算。最终合成图像的透明通道始终设置为 1。
 
-### 在 C# 代码中实现
+## 在 C# 代码中实现
 
 多数 UI 框架对于颜色值的处理都是用一个 `byte` 赛表单个通道的一个像素。于是计算会采用 0xff 即 255。
 
@@ -58,7 +58,7 @@ for (int i = 0; i + 4 < length; i = i + 4)
 
 下面使用像素着色器的实现是我曾经写过的一个特效的一个小部分，我把透明度叠加的部分单独摘取出来。
 
-### 在像素着色器中实现
+## 在像素着色器中实现
 
 以下是 HLSL 代码的实现。Background 是从采样寄存器 0 取到的颜色采样，Foreground 是从采样寄存器 1 取到的颜色采样。
 
@@ -121,7 +121,7 @@ float4 main(float2 uv : TEXCOORD) : COlOR
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Alpha compositing - Wikipedia](https://en.wikipedia.org/wiki/Alpha_compositing)
 - [algorithm - Manually alpha blending an RGBA pixel with an RGB pixel - Stack Overflow](https://stackoverflow.com/a/9014763/6233938)

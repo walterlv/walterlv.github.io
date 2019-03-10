@@ -12,7 +12,7 @@ tags: ilasm ildasm
 
 <div id="toc"></div>
 
-### 制造一个 this 可以为 null 的程序
+## 制造一个 this 可以为 null 的程序
 
 请看代码，这是我们的库函数：
 
@@ -111,7 +111,7 @@ namespace Walterlv.Demo
 
 ![this is null](/static/posts/2018-03-31-08-10-52.png)
 
-### 为什么此时 this 是 null
+## 为什么此时 this 是 null
 
 从名字上看，`call` 是为了调用非虚方法、静态方法或者基类方法的；而 `callvirt` 是为了调用虚方法的。前者在编译时就将确认调用了某个类的某个方法，而后者将在运行时动态决定应该调用哪个。
 
@@ -119,13 +119,13 @@ namespace Walterlv.Demo
 
 于是，此次便出现了 `null.Test()` 这样诡异的调用。
 
-### 一些建议和总结
+## 一些建议和总结
 
 虽然我们制造出了一个 `this` 可能为 `null` 的情况，即便库和调用方是分开开发的，但实际开发中其实并不需要考虑这样的问题。
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Easy way to modify IL code – I know the answer (it's 42)](https://blogs.msdn.microsoft.com/abhinaba/2007/07/26/easy-way-to-modify-il-code/)
 - [.net - Call and Callvirt - Stack Overflow](https://stackoverflow.com/a/193952/6233938)

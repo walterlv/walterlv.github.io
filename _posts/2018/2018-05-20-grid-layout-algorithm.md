@@ -12,7 +12,7 @@ categories: wpf uwp algorithm
 
 <div id="toc"></div>
 
-### Grid 的布局行为到底是怎样的？
+## Grid 的布局行为到底是怎样的？
 
 Grid 算是 WPF/UWP 入门中非常重要的一个布局容器了。面对它那强大而熟悉的布局方式，大家应该没有什么疑问吧！
 
@@ -36,13 +36,13 @@ Grid 算是 WPF/UWP 入门中非常重要的一个布局容器了。面对它那
 
 作为一个非常有潜力的 .NET Core 跨平台 UI 框架 Avalonia，应该认真定义好这些行为，而不是像 WPF/UWP 现有的 `Grid` 那样在某些情况下比较含糊，出现难以解释的布局行为。
 
-### 为这样的 Grid 布局行为设计一套算法
+## 为这样的 Grid 布局行为设计一套算法
 
 如果你熟知 WPF/UWP 的布局系统，那么 `MeasureOverride` 和 `ArrangeOverride` 一定不陌生，虽然它们只是布局的一部分（为什么是一部分？详见 [Visual->UIElement->FrameworkElement，带来更多功能的同时也带来了更多的限制 - 吕毅](/post/features-and-limits-on-visual-uielement-frameworkelement.html)）。
 
 不过，写一个 `Grid` 确实只需要关心这两个函数就够了。`MeasureOverride` 传入父级测量的可用尺寸，返回此 `Grid` 测量发现所需的最小尺寸；`ArrangeOverride` 传入父级实际可提供的可用尺寸，返回此 `Grid` 实际布局所用的尺寸。
 
-#### 分析 Grid 的布局思路
+### 分析 Grid 的布局思路
 
 如果行或列设置为 `Auto`，那么 `Grid` 的行或者列将为这个元素的尺寸进行适配，并且元素的所需尺寸也会影响到 `Grid` 的最小所需尺寸；如果行或列设置为 `*`，那么 `Grid` 的行列不会为此元素适配，但是元素的所需尺寸依然会影响到 `Grid` 的最小所需尺寸。
 
@@ -58,7 +58,7 @@ Grid 算是 WPF/UWP 入门中非常重要的一个布局容器了。面对它那
 1. 计算 `Grid` 所需的最小尺寸
 1. 将估算缩得的尺寸作为实际尺寸进行测量
 
-#### 布局算法设计
+### 布局算法设计
 
 `Grid` 的布局算法似乎难以用语言描述，不过，我可以尝试用更具体的文字用接近代码的方式来描述：
 
@@ -138,7 +138,7 @@ Grid 算是 WPF/UWP 入门中非常重要的一个布局容器了。面对它那
 // |#fix#| fix |#fix#| fix | fix | fix | fix |   #fix#   |#fix#|
 ```
 
-#### 布局算法的代码
+### 布局算法的代码
 
 为了让代码更容易调试，我专门写了一个 `GridLayout` 类来完成布局过程，而且 `GridLayout` 的计算设计为与 `Grid` 布局过程无关。做法是，将 `GridLayout` 的大部分方法设计为“纯方法”（纯方法只随便调用，调用此方法不会改变任何系统状态，只有拿到其返回值才会真正发挥作用）。
 
@@ -147,7 +147,7 @@ Grid 算是 WPF/UWP 入门中非常重要的一个布局容器了。面对它那
 - [Avalonia/Grid.cs at master · AvaloniaUI/Avalonia](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Grid.cs)
 - [Avalonia/GridLayout.cs at master · AvaloniaUI/Avalonia](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Controls/Utils/GridLayout.cs)
 
-### 效果和性能
+## 效果和性能
 
 在性能测试中，此算法还是表现不错的，以下是 Pull Request 中的性能测试截图（已经合并）。
 

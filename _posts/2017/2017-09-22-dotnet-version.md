@@ -19,7 +19,7 @@ description: 了解 .NET Framework 的公共语言运行时版本，这与 .NET 
 
 这里的疑点在于为什么以上两种看似类似的情况，提示的框架版本却不同。其中的 `app.config` 文件成为了调查此问题的突破口。
 
-### 配置支持的运行时
+## 配置支持的运行时
 
 观察程序附带的 `app.config` 文件，我们发现支持的运行时版本是 v4.0，sku 版本是 4.7。
 
@@ -73,7 +73,7 @@ description: 了解 .NET Framework 的公共语言运行时版本，这与 .NET 
 1. 无论我们选择的目标框架是 .NET Framework 4.x 的哪一个版本，用于指定 CLR 运行时版本的 `version` 值都是 v4.0；
 1. CLR 运行时会根据配置文件的 `sku` 值决定应该采用那一组运行库来为程序运行提供支持。
 
-### .NET Framework 的组成以及各部分的版本
+## .NET Framework 的组成以及各部分的版本
 
 我们需要寻找到 .NET Framework 的本质，不然如此错综复杂的版本号系统真把我搞懵了。
 
@@ -87,7 +87,7 @@ description: 了解 .NET Framework 的公共语言运行时版本，这与 .NET 
 
 从官方文档给出的表格当中我们可以确信：**.NET Framework 4.0/4.5/4.6/4.7 包含的 CLR 版本都是 4.0。**
 
-### CLR 的更新
+## CLR 的更新
 
 然而，不相信微软的 CLR 可以完全没有 BUG，既然 CLR 版本都是 4.0，那么微软对 CLR 运行时的更新怎么处理？安装了 .NET Framework 4.5/4.6/4.7 会如何提升 CLR 的稳定性和安全性？
 
@@ -101,7 +101,7 @@ description: 了解 .NET Framework 的公共语言运行时版本，这与 .NET 
 
 ![每一个不同的 .NET Framework 基础库有自己单独的文件夹](/static/posts/2017-09-22-21-39-42.png)
 
-### 解决一开始的疑问
+## 解决一开始的疑问
 
 于是，本文一开始的疑问就全部明晰了：
 1. 不管是 .NET Framework 4.5 的还是 4.7 的那两个程序，都是靠 4.0 版本的公共语言运行时（CLR）运行起来的；
@@ -110,7 +110,7 @@ description: 了解 .NET Framework 的公共语言运行时版本，这与 .NET 
 1. 如果已经安装有 4.0 版本的 CLR（可能随 .NET Framework 4.5/4.6 安装），我们程序的目标框架是 .NET Framework 4.7，但 .NET Framework 基础库并没有安装 4.7 版本，则运行时会提示需要安装 .NET Framework 4.7；
    - 这个提示是 4.0 版的 CLR 弹出的，是根据 `supportedRuntime` 中指定的 `sku` 值来决定的
 
-#### 参考资料
+**参考资料**
 
 - [supportedRuntime Element - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/configure-apps/file-schema/startup/supportedruntime-element?wt.mc_id=MVP)
 - [.NET Framework Versions and Dependencies - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#targeting-and-running-net-framework-apps-for-version-45-and-later?wt.mc_id=MVP)

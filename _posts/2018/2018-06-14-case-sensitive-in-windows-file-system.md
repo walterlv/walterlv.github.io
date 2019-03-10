@@ -13,7 +13,7 @@ Linux 一向都是区分文件和文件夹大小写的。Mac OS 默认不区分�
 
 <div id="toc"></div>
 
-### 问题
+## 问题
 
 本来文件系统是否区分大小写只是单纯风格上的差异，并没有孰优孰劣，但这可让那些跨平台的文件系统难以抉择了。典型的例子就是 Git。
 
@@ -21,7 +21,7 @@ Linux 一向都是区分文件和文件夹大小写的。Mac OS 默认不区分�
 
 由于 Windows 文件系统对大小写不敏感，所以上面的问题才变得尤其难办，竟然需要通过至少两次提交，并且丢掉单线的 Git 历史记录的方式才能真正完成任务。而单纯让 Git 在仓库中区分大小写竟然会产生两份文件（却无法在 Windows 系统中观察到）。
 
-### 开启方法
+## 开启方法
 
 Windows 10 四月更新终于带来了文件夹区分大小写的支持！
 
@@ -45,7 +45,7 @@ fsutil.exe file SetCaseSensitiveInfo C:\Users\walterlv\GitDemo disable
 
 看！以上就是在 Windows 10 系统级开启了大小写敏感的我的一个 Git 仓库，这下可以让跨平台的 Git 工作起来在各个系统都一样了。
 
-### 注意事项
+## 注意事项
 
 以上命令的正确运行需要以下条件，缺一不可：
 
@@ -84,7 +84,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 
 ---
 
-### 附
+## 附
 
 `fsutil file` 支持的命令：
 
@@ -140,7 +140,7 @@ wim             Transparent wim hosting management
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [fsutil setCaseSensitiveInfo · Issue #977 · MicrosoftDocs/windowsserverdocs](https://github.com/MicrosoftDocs/windowsserverdocs/issues/977)
 - [windows - fsutil - The request is not supported after setCaseSensitiveInfo - Stack Overflow](https://stackoverflow.com/q/50839623/6233938)

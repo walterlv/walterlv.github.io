@@ -14,7 +14,7 @@ position: knowledge
 
 <div id="toc"></div>
 
-### 文件关联
+## 文件关联
 
 Windows 上的文件关联是通过文件的扩展名来实现的。有些文件类型是被广泛使用的公共类型，例如 .txt、.png、.mp4 文件；有些则是你自己的应用程序使用的私有类型，例如我自己定义一个 .lvyi 扩展名的文件类型。
 
@@ -22,7 +22,7 @@ Windows 上的文件关联是通过文件的扩展名来实现的。有些文件
 
 那么问题来了，我怎么知道我现在准备使用的扩展名是不是已经被广泛使用的公共类型呢？请进入此网站查看：[Media Types](http://www.iana.org/assignments/media-types/media-types.xhtml)。
 
-### 注册一个文件类型
+## 注册一个文件类型
 
 要在 Windows 系统上注册一个文件类型，你需要做三个步骤：
 
@@ -30,7 +30,7 @@ Windows 上的文件关联是通过文件的扩展名来实现的。有些文件
 1. 在注册表中添加文件关联（用于告知 Windows 这个文件已经被关联）
 1. 为关联的程序添加谓词（用于打开这个文件）
 
-#### 取一个应用程序标识符
+### 取一个应用程序标识符
 
 没错，我说的就是取名字，而且要求在 Windows 系统上全局唯一；所以这里取名字也是有讲究的。关于应用程序标识符的相关内容，可以阅读微软的官方文档：[Programmatic Identifiers - Windows applications - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/shell/fa-progids)。
 
@@ -52,7 +52,7 @@ Walterlv.Foo.1
 
 竟然取一个名字也能写这么多篇幅，看来程序员的命名果然是世界上的一大难题呀！赶紧试用一下我的命名神器吧 —— [点击下载](ms-windows-store://pdp/?productid=9P8LNZRNJX85)，其原理可阅读 [冷算法：自动生成代码标识符（类名、方法名、变量名） - 吕毅](/post/algorithm-of-generating-random-identifiers.html)。
 
-#### 在注册表中添加文件关联
+### 在注册表中添加文件关联
 
 你需要在注册表的 `HKEY_LOCAL_MACHINE\Software\Classes` 或者 `HKEY_CURRENT_USER\Software\Classes` 添加一些子键：
 
@@ -87,7 +87,7 @@ HKEY_CURRENT_USER\Software\Classes
 
 写入计算机范围内的注册表项需要管理员权限，而写入用户范围内的注册表项不需要管理员权限；你可以酌情选用。
 
-#### 为关联的程序添加谓词
+### 为关联的程序添加谓词
 
 我们需要为关联的程序添加谓词才能够使用我们的程序打开这个文件。通常进行文件关联时最常用的谓词是 `open`，添加路径为 `HKEY_CURRENT_USER\Software\Classes\Walterlv.Foo.1\shell\Open\Command`。添加后，我们可以在文件资源管理器中通过双击打开这个文件。
 
@@ -117,7 +117,7 @@ Walterlv.Foo.1
                 (Default) = "C:\Users\lvyi\AppData\Local\Walterlv.Foo\walterlv.exe" open -f "%1" --doubi
 ```
 
-### 反注册文件类型
+## 反注册文件类型
 
 当你卸载你的程序的时候，需要反注册之前注册过的文件类型；而反注册的过程并不是把以上的过程完全反过来。
 
@@ -125,7 +125,7 @@ Walterlv.Foo.1
 
 总之，你需要做的，只是删除 ProgID 的键，文件扩展名的键不要去动它，Windows 自己会处理好 ProgID 删除之后文件关联的问题的。
 
-### 一个完整的文件关联示例
+## 一个完整的文件关联示例
 
 ```text
 HKEY_CLASSES_ROOT
@@ -159,7 +159,7 @@ HKEY_CLASSES_ROOT
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [File Types and File Associations - Windows applications - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/shell/fa-intro)
 - [Programmatic Identifiers - Windows applications - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/shell/fa-progids)

@@ -14,7 +14,7 @@ position: knowledge
 
 <div id="toc"></div>
 
-### 在程序运行期间手工改名
+## 在程序运行期间手工改名
 
 我们写一个简单的程序。
 
@@ -30,13 +30,13 @@ position: knowledge
 
 值得注意的是，你不能跨驱动器移动此文件。
 
-### 不止是 exe 文件，dll 文件也是可以改名的
+## 不止是 exe 文件，dll 文件也是可以改名的
 
 实际上，不止是 exe 文件，在 exe 程序运行期间，即使用到了某些 dll 文件，这些 dll 文件也是可以改名的。
 
 当然，一个 exe 的运行不一定在启动期间就加载好了所有的 dll，所以如果你在 exe 启动之后，某个 dll 加载之前改了那个 dll 的名称，那么会出现找不到 dll 的情况，可能导致程序崩溃。
 
-### 为什么 Windows 上的可执行程序可以在运行期间改名？
+## 为什么 Windows 上的可执行程序可以在运行期间改名？
 
 Windows 的文件系统由两个主要的表示结构：一个是目录信息，它保存有关文件的元数据（如文件名、大小、属性和时间戳）；第二个是文件的数据链。
 
@@ -46,7 +46,7 @@ Windows 的文件系统由两个主要的表示结构：一个是目录信息，
 
 但是跨驱动器移动文件，就意味着需要在原来的驱动器下删除文件，而这个操作会影响到文件的数据部分，所以此操作不被允许。
 
-### 编写一个程序在运行期间自动改名
+## 编写一个程序在运行期间自动改名
 
 一般来说，需要 OTA 更新的程序是客户端程序，所以实际上真正需要此代码的是客户端应用。以下代码中我使用 .NET Core 3.0 来编写一个给自己改名的 WPF 程序。
 
@@ -79,7 +79,7 @@ namespace Walterlv.Windows.Updater
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [c# - Why does rename a loaded .net assembly work? - Stack Overflow](https://stackoverflow.com/a/14775626/6233938)
 - [windows 7 - Why can I rename a running executable, but not delete it? - Super User](https://superuser.com/questions/488127/why-can-i-rename-a-running-executable-but-not-delete-it)

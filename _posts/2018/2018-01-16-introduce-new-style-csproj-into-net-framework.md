@@ -17,7 +17,7 @@ categories: visualstudio msbuild
 
 <p id="toc"></p>
 
-### 新 csproj 文件的优势与直观体验
+## 新 csproj 文件的优势与直观体验
 
 如果你已经体验过新 csproj 文件的好处，那么直接前往下一节即可。没体验过的话就来体验一下吧！
 
@@ -130,7 +130,7 @@ categories: visualstudio msbuild
 1. 可以一边编辑 csproj 一边打开项目，互不影响
 1. 可以指定多个开发框架，详见 [让一个项目指定多个开发框架 - 吕毅的博客](/post/configure-projects-to-target-multiple-platforms.html)
 
-### 迁移普通 .NET Framework 类库的项目文件
+## 迁移普通 .NET Framework 类库的项目文件
 
 目前只有基于 .NET Core 和 .NET Standard 的普通项目能够使用这种新的 csproj 文件。在 GitHub 的讨论（[XAML files are not supported · Issue #1467 · dotnet/project-system](https://github.com/dotnet/project-system/issues/1467)）中，.NET Core 的开发者们是这么说的。
 
@@ -138,7 +138,7 @@ categories: visualstudio msbuild
 
 目前没有自动的迁移方法，至少在我的实际迁移过程中，只有少数项目能够直接编译通过。由于以上我的小伙伴给出了具体的迁移方法，所以此处我只给出迁移思路。
 
-#### 手动迁移
+### 手动迁移
 
 **第一步：**将以下代码复制到原有的 csproj 文件中（不管原来的文件里有多少内容）
 
@@ -172,7 +172,7 @@ categories: visualstudio msbuild
 
 **第五步：**删除 Properties 文件夹和里面的所有文件，因为这些信息已经被 csproj 文件记录并自动生成了。
 
-#### 手动迁移过程中可能遇到的坑
+### 手动迁移过程中可能遇到的坑
 
 如果你的项目比较小，比较新，比较少折腾，那么走完上面的五个步骤基本上你应该能够直接编译通过并运行了。不过，能做到这些的项目其实真不多，基本上或多或少都会遇到一些坑。
 
@@ -182,11 +182,11 @@ categories: visualstudio msbuild
 
 比如，你可能有一些 xaml 文件——这时，你需要看本文的下一个章节 [迁移 WPF/UWP 这类 XAML UI 类库的项目文件](/post/introduce-new-style-csproj-into-net-framework.html#%E8%BF%81%E7%A7%BB-wpfuwp-%E8%BF%99%E7%B1%BB-xaml-ui-%E7%B1%BB%E5%BA%93%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6)。
 
-#### 自动迁移
+### 自动迁移
 
 自动迁移的方法我写了一篇新的博客，请阅读 [自动将 NuGet 包的引用方式从 packages.config 升级为 PackageReference](/post/migrate-packages-config-to-package-reference.html)。当然，目前自动迁移还只是 NuGet 引用方式的改变，加上文件通配符的帮助，我们的 csproj 文件即使依然是旧格式，也能非常简洁。
 
-### 迁移 WPF/UWP 这类 XAML UI 类库的项目文件
+## 迁移 WPF/UWP 这类 XAML UI 类库的项目文件
 
 UWP 项目已经是 .NET Core 了，然而它依然还在采用旧样式的 csproj 文件，这让人感到不可思议。然而我并不知道是否是因为旧版本的 Visual Studio 2017 不支持在新 csproj 中编译 XAML。
 
@@ -249,7 +249,7 @@ UWP 项目已经是 .NET Core 了，然而它依然还在采用旧样式的 cspr
 
 特别注意！你 **必须将 Visual Studio 升级到 15.8 以上的版本**，否则WPF 或者 UWP 项目迁移成新项目之后，默认新建的 XAML 文件会不可见，每次都需要手工去 csproj 中删掉自动增加的错误的 XAML 编译类型。
 
-#### 迁移中各种诡异的报错及其解决方法
+### 迁移中各种诡异的报错及其解决方法
 
 对于带 XAML 的项目，如果在迁移过程中放弃了，试图恢复成原来的方案，那么在编译时会发生一个诡异的错误：
 
@@ -265,20 +265,20 @@ UWP 项目已经是 .NET Core 了，然而它依然还在采用旧样式的 cspr
 
 唯一的解决办法就是清除项目中的所有 NuGet 缓存，使用 `git clean -xdf`。
 
-### 迁移之后的劣势
+## 迁移之后的劣势
 
 迁移成新的 csproj 格式之后，新格式中不支持的配置会丢失。
 
 - **ProjectTypeGuid** 这个属性标志着此项目的类型，比如指定为 WPF 自定义控件库的项目新建文件的模板有自定义控件，而普通类库则不会有。
 - 特别注意！WPF 或者 UWP 项目迁移成新项目之后，默认新建的 XAML 文件会不可见，每次都需要手工去 csproj 中删掉自动增加的错误的 XAML 编译类型。
 
-### 什么都不用管的第三方迁移方案
+## 什么都不用管的第三方迁移方案
 
 感谢小伙伴 [KodamaSakuno (神樹桜乃)](https://github.com/KodamaSakuno) 的指导，我们可以有第三方的解决方案 MSBuild.Sdk.Extras 来更简单地完成迁移。阅读 [MSBuild.Sdk.Extras](/post/use-msbuild-sdk-extras-for-wpf-and-uwp.html) 来了解更多。相比于以上全文的迁移以及带来的劣势，第三方方案并没有发现明显的缺陷，推荐使用！
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [XAML files are not supported · Issue #810 · dotnet/sdk](https://github.com/dotnet/sdk/issues/810)
 - [XAML files are not supported · Issue #1467 · dotnet/project-system](https://github.com/dotnet/project-system/issues/1467)

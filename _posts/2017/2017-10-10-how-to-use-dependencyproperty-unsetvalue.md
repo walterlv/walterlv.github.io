@@ -12,7 +12,7 @@ description: 为什么有时候在调试 XAML 程序（绑定或标记扩展）�
 
 ---
 
-### DependencyProperty.UnsetValue 是什么？
+## DependencyProperty.UnsetValue 是什么？
 
 要知道这是什么，一定要看源码：
 
@@ -50,7 +50,7 @@ internal class NamedObject
 
 这是因为在绑定中，`null` 可能是一个合理的值，可能会被故意用在绑定中来达到某种目的。于是微软必须用一个大家平常开发中一定不会用到的值来表示“不合理”，于是祭出了 `DependencyProperty.UnsetValue`。
 
-### 什么情况下会出现 DependencyProperty.UnsetValue？
+## 什么情况下会出现 DependencyProperty.UnsetValue？
 
 正常情况下，只有以下两处代码会遇到 `DependencyProperty.UnsetValue`：
 
@@ -66,7 +66,7 @@ internal class NamedObject
 1. 使用依赖项属性的 `ReadLocalValue` 来获取值，而不是 `GetValue`；但此时并没有为依赖对象设置值。  
 如果没有设置值，那么 `GetValue` 会返回更低优先级的值，一般情况下是依赖项属性在注册时的默认值；但 `ReadLocalValue` 就是在获取显式设置的那个值，如果没设，就只能是 `DependencyProperty.UnsetValue` 了。
 
-### 我们应该如何正确使用 DependencyProperty.UnsetValue？
+## 我们应该如何正确使用 DependencyProperty.UnsetValue？
 
 微软官方对于 `DependencyProperty.UnsetValue` 的介绍，专门的文档中只有一个说法，就是用来表示“不合理”的值，却并没有说明什么情况下为合理，什么情况下为不合理。但好在微软将一些推荐写法散落在了多个不同的文章中。这里整理在一起，以便为大家对 `DependencyProperty.UnsetValue` 的正确使用提供指导。
 
@@ -79,7 +79,7 @@ internal class NamedObject
 
 ---
 
-#### 参考资料
+**参考资料**
 - [Data binding in depth - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/data-binding/data-binding-in-depth?wt.mc_id=MVP)
 - [How to: Convert Bound Data - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/data/how-to-convert-bound-data?wt.mc_id=MVP)
 - [Custom dependency properties - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/custom-dependency-properties?wt.mc_id=MVP)

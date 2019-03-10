@@ -20,7 +20,7 @@ description: 了解 Dispatcher.PushFrame 方法的作用和背后的实现原理
 1. [Invoke/InvokeAsync 部分](/post/dotnet/2017/09/26/dispatcher-invoke-async.html)
 1. [PushFrame 部分](/post/dotnet/2017/09/26/dispatcher-push-frame.html)（本文）
 
-### Dispatcher.PushFrame 是什么？
+## Dispatcher.PushFrame 是什么？
 
 如果说上一篇文章 [深入了解 WPF Dispatcher 的工作原理（Invoke/InvokeAsync 部分）](/post/dotnet/2017/09/26/dispatcher-invoke-async.html) 中的 `Invoke` 算是偏冷门的写法，那 `ShowDialog` 总该写过吧？有没有好奇过为什么写 `ShowDialog` 的地方可以等新开的窗口返回之后继续执行呢？
 
@@ -32,7 +32,7 @@ Debug.WriteLine(w.Bar);
 
 看来我们这次有必要再扒开 `Dispatcher.PushFrame` 的源码看一看了。不过在看之前，我们先看一看 Windows Forms 里面 `DoEvents` 的实现，这将有助于增加我们对源码的理解。
 
-### DoEvents
+## DoEvents
 
 Windows Forms 里面的 `DoEvents` 允许你在执行耗时 UI 操作的过程中插入一段 UI 的渲染过程，使得你的界面看起来并没有停止响应。
 
@@ -72,7 +72,7 @@ public object ExitFrame(object f)
 
 知道了这些，再扒 `Dispatcher.PushFrame` 代码会显得容易许多。
 
-### PushFrame 的源码
+## PushFrame 的源码
 
 这真是一项神奇的技术。以至于这一次我需要毫无删减地贴出全部源码：
 
@@ -161,7 +161,7 @@ while(frame.Continue)
 
 ---
 
-### 调试源码以研究 PushFrame 不阻塞等待的原理
+## 调试源码以研究 PushFrame 不阻塞等待的原理
 
 为了开始调试，我为主窗口添加了触摸按下的事件处理函数：
 
@@ -192,7 +192,7 @@ private void OnStylusDown(object sender, StylusDownEventArgs e)
 
 如果希望更详细地了解 WPF 中的 Dispatcher 对消息循环的处理，可以参考：[详解WPF线程模型和Dispatcher - 踏雪无痕 - CSDN博客](http://blog.csdn.net/royyeah/article/details/4785473)。
 
-### 结论
+## 结论
 
 1. 每一次 `PushFrame` 都会开启一个新的消息循环，记录 `_frameDepth` 加 1；
 1. 在新的消息循环中，会处理各种各样的 Windows 消息，其中有的以事件的形式转发，有的是执行加入到 `PriorityQueue<DispatcherOperation>` 队列中的任务；
@@ -200,7 +200,7 @@ private void OnStylusDown(object sender, StylusDownEventArgs e)
 1. 当所有的 `PushFrame` 都退出后，程序结束。
 1. `PushFrame` 的 `while` 循环是真的阻塞着主线程，但循环内部会处理消息循环，以至于能够不断地处理新的消息，看起来就像没有阻塞一样。（这与我们平时随便写代码阻塞主线程导致无法处理消息还是有区别的。）
 
-### PushFrame 的已知缺陷
+## PushFrame 的已知缺陷
 
 `PushFrame` 使用通过开启一个新的消息循环使得 UI 线程能够在新的消息循环中处理消息，以便 UI “不卡”，同时使得调用 `PushFrame` 的代码能够 “阻塞”。
 
@@ -214,7 +214,7 @@ private void OnStylusDown(object sender, StylusDownEventArgs e)
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - PushFrame/DispatcherFrame
     - [Dispatcher.cs](http://referencesource.microsoft.com/#WindowsBase/Base/System/Windows/Threading/Dispatcher.cs)

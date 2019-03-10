@@ -17,7 +17,7 @@ XPath 是 XML 路径语言（XML Path Language），用来确定XML文档中某�
 
 <div id="toc"></div>
 
-### 一切从这里开始
+## 一切从这里开始
 
 .NET 中支持 XPath 的 XML 文档类有两种读取方法，一种是 `XPathDocument`，以只读的方式读取；另一种是 `XmlDocument`，不止可以读，还可以编辑。
 
@@ -38,9 +38,9 @@ var navigator1 = xPathDocument.CreateNavigator();
 var navigator2 = xmlDocument.CreateNavigator();
 ```
 
-### 上手 XPath
+## 上手 XPath
 
-#### 路径查询
+### 路径查询
 
 `XPathNavigator` 对象提供了下面两种通用的 `XPath` 表达式的使用检索方法。
 
@@ -71,7 +71,7 @@ navigator.Select("/d:package/d:metadata/d:id", namespaceManager);
 - `SelectAncestors`
 - `SelectDescendants`
 
-#### XPath 函数调用
+### XPath 函数调用
 
 `Compile` 和 `Evaluate` 提供了复杂的 XPath 函数调用。比如下面我们把几种 url 都拼接在一起得到一个新字符串。
 
@@ -80,7 +80,7 @@ XPathExpression query = navigator.Compile("concat(//licenseUrl/text(), //project
 string urls = (string) navigator.Evaluate(query);
 ```
 
-#### 节点匹配
+### 节点匹配
 
 `Matches` 用来检查当前的节点是否满足某个条件。比如下面的例子便是检查当前节点的父节点是否是 `group` 并且其 `targetFramework` 属性为 `.NETStandard2.0`。显然，符合这个条件的只有最后的那个 `dependency` 节点。
 
@@ -88,7 +88,7 @@ string urls = (string) navigator.Evaluate(query);
 navigator.Matches("../group/@targetFramework='.NETStandard2.0'");
 ```
 
-### XPath 导航
+## XPath 导航
 
 `XPathNavigator` 可以在节点、属性中间移动，以便能够不止从根节点进行查询。
 
@@ -118,19 +118,19 @@ navigator.Matches("../group/@targetFramework='.NETStandard2.0'");
 - `ValueAsLong`
 - `ValueAs`
 
-### 编辑 XML
+## 编辑 XML
 
 由于我们要编辑 XML 数据，所以加载 XML 文件的方式不能是 `XPathDocument` 了，得是 `XmlDocument`。
 
 插入使用 `Insert` 相关的方法，删除使用 `Delete` 相关的方法。而修改数据使用 `SetValue`。
 
-### 保存 XML 到文件
+## 保存 XML 到文件
 
 保存 XML 使用 `XmlDocument` 的 `Save` 或者 `WriteTo` 方法即可。
 
 ---
 
-### 假设的 XML 文件
+## 假设的 XML 文件
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -166,7 +166,7 @@ navigator.Matches("../group/@targetFramework='.NETStandard2.0'");
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [使用 XPath 导航选择节点 - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/standard/data/xml/select-nodes-using-xpath-navigation?wt.mc_id=MVP)
 - [Process XML Data Using the XPath Data Model - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/data/xml/process-xml-data-using-the-xpath-data-model?wt.mc_id=MVP)

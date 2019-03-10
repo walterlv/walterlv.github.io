@@ -13,7 +13,7 @@ categories: nuget msbuild
 
 <div id="toc"></div>
 
-### 我们遇到了什么问题
+## 我们遇到了什么问题
 
 如果你使用了 GitVersion 这款 NuGet 包来自动修改你的版本号，那么你可能会遇到这个问题。[GitTools/GitVersion: Easy Semantic Versioning (http://semver.org) for projects using Git](https://github.com/GitTools/GitVersion) 
 
@@ -39,7 +39,7 @@ categories: nuget msbuild
 - [如何创建一个基于命令行工具的跨平台的 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool.html)
 - [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html)
 
-### 官方提供的解决方案
+## 官方提供的解决方案
 
 ~~官方在非常早期的 2.7 版本就提供了 `developmentDependency` 属性，可以在 nuspec 文件中写。但实际上这个属性在后面版本的 NuGet 开发中就丢掉了。不生效。~~
 
@@ -66,9 +66,9 @@ categories: nuget msbuild
 
 至于如何查看自己的 NuGet 版本号，请参见：[获取 Nuget 版本号 - 林德熙](https://blog.lindexi.com/post/%E8%8E%B7%E5%8F%96-nuget-%E7%89%88%E6%9C%AC%E5%8F%B7)
 
-### ~~我试图寻找的解决方案~~
+## ~~我试图寻找的解决方案~~
 
-#### ~~为 A 项目添加去除依赖的代码~~
+### ~~为 A 项目添加去除依赖的代码~~
 
 ~~我们创建一个项目 Walterlv.PackageDemo.A 模拟前面提到的包 A，创建一个项目 Walterlv.PackageDemo.B 模拟前面提到的包 B，创建一个项目 Walterlv.ProjectDemo.C 模拟前面的项目 C。注意，实际场景中，这三个项目通常在不同的仓库中，由不同的开发者开发。~~
 
@@ -112,7 +112,7 @@ categories: nuget msbuild
 </Project>
 ```
 
-#### ~~在 B 项目中进行测试~~
+### ~~在 B 项目中进行测试~~
 
 ~~本地调试当然用不着推送到 <https://nuget.org>。我们本地新建一个源，专门用于调试。~~
 
@@ -144,7 +144,7 @@ categories: nuget msbuild
 
 ![B 项目的 NuGet 包](/static/posts/2018-08-05-21-15-42.png)
 
-#### ~~令人遗憾的结果~~
+### ~~令人遗憾的结果~~
 
 ~~然而使用命令行编译的时候，就不按照预期工作了；如下图这样，B 项目中出现了对 A 的依赖。~~
 

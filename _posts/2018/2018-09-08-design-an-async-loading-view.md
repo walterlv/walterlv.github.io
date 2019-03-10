@@ -15,14 +15,14 @@ No！WPF 一个窗口可以不止一个 UI 线程，本文将设计一个异步�
 
 <div id="toc"></div>
 
-### 异步加载的效果预览
+## 异步加载的效果预览
 
 下图的黑屏部分是正在加载一个布局需要花 500ms 的按钮。我们可以看到，即便是主线程被占用了 500ms，依然能有一个加载动画缓解用户的等待焦虑。
 
 ![异步加载效果预览](/static/posts/2018-09-08-loading-view-preview.gif)  
 ▲ 异步加载效果预览
 
-### 使用我写的 WPF 异步加载控件 AsyncBox
+## 使用我写的 WPF 异步加载控件 AsyncBox
 
 控件的名字为 `AsyncBox`，意为异步加载显示 UI 的容器。如果要使用它，可以很简单地写出以下代码：
 
@@ -138,7 +138,7 @@ namespace Walterlv.Demo
 </UserControl>
 ```
 
-### 现在，我们来实现这个异步加载 UI 的容器
+## 现在，我们来实现这个异步加载 UI 的容器
 
 你需要为你的项目添加以下文件：
 
@@ -162,7 +162,7 @@ namespace Walterlv.Demo
 
 由于这两棵树不在同一个线程中，于是主线程即便卡死，也不影响后台用来播放加载动画的线程。
 
-### 附 AsyncBox 的源码
+## 附 AsyncBox 的源码
 
 如果你不能在下面看到 `AsyncBox` 的源码，那么你的网络应该是被屏蔽了，可以访问 [AsyncBox.cs - A UI container for async loading.](https://gist.github.com/walterlv/4581ee10530a21ddf00f47b2cd680714) 查看。
 

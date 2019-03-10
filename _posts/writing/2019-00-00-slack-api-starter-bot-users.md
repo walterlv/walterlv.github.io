@@ -12,7 +12,7 @@ published: false
 
 <div id="toc"></div>
 
-### 创建一个新的 Slack 应用
+## 创建一个新的 Slack 应用
 
 如果你已经创建了一个 Slack 应用，可以跳过这一节。
 
@@ -43,7 +43,7 @@ published: false
 
 ![五种不同的应用类型](/static/posts/2019-01-06-14-16-48.png)
 
-### 创建 Bot Users 应用
+## 创建 Bot Users 应用
 
 本文，我们选中 Bot Users。
 
@@ -61,10 +61,10 @@ published: false
 
 ![看到机器人](/static/posts/2019-01-06-16-52-17.png)
 
-### 开始开发机器人
+## 开始开发机器人
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Enabling interactions with bots - Slack](https://api.slack.com/bot-users)

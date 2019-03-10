@@ -13,7 +13,7 @@ position: starter
 
 <div id="toc"></div>
 
-### 前置知识
+## 前置知识
 
 在阅读本文之前，你至少需要懂得：
 
@@ -29,7 +29,7 @@ position: starter
 - [如何编写基于 Microsoft.NET.Sdk 的跨平台的 MSBuild Target（附各种自带的 Task） - 吕毅](/post/write-msbuild-target.html)
 - [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包 - 吕毅](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html)
 
-### 编写内联的编译任务（Task）
+## 编写内联的编译任务（Task）
 
 如果你阅读了前面的博客，那么大致知道如何写一个在编译期间执行的 Task。不过，默认你需要编写一个额外的项目来写 Task，然后将这个项目生成 dll 供编译过程通过 `UsingTask` 来使用。然而如果 Task 足够简单，那么依然需要那么复杂的过程显然开发成本过高。
 
@@ -92,7 +92,7 @@ msbuild
 
 ![输出内容](/static/posts/2019-03-01-15-09-19.png)
 
-### 编写更复杂的内联编译任务
+## 编写更复杂的内联编译任务
 
 阅读我的另一篇博客了解如何编写一个更复杂的内联编译任务：
 

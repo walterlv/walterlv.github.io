@@ -13,7 +13,7 @@ UWP 才能使用的流畅设计效果好惊艳，写新的 UWP 程序可以做�
 
 <div id="toc"></div>
 
-### 迫不及待看效果
+## 迫不及待看效果
 
 ![光照效果](/static/posts/2018-04-05-16-09-11.gif)  
 ▲ 是不是很像 UWP 中的 `RevealBorderBrush`？
@@ -44,7 +44,7 @@ UWP 才能使用的流畅设计效果好惊艳，写新的 UWP 程序可以做�
 ![Cloud Keyboard](/static/posts/2019-01-23-reveal-brush-in-cloud-keyboard-pc.gif)  
 ▲ 源码在这个仓库：[Walterlv.CloudKeyboard](https://github.com/walterlv/Walterlv.CloudKeyboard)
 
-### 话不多说看源码
+## 话不多说看源码
 
 UWP 里的 CompositionBrush 是用一个 ShaderEffect 做出所有控件的所有效果的。正如 [叛逆者](https://www.zhihu.com/people/minmin.gong/activities) 在 [如何评价微软在 Build 2017 上提出的 Fluent Design System？ - 知乎](https://www.zhihu.com/question/59724483/answer/168191216?utm_medium=social&utm_source=wechat_session) 一文中说的，只需要极少的计算量就能完成。
 
@@ -137,6 +137,6 @@ namespace Walterlv.Demo
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [突出显示 - UWP app developer - Microsoft Docs](https://docs.microsoft.com/zh-cn/windows/uwp/design/style/reveal?wt.mc_id=MVP)

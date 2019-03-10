@@ -24,7 +24,7 @@ categories: dotnet csharp
 
 如果不了解它们之间的区别，请自行搜索。
 
-### 定义方法签名
+## 定义方法签名
 
 在 IL 中，方法名称可以使用比 C# 更多的字符，例如“<”和“>”，这也是 C# 编译闭包时喜欢使用的字符。目前我还没有找到 IL 中哪些字符可以作为标识符名称，但从混淆工具来看，是比 C# 多得多的。
 
@@ -41,7 +41,7 @@ method.DefineParameter(2, ParameterAttributes.None, "value");
 
 如果不声明形参，那么生成的 IL 代码的函数将无法被正常调用（提示可能造成运行时的不稳定）。
 
-### 声明和初始化局部变量
+## 声明和初始化局部变量
 
 平时写 C# 的时候，可能一个方法里面没有定义任何一个局部变量，但 IL 可不一定这么认为。
 
@@ -69,7 +69,7 @@ il.DeclareLocal(typeof(int));
 il.DeclareLocal(typeof(bool));
 ```
 
-### 定义标签
+## 定义标签
 
 如果代码中存在非线性结构，例如 `if`-`else`，那么 IL 就需要知道跳转的地址。那么如何能够知道跳转到哪个地址呢？
 
@@ -99,7 +99,7 @@ il.MarkLabel(endOfWholeIfElse);
 
 ---
 
-#### 参考资料
+**参考资料**
 
 + 生成方法签名与元数据
     - [ParameterBuilder Class (System.Reflection.Emit)](https://msdn.microsoft.com/en-us/library/system.reflection.emit.parameterbuilder(v=vs.110).aspx)

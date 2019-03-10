@@ -12,7 +12,7 @@ description:
 
 ---
 
-### 试验
+## 试验
 
 将 `ObservableCollection<T>` 用于 UI 绑定的目前只有 UWP 和 WPF，于是我写了两个 App 来验证这个问题。代码已上传 GitHub [walterlv/ListViewBindingDemo for ItemsMove](https://github.com/walterlv/ListViewBindingDemo-for-ItemsMove)。
 
@@ -34,12 +34,12 @@ description:
 - 在 WPF 中，未被移动数据的元素 Hash 值没有改变。  
 ![WPF 中看未被移动的元素](/static/posts/2017-10-20-wpf-items-move-2.gif)
 
-### 猜想
+## 猜想
 
 - UWP 真的对 `ObservableCollection<T>` 的 `Move` 操作有优化，根本就没有将移动数据的元素移除视觉树。
 - WPF 似乎并没有对 `ObservableCollection<T>` 的 `Move` 操作进行优化，因为 Hash 值都变了，直接就是创建了个新的。几乎等同于将原来的 UI 元素移除之后再创建了一个新的。
 
-### 调查
+## 调查
 
 .Net Standard 统一了 `ObservableCollection<T>` 的 API，所以 UWP 和 WPF 这些基本的 API 是一样的。由于 .NET Framework 发布了源代码，.Net Core 直接开源，所以这两者的代码我们都能翻出来。
 
@@ -111,6 +111,6 @@ EditableCollection.Insert(random.Next(EditableCollection.Count), new EditableMod
 
 这时运行发现，焦点确实移除了，但 HashCode 依然是原来的 HashCode。基本可以确定，UWP 的 `ListBox` 做了更多的优化，在根据 `DataTemplate` 生成控件时，一直在重用之前已经生成好的控件。
 
-### 结论
+## 结论
 
 UWP 比 WPF 对 `ObservableCollection<T>` 的集合操作进行了更好的性能优化，在添加、删除、移动时会重用之前创建好的控件。而在 WPF 中，则简单地创建和销毁这些控件——即便调用了 `ObservableCollection<T>` 专有的 `Move` 方法也没有做更多的优化。

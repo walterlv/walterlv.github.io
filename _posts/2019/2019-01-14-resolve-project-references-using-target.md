@@ -14,7 +14,7 @@ position: knowledge
 
 <div id="toc"></div>
 
-### 编写 Target
+## 编写 Target
 
 ```xml
 <Target Name="WalterlvDemoTarget" BeforeTargets="CoreCompile">
@@ -42,11 +42,11 @@ position: knowledge
 
 注意，我在 `BeforeTargets` 上增加了一个 `ResolveAssemblyReference`。
 
-### 以上 Target 的输出
+## 以上 Target 的输出
 
 引用通常很多，所以我将以上的输出单独放到这里来，避免影响到上面一节知识的阅读。
 
-#### Reference 的输出
+### Reference 的输出
 
 可以看到，Reference 的输出几乎就是 Reference 中写的字符串本身。
 
@@ -82,7 +82,7 @@ Microsoft.CSharp
 System.Core
 ```
 
-#### ReferencePath 的输出
+### ReferencePath 的输出
 
 可以看到，ReferencePath 则是将所有的 dll 的路径也输出了，而且即便是项目引用，项目编译好的 dll 的路径也在。
 
@@ -185,7 +185,7 @@ C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4
 C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\System.Xml.XmlSerializer.dll
 ```
 
-### 解读原因
+## 解读原因
 
 解析引用的 dll 的路径的 Task 是 `ResolveAssemblyReference`，你可以在 [Microsoft.NET.Sdk 文件夹](/post/read-microsoft-net-sdk.html) 中找到它。如果想知道 Task 是什么意思，可以阅读：[理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj.html)。
 

@@ -15,13 +15,13 @@ description: 了解 Windows 系统上如何使 32 位应用程序使用大于 2G
 
 <p id="toc"></p>
 
-### 为什么 32 位程序只能使用最大 2GB 内存？
+## 为什么 32 位程序只能使用最大 2GB 内存？
 
 32 位寻址空间只有 4GB 大小，于是 32 位应用程序进程最大只能用到 4GB 的内存。然而，除了应用程序本身要用内存，操作系统内核也需要使用。应用程序使用的内存空间分为用户空间和内核空间，每个 32 位程序的用户空间可独享前 2GB 空间（指针值为正数），而内核空间为所有进程共享 2GB 空间（指针值为负数）。所以，32 位应用程序实际能够访问的内存地址空间最多只有 2GB。
 
-### 让 32 位程序使用大于 2GB 内存的两种方法
+## 让 32 位程序使用大于 2GB 内存的两种方法
 
-#### editbin
+### editbin
 
 这是 Visual Studio 2017 采用的做法。我们需要使用到两个工具——`editbin` 和 `dumpbin`。前者用于编辑我们编译生成好的程序使之头信息中声明支持大于 2GB 内存，后者用于查看程序的头信息验证我们是否改好了。
 
@@ -54,7 +54,7 @@ editbin 改之前和改之后用 dumpbin 查看我们的程序头信息，得到
 
 如果希望能够在 Visual Studio 编译的时候自动调用这个工具，请参见：[LargeAddressAware Visual Studio 2015 C#](https://stackoverflow.com/questions/31565532/largeaddressaware-visual-studio-2015-c-sharp)。
 
-#### 编译成 AnyCPU (Prefer 32-bit)
+### 编译成 AnyCPU (Prefer 32-bit)
 
 这是本文更推荐的做法，也是最简单的做法。方法是打开入口程序集的属性页，将“目标平台”选为“AnyCPU”，然后勾选“首选 32 位”。需要注意的是，这种生成方式是 .NET Framework 4.5 及以上版本才提供的。
 
@@ -62,7 +62,7 @@ editbin 改之前和改之后用 dumpbin 查看我们的程序头信息，得到
 
 至于 AnyCPU (Prefer 32-bit) 和 x86 两种生成方式的区别，请参见：[WPF 编译为 AnyCPU 和 x86 有什么区别 - 林德熙](https://lindexi.github.io/lindexi/post/WPF-%E7%BC%96%E8%AF%91%E4%B8%BA-AnyCPU-%E5%92%8C-x86-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB.html) 和 [What is the purpose of the “Prefer 32-bit” setting in Visual Studio 2012 and how does it actually work?](https://stackoverflow.com/questions/12066638/what-is-the-purpose-of-the-prefer-32-bit-setting-in-visual-studio-2012-and-how)。
 
-### 声明支持大于 2GB 内存后，能使用多少内存？
+## 声明支持大于 2GB 内存后，能使用多少内存？
 
 对于 32 位操作系统，程序依然只能使用 2GB 内存，除非开启了 `/3GB` 开关，开启方法详见：[/3GB](https://msdn.microsoft.com/en-us/library/windows/hardware/ff556232(v=vs.85).aspx)。开启后，应用程序的用户态将可以使用 3GB 内存，但内核态将只能使用 1GB 内存。微软认为，是否打开 `/3GB` 开关是计算机设备开发商需要做的事情，开发商也需要自己测试开启后驱动程序的性能表现和稳定性。
 
@@ -70,7 +70,7 @@ editbin 改之前和改之后用 dumpbin 查看我们的程序头信息，得到
 
 ---
 
-#### 参考资料
+**参考资料**
 - AnyCPU (32bit preferred)
     - [What is the purpose of the “Prefer 32-bit” setting in Visual Studio 2012 and how does it actually work?](https://stackoverflow.com/questions/12066638/what-is-the-purpose-of-the-prefer-32-bit-setting-in-visual-studio-2012-and-how)
     - [WPF 编译为 AnyCPU 和 x86 有什么区别 - 林德熙](https://blog.lindexi.com/post/WPF-%E7%BC%96%E8%AF%91%E4%B8%BA-AnyCPU-%E5%92%8C-x86-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB.html)

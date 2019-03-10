@@ -13,7 +13,7 @@ Win2D 是 DirectX 的一个高层封装，提供了极大 DirectX 性能的同�
 
 <div id="toc"></div>
 
-### 使用 Win2D 做出来的游戏
+## 使用 Win2D 做出来的游戏
 
 我在 GitHub 上开源了我正在做的一个基于 Win2D 的小游戏 —— GravityMaze，可以翻译为重力迷宫。本意是使用手机的重力感应器借助于自然重力的方式玩这款游戏，不过考虑到 Windows 10 Mobile 的手机太少，用户数量太少，其实我还是直接展示 UWP 桌面版好了。使用方向键可以控制桌面的倾斜角度，以便间接控制小球的运动方向。
 
@@ -24,11 +24,11 @@ Win2D 是 DirectX 的一个高层封装，提供了极大 DirectX 性能的同�
 
 这张图的红色背景是我自己拍摄的，所以绝不可能存在版权问题。
 
-### 准备工作
+## 准备工作
 
 要使用 Win2D 进行简单的游戏开发，你需要先配置好一些 UWP 的开发环境，并且在你的项目中安装 Win2D.uwp 的 NuGet 包。阅读 [win10 uwp win2d 入门 看这一篇就够了 - 林德熙](https://blog.lindexi.com/post/win10-uwp-win2d-%E5%85%A5%E9%97%A8-%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html) 了解如何在你的项目中安装 Win2D，并且了解 Win2D 基本的知识。
 
-### Win2D 中的画布控件
+## Win2D 中的画布控件
 
 Win2D 中的画布有 `CanvasControl`、`CanvasVirtualControl` 和 `CanvasAnimatedControl`。
 
@@ -36,7 +36,7 @@ Win2D 中的画布有 `CanvasControl`、`CanvasVirtualControl` 和 `CanvasAnimat
 - `CanvasVirtualControl` 适用于在一个很大的画面中，只显示一个小部分的情况。例如显示大地图的一部分，或者显示大量超界的笔迹内容。
 - `CanvasAnimatedControl` 适用于显示频繁更新的画面。典型的例子就是游戏。
 
-### CanvasAnimatedControl
+## CanvasAnimatedControl
 
 我们使用 `CanvasAnimatedControl` 来做游戏循环，因为这是 Win2D 这几个控件中最适合做游戏循环的控件了。
 
@@ -79,7 +79,7 @@ private void OnDraw(ICanvasAnimatedControl sender, CanvasAnimatedDrawEventArgs e
 }
 ```
 
-### CanvasAnimatedControl 在游戏中的使用
+## CanvasAnimatedControl 在游戏中的使用
 
 你在我的 `GamePage` 中其实看不到对 `Update` 和 `Draw` 事件的实际使用，因为我把它们都封装到了 `MazeGame` 中了。
 
@@ -123,7 +123,7 @@ private void OnDraw(ICanvasAnimatedControl sender, CanvasAnimatedDrawEventArgs e
 
 事实上你在上面动图看到的球并不是一个毫无生机的灰球，而是一个具有特效的半透明塑料弹球。你可以阅读 [使用 Win2D 绘制带图片纹理的圆（或椭圆）](/post/draw-ellipse-with-bitmap-texture-using-win2d.html) 了解如何绘制这样的塑料弹球。
 
-### CanvasAnimatedControl 中 CreateResources 事件
+## CanvasAnimatedControl 中 CreateResources 事件
 
 `CanvasAnimatedControl` 中还有 `CreateResources` 事件，对更复杂的游戏循环有所帮助。当需要创建资源的时候会引发此事件。
 
@@ -179,7 +179,7 @@ private async void OnCreateResources(CanvasAnimatedControl sender, CanvasCreateR
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [win10 uwp win2d 入门 看这一篇就够了 - 林德熙](https://blog.lindexi.com/post/win10-uwp-win2d-%E5%85%A5%E9%97%A8-%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html)
 - [win10 uwp win2d CanvasVirtualControl 与 CanvasAnimatedControl - 林德熙](https://blog.lindexi.com/post/win10-uwp-win2d-CanvasVirtualControl-%E4%B8%8E-CanvasAnimatedControl.html)

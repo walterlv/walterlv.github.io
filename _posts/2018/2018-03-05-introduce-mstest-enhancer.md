@@ -25,7 +25,7 @@ You'll get the test result like the picture shown below:
 ![Test results](/static/posts/2018-02-13-13-09-26.png)  
 ▲ The unit test result that listed via ReSharper.
 
-### Classical Style of Writing Unit Tests
+## Classical Style of Writing Unit Tests
 
 We used to be recommended to write unit test like this:
 
@@ -49,7 +49,7 @@ public class TheTestedClassTest
 
 It is an example using MSTest. If we use NUnit or XUnit, we'll get similar test code, too. Sometimes the conditions and expects are more complex, and we cannot write them down with only a few words. And the more complex the method name is, the more difficult for coders to read and comprehend them.
 
-### Introduce MSTestEnhancer
+## Introduce MSTestEnhancer
 
 MSTestEnhancer is a MSTest v2 extension to connect unit test and the method that should be tested. You'll find out that all unit test contracts are listed under target methods, and you can see all the result of them directly, no need to translate the obscure method name into what you want to test.
 
@@ -58,7 +58,7 @@ Now, let's start!
 1. Install [MSTestEnhancer](https://www.nuget.org/packages/MSTestEnhancer/) from the [nuget.org](https://www.nuget.org/).
 1. Write unit test code in the style listed below.
 
-### Recommended Style of Writing Unit Tests
+## Recommended Style of Writing Unit Tests
 
 Assuming that you want to test a class named `TheTestedClass` containing a method named `TheTestedMethod`. Then you can write unit tests like this:
 
@@ -86,9 +86,9 @@ Notice that the name of class and method are almost the name of the tested class
 
 ![Test results](/static/posts/2018-02-13-13-09-26.png)
 
-### Advanced Usages
+## Advanced Usages
 
-#### Unit Test with Arguments
+### Unit Test with Arguments
 
 Some unit tests need multiple values to verify the contracts, so MSTestEnhancer provides `WithArguments` method to config the arguments.
 
@@ -121,10 +121,10 @@ You can pass up to 8 parameters into the test case.
 
 In this example, the contract description will be replaced to the arguments that you have passed into.
 
-#### Async Unit Test
+### Async Unit Test
 
 All `Test` extension method support async action so that you can test any async method.
 
-#### Some Fantastic Feature
+### Some Fantastic Feature
 
 Nested unit test classes are supported by MSTest v2, so you can write an infinite level unit test tree.

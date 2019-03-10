@@ -10,7 +10,7 @@ categories: dotnet windows
 
 <div id="toc"></div>
 
-### 性能比较
+## 性能比较
 
 `Process` 类中提供了四种查询进程的方法：
 
@@ -36,7 +36,7 @@ categories: dotnet windows
 
 结果显示获取所有进程实例的 `GetProcesses` 方法速度竟然比获取单个进程实例的 `GetProcessById` 还要快得多！额外地，根据名称查找进程比前两者都快，获取当前进程实例的方法快得不是一个数量级。
 
-### 这些速度差异源于哪里
+## 这些速度差异源于哪里
 
 我们先看看最慢的方法 `GetProcessIds`，它的最本质的实现在 `ProcessManager` 类中：
 

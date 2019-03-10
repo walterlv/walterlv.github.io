@@ -26,7 +26,7 @@ description:
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [GitLab Documentation](https://docs.gitlab.com/ce/workflow/gitlab_flow.html)
 - [git - Pull request vs Merge request - Stack Overflow](https://stackoverflow.com/questions/22199432/pull-request-vs-merge-request)

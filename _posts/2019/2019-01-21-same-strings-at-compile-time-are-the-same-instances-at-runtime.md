@@ -19,7 +19,7 @@ position: knowledge
 
 <div id="toc"></div>
 
-### 字符串拼接
+## 字符串拼接
 
 对于拼接，我们不需要运行便能知道是否是同一个实例：
 
@@ -31,7 +31,7 @@ private const string Z = X + Y;
 
 以上这段代码是可以编译通过的，因为能够写为 `const` 的字符串，一定是编译期间能够确定的。
 
-### 字符串内插
+## 字符串内插
 
 对于字符串内插，以上代码我们不能写成 `const`：
 
@@ -122,7 +122,7 @@ True
 
 可以发现，实际上 G 已经在编译期间完全确定了。
 
-### 扩展：修改编译期间的字符串
+## 扩展：修改编译期间的字符串
 
 前面我们说到可以在编译期间完全确定的字符串。呃，为什么一定要抬杠额外写一节呢？
 
@@ -160,7 +160,7 @@ Walterlv is a 逗比
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [$ - string interpolation - C# Reference - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated)
 - [[Discussion] Constant string interpolation · Issue #2077 · dotnet/csharplang](https://github.com/dotnet/csharplang/issues/2077)

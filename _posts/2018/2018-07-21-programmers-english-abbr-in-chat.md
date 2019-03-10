@@ -9,9 +9,9 @@ categories: miscellaneous
 
 ---
 
-### 英语部分
+## 英语部分
 
-##### lol
+#### lol
 
 - Laughing out Loud
 - Laugh out Loud
@@ -24,63 +24,63 @@ categories: miscellaneous
 
 或者，这种感觉可能和 233 很像。
 
-##### lmao
+#### lmao
 
 - Laughing my ass off
 
 笑到屁屁都掉了。似乎这是一个比 lol 笑得更厉害的笑法儿。
 
-##### idk
+#### idk
 
 - I don't know，我不知道
 
-##### thx / tks
+#### thx / tks
 
 - Thanks
 
-##### bbs / brb
+#### bbs / brb
 
 - Be back soon，马上回来
 - Be right back，马上回来
 
-##### btw
+#### btw
 
 - By the way，顺便说一下
 
-##### FYI
+#### FYI
 
 - For your information，给你信息，你参考一下
 - 邮件中会经常见到这个，通常在转发的时候带上
 
-##### ttyl
+#### ttyl
 
 - Talk to you later，回头再聊
 - 这个注意可能说出来之后会有结束当前会话的意味，也许没有回头了
 
-### 歪楼：中文部分
+## 歪楼：中文部分
 
 要歪个楼，因为发现中文中也有一些英文中可以对应的说法。
 
-##### 3q / 3Q
+#### 3q / 3Q
 
 - Thanks，谢了
 
-##### 1
+#### 1
 
 - 如果是一则消息，表示已读；如果是一个问题，表示“是”“同意”等
 - 就一个数字，按下即可回车，很快
 
-##### 0
+#### 0
 
 - 如果是一则消息，表示反对；如果是一个问题，表示“否”“不同意”等
 - 就一个数字，按下即可回车，很快
 
-##### 233
+#### 233
 
 - 愿意是“大笑”，但其实含义已经改变，现在意思几乎跟“呵呵”一样
 - “你继续说，我就看着不说话”
 
-##### 回聊
+#### 回聊
 
 - 回头再聊
 - Talk to you later，回头再聊
@@ -88,7 +88,7 @@ categories: miscellaneous
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [聊天中经常用的「lol」是什么意思？ - 知乎](https://www.zhihu.com/question/20624224)
 - [LMAO 不是老毛，是笑出猪叫 【英文缩写专题课】](https://zhuanlan.zhihu.com/p/35944392)

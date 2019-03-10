@@ -13,7 +13,7 @@ position: starter
 
 <div id="toc"></div>
 
-### 自安装或自更新的思路
+## 自安装或自更新的思路
 
 简单的安装过程实际上是 `解压 + 复制 + 配置 + 外部命令`。这里，我只做 `复制 + 配置 + 外部命令`，并且把 `配置 + 外部命令` 合为一个步骤。
 
@@ -23,13 +23,13 @@ position: starter
 1. 如果没有，则直接复制自己过去；
 1. 如果有，则比较版本号，更新则复制过去。
 
-### 本文用到的知识
+## 本文用到的知识
 
 - [在 Windows 系统上降低 UAC 权限运行程序（从管理员权限降权到普通用户权限） - walterlv](/post/start-process-with-lowered-uac-privileges.html)
 - [Windows 上的应用程序在运行期间可以给自己改名（可以做 OTA 自我更新） - walterlv](/post/rename-executable-self-when-running.html)
 - [仅反射加载（ReflectionOnlyLoadFrom）的 .NET 程序集，如何反射获取它的 Attribute 元数据呢？ - walterlv](/post/get-attributes-for-reflection-only-loaded-assembly.html)
 
-### 使用
+## 使用
 
 于是我写了一个简单的类型用来做自安装。创建完 `SelfInstaller` 的实例后，根据安装完的结果做不同的行为：
 
@@ -73,7 +73,7 @@ namespace Walterlv.ENPlugins.Presentation
 }
 ```
 
-### 附全部源码
+## 附全部源码
 
 本文代码在 <https://gist.github.com/walterlv/33bdd62e2411c69c2699038e2bc97488>。
 

@@ -13,7 +13,7 @@ EditorConfig 是一种被各种编辑器广泛支持的配置，使用此配置�
 
 <div id="toc"></div>
 
-### EditorConfig 的广泛支持
+## EditorConfig 的广泛支持
 
 在 EditorConfig 官网中，贴出了一些可以纯原生无需任何插件支持 EditorConfig 代码风格配置的编辑器：
 
@@ -27,7 +27,7 @@ EditorConfig 是一种被各种编辑器广泛支持的配置，使用此配置�
 
 EditorConfig 本身只定义了一个核心集，表示所有语言都共同遵循的代码格式规范：[EditorConfig 属性的核心集](https://editorconfig.org/#supported-properties)。同时，还有一些其他定义的规范：[EditorConfig 的完整属性](https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties)，不过这里不包括语言特定的规范。
 
-### Visual Studio 对 EditorConfig 的支持程度
+## Visual Studio 对 EditorConfig 的支持程度
 
 Visual Studio 2017 开始添加了对 EditorConfig 的原生支持（你当然能在上面看到 Visual Studio 的图标啦）。
 
@@ -50,7 +50,7 @@ Visual Studio 2017 开始添加了对 EditorConfig 的原生支持（你当然�
 
 Visual Studio 中 .NET 相关语言（C# VB）的 EditorConfig 属性，可以参考 [.NET coding convention settings For EditorConfig](https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference?view=vs-2017?wt.mc_id=MVP)。
 
-### 在 Visual Studio 中添加 EditorConfig 配置
+## 在 Visual Studio 中添加 EditorConfig 配置
 
 Visual Studio 支持 EditorConfig 对编程规范的约束。对于多数开发者来说，不需要安装任何插件的情况下这个编程规范的约束就会生效。
 
@@ -68,11 +68,11 @@ Visual Studio 支持 EditorConfig 对编程规范的约束。对于多数开发�
 ![生成规范](/static/posts/2018-11-20-11-10-20.png)  
 ▲ 生成规范
 
-### 在 Visual Studio 中开启 EditorConfig 支持
+## 在 Visual Studio 中开启 EditorConfig 支持
 
 实际上，Visual Studio 一旦检测到 .editorconfig 文件的存在，格式约定就会自动生效。
 
-### 在 ReSharper 中开启 EditorConfig 支持
+## 在 ReSharper 中开启 EditorConfig 支持
 
 一样的，ReSharper 默认是开启了 EditorConfig 配置的检测的，也就是说只要存在 .editorconfig 文件，那么 EditorConfig 也会在 ReSharper 的格式化中生效。
 
@@ -80,7 +80,7 @@ Visual Studio 支持 EditorConfig 对编程规范的约束。对于多数开发�
 
 ReSharper 对于 EditorConfig 的支持情况可以参考：[Using EditorConfig - Help - ReSharper](https://www.jetbrains.com/help/resharper/Using_EditorConfig.html)。
 
-### 效果体验
+## 效果体验
 
 我们来看一段风格十分混乱不忍直视的代码：
 
@@ -152,7 +152,7 @@ namespace Walterlv.Demo
 }
 ```
 
-#### 附 EditorConfig Language Service 生成的属性集
+### 附 EditorConfig Language Service 生成的属性集
 
 ```ini
 [*]
@@ -240,7 +240,7 @@ csharp_style_var_when_type_is_apparent = true:silent
 visual_basic_preferred_modifier_order = Partial,Default,Private,Protected,Public,Friend,NotOverridable,Overridable,MustOverride,Overloads,Overrides,MustInherit,NotInheritable,Static,Shared,Shadows,ReadOnly,WriteOnly,Dim,Const,WithEvents,Widening,Narrowing,Custom,Async:suggestion:suggestion
 ```
 
-#### 附 IntelliCode 生成的属性集
+### 附 IntelliCode 生成的属性集
 
 ```ini
 # Rules in this file were initially inferred by Visual Studio IntelliCode from the C:\Users\lvyi\Walterlv.Demo codebase based on best match to current usage at 2018/11/20
@@ -350,7 +350,7 @@ dotnet_style_qualification_for_property = false:suggestion
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Using EditorConfig settings in Visual Studio - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/ide/create-portable-custom-editor-options?view=vs-2017?wt.mc_id=MVP)
 - [.NET coding convention settings For EditorConfig - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference?view=vs-2017#formatting-conventions?wt.mc_id=MVP)

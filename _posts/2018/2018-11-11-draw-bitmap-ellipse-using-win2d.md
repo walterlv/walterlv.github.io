@@ -11,14 +11,14 @@ categories: dotnet win2d uwp
 
 <div id="toc"></div>
 
-### 重力迷宫小球
+## 重力迷宫小球
 
 ![重力迷宫](/static/posts/2018-11-11-walterlv-gravity-maze.gif)  
 ▲ 重力迷宫
 
 你可以看到这个小球就像一个透明塑料小球一样，纹理会跟随背景而动。这显然不是 [Win2D 中的游戏循环：CanvasAnimatedControl](/post/game-loop-of-win2d-canvas-animated-control.html) 一文中我用 `DrawEllipse` 画的那个灰色小球。
 
-### Win2D 实现
+## Win2D 实现
 
 我们会使用到 Win2D 中的多种特效：
 
@@ -103,7 +103,7 @@ using (var list = new CanvasCommandList(creator))
 }
 ```
 
-### 关于 CanvasCommandList
+## 关于 CanvasCommandList
 
 上面的例子中，我们是用到了 `CanvasCommandList`。它可以帮助我们将绘制命令先绘制到一个缓存的上下文中，以便被其他绘制上下文进行统一的处理。
 

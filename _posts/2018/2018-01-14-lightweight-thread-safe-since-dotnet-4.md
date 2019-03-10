@@ -9,6 +9,8 @@ categories: dotnet
 
 ---
 
+## 类型
+
 ### SpinLock, SpinWait
 
 SpinLock 被称之为“自旋锁”，SpinWait 称为“自旋等待”，适合在非常轻量的计算中使用。它与普通 lock 的区别在于普通 lock 使用 Win32 内核态对象来实现等待，[Overview of Synchronization Primitives](https://docs.microsoft.com/en-us/dotnet/standard/threading/overview-of-synchronization-primitives?wt.mc_id=MVP) 中描述为：

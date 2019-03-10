@@ -20,7 +20,7 @@ WPF 同一个窗口中跨线程访问 UI 有多种方法：
 
 <div id="toc"></div>
 
-### 准备必要的 Win32 函数
+## 准备必要的 Win32 函数
 
 完成基本功能所需的 Win32 函数是非常少的，只有 `SetParent` 和 `MoveWindow`。
 
@@ -36,7 +36,7 @@ public static extern bool MoveWindow(IntPtr hWnd, int X, int Y, int nWidth, int 
 
 `MoveWindow` 用于指定窗口相对于其父级的位置，我们使用这个函数来决定新嵌入的窗口在原来界面中的位置。
 
-### 启动后台 UI 线程
+## 启动后台 UI 线程
 
 启动一个后台的 WPF UI 线程网上有不少线程的方法，但大体思路是一样的。我之前在 [如何实现一个可以用 await 异步等待的 Awaiter](/post/write-custom-awaiter.html) 一文中写了一个利用 `async`/`await` 做的更高级的版本。
 
@@ -76,7 +76,7 @@ private void OnSourceInitialized(object sender, EventArgs e)
 }
 ```
 
-### 嵌入窗口
+## 嵌入窗口
 
 为了比较容易写出嵌入窗口的代码，我将核心部分代码贴出来：
 

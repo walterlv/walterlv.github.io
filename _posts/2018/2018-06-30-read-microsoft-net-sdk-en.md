@@ -22,7 +22,7 @@ This post is written in **multiple languages**. Please select yours:
 
 <div id="toc"></div>
 
-### Where to find the source code of Microsoft.NET.Sdk
+## Where to find the source code of Microsoft.NET.Sdk
 
 Search `Microsoft.NET.Sdk` using [Everything](https://www.voidtools.com/) or [Wox](https://github.com/Wox-launcher/Wox), I find that multiple versions are installed in my computer. As I've installed the .NET Core 2.1, the location of my latest version is `C:\Program Files\dotnet\sdk\2.1.300\Sdks`. The official document [How to: Reference an MSBuild Project SDK](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-use-project-sdk?wt.mc_id=MVP) says that if you implement your own Sdk, you can also push it to <nuget.org>.
 
@@ -36,7 +36,7 @@ The NuGet part of `Microsoft.NET.Sdk` is on GitHub:
 
 - [NuGet.Client/src/NuGet.Core at dev · NuGet/NuGet.Client](https://github.com/NuGet/NuGet.Client/tree/dev/src/NuGet.Core)
 
-### The folder structure of Microsoft.NET.Sdk
+## The folder structure of Microsoft.NET.Sdk
 
 When clicking into the `Microsoft.NET.Sdk` folder, we can find that the folder structure is very similar to the NuGet folder structure.
 
@@ -79,7 +79,7 @@ The `Sdk.props` file and the `Sdj.targets` file will be imported by default and 
 
 Because of the default importation behavior, Sdk can do variaty of tasks when MSBuild or Roslyn build the .NET projects. The default Sdk `Microsoft.NET.Sdk` is very extensible so that we can easily use it to customize out compiling behavior and I've mentioned these in the two non-English posts above.
 
-### The major targets of Microsoft.NET.Sdk
+## The major targets of Microsoft.NET.Sdk
 
 I try to search `Target` node in the whole `Sdk` folder and find out 174 `Target`s. Don't worry about the huge `Target` amount because most of them are private by indicating the name with a `_` prefix and some of them have the same name to override and wait to be overridden.
 
@@ -92,7 +92,7 @@ So the core compiling `Target` is not so many and I pick up some core `Target` h
 - `Pack`: Pack current project into a NuGet package file whose extension is nupkg.
 - `GenerateNuspec`: Generate the nuspec file which is the meta info of the NuGet package.
 
-### Write creative extensions of compiling
+## Write creative extensions of compiling
 
 I also find some creative `Target` that inspires me:
 
@@ -117,6 +117,6 @@ I also find some creative `Target` that inspires me:
 
 ---
 
-#### References
+### References
 
 - [How to: Reference an MSBuild Project SDK - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-use-project-sdk?wt.mc_id=MVP)

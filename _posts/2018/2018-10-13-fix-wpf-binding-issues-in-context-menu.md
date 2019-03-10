@@ -13,7 +13,7 @@ categories: wpf dotnet
 
 <div id="toc"></div>
 
-### 以下代码是可以正常工作的
+## 以下代码是可以正常工作的
 
 ```xml
 <Window x:Class="Walterlv.Demo.BindingContext.MainWindow"
@@ -35,7 +35,7 @@ categories: wpf dotnet
 ![使用普通的 ElementName 绑定](/static/posts/2018-10-14-11-11-23.png)  
 ▲ 使用普通的 ElementName 绑定
 
-### 以下代码就无法正常工作了
+## 以下代码就无法正常工作了
 
 保持以上代码不变，我们现在新增一个 `ContextMenu`，然后在 `ContextMenu` 中使用一模一样的绑定表达式：
 
@@ -63,7 +63,7 @@ categories: wpf dotnet
 
 ![在 ContextMenu 中使用了 ElementName 绑定](/static/posts/2018-10-14-11-10-17.png)
 
-### 使用 x:Reference 代替 ElementName 能够解决
+## 使用 x:Reference 代替 ElementName 能够解决
 
 以上绑定失败的原因，是 `Grid.ContextMenu` 属性中赋值的 `ContextMenu` 不在可视化树中，而 `ContextMenu` 又不是一个默认建立 ScopeName 的控件，此时既没有自己指定 NameScope，有没有通过可视化树寻找上层设置的 NameScope，所以在绑定上下文中是找不到 `WalterlvWindow` 的。如果调用去查找，得到的是 `null`。详见：[WPF 中的 NameScope](/post/namescope-of-wpf.html)。
 
@@ -157,6 +157,6 @@ public sealed class BindingProxy : Freezable
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [c# - WPF databinding error in Tag property - Stack Overflow](https://stackoverflow.com/a/32879146/6233938)

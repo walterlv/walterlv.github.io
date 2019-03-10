@@ -13,7 +13,7 @@ categories: csharp
 
 <div id="toc"></div>
 
-### 条件逻辑运算符是可以重载的
+## 条件逻辑运算符是可以重载的
 
 在微软的官方文档 [true Operator (C# Reference) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/true-operator?wt.mc_id=MVP) 中，解释了 `&&` 和 `||` 这两个条件逻辑运算符的重载方法：
 
@@ -27,7 +27,7 @@ categories: csharp
 
 于是，如果允许自定义 `&&` 和 `||` 运算符，那么必然会导致这个运算符重载的方法有两个参数传入，于是这两个参数一定会被计算值；这样就无法实现短路求值了。于是对于 `&&` 和 `||` 的重载采用的方案是重载 `&` 和 `|` 运算符，然后重载 `true` 和 `false` 运算符来指定短路求值。
 
-### 试错实验
+## 试错实验
 
 我们写一个类型进行实验：
 
@@ -79,7 +79,7 @@ var c = a && b;
 
 > Error CS0218: In order for 'Case.operator &(Case, Case)' to be applicable as a short circuit operator, its declaring type 'Case' must define operator true and operator false
 
-### 重载 && 和 ||
+## 重载 && 和 ||
 
 以下代码中，`true` 表示字符串中包含大写字母，`false` 表示字符串中不包含大写字母（`null` 和没有大小写的区域也属于不包含大写字母）。`&` 运算符仅留下两者共有的字符；`|` 则取所有字符。
 
@@ -112,7 +112,7 @@ public class Case
 }
 ```
 
-### 测试重载了条件逻辑运算符的类型
+## 测试重载了条件逻辑运算符的类型
 
 我们测试以上代码所用的代码如下：
 
@@ -144,14 +144,14 @@ Console.WriteLine(a || b);
 
 注意，空行其实指的是输出 `null`。
 
-### truthy 和 falsy
+## truthy 和 falsy
 
 刚刚的测试代码中，我们使用了 truthy 和 falsy 概念，而这是逻辑判断概念：
 
 - 如果在逻辑判断中，对象与 `true` 等价，但其数值上并非 `true`（不等于 `true`），那么称此对象为 truthy；
 - 如果在逻辑判断中，对象与 `false` 等价，但其数值上并非 `false`（不等于 `false`），那么称此对象为 falsy。
 
-### 对以上测试输出的解释
+## 对以上测试输出的解释
 
 第 5 行由于 `a` 和 `b` 没有共有字符，所以得到 `null`。
 
@@ -170,7 +170,7 @@ Console.WriteLine(a || b);
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [C# 中那些可以被重载的操作符 - walterlv - 请阅读文章末尾的评论](/post/overridable-operators-in-csharp.html#comment-4147325525)
 - [true Operator (C# Reference) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/true-operator?wt.mc_id=MVP)

@@ -19,7 +19,7 @@ position: problem
 
 <div id="toc"></div>
 
-### 如何判断当前进程的 UAC 权限
+## 如何判断当前进程的 UAC 权限
 
 通过下面的代码，可以获得当前进程的 UAC 权限。
 
@@ -39,7 +39,7 @@ if (principal.IsInRole(WindowsBuiltInRole.Administrator))
 
 此代码如果在 .NET Core 中编写，需要额外安装 Windows 兼容包：[Microsoft.Windows.Compatibility](https://www.nuget.org/packages/Microsoft.Windows.Compatibility)。
 
-### 方法一：使用 explorer.exe 代理运行程序（推荐）
+## 方法一：使用 explorer.exe 代理运行程序（推荐）
 
 因为绝大多数用户启动系统的时候，explorer.exe 进程都是处于运行状态，而如果启动一个新的 explorer.exe，都会自动激活当前正在运行的进程而不会启动新的。
 
@@ -66,7 +66,7 @@ if (principal.IsInRole(WindowsBuiltInRole.Administrator))
 }
 ```
 
-### 方法二：在启动进程时传入用户名和密码
+## 方法二：在启动进程时传入用户名和密码
 
 `ProcessStartInfo` 中有 `UserName` 和 `Password` 属性，设置此属性可以以此计算机上的另一个用户身份启动此进程。如果这个用户是普通用户，那么就会以普通权限运行此进程。
 
@@ -87,7 +87,7 @@ Process.Start(processInfo);
 
 然而，此方法最大的问题在于——产品级的程序，不可能也不应该知道用户的密码！所以实际上这样的方法并不实用。
 
-### 方法三：使用 Shell 进程的 Access Token 来启动进程
+## 方法三：使用 Shell 进程的 Access Token 来启动进程
 
 此方法需要较多的 Windows API 调用，我没有尝试过这种方法，但是你可以自行尝试下面的链接：
 
@@ -95,7 +95,7 @@ Process.Start(processInfo);
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [c# starting process with lowered privileges from UAC admin level process - Stack Overflow](https://stackoverflow.com/q/7870319/6233938)
 - [c# - How do you de-elevate privileges for a child process - Stack Overflow](https://stackoverflow.com/q/1173630/6233938)

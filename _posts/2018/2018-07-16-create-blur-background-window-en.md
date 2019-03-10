@@ -20,7 +20,7 @@ This post is written in **multiple languages**. Please select yours:
 
 <div id="toc"></div>
 
-### Options to blurring background
+## Options to blurring background
 
 We have three ways to blurring background on Windows 10 and each has its advantages and disadvantages.
 
@@ -35,7 +35,7 @@ We have three ways to blurring background on Windows 10 and each has its advanta
 
 ---
 
-### SetWindowCompositionAttribute API
+## SetWindowCompositionAttribute API
 
 Calling `SetWindowCompositionAttribute` API is not very easy, so I've written a wrapper class for easier usage. You can use my class by writing only a simple line in the XAML file **or** in the cs file.
 
@@ -67,7 +67,7 @@ Just add my wrapper class into your project. It's a very long class so I pasted 
 
 I also write a post for its usage, but it's not in English: <https://walterlv.github.io/post/win10/2017/10/02/wpf-transparent-blur-in-windows-10.html>
 
-### WPF BlurEffect
+## WPF BlurEffect
 
 Just set the Effect property of a WPF UIElement.
 
@@ -129,6 +129,6 @@ You can also add a `RectangleGeometry` to clip your UIElement into a rounded rec
 </Window>
 ```
 
-### UWP AcyclicBrush
+## UWP AcyclicBrush
 
 You can read Microsoft's documents [Acrylic material - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/style/acrylic?wt.mc_id=MVP) for more details about how to write an `AcylicBrush`.

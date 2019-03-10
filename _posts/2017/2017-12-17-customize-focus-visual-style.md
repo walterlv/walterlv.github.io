@@ -74,7 +74,7 @@ StackOverflow 上也有人说了这件事：[xaml - How to redefine FocusVisualS
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Styling for Focus in Controls, and FocusVisualStyle - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle?wt.mc_id=MVP)
 - [xaml - How to redefine FocusVisualStyle for a WPF user control - Stack Overflow](https://stackoverflow.com/questions/29101942/how-to-redefine-focusvisualstyle-for-a-wpf-user-control)

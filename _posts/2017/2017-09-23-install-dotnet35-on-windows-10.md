@@ -49,7 +49,7 @@ DISM /Online /Enable-Feature /FeatureName:NetFx3 /All /LimitAccess /Source:E:\so
 - 如果是在线安装，则需要修复 Windows Update 服务
 
 
-#### 参考资料
+**参考资料**
 - [How to instal .NET Framework 3.5 on Windows 10 - Microsoft Community](https://answers.microsoft.com/en-us/insider/forum/insider_wintp-insider_install/how-to-instal-net-framework-35-on-windows-10/450b3ba6-4d19-45ae-840e-78519f36d7a4)
 - [.NET Framework 3.5 installation error: 0x800F0906, 0x800F081F, 0x800F0907](https://support.microsoft.com/en-us/help/2734782/net-framework-3-5-installation-error-0x800f0906--0x800f081f--0x800f09)
 - [Net 3.5 framework, cannot install 0x800F081F. Solved - Windows 10 Forums](https://www.tenforums.com/software-apps/16594-net-3-5-framework-cannot-install-0x800f081f.html)

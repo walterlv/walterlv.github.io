@@ -15,9 +15,9 @@ categories: csharp dotnet
 
 <p id="toc"></p>
 
-### ReSharper 的官方帮助文档
+## ReSharper 的官方帮助文档
 
-#### 例子和现象
+### 例子和现象
 
 从 ReSharper 的提示中，我们可以跳转到官方帮助文档 [Code Inspection: Delegate subtractions - Help - ReSharper](https://www.jetbrains.com/help/resharper/2017.3/DelegateSubtraction.html)。
 
@@ -53,7 +53,7 @@ ReSharper 同时还给出另一个例子，说明委托的减法顺序也可能�
 
 它会从尾部减起，而这一点也容易被大家忽视。
 
-#### 原理
+### 原理
 
 究其原因，ReSharper 官方文档也已说明。因为委托保存了一个调用列表，委托的 `a + b`，是将 `b` 的调用列表追加到 `a` 的调用列表之后；而委托的 `a - b` 是从 `a` 的调用列表中移除 `b` 的调用列表子序列。
 
@@ -64,7 +64,7 @@ ReSharper 同时还给出另一个例子，说明委托的减法顺序也可能�
 ![调用列表的加减](/static/posts/2017-12-28-09-41-51.png)  
 ▲ 调用列表的加减其实就是序列的拼接和子序列的移除
 
-### 将委托和事件比较
+## 将委托和事件比较
 
 既然 ReSharper 对委托做出了这样的提示，而事件几乎就是委托的封装，那为何事件不给出提示呢？！
 
@@ -94,7 +94,7 @@ static void Main()
 
 但是——事件是观察者模式的一种实现，从设计上说，事件只作通知之用，不确保顺序，也不保证结果。在这个角度上说，如果依然用事件写出上面 demo 那样的“*不可预期*”代码，那简直不把事件当事件用。
 
-### 不再用委托减法了吗？
+## 不再用委托减法了吗？
 
 至少从设计模式上说，事件里委托减法的的那些非预期就忽略吧，那么没有定义成事件的那些委托呢？我们需要如何处理减法？
 
@@ -102,7 +102,7 @@ static void Main()
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Code Inspection: Delegate subtractions - Help - ReSharper](https://www.jetbrains.com/help/resharper/2017.3/DelegateSubtraction.html)
 - [events - "Delegate subtraction has unpredictable result" in ReSharper/C#? - Stack Overflow](https://stackoverflow.com/questions/11180068/delegate-subtraction-has-unpredictable-result-in-resharper-c)

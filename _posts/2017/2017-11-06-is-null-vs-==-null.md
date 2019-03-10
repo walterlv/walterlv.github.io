@@ -15,7 +15,7 @@ categories: csharp msil dotnet decompile
 
 ---
 
-### 🤓 C# 7 的模式匹配
+## 🤓 C# 7 的模式匹配
 
 说到 C# 中新增的模式匹配，想必大家一定不会忘了变量的匹配。以下例子来自于微软官方 C# 7.0 的介绍文档 [What's New in C# 7 - C# Guide - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-7?wt.mc_id=MVP)：
 
@@ -91,7 +91,7 @@ public static int DiceSum5(IEnumerable<object> values)
 
 ---
 
-### 🤔 `x is null` Vs. `x == null`
+## 🤔 `x is null` Vs. `x == null`
 
 好了，回到正题。我们想说的是 `x is null` 和 `x == null`。为了得知它们的区别，我们写一段代码：
 
@@ -184,7 +184,7 @@ IL_000f: stloc.1      // V_1
 
 ---
 
-### 😏 `x is 常量` Vs. `x == 常量`
+## 😏 `x is 常量` Vs. `x == 常量`
 
 如果只是像上面那样，那这篇文章也太没营养了！现在我们把 `null` 换成其它常量：
 
@@ -240,7 +240,7 @@ IL_001c: stloc.1      // V_1
 
 区别已经很明显了，前者会根据具体类型具体判断相等，也就是说引用类型会调用引用类型自己的方法判断相等，值类型也会调用值类型的方法判断相等。而后者依然是比较评估栈中的两个值是否相等。关键是这两者均出现了装箱！也就是说——因为装箱的存在，对后者而言，`ceq` 会压入 `0`，即永远返回 `false`，这就是 BUG 所在。这就是不一样的地方！
 
-### 🧐如果重写了 `==` 或者 `Equals` 呢？
+## 🧐如果重写了 `==` 或者 `Equals` 呢？
 
 ```csharp
 using System;
@@ -320,7 +320,7 @@ IL_002c: call         void [System.Console]System.Console::WriteLine(bool)
 
 ---
 
-### 回顾模式匹配中的常量匹配
+## 回顾模式匹配中的常量匹配
 
 在 C# 7 的模式匹配中，`null` 和常量其实都一样是常量，本来都是会调用 `Object.Equals(object, object)` 静态方法进行比较的；但 `null` 因为其特殊性，被编译器优化掉了，于是 `x is null` 和 `x == null` 完全一样；`x is constant` 和 `x == constant` 依然有区别。
 
@@ -331,7 +331,7 @@ IL_002c: call         void [System.Console]System.Console::WriteLine(bool)
 
 ---
 
-#### 参考资料
+**参考资料**
 - [What's New in C# 7 - C# Guide - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-7?wt.mc_id=MVP)
 - [Dissecting the pattern matching in C# 7 – Dissecting the code](https://blogs.msdn.microsoft.com/seteplia/2017/10/16/dissecting-the-pattern-matching-in-c-7/)
 - [c# - What is the difference between "x is null" and "x == null"? - Stack Overflow](https://stackoverflow.com/questions/40676426/what-is-the-difference-between-x-is-null-and-x-null)

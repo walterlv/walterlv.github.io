@@ -11,7 +11,7 @@ published: false
 
 ---
 
-### 充分利用 hugo import 命令
+## 充分利用 hugo import 命令
 
 GitHub 大神 [coderzh](https://github.com/coderzh) 在一个重要的 [PR](https://github.com/gohugoio/hugo/pull/1469) 中帮助我们完成了很大一部分的自动迁移工作，他为 Hugo 添加了 `import` 命令，可以只通过一条命令就完成最主要部分的迁移工作。
 
@@ -24,7 +24,7 @@ $ hugo import jekyll your-jekyll-dir target-dir
 1. 格式化 Markdown 的 YAML 元数据
 1. 迁移静态资源
 
-### 修改未迁移完全的 YAML 元数据
+## 修改未迁移完全的 YAML 元数据
 
 关于元数据，迁移之前是这样的：
 
@@ -46,13 +46,13 @@ title: 从 Jekyll 博客迁移到 Hugo 博客
 
 很明显，Hugo 官网推荐使用的 `publishDate` 字段并没有真正完成迁移。
 
-### 补充未迁移完全的静态资源
+## 补充未迁移完全的静态资源
 
 `hugo import` 命令已经帮我们完成了多数静态资源的迁移。
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Hugo Documentation - Hugo](https://gohugo.io/documentation/)
 - [Hugo中文文档](http://www.gohugo.org/)

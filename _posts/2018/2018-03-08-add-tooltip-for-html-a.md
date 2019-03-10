@@ -10,7 +10,7 @@ categories: web html css
 
 <div id="toc"></div>
 
-### 原生 ToolTip
+## 原生 ToolTip
 
 先来看看 HTML 原生自带的 ToolTip：
 
@@ -22,7 +22,7 @@ categories: web html css
 <a title="你看到了什么？对，这就是原生自带的 ToolTip！" href="#">请将鼠标划至这里</a>
 ```
 
-### 可交互 ToolTip
+## 可交互 ToolTip
 
 可交互的 ToolTip 就没那么幸运了，没有自带。于是，我们可考虑通过自己拼接的 html 容器来实现。效果像这样：
 

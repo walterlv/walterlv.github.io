@@ -11,7 +11,7 @@ categories: windows
 
 <div id="toc"></div>
 
-### 吹水的推断
+## 吹水的推断
 
 从直观看来，这个网址的连通性和网络图标上的“感叹号”有着直接的联系。那么到底有没有联系呢？于是去知乎上看看，发现了[专业造轮子拉黑抢前排的轮子哥的回复](https://www.zhihu.com/question/59865134/answer/169818796)。
 
@@ -24,7 +24,7 @@ categories: windows
 
 不过，吹水归吹水，还是需要更多地了解下这个网址。
 
-### 官方的依据
+## 官方的依据
 
 这个网址用于检测网络连接状态，并以图标形式展示给用户。而这个图标称之为“网络连接状态图标”（Connection Status Icon，NCSI）。
 
@@ -41,13 +41,13 @@ categories: windows
 
 关于 Windows XP/Vista/7 的检测方式，可以阅读：[Network Location Awareness (NLA) and how it relates to Windows Firewall Profiles - Networking Blog](https://blogs.technet.microsoft.com/networking/2010/09/08/network-location-awareness-nla-and-how-it-relates-to-windows-firewall-profiles/)。
 
-### 局限性
+## 局限性
 
 - 如果计算机上有多张网络适配器可以工作，但只有一个探测到连通状态，那么图标上依然会有一个感叹号，即探测为“网络受限”。
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [开机总是有一个弹窗 http://www.msftconnecttest.com/redirect ? - 知乎](https://www.zhihu.com/question/59865134)
 - [The Network Connection Status Icon - Networking Blog](https://blogs.technet.microsoft.com/networking/2012/12/20/the-network-connection-status-icon/)

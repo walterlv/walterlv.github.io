@@ -15,7 +15,7 @@ categories: wpf
 
 <p id="toc"></p>
 
-### 为什么要做像素对齐
+## 为什么要做像素对齐
 
 ![我们在解决什么问题](/static/posts/2017-12-12-19-48-01.png)
 
@@ -27,9 +27,9 @@ categories: wpf
 
 然而为什么 WPF 不默认为我们对齐像素呢？这是因为要对齐像素必定带来尺寸上的偏差；这是绘制尺寸精度和最终呈现效果之间的平衡。在 MacBook、Surface Pro 这些高档显示屏上，根本不用管这样的平衡问题；但在渣渣显示器上，微软把这种平衡的控制交给了应用的开发者。
 
-### 处理像素对齐的四种方法
+## 处理像素对齐的四种方法
 
-#### 方法一：布局取整 UseLayoutRounding
+### 方法一：布局取整 UseLayoutRounding
 
 ![UseLayoutRounding](/static/posts/2017-12-12-20-40-06.png)
 
@@ -43,13 +43,13 @@ categories: wpf
 
 事实上我们从 .NET Framework 源码可以得知，`UseLayoutRounding` 实际只处理 UI 元素对自己子级控件的布局取整。一旦整棵布局树种有任何一个不是整数（或者 DPI 相乘后不是整数），那么就依然没有解决问题。
 
-#### 方法二：对齐设备像素 SnapsToDevicePixels
+### 方法二：对齐设备像素 SnapsToDevicePixels
 
 这是一个会沿着逻辑树继承的属性，只要最顶层设置了这个属性，里面的元素都会具备此特性。不过，他只处理矩形的渲染，也就是说，只对 `Border` `Rectangle` 这些类型的元素生效，其他的包括自己写的元素基本都是不管用的。
 
 它有一个好处，是像素对齐的情况下同时能够保证显示不足或超过 1 像素时，也能带一点儿透明或者超过一点像素。
 
-#### 方法三：使用 DrawingContext 绘制并配合 GuidelineSet
+### 方法三：使用 DrawingContext 绘制并配合 GuidelineSet
 
 如果自己处理绘制，则可以在 `OnRender` 方法中使用 `DrawingContext` 来绘制各种各样的形状。`DrawingContext` 有方法 `PushGuidelineSet`，而 `PushGuidelineSet` 就是用来处理对齐的。
 
@@ -113,7 +113,7 @@ protected override void OnRender(DrawingContext dc)
 
 ![绘制的四条线](/static/posts/2017-12-12-21-32-09.png)
 
-#### 方法四：RenderOptions.EdgeMode
+### 方法四：RenderOptions.EdgeMode
 
 这是纯渲染级别的附加属性，对所有 UI 元素有效。这个属性很神奇，一旦设置，元素就再也不会出现模糊的边缘了，一定是硬像素边缘。不足半像素的全部删掉，超过半像素的变为 1 个像素。
 
@@ -125,7 +125,7 @@ protected override void OnRender(DrawingContext dc)
 
 ![硬边缘](/static/posts/2017-12-12-22-09-53.png)
 
-### 各种方法适用范围总结
+## 各种方法适用范围总结
 
 ![适用范围总结](/static/posts/2017-12-12-21-39-04.png)
 

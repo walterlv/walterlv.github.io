@@ -12,7 +12,7 @@ position: knowledge
 
 <div id="toc"></div>
 
-### 使用程序集信息获取
+## 使用程序集信息获取
 
 ```csharp
 var executablePath = Assembly.GetEntryAssembly().Location;
@@ -26,7 +26,7 @@ var executablePath = Assembly.GetEntryAssembly().Location;
 
 1. 必须是 .NET Framework 程序（.NET Core 程序不适用）
 
-### 使用应用程序域信息获取
+## 使用应用程序域信息获取
 
 ```csharp
 var executablePath = AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
@@ -40,7 +40,7 @@ var executablePath = AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
 
 当然，此方法因为不涉及到托管和非托管程序集，所以与编译结果无关，适用于 .NET Core 和 .NET Framework 程序。
 
-### 使用进程信息获取
+## 使用进程信息获取
 
 ```csharp
 var executablePath = Process.GetCurrentProcess().MainModule.FileName;
@@ -60,7 +60,7 @@ var executablePath = Process.GetCurrentProcess().MainModule.FileName;
 1. 适用于 .NET Framework 程序；
 1. 适用于发布成自包含的 .NET Core 程序。
 
-### 使用命令行参数获取
+## 使用命令行参数获取
 
 我在另一篇博客中提到命令行参数中包含应用程序路径：
 
@@ -74,7 +74,7 @@ var executablePath = Environment.GetCommandLineArgs()[0];
 
 这种方法的效果和前面使用进程信息获取的效果是相同的，会获取到相同的可执行程序路径。
 
-### 总结靠谱的方法
+## 总结靠谱的方法
 
 通过以上方法的说明，我们可以知道目前没有 100% 可靠的获取当前可执行程序文件路径的方法，不过可以组合多种方法达到 100% 可靠的目的。
 

@@ -19,7 +19,7 @@ position: starter
 
 <div id="toc"></div>
 
-### 新格式推荐：在 csproj 文件中设置
+## 新格式推荐：在 csproj 文件中设置
 
 在项目中设置 `<DefineConstants />` 属性：
 
@@ -61,7 +61,7 @@ position: starter
 </PropertyGroup>
 ```
 
-### 旧格式推荐：在 Visual Studio 项目属性中设置
+## 旧格式推荐：在 Visual Studio 项目属性中设置
 
 你可以在项目属性的“生成”页中找到条件编译符号的设置。
 
@@ -75,7 +75,7 @@ position: starter
 
 - 设置条件编译符号需要在各种配置下都设置，因为各种配置都是不一样的；具体来说是 Debug 下要设，Release 下也要设，x86 下要设，x64 下也要设。
 
-### 关于配置（Configuration）和条件编译符号（Conditional Compilation Symbols）
+## 关于配置（Configuration）和条件编译符号（Conditional Compilation Symbols）
 
 你可能在你的代码中同时看到 Pascal 命名规则的 Debug 和全部大写的 DEBUG，或者看到 Release 和 RELEASE。这是两个不同的概念。
 

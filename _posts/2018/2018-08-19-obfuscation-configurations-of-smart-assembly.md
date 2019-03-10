@@ -19,7 +19,7 @@ UWP 程序有 .NET Native 可以将程序集编译为本机代码，逆向的难
 
 <div id="toc"></div>
 
-### 准备
+## 准备
 
 我们先需要准备程序集来进行混淆试验。这里，我使用 [Whitman](ms-windows-store://pdp/?productid=9P8LNZRNJX85) 来试验。它在 [GitHub 上开源](https://github.com/walterlv/Whitman)，并且有两个程序集可以试验它们之间的相互影响。
 
@@ -31,7 +31,7 @@ UWP 程序有 .NET Native 可以将程序集编译为本机代码，逆向的难
 
 而且，如果要成功编译，还得用上同为 Red Gate 家出品的 SQL Server，如果不装，软件到处弹窗报错。只是报告错误而已，干嘛还要开发者装一个那么重量级的 SQL Server 啊！详见：[Why is SQL Server required — Redgate forums](https://forum.red-gate.com/discussion/83290/why-is-sql-server-required)。
 
-### SmartAssembly
+## SmartAssembly
 
 SmartAssembly 本质上是保护应用程序不被逆向或恶意篡改。目前我使用的版本是 6，它提供了对 .NET Framework 程序的多种保护方式：
 
@@ -72,7 +72,7 @@ SmartAssembly 本质上是保护应用程序不被逆向或恶意篡改。目前
 
 后面我只会说明其混淆功能。
 
-### 裁剪 Pruning
+## 裁剪 Pruning
 
 我故意在 Whitman.Core 中写了一个没有被用到的 `internal` 类 `UnusedClass`，如果我们开启了裁剪，那么这个类将消失。
 
@@ -81,9 +81,9 @@ SmartAssembly 本质上是保护应用程序不被逆向或恶意篡改。目前
 
 特别注意，如果标记了 `InternalsVisibleTo`，尤其注意不要不小心被误删了。
 
-### 名称混淆 Obfuscation
+## 名称混淆 Obfuscation
 
-#### 类/方法名与字段名的混淆
+### 类/方法名与字段名的混淆
 
 名称混淆中，类名和方法名的混淆有三个不同级别：
 
@@ -124,15 +124,15 @@ private static readonly Dictionary<int, int> \u0001 = new Dictionary<int, int>()
 
 需要 **特别小心如果有 `InternalsVisibleTo` 或者依据名称的反射调用，这种混淆下极有可能挂掉**！！！**请充分测试你的软件，切记**！！！
 
-#### 转移方法 ChangeMethodParent
+### 转移方法 ChangeMethodParent
 
 如果开启了 ChangeMethodParent，那么混淆可能会将一个类中的方法转移到另一个类中，这使得逆向时对类型含义的解读更加匪夷所思。
 
-#### 排除特定的命名空间
+### 排除特定的命名空间
 
 如果你的程序集中确实存在需要被按照名称反射调用的类型，或者有 `internal` 的类/方法需要被友元程序集调用，请排除这些命名空间。
 
-### 流程混淆 Control Flow Obfuscation
+## 流程混淆 Control Flow Obfuscation
 
 列举我在 Whitman.Core 中的方法：
 
@@ -170,19 +170,19 @@ public string Generate(bool pascal)
 ![没有混淆](/static/posts/2018-08-19-17-19-24.png)  
 ▲ 没有混淆
 
-#### 0 级流程混淆
+### 0 级流程混淆
 
 ![0 级流程混淆](/static/posts/2018-08-19-17-26-39.png)  
 ▲ 0 级流程混淆
 
-#### 1 级流程混淆
+### 1 级流程混淆
 
 ![1 级流程混淆](/static/posts/2018-08-19-17-24-43.png)  
 ▲ 1 级流程混淆
 
 可以发现 0 和 1 其实完全一样。又被 SmartAssembly 耍了。
 
-#### 2 级流程混淆
+### 2 级流程混淆
 
 2 级流程混淆代码很长，所以我没有贴图：
 
@@ -288,7 +288,7 @@ public string Generate(bool pascal)
 
 这时就发现代码的可读性降低了，需要耐心才能解读其含义。
 
-#### 3 级流程混淆
+### 3 级流程混淆
 
 以下是 3 级流程混淆：
 
@@ -386,7 +386,7 @@ public string Generate(bool pascal)
 
 3 级流程混淆并没有比 2 级高多少，可读性差不多。不过需要注意的是，这些差异并不是随机差异，因为重复生成得到的流程结果是相同的。
 
-#### 4 级流程混淆
+### 4 级流程混淆
 
 以下是 4 级流程混淆：
 
@@ -441,7 +441,7 @@ public unsafe string Generate(bool pascal)
 
 我们发现，4 级已经开始使用没有含义的指针来转换我们的内部实现了。这时除了外部调用以外，代码基本已无法解读其含义了。
 
-### 动态代理 References Dynamic Proxy
+## 动态代理 References Dynamic Proxy
 
 还是以上一节中我们 Generate 方法作为示例，在开启了动态代理之后（仅开启动态代理，其他都关掉），方法变成了下面这样：
 
@@ -507,9 +507,9 @@ internal sealed class \u0001 : MulticastDelegate
 }
 ```
 
-### 字符串编码与加密 Strings Encoding
+## 字符串编码与加密 Strings Encoding
 
-#### 字符串统一收集编码 Encode
+### 字符串统一收集编码 Encode
 
 字符串编码将程序集中的字符串都统一收集起来，存为一个资源；然后提供一个辅助类统一获取这些字符串。
 
@@ -659,7 +659,7 @@ public class Strings
 
 生成字符串获取辅助类后，原本写着字符串的地方就会被替换为 `Strings.Get(int)` 方法的调用。
 
-#### 字符串压缩加密 Compress
+### 字符串压缩加密 Compress
 
 前面那份统一收集的字符串依然还是明文存储为资源，但还可以进行压缩。这时，Resources 中的那份字符串资源现在是二进制文件（截取前 256 字节）：
 
@@ -701,19 +701,19 @@ public class Strings
 
 ![3000+ 行的解压与解密类](/static/posts/2018-08-19-18-34-18.png)
 
-#### 字符串缓存 UseCache
+### 字符串缓存 UseCache
 
 与其他的缓存策略一样，每次获取字符串都太消耗计算资源的话，就可以拿内存空间进行缓存。
 
 在实际混淆中，我发现无论我是否开启了字符串缓存，实际 `Strings.Get` 方法都会缓存字符串。你可以回到上面去重新阅读 `Strings.Get` 方法的代码，发现其本来就已带缓存。这可能是 SmartAssembly 的 Bug。
 
-#### 使用类的内部委托获取字符串 UseImprovedEncoding
+### 使用类的内部委托获取字符串 UseImprovedEncoding
 
 之前的混淆都会在原来有字符串地方使用 `Strings.Get` 来获取字符串。而如果开启了这一选项，那么 `Strings.Get` 就不是全局调用的了，而是在类的内部调用一个委托字段。
 
 比如从 `Strings.Get` 调用修改为 `\u0010(),`，而 `\u0010` 是我们自己的类 `RandomIdentifier` 内部的被额外加进去的一个字段 `internal static GetString \u0010;`。
 
-### 防止 MSIL Disassembler 对其进行反编译 MSIL Disassembler Protection
+## 防止 MSIL Disassembler 对其进行反编译 MSIL Disassembler Protection
 
 这其实是个没啥用的选项，因为我们程序集只会多出一个全局的特性：
 
@@ -730,7 +730,7 @@ dnSpy 可以做挺多事儿的，比如：
 - [断点调试 Windows 源代码 - lindexi](https://blog.lindexi.com/post/%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95-Windows-%E6%BA%90%E4%BB%A3%E7%A0%81.html)
 - [神器如 dnSpy，无需源码也能修改 .NET 程序 - walterlv](/post/edit-and-recompile-assembly-using-dnspy.html)
 
-### 密封
+## 密封
 
 在 `OtherOptimizations` 选项中，有一项 `SealClasses` 可以将所有可以密封的类进行密封（当然，此操作不会修改 API）。
 
@@ -752,7 +752,7 @@ internal sealed class UnusedClass
 }
 ```
 
-### 实际项目中，我该如何选择
+## 实际项目中，我该如何选择
 
 既然你希望选择“混淆”，那么你肯定是希望能进行最大程度的保护。在保证你没有额外产生 Bug，性能没有明显损失的情况下，能混淆得多厉害就混淆得多厉害。
 
@@ -802,7 +802,7 @@ SmartAssembly 的官方文档写得还是太简单了，很难得到每一个设
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [SmartAssembly 6 documentation - SmartAssembly 6 - Product Documentation](https://documentation.red-gate.com/sa6)
 - [Obfuscating code with name mangling - SmartAssembly 6 - Product Documentation](https://documentation.red-gate.com/sa6/obfuscating-your-code-with-smartassembly/obfuscating-code-with-name-mangling)

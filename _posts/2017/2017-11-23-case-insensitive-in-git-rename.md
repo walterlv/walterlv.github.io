@@ -15,7 +15,7 @@ Git 是大小写不敏感的，导致跨操作系统共享的 Git 仓库就会�
 
 <p id="toc"></p>
 
-### 让人困扰的大小写问题
+## 让人困扰的大小写问题
 
 让我对此问题产生困扰的是下面这张图，`Docs` 和 `docs` 两个文件夹分开了：
 
@@ -27,7 +27,7 @@ Git 是大小写不敏感的，导致跨操作系统共享的 Git 仓库就会�
 ![](/static/posts/2017-11-23-16-10-51.png)  
 ▲ 稍不注意，就 404 了
 
-### 走的弯路
+## 走的弯路
 
 这种问题怎么看都不像是我一个人会遇到的问题，堆栈网上讨论肯定很多。至少截至本文发表时，[How do I commit case-sensitive only filename changes in Git?](https://stackoverflow.com/questions/17683458/how-do-i-commit-case-sensitive-only-filename-changes-in-git) 中问题已经得到了 600+ 个赞，回答累计得到 1400+ 个赞了……
 
@@ -36,7 +36,7 @@ Git 是大小写不敏感的，导致跨操作系统共享的 Git 仓库就会�
 - `git mv -f OldFileNameCase newfilenamecase`
 - `git config core.ignorecase false`
 
-#### 尝试方法二：core.ignorecase false
+### 尝试方法二：core.ignorecase false
 
 第二种方法看起来更简单，于是我第一时间在我的全局 git 配置文件（`C:\Users\lvyi\.gitconfig`）中添加了一项：
 
@@ -61,7 +61,7 @@ $ git push
 
 看来需要使用第一种方法了。
 
-#### 尝试方法一：mv
+### 尝试方法一：mv
 
 我写下命令：
 
@@ -71,7 +71,7 @@ $ git mv -f ./Docs ./docs -f
 
 执行……推送后最终效果居然和第一种方法一样！依然是有 `Docs` 和 `docs` 两份文件夹。
 
-### 尝试出的可行的方法
+## 尝试出的可行的方法
 
 这是堆栈网那位只有 70+ 赞的方法的改进版本。先将文件夹重命名为临时文件夹，然后再从临时文件夹恢复成正常文件夹。
 
@@ -93,7 +93,7 @@ $ git push
 
 至此，文件夹才真的做了仅大小写的改名。
 
-### 使用 Windows 10 四月更新的特性（推荐）
+## 使用 Windows 10 四月更新的特性（推荐）
 
 我在 [Windows 10 四月更新，文件夹名称也能区分大小写？](/post/case-sensitive-in-windows-file-system.html) 一文中提到可以使用 `fsutil.exe file SetCaseSensitiveInfo` 使某个特定的文件夹支持区分大小写。
 
@@ -115,6 +115,6 @@ $ git push
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [How do I commit case-sensitive only filename changes in Git? - Stack Overflow](https://stackoverflow.com/questions/17683458/how-do-i-commit-case-sensitive-only-filename-changes-in-git)

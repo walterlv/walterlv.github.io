@@ -33,7 +33,7 @@ x:Reference 是 XAML 2009 中引入的功能，也算是比较早的功能了；
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [x:Reference Markup Extension - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/xaml-services/x-reference-markup-extension?wt.mc_id=MVP)
 - [wpf - What is the difference between x:Reference and ElementName? - Stack Overflow](https://stackoverflow.com/q/19244111/6233938)

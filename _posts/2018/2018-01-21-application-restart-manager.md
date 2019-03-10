@@ -132,7 +132,7 @@ namespace Walterlv.Win32
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [为何win10 1709（秋季创意更新） 重启会自动恢复一些程序为重启以前的工作状态？ - 蒋晟的回答 - 知乎](https://www.zhihu.com/question/67645160/answer/266972518)
 - [RegisterApplicationRestart function (Windows)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa373347)

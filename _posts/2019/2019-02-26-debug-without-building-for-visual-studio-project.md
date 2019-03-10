@@ -14,11 +14,11 @@ position: problem
 
 <div id="toc"></div>
 
-### 不编译直接调试
+## 不编译直接调试
 
 有时候只是为了定位 Bug 不断重复运行以调试程序，并没有修改代码。然而如果 Visual Studio 的差量编译因为逗比项目失效的话，就需要手动告诉 Visual Studio 不需要进行编译，直接进行调试。
 
-### 在 Visual Studio 中设置编译选项
+## 在 Visual Studio 中设置编译选项
 
 进入 `工具` -> `选项` -> `项目和解决方案` -> `生成并运行`。
 

@@ -13,7 +13,7 @@ categories: csharp dotnet visualstudio
 
 <p id="toc"></p>
 
-### 我们想要的效果
+## 我们想要的效果
 
 我们现在有一个泛型的版本：
 
@@ -61,11 +61,11 @@ public class Demo<T1, T2>
 
 于是，怎么生成呢？
 
-### 回顾 Visual Studio 那些生成代码的方式
+## 回顾 Visual Studio 那些生成代码的方式
 
 Visual Studio 原生自带两种代码生成方式。
 
-#### 第一种：T4 文本模板
+### 第一种：T4 文本模板
 
 事实上 T4 模板算是 Visual Studio 最推荐的方式了，因为你只需要编写一个包含占位符的模板文件，Visual Studio 就会自动为你填充那些占位符。
 
@@ -93,7 +93,7 @@ T4 模板编辑后一旦保存（Ctrl+S），代码立刻生成。
 
 这不是本文的重点，于是感兴趣请阅读官方文档 [Code Generation and T4 Text Templates - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/modeling/code-generation-and-t4-text-templates?wt.mc_id=MVP) 学习。
 
-#### 第二种：文件属性中的自定义工具
+### 第二种：文件属性中的自定义工具
 
 右键选择项目中的一个代码文件，然后选择“属性”，你将看到以下内容：
 
@@ -105,7 +105,7 @@ T4 模板编辑后一旦保存（Ctrl+S），代码立刻生成。
 
 这也不是本文的重点，于是感兴趣请阅读官方文档 [Custom Tools - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/custom-tools?wt.mc_id=MVP) 学习。
 
-#### 第三种：笨笨的编译生成事件
+### 第三种：笨笨的编译生成事件
 
 这算是通常项目用得最多的方式了，因为它可以在不修改用户开发环境的情况下执行几乎任何任务。
 
@@ -115,7 +115,7 @@ T4 模板编辑后一旦保存（Ctrl+S），代码立刻生成。
 
 在“预先生成事件命令行”中填入工具的名字和参数，便可以生成代码。
 
-### 制作生成泛型代码的工具
+## 制作生成泛型代码的工具
 
 我们新建一个控制台项目，取名为 `CodeGenerator`，然后把我写好的生成代码粘贴到新的类文件中。
 
@@ -260,7 +260,7 @@ class Program
 
 现在，编译此项目，即可生成多个泛型类了。
 
-### 彩蛋
+## 彩蛋
 
 如果你仔细阅读了 `GenericTypeGenerator` 类的代码，你将注意到我为生成的文件加上了条件编译符“`GENERATED_CODE`”。这样，你便可以使用 `#ifdef GENERATED_CODE` 来处理部分不需要进行转换或转换有差异的代码了。
 
@@ -270,7 +270,7 @@ class Program
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Code Generation and T4 Text Templates - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/modeling/code-generation-and-t4-text-templates?wt.mc_id=MVP)
 - [Custom Tools - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/custom-tools?wt.mc_id=MVP)

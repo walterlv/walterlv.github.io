@@ -18,7 +18,7 @@ categories: visualstudio
 
 <p id="toc"></p>
 
-### 新 csproj 文件
+## 新 csproj 文件
 
 在 [如何组织一个同时面向 UWP/WPF/.Net Core 控制台的 C# 项目解决方案 - walterlv](/post/organize-csharp-project-targeting-multiple-platforms.html) 一文中我讲了 .NET Standard 的方式，这种方式优势非常明显，跟普通的开发方式一样，也是我最推荐的方式。但缺点是要求目标 SDK 支持对应的 .NET Standard 版本。
 
@@ -30,7 +30,7 @@ categories: visualstudio
 
 如果是新开项目——强烈建议先按照 .NET Standard 项目类型建好，再修改成多开发框架。
 
-### 如何指定多个开发框架
+## 如何指定多个开发框架
 
 只要是新 csproj 文件，指定多个开发框架真的是相当的简单。
 
@@ -57,7 +57,7 @@ categories: visualstudio
 </Project>
 ```
 
-### 多框架项目的坑以及如何避坑
+## 多框架项目的坑以及如何避坑
 
 微软的官方文档 [How to: Configure Projects to Target Multiple Platforms - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/ide/how-to-configure-projects-to-target-multiple-platforms?wt.mc_id=MVP) 中只说了如何指定多个目标框架，并没有提及指定了多框架以后的坑。
 
@@ -103,7 +103,7 @@ categories: visualstudio
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [impromptu-interface/ImpromptuInterface.csproj at master · ekonbenefits/impromptu-interface](https://github.com/ekonbenefits/impromptu-interface/blob/master/ImpromptuInterface/ImpromptuInterface.csproj)
 - [How to: Configure Projects to Target Multiple Platforms - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/ide/how-to-configure-projects-to-target-multiple-platforms?wt.mc_id=MVP)

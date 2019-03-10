@@ -13,7 +13,7 @@ position: starter
 
 <div id="toc"></div>
 
-### 示例代码
+## 示例代码
 
 比如我们有一个名为 `CommandLine` 的类型，表示从命令行传入的参数；内有一个字典，包含命令行参数的所有信息。
 
@@ -32,7 +32,7 @@ public class CommandLine
 
 ![原生的调试显示](/static/posts/2019-03-05-22-30-28.png)
 
-### DebuggerDisplay
+## DebuggerDisplay
 
 使用 `DebuggerDisplayAttribute` 可以帮助我们直接在局部变量窗格或者鼠标划过的时候就看到对象中我们最希望了解的信息。
 
@@ -81,7 +81,7 @@ public class CommandLine
 
 另外，我们在 `DebuggerDisplay` 特性的中括号中加了 `nq` 标记（No Quote）来去掉最终显示的引号。
 
-### DebuggerTypeProxy
+## DebuggerTypeProxy
 
 虽然我们使用了 `DebuggerDisplay` 使得命令行参数一眼能看出来，但是看不出来我们把命令行解析成什么样了。于是我们需要更精细的视图。
 
@@ -120,7 +120,7 @@ class CommandLineDebugView
 
 点击 `Raw View` 可以看到我们没有使用 `DebuggerTypeProxyAttribute` 视图时的属性和字段。
 
-### 最终代码
+## 最终代码
 
 ```csharp
 using System;
@@ -161,7 +161,7 @@ namespace Walterlv.Framework
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [DebuggerTypeProxyAttribute Class (System.Diagnostics) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debuggertypeproxyattribute)
 - [DebuggerDisplayAttribute Class (System.Diagnostics) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debuggerdisplayattribute)

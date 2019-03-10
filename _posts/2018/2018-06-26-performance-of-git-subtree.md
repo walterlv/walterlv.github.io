@@ -13,7 +13,7 @@ categories: git
 
 <div id="toc"></div>
 
-### 不断增加的推送时间
+## 不断增加的推送时间
 
 如果你曾经在大仓库试过 `git subtree push`，你一定为下面这张图感到抓狂：
 
@@ -41,20 +41,20 @@ hint: (e.g. 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 
-### 永远也解不完的冲突
+## 永远也解不完的冲突
 
 在下次执行 `git subtree pull` 的时候，不管两个仓库有什么样的新变化，只要两边的代码不一样——就是冲突。
 
 ![](/static/posts/2018-06-26-10-18-22.png)
 
-### 原因
+## 原因
 
 每次执行 subtree 的 push 命令的时候，总会重新为子目录生成新的提交。然而这造成了一些很麻烦的问题：
 
 1. 每个提交都需要重新计算，因此每次推送都需要把主仓库所有的提交计算一遍，非常耗时；
 1. 每次 push 都是重新计算的，因此本地和远端新仓库的提交总是不一样的，关键还没有共同的父级，这导致 git 无法自动为我们解决冲突。
 
-### 解决
+## 解决
 
 git subtree 提供了 `split` 命令，官方对此的描述是：
 
@@ -76,7 +76,7 @@ $ git subtree split --rejoin --prefix=Dependencies/Cvte.Paint/ HEAD
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [git-subtree pull merge conflict - Stack Overflow](https://stackoverflow.com/q/25294227/6233938)
 - [git - Reduce increasing time to push a subtree - Stack Overflow](https://stackoverflow.com/q/16134975/6233938)

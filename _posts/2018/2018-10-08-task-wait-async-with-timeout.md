@@ -12,7 +12,7 @@ Task 自带有很多等待任务完成的方法，有的是实例方法，有的
 
 <div id="toc"></div>
 
-### Task 已有的等待方法
+## Task 已有的等待方法
 
 Task 实例已经有的等待方法有这些：
 
@@ -32,7 +32,7 @@ Task.Wait 提供的功能几乎与 Task 实例的 Wait 方法是一样的，只�
 
 可是，依然只有 Task.Wait 这种阻塞的方法才有超时，Task.When 系列是没有的。
 
-### 我们补充一个带超时的一步等待方法
+## 我们补充一个带超时的一步等待方法
 
 Task 有一个 `Delay` 静态方法，我们是否可以利用这个方法来间接实现异步非阻塞的等待呢？
 
@@ -81,6 +81,6 @@ namespace Walterlv
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [c# - Asynchronously wait for Task<T> to complete with timeout - Stack Overflow](https://stackoverflow.com/q/4238345/6233938)

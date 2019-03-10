@@ -18,13 +18,13 @@ MSBuild 或 Roslyn 编译项目时均支持差量编译，毕竟为了性能。�
 
 <div id="toc"></div>
 
-### 我们遇到的问题
+## 我们遇到的问题
 
 SourceFusion 是一个预编译框架，它在你编译期间对你的代码做一些改变。[dotnet-campus/SourceFusion: SourceFusion is a pre-compile framework based on Roslyn. It helps you to build high-performance .NET code.](https://github.com/dotnet-campus/SourceFusion)。
 
 这意味着，这个耗时的 Target 是会改变后续的编译的，典型的是 —— 它会在编译期间增加和删除几个源代码文件。如果完全使用 Target 原生的差量编译，那么一旦这个 Target 跳过，那么也就不会增加和删除任何源代码文件了。
 
-### 解决方案
+## 解决方案
 
 解决方案是，我们写一个前置的 Target，这个 Target 支持差量编译。于是我们可以利用它的差量编译特性得知当前是否处于差量编译的状态。
 
@@ -63,7 +63,7 @@ SourceFusion 是一个预编译框架，它在你编译期间对你的代码做�
 
 这样，我们便可以通过这个属性判断是否设置为 `true` 来得知当前是否处于全量编译状态。
 
-### 后续使用
+## 后续使用
 
 对于我们真实的耗时的 Target，则需要检测这个 `WalterlvDemoRebuildRequired` 的值，进行不同的处理。
 
@@ -80,7 +80,7 @@ SourceFusion 是一个预编译框架，它在你编译期间对你的代码做�
 
 这样，核心的 Target 里面，也就是 WalterlvDemo.exe 执行参数中，就可以拿到正确的差量状态了。`true` 表示正在重新编译，而 `false` 表示正在差量编译。
 
-### 一些坑
+## 一些坑
 
 如果不写那个新的 Target 是否可行呢？我们能否把这个属性的赋值直接放到差量编译的那个 `_WalterlvDemoRebuildingTest` 中？
 
@@ -92,7 +92,7 @@ MSBuild 在计算属性的时候，不同的 csproj 格式、不同版本的计�
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [CallTarget Task - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/calltarget-task)
 - [How to: Build Incrementally - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-build-incrementally)

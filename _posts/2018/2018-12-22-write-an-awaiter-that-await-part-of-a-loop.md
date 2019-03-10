@@ -15,7 +15,7 @@ position: problem
 
 <div id="toc"></div>
 
-### Awaiter 系列文章
+## Awaiter 系列文章
 
 入门篇：
 
@@ -28,7 +28,7 @@ position: problem
 - [在 WPF/UWP 中实现一个可以用 await 异步等待 UI 交互操作的 Awaiter](/post/write-dispatcher-awaiter-for-ui.html)
 - [.NET 编写一个可以异步等待循环中任何一个部分的 Awaiter](/post/write-an-awaiter-that-await-part-of-a-loop.html)
 
-### 遇到了什么问题
+## 遇到了什么问题
 
 有一个任务，可能会出错，然而重试有可能可以解决。典型的例子是写入文件，你可能因为其他进程占用的问题而导致无法写入，然而一段时间之后重试是可以解决的。
 
@@ -43,7 +43,7 @@ position: problem
 
 可是，我们如何在一个任务中同时对所有不同的业务需求进行不同种类的响应呢？
 
-### 思路
+## 思路
 
 我的思路是：
 
@@ -55,11 +55,11 @@ position: problem
 
 这样，任务不断重试。而且，无论多少个业务请求到来，都只是加入到循环中的一部分来，不会开启新的循环任务。每个业务的等待时长和异常处理都是自己的可等待对象中处理的，不影响循环任务的继续执行。
 
-### 关于源代码说明
+## 关于源代码说明
 
 本文所述的所有源代码可以在 <https://gist.github.com/walterlv/d2aecd02dfad74279713112d44bcd358> 查看和下载到最新版本。
 
-#### 期望如何使用这个新的 Awaiter
+### 期望如何使用这个新的 Awaiter
 
 ```csharp
 public class WalterlvDemo
@@ -101,7 +101,7 @@ public class WalterlvDemo
 }
 ```
 
-#### 写一个可以不断循环的循环，并允许不同业务加入等待
+### 写一个可以不断循环的循环，并允许不同业务加入等待
 
 上面的代码中，我们使用到了两个新的类型：用于循环执行某个委托的 `PartialAwaitableRetry`，以及用于表示单次执行结果的 `OperationResult`。
 
@@ -148,7 +148,7 @@ public class PartialAwaitableRetry
 
 关于 `OperationResult` 类，是个简单的运算符重载，用于表示单次循环中的成功与否的状态和异常情况。可以在本文文末查看其代码。
 
-#### 写一个可等待对象，针对不同业务返回不同的可等待对象实例
+### 写一个可等待对象，针对不同业务返回不同的可等待对象实例
 
 我写了三个不同的类来完成这个可等待对象：
 
@@ -176,6 +176,6 @@ public class PartialAwaitableRetry
 
 这几个类的实际代码可以在文末查看和下载。
 
-### 附全部源码
+## 附全部源码
 
 <script src="https://gist.github.com/walterlv/d2aecd02dfad74279713112d44bcd358.js"></script>

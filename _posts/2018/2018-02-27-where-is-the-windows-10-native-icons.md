@@ -48,7 +48,7 @@ Windows 10 自带的图标几乎都在 `%systemroot\system32\*.dll` 中，主要
 
 我们一起来看看它们都是什么样的吧！
 
-#### Windows 10 风格
+### Windows 10 风格
 
 ![ddores.dll](/static/posts/2018-02-27-22-00-05.png)  
 ▲ ddores.dll 包含各种硬件图标
@@ -83,7 +83,7 @@ Windows 10 自带的图标几乎都在 `%systemroot\system32\*.dll` 中，主要
 ![wpdshext.dll](/static/posts/2018-02-27-22-48-40.png)  
 ▲ wpdshext.dll
 
-#### Windows 7/Vista 风格
+### Windows 7/Vista 风格
 
 ![accessibilitycpl.dll](/static/posts/2018-02-27-21-56-53.png)  
 ▲ accessibilitycpl.dll 辅助功能图标
@@ -103,7 +103,7 @@ Windows 10 自带的图标几乎都在 `%systemroot\system32\*.dll` 中，主要
 ![netcenter.dll](/static/posts/2018-02-27-22-29-57.png)  
 ▲ netcenter.dll Windows 7 风格的网络和共享中心所用图标
 
-#### Windows XP/2000/9X/3.X 风格
+### Windows XP/2000/9X/3.X 风格
 
 ![compstui.dll](/static/posts/2018-02-27-22-49-36.png)  
 ▲ compstui.dll

@@ -13,7 +13,7 @@ position: starter
 
 <div id="toc"></div>
 
-### 找回 svn 仓库的 url
+## 找回 svn 仓库的 url
 
 如果你能记得你 svn 仓库的 url，或者这个仓库是一个纯本地仓库，那么你直接复制这个 url 就好了。
 
@@ -27,9 +27,9 @@ position: starter
 
 得到了这个 url 后，像我这种洁癖就卸载 TortoiseSVN 了。
 
-### 将 svn 仓库迁移到 git 仓库
+## 将 svn 仓库迁移到 git 仓库
 
-#### 命令行
+### 命令行
 
 在一个新的文件夹中，我们输入如下命令：
 
@@ -45,7 +45,7 @@ git.exe svn clone "https://svn.walterlv.com/LvYi/Timer" ".\Walterlv.RepoFromSvn"
 
 需要注意的是，上面的 `Walterlv.RepoFromSvn` 文件夹是不允许提前存在的，如果存在将无法迁移成功。
 
-#### TortoiseGit
+### TortoiseGit
 
 这里特地照顾一下从 TortoiseSVN 迁移来继续考虑 [TortoiseGit](https://tortoisegit.org/) 的小伙伴。在 TortoiseGit 中的操作是：
 
@@ -57,7 +57,7 @@ git.exe svn clone "https://svn.walterlv.com/LvYi/Timer" ".\Walterlv.RepoFromSvn"
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Git - Migrating to Git](https://git-scm.com/book/en/v2/Git-and-Other-Systems-Migrating-to-Git)
 - [How to get svn remote repository URL? - Stack Overflow](https://stackoverflow.com/questions/9128344/how-to-get-svn-remote-repository-url)

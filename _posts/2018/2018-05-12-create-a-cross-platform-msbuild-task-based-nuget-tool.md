@@ -20,9 +20,9 @@ MSBuild 的 Task 为我们扩展项目的编译过程提供了强大的扩展性
 
 <div id="toc"></div>
 
-### 第零步：前置条件
+## 第零步：前置条件
 
-### 第一步：创建一个项目，用来写工具的核心逻辑
+## 第一步：创建一个项目，用来写工具的核心逻辑
 
 为了方便制作跨平台的 NuGet 工具，新建项目时我们优先选用 .NET Core Library 项目或 .NET Standard Library 项目。
 
@@ -102,7 +102,7 @@ namespace Walterlv.NuGetTool
 
 ![输出目录下的 NuGet 包](/static/posts/2018-05-11-20-04-21.png)
 
-### 第二步：组织 NuGet 目录
+## 第二步：组织 NuGet 目录
 
 刚刚生成的 NuGet 包还不能真正拿来用。事实上你也可以拿去安装，不过最终的效果只是加了一个毫无作用的引用程序集而已（顺便还带来一堆垃圾的间接引用）。
 
@@ -212,7 +212,7 @@ namespace Walterlv.NuGetTool
 
 ![生成的 NuGet 包的目录结构](/static/posts/2018-05-11-20-54-45.png)
 
-### 第三步：编写 Target
+## 第三步：编写 Target
 
 .targets 文件是对项目功能进行扩展的关键文件，由于安装 NuGet 包会自动导入包中的此文件，所以它几乎相当于我们功能的入口。
 
@@ -252,13 +252,13 @@ targets 的文件结构与 csproj 是一样的，你可以阅读我的另一篇�
 </Project>
 ```
 
-### 第四部：调试
+## 第四部：调试
 
 严格来说，写到这里，我们的跨平台 NuGet 工具已经写完了。在以上状态下，你只需要编译一下，就可以获得一个跨平台的基于 MSBuild Task 的 NuGet 工具。只是——你肯定会非常郁闷——心里非常没谱，这工具到底有没有工作起来！有没有按照我预期的进行工作！如果遇到了 Bug 怎么办！
 
 于是现在我们来掌握一些调试技巧，这样才方便我们一步步完善我们的功能嘛！**额外插一句：以上第一到第三步几乎都是结构化的步骤，其实非常适合用工具来自动化完成的。**
 
-#### 让我们的 Target 能够正确找到我们新生成的 dll
+### 让我们的 Target 能够正确找到我们新生成的 dll
 
 你应该注意到，我们的 targets 文件在 `Assets\build` 目录下，而我们的 `Assets` 文件夹下并没有真实的 `tasks` 文件夹（里面是空的）。于是我们希望在调试状态下，dll 能够指向输出目录下。于是我们修改 targets 文件添加配置：
 
@@ -286,7 +286,7 @@ targets 的文件结构与 csproj 是一样的，你可以阅读我的另一篇�
 
 这样，我们就拥有了一个可以供用户设置的属性 `<IsInDemoToolDebugMode>` 了。
 
-#### 准备一个用于测试 Task 的测试项目
+### 准备一个用于测试 Task 的测试项目
 
 接着，我们在解决方案中新建一个调试项目 `Walterlv.Debug`（我选用了 .NET Standard 2.0 框架）。然后在它的 csproj 中 `<Import>` 我们刚刚的 .targets 文件，并设置 `<IsInDemoToolDebugMode>` 属性为 `True`：
 
@@ -308,7 +308,7 @@ targets 的文件结构与 csproj 是一样的，你可以阅读我的另一篇�
 
 ![带有调试环境的解决方案](/static/posts/2018-05-11-22-02-57.png)
 
-#### 让我们自定义的 Task 开始工作，并能够进入断点
+### 让我们自定义的 Task 开始工作，并能够进入断点
 
 最简单能够让 DemoTool 这个自定义的 Task 进入断点的方式当然是加上 `Debugger.Launch();` 了，就像这样：
 
@@ -349,11 +349,11 @@ namespace Walterlv.NuGetTool
 
 提示：**一旦调试环境搭建好，你可能会遇到编译 Walterlv.NuGetTool 项目时，发现 dll 被占用的情况，这时，打开任务管理器结束掉 msbuild.exe 进行即可。**
 
-### 第五步：发挥你的想象力
+## 第五步：发挥你的想象力
 
 想象力是没有限制的，不过如果不知道 Task 能够为我们提供到底什么样的功能，也是无从下手的。这一节我会说一些 Task 在 C# 代码和 .targets 文件中的互相操作。
 
-#### .targets 向 Task 传参数
+### .targets 向 Task 传参数
 
 .targets 向 Task 传参数只需要写一个属性赋值的句子就可以了：
 
@@ -388,7 +388,7 @@ public class DemoTool : Task
 
 你可以尽情发挥你的想象力，传入更多让人意想不到的参数，实现不可思议的功能。更多 MSBuild 全局参数，可以参考我的另一篇文章[项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - 吕毅](/post/known-properties-in-csproj.html)。
 
-#### Task 向 .targets 返回参数
+### Task 向 .targets 返回参数
 
 如果只是传入参数，那么我们顶多只能干一些不痛不痒的事情，或者就是两者互相约定了一些常量。什么？你说直接去改源代码？那万一你的代码不幸崩溃了，项目岂不被你破坏了！（当然，你去改了源码，还会破坏 MSBuild 的差量编译。）
 
@@ -466,7 +466,7 @@ namespace Walterlv.Debug
 
 需要注意：**编译期间才生成的项（`<ItemGroup>`）或者属性（`<PropertyGroup>`），需要写在 `<Target>` 节点的里面。**如果写在外面，则不是编译期间生效的，而是始终生效的。当写在外面时，要特别留意可能某些属性没有初始化完全，你应该只使用那些肯定能确认存在的属性或文件。
 
-#### 在 Target 里编写调试代码
+### 在 Target 里编写调试代码
 
 虽然说以上的每一个步骤我都是一边实操一边写的，但即便如此，本文都写了 500 多行了，如果你依然能够不出错地完成以上每一步，那也是万幸了！Task 里我能还能用断点调试，那么 Target 里面怎么办呢？
 
@@ -489,15 +489,15 @@ namespace Walterlv.Debug
 
 ![输出信息](/static/posts/2018-05-11-23-50-41.png)
 
-#### 在 Task 输出错误或警告
+### 在 Task 输出错误或警告
 
 我们继承了 `Microsoft.Build.Utilities.Task`，此类有一个 `Log` 属性，可以用来输出信息。使用 `LogWarning` 方法可以输出警告，使用 `LogError` 可以输出错误。如果输出了错误，那么就会导致编译不通过。
 
-#### 加入差量编译支持
+### 加入差量编译支持
 
 如果你觉得你自己写的 `Task` 执行非常耗时，那么建议加入差量编译的支持。关于加入差量编译，可以参考我的另一篇文章[每次都要重新编译？太慢！让跨平台的 MSBuild/dotnet build 的 Target 支持差量编译](/post/msbuild-incremental-build.html)。
 
-#### 本地测试 NuGet 包
+### 本地测试 NuGet 包
 
 在发布 NuGet 包之前，我们可以先在本地安装测试。由于我们在 `C:\Users\lvyi\Desktop\Walterlv.NuGetTool\Walterlv.NuGetTool\bin\Debug` 输出路径下已经有了打包好的 nupkg 文件，所以可以加一个本地 NuGet 源。
 
@@ -507,7 +507,7 @@ namespace Walterlv.Debug
 
 这时安装，编译完之后，我们就会发现我们的项目生成的 dll 中多出了一个“逗比(Doubi)”类，并且可以在那个项目中编写使用 `Doubi` 的代码了。
 
-### 总结
+## 总结
 
 不得不说，制作一个跨平台的基于 MSBuild Task 的 NuGet 工具包还是比较麻烦的，我们总结一下：
 
@@ -528,7 +528,7 @@ namespace Walterlv.Debug
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [NuGet pack and restore as MSBuild targets - Microsoft Docs](https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets?wt.mc_id=MVP)
 - [Bundling .NET build tools in NuGet](https://www.natemcmaster.com/blog/2017/11/11/build-tools-in-nuget/)

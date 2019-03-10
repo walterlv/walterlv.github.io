@@ -15,7 +15,7 @@ categories: csharp dotnet
 
 <p id="toc"></p>
 
-### 探索
+## 探索
 
 测试代码是这样的：
 
@@ -74,7 +74,7 @@ private void OnLoaded(object sender, RoutedEventArgs e)
 
 一样会导致不回收。
 
-### 结论
+## 结论
 
 在微软官方的《C# 规范 5.0》（[点此下载](http://www.microsoft.com/en-us/download/details.aspx?id=7029)）的第 7.15.5.1 章节中有说到：
 
@@ -88,7 +88,7 @@ private void OnLoaded(object sender, RoutedEventArgs e)
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [c# - .NET Do lambdas prevent garbage collection of external references used in them? - Stack Overflow](https://stackoverflow.com/a/31729713/6233938)
 - [C# Language Specification 5.0](http://www.c-sharpcorner.com/ebooks/csharp-language-specification_5)

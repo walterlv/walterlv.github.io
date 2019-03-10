@@ -12,7 +12,7 @@ Unknown build error, 'An item with the same key has already been added.'
 
 ---
 
-### 出现此问题的原因
+## 出现此问题的原因
 
 出现此问题的原因是：csproj 文件中存在两个对相同文件的引用行。
 
@@ -56,7 +56,7 @@ namespace Walterlv.Tools
 
 此代码的作用是输出指定文件中所有相同的行。
 
-### 一个让VS复现此问题的步骤
+## 一个让VS复现此问题的步骤
 
 如下图，将一个已排除到项目之外的文件拖拽到另一个文件夹，并覆盖项目内的同名文件，则必现此问题。
 

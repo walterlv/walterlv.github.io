@@ -14,7 +14,7 @@ position: knowledge
 
 <div id="toc"></div>
 
-### Snoop PowerShell 入口
+## Snoop PowerShell 入口
 
 常规 Snoop 的使用方法，将狮子瞄准镜拖出来对准要调试 UI 的 WPF 窗口松开。这里我拿 Visual Studio 2019 的窗口做试验。
 
@@ -26,7 +26,7 @@ position: knowledge
 
 本文的内容将从这里开始。
 
-### 自带的 PowerShell 变量
+## 自带的 PowerShell 变量
 
 在 Snoop 的 PowerShell 提示窗口中，我们可以得知有两个变量可以使用：`$root` 和 `$selected`。包含这两个，还有其他的可以使用：
 
@@ -41,9 +41,9 @@ position: knowledge
 
 ![`$selected`](/static/posts/2019-01-28-22-28-19.png)
 
-### 基本的 PowerShell 命令
+## 基本的 PowerShell 命令
 
-#### 属性
+### 属性
 
 ```powershell
 # 获取属性
@@ -63,7 +63,7 @@ $selected.Visual.Content = $null
 
 ![设置 Content 属性](/static/posts/2019-01-28-snoop-powershell-content-to-null.gif)
 
-#### 创建对象
+### 创建对象
 
 ```powershell
 # 创建对象
@@ -72,7 +72,7 @@ $button = New-Object System.Windows.Controls.Button -property @{ Content = "欢�
 
 ![创建一个 Button](/static/posts/2019-01-28-22-53-34.png)
 
-#### 调用方法
+### 调用方法
 
 ```powershell
 $selected.Visual.Children.Add($button)
@@ -92,6 +92,6 @@ $button.Content = [System.Environment]::Version.ToString() + " running for blog.
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Snooping WPF: Tips and PowerShell tricks](https://blog.scottlogic.com/2013/12/18/wpf-snoop-powershell.html)

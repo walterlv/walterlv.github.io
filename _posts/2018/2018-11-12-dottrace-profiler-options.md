@@ -11,7 +11,7 @@ categories: dotnet
 
 <div id="toc"></div>
 
-### dotTrace 的性能分析选项
+## dotTrace 的性能分析选项
 
 你可以前往 [Download dotTrace: .NET Performance Profiler by JetBrains](https://www.jetbrains.com/profiler/download/) 下载 dotTrace。
 
@@ -27,7 +27,7 @@ categories: dotnet
 - Line-by-Line
 - Timeline
 
-### Sampling 采样
+## Sampling 采样
 
 界面中的描述为：
 
@@ -37,7 +37,7 @@ categories: dotnet
 
 这适用于大多数场景。尤其是如果你还没有对你的程序进行过任何性能分析的情况下，先使用这个选项进行一个初步分析大致确定性能问题是很方便的。
 
-### Tracing 追踪
+## Tracing 追踪
 
 界面中的描述为：
 
@@ -47,7 +47,7 @@ categories: dotnet
 
 如果你使用 Sampling 分析方式得不到你想要的性能分析数据的时候，你可能用得到此选项。例如，当你分析算法复杂度，需要明确知道方法的调用次数，而不需要知道方法的准确执行时间的时候。
 
-### Line-by-line 逐行
+## Line-by-line 逐行
 
 界面中只写了一句根本无法理解的话：
 
@@ -59,7 +59,7 @@ categories: dotnet
 
 当你已经通过其他方法得知性能问题出现在哪个具体的方法时你可能需要用到这个选项，这会分析此方法的每一行代码。
 
-### Timeline 时间线
+## Timeline 时间线
 
 界面中的描述为：
 
@@ -73,6 +73,6 @@ categories: dotnet
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Profiler Options - Help - dotTrace](https://www.jetbrains.com/help/profiler/Profiler_Options.html)

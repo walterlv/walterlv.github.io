@@ -13,7 +13,7 @@ categories: uwp wpf dotnet
 
 <div id="toc"></div>
 
-### 创建一个 UWP 控件库
+## 创建一个 UWP 控件库
 
 建议专门为你复杂的 UWP 控件创建一个 UWP 控件库。在这个控件库中的开发就像普通 UWP 应用一样。这样比较容易创建出更复杂的 UWP 控件出来，而不会与 WPF 项目产生太多的影响。
 
@@ -23,11 +23,11 @@ categories: uwp wpf dotnet
 ![选择 SDK 版本](/static/posts/2018-11-04-11-06-45.png)  
 ▲ 选择 SDK 版本
 
-### 对 WPF 项目的准备工作
+## 对 WPF 项目的准备工作
 
 你依然需要阅读 [WindowsXamlHost：在 WPF 中使用 UWP 的控件（Windows Community Toolkit）](/post/use-uwp-controls-in-wpf.html) 一文，以便将你的 WPF 项目改造成可以访问 UWP 类型的项目。
 
-### 不方便的引入方式
+## 不方便的引入方式
 
 你如果直接让 WPF 项目添加 UWP 项目的引用，将会得到一个错误提示：
 
@@ -37,7 +37,7 @@ categories: uwp wpf dotnet
 
 也许将来 WPF 项目格式更新或者 Visual Studio 的更新能为我们带来这样更直接此引用方式。不过现在来看，还不能如此方便地使用。
 
-### 编辑 UWP 项目文件
+## 编辑 UWP 项目文件
 
 是的，你需要手工编写 UWP 的项目文件。
 
@@ -87,14 +87,14 @@ categories: uwp wpf dotnet
 - 一定要在 targets 之后添加这些代码，因为 `$(TargetDir)`、`$(ProjectName)` 等属性是在那里的 targets 执行完后才生成的。
 - 你的 UWP 项目中需要有 xaml，比如可以添加一个 MainPage.xaml 和 MainPage.xaml.cs，不然编译的时候可能会出现错误。
 
-### 重新加载项目并编译
+## 重新加载项目并编译
 
 现在，重新加载那个 UWP 控件库，将其编译，以便将 UWP 项目的生成文件复制到 WPF 目录下。
 
 ![生成的文件已复制到 WPF 目录下](/static/posts/2018-11-04-11-38-28.png)  
 ▲ 生成的文件已复制到 WPF 目录下
 
-### 在 WPF 项目中间接引用 UWP 控件库
+## 在 WPF 项目中间接引用 UWP 控件库
 
 现在，在 WPF 项目中开启所有文件夹的显示，然后将 UWP 项目中生成的文件添加到 WPF 项目中：
 
@@ -118,7 +118,7 @@ categories: uwp wpf dotnet
 
 但记得需要额外通过 `git add ./Whitman.Wpf/Whitman.Uwp/.gitignore` 把这个文件添加到版本管理中，不然其他人不会生效。
 
-### 在 WPF 项目中使用 UWP 控件库中的控件
+## 在 WPF 项目中使用 UWP 控件库中的控件
 
 这时，在 `WindowsXamlHost` 中就可以添加 UWP 控件库中的 MainPage 了。
 
@@ -180,7 +180,7 @@ namespace Walterlv.Whitman.Universal
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [WindowsXAMLHost control - Windows Community Toolkit - Microsoft Docs](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost?wt.mc_id=MVP)
 - [Enhance your desktop application for Windows 10 - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project?wt.mc_id=MVP)

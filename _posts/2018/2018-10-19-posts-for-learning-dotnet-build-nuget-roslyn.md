@@ -11,7 +11,7 @@ categories: dotnet csharp msbuild roslyn visualstudio nuget
 
 ---
 
-### SourceYard 性能数据
+## SourceYard 性能数据
 
 SourceYard 通过将公共组件的源代码和产品源代码合并来提升性能。
 
@@ -23,7 +23,7 @@ SourceYard 通过将公共组件的源代码和产品源代码合并来提升性
 
 - [C# 直接创建多个类和使用反射创建类的性能 - 林德熙](https://blog.lindexi.com/post/C-%E7%9B%B4%E6%8E%A5%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E7%B1%BB%E5%92%8C%E4%BD%BF%E7%94%A8%E5%8F%8D%E5%B0%84%E5%88%9B%E5%BB%BA%E7%B1%BB%E7%9A%84%E6%80%A7%E8%83%BD.html)
 
-### SourceFusion 性能数据
+## SourceFusion 性能数据
 
 SourceFusion 的其中一个用途是收集原本会通过反射收集的类型信息。
 
@@ -35,7 +35,7 @@ SourceFusion 的其中一个用途是收集原本会通过反射收集的类型�
 
 - [C# 直接创建多个类和使用反射创建类的性能 - 林德熙](https://blog.lindexi.com/post/C-%E7%9B%B4%E6%8E%A5%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E7%B1%BB%E5%92%8C%E4%BD%BF%E7%94%A8%E5%8F%8D%E5%B0%84%E5%88%9B%E5%BB%BA%E7%B1%BB%E7%9A%84%E6%80%A7%E8%83%BD.html)
 
-### dotnet build 基础
+## dotnet build 基础
 
 你需要先了解 csproj 文件的结构，以便进行后续的学习：
 
@@ -79,7 +79,7 @@ SourceFusion 的其中一个用途是收集原本会通过反射收集的类型�
 - [Roslyn 使用 Directory.Build.props 文件定义编译 - 林德熙](https://blog.lindexi.com/post/Roslyn-%E4%BD%BF%E7%94%A8-Directory.Build.props-%E6%96%87%E4%BB%B6%E5%AE%9A%E4%B9%89%E7%BC%96%E8%AF%91.html)
 - [使用 MSBuild 响应文件 (rsp) 来指定 dotnet build 命令行编译时的大量参数 - 吕毅](/post/msbuild-response-files.html)
 
-### NuGet 基础
+## NuGet 基础
 
 - [项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅](/post/known-nuget-properties-in-csproj.html)
 
@@ -109,7 +109,7 @@ NuGet 的坑很多，有些可以解，有些需要规避：
 
 - [阻止某个 NuGet 包意外升级 - 吕毅](/post/prevent-nuget-package-upgrade.html)
 
-### SourceYard 原理
+## SourceYard 原理
 
 SourceYard 利用 NuGet 自动 Import 的 Target 来执行我们的代码：
 
@@ -118,7 +118,7 @@ SourceYard 利用 NuGet 自动 Import 的 Target 来执行我们的代码：
 - [将 .NET Core 项目打一个最简单的 NuGet 源码包，安装此包就像直接把源码放进项目一样 - 吕毅](/post/the-simplest-way-to-pack-a-source-code-nuget-package.html)
 - [Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包 - 林德熙](https://blog.lindexi.com/post/Roslyn-%E5%A6%82%E4%BD%95%E5%9F%BA%E4%BA%8E-Microsoft.NET.Sdk-%E5%88%B6%E4%BD%9C%E6%BA%90%E4%BB%A3%E7%A0%81%E5%8C%85.html)
 
-### Roslyn 基础
+## Roslyn 基础
 
 Roslyn 由于其丰富且易用的 API，所以入门是比较容易的。推荐的入门文章有：
 
@@ -141,13 +141,13 @@ Roslyn 为何能够在提供如此友好的 API 的情况下依然有如此高�
 
 - [Roslyn 的确定性构建 - 吕毅](/post/deterministic-builds-in-roslyn.html)
 
-### SourceFusion 预编译框架
+## SourceFusion 预编译框架
 
 关于预编译框架的博客没有那么多，只有一些基本的使用：
 
 - [都是用 DllImport？有没有考虑过自己写一个 extern 方法？ - 吕毅](/post/write-your-own-extern-method.html)
 
-### 扩展阅读
+## 扩展阅读
 
 这里是是用到了 csproj / NuGet 等的额外博客：
 

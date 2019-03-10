@@ -12,7 +12,7 @@ description:
 
 ---
 
-### 写代码获取
+## 写代码获取
 
 .NET Framework 的 `System.Environment` 类型的 `Version` 属性直接可以获取到版本号。于是只需要简单写一个控制台程序即可获取。
 
@@ -24,7 +24,7 @@ Console.WriteLine($"{Environment.Version}");
 
 在我的 Windows 10 创造者更新 1703 上得到的结果是：`4.0.30319.42000`。
 
-### 用 PowerShell 获取
+## 用 PowerShell 获取
 
 考虑到 PowerShell 可以直接使用到 .NET Framework 中的类型，于是上面的代码很容易直接翻译成 PowerShell 脚本：
 

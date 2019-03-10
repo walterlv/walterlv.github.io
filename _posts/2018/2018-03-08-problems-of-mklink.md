@@ -10,7 +10,7 @@ categories: windows
 
 <div id="toc"></div>
 
-### 0x00 背景介绍：mklink
+## 0x00 背景介绍：mklink
 
 `mklink` 可以像创建快捷方式一样建立文件或文件夹的链接，但不同于快捷方式的是，`mklink` 创建的链接绝大多数程序都不会认为那是一个链接，而是一个实实在在的文件或文件夹。
 
@@ -44,13 +44,13 @@ MKLINK [[/D] | [/H] | [/J]] Link Target
 
 上面的表格顺序，从上到下的行为从越来越像快捷方式到越来越像两个独立的文件夹。
 
-### 0x01 坑：PowerShell 中没有 mklink 命令
+## 0x01 坑：PowerShell 中没有 mklink 命令
 
 是的，PowerShell 中就是中没有 mklink 命令。如果要在 powershell 中使用 mklink，那么得先敲 `cmd` 进入 `cmd` 之后再使用 `mklink` 命令。
 
 如果你是一个重度强迫症患者，那么可以编写一个 powershell 的扩展函数来实现：[Creating a Symbolic Link using PowerShell - Learn Powershell - Achieve More](https://learn-powershell.net/2013/07/16/creating-a-symbolic-link-using-powershell/)。
 
-### 0x02 坑：权限
+## 0x02 坑：权限
 
 默认我们的用户账户是 `Administrators` 组的，会继承它的权限设定。正常情况下，我们使用 `mklink` 是可以成功执行的。但如果文件系统的设置比较奇怪或者重装过系统，那么可能出现没有权限的错误。
 
@@ -63,7 +63,7 @@ C:\Users\lvyi>mklink /D D:\Foo D:\OneDrive\Foo
 
 ---
 
-#### 参考链接
+### 参考链接
 
 - [活用 MKLINK 命令保护、节省你的硬盘 - SinoSky](https://www.sinosky.org/mklink-cmd-useful-tips.html)
 - [关于mklink的/D /J 区别 - CSDN博客](http://blog.csdn.net/NotBack/article/details/73604292)

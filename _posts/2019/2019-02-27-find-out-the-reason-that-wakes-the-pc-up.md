@@ -13,7 +13,7 @@ position: problem
 
 <div id="toc"></div>
 
-### 调查是谁唤醒了电脑
+## 调查是谁唤醒了电脑
 
 使用命令查看上一次是谁唤醒了电脑。
 
@@ -25,7 +25,7 @@ powercfg -lastwake
 
 从图中可知上一次唤醒我计算机的是 [英特尔® 以太网连接 I219-V 82186](https://www.intel.cn/content/www/cn/zh/products/network-io/ethernet/controllers/connection-i219-v.html)。
 
-### 查看还有谁可以唤醒电脑
+## 查看还有谁可以唤醒电脑
 
 使用命令查看所有可以唤醒电脑的设备。
 
@@ -39,7 +39,7 @@ powercfg -devicequery wake_armed
 
 ![wake timers](/static/posts/2019-02-18-09-17-08.png)
 
-### 查看下一次计划的唤醒
+## 查看下一次计划的唤醒
 
 使用命令可以查看下一次计划的唤醒。
 
@@ -49,7 +49,7 @@ powercfg -waketimers
 
 当然这只能查到计划的唤醒，类似鼠标键盘还有以太网这种根据硬件状态触发的唤醒是看不到的。
 
-### 修复意外的唤醒
+## 修复意外的唤醒
 
 由于我不知道到底是谁通过以太网唤醒了我的电脑，所以我直接关掉以太网的唤醒即可。
 
@@ -63,6 +63,6 @@ powercfg -waketimers
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [How to find out why your PC wakes up, and how to stop it - gHacks Tech News](https://www.ghacks.net/2013/12/31/find-pc-wakes-stop/)

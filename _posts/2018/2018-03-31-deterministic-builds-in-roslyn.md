@@ -11,7 +11,7 @@ categories: visualstudio dotnet csharp roslyn msbuild
 
 <div id="toc"></div>
 
-### 确定性编译
+## 确定性编译
 
 于是有一天意外地发现了 Roslyn 的确定性构建。
 
@@ -33,7 +33,7 @@ categories: visualstudio dotnet csharp roslyn msbuild
 
 ![Non-deterministic Hash](/static/posts/2018-03-31-16-35-34.png)
 
-### 不确定的编译
+## 不确定的编译
 
 是什么导致了没有加此标记时每次编译都不一样呢？最少有三个：
 
@@ -45,7 +45,7 @@ categories: visualstudio dotnet csharp roslyn msbuild
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Customize your build - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build?wt.mc_id=MVP)
 - [roslyn/Deterministic Inputs.md at master · dotnet/roslyn](https://github.com/dotnet/roslyn/blob/master/docs/compilers/Deterministic%20Inputs.md)

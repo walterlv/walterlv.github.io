@@ -9,7 +9,7 @@ categories: uwp xaml
 
 ---
 
-### Reveal 的效果（自带）
+## Reveal 的效果（自带）
 
 在微软官方推荐的 [XAML Controls Gallery](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) 应用中，我们可以找到 Reveal 的实现章节。下图是应用中演示的 Reveal 效果：
 
@@ -33,7 +33,7 @@ categories: uwp xaml
 </Grid>
 ```
 
-### Reveal 的制作（自己实现）
+## Reveal 的制作（自己实现）
 
 采用自带效果的控件看起来实现很容易，不过 UWP 控件的自带样式略坑，自己实现控件样式和模板是不可避免的事儿。
 
@@ -118,7 +118,7 @@ categories: uwp xaml
 
 ![Reveal 背景光照效果出现](/static/posts/2018-04-15-all-reveal-worked.gif)
 
-### 本文相关
+## 本文相关
 
 - 本文所设计的源码来自我的一个个人兴趣项目，已在 GitHub 上开源：[walterlv/AssembleMailing](https://github.com/walterlv/AssembleMailing)。
 - 我写过另一篇让 WPF 实现光照效果的博客：[流畅设计 Fluent Design System 中的光照效果 RevealBrush，WPF 也能模拟实现啦！](/post/fluent-design-reveal-brush-in-wpf.html)

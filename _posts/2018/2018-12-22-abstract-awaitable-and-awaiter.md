@@ -14,7 +14,7 @@ position: knowledge
 
 <div id="toc"></div>
 
-### 接口代码
+## 接口代码
 
 你可以在 GitHub 上找到这段代码：<https://github.com/walterlv/sharing-demo/blob/master/src/Walterlv.Core/Threading/AwaiterInterfaces.cs>。
 
@@ -52,7 +52,7 @@ public interface ICriticalAwaiter<out TResult> : IAwaiter<TResult>, ICriticalNot
 }
 ```
 
-### 接口实现
+## 接口实现
 
 在 ReSharper 工具的帮助下，你可以在继承接口之后快速编写出实现代码来：
 
@@ -113,14 +113,14 @@ public sealed class Awaiter : IAwaiter<string>, IAwaitable<Awaiter, string>
 }
 ```
 
-### 实现业务需求
+## 实现业务需求
 
 我有另外两篇文章在实现真正可用的 Awaiter：
 
 - [在 WPF/UWP 中实现一个可以用 await 异步等待 UI 交互操作的 Awaiter](/post/write-custom-awaiter.html)
 - [.NET 除了用 Task 之外，如何自己写一个可以 await 的对象？](/post/understand-and-write-custom-awaiter.html)
 
-### 更多 Awaiter 系列文章
+## 更多 Awaiter 系列文章
 
 入门篇：
 

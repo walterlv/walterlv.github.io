@@ -13,7 +13,7 @@ Windows 10 自 1703 开始引入第二代的多屏 DPI 机制（PerMonitor V2）
 
 <div id="toc"></div>
 
-### 添加应用程序清单文件
+## 添加应用程序清单文件
 
 在你现有 WPF 项目的主项目中需要添加两个文件以支持第二代的多屏 DPI 机制。
 
@@ -25,7 +25,7 @@ Windows 10 自 1703 开始引入第二代的多屏 DPI 机制（PerMonitor V2）
 
 默认情况下，app.config 在你创建 WPF 项目的时候就会存在，而 app.manifest 则不是。如果你的项目中已经存在这两个文件，就不需要添加了。
 
-#### 如果你没有 app.config，如何添加？
+### 如果你没有 app.config，如何添加？
 
 打开项目属性，然后在属性中选择 .NET Framework 的版本，无论你选择哪个，app.config 都会自动为你添加。
 
@@ -33,14 +33,14 @@ Windows 10 自 1703 开始引入第二代的多屏 DPI 机制（PerMonitor V2）
 
 当然，正统的方法是跟下面的 app.manifest 的添加方法相同，你会在下面看到 Visual Studio 新建项中 app.manifest 和 app.config 文件是挨在一起的。
 
-#### 如果你没有 app.manifest，如何添加？
+### 如果你没有 app.manifest，如何添加？
 
 ![新建文件的时候选择应用程序清单文件（应用程序配置文件就在旁边）](/static/posts/2018-10-22-15-56-38.png)  
 ▲ 新建文件的时候选择应用程序清单文件（应用程序配置文件就在旁边）
 
-### 了解 WPF 清单文件中的 DPI 感知设置
+## 了解 WPF 清单文件中的 DPI 感知设置
 
-#### DpiAware
+### DpiAware
 
 在你打开了 app.manifest 文件后，找到以下代码，然后取消注释：
 
@@ -84,7 +84,7 @@ Windows 10 自 1703 开始引入第二代的多屏 DPI 机制（PerMonitor V2）
 
 说明一下，[SetProcessDpiAwareness](https://docs.microsoft.com/en-us/windows/desktop/api/shellscalingapi/nf-shellscalingapi-setprocessdpiawareness) 是新 API，要求的最低系统版本是 Windows 8.1，调用这个才能指定为 Per-Monitor 的 DPI 感知。而 [SetProcessDPIAware](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-setprocessdpiaware?wt.mc_id=MVP) 是 Vista 开始引入的老 API，没有参数可以传。
 
-#### DpiAwareness
+### DpiAwareness
 
 ```xml
 <asmv3:application>
@@ -119,7 +119,7 @@ Windows 10 自 1703 开始引入第二代的多屏 DPI 机制（PerMonitor V2）
 - 第一个能识别的感知级别是 `unaware`
     - 当前进程设置为不感知 DPI（Unaware），就算你调用了 [SetProcessDpiAwareness](https://docs.microsoft.com/en-us/windows/desktop/api/shellscalingapi/nf-shellscalingapi-setprocessdpiawareness) 和 [SetProcessDPIAware](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-setprocessdpiaware?wt.mc_id=MVP) 也是没有用的。
 
-### 使 WPF 程序支持 Per-Monitor V2 级 DPI 感知
+## 使 WPF 程序支持 Per-Monitor V2 级 DPI 感知
 
 前面我们分析 App.Manifest 文件中 DPI 的设置后，几乎得到一个信息，`dpiAware` 和 `dpiAwareness` 都是要设置的，除非以后绝大多数用户的系统版本都到达 Windows 10 (1607) 及以上。
 
@@ -158,7 +158,7 @@ Windows 10 自 1703 开始引入第二代的多屏 DPI 机制（PerMonitor V2）
 
 以上，划重点 **你并不需要编译为高版本的 .NET Framework 即可获得 Per-Monitor 的 DPI 缩放支持**。
 
-### WPF 程序在特殊清单设置下的效果
+## WPF 程序在特殊清单设置下的效果
 
 `dpiAwareness` 不设置，`dpiAware` 节点设置为 `true/pm`：
 
@@ -191,7 +191,7 @@ Windows 10 自 1703 开始引入第二代的多屏 DPI 机制（PerMonitor V2）
 
 注意到标题栏（非客户区）被缩放了，而 WPF 区域（客户区）也能清晰地缩放（仅 Windows 10 1703 及以上系统才是这个效果）。
 
-### 低版本 .NET Framework 和 低版本 Windows 下的 WPF DPI 缩放
+## 低版本 .NET Framework 和 低版本 Windows 下的 WPF DPI 缩放
 
 由于 Windows 8.1 操作系统用户存量不多，主要是 Windows 7 和 Windows 10。所以我们要么兼容完全不支持 Per-Monitor 的 Windows 7，要么使用具有新特性的 Windows 10 即可获得最佳的开发成本平衡。**使用以上的 DPI 缩放方法足以让你的 WPF 应用在任何一个 .NET Framework 版本下获得针对屏幕的 DPI 清晰缩放（Per-Monitor DPI Awareness）。**
 
@@ -199,7 +199,7 @@ Windows 10 自 1703 开始引入第二代的多屏 DPI 机制（PerMonitor V2）
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Developing a Per-Monitor DPI-Aware WPF Application - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/hidpi/declaring-managed-apps-dpi-aware?wt.mc_id=MVP)
 - [WPF-Samples/Developer Guide - Per Monitor DPI - WPF Preview.docx at master · Microsoft/WPF-Samples](https://github.com/Microsoft/WPF-Samples/blob/master/PerMonitorDPI/Developer%20Guide%20-%20Per%20Monitor%20DPI%20-%20WPF%20Preview.docx)

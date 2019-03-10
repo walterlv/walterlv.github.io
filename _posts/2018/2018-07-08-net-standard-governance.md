@@ -10,7 +10,7 @@ categories: dotnet
 
 <div id="toc"></div>
 
-### 都有哪些 .NET Standard 的实现？
+## 都有哪些 .NET Standard 的实现？
 
 目前 .NET Standard 的实现有这些：
 
@@ -20,7 +20,7 @@ categories: dotnet
 - Unity
 - Xamarin
 
-### 标准在前还是实现在前？
+## 标准在前还是实现在前？
 
 标准在前指的是先制定出 .NET Standard 的某个版本的标准，然后再由各个 .NET Standard 的实现去完成实现。而实现在前指的是待各个 .NET Standard 的实现完成某个版本的发布之后，.NET Standard 再进行新版本的发布，确保发布时所有实现都已有版本完成。
 
@@ -28,7 +28,7 @@ categories: dotnet
 
 主要在于，如果 .NET Standard 的 API 先发布，那么很多开发者基于新 .NET Standard API 开发的应用可能根本就没有办法编译到 .NET 的各个实现，例如 Mono/Xamarin。
 
-### 标准之内还是使用标准？
+## 标准之内还是使用标准？
 
 .NET Standard 的发布有两种不同的方式。
 
@@ -38,7 +38,7 @@ categories: dotnet
 
 这两种不同的方式分别独立更新而互不影响。
 
-### 并不一定都能实现的标准
+## 并不一定都能实现的标准
 
 .NET Standard 中的 API 并不一定都是能被各大 .NET 的实现来实现的，因为现实的运行环境总是有或多或少的限制。
 
@@ -46,6 +46,6 @@ categories: dotnet
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [standard/README.md at master · dotnet/standard](https://github.com/dotnet/standard/blob/master/docs/governance/README.md)

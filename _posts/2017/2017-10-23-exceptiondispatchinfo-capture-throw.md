@@ -17,7 +17,7 @@ categories: dotnet dotnet-core dotnet-standard csharp
 
 <p id="toc"></p>
 
-### 重新抛出异常
+## 重新抛出异常
 
 说起重新抛出异常，你是否会认为就是写出如下代码？
 
@@ -101,7 +101,7 @@ if (exceptions.Any())
 }
 ```
 
-### 使用内部异常
+## 使用内部异常
 
 .NET Framework 早期就提供了内部异常功能，专为解决保留调用栈而重新抛出异常而生。上面两段代码标记为`// 重新抛出异常。`的注释部分改为：
 
@@ -114,7 +114,7 @@ throw new AggregateException(exceptions);
 
 于是两边的调用栈就被分别保留在了多个不同的 `Exception` 实例中。然而看异常总要一层层点开查看，始终不便。尤其是从产品中收集异常时，如何在异常分析系统中显示和分析也是个问题。
 
-### `ExceptionDispatchInfo`
+## `ExceptionDispatchInfo`
 
 如果将第一种情况写为：
 

@@ -11,7 +11,7 @@ categories: dotnet
 
 <div id="toc"></div>
 
-### LTS
+## LTS
 
 这是 .NET Core 2.1 的发布博客：[Announcing .NET Core 2.1 - .NET Blog](https://blogs.msdn.microsoft.com/dotnet/2018/05/30/announcing-net-core-2-1/)；文中说：
 
@@ -28,7 +28,7 @@ LTS 是 long-term support 的缩写，意为长期支持。
 
 如果某个库承诺进行长期支持，那么至少数年之内使用这个库都是安全的。这段时间也足够多数开发者进行新库的准备和升级了。
 
-### LTSC / LTSB
+## LTSC / LTSB
 
 对于长期支持还有其他的变种名称，当然也对应着不同的功能。
 
@@ -42,7 +42,7 @@ LTS 是 long-term support 的缩写，意为长期支持。
 
 - [Documentation Updates for Surface and Windows 10 LTSB Compatibility – Surface](https://blogs.technet.microsoft.com/surface/2017/04/11/documentation-updates-for-surface-and-windows-10-ltsb-compatibility/)
 
-### ESR
+## ESR
 
 当然也有机构采用 ESR 作为长期支持版本的称呼，ESR 全称为 Extended Support Release。
 

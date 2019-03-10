@@ -24,7 +24,7 @@ This post is written in **multiple languages**. Please select yours:
 
 **Reading Tips:** All of the examples described in this article are not common usages for `Grid`. (Microsoft is a great company. It will never do strange things on common situation.)
 
-### Star Unit on Infinite space
+## Star Unit on Infinite space
 
 Copy and paste the code below and run to view the result:
 
@@ -108,7 +108,7 @@ So where is the lost space? Let's resize the window to check it.
 
 Even if there is space left on the left, the right side begins to clip the element space! Can we say that the length of a missing * length has gone to the left? Obviously not. However, we can guess that the clipping of the right side of the element begins at the 1:2 ratio.
 
-### Star Unit at the Size Just Required
+## Star Unit at the Size Just Required
 
 `HorizontalAlignment="True"` helps us a lot to distinguish whether the right side really occupies space. So we continue the testing on the right-alignment.
 
@@ -165,7 +165,7 @@ I tried to slightly increase the width of the second `Border`. Suddenly, I repro
 
 ![](/static/posts/2018-05-05-a-little-longer.gif)
 
-### The Proportion of Auto Size
+## The Proportion of Auto Size
 
 Now, abandon the previous right-aligned test method and no longer use the `*` width to separate the `Grid`. We use `Auto` instead.
 
@@ -205,7 +205,7 @@ So let's look at the other two sets of values ​​for the three `Border`: `50:
 
 In `50:50:50`, we eventually get the 1:1:1 proportion. But the ratio of column widths in `25:50:25` is far from `1:2:1`. That is, in fact, the `Grid` does not calculate the column widths by the proportion to the size of the element.
 
-### The same Element Size but Different Column Width
+## The same Element Size but Different Column Width
 
 In the experiment in the previous section, we notice that the same size brought about the same final visible size regardless of the proportion. However, this conclusion still can be subverted.
 
@@ -239,7 +239,7 @@ What is the width of the columns laid out at this time?
 
 Wait! Where did the 39 come from? If the equal-size `Border` in the previous section would get equal-sized column widths, then this will also subvert! In fact, even if the proportion of the column width to the proportion of elements is the same at this time, there are as infinitely as many solutions under this layout. WPF picks only one out of this infinite number of solutions - and it cannot explain itself!
 
-### The conclusion of the Grid undefined behavior
+## The conclusion of the Grid undefined behavior
 
 In summary, the `Grid` layout has some unreasonable behaviors under special circumstances. I call them "the undefined behaviors". These undefined behaviors are summarized in the following three points:
 

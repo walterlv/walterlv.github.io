@@ -6,14 +6,14 @@ keywords: wpf performance
 published: false
 ---
 
-#### 似乎有用篇
+### 似乎有用篇
 - [Improving WPF Rendering Performance (Part 1) | Mr Pfisters Random Waffle](http://mrpfister.com/journal/improving-wpf-rendering-performance/)
 - [RenderOptions.CachingHint Attached Property (System.Windows.Media)](https://msdn.microsoft.com/en-us/library/system.windows.media.renderoptions.cachinghint(v=vs.110).aspx)
 - [BitmapCacheBrush Class (System.Windows.Media)](https://msdn.microsoft.com/en-us/library/system.windows.media.bitmapcachebrush(v=vs.110).aspx)
 - [How to: Use a Cached Element as a Brush - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/graphics-multimedia/how-to-use-a-cached-element-as-a-brush?wt.mc_id=MVP)
 - [WPF Architecture - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/wpf-architecture?wt.mc_id=MVP)
 
-#### 并没有什么卵用篇
+### 并没有什么卵用篇
 - [Improving WPF Rendering performance (Part 2) | Mr Pfisters Random Waffle](http://mrpfister.com/journal/wpf-rendering-performance/)
 - [Improving WPF Rendering performance (Part 3) | Mr Pfisters Random Waffle](http://mrpfister.com/programming/increasing-wpf-rendering-performance-2/)
 - [Writing HLSL Pixel Shaders for WPF | Mr Pfisters Random Waffle](http://mrpfister.com/journal/writing-hlsl-pixel-shaders-for-wpf/)

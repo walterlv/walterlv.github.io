@@ -13,7 +13,7 @@ position: problem
 
 <div id="toc"></div>
 
-### 问题代码
+## 问题代码
 
 我们使用两种不同的方式判断文件是否存在：
 
@@ -39,7 +39,7 @@ static async Task Main(string[] args)
 
 ![以上代码在的运行结果](/static/posts/2018-12-30-named-mutex-demo.gif)
 
-### 原因分析
+## 原因分析
 
 实际翻阅代码可以发现，`FileInfo.Exists` 和 `File.Exists` 方法最终都是使用相同的方法来完成文件存在与否的判断。
 
@@ -81,7 +81,7 @@ public static bool FileExists(string fullPath)
 
 只不过，`FileInfo.Exists` 只会在没有初始化的时候初始化一次，而 `File.Exists` 是没有缓存的，每次都是直接去获取文件的属性（这就涉及到 IO）。
 
-### 解决办法
+## 解决办法
 
 所以，如果你正在处理的文件在不同的时间可能存在也可能不存在，那么最好使用 `File.Exists` 来判断文件存在与否，而不是使用 `FileInfo.Exists` 来判断。
 

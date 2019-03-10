@@ -14,7 +14,7 @@ position: starter
 
 <div id="toc"></div>
 
-### 加入 MyGet 这个 NuGet 源
+## 加入 MyGet 这个 NuGet 源
 
 添加 NuGet 源的方法在我和林德熙的博客中都有说明：
 
@@ -31,7 +31,7 @@ position: starter
 
 如果你想添加其他的 NuGet 源，可以参见我的另一篇博客：[我收集的各种公有 NuGet 源 - 吕毅](/post/public-nuget-sources.html)。
 
-### 使用 .NET Standard 的预览版本
+## 使用 .NET Standard 的预览版本
 
 因为我们在使用 .NET Standard 库的时候，是直接作为目标框架来选择的，就像下面的项目文件内容一样：
 

@@ -9,7 +9,7 @@ tags: Windows10 Win10 FAT32 NTFS GPT UEFI
 
 ---
 
-### 为什么 UEFI 方式启动的 U 盘必须使用 FAT32 文件系统？
+## 为什么 UEFI 方式启动的 U 盘必须使用 FAT32 文件系统？
 
 因为 NTFS 是 Windows 系统专属的文件系统，而 UEFI 目前并不支持 NTFS。
 

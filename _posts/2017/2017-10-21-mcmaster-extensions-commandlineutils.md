@@ -26,13 +26,13 @@ categories: dotnet dotnet-core dotnet-standard
 
 <p id="toc"></p>
 
-### 体验超级简洁的代码吧！
+## 体验超级简洁的代码吧！
 
 我正在自己的项目中采用这款库，项目名为 `mdmeta`，用于自动生成 Markdown 前的元数据标签，写博客非常方便。
 
 项目地址：[walterlv/markdown-metadata: Markdown Metadata (also called mdmeta) is a tool to generate and manage the front matter metadata. It is a cross-platform console app based on .Net Core 2.0.](https://github.com/walterlv/markdown-metadata)
 
-#### 体验主流的命令行参数体验
+### 体验主流的命令行参数体验
 
 ```powershell
 # 不带任何参数
@@ -64,7 +64,7 @@ mdmeta echo "Hello!" -s ", "
 mdmeta echo "Hello!" --repeat-count=3 -s ", " -s "| "
 ```
 
-#### 体验库的 Builder API
+### 体验库的 Builder API
 
 `McMaster.Extensions.CommandLineUtils` 使用 Builder API 配出以上的命令，代码非常简洁。
 
@@ -96,7 +96,7 @@ static int Main(string[] args)
 }
 ```
 
-#### 体验我封装的命令行参数配置
+### 体验我封装的命令行参数配置
 
 原生库配置命令行参数已经非常方便了，几乎是一行一个功能，但 `lambda` 表达式嵌套太多是一个问题，会导致代码随着参数种类的增多变得急剧膨胀；于是我针对原生库做了一个基于反射的版本。于是，实现一个命令行参数只需要写这些代码就够啦：
 
@@ -140,12 +140,12 @@ public sealed class SampleTask : CommandTask
 
 <script src="https://gist.github.com/walterlv/0a2257c30e8c175cae657b0058f5421c.js"></script>
 
-### 支持的平台
+## 支持的平台
 
 支持 .Net Standard 1.3，这意味着 .Net Core 可以使用，.NET Framework 4.5.1 及以上即可使用。这意味着可以很随意地跨全平台。
 
 ---
 
-#### 参考资料
+**参考资料**
 - [Creating Neat .NET Core Command Line Apps](https://gist.github.com/iamarcel/8047384bfbe9941e52817cf14a79dc34)
 -[natemcmaster/CommandLineUtils: Command line parsing and utilities for .NET Core and .NET Framework.](https://github.com/natemcmaster/CommandLineUtils/)

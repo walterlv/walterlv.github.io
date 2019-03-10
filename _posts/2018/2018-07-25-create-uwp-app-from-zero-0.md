@@ -20,7 +20,7 @@ categories: uwp msbuild
 
 <div id="toc"></div>
 
-### 从最简单的项目模板开始
+## 从最简单的项目模板开始
 
 虽然可以从零开始写一个 csproj 文件，不过这并没有什么技术含量，因为新的 csproj 文件实在是非常简单。参见：
 
@@ -66,7 +66,7 @@ namespace Walterlv.Demo.ZeroUwp
 
 不过，这两个文件都会被改掉的，已经无所谓里面是什么内容了。
 
-### 将项目改造成 UWP 项目
+## 将项目改造成 UWP 项目
 
 UWP 程序的输出类型是 `AppContainerExe`，而不是一般的 Library 或者 Exe。
 
@@ -145,7 +145,7 @@ UWP 程序的输出类型是 `AppContainerExe`，而不是一般的 Library 或�
 </Project>
 ```
 
-### 编写 AppxManifest
+## 编写 AppxManifest
 
 项目改造成 UWP 项目后，似乎已经完成了大部分了，但此时直接运行会有编译错误，因为我缺少 UWP 程序必要的 AppxManifest.xml 文件。
 
@@ -262,7 +262,7 @@ UWP 程序的输出类型是 `AppContainerExe`，而不是一般的 Library 或�
   </ItemGroup>
 ```
 
-### 编写 AssemblyInfo.cs
+## 编写 AssemblyInfo.cs
 
 由于没有新的基于 Sdk 的 csproj 文件支持，所以我们需要自己编写 AssemblyInfo.cs 文件，并放入到 Properties 文件夹中。
 
@@ -403,7 +403,7 @@ using System.Runtime.InteropServices;
 
 ![本机错误](/static/posts/2018-07-25-09-28-42.png)
 
-### 完成部署和运行
+## 完成部署和运行
 
 以上所有内容是一个 UWP 程序完成编译并运行所需的最少信息了。
 
@@ -419,7 +419,7 @@ Main 函数中的断点是可以进入的：
 
 ![无法继续运行](/static/posts/2018-07-25-09-02-19.png)
 
-### 总结与后续
+## 总结与后续
 
 在本文中，我们了解到 UWP 项目所需的最少文件有：
 

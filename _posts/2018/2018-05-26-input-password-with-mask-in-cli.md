@@ -11,7 +11,7 @@ categories: dotnet
 
 ---
 
-### 开始简单的程序
+## 开始简单的程序
 
 让我们开始一个简单的 .NET Core 控制台程序。
 
@@ -30,7 +30,7 @@ static void Main(string[] args)
 
 密码直接显示，暴露无遗。而且，由于我们后面持续不断的有输出，控制台不会清除掉这些输出，所以密码会一直显示到缓冲区中——**这显然是不能接受的**。
 
-### 写一个让用户输入密码并显示掩码的方法
+## 写一个让用户输入密码并显示掩码的方法
 
 既然控制台本身并没有提供可以为密码进行掩码的方法，那么我们只能自己来写了：
 
@@ -74,7 +74,7 @@ public static SecureString ReadPassword(string mask = "*")
 
 需要注意的是，在 `password` 返回之前，我们调用了 `SecureString.MakeReadOnly()` 方法，将字符串设为只读，确保返回之后不会再被外面修改。
 
-### 转换密码
+## 转换密码
 
 当然，只有对安全级别比较高的库才会接受 `SecureString` 类型的字符串作为密码；一些简单的库只接受字符串类型的密码。那么在这些简单的库中我们如何才能得到普通的字符串呢？
 
@@ -132,7 +132,7 @@ internal static string CreateString(SecureString secureString)
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [c# - Password masking console application - Stack Overflow](https://stackoverflow.com/q/3404421/6233938)
 - [c# - How to convert SecureString to System.String? - Stack Overflow](https://stackoverflow.com/q/818704/6233938)

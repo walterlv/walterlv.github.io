@@ -13,11 +13,11 @@ tags: MBR GPT
 
 <div id="toc"></div>
 
-### 第一步：按下 Shift + F10 启动命令提示符
+## 第一步：按下 Shift + F10 启动命令提示符
 
 在 Windows 的安装界面其实是可以启动命令提示符的，只需按下 Shift + F10 即可。
 
-### 第二步：敲命令
+## 第二步：敲命令
 
 启动 Diskpart：
 
@@ -70,7 +70,7 @@ DISKPART> clean
 DISKPART> convert gpt
 ```
 
-### 第三步：平复激动的心情
+## 第三步：平复激动的心情
 
 操作结束之后直接按下 Alt + F4 切换到 Windows 安装程序继续安装即可。如果你是强迫症重度患者，敲一个 `exit` 命令结束“Diskpart”程序也未尝不可。
 

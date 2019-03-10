@@ -20,7 +20,7 @@ This post is written in **multiple languages**. Please select yours:
 
 <div id="toc"></div>
 
-### The namespace
+## The namespace
 
 Sometimes we have to view the full class names with namespaces to determine their meanings.
 
@@ -44,7 +44,7 @@ We can split them into `Windows.ApplicationModel` and `Windows.UI`, or split the
 
 The `CoreApplication` and `CoreApplicationView` manage the application model, and the `Application`, `CoreWindow` and `Window` manage the application inner UI. The `CoreApplication`, `CoreApplicationView` and `CoreWindow` manages the core functions, but the `Application` and `Window` manage the XAML UI.
 
-### From top to bottom
+## From top to bottom
 
 From top to bottom is from `Application` to `Window`, then to XAML. It's obvious that the application contains windows and the window contains the inner XAML UI. Then, what's the real relationship?
 
@@ -58,7 +58,7 @@ You can read [Show multiple views for an app - UWP app developer - Microsoft Doc
 `CoreWindow` is the window that we are all familiar with. 
 `Windows.UI.XAML.Window` encapsulate the `CoreWindow` for easier usage. `CoreDispatcher` is the threading model based on the windows message loop. It's the `CoreDispatcher` that keeps the window to show all the time without being disposed.
 
-### For outer or for inner
+## For outer or for inner
 
 Most UWP developers are normal developers, so we should stand on their side to think about the outer and the inner. Normal UWP developers start writing code from `MainPage`, so the outer is out of the page and the inner is the XAML content of the page.
 
@@ -70,7 +70,7 @@ In details, the `CoreWindow` is the class that interop with the Windows Operatin
 
 In conclusion, the `CoreWindow` and the `CoreApplicationView` provide the low-level core functions of the operating system and the application model. The `Window` and the `ApplicationView` encapsulates them for XAML usage.
 
-### Some usages of these concepts
+## Some usages of these concepts
 
 I've written some other posts about UWP that take advantages of these concepts. Unfortunately, they are all not in English.
 
@@ -80,6 +80,6 @@ I've written some other posts about UWP that take advantages of these concepts. 
 
 ---
 
-#### References
+### References
 
 - [Title bar customization - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/shell/title-bar?wt.mc_id=MVP)

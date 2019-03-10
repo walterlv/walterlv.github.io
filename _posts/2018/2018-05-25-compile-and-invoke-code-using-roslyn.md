@@ -19,7 +19,7 @@ Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。
 
 <div id="toc"></div>
 
-### 我们希望做什么？
+## 我们希望做什么？
 
 是否有过在编译期间修改一段代码的想法呢？
 
@@ -29,14 +29,14 @@ Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。
 
 于是，我想到可以使用 Roslyn。在项目中编写一段转换代码，我们使用通用的方式去编译和执行这段代码，以便完成各种各样日益增加的类型转换需求。具体来说，就是 **使用 Roslyn 编译一段代码，然后执行它**。
 
-### 准备工作
+## 准备工作
 
 与之前在 [Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码](/post/analysis-code-of-existed-projects-using-roslyn.html) 中的不同，我们这次无需打开解决方案或者项目，而是直接寻找并编译源代码文件。所以（利好消息），我们这回可以使用 .NET Core 跨平台版本的 Roslyn 了。所以为了充分有跨平台特性，我们创建`控制台应用 (.NET Core)`。
 
 ![新建项目](/static/posts/2018-05-25-20-17-01.png)  
 ▲ 千万不要吐槽相比于上一个入门教程来说，这次的界面变成了英文
 
-### 安装必要的 NuGet 包
+## 安装必要的 NuGet 包
 
 这次不需要完整的 .NET Framework 环境，也不需要打开解决方案和项目这种重型 API，所以一个简单的 NuGet 包足矣：
 
@@ -44,7 +44,7 @@ Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。
 
 ![安装 Microsoft.CodeAnalysis.CSharp](/static/posts/2018-05-25-20-25-10.png)
 
-### 准备一份用于编译和执行代码文件
+## 准备一份用于编译和执行代码文件
 
 我直接使用 [生成代码，从 T 到 T1, T2, Tn —— 自动生成多个类型的泛型](/post/generate-code-of-generic-types.html) 这篇文章中的例子。把其中最关键的文件拿来用于编译和生成试验。
 
@@ -101,7 +101,7 @@ namespace Walterlv.Demo.Roslyn
 
 这份代码你甚至可以直接复制到你的项目中，一定是可以编译通过的。
 
-### 编译这份代码
+## 编译这份代码
 
 使用 Roslyn 编译一份代码是非常轻松愉快的。写出以下这三行就够了：
 
@@ -165,7 +165,7 @@ namespace Walterlv.Demo.Roslyn
 }
 ```
 
-### 执行编译后的代码
+## 执行编译后的代码
 
 既然得到了类型，那么执行这份代码其实毫无压力，因为我们都懂得反射（好吧，我假装你懂反射）。
 
@@ -179,10 +179,10 @@ var newContent = (string) type.GetMethod("Transform").Invoke(transformer,
 
 ![](/static/posts/2018-05-25-21-14-40.png)
 
-### 下面进入高阶模式
+## 下面进入高阶模式
 
 作为入门篇，我才不会进入高阶模式呢！如果你想实现如本文开头所说的更通用的效果，欢迎发动你的大脑让想象力迸发。当然，如果你确实想不出来，欢迎在下方评论，我将尽快回复。
 
-#### 参考资料
+**参考资料**
 
 - [Compiling C# Code Into Memory and Executing It with Roslyn - Tugberk Ugurlu's Blog](http://www.tugberkugurlu.com/archive/compiling-c-sharp-code-into-memory-and-executing-it-with-roslyn)

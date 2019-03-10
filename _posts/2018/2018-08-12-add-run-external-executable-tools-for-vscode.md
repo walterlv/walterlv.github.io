@@ -1,7 +1,7 @@
 ---
 title: "基于 task 为 VSCode 添加自定义的外部命令"
 publishDate: 2018-08-12 20:47:34 +0800
-date: 2018-12-30 17:00:42 +0800
+date: 2018-12-30 17:00:43 +0800
 categories: vscode
 ---
 
@@ -11,7 +11,7 @@ categories: vscode
 
 <div id="toc"></div>
 
-### 写一个外部命令的调用
+## 写一个外部命令的调用
 
 由于是调用外部工具，所以工具本身用什么语言写已经不重要的了，只要有环境，没有什么是不能执行的。
 
@@ -23,7 +23,7 @@ categories: vscode
 dotnet build\mdmeta\mdmeta.dll wupdate --ignore-in-hour 6
 ```
 
-### 让 VSCode 使用此外部命令
+## 让 VSCode 使用此外部命令
 
 如果你说使用 VSCode 嵌入的终端来使用外部命令，那我们其实没做什么，就像使用普通的脚本或者命令一样。
 
@@ -70,7 +70,7 @@ tasks.json 中有少量的默认内容，如果你完全不知道如可开始编
 
 由于后者才是需要频繁使用的命令，所以我将其设为编译类型的命令（`"kind": "build"`）。具体来说，设定为编译类型并指定为默认（`"isDefault": true`）将获得 `Ctrl+Shift+B` 快捷键的原生支持。
 
-### 使用快捷键执行外部命令
+## 使用快捷键执行外部命令
 
 当然，如果你有其他的编译命令，或者你有很多个命令，可以自己指定快捷键。比如我希望按下 `Ctrl+U` 时更新我的元数据（即执行以上第二条命令），直接在命令上加上 `"key": "ctrl+u"` 即可。
 
@@ -90,6 +90,6 @@ tasks.json 中有少量的默认内容，如果你完全不知道如可开始编
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Tasks in Visual Studio Code](https://code.visualstudio.com/docs/editor/tasks)

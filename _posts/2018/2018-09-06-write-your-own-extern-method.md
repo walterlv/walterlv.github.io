@@ -13,7 +13,7 @@ categories: dotnet csharp roslyn msbuild
 
 <div id="toc"></div>
 
-### DllImport
+## DllImport
 
 日常我们的平台调用代码是这样的：
 
@@ -34,7 +34,7 @@ class Walterlv
 
 你看不到 `FindWindow` 的实现。
 
-### 自定义的 extern
+## 自定义的 extern
 
 那我们能否自己实现一个这样的 `extern` 的方法呢？写一写，还真是能写得出来的。
 
@@ -68,7 +68,7 @@ internal sealed class WalterlvHiddenMethodAttribute : Attribute
 ![方法没有实现](/static/posts/2018-09-06-21-20-12.png)  
 ▲ 方法没有实现
 
-### 让自定义的 extern 工作起来
+## 让自定义的 extern 工作起来
 
 如果无法运行，那么我们写 `extern` 是完全没有意义的。于是我们怎么能让这个“外部的”函数工作起来呢？—— 事实上就是工作不起来。
 
@@ -180,12 +180,12 @@ class Demo
 ![可以运行](/static/posts/2018-09-06-21-53-26.png)  
 ▲ 可以运行
 
-### 总结
+## 总结
 
 - `extern` 是 C# 的一个语法而已，谁都可以用，但最终编译时的 C# 文件必须都有实现。
 - 我们可以在编译时修改编译的文件来为这些未实现的方法添加实现。
 
-### 原理
+## 原理
 
 看完上面的方法，是不是觉得写一个把实现藏起来的 `extern` 方法很简单？
 
@@ -231,6 +231,6 @@ class Demo
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [c# - How does DllImport really work? - Stack Overflow](https://stackoverflow.com/a/14471704/6233938)

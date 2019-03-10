@@ -13,7 +13,7 @@ position: principle
 
 <div id="toc"></div>
 
-### git 的冲突表示
+## git 的冲突表示
 
 例如我们有这样的三个提交 a、b、c。a、b 是在 master 上的其他修改，c 是我自己基于 master 上的 a 的修改。
 
@@ -51,7 +51,7 @@ Console.WriteLine("Hello Master!");
 
 以 `<<<<<<<` 表示冲突开头，`>>>>>>>` 表示冲突结尾，`=======` 分隔冲突的不同修改。上面是 HEAD，也就是在合并之前的工作目录上的最近提交；下面是合并进来的分支，通常是来自其他人的修改。
 
-### 三路合并
+## 三路合并
 
 加入上面的 b 提交修改的是其他文件。然后依然按照前面的方式进行合并。
 
@@ -71,7 +71,7 @@ Console.WriteLine("Hello World!");
 
 当然，前一节的问题依然会冲突，因为两个分支相对于共同的祖先节点 a 对同一个文件都有修改。
 
-### 递归三路合并
+## 递归三路合并
 
 从上面我们可以看到三路合并解决了二路合并中对于相同行不知道用哪一个的问题。不过实际的 git 提交树会更加复杂，就像下图那样纵横交错：
 
@@ -88,7 +88,7 @@ Console.WriteLine("Hello World!");
 
 这是 git 合并时默认采用的策略。
 
-### 快进式合并
+## 快进式合并
 
 git 还有非常简单的快进式（Fast-Forward）合并。快进式合并要求合并的两个分支（或提交）必须是祖孙/父子关系。例如上面的 e 和 d 并不满足此关系，所以无法进行快进式合并。
 
@@ -96,7 +96,7 @@ git 还有非常简单的快进式（Fast-Forward）合并。快进式合并要�
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [version control - Why is a 3-way merge advantageous over a 2-way merge? - Stack Overflow](https://stackoverflow.com/q/4129049/6233938)
 - [Guiffy SureMerge - A Trustworthy 3-Way Merge](http://www.guiffy.com/SureMergeWP.html)

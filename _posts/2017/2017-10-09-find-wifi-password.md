@@ -13,7 +13,7 @@ description: 了解如何查询已连接 Wi-Fi 的密码
 
 <p id="toc"></p>
 
-### 进阶篇
+## 进阶篇
 
 其实重点并不是解决问题，而是解决问题的过程；所以使用命令行来解决这个问题当然更加炫酷一些，当然要第一个讲啦！让其他人投来羡慕的目光吧！
 
@@ -35,7 +35,7 @@ netsh wlan show profiles name="walterlv" key=Clear
 
 第二条命令就是查看 `walterlv` 网络的信息。其中 `name` 换成你想查看的任何已记住的网络，`key` 设置为 `Clear` 是为了明文显示密码。我的 Wi-Fi 密码在图中可以看得到，被设置成了 `lvyi1009`。
 
-### 入门篇
+## 入门篇
 
 如果你觉得上面的方法太装了，想朴素一些，那么只需要点点鼠标即可。
 
@@ -57,5 +57,5 @@ netsh wlan show profiles name="walterlv" key=Clear
 
 ---
 
-#### 参考资料
+**参考资料**
 - [2 Ways To Find All Saved Wifi Passwords In Windows 10](https://www.itechtics.com/2-ways-find-saved-wifi-passwords-windows-10/)

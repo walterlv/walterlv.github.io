@@ -15,7 +15,7 @@ categories: site html javascript css
 
 <div id="toc"></div>
 
-### 主题色改变的原理
+## 主题色改变的原理
 
 html/css 带来的样式改变是非常简单的，html 中的 class 对应 css 中的样式即可完成各种各样的风格变化。
 
@@ -23,7 +23,7 @@ html/css 带来的样式改变是非常简单的，html 中的 class 对应 css 
 
 而对于 css，我们为每一个与主题色相关的颜色添加一个与之对应的 `dark-theme` 样式。那么，我们只需要即时切换 body 的 `dark-theme` 的出现与否，就能让浏览器为我们使用全新的样式和颜色。
 
-### 编写 css
+## 编写 css
 
 第一个要改变的，当然是背景色了。如果原来的背景色是设置到 `body` 上的，那么我们就通过 `.dark-theme` 指定一个暗色版的背景色。
 
@@ -92,7 +92,7 @@ body.dark-theme .post-content h5 {
 
 当然，如果希望立即能够看到效果，应该在 `body` 上加上 `dark-theme` 这个 class。
 
-### 编写 js
+## 编写 js
 
 其实我们的 js 只有一句话，就是切换 `body` 上的 `dark-theme`，所以我选择直接内联。
 
@@ -106,7 +106,7 @@ body.dark-theme .post-content h5 {
 
 这样，只需要点击这个按钮，即可完成黑白主题的切换。
 
-### 处理第三方评论系统这样不支持动态切换主题色的部件
+## 处理第三方评论系统这样不支持动态切换主题色的部件
 
 在我基本上改完之后，发现 Disqus 却没有办法很轻松地改掉。事实上，Disqus 的个人站点设置页面上可以选择亮色或者暗色主题，但是，那是静态的。
 
@@ -117,7 +117,7 @@ body.dark-theme .post-content h5 {
 ![切换 disqus 主题](/static/posts/2018-05-19-disqus-theme.gif)  
 ▲ 看起来还是很和谐的
 
-### 保存主题色
+## 保存主题色
 
 简单的保存基本上就是使用 cookie，于是我准备了一个 `theme=dark` 这样的键值对。如果存在，则使用暗色，否则使用亮色。并且，在切换时设置 cookie。
 

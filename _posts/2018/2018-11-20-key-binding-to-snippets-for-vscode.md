@@ -66,7 +66,7 @@ Visual Studio Code 默认是关闭了 Markdown 的智能感知提示的（因为
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Creating your own snippets in Visual Studio Code](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
 - [load keybindings.json from .vscode dir if there is any ? · Issue #10708 · Microsoft/vscode](https://github.com/Microsoft/vscode/issues/10708)

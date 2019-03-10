@@ -12,7 +12,7 @@ categories: roslyn dotnet csharp
 
 <div id="toc"></div>
 
-### 基本概念
+## 基本概念
 
 ```csharp
 using System;
@@ -35,13 +35,13 @@ namespace Walterlv.Demo
 
 接下来，我们会介绍 Roslyn 语法树中各种不同种类的节点，以及其含义。
 
-### 语法节点
+## 语法节点
 
-#### 语法树
+### 语法树
 
 **CompilationUnit**，是语法树的根节点。
 
-#### 关键字
+### 关键字
 
 **UsingKeyword**、**NamespaceKeyword**、**PublicKeyword**、**InternalKeyword**、**PrivateKeyword**、**ProtectedKeyword**、**StaticKeyword**、**ClassKeyword**、**InterfaceKeyword**、**StructKeyword**。
 
@@ -67,23 +67,23 @@ namespace Walterlv.Demo
 
 分别是 `lock`、`checked`、`unchecked`、`unsafe`、`fixed` 关键字。
 
-#### 符号
+### 符号
 
 **DotToken**、**SemicolonToken**、**OpenBraceToken**、**CloseBraceToken**、**LessThanToken**、**GreaterThanToken**、**OpenParenToken**、**CloseParenToken**。
 
 分别是 C# 中的各种符号：`.`, `;`, `{`, `}`, `<`, `>`, `(`, `)`。
 
-#### 空白
+### 空白
 
 **EndOfLineTrivia** 表示换行，**WhitespaceTrivia** 表示空格，**EndOfFileToken** 表示文件的末尾。
 
 通常，这两个语法节点会在另一个节点的里面，作为另一个节点的最后一部分。比如 `using Walterlv.Demo;` 是一个 UsingDirective，它的最后一个节点 Semicolon 中就会包含换行符 EndOfLineTrivia。
 
-#### 指令
+### 指令
 
 **UsingDirective** 是 `using` 指令。一个 `using` 指令包含一个 UsingKeyword，一个 QualifiedName 和一个 Semicolon（`;`）。
 
-#### 声明
+### 声明
 
 **NamespaceDeclaration**、**ClassDeclaration**、**MethodDeclaration**、**PropertyDeclaration**、**FieldDeclaration**、**VariableDeclaration**。
 
@@ -101,7 +101,7 @@ namespace Walterlv.Demo
 
 类型声明是命名空间声明的子节点，类型成员的声明是类型声明的子节点。
 
-#### 名称和标识符
+### 名称和标识符
 
 - **QualifiedName**
     - 限定名称，可以理解为完整的名称。
@@ -115,13 +115,13 @@ namespace Walterlv.Demo
 - **GenericName**
     - 泛型名称，即 Foo<T> 这种。
 
-#### 特性
+### 特性
 
 **AttributeList**、**Attribute**。
 
 一个允许添加特性的地方，如果添加了特性，那么可以得到 AttributeList 节点，内部包含了多个 Attribute 子节点。
 
-#### 形参和实参
+### 形参和实参
 
 形参是 parameter，实参是 argument。前者是定义的参数，后者是实际传入的参数。
 
@@ -144,7 +144,7 @@ namespace Walterlv.Demo
 - **TypeArgument**
     - 泛型实参，即以上例子中的 `T1` 和 `T2` 部分。
 
-#### 语句块
+### 语句块
 
 - **Block**
     - 即用 `{` 和 `}` 包裹的语句代码。
@@ -152,7 +152,7 @@ namespace Walterlv.Demo
 - **EqualsValueClause**
     - 等号子句，例如 `= null`。我们经常称之为“赋值”语句。
 
-#### 语句
+### 语句
 
 一个语句是指包含分号在内的实际执行的句子。
 
@@ -184,7 +184,7 @@ namespace Walterlv.Demo
 - **FixedStatement**
     - unsafe 语句。
 
-#### 表达式
+### 表达式
 
 - **EqualsExpression**
     - 相等判断表达式，即 `a == b`。
@@ -209,11 +209,11 @@ namespace Walterlv.Demo
     - 不带括号的 lambda 表达式，例如：
     - `a => xxx`、`a => { }`
 
-#### 基元类型
+### 基元类型
 
 **PredefinedType** 是所有基元类型的节点。它的子节点可能是 BoolKeyword、StringKeyword 或其它基元类型的关键字。
 
-#### C# 内建类型
+### C# 内建类型
 
 **NullableType**、**TupleType**、**ArrayType**。
 

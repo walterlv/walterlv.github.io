@@ -11,7 +11,7 @@ categories: csharp
 
 <p id="toc"></p>
 
-### 安装可空引用类型预览包
+## 安装可空引用类型预览包
 
 现在 C#8.0 还没有发布，但微软已经提供了预览的扩展包，让大家体验效果并[予以反馈](https://github.com/dotnet/csharplang/wiki/Nullable-Reference-Types-Preview#feedback)。
 
@@ -23,7 +23,7 @@ categories: csharp
 
 ---
 
-### 体验可空引用类型的作用
+## 体验可空引用类型的作用
 
 现在，再写一个新类的时候，Visual Studio 会为我们提示非空引用类型未初始化，并给出建议。
 
@@ -47,7 +47,7 @@ categories: csharp
 
 ---
 
-### 丢不掉的兼容性包袱
+## 丢不掉的兼容性包袱
 
 由于有兼容性的包袱*（至少得让你写了数月几年的项目编译通过吧）*，所以 C#8.0 的可空引用类型仅仅是“**契约**”的作用，并不能在编译级别阻止对非空引用类型的 null 赋值。而且目前为止也没有提供编译级别报错的选项。
 
@@ -61,7 +61,7 @@ categories: csharp
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - Nullable Reference
     - [Nullable Reference Types Preview · dotnet/csharplang Wiki](https://github.com/dotnet/csharplang/wiki/Nullable-Reference-Types-Preview)

@@ -11,7 +11,7 @@ categories: dotnet framework
 
 ---
 
-### 什么是语义耦合
+## 什么是语义耦合
 
 这是区别于常规意义上的“耦合”而言的。
 
@@ -21,11 +21,11 @@ categories: dotnet framework
 
 我们说耦合的危害是修改一个类的时候，另一个类也需要做对应的修改。显式耦合有工具帮我们做重构时的解耦，而语义上的耦合却很难有准确帮助我们的工具。一些变态的工具（例如 ReSharper）能够帮助我们解决一部分。
 
-### 哪些代码算作语义耦合
+## 哪些代码算作语义耦合
 
 按照上面的定义，语义耦合的概念依然模糊，但都有一个统一的核心——**在实现细节上存在依赖**，而不是在调用上存在依赖。
 
-#### 交换带有隐含意义的数据
+### 交换带有隐含意义的数据
 
 在这段代码中，`Bar` 依赖于 `Foo`，他们都依赖于 `FooInfo`。至少静态代码分析工具是这么认为的。
 
@@ -57,7 +57,7 @@ public class Bar
 
 将 `object` 类型的参数改为 `FooInfo` 类型是一个可选方案。但是，如果此函数是为了实现某个接口，`object` 是接口中对应方法的参数类型，那就不能这么改了。此时应该审视是否应该传入这个参数，或者审视接口设计的合理性。
 
-#### 假设对方已为自己完成了某种工作
+### 假设对方已为自己完成了某种工作
 
 典型的情况是要求调用某方法前先调用 `Init`。
 
@@ -100,7 +100,7 @@ public class Bar
 
 只有去掉 `Init` 方法才是真的解决了语义耦合，其他都是缓解语义耦合带来的危害。
 
-#### 暗示对方执行期望的代码
+### 暗示对方执行期望的代码
 
 目前主流的 MVVM 框架几乎都支持 `Message` 机制，为了解决部分情况下 `ViewModel` 的操作需要通知到 `View` 来完成的情况。
 
@@ -150,7 +150,7 @@ public class DemoViewModel : ViewModelBase
 
 我在自己编写的 MVVM 框架中弱化了 `Message` 的机制（是非常的弱），逼迫 `ViewModel` 的实现者不要试图通知 `View` 做任何事情，而是由 `View` 的实现者决定是否对 `ViewModel` 中任务的执行结果进行反馈。
 
-### 为什么语义耦合也有危害
+## 为什么语义耦合也有危害
 
 直接的耦合可以在静态代码分析工具的帮助下帮助我们理清楚依赖关系并批量重构（重命名等），不过这个过程是非常痛苦的，尤其是耦合是双向的时候，或者被非常多类耦合的时候。
 
@@ -162,7 +162,7 @@ public class DemoViewModel : ViewModelBase
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [The Perils of Semantic Coupling - Wide Awake Developers](http://www.michaelnygard.com/blog/2015/04/the-perils-of-semantic-coupling/)
 - [Semantic coupling in code - Alejandro Duarte](http://www.alejandrodu.com/blog/semantic-coupling)

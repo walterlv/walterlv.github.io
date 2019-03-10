@@ -13,7 +13,7 @@ MEF，Managed Extensibility Framework，现在已经发布了三个版本了，�
 
 <p id="toc"></p>
 
-### MEF 和 MEF2
+## MEF 和 MEF2
 
 其实微软发布了四个版本的 MEF：
 
@@ -35,7 +35,7 @@ MEF，Managed Extensibility Framework，现在已经发布了三个版本了，�
 
 ![性能报告](/static/posts/2018-01-17-08-49-22.png)
 
-### 安装 MEF2
+## 安装 MEF2
 
 .NET Framework 中自带的 MEF 在程序集 System.ComponentModel.Composition.dll 中，命名空间为 `System.ComponentModel.Composition`。MEF2 随 NuGet 包发布，其 NuGet 包名是 Microsoft.Composition，命名空间为 `System.Composition`。
 
@@ -43,29 +43,29 @@ MEF，Managed Extensibility Framework，现在已经发布了三个版本了，�
 
 所以，在需要使用 MEF2 的项目中安装以上 NuGet 包即可完成安装。
 
-### 使用 MEF2 开发
+## 使用 MEF2 开发
 
 MEF 完全使用特性来管理容器中的依赖，微软称之为 Attributed Programming Model，并辅以广告——不需要配置文件的依赖注入容器。所以，使用特性来标记依赖关系就成了 MEF 的招牌依赖管理方式。
 
 使用方法我将分为两个部分来讲，最容易的是业务代码，给开发团队中所有成员使用的代码。比较难的是框架代码，给开发团队中写框架的那一部分成员。
 
-#### 业务代码
+### 业务代码
 
 业务代码的写法其实取决于框架开发者怎么去定义框架。但是，为了方便大家理解，在这一节我将只说 MEF2 最原生的使用方法。框架那一节我才会说明如何自定义业务代码的写法。
 
 最原生的使用方法其实只有两个——`[Import]` 和 `[Export]`，其它都是变种！具体说来，标记了 `Export` 的类将导出给其它类使用；标记了 `Import` 的属性/字段/方法参数等将接收来自 `Export` 的那些类/属性/字段的实例。
 
-##### Import/Export
+#### Import/Export
 
 在类型上标记 `[Export]` 可以让容器发现这个类型。`[Export]` 允许带两个参数，一个契约名称，一个契约类型。在 `[Import]` 的时候，相同的契约名称会被注入；与属性或字段的类型相同的契约类型会被注入。
 
-##### IEnumerable/Lazy
+#### IEnumerable/Lazy
 
 如果属性或字段是集合类型，可以使用 [ImportMany] 来注入集合（如果 `Export` 有多个）。
 
 如果属性或字段是 `Lazy<T>` 类型，那么并不会立即注入，而是在访问到 `Lazy<T>.Value` 时才获取到实例（如果此时的创建过程由容器处理，那么第一次访问 `Value` 时才会创建）。
 
-#### 框架代码
+### 框架代码
 
 框架代码也分为两个部分：一个部分是初始化，初始化后可以创建一个依赖注入容器；另一个部分是管理依赖，将使用之前初始化好的依赖注入容器进行管理。
 
@@ -122,7 +122,7 @@ compositionHost.SatisfyImports(targetObject);
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [MEF in .NET 4.5 - CodeProject](https://www.codeproject.com/Tips/488513/MEF-in-NET)
 - [Managed Extensibility Framework(MEF) 2 框架新特性介绍 - PetterLiu - 博客园](http://www.cnblogs.com/wintersun/archive/2013/01/16/2863405.html)

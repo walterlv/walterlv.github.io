@@ -14,7 +14,7 @@ position: starter
 
 <div id="toc"></div>
 
-### Awaiter 系列文章
+## Awaiter 系列文章
 
 入门篇：
 
@@ -27,7 +27,7 @@ position: starter
 - [在 WPF/UWP 中实现一个可以用 await 异步等待 UI 交互操作的 Awaiter](/post/write-dispatcher-awaiter-for-ui.html)
 - [.NET 编写一个可以异步等待循环中任何一个部分的 Awaiter](/post/write-an-awaiter-that-await-part-of-a-loop.html)
 
-### 可等待对象
+## 可等待对象
 
 我们希望大家在调用下面的 `CallWalterlvAsync` 方法的时候，可以使用 `await` 关键字来异步等待：
 
@@ -45,7 +45,7 @@ public WalterlvOperation CallWalterlvAsync()
 
 所以我们需要实现一个 `WalterlvOperation`。
 
-### 编写基本的 Awaiter 框架代码
+## 编写基本的 Awaiter 框架代码
 
 先写一个空的类型，然后为它编写一个空的 `GetAwaiter` 方法，返回新的 `WalterlvAwaiter` 类型。
 
@@ -94,7 +94,7 @@ public class WalterlvAwaiter : INotifyCompletion
 string result = await CallWalterlvAsync("写博客");
 ```
 
-### 实现基本的 Awaiter
+## 实现基本的 Awaiter
 
 以上代码只能编译通过，但实际上如果你跑起来，会发现 `await` 一旦进入，是不会再往下执行的。因为我们还没有实现 `WalterlvAwaiter` 类型。
 
@@ -113,7 +113,7 @@ public void OnCompleted(Action continuation)
 
 不过，以上代码的执行是立即执行，没有任何异步的效果。因为 `OnCompleted` 被调用的时候，我们立刻调用了 `continuation` 的执行。
 
-### 实现异步的 Awaiter
+## 实现异步的 Awaiter
 
 要真正达到异步的效果，`OnCompleted` 执行的时候，我们不能立刻去调用参数传进来的委托，而只是将他记录下来，等到任务真正完成的时候再去调用。
 

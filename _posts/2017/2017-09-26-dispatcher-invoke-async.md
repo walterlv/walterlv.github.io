@@ -20,7 +20,7 @@ description: 了解 Dispatcher.BeginInvoke 和 Dispatcher.InvokeAsync 的不同�
 1. [Invoke/InvokeAsync 部分](/post/dotnet/2017/09/26/dispatcher-invoke-async.html)（本文）
 1. [PushFrame 部分](/post/dotnet/2017/09/26/dispatcher-push-frame.html)
 
-### 回顾老旧的 BeginInvoke，看看新的 InvokeAsync
+## 回顾老旧的 BeginInvoke，看看新的 InvokeAsync
 
 微软自 .NET Framework 3.0 为我们引入了 `Dispatcher` 之后，`BeginInvoke` 方法就已存在。不过，看这名字的 `Begin` 前缀，有没有一种年代感？没错！这是微软在 .NET Framework 1.1 时代就推出的 `Begin`/`End` 异步编程模型（APM，[Asynchronous Programming Model](https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm?wt.mc_id=MVP)）。虽说 `Dispatcher.BeginInvoke` 并不完全按照 APM 模型来实现（毕竟没有对应的 `End`，也没有返回 `IAsyncResult`），但这个类型毕竟也是做线程相关的事情，而且这个方法的签名明显还带着那个年代的影子。不止名字上带着 `Begin` 表示异步的执行，而且参数列表中还存在着 `Delegate` 和 `object` 这样古老的类型。要知道，现代化的方法可是 `Action`/`Func` 加泛型啊！
 
@@ -30,7 +30,7 @@ description: 了解 Dispatcher.BeginInvoke 和 Dispatcher.InvokeAsync 的不同�
 
 ---
 
-### BeginInvoke 和 InvokeAsync 有什么不同？
+## BeginInvoke 和 InvokeAsync 有什么不同？
 
 这个还真得扒开微软的源码看一看呢！
 
@@ -118,7 +118,7 @@ public DispatcherOperation InvokeAsync(Action callback, DispatcherPriority prior
 
 ---
 
-### InvokeAsync 的实现原理
+## InvokeAsync 的实现原理
 
 前面一节几乎告诉我们，`InvokeAsync` 的关键就在 `InvokeAsyncImpl` 方法中。
 
@@ -173,7 +173,7 @@ _window.Value.AddHook(_hook);
 
 而被我们遗弃的 `BeginInvoke`，由于内部调用了同一个函数，所以实现原理是完全一样的。而且，这么古老的函数也允许 `await`。
 
-### Invoke 的实现原理
+## Invoke 的实现原理
 
 也许你会觉得奇怪。我们连“异步”的 `InvokeAsync` 的实现原理都了解了，同步的 `Invoke` 还有何难！
 
@@ -206,13 +206,13 @@ public DispatcherOperationStatus Wait(TimeSpan timeout)
 
 它用了 `Dispatcher.PushFrame`。这样保证了在不阻塞线程的情况下进行“等待”。至于如何做到“不阻塞地等待”，请参阅本系列的第二篇文章 [深入了解 WPF Dispatcher 的工作原理（PushFrame 部分）](/post/dotnet/2017/09/26/dispatcher-push-frame.html)。
 
-### 总结
+## 总结
 
 1. 进入了 .NET Framework 4.5 及以上的开发者们，建议使用 `InvokeAsync` 代替 `BeginInvoke`；
 1. `Dispatcher` 通过创建一个隐藏的消息窗口来让一个个 `Invoke` 到此线程的任务按照优先级执行；
 1. `Invoke` 使用 `PushFrame` 做到了不阻塞 UI 线程的等待。
 
-#### 参考资料
+**参考资料**
 
 - 异步编程模型
   - [Asynchronous Programming Model (APM) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm?wt.mc_id=MVP)

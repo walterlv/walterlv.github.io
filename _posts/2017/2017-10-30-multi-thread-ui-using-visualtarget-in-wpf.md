@@ -20,7 +20,7 @@ WPF 同一个窗口中跨线程访问 UI 有多种方法：
 
 <div id="toc"></div>
 
-### 几个必备的组件
+## 几个必备的组件
 
 微软给 `VisualTarget` 提供的注释是：
 
@@ -38,7 +38,7 @@ WPF 同一个窗口中跨线程访问 UI 有多种方法：
 
 事实上经过尝试，我们真的只需要这样做就可以让另一个线程上的 UI 呈现到当前的窗口上，同一个窗口。*读者可以自行编写测试代码验证这一点，我并不打算在这里贴上试验代码，因为后面会给出完整可用的全部代码。*
 
-### 完善基本功能
+## 完善基本功能
 
 虽说 `VisualTarget` 的基本使用已经可以显示一个跨线程的 UI 了，但是其实功能还是欠缺的。
 
@@ -65,7 +65,7 @@ protected override CompositionTarget GetCompositionTargetCore()
 
 [`Microsoft.DwayneNeed`](http://microsoftdwayneneed.codeplex.com/) 中有 `VisualTargetPresentationSource` 的完整代码，我自己只为这个类添加了 `IDisposable` 接口，用于 `Dispose` 掉 `VisualTarget` 的实例。我需要这么做是因为我即将提供可修改后台 UI 线程控件的方法。
 
-### 让方法变得好用
+## 让方法变得好用
 
 为了让整个多线程 UI 线程的使用行云流水，我准备写一个 `DispatcherContainer` 类来优化多线程 UI 的使用体验。期望的使用方法是给这个控件的实例设置 `Child` 属性，这个 `Child` 是后台线程创建的 UI。然后一切线程同步相关的工作全部交给此类来完成。
 
@@ -122,7 +122,7 @@ await Host.SetChildAsync(control);
 
 ![运行在后台线程中](/static/posts/2017-10-30-23-24-39.png)
 
-### 完整的代码
+## 完整的代码
 
 以下所有代码均可点击进入 GitHub 查看。
 
@@ -141,7 +141,7 @@ await Host.SetChildAsync(control);
 
 ---
 
-#### 参考资料
+**参考资料**
 - [WPF Round Table Part 2: Multi UI Threaded Control - //InterKnowlogy/ Blogs](http://blogs.interknowlogy.com/2014/12/03/wpf-round-table-part-2-multi-ui-threaded-control/)
 - [Multithreaded UI: HostVisual – Presentation Source](https://blogs.msdn.microsoft.com/dwayneneed/2007/04/26/multithreaded-ui-hostvisual/)
 - [Microsoft.DwayneNeed - Home](http://microsoftdwayneneed.codeplex.com/)

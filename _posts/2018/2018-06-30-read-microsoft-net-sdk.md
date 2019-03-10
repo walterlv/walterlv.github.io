@@ -22,7 +22,7 @@ This post is written in **multiple languages**. Please select yours:
 
 <div id="toc"></div>
 
-### Microsoft.NET.Sdk 源码的位置
+## Microsoft.NET.Sdk 源码的位置
 
 在计算机上全局搜索 `Microsoft.NET.Sdk` 可以找到不同版本的多个 Sdk 目录，由于我安装了 .NET Core 2.1，所以找到的目录是：`C:\Program Files\dotnet\sdk\2.1.300\Sdks`。当然，按照官网 [How to: Reference an MSBuild Project SDK](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-use-project-sdk?wt.mc_id=MVP) 的描述，如果自己实现了一套 Sdk，也可以以 NuGet 包的形式发布。
 
@@ -36,7 +36,7 @@ Sdk 中的 NuGet 部分在 GitHub 上的仓库地址：
 
 - [NuGet.Client/src/NuGet.Core at dev · NuGet/NuGet.Client](https://github.com/NuGet/NuGet.Client/tree/dev/src/NuGet.Core)
 
-### Microsoft.NET.Sdk 的目录结构
+## Microsoft.NET.Sdk 的目录结构
 
 在打开看 `Microsoft.NET.Sdk` 的目录结构后，我们可以发现这几乎就是 NuGet 包要求的目录结构。
 
@@ -79,7 +79,7 @@ Sdk 中的 NuGet 部分在 GitHub 上的仓库地址：
 
 由于这两个文件的默认引入，Sdk 可以完成非常多的编译任务。而且通常 Sdk 带有扩展性，使得我们可以很方便地对项目的编译过程进行扩展，这一点在我前面提到了两篇制作 NuGet 工具包的文章中都有说明。
 
-### Microsoft.NET.Sdk 的主要任务
+## Microsoft.NET.Sdk 的主要任务
 
 在 Sdk 文件夹中搜索 `Target` 节点的个数，我得到了 174 个（随 .NET Core 2.1 发布）；不过有一些是同名的，会被重写（类似于 C#/.NET 中的继承和重写）；核心的并没有那么多。
 
@@ -90,7 +90,7 @@ Sdk 中的 NuGet 部分在 GitHub 上的仓库地址：
 - `Pack` 用于将当前程序集打包成一个 NuGet 包
 - `GenerateNuspec` 在打包之前生成 nuspec 文件
 
-### 定制富有创意的编译过程
+## 定制富有创意的编译过程
 
 下面是 Microsoft.NET.Sdk 中发现的一些富有创意的编译过程：
 
@@ -115,6 +115,6 @@ Sdk 中的 NuGet 部分在 GitHub 上的仓库地址：
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [How to: Reference an MSBuild Project SDK - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-use-project-sdk?wt.mc_id=MVP)

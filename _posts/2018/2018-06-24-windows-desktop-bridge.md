@@ -11,7 +11,7 @@ categories: dotnet
 
 <div id="toc"></div>
 
-### 商店中那些转制的应用
+## 商店中那些转制的应用
 
 如果你并没有感受到 Win32 转制的商店应用和原生的 UWP 或 PWA 应用有什么不同，可以尝试体验下面的三款转制应用。
 
@@ -19,7 +19,7 @@ categories: dotnet
 - **Telegram Desktop** <https://www.microsoft.com/store/productId/9NZTWSQNTD0S>
 - **Snipaste** <https://www.microsoft.com/store/productId/9P1WXPKB68KX>
 
-### 了解 Desktop Bridge
+## 了解 Desktop Bridge
 
 Desktop Bridge，可能还可以叫做“桌面桥”，它存在的目的便是将已有的 WPF 程序、Windows Forms 程序和其他 Win32 应用转换成应用商店应用。而桌面桥提供了一种与 UWP 一致的 Windows 应用包，使用这种 Windows 应用包，普通的 Win32 应用也能访问 UWP 的 API。
 
@@ -56,7 +56,7 @@ Desktop App Converter 基础系统镜像下载完后随便放到某个地方，�
 
 如果提示需要重启计算机，那么重启即可。 -->
 
-### 在 Visual Studio 中创建 Windows 应用打包工程
+## 在 Visual Studio 中创建 Windows 应用打包工程
 
 使用 Visual Studio 打开原来的 Win32 程序的解决方案，在解决方案中新建一个 Windows 应用程序包项目（Windows Application Packaging Project）。我们将使用这个项目为转制应用打包。
 
@@ -86,9 +86,9 @@ Desktop App Converter 基础系统镜像下载完后随便放到某个地方，�
 
 将这个新项目设置为启动项目，启动它即可进行正常的调试，能够正常断点、单步等等。
 
-### 修改包清单并发布应用
+## 修改包清单并发布应用
 
-#### 各种元数据
+### 各种元数据
 
 另外，转制的应用和原生的 UWP 应用一样，发布之前也需要为应用设计图标，设置应用显示名称、包名称、关联应用商店。
 
@@ -108,7 +108,7 @@ Desktop App Converter 基础系统镜像下载完后随便放到某个地方，�
 
 ![](/static/posts/2018-08-04-07-04-03.png)
 
-#### 通过认证
+### 通过认证
 
 如果没有接受 Centennial Program Addendum，那么提交是不被允许的，并且在上传 appxupload 的时候会有警告开始提示了：
 
@@ -149,7 +149,7 @@ Desktop App Converter 基础系统镜像下载完后随便放到某个地方，�
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Desktop Bridge - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root?wt.mc_id=MVP)
 - [App capability declarations - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations?wt.mc_id=MVP)

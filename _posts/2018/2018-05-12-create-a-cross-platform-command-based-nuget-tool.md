@@ -20,9 +20,9 @@ categories: visualstudio csharp dotnet msbuild
 
 <div id="toc"></div>
 
-### 第零步：前置条件
+## 第零步：前置条件
 
-### 第一步：创建一个项目，用来写工具的核心逻辑
+## 第一步：创建一个项目，用来写工具的核心逻辑
 
 为了方便制作跨平台的 NuGet 工具，新建项目时我们优先选用 .NET Core 控制台项目。
 
@@ -71,7 +71,7 @@ namespace Walterlv.NuGetTool
 
 ![输出目录下的 NuGet 包](/static/posts/2018-05-12-07-52-23.png)
 
-### 第二步：组织 NuGet 目录
+## 第二步：组织 NuGet 目录
 
 刚刚生成的 NuGet 包还不能真正拿来用。事实上你也可以拿去安装，不过最终的效果只是加了一个毫无作用的引用程序集而已（事实上就是把你写的程序作为普通 dll 引用了）。
 
@@ -175,7 +175,7 @@ namespace Walterlv.NuGetTool
 
 ![生成的 NuGet 包的目录结构](/static/posts/2018-05-12-08-03-01.png)
 
-### 第三步：编写 Target
+## 第三步：编写 Target
 
 .targets 文件是对项目功能进行扩展的关键文件，由于安装 NuGet 包会自动导入包中的此文件，所以它几乎相当于我们功能的入口。
 
@@ -211,13 +211,13 @@ targets 的文件结构与 csproj 是一样的，你可以阅读我的另一篇�
 </Project>
 ```
 
-### 第四部：调试
+## 第四部：调试
 
 严格来说，写到这里，我们的跨平台 NuGet 工具已经写完了。在以上状态下，你只需要编译一下，就可以获得一个跨平台的基于 MSBuild Task 的 NuGet 工具。只是——你肯定会非常郁闷——心里非常没谱，这工具到底有没有工作起来！有没有按照我预期的进行工作！如果遇到了 Bug 怎么办！
 
 于是现在我们来掌握一些调试技巧，这样才方便我们一步步完善我们的功能嘛！**额外插一句：以上第一到第三步几乎都是结构化的步骤，其实非常适合用工具来自动化完成的。**
 
-#### 让我们的 Target 能够正确找到我们新生成的 dll
+### 让我们的 Target 能够正确找到我们新生成的 dll
 
 你应该注意到，我们的 targets 文件在 `Assets\build` 目录下，而我们的 `Assets` 文件夹下并没有真实的 `tools` 文件夹（里面是空的）。于是我们希望在调试状态下，dll 能够指向输出目录下。于是我们修改 targets 文件添加配置：
 
@@ -242,7 +242,7 @@ targets 的文件结构与 csproj 是一样的，你可以阅读我的另一篇�
 
 这样，我们就拥有了一个可以供用户设置的属性 `<IsInDemoToolDebugMode>` 了。
 
-#### 准备一个用于测试此命令行工具的测试项目
+### 准备一个用于测试此命令行工具的测试项目
 
 接着，我们在解决方案中新建一个调试项目 `Walterlv.Debug`（我选用了 .NET Standard 2.0 框架）。然后在它的 csproj 中 `<Import>` 我们刚刚的 .targets 文件，并设置 `<IsInDemoToolDebugMode>` 属性为 `True`：
 
@@ -264,7 +264,7 @@ targets 的文件结构与 csproj 是一样的，你可以阅读我的另一篇�
 
 ![带有调试环境的解决方案](/static/posts/2018-05-12-08-13-03.png)
 
-#### 调试命令行项目
+### 调试命令行项目
 
 为了保持根兄弟文章的结构一致，我依然保留了“调试项目”这一部分内容，但其实大家都懂，不是吗？—— **一个控制台程序，谁不会调试啊**！！！
 
@@ -301,11 +301,11 @@ namespace Walterlv.NuGetTool
 
 现在，即使我们去 Walterlv.Debug 目录下输入 `msbuild` 命令或 `dotnet build` 命令，也能进入我们的断点了：
 
-### 第五步：发挥你的想象力
+## 第五步：发挥你的想象力
 
 想象力是没有限制的，我们只需要在 .targets 文件里面向我们的控制台程序传入合适的参数，即可完成非常多的功能。
 
-#### .targets 向控制台程序传参数
+### .targets 向控制台程序传参数
 
 .targets 向控制台程序传参数只需要按照普通控制台程序传参的方式就可以了：
 
@@ -343,7 +343,7 @@ namespace Walterlv.NuGetTool
 
 需要注意，控制台传参数是有字符数量限制的，要解决传参字符数量限制问题，可以参考 [Roslyn 使用 WriteLinesToFile 解决参数过长无法传入](https://blog.lindexi.com/post/Roslyn-%E4%BD%BF%E7%94%A8-WriteLinesToFile-%E8%A7%A3%E5%86%B3%E5%8F%82%E6%95%B0%E8%BF%87%E9%95%BF%E6%97%A0%E6%B3%95%E4%BC%A0%E5%85%A5.html)。
 
-#### 控制台程序向 .targets 返回数据
+### 控制台程序向 .targets 返回数据
 
 控制台程序的输出（也就是 `Console.WriteLine()` 那个）是能够直接和 MSBuild 的 Target 进行数据交换的。
 
@@ -354,7 +354,7 @@ namespace Walterlv.NuGetTool
 1. 报告编译警告和编译错误，具体可以阅读我的另一篇博客：
     - [如何在 MSBuild Target（Exec）中报告编译错误和编译警告](/post/standard-error-warning-format.html)
 
-#### 使用命令执行完之后的结果
+### 使用命令执行完之后的结果
 
 如果只是传入参数，那么我们顶多只能干一些不痛不痒的事情，我们应该使用我们的控制台程序做一些什么。什么？你说直接去改源代码？那万一你的代码不幸崩溃了，项目岂不被你破坏了！（当然，你去改了源码，还会破坏 MSBuild 的差量编译。）
 
@@ -426,11 +426,11 @@ namespace Walterlv.Debug
 
 需要注意：**编译期间才生成的项（`<ItemGroup>`）或者属性（`<PropertyGroup>`），需要写在 `<Target>` 节点的里面。**如果写在外面，则不是编译期间生效的，而是始终生效的。当写在外面时，要特别留意可能某些属性没有初始化完全，你应该只使用那些肯定能确认存在的属性或文件。
 
-#### 加入差量编译支持
+### 加入差量编译支持
 
 在本文的例子中，当你每次编译时，虽然核心的编译流程不怎么耗时，不过那个命令却是每次都执行。如果你觉得此命令的执行非常耗时，那么建议加入差量编译的支持。关于加入差量编译，可以参考我的另一篇文章[每次都要重新编译？太慢！让跨平台的 MSBuild/dotnet build 的 Target 支持差量编译](/post/msbuild-incremental-build.html)。
 
-#### 本地测试 NuGet 包
+### 本地测试 NuGet 包
 
 在发布 NuGet 包之前，我们可以先在本地安装测试。由于我们在 `C:\Users\lvyi\Desktop\Walterlv.NuGetTool\Walterlv.NuGetTool\bin\Debug` 输出路径下已经有了打包好的 nupkg 文件，所以可以加一个本地 NuGet 源。
 
@@ -440,7 +440,7 @@ namespace Walterlv.Debug
 
 这时安装，编译完之后，我们就会发现我们的项目生成的 dll 中多出了一个“逗比(Doubi)”类，并且可以在那个项目中编写使用 `Doubi` 的代码了。
 
-### 总结
+## 总结
 
 制作一个跨平台的基于控制台的 NuGet 工具包虽然无关步骤比较多，但总体还算不太难，我们总结一下：
 
@@ -461,7 +461,7 @@ namespace Walterlv.Debug
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [NuGet pack and restore as MSBuild targets - Microsoft Docs](https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets?wt.mc_id=MVP)
 - [Bundling .NET build tools in NuGet](https://www.natemcmaster.com/blog/2017/11/11/build-tools-in-nuget/)

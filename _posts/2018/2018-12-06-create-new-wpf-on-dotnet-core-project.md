@@ -14,7 +14,7 @@ position: starter
 
 <div id="toc"></div>
 
-### 安装 .NET Core 3.0 Preview SDK
+## 安装 .NET Core 3.0 Preview SDK
 
 前往官网下载：[.NET Core 3.0 downloads for Linux, macOS, and Windows](https://dotnet.microsoft.com/download/dotnet-core/3.0)。
 
@@ -22,7 +22,7 @@ position: starter
 
 如果你没有安装 Visual Studio 2019 Preview，请前往下载：[Visual Studio 2019](https://visualstudio.microsoft.com/vs/preview/)。
 
-### 运行新建命令
+## 运行新建命令
 
 在桌面或其他你要新建项目的文件夹中打开 PowerShell，然后输入命令：
 
@@ -37,14 +37,14 @@ dotnet new wpf -o WalterlvWpfApp
 ![刚刚新建的 WPF 项目](/static/posts/2018-12-06-08-52-20.png)  
 ▲ 刚刚新建的 WPF 项目
 
-### 打开这个 csproj 文件
+## 打开这个 csproj 文件
 
 在 Visual Studio 中打开这个 csproj 文件即可在 Visual Studio 2019 Preview 中基于这个新的 WPF on .NET Core 3 的项目进行开发。
 
 ![新的 WPF 项目](/static/posts/2018-12-06-08-55-09.png)  
 ▲ 新的 WPF 项目。
 
-### 更多
+## 更多
 
 如果你希望将现有基于 .NET Framework 的 WPF 项目迁移到 .NET Core 3，那么请阅读我的另一篇博客：[将基于 .NET Framework 的 WPF 项目迁移到基于 .NET Core 3](/post/migrate-wpf-project-from-dotnet-framework-to-dotnet-core.html)。
 

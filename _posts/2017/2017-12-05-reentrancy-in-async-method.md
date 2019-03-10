@@ -13,7 +13,7 @@ categories: csharp dotnet
 
 <p id="toc"></p>
 
-### 重新进入（Reentrancy）
+## 重新进入（Reentrancy）
 
 ```csharp
 private void Button_Click(object sender, RoutedEventArgs e)
@@ -47,7 +47,7 @@ private async Task DoSomethingAsync()
 
 由于任务执行的过程中 UI 依然是响应的，`DoSomethingAsync` 会因此在每一次点击的时候都进入。**在异步任务结束之前重新进入此异步任务的过程，叫做重新进入（Reentrancy）。**
 
-### 重新进入的五种方式
+## 重新进入的五种方式
 
 微软在 [Handling Reentrancy in Async Apps (C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/handling-reentrancy-in-async-apps?wt.mc_id=MVP) 一文中给出了重新进入的三种方式：
 
@@ -63,7 +63,7 @@ private async Task DoSomethingAsync()
 - 将异步任务放入队列中依次执行
 - 仅执行第一次和最后一次
 
-#### 禁用重新进入
+### 禁用重新进入
 
 禁用是最直接最简单也最彻底的重新进入问题解决办法。
 
@@ -75,19 +75,19 @@ Button.IsEnabled = true;
 
 既然重新进入可能出问题，那我们就禁止重新进入好了……
 
-#### 并发
+### 并发
 
 当然，不处理也是一种方法。这意味着我们需要真的考虑 `DoSomethingAsync` 并发造成的影响。
 
-#### 取消然后重启操作
+### 取消然后重启操作
 
 取消，然后重新执行一次，这也是常见的重新进入类型。浏览器或者资讯类 APP 中的刷新功能就是这种重新进入方式最常见的应用场景，用户重新执行一次刷新，可能因为前面那一次（因为网络问题或其他原因）太慢，所以重新开始。
 
-#### 将异步任务放入队列中依次执行
+### 将异步任务放入队列中依次执行
 
 放入队列中是因为此异步任务的顺序是很重要的，要求每一次执行且保持顺序一致。典型的应用场景是每一次执行都需要获取或生成一组数据输出（到屏幕、文件或者其他地方）。
 
-#### 仅执行第一次和最后一次
+### 仅执行第一次和最后一次
 
 如果用户每一次执行此异步任务都会获取当前应用程序的最新状态，然后根据最新状态执行；那么如果状态更新了，对旧状态执行多少次都是浪费的。
 
@@ -95,7 +95,7 @@ Button.IsEnabled = true;
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Handling Reentrancy in Async Apps (C#) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/handling-reentrancy-in-async-apps?wt.mc_id=MVP)
 - [处理异步应用中的重新进入 (C#) - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/concepts/async/handling-reentrancy-in-async-apps?wt.mc_id=MVP)

@@ -21,7 +21,7 @@ This post is written in **multiple languages**. Please select yours:
 
 <div id="toc"></div>
 
-### The touch failure issue
+## The touch failure issue
 
 Even if you write a very simple WPF application which contains only a button, you'll be suffering from the touch failure issue.
 
@@ -41,7 +41,7 @@ When you put them together, you'll get a full touch failure issue description.
 - Run any WPF application with a high CPU usage, and then keep plugging and unplugging a USB HID tablet device, you'll get the WPF application which stops responding to touches.
 - If multiple WPF applications are running at the same time, most of them will lose touch.
 
-### Preliminary analysis of the touch failure
+## Preliminary analysis of the touch failure
 
 WPF use two different threads to collect touch information from tablet devices and convert them to the `Stylus` and `Mouse` event that most of us are familiar to.
 
@@ -104,7 +104,7 @@ I can definitely sure that the `ArgumentException` is the result of the thread-s
 
 Remember that we can make a high CPU usage to increase the probability of reproduction, we can infer that the touch failure issue is caused by the thread-safety issue of WPF stylus handling.
 
-### The solutions to the touch failure
+## The solutions to the touch failure
 
 After inferring the preliminary reason, there are only two fundamental solutions left for us:
 
@@ -125,7 +125,7 @@ But what can I do if I'm only a normal user?
 
 1. Re-plug the touch device (if your touch frame can be manually plugged in via USB connection)
 
-### The details analysis for the touch failure
+## The details analysis for the touch failure
 
 The above conclusions come from the reading and debugging of the .NET Framework source code.
 

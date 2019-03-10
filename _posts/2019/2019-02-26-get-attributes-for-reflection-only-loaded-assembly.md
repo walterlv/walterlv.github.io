@@ -14,7 +14,7 @@ position: knowledge
 
 <div id="toc"></div>
 
-### 仅反射加载一个程序集
+## 仅反射加载一个程序集
 
 使用 `ReflectionOnlyLoadFrom` 可以仅以反射的方式加载一个程序集。
 
@@ -23,7 +23,7 @@ var extensionFilePath = @"C:\Users\walterlv\Desktop\Walterlv.Extension.dll";
 var assembly = Assembly.ReflectionOnlyLoadFrom(extensionFilePath);
 ```
 
-### 获取程序集的 Attribute（例如获取程序集版本号）
+## 获取程序集的 Attribute（例如获取程序集版本号）
 
 `Assembly.GetCustomAttributesData()` 得到的是一个 `CustomAttributeData` 的列表，而这个列表中的每一项都与普通反射中拿到的特性集合不同，这里拿到的只是特性的信息（以下循环中的 `data` 变量）。
 
@@ -57,7 +57,7 @@ var version = new Version(versionString);
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [CustomAttributeData Class (System.Reflection) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.reflection.customattributedata)
 - [c# - How to get custom attributes from an assembly that is not (really) loaded - Stack Overflow](https://stackoverflow.com/q/1459565/6233938)

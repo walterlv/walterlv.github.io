@@ -16,31 +16,31 @@ position: starter
 
 <div id="toc"></div>
 
-### 准备工作
+## 准备工作
 
 1. Windows 10 的安装文件
     - 例如 cn_windows_10_consumer_editions_version_1809_updated_jan_2019_x64_dvd_34b4d4fb.iso
 1. 现有系统是 Windows 8/8.1/10 操作系统
 
-### 第一步：解压 iso 文件
+## 第一步：解压 iso 文件
 
 将 iso 文件解压到一个文件夹中，例如，我解压到 D:\Windows10 文件夹中。
 
 ![解压 iso 到一个文件夹中](/static/posts/2019-01-17-19-33-15.png)
 
-### 第二步：重启进入 RE 环境
+## 第二步：重启进入 RE 环境
 
 现在，在开始菜单中点击电源按钮，这时会弹出电源选择菜单。注意：**请按住 Shift 键不放，然后点击重启按钮**，重启按钮点完之后才能松开 Shift 键。
 
 ![按住 Shift 键点击重启按钮](/static/posts/2019-01-17-19-34-56.png)
 
-### 第三步：等待进入 RE 环境
+## 第三步：等待进入 RE 环境
 
 这时重启会进入 RE 环境。Windows RE 指的是 [Windows Recovery Environment](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)，也就是 Windows 恢复环境。你可以在这里进行很多系统之外的操作。相比于 PE 需要一个光盘或者 U 盘来承载，RE 是直接在你安装 Windows 8/8.1/10 时直接自带到机器硬盘上的。
 
 ![进入 RE 环境](/static/posts/2019-01-17-19-38-03.png)
 
-### 第四步：进入 RE 环境的命令提示符
+## 第四步：进入 RE 环境的命令提示符
 
 依次进入 疑难解答 -> 高级选项 -> 命令提示符 -> 选择自己的账号 -> 输入自己的密码
 
@@ -56,7 +56,7 @@ position: starter
 
 ![输入自己账号的密码](/static/posts/2019-01-17-19-53-46.png)
 
-### 第五步：在命令提示符中找到安装程序
+## 第五步：在命令提示符中找到安装程序
 
 我们一开始将系统解压到了 D:\Windows10 文件夹下。一般来说，现在也应该是在 D 盘的 Windows10 文件夹下。不过有时候你会发现这里的 D 盘并不是你想象中那个 D 盘，你找不到那个文件夹和里面那个安装文件。这个时候可以去 C 盘、E 盘、F 盘等地方也看看。
 
@@ -64,7 +64,7 @@ position: starter
 
 ![打开 setup.exe](/static/posts/2019-01-17-19-57-34.png)
 
-### 第六步：按照熟悉的安装系统的流程安装操作系统
+## 第六步：按照熟悉的安装系统的流程安装操作系统
 
 现在，你应该可以看到熟悉的 Windows 10 安装界面了。
 

@@ -15,7 +15,7 @@ categories: dotnet csharp
 
 <div id="toc"></div>
 
-### YAML 元数据
+## YAML 元数据
 
 作为示例，我拿出我在去年写的一篇博客的元数据进行分析：
 
@@ -34,7 +34,7 @@ description: 使用 TypeConverter 实现字符串转各种类型。
 
 由于从 Markdown 中解析出 YAML 元数据不是本文的重点，所以我放到最后一起说明。
 
-### 定义 .NET 类型
+## 定义 .NET 类型
 
 我们需要先定义 .NET 类型，以便 YamlDotNet 进行序列化和反序列化。
 
@@ -112,7 +112,7 @@ public sealed class VersionsInfo
 }
 ```
 
-### 序列化与反序列化
+## 序列化与反序列化
 
 使用 `Deserializer` 类型可以反序列化一个 YAML 元数据。
 

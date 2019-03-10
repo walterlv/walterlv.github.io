@@ -13,7 +13,7 @@ categories: visualstudio dotnet csharp msbuild
 
 <div id="toc"></div>
 
-### 为什么要使用第三方的 SDK？
+## 为什么要使用第三方的 SDK？
 
 关于项目文件格式的迁移，我和 [林德熙](https://blog.lindexi.com/) 都写过文章：
 
@@ -28,7 +28,7 @@ categories: visualstudio dotnet csharp msbuild
 
 但在此之前呢？感谢小伙伴 [KodamaSakuno (神樹桜乃)](https://github.com/KodamaSakuno) 提醒我第三方 SDK 的存在 —— MSBuild.Sdk.Extras。我想，在 .NET Core 3 推出之前，这是一种不错的中转方案。既能体会到新风格 csproj 格式的好处，也能在将来 .NET Core 3 官方支持后较快地迁移成官方版本。
 
-### 如何使用 MSBuild.Sdk.Extras
+## 如何使用 MSBuild.Sdk.Extras
 
 虽说是第三方 SDK，但实际使用的方便程度却如官方般简洁！只需要将 SDK 替换成 `MSBuild.Sdk.Extras/1.6.41` 即可。1.6.41 是目前 MSBuild.Sdk.Extras 在 NuGet 上的最新版本，建议访问 [NuGet Gallery - MSBuild.Sdk.Extras](https://www.nuget.org/packages/MSBuild.Sdk.Extras/) 使用最新稳定版本。
 
@@ -72,6 +72,6 @@ categories: visualstudio dotnet csharp msbuild
 
 官方提供了更多的使用方法，例如更简单的是安装 NuGet 包，而不修改 SDK。详见：[onovotny/MSBuildSdkExtras: Extra properties for MSBuild SDK projects](https://github.com/onovotny/MSBuildSdkExtras)。
 
-#### 参考资料
+**参考资料**
 
 - [onovotny/MSBuildSdkExtras: Extra properties for MSBuild SDK projects](https://github.com/onovotny/MSBuildSdkExtras)

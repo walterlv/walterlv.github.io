@@ -40,7 +40,7 @@ permalink: /post/wpf-add-on-ui.html
 
 可以在这个链接中尝试重定向：<https://walterlv.github.io/post/wpf-add-on-ui.html>
 
-### 附那些盗版
+## 附那些盗版
 
 ![盗版](/static/posts/2017-11-14-00-58-47.png)  
 ▲ 某掐头去尾的盗版网站

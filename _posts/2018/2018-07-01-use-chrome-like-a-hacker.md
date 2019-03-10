@@ -13,7 +13,7 @@ Chrome 原生自带大量快捷键，Vimium 在原生的基础上又增加了大
 
 <div id="toc"></div>
 
-### Chrome 原生快捷键
+## Chrome 原生快捷键
 
 Chrome 原生快捷键估计多数人都能说出其中的一部分出来，例如 F5 刷新，Ctrl+W 关闭标签页。
 
@@ -39,7 +39,7 @@ Chrome 原生快捷键估计多数人都能说出其中的一部分出来，例�
 
 更多 Chrome 快捷键可以去官网上查阅：[Chrome 键盘快捷键 - Google Chrome帮助](https://support.google.com/chrome/answer/157179?hl=zh-Hans)。
 
-### Vimium 插件
+## Vimium 插件
 
 继续阅读之前，请先[点此安装 Vimium 插件](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=zh-CN)。
 
@@ -101,7 +101,7 @@ Vimium 不止是快捷键，你应该页注意到上面的 “快速启动框”
 
 ![按下 F 后准备跳转页面](/static/posts/2018-07-28-07-40-20.png)
 
-### 摆脱鼠标，像黑客一样操作 Chrome
+## 摆脱鼠标，像黑客一样操作 Chrome
 
 快捷键虽然多，但其实只需要练习几个小时就熟练了，双手不需要再不断在鼠标和键盘之间移动时，你的效率已暗中提高了。
 
@@ -109,6 +109,6 @@ Vimium 不止是快捷键，你应该页注意到上面的 “快速启动框”
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Chrome 键盘快捷键 - Google Chrome帮助](https://support.google.com/chrome/answer/157179?hl=zh-Hans)

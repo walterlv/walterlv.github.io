@@ -13,7 +13,7 @@ categories: dotnet csharp
 
 <div id="toc"></div>
 
-### 测试程序
+## 测试程序
 
 考虑下面这样的测试程序：
 
@@ -67,7 +67,7 @@ namespace Walterlv.Demo.CommandLines
 
 那为什么有时候会看到应用程序路径呢？
 
-### 解释
+## 解释
 
 在《Windows 核心编程》一书中有说到：
 
@@ -122,7 +122,7 @@ namespace Walterlv.Demo.CommandLines
 
 事实上这样的差异不止在 .NET 中有体现，整个 Windows 上的程序都是这样的特性。这在《Windows 核心编程》一书中是有说明的。
 
-### 总结
+## 总结
 
 1. Main 函数的参数中不包含应用程序执行路径；
 1. `System.Environment.GetCommandLineArgs()` 得到的命令行参数中包含应用程序的执行路径；

@@ -17,13 +17,13 @@ tags: U盘 优盘 量产 Windows10 Win10 4GB FAT32 NTFS GPT UEFI
 
 如果你熟悉如何制作 U 盘安装盘，那么可直接从第二步开始阅读；如果不了解，就直接开始吧！
 
-### 第一步：下载 Windows 10 iso 镜像文件
+## 第一步：下载 Windows 10 iso 镜像文件
 
 微软一般不提供 Windows 10 的下载镜像，但 MSDN I Tell You 收集了几乎所有的 Windows 10 正式版本镜像文件，所以可以 [前往 MSDN I Tell You 下载](https://msdn.itellyou.cn/)。
 
 ![Windows 10 1709 镜像下载地址](/static/posts/2018-02-22-20-45-09.png)
 
-### 第二步：使用镜像文件制作安装 U 盘
+## 第二步：使用镜像文件制作安装 U 盘
 
 曾经我一直使用 UltraISO 来制作启动 U 盘，毕竟是老牌刻录软件。
 
@@ -35,7 +35,7 @@ tags: U盘 优盘 量产 Windows10 Win10 4GB FAT32 NTFS GPT UEFI
 
 可能因为 UltraISO 太老了，以至于都没有看到对大尺寸镜像文件的支持。于是，我招到了另一款——rufus：
 
-#### 推荐使用开源软件 rufus
+### 推荐使用开源软件 rufus
 
 - [rufus 官网](https://rufus.akeo.ie/)
 - [rufus 的 GitHub 仓库](https://github.com/pbatard/rufus)
@@ -67,7 +67,7 @@ tags: U盘 优盘 量产 Windows10 Win10 4GB FAT32 NTFS GPT UEFI
 
 点击“开始”后静待进度条结束，我们便得到了一个可以 UEFI 启动的 Windows 安装 U 盘。
 
-#### 观察 rufus 制作的 U 盘
+### 观察 rufus 制作的 U 盘
 
 这不是安装过程中必要的步骤，只是为了满足好奇心。
 
@@ -80,9 +80,9 @@ tags: U盘 优盘 量产 Windows10 Win10 4GB FAT32 NTFS GPT UEFI
 
 ![4GB 的 install.wim](/static/posts/2018-02-22-22-24-32.png)
 
-### 第三步：重启电脑并选择 UEFI U 盘启动
+## 第三步：重启电脑并选择 UEFI U 盘启动
 
-#### 在 Windows 系统中
+### 在 Windows 系统中
 
 按住 Shift，然后点击“重启”按钮，Windows 10 将会在重启后进入 RE 环境：
 
@@ -90,7 +90,7 @@ tags: U盘 优盘 量产 Windows10 Win10 4GB FAT32 NTFS GPT UEFI
 
 在 RE 环境中选择使用可移动存储设备启动即可使用 U 盘启动。
 
-#### 使用更传统的方案
+### 使用更传统的方案
 
 当然，大部分主板都支持开机期间按下 F12 来临时选择启动设备。不过，如果在主板上开启了“快速启动”，那么很有可能根本就来不及按下 F12！这时可以采用上面的方案。
 
@@ -100,7 +100,7 @@ tags: U盘 优盘 量产 Windows10 Win10 4GB FAT32 NTFS GPT UEFI
 
 ![NTFS EFI loader](/static/posts/2018-02-22-22-22-30.png)
 
-### 第四步：选择 GPT 分区的驱动器，并按套路安装 Windows
+## 第四步：选择 GPT 分区的驱动器，并按套路安装 Windows
 
 在安装界面中，我们需要确保选择的驱动器是 GPT 分区的，因为 UEFI 启动时不支持 MBR 分区表。
 
@@ -110,6 +110,6 @@ tags: U盘 优盘 量产 Windows10 Win10 4GB FAT32 NTFS GPT UEFI
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Creating Windows 10 UEFI fat32 USB Stick from NTFS Windows 10 ISO not possible · Issue #589 · pbatard/rufus](https://github.com/pbatard/rufus/issues/589)

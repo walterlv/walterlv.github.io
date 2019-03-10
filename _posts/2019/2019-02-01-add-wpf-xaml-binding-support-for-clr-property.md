@@ -14,7 +14,7 @@ position: problem
 
 <div id="toc"></div>
 
-### 问题
+## 问题
 
 下面是一个很简单的 `MarkupExtension`，用户设置了什么值，就返回什么值。拿这么简单的类型只是为了避免额外引入复杂的理解难度。
 
@@ -55,7 +55,7 @@ public class WalterlvExtension : MarkupExtension
 
 ![设计器的警告](/static/posts/2019-02-01-00-09-00.png)
 
-### 解决
+## 解决
 
 实际上这个问题是能够解决的（不过也花了我一些时间思考解决方案）。
 
@@ -100,7 +100,7 @@ private readonly DependencyObject _dependencyObject = new DependencyObject();
 
 为了解决这两个问题，我必须自己写一个代理的依赖对象，用于帮助做属性的变更通知，以及处理绑定产生的 `Binding` 对象。在正常的依赖对象和依赖属性中，这些本来都不需要我们自己来处理。
 
-### 方案
+## 方案
 
 于是我写了一个代理的依赖对象，我把它命名为 `ClrBindingExchanger`，意思是将 CLR 属性和依赖属性的绑定进行交换。
 
@@ -205,7 +205,7 @@ public class WalterlvExtension : MarkupExtension
 
 于是，绑定就这么在一个普通的类型和一个普通的 CLR 属性中生效了，而且还获得了变更通知。
 
-#### 参考资料
+**参考资料**
 
 本文没有任何参考资料，所有方法都是我（walterlv）的原创方法，因为真的找不到资料呀！不过在找资料的过程中发现了一些没解决的文档或帖子：
 

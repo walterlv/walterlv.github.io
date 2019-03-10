@@ -14,7 +14,7 @@ position: knowledge
 
 <div id="toc"></div>
 
-### Nullable<T> 中的 null
+## Nullable<T> 中的 null
 
 注意看以下的代码。我们创建了一个值为 `null` 的 `int?`，然后依次输出 `value` 的值、`value.GetType()`。
 
@@ -92,7 +92,7 @@ public class Program
 1. 对于可空值类型，当不为 `null` 时，`GetType()` 返回的是对应的基础类型，而不是可空值类型；
 1. `typeof(int?)` 能够得到可空值类型。
 
-### Object.GetType() 和 is 对 Nullable<T> 的作用
+## Object.GetType() 和 is 对 Nullable<T> 的作用
 
 在 [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/nullable-types/how-to-identify-a-nullable-type) 中，有一段对此的描述：
 
@@ -123,7 +123,7 @@ Console.WriteLine($"value is int? = {value is int?}");
 
 ![用 is 确定类型](/static/posts/2019-01-06-20-14-28.png)
 
-### 应该如何判断可空值类型的真实类型
+## 应该如何判断可空值类型的真实类型
 
 使用 `Nullable.GetUnderlyingType(type)` 方法，能够得到一个可空值类型中的基础类型，也就是得到 `Nullable<T>` 中 `T` 的类型。如果得不到就返回 `null`。
 
@@ -168,7 +168,7 @@ public class Program
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [c# - Nullable type is not a nullable type? - Stack Overflow](https://stackoverflow.com/q/785358/6233938)
 - [How to: Identify a nullable type - C# Programming Guide - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/nullable-types/how-to-identify-a-nullable-type)

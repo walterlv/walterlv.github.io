@@ -12,7 +12,7 @@ categories: msbuild nuget visualstudio dotnet
 
 <div id="toc"></div>
 
-### 原生支持
+## 原生支持
 
 Visual Studio 原生支持 `Visible` 属性用来控制某一项文件是否在 Visual Studio 的解决方案资源管理器中显示。具体来说，是这样设置的：
 
@@ -38,7 +38,7 @@ Visual Studio 原生支持 `Visible` 属性用来控制某一项文件是否在 
 
 要是只有这样，我才不会写这篇文章呢！
 
-### 原生不支持
+## 原生不支持
 
 ![存在文件夹的情况](/static/posts/2018-07-04-20-08-19.png)
 
@@ -58,7 +58,7 @@ Visual Studio 原生支持 `Visible` 属性用来控制某一项文件是否在 
 
 好吧，那就等着解决吧！不过等大家的 Visual Studio 更新到解决的版本还需要很久吧。
 
-### 变通解决
+## 变通解决
 
 所以，我们只好采取其他手段来解决，最容易想到的是编写一个 `<Target />`。
 
@@ -84,7 +84,7 @@ Visual Studio 原生支持 `Visible` 属性用来控制某一项文件是否在 
 </Target>
 ```
 
-### 活学活用
+## 活学活用
 
 这并不是说在 Visual Studio 的解决方案资源管理器中，隐藏文件都应该采用 `<Target />` 来做，毕竟这样太复杂了。如果没有太复杂的要求，直接些 `Visible="false"` 也未尝不可。
 
@@ -95,6 +95,6 @@ Visual Studio 原生支持 `Visible` 属性用来控制某一项文件是否在 
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Content Visible=false hides the item, but not the directories in Solution Explorer · Issue #162 · Microsoft/VSProjectSystem](https://github.com/Microsoft/VSProjectSystem/issues/162)

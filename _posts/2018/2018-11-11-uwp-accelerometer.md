@@ -13,7 +13,7 @@ Windows 10 UWP 中的加速度计使用非常简单，只需要简单几句代�
 
 <div id="toc"></div>
 
-### 重力迷宫游戏
+## 重力迷宫游戏
 
 这里有一个利用加速度计的好玩的例子：
 
@@ -25,7 +25,7 @@ Windows 10 UWP 中的加速度计使用非常简单，只需要简单几句代�
 ![重力迷宫桌面版画面（高清版）](/static/posts/2018-11-11-walterlv-gravity-maze.gif)  
 ▲ 重力迷宫桌面版画面（高清版）
 
-### 初始化 Accelerometer
+## 初始化 Accelerometer
 
 `Accelerometer` 在 `Windows.Devices.Sensors` 命名空间下，使用时需要在类顶部加上 `using`。
 
@@ -57,7 +57,7 @@ if (_accelerometer != null)
 }
 ```
 
-### 得到 Accelerometer 的读数
+## 得到 Accelerometer 的读数
 
 在监听事件的 `Accelerometer_ReadingChanged` 事件中，我们可以得到加速度计的读数。
 
@@ -77,7 +77,7 @@ private void Accelerometer_ReadingChanged(Accelerometer sender, AccelerometerRea
 
 这些读数是 -1 到 1 之间的数值。
 
-### 将 Accelerometer 的读数转化成倾斜角度
+## 将 Accelerometer 的读数转化成倾斜角度
 
 在 [Win2D 中的游戏循环：CanvasAnimatedControl](/post/game-loop-of-win2d-canvas-animated-control.html) 一文中，我在 PC 上玩这款游戏，也是在模拟桌子的倾角。于是我们也需要将读数转化成 Windows 10 设备的倾斜角度。
 
@@ -109,6 +109,6 @@ private (float xAngle, float yAngle) GetTiltAngles()
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Use the accelerometer - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/devices-sensors/use-the-accelerometer?wt.mc_id=MVP)

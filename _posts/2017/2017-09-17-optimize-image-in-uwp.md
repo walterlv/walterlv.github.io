@@ -13,7 +13,7 @@ description: 优化 UWP 中图片的内存占用。
 
 ---
 
-### 1. DecodePixelWidth/DecodePixelHeight
+## 1. DecodePixelWidth/DecodePixelHeight
 
 对于那些高分辨率图像，直接设置其 `DecodePixelWidth` 和 `DecodePixelHeight` 的值为较小的值即可大大节省内存空间。以下两种方法中，后者对内存空间的节省非常显著。
 
@@ -33,7 +33,7 @@ description: 优化 UWP 中图片的内存占用。
 </Image>
 ```
 
-### 2. 利用好自带的布局机制
+## 2. 利用好自带的布局机制
 
 如果没有指定 `DecodePixelWidth`/`DecodePixelHeight`，那么 XAML 会根据布局自动调整图片的解码大小。
 
@@ -73,13 +73,13 @@ bitmapImage.UriSource = new URI("ms-appx:///static/posts/cool-image.png", UriKin
 myImage.Source = bitmapImage;
 ```
 
-### 3. 利用好自带的缓存机制
+## 3. 利用好自带的缓存机制
 
 如果你用 `UriSource` 属性，那么恭喜，你将获得自带的图片缓存！如果多次使用相同的 `Uri`，那么会共用同一份内存空间。除此之外就没啦，比如自己创建一个流啊什么的；这就是说并不建议自己用 `FileStream`。
 
 另外，微软提供了这么好用的 `SetSourceAsync`，但是用了这个就没有缓存了！于是我到底是用还是不用呢？
 
-### 4. GetThumbnailAsync
+## 4. GetThumbnailAsync
 
 如果你使用本机文件，那么恭喜，你直接获得了拿到系统自带缩略图的机会！
 

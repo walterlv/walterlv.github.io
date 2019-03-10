@@ -20,7 +20,7 @@ categories: uwp dotnet csharp
 
 <div id="toc"></div>
 
-### 启动应用
+## 启动应用
 
 在上一篇文章中的末尾，我们成功启动了程序并进入了 Main 函数的断点，但实际上运行会报错。我们能看见一个窗口显示出来，随后提示进程已启动，但应用尚未运行。
 
@@ -112,7 +112,7 @@ public void Uninitialize() { }
 
 在此接口的所有方法留空地实现完以后，我们的 UWP 应用终于能跑起来了。当按下 F5 调试之后，不会再提示错误，而是依次执行这五个方法后，正常退出应用。
 
-### 启动窗口
+## 启动窗口
 
 注意到以上所有方法都留空之后，应用程序很快就退出了。这与我们开发传统 Win32 应用时的效果是一致的 —— 是的，我们缺一个消息循环。我们需要一个不断处理的消息循环用来阻断主线程的退出，同时又能够不断响应消息。而这样的方法需要写到 `Run()` 方法里面。
 
@@ -138,7 +138,7 @@ private CoreWindow _window;
 
 你可以通过阅读 [理解 UWP 视图的概念，让 UWP 应用显示多个窗口（多视图）](/post/show-multiple-views-for-an-uwp-app.html) 一文来了解 UWP 应用（`CoreApplication`）、应用视图（`CoreApplicationView`）、窗口（`CoreWindow`/`Window`）、线程调度模型（`CoreDispatcher`）之间的关系。
 
-### 在窗口中显示点东西
+## 在窗口中显示点东西
 
 我们使用 `CompositionAPI` 可以在窗口中创建 `Visual` 并显示出来。
 
@@ -161,7 +161,7 @@ public void SetWindow(CoreWindow window)
 
 ![窗口中新增的 Visual](/static/posts/2018-07-25-20-44-19.png)
 
-### 在窗口中做一些交互
+## 在窗口中做一些交互
 
 `CoreWindow` 除了为我们提供了消息循环之外，也可以提供交互。监听 `PointerMoved` 事件，我们可以做一些简单的交互。
 
@@ -202,7 +202,7 @@ public void SetWindow(CoreWindow window)
 
 ![窗口内的交互](/static/posts/2018-07-25-interaction.gif)
 
-### 特别注意 GC
+## 特别注意 GC
 
 如果你真的按照以上步骤写出了一个 UWP 程序并且跑起来了，你会发现过一会儿就炸了。
 
@@ -214,7 +214,7 @@ public void SetWindow(CoreWindow window)
 private Compositor _compositor;
 ```
 
-### 总结
+## 总结
 
 在本文中，我们了解到 UWP 的应用程序启动中也一样需要有窗口消息循环。不过 UWP 中创建消息循环还是非常简单的。
 

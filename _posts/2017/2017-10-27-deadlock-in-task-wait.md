@@ -14,7 +14,7 @@ categories: dotnet csharp
 
 ---
 
-### 什么情况下会产生死锁？
+## 什么情况下会产生死锁？
 
 调用 `Task.Wait()` 或者 `Task.Result` 立刻产生死锁的充分条件：
 1. 调用 `Wait()` 或 `Result` 的代码位于 UI 线程；
@@ -58,7 +58,7 @@ async Task DoAsync()
 
 无论是 WPF 还是 UWP，只要在 UI 线程上调用上述代码，必然死锁！
 
-### 什么情况下不会产生死锁？
+## 什么情况下不会产生死锁？
 
 阅读了本文一开始说的那篇文章 [win10 uwp 异步转同步](https://blog.lindexi.com/post/win10-uwp-%E5%BC%82%E6%AD%A5%E8%BD%AC%E5%90%8C%E6%AD%A5.html) 后，你一定好奇为什么此文的情况不会产生死锁。
 
@@ -76,7 +76,7 @@ async Task DoAsync()
 1. 异步操作执行完后不需要回到原有线程（例如非 UI 线程和控制台线程）；
 1. 异步操作不需要单独的线程执行任务。
 
-### 如何避免死锁？
+## 如何避免死锁？
 
 明确了会造成死锁的条件和不会造成死锁的条件后，我们只需要做到以下几点即可避免死锁了：
 
@@ -113,7 +113,7 @@ async Task DoAsync()
 
 这样，即便真的使用 `DoAsync().Wait()` 也不会发生死锁。注意，**整个方法调用链都需要使用** `.ConfigureAwait(false)` **才能够防止线程切换时，在调用方的** `Wait()` **方法中发生死锁**。详见我的另一篇博客 [在编写异步方法时，使用 ConfigureAwait(false) 避免使用者死锁](/post/using-configure-await-to-avoid-deadlocks.html)。）
 
-### 更多死锁问题
+## 更多死锁问题
 
 死锁问题：
 
@@ -127,7 +127,7 @@ async Task DoAsync()
 - [在编写异步方法时，使用 ConfigureAwait(false) 避免使用者死锁 - walterlv](/post/using-configure-await-to-avoid-deadlocks.html)
 - [将 async/await 异步代码转换为安全的不会死锁的同步代码（使用 PushFrame） - walterlv](/post/convert-async-to-sync-by-push-frame.html)
 
-#### 参考资料
+**参考资料**
 
 - [There Is No Thread](http://blog.stephencleary.com/2013/11/there-is-no-thread.html)
 - [Async/Await - Best Practices in Asynchronous Programming](https://msdn.microsoft.com/en-us/magazine/jj991977.aspx)

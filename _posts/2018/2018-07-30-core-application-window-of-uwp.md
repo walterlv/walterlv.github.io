@@ -24,7 +24,7 @@ StackOverflow 上的地址：[c# - CoreApplicationView vs CoreWindow vs Applicat
 
 <div id="toc"></div>
 
-### 命名空间
+## 命名空间
 
 类的完整含义经常需要配合其命名空间查看，所以我们有必要将这几个类的完整名称拿出来看：
 
@@ -47,7 +47,7 @@ StackOverflow 上的地址：[c# - CoreApplicationView vs CoreWindow vs Applicat
 
 可以看到，大的命名空间分类有 `Windows.ApplicationModel` 和 `Windows.UI` 两类。也就是说，`CoreApplication` 和 `CoreApplicationView` 是管理应用程序模型的，而 `Application`、`CoreWindow` 和 `Window` 是管理应用内 UI 的。小的命名空间分类有 `Core` 和 `Xaml` 两类。也就是说，`CoreApplication`、`CoreApplicationView` 和 `CoreWindow` 是管理核心功能，而 `Application` 和 `Window` 是管理 XAML UI 的。
 
-### 自顶向下
+## 自顶向下
 
 `Application` 到 `Window` 到 XAML 内容，很明显地就能直到其是自顶向下的关系，应用内包含窗口，窗口内包含 XAML 内容。那么它们之间的关系呢？
 
@@ -60,7 +60,7 @@ StackOverflow 上的地址：[c# - CoreApplicationView vs CoreWindow vs Applicat
 
 `CoreWindow` 就是我们所理解的窗口。为了方便使用，`Windows.UI.XAML.Window` 类型封装了这个 `CoreWindow`。`CoreDispatcher` 是基于消息循环的线程调度模型，正是因为有了消息循环，所以此窗口才能一直显示而不被销毁。
 
-### 对外，还是对内？
+## 对外，还是对内？
 
 我们是站在 UWP 普通开发者的角度来思考这个问题的，普通 UWP 开发者是从 `MainPage` 开始写 UWP 应用的。所以在这里，“外” 指的是页面之外，或者叫做我们直接编写的 XAML 内容之外，那些非 XAML 内容；而 “内” 指的是页面之内，也就是我们通常写的 XAML 内容。
 
@@ -70,7 +70,7 @@ StackOverflow 上的地址：[c# - CoreApplicationView vs CoreWindow vs Applicat
 
 总结起来，`CoreWindow` 和 `CoreApplicationView` 提供更加核心的操作系统或应用底层功能，而 `Window` 和 `ApplicationView` 对前者进行了封装，使得我们能够使用 `Windows.UI.Xaml` 命名空间下的类型对窗口和应用视图进行控制。
 
-### 关于这些概念的更多应用
+## 关于这些概念的更多应用
 
 我有另外一些文章用到了这些概念：
 
@@ -80,6 +80,6 @@ StackOverflow 上的地址：[c# - CoreApplicationView vs CoreWindow vs Applicat
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Title bar customization - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/shell/title-bar?wt.mc_id=MVP)

@@ -13,9 +13,9 @@ categories: dotnet csharp
 
 <div id="toc"></div>
 
-### 原理区别
+## 原理区别
 
-#### Thread.Sleep(0)
+### Thread.Sleep(0)
 
 `Thread.Sleep(int millisecondsTimeout)` 的代码贴在下面，其内部实际上是在调用 `SleepInternal`，而 `SleepInternal` 由 CLR 内部实现。其目的是将当前线程挂起一个指定的时间间隔。
 
@@ -49,7 +49,7 @@ public static void Sleep(int millisecondsTimeout)
 }
 ```
 
-#### Thread.Yield()
+### Thread.Yield()
 
 `Thread.Yield()` 的代码贴在下面，其内部调用 `YieldInternal`，实际上也是由 CLR 内部实现。
 
@@ -73,7 +73,7 @@ public static bool Yield()
 }
 ```
 
-#### Thread.Sleep(1)
+### Thread.Sleep(1)
 
 `Thread.Sleep(1)` 与 `Thread.Sleep(0)` 虽然只有参数上的微小差别，但实际上做了不同的事情。
 
@@ -95,7 +95,7 @@ var elapsed = stopwatch.Elapsed;
 Console.WriteLine($"Thread.Sleep(0) : {elapsed}");
 ```
 
-#### Task.Delay(0)
+### Task.Delay(0)
 
 `Task.Delay` 是 `Task` 系列的线程模型（TAP）中的方法。关于 TAP 可参见 [Task-based Asynchronous Pattern (TAP)  Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap?wt.mc_id=MVP)。
 
@@ -164,7 +164,7 @@ public static Task Delay(int millisecondsDelay, CancellationToken cancellationTo
 ```
 
 
-#### Task.Yield()
+### Task.Yield()
 
 `Task.Yield()` 实际上只是返回一个 `YieldAwaitable` 的新实例，而 `YieldAwaitable.GetAwaiter` 方法返回一个 `YieldAwaiter` 的新实例。也就是说，后续的执行效果完全取决于 `YieldAwaiter` 是如何实现这个异步过程的（异步状态机会执行这个过程）。我有另一篇博客说明 `Awaiter` 是如何实现的：[如何实现一个可以用 await 异步等待的 Awaiter](/post/write-custom-awaiter.html)。
 
@@ -211,7 +211,7 @@ else
 }
 ```
 
-#### Task.Delay(1)
+### Task.Delay(1)
 
 与 `Thread` 一样，`Task.Delay(1)` 与 `Task.Delay(0)` 虽然只有参数上的微小差别，但实际上也做了不同的事情。
 
@@ -249,7 +249,7 @@ Console.WriteLine($"Thread.Sleep(0) : {elapsed}");
 
 > You're seeing an artifact of the Windows interrupt rate, which is (by default) approx every 15ms. Thus if you ask for 1-15ms, you'll get an approx 15ms delay. ~16-30 will yield 30ms... so on.
 
-### 用法区别
+## 用法区别
 
 `Thread.Sleep(0)` 和 `Thread.Yield` 在线程调度的效果上是相同的，`Thread.Sleep(int)` 是带有超时的等待，本质上也是线程调度。如果你希望通过放弃当前线程时间片以便给其他线程一些执行实际，那么考虑 `Thread.Sleep(0)` 或者 `Thread.Yield`；如果希望进行线程调度级别的等待（效果类似于阻塞线程），那么使用 `Thread.Sleep(int)`。
 
@@ -257,7 +257,7 @@ Console.WriteLine($"Thread.Sleep(0) : {elapsed}");
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Thread.Sleep(0) vs Sleep(1) vs Yeild - stg609 - 博客园](http://www.cnblogs.com/stg609/p/3857242.html)
 - [c# - Task.Delay(<ms>).Wait(); sometimes causing a 15ms delay in messaging system - Stack Overflow](https://stackoverflow.com/q/41830216/6233938)

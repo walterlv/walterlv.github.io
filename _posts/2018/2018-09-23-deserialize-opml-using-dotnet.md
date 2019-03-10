@@ -17,11 +17,11 @@ OPML 全称是 **Outline Processor Markup Language** ，即 **大纲处理标记
 
 <div id="toc"></div>
 
-### OPML 格式
+## OPML 格式
 
 在解析之前，最好先理解此格式的的元素组成和元素属性，所以如果你没有阅读 [概念篇](/post/using-opml-for-rss-migrating.html)，请先前往阅读。
 
-### 创建适用于 RSS 的简易 OPML 模型
+## 创建适用于 RSS 的简易 OPML 模型
 
 我们先为模型创建基类 `OpmlModel`。
 
@@ -141,7 +141,7 @@ namespace Walterlv.Rssman.Models
 }
 ```
 
-### 从 OPML 文档中解析出模型
+## 从 OPML 文档中解析出模型
 
 在以上的模型代码中，我为基类留有 `OnDeserializing` 方法以供反序列化。
 
@@ -220,7 +220,7 @@ protected override void OnDeserializing(XElement element)
 
 这里，所有的 XML 解析均使用的是 XPath 语法，关于 XPath 语法，可以阅读 [XML 的 XPath 语法 - walterlv](/post/xml-xpath.html)，关于如何使用 XPath 在 .NET 中读写 XML 文件，可以阅读 [.NET 使用 XPath 来读写 XML 文件 - walterlv](/post/read-write-xml-using-xpath-in-dotnet.html)。
 
-### 使用此 OPML 模型
+## 使用此 OPML 模型
 
 当你把这些类都准备好，那么你就可以使用简单的几句话来完成 OPML 文档的解析了。
 

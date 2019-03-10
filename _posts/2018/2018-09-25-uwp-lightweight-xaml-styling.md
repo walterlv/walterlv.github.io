@@ -13,7 +13,7 @@ categories: dotnet csharp uwp
 
 <div id="toc"></div>
 
-### 轻量级样式定义
+## 轻量级样式定义
 
 看一段简单的代码，你一定能立刻明白本文想说的是什么。
 
@@ -59,7 +59,7 @@ categories: dotnet csharp uwp
 
 相比于 Template -> Edit Copy 这种重量级的样式与模板定义，在保证足够的样式定义的情况下，代码量是不是少了非常多了呢？
 
-### 如何找到控件支持的主题资源
+## 如何找到控件支持的主题资源
 
 前面我们知道了如何定制轻量级样式，但实际做 UI 的时候，我怎么知道有哪些样式主题资源的值可以使用呢？
 
@@ -67,12 +67,12 @@ categories: dotnet csharp uwp
 
 找到 Key 的方法和定义一个全新的 Style / Template 一样，都可以通过 Visual Studio 的设计器视图（或者 Blend）实现。
 
-#### 第一步：前往 Visual Studio 设计器视图
+### 第一步：前往 Visual Studio 设计器视图
 
 ![Visual Studio 设计器视图](/static/posts/2018-09-26-09-03-50.png)  
 ▲ Visual Studio 设计器视图
 
-#### 第二步：在其中一个你想定制样式的控件上 右键 -> 编辑模板 -> 编辑副本
+### 第二步：在其中一个你想定制样式的控件上 右键 -> 编辑模板 -> 编辑副本
 
 ![编辑模板](/static/posts/2018-09-26-09-04-53.png)  
 ▲ 编辑模板
@@ -82,7 +82,7 @@ categories: dotnet csharp uwp
 ![灰色的 “编辑副本”](/static/posts/2018-09-26-09-05-18.png)  
 ▲ 灰色的 “编辑副本”
 
-#### 第三步：寻找你感兴趣的主题资源的 Key，记下来准备定义
+### 第三步：寻找你感兴趣的主题资源的 Key，记下来准备定义
 
 在编辑副本后，你可以在副本的代码中找到按钮的原生样式定义。比如一个按钮的样式是这样的：
 
@@ -180,6 +180,6 @@ categories: dotnet csharp uwp
 - ButtonBorderBrushDisabled
 - ButtonForegroundDisabled
 
-#### 第四步：轻量级样式定义
+### 第四步：轻量级样式定义
 
 请先删除这份副本样式，这样你就可以进行 “轻量级样式定义” 了。代码量相比于上面这份完整样式可以少非常多。

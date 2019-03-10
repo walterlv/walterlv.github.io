@@ -1,7 +1,7 @@
 ---
 title: "Git 更安全的强制推送，--force-with-lease"
 publishDate: 2018-05-07 19:16:42 +0800
-date: 2018-09-23 12:33:20 +0800
+date: 2018-09-23 12:33:38 +0800
 categories: git
 ---
 
@@ -13,7 +13,7 @@ categories: git
 
 `--force-with-lease` 参数自 Git 的 1.8.5 版本开始提供，只在解决 `git push --force` 命令造成的安全问题。
 
-#### 那么 `git push --force` 命令有什么安全问题？
+### 那么 `git push --force` 命令有什么安全问题？
 
 `--force` 会使用本地分支的提交覆盖远端推送分支的提交。也就是说，如果其他人在相同的分支推送了新的提交，你的这一举动将“删除”他的那些提交！就算在强制推送之前先 `fetch` 并且 `merge` 或 `rebase` 了也是不安全的，因为这些操作到推送之间依然存在时间差，别人的提交可能发生在这个时间差之内。
 
@@ -25,7 +25,7 @@ categories: git
 ![git push -f 致使枪杀](/static/posts/2018-09-23-12-31-26.png)  
 ▲ git push -f 致使枪杀
 
-#### `--force-with-lease` 将解决这种安全问题
+### `--force-with-lease` 将解决这种安全问题
 
 使用了 `--force-with-lease` 参数之后，上面那种安全问题就没有那么危险了。
 
@@ -74,7 +74,7 @@ categories: git
 >    219a6d5..dff94a5  master -> master
 > ```
 
-#### 额外的问题：为什么推送到远端的提交还依然要用 rebase？
+### 额外的问题：为什么推送到远端的提交还依然要用 rebase？
 
 Git 官方文档对 `rebase` 有如下描述：
 
@@ -86,7 +86,7 @@ Git 官方文档对 `rebase` 有如下描述：
 ![GitLab 那种要求进行 rebase 的设置](/static/posts/2018-05-07-19-13-29.png)  
 ▲ 这是 GitLab 上的设置，可以要求提交者必须进行 `rebase` 才允许合并
 
-#### 参考资料
+**参考资料**
 
 - [Git - git-push Documentation](https://git-scm.com/docs/git-push)
 - [How do I properly force a Git push? - Stack Overflow](https://stackoverflow.com/q/5509543/6233938)

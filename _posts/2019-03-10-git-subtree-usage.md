@@ -12,7 +12,7 @@ published: false
 
 <div id="toc"></div>
 
-### 将 B 仓库添加为 A 仓库的一个子目录
+## 将 B 仓库添加为 A 仓库的一个子目录
 
 在 A 仓库的根目录输入命令：
 
@@ -24,4 +24,4 @@ git subtree add --prefix=SubFolder/B https://github.com/walterlv/walterlv.git ma
 
 ---
 
-#### 参考资料
+**参考资料**

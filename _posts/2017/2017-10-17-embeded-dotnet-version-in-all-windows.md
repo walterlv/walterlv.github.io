@@ -18,7 +18,7 @@ Windows 10 | 10.0.10240 (1507) | .NET Framework 4.6
 
 ---
 
-#### 参考资料
+**参考资料**
 - [How to: Determine which .NET Framework versions are installed -Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed?wt.mc_id=MVP)
 - [Windows 10 release information - current branch, build history](https://technet.microsoft.com/en-us/windows/release-info.aspx)
 - [Windows 10 version history - Wikipedia](https://en.wikipedia.org/wiki/Windows_10_version_history)

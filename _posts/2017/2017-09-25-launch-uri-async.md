@@ -15,7 +15,7 @@ description: 在 UWP 中使用默认的应用或浏览器打开链接，当然�
 
 ---
 
-### 常用的 Windows 10 内置协议
+## 常用的 Windows 10 内置协议
 
 URI 协议|启动
 -|-
@@ -28,7 +28,7 @@ ms-store:|应用商店
 
 如果想知道 `ms-settings` 里有哪些可用，请参见：[启动 Windows 设置应用 - UWP app developer](https://docs.microsoft.com/zh-cn/windows/uwp/launch-resume/launch-settings-app)；想知道 `ms-store` 可以如何帮助我们前往商店的具体页面，请参见：[启动 Windows 应用商店应用 - UWP app developer](https://docs.microsoft.com/zh-cn/windows/uwp/launch-resume/launch-store-app?wt.mc_id=MVP)。
 
-### LaunchUriAsync
+## LaunchUriAsync
 
 要想简单地在代码中使用，一句足以：
 
@@ -55,7 +55,7 @@ await Launcher.LaunchUriAsync(new Uri(@"{{ site.url }}"));
 
 然而，UWP 还提供了更多的选项：`LauncherOptions`。
 
-### LauncherOptions
+## LauncherOptions
 
 在写以上代码时不难发现，`LaunchUriAsync` 提供了重载传入 `LauncherOptions` 参数，这个参数似乎是指定启动时的一些选项。查看注释后，可以发现这些选项：
 
@@ -108,7 +108,7 @@ public bool LimitPickerToCurrentAppAndAppUriHandlers { get; set; }
 
 我们还可以指定推荐用哪个应用打开（设置 `PreferredApplicationPackageFamilyName`），指定期望显示的窗口大小（设置 `DesiredRemainingView`，不过不是具体的大小，而是几种选项），指定只打开自己当前这款应用（设置 `LimitPickerToCurrentAppAndAppUriHandlers`）。具体查看注释是能够了解的。
 
-#### 参考资料
+**参考资料**
 - [启动 URI 的默认应用 - UWP app developer](https://docs.microsoft.com/zh-cn/windows/uwp/launch-resume/launch-default-app?wt.mc_id=MVP)
 - [启动 Windows 设置应用 - UWP app developer](https://docs.microsoft.com/zh-cn/windows/uwp/launch-resume/launch-settings-app?wt.mc_id=MVP)
 - [启动 Windows 应用商店应用 - UWP app developer](https://docs.microsoft.com/zh-cn/windows/uwp/launch-resume/launch-store-app?wt.mc_id=MVP)

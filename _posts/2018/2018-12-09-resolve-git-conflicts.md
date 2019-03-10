@@ -13,7 +13,7 @@ position: knowledge
 
 <div id="toc"></div>
 
-### 使用 Visual Studio
+## 使用 Visual Studio
 
 如果你使用 Visual Studio，那么当合并两个分支出现冲突的时候，Visual Studio 的 Team Explorer 会显示当前冲突的所有文件。
 

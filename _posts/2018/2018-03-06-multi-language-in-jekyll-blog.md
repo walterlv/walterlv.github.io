@@ -26,7 +26,7 @@ versions:
 
 <div id="toc"></div>
 
-### 编写一个简单的语言选择器
+## 编写一个简单的语言选择器
 
 html 里可以用 `<select>` 来做选择器。当然，本文只是用 `<select>` 当作例子，你也可以做成表格型的、链接型的或者其他更多更炫酷的样子。
 
@@ -62,7 +62,7 @@ html 里可以用 `<select>` 来做选择器。当然，本文只是用 `<select
 
 这就可以生效了。
 
-### 引入页面配置元数据
+## 引入页面配置元数据
 
 毕竟博客有多篇，终归要引入配置的。现在我们为这篇文章配置两种语言。*（考虑到更通用的情况，我将一种语言定义为一种 version。）*
 
@@ -76,7 +76,7 @@ html 里可以用 `<select>` 来做选择器。当然，本文只是用 `<select
 
 这个配置是要放到博客 markdown 的元数据头里的。
 
-### 制作布局文件
+## 制作布局文件
 
 为了更加通用，我在 `_include` 文件夹中新建了 `post-version-selector.html` 的布局文件，然后在每一个需要引入语言选择器的地方加上 {% raw %}`{% include post-version-selector.html %}`{% endraw %}。*（比如本文一开始的那个语言选择器就是通过在那个地方加上了这句话生成的。）*
 
@@ -112,7 +112,7 @@ html 里可以用 `<select>` 来做选择器。当然，本文只是用 `<select
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [jekyll - Iterate over hashes in liquid templates - Stack Overflow](https://stackoverflow.com/q/8206869/6233938)
 - [How can I set the default value for an HTML `<select>` element? - Stack Overflow](https://stackoverflow.com/q/3518002/6233938)

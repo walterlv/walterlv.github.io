@@ -13,7 +13,7 @@ position: knowledge
 
 <div id="toc"></div>
 
-### 项目和输出路径
+## 项目和输出路径
 
 对于这样的一个简单的项目文件，这个项目的实际输出路径可能是像下图那样的。
 
@@ -32,7 +32,7 @@ position: knowledge
 
 我在 [解读 Microsoft.NET.Sdk 的源码，你能定制各种奇怪而富有创意的编译过程](/post/read-microsoft-net-sdk.html) 一文中有说到如何解读 Microsoft.NET.Sdk，而我们的答案就是从解读这个 Sdk 而来。
 
-### 影响输出路径的属性
+## 影响输出路径的属性
 
 OutputPath 属性由这些部分组成：
 

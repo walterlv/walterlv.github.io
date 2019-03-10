@@ -13,7 +13,7 @@ WPF 自定义窗口样式有多种方式，不过基本核心实现都是在修�
 
 <div id="toc"></div>
 
-### 使用 Windows 原生窗口体验的应用
+## 使用 Windows 原生窗口体验的应用
 
 在自定义窗口样式的同时保证一致的 Windows 窗口风格体验的优秀应用有这些：
 
@@ -30,7 +30,7 @@ WPF 自定义窗口样式有多种方式，不过基本核心实现都是在修�
 ![Chrome 最大化窗口](/static/posts/2018-07-12-09-21-05.png)  
 ▲ Chrome 最大化窗口
 
-### 为什么不做无边框窗口？
+## 为什么不做无边框窗口？
 
 WPF 自定义窗口可是非常容易的，完全自定义样式、异形都不在话下。
 
@@ -61,7 +61,7 @@ WPF 自定义窗口可是非常容易的，完全自定义样式、异形都不�
 - 第三方应用集成
     - 第三方截图应用可以毫无障碍地捕捉到标准窗口的外框范围，但如果我们没有模拟好（而是拿一个 WPF 无边框窗口模拟），那么第三方截图应用就截不准（可能会超出窗口本来的大小）。
 
-### 开始使用 WindowChrome
+## 开始使用 WindowChrome
 
 理论上 `WindowChrome` 的使用是非常简单的（呃……理论上）。你只需要在 `<Window />` 节点里写如下代码便能够完成客户区（Client Area）到非客户区（Non-client Area）的覆盖：
 
@@ -98,7 +98,7 @@ WPF 自定义窗口可是非常容易的，完全自定义样式、异形都不�
 
 然而即便如此，我们也只解决了系统主题色边框的问题，没有解决调整窗口的拖拽热区问题。而且边框还如此之丑。
 
-#### GlassFrameThickness
+### GlassFrameThickness
 
 在官方文档 [WindowChrome.GlassFrameCompleteThickness Property (System.Windows.Shell)](https://msdn.microsoft.com/en-us/library/system.windows.shell.windowchrome.glassframecompletethickness(v=vs.110).aspx) 中有说，如果指定 `GlassFrameThickness` 值为 -1，那么可以做到整个窗口都遮挡，但实际上全遮挡的效果也是不对劲的，就像下面这样：
 
@@ -127,7 +127,7 @@ WPF 自定义窗口可是非常容易的，完全自定义样式、异形都不�
 
 显然，没有一个符合我们的要求。
 
-#### NonClientFrameEdges
+### NonClientFrameEdges
 
 但好在我们还有一个属性可以尝试 —— `NonClientFrameEdges`。官方文档 [WindowChrome.NonClientFrameEdges Property (System.Windows.Shell)](https://msdn.microsoft.com/en-us/library/system.windows.shell.windowchrome.nonclientframeedges%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396) 对此的解释是：
 
@@ -193,7 +193,7 @@ WPF 自定义窗口可是非常容易的，完全自定义样式、异形都不�
 
 其他的属性需要尝试吗？`CornerRadius`, `ResizeBorderThickness`, `ResizeGripDirection`, `UseAeroCaptionButtons` 在默认情况下的行为就已经够了；而 `IsHitTestVisibleInChrome` 是个与 WPF 相关的附加属性，与模拟窗口样式没有关系。所以基本模拟就靠前面的两个属性了。
 
-### 定制 Window 的控件模板
+## 定制 Window 的控件模板
 
 `WindowChrome` 提供客户区内容覆盖到非客户区的能力，所以我们通过定制 `Window` 的 `ControlTemplate` 能够在保证原生窗口体验的同时，尽可能定制我们的窗口样式。
 
@@ -237,7 +237,7 @@ WPF 自定义窗口可是非常容易的，完全自定义样式、异形都不�
 
 需要注意，我写了一个触发器，当窗口最大化时根元素边距值设为 6。如果不设置，最大化时窗口边缘的像素将看不见。这是反复尝试的经验值，且在多种 DPI 下验证是依然有效的。实际上即便是最合适此时设置的 `SystemParameters.WindowResizeBorderThickness` 属性依然无法让窗口最大化时边缘距离保持为 0。
 
-### 标题栏上的三大金刚
+## 标题栏上的三大金刚
 
 我们发现，在以上所有方法尝试完成后，还剩下右上角的三颗按钮的背景色无法定制。如果依然采用非客户区控件覆盖的方法，这三个按钮就会被遮挡，只能自己区模拟了，那是不小的工作量。
 
@@ -247,7 +247,7 @@ WPF 自定义窗口可是非常容易的，完全自定义样式、异形都不�
 
 为了完全模拟 UWP，标题栏上的按钮只能自绘了。关于自绘标题栏按钮以模拟 UWP 原生按钮，可以阅读我的另一篇文章（代码太长，还是分开了好）：[WPF 应用完全模拟 UWP 的标题栏按钮](/post/wpf-simulate-native-window-title-bar-buttons.html)。
 
-### 原生 Windows 窗口体验
+## 原生 Windows 窗口体验
 
 UWP 应用对窗口样式的定制能力是非常小的，远远小于传统 Win32 应用。但因为其与系统原生集成，如果要求保证原生窗口体验，UWP 的定制能力又是各种方法里面最大的，而且 API 非常简单。
 
@@ -255,7 +255,7 @@ UWP 应用对窗口样式的定制能力是非常小的，远远小于传统 Win
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [DwmSetWindowAttribute function - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/api/dwmapi/nf-dwmapi-dwmsetwindowattribute?wt.mc_id=MVP)
 - [pinvoke.net: DwmSetWindowAttribute (Enums)](https://www.pinvoke.net/default.aspx/Enums/DwmSetWindowAttribute.html)

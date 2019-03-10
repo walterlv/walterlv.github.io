@@ -26,6 +26,6 @@ categories: web ios
 
 ![最终效果](/static/posts/2017-10-28-view-pinned-tab-icon.jpg)
 
-#### 参考资料
+**参考资料**
 - [Creating Pinned Tab Icons](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/pinnedTabs/pinnedTabs.html)
 - [Configuring Web Applications](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)

@@ -14,12 +14,12 @@ position: knowledge
 
 <div id="toc"></div>
 
-### NuGet 包和 GitHub 开源仓库
+## NuGet 包和 GitHub 开源仓库
 
 - NuGet 包：[CommandLineParser](https://www.nuget.org/packages/CommandLineParser/)
 - GitHub 开源仓库：[commandlineparser/commandline](https://github.com/commandlineparser/commandline)
 
-### 最简单的命令行解析
+## 最简单的命令行解析
 
 ```csharp
 using System;
@@ -89,7 +89,7 @@ dotnet demo.dll --long-name xxx
 
 如果不指定，那么就是 `--longname`，这显然不好看。
 
-### 包含多个方法的命令行解析
+## 包含多个方法的命令行解析
 
 如果一个命令行程序只做一件事情，那么以上代码足以应付大多数的情况。可是有时候一个命令行程序是为了做一类事情的 —— 典型的例子就是 git 程序。当你运行 git 的时候，你可以在 git 后面加一个谓词（动词），表示执行的是哪一个命令。后面的参数是每个命令都不同的，并且第一个参数是不用指定名称的。
 
@@ -156,7 +156,7 @@ dotnet demo.dll check C:\Users\lvyi\Desktop\Test\Test.csproj
 dotnet demo.dll fix C:\Users\lvyi\Desktop\Test\Test.csproj -o C:\Users\lvyi\Desktop\TestFix\Test.csproj
 ```
 
-### Verb，Option 和 Value
+## Verb，Option 和 Value
 
 Verb 是在一个命令行选项的 Option 类上标记的，用于指定命令的类别。每一个 Verb 标记的类别都可以有自己独立的一套命令行参数。
 
@@ -166,7 +166,7 @@ Value 是命令行的无名参数，它是靠在命令行谓词后面的参数�
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [commandlineparser/commandline: The best C# command line parser that brings standardized *nix getopt style, for .NET. Includes F# support](https://github.com/commandlineparser/commandline)
 - [Home · commandlineparser/commandline Wiki](https://github.com/commandlineparser/commandline/wiki)

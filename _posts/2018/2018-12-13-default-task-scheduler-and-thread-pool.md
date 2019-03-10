@@ -14,7 +14,7 @@ position: knowledge
 
 <div id="toc"></div>
 
-### 如何使用 Task.Run？
+## 如何使用 Task.Run？
 
 1. 对于 IO 操作，尽量使用原生提供的 `Async` 方法（不要自己使用 `Task.Run` 调用一个同步的版本占用线程池资源）；
 1. 对于没有 `Async` 版本的 IO 操作，如果可能耗时很长，则指定 `CreateOptions` 为 `LongRunning`。
@@ -22,7 +22,7 @@ position: knowledge
 
 接下来分析原因：
 
-### 示例程序和示例代码
+## 示例程序和示例代码
 
 在开始之前，我们先准备一个测试程序。这个程序一开始就使用 `Task.Run` 跑起来 10 个异步任务，每一个里面都等待 5 秒。
 
@@ -61,7 +61,7 @@ class Program
 }
 ```
 
-### TaskScheduler
+## TaskScheduler
 
 造成以上异步任务不马上开始的原因，与 `Task` 使用的 `TaskScheduler` 有关。默认情况下，`Task.Run` 使用的是 .NET 提供的默认 Scheduler，可以通过 `TaskScheduler.Default` 获取到。
 
@@ -71,7 +71,7 @@ Task 使用 `TaskScheduler` 来决定何时执行一个异步任务，如果你�
 
 于是，你在线程池中的设置将决定一个 Task 将在何时开启一个线程执行。
 
-### ThreadPool
+## ThreadPool
 
 通过 `ThreadPool.GetMinThreads` 可以获得最小的线程数和异步 IO 完成线程数；通过 `ThreadPool.GetMaxThreads` 来获得其最大值。通过对应的 `set` 方法来设置最小值和最大值。
 
@@ -86,7 +86,7 @@ Task 使用 `TaskScheduler` 来决定何时执行一个异步任务，如果你�
 
 不过，每个类别创建线程的总数量受到最大线程数限制。
 
-### 推荐的使用方法
+## 推荐的使用方法
 
 了解到 `ThreadPoolTaskScheduler` 的默认行为之后，我们可以做这些事情来充分利用线程池带来的优势：
 
@@ -96,7 +96,7 @@ Task 使用 `TaskScheduler` 来决定何时执行一个异步任务，如果你�
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [TaskScheduler Class (System.Threading.Tasks) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.taskscheduler?wt.mc_id=MVP)
 - [TaskCreationOptions Enum (System.Threading.Tasks) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.taskcreationoptions?wt.mc_id=MVP)

@@ -13,7 +13,7 @@ categories: dotnet wpf
 
 ---
 
-### INameScope
+## INameScope
 
 WPF 的 `INameScope` 接口只用来管理一个范围之内的名称。它包含下面三个方法：
 
@@ -51,7 +51,7 @@ public static INameScope GetNameScope(DependencyObject dependencyObject)
 
 除此之外，NameScope 的设置由 XAML 解析器在 WPF 项目编译的时候自动生成。
 
-### NameScope 的名称注册规则
+## NameScope 的名称注册规则
 
 如果你没有在代码中显式去调用 `RegisterName` 这样的方法，那么 NameScope 的创建以及名称的注册都由 XAML 解析器来完成。
 
@@ -80,7 +80,7 @@ XAML 解析器（BamlRecordReader）注册名字的时候并没有去爬可视�
 - Style 的 NameScope
     - `myBrush`
 
-### NameScope 的名称查找规则
+## NameScope 的名称查找规则
 
 在本文一开始贴出 `NameScope` 依赖项属性的时候，你应该注意到这只是一个普通的属性，并没有使用到什么可以用可视化树继承这样的高级元数据。事实上也不应该有这样的高级元数据，因为 NameScope 的抽象级别低于可视化树或者逻辑树。
 

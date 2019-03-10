@@ -13,7 +13,7 @@ categories: dotnet csharp
 
 <div id="toc"></div>
 
-### 空的 try 块
+## 空的 try 块
 
 你可以点开[这个链接](https://source.dot.net/#System.Private.CoreLib/src/System/Exception.cs,a445c4e8ae46b283,references)查看 `Exception` 类，在里面你可以看到一段异常处理的代码非常奇怪：
 
@@ -97,7 +97,7 @@ internal void RestoreExceptionDispatchInfo(System.Runtime.ExceptionServices.Exce
 
 你可以在 [这里](https://referencesource.microsoft.com/#mscorlib/system/exception.cs,a445c4e8ae46b283) 查看 .NET Framework 版本，在[这里](https://source.dot.net/#System.Private.CoreLib/src/System/Exception.cs,a445c4e8ae46b283,references) 查看 .NET Core 的版本。
 
-### 受约束的执行区域（Constrained Execution Regions）
+## 受约束的执行区域（Constrained Execution Regions）
 
 这种现象在微软官方文档 [可靠性最佳做法](https://docs.microsoft.com/zh-cn/dotnet/framework/performance/reliability-best-practices#protect-critical-operations-with-constrained-execution-regions-and-reliability-contracts?wt.mc_id=MVP) 中有介绍。
 
@@ -107,7 +107,7 @@ internal void RestoreExceptionDispatchInfo(System.Runtime.ExceptionServices.Exce
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [可靠性最佳做法 - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/framework/performance/reliability-best-practices#protect-critical-operations-with-constrained-execution-regions-and-reliability-contracts?wt.mc_id=MVP)
 - [受约束的执行区域 - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/framework/performance/constrained-execution-regions#noninterruptible-regions?wt.mc_id=MVP)

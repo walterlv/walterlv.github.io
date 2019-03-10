@@ -11,13 +11,13 @@ Mutex 是 Mutual Exclusion 的缩写，是互斥锁，用于防止两个线程�
 
 <div id="toc"></div>
 
-### Mutex 是什么？
+## Mutex 是什么？
 
 与其他线程同步的方式一样，Mutex 也提供对资源的互斥访问；不过 Mutex 使用的系统资源会比 Monitor 更多，而 Monitor 就是实现 C# 中 lock 关键字所用的锁。
 
 用更多的系统资源，带来更强大的功能 —— Mutex 能进行跨越应用程序域边界的封送，能进行跨越进程边界的线程同步。
 
-### 简单的 Mutex（不能跨进程互斥）
+## 简单的 Mutex（不能跨进程互斥）
 
 最简单的 Mutex 的使用方法就是直接 `new` 出来，然后使用 `Wait` 进行等待，使用 `ReleaseMutex` 进行释放。
 
@@ -39,7 +39,7 @@ private void UseResource()
 
 不过这种方式不能达到跨进程同步的效果，所以实际上本文并不会过多描述这种互斥方式。
 
-### 创建跨进程互斥的 Mutex
+## 创建跨进程互斥的 Mutex
 
 要创建跨进程互斥的 Mutex，必须要给 Mutex 指定名称。
 
@@ -107,9 +107,9 @@ class Program
     }
 ```
 
-### 处理异常情况
+## 处理异常情况
 
-#### ApplicationException
+### ApplicationException
 
 `mutex.ReleaseMutex();` 方法只能被当前拥有它的线程调用，如果某个线程试图调用这个函数，却没有拥有这个 Mutex，就会抛出 `ApplicationException`。
 
@@ -117,7 +117,7 @@ class Program
 
 当一个线程没有拥有这个 Mutex 的时候，需要使用 `WaitOne` 来等待获得这个锁。
 
-#### AbandonedMutexException
+### AbandonedMutexException
 
 ```csharp
 class Program
@@ -166,7 +166,7 @@ private static void WaitOne()
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Mutexes - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/threading/mutexes)
 - [Mutex Constructor (System.Threading) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.threading.mutex.-ctor)

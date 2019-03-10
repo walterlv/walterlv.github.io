@@ -11,7 +11,7 @@ position: knowledge
 
 <div id="toc"></div>
 
-### 重载条件逻辑运算符“与”（&&）“或”（||）
+## 重载条件逻辑运算符“与”（&&）“或”（||）
 
 在 [C# 重载条件逻辑运算符（&& 和 ||）](/post/overload-conditional-and-and-or-operators-in-csharp.html) 一文中我说明了如何重载条件逻辑运算符 `&&` 和 `||`。
 
@@ -24,7 +24,7 @@ position: knowledge
 
 于是我们可以得到三值 `bool?` 的与或结果。
 
-### 三值 bool? 的与或结果
+## 三值 bool? 的与或结果
 
 | `x`     | `y`     | `x&y`   | `x|y`   |
 | ------- | ------- | ------- | ------- |
@@ -40,6 +40,6 @@ position: knowledge
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Using nullable types - C# Programming Guide - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/nullable-types/using-nullable-types)

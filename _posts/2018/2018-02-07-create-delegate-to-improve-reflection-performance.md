@@ -13,7 +13,7 @@ categories: dotnet csharp
 
 <p id="toc"></p>
 
-### 性能对比数据
+## 性能对比数据
 
 ![性能对比数据](/static/posts/2018-02-07-16-03-57.png)  
 ▲ 没有什么能够比数据更有说服力（注意后面两行是有秒数的）
@@ -119,7 +119,7 @@ namespace Walterlv.Demo
 }
 ```
 
-### 如何实现
+## 如何实现
 
 实现的关键就在于 `MethodInfo.CreateDelegate` 方法。这是 .NET Standard 中就有的方法，这意味着 .NET Framework 和 .NET Core 中都可以使用。
 

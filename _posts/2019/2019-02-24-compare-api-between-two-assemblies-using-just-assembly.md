@@ -15,13 +15,13 @@ position: starter
 
 <div id="toc"></div>
 
-### 下载和安装 JustAssembly
+## 下载和安装 JustAssembly
 
 [JustAssembly](https://github.com/telerik/justassembly) 是 [Telerik](https://github.com/telerik) 开源的一款程序集分析工具。
 
 你可以去它的官网下载并安装：[Assembly Diff Tool for .NET - JustAssembly](https://www.telerik.com/justassembly)。
 
-### 开始比较
+## 开始比较
 
 启动 JustAssembly，在一开始丑陋（逃）的界面中选择旧的和新的 dll 文件，然后点击 `Load`。
 
@@ -31,7 +31,7 @@ position: starter
 
 ![新版本的 API 相比于旧版本的差异](/static/posts/2019-02-24-17-03-03.png)
 
-### 关于比较结果的说明
+## 关于比较结果的说明
 
 在差异界面中，差异有以下几种显示：
 
@@ -52,7 +52,7 @@ position: starter
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [telerik/JustAssembly: Assembly Diff and Analysis Tool](https://github.com/telerik/justassembly)
 - [Assembly Diff Tool for .NET - JustAssembly](https://www.telerik.com/justassembly)

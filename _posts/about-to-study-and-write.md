@@ -5,7 +5,7 @@ categories: post
 published: false
 ---
 
-### About to Study
+## About to Study
 
 - D3DImage
 - CustomBrush
@@ -15,7 +15,7 @@ published: false
 - Latex
 - Castle
 
-### About to Write
+## About to Write
 
 - WPF 程序使用 UWP 通知
     - [从桌面 C# 应用发送本地 toast 通知 - Microsoft Docs](https://docs.microsoft.com/zh-cn/windows/uwp/design/shell/tiles-and-notifications/send-local-toast-desktop)

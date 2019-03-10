@@ -22,7 +22,7 @@ This post is written in **multiple languages**. Please select yours:
 
 <div id="toc"></div>
 
-### Install the GitVersionTask
+## Install the GitVersionTask
 
 A Microsoft engineer recommend a semantic versioning tools named `GitVersion` on his blog [Versioning NuGet packages in a continuous delivery world: part 3 – Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/2016/05/26/versioning-nuget-packages-cd-3/). I tried to find more tools but unfortunately the GitVersion seems to be the only one that can add semantic version to a nuget package.
 
@@ -33,7 +33,7 @@ Go to [NuGet.org](https://www.nuget.org/) to install [GitVersionTask](https://ww
 1. Only [GitVersionTask **4.0 or later**](https://www.nuget.org/packages/GitVersionTask/4.0.0-beta0012) (currently beta) supports new csproj format which is introduced from .NET Core.
 1. Currently even the latest beta version of GitVersionTask does not support the .NET Core-based compilation - `dotnet build`. I've submitted an issue to the GitTools team to explain the reason and the solution. (see: [`dotnet build` command always fails with GitVersionTask 4.0.0-beta · Issue #1399 · GitTools/GitVersion](https://github.com/GitTools/GitVersion/issues/1399)) The temporary fallback is to use a full .NET Framework version - `msbuild`.
 
-### GitVersion Configuration
+## GitVersion Configuration
 
 GitVersion official documentation is not easy to read. I cannot find even detailed meaning of each configuration keys and values. But I read it's source code, and these are the meanings below.
 
@@ -88,7 +88,7 @@ branches:
 
 ![版本库](/static/posts/2018-04-13-15-34-08.png)
 
-#### 分支名称匹配 `regex`
+### 分支名称匹配 `regex`
 
 那么当我们在 `release` 分支的 `f` 提交上编译，使用的配置将是 `release` 分支的配置。
 
@@ -105,7 +105,7 @@ branches:
 
 以上配置中我只列举了三组分支，但其实在 [一个成功的 Git 分支流模型](http://nvie.com/posts/a-successful-git-branching-model/) 中，还有 `hotfix` `develop` 这样更多的分支。如果你的项目足够大，建议自己参考其他分支写出这两个分支的配置出来。
 
-#### 预发布标签 `tag`
+### 预发布标签 `tag`
 
 我们的 release 配置中，会为版本号加一个 `beta` 预发布标签，所以可能打出 `2.0.0-beta` 这样的包出来，或者 `2.0.0-beta+3`。但在全局配置下，默认打出的包会加一个以分支名命名的预发布标签；像这样 `2.0.0-r`（在 `r` 分支），或者 `2.0.0-temp-walterlv-custombranch`（在 `temp/walterlv/custombranch` 分支）。
 
@@ -113,7 +113,7 @@ branches:
 
 我们在 `master` 分支的配置上
 
-#### 版本号递增规则 `increment`
+### 版本号递增规则 `increment`
 
 `increment` 这一项的可选值有 `Major`、`Minor`、`Patch`、`None` 和 `Inherit` 五种。
 
@@ -127,7 +127,7 @@ branches:
 
 ![](/static/posts/2018-04-13-16-27-11.png)
 
-#### 版本号递增的方式 `mode`
+### 版本号递增的方式 `mode`
 
 `mode` 可选的值有三种：
 
@@ -135,13 +135,13 @@ branches:
 - `continuous-deployment` 持续部署，日常使用，详细信息可阅读[Continuous deployment - GitVersion](http://gitversion.readthedocs.io/en/stable/reference/continuous-deployment/)
 - `Mainline` 传统的（官方文档没有说明，代码中没有注释，但阅读代码发现其策略是从上一个 Tag 递增版本号）
 
-### 语义版本号使用教程
+## 语义版本号使用教程
 
 在了解了以上的配置之后，使用 GitVersionTask 才不会显得版本号的规则诡异。
 
 我们从简单的使用开始，逐步向难演进。学习规则为：单个 master 分支 -> Git 分支流与预发布版本
 
-#### 单个 master 分支
+### 单个 master 分支
 
 如果我们只在 `master` 上开发，那么上手就非常容易了。
 
@@ -149,7 +149,7 @@ branches:
 
 ![](/static/posts/2018-04-13-17-15-09.png)
 
-#### Git 分支流与预发布版本
+### Git 分支流与预发布版本
 
 当使用 Git 分支流时，版本号的递增方式其实与前面配置章节和单个 master 章节讲的时一致的。如下图。
 
@@ -169,7 +169,7 @@ branches:
 
 ---
 
-#### References
+### References
 
 - [Versioning NuGet packages in a continuous delivery world: part 1 – Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/2016/05/03/versioning-nuget-packages-cd-1/)
 - [Versioning NuGet packages in a continuous delivery world: part 2 – Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/2016/05/18/versioning-nuget-packages-cd-2/)

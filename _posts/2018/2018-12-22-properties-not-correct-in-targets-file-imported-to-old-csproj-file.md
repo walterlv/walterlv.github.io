@@ -16,13 +16,13 @@ position: problem
 
 <div id="toc"></div>
 
-### 本文的前置知识
+## 本文的前置知识
 
 你可能需要了解 csproj 文件的格式和编译过程，才可能读懂本文，所以需要先阅读：
 
 - [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj.html)
 
-### 问题
+## 问题
 
 下面的代码来自 [SourceFusion](https://github.com/dotnet-campus/SourceFusion) 项目的早期版本。
 
@@ -57,7 +57,7 @@ position: problem
 
 不过，如果使用命令行进行编译，这个却又是生效的。
 
-### 原因
+## 原因
 
 究其原因，这是 MSBuild 对项目文件（csproj）的解析和 Visual Studio 对项目文件的解析是不同的。命令行使用的是 [MSBuild](https://github.com/Microsoft/msbuild) 解析 csproj，而 Visual Studio 使用的是 [VSProjectSystem](https://github.com/Microsoft/VSProjectSystem)。
 
@@ -65,12 +65,12 @@ position: problem
 
 真实的原因我并没有调查出来。但以上代码在大多数开发者的 Visual Studio 中是可以正常使用的，但有少数开发者使用这个会出现错误（没有创建任何文件夹）。
 
-### 解决办法
+## 解决办法
 
 既然问题出在 [MSBuild](https://github.com/Microsoft/msbuild) 和 [VSProjectSystem](https://github.com/Microsoft/VSProjectSystem) 对属性和集合处理的不同，那么我就不要创建动态的集合，而是在 Target 内部编写属性和集合。
 
 在 Target 内部的属性和集合将在编译期间进行计算，而不是在 Visual Studio 打开的时候就计算好。于是我们每次编译的时候都可以获得最新的属性和集合的值。
 
-### 衍生知识
+## 衍生知识
 
 旧格式的 csproj 是不会自动计算属性和集合的变更的，这也是为什么项目文件改变的时候，Visual Studio 需要重新加载项目才可以正常显示和编译项目。同时，如果编辑旧格式的 csproj 文件，也需要先卸载掉项目才可以。而新格式的 csproj 是可以直接编辑而不需要卸载项目的，同时如果被外部改变，也不需要重新加载项目，而是可以直接计算出来新的属性和集合。

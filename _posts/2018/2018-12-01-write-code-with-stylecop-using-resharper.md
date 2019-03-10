@@ -13,7 +13,7 @@ StyleCop 可以帮助强制执行代码格式化规范，ReSharper 可以帮助�
 
 <div id="toc"></div>
 
-### 安装插件 StyleCop by JetBrains
+## 安装插件 StyleCop by JetBrains
 
 StyleCop by JetBrains 插件的开发名称是 StyleCop.ReSharper，所以你也可以通过搜索 StyleCop.ReSharper 得到同样的插件。
 
@@ -34,7 +34,7 @@ StyleCop by JetBrains 插件的开发名称是 StyleCop.ReSharper，所以你也
 
 安装完之后，重启 Visual Studio 就会生效。如果你稍后见到了本节上面的图标，那么那实际上就是 StyleCop by JetBrains 插件的一部分。
 
-### 修改 StyleCop by JetBrains 的规则
+## 修改 StyleCop by JetBrains 的规则
 
 现在打开一个以前写的项目，你可能会发现大量的代码都已被波浪线入侵 😭 。
 
@@ -64,7 +64,7 @@ StyleCop by JetBrains 插件的开发名称是 StyleCop.ReSharper，所以你也
 
 ![设置团队约定](/static/posts/2018-12-01-12-06-37.png)
 
-### 不通用的 StyleCop by JetBrains 规则
+## 不通用的 StyleCop by JetBrains 规则
 
 实际上使用此插件生成的 StyleCop 规则并不是 StyleCop 的通用配置，而是生成了一个 DotSettings 的 ReSharper 配置。
 
@@ -72,7 +72,7 @@ StyleCop by JetBrains 插件的开发名称是 StyleCop.ReSharper，所以你也
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [StyleCop code style settings and inspections - .NET Tools Blog.NET Tools Blog](https://blog.jetbrains.com/dotnet/2018/04/09/stylecop-code-style-settings-inspections/)
 - [ReSharper Gallery - StyleCop by JetBrains](https://resharper-plugins.jetbrains.com/packages/StyleCop.StyleCop/)

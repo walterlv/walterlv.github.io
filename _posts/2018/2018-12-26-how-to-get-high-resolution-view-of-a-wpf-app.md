@@ -11,13 +11,13 @@ position: starter
 
 ---
 
-### 第一步：打开 Snoop
+## 第一步：打开 Snoop
 
 ![Snoop 的界面](/static/posts/2018-12-26-12-01-34.png)
 
 如果你没有 Snoop，请前往下载：[Release Snoop 2.10.0 · cplotts/snoopwpf](https://github.com/cplotts/snoopwpf/releases/tag/2.10.0)。
 
-### 第二步：使用 Snoop 的放大功能
+## 第二步：使用 Snoop 的放大功能
 
 ![放大功能](/static/posts/2018-12-26-12-03-28.png)
 
@@ -33,7 +33,7 @@ position: starter
 
 你就能看到 WPF 应用的超高清版本了。使用鼠标滚轮可以继续放大或缩小。
 
-### 查看效果
+## 查看效果
 
 比如一个按钮，现在可以放到这么大来看了。截图可以截出高清版本。
 

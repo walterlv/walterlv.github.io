@@ -21,7 +21,7 @@ Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。
 
 <div id="toc"></div>
 
-### 准备工作
+## 准备工作
 
 为了能够进行后面关键的操作，我们需要先有一个能跑起来的项目。
 
@@ -46,7 +46,7 @@ Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。
 
 现在，我们有了一个可以开始写代码的 Program.cs 文件，接下来就可以正式开始入门了。
 
-### 安装必要的 NuGet 包
+## 安装必要的 NuGet 包
 
 在 NuGet 包管理器中搜索并安装 Microsoft.CodeAnalysis 包 —— 这是一个包含 Roslyn 所有 API 的各种 NuGet 包的合集。
 
@@ -60,7 +60,7 @@ Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。
 - `Microsoft.Build.Tasks.Core`
 - `System.Threading.Tasks.Dataflow`
 
-### 打开一个解决方案/项目和其中的文件
+## 打开一个解决方案/项目和其中的文件
 
 现在，我们使用这些代码打开解决方案。我以 [MSTestEnhancer](https://github.com/dotnet-campus/MSTestEnhancer/) 为例：
 
@@ -80,7 +80,7 @@ var document = project.Documents.First(x =>
         x.Name.Equals("ContractTestContext.cs", StringComparison.InvariantCultureIgnoreCase));
 ```
 
-### 分析代码
+## 分析代码
 
 我们要分析的代码大致是这样的：
 
@@ -97,7 +97,7 @@ public class ContractTestContext<T>
 
 这里，我们必须引入一个概念 —— Syntax Rewriter。
 
-#### 语法重写——Syntax Rewriter
+### 语法重写——Syntax Rewriter
 
 Roslyn 对 C# 代码进行分析的一个非常关键的 API 是 `CSharpSyntaxRewriter`——这是一个专门用来给你继承的类。`CSharpSyntaxRewriter` 是**访问者模式**中访问者的一个实现，如果你不了解访问者模式，推荐阅读 [23种设计模式（9）：访问者模式 - CSDN博客](http://blog.csdn.net/zhengzhb/article/details/7489639#reply) 进行了解，否则我们后面的代码你将只能跟着我写，而不能明白其中的含义。
 
@@ -124,7 +124,7 @@ class TypeParameterVisitor : CSharpSyntaxRewriter
 
 如果你想了解更多语法节点，推荐另一篇入门文章：[Roslyn 入门：使用 Visual Studio 的语法可视化（Syntax Visualizer）窗格查看和了解代码的语法树](/post/roslyn-syntax-visualizer.html)。
 
-#### 访问泛型参数
+### 访问泛型参数
 
 现在，我们继续在之前打开解决方案和项目文件的代码后面增添代码：
 
@@ -147,7 +147,7 @@ var node = visitor.Visit(syntax);
 
 现在，整合以上的三大段代码，你的项目应该能够完整地跑起来了。哪三段？1. 打开项目文件；2. `TypeParameterVisitor`；3. 访问泛型参数。其中 1 和 3 写在一个方法中，2 是一个新类。
 
-#### 分析这个泛型参数
+### 分析这个泛型参数
 
 直到现在，我们所写的任何代码都还只是为了使使用 Roslyn API 的代码能够跑起来，没有进行任何实质上的分析。接下来，我们会修改 `CSharpSyntaxRewriter` 以进行真正的分析。不过在此之前，我假设上面的代码你是能正常跑起来而且没有错误的。（*如果不行，就在下面留言吧！留言有邮件通知的，我会在第一时间回复你。*）
 
@@ -182,7 +182,7 @@ class TypeParameterVisitor : CSharpSyntaxRewriter
 }
 ```
 
-### 总结
+## 总结
 
 我们总共编写了两个关键类：
 
@@ -249,7 +249,7 @@ namespace Walterlv.Demo.Roslyn
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [23种设计模式（9）：访问者模式 - CSDN博客](http://blog.csdn.net/zhengzhb/article/details/7489639#reply)
 - [John Koerner - Using a CSharp Syntax Rewriter](https://johnkoerner.com/csharp/using-a-csharp-syntax-rewriter/)

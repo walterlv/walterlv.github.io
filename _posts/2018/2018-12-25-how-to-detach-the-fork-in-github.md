@@ -32,7 +32,7 @@ position: problem
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Delete fork dependency of a GitHub repository - Stack Overflow](https://stackoverflow.com/a/16052845/6233938)
 - [Why are my contributions not showing up on my profile? - User Documentation](https://help.github.com/articles/why-are-my-contributions-not-showing-up-on-my-profile/#commit-was-made-in-a-fork)

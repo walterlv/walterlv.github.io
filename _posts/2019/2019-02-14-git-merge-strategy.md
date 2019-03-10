@@ -16,7 +16,7 @@ position: knowledge
 
 <div id="toc"></div>
 
-### git 合并策略
+## git 合并策略
 
 典型的使用指定 git 合并策略的命令这么写：
 
@@ -44,13 +44,13 @@ $ git merge origin/master -s resolve
 - ours
 - subtree
 
-### resolve
+## resolve
 
 这使用的是三路合并算法。不过我们在 [git 的合并原理（递归三路合并算法）](/post/git-merge-principle.html) 中说过，普通的三路合并算法会存在发现多个共同祖先的问题。此策略会“仔细地”寻找其中一个共同祖先。
 
 由于不需要递归合并出虚拟节点，所以此方法合并时会比较快速，但也可能会带来更多冲突。不敢说带来更多冲突是好事还是坏事，因为自动合并成功并不一定意味着在代码含义上也算是正确的合并。所以如果自动合并总是成功但代码含义上会失败，可以考虑此合并策略，这将让更多的冲突变成手工合并而不是自动合并。
 
-### recursive
+## recursive
 
 这是默认的合并策略，如果你不指定策略参数，那么将使用这个合并策略。这将直接使用递归三路合并算法进行合并，详见：[git 的合并原理（递归三路合并算法）](/post/git-merge-principle.html)。
 
@@ -72,17 +72,17 @@ $ git merge origin/master -s recursive -X diff-algorithm=patience
 $ git merge origin/master -X diff-algorithm=patience
 ```
 
-#### ours
+### ours
 
 如果不冲突，那么与默认的合并方式相同。但如果发生冲突，将自动应用自己这一方的修改。
 
 注意策略里面也有一个 ours，与这个不同的。
 
-#### theirs
+### theirs
 
 这与 ours 相反。如果不冲突，那么与默认的合并方式相同。但如果发生冲突，将自动应用来自其他人的修改（也就是 merge 参数中指定的那个分支的修改）。
 
-#### patience
+### patience
 
 此策略的名称叫“耐心”，因为 git 将话费更多的时间来进行合并一些看起来不怎么重要的行，合并的结果也更加准确。当然，使用的算法是 recursive 即递归三路合并算法。
 
@@ -131,11 +131,11 @@ int Bar()
 
 如果你经常合并出现这些括号丢失或者符号不再匹配的问题，可以考虑使用 `patience` 策略进行合并。
 
-#### no-renames
+### no-renames
 
 默认情况下 git 会识别出你重命名或者移动了文件，以便在你移动了文件之后依然可以与原文件进行合并。如果指定此策略，那么 git 将不再识别重命名，而是当作增加和删除了文件。
 
-#### 其他的参数
+### 其他的参数
 
 - `diff-algorithm=[patience|minimal|histogram|myers]`
 - `renormalize`
@@ -144,7 +144,7 @@ int Bar()
 - `rename-threshold=<n>`
 - `subtree[=<path>]`
 
-### octopus
+## octopus
 
 又是一个奇怪的名字——章鱼。章鱼有很多的触手，此合并策略就像这么多的触手一样。
 
@@ -160,7 +160,7 @@ Nope.
 Merge with strategy octopus failed.
 ```
 
-### ours
+## ours
 
 在合并的时候，无论有多少个合并分支，当前分支就直接是最终的合并结果。无论其他人有多少修改，在此次合并之后，都将不存在（当然历史里面还有）。
 
@@ -168,13 +168,13 @@ Merge with strategy octopus failed.
 
 注意 recursive 策略中也有一个 ours 参数，与这个不同的。
 
-### subtree
+## subtree
 
 此策略使用的是修改后的递归三路合并算法。与 recursive 不同的是，此策略会将合并的两个分支的其中一个视为另一个的子树，就像 git subtree 中使用的子树一样。
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Git merge strategy options & examples - Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials/using-branches/merge-strategy)
 - [diff - Any example to use git merge patience strategy? - Stack Overflow](https://stackoverflow.com/questions/47146379/any-example-to-use-git-merge-patience-strategy?noredirect=1&lq=1)

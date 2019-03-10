@@ -15,7 +15,7 @@ position: problem
 
 本文涉及到新旧 csproj 项目格式，不懂这个也不影响你完成开启本机代码调试。不过如果你希望了解，可以阅读：[将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj - walterlv](/post/introduce-new-style-csproj-into-net-framework.html)。
 
-### 在旧格式的项目中开启
+## 在旧格式的项目中开启
 
 旧格式指的是 Visual Studio 2015 及以前版本的 Visual Studio 使用的项目格式。目前 Visual Studio 2017 和 2019 对这种格式的支持还是很完善的。
 
@@ -23,7 +23,7 @@ position: problem
 
 ![在旧格式中开启本机代码调试](/static/posts/2019-02-20-22-25-48.png)
 
-### 在新格式的项目中开启
+## 在新格式的项目中开启
 
 如果你在你项目属性的 Debug 标签下没有找到上面那个选项，那么有可能你的项目格式是新格式的。
 
@@ -72,7 +72,7 @@ position: problem
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [How to: Debug in Mixed Mode - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/debugger/how-to-debug-in-mixed-mode?view=vs-2017)
 - [Tutorial: Debug C# and C++ code (mixed mode) - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/debugger/how-to-debug-managed-and-native-code?view=vs-2017)

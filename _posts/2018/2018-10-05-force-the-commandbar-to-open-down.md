@@ -13,7 +13,7 @@ categories: uwp
 
 <div id="toc"></div>
 
-### 为什么我们需要更改 CommandBar 的展开方向？
+## 为什么我们需要更改 CommandBar 的展开方向？
 
 ```xml
 <CommandBar Background="#40000000" ClosedDisplayMode="Compact">
@@ -31,13 +31,13 @@ categories: uwp
 
 我们当然希望在顶部的 CommandBar 其展开方向是向下，所以我们需要找到一些方法。
 
-### 将 CommandBar 改为向下展开的几种方法
+## 将 CommandBar 改为向下展开的几种方法
 
 首先定一个基调：CommandBar 的默认展开方向就是向上，无论你使用哪种方式，本质上都没有解决其展开方向的问题。
 
 所以以下方法都有可能在你的使用场景下失效，除了大杀器 —— 重写 Template。
 
-#### 方法一：使用 Page.TopAppBar 属性
+### 方法一：使用 Page.TopAppBar 属性
 
 ```xml
 <Page x:Class="Walterlv.Rssman.MainPage"
@@ -72,7 +72,7 @@ categories: uwp
 
 > Command bars can be placed at the top of the app window, at the bottom of the app window, and inline.
 
-#### 方法二：更改布局，使得顶部空间不足以展开 CommandBar
+### 方法二：更改布局，使得顶部空间不足以展开 CommandBar
 
 CommandBar 的 `ClosedDisplayMode` 设为 `Compact` 时，折叠状态高度 48，展开状态高度 60；在设为 `Minimal` 时，折叠状态高度 24，展开状态依然是 60。
 
@@ -90,7 +90,7 @@ CommandBar 的 `ClosedDisplayMode` 设为 `Compact` 时，折叠状态高度 48�
 
 如果你设置的 SecondaryCommand 比较长，那么展开的时候也会占用较多的控件，于是也可以强制 CommandBar 向下展开。
 
-#### 方法三：设置 DefaultLabelPosition 避开展开方向的问题
+### 方法三：设置 DefaultLabelPosition 避开展开方向的问题
 
 如果不容易改展开方向，那么不让 CommandBar 面临展开方向的问题也是一个不错的解决方案 —— 为 CommandBar 设置 `DefaultLabelPosition` 便是这样的方案。
 
@@ -99,7 +99,7 @@ CommandBar 的 `ClosedDisplayMode` 设为 `Compact` 时，折叠状态高度 48�
 ![设置为 Collapsed 或者 Right 的 DefaultLabelPosition](/static/posts/2018-10-05-17-06-56.png)  
 ▲ 设置为 Collapsed 或者 Right 的 DefaultLabelPosition
 
-#### 方法四：修改 CommandBar 的模板
+### 方法四：修改 CommandBar 的模板
 
 不得不说这真是一个令人难受的方法，因为定义 CommandBar 模板和样式的代码行数有 1400 行左右。但这也是目前依然使用 CommandBar 控件时最好的方案了。
 
@@ -157,7 +157,7 @@ CommandBar 的 `ClosedDisplayMode` 设为 `Compact` 时，折叠状态高度 48�
 ![使用样式更改的展开方向](/static/posts/2018-10-05-expand-by-editing-template.gif)  
 ▲ 使用样式更改的展开方向
 
-### 究竟应该如何修改 CommandBar 的展开方向
+## 究竟应该如何修改 CommandBar 的展开方向
 
 在多数情况下，我想我们并没有特别强烈的需求一定要让 CommandBar 在顶部依然有空间的情况下展开方向向下。
 

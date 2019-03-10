@@ -13,7 +13,7 @@ position: starter
 
 <div id="toc"></div>
 
-### 屏幕保护程序的本质
+## 屏幕保护程序的本质
 
 屏幕保护程序本质上就是一个 Win32 窗口应用程序。
 
@@ -23,7 +23,7 @@ position: starter
 
 编译好一个窗口应用程序之后，把扩展名改为 `scr`，于是你的屏幕保护程序就做好了。
 
-### 安装屏幕保护程序
+## 安装屏幕保护程序
 
 现在，在你的 `scr` 程序上点击右键，可以看到一个 “安装” 选项，点击之后就安装了。
 
@@ -35,7 +35,7 @@ position: starter
 
 为了方便截图，我调了下窗口大小。实际上本应该是 Visual Studio 创建的空 WPF 程序的默认大小。
 
-### 处理屏幕保护程序参数
+## 处理屏幕保护程序参数
 
 我的屏幕保护程序是一个非常简单的程序，几乎就是默认的模板。只是，现在加上了一点文字，输出命令行参数。
 
@@ -84,7 +84,7 @@ public partial class MainWindow : Window
 
 ![实际上运行时，后面有白色的背景](/static/posts/2018-12-22-10-24-22.png)
 
-### 请预防一些坑
+## 请预防一些坑
 
 你可能会发现 Windows 自带的屏幕保护程序在 `C:\Windows\System32` 文件夹中。但！那不是你放屏幕保护程序的地方！如果把你的屏幕保护程序拷贝到那个 Windows 的受信任目录下，你的程序是无法运行起来的。正确的做法，是右键，使用 “安装” 选项进行安装。
 
@@ -92,6 +92,6 @@ public partial class MainWindow : Window
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Create a screensaver with .NET and WPF](https://wbsimms.com/create-screensaver-net-wpf/)

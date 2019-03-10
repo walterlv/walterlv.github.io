@@ -24,7 +24,7 @@ This post is written in **multiple languages**. Please select yours:
 
 <div id="toc"></div>
 
-### 三种创建模糊背景窗口的方法
+## 三种创建模糊背景窗口的方法
 
 Windows 10 上创建带模糊背景的窗口有三种不同的方法，不过每一种都是既有好处又有坏处的：
 
@@ -39,7 +39,7 @@ Windows 10 上创建带模糊背景的窗口有三种不同的方法，不过每
 
 ---
 
-### SetWindowCompositionAttribute API
+## SetWindowCompositionAttribute API
 
 `SetWindowCompositionAttribute` 并没有那么好调用，所以我为此写了一个辅助类类封装对背景模糊效果的调用。使用这个辅助类，你只需要使用一行代码就能开启背景模糊效果。
 
@@ -73,7 +73,7 @@ public class MainWindow : Window
 
 当然，我还写了一篇博客专门讲使用 `SetWindowCompositionAttribute` API 实现背景模糊效果：[在 Windows 10 上为 WPF 窗口添加模糊特效（就像开始菜单和操作中心那样）](/post/win10/2017/10/02/wpf-transparent-blur-in-windows-10.html)。
 
-### WPF BlurEffect
+## WPF BlurEffect
 
 WPF 的 `UIElement` 都有 `Effect` 属性，将其设置为 `BlurEffect` 即可获得控件的高斯模糊效果。
 
@@ -137,6 +137,6 @@ WPF 的 `UIElement` 都有 `Effect` 属性，将其设置为 `BlurEffect` 即可
 
 如果是圆形窗口，我另外写了一篇文章来说明进行圆形裁剪：[WPF 中使用附加属性，将任意 UI 元素或控件裁剪成圆形（椭圆）](/post/clip-wpf-uielement-to-ellipse.html)。
 
-### UWP AcyclicBrush
+## UWP AcyclicBrush
 
 微软的官方文档 [Acrylic material - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/style/acrylic?wt.mc_id=MVP) 讲解了如何使用亚克力效果。

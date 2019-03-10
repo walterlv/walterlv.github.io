@@ -13,7 +13,7 @@ categories: visualstudio nuget msbuild
 
 <div id="toc"></div>
 
-### 回顾遇到的问题
+## 回顾遇到的问题
 
 如果你之前迁移过 csproj 文件，可能会遇到问题。关于迁移 csproj 文件，可以阅读：[将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj - 吕毅](/post/introduce-new-style-csproj-into-net-framework.html)。
 
@@ -27,13 +27,13 @@ categories: visualstudio nuget msbuild
 
 虽然我提到不用担心，但其实旧的一些包里并没有准备 build 文件夹，也没有准备 props 或者 targets 文件。所以一小部分特别依赖于 install.ps1 的 NuGet 包是没有办法在新格式中生效的。
 
-### 最简升级步骤
+## 最简升级步骤
 
 知道了问题所在，那么我们的根本便是将 Install.ps1 升级成新的 props 或者 targets。
 
 如果你不清楚 props 或者 targets 是什么意思，或者不知道怎么写它们，可以阅读我的另一篇文章[理解 C# 项目 csproj 文件格式的本质和编译流程 - 吕毅](/post/understand-the-csproj.html)。
 
-#### 第一步：将 install.ps1 翻译成 targets
+### 第一步：将 install.ps1 翻译成 targets
 
 最简单的方法，直接去安装好 NuGet 的项目的 csproj 文件中去看究竟生成了那些代码。一般来说，这些 install.ps1 中多是生成 `Target` 节点。
 
@@ -91,7 +91,7 @@ categories: visualstudio nuget msbuild
 </Project>
 ```
 
-#### 第二步：修改 nuspec 文件，加入 targets
+### 第二步：修改 nuspec 文件，加入 targets
 
 接着，去 nuspec 文件中，删除 Install.ps1 和 Uninstall.ps1，然后新增我们刚刚写的 targets 文件。
 
@@ -106,7 +106,7 @@ categories: visualstudio nuget msbuild
 </files>
 ```
 
-#### 重新打包和测试 NuGet 包
+### 重新打包和测试 NuGet 包
 
 以上改完了之后，基本上就迁移完了。
 

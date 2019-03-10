@@ -12,7 +12,7 @@ categories: dotnet csharp
 
 <div id="toc"></div>
 
-### .NET 中没有自带的方法
+## .NET 中没有自带的方法
 
 对于实例，.NET 中提供了这些方法来判断：
 
@@ -42,7 +42,7 @@ if (type.IsSubClassOf(typeof(Foo)))
 
 不过，如果你试图拿这个泛型版本的 `typeof(Foo<>)` 执行上述所有判断，你会发现所有的 `if` 条件都会是 `false`。
 
-### 我们需要自己编写方法
+## 我们需要自己编写方法
 
 `typeof(Foo<>)` 和 `typeof(Foo<SomeClass>)` 之间的关系就是 `GetGenericTypeDefinition` 函数带来的关系。
 

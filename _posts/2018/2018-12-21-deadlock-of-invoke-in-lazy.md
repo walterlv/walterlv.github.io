@@ -14,7 +14,7 @@ WPF 中为了 UI 的跨线程访问，提供了 `Dispatcher` 线程模型。其 
 
 <div id="toc"></div>
 
-### 一段死锁的代码
+## 一段死锁的代码
 
 请先看一段非常简单的 WPF 代码：
 
@@ -57,13 +57,13 @@ class Walterlv
 
 这里的 `Application.Current.Dispatcher` 并不一定必须是 `Application.Current`，只要是两个不同线程拿到的 `Dispatcher` 的实例是同一个，就会死锁。
 
-### 此死锁的触发条件
+## 此死锁的触发条件
 
 1. `Lazy<T>` 的线程安全参数设置为默认的，也就是 `LazyThreadSafetyMode.ExecutionAndPublication`；
 1. 后台线程和主 UI 线程并发访问这个 `Lazy<T>`，且后台线程先于主 UI 线程访问这个 `Lazy<T>`；
 1. `Lazy<T>` 内部的代码包含主线程的 `Invoke`。
 
-### 此死锁的原因
+## 此死锁的原因
 
 1. 后台线程访问到 Lazy，于是 Lazy 内部获得同步锁；
 1. 主 UI 线程访问到 Lazy，于是主 UI 线程等待同步锁完成，并进入阻塞状态（以至于不能处理消息循环）；
@@ -71,7 +71,7 @@ class Walterlv
 
 于是，后台线程在等待 UI 线程处理消息以便让 `Invoke` 完成，而主 UI 线程由于进入 Lazy 的等待，于是不能完成 `Invoke` 中的任务；于是发生死锁。
 
-### 此死锁的解决方法
+## 此死锁的解决方法
 
 `Invoke` 改为 `InvokeAsync` 便能解锁。
 
@@ -86,7 +86,7 @@ class Walterlv
 
 如果需要使用 `Invoke` 的返回值，那么改为 `InvokeAsync` 之后，可以使用 `await` 异步等待返回值。
 
-### 更多死锁问题
+## 更多死锁问题
 
 死锁问题：
 

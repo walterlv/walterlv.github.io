@@ -11,7 +11,7 @@ categories: windows csharp dotnet
 
 ---
 
-### 随处可用的代码
+## 随处可用的代码
 
 这是最方便的方式了，因为这段代码随便放到一段代码中就能运行：
 
@@ -38,7 +38,7 @@ private static void CreateShortcut(string lnkFilePath, string args = "")
 ![快捷方式属性](/static/posts/2018-08-05-20-37-14.png)  
 ▲ 快捷方式属性（其中 Target 等同于上面的 `TargetPath` 和 `Arguments` 一起，Start in 等同于上面的 `WorkingDirectory`）
 
-#### 引用 COM 组件
+### 引用 COM 组件
 
 引用 COM 组件 Interop.IWshRuntimeLibrary.dll 能够获得类型安全，不过本质上和以上方法是一样的。
 
@@ -53,7 +53,7 @@ private static void CreateShortcut(string lnkFilePath, string args = "")
     shortcut.Save();
 }
 ```
-#### 兼容 .NET 3.5 或早期版本
+### 兼容 .NET 3.5 或早期版本
 
 如果你还在使用 .NET Framework 3.5 或更早期版本，那真的很麻烦。同情你一下，不过也贴一段代码：
 

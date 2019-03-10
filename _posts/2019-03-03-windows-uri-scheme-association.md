@@ -1,7 +1,7 @@
 ---
 title: "如何为你的 Windows 应用程序关联 URL 协议，以便在浏览器中也能打开你的应用"
 publishDate: 2019-03-03 16:28:12 +0800
-date: 2019-03-04 22:15:13 +0800
+date: 2019-03-09 09:11:22 +0800
 categories: windows
 position: knowledge
 ---
@@ -14,26 +14,26 @@ position: knowledge
 
 <div id="toc"></div>
 
-### URL 协议
+## URL 协议
 
 一个常用的 URL 协议是这样子的：<https://walterlv.com>。前面的 `https` 就是协议名称，而 `https://` 放在一起就是在使用 `https` 协议。
 
 本文我们将定义一个 `walterlv` 协议，然后关联到我们本地安装的一个桌面应用程序上，然后使用 `walterlv://open?id=1` 来打开一个 id 为 1 的逗比。
 
-### 注册一个 URL 协议
+## 注册一个 URL 协议
 
 要在 Windows 系统上注册一个 URL 协议，你只需要两个步骤：
 
 - 好好想一个协议名称
 - 在注册表中添加协议关联
 
-#### 好好想一个协议名称
+### 好好想一个协议名称
 
 就知道你想不出来名字，于是可以使用命名生成工具：[Whitman](ms-windows-store://pdp/?productid=9P8LNZRNJX85)，其原理可阅读 [冷算法：自动生成代码标识符（类名、方法名、变量名） - 吕毅](/post/algorithm-of-generating-random-identifiers.html)。
 
 然后本文使用协议名称 `walterlv`。
 
-#### 在注册表中添加协议关联
+### 在注册表中添加协议关联
 
 你需要在注册表的 `HKEY_LOCAL_MACHINE\Software\Classes` 或者 `HKEY_CURRENT_USER\Software\Classes` 添加一些子键：
 

@@ -135,7 +135,7 @@ public static class GeometryExtensions
 }
 ```
 
-#### 参考资料
+**参考资料**
 
 - [SVG技术入门：如何画出一条会动的线 – WEB骇客](http://www.webhek.com/post/animated-line-drawing-in-svg.html)
 - [c# - Getting Geometry length - Stack Overflow](https://stackoverflow.com/questions/10877631/getting-geometry-length)

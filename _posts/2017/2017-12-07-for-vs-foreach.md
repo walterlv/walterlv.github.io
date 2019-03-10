@@ -10,7 +10,7 @@ categories: csharp dotnet
 
 <p id="toc"></p>
 
-### 少不了的源码
+## 少不了的源码
 
 于是，我立刻翻开了 `Find` 和 `FirstOrDefault` 的源代码：
 
@@ -43,7 +43,7 @@ public static TSource FirstOrDefault<TSource>(this IEnumerable<TSource> source, 
 
 这难道不是在 PK for 和 foreach 吗？接下来的分析才发现，没这么简单。
 
-### Find V.S. FirstOrDefault
+## Find V.S. FirstOrDefault
 
 我写了两段代码，然后在单元测试中测量它们的性能。方法我按不同顺序写了两遍，试图降低初始化影响和偶然事件的影响。
 
@@ -101,7 +101,7 @@ public class FindAndFirstOrDefaultTest
 
 这似乎能够解释，因为 `foreach` 毕竟还要生成 `IEnumerator` 对象，还要有方法调用；而 `for` 却只有 `List<T>` 集合的访问。然而，这真的只是 `for` 和 `foreach` 之间的性能差异吗？
 
-### for V.S. foreach
+## for V.S. foreach
 
 为了看看其性能差异来自于 `for` 和 `foreach`，我把 `Find` 和 `FirstOrDefault` 的调用修改为 `for` 和 `foreach`：
 
@@ -169,7 +169,7 @@ public class ForAndForeachTest
 
 然而结论居然是——`for` 比 `foreach` 有“**轻微**”的性能优势！这与 `Find` 和 `FirstOrDefault` 两倍的性能差异就小多了。是什么原因造成了如此的性能差异呢？
 
-### 轻微的性能优势，还是两倍的性能优势？
+## 轻微的性能优势，还是两倍的性能优势？
 
 为了了解原因，我将 `Find` 和 `FirstOrDefault` 中的方法写到测试里面：
 
@@ -233,7 +233,7 @@ public T this[int index] {
 
 我的 `For` 内部索引访问相比于 `Find` 内部索引访问多了数组越界判断，同时还可能存在 JIT 的特别优化。如果要验证这个问题，我就需要比较数组了。
 
-### List V.S. Array
+## List V.S. Array
 
 改写我们的测试代码，这回的 `For` 方法有两个重载，一个列表一个数组。
 
@@ -289,11 +289,11 @@ public void _B1_List()
 
 可以发现，即便是数组，其性能也赶不上原生的 `Find`。
 
-### 只有现象，却没有结论
+## 只有现象，却没有结论
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [C＃ Find vs FirstOrDefault - 林德熙](https://blog.lindexi.com/post/C-Find-vs-FirstOrDefault.html)
 - [c# - In .NET, which loop runs faster, 'for' or 'foreach'? - Stack Overflow](https://stackoverflow.com/questions/365615/in-net-which-loop-runs-faster-for-or-foreach)

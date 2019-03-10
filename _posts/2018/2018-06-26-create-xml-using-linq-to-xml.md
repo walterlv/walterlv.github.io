@@ -118,7 +118,7 @@ var dependencies = new Dictionary<string, (string id, string version, string exc
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [LINQ to XML 与DOM (C#) - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/concepts/linq/linq-to-xml-vs-dom?wt.mc_id=MVP)
 - [如何：控制命名空间前缀 (C#) (LINQ to XML) - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/concepts/linq/how-to-control-namespace-prefixes-linq-to-xml?wt.mc_id=MVP)

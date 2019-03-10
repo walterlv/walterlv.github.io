@@ -13,7 +13,7 @@ categories: windows dotnet wpf uwp
 
 <div id="toc"></div>
 
-### 各种不同的 Windows 桌面 UI 框架
+## 各种不同的 Windows 桌面 UI 框架
 
 微软主推的 Windows 桌面 UI 框架有：
 
@@ -29,7 +29,7 @@ UWP 只支持 Windows 10（当然也分不同的小版本，兼容起来有些�
 
 WPF 和 Windows Forms 的最新版本只支持 Windows 7 SP1 及以上系统。*如果要支持 Windows 7 和更早的系统，你需要降低 .NET Framework 的版本至 4.6.2 及以下；如果要 XP 支持，还需要到 4.0 及以下。*
 
-### 对普通用户而言的 DPI 级别
+## 对普通用户而言的 DPI 级别
 
 DPI 值有两种：系统 DPI (System DPI) 和屏幕 DPI (Monitor DPI)。自 Windows Vista 开始引入系统 DPI 概念，自 Windows 8.1 开始引入屏幕 DPI 概念。
 
@@ -67,7 +67,7 @@ Windows 7 中还额外提供了传统 Windows XP 风格 DPI 缩放比例的选�
 
 额外的，对于 Windows 8.1 及以上的系统，系统 DPI 值等于主屏在系统启动时的屏幕 DPI 值。
 
-### 对 Windows 应用而言的 DPI 感知级别（Dpi Awareness）
+## 对 Windows 应用而言的 DPI 感知级别（Dpi Awareness）
 
 Windows 的 DPI 感知级别经过历代升级，已经有四种了。
 
@@ -102,13 +102,13 @@ Windows 的 DPI 感知级别经过历代升级，已经有四种了。
 
 可以看到，目前仅文件资源管理器是 Per-Monitor V2 的。
 
-### 不同 UI 框架对 DPI 的支持情况
+## 不同 UI 框架对 DPI 的支持情况
 
-#### UWP
+### UWP
 
 UWP 当然支持最新的各种 DPI 感知级别，而且是完全支持。
 
-#### WPF
+### WPF
 
 WPF 的最新版支持最新的 DPI 感知级别，不过依然有限制：
 
@@ -120,15 +120,15 @@ WPF 第一个版本（随 .NET Framework 3.5 发布）就已支持系统级 DPI 
 
 .NET Framework 4.6.2 开始的 WPF 才开始支持屏幕级 DPI 感知。而 Per-Monitor V1 和 Per-Monitor V2 的支持在操作系统级别是兼容的，所以只需要修改 WPF 中的应用程序清单即可兼容第二代屏幕级 DPI 感知。
 
-#### Windows Forms
+### Windows Forms
 
 Windows Forms 也是在 .NET Framework 4.7 才开始支持屏幕级 DPI 感知的。不过部分控件不支持自动随屏幕 DPI 切换。
 
-#### 其他 UI 框架
+### 其他 UI 框架
 
 原生 Win32 是支持最新 DPI 感知的，其他如 GDI/GDI+/MFC 等都不支持，除非开发者手工编写。
 
-### 混合 DPI 感知级别
+## 混合 DPI 感知级别
 
 当项目足够大的时候，一个或几个项目成员可能很难了解所有的窗口逻辑。让一个进程的所有窗口开启 DPI 缩放对应用的高 DPI 迁移来说比较困难。不过好在我们可以开启混合 DPI 缩放。
 
@@ -165,7 +165,7 @@ Microsoft PowerPoint 的演示页面使用的是屏幕 DPI 感知级别：
 ![只有一个 PowerPoint 进程](/static/posts/2018-10-18-10-17-29.png)  
 ▲ 只有一个 PowerPoint 进程
 
-### DPI 相关的 Windows API 的迁移
+## DPI 相关的 Windows API 的迁移
 
 - GetSystemMetrics      ->  GetSystemMetricsForDpi
 - AdjustWindowRectEx    ->  AdjustWindowRectExForDpi
@@ -174,7 +174,7 @@ Microsoft PowerPoint 的演示页面使用的是屏幕 DPI 感知级别：
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [High DPI Desktop Application Development on Windows - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/hidpi/high-dpi-desktop-application-development-on-windows?wt.mc_id=MVP)
 - [WPF-Samples/Developer Guide - Per Monitor DPI - WPF Preview.docx at master · Microsoft/WPF-Samples](https://github.com/Microsoft/WPF-Samples/blob/master/PerMonitorDPI/Developer%20Guide%20-%20Per%20Monitor%20DPI%20-%20WPF%20Preview.docx)

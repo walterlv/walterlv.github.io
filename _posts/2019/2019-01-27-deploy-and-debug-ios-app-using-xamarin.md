@@ -13,7 +13,7 @@ position: starter
 
 <div id="toc"></div>
 
-### 准备一台 Mac 电脑
+## 准备一台 Mac 电脑
 
 如果你没有 Mac 电脑，那我只能很不幸地告诉你：本文读下去已经没有什么用了，你不会成功的……当然你也可以考虑使用 Mac OS 虚拟机，但成功率太低，本文不会涉及。
 
@@ -26,7 +26,7 @@ position: starter
 
 本文接下来的内容都假设你已经安装好了这两款应用。
 
-### 背景知识
+## 背景知识
 
 你需要知道一些背景知识，不然后面真机部署的时候失败了都不知道怎么回事。
 
@@ -37,7 +37,7 @@ position: starter
 
 也就是说，你必须有一些操作是在 XCode 中完成；只使用 Visual Studio for Mac 是无法完成部署任务的。
 
-### 在 XCode 中准备
+## 在 XCode 中准备
 
 1. 在 XCode 中新建一个空白 iOS 项目（什么类型都可以），这个项目随时可以丢弃。
 1. 选择你新建的项目，会出现这个项目的信息可以填，默认在 General 标签中。
@@ -52,7 +52,7 @@ position: starter
 
 *[重要] 额外的，如果你开发的是 iOS 扩展，有两个或者更多的包，那么你需要重复步骤 3 到 6。也就是不断地修改 Bundle Identifier，等待生成新的 Developer 信息，然后部署这个空的应用
 
-### 在 Visual Studio for Mac 中部署
+## 在 Visual Studio for Mac 中部署
 
 1. *[重要] 请回到你的 iPhone 手机，删除刚刚部署的应用
     - 如果你刚刚部署了多个空白应用，那么都要删除
@@ -77,7 +77,7 @@ position: starter
 1. 检查你的步骤与本文是否有出入；
 2. 参考：[使用 Xamarin 开发 iOS 应用中需要注意的若干个问题](/post/tips-for-developing-xamarin-ios-app.html)
 
-### 在 iPhone 上操作
+## 在 iPhone 上操作
 
 1. 打开设置 -> 通用 -> 设备管理
 1. 点开 [自己的开发者账号]，点击 [信任]

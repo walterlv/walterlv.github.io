@@ -13,7 +13,7 @@ MSBuild 不愧是强大的编译器，它提供的扩展机制让你几乎可以
 
 <div id="toc"></div>
 
-### 系列博客
+## 系列博客
 
 这是兄弟篇中的一篇，关于 MSBuild/Roslyn 和 NuGet 的 100 个坑：
 
@@ -28,9 +28,9 @@ MSBuild 不愧是强大的编译器，它提供的扩展机制让你几乎可以
 
 当然还有更多，可以访问 <https://walterlv.github.io/categories#nuget>。
 
-### 100 个坑
+## 100 个坑
 
-#### 不可用的源
+### 不可用的源
 
 NuGet 可以指定多个包源。既可以在 Visual Studio 中配置，也可以在配置文件中配置。
 
@@ -63,19 +63,19 @@ NuGet 可以指定多个包源。既可以在 Visual Studio 中配置，也可�
 
 这种情况，唯一的办法就是把那个不再可用的源从配置中删除，或者临时禁用掉出问题的源。
 
-#### 不存在的版本（新版本已修复）
+### 不存在的版本（新版本已修复）
 
 如果某个包的特定版本在所有源中不存在，那么安装此包的项目再也无法更新或者卸载此包了（也就别想再编译通过了）。
 
 不过目前这种问题只存在于旧的 `packages.config` 形式的 NuGet 包管理系统中。如果已经升级成 `PackageReference`，那么就没有这个问题了。
 
-#### 编译不通过后无法安装和更新 NuGet 包
+### 编译不通过后无法安装和更新 NuGet 包
 
 有些情况下，会因为项目没有办法完成编译导致无法安装和更新某些 NuGet 包；但编译不通过其实就是这个 NuGet 包导致的（比如某个测试包）。大面积注释确保编译通过虽然说是一种可以尝试的手段，但毕竟还是太低效了。
 
 这时，通过手工修改项目文件来实现手工更新 NuGet 包不失为一种尝试手段。
 
-#### 项目文件 Sdk 的来回切换
+### 项目文件 Sdk 的来回切换
 
 MSBuild 15.0 为项目文件的根节点 `Project` 带来了 `Sdk` 属性，也就是说 Visual Studio 2017 开始支持。
 
@@ -89,13 +89,13 @@ MSBuild 15.0 为项目文件的根节点 `Project` 带来了 `Sdk` 属性，也�
 
 唯一的解决办法就是清除项目中的所有 NuGet 缓存，使用 `git clean -xdf`。
 
-#### 依赖的项目会自动转为依赖的 NuGet 包
+### 依赖的项目会自动转为依赖的 NuGet 包
 
 如果你给一个项目 A 打 NuGet 包，但这个项目引用此解决方案中的另一个项目 B。那么这时打包，NuGet 会认为 A 包依赖于 B 包。
 
 事实上，B 包极有可能是不存在的，也就是说，你打的 A 包并没有办法给大家正常使用。
 
-#### .nuget.g.props 和 .nuget.g.targets
+### .nuget.g.props 和 .nuget.g.targets
 
 使用 `Microsoft.NET.Sdk` 作为 Sdk 的项目文件会自动在 obj 文件夹下生成 `project.assets.json`、`$(ProjectName).csproj.nuget.cache`、`$(ProjectName).csproj.nuget.g.props` 和 `$(ProjectName).csproj.nuget.g.targets` 文件；其中 `.nuget.g.props` 和 `.nuget.g.targets` 中生成了 `Import` 包中编译相关文件的代码。例如：
 

@@ -13,7 +13,7 @@ description: 如果你正在写 UWP 程序时发现 DEBUG 下可以反射获取�
 
 ---
 
-### 尝试反射获取属性
+## 尝试反射获取属性
 
 你的代码可能是这样的：
 
@@ -43,7 +43,7 @@ var properties = type.GetTypeInfo().DeclaredProperties;
 
 这就诡异了，DEBUG 和 RELEASE 下到底有什么区别呢？
 
-### 设置 .NET 本机工具链编译选项
+## 设置 .NET 本机工具链编译选项
 
 经过一番 Google，发现 RELEASE 下编译开启了 .NET 本机工具链选项，这使得 RELEASE 下生成的是静态的本机代码。
 
@@ -51,7 +51,7 @@ var properties = type.GetTypeInfo().DeclaredProperties;
 
 试着去掉这个选项，果然以上的反射代码能够得到期望的属性集合。然而这样就丢失了 .NET Native 带给我们棒棒的性能优势了啊！
 
-### 设置 .NET Native 运行时指令
+## 设置 .NET Native 运行时指令
 
 所以更推荐的做法是什么呢？微软为我们提供了设置 .NET Native 运行时指令的方法，展开解决方案项目的 Properties 文件夹，我们可以找到 `Default.rd.xml` 文件。
 
@@ -108,7 +108,7 @@ var properties = type.GetTypeInfo().DeclaredProperties;
 
 再次运行，已经可以反射获取到所有的属性了。经过尝试，在写了 `Windows.UI.Xaml` 命名空间后，它的子命名空间 `Windows.UI.Xaml.Controls` 是可以不用写的。
 
-#### 参考资料
+**参考资料**
 - [c# - Type.GetProperties() doesn't work in Release - Stack Overflow](https://stackoverflow.com/questions/35359942/type-getproperties-doesnt-work-in-release/35361710)
 - [c# - Adding runtime directives for generic types in UWP app - Stack Overflow](https://stackoverflow.com/questions/39365184/adding-runtime-directives-for-generic-types-in-uwp-app)
 - [.NET Native Deep Dive: Dynamic Features in Static Code](https://blogs.msdn.microsoft.com/dotnet/2014/05/20/net-native-deep-dive-dynamic-features-in-static-code/)

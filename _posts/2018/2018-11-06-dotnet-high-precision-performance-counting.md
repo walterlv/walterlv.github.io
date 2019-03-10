@@ -13,7 +13,7 @@ categories: dotnet csharp
 
 <div id="toc"></div>
 
-### 基本的计时
+## 基本的计时
 
 计时一般采用下面这种方式，在方法执行之前获取一次时间，在方法结束之后再取得一次时间。
 
@@ -31,7 +31,7 @@ Foo();
 - [C# 标准性能测试高级用法 - 林德熙](https://blog.lindexi.com/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95.html)
 - [.NET/C# 反射的的性能数据，以及高性能开发建议（反射获取 Attribute 和反射调用方法） - 吕毅](/post/dotnet-high-performance-reflection-suggestions.html)
 
-### 结论：使用什么方法计时
+## 结论：使用什么方法计时
 
 先说结论：`System.Diagnostics` 命名空间下有一个 `Stopwatch` 类。如果你要为你方法的执行时间进行统计，那么就使用这个类。
 
@@ -48,7 +48,7 @@ var elapsed = watch.Elapsed;
 
 当然，你也可以直接使用 `Stopwatch` 的构造函数，`new` 出来之后再 `Start`，不过 `StartNew` 静态方法可以将两句合并为一句。
 
-### 各种计时 API 及其比较
+## 各种计时 API 及其比较
 
 计时还有很多的方法，你可以针对不同需求场景使用不同的方法。不过，如果你根本没有了解过其他方法的话，那么建议直接使用上面的 `Stopwatch`，不要想太多。
 
@@ -66,7 +66,7 @@ var elapsed = watch.Elapsed;
     - `Get­System­Time­Precise­As­File­Time`
     - `Query­Interrupt­Time­Precise`, `Query­Unbiased­Interrupt­Time­Precise`
 
-#### 基于系统性能计数器（QPC）的 API
+### 基于系统性能计数器（QPC）的 API
 
 `QueryPerformanceCounter`，微软文档中把它称之为 QPC。
 
@@ -85,7 +85,7 @@ QPC 是通过计算机上独立运行的高精度硬件计时模块来获得时�
 1 s     = 1000 ms
 ```
 
-#### 基于系统时间的 API
+### 基于系统时间的 API
 
 如果你的需求不止是测量获取一个时间间隔，而是需要一个长期保存的时间，或者需要将时间与其他设备进行通信，那么基于单台设备的 QPC 就不符合要求了。
 
@@ -102,14 +102,14 @@ internal static extern long GetSystemTimeAsFileTime();
 
 这里我只能拿英文来说话了。来自微软的 Raymond Chen 在它的 [The Old New Thing](https://www.amazon.com/gp/product/0321440307?ie=UTF8&tag=tholneth-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0321440307) 一书中说，基于系统时间的 API 获取的时间戳精度用的是 “所谓的 Precise”，但实际上应该称之为 “Accurate”，而 QPC 才能称之为实质上的 “Precise”。纠结起来就是 QPC 比基于系统时间的 API 得到的时间戳精度更高。
 
-#### 基于 QPC 和系统时间的 API
+### 基于 QPC 和系统时间的 API
 
 `Get­System­Time­Precise­As­File­Time` 这些 API 既可以获得 QPC 的高精度，又与系统时钟相关，于是你可以使用这些 API 同时获得以上测量的好处。当然，这以性能成本为代价的。
 
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Acquiring high-resolution time stamps - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/sysinfo/acquiring-high-resolution-time-stamps?wt.mc_id=MVP)
 - [How accurate are the various Windows time-querying functions? – The Old New Thing](https://blogs.msdn.microsoft.com/oldnewthing/20170921-00/?p=97057)

@@ -19,9 +19,9 @@ categories: visualstudio msbuild
 
 <div id="toc"></div>
 
-### csproj 里面是什么？
+## csproj 里面是什么？
 
-#### 总览 csproj 文件
+### 总览 csproj 文件
 
 相信你一定见过传统的 csproj 文件格式。就算你几乎从来没主动去看过里面的内容，在版本管理工具中解冲突时也在里面修改过内容。
 
@@ -54,13 +54,13 @@ categories: visualstudio msbuild
 
 是什么导致了这样的差异？在了解 csproj 文件中各个部件的作用之前，这似乎很难回答。
 
-#### 了解 csproj 中的各个部件的作用
+### 了解 csproj 中的各个部件的作用
 
 xml 声明部分完全没有在此解释的必要了，为兼容性提供了方便，详见：[XML - Wikipedia](https://en.wikipedia.org/wiki/XML#International_use)。
 
 接下来，我们不会依照部件出现的顺序安排描述的顺序，而是按照关注程度排序。
 
-#### PropertyGroup
+### PropertyGroup
 
 `PropertyGroup` 是用来存放属性的地方，这与它的名字非常契合。那么里面放什么属性呢？答案是——什么都能放！
 
@@ -87,7 +87,7 @@ xml 声明部分完全没有在此解释的必要了，为兼容性提供了方�
 
 额外说一下，`Debug` 和 `Release` 这两个值其实是在某处一个名为 `Configuration` 的属性定义的，它们其实只是普通的字符串而已，没什么特殊的意义，只是有很多的 `PropertyGroup` 加上了 `Debug` `Release` 的判断条件才使得不同的 `Configuration` 具有不同的其他属性，最终表现为编译后的巨大差异。由于 `Configuration` 属性可以放任意字符串，所以甚至可以定义一个非 `Debug` 和 `Release` 的配置（例如用于性能专项测试）也是可以的。
 
-#### ItemGroup
+### ItemGroup
 
 `ItemGroup` 是用来指定集合的地方，这与它的名字非常契合。那么这集合里面放什么项呢？答案是——什么都能放！
 
@@ -117,7 +117,7 @@ xml 声明部分完全没有在此解释的必要了，为兼容性提供了方�
 
 `ItemGroup` 也可以放很多组，一样是为了提升可读性或者增加条件。
 
-#### Import
+### Import
 
 你应该注意到在前面的思维导图中，无论是新 csproj 还是旧 csproj 文件，我都写了两个 `Import` 节点。其实它们本质上是完全一样的，只不过在含义上有不同。前面我们了解到 csproj 文件致力于脱离语义，所以分开两个地方写几乎只是为了可读性考虑。
 
@@ -178,7 +178,7 @@ xml 声明部分完全没有在此解释的必要了，为兼容性提供了方�
 
 那么，既然 csproj 文件中可以完全实现这样的功能，为何还要单独用 `props` 文件来存放呢？原因显而易见了——为了在多个项目中使用，**一处更新，到处生效**。所以有没有觉得很好玩——如果把版本号单独放到 props 文件中，就能做到一处更新版本号，到处更新版本号啦！
 
-#### Target
+### Target
 
 终于开始说 Target 了。为什么会这么期待呢？因为前面埋下的各种伏笔几乎都要在这一节点得到解释了。
 
@@ -218,7 +218,7 @@ xml 声明部分完全没有在此解释的必要了，为兼容性提供了方�
 
 而引入的这份 `.targets` 文件便包含了 msbuild 定义的各种核心编译任务。只要引入了这个 `.targets` 文件，便能使用 msbuild 自带的编译任务完成绝大多数项目的编译。你可以自己去查看此文件中的内容，相信有以上 `Target` 的简单介绍，应该能大致理解其完成编译的流程。这是我的地址：`C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.CSharp.targets`。
 
-#### Project
+### Project
 
 所有的 csproj 文件都是以 `Project` 节点为根节点。既然是根节点为何我会在最后才说 `Project` 呢？因为这可是一个大悬念啊！本文一开始就描述了新旧两款 csproj 文件格式的差异，你也能从我的多篇博客中感受到新格式带来的各种好处；而简洁便是新格式中最大的好处之一。它是怎么做到简洁的呢？
 
@@ -228,7 +228,7 @@ xml 声明部分完全没有在此解释的必要了，为兼容性提供了方�
 
 如果你希望看看 `Microsoft.NET.Sdk` 都引入了哪些文件，可以去本机安装的 msbuild 或 dotnet 的目录下查看。当我使用 msbuild 编译时，我的地址：`C:\Program Files\dotnet\sdk\2.1.300\Sdks\Microsoft.NET.Sdk\build\`。比如你可以从此文件夹里的 `Microsoft.NET.GenerateAssemblyInfo.targets` 文件中发现 `AssemblyInfo.cs` 文件是如何自动生成及生效的。
 
-### 编译器是如何将这些零散的部件组织起来的？
+## 编译器是如何将这些零散的部件组织起来的？
 
 这里说的编译器几乎只指 msbuild 和 Roslyn，前者基于 .NET Framework，后者基于 .NET Core。不过，它们在处理我们的项目文件时的行为大多是一致的——至少对于通常项目来说如此。
 
@@ -238,7 +238,7 @@ xml 声明部分完全没有在此解释的必要了，为兼容性提供了方�
 
 在编译时，msbuild 或 Roslyn 还会重新做一遍上面的事情——毕竟这两个才是真正的编译器，可不是 Visual Studio 的一部分啊。随后，执行编译过程。它们会按照 `Target` 指定的先后顺序来安排不同 `Target` 的执行，当执行完所有的 `Target`，便完成了编译过程。
 
-### 新旧 csproj 在编译过程上有什么差异？
+## 新旧 csproj 在编译过程上有什么差异？
 
 相信读完前面两个部分之后，你应该已经了解到在格式本身上，新旧格式之间其实并没有什么差异。或者更严格来说，差异只有一条——新格式在 Project 上指定了 `Sdk`。真正造成新旧格式在行为上的差别来源于默认为我们项目 `Import` 进来的那些 .props 和 .targets 不同。新格式通过 `Microsoft.NET.Sdk` 为我们导入了更现代化的 .props 和 .targets，而旧格式需要考虑到兼容性压力，只能引入旧的那些 .targets。
 
@@ -258,7 +258,7 @@ xml 声明部分完全没有在此解释的必要了，为兼容性提供了方�
 
 不过好在 NuGet 4.x 以上版本在安装 NuGet 包时自动为我们在 csproj 中插入了以上代码。
 
-### 更多资料
+## 更多资料
 
 如果你在阅读本文时还有更多问题，可以阅读我和朋友的其他相关博客，也可以随时在下方向我留言。如果没有特别原因，我都是在一天之内进行回复。
 

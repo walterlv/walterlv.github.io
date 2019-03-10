@@ -18,13 +18,13 @@ But how can I detect a incremental building behavior and do something different 
 
 <div id="toc"></div>
 
-### The Problem
+## The Problem
 
 SourceFusion is a pre-compile framework and allows you to change you code during the compiling. You can visit [dotnet-campus/SourceFusion: SourceFusion is a pre-compile framework based on Roslyn. It helps you to build high-performance .NET code.](https://github.com/dotnet-campus/SourceFusion) to view the open-source project.
 
 The Target in the SourceFusion takes long time and affects followed Targets such as the `CoreCompile` Target. If it use a completely incremental building, the Target will be skipped when building and no more source code will be added or removed before the `CoreCompile` Target. So nothing will happen during a incremental building and the SourceFusion changes nothing.
 
-### The Solution
+## The Solution
 
 We can write another Target helps us to detect rebuilding behavior. We can define a property to tell us whether it is a incremental building or not.
 
@@ -63,7 +63,7 @@ I need `WalterlvDemoRebuildRequired` property to detect the rebuilding behavior.
 
 Then we can check the value of `WalterlvDemoRebuildRequired` to detect a rebuilding or incremental building.
 
-### How to use this property
+## How to use this property
 
 For the long-time Target `WalterlvDemoCoreTarget`, it should detect the property and do something different.
 
@@ -82,7 +82,7 @@ Then pass the property value to the core Task, and the Task will know whether it
 
 ---
 
-#### References
+### References
 
 - [CallTarget Task - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/calltarget-task)
 - [How to: Build Incrementally - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-build-incrementally)

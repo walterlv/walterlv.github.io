@@ -17,7 +17,7 @@ description: 一个耗时的任务，可以通过 Task.Yield 或者 Dispatcher.Y
 - [深入了解 WPF Dispatcher 的工作原理（Invoke/InvokeAsync 部分）](/post/dotnet/2017/09/26/dispatcher-invoke-async.html)
 - [深入了解 WPF Dispatcher 的工作原理（PushFrame 部分）](/post/dotnet/2017/09/26/dispatcher-push-frame.html)
 
-### Dispatcher.Yield
+## Dispatcher.Yield
 
 如果一个方法的实现比较耗时，为了不影响 UI 的响应，你会选择用什么方法呢？我之前介绍过的 [Invoke 和 InvokeAsync](/post/dotnet/2017/09/26/dispatcher-invoke-async.html) 可以解决，将后续耗时的任务分割成一个个小的片段以低于用户输入和渲染的优先级执行。
 
@@ -52,7 +52,7 @@ public void OnCompleted(Action continuation)
 
 所以，其实真的就是 `InvokeAsync`。如果希望了解为何是 `OnCompleted` 方法，可以阅读 [【C#】【多线程】【05-使用C#6.0】08-自定义awaitable类型 - L.M](http://liujiajia.me/blog/details/csharp-multi-threading-05-csharp6-08-customize-awaitable)。
 
-#### 需要注意
+### 需要注意
 
 `Dispatcher.Yield` 是 `Dispatcher` 类型的静态方法，而不是像 `InvokeAsync` 一样是实例方法。不过 C# 有一个神奇的特性——静态方法和实例方法可以在同一上下文中调用，而不用担心产生歧义。
 
@@ -75,7 +75,7 @@ class Demo : DispatcherObject
 
 注意需要引用命名空间 `System.Windows.Threading`。
 
-### Task.Yield
+## Task.Yield
 
 拿前面 `Dispatcher.Yield` 的例子，我们换成 `Task.Yield`：
 
@@ -114,7 +114,7 @@ public override void Post(SendOrPostCallback d, Object state)
 
 ---
 
-#### 参考资料
+**参考资料**
 - [c# - Task.Yield - real usages? - Stack Overflow](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=c%23%20-%20Task.Yield%20-%20real%20usages%3F%20-%20Stack%20Overflow&uri=https://stackoverflow.com/questions/23431595/task-yield-real-usages)
 - [Task.Yield Method (System.Threading.Tasks)](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task.yield%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396)
 - [c# - Difference between Synchronization Context and Dispatcher - Stack Overflow](https://stackoverflow.com/questions/24671883/difference-between-synchronization-context-and-dispatcher)

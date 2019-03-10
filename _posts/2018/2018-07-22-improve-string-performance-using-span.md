@@ -10,7 +10,7 @@ categories: dotnet csharp
 
 <div id="toc"></div>
 
-### 简单的例子
+## 简单的例子
 
 先来看一个字符串处理时使用 `Span<T>` 的最简单的例子：
 
@@ -43,7 +43,7 @@ namespace Walterlv.Demo.StringSpan
 
 这种方式取出字符串替代了 `SubString` 这种会额外生成临时字符串的方式。如果上述代码发生在较大或较多文本的处理中，那么反复的拼接将生成大量的临时字符串，造成大量 GC 压力；而使用 `Span<T>` 将不会额外生成任何临时字符串。
 
-### 语言/框架的支持
+## 语言/框架的支持
 
 然而，只有 .NET Core 2.1 是原生支持字符串的 `AsSpan<T>` 方法的，.NET Core 2.0、.NET Framework 4.7.2 是不支持的。.NET Core 2.0 可以无视，因为有了 2.1。但 .NET Framework 的低版本却不能无视，因为用户的计算机上通常都是安装低版本的 .NET Framework。
 
@@ -55,7 +55,7 @@ namespace Walterlv.Demo.StringSpan
 
 **这真是一个悲伤的故事**！
 
-### 低版本 .NET 中有限的字符串性能提升
+## 低版本 .NET 中有限的字符串性能提升
 
 缺少了 `StringBuilder` 对 `ReadOnlySpan<char>` 的支持，广泛使用的字符串拼接功能便没有办法获得 Span<T> 的支持。
 
@@ -70,7 +70,7 @@ namespace Walterlv.Demo.StringSpan
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Welcome to C# 7.2 and Span - .NET Blog](https://blogs.msdn.microsoft.com/dotnet/2017/11/15/welcome-to-c-7-2-and-span/)
 - [C# 7.2: Understanding Span - Connect(); 2017 - Channel 9](https://channel9.msdn.com/Events/Connect/2017/T125)

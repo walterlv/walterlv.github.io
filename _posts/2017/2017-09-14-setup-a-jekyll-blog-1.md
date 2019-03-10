@@ -15,7 +15,7 @@ description: 搭建一个博客，并且看起来还不错。
 
 ---
 
-### 为什么选用静态的站点生成器？
+## 为什么选用静态的站点生成器？
 
 相比于使用类似 WordPress 这样的 CMS（译者注：内容管理系统，允许用户在 Web 上创建和发布内容），我们有几条理由来选择使用静态站点生成器。对于本文来说，我们主要关注于 Jekyll 带给我们的简单：
 - 上手容易（熟悉 Markdown 的话就更好了）
@@ -28,7 +28,7 @@ description: 搭建一个博客，并且看起来还不错。
 - GitHub 在用（GitHub 创始人 Tom Preston-Werner 编写）
 - 基于 Ruby 生态系统
 
-### 挑选一款 Jekyll 博客主题
+## 挑选一款 Jekyll 博客主题
 
 默认的模板在设计上只能说一般般，不过你可以从 [jekyllthemes.org](http://jekyllthemes.org/) 找到更棒的模板。你正在阅读的本站博客用的是 [Read Only](https://github.com/old-jekyll-templates/Read-Only-Jekyll-Theme) 模板，把它克隆下来你就可以开始啦。（译者注：原文博客用的模板是 [clean-blog](https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll)）
 
@@ -44,11 +44,11 @@ gem install jekyll
 
 为了让 Jekyll 在你的电脑上跑起来，请阅读 [Jekyll 基本用法](http://jekyllcn.com/docs/usage/)。
 
-### 部署 Jekyll 博客
+## 部署 Jekyll 博客
 
 要部署你的博客，你只需要做以下任意一件事即可：
 
-##### 1. 手动生成静态博客
+#### 1. 手动生成静态博客
 
 ```bash
 jekyll build
@@ -60,7 +60,7 @@ jekyll build
 - 扔到亚马逊 S3 上作为静态站点
 - 拷贝到 Dropbox 上作为公开的文件夹（不确定有没有用，算了还是别试了……）（译者注：这句话是原作者说的，不关我的事……）
 
-##### 2. 用 GitHub Pages 托管，而你需要做的只是在 GitHub 上建一个这种名字的仓库：
+#### 2. 用 GitHub Pages 托管，而你需要做的只是在 GitHub 上建一个这种名字的仓库：
 
 ```
 your_github_username.github.io
@@ -68,7 +68,7 @@ your_github_username.github.io
 
 每次你把你的 Jekyll 博客仓库推送到 GitHub 仓库上，GitHub 就会自动为你生成和部署静态站点。
 
-### 使用 Disqus 为你的博客添加评论功能
+## 使用 Disqus 为你的博客添加评论功能
 
 添加 Disqus 评论功能非常简单：
 
@@ -78,7 +78,7 @@ your_github_username.github.io
 
 (译者注：国内接入社会化评论需取得 ICP 备案，也就是说随着国内使用人数的增多，Disqus 随时有被屏蔽的可能性。)
 
-### 添加发邮件功能
+## 添加发邮件功能
 
 Clean-Blog 模板（译者注：就是原文博主用的那个模板）自带一个非常棒的“联系我”页，不过他发邮件用的是 PHP 脚本，GItHub Pages 不会执行任何 PHP 脚本，所以这对我们来说根本没用。
 

@@ -15,7 +15,7 @@ WPF 的标记扩展为 WPF 带来了强大的扩展性。利用自定义的标�
 
 <div id="toc"></div>
 
-### 编写简单的标记扩展
+## 编写简单的标记扩展
 
 一个简单的标记扩展会是像这样：
 
@@ -40,7 +40,7 @@ namespace Walterlv.Demo
 
 然而……有小伙伴写了更加复杂的标记扩展，在标记扩展中还通过 `serviceProvider` 拿到了目标控件的一些属性。本来一直好好工作的，结果有一天这个标记扩展被用到了 `ControlTemplate` 上，然后就挂了……挂了……
 
-### 编写能在 `ControlTemplate` 中使用的标记扩展
+## 编写能在 `ControlTemplate` 中使用的标记扩展
 
 在 `ControlTemplate` 中，XAML 标记扩展也是立即执行的，这就意味着当标记扩展中的 `ProvideValue` 执行时，还没有根据模板创建控件呢，那创建的是什么呢？
 

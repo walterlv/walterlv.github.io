@@ -13,7 +13,7 @@ position: knowledge
 
 <div id="toc"></div>
 
-### Windows 如何查找程序路径？
+## Windows 如何查找程序路径？
 
 当我们在任意目录中输入一个命令的时候，Windows 会按照如下顺序寻找这个命令对应的可执行程序：
 
@@ -27,7 +27,7 @@ position: knowledge
 
 当然，你也可以使用当前用户键下的注册表项来实现同样的目的，程序使用当前用户路径写注册表是不需要管理员权限的。`HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\App Paths`。
 
-### 使用 App Paths 添加可执行程序
+## 使用 App Paths 添加可执行程序
 
 在注册表中打开 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths` 子键，你可以在里面找到当前通过此方法注册的所有可执行程序。
 
@@ -41,6 +41,6 @@ position: knowledge
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Application Registration - Windows applications - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/shell/app-registration)

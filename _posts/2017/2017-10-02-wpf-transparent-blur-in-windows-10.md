@@ -23,7 +23,7 @@ description:
 
 <p id="toc"></p>
 
-### 为什么不推荐使用？
+## 为什么不推荐使用？
 
 当初 Windows Vista 推出 Aero 特效后惊艳了世人。然而那还是个 30 帧动画大行其道的年代，即便是后来的 Windows 7 也是如此。这个特效不能使用更高帧率就在于对资源的消耗量太感人。然而 Windows 8/8.1 的推出，动画是其中的一个重要部分——那全屏的感人的流畅的动画，那丝般的顺滑，让人难忘。然而这么流畅是有代价的——需要 60 帧满速运行，而且不能占用太多资源，不然依然卡顿。于是微软只好砍掉了背景高斯模糊功能……充满遗憾……被世人唾骂……
 
@@ -35,7 +35,7 @@ description:
 
 然而，本文探究的方法并不是 Fluent Design System 中的任何部分。依然是微软不期望大家使用的方法，所以，本文并不推荐大家作为真实项目使用，而是作为一种探究学习的途径。
 
-### 我封装的 API
+## 我封装的 API
 
 为了方便大家使用，我封装了一个小的 API。于是大家可以非常方便地使用。
 
@@ -92,7 +92,7 @@ WindowBlur.SetIsEnabled(this, true);
 </Window>
 ```
 
-### 实现原理——SetWindowCompositionAttribute
+## 实现原理——SetWindowCompositionAttribute
 
 `WindowBlur` 类内部用到了微软从未开放的 API，[叛逆者](https://www.zhihu.com/people/minmin.gong/activities) 也已经证实这就是微软在开始菜单和操作中心中用到的 API。这个 API 就是 `SetWindowCompositionAttribute`。
 
@@ -102,7 +102,7 @@ WindowBlur.SetIsEnabled(this, true);
 
 ---
 
-#### 参考资料
+**参考资料**
 - [如何评价微软在 Build 2017 上提出的 Fluent Design System？ - 知乎](https://www.zhihu.com/question/59724483/answer/168191216?utm_medium=social&utm_source=wechat_session)
 - [windows - Mimicking Acrylic in a Win32 app - Stack Overflow](https://stackoverflow.com/questions/44000217/mimicking-acrylic-in-a-win32-app)
 - [winapi - How do you set the glass blend colour on Windows 10? - Stack Overflow](https://stackoverflow.com/questions/32724187/how-do-you-set-the-glass-blend-colour-on-windows-10)
@@ -114,6 +114,6 @@ WindowBlur.SetIsEnabled(this, true);
 
 ---
 
-### 附：封装好的 API 代码
+## 附：封装好的 API 代码
 
 <script src="https://gist.github.com/walterlv/752669f389978440d344941a5fcd5b00.js"></script>

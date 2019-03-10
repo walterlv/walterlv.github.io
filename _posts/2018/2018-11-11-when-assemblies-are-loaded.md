@@ -12,7 +12,7 @@ categories: dotnet csharp
 
 <div id="toc"></div>
 
-### 程序集加载方式对性能的影响
+## 程序集加载方式对性能的影响
 
 为了直观地说明程序集加载方式对性能的影响，我们先来看一段代码：
 
@@ -160,7 +160,7 @@ _assembliesToBeManaged.AddRange(assemblies.Select(x => x()));
 
 上面的版本，这些程序集的加载时间是 180 ms，而下面的版本，则达到惊人的 701 ms！
 
-### 程序集的加载时机
+## 程序集的加载时机
 
 于是我们可以了解到程序集的加载时机。
 

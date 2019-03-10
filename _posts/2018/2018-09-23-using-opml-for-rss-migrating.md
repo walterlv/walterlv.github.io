@@ -18,7 +18,7 @@ OPML 全称是 **Outline Processor Markup Language** ，即 **大纲处理标记
 
 <div id="toc"></div>
 
-### OPML 格式
+## OPML 格式
 
 RSS 订阅你应该并不陌生，你可以在我的博客上方看到 RSS 的订阅源按钮，也可以在各大博客站点发现这样的订阅按钮。
 
@@ -39,7 +39,7 @@ OPML 官网对其作用的描述为：
 
 其中最后一行的描述即交换订阅，尤其是 RSS 订阅。
 
-### 典型的 OPML 文件
+## 典型的 OPML 文件
 
 为了直观地了解 OPML 格式，我直接贴一个我的订阅的极简版文件内容。
 
@@ -66,15 +66,15 @@ OPML 官网对其作用的描述为：
 
 你可以很容易地看出它的一些特征。比如以 `opml` 为根，`head` 中包含 `title`，`body` 中包含分组的 `outline`。每一个 `outline` 中包含 `text`, `type`, `xmlUrl` 等属性。接下来我们详细描述这个格式。
 
-### OPML 文件中的节点解释
+## OPML 文件中的节点解释
 
-#### opml 根节点
+### opml 根节点
 
 `<opml>` 是 OPML 格式文件的根节点，其 `version` 属性是必要的。它的值可能为 `1.0` 或 `2.0`；如果是 `1.0`，则视为符合 [OPML 1.0 规范](http://dev.opml.org/spec1.html)；如果是 `2.0`，则视为符合 [OPML 2.0 规范](http://dev.opml.org/spec2.html)。额外的，值也可能是 `1.1`，那么也视为符合 1.0 规范。
 
 `opml` 根节点中包含 `head` 和 `body` 节点。
 
-#### head 节点
+### head 节点
 
 `head` 节点可包含 0 个或多个元素：
 
@@ -97,11 +97,11 @@ OPML 官网对其作用的描述为：
 
 额外的，还有 `expansionState`, `vertScrollState`, `windowTop`, `windowLeft`, `windowBottom`, `windowRight`。
 
-#### body 节点
+### body 节点
 
 `body` 节点包含一个或多个 `outline` 元素。
 
-#### outline（普通）
+### outline（普通）
 
 outline 元素组成一个树状结构。也就是说，如果我们使用 OPML 储存 RSS 订阅列表，那么可以存为树状结构。在前面的例子中，我把自己的 RSS 订阅独立开来，把朋友和微软的 RSS 订阅分成了单独的组。
 
@@ -132,7 +132,7 @@ outline 元素组成一个树状结构。也就是说，如果我们使用 OPML 
     - 逗号分隔的类别：如果表示分类，则要用 `/` 分隔子类别；如果表示标签，则不加 `/`
     - 例如：`/Boston/Weather`, `/Harvard/Berkman,/Politics`（例子来源于[官方规范](http://dev.opml.org/spec2.html)）
 
-#### outline（RSS 专属）
+### outline（RSS 专属）
 
 当 `type` 是 `rss` 时，还有一些 RSS 专属属性。这时，必要属性就有三个了：
 
@@ -150,6 +150,6 @@ outline 元素组成一个树状结构。也就是说，如果我们使用 OPML 
 - `title`
 - `version`
 
-### OPML 的解析
+## OPML 的解析
 
 在了解了 OPML 的格式组成之后，便可以很容易的地解析此文件了。当然，我也写了一份 OPML 的解析，请参阅本文的第二部分，[解析篇](/post/deserialize-opml-using-dotnet.html)。

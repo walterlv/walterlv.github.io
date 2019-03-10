@@ -11,7 +11,7 @@ Jekyll 是一个不错的静态博客工具，本文将提供快速在 Windows �
 
 <div id="toc"></div>
 
-### For 老手
+## For 老手
 
 其实所需的命令只有少数几个而已：
 
@@ -26,9 +26,9 @@ bundle install
 jekyll serve
 ```
 
-### For 新手
+## For 新手
 
-#### 下载必要的软件
+### 下载必要的软件
 
 考虑到我们的网络环境，为了提升本文的阅读效率，建议一边下载一边阅读。我为大家提供两种不同的下载源：1. 官方源；2. 加速源。
 
@@ -40,7 +40,7 @@ jekyll serve
     - [ruby](http://lindexi.ml:8080/index.php/s/L9LuTD14Y3pKadV)
     - [MSYS2](http://lindexi.ml:8080/index.php/s/qn2EbO5xhy86xlf)
 
-#### 安装 Ruby 和 Jekyll
+### 安装 Ruby 和 Jekyll
 
 1. 分别安装下载好的 Ruby 和 MSYS2 安装包，一路下一步，直到两者都安装结束；
 
@@ -60,7 +60,7 @@ gem install jekyll bundler
 
 自此，Jekyll 开发环境就搭建完成了。
 
-#### 让自己的博客跑起来
+### 让自己的博客跑起来
 
 如果你已经有了自己的 Jekyll 博客，希望在本地能够编译运行，那么就继续阅读本节。
 
@@ -91,12 +91,12 @@ bundle update
 随后再次 `jekyll serve` 即可。
 
 <!--
-### For 懒人
+## For 懒人
 
 懒人也不要太懒啊，最起码得翻到这篇文章的最末尾吧？
 -->
 
-### Ruby 跨版本升级的坑
+## Ruby 跨版本升级的坑
 
 如果你之前安装过 Ruby 的旧版本，现在需要跨大版本号升级，那么你会遇到很多问题：
 

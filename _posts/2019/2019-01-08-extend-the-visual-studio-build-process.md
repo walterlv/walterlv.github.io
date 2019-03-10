@@ -12,7 +12,7 @@ MSBuild 的编译过程提供了一些可以被重写的 Target，通过重写�
 
 <div id="toc"></div>
 
-### 重写预定义的 Target
+## 重写预定义的 Target
 
 有这些预定义的 Target 可以重写：
 
@@ -44,39 +44,39 @@ MSBuild 的编译过程提供了一些可以被重写的 Target，通过重写�
 
 那么以上那些 Target 都是什么时机呢？
 
-#### `BeforeCompile`, `AfterCompile`
+### `BeforeCompile`, `AfterCompile`
 
 在 C# 文件以及各种资源文件被编译成 dll 的之前或之后执行。你可以在之前执行以便修改要编译的 C# 文件或者资源文件，你也可以在编译之后做一些其他的操作。
 
 由于我们可以在 BeforeCompile 这个时机修改源码，所以我们很多关于代码级别的重新定义都可以在这个时机去完成。
 
-#### `BeforeBuild`, `AfterBuild`
+### `BeforeBuild`, `AfterBuild`
 
 在整个编译之前或者之后执行。对于普通的编译来说，一般来说不会有比 `BeforeBuild` 更前以及比 `AfterBuild` 更后的时机了，不过如果有其他 Import 进来的 Target 或者通过 NuGet 自动引入进来的其他 Target 也使用了类似这样的时机，那么你就不一定比他们更靠前或者靠后。
 
-#### `BeforeRebuild`, `AfterRebuild`
+### `BeforeRebuild`, `AfterRebuild`
 
 如果编译时采用了 `/t:Rebuild` 方案，也就是重新编译，那么 BeforeRebuild 和 AfterRebuild 就会被触发。一旦触发，会比前面更加提前和靠后。
 
 执行顺序为：BeforeRebuild -> Clean -> Build -> AfterRebuild
 
-#### `BeforeClean`, `AfterClean`
+### `BeforeClean`, `AfterClean`
 
 在清理开始和结束时执行。如果是重新编译，那么也会有 Clean 的过程。顺序见上面。
 
-#### `BeforePublish`, `AfterPublish`
+### `BeforePublish`, `AfterPublish`
 
 在发布之前执行和发布之后执行。对应到 Visual Studio 右键菜单中的发布按钮。
 
-#### `BeforeResolveReference`, `AfterResolveReferences`
+### `BeforeResolveReference`, `AfterResolveReferences`
 
 在程序集的引用被解析之前和之后执行。你可以通过重写这两个时机的 Target 来修改程序集的引用关系或者利用引用执行一些其他操作。
 
-#### `BeforeResGen`, `AfterResGen`
+### `BeforeResGen`, `AfterResGen`
 
 在资源被生成之前和之后执行。
 
-### 通过改写 DependsOn 的值扩展编译
+## 通过改写 DependsOn 的值扩展编译
 
 有这些预定义的 DependsOn 可以改写：
 
@@ -108,7 +108,7 @@ MSBuild 的编译过程提供了一些可以被重写的 Target，通过重写�
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Extend the build process - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process)
 - [c# - Determine if MSBuild CoreCompile will run and call custom target - Stack Overflow](https://stackoverflow.com/questions/11667510/determine-if-msbuild-corecompile-will-run-and-call-custom-target)

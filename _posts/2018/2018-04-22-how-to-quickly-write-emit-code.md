@@ -13,7 +13,7 @@ categories: dotnet csharp
 
 <div id="toc"></div>
 
-### 我们在解决什么问题？
+## 我们在解决什么问题？
 
 之前我写过一篇[创建委托以大幅度提高反射调用的性能](/post/create-delegate-to-improve-reflection-performance.html)的方法，不过此方法适用于预先知道方法参数和返回值类型的情况。如果我们在编译期不知道类型，那么它就行不通了。（原因？注意到那篇文章中返回的委托有类型强转吗？也就是说需要编译期确定类型，即便是泛型。）
 
@@ -49,7 +49,7 @@ categories: dotnet csharp
 
 类的类型、属性名称和属性的类型是编译期不能确定，但可以在运行时确定的；如果此生成的方法会被大量调用，那么性能优势将极其明显。
 
-### 快速编写 Emit
+## 快速编写 Emit
 
 为了快速编写和调试 Emit，我们需要 ReSharper 全家桶：
 
@@ -177,7 +177,7 @@ static void Main(string[] args)
 
 直接运行，在 `setValue` 之后我们查看 `instance` 中 `TempProperty` 属性的值，可以发现已经成功修改了。**大功告成**！
 
-### 快速调试和修改 Emit
+## 快速调试和修改 Emit
 
 **才没有大功告成呢**！
 
@@ -256,14 +256,14 @@ il.Emit(castingCode, propertyType);
 
 现在运行，即可正常通过。如果你希望拥有完整的代码，可以自行将以上两句替换掉此前注释说明了 `注意：下一句代码会在文章后面被修改。` 的地方。
 
-### 更进一步
+## 更进一步
 
 - 如果要 Emit 的代码中存在 `if`-`else` 这样的非顺序结构怎么办？*阅读 [使用 Emit 生成 IL 代码 - 吕毅](/post/generate-il-using-emit.html) 可以了解做法。*
 - 我们可以用 `int` 为 `double` 类型的属性赋值，但在本例代码中却不可行，如何解决这种隐式转换的问题？
 
 如果你尝试编写了 Emit 的代码，那么上面的问题应该难不倒你。
 
-### 总结
+## 总结
 
 1. 通过 Emit，我们能够在运行时动态生成 IL 代码，以解决反射动态调用方法造成的大量性能损失。
 1. 通过 ReSharper 插件，我们可以实时查看生成的 IL 代码。
@@ -272,7 +272,7 @@ il.Emit(castingCode, propertyType);
 
 ---
 
-#### 参考资料
+**参考资料**
 
 + 生成方法签名与元数据
     - [ParameterBuilder Class (System.Reflection.Emit)](https://msdn.microsoft.com/en-us/library/system.reflection.emit.parameterbuilder(v=vs.110).aspx)

@@ -16,7 +16,7 @@ Windows 10 的创造者更新为开发者们带来了 Connected Animation 连接
 
 <p id="toc"></p>
 
-### 模拟 UWP 中的 API
+## 模拟 UWP 中的 API
 
 UWP 中的连接动画能跑起来的最简单代码包含下面两个部分。
 
@@ -40,14 +40,14 @@ UWP 中的连接动画能跑起来的最简单代码包含下面两个部分。
 - `ConnectedAnimationService.GetAnimation(string key);`
 - `ConnectedAnimation.TryStart(UIElement destination);`
 
-### 实现这个 API
+## 实现这个 API
 
 现在，我们需要写两个类才能实现上面那些方法：
 
 - `ConnectedAnimationService` - 用来管理一个窗口内的所有连接动画
 - `ConnectedAnimation` - 用来管理和播放一个指定 Key 的连接动画
 
-#### ConnectedAnimationService
+### ConnectedAnimationService
 
 我选用窗口作为一个 `ConnectedAnimationService` 的管理单元是因为我可以在一个窗口内实现这样的动画，而跨窗口的动画就非常麻烦了。所以，我试用附加属性为 `Window` 附加一个 `ConnectedAnimationService` 属性，用于在任何一个 `View` 所在的地方获取 `ConnectedAnimationService` 的实例。
 
@@ -139,7 +139,7 @@ namespace Walterlv.Demo.Media.Animation
 }
 ```
 
-#### ConnectedAnimation
+### ConnectedAnimation
 
 这是连接动画的关键实现。
 
@@ -515,7 +515,7 @@ namespace Walterlv.Demo.Media.Animation
 }
 ```
 
-#### 调用
+### 调用
 
 我在一个按钮的点击事件里面尝试调用上面的代码：
 
@@ -544,7 +544,7 @@ private async void BeginConnectedAnimation(UIElement source, UIElement destinati
 ![连接动画试验](/static/posts/2017-12-25-connected-animation-test.gif)  
 ▲ 上面的代码做的连接动画
 
-### 目前的局限性以及改进计划
+## 目前的局限性以及改进计划
 
 然而稍微试试不难发现，这段代码很难将控件本身隐藏起来（设置 `Visibility` 为 `Collapsed`），也就是说如果源控件和目标控件一直显示，那么动画期间就不允许隐藏（不同时显示就没有这个问题)。这样也就出不来“连接”的感觉，而是覆盖的感觉。
 
@@ -577,7 +577,7 @@ private async void BeginConnectedAnimation(UIElement source, UIElement destinati
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Connected animation - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/motion/connected-animation?wt.mc_id=MVP)
 - [UWP Connected Animations updates with Windows Creators release – Varun Shandilya](http://varunshandilya.com/uwp-connected-animations-updates-with-windows-creators-release/)

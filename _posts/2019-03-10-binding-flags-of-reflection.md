@@ -13,7 +13,7 @@ position: knowledge
 
 <div id="toc"></div>
 
-### 所有的 BindingFlags
+## 所有的 BindingFlags
 
 默认值：
 
@@ -98,13 +98,13 @@ IgnoreReturn
 DoNotWrapExceptions
 ```
 
-### 你可能会有的疑问
+## 你可能会有的疑问
 
 1. 如果 A 程序集对 B 程序集内部可见（`InternalsVisibleTo("B")`），那么 B 在反射查找 A 的时候，`internal` 成员的查找应该使用 `Public` 还是 `NonPublic` 标记呢？
     - 依然是 `NonPublic` 标记。
     - 因为反射的是程序集的元数据，这是静态的数据，跟运行时状态是无关的。
 
-### 常用的组合
+## 常用的组合
 
 从上面的解释中可以发现，这个类型的设计其实是有问题的，不符合单一职责原则。所以我们会在不同的使用场景下使用不同区域的组合。
 
@@ -124,7 +124,7 @@ BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static | BindingFlag
 BindingFlags.Public | BindingFlags.Instance
 ```
 
-### 附 BindingFlags 的源码
+## 附 BindingFlags 的源码
 
 ```csharp
 [Flags]
@@ -175,7 +175,7 @@ public enum BindingFlags
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [BindingFlags.cs](https://source.dot.net/#System.Private.CoreLib/shared/System/Reflection/BindingFlags.cs)
 - [RuntimeReflectionExtensions.cs](https://source.dot.net/#System.Runtime/System/Reflection/RuntimeReflectionExtensions.cs)

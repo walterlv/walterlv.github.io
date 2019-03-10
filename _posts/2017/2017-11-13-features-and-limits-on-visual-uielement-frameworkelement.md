@@ -13,7 +13,7 @@ categories: wpf uwp xaml
 
 <p id="toc"></p>
 
-### 宽度和高度
+## 宽度和高度
 
 如果问 `Width`/`Height` 属性来自谁，只要在 WPF 和 UWP 里混了一点儿时间都会知道——`FrameworkElement`。随着 `FrameworkElement` 的宽高属性一起带来的还有 `ActualWidth`、`ActualHeight`、`MinWidth`、`MinHeight`、`MaxWidth`、`MaxHeight`。正是这些属性的存在，让我们可以直观地给元素指定尺寸——想设置多少就设置多少。
 
@@ -59,7 +59,7 @@ protected virtual Geometry GetLayoutClip(Size layoutSlotSize)
    - `ArrangeOverride` 返回的尺寸不大于参数传入的尺寸
 1. 重写 `GetLayoutClip` 方法，并返回 null（或者写成 `UIElement` 那样）
 
-### 布局系统
+## 布局系统
 
 提及 `MeasureOverride`、`ArrangeOverride`，大家都会认为这是 WPF 布局系统给我们提供的两个可供重写的方法。然而，这两个方法其实也是 `FrameworkElement` 才提供的。
 
@@ -73,7 +73,7 @@ protected virtual Geometry GetLayoutClip(Size layoutSlotSize)
 
 顺便吐槽一下：*其实微软是喜欢用 `Core` 来作为子类重写方法的后缀的，比如 `Freezable`、`EasingFunction` 都是用 `Core` 后缀来处理重写。`Override` 后缀纯属是因为 `UIElement` 把这个名字用了而已。*
 
-### 屏幕交互
+## 屏幕交互
 
 `UIElement` 中存在着布局计算，`FrameworkElement` 中存在着带限制的布局计算，这很容易让人以为屏幕相关的坐标计算会存在于 `UIElement` 或者 `FrameworkElement` 中。
 
@@ -87,11 +87,11 @@ protected virtual Geometry GetLayoutClip(Size layoutSlotSize)
 
 所以其实如果希望做出非常轻量级的高性能 UI，继承自 `Visual` 也是一个大胆的选择。*当然，真正遇到瓶颈的时候，继承自 `Visual` 也解决不了多少问题。*
 
-### 样式和模板
+## 样式和模板
 
 `FrameworkElement` 开始有了样式（`Style`），`Control` 开始有了模板（`Template`）。而模板极大地方便了样式定制的同时，也造成了强大的性能开销，因为本来的一个 `Visual` 瞬间变成了几个、几十个。一般情况下这根本不会是性能瓶颈，然而当这种控件会一次性产生几十个甚至数百个（例如表格）的时候，这种瓶颈就会非常明显。
 
-### 总结容易出现理解偏差的几个点
+## 总结容易出现理解偏差的几个点
 
 1. `Width` 和 `Height` 属性其实只是为布局过程中的计算进行限制而已，跟 `MinWidth`、`MinHeight`、`MaxWidth`、`MaxHeight` 没有区别，并不直接决定实际尺寸。
 1. 如果发现元素布局中被切掉了，这并不是不可避免的问题；因为切掉是 `FrameworkElement` 为我们引入的特性，不喜欢可以随时关掉。
@@ -101,5 +101,5 @@ protected virtual Geometry GetLayoutClip(Size layoutSlotSize)
 
 ---
 
-#### 参考资料
+**参考资料**
 - [WPF Architecture - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/wpf-architecture?wt.mc_id=MVP)

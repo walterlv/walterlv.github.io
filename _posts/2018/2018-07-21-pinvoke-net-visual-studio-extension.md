@@ -10,7 +10,7 @@ categories: dotnet csharp visualstudio windows
 
 <div id="toc"></div>
 
-### PInvoke.net
+## PInvoke.net
 
 PInvoke.net 的官方网站是 <https://www.pinvoke.net/>，如果你只是希望临时找一找 P/Invoke 函数调用的方法签名，那么直接去网站就能搜索。不过，如果你期望写代码时能够随时方便地插入，那么安装插件还是非常方便的。
 
@@ -22,7 +22,7 @@ PInvoke.net 的官方网站是 <https://www.pinvoke.net/>，如果你只是希�
 
 ![安装扩展](/static/posts/2018-07-21-22-38-12.png)
 
-### 使用 PInvoke.net 扩展
+## 使用 PInvoke.net 扩展
 
 在安装了 PInvoke.net 插件后，可以在顶部菜单栏中寻找到 PInvoke.net 菜单项，里面可以插入 PInvoke 的函数调用签名：
 

@@ -15,7 +15,7 @@ Windows 自带一个强大的 PowerShell，不过自带的 PowerShell 一直是�
 
 <div id="toc"></div>
 
-### 下载和安装
+## 下载和安装
 
 前往 .NET Core 版本 PowerShell 的发布页面来下载 PowerShell 全平台的安装包：
 
@@ -25,7 +25,7 @@ Windows 平台上建议下载 msi 格式的安装包，这样它可以帮助你�
 
 ![PowerShell 安装界面](/static/posts/2019-03-02-16-05-32.png)
 
-### 运行
+## 运行
 
 在安装完成之后启动新的 .NET Core 版本的 PowerShell 可以看见新的 PowerShell。
 
@@ -35,7 +35,7 @@ Windows 平台上建议下载 msi 格式的安装包，这样它可以帮助你�
 
 ![使用右键菜单打开 PowerShell](/static/posts/2019-03-02-16-14-49.png)
 
-### 在其他终端使用 PowerShell Core
+## 在其他终端使用 PowerShell Core
 
 如果你要在其他的终端使用 PowerShell Core，直接输入 `pwsh` 即可。其原理可以参考我的另一篇博客：
 

@@ -13,7 +13,7 @@ categories: wpf
 
 <p id="toc"></p>
 
-### 来自于托管插件框架的辅助类
+## 来自于托管插件框架的辅助类
 
 .NET Framework 自 3.5 以来推出了托管插件框架（MAF，Managed AddIn Framework），位于 `System.AddIn` 命名空间。其特性在于，将宿主和插件隔离在不同的应用程序域中，避免插件对宿主造成不良影响。
 
@@ -31,7 +31,7 @@ public static class FrameworkElementAdapters
 }
 ```
 
-### 一个极简的跨域 UI Demo
+## 一个极简的跨域 UI Demo
 
 首先，我们需要有一个支持跨域调用的类型，并有任意的可以用来返回 `INativeHandleContract` 的方法。
 
@@ -69,7 +69,7 @@ this.Content = element;
 
 以上的这两端代码都可以写在 `MainWindow` 的 `Loaded` 事件中。
 
-### 对 MAF 吐一下槽
+## 对 MAF 吐一下槽
 
 MAF 框架对插件和宿主程序集所在的文件夹结构有要求。这可是非常讨厌的一项特性！因为当我们希望采用 MAF 框架的时候，我们的应用程序可能已经有自己独特的一套目录了。就算我们从零开始写应用，采用 MAF 约定的方式组织 dll 也是很丑的方式（带有很重的 MAF 的影子）。
 
@@ -79,7 +79,7 @@ MAF 框架对插件和宿主程序集所在的文件夹结构有要求。这可�
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [ENikS/System.AddIn: Projects related to Microsoft System.AddIn](https://github.com/ENikS/System.AddIn)
 - [Add-In Performance: What can you expect as you cross an isolation boundary and how to make it better [Jesse Kaplan] – CLR Add-In Team Blog](https://blogs.msdn.microsoft.com/clraddins/2008/02/22/add-in-performance-what-can-you-expect-as-you-cross-an-isolation-boundary-and-how-to-make-it-better-jesse-kaplan/)

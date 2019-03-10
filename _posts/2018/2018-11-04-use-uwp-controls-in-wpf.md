@@ -15,7 +15,7 @@ Windows Community Toolkit 再次更新到 5.0。以前可以在 WPF 中使用有
 
 <div id="toc"></div>
 
-### 安装 NuGet 包
+## 安装 NuGet 包
 
 你需要做的第一步，是在你的 WPF 项目中安装 Microsoft.Toolkit.Wpf.UI.XamlHost。建议直接在 项目的 NuGet 管理器中搜索并安装。
 
@@ -23,7 +23,7 @@ Windows Community Toolkit 再次更新到 5.0。以前可以在 WPF 中使用有
 
 ![安装好 NuGet 包后查看引用](/static/posts/2018-11-04-09-43-24.png)
 
-### 配置 WPF 项目能访问 UWP 的类型
+## 配置 WPF 项目能访问 UWP 的类型
 
 因为我们即将开始使用到 UWP 中的控件类型，所以需要配置项目能够访问到 Windows Runtime 的类型。
 
@@ -66,7 +66,7 @@ Windows Community Toolkit 再次更新到 5.0。以前可以在 WPF 中使用有
 ![添加 Windows.Foundation.FoundationContract.winmd](/static/posts/2018-11-04-09-58-54.png)  
 ▲ 添加 Windows.Foundation.FoundationContract.winmd
 
-### 开始在 WPF 中使用 UWP 的控件
+## 开始在 WPF 中使用 UWP 的控件
 
 你可以像使用普通 WPF 控件一样将 WindowsXamlHost 添加到你的 WPF 界面中：
 
@@ -103,7 +103,7 @@ private void UwpButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-### 可以忽略的错误
+## 可以忽略的错误
 
 在启动的时候，你可能会遇到一些异常。比如下面这个：
 
@@ -111,20 +111,20 @@ private void UwpButton_Click(object sender, RoutedEventArgs e)
 
 因为我们不是原生的 UWP，而是 Host 在 WPF 中的 UWP 控件，所以会没有 `Application`。这在 UWP 控件初始化内部已经 `catch` 了，所以你可以忽略。
 
-### 最终效果
+## 最终效果
 
 当将程序跑起来之后，你就能看到 WPF 窗口中的 UWP 控件了。
 
 ![运行效果](/static/posts/2018-11-04-uwp-button-in-wpf-window.gif)
 
-### 值得注意的地方
+## 值得注意的地方
 
 1. 目前 WindowsXamlHost 还不够稳定，会出现一些闪退
     - 这点就需要为 WindowsCommunityToolkit 贡献 Issues 或代码了
 1. Host 的 UWP 控件是一个新的 HwndSource，这相当于 UWP 的控件是通过子窗口的形式与 WPF 窗口放在一起的
     - 于是，只能指定一个矩形区域完全属于 UWP，在这个区域 WPF 控件无法与其获得交互或渲染叠加
 
-### 关于 DPI 适配
+## 关于 DPI 适配
 
 为了让 UWP 控件能够在 WPF 窗口中获得正确的 Per-Monitor 的 DPI 适配效果，你需要设置为 PerMonitorV2 的 DPI 感知级别。
 
@@ -150,7 +150,7 @@ private void UwpButton_Click(object sender, RoutedEventArgs e)
 
 - [支持 Windows 10 最新 PerMonitorV2 特性的 WPF 多屏高 DPI 应用开发 - walterlv](/post/windows-high-dpi-development-for-wpf.html)
 
-### 更复杂的 UWP 控件嵌入
+## 更复杂的 UWP 控件嵌入
 
 如果希望将更多的 WPF 窗口内的 UI 部分交给 UWP 来做，那么就不能只是仅仅初始化一个 `Button` 就完了。
 
@@ -160,7 +160,7 @@ private void UwpButton_Click(object sender, RoutedEventArgs e)
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [WindowsXAMLHost control - Windows Community Toolkit - Microsoft Docs](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost?wt.mc_id=MVP)
 - [Enhance your desktop application for Windows 10 - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project?wt.mc_id=MVP)

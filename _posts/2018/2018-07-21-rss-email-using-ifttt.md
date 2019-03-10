@@ -12,7 +12,7 @@ IFTTT 是一个奇特的网络服务。它本身没有提供什么功能，但�
 
 <div id="toc"></div>
 
-### IFTTT
+## IFTTT
 
 IFTTT 这种神奇的名字还是需要介绍一下的 —— 读作 [ɪft]，意思是 **If This Then That**。
 
@@ -26,7 +26,7 @@ If This Then That()
 
 ![if this then that](/static/posts/2018-07-21-17-10-57.png)
 
-### 做一个 RSS 邮件订阅服务
+## 做一个 RSS 邮件订阅服务
 
 首先，前往 IFTTT：<https://ifttt.com/>。你需要注册一个账号，在登录后再进行下面的操作。
 
@@ -74,6 +74,6 @@ If This Then That()
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [IFTTT - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/IFTTT)

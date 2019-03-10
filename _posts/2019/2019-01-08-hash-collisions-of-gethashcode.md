@@ -19,7 +19,7 @@ position: knowledge
 
 <div id="toc"></div>
 
-### 计算方法
+## 计算方法
 
 计算哈希碰撞概率的问题可以简化为这样：
 
@@ -76,7 +76,7 @@ $$1-\frac{n\times(n-1)\times(n-2)\times...(n-k+1)}{n^k}$$
 
 $$1-\frac{(n-1)\times(n-2)\times...(n-k+1)}{n^{k-1}}$$
 
-### 计算的简化
+## 计算的简化
 
 而 $$k$$ 很大的时候，此概率的计算非常复杂。然而我们可以取近似值简化成如下形式 [[1]][x]：
 
@@ -90,7 +90,7 @@ $$\frac{k(k-1)}{2n}$$
 
 你可以阅读 [Hash Collision Probabilities](https://preshing.com/20110504/hash-collision-probabilities/) 了解更多关于计算简化的内容。
 
-### 概率图
+## 概率图
 
 为了直观感受到 32 bit 的哈希值的碰撞概率与对象数量之间的关系，我从 [Socks, birthdays and hash collisions](https://blogs.msdn.microsoft.com/ericlippert/2010/03/22/socks-birthdays-and-hash-collisions/) 和 [Hash Collision Probabilities](https://preshing.com/20110504/hash-collision-probabilities/) 找到了计算好的概率数据，并绘制成一张图：
 
@@ -98,7 +98,7 @@ $$\frac{k(k-1)}{2n}$$
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [c# - Probability of getting a duplicate value when calling GetHashCode() on strings - Stack Overflow](https://stackoverflow.com/a/7969189/6233938)
 - [Socks, birthdays and hash collisions – Fabulous Adventures In Coding](https://blogs.msdn.microsoft.com/ericlippert/2010/03/22/socks-birthdays-and-hash-collisions/)

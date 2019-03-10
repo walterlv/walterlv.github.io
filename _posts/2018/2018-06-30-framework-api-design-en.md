@@ -24,19 +24,19 @@ The API design principles in this post mostly come from *Practical API Design* w
 
 <div id="toc"></div>
 
-### What is API?
+## What is API?
 
 API is the short of Application programming interface. Wikipedia has a definition for it, but it's a bit hard to understand. See this link to view the definition: [Application programming interface - Wikipedia](https://en.wikipedia.org/wiki/Application_programming_interface).
 
 We can simply treat `class`, `interface`, Property, Field, Method, and the configuration file or the protocol provided by the library as APIs.
 
-### API design principles
+## API design principles
 
 Even if you don't learn anything nor read any books about API design, if you have programmed a few times long, you'll feel that some APIs are easier to use and others are not. This means that every programmer has more or less API usage experience.
 
 So the principals concluded in this post will help us design better API for our library users.
 
-#### Easier to understand
+### Easier to understand
 
 Some users want to use a new API and find that they must learn some new knowledge about it to write correct code. The more the user should learn new knowledge the harder the API to understand.
 
@@ -51,7 +51,7 @@ We can follow these tips to help us design easier-to-understand APIs:
 
 Moq in .NET foundation is a very good practice for *Prevent the user to use it incorrectly*. You can install and try it in [Moq in nuget.org](https://www.nuget.org/packages/Moq/).
 
-#### Easier to find
+### Easier to find
 
 Most of us use IDE to develop and maybe some of us use code editor such as *Visual Studio Code*, *Sublime*, *Atom*, *Notepad++* or *Vim*. Whatever you use to write code, they all have IntelliSense which can help you know more context APIs and write correct API usage code.
 
@@ -68,13 +68,13 @@ There is a picture below I draw to describe APIs easier or harder to find.
 ![Easier/Harder to Find](/static/posts/2018-06-30-15-59-13.png)  
 ▲ The connection lines indicates that we can know the APIs through the method parameters and the returning value.
 
-#### Related APIs are more similar
+### Related APIs are more similar
 
 If the similar functions have similar APIs, the API users cost very less to learn the correct usage of the new API.
 
 You may remember the `Select` method of LINQ. And when you use LINQ to XML to read/write XML files, you'll find `Select` method, too. Their usage experiences are very similar so that you can easily know how to use `Select` in LINQ to XML if you know the LINQ.
 
-#### Simple task have simple implementation
+### Simple task have simple implementation
 
 If you only design your APIs in the recommendation of the three principles above, your classes may be too large so that they may violate the *Single Responsibility Principle* of S.O.L.I.D. So there is another principle to prevent this being happen. That is, a simple task should have a simple implementation.
 
@@ -102,13 +102,13 @@ You can write more advanced functions by writing more customization code, but al
 > inkCanvas.InkPresenter.UpdateDefaultDrawingAttributes(drawingAttributes);
 > ```
 
-#### Easier to test and to be tested
+### Easier to test and to be tested
 
 Better API helps the API user easier to test his/her API usage methods.
 
 If you provide an API with a static method such as `Config.Get("SomeKey")` to retrieve configuration values, the API user will find it hard to write unit test method because he/she cannot create fake configuration.
 
-#### Easier to keep compatibility even if upgrading frequently
+### Easier to keep compatibility even if upgrading frequently
 
 Better APIs cost less for the users to upgrade their library versions and bring less burden for the API developers to make library compatible.
 
@@ -130,7 +130,7 @@ We can follow these tips to help us design better-future-compatibility APIs:
 1. Give tips for the users to migrate legacy APIs.
     - If an API is obsolete, you'd better not to delete it immediately. It's recommended to mark it obsolete and tell the users how to migrate to the new APIs.
 
-### Framework design
+## Framework design
 
 The framework can be understood as a set of APIs developed for the complete solution of a certain kind of problems.
 
@@ -140,6 +140,6 @@ Hope you'll design better APIs by reading the six API design principals.
 
 ---
 
-#### References
+### References
 
 - *Practical API Design* by Jaroslav Tulach (The NetBeans founder)

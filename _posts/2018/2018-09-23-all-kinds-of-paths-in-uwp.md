@@ -13,7 +13,7 @@ UWP 提供了多种不同文件路径访问方式，对应到不同的文件路�
 
 <div id="toc"></div>
 
-### UWP 中的路径种类
+## UWP 中的路径种类
 
 UWP 中可访问的路径有这些：
 
@@ -24,7 +24,7 @@ UWP 中可访问的路径有这些：
 - [特殊文件夹](https://docs.microsoft.com/en-us/uwp/api/windows.storage.appdatapaths?wt.mc_id=MVP)
     - 提供用户文档、用户收藏夹等特殊文件夹的访问
 
-### ApplicationData
+## ApplicationData
 
 ApplicationData 提供应用程序自己创建的数据的读写能力。它包含这些文件夹：
 
@@ -43,7 +43,7 @@ ApplicationData 提供应用程序自己创建的数据的读写能力。它包�
 
 额外的，
 
-### Package.InstalledLocation
+## Package.InstalledLocation
 
 应用程序可以访问安装后程序包所在的路径，使用 `Package.Current.InstalledLocation` 即可获取到应用程序包所在路径。
 
@@ -60,7 +60,7 @@ var uri = new Windows.Foundation.Uri("ms-appx:///samples/logo.png");
 var file = Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(uri);
 ```
 
-### 特殊文件夹
+## 特殊文件夹
 
 特殊文件夹可以通过 `KnownFolders` 类型获取，可以获取到照片、图片、音乐、视频等文件夹。
 

@@ -13,7 +13,7 @@ categories: uwp windows
 
 <div id="toc"></div>
 
-### Windows 10 的兼容性问题
+## Windows 10 的兼容性问题
 
 在创建 UWP 应用的时候，我们可以选择目标版本和最低版本。目标版本决定了我们能使用的最新 API，最低版本决定了我们需要支持的最低版本的 Windows 10。
 
@@ -28,7 +28,7 @@ Windows 10 也在各个版本新增了一些控件。那么问题来了，要支
 
 ![NavigationView](/static/posts/2018-07-21-21-32-58.png)
 
-### Microsoft.UI.Xaml 库
+## Microsoft.UI.Xaml 库
 
 于是微软就推出了在 <nuget.org> 上推出了 NuGet 包 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml)。
 
@@ -42,7 +42,7 @@ Windows 10 也在各个版本新增了一些控件。那么问题来了，要支
 
 ![安装 Microsoft.UI.Xaml](/static/posts/2018-07-21-21-37-52.png)
 
-### Microsoft.UI.Xaml 的上手方法
+## Microsoft.UI.Xaml 的上手方法
 
 安装 Microsoft.UI.Xaml 后，Visual Studio 会自动打开 readme.txt 文件提示我们用法：
 
@@ -111,7 +111,7 @@ xmlns:controls="using:Microsoft.UI.Xaml.Controls"
 
 当然除了在 XAML 中，也可以在 C# 代码中使用库中的新 API。
 
-### 解决意料之外的错误
+## 解决意料之外的错误
 
 一切可以那么顺利？不一定，你可能在刚刚把 `<XamlControlsResources />` 加入之后，就会发现程序启动即崩溃了……
 

@@ -13,7 +13,7 @@ categories: xaml wpf uwp
 
 <p id="toc"></p>
 
-### 准备工作
+## 准备工作
 
 为了写出一个通用的变换方法来，我准备了一个测试控件，并为它随意填写一个变换：
 
@@ -69,7 +69,7 @@ private (Vector Scaling, double Rotation, Vector Translation) ExtractMatrix(Matr
 
 ---
 
-### 思路和初步成果
+## 思路和初步成果
 
 我们的思路是创造一个单位矩形，让它应用这个变换，然后测量变换后矩形的宽高变化，角度变化和位置变化。由于直接使用 `Rect` 类型时无法表示旋转后的矩形，所以我们直接使用四个顶点来计算，于是我们写出如下代码：
 
@@ -94,7 +94,7 @@ private (Vector Scaling, double Rotation, Vector Translation) ExtractMatrix(Matr
 
 ---
 
-### 可以灵活应用计算结果
+## 可以灵活应用计算结果
 
 不过如果真要在产品中做追踪框，肯定不能像上图那样被严重拉伸。所以，我们把缩放分量去掉，换成尺寸变化：
 
@@ -119,7 +119,7 @@ private void OnLoaded(object sender, RoutedEventArgs args)
 
 ---
 
-### 更通用的方法
+## 更通用的方法
 
 以上虽然达到了目的，不过实际应用中可能会有更多的限制，例如：
 - 变换中心不是 `(0, 0)`

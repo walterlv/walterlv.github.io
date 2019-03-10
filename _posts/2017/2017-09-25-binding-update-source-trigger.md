@@ -65,7 +65,7 @@ public enum UpdateSourceTrigger
 
 没错，就是加这半句就好了。
 
-#### 参考资料
+**参考资料**
 - [How to: Control When the TextBox Text Updates the Source - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/data/how-to-control-when-the-textbox-text-updates-the-source?wt.mc_id=MVP)
 - [c# - WPF two-way binding not working - Stack Overflow](https://stackoverflow.com/questions/22253211/wpf-two-way-binding-not-working)
 - [The UpdateSourceTrigger property - The complete WPF tutorial](http://www.wpf-tutorial.com/data-binding/the-update-source-trigger-property/)

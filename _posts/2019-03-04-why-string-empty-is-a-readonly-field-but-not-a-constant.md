@@ -14,7 +14,7 @@ position: principle
 
 <div id="toc"></div>
 
-### string.Empty
+## string.Empty
 
 这个问题，我们需要去看 .NET Core 的源码（当然 .NET Framework 也是一样的）。
 
@@ -25,7 +25,7 @@ public static readonly string Empty;
 
 值得注意的是上面的 `Intrinsic` 特性。
 
-### Intrinsic 特性
+## Intrinsic 特性
 
 `Intrinsic` 特性的注释是这样的：
 
@@ -36,7 +36,7 @@ public static readonly string Empty;
 
 也就是说，`string.Empty` 字段并不是一个普通的字段，对它的调用会被特殊处理。但是是如何特殊处理呢？
 
-### JIT 编译器
+## JIT 编译器
 
 对 `string.Empty` 的注释是这样描述的：
 
@@ -78,7 +78,7 @@ OBJECTREF* pEmptyStringHandle = (OBJECTREF*)
 SetObjectReference( pEmptyStringHandle, StringObject::GetEmptyString(), this );
 ```
 
-### 总结：为什么 string.Empty 需要是一个静态只读字段而不是常量？
+## 总结：为什么 string.Empty 需要是一个静态只读字段而不是常量？
 
 从上文中 `string.Empty` 的注释描述中可以知道：
 
@@ -88,9 +88,9 @@ SetObjectReference( pEmptyStringHandle, StringObject::GetEmptyString(), this );
 
 当然，事实上编译器也可以针对此场景做特殊处理，但为什么不是在编译这一层进行特殊处理，我已经找不到出处了。
 
-### 本文引申的其他问题
+## 本文引申的其他问题
 
-#### 能否反射修改 string.Empty 的值？
+### 能否反射修改 string.Empty 的值？
 
 不行！
 
@@ -101,7 +101,7 @@ SetObjectReference( pEmptyStringHandle, StringObject::GetEmptyString(), this );
 - [C＃ 字符串首字符大写 - 林德熙](https://lindexi.gitee.io/post/C-%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%A6%96%E5%AD%97%E7%AC%A6%E5%A4%A7%E5%86%99.html)
 - [.NET/C# 编译期间能确定的相同字符串，在运行期间是相同的实例 - 吕毅](/post/same-strings-at-compile-time-are-the-same-instances-at-runtime.html)
 
-#### `""` 和 `string.Empty` 到底有什么区别？
+### `""` 和 `string.Empty` 到底有什么区别？
 
 从前文你可以得知，在运行时级别，这两者 **没有任何区别**。
 
@@ -109,7 +109,7 @@ SetObjectReference( pEmptyStringHandle, StringObject::GetEmptyString(), this );
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [String.CoreCLR.cs](https://source.dot.net/#System.Private.CoreLib/src/System/String.CoreCLR.cs,c9f70a27facb27cf)
 - [Intrinsic](https://source.dot.net/#System.Private.CoreLib/shared/System/Runtime/CompilerServices/IntrinsicAttribute.cs,0b1553fdd9183e62,references)

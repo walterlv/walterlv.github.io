@@ -13,7 +13,7 @@ categories: dotnet wpf
 
 <div id="toc"></div>
 
-### .NET Core 3.0 Desktop API Analyzer
+## .NET Core 3.0 Desktop API Analyzer
 
 你可以前往 GitHub 查看 .NET Core 3.0 Desktop API Analyzer 项目：
 
@@ -25,7 +25,7 @@ categories: dotnet wpf
 
 下载完后解压到任意目录即可运行。
 
-### 分析一个 WPF 程序
+## 分析一个 WPF 程序
 
 第一个想到的，是分析目前已在商店发布的基于 .NET Framework 4.7 的 WPF 程序 [标识符命名工具 - Whitman](ms-windows-store://pdp/?productid=9P8LNZRNJX85)。
 
@@ -51,7 +51,7 @@ C:\Users\walterlv\AppData\Local\Temp\PortabilityReport.xlsx
 
 可以看到，我的 Whitman 对 .NET Core 3.0 的 API 是 100% 兼容的。将来迁移的时候可以不需要修改代码。
 
-### 分析更复杂的程序
+## 分析更复杂的程序
 
 我试着分析一个更庞大的 WPF 软件目录后，发现还是有一些 API 是不兼容的。
 
@@ -68,7 +68,7 @@ C:\Users\walterlv\AppData\Local\Temp\PortabilityReport.xlsx
 
 所以，我们只需要查找对对应 API（第一列）的使用，然后通过其他技术手段将其替换成别的方法来写即可解决这样的兼容性问题。
 
-### 着手解决兼容性问题
+## 着手解决兼容性问题
 
 比如我们拿出其中一行：
 
@@ -96,7 +96,7 @@ public override IMessage Invoke(IMessage msg)
 
 这是一项繁重的工作，不过还是要做的。迁移到 .NET Core 有很多好处，不是吗？
 
-### 一些错误
+## 一些错误
 
 额外的，在其他一些程序的分析中，我遇到了一些错误。通过混淆的比较，我认为此错误可能源于程序集的混淆：
 
@@ -117,7 +117,7 @@ Cannot locate assembly information for System.Object. Microsoft assemblies found
 
 如果你想了解更多混淆相关的资料，可以阅读我的另一篇博客：[.NET 中各种混淆（Obfuscation）的含义、原理、实际效果和不同级别的差异（使用 SmartAssembly）](/post/obfuscation-configurations-of-smart-assembly.html)。
 
-### 未来的迁移
+## 未来的迁移
 
 .NET Core 并不会原生提供 WPF / Windows Forms 这些桌面应用的支持，而是通过 Windows 兼容包（Windows Compatibility Pack）实现。你可以阅读微软官方博客了解：
 

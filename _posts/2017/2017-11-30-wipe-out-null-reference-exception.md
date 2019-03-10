@@ -12,7 +12,7 @@ categories: csharp dotnet
 
 <p id="toc"></p>
 
-### NullReferenceException 的可恨之处
+## NullReferenceException 的可恨之处
 
 你说 `NullReferenceException` 可以告诉你程序中某个字段为 null，告诉你程序发生了 BUG。
 
@@ -48,7 +48,7 @@ public class Walterlv
 
 而这两点直接与异常机制相悖。异常就是要提供足够我们诊断错误的信息，让我们在开发中避免发生这样的错误。
 
-### NullReferenceException 的替代方案
+## NullReferenceException 的替代方案
 
 既然 `NullReferenceException` 没能给我们提供足够的信息，那么我们就自己来提供这些信息。
 
@@ -64,7 +64,7 @@ public class Walterlv
 
 当然，还有一个替代方案，就是在 `Console.WriteLine(_value.Length);` 之前先对 `_value` 进行 `null` 判断。可是，你能说出 `_value` 为 `null` 代表什么意义吗？为什么为 `null` 时不应该输出？如果这个问题回答不上来，那么你的这个 `null` 判断为你的程序埋藏了一个更深的 BUG——**当用户反馈软件行为不正常时，你甚至连异常信息都没收集到**！硕大一个程序，你**甚至都无法定位到底是哪个模块发生了错误**！！！
 
-### 对待 null，建议的约定
+## 对待 null，建议的约定
 
 当了解了 `NullReferenceException` 的缺陷，再了解了其替代方案后，其实我们会发现一个问题：
 

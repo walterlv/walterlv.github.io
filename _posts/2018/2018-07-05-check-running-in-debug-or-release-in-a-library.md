@@ -13,7 +13,7 @@ categories: dotnet
 
 <div id="toc"></div>
 
-### 先上代码
+## 先上代码
 
 ```csharp
 using System;
@@ -58,9 +58,9 @@ namespace Walterlv.ComponentModel
 }
 ```
 
-### 再解释原理
+## 再解释原理
 
-#### 发现特性
+### 发现特性
 
 所有 .NET 开发者都应该知道我们编译程序时有 Debug 配置和 Release 配置，具体来说是项目文件中一个名为 `<Configuration>` 的节点记录的字符串。
 
@@ -152,7 +152,7 @@ namespace Walterlv.ComponentModel
 
 通常在 Debug 下编译时，使用的值是 `EnableEditAndContinue`。
 
-#### 寻找程序集
+### 寻找程序集
 
 以上发现的程序集特性是需要找到一个程序集的，那么应该使用哪一个程序集呢？
 
@@ -170,13 +170,13 @@ var assembly = new StackTrace().GetFrames().Last().GetMethod().Module.Assembly;
 
 `StackTrace.GetFrames()` 方法可能返回 `null`，但那仅对于一个任意的 `StackTrace`。在我们的使用场景中是取整个托管调用栈的，由于这个方法本身就是托管代码，所以栈中至少存在一个帧；也就是说此方法在我们的场景中是不可能返回 `null` 的。所以代码静态检查工具如果提示需要处理 `null`，其实是多余的担心。
 
-#### 性能
+### 性能
 
 另外，一个编译好的程序集是不可能在运行时再去修改 Debug 和 Release 配置的，所以第一次获取完毕后就可以缓存下来以便后续使用。
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Assembly.GetEntryAssembly Method (System.Reflection)](https://msdn.microsoft.com/en-us/library/system.reflection.assembly.getentryassembly.aspx?f=255&MSPPError=-2147217396)
 - [c# - I need an alternative to `Assembly.GetEntryAssembly()` that never returns null - Stack Overflow](https://stackoverflow.com/a/14165787/6233938)

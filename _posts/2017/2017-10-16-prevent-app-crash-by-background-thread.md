@@ -37,6 +37,6 @@ WPF 和 Windows Forms 都是微软的框架，为了照顾初学者，微软会�
 
 ---
 
-#### 参考资料
+**参考资料**
 - [c# - How to prevent an exception in a background thread from terminating an application? - Stack Overflow](https://stackoverflow.com/questions/186854/how-to-prevent-an-exception-in-a-background-thread-from-terminating-an-applicati)
 - [Exceptions in Managed Threads - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/threading/exceptions-in-managed-threads?wt.mc_id=MVP)

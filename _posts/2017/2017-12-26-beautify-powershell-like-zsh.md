@@ -15,7 +15,7 @@ Windows 下我们用 oh-my-posh 在 PowerShell 中实现这样的效果。分以
 
 <p id="toc"></p>
 
-### 安装 oh-my-posh
+## 安装 oh-my-posh
 
 我们需要先以管理员权限启动 PowerShell，以便执行安装操作。（具体是在开始按钮上点击右键，选择“Windows PowerShell (管理员)”。）
 
@@ -47,7 +47,7 @@ Install-Module oh-my-posh -Scope CurrentUser
 
 自此，oh-my-posh 安装完毕。
 
-### 启用模组并设置主题
+## 启用模组并设置主题
 
 接下来，我们需要启用安装的模组。启用模组的命令是：
 
@@ -89,7 +89,7 @@ Set-Theme
 
 并没有 zsh 那样的效果。——因为我们缺少专用的字体！
 
-### 安装字体/安装第三方 PowerShell
+## 安装字体/安装第三方 PowerShell
 
 ！！！**重要说明：给 PowerShell 定制字体是一件非常困难的事情，非常困难！！！** *可参见 [自定义 Windows PowerShell 和 cmd 的字体](/post/customize-fonts-of-command-window.html) 感受一下。* **所以，这里更倾向于在安装了字体的情况下使用第三方 PowerShell。**
 
@@ -112,7 +112,7 @@ Set-Theme
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [powerline/fonts: Patched fonts for Powerline users.](https://github.com/powerline/fonts)
 - [Overview — Powerline beta documentation](https://powerline.readthedocs.io/en/master/overview.html)

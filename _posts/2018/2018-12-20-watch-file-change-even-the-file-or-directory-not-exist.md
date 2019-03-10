@@ -15,7 +15,7 @@ position: problem
 
 <div id="toc"></div>
 
-### 方法一：创建文件夹（在逃避问题，但也不失为一种解决思路）
+## 方法一：创建文件夹（在逃避问题，但也不失为一种解决思路）
 
 如果文件夹不存在，把它创建出来就可以监视了嘛！这其实是在逃避问题。不过我把它写出来是因为如果我不说，可能有些小伙伴原本简单的问题就会变得复杂化。
 
@@ -64,7 +64,7 @@ private void FinalFile_Changed(object sender, FileSystemEventArgs e)
 
 如果你的业务当中，反正始终都是要创建这个文件的，那么一开始创建了这个文件夹就能避免不少的麻烦。这也是我把这个方法放到这里作为首选方法的原因。虽然实际上这是在逃避问题，但真的是一个好方法。
 
-### 方法二：递归监视文件夹
+## 方法二：递归监视文件夹
 
 这种方法适用于如果文件或者文件夹不存在时，你不能创建这个文件夹的情况。也许是你的业务需要，也许因为你正在写库，库作为最为通用的业务，不希望改变用户的环境。
 
@@ -78,7 +78,7 @@ private void FinalFile_Changed(object sender, FileSystemEventArgs e)
 
 那么，如果 b 文件夹不存在，就监听 a 文件夹，如果 a 文件夹也不存在，那么就监听 C: 驱动器。实际上，我们不需要再去考虑 C: 驱动器也不存在的情况了（当你真的遇到的时候，考虑业务上规避吧……）。
 
-#### 代码实现
+### 代码实现
 
 既然需要递归监视，那么我们需要查找第一次监视的时候，需要到哪一层。
 
@@ -168,7 +168,7 @@ private void FinalFile_Changed(object sender, FileSystemEventArgs e)
 }
 ```
 
-#### 完整的代码和使用方法
+### 完整的代码和使用方法
 
 由于代码还是有一点点多。如果放到你原有的业务当中，对你的业务代码确实是一种污染。所以我封装了一个类 `FileWatcher`。它不需要依赖任何就可以使用，你可以将它拷贝到你的项目当中。
 
@@ -189,7 +189,7 @@ private void OnFileChanged(object sender, EventArgs e)
 }
 ```
 
-#### 此方法的特点，优势和不足
+### 此方法的特点，优势和不足
 
 实际上，`FileSystemWatcher` 的监视也是有一些空洞的。如果你只是监视一级文件夹而不是递归监视子文件夹（通过设置 `IncludeSubdirectories` 属性来指定），那么就会存在一些情况是监视不到的。然而如果你真的递归监视子文件夹，又会监听到大量的事件需要过滤。
 
@@ -214,7 +214,7 @@ private void OnFileChanged(object sender, EventArgs e)
 
 1. 一开始文件存在，但直接将 b\x.txt 连文件带文件夹一起移走，这时依然能监听到 x.txt 文件的改变，但它已经不在原来的目录了。
 
-#### 附所有源码
+### 附所有源码
 
 如果看不到，请访问：[FileWatcher that helps you to watch a single file change even if the file or it's owner folers does not exists.](https://gist.github.com/walterlv/cffec6dd951780ea946feb2ea96f302a)。
 
@@ -222,7 +222,7 @@ private void OnFileChanged(object sender, EventArgs e)
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [FileSystemWatcher Class (System.IO) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2)
 - [c# - How can i use FileSystemWatcher to watch directory if directory not exist? - Stack Overflow](https://stackoverflow.com/a/29602014/6233938)

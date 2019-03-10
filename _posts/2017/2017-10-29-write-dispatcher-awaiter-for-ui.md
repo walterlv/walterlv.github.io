@@ -13,7 +13,7 @@ categories: dotnet csharp wpf uwp
 
 <div id="toc"></div>
 
-### Awaiter 系列文章
+## Awaiter 系列文章
 
 入门篇：
 
@@ -26,7 +26,7 @@ categories: dotnet csharp wpf uwp
 - [在 WPF/UWP 中实现一个可以用 await 异步等待 UI 交互操作的 Awaiter](/post/write-dispatcher-awaiter-for-ui.html)
 - [.NET 编写一个可以异步等待循环中任何一个部分的 Awaiter](/post/write-an-awaiter-that-await-part-of-a-loop.html)
 
-### 本文阅读建议
+## 本文阅读建议
 
 本文**代码较多**，阅读建议：
 
@@ -35,7 +35,7 @@ categories: dotnet csharp wpf uwp
 1. 没有注释标注的代码块是用于研究的代码片段，不需要使用。
 1. 可点击下面的导航跳转到你希望的地方。
 
-### 我们的需求
+## 我们的需求
 
 这里说的 UI “耗时”，“耗时”打了引号，是因为严格来说并不是真的卡死了 UI，而是某个函数的执行需要更多的 UI 操作才能继续。这句话可能比较难懂，但举两个例子就好懂了。
 
@@ -44,7 +44,7 @@ categories: dotnet csharp wpf uwp
 
 本文将以实现第 2 条为目标，一步步完善我们的代码，并做出一个非常通用的 UI 可等待类出来。最终你会发现，我们的代码也能轻松应对第 1 条的需求。
 
-### 实现目标 DispatcherAsyncOperation<T>
+## 实现目标 DispatcherAsyncOperation<T>
 
 现在，我们来实现我们的目标。
 
@@ -301,7 +301,7 @@ namespace Walterlv.Demo
 }
 ```
 
-### 回顾完整的代码
+## 回顾完整的代码
 
 至此，我们得到了三个完整的代码文件（在 **GitHub** 上，以下所有代码文件均有**详尽的中文注释**）：
 
@@ -309,11 +309,11 @@ namespace Walterlv.Demo
 - [DispatcherAsyncOperation.cs](https://github.com/walterlv/sharing-demo/blob/master/src/Walterlv.Demo.Sharing/Utils/Threading/DispatcherAsyncOperation.cs) 一个自定义的，适用于 UI 的自定义可等待（`awaitable`）类；使用此类可以避免浪费一个线程用于等待 UI 操作的结束。
 - [UIDispatcher.cs](https://github.com/walterlv/sharing-demo/blob/master/src/Walterlv.Demo.WPF/Utils/Threading/UIDispatcher.cs) 用于在后台线程启动一个 `Dispatcher`，以便在这个 `Dispatcher` 中方便地创建控件。
 
-### 回顾需求
+## 回顾需求
 
 现在，在以上三个完整代码文件的帮助下，我们实现我们的那两个需求。（手动斜眼一下，我只说拿第 2 个需求当例子进行分析，并不是说只实现第 2 个。我们的目标是写出一份通用的组件来，方便实现大部分主流需求。）
 
-#### 实现第 2 个需求
+### 实现第 2 个需求
 
 后台创建一个 UI 控件：
 
@@ -359,7 +359,7 @@ var result = CreateElementAsync<Button>();
 var result = CreateElementAsync<Button>(dispatcher);
 ```
 
-#### 实现第 1 个需求
+### 实现第 1 个需求
 
 显示一个用户控件，等用户点击了确定后异步返回：
 
@@ -400,7 +400,7 @@ else
 }
 ```
 
-### 全文总结
+## 全文总结
 
 读者读到此处，应该已经学会了如何自己实现一个自定义的异步等待类，也能明白某些场景下自己写一个这样的类代替原生 `Task` 的好处。不过不管是否明白，通过阅读本文还收获了三份代码文件呢！我已经把这些文件以 MIT 开源到了 [walterlv/sharing-demo](https://github.com/walterlv/sharing-demo) 中，大家可以随意使用。
 
@@ -410,7 +410,7 @@ else
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Dixin's Blog - Understanding C# async / await (1) Compilation](https://weblogs.asp.net/dixin/understanding-c-sharp-async-await-1-compilation)
 - [Dixin's Blog - Understanding C# async / await (2) The Awaitable-Awaiter Pattern](https://weblogs.asp.net/dixin/understanding-c-sharp-async-await-2-awaitable-awaiter-pattern)

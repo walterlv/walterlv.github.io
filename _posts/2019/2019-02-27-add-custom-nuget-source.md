@@ -13,7 +13,7 @@ position: starter
 
 <div id="toc"></div>
 
-### 使用命令行添加
+## 使用命令行添加
 
 在使用命令行之前，你需要先在 <https://www.nuget.org/downloads> 下载最新的 nuget.exe 然后加入到环境变量中。
 
@@ -30,7 +30,7 @@ nuget sources Disable -Name "nuget.org"
 nuget sources add -Name "huaweicloud" -Source "https://mirrors.huaweicloud.com/repository/nuget/v3/index.json"
 ```
 
-### 在 Visual Studio 中添加
+## 在 Visual Studio 中添加
 
 在 Visual Studio 中打开 `工具` -> `选项` -> `NuGet 包管理器` -> `包源`：
 
@@ -45,7 +45,7 @@ nuget sources add -Name "huaweicloud" -Source "https://mirrors.huaweicloud.com/r
 1. 你可以添加一个本地路径作为本地 NuGet 源，而那个路径只要存在 *.nupkg 文件就够了。
     - 对于 .NET Core 项目，勾选编译后生成 NuGet 包则会在输出路径生成这样的文件，于是你可以本地调试。
 
-### 直接修改配置文件
+## 直接修改配置文件
 
 NuGet 的全局配置文件在 `%AppData\NuGet\NuGet.config`，例如：
 
@@ -72,7 +72,7 @@ C:\Users\lvyi\AppData\Roaming\NuGet\NuGet.Config
 </configuration>
 ```
 
-### 为单独的项目添加自定义的 NuGet 源
+## 为单独的项目添加自定义的 NuGet 源
 
 NuGet.config 文件是有优先级的。nuget.exe 会先把全局配置加载进来；然后从当前目录中寻找 NuGet.config 文件，如果没找到就去上一级目录找，一直找到驱动器的根目录；找到后添加到已经加载好的全局配置中成为一个合并的配置。
 

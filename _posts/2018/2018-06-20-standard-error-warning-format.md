@@ -13,7 +13,7 @@ categories: dotnet msbuild
 
 <div id="toc"></div>
 
-### 编译错误和编译警告
+## 编译错误和编译警告
 
 MSBuild 的 Exec 自带有错误和警告的标准格式，按照此格式输出，将被识别为编译错误和编译警告。
 
@@ -51,7 +51,7 @@ namespace Walterlv.Demo
 </Project>
 ```
 
-### 更复杂的错误和警告控制
+## 更复杂的错误和警告控制
 
 实际上，上面的 `warning`、`error` 只是省略的格式，而完整的部分是这样的：
 
@@ -69,7 +69,7 @@ file_path(line_start,column_start,line_end,column_end): error_or_warning key: me
 Demo.cs(344,59,344,78): warning CS0067: The event 'WalterlvClass.Foo' is never used.
 ```
 
-### 阻止编译错误和编译警告的格式化识别
+## 阻止编译错误和编译警告的格式化识别
 
 当然，有可能你只是需要一个 `error:` 开头或者 `warning:` 开头的格式，并不希望真的产生编译错误或者编译警告，那么只需要在执行 `Exec` 的时候设置 `IgnoreStandardErrorWarningFormat="True"`。
 
@@ -79,6 +79,6 @@ Demo.cs(344,59,344,78): warning CS0067: The event 'WalterlvClass.Foo' is never u
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Exec task and "error :" in output](https://social.msdn.microsoft.com/Forums/vstudio/en-US/77eb8b02-8cd7-4d32-acad-3ab0dc308d78/exec-task-and-error-in-output?forum=msbuild)

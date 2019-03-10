@@ -62,7 +62,7 @@ public static char[] GetInvalidPathChars() => new char[]
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [.net - Determine via C# whether a string is a valid file path - Stack Overflow](https://stackoverflow.com/questions/3067479/determine-via-c-sharp-whether-a-string-is-a-valid-file-path)
 - [c# - How do I check if a given string is a legal/valid file name under Windows? - Stack Overflow](https://stackoverflow.com/questions/62771/how-do-i-check-if-a-given-string-is-a-legal-valid-file-name-under-windows)

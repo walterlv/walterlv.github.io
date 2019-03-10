@@ -30,7 +30,7 @@ public static class StorageSomeInfo
 }
 ```
 
-### 故事背景
+## 故事背景
 
 你将类库发布到 NuGet 上，一切运行安好。
 
@@ -59,7 +59,7 @@ public static class StorageSomeInfo
 
 ---
 
-### 使用 AppContext
+## 使用 AppContext
 
 这时候祭出——`AppContext`！
 
@@ -102,7 +102,7 @@ public static class StorageSomeInfo
 
 ---
 
-### 更多 AppContext 的信息
+## 更多 AppContext 的信息
 
 开发者们如果有多个开关需要开启或关闭，则使用分号分隔多个开关：
 
@@ -124,6 +124,6 @@ AppContext.SetSwitch(string, bool);
 1. 在 `app.config` 中指定的优先级其次；
 1. 在注册表中指定的优先级最低。
 
-### 一点坑
+## 一点坑
 
 在从 .NET Framework 4.6 升级到 4.7 后，注册表的方式貌似失效了。参考：[FIX: AppContext switch overrides are not applied to applications that run on the .NET Framework 4.7](https://support.microsoft.com/en-us/help/4036977/fix-appcontext-switch-overrides-are-not-applied-to-applications-that-r)

@@ -56,6 +56,6 @@ $ git fetch
 $ git reset origin/master --hard
 ```
 
-#### 参考资料
+**参考资料**
 
 - [GIT: How do I add a file to the first commit (and rewrite history in the process)?](https://stackoverflow.com/questions/21353584/git-how-do-i-add-a-file-to-the-first-commit-and-rewrite-history-in-the-process)

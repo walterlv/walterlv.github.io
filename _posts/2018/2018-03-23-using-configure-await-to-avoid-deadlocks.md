@@ -13,7 +13,7 @@ categories: dotnet
 
 <div id="toc"></div>
 
-### 可能死锁的代码
+## 可能死锁的代码
 
 现在，我们是类库设计者的身份，我们试图编写一个 `RunAsync` 方法用以异步执行某些操作。
 
@@ -86,7 +86,7 @@ private async Task RunAsync()
 
 只有第 2 种会发生死锁，第 1 和第 3 种都不会。
 
-### 原因
+## 原因
 
 对于第 2 种情况，下方“`await` 之后的代码”试图回到 UI 线程执行，但 UI 此时处于调用者 `foo.RunAsync().Wait();` 这段神奇代码的等待状态——所以死锁了。回到 UI 线程靠的是 `DispatcherSynchronizationContext`，我在 [使用 Task.Wait()？立刻死锁（deadlock）](/post/deadlock-in-task-wait.html) 一文中已有解释，建议前往了解更深层次的原因。
 
@@ -134,13 +134,13 @@ private async Task RunAsync()
 
 对第 3 种情况，由于指定了 `ConfigureAwait(false)`，这意味着通知异步状态机 `AsyncMethodStateMachine` 并不需要使用设置好的 `SynchronizationContext`（对于 UI 线程，是 `DispatcherSynchronizationContext`）执行线程同步，而是使用默认的 `SynchronizationContext`，而默认行为是随便找个线程执行后面的代码。于是，`await Task.Run` 后面的代码便不需要返回原线程，也就不会发生第 2 种情况里的死锁问题。
 
-### 预防
+## 预防
 
 建议安装 NuGet 包 [Microsoft.CodeAnalysis.FxCopAnalyzers](https://www.nuget.org/packages/Microsoft.CodeAnalysis.FxCopAnalyzers/)。这样，当你在代码中写出 `await` 时，分析器会提示你 [CA2007](/post/meaning-of-all-kind-of-stylecop.html) 警告，你必须显式设置 `ConfigureAwait(false)` 或 `ConfigureAwait(true)` 来提醒你是否需要使用默认的 `SynchronizationContext`。
 
 如果你是类库的编写者，注意此问题能够一定程度上防止逗比使用者出现死锁问题后喷你的类库写得不好。
 
-### 更多死锁问题
+## 更多死锁问题
 
 死锁问题：
 

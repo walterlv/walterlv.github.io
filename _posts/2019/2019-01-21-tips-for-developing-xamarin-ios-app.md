@@ -12,7 +12,7 @@ position: knowledge
 
 <div id="toc"></div>
 
-### 需要注册 Apple Developer Portal
+## 需要注册 Apple Developer Portal
 
 不管你用什么开发 iOS 应用，成为一个 Apple 的开发者是必要的。
 
@@ -22,7 +22,7 @@ position: knowledge
 
 完成！虽然简单，但是如果没有成为开发者，那么你在所有工具上都无法成功部署应用。
 
-### Could not find any available provisioning profiles for iOS
+## Could not find any available provisioning profiles for iOS
 
 这个错误可能出现在你是用 Visual Studio 或者 Visual Studio for Mac 部署真机调试的时候出现。
 
@@ -48,7 +48,7 @@ position: knowledge
 
 Visual Studio for Mac 中的设置方法则是选中这个项目的 Info.plist 文件，然后点击 Bundle Signing，在对话框中选。
 
-### 需要注册 Apple Developer Program
+## 需要注册 Apple Developer Program
 
 注意，注册 Apple Developer Program 需要付 $99 美元的年费。
 
@@ -56,6 +56,6 @@ Visual Studio for Mac 中的设置方法则是选中这个项目的 Info.plist �
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [How to check whether Xcode downloaded all profiles? - Stack Overflow](https://stackoverflow.com/questions/44321291/how-to-check-whether-xcode-downloaded-all-profiles)

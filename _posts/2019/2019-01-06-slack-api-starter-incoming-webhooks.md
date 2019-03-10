@@ -13,7 +13,7 @@ position: starter
 
 <div id="toc"></div>
 
-### 创建一个新 Slack 应用
+## 创建一个新 Slack 应用
 
 如果你已经创建了一个 Slack 应用，可以跳过这一节。
 
@@ -44,7 +44,7 @@ position: starter
 
 ![五种不同的应用类型](/static/posts/2019-01-06-14-16-48.png)
 
-### 创建 Webhooks 应用
+## 创建 Webhooks 应用
 
 本文，我们选中 Incoming Webhooks。
 
@@ -58,7 +58,7 @@ position: starter
 
 ![提示重新安装](/static/posts/2019-01-06-15-28-41.png)
 
-### 添加一个 Webhook Url
+## 添加一个 Webhook Url
 
 继续把网页往下滑，点击 [Add New Webhook to Workspace]。
 
@@ -72,7 +72,7 @@ position: starter
 
 ![可以复制的新 Url](/static/posts/2019-01-06-14-31-14.png)
 
-### 模拟发送一个消息
+## 模拟发送一个消息
 
 为了迅速验证，我们可以使用 Postman 来发送这条消息。
 
@@ -94,7 +94,7 @@ position: starter
 
 ![看看新发送的消息](/static/posts/2019-01-06-14-38-26.png)
 
-### 你可以用这个来做什么？
+## 你可以用这个来做什么？
 
 当你可以随时向 Slack 的某个通道发送消息之后，你可以用来做什么呢？
 
@@ -104,6 +104,6 @@ position: starter
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Enabling interactions with bots - Slack](https://api.slack.com/bot-users)

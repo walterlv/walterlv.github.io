@@ -11,7 +11,7 @@ LaTeX 是一套排版系统，原生包含对科学和技术型文档内容的�
 
 ---
 
-### 为站点添加 LaTeX 公式支持
+## 为站点添加 LaTeX 公式支持
 
 在你的站点中添加 `MathJax.js` 的支持即可。比如添加下面这段代码：
 
@@ -38,7 +38,7 @@ $$h_\theta(x) = \theta^T x$$
 
 如果你希望写出更复杂的 LaTeX 公式，可以参考 [Latex 公式速查](https://lindexi.oschina.io/lindexi/post/Latex-%E5%85%AC%E5%BC%8F%E9%80%9F%E6%9F%A5.html)。
 
-### 为 VSCode 编辑器添加 LaTeX 公式支持
+## 为 VSCode 编辑器添加 LaTeX 公式支持
 
 在 VSCode 插件商店中搜索 *latex* 可以得到不少的插件，我使用的是目前有 106K 下载量的 *Markdown+Math* 插件。
 
@@ -46,7 +46,7 @@ $$h_\theta(x) = \theta^T x$$
 
 ![](/static/posts/2018-05-26-10-18-53.png)
 
-#### 参考资料
+**参考资料**
 
 - [Easily Add LaTeX Support To Jekyll](http://cushychicken.github.io/easy-latex-in-jekyll)
 - [Latex 公式速查](https://lindexi.oschina.io/lindexi/post/Latex-%E5%85%AC%E5%BC%8F%E9%80%9F%E6%9F%A5.html)

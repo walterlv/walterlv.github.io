@@ -13,7 +13,7 @@ Windows 跳转列表是自 Windows 7 时代就带来的功能，这一功能是�
 
 <div id="toc"></div>
 
-### 一个简单的跳转列表程序
+## 一个简单的跳转列表程序
 
 新建一个 WPF 程序，然后直接在 App.xaml 中添加跳转列表的代码。这里为了更快上手，我直接贴出整个 App.xaml 的代码。
 
@@ -50,7 +50,7 @@ Windows 跳转列表是自 Windows 7 时代就带来的功能，这一功能是�
 
 - [Windows 10 自带那么多图标，去哪里找呢？](/post/where-is-the-windows-10-native-icons.html)
 
-### 定制跳转列表的功能
+## 定制跳转列表的功能
 
 `JumpList` 有两个属性 `ShowRecentCategory` 和 `ShowFrequentCategory`，如果指定为 `true` 则表示操作系统会自动为我们保存此程序最近使用的文件的最频繁使用的文件。
 
@@ -71,7 +71,7 @@ Windows 的跳转列表有两种不同的列表项，一种是“任务”，另
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [JumpList Class (System.Windows.Shell) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.windows.shell.jumplist)
 - [Taskbar Extensions - Windows applications - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/shell/taskbar-extensions)

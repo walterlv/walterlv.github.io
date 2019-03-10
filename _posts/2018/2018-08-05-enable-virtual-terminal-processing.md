@@ -13,7 +13,7 @@ categories: windows dotnet csharp
 
 <div id="toc"></div>
 
-### 基本的准备代码
+## 基本的准备代码
 
 在开始之前，我们先添加一些基础性代码，这是对系统核心功能的调用。
 
@@ -49,9 +49,9 @@ static void Main(string[] args)
 }
 ```
 
-### 开始使用 ANSI 转义序列
+## 开始使用 ANSI 转义序列
 
-#### 添加下划线
+### 添加下划线
 
 ```csharp
 const string UNDERLINE = "\x1B[4m";
@@ -62,7 +62,7 @@ Console.WriteLine($"Some {UNDERLINE}underlined{RESET} text");
 ![下划线转义](/static/posts/2018-08-05-14-02-54.png)  
 ▲ 下划线转义
 
-#### 修改颜色
+### 修改颜色
 
 ```csharp
 const string RED = "\x1B[31m";
@@ -72,19 +72,19 @@ Console.WriteLine($"Some {UNDERLINE}underlined{RESET} and {RED}red{RESET} text")
 ![颜色转义](/static/posts/2018-08-05-14-09-53.png)  
 ▲ 颜色转义（当然，.NET 封装有 API）
 
-#### 其他转义序列
+### 其他转义序列
 
 其他转义序列，可阅读 [ANSI escape code - Wikipedia](https://en.wikipedia.org/wiki/ANSI_escape_code)。不过 Windows 能支持的并不多。
 
 关于颜色，不同控制台上对于相同转义序列的颜色值和颜色支持程度也不同。
 
-### 关于 ENABLE_VIRTUAL_TERMINAL_PROCESSING
+## 关于 ENABLE_VIRTUAL_TERMINAL_PROCESSING
 
 这是用来开启虚拟终端处理的一个标识，Windows 从一开始就默认关闭这个标识，必须通过 `SetConsoleMode` 手工开启。虽然在 10.0.10586 版本时短暂开启了一个版本，随后在 10.0.14393 中又再次默认关闭了。
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [SetConsoleMode function - Windows Console - Microsoft Docs](https://docs.microsoft.com/en-us/windows/console/setconsolemode?wt.mc_id=MVP)
 - [Win10 New Console: Enable ENABLE_VIRTUAL_TERMINAL_PROCESSING by default (or with a flag) · Issue #92 · rprichard/winpty](https://github.com/rprichard/winpty/issues/92)

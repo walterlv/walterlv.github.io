@@ -12,7 +12,7 @@ categories: dotnet csharp msbuild
 
 <div id="toc"></div>
 
-### 在哪里选择 Main？
+## 在哪里选择 Main？
 
 在带有 Main 函数的项目上 “右键 -> 属性 -> 应用 -> 启动对象”，可以看到我们的 Main 函数，默认值是 “未设置”。
 
@@ -34,7 +34,7 @@ Walterlv.Demo.Main C:\Users\lvyi\Desktop\Walterlv.Demo.Main\Walterlv.Demo.Main\N
 ![选择一个 Main 函数](/static/posts/2018-10-09-18-18-25.png)  
 ▲ 选择一个 Main 函数
 
-### 我们准备一个 WPF 程序
+## 我们准备一个 WPF 程序
 
 现在，我们来一些更复杂的操作。现在把我们的项目换成一个普通的 WPF 项目。
 
@@ -112,7 +112,7 @@ namespace Walterlv.Demo
 
 这时，我们的 Program 和 NewProgram 还是保持之前的代码不变，因为我们的启动对象已经被设置为了 Walterlv.Demo.App，所以这里的两个 Main 函数其实并没有起作用。
 
-### 根据启动对象的不同，控制不同的启动流程
+## 根据启动对象的不同，控制不同的启动流程
 
 现在，我们即将实现一个功能：
 
@@ -204,7 +204,7 @@ namespace Walterlv.Demo
 
 由于 `window` 是局部变量，所以 `Main` 函数中是不能修改到的。而采用了这种根据启动对象不同动态改变 App.xaml.cs 的方式解决了这个问题。
 
-### 将不同的文件换成不同的条件编译符
+## 将不同的文件换成不同的条件编译符
 
 如果你的启动流程差异并不是那么大，那么也可以使用条件编译符的定义来替代整个文件的替换。
 

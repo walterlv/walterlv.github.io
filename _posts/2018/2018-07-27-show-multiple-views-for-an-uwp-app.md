@@ -11,7 +11,7 @@ UWP 应用多是一个窗口完成所有业务的，事实上我也推荐使用�
 
 <div id="toc"></div>
 
-### 为什么 UWP 需要多窗口？
+## 为什么 UWP 需要多窗口？
 
 多窗口在传统 Win32 的开发当中是司空见惯的事儿了，不过我个人非常不喜欢，因为 Windows 系统上的多窗口太多坑。以下是我以前写的关于传统多窗口开发中的一些坑（除此之外还有更多）：
 
@@ -22,7 +22,7 @@ UWP 应用多是一个窗口完成所有业务的，事实上我也推荐使用�
 
 微软官方文档中列举了一些例子：例如一边写邮件一边参考以往的邮件；一边看正在播放的音乐一边浏览播放列表；一次性打开多份文章然后稍后一起阅读等。
 
-### UWP 视图的概念
+## UWP 视图的概念
 
 在学习如何编写 UWP 多窗口之前，我们需要了解一些 UWP 视图（View）的概念。
 
@@ -36,7 +36,7 @@ UWP 应用多是一个窗口完成所有业务的，事实上我也推荐使用�
 
 ![UWP 应用视图](/static/posts/2018-07-27-08-37-42.png)
 
-### UWP 多窗口
+## UWP 多窗口
 
 在了解到 UWP 视图的概念之后，严格意义上说，这一节的标题应该叫做 “UWP 多视图”。
 
@@ -77,7 +77,7 @@ private async void OnLoaded(object sender, RoutedEventArgs e)
 
 ![UWP 多窗口](/static/posts/2018-07-27-08-58-16.png)
 
-### 管理多个 UWP 视图
+## 管理多个 UWP 视图
 
 我们平时开发 UWP 应用的时候很少去关心 `CoreApplicationView`，因为默认情况下 UWP 能为我们做很多管理应用视图的工作。
 
@@ -91,6 +91,6 @@ await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Show multiple views for an app - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/layout/show-multiple-views?wt.mc_id=MVP)

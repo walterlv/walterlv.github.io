@@ -13,7 +13,7 @@ categories: visualstudio nuget
 
 <div id="toc"></div>
 
-### 空的 NuGetPackageImportStamp 节点
+## 空的 NuGetPackageImportStamp 节点
 
 NuGetPackageImportStamp 节点只会出现在传统的 csproj 文件中。如果你不清楚我这里指的传统的和新的 csproj 文件格式，那么可以阅读我的另一篇文章来了了解它们的区别：[将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj](/post/introduce-new-style-csproj-into-net-framework.html)。
 
@@ -37,13 +37,13 @@ NuGetPackageImportStamp 节点只会出现在传统的 csproj 文件中。如果
 
 文件已经经过过度简化，肯定是编译不过的了。不过，你可以意会。它会在某些 NuGet 包安装完后出现在 csproj 文件中。
 
-### 什么情况下会出现 NuGetPackageImportStamp 节点
+## 什么情况下会出现 NuGetPackageImportStamp 节点
 
 你也许会发现，并不是所有的 NuGet 包安装完后都会出现 `NuGetPackageImportStamp` 节点。实际上，只有那些会导致新 `Import` 文件部件的 NuGet 包才会出现这样的节点。
 
 我们来了做个实验。
 
-#### 不会新增 NuGetPackageImportStamp
+### 不会新增 NuGetPackageImportStamp
 
 在项目中安装 [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json)。安装完后，你会看到仓库中有两个文件发生了变化：
 
@@ -75,7 +75,7 @@ NuGetPackageImportStamp 节点只会出现在传统的 csproj 文件中。如果
 
 我们发现，安装 [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json) 是不会导致项目中新增 `NuGetPackageImportStamp` 节点的。
 
-#### 会新增 NuGetPackageImportStamp
+### 会新增 NuGetPackageImportStamp
 
 现在，我们换另一个 NuGet 包来安装：[StyleCop.MSBuild](https://www.nuget.org/packages/StyleCop.MSBuild)。
 
@@ -112,7 +112,7 @@ NuGetPackageImportStamp 节点只会出现在传统的 csproj 文件中。如果
 1. `NuGetPackageImportStamp`
 1. 用于 Import 一个 `targets` 文件的 `Target`
 
-### NuGetPackageImportStamp 的出现目的
+## NuGetPackageImportStamp 的出现目的
 
 我们发现 `NuGetPackageImportStamp` 其实是伴随着 `Import` 而出现的。而微软官方的注释也是诡异地说出了它的原因：
 
