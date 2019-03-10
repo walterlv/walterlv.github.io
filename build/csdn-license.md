@@ -1,7 +1,7 @@
 
 ---
 
-我的博客会首发于 <https://blog.walterlv.com/>，而 CSDN 和博客园仅从其中摘选发布，而且一旦发布了就不再更新。
+我的博客会首发于 <https://blog.walterlv.com/>，而 CSDN 会从其中精选发布，但是一旦发布了就很少更新。
 
 如果在博客看到有任何不懂的内容，欢迎交流。我搭建了 [dotnet 职业技术学院](https://t.me/dotnet_campus) 欢迎大家加入。
 
