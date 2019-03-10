@@ -509,7 +509,11 @@ aside nav li a:hover {
 }
 
 aside nav p {
-    margin: 0.5rem 1rem
+    margin: 0 1.2rem 1rem;
+    font-weight: 300;
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+    color: #1570a6;
 }
 
 aside nav svg {
