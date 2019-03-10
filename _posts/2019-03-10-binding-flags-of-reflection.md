@@ -1,6 +1,6 @@
 ---
 title: "详解 .NET 反射中的 BindingFlags 以及常用的 BindingFlags 使用方式"
-date: 2019-03-10 14:51:00 +0800
+date: 2019-03-10 16:19:32 +0800
 categories: dotnet csharp
 position: knowledge
 published: false
@@ -70,8 +70,9 @@ GetProperty
 SetProperty
 ```
 
-这些标记用于为 `InvokeMember` 方法提供参数，但是仅在调用一个 COM 组件的时候才应该使用：
+接下来下面的部分就不是那么常用的了。
 
+这些标记用于为 `InvokeMember` 方法提供参数，但是仅在调用一个 COM 组件的时候才应该使用：
 
 ```csharp
 PutDispProperty
@@ -79,22 +80,24 @@ PutRefDispProperty
 ```
  
 ```csharp
-ExactBinding = 0x010000,    // Bind with Exact Type matching, No Change type
-SuppressChangeType = 0x020000,
+ExactBinding
+SuppressChangeType
 ```
  
 ```csharp
-// DefaultValueBinding will return the set of methods having ArgCount or 
-//    more parameters.  This is used for default values, etc.
-OptionalParamBinding = 0x040000,
-```
- 
-```csharp
-// These are a couple of misc attributes used
-IgnoreReturn = 0x01000000,  // This is used in COM Interop
-DoNotWrapExceptions = 0x02000000, // Disables wrapping exceptions in TargetInvocationException
+OptionalParamBinding
 ```
 
+下面是一些杂项……
+ 
+```csharp
+// 忽略返回值（在 COM 组件的互操作中使用）
+IgnoreReturn
+
+// 反射调用方法时如果出现了异常，通常反射会用 TargetInvocationException 包装这个异常。
+// 此标记用于禁止把异常包装到 TargetInvocationException 中。
+DoNotWrapExceptions
+```
 
 ### 你可能会有的疑问
 
@@ -104,6 +107,23 @@ DoNotWrapExceptions = 0x02000000, // Disables wrapping exceptions in TargetInvoc
 
 ### 常用的组合
 
+从上面的解释中可以发现，这个类型的设计其实是有问题的，不符合单一职责原则。所以我们会在不同的使用场景下使用不同区域的组合。
+
+查找，也就是获取一个类型中的字段、属性、方法等的时候使用的。
+
+拿到所有成员：
+
+```csharp
+BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance
+```
+
+实际上 [`RuntimeReflectionExtensions.Everything`](https://source.dot.net/#System.Runtime/System/Reflection/RuntimeReflectionExtensions.cs,a63775278f260201,references) 属性就是这么写的。
+
+拿到公有的实例成员：
+
+```csharp
+BindingFlags.Public | BindingFlags.Instance
+```
 
 ### 附 BindingFlags 的源码
 
@@ -159,3 +179,4 @@ public enum BindingFlags
 #### 参考资料
 
 - [BindingFlags.cs](https://source.dot.net/#System.Private.CoreLib/shared/System/Reflection/BindingFlags.cs)
+- [RuntimeReflectionExtensions.cs](https://source.dot.net/#System.Runtime/System/Reflection/RuntimeReflectionExtensions.cs)
