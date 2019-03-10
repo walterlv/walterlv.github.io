@@ -1,9 +1,8 @@
 ---
 title: "详解 .NET 反射中的 BindingFlags 以及常用的 BindingFlags 使用方式"
-date: 2019-03-10 16:19:32 +0800
+date: 2019-03-10 16:21:12 +0800
 categories: dotnet csharp
 position: knowledge
-published: false
 ---
 
 使用 .NET 的反射 API 时，通常会要求我们传入一个 `BindingFlags` 参数用于指定反射查找的范围。不过如果对反射不熟的话，第一次写反射很容易写错导致找不到需要的类型成员。
