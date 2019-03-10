@@ -1302,22 +1302,51 @@ body.dark-theme .post-content h5 {
 
 .post-content h2 {
     font-size: 1.8rem;
-    line-height: 1.8rem;
+    line-height: 2.4rem;
 }
 
 .post-content h3 {
     font-size: 1.6rem;
-    line-height: 1.6rem;
+    line-height: 2.0rem;
 }
 
 .post-content h4 {
     font-size: 1.4rem;
-    line-height: 1.4rem;
+    line-height: 1.6rem;
 }
 
 .post-content h5 {
     font-size: 1.2rem;
-    line-height: 1.2rem;
+    line-height: 1.4rem;
+}
+
+
+@media only screen and (max-width:37.5rem) {
+    .post-content h1.post-title {
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+    }
+    
+    .post-content h2 {
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        font-weight: 600;
+    }
+    
+    .post-content h3 {
+        font-size: 1.6rem;
+        line-height: 2.0rem;
+    }
+    
+    .post-content h4 {
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+    }
+    
+    .post-content h5 {
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+    }
 }
 
 .post-content ul, .post-content ol {
