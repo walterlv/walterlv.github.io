@@ -1,6 +1,6 @@
 ---
 title: "详解 .NET 反射中的 BindingFlags 以及常用的 BindingFlags 使用方式"
-date: 2019-03-10 16:21:12 +0800
+date: 2019-03-10 19:05:11 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -15,12 +15,14 @@ position: knowledge
 
 ## 所有的 BindingFlags
 
-默认值：
+### 默认值
 
 ```csharp
 // 默认值
 Default
 ```
+
+### 查找
 
 这些标记用于反射的时候查找类型成员：
 
@@ -47,6 +49,8 @@ NonPublic
 FlattenHierarchy
 ```
 
+### 调用
+
 这些标记用于为 `InvokeMember` 方法提供参数，告知应该如何反射调用一个方法：
 
 ```csharp
@@ -68,6 +72,8 @@ GetProperty
 // 设置属性的值。
 SetProperty
 ```
+
+### 其他
 
 接下来下面的部分就不是那么常用的了。
 
