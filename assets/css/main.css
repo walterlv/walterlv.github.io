@@ -7,7 +7,7 @@ html {
 
 @media only screen and (max-width:600px) {
     html {
-        font-size: 90%
+        font-size: 110%;
     }
 }
 
@@ -943,6 +943,14 @@ body.dark-theme .box-item .box-body h2 {
     line-height: 1.25rem
 }
 
+@media only screen and (max-width: 37.5rem){
+    .box-item .box-body p {
+        font-size: 0.8rem;
+        line-height: 1rem;
+        margin: 0.5rem 0;
+    }
+}
+
 body.dark-theme .box-item .box-body p {
     color: #bbbbbb;
 }
@@ -1012,6 +1020,12 @@ body.dark-theme .box-item .box-body p {
 
 .box-item .box-info {
     padding: 0.8rem 2rem 0;
+}
+
+@media only screen and (max-width:37.5rem) {
+    .box-item .box-info {
+        padding: .8rem 0.8rem 0;
+    }
 }
 
 div.pager {
@@ -1140,7 +1154,7 @@ body.dark-theme ul.pager li.active {
     font-style: normal;
     font-size: 1rem;
     line-height: 1.4rem;
-    padding: 0 1.25rem;
+    padding: 0 0.8rem;
     margin: 0.9rem auto 0.9rem;
     letter-spacing: .05rem;
     overflow-wrap: break-word
