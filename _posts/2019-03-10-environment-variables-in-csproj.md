@@ -1,6 +1,7 @@
 ---
-title: "在 csproj 文件中使用系统环境变量的值"
-date: 2019-03-10 22:05:55 +0800
+title: "在 csproj 文件中使用系统环境变量的值（示例将 dll 生成到 AppData 目录下）"
+publishDate: 2019-03-10 22:05:55 +0800
+date: 2019-03-12 11:53:06 +0800
 categories: dotnet csharp visualstudio msbuild
 position: starter
 ---
