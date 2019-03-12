@@ -1,6 +1,7 @@
 ---
 title: "我收集的各种公有 NuGet 源"
-date: 2019-02-27 12:27:27 +0800
+publishDate: 2019-02-27 12:27:27 +0800
+date: 2019-03-12 12:41:49 +0800
 categories: dotnet nuget
 position: knowledge
 ---
@@ -25,6 +26,10 @@ position: knowledge
     - `C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\`
 
 官方网站：<https://www.nuget.org/>
+
+- dotnet feed
+    - 包含 [.NET Foundation](https://github.com/dotnet) 中各种项目的日构建包 
+    - <https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json>
 
 ## NuGet 镜像
 
