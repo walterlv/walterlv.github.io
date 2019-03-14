@@ -1,7 +1,7 @@
 ---
 title: ".NET 中的轻量级线程安全"
 publishDate: 2018-01-14 20:46:22 +0800
-date: 2018-12-14 09:54:00 +0800
+date: 2019-03-14 13:01:05 +0800
 categories: dotnet
 ---
 
@@ -35,7 +35,7 @@ SpinLock 被称之为“自旋锁”，SpinWait 称为“自旋等待”，适�
 
 ---
 
-#### 参考资料
+**参考资料**
 
 - [Overview of Synchronization Primitives - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/threading/overview-of-synchronization-primitives?wt.mc_id=MVP)
 - [Thread-Safe Collections - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/collections/thread-safe/?wt.mc_id=MVP)

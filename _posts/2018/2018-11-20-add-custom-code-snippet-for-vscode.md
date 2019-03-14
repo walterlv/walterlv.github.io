@@ -1,7 +1,7 @@
 ---
 title: "在 Visual Studio Code 中添加自定义的代码片段"
 publishDate: 2018-11-20 10:19:28 +0800
-date: 2019-03-09 09:09:59 +0800
+date: 2019-03-14 13:01:30 +0800
 categories: vscode
 ---
 
@@ -174,11 +174,11 @@ categories: vscode
 			"",
 			"@[TOC](本文内容)",
 			"",
-			"### 标题",
+			"## 标题",
 			"",
 			"---",
 			"",
-			"### 参考资料"
+			"**参考资料**"
 		],
 		"description": "使用 blog.walterlv.com 专用的博客模板"
 	}

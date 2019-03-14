@@ -1,6 +1,7 @@
 ---
 title: "解决 mklink 使用中的各种坑（硬链接，软链接/符号链接，目录链接）"
-date: 2018-03-08 20:23:06 +0800
+publishDate: 2018-03-08 20:23:06 +0800
+date: 2019-03-14 13:01:14 +0800
 categories: windows
 ---
 
@@ -63,7 +64,7 @@ C:\Users\lvyi>mklink /D D:\Foo D:\OneDrive\Foo
 
 ---
 
-### 参考链接
+**参考链接**
 
 - [活用 MKLINK 命令保护、节省你的硬盘 - SinoSky](https://www.sinosky.org/mklink-cmd-useful-tips.html)
 - [关于mklink的/D /J 区别 - CSDN博客](http://blog.csdn.net/NotBack/article/details/73604292)

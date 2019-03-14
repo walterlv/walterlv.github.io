@@ -1,7 +1,7 @@
 ---
 title: "自然码的形码"
 publishDate: 2019-01-05 17:27:08 +0800
-date: 2019-01-27 13:49:39 +0800
+date: 2019-03-14 13:01:47 +0800
 categories: ime
 position: knowledge
 ---
@@ -61,7 +61,7 @@ position: knowledge
 
 ---
 
-### 参考链接
+**参考链接**
 
 - [【双拼输入法】自然码辅助码入门教程（辅助码表） – 柳婼 の blog](https://www.liuchuo.net/archives/2847)
 - [如何评价手心输入法？ - 知乎](https://www.zhihu.com/question/24722335)

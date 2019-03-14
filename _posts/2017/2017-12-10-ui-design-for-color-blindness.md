@@ -1,6 +1,7 @@
 ---
-title: "UI 设计中的视觉无障碍设计"
-date: 2017-12-10 18:58:07 +0800
+title: "UI 设计中的视觉无障碍设计（色盲眼中的世界以及 UI 使用体验）"
+publishDate: 2017-12-10 18:58:07 +0800
+date: 2019-03-14 13:00:53 +0800
 categories: ux ui
 ---
 
@@ -165,7 +166,7 @@ categories: ux ui
 
 ---
 
-### 参考与引用
+**参考与引用**
 
 - [颜色 - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/%E9%A2%9C%E8%89%B2)
 - [色盲 - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/%E8%89%B2%E7%9B%B2)
