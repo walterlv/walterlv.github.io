@@ -1,9 +1,8 @@
 ---
 title: "让你的 VSCode 具备调试 C# 语言 .NET Core 程序的能力"
-date: 2019-03-14 22:01:44 +0800
+date: 2019-03-14 22:24:20 +0800
 categories: dotnet csharp vscode msbuild visualstudio
 position: starter
-published: false
 ---
 
 如果你是开发个人项目，那就直接用 Visual Studio Community 版本吧，对个人免费，对小团体免费，不需要这么折腾。
@@ -72,8 +71,4 @@ published: false
 
 - [手工编辑 tasks.json 和 launch.json，让你的 VSCode 具备调试 .NET Core 程序的能力](/post/equip-vscode-manually-for-dotnet-core-app-debugging.html)
 
-## 编写 C# 代码
-
-请参见博客：
-
-- [让你的 VSCode 具备调试 C# 语言 .NET Core 程序的能力](/post/equip-vscode-for-dotnet-core-app-debugging.html)
+还补充一句，本文说编译文件和调试文件是不对的，因为在 Visual Studio Code 中没有编译这个概念，编译只是任务中的一种而已。
