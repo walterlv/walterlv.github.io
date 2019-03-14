@@ -1,7 +1,7 @@
 ---
 title: "C#/.NET 中的契约式编程，以及 ReSharper 为我们提供的契约特性"
 publishDate: 2017-12-20 23:04:21 +0800
-date: 2019-03-08 14:33:41 +0800
+date: 2019-03-14 12:57:32 +0800
 categories: csharp dotnet
 ---
 
@@ -171,7 +171,7 @@ Roslyn 相比于任何第三方契约的优势在于它甚至能在语法层面�
 
 ---
 
-### 参考资料
+**参考资料**
 
 - [Code Contracts - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/debug-trace-profile/code-contracts?wt.mc_id=MVP)
 - [.NET 4.0 中的契约式编程 - Angel Lucifer - 博客园](http://www.cnblogs.com/lucifer1982/archive/2009/03/21/1418642.html)
