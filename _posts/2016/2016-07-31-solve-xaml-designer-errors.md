@@ -53,7 +53,7 @@ permalink: /wpf/2016/07/31/solve-xaml-designer-errors.html
 
 ---
 
-#### 参考资料
+**参考资料**
 
 [MSDN - Troubleshooting Designer Load Failures](https://msdn.microsoft.com/en-us/library/jj871742.aspx)  
 [MSDN - How to: Debug a Designer Load Failure](https://msdn.microsoft.com/en-us/library/ee856616.aspx)
