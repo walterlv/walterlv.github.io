@@ -1,6 +1,6 @@
 ---
 title: "About to Study and Write"
-date: 2019-03-09 15:31:01 +0800
+date: 2019-03-13 14:56:51 +0800
 categories: post
 published: false
 ---
@@ -16,6 +16,15 @@ published: false
 - Castle
 
 ## About to Write
+
+- DirectX
+    - [WPF 使用 SharpDx 渲染博客导航](https://lindexi.gitee.io/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html)
+    - [【X_Jun的博客】一个游戏/图形爱好者 - CSDN博客](https://blog.csdn.net/X_Jun96)
+    - [LinkClinton/IGP-DirectX12-Chinese: Introduction to 3D Game Programming with DirectX 12 Chinese Translation](https://github.com/LinkClinton/IGP-DirectX12-Chinese)
+    - [mellinoe/ShaderGen: Proof-of-concept library for generating HLSL, GLSL, and Metal shader code from C#,](https://github.com/mellinoe/ShaderGen)
+
+- 跨平台渲染 Vulkan
+    - [mellinoe/CrazyCore: Repository containing the game assets and code for Crazy Core](https://github.com/mellinoe/CrazyCore)
 
 - WPF 程序使用 UWP 通知
     - [从桌面 C# 应用发送本地 toast 通知 - Microsoft Docs](https://docs.microsoft.com/zh-cn/windows/uwp/design/shell/tiles-and-notifications/send-local-toast-desktop)
