@@ -1,7 +1,7 @@
 ---
-title: "不要使用 Dispatcher.Invoke，因为它可能在你的延迟初始化 Lazy<T> 中导致死锁"
+title: "不要使用 Dispatcher.Invoke，因为它可能在你的延迟初始化 Lazy 中导致死锁"
 publishDate: 2018-12-21 14:47:30 +0800
-date: 2018-12-23 15:17:02 +0800
+date: 2019-03-15 15:52:24 +0800
 categories: dotnet wpf
 position: knowledge
 ---
@@ -91,7 +91,7 @@ class Walterlv
 死锁问题：
 
 - [使用 Task.Wait()？立刻死锁（deadlock） - walterlv](/post/deadlock-in-task-wait.html)
-- [不要使用 Dispatcher.Invoke，因为它可能在你的延迟初始化 Lazy<T> 中导致死锁 - walterlv](/post/deadlock-of-invoke-in-lazy.html)
+- [不要使用 Dispatcher.Invoke，因为它可能在你的延迟初始化 `Lazy<T>` 中导致死锁 - walterlv](/post/deadlock-of-invoke-in-lazy.html)
 - [在有 UI 线程参与的同步锁（如 AutoResetEvent）内部使用 await 可能导致死锁](/post/deadlock-if-await-in-ui-lock-context.html)
 - [.NET 中小心嵌套等待的 Task，它可能会耗尽你线程池的现有资源，出现类似死锁的情况 - walterlv](/post/task-wait-may-cause-long-time-waiting.html)
 
