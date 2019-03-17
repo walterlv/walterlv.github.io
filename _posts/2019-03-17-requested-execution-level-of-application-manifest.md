@@ -1,11 +1,11 @@
 ---
 title: "应用程序清单 Manifest 中各种 UAC 权限级别的含义和效果"
-date: 2019-03-17 18:27:15 +0800
+date: 2019-03-17 19:31:11 +0800
 categories: windows dotnet csharp wpf
 position: knowledge
 ---
 
-如果你的程序对 Windows 运行权限有要求，那么需要设置应用程序清单。本文介绍如何添加应用程序清单，并解释其中各项权限设置的实际效果。
+如果你的程序对 Windows 运行权限有要求，那么需要设置应用程序清单。本文介绍如何添加应用程序清单，并解释其中各项 UAC 权限设置的实际效果。
 
 ---
 
@@ -52,21 +52,22 @@ position: knowledge
 
 **此程序将以当前用户能获取的最高权限来运行。**
 
-这个概念可能会跟前面说的 `requireAdministrator` 弄混淆。所以这里多说一点。
+这个概念可能会跟前面说的 `requireAdministrator` 弄混淆。
 
-先引入两个概念：用户账户（User Account）和访问令牌（Access Token）。
+要更好的理解这两个概念的区别，你可能需要对 UAC 用户账户控制有一个初步的了解，可以阅读我的另一篇博客：
 
-默认我们安装 Windows 时创建的那个用户账户是管理员账户，当 UAC 是打开的情况下，用户启动的进程是在管理员账户下使用受限访问令牌（Limited Access Token）运行的。如果此程序在运行时要求提升权限，那么会弹出 UAC 提示框，当用户同意之后，开启的子进程依然是管理员账户下运行，但获得了完全访问令牌（Full Access Token）。
+- [Windows 中的 UAC 用户账户控制](/post/windows-user-account-control.html)
 
-对于这种以管理员账号登录的情况，`requireAdministrator` 和 `highestAvailable` 是没有区别的。资源管理器上都会出现盾牌图标，双击或使用 `Process.Start` 启动此程序都会弹出 UAC 提示框。
+接下来的内容，都假设你已经了解了上文所述的 UAC 用户账户控制。
 
-但是，当使用标准用户账户登录 Windows 时，用户启动的进程是在标准账户下使用受限访问令牌运行的。而此标准账号拥有的最高权限就是标准账号权限了。那么这个时候，`highestAvailable` 在此账号下就会以普通权限运行。即资源管理器上不会出现盾牌图标，双击或使用 `Process.Start` 启动此程序也不会出现 UAC 提示框，此程序将以标准权限执行。如果此程序在运行时要求提升权限，那么会弹出 UAC 提示框要求用户输入管理员账号密码，此时开启的子进程是在输入的那个管理员账户下运行的，获得的是那个管理员账户的完全访问令牌（Full Access Token）。
+如果你指定为 `highestAvailable`：
+
+  - 当你在管理员账户下运行此程序，就会要求权限提升。资源管理器上会出现盾牌图标，双击或使用 `Process.Start` 启动此程序会弹出 UAC 提示框。在用户同意后，你的程序将获得完全访问令牌（Full Access Token）。
+  - 当你在标准账户下运行此程序，此账户的最高权限就是标准账户。受限访问令牌（Limited Access Token）就是当前账户下的最高令牌了，于是 `highestAvailable` 已经达到了要求。资源管理器上不会出现盾牌图标，双击或使用 `Process.Start` 启动此程序也不会出现 UAC 提示框，此程序将以受限权限执行。
 
 下图是一个例子。lvyi 是我安装系统时创建的管理员账号，但是我使用的是 walterlv 标准账号。正常是在 walterlv 账号下启动程序，但以管理员权限运行时，会要求输入 lvyi 账号的密码来提权，于是就会以 lvyi 的身份运行这个程序。这种情况下，那个管理员权限运行的程序会以为当前运行在 lvyi 这个账户下，程序员需要小心这里的坑，因为拿到的用户路径以及注册表不是你所期望的 walterlv 这个账号下的。
 
 ![标准账户下运行管理员权限程序会切换账户](/static/posts/2019-03-17-16-57-48.png)
-
-在上图中，你会发现当前账户下的任务管理器连管理员账户运行的程序图标都拿不到。
 
 ## 删除 requestedExecutionLevel 元素
 
@@ -98,6 +99,12 @@ position: knowledge
 1. 驱动等内核模式进程
 
 这部分的列表你可以在这里查询到：[Registry Virtualization - Windows applications - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/sysinfo/registry-virtualization#registry-virtualization-scope)。
+
+## 为什么 UWP 程序不能指定 UAC 清单选项？
+
+在我的另一篇博客 [Windows 中的 UAC 用户账户控制](/post/windows-user-account-control.html) 中说到了访问令牌。
+
+UWP 程序只能获得受限访问令牌，没得选，所以也就不需要指定 UAC 清单选项了。这也是为什么当你关闭 UAC 之后，UWP 程序将全部闪退的重要原因。
 
 ---
 
