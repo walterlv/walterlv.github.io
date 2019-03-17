@@ -1,6 +1,6 @@
 ---
 title: "应用程序清单 Manifest 中各种 UAC 权限级别的含义和效果"
-date: 2019-03-17 19:31:11 +0800
+date: 2019-03-17 20:03:29 +0800
 categories: windows dotnet csharp wpf
 position: knowledge
 ---
@@ -13,7 +13,7 @@ position: knowledge
 
 阅读本文之前，你可能需要了解如何创建应用程序清单文件。阅读我的另一篇博客可以了解：
 
-[如何创建应用程序清单文件 App.Manifest，如何创建不带清单的应用程序 - 吕毅](/post/create-manifest-file-for-application.html)
+- [如何创建应用程序清单文件 App.Manifest，如何创建不带清单的应用程序 - 吕毅](/post/create-manifest-file-for-application.html)
 
 ## 各种不同的 UAC 清单选项
 

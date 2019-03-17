@@ -1,6 +1,6 @@
 ---
 title: "Windows 中的 UAC 用户账户控制"
-date: 2019-03-17 19:21:51 +0800
+date: 2019-03-17 20:03:59 +0800
 categories: windows
 position: knowledge
 ---
@@ -30,6 +30,10 @@ SYSTEM 在系统中拥有最高权限。
 Administrator 的权限级别和我们用户创建的管理员账户的权限级别是一样的，但是访问令牌（Access Token）的管理方式不一样，所以这里我们需要分开说。
 
 标准账户是我推荐大家使用的首选账户种类，因为在普通使用场景下，这个是最安全的。
+
+Administrator 账户目前的主要作用就是准备 OOBE 开箱体验，不适合日常使用，因为很不安全。关于 OOBE 开箱体验与审核模式，可以阅读我的另一篇博客：
+
+- [启用 Windows 审核模式（Audit Mode），以 Administrator 账户来设置电脑的开箱体验 - 吕毅](/post/windows-audit-mode.html)
 
 ## UAC 通知等级
 
