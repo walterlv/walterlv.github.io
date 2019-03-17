@@ -1,7 +1,7 @@
 ---
 title: "在 Windows 系统上降低 UAC 权限运行程序（从管理员权限降权到普通用户权限）"
 publishDate: 2019-02-25 07:28:19 +0800
-date: 2019-03-10 21:30:57 +0800
+date: 2019-03-17 14:57:59 +0800
 categories: windows dotnet csharp
 position: problem
 ---
@@ -43,16 +43,18 @@ if (principal.IsInRole(WindowsBuiltInRole.Administrator))
 
 因为绝大多数用户启动系统的时候，explorer.exe 进程都是处于运行状态，而如果启动一个新的 explorer.exe，都会自动激活当前正在运行的进程而不会启动新的。
 
-于是我们可以委托默认以普通权限运行的 explorer.exe 来代理启动我们需要启动的子进程，这时启动的子进程便是与 explorer.exe 相同权限的，也就是降权运行了。
+于是我们可以委托默认以普通权限运行的 explorer.exe 来代理启动我们需要启动的子进程，这时启动的子进程便是与 explorer.exe 相同权限的。
 
 ```csharp
 var subProcessFileName = "C:\Users\walterlv\Desktop\walterlv.exe";
 Process.Start("explorer.exe", subProcessFileName);
 ```
 
-通过以上代码，`walterlv.exe` 就会以与 explorer.exe 相同权限运行，也就是降权运行了。
+如果用户计算机上的 UAC 是打开的，那么 explorer.exe 默认就会以标准用户权限运行。通过以上代码，`walterlv.exe` 就会以与 explorer.exe 相同权限运行，也就是降权运行了。
 
-下面的代码，如果发现自己是以管理员权限运行的，那么就降权重新运行自己，然后自己退出。
+不过值得注意的是，Windows 7 上控制面板的 UAC 设置拉倒最低就是关掉 UAC 了；Windows 8 开始拉倒最底 UAC 还是打开的，只是不会提示 UAC 弹窗而已。也就是说，拉倒最底的话，Windows 7 的 UAC 就会关闭，explorer.exe 就会以管理员权限启动。
+
+下面的代码，如果发现自己是以管理员权限运行的，那么就降权重新运行自己，然后自己退出。（当然在关闭 UAC 的电脑上是无效的。）
 
 ```csharp
 var identity = WindowsIdentity.GetCurrent();
