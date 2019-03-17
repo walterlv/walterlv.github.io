@@ -1,6 +1,6 @@
 ---
 title: "Windows 中的 UAC 用户账户控制"
-date: 2019-03-17 19:17:45 +0800
+date: 2019-03-17 19:21:51 +0800
 categories: windows
 position: knowledge
 ---
@@ -77,6 +77,7 @@ Administrator 账户下，正常启动的进程也都是管理员权限，会获
 
 而标准账户的 UAC 弹窗是这样的，要求输入管理员账号和密码：
 
+![UAC 输入账号密码](/static/posts/2019-03-17-19-21-44.png)
 
 以上在标准账户下用管理员账户打开子进程的例子可以看下图：
 
