@@ -1,6 +1,6 @@
 ---
 title: "About to Study and Write"
-date: 2019-03-13 14:56:51 +0800
+date: 2019-03-17 18:16:47 +0800
 categories: post
 published: false
 ---
@@ -16,6 +16,12 @@ published: false
 - Castle
 
 ## About to Write
+
+- UAC
+    - [UAC 实现原理及绕过方法 - _chesky - 博客园](https://www.cnblogs.com/Chesky/p/UAC_Bypass.html)
+    - [如何绕过新版Windows的UAC机制 - 安全客，安全资讯平台](https://www.anquanke.com/post/id/163222)
+    - [Provadys Offensive Security Blog](https://offsec.provadys.com/UAC-bypass-dotnet.html)
+    - [白名单绕过UAC方法原理介绍 - FreeBuf互联网安全新媒体平台](https://www.freebuf.com/vuls/183914.html)
 
 - DirectX
     - [WPF 使用 SharpDx 渲染博客导航](https://lindexi.gitee.io/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html)
