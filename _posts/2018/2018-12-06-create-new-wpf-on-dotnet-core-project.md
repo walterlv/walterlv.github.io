@@ -1,7 +1,7 @@
 ---
 title: "如何创建一个基于 .NET Core 3 的 WPF 项目"
 publishDate: 2018-12-06 11:11:05 +0800
-date: 2019-01-29 14:45:00 +0800
+date: 2019-03-19 18:30:07 +0800
 categories: dotnet wpf
 position: starter
 ---
@@ -22,7 +22,27 @@ position: starter
 
 如果你没有安装 Visual Studio 2019 Preview，请前往下载：[Visual Studio 2019](https://visualstudio.microsoft.com/vs/preview/)。
 
-## 运行新建命令
+## 使用 Visual Studio 2019 创建
+
+1. 启动 Visual Studio 2019，选择“创建新项目”
+1. 选择 WPF App (.NET Core)，下一步
+1. 输入项目名称、位置和解决方案名称，创建
+
+![创建新项目](/static/posts/2019-03-19-18-26-22.png)
+
+![WPF App (.NET Core)](/static/posts/2019-03-19-18-26-27.png)
+
+![创建](/static/posts/2019-03-19-18-26-33.png)
+
+## 使用命令行创建
+
+刚刚发布 .NET Core 3.0 和 Visual Studio 2019 第一个预览版的时候，Visual Studio 还不能创建 .NET Core 3.0 的 WPF 程序，所以会有这一小节用命令行来创建。
+
+当然，有时我也会用 Visual Studio Code 来写简单的程序，这个时候也用得到命令行：
+
+- [让你的 VSCode 具备调试 C# 语言 .NET Core 程序的能力 - 吕毅](/post/equip-vscode-for-dotnet-core-app-debugging.html)
+
+### 运行新建命令
 
 在桌面或其他你要新建项目的文件夹中打开 PowerShell，然后输入命令：
 
@@ -37,7 +57,7 @@ dotnet new wpf -o WalterlvWpfApp
 ![刚刚新建的 WPF 项目](/static/posts/2018-12-06-08-52-20.png)  
 ▲ 刚刚新建的 WPF 项目
 
-## 打开这个 csproj 文件
+### 打开这个 csproj 文件
 
 在 Visual Studio 中打开这个 csproj 文件即可在 Visual Studio 2019 Preview 中基于这个新的 WPF on .NET Core 3 的项目进行开发。
 
