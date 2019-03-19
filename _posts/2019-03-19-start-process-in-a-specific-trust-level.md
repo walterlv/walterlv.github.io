@@ -1,6 +1,6 @@
 ---
-title: "Windows 下以指定的权限启动一个进程（非管理员、管理员）"
-date: 2019-03-19 09:34:23 +0800
+title: "Windows 下使用 runas 命令以指定的权限启动一个进程（非管理员、管理员）"
+date: 2019-03-19 09:37:16 +0800
 categories: windows csharp dotnet
 position: knowledge
 ---

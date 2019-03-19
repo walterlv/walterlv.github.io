@@ -1,7 +1,7 @@
 ---
 title: "在 Windows 系统上降低 UAC 权限运行程序（从管理员权限降权到普通用户权限）"
 publishDate: 2019-02-25 07:28:19 +0800
-date: 2019-03-17 14:57:59 +0800
+date: 2019-03-19 09:36:49 +0800
 categories: windows dotnet csharp
 position: problem
 ---
@@ -39,7 +39,26 @@ if (principal.IsInRole(WindowsBuiltInRole.Administrator))
 
 此代码如果在 .NET Core 中编写，需要额外安装 Windows 兼容包：[Microsoft.Windows.Compatibility](https://www.nuget.org/packages/Microsoft.Windows.Compatibility)。
 
-## 方法一：使用 explorer.exe 代理运行程序（推荐）
+## 方法一：使用 runas 命令来运行程序（推荐）
+
+使用 `runas` 命令来运行，可以指定一个权限级别：
+
+```powershell
+> runas /trustlevel:0x20000 "C:\Users\walterlv\Desktop\walterlv.exe"
+```
+
+```csharp
+var subProcessFileName = "C:\Users\walterlv\Desktop\walterlv.exe";
+Process.Start("runas.exe", $"/trustlevel:0x20000 {subProcessFileName}");
+```
+
+关于 runas 的更多细节，可以参考我的另一篇博客：
+
+- [Windows 下使用 runas 命令以指定的权限启动一个进程（非管理员、管理员） - 吕毅](/post/start-process-in-a-specific-trust-level.html)
+
+## 方法二：使用 explorer.exe 代理运行程序
+
+**请特别注意**，使用 explorer.exe 代理运行程序的时候，是不能带参数的，否则 explorer.exe 将不会启动你的程序。
 
 因为绝大多数用户启动系统的时候，explorer.exe 进程都是处于运行状态，而如果启动一个新的 explorer.exe，都会自动激活当前正在运行的进程而不会启动新的。
 
@@ -68,7 +87,9 @@ if (principal.IsInRole(WindowsBuiltInRole.Administrator))
 }
 ```
 
-## 方法二：在启动进程时传入用户名和密码
+**请再次特别注意**，使用 explorer.exe 代理运行程序的时候，是不能带参数的，否则 explorer.exe 将不会启动你的程序。
+
+## 方法三：在启动进程时传入用户名和密码
 
 `ProcessStartInfo` 中有 `UserName` 和 `Password` 属性，设置此属性可以以此计算机上的另一个用户身份启动此进程。如果这个用户是普通用户，那么就会以普通权限运行此进程。
 
@@ -89,7 +110,7 @@ Process.Start(processInfo);
 
 然而，此方法最大的问题在于——产品级的程序，不可能也不应该知道用户的密码！所以实际上这样的方法并不实用。
 
-## 方法三：使用 Shell 进程的 Access Token 来启动进程
+## 方法四：使用 Shell 进程的 Access Token 来启动进程
 
 此方法需要较多的 Windows API 调用，我没有尝试过这种方法，但是你可以自行尝试下面的链接：
 
