@@ -1,6 +1,6 @@
 ---
 title: "Windows 的 UAC 设置中的通知等级实际上只有两个档而已"
-date: 2019-03-19 17:39:39 +0800
+date: 2019-03-19 17:43:47 +0800
 categories: windows
 position: knowledge
 ---
@@ -37,7 +37,7 @@ Windows 系统是通过让一些 UAC 提权动作变成静默提权的方式来�
 
 有了这个后门，大家就可以找到各种绕过 UAC 弹窗的方法，比如 [NSudo](https://github.com/M2Team/NSudo)、[UACME](https://github.com/hfiref0x/UACME)、QuickAdmin。你根本阻止不完这些绕过 UAC 弹窗的方法！
 
-微软说：“绕过 UAC 弹窗不是漏洞，所以我们不会修补。”
+微软说：“绕过 UAC 弹窗不是漏洞，所以我们不会修补。” *(也许将来绕过 UAC 弹窗的恶意软件泛滥的时候，微软就会做点什么了)*
 
 微软已经提供了全部弹窗这个选项，明明可以阻止各类程序绕过 UAC，但为什么默认设置是这个可以绕过的选项呢？
 
