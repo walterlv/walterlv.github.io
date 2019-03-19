@@ -1,7 +1,7 @@
 ---
 title: "将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj"
 publishDate: 2018-01-16 00:04:28 +0800
-date: 2018-09-07 12:40:50 +0800
+date: 2019-03-19 22:07:47 +0800
 categories: visualstudio msbuild
 ---
 
@@ -275,6 +275,10 @@ UWP 项目已经是 .NET Core 了，然而它依然还在采用旧样式的 cspr
 ## 什么都不用管的第三方迁移方案
 
 感谢小伙伴 [KodamaSakuno (神樹桜乃)](https://github.com/KodamaSakuno) 的指导，我们可以有第三方的解决方案 MSBuild.Sdk.Extras 来更简单地完成迁移。阅读 [MSBuild.Sdk.Extras](/post/use-msbuild-sdk-extras-for-wpf-and-uwp.html) 来了解更多。相比于以上全文的迁移以及带来的劣势，第三方方案并没有发现明显的缺陷，推荐使用！
+
+## 什么都不用改的微软官方迁移方案
+
+在 csproj 前面加上 `Sdk="Microsoft.NET.Sdk.WindowsDesktop"` 使用 .NET Core 3 为我们带来的原生支持。
 
 ---
 
