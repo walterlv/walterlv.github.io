@@ -1,6 +1,7 @@
 ---
 title: "应用程序清单 Manifest 中各种 UAC 权限级别的含义和效果"
-date: 2019-03-17 20:03:29 +0800
+publishDate: 2019-03-17 20:03:29 +0800
+date: 2019-03-20 09:00:09 +0800
 categories: windows dotnet csharp wpf
 position: knowledge
 ---
@@ -62,8 +63,8 @@ position: knowledge
 
 如果你指定为 `highestAvailable`：
 
-  - 当你在管理员账户下运行此程序，就会要求权限提升。资源管理器上会出现盾牌图标，双击或使用 `Process.Start` 启动此程序会弹出 UAC 提示框。在用户同意后，你的程序将获得完全访问令牌（Full Access Token）。
-  - 当你在标准账户下运行此程序，此账户的最高权限就是标准账户。受限访问令牌（Limited Access Token）就是当前账户下的最高令牌了，于是 `highestAvailable` 已经达到了要求。资源管理器上不会出现盾牌图标，双击或使用 `Process.Start` 启动此程序也不会出现 UAC 提示框，此程序将以受限权限执行。
+- 当你在管理员账户下运行此程序，就会要求权限提升。资源管理器上会出现盾牌图标，双击或使用 `Process.Start` 启动此程序会弹出 UAC 提示框。在用户同意后，你的程序将获得完全访问令牌（Full Access Token）。
+- 当你在标准账户下运行此程序，此账户的最高权限就是标准账户。受限访问令牌（Limited Access Token）就是当前账户下的最高令牌了，于是 `highestAvailable` 已经达到了要求。资源管理器上不会出现盾牌图标，双击或使用 `Process.Start` 启动此程序也不会出现 UAC 提示框，此程序将以受限权限执行。
 
 下图是一个例子。lvyi 是我安装系统时创建的管理员账号，但是我使用的是 walterlv 标准账号。正常是在 walterlv 账号下启动程序，但以管理员权限运行时，会要求输入 lvyi 账号的密码来提权，于是就会以 lvyi 的身份运行这个程序。这种情况下，那个管理员权限运行的程序会以为当前运行在 lvyi 这个账户下，程序员需要小心这里的坑，因为拿到的用户路径以及注册表不是你所期望的 walterlv 这个账号下的。
 
@@ -99,6 +100,12 @@ position: knowledge
 1. 驱动等内核模式进程
 
 这部分的列表你可以在这里查询到：[Registry Virtualization - Windows applications - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/sysinfo/registry-virtualization#registry-virtualization-scope)。
+
+## 这些值都用于什么场景？
+
+- `asInvoker` 是默认情况下的首选。如果你的程序没有什么特殊的需求，就使用 `asInvoker`；就算你的程序需要管理员程序做一些特殊的任务，那最好也写成 `asInvoker`，仅在必要的时候才进行管理员权限提升。
+- `requireAdministrator`，只有当你的程序大量进行需要管理员权限的操作的时候才建议使用 `requireAdministrator` 值，例如你正在做安装程序。
+- `highestAvailable`，当你的程序需要管理员权限，但又要求仅对当前用户修改时设置为此值。因为标准用户申请 UAC 提权之后会以其他用户的身份运行进程，这就不是对当前用户的操作了；使用 `highestAvailable` 来确保以当前用户运行。
 
 ## 为什么 UWP 程序不能指定 UAC 清单选项？
 
