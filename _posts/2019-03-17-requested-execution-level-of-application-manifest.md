@@ -1,7 +1,7 @@
 ---
 title: "应用程序清单 Manifest 中各种 UAC 权限级别的含义和效果"
 publishDate: 2019-03-17 20:03:29 +0800
-date: 2019-03-20 09:00:09 +0800
+date: 2019-03-20 21:39:33 +0800
 categories: windows dotnet csharp wpf
 position: knowledge
 ---
@@ -119,3 +119,4 @@ UWP 程序只能获得受限访问令牌，没得选，所以也就不需要指�
 
 - [Registry Virtualization - Windows applications - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/sysinfo/registry-virtualization#registry-virtualization-scope)
 <!-- - [UAC 实现原理及绕过方法 - _chesky - 博客园](https://www.cnblogs.com/Chesky/p/UAC_Bypass.html) -->
+- [How User Account Control (UAC) Affects Your Application - Microsoft Docs](https://docs.microsoft.com/en-us/cpp/security/how-user-account-control-uac-affects-your-application)
