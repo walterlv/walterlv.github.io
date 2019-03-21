@@ -1,6 +1,7 @@
 ---
 title: "制作一个极简的 .NET 客户端应用自安装或自更新程序"
-date: 2019-02-27 10:36:29 +0800
+publishDate: 2019-02-27 10:36:29 +0800
+date: 2019-03-22 00:44:03 +0800
 categories: windows dotnet csharp
 position: starter
 ---
@@ -50,17 +51,17 @@ namespace Walterlv.ENPlugins.Presentation
         {
             base.OnStartup(e);
 
-            var installer = new SelfInstaller(Path.Combine(
-                @"C:\Users\lvyi\AppData\Local\Walterlv",
-                "Walterlv.ENPlugins.Presentation.exe"));
+            var installer = new SelfInstaller(@"C:\Users\lvyi\AppData\Local\Walterlv");
 
             var state = installer.TryInstall();
             switch (state)
             {
                 case InstalledState.Installed:
                 case InstalledState.Updated:
+                case InstalledState.UpdatedInUse:
                     new InstallTipWindow().Show();
                     break;
+                case InstalledState.Same:
                 case InstalledState.Ran:
                     new MainWindow().Show();
                     break;
@@ -84,9 +85,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Security.Principal;
 
-namespace Walterlv.Installing
+namespace Walterlv.EasiPlugins.Installing
 {
     /// <summary>
     /// 自安装或字更新的安装器。
@@ -100,7 +100,11 @@ namespace Walterlv.Installing
         /// <param name="installingProcedure">如果需要在安装后执行额外的安装步骤，则指定自定义的安装步骤。</param>
         public SelfInstaller(string targetFilePath, IInstallingProcedure installingProcedure = null)
         {
-            TargetFileInfo = new FileInfo(targetFilePath ?? throw new ArgumentNullException(nameof(targetFilePath)));
+            var assembly = Assembly.GetCallingAssembly();
+            var extensionName = assembly.GetCustomAttribute<AssemblyTitleAttribute>().Title;
+            TargetFileInfo = new FileInfo(Path.Combine(
+                targetFilePath ?? throw new ArgumentNullException(nameof(targetFilePath)),
+                extensionName, extensionName + Path.GetExtension(assembly.Location)));
             InstallingProcedure = installingProcedure;
         }
 
@@ -124,36 +128,38 @@ namespace Walterlv.Installing
         /// </summary>
         public InstalledState TryInstall()
         {
-            if (!CheckRunningInNormalPrivilege())
-            {
-                // 降权处理。
-                Process.Start("explorer.exe", BuildRerunArguments("Privilege", true));
-                return InstalledState.ShouldRerun;
-            }
-
-            var state = InstallOrUpdate();
-            switch (state)
+            var state0 = InstallOrUpdate();
+            switch (state0)
             {
                 // 已安装或更新，由已安装的程序处理安装后操作。
                 case InstalledState.Installed:
                 case InstalledState.Updated:
+                case InstalledState.UpdatedInUse:
+                case InstalledState.Same:
+                    break;
                 case InstalledState.ShouldRerun:
-                    Process.Start("explorer.exe", BuildRerunArguments(state.ToString(), true, TargetFileInfo.FullName));
-                    return state;
+                    Process.Start(TargetFileInfo.FullName, BuildRerunArguments(state0.ToString(), false));
+                    return state0;
             }
 
-            state = InstallingProcedure?.AfterInstall() ?? InstalledState.Ran;
-            return state;
-        }
+            var state1 = InstallingProcedure?.AfterInstall(TargetFileInfo.FullName) ?? InstalledState.Ran;
 
-        /// <summary>
-        /// 检查程序是否运行在普通用户权限下（此安装器仅限运行在普通权限）。
-        /// </summary>
-        private bool CheckRunningInNormalPrivilege()
-        {
-            var identity = WindowsIdentity.GetCurrent();
-            var principal = new WindowsPrincipal(identity);
-            return !principal.IsInRole(WindowsBuiltInRole.Administrator);
+            if (state0 is InstalledState.UpdatedInUse || state1 is InstalledState.UpdatedInUse)
+            {
+                return InstalledState.UpdatedInUse;
+            }
+
+            if (state0 is InstalledState.Updated || state1 is InstalledState.Updated)
+            {
+                return InstalledState.Updated;
+            }
+
+            if (state0 is InstalledState.Installed || state1 is InstalledState.Installed)
+            {
+                return InstalledState.Installed;
+            }
+
+            return state1;
         }
 
         /// <summary>
@@ -175,20 +181,25 @@ namespace Walterlv.Installing
             var isOldOneExists = File.Exists(extensionFilePath);
             if (isOldOneExists)
             {
-                var (currentVersion, installedVersion) = GetVersions();
-                if (currentVersion <= installedVersion)
+                var isNewer = CheckIfNewer();
+                if (!isNewer)
                 {
                     // 运行已安装目录下的自己。
-                    return InstalledState.ShouldRerun;
+                    return InstalledState.Same;
                 }
             }
 
             // 将自己复制到插件目录进行安装。
-            CopySelfToInstall();
+            var succeedOnce = CopySelfToInstall();
+            if (!succeedOnce)
+            {
+                // 如果不是一次就成功，说明目标被占用。
+                return InstalledState.UpdatedInUse;
+            }
 
             return isOldOneExists ? InstalledState.Updated : InstalledState.Installed;
 
-            (Version currentVersion, Version installedVersion) GetVersions()
+            bool CheckIfNewer()
             {
                 Version installedVersion;
                 try
@@ -215,33 +226,45 @@ namespace Walterlv.Installing
                 var currentVersionString =
                     current.GetCustomAttribute<AssemblyFileVersionAttribute>()?.Version ?? "0.0";
                 var currentVersion = new Version(currentVersionString);
-                return (currentVersion, installedVersion);
+                return currentVersion > installedVersion;
             }
         }
 
         /// <summary>
         /// 将自己复制到目标安装路径。
         /// </summary>
-        private void CopySelfToInstall()
+        private bool CopySelfToInstall()
         {
             var extensionFolder = TargetFileInfo.Directory.FullName;
             var extensionFilePath = TargetFileInfo.FullName;
             var selfFilePath = Assembly.GetExecutingAssembly().Location;
 
-            try
+            if (!Directory.Exists(extensionFolder))
             {
-                if (!Directory.Exists(extensionFolder))
-                {
-                    Directory.CreateDirectory(extensionFolder);
-                }
+                Directory.CreateDirectory(extensionFolder);
+            }
 
-                File.Copy(selfFilePath, extensionFilePath, true);
-            }
-            catch (IOException)
+            var isInUse = false;
+            for (var i = 0; i < int.MaxValue; i++)
             {
-                File.Move(extensionFilePath, extensionFilePath + ".bak");
-                File.Copy(selfFilePath, extensionFilePath, true);
+                try
+                {
+                    if (i > 0)
+                    {
+                        File.Move(extensionFilePath, extensionFilePath + $".{i}.bak");
+                    }
+
+                    File.Copy(selfFilePath, extensionFilePath, true);
+                    return !isInUse;
+                }
+                catch (IOException)
+                {
+                    // 不退出循环，于是会重试。
+                    isInUse = true;
+                }
             }
+
+            return !isInUse;
         }
 
         /// <summary>
@@ -274,7 +297,7 @@ namespace Walterlv.Installing
 
             if (!string.IsNullOrWhiteSpace(RunSelfArguments))
             {
-                args.Add(RunSelfArguments.Replace("reason", rerunReason));
+                args.Add(RunSelfArguments.Replace("{reason}", rerunReason));
             }
 
             return string.Join(" ", args);
@@ -297,9 +320,19 @@ namespace Walterlv.Installing
         Updated,
 
         /// <summary>
+        /// 已更新。但是原始文件被占用，可能需要重启才可使用。
+        /// </summary>
+        UpdatedInUse,
+
+        /// <summary>
         /// 已代理启动新的程序，所以此程序需要退出。
         /// </summary>
         ShouldRerun,
+
+        /// <summary>
+        /// 两个程序都是一样的，跑谁都一样。
+        /// </summary>
+        Same,
 
         /// <summary>
         /// 没有执行安装、更新或代理，表示此程序现在是正常启动。
