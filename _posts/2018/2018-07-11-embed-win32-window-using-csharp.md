@@ -1,7 +1,7 @@
 ---
 title: "WPF 同一窗口内的多线程/多进程 UI（使用 SetParent 嵌入另一个窗口）"
 publishDate: 2018-07-11 21:35:58 +0800
-date: 2018-07-12 19:44:57 +0800
+date: 2019-03-21 10:13:01 +0800
 categories: wpf dotnet csharp windows
 ---
 
@@ -164,3 +164,13 @@ await dispatcher.InvokeAsync(() =>
 ```
 
 ![](/static/posts/2018-07-11-21-33-55.png)
+
+## 源码
+
+以上代码中使用到了我之前的一些源码，这几个文件可分别从以下链接找到并下载到你的项目中：
+
+1. [Annotations.cs](https://github.com/walterlv/sharing-demo/blob/master/src/Walterlv.Core/Annotations/Annotations.cs)
+1. [AwaiterInterfaces.cs](https://gist.github.com/walterlv/ca0fc857eae04c1088aebcb8d636d1cb#file-awaiterinterfaces-cs)
+1. [DispatcherAsyncOperation.cs](https://gist.github.com/walterlv/ca0fc857eae04c1088aebcb8d636d1cb#file-dispatcherasyncoperation-cs)
+1. [UIDispatcher.cs](https://gist.github.com/walterlv/ca0fc857eae04c1088aebcb8d636d1cb#file-uidispatcher-cs)
+1. [VisualTargetPresentationSource.cs](https://github.com/walterlv/sharing-demo/blob/master/src/Walterlv.Demo.WPF/Utils/Threading/VisualTargetPresentationSource.cs)
