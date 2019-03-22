@@ -1,6 +1,6 @@
 ---
 title: "About to Study and Write"
-date: 2019-03-17 18:16:47 +0800
+date: 2019-03-23 07:55:17 +0800
 categories: post
 published: false
 ---
@@ -16,6 +16,13 @@ published: false
 - Castle
 
 ## About to Write
+
+- 跨权限程序之间的拖拽（UAC Drag Drop）
+    - [How to Enable Drag and Drop for an Elevated MFC Application on Vista/Windows 7 • Helge Klein](https://helgeklein.com/blog/2010/03/how-to-enable-drag-and-drop-for-an-elevated-mfc-application-on-vistawindows-7/)
+    - [c# - Enable drag&drop from explorer to Run-As-Administrator application - Stack Overflow](https://stackoverflow.com/questions/3794462/enable-dragdrop-from-explorer-to-run-as-administrator-application)
+    - [Q: Why Doesn’t Drag-and-Drop work when my Application is Running Elevated? – A: Mandatory Integrity Control and UIPI – Pat Altimore's Blog](https://blogs.msdn.microsoft.com/patricka/2010/01/28/q-why-doesnt-drag-and-drop-work-when-my-application-is-running-elevated-a-mandatory-integrity-control-and-uipi/)
+    - [Drag and drop not working with UAC and Run as Administrator - Laserfiche Answers](https://answers.laserfiche.com/questions/92215/Drag-and-drop-not-working-with-UAC-and-Run-as-Administrator)
+    - [Fix Drag and drop to open file when running as Administrator – Visual Studio](https://visualstudio.uservoice.com/forums/121579-visual-studio-ide/suggestions/2164233-fix-drag-and-drop-to-open-file-when-running-as-adm)
 
 - UAC
     - [UAC 实现原理及绕过方法 - _chesky - 博客园](https://www.cnblogs.com/Chesky/p/UAC_Bypass.html)
