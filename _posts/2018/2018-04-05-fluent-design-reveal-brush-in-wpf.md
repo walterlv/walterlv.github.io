@@ -1,7 +1,7 @@
 ---
 title: "流畅设计 Fluent Design System 中的光照效果 RevealBrush，WPF 也能模拟实现啦！"
 publishDate: 2018-04-05 16:34:42 +0800
-date: 2019-03-23 10:55:16 +0800
+date: 2019-03-23 11:09:45 +0800
 categories: wpf xaml uwp
 ---
 
@@ -36,15 +36,19 @@ UWP 才能使用的流畅设计效果好惊艳，写新的 UWP 程序可以做�
 
 当然，窗口背景那张图是直接用的高斯模糊效果，并不是亚克力 Acrylic 效果。鉴于那张被模糊得看不清的图**是我自己画的**，所以我一定要单独放出来给大家看🤓！
 
-![我自己画的图，不忍直视，只好模糊掉作为背景了](/static/posts/2018-04-05-16-17-15.png)  
-▲ 我自己画的图，不忍直视，只好模糊掉作为背景了
+我自己画的图，不忍直视，只好模糊掉作为背景了。[请点击查看：图片](/static/posts/2018-04-05-16-17-15.png)
 
-**2019 年 1 月更新：**我在新的 WPF 程序当中应用了这个 Reveal 效果，看着是不是挺不错？
+以下是我后来使用此模拟的效果制作的应用。这些应用虽然看起来整个儿都很像 UWP 应用，但都是 100% 纯 WPF；因为我模拟了 UWP 的风格：
+
+- [WPF 使用 WindowChrome，在自定义窗口标题栏的同时最大程度保留原生窗口样式（类似 UWP/Chrome） - walterlv](/post/wpf-simulate-native-window-style-using-window-chrome.html)
+- [WPF 应用完全模拟 UWP 的标题栏按钮 - walterlv](/post/wpf-simulate-native-window-title-bar-buttons.html)
+
+**2019 年 1 月更新：**
 
 ![Cloud Keyboard](/static/posts/2019-01-23-reveal-brush-in-cloud-keyboard-pc.gif)  
 ▲ 源码在这个仓库：[Walterlv.CloudKeyboard](https://github.com/walterlv/Walterlv.CloudKeyboard)
 
-**2019 年 3 月更新：**我又在新的 WPF 程序当中应用了这个 Reveal 效果，看着是不是挺不错？
+**2019 年 3 月更新：**
 
 ![Diagnostics Window](/static/posts/2019-03-23-reveal-in-wpf-window.gif)  
 
