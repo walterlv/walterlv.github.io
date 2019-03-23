@@ -1,6 +1,7 @@
 ---
-title: "使用 Microsoft.Net.Compilers 在旧版本的 Visual Studio 2013/2015 中开启新的 C# 7.x 语法"
-date: 2018-10-15 15:23:45 +0800
+title: "使用 Microsoft.Net.Compilers 在旧版本的 Visual Studio 2013/2015/2017 中开启新的 C# 7.x 和 C# 8 语法"
+publishDate: 2018-10-15 15:23:45 +0800
+date: 2019-03-23 10:30:03 +0800
 categories: visualstudio csharp
 ---
 
