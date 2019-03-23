@@ -1,7 +1,7 @@
 ---
 title: "流畅设计 Fluent Design System 中的光照效果 RevealBrush，WPF 也能模拟实现啦！"
 publishDate: 2018-04-05 16:34:42 +0800
-date: 2019-01-23 09:26:02 +0800
+date: 2019-03-23 10:55:16 +0800
 categories: wpf xaml uwp
 ---
 
@@ -44,6 +44,10 @@ UWP 才能使用的流畅设计效果好惊艳，写新的 UWP 程序可以做�
 ![Cloud Keyboard](/static/posts/2019-01-23-reveal-brush-in-cloud-keyboard-pc.gif)  
 ▲ 源码在这个仓库：[Walterlv.CloudKeyboard](https://github.com/walterlv/Walterlv.CloudKeyboard)
 
+**2019 年 3 月更新：**我又在新的 WPF 程序当中应用了这个 Reveal 效果，看着是不是挺不错？
+
+![Diagnostics Window](/static/posts/2019-03-23-reveal-in-wpf-window.gif)  
+
 ## 话不多说看源码
 
 UWP 里的 CompositionBrush 是用一个 ShaderEffect 做出所有控件的所有效果的。正如 [叛逆者](https://www.zhihu.com/people/minmin.gong/activities) 在 [如何评价微软在 Build 2017 上提出的 Fluent Design System？ - 知乎](https://www.zhihu.com/question/59724483/answer/168191216?utm_medium=social&utm_source=wechat_session) 一文中说的，只需要极少的计算量就能完成。
@@ -54,21 +58,29 @@ UWP 里的 CompositionBrush 是用一个 ShaderEffect 做出所有控件的所�
 
 以下是全部源码。**不要在意基类啦！WPF 不让我们实现自己的 Brush，所以只好用 MarkupExtension 绕道实现了。**
 
+**2019 年 3 月更新：**以下源码中现在使用了全局光照，也就是说，就算你的控件不在一个固定的窗口中，也会使用到光照效果了。
+
 ```csharp
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Markup;
 using System.Windows.Media;
 
-namespace Walterlv.Demo
+// ReSharper disable CheckNamespace
+
+namespace Walterlv.Effects
 {
     /// <summary>
     /// Paints a control border with a reveal effect using composition brush and light effects.
     /// </summary>
     public class RevealBorderBrushExtension : MarkupExtension
     {
+        [ThreadStatic]
+        private static Dictionary<RadialGradientBrush, WeakReference<FrameworkElement>> _globalRevealingElements;
+
         /// <summary>
         /// The color to use for rendering in case the <see cref="MarkupExtension"/> can't work correctly.
         /// </summary>
@@ -96,13 +108,84 @@ namespace Walterlv.Demo
             if (!(service.TargetObject is FrameworkElement element)) return this;
             if (DesignerProperties.GetIsInDesignMode(element)) return new SolidColorBrush(FallbackColor);
 
-            var window = Window.GetWindow(element);
-            if (window == null) return this;
-            var brush = CreateBrush(window, element);
+            var brush = CreateGlobalBrush(element);
             return brush;
         }
 
-        private Brush CreateBrush(Window window, FrameworkElement element)
+        private Brush CreateBrush(UIElement rootVisual, FrameworkElement element)
+        {
+            var brush = CreateRadialGradientBrush();
+            rootVisual.MouseMove += OnMouseMove;
+            return brush;
+
+            void OnMouseMove(object sender, MouseEventArgs e)
+            {
+                UpdateBrush(brush, e.GetPosition(element));
+            }
+        }
+
+        private Brush CreateGlobalBrush(FrameworkElement element)
+        {
+            var brush = CreateRadialGradientBrush();
+            if (_globalRevealingElements is null)
+            {
+                CompositionTarget.Rendering -= OnRendering;
+                CompositionTarget.Rendering += OnRendering;
+                _globalRevealingElements = new Dictionary<RadialGradientBrush, WeakReference<FrameworkElement>>();
+            }
+
+            _globalRevealingElements.Add(brush, new WeakReference<FrameworkElement>(element));
+            return brush;
+        }
+
+        private void OnRendering(object sender, EventArgs e)
+        {
+            if (_globalRevealingElements is null)
+            {
+                return;
+            }
+
+            var toCollect = new List<RadialGradientBrush>();
+            foreach (var pair in _globalRevealingElements)
+            {
+                var brush = pair.Key;
+                var weak = pair.Value;
+                if (weak.TryGetTarget(out var element))
+                {
+                    Reveal(brush, element);
+                }
+                else
+                {
+                    toCollect.Add(brush);
+                }
+            }
+
+            foreach (var brush in toCollect)
+            {
+                _globalRevealingElements.Remove(brush);
+            }
+
+            void Reveal(RadialGradientBrush brush, IInputElement element)
+            {
+                UpdateBrush(brush, Mouse.GetPosition(element));
+            }
+        }
+
+        private void UpdateBrush(RadialGradientBrush brush, Point origin)
+        {
+            IInputElement element;
+            if (IsUsingMouseOrStylus())
+            {
+                brush.GradientOrigin = origin;
+                brush.Center = origin;
+            }
+            else
+            {
+                brush.Center = new Point(double.NegativeInfinity, double.NegativeInfinity);
+            }
+        }
+
+        private RadialGradientBrush CreateRadialGradientBrush()
         {
             var brush = new RadialGradientBrush(Color, Colors.Transparent)
             {
@@ -114,22 +197,23 @@ namespace Walterlv.Demo
                 RelativeTransform = RelativeTransform,
                 Center = new Point(double.NegativeInfinity, double.NegativeInfinity),
             };
-            window.MouseMove += OnMouseMove;
-            window.Closed += OnClosed;
             return brush;
+        }
 
-            void OnMouseMove(object sender, MouseEventArgs e)
+        private bool IsUsingMouseOrStylus()
+        {
+            var device = Stylus.CurrentStylusDevice;
+            if (device is null)
             {
-                var position = e.GetPosition(element);
-                brush.GradientOrigin = position;
-                brush.Center = position;
+                return true;
             }
 
-            void OnClosed(object o, EventArgs eventArgs)
+            if (device.TabletDevice.Type == TabletDeviceType.Stylus)
             {
-                window.MouseMove -= OnMouseMove;
-                window.Closed -= OnClosed;
+                return true;
             }
+
+            return false;
         }
     }
 }
