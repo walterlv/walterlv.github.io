@@ -1,6 +1,7 @@
 ---
 title: "C#/.NET 如何获取一个异常（Exception）的关键特征，用来判断两个异常是否表示同一个异常"
-date: 2019-03-24 11:40:31 +0800
+publishDate: 2019-03-24 11:40:31 +0800
+date: 2019-03-26 14:35:51 +0800
 categories: dotnet csharp
 position: principle
 ---
@@ -70,7 +71,7 @@ System.NotSupportedException
 为了提取出以上的关键特征，我需要写一段 C# 代码来做这样的事情：
 
 ```csharp
-public (string typeName, string frameSignature) GetDescriptor(Exception exception)
+public (string typeName, IReadonlyList<string> frameSignature) GetDescriptor(Exception exception)
 {
     var type = exception.GetType().FullName;
     var stackFrames = new StackTrace(exception).GetFrames() ?? new StackFrame[0];
