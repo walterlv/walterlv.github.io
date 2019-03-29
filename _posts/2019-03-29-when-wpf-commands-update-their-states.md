@@ -1,8 +1,13 @@
 ---
 title: "WPF 的命令的自动刷新时机——当你 CanExecute 会返回 true 但命令依旧不可用时可能是这些原因"
-date: 2019-03-29 08:39:55 +0800
+date: 2019-03-29 08:41:28 +0800
 categories: wpf dotnet csharp
 position: problem
+version:
+  current: 中文
+versions:
+  - 中文: #
+  - English: /post/when-wpf-commands-update-their-states-en.html
 ---
 
 在 WPF 中，你可以使用 `Command="{Binding WalterlvCommand}"` 的方式来让 XAML 中的一个按钮或其他控件绑定一个命令。这样，按钮的可用性会自动根据 `WalterlvCommand` 当前 `CanExecute` 的状态来改变。这本是一个非常智能的特性，直到你可能发现你按钮的可用性状态不正确……
