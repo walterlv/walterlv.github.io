@@ -1,7 +1,7 @@
 ---
 title: "解决 Git 重命名时遇到的大小写不敏感的问题"
 publishDate: 2017-11-23 16:51:07 +0800
-date: 2019-03-29 07:47:24 +0800
+date: 2019-03-29 17:19:06 +0800
 categories: windows git
 ---
 
@@ -141,3 +141,4 @@ $ git push
 **参考资料**
 
 - [How do I commit case-sensitive only filename changes in Git? - Stack Overflow](https://stackoverflow.com/questions/17683458/how-do-i-commit-case-sensitive-only-filename-changes-in-git)
+- [In a Git repository, how to properly rename a directory? - Stack Overflow](https://stackoverflow.com/q/11183788/6233938)
