@@ -1,6 +1,7 @@
 ---
 title: "WPF 的命令的自动刷新时机——当你 CanExecute 会返回 true 但命令依旧不可用时可能是这些原因"
-date: 2019-03-29 08:41:28 +0800
+publishDate: 2019-03-29 08:41:28 +0800
+date: 2019-03-29 16:43:27 +0800
 categories: wpf dotnet csharp
 position: problem
 version:
@@ -15,6 +16,10 @@ versions:
 本文介绍默认情况下，WPF 在 UI 上的这些命令会在什么时机进行刷新；以及没有及时刷新时，可以如何强制让这些命令的可用性状态进行刷新。了解了这些，你可能能够解决你在 WPF 程序中命令绑定的一些坑。
 
 ---
+
+This post is written in **multiple languages**. Please select yours:
+
+{% include post-version-selector.html %}
 
 <div id="toc"></div>
 

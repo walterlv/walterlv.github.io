@@ -1,6 +1,6 @@
 ---
 title: "When WPF Commands update their CanExecute states?"
-date: 2019-03-29 16:41:47 +0800
+date: 2019-03-29 16:43:19 +0800
 categories: wpf dotnet csharp
 position: problem
 version:
@@ -15,6 +15,10 @@ When writing `Command="{Binding WalterlvCommand}"` into your XAML code and your 
 We'll talk about when the UI commands will refresh their can-execute states and how to force updating the states.
 
 ---
+
+This post is written in **multiple languages**. Please select yours:
+
+{% include post-version-selector.html %}
 
 This post is written for my Stack Overflow answer:
 
