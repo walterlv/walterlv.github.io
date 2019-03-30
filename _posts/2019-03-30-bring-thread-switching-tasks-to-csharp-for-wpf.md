@@ -1,6 +1,7 @@
 ---
 title: "将 C++/WinRT 中的线程切换体验带到 C# 中来（WPF 版本）"
-date: 2019-03-30 08:24:45 +0800
+publishDate: 2019-03-30 08:24:45 +0800
+date: 2019-03-30 09:13:12 +0800
 categories: dotnet csharp wpf
 position: play
 ---
@@ -194,8 +195,158 @@ if (condition)
 DoSomething();
 ```
 
+## Raymond Chen 的版本
+
+Raymond Chen 后来在另一篇博客中也编写了一份 WPF / Windows Forms 的线程切换版本。请点击下方的链接跳转至原文阅读：
+
+- [C++/WinRT envy: Bringing thread switching tasks to C# (WPF and WinForms edition) - The Old New Thing](https://devblogs.microsoft.com/oldnewthing/20190329-00/?p=102373)
+
+我在为他的代码添加了所有的注释后，贴在了下面：
+
+```csharp
+using System;
+using System.Runtime.CompilerServices;
+using System.Threading;
+using System.Windows.Forms;
+using System.Windows.Threading;
+
+namespace Walterlv.Windows.Threading
+{
+    /// <summary>
+    /// 提供类似于 WinRT 中的线程切换体验。
+    /// </summary>
+    /// <remarks>
+    /// https://devblogs.microsoft.com/oldnewthing/20190329-00/?p=102373
+    /// https://blog.walterlv.com/post/bring-thread-switching-tasks-to-csharp-for-wpf.html
+    /// </remarks>
+    public class ThreadSwitcher
+    {
+        /// <summary>
+        /// 将当前的异步等待上下文切换到 WPF 的 UI 线程中继续执行。
+        /// </summary>
+        /// <param name="dispatcher">WPF 一个 UI 线程的调度器。</param>
+        /// <returns>一个可等待对象，使用 await 等待此对象可以使后续任务切换到 UI 线程执行。</returns>
+        public static DispatcherThreadSwitcher ResumeForegroundAsync(Dispatcher dispatcher) =>
+            new DispatcherThreadSwitcher(dispatcher);
+
+        /// <summary>
+        /// 将当前的异步等待上下文切换到 Windows Forms 的 UI 线程中继续执行。
+        /// </summary>
+        /// <param name="control">Windows Forms 的一个控件。</param>
+        /// <returns>一个可等待对象，使用 await 等待此对象可以使后续任务切换到 UI 线程执行。</returns>
+        public static ControlThreadSwitcher ResumeForegroundAsync(Control control) =>
+            new ControlThreadSwitcher(control);
+
+        /// <summary>
+        /// 将当前的异步等待上下文切换到线程池中继续执行。
+        /// </summary>
+        /// <returns>一个可等待对象，使用 await 等待此对象可以使后续的任务切换到线程池执行。</returns>
+        public static ThreadPoolThreadSwitcher ResumeBackgroundAsync() =>
+            new ThreadPoolThreadSwitcher();
+    }
+
+    /// <summary>
+    /// 提供一个可切换到 WPF 的 UI 线程执行上下文的可等待对象。
+    /// </summary>
+    public struct DispatcherThreadSwitcher : INotifyCompletion
+    {
+        internal DispatcherThreadSwitcher(Dispatcher dispatcher) =>
+            _dispatcher = dispatcher;
+
+        /// <summary>
+        /// 当使用 await 关键字异步等待此对象时，将调用此方法返回一个可等待对象。
+        /// </summary>
+        public DispatcherThreadSwitcher GetAwaiter() => this;
+
+        /// <summary>
+        /// 获取一个值，该值指示是否已完成线程池到 WPF UI 线程的切换。
+        /// </summary>
+        public bool IsCompleted => _dispatcher.CheckAccess();
+
+        /// <summary>
+        /// 由于进行线程的上下文切换必须使用 await 关键字，所以不支持调用同步的 <see cref="GetResult"/> 方法。
+        /// </summary>
+        public void GetResult()
+        {
+        }
+
+        /// <summary>
+        /// 当异步状态机中的前一个任务结束后，将调用此方法继续下一个任务。在此可等待对象中，指的是切换到 WPF 的 UI 线程。
+        /// </summary>
+        /// <param name="continuation">将异步状态机推进到下一个异步状态。</param>
+        public void OnCompleted(Action continuation) => _dispatcher.BeginInvoke(continuation);
+
+        private readonly Dispatcher _dispatcher;
+    }
+
+    /// <summary>
+    /// 提供一个可切换到 Windows Forms 的 UI 线程执行上下文的可等待对象。
+    /// </summary>
+    public struct ControlThreadSwitcher : INotifyCompletion
+    {
+        internal ControlThreadSwitcher(Control control) =>
+            _control = control;
+
+        /// <summary>
+        /// 当使用 await 关键字异步等待此对象时，将调用此方法返回一个可等待对象。
+        /// </summary>
+        public ControlThreadSwitcher GetAwaiter() => this;
+
+        /// <summary>
+        /// 获取一个值，该值指示是否已完成线程池到 Windows Forms UI 线程的切换。
+        /// </summary>
+        public bool IsCompleted => !_control.InvokeRequired;
+
+        /// <summary>
+        /// 由于进行线程的上下文切换必须使用 await 关键字，所以不支持调用同步的 <see cref="GetResult"/> 方法。
+        /// </summary>
+        public void GetResult()
+        {
+        }
+
+        /// <summary>
+        /// 当异步状态机中的前一个任务结束后，将调用此方法继续下一个任务。在此可等待对象中，指的是切换到 Windows Forms 的 UI 线程。
+        /// </summary>
+        /// <param name="continuation">将异步状态机推进到下一个异步状态。</param>
+        public void OnCompleted(Action continuation) => _control.BeginInvoke(continuation);
+
+        private readonly Control _control;
+    }
+
+    /// <summary>
+    /// 提供一个可切换到线程池执行上下文的可等待对象。
+    /// </summary>
+    public struct ThreadPoolThreadSwitcher : INotifyCompletion
+    {
+        /// <summary>
+        /// 当使用 await 关键字异步等待此对象时，将调用此方法返回一个可等待对象。
+        /// </summary>
+        public ThreadPoolThreadSwitcher GetAwaiter() => this;
+
+        /// <summary>
+        /// 获取一个值，该值指示是否已完成 UI 线程到线程池的切换。
+        /// </summary>
+        public bool IsCompleted => SynchronizationContext.Current == null;
+
+        /// <summary>
+        /// 由于进行线程的上下文切换必须使用 await 关键字，所以不支持调用同步的 <see cref="GetResult"/> 方法。
+        /// </summary>
+        public void GetResult()
+        {
+        }
+
+        /// <summary>
+        /// 当异步状态机中的前一个任务结束后，将调用此方法继续下一个任务。在此可等待对象中，指的是切换到线程池中。
+        /// </summary>
+        /// <param name="continuation">将异步状态机推进到下一个异步状态。</param>
+        public void OnCompleted(Action continuation) => ThreadPool.QueueUserWorkItem(_ => continuation());
+    }
+}
+```
+
 ---
 
 **参考资料**
 
 - [C++/WinRT envy: Bringing thread switching tasks to C# (UWP edition) - The Old New Thing](https://devblogs.microsoft.com/oldnewthing/20190328-00/?p=102368)
+- [C++/WinRT envy: Bringing thread switching tasks to C# (WPF and WinForms edition) - The Old New Thing](https://devblogs.microsoft.com/oldnewthing/20190329-00/?p=102373)
