@@ -1,6 +1,7 @@
 ---
 title: "C#/.NET 中启动进程时所使用的 UseShellExecute 设置为 true 和 false 分别代表什么意思？"
-date: 2019-03-29 15:23:35 +0800
+publishDate: 2019-03-29 15:23:35 +0800
+date: 2019-04-01 12:04:26 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -22,7 +23,7 @@ position: knowledge
 - `UseShellExecute = false`
     - 调用的是 [CreateProcess](https://docs.microsoft.com/en-us/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createprocessa)
 
-当然，如果你知道这两个函数的区别，那你自然也就了解吃属性设置为 `true` 和 `false` 的区别了。
+当然，如果你知道这两个函数的区别，那你自然也就了解此属性设置为 `true` 和 `false` 的区别了。
 
 ## 效果差异
 
