@@ -108,6 +108,82 @@ permalink: /friends/
 
 ---
 
+Microsoft MVPs Blogs:
+
+- Alan Mendelevič	<https://blog.ailon.org/>
+- Andrei Marukovich	<http://lunarfrog.com/blog>
+- Angelo Luis	<http://xamarinbr.azurewebsites.net/>
+- Bart Lannoeye	<http://www.bartlannoeye.com/blog>
+- Brian Lagunas	<https://www.brianlagunas.com>
+- Brian Noyes	<http://briannoyes.net/>
+- Bruno Sonnino	<http://blogs.msmvps.com/bsonnino/>
+- Caio Proiete	<http://caioproiete.net/en>
+- Christian Nagel	<https://csharp.christiannagel.com/>
+- Christopher Maneu	<http://deezer.io>
+- Christopher Maneu	<http://log.maneu.net>
+- Dachi Gogotchuri	<https://geekytheory.com/>
+- Dachi Gogotchuri	<http://modernuidoc.com/>
+- Dan Ciprian Ardelean	<http://sviluppomobile.blogpost.com>
+- Daniel Vaughan	<http://danielvaughan.org>
+- David J. Kelley	<http://www.Transhumanity.net/>
+- Diederik Krols	<http://Xamlbrewer.wordpress.com>
+- Dwight Goins	<http://dgoins.wordpress.com>
+- Engin Polat	<http://www.enginpolat.com>
+- Giancarlo Lelli	<http://www.aspitalia.com/ricerca/super.aspx?action=author&key=Giancarlo+Lelli>
+- Glenn Versweyveld	<http://depblog.weblogs.us/>
+- Ignat Andrei	<http://msprogrammer.serviciipeweb.ro/>
+- Ivan Toledo	<http://www.birdie.cl/blog/>
+- James Croft	<http://www.jamescroft.co.uk/blog>
+- Jan Hannemann	<http://janhannemann.wordpress.com>
+- Javier Suárez Ruiz	<https://javiersuarezruiz.wordpress.com>
+- Jeremy Likness	<http://csharperimage.jeremylikness.com/>
+- Jesse Liberty	<http://Jesseliberty.com>
+- Jessica Engström	<https://www.catoholic.se>
+- Jimmy Engström	<https://www.apeoholic.se>
+- Jonathan ANTOINE	<http://jonathanantoine.com>
+- Joost van Schaik	<http://dotnetbyexample.blogspot.com>
+- Lance McCarthy	<https://winplatform.wordpress.com>
+- Laurent	<http://blog.galasoft.ch>
+- Magnus Montin	<http://blog.magnusmontin.net>
+- Marco Minerva	<http://marcominerva.wordpress.com>
+- Mark Schramm	<http://blog.markbschramm.com>
+- Matt Lacey	<http://mrlacey.com/>
+- Matteo Tumiati	<http://aspitalia.com/>
+- Mikael Koskinen	<http://mikaelkoskinen.net/>
+- Morten Nielsen	<https://www.sharpgis.net>
+- Nick Prühs	<http://npruehs.de>
+- Nick Randolph	<http://nicksnettravels.builttoroam.com>
+- Nico Vermeir	<http://www.spikie.be>
+- Nigel Sampson	<http://compiledexperience.com>
+- Olivier Dahan	<http://www.e-naxos.com/blog>
+- Oren Novotny	<https://oren.codes>
+- Patrick Getzmann	<https://patrickgetzmann.wordpress.com/>
+- Peter Foot	<http://peterfoot.net>
+- Rene Schulte	<http://blog.rene-schulte.info>
+- Rob Irving	<https://www.robwirving.com>
+- Rodrigo Díaz Concha	<http://rdiazconcha.com>
+- Rudy Huyn	<http://rudyhuyn.com>
+- Russel Fustino	<http://russtoolshed.net/blog/>
+- Santiago Porras Rodríguez	<http://geeks.ms/santypr>
+- Sascha Wolter	<http://wolter.biz>
+- Scott Lovegrove	<https://www.metronuggets.com>
+- Sébastien Lachance	<http://dotnetapp.com>
+- Senthil Kumar	<http://DeveloperPublish.com>
+- Shawn Kendrot	<http://visuallylocated.com/>
+- Subramanyam Balaraju	<http://bsubramanyamraju.blogspot.com>
+- Tamás Deme	<http://shoreparty.org>
+- Thomas Claudius <https://huber.com>
+- <http://www.thomasclaudiushuber.com/blog>
+- Tom Walker	<http://tomwalker.codes>
+- Tony Champion	<http://tonychampion.net/blog>
+- Velvárt, András	<http://vbandi.net>
+- Vicente Gerardo Guzman Lucio	<https://vicenteguzman.mx/>
+- Mark Arteaga 	<https://www.redbitdev.com/blog>
+- Alex Sorokoletov 	<http://sorokoletov.com>
+- Mark MacDonnell	<https://www.markmacdonnell.ca>
+
+---
+
 - [Microsoft .NET Blog](https://blogs.msdn.microsoft.com/dotnet/)
     - [Performance Improvements in .NET Core - .NET Blog](https://blogs.msdn.microsoft.com/dotnet/2017/06/07/performance-improvements-in-net-core/)
 
