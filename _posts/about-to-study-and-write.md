@@ -17,6 +17,9 @@ published: false
 
 ## About to Write
 
+- WPF 画图
+    - [c# - How to easily draw graphs in WPF? - Stack Overflow](https://stackoverflow.com/a/31537844/6233938)
+
 - 跨权限程序之间的拖拽（UAC Drag Drop）
     - [How to Enable Drag and Drop for an Elevated MFC Application on Vista/Windows 7 • Helge Klein](https://helgeklein.com/blog/2010/03/how-to-enable-drag-and-drop-for-an-elevated-mfc-application-on-vistawindows-7/)
     - [c# - Enable drag&drop from explorer to Run-As-Administrator application - Stack Overflow](https://stackoverflow.com/questions/3794462/enable-dragdrop-from-explorer-to-run-as-administrator-application)
