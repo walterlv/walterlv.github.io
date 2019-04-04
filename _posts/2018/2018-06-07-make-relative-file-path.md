@@ -1,7 +1,7 @@
 ---
 title: "如何根据一个绝对文件路径生成一个相对文件路径"
 publishDate: 2018-06-07 19:30:24 +0800
-date: 2018-09-01 08:04:03 +0800
+date: 2019-04-04 17:11:37 +0800
 categories: dotnet
 ---
 
@@ -11,9 +11,11 @@ categories: dotnet
 
 ---
 
-那么，既然 `Path` 没有生成相对路径的方法，还能怎么生成相对路径呢？*别跟我说自己去做字符串比较……*
+.NET Core 2.0 开始，提供了 `Path.GetRelativePath` 这样的方法来获取两个路径之间的相对路径，但是 .NET Framework 却没有这样的方法可以用。
 
-`Uri` 却提供了 `MakeRelativeUri` 方法，可以生成一个路径到另一个路径的相对路径。于是我们可以写出这样的代码：
+那么，在旧版本的 .NET Core 或者 .NET Framework 中 `Path` 没有生成相对路径的方法，还能怎么生成相对路径呢？*别跟我说自己去做字符串比较……*
+
+`Uri` 提供了 `MakeRelativeUri` 方法，可以生成一个路径到另一个路径的相对路径。于是我们可以写出这样的代码：
 
 ```csharp
 public static string MakeRelativePath(string fromPath, string toPath)
@@ -68,8 +70,11 @@ public static string MakeRelativePath(string fromPath, string toPath)
 
 现在重新传入 `C:\Users\walterlv\OpenSource\Demo` 和 `C:\Users\walterlv\OpenSource\Demo\build\config.xml`。结果，已经能够得到：`build\config.xml` 了。
 
+关于 .NET Core 中的 `Path.GetRelativePath` 方法，可以参考：[GetRelativePath](https://source.dot.net/#System.Private.CoreLib/shared/System/IO/Path.cs,4aa697c72b567ed8,references)
+
 ---
 
 **参考资料**
 
 - [.net - How to get relative path from absolute path - Stack Overflow](https://stackoverflow.com/q/275689/6233938)
+- [Path.GetRelativePath](https://source.dot.net/#System.Private.CoreLib/shared/System/IO/Path.cs,4aa697c72b567ed8,references)
