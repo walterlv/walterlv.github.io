@@ -1,7 +1,7 @@
 ---
 title: ".NET Core/Framework 创建委托以大幅度提高反射调用的性能"
 publishDate: 2018-02-07 17:45:21 +0800
-date: 2018-02-27 19:58:33 +0800
+date: 2019-04-04 19:21:42 +0800
 categories: dotnet csharp
 ---
 
@@ -44,7 +44,6 @@ namespace Walterlv.Demo
 
             // 使用反射找到的方法。
             var method = typeof(StubClass).GetMethod(nameof(StubClass.Test), new[] { typeof(int) });
-            Assert.IsNotNull(method);
 
             // 将反射找到的方法创建一个委托。
             var func = InstanceMethodBuilder<int, int>.CreateInstanceMethod(instance, method);
@@ -118,6 +117,8 @@ namespace Walterlv.Demo
     }
 }
 ```
+
+上面的代码中，有一个我们还没有实现的 `InstanceMethodBuilder` 类型，接下来将介绍如何实现它。
 
 ## 如何实现
 
