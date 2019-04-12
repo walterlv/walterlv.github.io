@@ -1,13 +1,13 @@
 ---
-title: "将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的新 csproj"
+title: "将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj"
 publishDate: 2018-01-16 00:04:28 +0800
-date: 2019-04-12 09:33:51 +0800
+date: 2019-04-12 09:35:21 +0800
 categories: visualstudio msbuild
 ---
 
 写过 .NET Standard 类库或者 .NET Core 程序的你一定非常喜欢微软为他们新开发的项目文件（对于 C#，则是 csproj 文件）。这种文件非常简洁，组织一个庞大的项目也只需要聊聊二三十行；也非常易读，你可以轻易地修改其代码而不用经过过多的提前学习。当然，微软曾经尝试过用 project.json 来组织项目文件，不过只有短短的预览版阶段用过，此后就废弃了。
 
-然而组织传统 .NET Framework 类库的 csproj 文件却极其庞大且难以理解。而本文将提供一种迁移方法，帮助你完成这样的迁移，以便体验新 csproj 文件带来的诸多好处。
+然而组织传统 .NET Framework 类库的 csproj 文件却极其庞大且难以理解。而本文将提供一种迁移方法，帮助你完成这样的迁移，以便体验 Sdk 风格的 csproj 文件带来的诸多好处。
 
 ---
 
@@ -17,9 +17,9 @@ categories: visualstudio msbuild
 
 <p id="toc"></p>
 
-## 新 csproj 文件的优势与直观体验
+## Sdk 风格的 csproj 文件的优势与直观体验
 
-如果你已经体验过新 csproj 文件的好处，那么直接前往下一节即可。没体验过的话就来体验一下吧！
+如果你已经体验过 Sdk 风格的 csproj 文件的好处，那么直接前往下一节即可。没体验过的话就来体验一下吧！
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -121,7 +121,7 @@ categories: visualstudio msbuild
 
 而且，还要搭配一个 packages.config 文件来描述 NuGet。
 
-从对比中我们就能明显看出新 csproj 文件的优势：
+从对比中我们就能明显看出 Sdk 风格的 csproj 文件的优势：
 
 1. 文件小，易读易写
 1. 在版本管理中更容易解冲突
@@ -132,7 +132,7 @@ categories: visualstudio msbuild
 
 ## 迁移普通 .NET Framework 类库的项目文件
 
-目前只有基于 .NET Core 和 .NET Standard 的普通项目能够使用这种新的 csproj 文件。在 GitHub 的讨论（[XAML files are not supported · Issue #1467 · dotnet/project-system](https://github.com/dotnet/project-system/issues/1467)）中，.NET Core 的开发者们是这么说的。
+目前只有基于 .NET Core 和 .NET Standard 的普通项目能够使用这种 Sdk 风格的 csproj 文件。在 GitHub 的讨论（[XAML files are not supported · Issue #1467 · dotnet/project-system](https://github.com/dotnet/project-system/issues/1467)）中，.NET Core 的开发者们是这么说的。
 
 不过，.NET Framework 项目也能够有限地得到支持。具体可支持的类型以及迁移方法我的小伙伴写了一篇博客，请前往此处查看：[从以前的项目格式迁移到 VS2017 新项目格式 - 林德熙](https://lindexi.github.io/lindexi/post/%E4%BB%8E%E4%BB%A5%E5%89%8D%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E8%BF%81%E7%A7%BB%E5%88%B0-VS2017-%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F.html)。
 
@@ -188,7 +188,7 @@ categories: visualstudio msbuild
 
 ## 迁移 WPF/UWP 这类 XAML UI 类库的项目文件
 
-UWP 项目已经是 .NET Core 了，然而它依然还在采用旧样式的 csproj 文件，这让人感到不可思议。然而我并不知道是否是因为旧版本的 Visual Studio 2017 不支持在新 csproj 中编译 XAML。
+UWP 项目已经是 .NET Core 了，然而它依然还在采用旧样式的 csproj 文件，这让人感到不可思议。然而我并不知道是否是因为旧版本的 Visual Studio 2017 不支持在 Sdk 风格的 csproj 中编译 XAML。
 
 包含 XAML 的 WPF/UWP 项目需要额外添加以下至少三个节点（`LanguageTargets`、`Page.Generator`、`Compile.DependentUpon`）：
 
@@ -261,7 +261,7 @@ UWP 项目已经是 .NET Core 了，然而它依然还在采用旧样式的 cspr
 
 就是试图迁移的那个项目！无论依赖了谁还是被谁依赖，都是此项目发生“NuGet”错误。
 
-其实这是只有新的项目文件才会出现的编译错误，而错误原因是 NuGet 的缓存文件中与包引用相关的信息已经不正确了，需要运行 `nuget restore` 或者 `dotnet restore` 重新更新此文件才行。但是，只有使用了 `Microsoft.NET.Sdk` 的新 csproj 文件才会在执行了此命令后重新生成正确的包引用缓存文件；原来的格式并不会生成此文件，也就是说，无法修复。
+其实这是只有新的项目文件才会出现的编译错误，而错误原因是 NuGet 的缓存文件中与包引用相关的信息已经不正确了，需要运行 `nuget restore` 或者 `dotnet restore` 重新更新此文件才行。但是，只有使用了 Sdk 风格的 csproj 文件才会在执行了此命令后重新生成正确的包引用缓存文件；原来的格式并不会生成此文件，也就是说，无法修复。
 
 唯一的解决办法就是清除项目中的所有 NuGet 缓存，使用 `git clean -xdf`。
 
