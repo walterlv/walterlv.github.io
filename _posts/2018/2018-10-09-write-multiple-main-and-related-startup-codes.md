@@ -1,6 +1,7 @@
 ---
 title: ".NET/C# 中你可以在代码中写多个 Main 函数，然后按需要随时切换"
-date: 2018-10-09 20:26:01 +0800
+publishDate: 2018-10-09 20:26:01 +0800
+date: 2019-04-12 09:39:32 +0800
 categories: dotnet csharp msbuild
 ---
 
@@ -79,7 +80,7 @@ Walterlv.Demo.Main C:\Users\lvyi\Desktop\Walterlv.Demo.Main\Walterlv.Demo.Main\N
 </Project>
 ```
 
-你可以通过阅读 [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj](/post/introduce-new-style-csproj-into-net-framework.html) 完成这样的新旧格式迁移。
+你可以通过阅读 [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj](/post/introduce-new-style-csproj-into-net-framework.html) 完成这样的新旧格式迁移。
 
 App.xaml 中保持默认的代码即可：
 

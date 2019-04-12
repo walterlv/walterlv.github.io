@@ -1,7 +1,7 @@
 ---
 title: "从零开始学习 dotnet 编译过程和 Roslyn 源码分析"
 publishDate: 2018-10-19 16:23:18 +0800
-date: 2018-11-27 13:08:55 +0800
+date: 2019-04-12 09:41:03 +0800
 categories: dotnet csharp msbuild roslyn visualstudio nuget
 ---
 
@@ -45,8 +45,8 @@ SourceFusion 的其中一个用途是收集原本会通过反射收集的类型�
 
 在了解到 csproj 文件结构之后，你可以通过迁移一些项目，并确保他们编译通过来练习：
 
-- [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj - 吕毅](/post/introduce-new-style-csproj-into-net-framework.html)
-- [新 csproj 对 WPF/UWP 支持不太好？有第三方 SDK 可以用！MSBuild.Sdk.Extras - 吕毅](/post/use-msbuild-sdk-extras-for-wpf-and-uwp.html)
+- [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj - 吕毅](/post/introduce-new-style-csproj-into-net-framework.html)
+- [Sdk 风格的 csproj 对 WPF/UWP 支持不太好？有第三方 SDK 可以用！MSBuild.Sdk.Extras - 吕毅](/post/use-msbuild-sdk-extras-for-wpf-and-uwp.html)
 
 接着，csproj 中的重要内容 Target 对理解编译过程非常重要，因为它决定了如何编译这个项目：
 

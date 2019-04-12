@@ -1,12 +1,12 @@
 ---
 title: "如何更精准地设置 C# / .NET Core 项目的输出路径？（包括添加和删除各种前后缀）"
 publishDate: 2019-02-21 18:49:14 +0800
-date: 2019-03-10 21:30:47 +0800
+date: 2019-04-12 09:40:15 +0800
 categories: dotnet csharp visualstudio msbuild
 position: knowledge
 ---
 
-我们都知道可以通过在 Visual Studio 中设置输出路径（OutputPath）来更改项目输出文件所在的位置。对于 .NET Core 所使用的新 csproj 格式来说，你可能会发现实际生成路径中带了 `netcoreapp3.0` 或者 `net472` 这样的子文件夹。
+我们都知道可以通过在 Visual Studio 中设置输出路径（OutputPath）来更改项目输出文件所在的位置。对于 .NET Core 所使用的 Sdk 风格的 csproj 格式来说，你可能会发现实际生成路径中带了 `netcoreapp3.0` 或者 `net472` 这样的子文件夹。
 
 然而有时我们并不允许生成这样的子文件夹。本文将介绍可能影响实际输出路径的各种设置。
 

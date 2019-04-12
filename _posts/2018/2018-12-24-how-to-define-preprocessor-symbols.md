@@ -1,7 +1,7 @@
 ---
 title: ".NET/C# 项目如何优雅地设置条件编译符号？"
 publishDate: 2018-12-24 22:17:53 +0800
-date: 2018-12-25 08:15:22 +0800
+date: 2019-04-12 09:40:26 +0800
 categories: csharp dotnet visualstudio msbuild
 position: starter
 ---
@@ -15,7 +15,7 @@ position: starter
 对于新旧格式的差别或者迁移，可以查看我的其他博客：
 
 - [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj.html)
-- [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj](/post/introduce-new-style-csproj-into-net-framework.html)
+- [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj](/post/introduce-new-style-csproj-into-net-framework.html)
 
 <div id="toc"></div>
 

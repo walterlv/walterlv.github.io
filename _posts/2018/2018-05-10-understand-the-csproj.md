@@ -1,7 +1,7 @@
 ---
 title: "理解 C# 项目 csproj 文件格式的本质和编译流程"
 publishDate: 2018-05-10 08:13:43 +0800
-date: 2018-12-14 09:54:00 +0800
+date: 2019-04-12 09:37:21 +0800
 categories: visualstudio msbuild
 ---
 
@@ -35,7 +35,7 @@ categories: visualstudio msbuild
 
 如果你此前也阅读过我的其他博客，会发现我一直在试图推荐使用新的 csproj 格式：
 
-- [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj](/post/introduce-new-style-csproj-into-net-framework.html)
+- [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj](/post/introduce-new-style-csproj-into-net-framework.html)
 - [让一个 csproj 项目指定多个开发框架](/post/configure-projects-to-target-multiple-platforms.html)
 
 那么新格式和旧格式究竟有哪些不同使得新的格式如此简洁？
@@ -119,7 +119,7 @@ xml 声明部分完全没有在此解释的必要了，为兼容性提供了方�
 
 ### Import
 
-你应该注意到在前面的思维导图中，无论是新 csproj 还是旧 csproj 文件，我都写了两个 `Import` 节点。其实它们本质上是完全一样的，只不过在含义上有不同。前面我们了解到 csproj 文件致力于脱离语义，所以分开两个地方写几乎只是为了可读性考虑。
+你应该注意到在前面的思维导图中，无论是 Sdk 风格的 csproj 还是旧 csproj 文件，我都写了两个 `Import` 节点。其实它们本质上是完全一样的，只不过在含义上有不同。前面我们了解到 csproj 文件致力于脱离语义，所以分开两个地方写几乎只是为了可读性考虑。
 
 那么前面那个 `Import` 和后面的 `Import` 在含义上有何区别？思维导图的括号中我已说明了含义。前面是为了导入属性（props），后面是为了导入 `Targets`。属性就是前面 `PropertyGroup` 中说的那些属性和 `ItemGroup` 里说的那些项；而 `Targets` 是新东西，这才是真正用来定义编译流程的关键，由于 `Targets` 是所有节点里面最复杂的部分，所以我们放到最后再说。
 
@@ -265,5 +265,5 @@ xml 声明部分完全没有在此解释的必要了，为兼容性提供了方�
 - [项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量了） - 吕毅](/post/known-properties-in-csproj.html)
 - [让一个 csproj 项目指定多个开发框架 - 吕毅](/post/configure-projects-to-target-multiple-platforms.html)
 - [从以前的项目格式迁移到 VS2017 新项目格式 - 林德熙](https://lindexi.github.io/post/%E4%BB%8E%E4%BB%A5%E5%89%8D%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E8%BF%81%E7%A7%BB%E5%88%B0-VS2017-%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F.html#%E5%A4%9A%E4%B8%AA%E6%A1%86%E6%9E%B6)
-- [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj - 吕毅](/post/introduce-new-style-csproj-into-net-framework.html)
+- [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj - 吕毅](/post/introduce-new-style-csproj-into-net-framework.html)
 - [自动将 NuGet 包的引用方式从 packages.config 升级为 PackageReference - 吕毅](/post/migrate-packages-config-to-package-reference.html)

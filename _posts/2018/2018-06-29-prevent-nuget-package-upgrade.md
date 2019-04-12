@@ -1,6 +1,7 @@
 ---
 title: "阻止某个 NuGet 包意外升级"
-date: 2018-06-29 17:59:00 +0800
+publishDate: 2018-06-29 17:59:00 +0800
+date: 2019-04-12 09:38:45 +0800
 categories: dotnet visualstudio nuget
 ---
 
@@ -16,9 +17,9 @@ categories: dotnet visualstudio nuget
 
 ## 准备工作
 
-本文提供的方法仅适用于使用了 Microsoft.NET.Sdk 的新 csproj 项目文件。（当然并不是说旧的 csproj 不能使用这种方法，只是写法上会有差别，我没有去研究如何编写。）
+本文提供的方法仅适用于使用了 Sdk 风格的 csproj 项目文件。（当然并不是说旧的 csproj 不能使用这种方法，只是写法上会有差别，我没有去研究如何编写。）
 
-如果你的项目还在使用旧的 csproj 格式，推荐阅读 [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj](/post/introduce-new-style-csproj-into-net-framework.html) 迁移成新格式之后再开始。
+如果你的项目还在使用旧的 csproj 格式，推荐阅读 [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj](/post/introduce-new-style-csproj-into-net-framework.html) 迁移成新格式之后再开始。
 
 作为例子，假设我们的项目文件是这样的：
 

@@ -1,7 +1,7 @@
 ---
 title: "(1/2) 为了理解 UWP 的启动流程，我从零开始创建了一个 UWP 程序"
 publishDate: 2018-07-25 09:27:23 +0800
-date: 2018-12-14 09:54:00 +0800
+date: 2019-04-12 09:40:58 +0800
 categories: uwp msbuild
 ---
 
@@ -25,7 +25,7 @@ categories: uwp msbuild
 虽然可以从零开始写一个 csproj 文件，不过这并没有什么技术含量，因为新的 csproj 文件实在是非常简单。参见：
 
 - [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj.html)
-- [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj](/post/introduce-new-style-csproj-into-net-framework.html)
+- [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj](/post/introduce-new-style-csproj-into-net-framework.html)
 
 于是，我创建一个 .NET Core 控制台应用。当然，其它简单的如 .NET Standard 库都是一样的，反正最后都会被我改得面目全非。
 
@@ -70,7 +70,7 @@ namespace Walterlv.Demo.ZeroUwp
 
 UWP 程序的输出类型是 `AppContainerExe`，而不是一般的 Library 或者 Exe。
 
-另外，基于 Microsoft.NET.Sdk 的新 csproj 格式不支持 UWP 应用程序。所以我希望借助第三方的 MSBuild.Sdk.Extras 来编译 UWP 的项目。参见 [新 csproj 对 WPF/UWP 支持不太好？有第三方 SDK 可以用！MSBuild.Sdk.Extras](/post/use-msbuild-sdk-extras-for-wpf-and-uwp.html)。
+另外，基于 Sdk 风格的 csproj 格式不支持 UWP 应用程序。所以我希望借助第三方的 MSBuild.Sdk.Extras 来编译 UWP 的项目。参见 [Sdk 风格的 csproj 对 WPF/UWP 支持不太好？有第三方 SDK 可以用！MSBuild.Sdk.Extras](/post/use-msbuild-sdk-extras-for-wpf-and-uwp.html)。
 
 然而实际情况也不容乐观，因为此第三方 Sdk 只支持 UWP 的库程序，而不支持应用程序容器。所以即便修改为以下方式，最终也因为缺少 Visual Studio RunCommand 的支持，而导致无法启动。
 
@@ -90,7 +90,7 @@ UWP 程序的输出类型是 `AppContainerExe`，而不是一般的 Library 或�
 ![RunCommand Property is not defined](/static/posts/2018-07-25-08-31-09.png)  
 ▲ 无法启动
 
-所以我们依然只能使用传统的 csproj 文件格式。里面大部分的内容从模板中复制而来。事实上，我寻找了很多资料，都没有找到让支持 Sdk 的新 csproj 格式支持 UWP 的主程序。
+所以我们依然只能使用传统的 csproj 文件格式。里面大部分的内容从模板中复制而来。事实上，我寻找了很多资料，都没有找到让 Sdk 风格的 csproj 格式支持 UWP 的主程序。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

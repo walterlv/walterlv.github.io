@@ -1,7 +1,7 @@
 ---
 title: "MSBuild/Roslyn 和 NuGet 的 100 个坑"
 publishDate: 2018-07-04 21:29:29 +0800
-date: 2018-09-04 21:08:05 +0800
+date: 2019-04-12 09:38:58 +0800
 categories: msbuild nuget visualstudio dotnet
 ---
 
@@ -79,13 +79,13 @@ NuGet 可以指定多个包源。既可以在 Visual Studio 中配置，也可�
 
 MSBuild 15.0 为项目文件的根节点 `Project` 带来了 `Sdk` 属性，也就是说 Visual Studio 2017 开始支持。
 
-[将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj](/post/introduce-new-style-csproj-into-net-framework.html) 一文讲述了如何为项目文件添加 Sdk 属性，以便项目能够体验到最新的 Microsoft.NET.Sdk 编译体验。其中的 NuGet 原生支持是非常清爽的。
+[将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj](/post/introduce-new-style-csproj-into-net-framework.html) 一文讲述了如何为项目文件添加 Sdk 属性，以便项目能够体验到最新的 Microsoft.NET.Sdk 编译体验。其中的 NuGet 原生支持是非常清爽的。
 
 升级时很清爽，降级就不爽了！这种情况会发生在新分支中进行了项目文件升级，随后切换回之前的分支；这时相当于在降级。但是，降级时会编译不通过，并提示：
 
 > Your project.json doesn't have a runtimes section. You should add '"runtimes": { "win": { } }' to your project.json and then re-run NuGet restore.
 
-其实这是只有新的项目文件才会出现的编译错误，而错误原因是 NuGet 的缓存文件中与包引用相关的信息已经不正确了，需要运行 `nuget restore` 或者 `dotnet restore` 重新更新此文件才行。但是，只有使用了 `Microsoft.NET.Sdk` 的新 csproj 文件才会在执行了此命令后重新生成正确的包引用缓存文件；原来的格式并不会生成此文件，也就是说，无法修复。
+其实这是只有新的项目文件才会出现的编译错误，而错误原因是 NuGet 的缓存文件中与包引用相关的信息已经不正确了，需要运行 `nuget restore` 或者 `dotnet restore` 重新更新此文件才行。但是，只有使用了 Sdk 风格的 csproj 文件才会在执行了此命令后重新生成正确的包引用缓存文件；原来的格式并不会生成此文件，也就是说，无法修复。
 
 唯一的解决办法就是清除项目中的所有 NuGet 缓存，使用 `git clean -xdf`。
 

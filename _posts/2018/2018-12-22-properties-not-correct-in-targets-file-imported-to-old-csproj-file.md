@@ -1,14 +1,14 @@
 ---
 title: "Visual Studio 2017 以前的旧格式的 csproj Import 进来的 targets 文件有时不能正确计算属性（PropertyGroup）和集合（ItemGroup）"
 publishDate: 2018-12-22 22:30:12 +0800
-date: 2018-12-23 15:17:07 +0800
+date: 2019-04-12 09:40:00 +0800
 categories: dotnet visualstudio msbuild roslyn nuget
 position: problem
 ---
 
 我在之前的博客中有教大家如何编写 NuGet 工具包，其中就有编写 .targets 文件。
 
-我在实际的使用中，发现 Visual Studio 2017 带来的含 Sdk 的新 csproj 格式基本上没有多少坑；然而旧的 csproj 文件却总是不能完美的运行，总是出错。关键是，不是每台电脑都出错，不是每个时机都出错。
+我在实际的使用中，发现 Visual Studio 2017 带来的 Sdk 风格的 csproj 格式基本上没有多少坑；然而旧的 csproj 文件却总是不能完美的运行，总是出错。关键是，不是每台电脑都出错，不是每个时机都出错。
 
 本文将讲一些坑。
 

@@ -1,6 +1,7 @@
 ---
 title: "在 Visual Studio 新旧不同的 csproj 项目格式中启用混合模式调试程序（开启本机代码调试）"
-date: 2019-02-20 22:40:43 +0800
+publishDate: 2019-02-20 22:40:43 +0800
+date: 2019-04-12 09:40:06 +0800
 categories: visualstudio dotnet csharp
 position: problem
 ---
@@ -13,7 +14,7 @@ position: problem
 
 <div id="toc"></div>
 
-本文涉及到新旧 csproj 项目格式，不懂这个也不影响你完成开启本机代码调试。不过如果你希望了解，可以阅读：[将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成基于 Microsoft.NET.Sdk 的新 csproj - walterlv](/post/introduce-new-style-csproj-into-net-framework.html)。
+本文涉及到新旧 csproj 项目格式，不懂这个也不影响你完成开启本机代码调试。不过如果你希望了解，可以阅读：[将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj - walterlv](/post/introduce-new-style-csproj-into-net-framework.html)。
 
 ## 在旧格式的项目中开启
 
