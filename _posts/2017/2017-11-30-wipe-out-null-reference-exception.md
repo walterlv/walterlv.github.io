@@ -1,6 +1,7 @@
 ---
 title: "NullReferenceException，就不应该存在！"
-date: 2017-11-30 00:08:27 +0800
+publishDate: 2017-11-30 00:08:27 +0800
+date: 2019-04-16 10:47:57 +0800
 categories: csharp dotnet
 ---
 
@@ -11,6 +12,11 @@ categories: csharp dotnet
 ---
 
 <p id="toc"></p>
+
+## null
+
+- [The worst mistake of computer science - Lucidchart](https://www.lucidchart.com/techblog/2015/08/31/the-worst-mistake-of-computer-science/)
+- [计算机科学中的最严重错误，造成十亿美元损失 - 文章 - 伯乐在线](http://blog.jobbole.com/93667/)
 
 ## NullReferenceException 的可恨之处
 
