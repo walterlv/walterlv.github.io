@@ -1,6 +1,6 @@
 ---
 title: "MSBuild 如何编写带条件的属性、集合和任务 Condition？"
-date: 2019-04-16 17:27:17 +0800
+date: 2019-04-16 17:27:46 +0800
 categories: msbuild
 position: starter
 ---
