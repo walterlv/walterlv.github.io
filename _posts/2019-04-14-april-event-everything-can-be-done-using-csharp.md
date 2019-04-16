@@ -1,7 +1,7 @@
 ---
 title: "C# 跨设备前后端开发探索"
 publishDate: 2019-04-13 17:31:39 +0800
-date: 2019-04-15 08:21:52 +0800
+date: 2019-04-16 08:54:48 +0800
 categories: csharp dotnet wpf uwp xamarin web
 position: starter
 ---
@@ -13,6 +13,8 @@ position: starter
 ---
 
 [![C# 跨设备前后端开发探索](/static/posts/2019-04-14-17-10-52.png)](http://easinote.seewo.com/linkShare?id=7dc9e588977d4764b1ea1a4112716540)
+
+本文内容已加入 [2019 年 4 月 13 日的广州 .NET 俱乐部第 2 届线下沙龙](https://github.com/guangzhou-dotnet-club/coursewares/tree/master/%E7%AC%AC2%E5%B1%8A%E7%BA%BF%E4%B8%8B%E6%B2%99%E9%BE%99%4020190413)。
 
 <div id="toc"></div>
 
