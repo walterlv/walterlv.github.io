@@ -1,7 +1,7 @@
 ---
 title: "WPF 像素着色器入门：使用 Shazzam Shader Editor 编写 HLSL 像素着色器代码"
 publishDate: 2019-04-17 12:00:55 +0800
-date: 2019-04-17 12:08:17 +0800
+date: 2019-04-17 14:32:07 +0800
 categories: dotnet csharp wpf directx
 position: starter
 ---
@@ -18,8 +18,8 @@ HLSL，High Level Shader Language，高级着色器语言，是 Direct3D 着色�
 
 实际上 Shazzam Shader Editor 有一段时间没有维护了，不过在 WPF 下依然是一个不错的编写 HLSL 的工具。
 
-- 优先去官网下载：[shazzam-tool.com](http://shazzam-tool.com/)，但官网似乎挂了……
 - 于是去我的镜像地址下载：<https://github.com/walterlv/download/raw/master/Shazzam/Shazzam_v1.5.Setup.exe>
+- 已经没有官网了：shazzam-tool.com
 
 下载完成之后安装到你的电脑上即可。
 
