@@ -1,6 +1,6 @@
 ---
 title: "C# 8.0 如何在项目中开启可空引用类型的支持"
-date: 2019-04-21 19:19:27 +0800
+date: 2019-04-21 19:22:00 +0800
 categories: csharp msbuild visualstudio
 position: starter
 ---
@@ -119,8 +119,13 @@ var value = walterlv.ToString();
 - `#pragma warning restore nullable`
 - `#pragma warning safeonly nullable`
 
+## 早期版本的属性
+
+在 Visual Studio 2019 Preview 2 升级之后才引入 `NullableContextOptions` 属性，而在此之前，用于控制可空引用类型开关的属性是 `NullableReferenceTypes`。现在，这个旧的属性已经废弃。
+
 ---
 
 **参考资料**
 
 - [Nullable reference types - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/nullable-references)
+- [c# - What is the difference between NullableContextOptions and NullableReferenceTypes? - Stack Overflow](https://stackoverflow.com/a/54855437/6233938)
