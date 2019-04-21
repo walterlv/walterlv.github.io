@@ -1,6 +1,7 @@
 ---
 title: "如何快速自定义 Visual Studio 中部分功能的快捷键"
-date: 2019-04-21 12:31:19 +0800
+publishDate: 2019-04-21 12:31:19 +0800
+date: 2019-04-21 20:06:45 +0800
 categories: visualstudio
 position: starter
 ---
@@ -42,6 +43,8 @@ Visual Studio 中有些自带的快捷键与现有软件有冲突，那么如何
 ![新分配的快捷键](/static/posts/2019-04-21-12-26-49.png)
 
 现在，可以使用新的快捷键来操作这些功能了。
+
+![可以使用新的快捷键](/static/posts/2019-04-21-20-06-38.png)
 
 ---
 
