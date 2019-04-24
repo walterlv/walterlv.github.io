@@ -1,6 +1,7 @@
 ---
 title: "C# 可空引用类型 NullableReferenceTypes 更强制的约束：将警告改为错误 WarningsAsErrors"
-date: 2019-04-21 20:20:18 +0800
+publishDate: 2019-04-21 20:20:18 +0800
+date: 2019-04-24 21:35:12 +0800
 categories: csharp msbuild
 position: problem
 ---
@@ -42,7 +43,7 @@ NU 是 NuGet 中发生的错误或者警告的前缀，`NU1605` 是大家可能�
 于是，我们将我们需要视为错误的错误代码补充到后面就可以，以分号分隔。
 
 ```
-NU1605;CS8600;CS8602;CS8603;CS8625
+NU1605;CS8600;CS8602;CS8603;CS8618;CS8625
 ```
 
 这些值的含义可以参考我的另一篇博客：
@@ -69,7 +70,7 @@ NU1605;CS8600;CS8602;CS8603;CS8625
         <TargetFramework>netcoreapp3.0</TargetFramework>
         <LangVersion>8.0</LangVersion>
         <NullableContextOptions>enable</NullableContextOptions>
-++      <WarningsAsErrors>$(WarningsAsErrors);CS8600;CS8602;CS8603;CS8625</WarningsAsErrors>
+++      <WarningsAsErrors>$(WarningsAsErrors);CS8600;CS8602;CS8603;CS8618;CS8625</WarningsAsErrors>
       </PropertyGroup>
     
     </Project>
