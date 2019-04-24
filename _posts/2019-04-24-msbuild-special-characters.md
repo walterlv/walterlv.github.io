@@ -1,6 +1,6 @@
 ---
 title: "MSBuild 中的特殊字符（$ @ % 等）：含义、用法以及转义"
-date: 2019-04-24 20:47:36 +0800
+date: 2019-04-24 20:48:21 +0800
 categories: msbuild visualstudio dotnet
 position: knowledge
 ---
@@ -127,6 +127,10 @@ MSBuild 中有这些特殊字符：
 ```xml
 <Compile Include="$([MSBuild]::Escape('Walterlv1;Walterlv2.cs'))" />
 ```
+
+详细方法可参见：
+
+- [Roslyn how to use WriteLinesToFile to write the semicolons to file - 林德熙](https://blog.lindexi.com/post/roslyn-how-to-use-writelinestofile-to-write-the-semicolons-to-file)
 
 ---
 
