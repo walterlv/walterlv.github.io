@@ -1,6 +1,6 @@
 ---
 title: "使用 7-Zip 的命令行版本来压缩和解压文件"
-date: 2019-04-24 09:32:03 +0800
+date: 2019-04-24 09:54:27 +0800
 categories: windows dotnet
 position: starter
 ---
@@ -47,7 +47,7 @@ position: starter
 ### 解压一个文件
 
 ```cmd
-> 7z.exe x {fileName} -o{outputDirectory}
+> 7z x {fileName} -o{outputDirectory}
 ```
 
 以上：
@@ -62,13 +62,59 @@ position: starter
 一个例子：
 
 ```cmd
-> 7z.exe x C:\Users\walterlv\demo.7z -oC:\Users\walterlv\demo
+> 7z x C:\Users\walterlv\demo.7z -oC:\Users\walterlv\demo
 ```
 
 7z 的强大之处还有一点就是可以解压各种文件——包括解压安装包：
 
 ```cmd
-> 7z.exe x C:\Users\walterlv\nsis_installer_1.0.0.0.exe -oC:\Users\walterlv\nsis
+> 7z x C:\Users\walterlv\nsis_installer_1.0.0.0.exe -oC:\Users\walterlv\nsis
 ```
 
 这也是为什么我们考虑使用 7z 来解压缩，而不是使用相关的 NuGet 包来调用。
+
+## 其他命令行操作
+
+运行 `7z.exe` 后可以看到命令行中列出了可用的命令行命令：
+
+```
+a：将文件添加到压缩档案中
+b：测试压缩或解压算法执行时的 CPU 占用
+d：从压缩档案中删除文件
+e：将压缩档案中的所有文件解压到指定路径，所有文件将输出到同一个目录中
+h：计算文件的哈希值
+i：显示有关支持格式的信息
+l：列出压缩档案的内容
+rn：重命名压缩档案中的文件
+t：测试压缩档案的完整性
+u：更新要进入压缩档案中的文件
+x：将压缩档案中的所有文件解压到指定路径，并包含所有文件的完整路径
+```
+
+下面列出几个常用的命令。
+
+### a 添加文件
+
+将 subdir\ 文件夹中的所有文件加入到 walterlv.zip 文件中，所有的子文件和文件夹将会在压缩档案的 subdir 文件夹中：
+
+```cmd
+7z a walterlv.zip subdir\
+```
+
+将 subdir\ 文件夹中的所有文件加入到 walterlv.zip 文件中，所有的子文件和文件夹路径不会包含 subdir 前缀：
+
+```cmd
+7z a walterlv.zip .\subdir\*
+```
+
+### d 删除文件
+
+删除压缩档案 walterlv.zip 中的所有扩展名为 bak 的文件：
+
+```cmd
+7z d walterlv.zip *.bak -r
+```
+
+### e 解压文件
+
+相比于 x，此命令会将压缩档案中的所有文件输出到同一个目录中。
