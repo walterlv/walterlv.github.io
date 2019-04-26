@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio 如何能够不进行编译就调试 .NET/C# 项目（用于解决大项目编译缓慢的问题）"
 publishDate: 2019-02-26 20:40:15 +0800
-date: 2019-02-27 14:37:11 +0800
+date: 2019-04-26 08:11:44 +0800
 categories: dotnet csharp visualstudio
 position: problem
 ---
@@ -12,7 +12,10 @@ position: problem
 
 ---
 
-<div id="toc"></div>
+我找到了两种临时调试而不用编译的方法：
+
+- [在 Visual Studio 的设置界面设置启动前不编译（本文）](/post/debug-without-building-for-visual-studio-project.html)
+- [通过修改项目调试配置文件](/post/debug-project-without-building-via-launch-settings.html)
 
 ## 不编译直接调试
 
