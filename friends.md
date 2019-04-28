@@ -39,6 +39,8 @@ permalink: /friends/
 
 - [张蘅水 - 博客园](https://www.cnblogs.com/chenug/)
 
+- [周三台 - 博客园](https://www.cnblogs.com/3Tai/?tdsourcetag=s_pctim_aiomsg)
+
 - [Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/)
 
 - [吴波 - 叹为观止](http://blog.vichamp.com/)  
