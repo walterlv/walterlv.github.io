@@ -37,6 +37,8 @@ permalink: /friends/
 - [码友网](https://codedefault.com/)
     - Reflector 的网站，专注 .NET/.NET Core 开发的编程爱好者社区
 
+- [张蘅水 - 博客园](https://www.cnblogs.com/chenug/)
+
 - [Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/)
 
 - [吴波 - 叹为观止](http://blog.vichamp.com/)  
