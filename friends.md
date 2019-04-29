@@ -213,3 +213,29 @@ Microsoft MVPs Blogs:
 - [Font Awesome Icons](http://fontawesome.io/icons/)
 - [Sabia科学研究所](https://www.sabia.cc/)
 - [ownCloud](https://doc.owncloud.org/)
+
+---
+
+<!-- https://www.mutuduxf.com/feed.xml
+http://feed.cnblogs.com/blog/u/42514/rss
+http://poumason.blogspot.com/feeds/posts/default
+http://feed.cnblogs.com/blog/u/196619/rss
+https://blog.csdn.net/sd7o95o/rss/list
+https://www.cnblogs.com/tsliwei/rss
+https://www.cnblogs.com/blue-fire/rss
+https://www.cnblogs.com/lin277541/rss
+http://feed.cnblogs.com/blog/u/261736/rss
+http://jamescroft.co.uk/blog/feed/
+https://huangtengxiao.gitee.io/feed.xml
+https://www.cnblogs.com/Helius/rss
+https://www.cnblogs.com/BeanHsiang/rss
+https://frendguo.top/feed.xml
+http://feed.cnblogs.com/blog/u/77852/rss
+http://feed.cnblogs.com/blog/u/74764/rss
+http://feed.cnblogs.com/blog/u/138780/rss
+https://www.cnblogs.com/chenyinxin/rss
+https://blog.csdn.net/lzl1918/rss/list
+http://feed.cnblogs.com/blog/u/481512/rss
+http://feed.cnblogs.com/blog/u/261865/rss
+https://codedefault.com/rss/sn.xml
+https://blog.csdn.net/norsd/rss/list -->
