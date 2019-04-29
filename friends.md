@@ -37,6 +37,8 @@ permalink: /friends/
 - [码友网](https://codedefault.com/)
     - Reflector 的网站，专注 .NET/.NET Core 开发的编程爱好者社区
 
+- [.Net开发者不容错过的技术类RSS订阅指南 - Bravo Yeung-羊较瘦之自留地 - CSDN博客](https://blog.csdn.net/lzuacm/article/details/89669594)
+
 - [张蘅水 - 博客园](https://www.cnblogs.com/chenug/)
 
 - [周三台 - 博客园](https://www.cnblogs.com/3Tai/?tdsourcetag=s_pctim_aiomsg)
