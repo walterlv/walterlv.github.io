@@ -1,7 +1,6 @@
 ---
 title: "XAML 很少人知道的科技"
-publishDate: 2019-04-01 12:04:57 +0800
-date: 2019-04-06 09:49:14 +0800
+date: 2019-04-30 10:30:24 +0800
 categories: dotnet csharp wpf uwp
 position: knowledge
 published: false
