@@ -1,6 +1,7 @@
 ---
 title: "安装和运行 .NET Core 版本的 PowerShell"
-date: 2019-03-02 17:29:05 +0800
+publishDate: 2019-03-02 17:29:05 +0800
+date: 2019-04-30 19:37:52 +0800
 categories: dotnet powershell
 position: knowledge
 ---
@@ -24,6 +25,8 @@ Windows 自带一个强大的 PowerShell，不过自带的 PowerShell 一直是�
 Windows 平台上建议下载 msi 格式的安装包，这样它可以帮助你完成大多数的安装任务。
 
 ![PowerShell 安装界面](/static/posts/2019-03-02-16-05-32.png)
+
+![PowerShell 安装配置](/static/posts/2019-04-30-19-37-42.png)
 
 ## 运行
 
