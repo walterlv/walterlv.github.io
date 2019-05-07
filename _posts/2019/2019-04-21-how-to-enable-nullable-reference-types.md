@@ -1,6 +1,7 @@
 ---
 title: "C# 8.0 如何在项目中开启可空引用类型的支持"
-date: 2019-04-21 19:22:00 +0800
+publishDate: 2019-04-21 19:22:00 +0800
+date: 2019-05-07 19:00:33 +0800
 categories: csharp msbuild visualstudio
 position: starter
 ---
@@ -122,6 +123,10 @@ var value = walterlv.ToString();
 ## 早期版本的属性
 
 在 Visual Studio 2019 Preview 2 升级之后才引入 `NullableContextOptions` 属性，而在此之前，用于控制可空引用类型开关的属性是 `NullableReferenceTypes`。现在，这个旧的属性已经废弃。
+
+## ReSharper 支持
+
+ReSharper 从 2019.1.1 版本开始支持 C# 8.0，如果使用早期版本，就会到处报错。
 
 ---
 
