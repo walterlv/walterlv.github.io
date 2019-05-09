@@ -1,6 +1,6 @@
 ---
 title: "使用 System File Check (SFC) 工具检查并修复 Windows 系统文件"
-date: 2019-05-09 19:14:47 +0800
+date: 2019-05-09 21:02:40 +0800
 categories: windows
 position: knowledge
 ---
@@ -15,7 +15,9 @@ sfc.exe 这个程序的名称指的是 System File Check，用于做系统文件
 
 Windows Vista 及以上的操作系统才具有 sfc.exe 工具。 *相比于 Windows 7 开始提供 dism 工具。*
 
-当然，虽然系统要求如此，但如果你使用的是 Windows 8/8.1 或者 Windows 10，那么便建议使用 DISM。
+当然，虽然系统要求如此，但如果你使用的是 Windows 8/8.1 或者 Windows 10，那么便建议使用 DISM。可以阅读：
+
+- [使用 DISM 工具检查并修复 Windows 系统文件](/post/dism-restore-health.html)
 
 ## 使用方法
 
