@@ -1,6 +1,6 @@
 ---
 title: "使用 DISM 工具检查并修复 Windows 系统文件"
-date: 2019-05-09 21:16:48 +0800
+date: 2019-05-09 21:17:20 +0800
 categories: windows
 position: knowledge
 ---
@@ -49,3 +49,4 @@ DISM.exe /Online /Cleanup-Image /RestoreHealth /Source:C:\RepairSource\Windows /
 
 - [Fix corrupted Windows Update system files using DISM Tool](https://www.thewindowsclub.com/fix-windows-update-using-dism)
 - [How to use DISM command-line utility to repair a Windows 10 image - Windows Central](https://www.windowscentral.com/how-use-dism-command-line-utility-repair-windows-10-image)
+- [Fix Windows Update errors by using the DISM or System Update Readiness tool](https://support.microsoft.com/en-us/help/947821/fix-windows-update-errors-by-using-the-dism-or-system-update-readiness)
