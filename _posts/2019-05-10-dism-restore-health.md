@@ -1,6 +1,6 @@
 ---
 title: "使用 DISM 工具检查并修复 Windows 系统文件"
-date: 2019-05-09 21:17:20 +0800
+date: 2019-05-10 09:02:34 +0800
 categories: windows
 position: knowledge
 ---
