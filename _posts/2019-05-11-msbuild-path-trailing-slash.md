@@ -1,6 +1,7 @@
 ---
 title: "Roslyn/MSBuild 在编译期间处理路径中的斜杠与反斜杠（\\）"
-date: 2019-05-11 12:56:58 +0800
+publishDate: 2019-05-11 12:56:58 +0800
+date: 2019-05-11 14:24:20 +0800
 categories: msbuild roslyn visualstudio
 position: knowledge
 ---
@@ -55,7 +56,7 @@ position: knowledge
 </Target>
 ```
 
-以上的 Target 是我在另一篇博客中的简化版本：[如何创建一个基于命令行工具的跨平台的 NuGet 工具包 - walterlv](https://blog.walterlv.com/post/create-a-cross-platform-command-based-nuget-tool.html)。
+以上的 Target 是我在另一篇博客中的简化版本：[如何创建一个基于命令行工具的跨平台的 NuGet 工具包 - walterlv](/post/create-a-cross-platform-command-based-nuget-tool.html)。
 
 但是这样，如果 `WalterlvPath` 中存在反斜杠，那么这个命令行将变成这样：
 
@@ -86,3 +87,7 @@ position: knowledge
 1. `$(WalterlvPath.Substring(0, length-1)` 将路径字符串取出子串。
 
 这里的解释里面，`length` 只是表意，并不是为了编译通过。要编译的代码还是上面代码块中的完整代码。
+
+更多关于在 Roslyn/MSBuild 中进行数学运算的内容，可以阅读我的另一篇博客：
+
+- [在 Roslyn/MSBuild 中进行数学运算 - walterlv](/post/msbuild-numeric-methods.html)
