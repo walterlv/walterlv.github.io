@@ -1,6 +1,7 @@
 ---
 title: "cmd.exe 的命令行启动参数（可用于执行命令、传参或进行环境配置）"
-date: 2019-05-12 13:06:46 +0800
+publishDate: 2019-05-12 13:06:46 +0800
+date: 2019-05-12 14:44:25 +0800
 categories: windows powershell
 position: knowledge
 ---
@@ -19,7 +20,11 @@ position: knowledge
 
 ![FRP 反向代理程序限制必须从命令行启动](/static/posts/2019-05-12-12-48-57.png)
 
-那么我们如何能够借助于 cmd.exe 来启动它呢？
+那么我们如何能够借助于 cmd.exe 来启动它呢？接下来说明。
+
+顺便，使用 PowerShell 来启动的方法可以参见我的另一篇博客：
+
+- [PowerShell 的命令行启动参数（可用于执行命令、传参或进行环境配置） - 吕毅](/post/powershell-startup-arguments.html)
 
 ## cmd.exe 的帮助文档
 
