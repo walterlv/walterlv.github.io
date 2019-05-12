@@ -1,6 +1,6 @@
 ---
 title: "PowerShell 的命令行启动参数（可用于执行命令、传参或进行环境配置）"
-date: 2019-05-12 15:03:10 +0800
+date: 2019-05-12 15:05:23 +0800
 categories: windows powershell
 position: knowledge
 ---
@@ -68,6 +68,21 @@ position: knowledge
 ```
 
 实际上使用 PowerShell 来做这些事情简直是用牛刀杀鸡，因为本身 PowerShell 非常强大。我们只是因为一些程序的限制不得不使用这样的方案来启动程序而已。
+
+比如其中之一，执行脚本。
+
+### 使用 PowerShell 间接执行一个脚本
+
+```powershell
+# Execute a PowerShell Command in a session
+PowerShell -Command "Get-EventLog -LogName security"
+
+# Run a script block in a session
+PowerShell -Command {Get-EventLog -LogName security}
+
+# An alternate way to run a command in a new session
+PowerShell -Command "& {Get-EventLog -LogName security}"
+```
 
 ## 附 PowerShell 的全部启动参数说明
 
