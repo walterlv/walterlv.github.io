@@ -12,6 +12,11 @@ display_title: 吕毅's blog, Focus on Windows
     <section class="content">
       <main class="home" id="post" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
         <div id="grid" class="row grid">
+          <a rel="blog banner" href="http://bulletin.service.walterlv.com/api/Image/banner/UrlMove">
+            <img alt="blog banner" src="http://bulletin.service.walterlv.com/api/Image/banner/blog.png" />
+          </a>
+        </div>
+        <div id="grid" class="row grid">
           {% for post in paginator.posts %}
           <article class="box-item shown" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
             <div class="box-body">
@@ -63,11 +68,6 @@ display_title: 吕毅's blog, Focus on Windows
             {% endif %}
           </ul>
           {% endif %}
-        </div>
-        <div id="grid" class="row grid">
-          <a rel="blog bulletin" href="http://bulletin.service.walterlv.com/api/Image/UrlMove">
-            <img alt="blog bulletin" src="http://bulletin.service.walterlv.com/api/Image/bulletin/blog.png" />
-          </a>
         </div>
       </main>
     </section>
