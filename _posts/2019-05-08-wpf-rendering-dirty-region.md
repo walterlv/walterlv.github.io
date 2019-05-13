@@ -1,11 +1,12 @@
 ---
 title: "通过分析 WPF 的渲染脏区优化渲染性能"
-date: 2019-05-08 09:36:29 +0800
+publishDate: 2019-05-08 09:36:29 +0800
+date: 2019-05-13 09:50:23 +0800
 categories: wpf dotnet csharp
 position: problem
 ---
 
-在此处编辑 blog.walterlv.com 的博客摘要
+本文介绍通过发现渲染脏区来提高渲染性能。
 
 ---
 
