@@ -1,6 +1,6 @@
 ---
 title: "让 Directory Opus 支持 Windows 10 的暗色主题"
-date: 2019-05-14 16:16:04 +0800
+date: 2019-05-14 16:17:51 +0800
 categories: csharp
 position: starter
 ---
@@ -95,4 +95,6 @@ Directory Opus 在安装完之后的默认主题样式是下面这样的：
 
 **参考资料**
 
+- [Latest Themes topics - Directory Opus Resource Centre](https://resource.dopus.com/c/downloads/themes)
 - [Simple Windows 10 Dark Theme - Downloads / Themes - Directory Opus Resource Centre](https://resource.dopus.com/t/simple-windows-10-dark-theme/30055)
+- [Plain / Default Theme - Themes - Directory Opus Resource Centre](https://resource.dopus.com/t/plain-default-theme/1169)
