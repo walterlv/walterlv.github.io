@@ -1,6 +1,6 @@
 ---
 title: "C# 8.0 中开启默认接口实现"
-date: 2019-05-15 14:55:44 +0800
+date: 2019-05-15 14:57:35 +0800
 categories: csharp dotnet
 position: starter
 ---
@@ -173,3 +173,4 @@ public class Foo : IWalterlv
 
 - [Default implementations in interfaces - .NET Blog](https://devblogs.microsoft.com/dotnet/default-implementations-in-interfaces/)
 - [Visual Studio 2019 version 16.1 Preview 3 - The Visual Studio Blog](https://devblogs.microsoft.com/visualstudio/visual-studio-2019-version-16-1-preview-3/)
+- [Safely update interfaces using default interface members in C# - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/default-interface-members-versions)
