@@ -1,6 +1,6 @@
 ---
-title: "Markdown 如何在内联代码或者代码片段中使用代码开始和结束符号 `"
-date: 2019-05-15 22:05:53 +0800
+title: "Markdown 如何在内联代码或者代码块中使用代码开始符号反引号（`）"
+date: 2019-05-15 22:09:44 +0800
 categories: markdown
 position: problem
 ---
