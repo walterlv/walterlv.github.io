@@ -1,7 +1,7 @@
 ---
 title: "在 Directory Opus 中添加自定义的工具栏按钮提升效率"
 publishDate: 2019-05-14 19:52:15 +0800
-date: 2019-05-15 08:14:28 +0800
+date: 2019-05-15 08:58:25 +0800
 categories: windows
 position: starter
 ---
@@ -56,8 +56,8 @@ Directory Opus 自定义的工具栏按钮可以执行非常复杂的命令，�
 
 接下来我会通过两个示例来说明如何使用这个命令编辑器。
 
-1. [Directory Opus 使用命令编辑器添加 PowerShell / CMD / Bash 等多种终端到自定义按钮](/post/directory-opus-integrate-with-terminals.html)
 1. [Directory Opus 使用命令编辑器集成 TortoiseGit 的各种功能](/post/directory-opus-integrate-with-tortoise-git.html)
+1. [Directory Opus 使用命令编辑器添加 PowerShell / CMD / Bash 等多种终端到自定义菜单](/post/directory-opus-integrate-with-terminals.html)
 
 ## 一切皆命令
 
