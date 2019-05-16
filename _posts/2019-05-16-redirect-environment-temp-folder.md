@@ -1,6 +1,7 @@
 ---
 title: "通过修改环境变量修改当前进程使用的系统 Temp 文件夹的路径"
-date: 2019-05-16 10:48:53 +0800
+publishDate: 2019-05-16 10:48:53 +0800
+date: 2019-05-16 19:21:35 +0800
 categories: windows dotnet csharp wpf
 position: problem
 ---
@@ -49,3 +50,4 @@ var tempPath = Path.GetTempFileName();
 
 - [c# - System.IO.IOException: "The file exists" when using System.IO.Path.GetTempFileName() - resolutions? - Stack Overflow](https://stackoverflow.com/q/18350699/6233938)
 - [azure - .NET Change Temp Path - Stack Overflow](https://stackoverflow.com/a/4485432/6233938)
+- [GetTempFileNameA function (fileapi.h) - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/api/fileapi/nf-fileapi-gettempfilenamea)
