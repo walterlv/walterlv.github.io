@@ -1,10 +1,4 @@
----
-title: "About to Study and Write"
-publishDate: 2019-04-02 16:51:39 +0800
-date: 2019-04-04 17:17:53 +0800
-categories: post
-published: false
----
+# About to Study and Write
 
 ## About to Study
 
@@ -17,6 +11,9 @@ published: false
 - Castle
 
 ## About to Write
+
+- 关于申请加入 NCC 的项目的标准
+    - [Home/project-requirements-for-joining-ncc.md at master · dotnetcore/Home](https://github.com/dotnetcore/Home/blob/master/docs/rules/project-requirements-for-joining-ncc.md)
 
 - WPF 画图
     - [c# - How to easily draw graphs in WPF? - Stack Overflow](https://stackoverflow.com/a/31537844/6233938)
