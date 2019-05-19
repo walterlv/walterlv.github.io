@@ -1,6 +1,6 @@
 ---
 title: "PreviewTextInput"
-date: 2019-05-19 16:52:55 +0800
+date: 2019-05-19 16:53:19 +0800
 categories: wpf dotnet csharp windows
 position: knowledge
 published: false
