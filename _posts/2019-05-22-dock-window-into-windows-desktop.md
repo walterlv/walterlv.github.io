@@ -1,6 +1,6 @@
 ---
 title: "WPF 使用 AppBar 将窗口停靠在桌面上，让其他程序不占用此窗口的空间（附我封装的附加属性）"
-date: 2019-05-22 19:44:35 +0800
+date: 2019-05-22 19:57:43 +0800
 categories: windows dotnet csharp wpf
 position: knowledge
 ---
