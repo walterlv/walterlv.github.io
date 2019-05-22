@@ -1,6 +1,6 @@
 ---
 title: "WPF 判断一个对象是否是设计时的窗口类型，而不是运行时的窗口"
-date: 2019-05-22 15:17:03 +0800
+date: 2019-05-22 16:24:56 +0800
 categories: wpf dotnet csharp
 position: problem
 ---
@@ -53,17 +53,21 @@ public static class WalterlvDesignTime
     /// </summary>
     /// <param name="window">要被判断设计时的 <see cref="Window"/> 对象。</param>
     /// <returns>如果对象是设计时的 <see cref="Window"/>，则返回 true，否则返回 false。</returns>
-    public static bool IsDesignTimeWindow(DependencyObject window)
+    private static bool IsDesignTimeWindow(DependencyObject window)
     {
+        const string vs201920172015Window =
+            "Microsoft.VisualStudio.DesignTools.WpfDesigner.InstanceBuilders.WindowInstance";
+        const string vs2013Window = "Microsoft.Expression.WpfPlatform.InstanceBuilders.WindowInstance";
+
         if (DesignerProperties.GetIsInDesignMode(window))
         {
-            string typeName = window.GetType().FullName;
-            if (Equals("Microsoft.Expression.WpfPlatform.InstanceBuilders.WindowInstance", typeName) // Visual Studio 2013
-                || Equals("Microsoft.VisualStudio.DesignTools.WpfDesigner.InstanceBuilders.WindowInstance", typeName)) // Visual Studio 2015/2017/2019
+            var typeName = window.GetType().FullName;
+            if (Equals(vs201920172015Window, typeName) || Equals(vs2013Window, typeName))
             {
                 return true;
             }
         }
+
         return false;
     }
 }
