@@ -1,6 +1,6 @@
 ---
 title: "WPF 判断一个对象是否是设计时的窗口类型，而不是运行时的窗口"
-date: 2019-05-22 16:24:56 +0800
+date: 2019-05-22 19:53:07 +0800
 categories: wpf dotnet csharp
 position: problem
 ---
@@ -12,9 +12,6 @@ position: problem
 ---
 
 <div id="toc"></div>
-
-## 判断类型
-
 
 ## 方法一：判断设计时属性
 
