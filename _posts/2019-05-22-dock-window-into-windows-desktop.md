@@ -1,7 +1,7 @@
 ---
 title: "WPF 使用 AppBar 将窗口停靠在桌面上，让其他程序不占用此窗口的空间（附我封装的附加属性）"
 publishDate: 2019-05-22 19:57:43 +0800
-date: 2019-05-22 20:08:10 +0800
+date: 2019-05-23 18:53:39 +0800
 categories: windows dotnet csharp wpf
 position: knowledge
 ---
@@ -93,7 +93,7 @@ namespace Walterlv.Demo.DesktopDocking
 
 同时我们还能注意到，Visual Studio 的窗口是处于最大化的状态的——这是停靠窗口的最大优势——可以让其他窗口的工作区缩小，在最大化的时候不会覆盖到停靠窗口的内容。
 
-另外，如果设置了第二个停靠窗口，那么第二个定考窗口会挤下第一个窗口的位置。
+另外，如果设置了第二个停靠窗口，那么第二个停靠窗口会挤下第一个窗口的位置。
 
 ![两个停靠窗口](/static/posts/2019-05-22-20-02-29.png)
 
