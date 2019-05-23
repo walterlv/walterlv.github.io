@@ -1,6 +1,6 @@
 ---
 title: ".NET/C# 使用 ConditionalWeakTable 为对象附加字段附加属性（也可用用来当作弱引用字典 WeakDictionary）"
-date: 2019-05-23 13:10:04 +0800
+date: 2019-05-23 13:12:43 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -57,6 +57,7 @@ class Foo
 1. 将后两个的 `key` 设为 `null`；
 1. 进行垃圾回收。
 
+{% raw %}
 ```csharp
 using System;
 using System.Linq;
@@ -106,6 +107,7 @@ Table = {{{string.Join(", ", table.Select(x => $"{x.Key} = {x.Value}"))}}}");
     }
 }
 ```
+{% endraw %}
 
 这段代码的运行结果如下图：
 
