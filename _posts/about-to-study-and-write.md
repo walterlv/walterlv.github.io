@@ -12,6 +12,16 @@
 
 ## About to Write
 
+- DAG DFS
+    - [基于DAG的任务依赖调度 - 鱼儿的博客](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=%E5%9F%BA%E4%BA%8EDAG%E7%9A%84%E4%BB%BB%E5%8A%A1%E4%BE%9D%E8%B5%96%E8%B0%83%E5%BA%A6%20%7C%20%E9%B1%BC%E5%84%BF%E7%9A%84%E5%8D%9A%E5%AE%A2&pos=400&uri=https://yuerblog.cc/2018/02/23/dag-task-schedule/)
+    - [【图论】有向无环图的拓扑排序 - Treant - 博客园](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=%E3%80%90%E5%9B%BE%E8%AE%BA%E3%80%91%E6%9C%89%E5%90%91%E6%97%A0%E7%8E%AF%E5%9B%BE%E7%9A%84%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F%20-%20Treant%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD&pos=2400&uri=http://www.cnblogs.com/en-heng/p/5085690.html)
+    - [Topological Sort (DFS) Visualization](https://www.cs.usfca.edu/~galles/visualization/TopoSortDFS.html)
+    - [使用任务依赖关系来基于其他任务的完成情况运行任务 - Azure Batch | Azure Docs](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=%E4%BD%BF%E7%94%A8%E4%BB%BB%E5%8A%A1%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%E6%9D%A5%E5%9F%BA%E4%BA%8E%E5%85%B6%E4%BB%96%E4%BB%BB%E5%8A%A1%E7%9A%84%E5%AE%8C%E6%88%90%E6%83%85%E5%86%B5%E8%BF%90%E8%A1%8C%E4%BB%BB%E5%8A%A1%20-%20Azure%20Batch%20%7C%20Azure%20Docs&pos=500&uri=https://docs.azure.cn/zh-cn/batch/batch-task-dependencies)
+    - [运行并行工作负荷 - Azure Batch .NET | Microsoft Docs](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=%E8%BF%90%E8%A1%8C%E5%B9%B6%E8%A1%8C%E5%B7%A5%E4%BD%9C%E8%B4%9F%E8%8D%B7%20-%20Azure%20Batch%20.NET%20%7C%20Microsoft%20Docs&pos=2700&uri=https://docs.microsoft.com/zh-cn/azure/batch/tutorial-parallel-dotnet)
+    - [基于数据依赖关系的程序自动并行化方法 - 百度文库](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=%E5%9F%BA%E4%BA%8E%E6%95%B0%E6%8D%AE%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%E7%9A%84%E7%A8%8B%E5%BA%8F%E8%87%AA%E5%8A%A8%E5%B9%B6%E8%A1%8C%E5%8C%96%E6%96%B9%E6%B3%95%C2%A0-%20%E7%99%BE%E5%BA%A6%E6%96%87%E5%BA%93&pos=3668&uri=https://wenku.baidu.com/view/c86364d6195f312b3169a585)
+    - [具有依赖关系的并行操作执行 - 云+社区 - 腾讯云](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=%E5%85%B7%E6%9C%89%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%E7%9A%84%E5%B9%B6%E8%A1%8C%E6%93%8D%E4%BD%9C%E6%89%A7%E8%A1%8C%20-%20%E4%BA%91%2B%E7%A4%BE%E5%8C%BA%20-%20%E8%85%BE%E8%AE%AF%E4%BA%91&pos=0&uri=https://cloud.tencent.com/developer/article/1021013)
+    - [Parallelizing Operations With Dependencies](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=Parallelizing%20Operations%20With%20Dependencies&pos=100&uri=https://msdn.microsoft.com/en-us/magazine/dd569760.aspx?f=255&MSPPError=-2147217396)
+
 - 关于申请加入 NCC 的项目的标准
     - [Home/project-requirements-for-joining-ncc.md at master · dotnetcore/Home](https://github.com/dotnetcore/Home/blob/master/docs/rules/project-requirements-for-joining-ncc.md)
 
