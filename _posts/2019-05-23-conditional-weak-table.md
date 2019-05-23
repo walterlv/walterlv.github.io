@@ -1,13 +1,13 @@
 ---
-title: ".NET/C# 使用 ConditionalWeakTable 为对象附加字段附加属性（也可用用来当作弱引用字典 WeakDictionary）"
-date: 2019-05-23 13:12:43 +0800
+title: ".NET/C# 使用 ConditionalWeakTable 附加字段（CLR 版本的附加属性，也可用用来当作弱引用字典 WeakDictionary）"
+date: 2019-05-23 13:17:23 +0800
 categories: dotnet csharp
 position: knowledge
 ---
 
-我们知道可以使用 `WeakReference` 和 `WeakReference<T>` 来实现弱引用的功能，既可以在需要的时候获取到引用的实例，也可以在垃圾回收的时候回收掉这个对象。
+如果你使用过 WPF/UWP 等 XAML UI 框架，那么应该了解到附加属性的概念。那么没有依赖属性支持的时候如何做附加属性的功能呢？你可能会想到弱引用。但这需要做一个弱引用字典，要写的代码还是非常麻烦的。
 
-那有没有弱引用字典呢？你也许会想要实现一个 `WeakDictionary<TKey, TValue>`，但实际上我们有现成可用的类。
+本文介绍 .NET 的 `ConditionalWeakTable<TKey,TValue>` 类型，适用于 .NET Framework 4.0 以上和全部 .NET Core 的版本。
 
 ---
 
