@@ -1,7 +1,7 @@
 ---
 title: "cmd.exe 的命令行启动参数（可用于执行命令、传参或进行环境配置）"
 publishDate: 2019-05-12 13:06:46 +0800
-date: 2019-05-12 14:44:25 +0800
+date: 2019-05-24 22:50:24 +0800
 categories: windows powershell
 position: knowledge
 ---
@@ -69,6 +69,18 @@ position: knowledge
 - `/k` 在执行完程序之后，cmd.exe 依然会继续运行
 
 所以 `/c` 命令会更适用于自动化的脚本，而 `/k` 命令则更适用于半自动化的脚本。
+
+## cmd.exe 启动参数使用中的坑
+
+在上面的例子中，我们的路径中不涉及到空格。我们知道，路径中有空格的话，在命令行中使用需要加上引号。但实际上如果你真的给路径加上了引号，会发现 cmd.exe 就开始不识别你的命令路径了。
+
+这个时候，你需要在整个传给 cmd.exe 的命令外层再加一层引号：
+
+```powershell
+> cmd /c " "D:\walterlv folders\frp\frpc.exe" -c ./frpc.ini "
+```
+
+以上，感谢 [林德熙](https://blog.lindexi.com/) 挥泪踩出来的坑。
 
 ## 附 cmd.exe 的全部启动参数说明
 
