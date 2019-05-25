@@ -1,7 +1,7 @@
 ---
 title: "cmd.exe 的命令行启动参数（可用于执行命令、传参或进行环境配置）"
 publishDate: 2019-05-12 13:06:46 +0800
-date: 2019-05-24 22:50:24 +0800
+date: 2019-05-25 09:50:48 +0800
 categories: windows powershell
 position: knowledge
 ---
@@ -80,7 +80,9 @@ position: knowledge
 > cmd /c " "D:\walterlv folders\frp\frpc.exe" -c ./frpc.ini "
 ```
 
-以上，感谢 [林德熙](https://blog.lindexi.com/) 挥泪踩出来的坑。
+以上，感谢 [林德熙](https://blog.lindexi.com/) 挥泪踩出来的坑，详见：
+
+- [如何在 CMD 启动的软件传入带空格的路径 - 林德熙](https://blog.lindexi.com/post/%E5%A6%82%E4%BD%95%E5%9C%A8-cmd-%E5%90%AF%E5%8A%A8%E7%9A%84%E8%BD%AF%E4%BB%B6%E4%BC%A0%E5%85%A5%E5%B8%A6%E7%A9%BA%E6%A0%BC%E7%9A%84%E8%B7%AF%E5%BE%84)
 
 ## 附 cmd.exe 的全部启动参数说明
 
