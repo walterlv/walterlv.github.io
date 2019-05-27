@@ -39,6 +39,8 @@ permalink: /friends/
 
 - [.Net开发者不容错过的技术类RSS订阅指南 - Bravo Yeung-羊较瘦之自留地 - CSDN博客](https://blog.csdn.net/lzuacm/article/details/89669594)
 
+- [dino.c - 博客园](https://www.cnblogs.com/dino623/)
+
 - [张蘅水 - 博客园](https://www.cnblogs.com/chenug/)
 
 - [周三台 - 博客园](https://www.cnblogs.com/3Tai/?tdsourcetag=s_pctim_aiomsg)
