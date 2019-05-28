@@ -1,6 +1,6 @@
 ---
 title: ".NET/C# 编译期能确定的字符串会在字符串暂存池中不会被 GC 垃圾回收掉"
-date: 2019-05-28 21:24:59 +0800
+date: 2019-05-28 21:29:15 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -64,3 +64,9 @@ namespace Walterlv.Demo
 那被什么引用着呢？是字符串暂存池。要理解字符串暂存池，可以阅读我的另一篇博客：
 
 - [.NET/C# 的字符串暂存池](https://blog.walterlv.com/post/string-intern-pool.html)
+
+---
+
+**参考资料**
+
+- [c# - Strings and Garbage Collection - Stack Overflow](https://stackoverflow.com/a/2423134/6233938)
