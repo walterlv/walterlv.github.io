@@ -1,6 +1,6 @@
 ---
 title: ".NET/C# 的字符串暂存池"
-date: 2019-05-28 21:08:55 +0800
+date: 2019-05-28 21:26:27 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -67,6 +67,12 @@ Console.WriteLine(ReferenceEquals(a, c));
 ```csharp
 [assembly: CompilationRelaxations(CompilationRelaxations.NoStringInterning)]
 ```
+
+## 垃圾回收
+
+在字符串暂存池中的字符串不会被垃圾回收，你可以阅读另一篇博客：
+
+- [.NET/C# 编译期能确定的字符串会在字符串暂存池中不会被 GC 垃圾回收掉](/post/-compile-time-strings-are-in-the-string-intern-pool.html)
 
 ---
 
