@@ -12,6 +12,10 @@
 
 ## About to Write
 
+- LOH
+    - [The large object heap on Windows systems - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/large-object-heap)
+    - [GCSettings.LargeObjectHeapCompactionMode Property (System.Runtime) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.gcsettings.largeobjectheapcompactionmode)
+
 - DAG DFS
     - [基于DAG的任务依赖调度 - 鱼儿的博客](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=%E5%9F%BA%E4%BA%8EDAG%E7%9A%84%E4%BB%BB%E5%8A%A1%E4%BE%9D%E8%B5%96%E8%B0%83%E5%BA%A6%20%7C%20%E9%B1%BC%E5%84%BF%E7%9A%84%E5%8D%9A%E5%AE%A2&pos=400&uri=https://yuerblog.cc/2018/02/23/dag-task-schedule/)
     - [【图论】有向无环图的拓扑排序 - Treant - 博客园](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=%E3%80%90%E5%9B%BE%E8%AE%BA%E3%80%91%E6%9C%89%E5%90%91%E6%97%A0%E7%8E%AF%E5%9B%BE%E7%9A%84%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F%20-%20Treant%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD&pos=2400&uri=http://www.cnblogs.com/en-heng/p/5085690.html)
