@@ -1,13 +1,22 @@
 ---
 title: "The partial same C# namespace may cause source code compatibility issue"
-date: 2019-05-31 19:37:45 +0800
+date: 2019-05-31 19:39:23 +0800
 categories: csharp dotnet visualstudio
 position: problem
+version:
+  current: English
+versions:
+  - 中文: #
+  - English: /post/source-code-compatibility-issue-of-adding-apis-en.html
 ---
 
 You might just add some simple APIs in your library and you'll not think that will break down your compatibility. But actually, it might, that is -- the source-code compatibility.
 
 ---
+
+This post is written in **multiple languages**. Please select yours:
+
+{% include post-version-selector.html %}
 
 Assume that we've written a project P which references another two libraries A and B. And we have a `Walterlv.A.Diagnostics.Foo` class in library A.
 
