@@ -1,7 +1,7 @@
 ---
 title: "将基于 .NET Framework 的 WPF 项目迁移到基于 .NET Core 3"
 publishDate: 2018-12-06 11:11:10 +0800
-date: 2019-01-29 14:45:13 +0800
+date: 2019-05-31 20:11:59 +0800
 categories: dotnet wpf
 position: starter
 ---
@@ -158,6 +158,12 @@ position: starter
 ```
 
 如果你觉得这一步骤比较繁琐，那么可以在本文一开始就按照这篇博客的方式进行操作：[自动将 NuGet 包的引用方式从 packages.config 升级为 PackageReference - walterlv](/post/migrate-packages-config-to-package-reference.html)。
+
+## 添加 Windows 兼容包
+
+如果你原有的 WPF 项目引用了一些注册表等 Windows 特有的功能，那么你还需要引用一个 Windows 兼容 NuGet 包：
+
+- [Microsoft.Windows.Compatibility](https://www.nuget.org/packages/Microsoft.Windows.Compatibility)
 
 ## 编译、运行和修复其他错误
 
