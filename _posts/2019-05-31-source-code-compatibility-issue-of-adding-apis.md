@@ -1,6 +1,6 @@
 ---
 title: "C# 中新增类型的命名空间只需部分与其他命名空间名称相同即可破坏源码兼容性"
-date: 2019-05-31 19:29:15 +0800
+date: 2019-05-31 19:29:47 +0800
 categories: csharp dotnet visualstudio
 position: problem
 ---
