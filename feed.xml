@@ -14,10 +14,7 @@ layout: null
     {% for post in site.posts limit:15 %}
       <item>
         <title>{{ post.title | xml_escape }}</title>
-        <description>
-          {{ post.excerpt | xml_escape }}
-          &lt;p&gt;&lt;a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">阅读全文&lt;/a&gt;&lt;/p&gt;
-        </description>
+        <description>{{ post.content | xml_escape }}</description>
         <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
         <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
         <language>
