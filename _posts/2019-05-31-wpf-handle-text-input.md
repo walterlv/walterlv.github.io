@@ -1,6 +1,6 @@
 ---
-title: "PreviewTextInput"
-date: 2019-05-27 22:48:18 +0800
+title: "在 WPF 应用程序中处理输入法输入文字事件（TextInput）"
+date: 2019-05-31 19:45:33 +0800
 categories: wpf dotnet csharp windows
 position: knowledge
 published: false
