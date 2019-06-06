@@ -48,7 +48,7 @@ permalink: /friends/
 - [Win2D - 淹死的鱼 - 知乎](https://zhuanlan.zhihu.com/c_191585960)
 - [dotNet 匠人 Bravo Yeung - CSDN博客](https://blog.csdn.net/lzuacm)
 - [张蘅水 - 博客园](https://www.cnblogs.com/chenug/)
-- [周三台 - 博客园](https://www.cnblogs.com/3Tai/?tdsourcetag=s_pctim_aiomsg)
+- [周三台 - 博客园](https://www.cnblogs.com/3Tai/)
 - [吴波 - 叹为观止](http://blog.vichamp.com/) PowerShell 技能
 - [Bean.Hsiang - 博客园](http://www.cnblogs.com/BeanHsiang/) 如果你想学习机器学习 ML.NET，他真的很接地气
 - [毛利的技术小站](https://mourinaruto.github.io/?file=Home)
