@@ -1,7 +1,7 @@
 ---
 title: "WPF 使用 WindowChrome，在自定义窗口标题栏的同时最大程度保留原生窗口样式（类似 UWP/Chrome）"
 publishDate: 2018-07-12 15:57:30 +0800
-date: 2018-12-14 09:54:00 +0800
+date: 2019-06-10 15:33:00 +0800
 categories: wpf uwp dotnet windows
 ---
 
@@ -62,6 +62,8 @@ WPF 自定义窗口可是非常容易的，完全自定义样式、异形都不�
     - 第三方截图应用可以毫无障碍地捕捉到标准窗口的外框范围，但如果我们没有模拟好（而是拿一个 WPF 无边框窗口模拟），那么第三方截图应用就截不准（可能会超出窗口本来的大小）。
 
 ## 开始使用 WindowChrome
+
+你也许需要先阅读 [Window 的 UI 元素及行为 - dino.c](https://www.cnblogs.com/dino623/p/uielements_of_window.html) 了解一些基本概念。
 
 理论上 `WindowChrome` 的使用是非常简单的（呃……理论上）。你只需要在 `<Window />` 节点里写如下代码便能够完成客户区（Client Area）到非客户区（Non-client Area）的覆盖：
 
