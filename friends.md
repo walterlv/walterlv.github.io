@@ -88,6 +88,7 @@ permalink: /friends/
     - [wphoneveloper的个人空间 - 哔哩哔哩 ( ゜- ゜)つロ 乾杯~ Bilibili](https://space.bilibili.com/25828081/)
     - [4K HEVC测试 40M码率 测网速 - wphoneveloper - 哔哩哔哩直播，二次元弹幕直播平台](https://live.bilibili.com/1629664)
 - [Sabia科学研究所](https://www.sabia.cc/)
+- [月江流 · 语雀](https://www.yuque.com/yuejiangliu)
 
 ---
 
