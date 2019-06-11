@@ -1,6 +1,6 @@
 ---
 title: "WPF 程序的编译过程"
-date: 2019-06-11 14:05:04 +0800
+date: 2019-06-11 16:05:03 +0800
 categories: wpf dotnet csharp msbuild visualstudio roslyn
 position: knowledge
 ---
@@ -218,7 +218,7 @@ WPF 编译过程有两个编译传递，`MarkupCompilePass1` 和 `MarkupCompileP
 
 下面这几篇博客就是在讨论其中的一些坑：
 
-- [制作通过 NuGet 分发的源代码包时，如果目标项目是 WPF 则会出现一些问题](/post/issues-of-source-code-nuget-package-for-wpf-projects.html)
+- [制作通过 NuGet 分发的源代码包时，如果目标项目是 WPF 则会出现一些问题](/post/issues-of-nuget-package-import-for-wpf-projects.html)
 - [Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包](https://blog.lindexi.com/post/roslyn-%E5%A6%82%E4%BD%95%E5%9F%BA%E4%BA%8E-microsoft.net.sdk-%E5%88%B6%E4%BD%9C%E6%BA%90%E4%BB%A3%E7%A0%81%E5%8C%85)
 
 我需要摘抄生成临时程序集的一部分源码：
@@ -319,7 +319,7 @@ WPF 编译过程有两个编译传递，`MarkupCompilePass1` 和 `MarkupCompileP
 
 注意，虽然新生成的项目文件中有 `PackageReference` 来表示包引用，但由于只有 `_CompileTargetNameForLocalType` 指定的编译目标和相关依赖可以被执行，而 NuGet 包中自动 Import 的部分没有加入到依赖项中，所以实际上包中的 `.props` 和 `.targets` 文件都不会被 `Import` 进来，这可能造成部分 NuGet 包在 WPF 项目中不能正常工作。比如下面这个：
 
-- [制作通过 NuGet 分发的源代码包时，如果目标项目是 WPF 则会出现一些问题](/post/issues-of-source-code-nuget-package-for-wpf-projects.html)
+- [制作通过 NuGet 分发的源代码包时，如果目标项目是 WPF 则会出现一些问题](/post/issues-of-nuget-package-import-for-wpf-projects.html)
 
 更典型的，就是 SourceYard 项目，这个 Bug 给 SourceYard 造成了不小的困扰：
 
