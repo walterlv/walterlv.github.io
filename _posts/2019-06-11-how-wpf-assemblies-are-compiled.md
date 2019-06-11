@@ -1,6 +1,6 @@
 ---
 title: "WPF 程序的编译过程"
-date: 2019-06-11 12:45:52 +0800
+date: 2019-06-11 13:05:13 +0800
 categories: wpf dotnet csharp msbuild visualstudio roslyn
 position: knowledge
 ---
@@ -209,6 +209,58 @@ WPF 编译过程有两个编译传递，`MarkupCompilePass1` 和 `MarkupCompileP
 ![生成临时项目和程序集](/static/posts/2019-06-11-12-38-40.png)
 
 随后，就是正常的其他的编译过程。
+
+### 关于临时生成程序集
+
+在 WPF 的编译过程中，我想单独将临时生成程序集的部分进行特别说明。因为如果你不了解这一部分的细节，可能在未来的使用中遇到一些临时生成程序集相关的坑。
+
+下面这几篇博客就是在讨论其中的一些坑：
+
+- [制作通过 NuGet 分发的源代码包时，如果目标项目是 WPF 则会出现一些问题](/post/issues-of-source-code-nuget-package-for-wpf-projects.html)
+- [Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包](https://blog.lindexi.com/post/roslyn-%E5%A6%82%E4%BD%95%E5%9F%BA%E4%BA%8E-microsoft.net.sdk-%E5%88%B6%E4%BD%9C%E6%BA%90%E4%BB%A3%E7%A0%81%E5%8C%85)
+
+我需要摘抄生成临时程序集的一部分源码：
+
+```xml
+<PropertyGroup>
+    <_CompileTargetNameForLocalType Condition="'$(_CompileTargetNameForLocalType)' == ''">_CompileTemporaryAssembly</_CompileTargetNameForLocalType>
+</PropertyGroup>
+
+<Target Name="_CompileTemporaryAssembly"  DependsOnTargets="BuildOnlySettings;ResolveKeySource;CoreCompile" />
+
+<Target Name="GenerateTemporaryTargetAssembly"
+        Condition="'$(_RequireMCPass2ForMainAssembly)' == 'true' " >
+
+    <Message Text="MSBuildProjectFile is $(MSBuildProjectFile)" Condition="'$(MSBuildTargetsVerbose)' == 'true'" />
+
+    <GenerateTemporaryTargetAssembly
+            CurrentProject="$(MSBuildProjectFullPath)"
+            MSBuildBinPath="$(MSBuildBinPath)"
+            ReferencePathTypeName="ReferencePath"
+            CompileTypeName="Compile"
+            GeneratedCodeFiles="@(_GeneratedCodeFiles)"
+            ReferencePath="@(ReferencePath)"
+            IntermediateOutputPath="$(IntermediateOutputPath)"
+            AssemblyName="$(AssemblyName)"
+            CompileTargetName="$(_CompileTargetNameForLocalType)"
+            GenerateTemporaryTargetAssemblyDebuggingInformation="$(GenerateTemporaryTargetAssemblyDebuggingInformation)"
+            >
+
+    </GenerateTemporaryTargetAssembly>
+
+    <CreateItem Include="$(IntermediateOutputPath)$(TargetFileName)" >
+        <Output TaskParameter="Include" ItemName="AssemblyForLocalTypeReference" />
+    </CreateItem>
+
+</Target>
+```
+
+我们需要关注这些点：
+
+1. 生成临时程序集时，会调用一个编译目标（Target），这个编译目标的名称由 `_CompileTargetNameForLocalType` 这个私有属性来决定；
+1. 当 `_CompileTargetNameForLocalType` 没有指定时，会设置其默认值为 `_CompileTemporaryAssembly` 这个编译目标；
+1. `_CompileTemporaryAssembly` 这个编译目标执行时，仅会执行三个依赖的编译目标，`BuildOnlySettings`、`ResolveKeySource`、`CoreCompile`，至于这些依赖目标所依赖的其他编译目标，则会根据新生成的项目文件动态计算。
+1. 生成临时程序集和临时程序集的编译过程并不在同一个编译上下文中，这也是为什么只能通过传递名称 `_CompileTargetNameForLocalType` 来执行，而不能直接调用这个编译目标或者设置编译目标的依赖。
 
 ---
 
