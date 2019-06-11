@@ -1,6 +1,6 @@
 ---
 title: "制作通过 NuGet 分发的源代码包时，如果目标项目是 WPF 则会出现一些问题"
-date: 2019-06-10 19:55:59 +0800
+date: 2019-06-11 14:02:48 +0800
 categories: dotnet csharp wpf nuget visualstudio msbuild roslyn
 position: problem
 ---
@@ -436,3 +436,80 @@ e_vobqk5lg_wpftmp.csproj]
 
 ## 修复错误
 
+### 找出原因
+
+要了解问题到底出在哪里了，我们需要知道 WPF 究竟在编译过程中做了哪些额外的事情。WPF 额外的编译任务主要在 Microsoft.WinFX.targets 文件中。在了解了 WPF 的编译过程之后，这个临时的程序集将非常容易理解。
+
+我写了一篇讲解 WPF 编译过程的博客，在解决这个问题之前，建议阅读这篇博客了解 WPF 是如何进行编译的：
+
+- [WPF 程序的编译过程](/post/how-wpf-assemblies-are-compiled.html)
+
+在了解了 WPF 程序的编译过程之后，我们知道了前面一些疑问的答案：
+
+1. 那个临时的项目文件是如何生成的；
+1. 那个临时项目文件和原始的项目文件有哪些不同；
+1. 编译临时项目文件时，哪些编译目标会执行，哪些编译目标不会执行。
+
+在那篇博客中，我们解释到新生成的项目文件会使用 `ReferencePath` 替代其他方式收集到的引用，这就包含项目引用和 NuGet 包的引用。
+
+在使用 `ReferencePath` 的情况下，无论是项目引用还是 NuGet 包引用，都会被换成普通的 dll 引用，因为这个时候目标项目都已经编译完成，包含可以被引用的程序集。
+
+以下是我在示例程序中抓取到的临时生成的项目文件的内容，与原始项目文件之间的差异：
+
+```diff
+    <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+        <PropertyGroup>
+            <OutputType>Exe</OutputType>
+            <TargetFramework>net48</TargetFramework>
+            <UseWPF>true</UseWPF>
+            <GenerateTemporaryTargetAssemblyDebuggingInformation>True</GenerateTemporaryTargetAssemblyDebuggingInformation>
+        </PropertyGroup>
+        <ItemGroup>
+            <PackageReference Include="Walterlv.SourceYard.Demo" Version="0.1.0-alpha" />
+        </ItemGroup>
+++      <ItemGroup>
+++          <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\mscorlib.dll" />
+++          <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\PresentationCore.dll" />
+++          <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\PresentationFramework.dll" />
+++          <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Core.dll" />
+++          <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Data.dll" />
+++          <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll" />
+++          <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Drawing.dll" />
+++          <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.IO.Compression.FileSystem.dll" />
+++          <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Numerics.dll" />
+++          <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Runtime.Serialization.dll" />
+++          <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Windows.Controls.Ribbon.dll" />
+++          <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Xaml.dll" />
+++          <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Xml.dll" />
+++          <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Xml.Linq.dll" />
+++          <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\UIAutomationClient.dll" />
+++          <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\UIAutomationClientsideProviders.dll" />
+++          <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\UIAutomationProvider.dll" />
+++          <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\UIAutomationTypes.dll" />
+++          <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\WindowsBase.dll" />
+++      </ItemGroup>
+++      <ItemGroup>
+++          <Compile Include="D:\Developments\Open\Walterlv.Demo\Walterlv.GettingStarted.SourceYard\Walterlv.GettingStarted.SourceYard.Sample\obj\Debug\net48\Demo.g.cs" />
+++      </ItemGroup>
+    </Project>
+```
+
+你可能已经注意到了我在项目中设置了 `GenerateTemporaryTargetAssemblyDebuggingInformation` 属性，这个属性可以让 WPF 临时生成的项目文件保留下来，便于进行研究和调试。在前面 `GenerateTemporaryTargetAssembly` 的源码部分我们已经贴出了这个属性使用的源码，只是前面我们没有说明其用途。
+
+注意，虽然新生成的项目文件中有 `PackageReference` 来表示包引用，但由于只有 `_CompileTargetNameForLocalType` 指定的编译目标和相关依赖可以被执行，而 NuGet 包中自动 Import 的部分没有加入到依赖项中，所以实际上包中的 `.props` 和 `.targets` 文件都不会被 `Import` 进来，这可能造成部分 NuGet 包在 WPF 项目中不能正常工作。比如本文正片文章都在探索的这个 Bug。
+
+更典型的，就是 SourceYard 项目，这个 Bug 给 SourceYard 造成了不小的困扰：
+
+- [walterlv.demo/Walterlv.GettingStarted.SourceYard at master · walterlv/walterlv.demo](https://github.com/walterlv/walterlv.demo/tree/master/Walterlv.GettingStarted.SourceYard)
+
+### 解决问题
+
+
+
+---
+
+**参考资料**
+
+- [msbuild is adding a random hash and wpftmp to my AssemblyName during build - Developer Community](https://developercommunity.visualstudio.com/content/problem/210156/msbuild-is-adding-a-random-hash-and-wpftmp-to-my-a.html)
+- [WPF .Targets Files - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/wpf-dot-targets-files)
+- [MarkupCompilePass2 Task - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/markupcompilepass2-task)
