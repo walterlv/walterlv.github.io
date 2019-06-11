@@ -1,6 +1,6 @@
 ---
 title: "WPF 程序的编译过程"
-date: 2019-06-11 13:05:13 +0800
+date: 2019-06-11 13:33:59 +0800
 categories: wpf dotnet csharp msbuild visualstudio roslyn
 position: knowledge
 ---
@@ -267,4 +267,5 @@ WPF 编译过程有两个编译传递，`MarkupCompilePass1` 和 `MarkupCompileP
 **参考资料**
 
 - [WPF MSBuild Task Reference - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/wpf-msbuild-task-reference?view=vs-2019)
+- [GenerateTemporaryTargetAssembly.cs](https://referencesource.microsoft.com/#PresentationBuildTasks/BuildTasks/Microsoft/Build/Tasks/Windows/GenerateTemporaryTargetAssembly.cs)
 - [Localization Attributes and Comments - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/localization-attributes-and-comments)
