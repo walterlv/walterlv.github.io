@@ -1,6 +1,6 @@
 ---
 title: "制作通过 NuGet 分发的源代码包时，如果目标项目是 WPF 则会出现一些问题"
-date: 2019-06-11 14:02:48 +0800
+date: 2019-06-11 14:44:25 +0800
 categories: dotnet csharp wpf nuget visualstudio msbuild roslyn
 position: problem
 ---
@@ -502,7 +502,62 @@ e_vobqk5lg_wpftmp.csproj]
 
 - [walterlv.demo/Walterlv.GettingStarted.SourceYard at master · walterlv/walterlv.demo](https://github.com/walterlv/walterlv.demo/tree/master/Walterlv.GettingStarted.SourceYard)
 
-### 解决问题
+### 解决思路
+
+这个问题解决起来其实并不如想象当中那么简单，因为：
+
+1. WPF 项目的编译包含两个编译上下文，一个是正常的编译上下文，另一个是临时生成的项目文件编译的上下文；正常的编译上下文编译到 `MarkupCompilePass1` 和 `MarkupCompilePass2` 之间的 `GenerateTemporaryTargetAssembly` 编译目标时，会插入一段临时项目文件的编译；
+1. 临时项目文件的编译中，会执行 `_CompileTargetNameForLocalType` 内部属性指定的编译目标，虽然相当于开放了修改，但由于临时项目文件中不会执行 NuGet 相关的编译目标，所以不会自动 Import NuGet 包中的任何编译目标和属性定义；换句话说，我们几乎没有可以自动 Import 源码的方案。
+
+如果我们强行将 `_CompileTargetNameForLocalType` 替换成我们自己定义的类型（通过直接在原项目文件中修改）会怎么样？
+
+直接出现编译错误，找不到我们定义的编译目标。当然这个编译错误出现在临时生成的程序集上。
+
+![编译错误](/static/posts/2019-06-11-14-21-48.png)
+
+我们失去了通过 NuGet 自动被 Import 的时机！
+
+### 解决方法
+
+既然我们失去了通过 NuGet 被自动 Import 的时机，那么我们只能另寻它法：
+
+1. 帮助微软修复 NuGet 在 WPF 临时生成的项目中依然可以自动 Import 编译文件 .props 和 .targets；
+1. 直接修改项目文件，使其直接或间接 Import 我们希望 Import 进来的编译文件 .props 和 .targets。
+1. 寻找其他可以被自动 Import 的时机进行自动 Import；
+
+#### 方案一：帮助微软修复
+
+// TODO：正在组织 issues 和 pull request
+
+无论结果如何，等待微软将这些修改发布也是需要一段时间的，这段时间我们需要使用方案二和方案三来顶替一段时间。
+
+#### 方案二：修改项目文件
+
+方案二的其中一种实施方案是下面这篇文章在最后一小节说到的方法：
+
+- [Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包](https://blog.lindexi.com/post/roslyn-%E5%A6%82%E4%BD%95%E5%9F%BA%E4%BA%8E-microsoft.net.sdk-%E5%88%B6%E4%BD%9C%E6%BA%90%E4%BB%A3%E7%A0%81%E5%8C%85#%E8%A7%A3%E5%86%B3-xaml-%E6%89%BE%E4%B8%8D%E5%88%B0%E6%96%B9%E6%B3%95%E9%97%AE%E9%A2%98)
+
+具体来说，就是修改项目文件，在项目文件的首尾各加上 NuGet 自动生成的那些 Import 来自 NuGet 中的所有编译文件：
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Condition="Exists('obj\$(MSBuildProjectName).csproj.nuget.g.props') " Project="obj\$(MSBuildProjectName).csproj.nuget.g.props" />
+
+  <!-- 项目文件中的原有其他代码。 -->
+
+  <Import Condition="Exists('obj\$(MSBuildProjectName).csproj.nuget.g.targets') " Project="obj\$(MSBuildProjectName).csproj.nuget.g.targets" />
+</Project>
+```
+
+另外，可以直接在这里 Import 我们 NuGet 包中的编译文件，但这些不如以上方案来得靠谱，因为上面的代码可以使得项目文件的修改完全确定，不用随着开发计算机的不同或者 NuGet 包的数量和版本不同而变化。
+
+如果打算选用方案二，那么上面这种实施方式是最推荐的实施方式。
+
+当然需要注意，此方案的副作用是会多出重复导入的编译警告。在清楚了 WPF 的编译过程之后，是不是能理解了这个警告的原因了呢？是的，对临时项目来说，由于没有自动 Import，所以这里的 Import 不会导致临时项目出现问题；但对于原项目来说，由于默认就会 Import NuGet 中的那两个文件，所以如果再次 Import 就会重复导入。
+
+![重复导入的编译警告](/static/posts/2019-06-11-14-42-19.png)
+
+#### 方案三：寻找其他自动 Import 的时机
 
 
 
