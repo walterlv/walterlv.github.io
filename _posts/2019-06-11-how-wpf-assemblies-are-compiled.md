@@ -1,6 +1,7 @@
 ---
 title: "WPF 程序的编译过程"
-date: 2019-06-11 16:05:03 +0800
+publishDate: 2019-06-11 14:05:04 +0800
+date: 2019-06-11 16:05:22 +0800
 categories: wpf dotnet csharp msbuild visualstudio roslyn
 position: knowledge
 ---
