@@ -1,6 +1,6 @@
 ---
 title: "WPF 程序的编译过程"
-date: 2019-06-11 13:33:59 +0800
+date: 2019-06-11 13:44:34 +0800
 categories: wpf dotnet csharp msbuild visualstudio roslyn
 position: knowledge
 ---
@@ -261,6 +261,21 @@ WPF 编译过程有两个编译传递，`MarkupCompilePass1` 和 `MarkupCompileP
 1. 当 `_CompileTargetNameForLocalType` 没有指定时，会设置其默认值为 `_CompileTemporaryAssembly` 这个编译目标；
 1. `_CompileTemporaryAssembly` 这个编译目标执行时，仅会执行三个依赖的编译目标，`BuildOnlySettings`、`ResolveKeySource`、`CoreCompile`，至于这些依赖目标所依赖的其他编译目标，则会根据新生成的项目文件动态计算。
 1. 生成临时程序集和临时程序集的编译过程并不在同一个编译上下文中，这也是为什么只能通过传递名称 `_CompileTargetNameForLocalType` 来执行，而不能直接调用这个编译目标或者设置编译目标的依赖。
+
+新生成的临时项目文件相比于原来的项目文件，包含了这些修改：
+
+1. 添加了第一轮 XAML 编译传递（`MarkupCompilePass1`）时生成的 .g.cs 文件；
+1. 将所有引用方式收集到的引用全部换成 `ReferencePath`，这样就可以避免临时项目编译期间再执行一次 `ResolveAssemblyReference` 编译目标来收集引用，避免降低太多性能。
+
+关于引用换成 `ReferencePath` 的内容，可以阅读我的另一篇博客了解更多：
+
+- [在 Target 中获取项目引用的所有依赖（dll/NuGet/Project）的路径](/post/resolve-project-references-using-target.html)
+
+在使用 `ReferencePath` 的情况下，无论是项目引用还是 NuGet 包引用，都会被换成普通的 dll 引用，因为这个时候目标项目都已经编译完成，包含可以被引用的程序集。
+
+注意这里其实就带来了一些潜在问题：`NuGet` 包中带有的 `Package.props` 和 `Package.targets` 文件就不会被 `Import` 进来，这可能造成部分 NuGet 包在 WPF 项目中不能正常工作。比如：
+
+- [制作通过 NuGet 分发的源代码包时，如果目标项目是 WPF 则会出现一些问题](/post/issues-of-source-code-nuget-package-for-wpf-projects.html)
 
 ---
 
