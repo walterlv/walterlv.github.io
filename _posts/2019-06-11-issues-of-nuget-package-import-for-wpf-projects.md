@@ -1,6 +1,6 @@
 ---
-title: "制作通过 NuGet 分发的源代码包时，如果目标项目是 WPF 则会出现一些问题"
-date: 2019-06-11 14:44:25 +0800
+title: "制作通过 NuGet 分发的源代码包时，如果目标项目是 WPF 则会出现一些问题（探索篇，含解决方案）"
+date: 2019-06-11 15:30:40 +0800
 categories: dotnet csharp wpf nuget visualstudio msbuild roslyn
 position: problem
 ---
@@ -502,36 +502,52 @@ e_vobqk5lg_wpftmp.csproj]
 
 - [walterlv.demo/Walterlv.GettingStarted.SourceYard at master · walterlv/walterlv.demo](https://github.com/walterlv/walterlv.demo/tree/master/Walterlv.GettingStarted.SourceYard)
 
-### 解决思路
+### 解决问题
 
 这个问题解决起来其实并不如想象当中那么简单，因为：
 
 1. WPF 项目的编译包含两个编译上下文，一个是正常的编译上下文，另一个是临时生成的项目文件编译的上下文；正常的编译上下文编译到 `MarkupCompilePass1` 和 `MarkupCompilePass2` 之间的 `GenerateTemporaryTargetAssembly` 编译目标时，会插入一段临时项目文件的编译；
 1. 临时项目文件的编译中，会执行 `_CompileTargetNameForLocalType` 内部属性指定的编译目标，虽然相当于开放了修改，但由于临时项目文件中不会执行 NuGet 相关的编译目标，所以不会自动 Import NuGet 包中的任何编译目标和属性定义；换句话说，我们几乎没有可以自动 Import 源码的方案。
 
-如果我们强行将 `_CompileTargetNameForLocalType` 替换成我们自己定义的类型（通过直接在原项目文件中修改）会怎么样？
+如果我们强行将 `_CompileTargetNameForLocalType` 替换成我们自己定义的类型会怎么样？
 
-直接出现编译错误，找不到我们定义的编译目标。当然这个编译错误出现在临时生成的程序集上。
+这是通过 NuGet 包中的 .targets 文件中的内容，用来强行替换：
+
+```xml
+<Project>
+
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <_CompileTargetNameForLocalType>_WalterlvCompileTemporaryAssembly</_CompileTargetNameForLocalType>
+  </PropertyGroup>
+
+  <Target Name="_WalterlvCompileTemporaryAssembly" />
+  
+</Project>
+```
+
+我们在属性中将临时项目的编译目标改成了我们自己的目标，但会直接出现编译错误，找不到我们定义的编译目标。当然这个编译错误出现在临时生成的程序集上。
 
 ![编译错误](/static/posts/2019-06-11-14-21-48.png)
 
-我们失去了通过 NuGet 自动被 Import 的时机！
+原因就在于这个 .targets 文件没有自动被 Import 进来，于是我们定义的 `_WalterlvCompileTemporaryAssembly` 在临时生成的项目编译中根本就不存在。
 
-### 解决方法
+我们失去了通过 NuGet 自动被 Import 的时机！
 
 既然我们失去了通过 NuGet 被自动 Import 的时机，那么我们只能另寻它法：
 
 1. 帮助微软修复 NuGet 在 WPF 临时生成的项目中依然可以自动 Import 编译文件 .props 和 .targets；
 1. 直接修改项目文件，使其直接或间接 Import 我们希望 Import 进来的编译文件 .props 和 .targets。
 1. 寻找其他可以被自动 Import 的时机进行自动 Import；
+1. 不管时机了，从 `GenerateTemporaryTargetAssembly` 这个编译任务入手，修改其需要的参数；
 
-#### 方案一：帮助微软修复
+#### 方案一：帮助微软修复（等待中）
 
 // TODO：正在组织 issues 和 pull request
 
 无论结果如何，等待微软将这些修改发布也是需要一段时间的，这段时间我们需要使用方案二和方案三来顶替一段时间。
 
-#### 方案二：修改项目文件
+#### 方案二：修改项目文件（可行，但不好）
 
 方案二的其中一种实施方案是下面这篇文章在最后一小节说到的方法：
 
@@ -557,9 +573,92 @@ e_vobqk5lg_wpftmp.csproj]
 
 ![重复导入的编译警告](/static/posts/2019-06-11-14-42-19.png)
 
-#### 方案三：寻找其他自动 Import 的时机
+#### 方案三：寻找其他自动 Import 的时机（不可行）
 
+Directory.Build.props 和 Directory.Build.targets 也是可以被自动 Import 的文件，这也是在 Microsoft.NET.Sdk 中将其自动导入的。
 
+关于这两个文件的自动导入，可以阅读博客：
+
+- [Roslyn 使用 Directory.Build.props 文件定义编译](https://blog.lindexi.com/post/roslyn-%E4%BD%BF%E7%94%A8-directory.build.props-%E6%96%87%E4%BB%B6%E5%AE%9A%E4%B9%89%E7%BC%96%E8%AF%91)
+
+但是，如果我们使用这两个文件帮助自动导入，将造成导入循环，这会形成编译错误！
+
+![因导入循环造成的编译错误](/static/posts/2019-06-11-14-54-57.png)
+
+#### 方案四：设置 GenerateTemporaryTargetAssembly 编译任务
+
+`GenerateTemporaryTargetAssembly` 的代码如下：
+
+```xml
+<GenerateTemporaryTargetAssembly
+        CurrentProject="$(MSBuildProjectFullPath)"
+        MSBuildBinPath="$(MSBuildBinPath)"
+        ReferencePathTypeName="ReferencePath"
+        CompileTypeName="Compile"
+        GeneratedCodeFiles="@(_GeneratedCodeFiles)"
+        ReferencePath="@(ReferencePath)"
+        IntermediateOutputPath="$(IntermediateOutputPath)"
+        AssemblyName="$(AssemblyName)"
+        CompileTargetName="$(_CompileTargetNameForLocalType)"
+        GenerateTemporaryTargetAssemblyDebuggingInformation="$(GenerateTemporaryTargetAssemblyDebuggingInformation)"
+        >
+
+</GenerateTemporaryTargetAssembly>
+```
+
+可以看到它的的参数有：
+
+- CurrentProject，传入了 `$(MSBuildProjectFullPath)`，表示项目文件的完全路径，修改无效。
+- MSBuildBinPath，传入了 `$(MSBuildBinPath)`，表示 MSBuild 程序的完全路径，修改无效。
+- ReferencePathTypeName，传入了字符串常量 `ReferencePath`，这是为了在生成临时项目文件时使用正确的引用路径项的名称。
+- CompileTypeName，传入了字符串常量 `Compile`，这是为了在生成临时项目文件时使用正确的编译项的名称。
+- GeneratedCodeFiles，传入了 `@(_GeneratedCodeFiles)`，包含生成的代码文件，也就是那些 .g.cs 文件。
+- ReferencePath，传入了 `@(ReferencePath)`，也就是目前已收集到的所有引用文件的路径。
+- IntermediateOutputPath，传入了 `$(IntermediateOutputPath)`，表示临时输出路径，当使用临时项目文件编译时，生成的临时程序集将放在这个目录中。
+- AssemblyName，传入了 `$(AssemblyName)`，表示程序集名称，当生成临时程序集的时候，将参考这个程序集名称。
+- CompileTargetName，传入了 `$(_CompileTargetNameForLocalType)`，表示当生成了新的项目文件后，要使用哪个编译目标来编译这个项目。
+- GenerateTemporaryTargetAssemblyDebuggingInformation，传入了 `$(GenerateTemporaryTargetAssemblyDebuggingInformation)`，表示是否要为了调试保留临时生成的项目文件和程序集。
+
+可能为我们所用的有：
+
+- `@(_GeneratedCodeFiles)`，我们可以把我们需要 Import 进来的源代码伪装成生成的 .g.cs 文件
+
+好吧，就这一个了。其他的并不会对我们 Import 源代码造成影响。
+
+于是回到我们本文一开始的 Walterlv.SourceYard.Demo.targets 文件，我们将内容修改一下，增加了一个 `_ENSdkImportInTempProject` 编译目标。它在 `MarkupCompilePass1` 之后执行，因为这是 XAML 的第一轮编译，会创造 `_GeneratedCodeFiles` 这个集合，将 XAML 生成 .g.cs 文件；在 `GenerateTemporaryTargetAssembly` 之前执行，因为这里会生成一个新的临时项目，然后立即对其进行编译。我们选用这个之间的时机刚好可以在产生 `_GeneratedCodeFiles` 集合之后修改其内容。
+
+```diff
+    <Project>
+
+      <PropertyGroup>
+        <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+      </PropertyGroup>
+
+      <Target Name="_WalterlvIncludeSomeCode" BeforeTargets="CoreCompile">
+        <ItemGroup>
+          <Compile Include="$(MSBuildThisFileDirectory)..\src\Foo.cs" />
+        </ItemGroup>
+      </Target>
+      
+++    <Target Name="_ENSdkImportInTempProject" AfterTargets="MarkupCompilePass1" BeforeTargets="GenerateTemporaryTargetAssembly">
+++      <ItemGroup>
+++        <_GeneratedCodeFiles Include="$(MSBuildThisFileDirectory)..\src\Foo.cs" />
+++      </ItemGroup>
+++    </Target>
+++    
+    </Project>
+```
+
+现在重新再编译，我们本文一开始疑惑的各种问题，现在终于无警告无错误地解决掉了。
+
+![解决掉的源代码包问题](/static/posts/2019-06-11-15-25-50.png)
+
+## 解决关键
+
+如果你觉得本文略长，希望立刻获得解决办法，可以：
+
+1. 直接使用 “方案四” 中新增的那一段代码；
+1. 阅读我的另一篇专门的只说解决方案的博客：[如何为 WPF 项目制作源代码包（SourceYard 基础原理篇，解决 WPF 项目编译问题和 NuGet 包中的各种问题）](/post/build-source-code-nuget-package-for-wpf-projects.html)
 
 ---
 
