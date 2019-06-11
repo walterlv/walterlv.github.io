@@ -1,11 +1,13 @@
 ---
 title: "WPF 程序的编译过程"
-date: 2019-06-11 13:59:41 +0800
+date: 2019-06-11 14:05:04 +0800
 categories: wpf dotnet csharp msbuild visualstudio roslyn
 position: knowledge
 ---
 
-基于 Sdk 的项目进行编译的时候，会使用 Sdk 中附带的 props 文件和 targets 文件对项目进行编译。本文介绍 WPF 项目编译时，WPF 额外为编译过程添加的那些扩展。
+基于 Sdk 的项目进行编译的时候，会使用 Sdk 中附带的 props 文件和 targets 文件对项目进行编译。Microsoft.NET.Sdk.WindowsDesktop 的 Sdk 包含 WPF 项目的编译过程。
+
+而本文介绍 WPF 项目的编译过程，包含 WPF 额外为编译过程添加的那些扩展编译目标，以及这些扩展的编译目标如何一步步完成 WPF 项目的过程。
 
 ---
 
