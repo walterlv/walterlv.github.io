@@ -1,6 +1,7 @@
 ---
 title: ".NET 使用 ILRepack 合并多个程序集（替代 ILMerge），避免引入额外的依赖"
-date: 2019-06-13 09:47:28 +0800
+publishDate: 2019-06-13 09:47:28 +0800
+date: 2019-06-13 13:55:36 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -124,6 +125,31 @@ ilrepack /help
 或者直接访问 ILRepack 的 GitHub 仓库来查看用法：
 
 - [gluck/il-repack: Open-source alternative to ILMerge](https://github.com/gluck/il-repack)
+
+## 如果解决合并错误？
+
+### 缺少依赖
+
+如果你在使用 ILRepack 合并程序集的过程中出现了缺少依赖的错误，例如下面这样：
+
+```
+Mono.Cecil.AssemblyResolutionException: Failed to resolve assembly: 'xxxxxxxxx'
+```
+
+![缺少依赖错误提示](/static/posts/2019-06-13-13-51-42.png)
+
+那么你需要做以下两种事情中的任何一种：
+
+1. 将所有依赖合并；
+1. 将依赖加入搜索目录。
+
+将所有依赖合并指的是将缺少的依赖也一起作为命令行参数传入要合并的程序集中。
+
+而另一种是增加一个参数 `/lib`，即添加一个被搜索的依赖程序集的目录。将这个目录指定后，则可以正确解析依赖完成合并。而且这些依赖将成为合并后的程序集的依赖，不会合并到程序集中。
+
+```powershell
+ilrepack /lib:D:\Dependencies /out:Walterlv.Demo.AssemblyLoading.exe Walterlv.Demo.AssemblyLoading.exe Ben.Demystifier.dll System.Collections.Immutable.dll System.Reflection.Metadata.dll
+```
 
 ---
 
