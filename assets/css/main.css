@@ -1365,7 +1365,7 @@ body.dark-theme .post-content h5 {
 
 .post-content blockquote {
     width: auto;
-    max-width: 45.625rem;
+    max-width: 60rem;
     float: none;
     display: block;
     border-left: .25rem solid #1570a6;
