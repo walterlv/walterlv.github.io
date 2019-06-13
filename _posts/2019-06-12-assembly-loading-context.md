@@ -1,6 +1,7 @@
 ---
 title: ".NET 的程序集加载上下文"
-date: 2019-06-12 16:30:53 +0800
+publishDate: 2019-06-12 16:30:53 +0800
+date: 2019-06-13 13:49:44 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -180,13 +181,17 @@ AppDomain.CurrentDomain.AppendPrivatePath(folder);
 
 另外，.NET Core 中已经不能使用此 API 了，这非常好！
 
-### 使用 ILMerge 合并依赖
+### 使用 ILRepack / ILMerge 合并依赖
 
 前面我们说过，加载位置上下文中的程序集可以依赖默认加载上下文中的程序集，而反过来却不行。通常默认加载上下文中的程序集是我们的主程序程序集和附属程序集，而加载位置上下文中加载的程序是插件程序集。
 
 如果插件程序集依赖了一些主程序没有的依赖，那么插件可以考虑将所有的依赖合并入插件单个程序集中，避免依赖其他程序集，导致不得不去非探测路径加载程序集。
 
-关于使用 ILMerge 合并依赖的内容，可以阅读我的另一篇博客：
+关于使用 ILRepack 合并依赖的内容，可以阅读我的另一篇博客：
+
+- [.NET 使用 ILRepack 合并多个程序集（替代 ILMerge），避免引入额外的依赖 - walterlv](https://blog.walterlv.com/post/merge-assemblies-using-ilrepack.html)
+
+首先推荐使用 ILRepack 来进行合并，如果你愿意，也可以使用 ILMerge：
 
 - [.NET 使用 ILMerge 合并多个程序集，避免引入额外的依赖](/post/merge-assemblies-using-ilmerge.html)
 
