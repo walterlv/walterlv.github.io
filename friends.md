@@ -94,9 +94,11 @@ permalink: /friends/
 
 ## 微软
 
+- [The Old New Thing](https://devblogs.microsoft.com/oldnewthing/)
 - [Microsoft .NET Blog](https://blogs.msdn.microsoft.com/dotnet/)
 - [Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/)
-- [The Old New Thing](https://devblogs.microsoft.com/oldnewthing/)
+- [Microsoft open source projects](https://opensource.microsoft.com/)
+- [.NET Foundation](https://www.dotnetfoundation.org/blog)
 
 ---
 
