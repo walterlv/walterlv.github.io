@@ -9,6 +9,8 @@ permalink: /friends/
 - [林德熙 https://blog.lindexi.com/](https://blog.lindexi.com/)  
     微软最有价值专家（MVP），也是我的好朋友
 
+- [李少珺](https://blog.sdlsj.net/)
+
 - [【Iron 的博客】每当接触新的知识，都有一种莫名的欣喜，乐于用旧知识来推敲，故而载之 - CSDN博客](https://blog.csdn.net/Iron_Ye)  
     WPF 大佬，专业做动画和 3D 是 dotnet 职业技术学院的校长
 
