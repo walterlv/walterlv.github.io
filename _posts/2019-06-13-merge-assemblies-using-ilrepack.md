@@ -1,7 +1,7 @@
 ---
 title: ".NET 使用 ILRepack 合并多个程序集（替代 ILMerge），避免引入额外的依赖"
 publishDate: 2019-06-13 09:47:28 +0800
-date: 2019-06-13 13:55:36 +0800
+date: 2019-06-17 21:30:46 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -151,8 +151,22 @@ Mono.Cecil.AssemblyResolutionException: Failed to resolve assembly: 'xxxxxxxxx'
 ilrepack /lib:D:\Dependencies /out:Walterlv.Demo.AssemblyLoading.exe Walterlv.Demo.AssemblyLoading.exe Ben.Demystifier.dll System.Collections.Immutable.dll System.Reflection.Metadata.dll
 ```
 
+### 没有生成 PDB 文件
+
+如果使用新的基于 Sdk 的项目文件，那么默认生成的 PDB 是 Portable PDB，但是 ILRepack 暂时不支持 Portable PDB，其在内部捕获了异常以至于可以完成合并但不会生成 PDB 文件。
+
+目前此问题在 ILRepack 中还处于打开状态，且持续两年都没关闭了。同时很早就有支持 Portable PDB 的拉取请求，但至今未合并。
+
+以下是 GitHub 社区中的讨论：
+
+- [Mono.Cecil 0.10 support · Issue #182 · gluck/il-repack](https://github.com/gluck/il-repack/issues/182)
+- [Migrate to vanilla 0.10 cecil by Alexx999 · Pull Request #236 · gluck/il-repack](https://github.com/gluck/il-repack/pull/236)
+- [ERROR: Failed to load assembly while merging .NET Core assembly · Issue #230 · gluck/il-repack](https://github.com/gluck/il-repack/issues/230)
+- [Support for portable PDBs · Issue #11 · dotnet/ILMerge](https://github.com/dotnet/ILMerge/issues/11)
+
 ---
 
 **参考资料**
 
 - [gluck/il-repack: Open-source alternative to ILMerge](https://github.com/gluck/il-repack)
+- [Is it expected that pdb files are not merged? · Issue #217 · gluck/il-repack](https://github.com/gluck/il-repack/issues/217)

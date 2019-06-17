@@ -1,6 +1,7 @@
 ---
 title: ".NET 使用 ILMerge 合并多个程序集，避免引入额外的依赖"
-date: 2019-06-13 08:43:39 +0800
+publishDate: 2019-06-13 08:43:39 +0800
+date: 2019-06-17 21:34:41 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -139,6 +140,44 @@ ilmerge /ndebug /target:exe /out:Walterlv.Demo.AssemblyLoading.exe /log Walterlv
 
 ![合并后的程序集](/static/posts/2019-06-13-08-40-58.png)
 
+## 以封装的 NuGet 包来使用 ILRepack
+
+安装 NuGet 包：
+
+- [NuGet Gallery - ILRepack.Lib.MSBuild.Task](https://www.nuget.org/packages/ILRepack.Lib.MSBuild.Task/)
+
+之后，你就能直接使用 `ILRepack` 这个编译任务了，而不是在 MSBuild 中使用 Exec 来间接执行 ILRepack 的任务。
+
+关于此 NuGet 包的使用，GitHub 中有很棒的例子，可以查看：
+
+- [peters/ILRepack.MSBuild.Task: MSBuild task for ILRepack which is an open-source alternative to ILMerge.](https://github.com/peters/ILRepack.MSBuild.Task)
+
+## 需要注意
+
+如果使用新的基于 Sdk 的项目文件，那么默认生成的 PDB 是 Portable PDB，但是 ILMerge 暂时不支持 Portable PDB，会在编译时提示错误：
+
+```
+An exception occurred during merging:
+ILMerge.Merge:  There were errors reported in dotnetCampus.EasiPlugin.Sample's metadata.
+        数组维度超过了支持的范围。
+   在 ILMerging.ILMerge.Merge()
+   在 ILMerging.ILMerge.Main(String[] args)
+```
+
+或者英文提示：
+
+```
+An exception occurred during merging:
+ILMerge.Merge:        There were errors reported in ReferencedProject's metadata.
+      Array dimensions exceeded supported range.
+   at ILMerging.ILMerge.Merge()
+   at ILMerging.ILMerge.Main(String[] args)
+```
+
+目前，GitHub 上有 issue 在追踪此问题：
+
+- [Support for portable PDBs · Issue #11 · dotnet/ILMerge](https://github.com/dotnet/ILMerge/issues/11)
+
 ---
 
 **参考资料**
@@ -148,3 +187,6 @@ ilmerge /ndebug /target:exe /out:Walterlv.Demo.AssemblyLoading.exe /log Walterlv
 - [NuGet Gallery - ilmerge](https://www.nuget.org/packages/ilmerge)
 - [jbevain/cecil: Cecil is a library to inspect, modify and create .NET programs and libraries.](https://github.com/jbevain/cecil)
 - [gluck/il-repack: Open-source alternative to ILMerge](https://github.com/gluck/il-repack)
+- [Support for portable PDBs · Issue #11 · dotnet/ILMerge](https://github.com/dotnet/ILMerge/issues/11)
+- [Merging assemblies using ILRepack - Meziantou's blog](https://www.meziantou.net/merging-assemblies-using-ilrepack.htm)
+- [peters/ILRepack.MSBuild.Task: MSBuild task for ILRepack which is an open-source alternative to ILMerge.](https://github.com/peters/ILRepack.MSBuild.Task)
