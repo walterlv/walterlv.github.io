@@ -1,7 +1,7 @@
 ---
 title: "配置 legacyUnhandledExceptionPolicy 防止后台线程抛出的异常让程序崩溃退出"
 publishDate: 2017-10-16 20:52:01 +0800
-date: 2018-12-14 09:54:00 +0800
+date: 2019-06-21 09:17:01 +0800
 categories: dotnet wpf
 tags: AppDomain Application Dispatcher legacyUnhandledExceptionPolicy
 description: legacyUnhandledExceptionPolicy 可以防止程序在后台线程抛出异常后崩溃退出。
@@ -19,7 +19,7 @@ WPF 和 Windows Forms 都是微软的框架，为了照顾初学者，微软会�
 
 写出了监听 `Dispatcher.UnhandledException` 事件的开发者，微软会认为他们已经学会了如何在 UI 线程中处理异常。于是允许开发者设置 `e.Handled = true` 来标记异常已被正确处理，程序可以不用退出了。
 
-还有一个事件 `Appdomain.CurrentDomain.UnhandledException`，然而这个事件却并不允许开发者标记 `e.Handled = true`。因为微软认为，应用程序域中所有的线程发生异常都会进入这个事件中，大多数开发者都不明白这些线程这些异常是怎么回事，所以不认为这些开发者具备正确处理这些异常的能力。比如 WPF 的触摸模块发生了异常，开发者知道如何恢复吗？并不知道，还不如结束掉程序然后重启呢！
+还有一个事件 `AppDomain.CurrentDomain.UnhandledException`，然而这个事件却并不允许开发者标记 `e.Handled = true`。因为微软认为，应用程序域中所有的线程发生异常都会进入这个事件中，大多数开发者都不明白这些线程这些异常是怎么回事，所以不认为这些开发者具备正确处理这些异常的能力。比如 WPF 的触摸模块发生了异常，开发者知道如何恢复吗？并不知道，还不如结束掉程序然后重启呢！
 
 在这个事件中，有一个属性 `IsTerminating` 指示是否应用程序正因为这次异常准备退出，不过开发者并不能拿这个属性做些什么。
 
@@ -31,9 +31,9 @@ WPF 和 Windows Forms 都是微软的框架，为了照顾初学者，微软会�
 <legacyUnhandledExceptionPolicy enabled="1"/>  
 ```
 
-加上了这个配置之后，`Appdomain.CurrentDomain.UnhandledException` 事件的 `IsTerminating` 就变成了 `false` 啦！也就是说，程序并不会因为这次的异常而崩溃退出。
+加上了这个配置之后，`AppDomain.CurrentDomain.UnhandledException` 事件的 `IsTerminating` 就变成了 `false` 啦！也就是说，程序并不会因为这次的异常而崩溃退出。
 
-既然你通过这个配置节点于微软达成了契约，你就需要好好地在 `Appdomain.CurrentDomain.UnhandledException` 事件中写好异常的恢复逻辑。如果不好好恢复，小心有些致命的异常会导致你的程序出现雪崩式的错误，最终 Windows 还是会通过 `CorruptedStateException` 把你干掉的！
+既然你通过这个配置节点于微软达成了契约，你就需要好好地在 `AppDomain.CurrentDomain.UnhandledException` 事件中写好异常的恢复逻辑。如果不好好恢复，小心有些致命的异常会导致你的程序出现雪崩式的错误，最终 Windows 还是会通过 `CorruptedStateException` 把你干掉的！
 
 ---
 
