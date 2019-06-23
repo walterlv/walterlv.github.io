@@ -1,6 +1,6 @@
 ---
 title: "如果不用 ReSharper，那么 Visual Studio 2019 能还原 ReSharper 多少功能呢？"
-date: 2019-06-23 14:23:37 +0800
+date: 2019-06-23 14:37:31 +0800
 categories: visualstudio dotnet csharp
 position: knowledge
 ---
@@ -49,6 +49,12 @@ Visual Studio 2019 中可以设置智能感知提示中“显示未导入命名�
 ## 可以还原
 
 ## 依然不足
+
+### 提取局部变量
+
+在 ReSharper 中，选中一段代码，如果这段代码可以返回一个值，那么可以使用重构快捷键（默认 Alt+Enter）生成一个局部变量。如果同样带代码块在此方法体中有多处，那么可以同时将多处代码一并提取出来成为一个布局变量。
+
+然而在 Visual Studio 中执行同样的操作，使用重构快捷键（默认 Ctrl+. 可以改为 Alt+Enter）则只能提取方法。
 
 ---
 
