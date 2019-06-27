@@ -1,6 +1,6 @@
 ---
 title: ".NET/C# 如何获取当前进程的 CPU 和内存占用？如何获取全局 CPU 和内存占用？"
-date: 2019-06-28 07:47:40 +0800
+date: 2019-06-28 07:48:08 +0800
 categories: dotnet
 position: knowledge
 ---
