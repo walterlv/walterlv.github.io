@@ -1,8 +1,9 @@
 ---
 title: "WPF 制作跨进程 UI"
-date: 2019-06-28 07:50:26 +0800
+date: 2019-06-28 09:52:53 +0800
 categories: wpf dotnet csharp
 position: knowledge
+published: false
 ---
 
 在此处编辑 blog.walterlv.com 的博客摘要
