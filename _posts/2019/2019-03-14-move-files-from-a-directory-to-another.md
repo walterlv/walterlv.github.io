@@ -1,6 +1,7 @@
 ---
 title: "C#/.NET 移动或重命名一个文件夹（如果存在，则合并而不是出现异常报错）"
-date: 2019-03-14 22:46:56 +0800
+publishDate: 2019-03-14 22:46:56 +0800
+date: 2019-06-29 12:57:15 +0800
 categories: dotnet csharp
 position: problem
 ---
@@ -24,7 +25,7 @@ position: problem
 ```csharp
 private static void MoveDirectory(string sourceDirectory, string targetDirectory)
 {
-    MoveDirectory(crashFolder, crashFolder + ".bak", 0);
+    MoveDirectory(sourceDirectory, targetDirectory, 0);
 
     void MoveDirectory(string source, string target, int depth)
     {
@@ -53,8 +54,8 @@ private static void MoveDirectory(string sourceDirectory, string targetDirectory
 
         foreach (var directoryInfo in sourceFolder.EnumerateDirectories("*", SearchOption.TopDirectoryOnly))
         {
-            var back = string.Join('\\', Enumerable.Repeat("..", depth));
-            MoveFolder(directoryInfo.FullName,
+            var back = string.Join("\\", Enumerable.Repeat("..", depth));
+            MoveDirectory(directoryInfo.FullName,
                 Path.GetFullPath(Path.Combine(target, back, directoryInfo.Name)), depth + 1);
         }
 
