@@ -1,6 +1,7 @@
 ---
-title: "如何追中 WPF 程序中当前获得键盘焦点的元素并显示出来"
-date: 2019-06-28 09:49:29 +0800
+title: "如何追踪 WPF 程序中当前获得键盘焦点的元素并显示出来"
+publishDate: 2019-06-28 09:49:29 +0800
+date: 2019-06-29 09:07:54 +0800
 categories: wpf dotnet csharp
 position: knowledge
 ---
