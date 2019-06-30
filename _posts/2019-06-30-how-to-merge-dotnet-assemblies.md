@@ -1,6 +1,6 @@
 ---
-title: ".NET 将多个程序集合并成单一程序集的四种方法"
-date: 2019-06-30 11:30:59 +0800
+title: ".NET 将多个程序集合并成单一程序集的 4+3 种方法"
+date: 2019-06-30 13:16:33 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -12,12 +12,11 @@ position: knowledge
 ---
 
 <div id="toc"></div>
-
 ## 四种方法
 
 目前我已知的将 .NET 程序集与依赖合并到一起的方法有下面四种：
 
-1. 使用 .NET Core 3.0 自带的合并依赖的方法
+1. 使用 .NET Core 3.0 自带的 PublishSingleFile 属性合并依赖
 1. 使用 Fody
 1. 使用 SourceYard 源代码包
 1. 使用 ILMerge（微软所写）或者 ILRepack（基于 Mono.Ceil）
@@ -27,7 +26,7 @@ position: knowledge
 
 上面的第五种方法我也会做一些介绍，要么是因为无法真正完成任务或者适用场景非常有限，要么是其原理我还不理解，因此只进行简单介绍。
 
-### 使用 .NET Core 3.0 自带的合并依赖的方法
+### 使用 .NET Core 3.0 自带的 PublishSingleFile 属性合并依赖
 
 .NET Core 3.0 自 Preview 5 开始，增加了发布成单一 exe 文件的功能。
 
@@ -69,8 +68,8 @@ dotnet publish -r win10-x64 /p:PublishSingleFile=true
 下面说一些 .NET Core 3.0 发布程序集的一点扩展——.NET Core 3.0 中对于发布程序集的三种处理方式可以放在一起使用：
 
 - 裁剪程序集（Assembly Trimmer）
-- 提前编译（Ahead-of-Time compilation，通过 crossgen）
-- 单一文件打包（Single File Bundling）
+- 提前编译（Ahead-of-Time compilation，通过 crossgen）*后面马上会说到 Microsoft.DotNet.ILCompiler*
+- 单一文件打包（Single File Bundling）*本小节*
 
 关于 .NET Core 3.0 中发布仅一个 exe 的方法、原理和实践，可以参见林德熙的博客：
 
@@ -152,16 +151,118 @@ SourceYard 在 GitHub 上开源：
 
 ### 使用 ILMerge 或者 ILRepack 等工具
 
+ILMerge 和 ILRepack 的合并就更加富有技术含量——当然坑也更多。
+
+这两个都是工具，因此，你需要将工具下载下来使用。你有很多种方法下载到工具使用，因此我会推荐不同的人群使用不同的工具。
+
+#### ILMerge
+
+ILMerge 命令行工具是微软官方出品，下载地址：
+
+- [Download ILMerge from Official Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=17630)
+
+其使用方法请参见我的博客：
+
+- [.NET 使用 ILMerge 合并多个程序集，避免引入额外的依赖 - walterlv](/post/merge-assemblies-using-ilmerge.html)
+
+#### ILRepack
+
+ILRepack 基于 Mono.Ceil 来进行 IL 合并，其使用方法可以参见我的博客：
+
+- [.NET 使用 ILRepack 合并多个程序集（替代 ILMerge），避免引入额外的依赖 - walterlv](https://blog.walterlv.com/post/merge-assemblies-using-ilrepack.html)
+
+#### ILMerge-GUI 工具（已过时，但适合新手随便玩玩）
+
+你可以在以下网址中找到 ILMerge-GUI 的下载链接：
+
+- [wvd-vegt / ilmergegui / Downloads — Bitbucket](https://bitbucket.org/wvd-vegt/ilmergegui/downloads/?tab=downloads)
+
+ILMerge-GUI 工具在 Bitbucket 上开源：
+
+- [wvd-vegt / ilmergegui — Bitbucket](https://bitbucket.org/wvd-vegt/ilmergegui/src/master/)
+
 ### 其他方法
+
+#### 使用 Microsoft.DotNet.ILCompiler
+
+可以将 .NET Core 编译为单个无依赖的 Native 程序。
+
+你需要先安装一个预览版的 NuGet 包 [Microsoft.DotNet.ILCompiler](https://dotnet.myget.org/feed/dotnet-core/package/nuget/Microsoft.DotNet.ILCompiler)
+
+关于 Microsoft.DotNet.ILCompiler 的使用，你可以阅读林德熙的博客：
+
+- [dotnet core 使用 CoreRT 将程序编译为 Native 程序](https://blog.lindexi.com/post/dotnet-core-%E4%BD%BF%E7%94%A8-corert-%E5%B0%86%E7%A8%8B%E5%BA%8F%E7%BC%96%E8%AF%91%E4%B8%BA-native-%E7%A8%8B%E5%BA%8F)
 
 #### 使用 dnSpy
 
+dnSpy 支持添加一个模块到程序集，也可以创建模块，还可以将程序集转换为模块。因此，一个程序集可以包含多个模块的功能就可以被充分利用起来。
+
+![添加模块到程序集](/static/posts/2019-06-30-11-44-16.png)
+
 #### 使用 Warp
+
+Warp 在 GitHub 上开源：
 
 - [dgiagio/warp: Create self-contained single binary applications](https://github.com/dgiagio/warp)
 
+其使用可以参见林德熙的博客：
+
+- [dotnet core 发布只有一个 exe 的方法](https://blog.lindexi.com/post/dotnet-core-%E5%8F%91%E5%B8%83%E5%8F%AA%E6%9C%89%E4%B8%80%E4%B8%AA-exe-%E7%9A%84%E6%96%B9%E6%B3%95.html)
+
 ## 各种方法的原理和使用场景比较
 
----
+### 原理
 
-**参考资料**
+使用 .NET Core 3.0 自带的 `PublishSingleFile` 属性合并依赖，其原理是生成一个启动器容器程序。最终没有对程序进行任何修改，只是单纯的打包而已。
+
+使用 Fody，是将程序集依赖放到了资源里面。当要加载程序集的时候，会直接将资源中的程序集流加载到内存中。
+
+使用 SourceYard 源代码包，是直接将源代码合并到了目标项目里面。
+
+使用 ILMerge / ILRepack，是在 IL 级别对程序集进行了合并。
+
+我们可以通过下面一张图来感受一下后三种原理上的不同。
+
+这是一个分别通过 Fody、SourceYard 和 ILMerge / ILRepack 生成的程序集的反编译图。可以看到，对于 ILRepack / ILMerge 和 SourceYard，反编译后看到的源代码都在目标程序集中，而对于 Fody，依赖仅仅出现在资源中。
+
+![原理差别](/static/posts/2019-06-30-12-35-31.png)
+
+### 适用范围
+
+由于其原理不同，所以其适用范围和造成的副作用也不同。
+
+如果你基于 .NET Core 3.0 开发，并且也不在意在目标计算机上生成的临时文件夹，那么可以考虑使用 `PublishSingleFile` 属性合并依赖。
+
+如果你不在乎启动性能以及内存消耗，那么可以考虑 Fody（这意味着小型程序比较适合采用）。
+
+如果你的程序非常在乎启动性能，那么就需要考虑 SourceYard、ILMerge / ILRepack 了。
+
+对于 ILMerge / ILRepack 和 SourceYard 的比较，可以看下面这张表格：
+
+| 方案           | ILRepack / ILMerge                     | SourceYard                        |
+| -------------- | -------------------------------------- | --------------------------------- |
+| 适用于         | 任意 .NET 程序集                       | 通过 SourceYard 发布的 NuGet 包   |
+| WPF            | ILRepack 支持，ILMerge 不支持          | 支持                              |
+| 调试（支持）   | 仅支持一般方法的调试                   | 支持一般程序集支持的所有调试方法  |
+| 调试（不支持） | 不支持异步方法调试，不支持显示局部变量 | 没有不支持的                      |
+| 隐藏 API       | internal 的类型和成员可以隐藏          | 必须是 private 类型和成员才可隐藏 |
+
+可以发现，如果我们能够充分将我们需要的包通过 SourceYard 发布成 NuGet，那么我们将可以获得比 ILRepack / ILMerge 更好的编写和调试体验。
+
+表格之外还有一些特别需要说明的：
+
+1. ILRepack 额外支持修改 WPF 编译生成的 Baml 文件，将资源的引用路径修改成新程序集的路径。
+1. SourceYard 的类型需要写成 private 才可以隐藏，但是只有内部类才可以写 private，因此如果特别需要隐藏，请首先写一个内部类。（因此，你可能会发现有一个类型有很多个分部类，每一个分部类中都是一个私有的内部类）
+
+## 开源社区
+
+最后说一下，以上所说的所有方法全部是开源的，有问题欢迎在社区讨论一起解决：
+
+- [.NET Foundation](https://github.com/dotnet)
+- [Fody/Fody](https://github.com/Fody/Fody)
+- [dotnet-campus/SourceYard](https://github.com/dotnet-campus/SourceYard)
+- [dotnet/ILMerge](https://github.com/dotnet/ILMerge)
+- [gluck/il-repack](https://github.com/gluck/il-repack)
+- [0xd4d/dnSpy](https://github.com/0xd4d/dnSpy)
+- [dgiagio/warp](https://github.com/dgiagio/warp)
+- [corert/pkg/Microsoft.DotNet.ILCompiler](https://github.com/dotnet/corert/tree/master/pkg/Microsoft.DotNet.ILCompiler)
