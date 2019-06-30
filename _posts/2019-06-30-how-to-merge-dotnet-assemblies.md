@@ -1,6 +1,6 @@
 ---
 title: ".NET 将多个程序集合并成单一程序集的 4+3 种方法"
-date: 2019-06-30 13:16:33 +0800
+date: 2019-06-30 13:17:54 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -12,6 +12,7 @@ position: knowledge
 ---
 
 <div id="toc"></div>
+
 ## 四种方法
 
 目前我已知的将 .NET 程序集与依赖合并到一起的方法有下面四种：
