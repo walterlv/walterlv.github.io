@@ -1,6 +1,6 @@
 ---
 title: ".NET 将多个程序集合并成单一程序集的四种方法"
-date: 2019-06-30 11:14:42 +0800
+date: 2019-06-30 11:30:59 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -76,6 +76,10 @@ dotnet publish -r win10-x64 /p:PublishSingleFile=true
 
 - [dotnet core 发布只有一个 exe 的方法](https://blog.lindexi.com/post/dotnet-core-%E5%8F%91%E5%B8%83%E5%8F%AA%E6%9C%89%E4%B8%80%E4%B8%AA-exe-%E7%9A%84%E6%96%B9%E6%B3%95.html)
 
+.NET Core 在 GitHub 上开源：
+
+- [.NET Foundation](https://github.com/dotnet)
+
 ### 使用 Fody
 
 在你的项目中安装一个 NuGet 包 [Costura.Fody](https://www.nuget.org/packages/Costura.Fody/)。一般来说，安装完之后，你编译的时候就会生成仅有一个 exe 的程序集了。
@@ -95,7 +99,56 @@ dotnet publish -r win10-x64 /p:PublishSingleFile=true
 
 - [.NET 合并程序集（将 dll 合并到 exe 中） - Iron 的博客 - CSDN博客](https://blog.csdn.net/iron_ye/article/details/83961266)
 
+Fody 在 GitHub 上开源：
+
+- [Fody/Fody: Extensible tool for weaving .net assemblies](https://github.com/Fody/Fody)
+
 ### 使用 SourceYard 源代码包
+
+SourceYard 源代码包在程序集合并上是另辟蹊径的一种合并方式。它不能帮助你将所有的依赖全部合并，但足以让你在发布一些简单应用的时候不至于引入大量的依赖。
+
+例如，你可以考虑新建一个项目，然后安装下面的 NuGet 包：
+
+- [lindexi.src.MacAddress.Source](https://www.nuget.org/packages/lindexi.src.MacAddress.Source/)
+
+安装完成之后，你就可以在你的项目中使用到此 NuGet 包为你带来的获取 MAC 地址的工具类了。
+
+```csharp
+using System;
+using lindexi.src;
+
+namespace Walterlv.Demo
+{
+    internal static class Program
+    {
+        static void Main()
+        {
+            var macList = MacAddress.GetActiveMacAddress();
+            foreach (var mac in macList)
+            {
+                Console.WriteLine(mac);
+            }
+        }
+    }
+}
+```
+
+编译完你的项目，你会发现你的项目没有携带任何依赖。你安装的 NuGet 包并没有成为你的依赖，反而成为你正在编译的程序集的一部分。
+
+如果你要制作一个像上面那样的源代码包，只需要在你要制作 NuGet 包的项目安装上 [dotnetCampus.SourceYard](https://www.nuget.org/packages/dotnetCampus.SourceYard/0.1.7213-alpha)，在你打包成 NuGet 包的时候，就会生成一个普通的 NuGet 包以及一个 *.Source.nupkg 的源代码包。将源代码包上传到 nuget.org 上，其他人便可以安装你制作的源代码包了。
+
+关于如何使用 SourceYard 制作一个源代码包的方法可以阅读林德熙的博客：
+
+- [SourceYard 制作源代码包](https://blog.lindexi.com/post/sourceyard-%E5%88%B6%E4%BD%9C%E6%BA%90%E4%BB%A3%E7%A0%81%E5%8C%85)
+
+关于能够做出源代码包的原理，可以阅读我的博客：
+
+- 入门篇：[将 .NET Core 项目打一个最简单的 NuGet 源码包，安装此包就像直接把源码放进项目一样](/post/the-simplest-way-to-pack-a-source-code-nuget-package.html)
+- 进阶篇：[从零开始制作 NuGet 源代码包（全面支持 .NET Core / .NET Framework / WPF 项目）](/post/build-source-code-package-for-wpf-projects.html)
+
+SourceYard 在 GitHub 上开源：
+
+- [dotnet-campus/SourceYard: Add a NuGet package only for dll reference? By using dotnetCampus.SourceYard, you can pack a NuGet package with source code. By installing the new source code package, all source codes behaviors just like it is in your project.](https://github.com/dotnet-campus/SourceYard)
 
 ### 使用 ILMerge 或者 ILRepack 等工具
 
