@@ -1,6 +1,6 @@
 ---
 title: "App will crash when using the when keyword in a catch expression"
-date: 2019-07-02 19:25:09 +0800
+date: 2019-07-02 19:32:59 +0800
 categories: dotnet csharp
 position: problem
 version:
@@ -17,6 +17,10 @@ This happens in .NET Framework 4.8 but in .NET Core 3.0, it works correctly as t
 Maybe this is a bug in the .NET Framework 4.8 CLR.
 
 ---
+
+本文使用 **多种语言** 编写，请选择你想阅读的语言：
+
+{% include post-version-selector.html %}
 
 <div id="toc"></div>
 
