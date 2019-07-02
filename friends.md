@@ -35,6 +35,8 @@ permalink: /friends/
 - [【Miss_Bread的博客】C#和WPF桌面编程_操作系统之——Linux_C/C++ - CSDN博客](https://blog.csdn.net/miss_bread)  
     dotnet 职业技术学院的女装程序员
 
+- [【王文平_Trista的博客】好记性不如烂笔头 - CSDN博客](https://blog.csdn.net/trista_wang)
+
 - [niuyanjie's blog](http://niuyanjie.gitee.io/blog/)  
     WPF 开发，主打一个菜鸟的成长历程
 
@@ -66,6 +68,7 @@ permalink: /friends/
 - [沨沄的博客 - FoxGeeker Blog](http://ifoxfactory.com/)
 - [客户端Post提交文章到博客服务器 - 我是卧底 - 技术家园,原创博客](https://www.songshizhao.com/blog/blogPage/507.html)
 - [法的空间 - 博客园](https://www.cnblogs.com/FaDeKongJian)
+- [玩命夜狼 - 博客园](https://www.cnblogs.com/noctwolf/)
 - [迪莫的小站](https://www.dimojang.com/)
 - [木杉的博客 - 要么精通，要么死](http://imushan.com/)
 - [Nagisa](http://i.pcbeta.com/home.php?mod=space&uid=3887572&do=thread&type=reply&view=me&from=space) Windows Runtime [Nagisa 0.3 开发近况](http://bbs.pcbeta.com/viewthread-1778794-1-1.html) [Project-Nagisa/Nagisa](https://github.com/Project-Nagisa/Nagisa)
