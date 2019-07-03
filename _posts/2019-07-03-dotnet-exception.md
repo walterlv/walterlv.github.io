@@ -1,22 +1,19 @@
 ---
 title: "一文看懂 .NET 的异常处理机制、原则以及最佳实践"
-date: 2019-07-03 14:14:18 +0800
+date: 2019-07-03 14:26:13 +0800
 categories: dotnet csharp
 position: knowledge
-published: false
 ---
 
-在此处编辑 blog.walterlv.com 的博客摘要
+什么时候该抛出异常，抛出什么异常？什么时候该捕获异常，捕获之后怎么处理异常？你可能已经使用异常一段时间了，但对 .NET/C# 的异常机制依然有一些疑惑。那么，可以阅读本文。
+
+本文适用于已经入门 .NET/C# 开发，已经开始在实践中抛出和捕获异常，但是对 .NET 异常机制的用法以及原则比较模糊的小伙伴。通过阅读本文，小伙伴们可以迅速在项目中使用比较推荐的异常处理原则来处理异常。
 
 ---
 
 <div id="toc"></div>
 
 ## 快速了解 .NET 的异常机制
-
-### 异常与传统的错误处理方法
-
-
 
 ### Exception 类
 
@@ -247,6 +244,8 @@ public class InvalidDepartmentException : Exception
 
 其他的异常则是可以抛出的，只要你可以准确地表明错误原因。
 
+另外，尽量不要考虑抛出聚合异常 `AggregateException`，而是优先使用 `ExceptionDispatchInfo` 抛出其内部异常。详见：[使用 ExceptionDispatchInfo 捕捉并重新抛出异常 - walterlv](https://blog.walterlv.com/post/exceptiondispatchinfo-capture-throw.html)。
+
 ### 异常的分类
 
 在 [该不该引发异常](#该不该引发异常？) 小节中我们说到一个异常会被引发，是因为某个方法声称的任务没有成功完成（失败），而失败的原因有四种：
@@ -257,13 +256,54 @@ public class InvalidDepartmentException : Exception
 
 简单说来，就是：使用错误，实现错误、环境错误。
 
+使用错误：
+
+- `ArgumentException` 表示参数使用错了
+- `ArgumentNullException` 表示参数不应该传入 null
+- `ArgumentOutOfRangeException` 表示参数中的序号超出了范围
+- `InvalidEnumArgumentException` 表示参数中的枚举值不正确
+- `InvalidOperationException` 表示当前状态下不允许进行此操作（也就是说存在着允许进行此操作的另一种状态）
+- `ObjectDisposedException` 表示对象已经 Dispose 过了，不能再使用了
+- `NotSupportedException` 表示不支持进行此操作（这是在说不要再试图对这种类型的对象调用此方法了，不支持）
+- `PlatformNotSupportedException` 表示在此平台下不支持（如果程序跨平台的话）
+- `NotImplementedException` 表示此功能尚在开发中，暂时请勿使用
+
+实现错误：
+
+*前面由 CLR 抛出的异常代码主要都是实现错误*
+
+- `NullReferenceException` 试图在空引用上执行某些方法，除了告诉实现者出现了意料之外的 null 之外，没有什么其它价值了
+- `IndexOutOfRangeException` 使用索引的时候超出了边界
+- `InvalidCastException` 表示试图对某个类型进行强转但类型不匹配
+- `StackOverflow` 表示栈溢出，这通常说明实现代码的时候写了不正确的显式或隐式的递归
+- `OutOfMemoryException` 表示托管堆中已无法分出期望的内存空间，或程序已经没有更多内存可用了
+- `AccessViolationException` 这说明使用非托管内存时发生了错误
+- `BadImageFormatException` 这说明了加载的 dll 并不是期望中的托管 dll
+- `TypeLoadException` 表示类型初始化的时候发生了错误
+
+环境错误：
+
+- `IOException` 下的各种子类
+- `Win32Exception` 下的各种子类
+- ……
+
+另外，还剩下一些不应该抛出的异常，例如过于抽象的异常和已经过时的异常，这在前面一小结中有说明。
+
 ## 其他
 
 ### 一些常见异常的原因和解决方法
 
-BadImageException
+在平时的开发当中，你可能会遇到这样一些异常，它不像是自己代码中抛出的那些常见的异常，但也不包含我们自己的异常堆栈。
 
-FileNotFoundExcception
+这里介绍一些常见这些异常的原因和解决办法。
+
+#### AccessViolationException
+
+当出现此异常时，说明非托管内存中发生了错误。如果要解决问题，需要从非托管代码中着手调查。
+
+这个异常是访问了不允许的内存时引发的。在原因上会类似于托管中的 `NullReferenceException`。
+
+#### FileNotFoundException
 
 ### 捕捉非 CLS 异常
 
