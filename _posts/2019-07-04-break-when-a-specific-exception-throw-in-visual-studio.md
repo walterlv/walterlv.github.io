@@ -1,9 +1,8 @@
 ---
 title: "在 Visual Studio 中设置当发生某个特定异常或所有异常时中断"
-date: 2019-07-04 09:56:29 +0800
+date: 2019-07-04 13:07:52 +0800
 categories: dotnet csharp visualstudio
 position: starter
-published: false
 ---
 
 当使用 Visual Studio 调试的时候，如果我们的代码中出现了异常，那么 Visual Studio 会让我们的程序中断，然后我们就能知道程序中出现了异常。但是，如果这个异常已经被 `catch` 了，那么默认情况下 Visual Studio 是不会帮我们中断的。
