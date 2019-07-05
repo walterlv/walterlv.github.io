@@ -1,6 +1,6 @@
 ---
-title: "基于 Roslyn 同时为 Visual Studio 插件和 NuGet 包开发 .NET/C# 源代码分析器 Analyzer"
-date: 2019-07-05 23:48:19 +0800
+title: "基于 Roslyn 同时为 Visual Studio 插件和 NuGet 包开发 .NET/C# 源代码分析器 Analyzer 和修改器 CodeFixProvider"
+date: 2019-07-06 00:33:49 +0800
 categories: roslyn visualstudio nuget dotnet csharp
 position: knowledge
 published: false
@@ -82,17 +82,17 @@ Roslyn 是 .NET 平台下十分强大的编译器，其提供的 API 也非常�
 在项目内部：
 
 - WalterlvDemoAnalyzersAnalyzer.cs
-    - 模板中自带的分析器的主要代码，我们接下来也主要在这个类中编写代码
-    - 我们什么都还没有写的时候，里面已经包含一份示例用的，其功能是只要类型名称中有任何一个字符是小写的，就给出建议将其改为全部大写
+    - 模板中自带的分析器（Analyzer）的主要代码
+    - 我们什么都还没有写的时候，里面已经包含一份示例用的分析器，其功能是找到包含小写的类名。
 - WalterlvDemoAnalyzersCodeFixProvider.cs
-    - 这个类用于注册一个代码分析器，目前我们还只是有一个模板中自带的将类名改为全部大写的分析器，因此这个类就是帮我们注册了这个分析器
-    - 如果我们还要编写其他的分析器，那么也需要在这里注册，后面我会教大家如何注册一个分析器
+    - 模板中自带的代码修改器（CodeFixProvider）的主要代码
+    - 我们什么都还没有写的时候，里面已经包含一份示例用的代码修改器，根据前面分析器中找到的诊断信息，给出修改建议，即只要类型名称中有任何一个字符是小写的，就给出建议将其改为全部大写
 - Resources.resx
     - 这里包含分析器建议使用的多语言信息
 
 ![多语言资源文件](/static/posts/2019-07-05-21-33-34.png)
 
-### 分析器代码
+### 分析器代码（Analyzer）
 
 别看我们分析器主文件中的代码很长，但实际上关键的信息并不多。
 
@@ -128,9 +128,9 @@ public class WalterlvDemoAnalyzersAnalyzer : DiagnosticAnalyzer
 ```csharp
 public const string DiagnosticId = "WalterlvDemoAnalyzers";
 
-private static readonly string Title = "Type name contains lowercase letters";
-private static readonly string MessageFormat = "Type name '{0}' contains lowercase letters";
-private static readonly string Description = "Type names should be all uppercase.";
+private static readonly LocalizableString Title = "Type name contains lowercase letters";
+private static readonly LocalizableString MessageFormat = "Type name '{0}' contains lowercase letters";
+private static readonly LocalizableString Description = "Type names should be all uppercase.";
 private const string Category = "Naming";
 
 private static DiagnosticDescriptor Rule = new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, description: Description);
@@ -153,7 +153,9 @@ private static void AnalyzeSymbol(SymbolAnalysisContext context)
 }
 ```
 
-## 开发自己的分析器
+### 代码修改器（CodeFixProvider）
+
+## 开发自己的分析器（Analyzer）
 
 ### 一个简单的目标
 
@@ -213,6 +215,59 @@ private void AnalyzeAutoProperty(SyntaxNodeAnalysisContext context)
 ![在语法可视化窗格中分析属性](/static/posts/2019-07-05-23-42-01.png)
 
 ### 添加分析自动属性的代码
+
+由于我们在前面 `Initialize` 方法中注册了仅在属性声明语法节点的时候才会执行 `AnalyzeAutoProperty` 方法，所以我们在这里可以简单的开始报告一个代码分析 `Diagnostic`：
+
+```csharp
+var propertyNode = (PropertyDeclarationSyntax)context.Node;
+var diagnostic = Diagnostic.Create(_rule, propertyNode.GetLocation());
+context.ReportDiagnostic(diagnostic);
+```
+
+现在，`WalterlvDemoAnalyzersAnalyzer` 类的完整代码如下：
+
+```csharp
+[DiagnosticAnalyzer(LanguageNames.CSharp)]
+public class WalterlvDemoAnalyzersAnalyzer : DiagnosticAnalyzer
+{
+    public const string DiagnosticId = "WalterlvDemoAnalyzers";
+
+    private static readonly LocalizableString _title = "自动属性";
+    private static readonly LocalizableString _messageFormat = "这是一个自动属性";
+    private static readonly LocalizableString _description = "可以转换为可通知属性。";
+    private const string _category = "Usage";
+
+    private static readonly DiagnosticDescriptor _rule = new DiagnosticDescriptor(
+        DiagnosticId, _title, _messageFormat, _category, DiagnosticSeverity.Info,
+        isEnabledByDefault: true, description: _description);
+
+    public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(_rule);
+
+    public override void Initialize(AnalysisContext context) =>
+        context.RegisterSyntaxNodeAction(AnalyzeAutoProperty, SyntaxKind.PropertyDeclaration);
+
+    private void AnalyzeAutoProperty(SyntaxNodeAnalysisContext context)
+    {
+        var propertyNode = (PropertyDeclarationSyntax)context.Node;
+        var diagnostic = Diagnostic.Create(_rule, propertyNode.GetLocation());
+        context.ReportDiagnostic(diagnostic);
+    }
+}
+```
+
+可以发现代码并不多，现在运行，可以在光标落在属性声明的行时看到修改建议。如下图所示：
+
+![在属性上有修改建议](/static/posts/2019-07-06-00-33-03.png)
+
+你可能会觉得有些不满，看起来似乎只有我们写的那些标题和描述在工作。但实际上你还应该注意到这些：
+
+1. `DiagnosticId`、`_messageFormat`、`_description` 已经工作起来了；
+1. 只有光标在属性声明的语句块时，这个提示才会出现，因此说明我们的已经找到了正确的代码块了；
+1. 不要忘了我们还有个 `CodeFixProvider` 没有写呢，你现在看到的依然还在修改大小写的部分代码是那个类（`WalterlvDemoAnalyzersCodeFixProvider`）里的。
+
+## 开发自己的代码修改器（CodeFixProvider）
+
+现在，我们开始进行代码修改。
 
 
 
