@@ -1,6 +1,6 @@
 ---
 title: "基于 Roslyn 同时为 Visual Studio 插件和 NuGet 包开发 .NET/C# 源代码分析器 Analyzer 和修改器 CodeFixProvider"
-date: 2019-07-06 00:33:49 +0800
+date: 2019-07-06 01:00:47 +0800
 categories: roslyn visualstudio nuget dotnet csharp
 position: knowledge
 published: false
@@ -94,7 +94,7 @@ Roslyn 是 .NET 平台下十分强大的编译器，其提供的 API 也非常�
 
 ### 分析器代码（Analyzer）
 
-别看我们分析器主文件中的代码很长，但实际上关键的信息并不多。
+别看我们分析器文件中的代码很长，但实际上关键的信息并不多。
 
 我们现在还没有自行修改 `WalterlvDemoAnalyzersAnalyzer` 类中的任何内容，而到目前位置这个类里面包含的最关键代码我提取出来之后是下面这些。为了避免你吐槽这些代码编译不通过，我将一部分的实现替换成了 `NotImplementedException`。
 
@@ -154,6 +154,73 @@ private static void AnalyzeSymbol(SymbolAnalysisContext context)
 ```
 
 ### 代码修改器（CodeFixProvider）
+
+代码修改器文件中的代码更长，但关键信息也没有增加多少。
+
+我们现在也没有自行修改 `WalterlvDemoAnalyzersCodeFixProvider` 类中的任何内容，而到目前位置这个类里面包含的最关键代码我提取出来之后是下面这些。为了避免你吐槽这些代码编译不通过，我将一部分的实现替换成了 `NotImplementedException`。
+
+```csharp
+[ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(WalterlvDemoAnalyzersCodeFixProvider)), Shared]
+public class WalterlvDemoAnalyzersCodeFixProvider : CodeFixProvider
+{
+    public sealed override ImmutableArray<string> FixableDiagnosticIds
+        => throw new NotImplementedException();
+
+    public sealed override FixAllProvider GetFixAllProvider()
+        => WellKnownFixAllProviders.BatchFixer;
+
+    public sealed override async Task RegisterCodeFixesAsync(CodeFixContext context)
+        => throw new NotImplementedException();
+}
+```
+
+最关键的点：
+
+1. `[ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(WalterlvDemoAnalyzersCodeFixProvider)), Shared]`
+    - 为 C# 语言提供代码修改器
+1. `override FixableDiagnosticIds`
+    - 注意到前面 `WalterlvDemoAnalyzersAnalyzer` 类型中有一个公共字段 `DiagnosticId` 吗？在这里返回，可以为那里分析器找到的代码提供修改建议
+1. `override GetFixAllProvider`
+    - 在最简单的示例中，我们将仅仅返回 `BatchFixer`，其他种类的 `FixAllProvider` 我将通过其他博客进行说明
+1. `override RegisterCodeFixesAsync`
+    - 在 `FixableDiagnosticIds` 属性中我们返回的那些诊断建议这个方法中可以拿到，于是为每一个返回的诊断建议注册一个代码修改器（CodeFix）
+
+在这个模板提供的例子中，`FixableDiagnosticIds` 返回了 `WalterlvDemoAnalyzersAnalyzer` 类中的公共字段 `DiagnosticId`：
+
+```csharp
+public sealed override ImmutableArray<string> FixableDiagnosticIds =>
+    ImmutableArray.Create(WalterlvDemoAnalyzersAnalyzer.DiagnosticId);
+```
+
+`RegisterCodeFixesAsync` 中找到我们在 `WalterlvDemoAnalyzersAnalyzer` 类中找到的一个 `Diagnostic`，然后对这个 `Diagnostic` 注册一个代码修改（CodeFix）。
+
+```csharp
+public sealed override async Task RegisterCodeFixesAsync(CodeFixContext context)
+{
+    var root = await context.Document.GetSyntaxRootAsync(context.CancellationToken).ConfigureAwait(false);
+
+    // TODO: Replace the following code with your own analysis, generating a CodeAction for each fix to suggest
+    var diagnostic = context.Diagnostics.First();
+    var diagnosticSpan = diagnostic.Location.SourceSpan;
+
+    // Find the type declaration identified by the diagnostic.
+    var declaration = root.FindToken(diagnosticSpan.Start).Parent.AncestorsAndSelf().OfType<TypeDeclarationSyntax>().First();
+
+    // Register a code action that will invoke the fix.
+    context.RegisterCodeFix(
+        CodeAction.Create(
+            title: title,
+            createChangedSolution: c => MakeUppercaseAsync(context.Document, declaration, c),
+            equivalenceKey: title),
+        diagnostic);
+}
+
+private async Task<Solution> MakeUppercaseAsync(Document document, TypeDeclarationSyntax typeDecl, CancellationToken cancellationToken)
+{
+    // 省略实现。
+    // 返回一个将类名改为全大写的解决方案。
+}
+```
 
 ## 开发自己的分析器（Analyzer）
 
@@ -267,7 +334,7 @@ public class WalterlvDemoAnalyzersAnalyzer : DiagnosticAnalyzer
 
 ## 开发自己的代码修改器（CodeFixProvider）
 
-现在，我们开始进行代码修改。
+现在，我们开始进行代码修改，将 `WalterlvDemoAnalyzersCodeFixProvider` 类改成我们希望的将属性修改为可通知属性的代码。
 
 
 
