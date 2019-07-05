@@ -1,6 +1,7 @@
 ---
 title: "如何快速创建 Visual Studio 代码片段？"
-date: 2019-06-23 12:03:35 +0800
+publishDate: 2019-06-23 12:03:35 +0800
+date: 2019-07-05 13:32:21 +0800
 categories: visualstudio dotnet csharp
 position: starter
 ---
@@ -136,6 +137,17 @@ Debug.WriteLine($$"[$section$] $text$");
 在 Visual Studio 视图菜单的其他窗口中，可以找到“Snippet Explorer”，打开它可以管理已有的代码片段，包括 Visual Studio 中内置的那些片段。
 
 ![代码片段管理器](/static/posts/2019-06-23-11-40-05.png)
+
+## 推荐 C# 代码片段
+
+推荐另一款插件 Snippetica：
+
+- [Snippetica - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Snippetica)
+- [Snippetica for C# - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=josefpihrt-vscode.snippetica-csharp)
+
+前者适用于 Visual Studio，后者适用于 Visual Studio Code。
+
+它自带了很多的 C# 代码片段，可以很大程度补充 Visual Studio 原生代码片段存在感低的问题。
 
 ---
 
