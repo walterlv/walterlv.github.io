@@ -1,6 +1,6 @@
 ---
 title: "基于 Roslyn 同时为 Visual Studio 插件和 NuGet 包开发 .NET/C# 源代码分析器 Analyzer"
-date: 2019-07-05 21:12:58 +0800
+date: 2019-07-05 22:37:09 +0800
 categories: roslyn visualstudio nuget dotnet csharp
 position: knowledge
 published: false
@@ -12,7 +12,7 @@ Roslyn 是 .NET 平台下十分强大的编译器，其提供的 API 也非常�
 
 <div id="toc"></div>
 
-## 开发前准备
+## 开发准备
 
 ### 安装 Visual Studio 扩展开发工作负载
 
@@ -30,7 +30,33 @@ Roslyn 是 .NET 平台下十分强大的编译器，其提供的 API 也非常�
 
 随后，取好项目名字之后，点击“创建”，你将来到 Visual Studio 的主界面。
 
-### 解读分析器项目和解决方案
+我为项目取的名称是 `Walterlv.Demo.Analyzers`，接下来都将以此名称作为示例。你如果使用了别的名称，建议你自己找到名称的对应关系。
+
+### 首次调试
+
+如果你现在按下 F5，那么将会启动一个 Visual Studio 的实验实例用于调试。
+
+![Visual Studio 实验实例](/static/posts/2019-07-05-20-53-50.png)
+
+由于我们是一个分析器项目，所以我们需要在第一次启动实验实例的时候新建一个专门用来测试的小型项目。
+
+简单起见，我新建一个 .NET Core 控制台项目。新建的项目如下：
+
+![测试用的控制台项目](/static/posts/2019-07-05-20-58-03.png)
+
+我们目前只是基于模板创建了一个分析器，而模板中自带的分析器功能是 “只要类型名称中有任何一个字符是小写的，就给出建议将其改为全部大写”。
+
+于是我们看到 `Program` 类名底下标了绿色的波浪线，我们将光标定位到 `Program` 类名上，可以看到出现了一个 “小灯泡” 提示。按下重构快捷键（默认是 `Ctrl + .`）后可以发现，我们的分析器项目提供的 “Make uppercase” 建议显示了出来。于是我们可以快速地将类名修改为全部大写。
+
+![模板中自带的分析器建议](/static/posts/2019-07-05-code-fix-make-upper-case.gif)
+
+如果体验完毕，可以关闭 Visual Studio；当然也可以在我们的分析器项目中 Shift + F5 强制结束调试。
+
+下次调试的时候，我们不需要再次新建项目了，因为我们刚刚新建的项目还在我们新建的文件夹下。下次调试只要再打开这个项目测试就好了。
+
+## 解读模板自带的分析器项目
+
+### 项目和解决方案
 
 在创建完项目之后，你会发现解决方案中有三个项目：
 
@@ -55,32 +81,122 @@ Roslyn 是 .NET 平台下十分强大的编译器，其提供的 API 也非常�
 - WalterlvDemoAnalyzersCodeFixProvider.cs
     - 这个类用于注册一个代码分析器，目前我们还只是有一个模板中自带的将类名改为全部大写的分析器，因此这个类就是帮我们注册了这个分析器
     - 如果我们还要编写其他的分析器，那么也需要在这里注册，后面我会教大家如何注册一个分析器
+- Resources.resx
+    - 这里包含分析器建议使用的多语言信息
 
-## 开发和调试
+![多语言资源文件](/static/posts/2019-07-05-21-33-34.png)
 
-### 首次调试
+### 分析器代码
 
-如果你现在按下 F5，那么将会启动一个 Visual Studio 的实验实例用于调试。
+别看我们分析器主文件中的代码很长，但实际上关键的信息并不多。
 
-![Visual Studio 实验实例](/static/posts/2019-07-05-20-53-50.png)
+我们现在还没有自行修改 `WalterlvDemoAnalyzersAnalyzer` 类中的任何内容，而到目前位置这个类里面包含的最关键代码我提取出来之后是下面这些。为了避免你吐槽这些代码编译不通过，我将一部分的实现替换成了 `NotImplementedException`。
 
-由于我们是一个分析器项目，所以我们需要在第一次启动实验实例的时候新建一个专门用来测试的小型项目。
+```csharp
+[DiagnosticAnalyzer(LanguageNames.CSharp)]
+public class WalterlvDemoAnalyzersAnalyzer : DiagnosticAnalyzer
+{
+    public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics
+        => throw new NotImplementedException();
 
-简单起见，我新建一个 .NET Core 控制台项目。新建的项目如下：
+    public override void Initialize(AnalysisContext context)
+        => throw new NotImplementedException();
+}
+```
 
-![测试用的控制台项目](/static/posts/2019-07-05-20-58-03.png)
+最关键的点：
 
-记得我们前面说的吗？模板中给我们示例的分析器功能是 “只要类型名称中有任何一个字符是小写的，就给出建议将其改为全部大写”。
+1. `[DiagnosticAnalyzer(LanguageNames.CSharp)]`
+    - 为 C# 语言提供诊断分析器
+1. `override SupportedDiagnostics`
+    - 返回此分析器支持的诊断规则
+1. `override Initialize`
+    - 在此分析器初始化的时候执行某些代码
 
-于是我们看到 `Program` 类名底下标了绿色的波浪线，我们将光标定位到 `Program` 类名上，可以看到出现了一个 “小灯泡” 提示。按下重构快捷键（默认是 `Ctrl + .`）后可以发现，我们的分析器项目提供的 “Make uppercase” 建议显示了出来。于是我们可以快速地将类名修改为全部大写。
+现在我们分别细化这些关键代码。为了简化理解，我将多语言全部替换成了实际的字符串值。
 
-![模板中自带的分析器建议](/static/posts/2019-07-05-21-01-54.png)
+重写 `SupportedDiagnostics` 的部分，创建并返回了一个 `DiagnosticDescriptor` 类型的只读集合。目前只有一个 `DiagnosticDescriptor`，名字是 `Rule`，构造它的时候传入了一大堆字符串，包括分析器 Id、标题、消息提示、类型、级别、默认开启、描述信息。
 
-如果体验完毕，可以关闭 Visual Studio；当然也可以在我们的分析器项目中 Shift + F5 强制结束调试。
+可以很容易看出，如果我们这个分析器带有多个诊断建议，那么在只读集合中返回多个 `DiagnosticDescriptor` 的实例。
 
-下次调试的时候，我们不需要再次新建项目了，因为我们刚刚新建的项目还在我们新建的文件夹下。下次调试只要再打开这个项目测试就好了。
+```csharp
+public const string DiagnosticId = "WalterlvDemoAnalyzers";
 
-### 分析器
+private static readonly string Title = "Type name contains lowercase letters";
+private static readonly string MessageFormat = "Type name '{0}' contains lowercase letters";
+private static readonly string Description = "Type names should be all uppercase.";
+private const string Category = "Naming";
+
+private static DiagnosticDescriptor Rule = new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, description: Description);
+
+public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
+```
+
+重写 `Initialize` 的部分，模板中注册了一个类名分析器，其实就是下面那个静态方法 `AnalyzeSymbol`。
+
+```csharp
+public override void Initialize(AnalysisContext context)
+{
+    context.RegisterSymbolAction(AnalyzeSymbol, SymbolKind.NamedType);
+}
+
+private static void AnalyzeSymbol(SymbolAnalysisContext context)
+{
+    // 省略实现。
+    // 在模板自带的实现中，这里判断类名是否包含小写字母，如果包含则创建一个新的诊断建议以改为大写字母。
+}
+```
+
+## 开发自己的分析器
+
+作为示例，我们写一个属性转换分析器，将自动属性转换为可通知属性。
+
+就是像以下上面的一种属性转换成下面的一种：
+
+```csharp
+public string Foo { get; set; }
+```
+
+```csharp
+private string _foo;
+
+public string Foo
+{
+    get => _foo;
+    set => SetValue(ref _foo, value);
+}
+```
+
+
+
+
+
+于是你需要先在测试项目中添加一个类 `NotificationObject`：
+
+```csharp
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
+namespace Walterlv.TestForAnalyzer
+{
+    public class NotificationObject : INotifyPropertyChanged
+    {
+        protected bool SetValue<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
+        {
+            if (Equals(field, value))
+            {
+                return false;
+            }
+
+            field = value;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            return true;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+    }
+}
+```
 
 ---
 
