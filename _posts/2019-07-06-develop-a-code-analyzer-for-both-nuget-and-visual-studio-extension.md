@@ -1,6 +1,6 @@
 ---
 title: "基于 Roslyn 同时为 Visual Studio 插件和 NuGet 包开发 .NET/C# 源代码分析器 Analyzer"
-date: 2019-07-05 22:37:09 +0800
+date: 2019-07-05 23:48:19 +0800
 categories: roslyn visualstudio nuget dotnet csharp
 position: knowledge
 published: false
@@ -50,9 +50,15 @@ Roslyn 是 .NET 平台下十分强大的编译器，其提供的 API 也非常�
 
 ![模板中自带的分析器建议](/static/posts/2019-07-05-code-fix-make-upper-case.gif)
 
+因为我们在前面安装了 Visual Studio 扩展开发的工作负载，所以可以在 “视图”->“其他窗口” 中找到并打开 Syntax Visualizer 窗格。现在，请将它打开，因为接下来我们的代码分析会用得到这个窗格。
+
+![打开语法可视化窗格](/static/posts/2019-07-05-22-42-05.png)
+
 如果体验完毕，可以关闭 Visual Studio；当然也可以在我们的分析器项目中 Shift + F5 强制结束调试。
 
-下次调试的时候，我们不需要再次新建项目了，因为我们刚刚新建的项目还在我们新建的文件夹下。下次调试只要再打开这个项目测试就好了。
+下次调试的时候，我们不需要再次新建项目了，因为我们刚刚新建的项目还在我们新建的文件夹下。下次调试只要像下面那样再次打开这个项目测试就好了。
+
+![打开历史记录中的项目](/static/posts/2019-07-05-23-29-33.png)
 
 ## 解读模板自带的分析器项目
 
@@ -149,6 +155,8 @@ private static void AnalyzeSymbol(SymbolAnalysisContext context)
 
 ## 开发自己的分析器
 
+### 一个简单的目标
+
 作为示例，我们写一个属性转换分析器，将自动属性转换为可通知属性。
 
 就是像以下上面的一种属性转换成下面的一种：
@@ -167,11 +175,52 @@ public string Foo
 }
 ```
 
+这里我们写了一个 `SetValue` 方法，有没有这个 `SetValue` 方法存在对我们后面写的分析器其实没有任何影响。不过你如果强迫症，可以看本文最后的“一些补充”章节，把 `SetValue` 方法加进来。
+
+### 开始添加最基础的代码
+
+于是，我们将 `Initialize` 方法中的内容改成我们期望的分析自动属性的语法节点分析。
+
+```csharp
+public override void Initialize(AnalysisContext context)
+    => context.RegisterSyntaxNodeAction(AnalyzeAutoProperty, SyntaxKind.PropertyDeclaration);
+
+private void AnalyzeAutoProperty(SyntaxNodeAnalysisContext context)
+{
+    // 你可以在这一行打上一个断点，这样你可以观察 `context` 参数。
+}
+```
+
+上面的 `AnalyzeAutoProperty` 只是我们随便取的名字，而 `SyntaxKind.PropertyDeclaration` 是靠智能感知提示帮我找到的。
+
+现在我们来试着分析一个自动属性。
+
+按下 F5 调试，在新的调试的 Visual Studio 实验实例中，我们将鼠标光标放在 `public string Foo { get; set; }` 行上。如果我们提前在 `AnalyzeAutoProperty` 方法中打了断点，那么我们可以在此时观察到 `context` 参数。
+
+![context 参数](/static/posts/2019-07-05-23-31-47.png)
+
+- `CancellationToken` 指示当前是否已取消分析
+- `Node` 语法节点
+- `SemanticModel`
+- `ContainingSymbol` 语义分析节点
+- `Compilation`
+- `Options`
+
+其中，`Node.KindText` 属性的值为 `PropertyDeclaration`。还记得前面让你先提前打开 Syntax Visualizer 窗格吗？是的，我们可以在这个窗格中找到 `PropertyDeclaration` 节点。
+
+我们可以借助这个语法可视化窗格，找到 `PropertyDeclaration` 的子节点。当我们一级一级分析其子节点的语法的时候，便可以取得这个语法节点的全部所需信息（可见性、属性类型、属性名称），也就是具备生成可通知属性的全部信息了。
+
+![在语法可视化窗格中分析属性](/static/posts/2019-07-05-23-42-01.png)
+
+### 添加分析自动属性的代码
 
 
 
+## 一些补充
 
-于是你需要先在测试项目中添加一个类 `NotificationObject`：
+前面我们提到了 `SetValue` 这个方法，这是为了写一个可通知对象。为了拥有这个方法，请在我们的测试项目中添加下面这两个文件：
+
+一个可通知类文件 NotificationObject.cs：
 
 ```csharp
 using System.ComponentModel;
@@ -194,6 +243,18 @@ namespace Walterlv.TestForAnalyzer
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+    }
+}
+```
+
+一个用于分析器测试的类 Demo.cs：
+
+```csharp
+namespace Walterlv.TestForAnalyzer
+{
+    class Demo : NotificationObject
+    {
+        public string Foo { get; set; }
     }
 }
 ```
