@@ -1,6 +1,6 @@
 ---
 title: "基于 Roslyn 同时为 Visual Studio 插件和 NuGet 包开发 .NET/C# 源代码分析器 Analyzer 和修改器 CodeFixProvider"
-date: 2019-07-06 01:00:47 +0800
+date: 2019-07-06 09:19:11 +0800
 categories: roslyn visualstudio nuget dotnet csharp
 position: knowledge
 published: false
@@ -9,6 +9,10 @@ published: false
 Roslyn 是 .NET 平台下十分强大的编译器，其提供的 API 也非常丰富好用。本文将基于 Roslyn 开发一个 C# 代码分析器，你不止可以将分析器作为 Visual Studio 代码分析和重构插件发布，还可以作为 NuGet 包发布。不管哪一种，都可以让我们编写的 C# 代码分析器工作起来并真正起到代码建议和重构的作用。
 
 ---
+
+本文将教大家如何从零开始开发一个基于 Roslyn 的 C# 源代码分析器 Analyzer 和修改器 CodeFixProvider。可以作为 Visual Studio 插件安装和使用，也可以作为 NuGet 包安装到项目中使用（无需安装插件）。无论哪一种，你都可以在支持 Roslyn 分析器扩展的 IDE（如 Visual Studio）中获得如下面动图所展示的效果。
+
+![本文教大家可以做到的效果](/static/posts/2019-07-06-preview-of-roslyn-code-fix.gif)
 
 <div id="toc"></div>
 
@@ -31,6 +35,8 @@ Roslyn 是 .NET 平台下十分强大的编译器，其提供的 API 也非常�
 随后，取好项目名字之后，点击“创建”，你将来到 Visual Studio 的主界面。
 
 我为项目取的名称是 `Walterlv.Demo.Analyzers`，接下来都将以此名称作为示例。你如果使用了别的名称，建议你自己找到名称的对应关系。
+
+在创建完项目之后，你可选可以更新一下项目的 .NET Standard 版本（默认是 1.3，建议更新为 2.0）以及几个 NuGet 包。
 
 ### 首次调试
 
@@ -218,7 +224,7 @@ public sealed override async Task RegisterCodeFixesAsync(CodeFixContext context)
 private async Task<Solution> MakeUppercaseAsync(Document document, TypeDeclarationSyntax typeDecl, CancellationToken cancellationToken)
 {
     // 省略实现。
-    // 返回一个将类名改为全大写的解决方案。
+    // 将类名改为全大写，然后返回解决方案。
 }
 ```
 
@@ -336,9 +342,168 @@ public class WalterlvDemoAnalyzersAnalyzer : DiagnosticAnalyzer
 
 现在，我们开始进行代码修改，将 `WalterlvDemoAnalyzersCodeFixProvider` 类改成我们希望的将属性修改为可通知属性的代码。
 
+```csharp
+[ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(WalterlvDemoAnalyzersCodeFixProvider)), Shared]
+public class WalterlvDemoAnalyzersCodeFixProvider : CodeFixProvider
+{
+    private const string _title = "转换为可通知属性";
 
+    public sealed override ImmutableArray<string> FixableDiagnosticIds =>
+        ImmutableArray.Create(WalterlvDemoAnalyzersAnalyzer.DiagnosticId);
+
+    public sealed override FixAllProvider GetFixAllProvider() => WellKnownFixAllProviders.BatchFixer;
+
+    public sealed override async Task RegisterCodeFixesAsync(CodeFixContext context)
+    {
+        var root = await context.Document.GetSyntaxRootAsync(context.CancellationToken).ConfigureAwait(false);
+        var diagnostic = context.Diagnostics.First();
+        var declaration = (PropertyDeclarationSyntax)root.FindNode(diagnostic.Location.SourceSpan);
+
+        context.RegisterCodeFix(
+            CodeAction.Create(
+                title: _title,
+                createChangedSolution: ct => ConvertToNotificationProperty(context.Document, declaration, ct),
+                equivalenceKey: _title),
+            diagnostic);
+    }
+
+    private async Task<Solution> ConvertToNotificationProperty(Document document,
+        PropertyDeclarationSyntax propertyDeclarationSyntax, CancellationToken cancellationToken)
+    {
+        // 获取文档根语法节点。
+        var root = await document.GetSyntaxRootAsync(cancellationToken).ConfigureAwait(false);
+
+        // 生成可通知属性的语法节点集合。
+        var type = propertyDeclarationSyntax.Type;
+        var propertyName = propertyDeclarationSyntax.Identifier.ValueText;
+        var fieldName = $"_{char.ToLower(propertyName[0])}{propertyName.Substring(1)}";
+        var newNodes = CreateNotificationProperty(type, propertyName, fieldName);
+
+        // 将可通知属性的语法节点插入到原文档中形成一份中间文档。
+        var intermediateRoot = root
+            .InsertNodesAfter(
+                root.FindNode(propertyDeclarationSyntax.Span),
+                newNodes);
+
+        // 将中间文档中的自动属性移除形成一份最终文档。
+        var newRoot = intermediateRoot
+            .RemoveNode(intermediateRoot.FindNode(propertyDeclarationSyntax.Span), SyntaxRemoveOptions.KeepNoTrivia);
+
+        // 将原来解决方案中的此份文档换成新文档以形成新的解决方案。
+        return document.Project.Solution.WithDocumentSyntaxRoot(document.Id, newRoot);
+    }
+
+    private async Task<Solution> ConvertToNotificationProperty(Document document,
+        PropertyDeclarationSyntax propertyDeclarationSyntax, CancellationToken cancellationToken)
+    {
+        // 这个类型暂时留空，因为这是真正的使用 Roslyn 生成语法节点的代码，虽然只会写一句话，但相当长。
+    }
+}
+```
+
+还记得我们在前面解读 `WalterlvDemoAnalyzersCodeFixProvider` 类型时的那些描述吗？我们现在为一个诊断 `Diagnostic` 注册了一个代码修改（CodeFix），并且其回调函数是 `ConvertToNotificationProperty`。这是我们自己编写的一个方法。
+
+我在这个方法里面写的代码并不复杂，是获取原来的属性里的类型信息和属性名，然后修改文档，将新的文档返回。
+
+其中，我留了一个 `ConvertToNotificationProperty` 方法为空，因为这是真正的使用 Roslyn 生成语法节点的代码，虽然只会写一句话，但相当长。
+
+于是我将这个方法单独写在了下面。将这两个部分拼起来（用下面方法替换上面同名的方法），你就能得到一个完整的 `WalterlvDemoAnalyzersCodeFixProvider` 类的代码了。
+
+```csharp
+private SyntaxNode[] CreateNotificationProperty(TypeSyntax type, string propertyName, string fieldName)
+    => new SyntaxNode[]
+    {
+        SyntaxFactory.FieldDeclaration(
+            new SyntaxList<AttributeListSyntax>(),
+            new SyntaxTokenList(SyntaxFactory.Token(SyntaxKind.PrivateKeyword)),
+            SyntaxFactory.VariableDeclaration(
+                type,
+                SyntaxFactory.SeparatedList(new []
+                {
+                    SyntaxFactory.VariableDeclarator(
+                        SyntaxFactory.Identifier(fieldName)
+                    )
+                })
+            ),
+            SyntaxFactory.Token(SyntaxKind.SemicolonToken)
+        ),
+        SyntaxFactory.PropertyDeclaration(
+            type,
+            SyntaxFactory.Identifier(propertyName)
+        )
+        .AddModifiers(SyntaxFactory.Token(SyntaxKind.PublicKeyword))
+        .AddAccessorListAccessors(
+            SyntaxFactory.AccessorDeclaration(
+                SyntaxKind.GetAccessorDeclaration
+            )
+            .WithExpressionBody(
+                SyntaxFactory.ArrowExpressionClause(
+                    SyntaxFactory.Token(SyntaxKind.EqualsGreaterThanToken),
+                    SyntaxFactory.IdentifierName(fieldName)
+                )
+            )
+            .WithSemicolonToken(SyntaxFactory.Token(SyntaxKind.SemicolonToken)),
+            SyntaxFactory.AccessorDeclaration(
+                SyntaxKind.SetAccessorDeclaration
+            )
+            .WithExpressionBody(
+                SyntaxFactory.ArrowExpressionClause(
+                    SyntaxFactory.Token(SyntaxKind.EqualsGreaterThanToken),
+                    SyntaxFactory.InvocationExpression(
+                        SyntaxFactory.IdentifierName("SetValue"),
+                        SyntaxFactory.ArgumentList(
+                            SyntaxFactory.Token(SyntaxKind.OpenParenToken),
+                            SyntaxFactory.SeparatedList(new []
+                            {
+                                SyntaxFactory.Argument(
+                                    SyntaxFactory.IdentifierName(fieldName)
+                                )
+                                .WithRefKindKeyword(
+                                    SyntaxFactory.Token(SyntaxKind.RefKeyword)
+                                ),
+                                SyntaxFactory.Argument(
+                                    SyntaxFactory.IdentifierName("value")
+                                ),
+                            }),
+                            SyntaxFactory.Token(SyntaxKind.CloseParenToken)
+                        )
+                    )
+                )
+            )
+            .WithSemicolonToken(SyntaxFactory.Token(SyntaxKind.SemicolonToken))
+        ),
+    };
+```
+
+实际上本文并不会重点介绍如何使用 Roslyn 生成新的语法节点，因此我不会解释上面我是如何写出这样的语法节点来的，但如果你对照着语法可视化窗格（Syntax Visualizer）来看的话，也是不难理解为什么我会这么写的。
+
+在此类型完善之后，我们再 F5 启动调试，可以发现我们已经可以完成一个自动属性的修改了，可以按照预期改成一个可通知属性。如下图：
+
+![可以修改属性](/static/posts/2019-07-06-03-42-00.png)
+
+![修改后的属性](/static/posts/2019-07-06-03-42-33.png)
+
+### 发布
+
+### 发布成 NuGet 包
+
+前往我们分析器主项目 Walterlv.Demo.Analyzers 项目的输出目录，因为本文没有改输出路径，所以在项目的 `bin\Debug` 文件夹下。我们可以找到每次编译产生的 NuGet 包。
+
+![已经打出来的 NuGet 包](/static/posts/2019-07-06-09-08-43.png)
+
+如果你不知道如何将此 NuGet 包发布到 [nuget.org](https://www.nuget.org/)，请在文本中回复，也许我需要再写一篇博客讲解如何推送。
+
+### 发布到 Visual Studio 插件商店
+
+前往我们分析器的 Visual Studio 插件项目 Walterlv.Demo.Analyzers.Vsix 项目的输出目录，因为本文没有改输出路径，所以在项目的 `bin\Debug` 文件夹下。我们可以找到每次编译产生的 Visual Studio 插件安装包。
+
+![已经打出来的 Visual Studio 插件](/static/posts/2019-07-06-09-10-26.png)
+
+如果你不知道如何将此 Visual Studio 插件发布到 [Visual Studio Marketplace](https://marketplace.visualstudio.com/)，请在文本中回复，也许我需要再写一篇博客讲解如何推送。
 
 ## 一些补充
+
+### 辅助源代码
 
 前面我们提到了 `SetValue` 这个方法，这是为了写一个可通知对象。为了拥有这个方法，请在我们的测试项目中添加下面这两个文件：
 
@@ -381,8 +546,19 @@ namespace Walterlv.TestForAnalyzer
 }
 ```
 
+### 示例代码仓库
+
+代码仓库在我的 Demo 项目中，注意协议是 [996.ICU](https://github.com/996icu/996.ICU/blob/master/LICENSE) 哟！
+
+- [walterlv.demo/Walterlv.Demo.Analyzers at master · walterlv/walterlv.demo](https://github.com/walterlv/walterlv.demo/tree/master/Walterlv.Demo.Analyzers)
+
+### 别忘了单元测试
+
+别忘了我们一开始创建仓库的时候有一个单元测试项目，而我们全文都没有讨论如何充分利用其中的单元测试。我将在其他的博客中说明如何编写和使用分析器项目的单元测试。
+
 ---
 
 **参考资料**
 
 - [Writing a Roslyn analyzer - Meziantou's blog](https://www.meziantou.net/writing-a-roslyn-analyzer.htm)
+- [Code Generation with Roslyn – Fields and Properties - Dogs Chasing Squirrels](https://dogschasingsquirrels.com/2014/08/04/code-generation-with-roslyn-fields-and-properties/)
