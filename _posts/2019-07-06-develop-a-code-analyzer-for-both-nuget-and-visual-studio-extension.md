@@ -1,9 +1,8 @@
 ---
 title: "基于 Roslyn 同时为 Visual Studio 插件和 NuGet 包开发 .NET/C# 源代码分析器 Analyzer 和修改器 CodeFixProvider"
-date: 2019-07-06 09:19:11 +0800
+date: 2019-07-06 09:20:23 +0800
 categories: roslyn visualstudio nuget dotnet csharp
 position: knowledge
-published: false
 ---
 
 Roslyn 是 .NET 平台下十分强大的编译器，其提供的 API 也非常丰富好用。本文将基于 Roslyn 开发一个 C# 代码分析器，你不止可以将分析器作为 Visual Studio 代码分析和重构插件发布，还可以作为 NuGet 包发布。不管哪一种，都可以让我们编写的 C# 代码分析器工作起来并真正起到代码建议和重构的作用。
@@ -477,11 +476,11 @@ private SyntaxNode[] CreateNotificationProperty(TypeSyntax type, string property
 
 实际上本文并不会重点介绍如何使用 Roslyn 生成新的语法节点，因此我不会解释上面我是如何写出这样的语法节点来的，但如果你对照着语法可视化窗格（Syntax Visualizer）来看的话，也是不难理解为什么我会这么写的。
 
-在此类型完善之后，我们再 F5 启动调试，可以发现我们已经可以完成一个自动属性的修改了，可以按照预期改成一个可通知属性。如下图：
+在此类型完善之后，我们再 F5 启动调试，可以发现我们已经可以完成一个自动属性的修改了，可以按照预期改成一个可通知属性。
 
-![可以修改属性](/static/posts/2019-07-06-03-42-00.png)
+你可以再看看下面的动图：
 
-![修改后的属性](/static/posts/2019-07-06-03-42-33.png)
+![可以修改属性](/static/posts/2019-07-06-preview-of-roslyn-code-fix.gif)
 
 ### 发布
 
