@@ -1,7 +1,7 @@
 ---
 title: "Roslyn 入门：使用 Visual Studio 的语法可视化（Syntax Visualizer）窗格查看和了解代码的语法树"
 publishDate: 2018-03-18 20:50:09 +0800
-date: 2019-01-16 21:09:09 +0800
+date: 2019-07-07 10:00:43 +0800
 categories: visualstudio dotnet csharp roslyn
 ---
 
@@ -27,7 +27,7 @@ categories: visualstudio dotnet csharp roslyn
 - 绿色：[SyntaxToken](https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.codeanalysis.syntaxtoken?view=roslyn-dotnet)，表示关键字、标识符、运算符等标点。
 - 红色：[SyntaxTrivia](https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.codeanalysis.syntaxtrivia?view=roslyn-dotnet)，代表语法上不重要的信息，例如标记、预处理指令和注释之间的空格。
 
-如果你是 Visual Studio 2017.6，并且在安装 Visual Studio 时选择了 Visual Studio 扩展，那么你什么都不用做就已经安装好了。否则，你需要去 [.NET Compiler Platform SDK - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=VisualStudioProductTeam.NETCompilerPlatformSDK) 下载安装。
+如果你是 Visual Studio 2017 / 2019，并且在安装 Visual Studio 时选择了 Visual Studio 扩展开发的工作负载，并且已经勾选了 .NET Compiler Platform SDK，那么你就已经安装好了。如果没有找到，请前往 [如何安装和准备 Visual Studio 扩展/插件开发环境 - walterlv](https://blog.walterlv.com/post/how-to-prepare-visual-studio-extension-development-environment.html) 再安装。如果你的 Visual Studio 版本比较旧，则需要去 [.NET Compiler Platform SDK - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=VisualStudioProductTeam.NETCompilerPlatformSDK) 下载安装。
 
 安装完之后，去“视图->其它窗口”中就可以找到“Syntax Visualizer”。
 

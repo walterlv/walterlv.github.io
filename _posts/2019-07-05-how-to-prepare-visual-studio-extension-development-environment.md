@@ -1,6 +1,7 @@
 ---
 title: "如何安装和准备 Visual Studio 扩展/插件开发环境"
-date: 2019-07-05 20:21:28 +0800
+publishDate: 2019-07-05 20:21:28 +0800
+date: 2019-07-07 09:58:32 +0800
 categories: visualstudio dotnet
 position: starter
 ---
@@ -26,6 +27,12 @@ position: starter
 ![勾选 Visual Studio 扩展开发负载](/static/posts/2019-07-05-20-17-03.png)
 
 等待 Visual Studio 安装完 Visual Studio 扩展开发。如果提示重启计算机，那么就重启一下。
+
+## 如果你想开发基于 Roslyn 的语法/语义分析插件
+
+如果你想开发基于 Roslyn 的语法/语义分析插件，那么需要在选择了 Visual Studio 扩展开发工作负载之后，在右侧将可选的 .NET Compiler Platform SDK 也打上勾。
+
+![.NET Compiler Platform SDK](/static/posts/2019-07-07-09-57-09.png)
 
 ## 体验 Visual Studio 插件模板
 

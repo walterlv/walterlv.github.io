@@ -1,6 +1,7 @@
 ---
 title: "基于 Roslyn 同时为 Visual Studio 插件和 NuGet 包开发 .NET/C# 源代码分析器 Analyzer 和修改器 CodeFixProvider"
-date: 2019-07-06 09:20:23 +0800
+publishDate: 2019-07-06 09:20:23 +0800
+date: 2019-07-07 09:52:24 +0800
 categories: roslyn visualstudio nuget dotnet csharp
 position: knowledge
 ---
@@ -404,7 +405,7 @@ public class WalterlvDemoAnalyzersCodeFixProvider : CodeFixProvider
 
 我在这个方法里面写的代码并不复杂，是获取原来的属性里的类型信息和属性名，然后修改文档，将新的文档返回。
 
-其中，我留了一个 `ConvertToNotificationProperty` 方法为空，因为这是真正的使用 Roslyn 生成语法节点的代码，虽然只会写一句话，但相当长。
+其中，我留了一个 `CreateNotificationProperty` 方法为空，因为这是真正的使用 Roslyn 生成语法节点的代码，虽然只会写一句话，但相当长。
 
 于是我将这个方法单独写在了下面。将这两个部分拼起来（用下面方法替换上面同名的方法），你就能得到一个完整的 `WalterlvDemoAnalyzersCodeFixProvider` 类的代码了。
 
