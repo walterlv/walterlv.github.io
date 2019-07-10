@@ -1,7 +1,7 @@
 ---
 title: "如果不用 ReSharper，那么 Visual Studio 2019 能还原 ReSharper 多少功能呢？"
 publishDate: 2019-06-24 08:00:38 +0800
-date: 2019-07-10 21:20:40 +0800
+date: 2019-07-10 22:03:12 +0800
 categories: visualstudio dotnet csharp
 position: knowledge
 ---
@@ -77,7 +77,7 @@ Visual Studio 2019 中可以设置智能感知提示中“显示未导入命名�
 
 ReSharper 可以使用 Ctrl + R, R 快捷键重命名一个标识符。
 
-Visual Studio 中也是默认使用 Ctrl + R, R 快捷键来重命名一个标识符。
+Visual Studio 中也是默认使用 F2 或者与 ReSharper 相同的 Ctrl + R, R 快捷键来重命名一个标识符。
 
 ![重命名标识符](/static/posts/2019-07-10-21-20-34.png)
 
