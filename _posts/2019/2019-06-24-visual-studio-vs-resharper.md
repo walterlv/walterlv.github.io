@@ -1,7 +1,7 @@
 ---
 title: "如果不用 ReSharper，那么 Visual Studio 2019 能还原 ReSharper 多少功能呢？"
 publishDate: 2019-06-24 08:00:38 +0800
-date: 2019-07-10 20:09:22 +0800
+date: 2019-07-10 20:42:36 +0800
 categories: visualstudio dotnet csharp
 position: knowledge
 ---
@@ -69,7 +69,6 @@ Visual Studio 2019 中可以设置智能感知提示中“显示未导入命名�
 
 ## 可以还原
 
-正在填坑……
 
 ## 依然不足
 
@@ -78,3 +77,14 @@ Visual Studio 2019 中可以设置智能感知提示中“显示未导入命名�
 在 ReSharper 中，选中一段代码，如果这段代码可以返回一个值，那么可以使用重构快捷键（默认 Alt+Enter）生成一个局部变量。如果同样带代码块在此方法体中有多处，那么可以同时将多处代码一并提取出来成为一个布局变量。
 
 然而在 Visual Studio 中执行同样的操作，使用重构快捷键（默认 Ctrl+. 可以改为 Alt+Enter）则只能提取方法。
+
+### 大量的代码片段
+
+ReSharper 中自带了大量方便的代码片段，而且其代码片段的可定制性非常强，有很多可以只能完成的宏；而且还有后置式代码片段。
+
+然而 Visual Studio 自带的代码片段就弱很多，只能支持最基本的宏。
+
+不过可以通过下面一些插件通过数量来补足功能上的一些短板：
+
+- [Snippetica for C# - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=josefpihrt-vscode.snippetica-csharp)
+- [C# Methods Code Snippets - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=jsakamoto.CMethodsCodeSnippets)
