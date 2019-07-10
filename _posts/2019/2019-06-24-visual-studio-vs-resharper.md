@@ -1,6 +1,7 @@
 ---
 title: "如果不用 ReSharper，那么 Visual Studio 2019 能还原 ReSharper 多少功能呢？"
-date: 2019-06-24 08:00:38 +0800
+publishDate: 2019-06-24 08:00:38 +0800
+date: 2019-07-10 19:16:08 +0800
 categories: visualstudio dotnet csharp
 position: knowledge
 ---
@@ -37,6 +38,10 @@ position: knowledge
 ![打开更多的智能感知提示时机](/static/posts/2019-06-24-07-56-52.png)
 
 打开“键入字符后显示完成列表”和“删除字符后显示完成列表”。这样，你只要正在编辑，都会显示智能感知提示。
+
+另外，在 `IntelliCode` 部分，可以选择打开更多的 `IntelliSense` 完成项：
+
+![IntelliCode](/static/posts/2019-07-10-19-14-53.png)
 
 ### 在输入时即自动导入需要的命名空间
 
