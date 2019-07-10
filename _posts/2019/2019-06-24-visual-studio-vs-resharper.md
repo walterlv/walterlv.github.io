@@ -1,7 +1,7 @@
 ---
 title: "如果不用 ReSharper，那么 Visual Studio 2019 能还原 ReSharper 多少功能呢？"
 publishDate: 2019-06-24 08:00:38 +0800
-date: 2019-07-10 19:16:08 +0800
+date: 2019-07-10 20:09:22 +0800
 categories: visualstudio dotnet csharp
 position: knowledge
 ---
@@ -38,6 +38,14 @@ position: knowledge
 ![打开更多的智能感知提示时机](/static/posts/2019-06-24-07-56-52.png)
 
 打开“键入字符后显示完成列表”和“删除字符后显示完成列表”。这样，你只要正在编辑，都会显示智能感知提示。
+
+另外，如果你当前需要打开智能感知提示，默认情况下使用 `Ctrl + 空格键` 可以打开。当然你也可以将其修改为 ReSharper 中常见的快捷键 `Alt + 右箭头`。方法是修改键盘快捷键中的 “” 项。
+
+![完成列表](/static/posts/2019-07-10-20-07-38.png)
+
+修改快捷键方法详见：
+
+- [如何快速自定义 Visual Studio 中部分功能的快捷键](/post/customizing-keyboard-shortcuts-in-visual-studio.html)
 
 另外，在 `IntelliCode` 部分，可以选择打开更多的 `IntelliSense` 完成项：
 
