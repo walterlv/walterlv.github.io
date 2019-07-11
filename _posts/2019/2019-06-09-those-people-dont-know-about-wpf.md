@@ -1,7 +1,7 @@
 ---
 title: "WPF 很少人知道的科技"
 publishDate: 2019-06-09 09:49:30 +0800
-date: 2019-07-03 09:39:52 +0800
+date: 2019-07-11 14:16:23 +0800
 categories: wpf dotnet csharp
 position: knowledge
 ---
@@ -29,10 +29,14 @@ WPF 提供 `CompositionCollection` 用于将多个列表合并为一个，以便
 
 ```xml
 <ListBox Name="WalterlvDemoListBox">
+    <ListBox.Resources>
+        <CollectionViewSource x:Key="Items1Source" Source="{Binding Items1}"/>
+        <CollectionViewSource x:Key="Items2Source" Source="{Binding Items2}"/>
+    </ListBox.Resources>
     <ListBox.ItemsSource>
         <CompositeCollection>
-            <CollectionContainer Collection="{Binding Items1}" />
-            <CollectionContainer Collection="{Binding Items2}" />
+            <CollectionContainer Collection="{Binding Source={StaticResource Items1Source}}" />
+            <CollectionContainer Collection="{Binding Source={StaticResource Items2Source}}" />
             <ListBoxItem>Walterlv End Item 1</ListBoxItem>
             <ListBoxItem>Walterlv End Item 2</ListBoxItem>
         </CompositeCollection>
