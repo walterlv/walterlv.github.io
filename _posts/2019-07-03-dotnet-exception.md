@@ -1,7 +1,7 @@
 ---
 title: "一文看懂 .NET 的异常处理机制、原则以及最佳实践"
 publishDate: 2019-07-03 20:02:18 +0800
-date: 2019-07-11 11:51:10 +0800
+date: 2019-07-12 08:33:36 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -276,7 +276,7 @@ public class InvalidDepartmentException : Exception
 - `NullReferenceException` 试图在空引用上执行某些方法，除了告诉实现者出现了意料之外的 null 之外，没有什么其它价值了
 - `IndexOutOfRangeException` 使用索引的时候超出了边界
 - `InvalidCastException` 表示试图对某个类型进行强转但类型不匹配
-- `StackOverflow` 表示栈溢出，这通常说明实现代码的时候写了不正确的显式或隐式的递归
+- `StackOverflowException` 表示栈溢出，这通常说明实现代码的时候写了不正确的显式或隐式的递归
 - `OutOfMemoryException` 表示托管堆中已无法分出期望的内存空间，或程序已经没有更多内存可用了
 - `AccessViolationException` 这说明使用非托管内存时发生了错误
 - `BadImageFormatException` 这说明了加载的 dll 并不是期望中的托管 dll
@@ -316,3 +316,4 @@ public class InvalidDepartmentException : Exception
 
 - [Handling and throwing exceptions in .NET - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/exceptions/)
 - [Exceptions and Exception Handling - C# Programming Guide - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/exceptions/)
+- [Design Guidelines for Exceptions - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/exceptions)
