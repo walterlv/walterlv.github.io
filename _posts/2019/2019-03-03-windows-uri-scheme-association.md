@@ -1,7 +1,7 @@
 ---
 title: "如何为你的 Windows 应用程序关联 URL 协议，以便在浏览器中也能打开你的应用"
 publishDate: 2019-03-03 16:28:12 +0800
-date: 2019-03-09 09:11:22 +0800
+date: 2019-07-20 09:15:12 +0800
 categories: windows
 position: knowledge
 ---
@@ -69,3 +69,9 @@ HKEY_CURRENT_USER\Software\Classes
 也就是说，如果你试图修改文件关联，那么需要去 `HKEY_LOCAL_MACHINE\Software\Classes` 和 `HKEY_CURRENT_USER\Software\Classes` 中，但如果只是去查看文件关联的情况，则只需要去 `HKEY_CLASSES_ROOT` 中。
 
 写入计算机范围内的注册表项需要管理员权限，而写入用户范围内的注册表项不需要管理员权限；你可以酌情选用。
+
+### 额外说明
+
+感谢 [人猿](https://me.csdn.net/xnyqh) 提供的补充信息：
+
+> 假如初次点击不打开，并且勾选了始终，那么以后这个弹框就没有了，而程序也不会打开，需要做下配置的修改 谷歌浏览器：C:\Users\(你的用户名)\AppData\Local\Google\Chrome\User Data\Default\Preferences 火狐浏览器：先关闭浏览器C:\Users\(你的用户名)\AppData\Roaming\Mozilla\Firefox\Profiles\4uasyvvi.default 找到handlers.json
