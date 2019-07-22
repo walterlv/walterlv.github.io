@@ -1,9 +1,8 @@
 ---
 title: "使用 Roslyn 分析代码注释，给 TODO 类型的注释添加负责人、截止日期和 issue 链接跟踪"
-date: 2019-07-20 21:40:14 +0800
+date: 2019-07-22 09:04:15 +0800
 categories: roslyn visualstudio nuget dotnet csharp
 position: starter
-published: false
 ---
 
 如果某天改了一点代码但是没有完成，我们可能会在注释里面加上 `// TODO`。如果某个版本为了控制影响范围临时使用不太合适的方法解了 Bug，我们可能也会在注释里面加上 `// TODO`。但是，对于团队项目来说，一个人写的 `TODO` 可能过了一段时间就淹没在大量的 `TODO` 堆里面了。如果能够强制要求所有的 `TODO` 被跟踪，那么代码里面就比较容易能够控制住 `TODO` 的影响了。
@@ -25,7 +24,7 @@ published: false
 我们先准备一些公共的信息：
 
 ```csharp
-namespace Cvte.Core
+namespace Walterlv.Demo
 {
     internal static class DiagnosticIds
     {
@@ -78,6 +77,8 @@ public class TodoMustBeTrackedAnalyzer : DiagnosticAnalyzer
 // TODO 林德熙在这个版本写的逗比代码，下个版本要改掉。
 ```
 
+在语法节点中判断注释的袋子性，然后使用正则表达式匹配 `TODO`、负责人以及截止日期即可。
+
 ```csharp
 private static readonly Regex TodoRegex = new Regex(@"//\s*todo", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 private static readonly Regex AssigneeRegex = new Regex(@"@\w+", RegexOptions.Compiled);
@@ -109,21 +110,24 @@ private void AnalyzeSingleLineComment(SyntaxTreeAnalysisContext context)
 }
 ```
 
-![](/static/posts/2019-07-20-22-04-53.png)
+将上面的类组装起来运行 Visual Studio 调试即可看到效果。没有负责人和截止日期的 `TODO` 注释将报告编译错误。
 
+![注释上的编译错误](/static/posts/2019-07-20-22-04-53.png)
+
+`TodoMustBeTrackedAnalyzer` 类型的完整代码如下：
 
 ```csharp
 using System;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
-using Cvte.Core;
+using Walterlv.Demo;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 
-namespace Cvte.Analyzers.Maintainability
+namespace Walterlv.Analyzers.Maintainability
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class TodoMustBeTrackedAnalyzer : DiagnosticAnalyzer
@@ -180,7 +184,13 @@ namespace Cvte.Analyzers.Maintainability
 
 ## 代码修改器
 
-![](/static/posts/2019-07-20-22-05-14.png)
+只是报错的话，开发者看到错误可能会一脸懵逼，因为从未见过注释还会报告编译错误的，不知道怎么改。
+
+于是我们需要编写一个代码修改器以便自动完成注释的修改，添加负责人和截止日期。我这里代码修改器修改后的结果就像下面这样：
+
+![TODO 注释的代码修改器](/static/posts/2019-07-20-22-05-14.png)
+
+生成一个新的注释字符串然后替换即可：
 
 ```csharp
 using System;
@@ -190,13 +200,13 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
-using Cvte.Core;
+using Walterlv.Demo;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CodeActions;
 using Microsoft.CodeAnalysis.CodeFixes;
 using Microsoft.CodeAnalysis.CSharp;
 
-namespace Cvte.Analyzers.Maintainability
+namespace Walterlv.Analyzers.Maintainability
 {
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(TodoMustBeTrackedCodeFixProvider)), Shared]
     public class TodoMustBeTrackedCodeFixProvider : CodeFixProvider
@@ -237,7 +247,7 @@ namespace Cvte.Analyzers.Maintainability
                 }
             }
 
-            var comment = $"// TODO @吕毅(walterlv) {DateTime.Now:yyyy年M月d日} {oldComment}";
+            var comment = $"// TODO @{Environment.UserName} {DateTime.Now:yyyy年M月d日} {oldComment}";
             var newTrivia = SyntaxFactory.ParseTrailingTrivia(comment);
 
             var newRoot = root.ReplaceTrivia(oldTrivia, newTrivia);
@@ -246,7 +256,3 @@ namespace Cvte.Analyzers.Maintainability
     }
 }
 ```
-
----
-
-**参考资料**
