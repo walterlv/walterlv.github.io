@@ -1,8 +1,9 @@
 ---
 title: "为 NuGet 指定检测的 MSBuild 路径或版本，解决 MSBuild auto-detection: using msbuild version 自动查找路径不合适的问题"
-date: 2019-07-23 14:31:56 +0800
+date: 2019-07-23 14:32:39 +0800
 categories: nuget msbuild visualstudio dotnet
 position: problem
+published: false
 ---
 
 使用 `nuget restore` 命令还原项目的 NuGet 包的时候，NuGet 会尝试自动检测计算机上已经安装的 MSBuild。不过，如果你同时安装了 Visual Studio 2017 和 Visual Studio 2019，那么 NuGet 有可能找到错误版本的 MSBuild。
