@@ -27,7 +27,7 @@ categories: windows dotnet wpf uwp
 
 UWP 只支持 Windows 10（当然也分不同的小版本，兼容起来有些痛苦）。
 
-WPF 和 Windows Forms 的最新版本只支持 Windows 7 SP1 及以上系统。*如果要支持 Windows 7 和更早的系统，你需要降低 .NET Framework 的版本至 4.6.2 及以下；如果要 XP 支持，还需要到 4.0 及以下。*
+WPF 和 Windows Forms 的最新版本只支持 Windows 7 SP1 及以上系统。*如果要支持 Windows 7 和更早的系统，你需要降低 .NET Framework 的版本至 4.5.2 及以下；如果要 XP 支持，还需要到 4.0 及以下。*
 
 ## 对普通用户而言的 DPI 级别
 
