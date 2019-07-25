@@ -1,6 +1,7 @@
 ---
 title: "为 NuGet 指定检测的 MSBuild 路径或版本，解决 MSBuild auto-detection: using msbuild version 自动查找路径不合适的问题"
-date: 2019-07-23 18:13:54 +0800
+publishDate: 2019-07-23 18:13:54 +0800
+date: 2019-07-25 18:11:47 +0800
 categories: nuget msbuild visualstudio dotnet
 position: problem
 ---
@@ -51,12 +52,49 @@ position: problem
 ```powershell
 Using Msbuild from 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Current\Bin'.
 ```
-<!-- 
-## 使用项目文件配置
 
+## 修改环境变量解决
 
+NuGet 的命令行自动查找 MSBuild.exe 时，是通过环境变量中的 `PATH` 变量来找的。会找到 `PATH` 中第一个包含 `msbuild.exe` 文件的路径，将其作为自动查找到的 MSBuild 的路径。
 
-## 修改全局配置文件 -->
+所以，我们的解决方法是，如果找错了，我们就把期望正确的 MSBuild 所在的路径设置到不期望的 MSBuild 路径的前面。就像下图这样，我们把 2019 版本的 MSBuild 设置到了 2017 版本的前面。
+
+![设置环境变量](/static/posts/2019-07-25-18-07-00.png)
+
+以下是 NuGet 项目中自动查找 MSBuild.exe 文件的方法，源代码来自 <https://github.com/NuGet/NuGet.Client/blob/2b45154b8568d6cbf1469f414938f0e3e88e3704/src/NuGet.Clients/NuGet.CommandLine/MsBuildUtility.cs#L986>。
+
+```csharp
+private static string GetMSBuild()
+{
+    var exeNames = new [] { "msbuild.exe" };
+
+    if (RuntimeEnvironmentHelper.IsMono)
+    {
+        exeNames = new[] { "msbuild", "xbuild" };
+    }
+
+    // Try to find msbuild or xbuild in $Path.
+    var pathDirs = Environment.GetEnvironmentVariable("PATH")?.Split(new[] { Path.PathSeparator }, StringSplitOptions.RemoveEmptyEntries);
+
+    if (pathDirs?.Length > 0)
+    {
+        foreach (var exeName in exeNames)
+        {
+            var exePath = pathDirs.Select(dir => Path.Combine(dir, exeName)).FirstOrDefault(File.Exists);
+            if (exePath != null)
+            {
+                return exePath;
+            }
+        }
+    }
+
+    return null;
+}
+```
+
+我故意在桌面上放了一个老旧的 MSBuild.exe，然后将此路径设置到环境变量 `PATH` 的前面，出现了编译错误。
+
+![编译错误](/static/posts/2019-07-25-18-11-09.png)
 
 ---
 
