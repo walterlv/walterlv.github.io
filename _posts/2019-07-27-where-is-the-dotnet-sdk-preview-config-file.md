@@ -1,6 +1,6 @@
 ---
 title: "Visual Studio 2019 中使用 .NET Core 预览版 SDK 的全局配置文件在哪里？"
-date: 2019-07-27 09:37:15 +0800
+date: 2019-07-27 09:39:00 +0800
 categories: msbuild visualstudio dotnet
 position: problem
 ---
@@ -29,7 +29,7 @@ UsePreviews=True
 
 虽然这很诡异，但确实如此，不信，可以看我是如何确认这个文件就是 .NET Core SDK 预览版的全局配置的：
 
-- [探索 .NET Core SDK 预览版开关的全局配置](/post/find-out-the-dotnet-sdk-preview-config-file.html)
+- [找出 .NET Core SDK 是否使用预览版的全局配置文件在那里（探索篇）](/post/find-out-the-dotnet-sdk-preview-config-file.html)
 
 另外，如果你想知道如何在 Visual Studio 2019 中指定使用 .NET Core SDK 的预览版，可以参考我的另外一篇博客：
 
