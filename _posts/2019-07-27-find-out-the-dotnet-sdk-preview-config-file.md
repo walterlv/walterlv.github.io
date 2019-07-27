@@ -1,6 +1,7 @@
 ---
-title: "找出 .NET Core SDK 是否使用预览版的全局配置文件在那里（探索篇）"
-date: 2019-07-27 13:19:41 +0800
+title: "找出 .NET Core SDK 是否使用预览版的全局配置文件在哪里（探索篇）"
+publishDate: 2019-07-27 13:19:41 +0800
+date: 2019-07-27 14:57:42 +0800
 categories: msbuild visualstudio dotnet
 position: problem
 ---
