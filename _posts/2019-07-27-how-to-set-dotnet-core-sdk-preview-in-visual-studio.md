@@ -1,6 +1,7 @@
 ---
 title: "如何在 Visual Studio 2019 中设置使用 .NET Core SDK 的预览版（全局生效）"
-date: 2019-07-27 09:38:56 +0800
+publishDate: 2019-07-27 09:38:56 +0800
+date: 2019-07-27 18:35:55 +0800
 categories: msbuild visualstudio dotnet
 position: starter
 ---
@@ -13,21 +14,38 @@ Visual Studio 2019 中提供了使用 .NET Core SDK 预览版的开关。但几�
 
 <div id="toc"></div>
 
-## Visual Studio 2019 (16.2 和 16.1)
+## Visual Studio 2019 (16.2)
 
-从 Visual Studio 2019 的 16.1 版本开始，.NET Core 预览版的设置项的位置就移到了：
+从 Visual Studio 2019 的 16.2 版本，.NET Core 预览版的设置项的位置在：
+
+- `工具` -> `选项`
+- `环境` -> `预览功能` -> `Use previews of the .NET Core SDK (需要 restart)`
+
+
+![Visual Studio 2019 16.2 的设置位置](/static/posts/2019-07-27-18-31-15.png)
+
+如果你是英文版的 Visual Studio，也可以参考英文版：
+
+- `Tools` -> `Options`
+- `Environment` -> `Preview Features` -> `Use previews of the .NET Core SDK (requires restart)`
+
+![Option location of Visual Studio 2019 16.2](/static/posts/2019-07-27-18-34-43.png)
+
+## Visual Studio 2019 (16.1)
+
+从 Visual Studio 2019 的 16.1 版本，.NET Core 预览版的设置项的位置在：
 
 - `工具` -> `选项`
 - `环境` -> `预览功能` -> `使用 .NET Core SDK 的预览`
 
-![Visual Studio 2019 16.2 的设置位置](/static/posts/2019-07-27-09-00-09.png)
+![Visual Studio 2019 16.1 的设置位置](/static/posts/2019-07-27-09-00-09.png)
 
 如果你是英文版的 Visual Studio，也可以参考英文版：
 
 - `Tools` -> `Options`
 - `Environment` -> `Preview Features` -> `Use previews of the .NET Core SDK`
 
-![Option location of Visual Studio 2019 16.2](/static/posts/2019-07-27-09-11-48.png)
+![Option location of Visual Studio 2019 16.1](/static/posts/2019-07-27-09-11-48.png)
 
 ## Visual Studio 2019 (16.0 和早期预览版)
 
