@@ -70,6 +70,7 @@ permalink: /friends/
 - [法的空间 - 博客园](https://www.cnblogs.com/FaDeKongJian)
 - [玩命夜狼 - 博客园](https://www.cnblogs.com/noctwolf/)
 - [迪莫的小站](https://www.dimojang.com/)
+- [Ron.Liang - 博客园](https://www.cnblogs.com/viter/)
 - [木杉的博客 - 要么精通，要么死](http://imushan.com/)
 - [Nagisa](http://i.pcbeta.com/home.php?mod=space&uid=3887572&do=thread&type=reply&view=me&from=space) Windows Runtime [Nagisa 0.3 开发近况](http://bbs.pcbeta.com/viewthread-1778794-1-1.html) [Project-Nagisa/Nagisa](https://github.com/Project-Nagisa/Nagisa)
 - [HandyOrg/HandyControl - 纳边](https://github.com/HandyOrg/HandyControl) WPF 控件库
@@ -96,6 +97,7 @@ permalink: /friends/
     - [4K HEVC测试 40M码率 测网速 - wphoneveloper - 哔哩哔哩直播，二次元弹幕直播平台](https://live.bilibili.com/1629664)
 - [Sabia科学研究所](https://www.sabia.cc/)
 - [月江流 · 语雀](https://www.yuque.com/yuejiangliu)
+- [小渣渣的个人博客](https://www.itsvse.com/blog_xzz.html)
 
 ---
 
