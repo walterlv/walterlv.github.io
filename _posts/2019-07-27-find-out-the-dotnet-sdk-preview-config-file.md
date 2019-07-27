@@ -1,6 +1,6 @@
 ---
 title: "找出 .NET Core SDK 是否使用预览版的全局配置文件在那里（探索篇）"
-date: 2019-07-27 13:13:11 +0800
+date: 2019-07-27 13:19:41 +0800
 categories: msbuild visualstudio dotnet
 position: problem
 ---
@@ -141,3 +141,49 @@ UsePreviews=True
 ## 反编译探索
 
 通过反编译探索的方式感谢小伙伴 [KodamaSakuno (神樹桜乃)](https://github.com/KodamaSakuno) 彻夜寻找。
+
+相关的代码在 [cli/VSSettings.cs at master · dotnet/cli](https://github.com/dotnet/cli/blob/master/src/Microsoft.DotNet.MSBuildSdkResolver/VSSettings.cs) 中，你可以前往查看。
+
+在 `VSSettings` 的构造函数中，为字段 `_settingsFilePath` 赋值，拼接了 `sdk.txt` 文件的路径。
+
+```csharp
+_settingsFilePath = Path.Combine(
+    Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+    "Microsoft",
+    "VisualStudio",
+    version.Major + ".0_" + instanceId,
+    "sdk.txt");
+```
+
+读取时，使用此路径下的 `sdk.txt` 文件读取了 `UsePreviews` 变量的值。
+
+```csharp
+private void ReadFromDisk()
+{
+    using (var reader = new StreamReader(_settingsFilePath))
+    {
+        string line;
+        while ((line = reader.ReadLine()) != null)
+        {
+            int indexOfEquals = line.IndexOf('=');
+            if (indexOfEquals < 0 || indexOfEquals == (line.Length - 1))
+            {
+                continue;
+            }
+
+            string key = line.Substring(0, indexOfEquals).Trim();
+            string value = line.Substring(indexOfEquals + 1).Trim();
+
+            if (key.Equals("UsePreviews", StringComparison.OrdinalIgnoreCase)
+                && bool.TryParse(value, out bool usePreviews))
+            {
+                _disallowPrerelease = !usePreviews;
+                return;
+            }
+        }
+    }
+
+    // File does not have UsePreviews entry -> use default
+    _disallowPrerelease = _disallowPrereleaseByDefault;
+}
+```
