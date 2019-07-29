@@ -1,6 +1,7 @@
 ---
 title: "Visual Studio 2019 中使用 .NET Core 预览版 SDK 的全局配置文件在哪里？"
-date: 2019-07-27 09:39:00 +0800
+publishDate: 2019-07-27 09:39:00 +0800
+date: 2019-07-29 17:47:40 +0800
 categories: msbuild visualstudio dotnet
 position: problem
 ---
