@@ -1,8 +1,9 @@
 ---
 title: "解决 WPF 嵌套的子窗口在改变窗口大小的时候闪烁的问题"
-date: 2019-08-01 20:56:42 +0800
+date: 2019-08-02 11:32:37 +0800
 categories: wpf windows dotnet csharp
 position: problem
+published: false
 ---
 
 因为 Win32 的窗口句柄是可以跨进程传递的，所以可以用来实现跨进程 UI。不过，本文不会谈论跨进程 UI 的具体实现，只会提及其实现中的一个重要缓解，使用子窗口的方式。
@@ -27,13 +28,17 @@ position: problem
 
 我特地提取了一个提交下的代码，如果你要尝试，不能使用 `master` 分支，因为 `master` 分支修复了闪烁的问题。
 
+后来使用 `CreateWindowEx` 创建了一个纯 Win32 窗口，这种闪烁现象更容易被截图：
+
+![Win32 窗口闪烁](/static/posts/2019-08-02-08-16-22.png)
+
+![Win32 窗口闪烁 - 动图](/static/posts/2019-08-02-window-flicker.gif)
+
 ## 解决
 
 ```diff
     public class HwndWrapper : HwndHost
     {
-        private HwndSource _source;
-
         protected override HandleRef BuildWindowCore(HandleRef hwndParent)
         {
             const int WS_CHILD = 0x40000000;
@@ -46,20 +51,13 @@ position: problem
 --              WindowStyle = (int)(WS_CHILD),
 ++              WindowStyle = (int)(WS_CHILD | WS_CLIPCHILDREN),
             };
-            _source = new HwndSource(parameters);
-            _source.RootVisual = new ChildPage();
-            return new HandleRef(this, _source.Handle);
+            var source = new HwndSource(parameters);
+            source.RootVisual = new ChildPage();
+            return new HandleRef(this, source.Handle);
         }
 
         protected override void DestroyWindowCore(HandleRef hwnd)
         {
-            _source?.Dispose();
-        }
-
-        protected override Size ArrangeOverride(Size finalSize)
-        {
-            Win32.User32.GetWindowRect(_source.Handle, out var bounds);
-            return new Size(bounds.Width, bounds.Height);
         }
     }
 ```
@@ -74,3 +72,4 @@ position: problem
 
 - [wpf - Custom dwm drawn window frame flickers on resizing if the window contains a HwndHost element - Stack Overflow](https://stackoverflow.com/q/6500336/6233938)
 - [WPF多进程UI探索（Like Chrome） - 简书](https://www.jianshu.com/p/f2c6a2d9bbb2)
+- [关于WS_CLIPCHILDREN和WS_CLIPSIBLINGS的理解（个人认为还是相当全面的） - helloj2ee - 博客园](https://www.cnblogs.com/helloj2ee/archive/2009/05/29/1491822.html)
