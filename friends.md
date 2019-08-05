@@ -61,6 +61,7 @@ permalink: /friends/
 - [云乡 - 云之幻](https://blog.richasy.cn/)
 - [蓝火火](https://blog.ultrabluefire.cn/) [叫我蓝火火](https://www.cnblogs.com/blue-fire/) UWP 大神，Composition API 大神，Win2D 大神
 - [快乐 就在你的心 的博客](https://kljzndx.github.io/My-Blog/)
+- [文轩 – 文轩大猪头](https://www.itoolsoft.org/archives/author/admin)
 - [LiesAuer's Blog](http://www.liesauer.net/) 生命不息，折腾不止
 - [未来代码研究所](http://blog.atelier39.org/)
 - [普通的地球人 - 博客园](https://www.cnblogs.com/tsliwei/default.html?page=1) 很多炫酷的 WPF 效果
