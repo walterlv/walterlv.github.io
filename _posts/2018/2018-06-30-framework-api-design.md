@@ -1,7 +1,7 @@
 ---
 title: "好的框架需要好的 API 设计 —— API 设计的六个原则"
 publishDate: 2018-06-30 17:23:45 +0800
-date: 2019-08-05 11:48:17 +0800
+date: 2019-08-05 12:20:04 +0800
 categories: dotnet framework
 version:
   current: 中文
@@ -38,7 +38,7 @@ This post is written in **multiple languages**. Please select yours:
 
 > 我（吕毅）说：  
 > 在 API 设计原则里面，无法写出错误代码是为上策，写错了会出现异常次之，仅靠文档约束为下策，连约束都没有只剩坑的需祭天。
-> 
+>   
 > 头像大人云：  
 > 故上码伐编译，其次伐异常，其次伐文档，其下祭天。祭天之法，为不得已。
 
