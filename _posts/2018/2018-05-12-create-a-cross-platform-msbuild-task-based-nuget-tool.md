@@ -1,7 +1,7 @@
 ---
 title: "如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包"
 publishDate: 2018-05-12 00:04:14 +0800
-date: 2018-12-14 09:54:00 +0800
+date: 2019-08-07 14:50:59 +0800
 categories: visualstudio csharp dotnet msbuild
 ---
 
@@ -530,6 +530,7 @@ namespace Walterlv.Debug
 
 **参考资料**
 
+- [docs.microsoft.com-nuget/Creating-a-Package.md at master · NuGet/docs.microsoft.com-nuget](https://github.com/NuGet/docs.microsoft.com-nuget/blob/master/docs/create-packages/Creating-a-Package.md)
 - [NuGet pack and restore as MSBuild targets - Microsoft Docs](https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets?wt.mc_id=MVP)
 - [Bundling .NET build tools in NuGet](https://www.natemcmaster.com/blog/2017/11/11/build-tools-in-nuget/)
 - [Shipping a cross-platform MSBuild task in a NuGet package](https://www.natemcmaster.com/blog/2017/07/05/msbuild-task-in-nuget/)
