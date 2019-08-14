@@ -1,6 +1,7 @@
 ---
 title: "System.InvalidOperationException:“寄宿 HWND 必须是子窗口。”"
-date: 2019-08-01 18:45:38 +0800
+publishDate: 2019-08-01 18:45:38 +0800
+date: 2019-08-14 16:32:35 +0800
 categories: wpf windows dotnet csharp
 position: problem
 ---
