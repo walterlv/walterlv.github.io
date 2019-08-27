@@ -1,6 +1,7 @@
 ---
-title: "WPF 的 Application.Current.Dispatcher 中，仅 Current 可能为 null，而 Dispatcher 属性一定不会为 null"
-date: 2019-08-27 10:10:50 +0800
+title: "WPF 的 Application.Current.Dispatcher 中，Dispatcher 属性一定不会为 null"
+publishDate: 2019-08-27 10:10:50 +0800
+date: 2019-08-27 11:14:25 +0800
 categories: wpf dotnet csharp
 position: problem
 ---
@@ -10,6 +11,11 @@ position: problem
 然而实际上这里只可能 `Current` 为 `null` 而此上下文的 `Dispatcher` 是绝对不会为 `null` 的。（当然我们这里讨论的是常规编程手段，如果非常规手段，你甚至可以让实例的 `this` 为 `null` 呢……）
 
 ---
+
+由于本文所述的两个部分都略长，所以拆分成两篇博客，这样更容易理解。
+
+- [WPF 的 Application.Current.Dispatcher 中，Dispatcher 属性一定不会为 null - walterlv](https://blog.walterlv.com/post/application-dispatcher-will-never-be-null.html)
+- [WPF 的 Application.Current.Dispatcher 中，Current 可能为 null](https://blog.walterlv.com/post/application-current-may-be-null.html)
 
 <div id="toc"></div>
 
@@ -203,7 +209,7 @@ public static Dispatcher CurrentDispatcher
 
 可以看到，无论前面的方法得到的值是否是 `null`，后面都会再给 `currentDispatcher` 局部变量赋值一个新创建的实例的。因此，此属性是绝对不会返回 `null` 的。
 
-由此可知，`DispatcherObject` 自构造起便拥有一个不为 `null` 的 `Dispatcher` 属性，其所有子类在初始化之前变回得到不为 `null` 的 `Dispatcher` 属性。
+由此可知，`DispatcherObject` 自构造起便拥有一个不为 `null` 的 `Dispatcher` 属性，其所有子类在初始化之前便会得到不为 `null` 的 `Dispatcher` 属性。
 
 ### 后续赋值
 
@@ -276,8 +282,14 @@ static ItemInfo()
 
 因此，所有常规手段均不会让 `Application` 类的 `Dispatcher` 属性拿到 `null` 值。如果你还说拿到了 `null`，那就检查是否有逗比程序员通过反射或其他手段将 `_dispatcher` 字段改为了 `null` 吧……
 
+## `Application.Current` 静态属性
+
+关于 `Application.Current` 是否可能为 `null` 的分析，由于比较长，请参见我的另一篇博客：
+
+- [WPF 的 Application.Current.Dispatcher 中，Current 可能为 null](https://blog.walterlv.com/post/application-current-may-be-null.html)
+
 ---
 
 **参考资料**
 
-- [DetachFromDispatcher](https://referencesource.microsoft.com/#WindowsBase/Base/System/Windows/Threading/DispatcherObject.cs,8d170508c09ff6a2,references)
+- [DispatcherObject.cs](https://referencesource.microsoft.com/#WindowsBase/Base/System/Windows/Threading/DispatcherObject.cs)
