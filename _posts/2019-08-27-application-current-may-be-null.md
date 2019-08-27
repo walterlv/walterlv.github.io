@@ -1,7 +1,7 @@
 ---
 title: "WPF 的 Application.Current.Dispatcher 中，为什么 Current 可能为 null"
 publishDate: 2019-08-27 12:45:27 +0800
-date: 2019-08-27 13:01:31 +0800
+date: 2019-08-27 13:05:49 +0800
 categories: wpf dotnet csharp
 position: problem
 ---
@@ -250,6 +250,39 @@ private void ShutdownImplInSecurityContext(Object state)
 
 - 所有通过 `Invoke/BeginInvoke/InvokeAsync` 或间接通过此方法（如 WPF 控件相关事件）调用的代码，均不会遭遇 `Application.Current` 为 `null`。
 - 所有在 UI 线程使用 `async` / `await` 并使用默认上下文执行的代码，均不会遭遇 `Application.Current` 为 `null`。（这意味着你没有使用 `.ConfigureAwait(false)`，详见[在编写异步方法时，使用 ConfigureAwait(false) 避免使用者死锁 - walterlv](https://blog.walterlv.com/post/using-configure-await-to-avoid-deadlocks.html)。）
+
+### 最简示例代码
+
+![最简例子](/static/posts/2019-08-27-13-04-03.png)
+
+```csharp
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows;
+
+namespace Walterlv.Demo.ApplicationDispatcher
+{
+    class Program
+    {
+        [STAThread]
+        static void Main(string[] args)
+        {
+            var app = new Application();
+            Task.Delay(1000).ContinueWith(t =>
+            {
+                app.Dispatcher.InvokeAsync(() => app.Shutdown());
+            });
+            Task.Delay(2000).ContinueWith(t =>
+            {
+                Application.Current.Dispatcher.InvokeAsync(() => { });
+            });
+            app.Run();
+            Thread.Sleep(2000);
+        }
+    }
+}
+```
 
 ### 结论
 
