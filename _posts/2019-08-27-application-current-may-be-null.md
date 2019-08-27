@@ -1,6 +1,7 @@
 ---
 title: "WPF 的 Application.Current.Dispatcher 中，Current 可能为 null"
-date: 2019-08-27 12:45:27 +0800
+publishDate: 2019-08-27 12:45:27 +0800
+date: 2019-08-27 12:50:21 +0800
 categories: wpf dotnet csharp
 position: problem
 ---
@@ -257,9 +258,11 @@ private void ShutdownImplInSecurityContext(Object state)
 1. 任何与 `Application` 不在同一个线程的代码，都可能遭遇 `Application.Current` 为 `null`。
 1. 任何与 `Application` 在同一个线程的代码，都不可能遇到 `Application.Current` 为 `null`。
 
-这其实是一个线程安全问题。
+这其实是一个线程安全问题。用所有业务开发者都可以理解的说法描述就是：
 
-在编写你自己的业务代码时，需要关注这一点，所有非 UI 线程的代码，如果需要转移到 UI 线程执行，记得判空：
+**当你的应用程序退出时，所有 UI 线程的代码都不再会执行，因此这是安全的；但所有非 UI 线程的代码依然在继续执行，此时随时可能遇到 `Application.Current` 属性为 null。**
+
+因此，记得所有非 UI 线程的代码，如果需要转移到 UI 线程执行，记得判空：
 
 ```csharp
 private void OnUsbDeviceChanged(object sender, EventArgs e)
