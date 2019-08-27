@@ -1,7 +1,7 @@
 ---
 title: "WPF 的 Application.Current.Dispatcher 中，为什么 Current 可能为 null"
 publishDate: 2019-08-27 12:45:27 +0800
-date: 2019-08-27 12:51:01 +0800
+date: 2019-08-27 12:52:09 +0800
 categories: wpf dotnet csharp
 position: problem
 ---
@@ -15,7 +15,7 @@ position: problem
 由于本文所述的两个部分都略长，所以拆分成两篇博客，这样更容易理解。
 
 - [WPF 的 Application.Current.Dispatcher 中，Dispatcher 属性一定不会为 null](https://blog.walterlv.com/post/application-dispatcher-will-never-be-null.html)
-- [WPF 的 Application.Current.Dispatcher 中，Current 可能为 null](https://blog.walterlv.com/post/application-current-may-be-null.html)
+- [WPF 的 Application.Current.Dispatcher 中，为什么 Current 可能为 null](https://blog.walterlv.com/post/application-current-may-be-null.html)
 
 <div id="toc"></div>
 
