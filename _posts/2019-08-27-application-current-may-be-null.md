@@ -1,7 +1,7 @@
 ---
 title: "WPF 的 Application.Current.Dispatcher 中，为什么 Current 可能为 null"
 publishDate: 2019-08-27 12:45:27 +0800
-date: 2019-08-27 12:52:09 +0800
+date: 2019-08-27 13:01:31 +0800
 categories: wpf dotnet csharp
 position: problem
 ---
@@ -11,6 +11,8 @@ position: problem
 然而实际上这里只可能 `Current` 为 `null` 而此上下文的 `Dispatcher` 是绝对不会为 `null` 的。（当然我们这里讨论的是常规编程手段，如果非常规手段，你甚至可以让实例的 `this` 为 `null` 呢……）
 
 ---
+
+**当你的应用程序退出时，所有 UI 线程的代码都不再会执行，因此这是安全的；但所有非 UI 线程的代码依然在继续执行，此时随时可能遇到 `Application.Current` 属性为 null。**
 
 由于本文所述的两个部分都略长，所以拆分成两篇博客，这样更容易理解。
 
@@ -157,9 +159,7 @@ internal virtual void DoShutdown()
 
 但是这部分业务代码会有一些公共特征帮助你判定你是否可能写出遭遇 `Application.Current` 为 `null` 的代码。
 
-此特征是：
-
-- 此代码与 `Application.Current` 不在同一线程
+此特征是：**此代码与 `Application.Current` 不在同一线程**。
 
 ## 与 `Application.Current` 不在同一线程
 
