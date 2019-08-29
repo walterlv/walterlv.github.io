@@ -1,6 +1,6 @@
 ---
 title: "通过设置启用 Visual Studio 默认关闭的大量强大的功能提升开发效率"
-date: 2019-08-29 21:40:33 +0800
+date: 2019-08-29 21:54:47 +0800
 categories: visualstudio csharp
 position: starter
 ---
@@ -82,3 +82,15 @@ Visual Studio 2019 默认安装了 IntelliCode 可以充分利用微软使用 Gi
 
 - [如何快速自定义 Visual Studio 中部分功能的快捷键](/post/customizing-keyboard-shortcuts-in-visual-studio.html)
 - [提高使用 Visual Studio 开发效率的键盘快捷键](/post/keyboard-shortcuts-to-improve-the-efficiency-of-visual-studio.html)
+
+## 自动完成
+
+在你点击 “确定” 关闭了以上窗口之后，我们还需要设置一项。
+
+确保下图中的这个按钮处于 “非选中” 状态：
+
+![建议完成模式](/static/posts/2019-08-29-21-49-58.png)
+
+这样，当出现智能感知列表的时候，我们直接就可以按下回车键输入这个选项了；否则你还需要按上下选中再回车。
+
+![建议完成和标准完成](/static/posts/2019-08-29-21-53-51.png)
