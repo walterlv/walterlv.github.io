@@ -1,7 +1,7 @@
 ---
 title: "C#/.NET 中 Thread.Sleep(0), Task.Delay(0), Thread.Yield(), Task.Yield() 不同的执行效果和用法建议"
 publishDate: 2018-11-27 13:14:07 +0800
-date: 2018-12-14 09:54:00 +0800
+date: 2019-08-29 16:34:41 +0800
 categories: dotnet csharp
 ---
 
@@ -165,6 +165,19 @@ public static Task Delay(int millisecondsDelay, CancellationToken cancellationTo
 
 
 ### Task.Yield()
+
+`Task.Yield()` 的最大作用实际上是让一个异步方法立刻返回，让后面其他代码的调用进入下一个异步上下文。
+
+```csharp
+public async Task Foo()
+{
+    // 执行某些操作。
+    await Task.Yield();
+    // 执行另一些操作。
+}
+```
+
+如果外面的代码使用 `await` 来等待 `Foo`，那么 `Task.Yield` 的作用可能不太明显，但是如果外面并没有 `await` 或者任何一层更外层的调用没有 `await`，那么就有区别了。对于没有异步等待的调用，那个方法就会在此 `Task.Yield()` 这一句执行后返回。而此后的代码将在那些没有异步等待的方法之后执行。
 
 `Task.Yield()` 实际上只是返回一个 `YieldAwaitable` 的新实例，而 `YieldAwaitable.GetAwaiter` 方法返回一个 `YieldAwaiter` 的新实例。也就是说，后续的执行效果完全取决于 `YieldAwaiter` 是如何实现这个异步过程的（异步状态机会执行这个过程）。我有另一篇博客说明 `Awaiter` 是如何实现的：[如何实现一个可以用 await 异步等待的 Awaiter](/post/write-custom-awaiter.html)。
 
