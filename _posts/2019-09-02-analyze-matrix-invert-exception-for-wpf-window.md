@@ -1,6 +1,7 @@
 ---
 title: "WPF 不要给 Window 类设置变换矩阵（分析篇）：System.InvalidOperationException: 转换不可逆。"
-date: 2019-09-02 11:54:06 +0800
+publishDate: 2019-09-02 11:54:06 +0800
+date: 2019-09-02 14:13:35 +0800
 categories: wpf dotnet csharp
 position: problem
 ---
@@ -198,7 +199,7 @@ $$
 
 - 平移？平移只会修改 $$OffsetX$$ 和 $$OffsetY$$，因此对结果没有影响
 - 缩放？缩放会将原矩阵点乘缩放矩阵
-- 旋转？旋转会将旋转矩阵点乘旋转矩阵
+- 旋转？旋转会将旋转矩阵点乘原矩阵
 
 其中，原矩阵在我们的场景下就是恒等的矩阵，即 `Matrix.Identity`：
 
@@ -266,8 +267,7 @@ $$
 -\sin{\alpha} & \cos{\alpha} & 0 \\
 0 & 0 & 1
 \end{bmatrix}
-\cdot 
-\begin{bmatrix}
+\cdot \begin{bmatrix}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 1
