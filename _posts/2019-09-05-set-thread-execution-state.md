@@ -1,6 +1,6 @@
 ---
 title: ".NET/C# 阻止屏幕关闭，阻止系统进入睡眠状态"
-date: 2019-09-05 14:43:33 +0800
+date: 2019-09-05 14:49:41 +0800
 categories: dotnet csharp windows
 position: knowledge
 ---
@@ -122,6 +122,10 @@ namespace Walterlv.Windows
     }
 }
 ```
+
+如果你对这段封装中的 `keepDisplayOn` 参数，也就是 `ExecutionState.DisplayRequired` 枚举不了解，看看下图直接就懂了。一个指的是屏幕关闭，一个指的是系统进入睡眠。
+
+![电源和睡眠](/static/posts/2019-09-05-14-48-37.png)
 
 此封装后，使用则相当简单：
 
