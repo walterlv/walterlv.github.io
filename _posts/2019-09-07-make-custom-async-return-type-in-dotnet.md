@@ -1,6 +1,6 @@
 ---
 title: "C# 实现自己的异步方法返回值类型（AsyncMethodBuilder）"
-date: 2019-09-01 18:37:05 +0800
+date: 2019-09-05 14:36:40 +0800
 categories: csharp dotnet
 position: knowledge
 published: false
@@ -198,6 +198,14 @@ namespace Walterlv.Demo
 
 **参考资料**
 
+- [roslyn/task-types.md at master · dotnet/roslyn](https://github.com/dotnet/roslyn/blob/master/docs/features/task-types.md)
 - [Async Return Types (C#) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/async-return-types)
 - [Extending the async methods in C# - Premier Developer](https://devblogs.microsoft.com/premier-developer/extending-the-async-methods-in-c/)
+- [Dissecting the async methods in C# - Premier Developer](https://devblogs.microsoft.com/premier-developer/dissecting-the-async-methods-in-c/)
 - [AsyncMethodBuilder.cs](https://referencesource.microsoft.com/#mscorlib/system/runtime/compilerservices/AsyncMethodBuilder.cs)
+- [AsyncValueTaskMethodBuilderT.cs](https://source.dot.net/#System.Private.CoreLib/shared/System/Runtime/CompilerServices/AsyncValueTaskMethodBuilderT.cs)
+- [Understanding the Whys, Whats, and Whens of ValueTask - .NET Blog](https://devblogs.microsoft.com/dotnet/understanding-the-whys-whats-and-whens-of-valuetask/)
+- [Dixin's Blog - Understanding C# async / await (1) Compilation](https://weblogs.asp.net/dixin/understanding-c-sharp-async-await-1-compilation)
+- [Dixin's Blog - Understanding C# async / await (2) The Awaitable-Awaiter Pattern](https://weblogs.asp.net/dixin/understanding-c-sharp-async-await-2-awaitable-awaiter-pattern)
+- [Dixin's Blog - Understanding C# async / await (3) Runtime Context](https://weblogs.asp.net/dixin/understanding-c-sharp-async-await-3-runtime-context)
+- [Interface ICriticalNotifyCompletion - CoreCLR site](https://dotnet.github.io/dotnet-web/api/System.Runtime.CompilerServices.ICriticalNotifyCompletion.html)
