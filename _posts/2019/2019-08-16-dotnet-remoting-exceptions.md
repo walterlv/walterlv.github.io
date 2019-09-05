@@ -1,7 +1,7 @@
 ---
 title: "在使用 .NET Remoting 技术开发跨进程通信时可能遇到的各种异常"
 publishDate: 2019-08-19 08:44:13 +0800
-date: 2019-08-29 15:02:19 +0800
+date: 2019-09-05 21:26:31 +0800
 categories: dotnet
 position: problem
 ---
@@ -12,7 +12,7 @@ position: problem
 
 <div id="toc"></div>
 
-## 连接到 IPC 端口失败: 系统找不到指定的文件。
+## 连接到 IPC 端口失败: 系统找不到指定的文件
 
 > System.Runtime.Remoting.RemotingException:“连接到 IPC 端口失败: 系统找不到指定的文件。”
 
@@ -78,6 +78,19 @@ namespace Walterlv.Remoting.Framework
 ```
 
 而对于第三种情况，你需要检查你是如何注册 .NET Remoting 通道的，创建和访问方式必须匹配。
+
+## 信道“ipc”已注册
+
+> System.Runtime.Remoting.RemotingException:“信道“ipc”已注册。”
+
+在同一个进程中，`IpcChannel` 类的默认信道名称 `IpcChannel.ChannelName` 值是字符串 `"ipc"`。如果你不通过它的参数 `properties` 来指定 `["name"] = "另一个名称"`，那么你就不能重复调用 `ChannelServices.RegisterChannel` 来调用这个信道。
+
+说简单点，就是上面的方法 `RegisterChannel` 你不能在一个进程中调用两次，即便 `"portName"` 不同也不行。通常你也不需要去调用两次，如果一定要，请通过 `HashTable` 修改 `name` 属性。
+
+<!-- ## 创建 IPC 端口失败: 拒绝访问
+
+> System.Runtime.Remoting.RemotingException:“创建 IPC 端口失败: 拒绝访问。”
+ -->
 
 ---
 
