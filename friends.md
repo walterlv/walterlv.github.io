@@ -117,6 +117,7 @@ permalink: /friends/
 - [Nick Waggoner – Thoughs and Inishgts on Software, Leadership, Business, & Effectiveness](http://www.nickwaggoner.com/)  
     Nick Waggoner 供职于微软 native Windows UI platform
 - [Nate McMaster](https://www.natemcmaster.com/)
+- [Stephen Cleary (the blog)](https://blog.stephencleary.com/)
 - [Hacker News](https://news.ycombinator.com/)
     - [Hacker Newsletter 每周精选](https://www.hackernewsletter.com/)
     - [Hacker News 与 Reddit 的算法比较 - 旁观者 - 博客园](http://www.cnblogs.com/zhengyun_ustc/archive/2010/12/15/amir.html)
