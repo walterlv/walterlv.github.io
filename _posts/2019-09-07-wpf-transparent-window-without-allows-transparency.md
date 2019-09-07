@@ -1,6 +1,7 @@
 ---
-title: "WPF 不使用 AllowsTransparency=True 制作背景透明的异形窗口"
-date: 2019-09-07 14:40:20 +0800
+title: "WPF 制作高性能的透明背景异形窗口（使用 WindowChrome 而不要使用 AllowsTransparency=True）"
+publishDate: 2019-09-07 14:40:20 +0800
+date: 2019-09-07 16:36:41 +0800
 categories: wpf dotnet csharp
 position: knowledge
 ---
