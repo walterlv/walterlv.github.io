@@ -1,7 +1,7 @@
 ---
 title: "提高使用 Visual Studio 开发效率的键盘快捷键"
 publishDate: 2019-08-29 23:09:33 +0800
-date: 2019-09-07 09:25:26 +0800
+date: 2019-09-07 10:05:07 +0800
 categories: visualstudio csharp
 position: knowledge
 ---
@@ -72,6 +72,10 @@ Visual Studio 的功能可谓真是丰富，再配合各种各样神奇强大的
 这可以帮助你快速找到整个解决方案中的所有文件或符号，看下图：
 
 ![转到所有](/static/posts/2019-09-07-09-07-22.png)
+
+修改方法可以参见：[如何快速自定义 Visual Studio 中部分功能的快捷键](/post/customizing-keyboard-shortcuts-in-visual-studio.html)，下图是此功能的命令名称 `编辑.转到所有`（`Edit.GoToAll`）：
+
+![编辑.转到所有](/static/posts/2019-09-07-10-04-24.png)
 
 有一些小技巧：
 
