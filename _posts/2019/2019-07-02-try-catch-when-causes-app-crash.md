@@ -1,6 +1,7 @@
 ---
 title: ".NET Framework 的 bug？try-catch-when 中如果 when 语句抛出异常，程序将彻底崩溃"
-date: 2019-07-02 19:32:25 +0800
+publishDate: 2019-07-02 19:32:25 +0800
+date: 2019-09-12 14:58:50 +0800
 categories: dotnet csharp
 position: problem
 version:
@@ -12,7 +13,7 @@ versions:
 
 在 .NET Framework 4.8 中，try-catch-when 中如果 when 语句抛出异常，程序将彻底崩溃。而 .NET Core 3.0 中不会出现这样的问题。
 
-本文可能是正在像微软报告的一个 Bug。
+本文涉及的 Bug 已经报告给了微软，并且得到了微软的回复。是 .NET Framework 4.8 为了解决一个安全性问题而强行结束了进程。
 
 ---
 
@@ -95,3 +96,19 @@ namespace Walterlv.Demo.CatchWhenCrash
 以下是在 Visual Studio 中单步跟踪的步骤：
 
 ![单步调试](/static/posts/2019-07-02-catch-when-crash.gif)
+
+## Issue 和行为
+
+由于本人金鱼般的记忆力，我竟然给微软报了三次这个 Bug：
+
+- 给文档的（2019.09.10）：[When use the when keyword in a catch expression the app crashes instead of do what the document says · Issue #14338 · dotnet/docs](https://github.com/dotnet/docs/issues/14338)
+- 给框架和 SDK 的（2019.09.12）： [When use the when keyword in a catch expression the app crashes instead of do what the document says · Issue #41047 · dotnet/corefx](https://github.com/dotnet/corefx/issues/41047)
+- 给运行时的（2019.07.02）：[App will crash when using the when keyword in a catch expression · Issue #25534 · dotnet/coreclr](https://github.com/dotnet/coreclr/issues/25534)
+
+此问题是 .NET Framework 4.8 为了修复一个安全性问题才强行结束了进程：
+
+> Process corrupting exceptions in exception filter (like access violation) now result in aborting the current process. [110375, clr.dll, Bug, Build:3694]
+
+请参见：
+
+- [dotnet/dotnet48-changes.md at master · microsoft/dotnet](https://github.com/microsoft/dotnet/blob/master/releases/net48/dotnet48-changes.md)
