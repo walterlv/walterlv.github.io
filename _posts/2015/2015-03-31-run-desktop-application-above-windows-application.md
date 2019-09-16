@@ -15,20 +15,24 @@ permalink: /wpf/2015/03/31/run-desktop-application-above-windows-application.htm
 做到这些，需要四个步骤，缺一不可：
 
 ### 修改 Manifest
+
 ```xml
 <requestedExecutionLevel level="asInvoker" uiAccess="true" />
 ```
 
 ### 修改窗口属性
+
 ```csharp
 ShowInTaskbar=true
 TopMost=true
 ```
 
 ### 为程序签名
-[参见此处](/windows/wpf/2015/03/31/sign-for-desktop-application.html)
+
+[参见此处 - 为程序签名](/windows/2015/03/31/sign-for-desktop-application.html)
 
 ### 将程序放到受信任的目录下
+
 ```
 C:\program files
 C:\program files x86
