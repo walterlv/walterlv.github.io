@@ -1,7 +1,7 @@
 ---
 title: "C#/.NET 中启动进程时所使用的 UseShellExecute 设置为 true 和 false 分别代表什么意思？"
 publishDate: 2019-03-29 15:23:35 +0800
-date: 2019-04-01 12:04:26 +0800
+date: 2019-09-17 12:37:17 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -47,7 +47,7 @@ position: knowledge
 
 ## 如何选择
 
-`UseShellExecute` 的默认值是 `true`。
+`UseShellExecute` 在 .NET Framework 中的的默认值是 `true`，在 .NET Core 中的默认值是 `false`。
 
 如果有以下需求，那么建议设置此值为 `false`：
 
