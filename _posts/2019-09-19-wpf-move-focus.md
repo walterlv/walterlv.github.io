@@ -1,6 +1,6 @@
 ---
 title: "WPF 程序如何移动焦点到其他控件"
-date: 2019-09-19 11:33:07 +0800
+date: 2019-09-19 11:39:09 +0800
 categories: wpf dotnet csharp
 position: knowledge
 ---
@@ -31,6 +31,16 @@ var traversalRequest = new TraversalRequest(FocusNavigationDirection.Next);
 // view 是可视化树中的一个控件。
 view.MoveFocus(traversalRequest);
 ```
+
+## 关于逻辑焦点和键盘焦点
+
+键盘焦点就是你实际上按键输入和快捷键会生效的焦点，也就是当前正在工作的控件的焦点。
+
+而 WPF 有多个焦点范围（Focus Scope），按下 Tab 键切换焦点的时候只会在当前焦点范围切焦点，不会跨范围。那么一旦跨范围切焦点的时候，焦点会去哪里呢？答案是逻辑焦点。
+
+每个焦点范围内都有一个逻辑焦点，记录如果这个焦点范围一旦获得焦点后应该在哪个控件获得键盘焦点。
+
+比如默认情况下 WPF 每个 `Window` 就是一个焦点范围，那么每个 `Window` 中的当前焦点就是逻辑焦点。而一旦这个 `Window` 激活，那么这个窗口中的逻辑焦点就会成为键盘焦点，另一个窗口当中的逻辑焦点保留，而键盘焦点则丢失。
 
 ---
 
