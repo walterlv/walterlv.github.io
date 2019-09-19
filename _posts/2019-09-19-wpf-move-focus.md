@@ -1,6 +1,6 @@
 ---
 title: "WPF 程序如何移动焦点到其他控件"
-date: 2019-09-19 11:39:09 +0800
+date: 2019-09-19 11:41:12 +0800
 categories: wpf dotnet csharp
 position: knowledge
 ---
@@ -41,6 +41,12 @@ view.MoveFocus(traversalRequest);
 每个焦点范围内都有一个逻辑焦点，记录如果这个焦点范围一旦获得焦点后应该在哪个控件获得键盘焦点。
 
 比如默认情况下 WPF 每个 `Window` 就是一个焦点范围，那么每个 `Window` 中的当前焦点就是逻辑焦点。而一旦这个 `Window` 激活，那么这个窗口中的逻辑焦点就会成为键盘焦点，另一个窗口当中的逻辑焦点保留，而键盘焦点则丢失。
+
+## 跨窗口/跨进程切换焦点
+
+参见我的另一篇博客：
+
+- [WPF 程序如何跨窗口/跨进程设置控件焦点](https://blog.walterlv.com/post/move-focus-to-win32-window.html)
 
 ---
 
