@@ -1,7 +1,7 @@
 ---
 title: "如何在 Visual Studio 2019 中设置使用 .NET Core SDK 的预览版（全局生效）"
 publishDate: 2019-07-27 09:38:56 +0800
-date: 2019-07-27 18:35:55 +0800
+date: 2019-09-24 08:37:39 +0800
 categories: msbuild visualstudio dotnet
 position: starter
 ---
@@ -13,6 +13,14 @@ Visual Studio 2019 中提供了使用 .NET Core SDK 预览版的开关。但几�
 ---
 
 <div id="toc"></div>
+
+## Visual Studio 2019 (16.3 及以上)
+
+.NET Core 3.0 已经发布，下载地址：
+
+- [Download .NET (Linux, macOS, and Windows)](https://dotnet.microsoft.com/download)
+
+Visual Studio 16.3 与 .NET Core 3.0 正式版同步发布，因此不再需要 .NET Core 3.0 的预览版设置界面。你只需要安装正式版 .NET Core SDK 即可。
 
 ## Visual Studio 2019 (16.2)
 
