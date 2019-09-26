@@ -5,6 +5,14 @@ categories: favorite
 sitemap: false
 ---
 
+- Internal and External Devices
+    - [How can I remove the option to eject internal SATA drives from the Windows 8 tray icon? - Super User](https://superuser.com/questions/792693/how-can-i-remove-the-option-to-eject-internal-sata-drives-from-the-windows-8-tra)
+    - [windows 7 - Disable possibility to eject internal hardrives - Super User](https://superuser.com/questions/558963/disable-possibility-to-eject-internal-hardrives/559141)
+    - [Built-in hardware appearing as ejectable USB devices under Windows 7 - Super User](https://superuser.com/questions/420584/built-in-hardware-appearing-as-ejectable-usb-devices-under-windows-7#comment481276_420584)
+    - [How can I remove the option to eject SATA drives from the Windows 7 tray icon? - Super User](https://superuser.com/questions/12955/how-can-i-remove-the-option-to-eject-sata-drives-from-the-windows-7-tray-icon)
+    - [Removable USB Flash Drive as Local HDD in Windows 10 / 7 | Windows OS Hub](http://woshub.com/removable-usb-flash-drive-as-local-disk-in-windows-7/)
+    - [Can I Convert an External USB Hard Drive into an Internal One? - Ask Leo!](https://askleo.com/can-i-convert-an-external-usb-hard-drive-into-an-internal-one/)
+
 - CompositionAPI
     - [robmikh blog](http://blog.robmikh.com/)
 
