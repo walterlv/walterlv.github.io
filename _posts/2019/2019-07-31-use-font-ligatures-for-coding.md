@@ -1,6 +1,7 @@
 ---
 title: "推荐几款连字字体，在代码编辑器中启用连字字体（Visual Studio Code）"
-date: 2019-07-31 08:52:52 +0800
+publishDate: 2019-07-31 08:52:52 +0800
+date: 2019-09-27 10:04:33 +0800
 categories: windows vscode visualstudio dotnet
 position: starter
 ---
@@ -13,11 +14,19 @@ position: starter
 
 ## 连字字体
 
-下面是 Fira Code 连字字体在 Visual Studio Code 中的显示效果：
+微软随 [Windows Terminal](https://github.com/microsoft/terminal) 设计了一款新的字体 Cascadia Code，而这是一款连字字体。
+
+- [microsoft/cascadia-code: This is a fun, new monospaced font that includes programming ligatures and is designed to enhance the modern look and feel of the Windows Terminal.](https://github.com/microsoft/cascadia-code)
+
+你可以看到，在 Windows Terminal 的终端中，`=>` `==` `!=` 符号显示成了更容易理解的连字符号：
+
+![Cascadia Code](/static/posts/2019-09-27-10-01-28.png)
+
+在 Cascadia Code 发布之前，Fira Code 是一款特别火的连字字体，下面是 Fira Code 连字字体在 Visual Studio Code 中的显示效果：
 
 ![Fira Code in Visual Studio Code](/static/posts/2019-07-30-08-30-37.png)
 
-就是下面这一段代码：
+而显示的，其实是下面这一段代码：
 
 ```csharp
 x =>
@@ -31,7 +40,13 @@ x =>
 
 ## 连字字体推荐
 
-你可以在这里找到一些好看的用于编程的连字字体：
+作为微软的粉丝，当然首推 [Cascadia Code](https://github.com/microsoft/cascadia-code)！不过我喜欢比较细的字体风格，目前 Cascadia Code 还没有提供细体，因此我可能还需要等一些时间才正式入坑。
+
+在这里可以关注 Cascadia Code 的状态：
+
+- [microsoft/cascadia-code: This is a fun, new monospaced font that includes programming ligatures and is designed to enhance the modern look and feel of the Windows Terminal.](https://github.com/microsoft/cascadia-code)
+
+灵台，你也可以在这里找到其他一些好看的用于编程的连字字体：
 
 - [8 Best monospace programming fonts with ligatures as of 2019 - Slant](https://www.slant.co/topics/5611/~monospace-programming-fonts-with-ligatures#2)
 
