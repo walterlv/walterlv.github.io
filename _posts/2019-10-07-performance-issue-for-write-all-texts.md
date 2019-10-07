@@ -1,6 +1,6 @@
 ---
 title: ".NET 使用 WriteAllTexts 时可能需要"
-date: 2019-09-24 08:39:26 +0800
+date: 2019-10-07 09:57:00 +0800
 categories: dotnet
 position: starter
 published: false
