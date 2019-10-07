@@ -1,6 +1,6 @@
 ---
 title: "使用 SetParent 制作父子窗口的时候，如何设置子窗口的窗口样式以避免抢走父窗口的焦点"
-date: 2019-09-19 10:24:11 +0800
+date: 2019-09-19 10:24:12 +0800
 categories: windows wpf dotnet csharp
 position: starter
 ---
