@@ -1,7 +1,7 @@
 ---
 title: "使用 SetWindowCompositionAttribute 来控制程序的窗口边框和背景（可以做 Acrylic 亚克力效果、模糊效果、主题色效果等）"
 publishDate: 2019-10-07 20:30:10 +0800
-date: 2019-10-09 22:09:01 +0800
+date: 2019-10-09 22:20:44 +0800
 categories: windows csharp dotnet wpf
 position: knowledge
 ---
@@ -13,7 +13,6 @@ Windows 系统中有一个没什么文档的 API，`SetWindowCompositionAttribut
 ---
 
 <div id="toc"></div>
-
 ## 试验用的源代码
 
 本文将创建一个简单的 WPF 程序来验证 `SetWindowCompositionAttribute` 能达到的各种效果。你也可以不使用 WPF，得到类似的效果。
@@ -428,7 +427,18 @@ private enum AccentState
 
 ## 总结
 
+由于 Windows 7 上所有的值都是同样的效果，所以下表仅适用于 Windows 10。
 
+|                                   | 效果                                   |
+| --------------------------------- | -------------------------------------- |
+| ACCENT_DISABLED                   | 黑色（边框为纯白色）                   |
+| ACCENT_ENABLE_GRADIENT            | GradientColor 颜色（失焦后边框为深色） |
+| ACCENT_ENABLE_TRANSPARENTGRADIENT | 主题色（失焦后边框为深色）             |
+| ACCENT_ENABLE_BLURBEHIND          | 模糊特效（失焦后边框为灰色）           |
+| ACCENT_ENABLE_ACRYLICBLURBEHIND   | 与 GradientColor 叠加颜色的亚克力特效 |
+| ACCENT_INVALID_STATE              | 黑色（边框为纯白色）                   |
+
+在以上的特效之下，`WindowChrome` 可以让客户区覆盖非客户区，或者让整个窗口都获得特效，而不只是标题栏。
 
 ## 附源代码
 
