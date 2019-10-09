@@ -1,18 +1,19 @@
 ---
 title: "直击本质：WPF 框架是如何实现模态窗口的"
-date: 2019-10-08 09:25:22 +0800
+date: 2019-10-08 10:00:00 +0800
 categories: wpf dotnet csharp windows
 position: knowledge
+published: false
 ---
 
-在此处编辑 blog.walterlv.com 的博客摘要
+想知道你在 WPF 编写 `Window.ShowDialog()` 之后，WPF 框架是如何帮你实现模态窗口的吗？
+
+本文就带你来了解这一些。
 
 ---
 
 <div id="toc"></div>
 
-## 标题
+## `Window.ShowDialog`
 
----
 
-**参考资料**

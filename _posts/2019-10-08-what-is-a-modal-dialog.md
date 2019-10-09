@@ -4,6 +4,7 @@ publishDate: 2019-10-07 20:38:04 +0800
 date: 2019-10-08 09:24:47 +0800
 categories: windows dotnet csharp wpf
 position: knowledge
+published: false
 ---
 
 做 Windows 桌面应用开发的小伙伴们对“模态窗口”（Modal Dialog）一定不陌生。如果你希望在模态窗口之上做更多的事情，或者自己实现一套模态窗口类似的机制，那么你可能需要了解模态窗口的本质。
