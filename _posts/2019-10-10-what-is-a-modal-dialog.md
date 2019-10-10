@@ -1,7 +1,6 @@
 ---
 title: "什么是模态窗口？本文带你了解模态窗口的本质"
-publishDate: 2019-10-07 20:38:04 +0800
-date: 2019-10-08 09:24:47 +0800
+date: 2019-10-10 08:00:09 +0800
 categories: windows dotnet csharp wpf
 position: knowledge
 published: false

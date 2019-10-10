@@ -1,6 +1,6 @@
 ---
 title: ".NET 强签名"
-date: 2019-10-07 09:56:51 +0800
+date: 2019-10-10 08:00:03 +0800
 categories: dotnet
 position: principle
 published: false

@@ -1,7 +1,7 @@
 ---
 title: "使用 SetWindowCompositionAttribute 来控制程序的窗口边框和背景（可以做 Acrylic 亚克力效果、模糊效果、主题色效果等）"
 publishDate: 2019-10-07 20:30:10 +0800
-date: 2019-10-09 22:20:44 +0800
+date: 2019-10-10 07:58:37 +0800
 categories: windows csharp dotnet wpf
 position: knowledge
 ---
