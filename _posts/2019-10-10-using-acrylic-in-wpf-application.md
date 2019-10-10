@@ -1,6 +1,6 @@
 ---
 title: "在 WPF 程序中应用 Windows 10 真•亚克力效果"
-date: 2019-10-10 10:23:47 +0800
+date: 2019-10-10 10:25:11 +0800
 categories: dotnet
 position: starter
 ---
@@ -35,6 +35,8 @@ position: starter
 代码请参见：
 
 - [Walterlv.Packages/WindowAccentCompositor.cs at master · walterlv/Walterlv.Packages](https://github.com/walterlv/Walterlv.Packages/blob/master/src/Themes/Walterlv.Themes.FluentDesign/Effects/WindowAccentCompositor.cs)
+
+![亚克力效果在 WPF 程序中](/static/posts/2019-10-10-10-25-00.png)
 
 ## 注意事项
 
