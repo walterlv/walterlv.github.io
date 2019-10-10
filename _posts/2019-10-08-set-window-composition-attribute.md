@@ -1,7 +1,7 @@
 ---
 title: "使用 SetWindowCompositionAttribute 来控制程序的窗口边框和背景（可以做 Acrylic 亚克力效果、模糊效果、主题色效果等）"
 publishDate: 2019-10-07 20:30:10 +0800
-date: 2019-10-10 07:58:37 +0800
+date: 2019-10-10 08:09:12 +0800
 categories: windows csharp dotnet wpf
 position: knowledge
 ---
@@ -13,6 +13,7 @@ Windows 系统中有一个没什么文档的 API，`SetWindowCompositionAttribut
 ---
 
 <div id="toc"></div>
+
 ## 试验用的源代码
 
 本文将创建一个简单的 WPF 程序来验证 `SetWindowCompositionAttribute` 能达到的各种效果。你也可以不使用 WPF，得到类似的效果。
@@ -491,7 +492,7 @@ namespace Walterlv.Windows.Effects
             // 创建 AccentPolicy 对象。
             var accent = new AccentPolicy
             {
-                AccentState = AccentState.ACCENT_INVALID_STATE,
+                AccentState = AccentState.ACCENT_ENABLE_ACRYLICBLURBEHIND,
                 GradientColor = 0,
             };
 
