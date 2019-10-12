@@ -1,6 +1,6 @@
 ---
 title: "推荐 .NET/C# 开发者安装的几款代码分析插件或对应的代码分析 NuGet 包"
-date: 2019-10-12 11:07:16 +0800
+date: 2019-10-12 11:36:42 +0800
 categories: dotnet csharp
 position: principle
 ---
@@ -71,6 +71,10 @@ Microsoft Code Analysis 分析器的诊断 ID 都是以 `CA` 开头，因此你�
     - 如果你在使用 .NET Core 或者 .NET Standard，那么此分析器会告诉你更恰当地使用框架提供的 API（如果 API 恰好与 .NET Framework 桌面应用相同，那么 .NET Framework 桌面应用也因此受益）
 - [Microsoft.NetFramework.Analyzers](https://www.nuget.org/packages/Microsoft.NetFramework.Analyzers)
     - 如果你在使用 .NET Framework 开发桌面应用，那么此分析器会告诉你更恰当地使用框架提供的 API
+
+如果你想安装这款 NuGet 包，并不需要特别去 NuGet 包管理器中安装，也不需要命令行，只需要去项目的属性页面，选择“安装”就好了。如下图：
+
+![安装分析器](/static/posts/2019-10-12-11-36-25.png)
 
 ### Code Cracker
 
