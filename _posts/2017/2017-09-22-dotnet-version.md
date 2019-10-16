@@ -2,37 +2,37 @@
 layout: post
 title: ".NET Framework 4.x 程序到底运行在哪个 CLR 版本之上"
 publishDate: 2017-09-22 18:05:00 +0800
-date: 2018-12-14 09:54:33 +0800
+date: 2019-10-16 09:42:52 +0800
 categories: dotnet
 permalink: /dotnet/2017/09/22/dotnet-version.html
 keywords: dotnet version sku runtime
 description: 了解 .NET Framework 的公共语言运行时版本，这与 .NET Framework 基础库的版本是不一样的。
 ---
 
-当我们编译程序目标框架选为 .NET Framework 4.5/4.6/4.7 时，CLR 运行时是如何判断我们究竟应该用哪一个 .NET Framework 呢？.NET Framework 的版本到底由哪些部分组成？我们编译 .NET Framework 时选择的版本决定了什么？
+当我们编译程序目标框架选为 .NET Framework 4.5/4.6/4.7/4.8 时，CLR 运行时是如何判断我们究竟应该用哪一个 .NET Framework 呢？.NET Framework 的版本到底由哪些部分组成？我们编译 .NET Framework 时选择的版本决定了什么？
 
 ---
 
 让我对这个问题产生兴趣的原因是：
-- 我将程序编译的目标框架选为 .NET Framework 4.7；在一台安装了 .NET Framework 4.6 的电脑上提示缺少 .NET Framework 4.7；删除了随编译一起生成的 `app.config` 文件后程序能够正常运行。
+- 我将程序编译的目标框架选为 .NET Framework 4.8；在一台安装了 .NET Framework 4.6 的电脑上提示缺少 .NET Framework 4.8；删除了随编译一起生成的 `app.config` 文件后程序能够正常运行。
 - 另一个程序，我明明将程序编译的目标框架选为 .NET Framework 4.5，但在一台没有安装任何额外 .NET Framework 的 Windows 7 的电脑上提示缺少的是 .NET Framework 4.0。
 
 这里的疑点在于为什么以上两种看似类似的情况，提示的框架版本却不同。其中的 `app.config` 文件成为了调查此问题的突破口。
 
 ## 配置支持的运行时
 
-观察程序附带的 `app.config` 文件，我们发现支持的运行时版本是 v4.0，sku 版本是 4.7。
+观察程序附带的 `app.config` 文件，我们发现支持的运行时版本是 v4.0，sku 版本是 4.8。
 
 ```xml
 <configuration>  
    <startup>  
-      <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.7" />  
+      <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.8" />  
    </startup>  
 </configuration>  
 ```
 
 疑点：
-1. 为什么我们基于 .NET Framework 4.7 开发的程序运行时版本是 4.0？
+1. 为什么我们基于 .NET Framework 4.8 开发的程序运行时版本是 4.0？
 1. sku 是什么？
 
 微软的官方文档给了我们解答：[supportedRuntime Element](https://docs.microsoft.com/en-us/dotnet/framework/configure-apps/file-schema/startup/supportedruntime-element?wt.mc_id=MVP)。
@@ -49,7 +49,7 @@ description: 了解 .NET Framework 的公共语言运行时版本，这与 .NET 
 3.0|"v2.0.50727"
 3.5|"v2.0.50727"
 3.5|"v2.0.50727"
-4.0-4.7|"v4.0"
+4.0-4.8|"v4.0"
 
 `sku` 的值可取：
 
@@ -64,6 +64,9 @@ description: 了解 .NET Framework 的公共语言运行时版本，这与 .NET 
 4.6.1|".NETFramework,Version=v4.6.1"
 4.6.2|".NETFramework,Version=v4.6.2"
 4.7|".NETFramework,Version=v4.7"
+4.7.1|".NETFramework,Version=v4.7.1"
+4.7.2|".NETFramework,Version=v4.7.2"
+4.8|".NETFramework,Version=v4.8"
 
 于是我们发现，其实无论我们将程序的目标框架选为 .NET Framework 的哪一个 4.x 版本，CLR 运行时都是用 v4.0 表示的。微软的描述是：
 
@@ -95,7 +98,7 @@ description: 了解 .NET Framework 的公共语言运行时版本，这与 .NET 
 
 微软对 .NET Framework 4.x 框架就地更新的说明是：
 
-> .NET Framework 4.5 是替代计算机上的 .NET Framework 4 的就地更新，同样，.NET Framework 4.5.1 4.5.2、4.6、4.6.1、4.6.2 和 4.7 是对 .NET Framework 4.5 的就地更新，这意味着它们将使用相同的运行时版本，但是程序集版本会更新并包括新类型和成员。 在安装其中某个更新后，你的 .NET Framework 4.NET Framework 4.5 或 .NET Framework 4.6 应用应继续运行，而无需重新编译。 但是，反过来则不行。
+> .NET Framework 4.5 是替代计算机上的 .NET Framework 4 的就地更新，同样，.NET Framework 4.5.1 4.5.2、4.6、4.6.1、4.6.2、4.7、4.7.1、4.7.2、4.8 是对 .NET Framework 4.5 的就地更新，这意味着它们将使用相同的运行时版本，但是程序集版本会更新并包括新类型和成员。 在安装其中某个更新后，你的 .NET Framework 4.NET Framework 4.5 或 .NET Framework 4.6 应用应继续运行，而无需重新编译。 但是，反过来则不行。
 
 也就是说，**无论我们在开发时指定目标框架的版本是 4.x 的哪一个，在运行时，CLR 环境都是 4.0**。但是新的 .NET Framework 会带来更新版本的 CLR，这个 CLR 会直接替换掉旧的 CLR。[.NET 4.5 is an in-place replacement for .NET 4.0](https://weblog.west-wind.com/posts/2012/Mar/13/NET-45-is-an-inplace-replacement-for-NET-40) 文章中 .NET Framework 基础库也是就地更新的；但我实际实验的情况是每一个不同的 .NET Framework 基础库有自己单独的文件夹，目前尚不清楚这个改变是从 .NET Framework 的哪一个版本开始的，但一定是 4.5.1、4.5.2、4.6 这三个版本中的一个。
 
@@ -104,10 +107,10 @@ description: 了解 .NET Framework 的公共语言运行时版本，这与 .NET 
 ## 解决一开始的疑问
 
 于是，本文一开始的疑问就全部明晰了：
-1. 不管是 .NET Framework 4.5 的还是 4.7 的那两个程序，都是靠 4.0 版本的公共语言运行时（CLR）运行起来的；
+1. 不管是 .NET Framework 4.5 的还是 4.8 的那两个程序，都是靠 4.0 版本的公共语言运行时（CLR）运行起来的；
 1. 如果没有安装 4.0 版本的 CLR，则会弹出提示需要安装 .NET Framework 4.0 版本才能运行，而不管我们的程序目标框架是 .NET Framework 4.x 的哪一个版本；
    - 虽然说文案说的是 .NET Framework，但其实需要的是 CLR
-1. 如果已经安装有 4.0 版本的 CLR（可能随 .NET Framework 4.5/4.6 安装），我们程序的目标框架是 .NET Framework 4.7，但 .NET Framework 基础库并没有安装 4.7 版本，则运行时会提示需要安装 .NET Framework 4.7；
+1. 如果已经安装有 4.0 版本的 CLR（可能随 .NET Framework 4.5/4.6 安装），我们程序的目标框架是 .NET Framework 4.8，但 .NET Framework 基础库并没有安装 4.8 版本，则运行时会提示需要安装 .NET Framework 4.7；
    - 这个提示是 4.0 版的 CLR 弹出的，是根据 `supportedRuntime` 中指定的 `sku` 值来决定的
 
 **参考资料**
