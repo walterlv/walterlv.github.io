@@ -1,6 +1,7 @@
 ---
 title: "WPF 高性能位图渲染 WriteableBitmap 及其高性能用法示例"
-date: 2019-10-17 17:07:14 +0800
+publishDate: 2019-10-17 17:07:14 +0800
+date: 2019-10-17 17:44:11 +0800
 categories: wpf dotnet csharp
 position: principle
 ---
@@ -16,6 +17,7 @@ WPF 渲染框架并没有对外提供多少可以完全控制渲染的部分，�
 ---
 
 <div id="toc"></div>
+
 ## 如何使用 WriteableBitmap
 
 创建一个新的 WPF 项目，然后我们在 MainWindow.xaml 中编写一点可以用来显示 `WriteableBitmap` 的代码：
@@ -169,6 +171,10 @@ Visual Studio 中看到的 CPU 占用率大约维持在 16% 左右（跟具体�
 
 ![零脏区 CPU 占用率和内存用量](/static/posts/2019-10-17-16-34-41.png)
 
+### 不渲染
+
+如果我们不把 WriteableBitmap 设置为 `Image` 的 `Source` 属性，那么无论脏区多大，CPU 占用都是 0。
+
 ### 脏区大小与 CPU 占用率之间的关系
 
 从前面的测试中我们可以发现，脏区的大小在 `WriteableBitmap` 的渲染里占了绝对的耗时。因此，我把脏区大小与 CPU 占用率之间的关系用图表的形式贴出来，这样可以直观地理解其性能差异。
@@ -188,9 +194,17 @@ Visual Studio 中看到的 CPU 占用率大约维持在 16% 左右（跟具体�
 | 2560*1440 | 12.3%      | 60   |
 | 3840*2160 | 16.1%      | 60   |
 
-### 不渲染
+根据这张表我么可以得出：
 
-如果我们不把 WriteableBitmap 设置为 `Image` 的 `Source` 属性，那么无论脏区多大，CPU 占用都是 0。所以实际上最耗时的部分其实是脏区的刷新——而不是内存数据的拷贝。
+- 脏区渲染是 CPU 占用的最大瓶颈（因为没有脏区仅剩内存拷贝的时候 CPU 占用为 0%）
+
+但是有一个需要注意的信息是——虽然 CPU 占用率受脏区影响非常大，但主线程却几乎没有消耗 CPU 占用。此占用基本上全是渲染线程的事。
+
+如果我们分析主线程的性能分布，可以发现内存拷贝现在是性能瓶颈：
+
+![内存拷贝是性能瓶颈](/static/posts/2019-10-17-17-38-04.png)
+
+后面我们会提到 WriteableBitmap 的渲染原理，也会说到这一点。
 
 ## 启用基准测试（Benchmark）
 
@@ -338,3 +352,35 @@ private static extern void CopyMemory(IntPtr destination, IntPtr source, uint le
 
 - 如果你希望有较大脏区的情况下降低 CPU 占用，可以考虑降低 WriteableBitmap 脏区的刷新率
 - 如果你希望 WriteableBitmap 有较低的渲染延迟，则考虑减小脏区
+
+## WriteableBitmap 渲染原理
+
+在调用 WriteableBitmap 的 `AddDirtyRect` 方法的时候，实际上是调用 `MILSwDoubleBufferedBitmap.AddDirtyRect`，这是 WPF 专门为 WriteableBitmap 而提供的非托管代码的双缓冲位图的实现。
+
+在 WriteableBitmap 内部数组修改完毕之后，需要调用 `Unlock` 来解锁内部缓冲区的访问，这时会提交所有的修改。接下来的渲染都交给了 `MediaContext`，用来完成双缓冲位图的渲染。
+
+```csharp
+private void SubscribeToCommittingBatch()
+{
+    // Only subscribe the the CommittingBatch event if we are on-channel.
+    if (!_isWaitingForCommit)
+    {
+        MediaContext mediaContext = MediaContext.From(Dispatcher);
+        if (_duceResource.IsOnChannel(mediaContext.Channel))
+        {
+            mediaContext.CommittingBatch += CommittingBatchHandler;
+            _isWaitingForCommit = true;
+        }
+    }
+}
+```
+
+在上面的 `CommittingBatchHandler` 中，将渲染指令发送到了渲染线程。
+
+```csharp
+channel.SendCommand((byte*)&command, sizeof(DUCE.MILCMD_DOUBLEBUFFEREDBITMAP_COPYFORWARD));
+```
+
+前面我们通过脏区大小可以得出内存拷贝不是 CPU 占用率的瓶颈，脏区大小才是，不过是渲染线程在占用这 CPU 而不是主线程。但是内存拷贝却成为了主线程的瓶颈（当然前面我们给出了数据，实际上非常小）。所以如果试图分析这么高 CPU 的占用，会发现并不能从主线程上调查得出符合预期的结论（因为即便你完全干掉了内存拷贝，CPU 占用依然是这么高）。
+
+![内存拷贝是性能瓶颈](/static/posts/2019-10-17-17-38-04.png)
