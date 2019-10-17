@@ -1,7 +1,7 @@
 ---
 title: "WPF 制作高性能的透明背景异形窗口（使用 WindowChrome 而不要使用 AllowsTransparency=True）"
 publishDate: 2019-09-07 14:40:20 +0800
-date: 2019-09-07 16:36:41 +0800
+date: 2019-10-17 10:36:05 +0800
 categories: wpf dotnet csharp
 position: knowledge
 ---
@@ -174,3 +174,9 @@ position: knowledge
 另外，以上表格仅针对鼠标操作窗口。如果算上使用触摸来操作窗口，那么所有标记为 `自行实现` 的都将变为 `丢失`。因为虽然你可以一句话补回功能，但在触摸操作下各种 Bug，你解不完……
 
 - [WPF 程序无法触摸操作？我们一起来找原因和解决方法！](/wpf/2017/09/12/touch-not-work-in-wpf.html)
+
+这两种实现的窗口之间还有一些功能上的区别：
+
+| 方案     | WindowChrome                             | AllowsTransparency                         | 说明                                                         |
+| -------- | ---------------------------------------- | ------------------------------------------ | ------------------------------------------------------------ |
+| 点击穿透 | 在完全透明的部分点击依然点在自己的窗口上 | 在完全透明的部分点击会穿透到下面的其他窗口 | 感谢 [nocanstillbb (huang bin bin)](https://github.com/nocanstillbb) 提供的信息 |
