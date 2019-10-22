@@ -1,6 +1,7 @@
 ---
-title: "使用 Mono.Ceil 读取 .NET 程序集元数据，不需要加载程序集就能像反射一样获取所有的类型和成员信息"
-date: 2019-08-30 14:25:57 +0800
+title: ".NET/C# 在正确的条件下抛出最合适的异常"
+publishDate: 2019-06-10 16:51:59 +0800
+date: 2019-10-22 14:13:20 +0800
 categories: dotnet csharp
 position: knowledge
 published: false

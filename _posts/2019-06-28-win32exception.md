@@ -1,9 +1,9 @@
 ---
 title: "System.ComponentModel.Win32Exception (0x80004005): 无效的窗口句柄。"
-date: 2019-06-28 07:50:24 +0800
+publishDate: 2019-06-28 07:50:24 +0800
+date: 2019-10-22 14:13:45 +0800
 categories: dotnet csharp wpf
 position: problem
-published: false
 ---
 
 在 WPF 获取鼠标当前坐标的时候，可能会得到一个异常：`System.ComponentModel.Win32Exception:“无效的窗口句柄。”`。

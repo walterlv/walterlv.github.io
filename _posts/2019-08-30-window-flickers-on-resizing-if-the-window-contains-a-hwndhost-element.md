@@ -1,9 +1,9 @@
 ---
 title: "解决 WPF 嵌套的子窗口在改变窗口大小的时候闪烁的问题"
-date: 2019-08-30 14:26:00 +0800
+publishDate: 2019-08-30 14:26:00 +0800
+date: 2019-10-22 14:14:08 +0800
 categories: wpf windows dotnet csharp
 position: problem
-published: false
 ---
 
 因为 Win32 的窗口句柄是可以跨进程传递的，所以可以用来实现跨进程 UI。不过，本文不会谈论跨进程 UI 的具体实现，只会提及其实现中的一个重要缓解，使用子窗口的方式。
