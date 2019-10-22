@@ -1,7 +1,7 @@
 ---
 title: "将 Direct3D11 在 GPU 中的纹理（Texture2D）导出到内存（Map）或导出成图片文件"
-date: 2019-10-22 12:43:30 +0800
-categories: directx dotnet csharp
+date: 2019-10-22 14:07:29 +0800
+categories: directx sharpdx dotnet csharp
 position: knowledge
 ---
 
