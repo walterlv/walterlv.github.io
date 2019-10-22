@@ -1,9 +1,9 @@
 ---
 title: ".NET 实现 NTFS 文件系统的硬链接 mklink /J（Junction）"
-date: 2019-10-20 22:04:46 +0800
+publishDate: 2019-10-20 22:04:46 +0800
+date: 2019-10-22 14:04:24 +0800
 categories: dotnet windows csharp
 position: knowledge
-published: false
 ---
 
 我们知道 Windows 系统 NTFS 文件系统提供了硬连接功能，可以通过 `mklink` 命令开启。如果能够通过代码实现，那么我们能够做更多有趣的事情。

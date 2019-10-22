@@ -1,6 +1,7 @@
 ---
 title: "使用 Direct3D11 的 OpenSharedResource 方法渲染来自其他进程/设备的共享资源（SharedHandle）"
-date: 2019-10-22 11:39:59 +0800
+publishDate: 2019-10-22 11:39:59 +0800
+date: 2019-10-22 14:04:59 +0800
 categories: directx dotnet
 position: knowledge
 ---
