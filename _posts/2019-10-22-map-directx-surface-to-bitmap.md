@@ -1,6 +1,6 @@
 ---
 title: "将 Direct3D11 在 GPU 中的纹理（Texture2D）导出到内存（Map）或导出成图片文件"
-date: 2019-10-22 12:21:43 +0800
+date: 2019-10-22 12:41:00 +0800
 categories: directx dotnet csharp
 position: knowledge
 ---
@@ -187,7 +187,7 @@ public static unsafe void MapTexture2DToFile(SharpDX.Direct3D11.Texture2D textur
 }
 ```
 
-如果你是希望以纯软件的方式渲染到 WPF 中，可以参考：
+如果你是希望以纯软件的方式渲染到 WPF 中（WriteableBitmap），可以参考：
 
 - [WPF 高性能位图渲染 WriteableBitmap 及其高性能用法示例](/post/wpf-high-performance-bitmap-rendering.html)
 
