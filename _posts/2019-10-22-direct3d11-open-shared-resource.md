@@ -1,6 +1,6 @@
 ---
 title: "使用 Direct3D11 的 OpenSharedResource 方法渲染来自其他进程/设备的共享资源（SharedHandle）"
-date: 2019-10-22 11:13:27 +0800
+date: 2019-10-22 11:39:59 +0800
 categories: directx dotnet
 position: knowledge
 ---
@@ -88,7 +88,7 @@ var surface = texture2D.QueryInterface<SharpDX.DXGI.Surface>();
 
 在获取到 `SharpDX.DXGI.Surface` 的 COM 组件引用之后，可以在内存中映射位图用于调试，可以参见：
 
-- [将 Direct3D11 在 GPU 中的纹理（Texture2D）导出到内存或导出成图片文件](/post/map-directx-buffer-into-bitmap.html)
+- [将 Direct3D11 在 GPU 中的纹理（Texture2D）导出到内存或导出成图片文件](/post/map-directx-surface-to-bitmap.html)
 
 ---
 
