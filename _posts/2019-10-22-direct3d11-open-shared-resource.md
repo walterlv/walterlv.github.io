@@ -1,6 +1,6 @@
 ---
 title: "使用 Direct3D11 的 OpenSharedResource 方法渲染来自其他进程/设备的共享资源（SharedHandle）"
-date: 2019-10-22 11:10:20 +0800
+date: 2019-10-22 11:13:27 +0800
 categories: directx dotnet
 position: knowledge
 ---
@@ -10,6 +10,23 @@ position: knowledge
 ---
 
 <div id="toc"></div>
+
+## SharpDX
+
+本文的代码会使用到 [SharpDX](https://www.nuget.org/packages?q=Tags%3A%22SharpDX%22) 库，因此，你需要在你的项目当中安装这些 NuGet 包：
+
+```xml
+<!-- 基础，必装 -->
+<PackageReference Include="SharpDX" Version="4.2.0" />
+<PackageReference Include="SharpDX.D3DCompiler" Version="4.2.0" />
+<PackageReference Include="SharpDX.DXGI" Version="4.2.0" />
+<PackageReference Include="SharpDX.Mathematics" Version="4.2.0" />
+<PackageReference Include="SharpDX.Direct3D11" Version="4.2.0" />
+
+<!-- 其他，可选 -->
+<PackageReference Include="SharpDX.Direct2D1" Version="4.2.0" />
+<PackageReference Include="SharpDX.Direct3D9" Version="4.2.0" />
+```
 
 ## SharedHandle
 
