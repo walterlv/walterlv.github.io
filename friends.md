@@ -58,6 +58,7 @@ permalink: /friends/
 - [毛利的技术小站](https://mourinaruto.github.io/?file=Home)
 - [Edi Wang](http://edi.wang/) 微软 MVP，国内 .NET 的大神，有很多的文章，有 WPF、UWP 还有其他的 Linux……
 - [晓晨Master - 博客园](https://www.cnblogs.com/stulzq/) 微软 MVP
+- [.NET骚操作 - 周杰 - 博客园](https://www.cnblogs.com/sdflysha/)
 - [云乡 - 云之幻](https://blog.richasy.cn/)
 - [蓝火火](https://blog.ultrabluefire.cn/) [叫我蓝火火](https://www.cnblogs.com/blue-fire/) UWP 大神，Composition API 大神，Win2D 大神
 - [快乐 就在你的心 的博客](https://kljzndx.github.io/My-Blog/)
