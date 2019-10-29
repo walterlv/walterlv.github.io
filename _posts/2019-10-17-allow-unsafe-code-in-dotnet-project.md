@@ -1,6 +1,7 @@
 ---
 title: "如何在 .NET 项目中开启不安全代码（以便启用 unsafe fixed 等关键字）"
-date: 2019-10-17 15:55:41 +0800
+publishDate: 2019-10-17 15:55:41 +0800
+date: 2019-10-29 08:43:58 +0800
 categories: dotnet csharp
 position: starter
 ---
@@ -28,6 +29,8 @@ position: starter
 ![在 Release 允许不安全代码](/static/posts/2019-10-17-15-38-36.png)
 
 方法结束。
+
+如果你一开始选择了“所有配置”，那么就不需要分别在 Debug 和 Release 下打开了，一次打开即可。
 
 ## 高级方法
 
