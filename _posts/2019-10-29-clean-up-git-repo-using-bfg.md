@@ -1,6 +1,7 @@
 ---
 title: "清理 git 仓库太繁琐？试试 bfg！删除敏感信息删除大文件一句命令搞定（比官方文档还详细的使用说明）"
-date: 2019-10-29 11:53:34 +0800
+publishDate: 2019-10-29 11:53:34 +0800
+date: 2019-10-29 12:09:12 +0800
 categories: git
 position: starter
 ---
@@ -74,6 +75,12 @@ Linking ~\scoop\apps\openjdk\current => ~\scoop\apps\openjdk\13.0.1-9
     - 如果本文后面的命令你遇到了受保护的提交，那么需要在所有命令的后面加上 `--no-blob-protection` 参数
 
 ## 常见用法
+
+使用 `bfg` 来清理仓库比 git 原生的 `git-filter-branch` 快得多。官方说法是，10-720 倍：
+
+>  turning an overnight job into one that takes less than ten minutes.
+
+将一整夜的工作缩减到不到十分钟。
 
 ### 删除误上传的大文件
 
