@@ -1,6 +1,6 @@
 ---
-title: "清理 git 仓库太繁琐？试试 bfg！删除敏感信息删除大文件一句命令搞定"
-date: 2019-10-29 11:05:08 +0800
+title: "清理 git 仓库太繁琐？试试 bfg！删除敏感信息删除大文件一句命令搞定（比官方文档还详细的使用说明）"
+date: 2019-10-29 11:52:20 +0800
 categories: git
 position: starter
 ---
@@ -54,9 +54,13 @@ The java bucket was added successfully.
 安装 Jdk：
 
 ```powershell
-scoop install java/openjdk
+PS C:\Users\lvyi> scoop install java/openjdk
 Installing 'openjdk' (13.0.1-9) [64bit]
-openjdk-13.0.1_windows-x64_bin.zip (186.9 MB) [=========================================================================>                             ]  72%
+openjdk-13.0.1_windows-x64_bin.zip (186.9 MB) [=======================================================================================================] 100%
+Checking hash of openjdk-13.0.1_windows-x64_bin.zip ... ok.
+Extracting openjdk-13.0.1_windows-x64_bin.zip ... done.
+Linking ~\scoop\apps\openjdk\current => ~\scoop\apps\openjdk\13.0.1-9
+'openjdk' (13.0.1-9) was installed successfully!
 ```
 ## 准备工作
 
@@ -119,9 +123,35 @@ openjdk-13.0.1_windows-x64_bin.zip (186.9 MB) [=================================
 > bfg --delete-folders walterlv --delete-files walterlv.snk
 ```
 
-<!-- ### 删除敏感的密码信息
+### 删除敏感的密码信息
 
- -->
+```powershell
+> bfg --replace-text expression-file.txt
+```
+
+注意，这里的 expression-file.txt 名称是随便取的，你可以取其他任何名称，只要在命令里输入正确的名称（可能需要包含路径）就行。
+
+但是 expression-file.txt 里面的内容却是我们需要关注的重点。
+
+此文件中的每一行是一个匹配表达式。默认情况下，每一个表达式被视为一段文本常量，但你可以通过指定 `regex:` 前缀来说明此表达式是一个正则表达式，或者指定 `glob:` 前缀。每一个表达式的后面可以加上 '==>' 来指定匹配的文件应该被替换成什么（如果没有指定，就会被替换成默认值 `***REMOVED***`。
+
+下面这个例子示例将 git 仓库中所有文件中的 `密码：123456` 字符串替换成 `***REMOVED***`：
+
+```
+密码：123456
+```
+
+更复杂一点的，下面的例子示例将 git 仓库中所有文件中的 `密码：123456` 字符串替换成 `密码：******`：
+
+```
+密码：123456 ==> 密码：******
+```
+
+还可以使用正则表达式：
+
+```
+regex:密码：\d+ ==> 密码：******
+```
 
 ## 推回远端仓库
 
@@ -135,6 +165,80 @@ openjdk-13.0.1_windows-x64_bin.zip (186.9 MB) [=================================
 
 ```powershell
 > git reflog expire --expire=now --all && git gc --prune=now --aggressive
+```
+
+## 附命令行用法输出
+
+直接在命令行输入 `bfg` 可以看 `bfg` 命令行的用法。我贴在下面可以让还没安装的小伙伴感受一下它的功能：
+
+```powershell
+PS C:\Users\lvyi\Desktop\BfgDemoRepo> bfg
+bfg 1.13.0
+Usage: bfg [options] [<repo>]
+
+  -b, --strip-blobs-bigger-than <size>
+                           strip blobs bigger than X (eg '128K', '1M', etc)
+  -B, --strip-biggest-blobs NUM
+                           strip the top NUM biggest blobs
+  -bi, --strip-blobs-with-ids <blob-ids-file>
+                           strip blobs with the specified Git object ids
+  -D, --delete-files <glob>
+                           delete files with the specified names (eg '*.class', '*.{txt,log}' - matches on file name, not path within repo)
+  --delete-folders <glob>  delete folders with the specified names (eg '.svn', '*-tmp' - matches on folder name, not path within repo)
+  --convert-to-git-lfs <value>
+                           extract files with the specified names (eg '*.zip' or '*.mp4') into Git LFS
+  -rt, --replace-text <expressions-file>
+                           filter content of files, replacing matched text. Match expressions should be listed in the file, one expression per line - by default, each expression is treated as a literal, but 'regex:' & 'glob:' prefixes are supported, with '==>' to specify a replacement string other than the default of '***REMOVED***'.
+  -fi, --filter-content-including <glob>
+                           do file-content filtering on files that match the specified expression (eg '*.{txt,properties}')
+  -fe, --filter-content-excluding <glob>
+                           don't do file-content filtering on files that match the specified expression (eg '*.{xml,pdf}')
+  -fs, --filter-content-size-threshold <size>
+                           only do file-content filtering on files smaller than <size> (default is 1048576 bytes)
+  -p, --protect-blobs-from <refs>
+                           protect blobs that appear in the most recent versions of the specified refs (default is 'HEAD')
+  --no-blob-protection     allow the BFG to modify even your *latest* commit. Not recommended: you should have already ensured your latest commit is clean.
+  --private                treat this repo-rewrite as removing private data (for example: omit old commit ids from commit messages)
+  --massive-non-file-objects-sized-up-to <size>
+                           increase memory usage to handle over-size Commits, Tags, and Trees that are up to X in size (eg '10M')
+  <repo>                   file path for Git repository to clean
+```
+
+我觉得你可能需要中文版，于是自己翻译了一下：
+
+```powershell
+PS C:\Users\lvyi\Desktop\BfgDemoRepo> bfg
+bfg 1.13.0
+用法: bfg [options] [<repo>]
+
+  -b, --strip-blobs-bigger-than <size>
+                           移除大于 <size> 大小的文件（<size> 可填写诸如 '128K'、'1M'）
+  -B, --strip-biggest-blobs NUM
+                           从大到小移除 NUM 数量的文件
+  -bi, --strip-blobs-with-ids <blob-ids-file>
+                           移除具有指定 git 对象 id 的文件
+  -D, --delete-files <glob>
+                           移除具有指定名称的文件（例如 '*.class'、'*.{txt,log}'，仅匹配文件名而不能匹配路径）
+  --delete-folders <glob>  移除具有指定名称的文件夹（例如 '.svn'、'*-tmp'，仅匹配文件夹名而不能匹配路径）
+  --convert-to-git-lfs <value>
+                           将指定名称的文件（例如 '*.zip' 或 '*.mp4'）解压到 Git LFS
+  -rt, --replace-text <expressions-file>
+                           查找文件内容，并替换其中匹配的文本。<expressions-file> 是一个包含一个或多个匹配表达式的文件，文件中每一行是一个匹配表达式。
+                           默认情况下，每一个表达式被视为一段文本常量，但你可以通过指定 'regex:' 前缀来说明此表达式是一个正则表达式，或者指定 'glob:' 前缀。
+                           每一个表达式的后面可以加上 '==>' 来指定匹配的文件应该被替换成什么（如果没有指定，就会被替换成默认值 '***REMOVED***'。
+  -fi, --filter-content-including <glob>
+                           指定文件名（例如 '*.{txt,properties}'），在进行内容替换的时候只对这些文件进行处理。
+  -fe, --filter-content-excluding <glob>
+                           指定文件名（例如 '*.{xml,pdf}'），在进行内容替换的时候不对这些文件进行处理。
+  -fs, --filter-content-size-threshold <size>
+                           仅对小于 <size> 指定的大小的文件替换内容。（默认值为 1048576 字节）
+  -p, --protect-blobs-from <refs>
+                           protect blobs that appear in the most recent versions of the specified refs (default is 'HEAD')
+  --no-blob-protection     allow the BFG to modify even your *latest* commit. Not recommended: you should have already ensured your latest commit is clean.
+  --private                仅将本次操作视为个人数据的修改（这样生成的新提交会使用旧提交的 Id，其他人拉取仓库的时候因为这些 Id 已经存在于是不会更新，以至于此更改实际上只影响自己）。
+  --massive-non-file-objects-sized-up-to <size>
+                           increase memory usage to handle over-size Commits, Tags, and Trees that are up to X in size (eg '10M')
+  <repo>                   file path for Git repository to clean
 ```
 
 ---
