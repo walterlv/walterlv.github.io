@@ -1,7 +1,7 @@
 ---
 title: "如何在 .NET 项目中开启不安全代码（以便启用 unsafe fixed 等关键字）"
 publishDate: 2019-10-17 15:55:41 +0800
-date: 2019-10-29 08:43:58 +0800
+date: 2019-10-29 11:53:34 +0800
 categories: dotnet csharp
 position: starter
 ---
