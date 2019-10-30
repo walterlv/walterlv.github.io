@@ -5,6 +5,9 @@ categories: favorite
 sitemap: false
 ---
 
+- Scoop
+    - [Windows - Scoop软件包管理神器 - 小新博客](https://www.limufang.com/post/569.html)
+
 - Internal and External Devices
     - [How can I remove the option to eject internal SATA drives from the Windows 8 tray icon? - Super User](https://superuser.com/questions/792693/how-can-i-remove-the-option-to-eject-internal-sata-drives-from-the-windows-8-tra)
     - [windows 7 - Disable possibility to eject internal hardrives - Super User](https://superuser.com/questions/558963/disable-possibility-to-eject-internal-hardrives/559141)
