@@ -1,6 +1,6 @@
 ---
 title: "如何在保留每一行 git 历史记录的情况下将一个文件拆分成两个"
-date: 2019-10-30 12:22:13 +0800
+date: 2019-11-05 11:24:00 +0800
 categories: git
 position: problem
 published: false

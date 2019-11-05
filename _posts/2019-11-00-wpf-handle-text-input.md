@@ -1,7 +1,6 @@
 ---
 title: "在 WPF 应用程序中处理输入法输入文字事件（TextInput）"
-publishDate: 2019-06-28 07:50:28 +0800
-date: 2019-10-22 14:14:41 +0800
+date: 2019-11-05 11:24:40 +0800
 categories: wpf dotnet csharp windows
 position: knowledge
 published: false
