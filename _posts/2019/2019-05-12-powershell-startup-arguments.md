@@ -1,6 +1,7 @@
 ---
 title: "PowerShell 的命令行启动参数（可用于执行命令、传参或进行环境配置）"
-date: 2019-05-12 15:05:23 +0800
+publishDate: 2019-05-12 15:05:23 +0800
+date: 2019-11-20 14:39:56 +0800
 categories: windows powershell
 position: knowledge
 ---
@@ -70,6 +71,26 @@ position: knowledge
 实际上使用 PowerShell 来做这些事情简直是用牛刀杀鸡，因为本身 PowerShell 非常强大。我们只是因为一些程序的限制不得不使用这样的方案来启动程序而已。
 
 比如其中之一，执行脚本。
+
+### 使用 PowerShell 执行命令/脚本后保留窗口不退出
+
+需要加上 `-NoExit` 参数。
+
+```powershell
+> pwsh -NoExit -c "D:\walterlv\frpc.exe -c ./frpc.ini"
+```
+
+一定要注意，`-c` 和后面的命令必须放到最末尾，因为 `-c` 后面的所有字符串都会被解析为需要执行的命令。
+
+### 使用 PowerShell 执行多条命令/脚本
+
+多条脚本之间使用 `;` 作为分隔：
+
+```powershell
+> pwsh -c "D:\walterlv\frpc.exe -c ./frpc.ini"; "D:\walterlv\frps.exe -c ./frps.ini"
+```
+
+如果引号里面还需要写引号，则可以把里面的引号改成单引号 `'` 或者把外面的引号改为单引号 `'`。
 
 ### 使用 PowerShell 间接执行一个脚本
 
@@ -202,3 +223,12 @@ PowerShell -Command "& {Get-EventLog -LogName security}"
 >     $encodedCommand = [Convert]::ToBase64String($bytes)
 >     powershell.exe -encodedCommand $encodedCommand
 > ```
+
+---
+
+**参考资料**
+
+- [windows - How do I run multiple commands on one line in PowerShell? - Super User](https://superuser.com/questions/612409/how-do-i-run-multiple-commands-on-one-line-in-powershell)
+- [How to split long commands over multiple lines in PowerShell - Stack Overflow](https://stackoverflow.com/q/2608144/6233938)
+- [Stop Powershell from exiting - Stack Overflow](https://stackoverflow.com/q/9362722/6233938)
+- [Powershell 任意键退出 – PowerShell 中文博客](https://www.pstips.net/powershell-any-key-exit.html)
