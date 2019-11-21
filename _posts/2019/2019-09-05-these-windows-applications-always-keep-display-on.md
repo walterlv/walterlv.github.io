@@ -1,6 +1,7 @@
 ---
 title: "发现电脑屏幕总是不自动关闭？看看你是否打开了这些程序……"
-date: 2019-09-05 15:04:38 +0800
+publishDate: 2019-09-05 15:04:38 +0800
+date: 2019-11-21 14:25:44 +0800
 categories: windows
 position: problem
 ---
@@ -34,6 +35,7 @@ position: problem
 
 - Microsoft PowerPoint *在演示模式下*
 - 金山 WPS 演示 *在演示模式下*
+- Wallpaper Engine
 
 ## 工具
 
