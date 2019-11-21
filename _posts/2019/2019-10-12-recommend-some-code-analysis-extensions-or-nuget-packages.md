@@ -1,6 +1,7 @@
 ---
 title: "推荐 .NET/C# 开发者安装的几款代码分析插件或对应的代码分析 NuGet 包"
-date: 2019-10-12 11:36:42 +0800
+publishDate: 2019-10-12 11:36:42 +0800
+date: 2019-11-21 15:56:24 +0800
 categories: dotnet csharp
 position: principle
 ---
@@ -17,11 +18,14 @@ position: principle
 
 1. Visual Studio 2019 自带的分析器
 1. Microsoft Code Analysis
-    - VS 扩展：[Microsoft Code Analysis 2019 - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=VisualStudioPlatformTeam.MicrosoftCodeAnalysis2019)
+    - VS 扩展：[Microsoft Code Analysis 2019](https://marketplace.visualstudio.com/items?itemName=VisualStudioPlatformTeam.MicrosoftCodeAnalysis2019)
     - NuGet 包： [Microsoft.CodeAnalysis.FxCopAnalyzers](https://www.nuget.org/packages/Microsoft.CodeAnalysis.FxCopAnalyzers)
 1. Code Cracker
     - VS 扩展：[Code Cracker for C#](https://marketplace.visualstudio.com/items?itemName=GiovanniBassi-MVP.CodeCrackerforC)
     - NuGet 包：[codecracker.CSharp](https://www.nuget.org/packages/codecracker.CSharp/)
+1. Meziantou.Analyzer
+    - VS 扩展：[Meziantou.Analyzer](https://marketplace.visualstudio.com/items?itemName=Meziantou.Meziantou-Analyzer)
+    - NuGet 包：[Meziantou.Analyzer 1.0.238](https://www.nuget.org/packages/Meziantou.Analyzer/)
 
 ## 类型
 
@@ -93,6 +97,18 @@ Code Cracker 是第三方开发者开发的，代码已在 GitHub 上开源：
 Code Cracker 支持的所有种类的代码分析都可以在这里查得到：
 
 - [All diagnostics - Code Cracker](http://code-cracker.github.io/diagnostics.html)
+
+### Meziantou.Analyzer
+
+这款插件是对其他几款分析器的重要补充。如果说其他几款分析器可以帮你解决一些基本设计问题或者 Bug 的话，这款分析器可以帮你发现更大范围的问题。
+
+最典型的，也是我推荐这款分析器的最大原因是 —— 区域和本地化！
+
+你的每一个 `ToString()`，每一个字符串比较，每一个字典的构造……他都提醒你需要考虑区域问题，然后提供给你区域问题的推荐代码！
+
+![提醒需要考虑区域问题](/static/posts/2019-11-21-15-56-05.png)
+
+![提供的建议](/static/posts/2019-11-21-15-56-20.png)
 
 ## 配置代码分析严重程度
 
