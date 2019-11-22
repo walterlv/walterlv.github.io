@@ -1,7 +1,7 @@
 ---
 title: "C# 8.0 可空引用类型中的各项警告/错误的含义和示例代码"
 publishDate: 2019-04-21 20:23:30 +0800
-date: 2019-04-24 21:36:36 +0800
+date: 2019-11-22 12:44:02 +0800
 categories: csharp visualstudio msbuild
 position: knowledge
 ---
@@ -56,6 +56,23 @@ string Foo()
 ```
 
 ![CS8603](/static/posts/2019-04-21-20-12-35.png)
+
+### `CS8604`
+
+将可能为 `null` 的引用作为参数传递到不可为 `null` 的方法中：
+
+```csharp
+void Foo()
+{
+    string text = GetText();;
+    Bar(text);
+}
+
+string? GetText()
+{
+    return null;
+}
+```
 
 ### `CS8618`
 
