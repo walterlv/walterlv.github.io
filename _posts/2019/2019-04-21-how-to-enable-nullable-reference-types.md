@@ -1,7 +1,7 @@
 ---
 title: "C# 8.0 如何在项目中开启可空引用类型的支持"
 publishDate: 2019-04-21 19:22:00 +0800
-date: 2019-11-22 12:37:42 +0800
+date: 2019-11-22 13:44:53 +0800
 categories: csharp msbuild visualstudio
 position: starter
 ---
@@ -142,6 +142,12 @@ var value = walterlv.ToString();
 - `#pragma warning enable nullable`
 - `#pragma warning restore nullable`
 - `#pragma warning safeonly nullable` -->
+
+## ReSharper 支持
+
+ReSharper 从 2019.1.1 版本开始支持 C# 8.0，如果使用早期版本，就会到处报错。
+
+但是，由于 C# 8.0 可空引用类型的特性总在变，所以建议使用 2019.2.3 或以上版本，这是 C# 8.0 正式版本发布之后的 ReSharper。
 
 ---
 
