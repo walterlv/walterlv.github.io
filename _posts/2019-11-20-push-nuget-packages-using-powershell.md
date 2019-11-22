@@ -1,6 +1,7 @@
 ---
 title: "可集成到文件管理器，一句 PowerShell 脚本发布某个版本的所有 NuGet 包"
-date: 2019-11-20 14:38:39 +0800
+publishDate: 2019-11-20 14:38:39 +0800
+date: 2019-11-22 14:53:04 +0800
 categories: powershell nuget dotnet
 position: problem
 ---
@@ -73,7 +74,7 @@ pwsh -NoExit -c "nuget push *.0.8.0-alpha.nupkg -Source https://api.nuget.org/v3
 
 ```powershell
 cd "{sourcepath} "
-pwsh -NoExit -c "nuget push *([Regex]::Match('{file}', '\.\d+\.\d+\.\d+.+.nupkg').Value) -Source https://api.nuget.org/v3/index.json"
+pwsh -NoExit -c "$file=[Regex]::Match('{file}', '\.\d+\.\d+\.\d+.+.nupkg').Value; nuget push *$file -Source https://api.nuget.org/v3/index.json"
 ```
 
 含义为：
@@ -85,7 +86,7 @@ pwsh -NoExit -c "nuget push *([Regex]::Match('{file}', '\.\d+\.\d+\.\d+.+.nupkg'
     - `{file}` 是 Directory Opus 当前选中的文件，我用正则表达式匹配出其版本号和后面的 `.nupkg` 后缀
     - 将正则表达式匹配出来的文本作为 `nuget push` 的包，最终生成的命令会非常类似于本文一开始提到的命令 `nuget push *.0.8.0-alpha.nupkg -Source https://api.nuget.org/v3/index.json`
 
-![Directory Opus 工具栏按钮](/static/posts/2019-11-20-14-34-10.png)
+![Directory Opus 工具栏按钮](/static/posts/2019-11-22-14-52-06.png)
 
 于是，当我选中了一个包，按下这个工具栏按钮之后，就可以推送与这个包相同版本的所有的 NuGet 包了。
 
