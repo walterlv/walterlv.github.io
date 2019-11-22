@@ -1,7 +1,7 @@
 ---
 title: "C# 8.0 如何在项目中开启可空引用类型的支持"
 publishDate: 2019-04-21 19:22:00 +0800
-date: 2019-11-22 13:44:53 +0800
+date: 2019-11-22 14:11:13 +0800
 categories: csharp msbuild visualstudio
 position: starter
 ---
@@ -44,7 +44,7 @@ C# 8.0 引入了可为空引用类型和不可为空引用类型。由于这是�
       <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>netcoreapp3.0</TargetFramework>
-        <LangVersion>8.0</LangVersion>
+        <LangVersion>latest</LangVersion>
 ++      <Nullable>enable</Nullable>
       </PropertyGroup>
 
@@ -62,7 +62,6 @@ C# 8.0 引入了可为空引用类型和不可为空引用类型。由于这是�
 - `disable`
     - 与 8.0 之前的 C# 行为相同，即既不认为类型不可为空，也不启用 null 相关的警告。
 
-
 这五个值其实是两个不同维度的设置排列组合之后的结果：
 
 - 可为空注释上下文
@@ -71,6 +70,28 @@ C# 8.0 引入了可为空引用类型和不可为空引用类型。由于这是�
     - 用于告知编译器是否要启用 null 相关的警告，以及警告的级别。
 
 当仅仅启用警告上下文而不开启可为空注释上下文，那么编译器将仅仅识别局部变量中明显可以判定出对 null 解引用的代码，而不会对包括变量或者参数定义部分进行分析。
+
+### 将警告视为错误
+
+以上只是警告，如果你希望更严格地执行可空引用的建议，可以考虑使用编译错误：
+
+```diff
+    <Project Sdk="Microsoft.NET.Sdk">
+
+      <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+++      <LangVersion>latest</LangVersion>
+++      <Nullable>enable</Nullable>
+++      <WarningsAsErrors>$(WarningsAsErrors);CS8600;CS8602;CS8603;CS8604;CS8618;CS8625</WarningsAsErrors>
+      </PropertyGroup>
+
+    </Project>
+```
+
+详见：
+
+- [C# 可空引用类型 NullableReferenceTypes 更强制的约束：将警告改为错误 WarningsAsErrors - walterlv](/post/warning-as-errors-for-csharp-nullable-reference-types.html)
 
 ### 可为空注释（Annotation）上下文
 
