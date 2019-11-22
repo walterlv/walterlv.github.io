@@ -1,7 +1,7 @@
 ---
 title: "C# 8.0 如何在项目中开启可空引用类型的支持"
 publishDate: 2019-04-21 19:22:00 +0800
-date: 2019-05-07 19:00:33 +0800
+date: 2019-11-22 12:37:42 +0800
 categories: csharp msbuild visualstudio
 position: starter
 ---
@@ -40,29 +40,28 @@ C# 8.0 引入了可为空引用类型和不可为空引用类型。由于这是�
 
 ```diff
     <Project Sdk="Microsoft.NET.Sdk">
-    
+
       <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>netcoreapp3.0</TargetFramework>
         <LangVersion>8.0</LangVersion>
-++      <NullableContextOptions>enable</NullableContextOptions>
+++      <Nullable>enable</Nullable>
       </PropertyGroup>
-    
+
     </Project>
 ```
 
-此属性可被指定为以下五个值之一：
+此属性可被指定为以下四个值之一：
 
 - `enable`
-    - 所有引用类型均被视为不可为空，启用所有 null 相关的（Nullability）警告。
-- `disable`
-    - 无视所有引用类型是否为空，当设为此选项，则跟此前版本的 C# 行为一致。
-- `safeonly`
-    - 所有引用类型均被视为不可为空，启用所有安全性的 null 相关警告。
+    - 所有引用类型均被视为不可为空，启用所有 null 相关的警告。
 - `warnings`
-    - 无视所有引用类型是否为空，但启用所有 null 相关的警告。
-- `safeonlywarnings`
-    - 无视所有引用类型是否为空，但启用所有安全性的 null 相关警告。
+    - 不会判定类型是否可空或不可为空，但启用局部范围内的 null 相关的警告。
+- `annotations`
+    - 所有引用类型均被视为不可为空，但关闭 null 相关的警告。
+- `disable`
+    - 与 8.0 之前的 C# 行为相同，即既不认为类型不可为空，也不启用 null 相关的警告。
+
 
 这五个值其实是两个不同维度的设置排列组合之后的结果：
 
@@ -108,25 +107,41 @@ var value = walterlv.ToString();
 
 除了在项目文件中全局开启可空引用类型的支持，也可以在 C# 源代码文件中覆盖全局的设定。
 
-- `#nullable enable`
-- `#nullable disable`
-- `#nullable safeonly`
-- `#nullable restore`
+- `#nullable enable`: 在源代码中启用可空引用类型并给出警告。
+- `#nullable disable`: 在源代码中禁用可空引用类型并关闭警告。
+- `#nullable restore`: 还原这段代码中可空引用类型和可空警告。
+- `#nullable disable warnings`: 在源代码中禁用可空警告。
+- `#nullable enable warnings`: 在源代码中启用可空警告。
+- `#nullable restore warnings`: 还原这段代码中可空警告。
+- `#nullable disable annotations`: 在源代码中禁用可空引用类型。
+- `#nullable enable annotations`: 在源代码中启用用可空引用类型。
+- `#nullable restore annotations`: 还原这段代码中可空引用类型。
 
-或者
+## 早期版本的属性
+
+在接近正式版的时候，开关才是 `Nullable`，而之前是 `NullableContextOptions`，但在 Visual Studio 2019 Preview 2 之前，则是 `NullableReferenceTypes`。现在，这些旧的属性已经废弃。
+
+<!-- 早期 `NullableContextOptions` 属性可被指定为以下五个值之一：
+
+- `enable`
+    - 所有引用类型均被视为不可为空，启用所有 null 相关的（Nullability）警告。
+- `disable`
+    - 无视所有引用类型是否为空，当设为此选项，则跟此前版本的 C# 行为一致。
+- `safeonly`
+    - 所有引用类型均被视为不可为空，启用所有安全性的 null 相关警告。
+- `warnings`
+    - 无视所有引用类型是否为空，但启用所有 null 相关的警告。
+- `safeonlywarnings`
+    - 无视所有引用类型是否为空，但启用所有安全性的 null 相关警告。
+
+当前现在不用这么复杂了。
+
+早期在项目中还可以通过 pragma 设置：
 
 - `#pragma warning disable nullable`
 - `#pragma warning enable nullable`
 - `#pragma warning restore nullable`
-- `#pragma warning safeonly nullable`
-
-## 早期版本的属性
-
-在 Visual Studio 2019 Preview 2 升级之后才引入 `NullableContextOptions` 属性，而在此之前，用于控制可空引用类型开关的属性是 `NullableReferenceTypes`。现在，这个旧的属性已经废弃。
-
-## ReSharper 支持
-
-ReSharper 从 2019.1.1 版本开始支持 C# 8.0，如果使用早期版本，就会到处报错。
+- `#pragma warning safeonly nullable` -->
 
 ---
 
