@@ -1,7 +1,7 @@
 ---
 title: "C# 8.0 如何在项目中开启可空引用类型的支持"
 publishDate: 2019-04-21 19:22:00 +0800
-date: 2019-11-22 14:11:13 +0800
+date: 2019-11-24 13:20:04 +0800
 categories: csharp msbuild visualstudio
 position: starter
 ---
@@ -83,7 +83,7 @@ C# 8.0 引入了可为空引用类型和不可为空引用类型。由于这是�
         <TargetFramework>netcoreapp3.0</TargetFramework>
 ++      <LangVersion>latest</LangVersion>
 ++      <Nullable>enable</Nullable>
-++      <WarningsAsErrors>$(WarningsAsErrors);CS8600;CS8602;CS8603;CS8604;CS8618;CS8625</WarningsAsErrors>
+++      <WarningsAsErrors>$(WarningsAsErrors);CS8600;CS8601;CS8602;CS8603;CS8604;CS8618;CS8622;CS8625</WarningsAsErrors>
       </PropertyGroup>
 
     </Project>
@@ -92,6 +92,7 @@ C# 8.0 引入了可为空引用类型和不可为空引用类型。由于这是�
 详见：
 
 - [C# 可空引用类型 NullableReferenceTypes 更强制的约束：将警告改为错误 WarningsAsErrors - walterlv](/post/warning-as-errors-for-csharp-nullable-reference-types.html)
+- [C# 8.0 可空引用类型中的各项警告/错误的含义和示例代码 - walterlv](https://blog.walterlv.com/post/nullable-context-options-warnings.html)
 
 ### 可为空注释（Annotation）上下文
 

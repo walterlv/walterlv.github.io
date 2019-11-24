@@ -1,7 +1,7 @@
 ---
 title: "C# 8.0 可空引用类型中的各项警告/错误的含义和示例代码"
 publishDate: 2019-04-21 20:23:30 +0800
-date: 2019-11-22 12:44:02 +0800
+date: 2019-11-24 13:15:55 +0800
 categories: csharp visualstudio msbuild
 position: knowledge
 ---
@@ -32,6 +32,20 @@ string walterlv = null;
 ```
 
 ![CS8600](/static/posts/2019-04-21-20-07-16.png)
+
+### `CS8601`
+
+可能的 null 引用赋值。
+
+```csharp
+string Text { get; set; }
+
+void Foo(string? text)
+{
+    // 将可能为 null 的文本向不可为 null 的类型赋值。
+    Text = text;
+}
+```
 
 ### `CS8602`
 
@@ -79,6 +93,25 @@ string? GetText()
 未初始化不可以为 null 的字段 "_walterlv"。
 
 如果一个类型中存在不可以为 null 的字段，那么需要在构造函数中初始化，如果没有初始化，则会发出警告或者异常。
+
+### `CS8622`
+
+委托定义的参数中引用类型的为 null 性与目标委托不匹配。
+
+比如你定义了一个委托：
+
+```csharp
+void Foo(object? sender, EventArgs e);
+```
+
+然而在订阅事件的时候，使用的函数 null 性不匹配，则会出现警告：
+
+```csharp
+void OnFoo(object sender, EventArgs e)
+{
+    // 注意到这里的 object 本应该写作 object?
+}
+```
 
 ### `CS8625`
 
