@@ -1,7 +1,7 @@
 ---
 title: "可集成到文件管理器，一句 PowerShell 脚本发布某个版本的所有 NuGet 包"
 publishDate: 2019-11-20 14:38:39 +0800
-date: 2019-11-22 14:53:04 +0800
+date: 2019-11-24 13:18:38 +0800
 categories: powershell nuget dotnet
 position: problem
 ---
@@ -91,6 +91,8 @@ pwsh -NoExit -c "$file=[Regex]::Match('{file}', '\.\d+\.\d+\.\d+.+.nupkg').Value
 于是，当我选中了一个包，按下这个工具栏按钮之后，就可以推送与这个包相同版本的所有的 NuGet 包了。
 
 毕竟我一次编译产生的 NuGet 包太多了，还是需要使用这样的方式来提高一点效率。至于为什么不用持续集成，是因为目前 SourceYard 还不支持在 GitHub 上集成。
+
+![一键推送 NuGet 包](/static/posts/2019-11-24-13-18-30.png)
 
 ---
 
