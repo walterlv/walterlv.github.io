@@ -83,7 +83,7 @@ C# 8.0 引入了可为空引用类型和不可为空引用类型。由于这是�
         <TargetFramework>netcoreapp3.0</TargetFramework>
 ++      <LangVersion>latest</LangVersion>
 ++      <Nullable>enable</Nullable>
-++      <WarningsAsErrors>$(WarningsAsErrors);CS8600;CS8601;CS8602;CS8603;CS8604;CS8618;CS8622;CS8625</WarningsAsErrors>
+++      <WarningsAsErrors>$(WarningsAsErrors);CS8600;CS8601;CS8602;CS8603;CS8604;CS8616;CS8618;CS8622;CS8625</WarningsAsErrors>
       </PropertyGroup>
 
     </Project>

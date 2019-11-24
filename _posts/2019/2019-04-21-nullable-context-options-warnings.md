@@ -1,7 +1,7 @@
 ---
 title: "C# 8.0 可空引用类型中的各项警告/错误的含义和示例代码"
 publishDate: 2019-04-21 20:23:30 +0800
-date: 2019-11-24 13:15:55 +0800
+date: 2019-11-24 13:54:04 +0800
 categories: csharp visualstudio msbuild
 position: knowledge
 ---
@@ -88,6 +88,12 @@ string? GetText()
 }
 ```
 
+### `CS8616`
+
+接口中定义的成员中的 null 性与实现中成员的 null 型不匹配。
+
+比如你的接口中不允许为 null，但是实现中却允许为 null。
+
 ### `CS8618`
 
 未初始化不可以为 null 的字段 "_walterlv"。
@@ -124,3 +130,7 @@ void Foo(string walterlv = null)
 ```
 
 ![CS8625](/static/posts/2019-04-21-20-10-39.png)
+
+### `CS8653`
+
+对于泛型 T，使用 `default` 设置其值。如果 T 是引用类型，那么 `default` 就会将这个泛型类型赋值为 `null`。然而并没有将泛型 T 的使用写为 T?。
