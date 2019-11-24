@@ -1,7 +1,7 @@
 ---
 title: "C# 8.0 可空引用类型中的各项警告/错误的含义和示例代码"
 publishDate: 2019-04-21 20:23:30 +0800
-date: 2019-11-24 13:54:04 +0800
+date: 2019-11-24 18:59:48 +0800
 categories: csharp visualstudio msbuild
 position: knowledge
 ---
@@ -99,6 +99,16 @@ string? GetText()
 未初始化不可以为 null 的字段 "_walterlv"。
 
 如果一个类型中存在不可以为 null 的字段，那么需要在构造函数中初始化，如果没有初始化，则会发出警告或者异常。
+
+### `CS8619`
+
+一个类型与构造这个类型的 null 性不匹配。
+
+例如：
+
+```csharp
+Task<object?> foo = new Task<object>(() => new object());
+```
 
 ### `CS8622`
 
