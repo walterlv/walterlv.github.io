@@ -1,7 +1,7 @@
 ---
 title: "C# 8.0 可空引用类型中的各项警告/错误的含义和示例代码"
 publishDate: 2019-04-21 20:23:30 +0800
-date: 2019-11-24 18:59:48 +0800
+date: 2019-11-24 19:11:24 +0800
 categories: csharp visualstudio msbuild
 position: knowledge
 ---
@@ -85,6 +85,42 @@ void Foo()
 string? GetText()
 {
     return null;
+}
+```
+
+### `CS8609`
+
+返回类型中引用类型的为 Null 性与重写成员不匹配。
+
+比如你的基类中返回值不允许为 null，但是实现中返回值却允许为 null。
+
+```csharp
+protected virtual async Task<string> FooAsync()
+{
+}
+```
+
+```csharp
+protected override async Task<string?> FooAsync()
+{
+}
+```
+
+### `CS8610`
+
+参数中引用类型的为 Null 性与重写成员不匹配。
+
+比如你的基类中方法参数值不允许为 null，但是实现中方法参数却允许为 null。
+
+```csharp
+protected virtual void FooAsync(string value)
+{
+}
+```
+
+```csharp
+protected override void FooAsync(string? value)
+{
 }
 ```
 
