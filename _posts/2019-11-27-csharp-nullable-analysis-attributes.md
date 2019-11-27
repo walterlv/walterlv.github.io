@@ -1,6 +1,7 @@
 ---
 title: "C# 8.0 的可空引用类型，不止是加个问号哦！你还有很多种不同的可空玩法"
-date: 2019-11-27 18:58:29 +0800
+publishDate: 2019-11-27 18:58:29 +0800
+date: 2019-11-27 19:13:26 +0800
 categories: csharp dotnet
 position: knowledge
 ---
@@ -189,7 +190,7 @@ public string? GetValue(string key, string? defaultValue)
 
 那么上面这些特性呢？它们并没有编译到目标程序集中怎么办？
 
-实际上，你只需要有一个名字相同，实现相同的类型就够了。你可以写一个放到你自己的程序集中，也可以把这些类型写到一个自己公共的库中，然后引用它。当然，你也可以用我已经写好的 NuGet 包 Walterlv.NullableAttributes。
+实际上，你只需要有一个命名空间、名字和实现都相同的类型就够了。你可以写一个放到你自己的程序集中，也可以把这些类型写到一个自己公共的库中，然后引用它。当然，你也可以用我已经写好的 NuGet 包 Walterlv.NullableAttributes。
 
 ## Walterlv.NullableAttributes
 
