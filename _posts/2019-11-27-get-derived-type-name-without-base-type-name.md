@@ -1,6 +1,6 @@
 ---
 title: "一个简单的方法：截取子类名称中不包含基类后缀的部分"
-date: 2019-11-27 10:01:53 +0800
+date: 2019-11-27 10:03:09 +0800
 categories: dotnet csharp
 position: starter
 ---
@@ -42,9 +42,11 @@ namespace Walterlv.Utils
 
             var derivedTypeName = @this.GetType().Name;
             var baseTypeName = typeof(T).Name;
+            // 截取子类名称中去掉基类后缀的部分。
             var name = derivedTypeName.EndsWith(baseTypeName, StringComparison.Ordinal)
                 ? derivedTypeName.Substring(0, derivedTypeName.Length - baseTypeName.Length)
                 : derivedTypeName;
+            // 如果子类名称和基类完全一样，则直接返回子类名称。
             return string.IsNullOrWhiteSpace(name) ? derivedTypeName : name;
         }
     }
