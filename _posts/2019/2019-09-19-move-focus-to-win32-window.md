@@ -1,6 +1,7 @@
 ---
 title: "WPF 程序如何跨窗口/跨进程设置控件焦点"
-date: 2019-09-19 12:24:28 +0800
+publishDate: 2019-09-19 12:24:28 +0800
+date: 2019-11-27 08:53:01 +0800
 categories: windows wpf dotnet csharp
 position: starter
 ---
