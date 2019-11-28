@@ -1,7 +1,7 @@
 ---
 title: "配置 legacyUnhandledExceptionPolicy 防止后台线程抛出的异常让程序崩溃退出"
 publishDate: 2017-10-16 20:52:01 +0800
-date: 2019-06-21 09:17:01 +0800
+date: 2019-11-28 16:08:14 +0800
 categories: dotnet wpf
 tags: AppDomain Application Dispatcher legacyUnhandledExceptionPolicy
 description: legacyUnhandledExceptionPolicy 可以防止程序在后台线程抛出异常后崩溃退出。
@@ -29,6 +29,20 @@ WPF 和 Windows Forms 都是微软的框架，为了照顾初学者，微软会�
 
 ```xml
 <legacyUnhandledExceptionPolicy enabled="1"/>  
+```
+
+如果你找不到在 App.config 的哪个地方，我再用一段代码标注一下，大概在这里：
+
+```diff
+    <?xml version="1.0" encoding="utf-8"?>
+    <configuration>
+        <startup useLegacyV2RuntimeActivationPolicy="true">
+            <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.8" />
+        </startup>
+        <runtime>
+++          <legacyUnhandledExceptionPolicy enabled="1" />
+        </runtime>
+    </configuration>
 ```
 
 加上了这个配置之后，`AppDomain.CurrentDomain.UnhandledException` 事件的 `IsTerminating` 就变成了 `false` 啦！也就是说，程序并不会因为这次的异常而崩溃退出。
