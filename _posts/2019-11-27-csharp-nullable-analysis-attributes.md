@@ -1,7 +1,7 @@
 ---
 title: "C# 8.0 的可空引用类型，不止是加个问号哦！你还有很多种不同的可空玩法"
 publishDate: 2019-11-27 18:58:29 +0800
-date: 2019-11-27 19:13:26 +0800
+date: 2019-12-05 15:02:32 +0800
 categories: csharp dotnet
 position: knowledge
 ---
@@ -131,6 +131,12 @@ public T Find<T>(int index)
 实际上这样的写法并没有从本质上解决掉泛型 `T` 的问题，不过可以用来给旧项目迁移时用来兼容 API 使用。
 
 如果你可以不用考虑 API 的兼容性，那么可以使用新的泛型契约 `where T : notnull`。
+
+```csharp
+public T Find<T>(int index) where T : notnull
+{
+}
+```
 
 ### 输出：`NotNull`
 
