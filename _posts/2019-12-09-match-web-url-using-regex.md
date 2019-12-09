@@ -1,6 +1,6 @@
 ---
 title: "使用正则表达式尽可能准确匹配域名/网址"
-date: 2019-12-09 16:54:20 +0800
+date: 2019-12-09 16:55:34 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -130,7 +130,7 @@ position: knowledge
 如果上下文中要求必须匹配 `https`，则可以写：
 
 ```
-^(http(s)?:\/\/)?\w+[^\s]+(\.[^\s]+){1,}$
+^(http(s)?:\/\/)\w+[^\s]+(\.[^\s]+){1,}$
 ```
 
 - `https://blog.walterlv.com/post/read-32bit-registry-from-x64-process.html#content)`
