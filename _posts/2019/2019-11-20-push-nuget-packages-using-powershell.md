@@ -1,7 +1,7 @@
 ---
 title: "可集成到文件管理器，一句 PowerShell 脚本发布某个版本的所有 NuGet 包"
 publishDate: 2019-11-20 14:38:39 +0800
-date: 2019-11-24 13:18:38 +0800
+date: 2019-12-08 15:29:05 +0800
 categories: powershell nuget dotnet
 position: problem
 ---

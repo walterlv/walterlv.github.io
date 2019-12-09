@@ -1,6 +1,7 @@
 ---
 title: "一个简单的方法：截取子类名称中不包含基类后缀的部分"
-date: 2019-11-27 10:03:09 +0800
+publishDate: 2019-11-27 10:03:09 +0800
+date: 2019-12-08 15:29:19 +0800
 categories: dotnet csharp
 position: starter
 ---
