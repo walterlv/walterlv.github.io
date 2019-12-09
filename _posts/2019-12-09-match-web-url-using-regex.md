@@ -1,6 +1,6 @@
 ---
 title: "使用正则表达式尽可能准确匹配域名/网址"
-date: 2019-12-09 16:57:20 +0800
+date: 2019-12-09 16:58:13 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -125,7 +125,7 @@ position: knowledge
 这个正则表达式可以不写 `https` 协议前缀：
 
 ```
-\w+[^\s]+(\.[^\s]+){1,}
+^\w+[^\s]+(\.[^\s]+){1,}$
 ```
 
 如果上下文中要求必须匹配 `https`，则可以写：
