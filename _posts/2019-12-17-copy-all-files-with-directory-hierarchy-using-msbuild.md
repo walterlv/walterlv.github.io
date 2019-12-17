@@ -1,6 +1,6 @@
 ---
 title: "使用 MSBuild Target 复制文件的时候如何保持文件夹结构不变"
-date: 2019-12-17 16:16:16 +0800
+date: 2019-12-17 16:36:39 +0800
 categories: msbuild dotnet
 position: knowledge
 ---
@@ -20,7 +20,7 @@ position: knowledge
 ```xml
 <Target Name="_WalterlvCopyDemo" AfterTargets="AfterBuild">
   <ItemGroup>
-    <_WalterlvToCopyFile Include="$(Compile)**" />
+    <_WalterlvToCopyFile Include="$(OutputPath)**" />
   </ItemGroup>
   <Copy SourceFiles="@(_WalterlvToCopyFile)" DestinationFolder="bin\Debug\Test" SkipUnchangedFiles="True" />
 </Target>
@@ -39,7 +39,7 @@ position: knowledge
 ```diff
   <Target Name="_WalterlvCopyDemo" AfterTargets="AfterBuild">
     <ItemGroup>
-      <_WalterlvToCopyFile Include="$(Compile)**" />
+      <_WalterlvToCopyFile Include="$(OutputPath)**" />
     </ItemGroup>
 -   <Copy SourceFiles="@(_WalterlvToCopyFile)" DestinationFolder="bin\Debug\Test" SkipUnchangedFiles="True" />
 +   <Copy SourceFiles="@(_WalterlvToCopyFile)" DestinationFolder="bin\Debug\Test\%(RecursiveDir)" SkipUnchangedFiles="True" />
