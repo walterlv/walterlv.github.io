@@ -1,7 +1,7 @@
 ---
 title: "将美化进行到底，把 PowerShell 做成 oh-my-zsh 的样子"
 publishDate: 2017-12-26 15:00:17 +0800
-date: 2018-02-20 06:53:00 +0800
+date: 2019-12-18 13:47:18 +0800
 categories: windows powershell
 ---
 
@@ -55,22 +55,6 @@ Install-Module oh-my-posh -Scope CurrentUser
 Import-Module oh-my-posh
 ```
 
-但是，我们期望的是每次打开 PowerShell 都能够启用这个模组，所以我们需要设置 profile 文件让它自动启用。
-
-敲 `$profile` 可以让 PowerShell 告诉我们这个文件的路径是什么。当然下图是我的路径，读者的默认在文档路径里的 PowerShell 文件夹下。
-
-![profile 文件路径](/static/posts/2017-12-26-13-21-46.png)
-
-我们需要编辑这个文件（如果没有，手动创建一个），然后在里面写下那一句话：
-
-```powershell
-Import-Module oh-my-posh
-```
-
-接下来，新打开 PowerShell（不需要管理员权限）时就会提示加载了这个文件：
-
-![加载个人及系统配置文件](/static/posts/2017-12-26-13-24-35.png)
-
 其实写本文主要就是想体验 zsh 的操作，并看看 git 文件夹的视觉效果。现在我们就试试，输入：
 
 ```powershell
@@ -89,6 +73,27 @@ Set-Theme
 
 并没有 zsh 那样的效果。——因为我们缺少专用的字体！
 
+下一节我们会讲如何安装专为 zsh 效果设计的字体。
+
+现在，我们需要让 PowerShell 每次启动的时候都能够加载这个模组，所以我们需要设置 profile 文件让它自动启用。
+
+敲 `$profile` 可以让 PowerShell 告诉我们这个文件的路径是什么。当然下图是我的路径，读者的默认在文档路径里的 PowerShell 文件夹下。
+
+![profile 文件路径](/static/posts/2017-12-26-13-21-46.png)
+
+我们需要编辑这个文件（如果没有，手动创建一个），然后在里面写下那一句话：
+
+```powershell
+Import-Module oh-my-posh
+Set-Theme Paradox
+```
+
+![在个人配置文件中的内容](/static/posts/2019-12-18-13-36-33.png)
+
+接下来，新打开 PowerShell（不需要管理员权限）时就会提示加载了这个文件：
+
+![加载个人及系统配置文件](/static/posts/2017-12-26-13-24-35.png)
+
 ## 安装字体/安装第三方 PowerShell
 
 ！！！**重要说明：给 PowerShell 定制字体是一件非常困难的事情，非常困难！！！** *可参见 [自定义 Windows PowerShell 和 cmd 的字体](/post/customize-fonts-of-command-window.html) 感受一下。* **所以，这里更倾向于在安装了字体的情况下使用第三方 PowerShell。**
@@ -102,7 +107,27 @@ Set-Theme
 - [ConEmu](https://www.fosshub.com/ConEmu.html)
 - [cmder - Console Emulator](http://cmder.net/)
 
-而适用于 oh-my-posh 的字体推荐使用 PowerLine 字体，他们专门为 zsh 这样的体验而生。官方文档在这里 [Overview — Powerline beta documentation](https://powerline.readthedocs.io/en/master/overview.html)。
+但是，如果你执意要跑原生 PowerShell，那也不是没有办法，你可以使用 PowerLine 专为 PowerShell 和 zsh 设计的字体，它们的字体是可以完美跑到 PowerShell 和 PowerShell Core 中的。
+
+下图是我在 PowerShell Core 中的运行效果：
+
+![PowerLine 字体效果](/static/posts/2019-12-18-13-47-07.png)
+
+请在这里下载 PowerLine 字体：
+
+- [powerline/fonts: Patched fonts for Powerline users.](https://github.com/powerline/fonts)
+
+方法是克隆这个仓库，然后在克隆出来的文件夹中找到 Install.ps1 文件，执行它，会发现它会自动为我们安装所有的 PowerLine 字体。
+
+![Install.ps1](/static/posts/2019-12-18-13-39-31.png)
+
+![安装所有的字体](/static/posts/2019-12-18-13-41-05.png)
+
+安装完成之后，在 PowerShell 或者 PowerShell Core 的标题栏上右击选择“属性”，然后选择你想要设置的字体就可以立刻看到效果了。注意，PowerLine 字体都是带有 for PowerLine 后缀的。
+
+![设置字体](/static/posts/2019-12-18-13-45-44.png)
+
+PowerLine 字体官方文档在这里：[Overview — Powerline beta documentation](https://powerline.readthedocs.io/en/master/overview.html)。
 
 ![官方文档中的 PowerLine 字体截图](/static/posts/2017-12-26-13-38-19.png)  
 ▲ 官方文档中的 PowerLine 字体截图
