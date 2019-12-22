@@ -138,10 +138,10 @@ public static Point ClientToRoot(Point point, PresentationSource presentationSou
 
 而 `PresentationSource` 的 `RootVisual` 是什么呢？`PresentationSource` 是承载 WPF 可视化树的一个对象，对于窗口 `Window`，是通过 `HwndSource`（`PresentationSource` 的子类）承载的；对于跨线程 WPF UI，可以通过自定义的 `PresentationSource` 子类来完成。这部分可以参考我之前的一些博客：
 
-- [WPF 同一窗口内的多线程 UI（VisualTarget）](/post/multi-thread-ui-using-visualtarget-in-wpf.html)
-- [WPF 同一窗口内的多线程/多进程 UI（使用 SetParent 嵌入另一个窗口）](/post/embed-win32-window-using-csharp.html)
-- [WPF 多线程 UI：设计一个异步加载 UI 的容器](/post/design-an-async-loading-view.html)
-- [WPF 获取元素（Visual）相对于屏幕设备的缩放比例，可用于清晰显示图片](/post/get-wpf-visual-scaling-ratio-to-device.html)
+- [WPF 同一窗口内的多线程 UI（VisualTarget）](/post/multi-thread-ui-using-visualtarget-in-wpf)
+- [WPF 同一窗口内的多线程/多进程 UI（使用 SetParent 嵌入另一个窗口）](/post/embed-win32-window-using-csharp)
+- [WPF 多线程 UI：设计一个异步加载 UI 的容器](/post/design-an-async-loading-view)
+- [WPF 获取元素（Visual）相对于屏幕设备的缩放比例，可用于清晰显示图片](/post/get-wpf-visual-scaling-ratio-to-device)
 
 不管怎么说，这个指的就是 WPF 可视化树的根：
 

@@ -118,7 +118,7 @@ private readonly Random \u0001 = new Random();
 private static readonly Dictionary<int, int> \u0001 = new Dictionary<int, int>();
 ```
 
-这部分的原始代码可以在 [冷算法：自动生成代码标识符（类名、方法名、变量名）](/post/algorithm-of-generating-random-identifiers.html) 找到。
+这部分的原始代码可以在 [冷算法：自动生成代码标识符（类名、方法名、变量名）](/post/algorithm-of-generating-random-identifiers) 找到。
 
 如果你需要在混淆时使用名称混淆，你只需要在以上两者的组合中找到一个能够编译通过的组合即可，不需要特别在意等级 1~3 的区别，因为实际上都做了混淆，1~3 的差异对逆向来说难度差异非常小的。
 
@@ -163,7 +163,7 @@ public string Generate(bool pascal)
 }
 ```
 
-▲ 这个方法可以在 [冷算法：自动生成代码标识符（类名、方法名、变量名）](/post/algorithm-of-generating-random-identifiers.html) 找到。
+▲ 这个方法可以在 [冷算法：自动生成代码标识符（类名、方法名、变量名）](/post/algorithm-of-generating-random-identifiers) 找到。
 
 流程混淆修改方法内部的实现。为了了解各种不同的流程混淆级别对代码的影响，我为每一个混淆级别都进行反编译查看。
 
@@ -532,7 +532,7 @@ U21hcnRBc3NlbWJseQ==UGF0aA==U29mdHdhcmVcUmVkIEdhdGVc(U29mdHdhcmVcV293NjQzMk5vZ
 GVcUmVkIEdhdGVc
 ```
 
-虽然字符串难以读懂，但其实我原本就是这么写的；给你看看我的原始代码就知道了（来自 [冷算法：自动生成代码标识符（类名、方法名、变量名）](/post/algorithm-of-generating-random-identifiers.html)）：
+虽然字符串难以读懂，但其实我原本就是这么写的；给你看看我的原始代码就知道了（来自 [冷算法：自动生成代码标识符（类名、方法名、变量名）](/post/algorithm-of-generating-random-identifiers)）：
 
 ```csharp
 private static readonly List<string> Consonants = new List<string>
@@ -728,7 +728,7 @@ dnSpy 和 dotPeek 实际上都忽略了这个特性，依然能毫无障碍地�
 dnSpy 可以做挺多事儿的，比如：
 
 - [断点调试 Windows 源代码 - lindexi](https://blog.lindexi.com/post/%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95-Windows-%E6%BA%90%E4%BB%A3%E7%A0%81.html)
-- [神器如 dnSpy，无需源码也能修改 .NET 程序 - walterlv](/post/edit-and-recompile-assembly-using-dnspy.html)
+- [神器如 dnSpy，无需源码也能修改 .NET 程序 - walterlv](/post/edit-and-recompile-assembly-using-dnspy)
 
 ## 密封
 

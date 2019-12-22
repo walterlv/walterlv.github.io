@@ -20,7 +20,7 @@ position: problem
 
 你需要先在你的项目中启用可空引用类型的支持，才能修改警告到错误：
 
-- [C# 8.0 如何在项目中开启可空引用类型的支持 - 吕毅](/post/how-to-enable-nullable-reference-types.html)
+- [C# 8.0 如何在项目中开启可空引用类型的支持 - 吕毅](/post/how-to-enable-nullable-reference-types)
 
 ## 项目属性
 
@@ -48,7 +48,7 @@ NU1605;CS8600;CS8602;CS8603;CS8604;CS8618;CS8625
 
 这些值的含义可以参考我的另一篇博客：
 
-- [C# 8.0 可空引用类型中的各项警告和错误 - 吕毅](/post/nullable-context-options-warnings.html)
+- [C# 8.0 可空引用类型中的各项警告和错误 - 吕毅](/post/nullable-context-options-warnings)
 
 记得在改之前，把前面的配置从“活动”改为“所有配置”，这样你就不用改完之后仅在 Debug 生效，完了还要去 Release 配置再改一遍。
 
@@ -80,7 +80,7 @@ NU1605;CS8600;CS8602;CS8603;CS8604;CS8618;CS8625
 
 这些值的含义可以参考我的另一篇博客：
 
-- [C# 8.0 可空引用类型中的各项警告和错误 - 吕毅](/post/nullable-context-options-warnings.html)
+- [C# 8.0 可空引用类型中的各项警告和错误 - 吕毅](/post/nullable-context-options-warnings)
 
 ---
 

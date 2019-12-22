@@ -101,7 +101,7 @@ namespace Walterlv.Demo.HwndWrapping
 
 另外，`WindowStyle` 属性最好加上 `WS_CLIPCHILDREN`，详情请阅读：
 
-- [解决 WPF 嵌套的子窗口在改变窗口大小的时候闪烁的问题](/post/window-flickers-on-resizing-if-the-window-contains-a-hwndhost-element.html)
+- [解决 WPF 嵌套的子窗口在改变窗口大小的时候闪烁的问题](/post/window-flickers-on-resizing-if-the-window-contains-a-hwndhost-element)
 
 ---
 

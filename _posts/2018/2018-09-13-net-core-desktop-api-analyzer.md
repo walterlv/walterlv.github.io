@@ -115,7 +115,7 @@ Cannot locate assembly information for System.Object. Microsoft assemblies found
 Cannot locate assembly information for System.Object. Microsoft assemblies found are:
 ```
 
-如果你想了解更多混淆相关的资料，可以阅读我的另一篇博客：[.NET 中各种混淆（Obfuscation）的含义、原理、实际效果和不同级别的差异（使用 SmartAssembly）](/post/obfuscation-configurations-of-smart-assembly.html)。
+如果你想了解更多混淆相关的资料，可以阅读我的另一篇博客：[.NET 中各种混淆（Obfuscation）的含义、原理、实际效果和不同级别的差异（使用 SmartAssembly）](/post/obfuscation-configurations-of-smart-assembly)。
 
 ## 未来的迁移
 

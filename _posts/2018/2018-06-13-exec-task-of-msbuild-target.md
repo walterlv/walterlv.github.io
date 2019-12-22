@@ -5,7 +5,7 @@ date: 2018-12-14 09:54:00 +0800
 categories: dotnet msbuild
 ---
 
-我曾经写过一篇文章 [如何创建一个基于命令行工具的跨平台的 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool.html)，通过编写一个控制台程序来参与编译过程。但是，相比于 [基于 Task 的方式](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html)，可控制的因素还是太少了。
+我曾经写过一篇文章 [如何创建一个基于命令行工具的跨平台的 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool)，通过编写一个控制台程序来参与编译过程。但是，相比于 [基于 Task 的方式](/post/create-a-cross-platform-msbuild-task-based-nuget-tool)，可控制的因素还是太少了。
 
 有没有什么办法能够让控制台程序也能与 MSBuild Target 之间发生更多的信息交换呢？答案是有的，通过捕获控制台的输出！
 
@@ -19,7 +19,7 @@ categories: dotnet msbuild
 
 那么，捕获的输出去了哪里呢？
 
-我在 [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html) 中提到了使用 `Output` 来将 `Task` 中的参数输出出来。而 `Exec` 也是这么做的。我们将 `ConsoleOutput` 输出出来即可。由于这个属性不是 `ITaskItem[]` 类型的，所以我们只能得到字符串属性，于是只能通过 `PropertyName` 来接收这样的输出。
+我在 [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包](/post/create-a-cross-platform-msbuild-task-based-nuget-tool) 中提到了使用 `Output` 来将 `Task` 中的参数输出出来。而 `Exec` 也是这么做的。我们将 `ConsoleOutput` 输出出来即可。由于这个属性不是 `ITaskItem[]` 类型的，所以我们只能得到字符串属性，于是只能通过 `PropertyName` 来接收这样的输出。
 
 ```xml
 <Exec ConsoleToMSBuild="True" Command="&quot;$(NuGetWalterlvToolPath)&quot;">
@@ -29,7 +29,7 @@ categories: dotnet msbuild
 
 ## PropertyGroup 转 ItemGroup
 
-如果你需要的只是一个字符串，那看完上一节就已经够了。但如果你希望得到的是一组值（例如新增了一组需要编译的文件），那么需要得到的是 `ItemGroup` 中的多个值，而不是 `PropertyGroup` 中的单个值。（如果不太明白 `ItemGroup` 和 `PropertyGroup` 之间的差别，不要紧，可以阅读 [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj.html)。）
+如果你需要的只是一个字符串，那看完上一节就已经够了。但如果你希望得到的是一组值（例如新增了一组需要编译的文件），那么需要得到的是 `ItemGroup` 中的多个值，而不是 `PropertyGroup` 中的单个值。（如果不太明白 `ItemGroup` 和 `PropertyGroup` 之间的差别，不要紧，可以阅读 [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj)。）
 
 MSBuild 还自带了一个 `Task`，名为 `CreateItem`，就是从一段字符串创建一组 `Item`。通过下面这段代码，我们能将上一节捕获到的属性转换成项的集合。
 

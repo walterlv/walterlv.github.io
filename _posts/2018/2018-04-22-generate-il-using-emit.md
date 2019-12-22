@@ -11,7 +11,7 @@ categories: dotnet csharp
 
 ---
 
-在编写以下代码时如果遇到一些意料之外的错误，希望调试生成的 IL 代码，可以尝试阅读 [如何快速编写和调试 Emit 生成 IL 的代码](/post/how-to-quickly-write-emit-code.html) 了解如何调试和解决。
+在编写以下代码时如果遇到一些意料之外的错误，希望调试生成的 IL 代码，可以尝试阅读 [如何快速编写和调试 Emit 生成 IL 的代码](/post/how-to-quickly-write-emit-code) 了解如何调试和解决。
 
 <div id="toc"></div>
 

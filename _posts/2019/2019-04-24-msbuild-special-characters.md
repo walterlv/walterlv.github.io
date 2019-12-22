@@ -40,8 +40,8 @@ MSBuild 中有这些特殊字符：
 
 比如以下两篇博客列出了一些最典型的使用场景。
 
-- [如何更精准地设置 C# / .NET Core 项目的输出路径？（包括添加和删除各种前后缀）](/post/the-properties-that-affetcs-project-output-path.html)
-- [在 csproj 文件中使用系统环境变量的值（示例将 dll 生成到 AppData 目录下）](/post/environment-variables-in-csproj.html)
+- [如何更精准地设置 C# / .NET Core 项目的输出路径？（包括添加和删除各种前后缀）](/post/the-properties-that-affetcs-project-output-path)
+- [在 csproj 文件中使用系统环境变量的值（示例将 dll 生成到 AppData 目录下）](/post/environment-variables-in-csproj)
 
 ### `@`
 
@@ -56,8 +56,8 @@ MSBuild 中有这些特殊字符：
 
 比如以下两篇博客列出了一些最典型的使用场景：
 
-- [在 Target 中获取项目引用的所有依赖（dll/NuGet/Project）的路径](/post/resolve-project-references-using-target.html)
-- [在制作跨平台的 NuGet 工具包时，如何将工具（exe/dll）的所有依赖一并放入包中](/post/include-dependencies-into-nuget-tool-package.html)
+- [在 Target 中获取项目引用的所有依赖（dll/NuGet/Project）的路径](/post/resolve-project-references-using-target)
+- [在制作跨平台的 NuGet 工具包时，如何将工具（exe/dll）的所有依赖一并放入包中](/post/include-dependencies-into-nuget-tool-package)
 
 ### `%`
 
@@ -74,7 +74,7 @@ MSBuild 中有这些特殊字符：
 
 比如下面两篇博客列出了此字符的一些使用：
 
-- [在项目文件 csproj 中或者 MSBuild 的 Target 中使用 % 引用集合中每一项的属性](/post/msbuild-referencing-metadata.html)
+- [在项目文件 csproj 中或者 MSBuild 的 Target 中使用 % 引用集合中每一项的属性](/post/msbuild-referencing-metadata)
 
 ### `'`
 
@@ -82,7 +82,7 @@ MSBuild 中有这些特殊字符：
 
 下面这篇博客列出了此字符的一些使用：
 
-- [MSBuild 如何编写带条件的属性、集合和任务 Condition？](/post/how-to-write-msbuild-conditions.html)
+- [MSBuild 如何编写带条件的属性、集合和任务 Condition？](/post/how-to-write-msbuild-conditions)
 
 ### `;`
 

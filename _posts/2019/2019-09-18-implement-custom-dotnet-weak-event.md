@@ -15,9 +15,9 @@ position: knowledge
 
 系列博客：
 
-- [.NET/C# 利用 Walterlv.WeakEvents 高性能地定义和使用弱事件](/post/implement-custom-dotnet-weak-event.html)
-- [.NET/C# 利用 Walterlv.WeakEvents 高性能地中转一个自定义的弱事件（可让任意 CLR 事件成为弱事件）](/post/implement-custom-dotnet-weak-event-relay.html)
-- [.NET 设计一套高性能的弱事件机制](/post/design-a-dotnet-weak-event-relay.html)
+- [.NET/C# 利用 Walterlv.WeakEvents 高性能地定义和使用弱事件](/post/implement-custom-dotnet-weak-event)
+- [.NET/C# 利用 Walterlv.WeakEvents 高性能地中转一个自定义的弱事件（可让任意 CLR 事件成为弱事件）](/post/implement-custom-dotnet-weak-event-relay)
+- [.NET 设计一套高性能的弱事件机制](/post/design-a-dotnet-weak-event-relay)
 
 ## 下载安装 Walterlv.WeakEvents
 

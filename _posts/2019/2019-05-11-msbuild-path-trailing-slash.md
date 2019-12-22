@@ -56,7 +56,7 @@ position: knowledge
 </Target>
 ```
 
-以上的 Target 是我在另一篇博客中的简化版本：[如何创建一个基于命令行工具的跨平台的 NuGet 工具包 - walterlv](/post/create-a-cross-platform-command-based-nuget-tool.html)。
+以上的 Target 是我在另一篇博客中的简化版本：[如何创建一个基于命令行工具的跨平台的 NuGet 工具包 - walterlv](/post/create-a-cross-platform-command-based-nuget-tool)。
 
 但是这样，如果 `WalterlvPath` 中存在反斜杠，那么这个命令行将变成这样：
 
@@ -90,4 +90,4 @@ position: knowledge
 
 更多关于在 Roslyn/MSBuild 中进行数学运算的内容，可以阅读我的另一篇博客：
 
-- [在 Roslyn/MSBuild 中进行数学运算 - walterlv](/post/msbuild-numeric-methods.html)
+- [在 Roslyn/MSBuild 中进行数学运算 - walterlv](/post/msbuild-numeric-methods)

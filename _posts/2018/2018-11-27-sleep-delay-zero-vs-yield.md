@@ -86,7 +86,7 @@ public static bool Yield()
 
 其中，Nothing 表示没有写任何代码。
 
-测量使用的是 `Stopwatch`，你可以通过阅读 [.NET/C# 在代码中测量代码执行耗时的建议（比较系统性能计数器和系统时间）](/post/dotnet-high-precision-performance-counting.html) 了解 `Stopwatch` 测量的原理和精度。
+测量使用的是 `Stopwatch`，你可以通过阅读 [.NET/C# 在代码中测量代码执行耗时的建议（比较系统性能计数器和系统时间）](/post/dotnet-high-precision-performance-counting) 了解 `Stopwatch` 测量的原理和精度。
 
 ```csharp
 var stopwatch = Stopwatch.StartNew();
@@ -179,13 +179,13 @@ public async Task Foo()
 
 如果外面的代码使用 `await` 来等待 `Foo`，那么 `Task.Yield` 的作用可能不太明显，但是如果外面并没有 `await` 或者任何一层更外层的调用没有 `await`，那么就有区别了。对于没有异步等待的调用，那个方法就会在此 `Task.Yield()` 这一句执行后返回。而此后的代码将在那些没有异步等待的方法之后执行。
 
-`Task.Yield()` 实际上只是返回一个 `YieldAwaitable` 的新实例，而 `YieldAwaitable.GetAwaiter` 方法返回一个 `YieldAwaiter` 的新实例。也就是说，后续的执行效果完全取决于 `YieldAwaiter` 是如何实现这个异步过程的（异步状态机会执行这个过程）。我有另一篇博客说明 `Awaiter` 是如何实现的：[如何实现一个可以用 await 异步等待的 Awaiter](/post/write-custom-awaiter.html)。
+`Task.Yield()` 实际上只是返回一个 `YieldAwaitable` 的新实例，而 `YieldAwaitable.GetAwaiter` 方法返回一个 `YieldAwaiter` 的新实例。也就是说，后续的执行效果完全取决于 `YieldAwaiter` 是如何实现这个异步过程的（异步状态机会执行这个过程）。我有另一篇博客说明 `Awaiter` 是如何实现的：[如何实现一个可以用 await 异步等待的 Awaiter](/post/write-custom-awaiter)。
 
 `YieldAwaiter` 靠 `QueueContinuation` 来决定后续代码的执行时机。此方法的核心代码贴在了下面。
 
 有两个分支，如果指定了 `SynchronizationContext`，那么就会使用 `SynchronizationContext` 自带的 `Post` 方法来执行异步任务的下一个步骤。调用 `continuation` 就是执行异步状态机中的下一个步骤以进入下一个异步状态；不过，为了简化理解，你可以认为这就是调用 `await` 后面的那段代码。
 
-WPF UI 线程的 `SynchronizationContext` 被设置为了 `DispatcherSynchronizationContext`，它的 `Post` 方法本质上是用消息循环来实现的。其他线程如果没有特殊设置，则是 `null`。这一部分知识可以看参见：[出让执行权：Task.Yield, Dispatcher.Yield](/post/yield-in-task-dispatcher.html)。
+WPF UI 线程的 `SynchronizationContext` 被设置为了 `DispatcherSynchronizationContext`，它的 `Post` 方法本质上是用消息循环来实现的。其他线程如果没有特殊设置，则是 `null`。这一部分知识可以看参见：[出让执行权：Task.Yield, Dispatcher.Yield](/post/yield-in-task-dispatcher)。
 
 如果没有指定 `SynchronizationContext` 或者当前的 `SynchronizationContext` 就是 `SynchronizationContext` 类型基类，那么就会执行后面 `else` 中的逻辑。主要就是在线程池中寻找一个线程然后执行代码，或者再次启动一个 `Task` 任务并加入队列；这取决于 `TaskScheduler.Current` 的设置。
 
@@ -249,7 +249,7 @@ static extern bool ChangeAppDomainTimer(AppDomainTimerSafeHandle handle, uint du
 
 其中，Nothing 表示没有写任何代码。
 
-测量使用的是 `Stopwatch`，你依然可以通过阅读 [.NET/C# 在代码中测量代码执行耗时的建议（比较系统性能计数器和系统时间）](/post/dotnet-high-precision-performance-counting.html) 了解 `Stopwatch` 测量的原理和精度。
+测量使用的是 `Stopwatch`，你依然可以通过阅读 [.NET/C# 在代码中测量代码执行耗时的建议（比较系统性能计数器和系统时间）](/post/dotnet-high-precision-performance-counting) 了解 `Stopwatch` 测量的原理和精度。
 
 ```csharp
 var stopwatch = Stopwatch.StartNew();

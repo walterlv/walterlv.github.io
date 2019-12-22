@@ -103,4 +103,4 @@ Visual Studio 提供了一个异常窗格，可以用来设置在发生哪些异
 
 有没有方法可以在异常发生的那一刻中断呢？请阅读我的另一篇博客：
 
-- [.NET/C# 中设置当发生某个特定异常时进入断点（不借助 Visual Studio 的纯代码实现）](/post/set-a-breakpoint-when-exception-occurred.html)
+- [.NET/C# 中设置当发生某个特定异常时进入断点（不借助 Visual Studio 的纯代码实现）](/post/set-a-breakpoint-when-exception-occurred)

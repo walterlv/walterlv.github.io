@@ -17,7 +17,7 @@ position: starter
 
 如果你是从下面这篇文章阅读过来的，那么你现在应该正好已经打开了一个命令编辑器：
 
-- [在 Directory Opus 中添加自定义的工具栏按钮提升效率](/post/directory-opus-custom-toolbar-buttons.html)
+- [在 Directory Opus 中添加自定义的工具栏按钮提升效率](/post/directory-opus-custom-toolbar-buttons)
 
 如果你并没有打开命令编辑器，那么可以再阅读上面这篇文章打开一个。
 
@@ -25,7 +25,7 @@ position: starter
 
 ## 寻找命令
 
-我在 [Windows 系统上使用任务管理器查看进程的各项属性](/post/view-process-info-using-task-manager.html) 一文中告诉大家可以在任务管理器中查看某个正在运行中的进程的命令行参数，于是我们可以通过这样的方式得知如何集成 TortoiseGit 的各项功能。
+我在 [Windows 系统上使用任务管理器查看进程的各项属性](/post/view-process-info-using-task-manager) 一文中告诉大家可以在任务管理器中查看某个正在运行中的进程的命令行参数，于是我们可以通过这样的方式得知如何集成 TortoiseGit 的各项功能。
 
 比如，我们在一个文件夹中从文件资源管理器中右键，选择 `Git 克隆...`，等待打开一个 TortoiseGit 的克隆窗口。
 

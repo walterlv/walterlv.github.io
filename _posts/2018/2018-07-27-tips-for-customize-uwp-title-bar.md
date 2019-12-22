@@ -34,7 +34,7 @@ titleBar.ButtonBackgroundColor = Colors.Transparent;
 
 那么问题来了，为什么前者需要拿到 `CoreApplicationView` 的实例，后者需要拿到 `ApplicationView` 的实例？它们到底是什么区别？
 
-我在 [CoreApplication/Application、CoreWindow/Window 之间的区别](/post/core-application-window-of-uwp.html) 一文中提到过 `CoreApplication`、`CoreWindow` 和 `CoreDispatcher` 之间的关系。继续借用那篇文章中的图：
+我在 [CoreApplication/Application、CoreWindow/Window 之间的区别](/post/core-application-window-of-uwp) 一文中提到过 `CoreApplication`、`CoreWindow` 和 `CoreDispatcher` 之间的关系。继续借用那篇文章中的图：
 
 ![UWP 创建应用视图](/static/posts/2018-07-27-08-48-53.png)
 
@@ -86,9 +86,9 @@ Window.Current.SetTitleBar(TitleBar);
 
 ### 在什么时机调用？
 
-扩展标题栏用的是 `CoreApplicationView`，自定义标题栏颜色用的是 `ApplicationView`，将控件指定为标题栏用的是 `Window`。如果我们的应用只有一个视图，其实我们随便找一个初始化的地方调用就好了。但如果我们的应用有多个视图，那么给非主要视图调用的时候就需要在其初始化之后了。阅读 [理解 UWP 视图的概念，让 UWP 应用显示多个窗口（多视图）](/post/show-multiple-views-for-an-uwp-app.html) 了解如何编写多个视图的 UWP 应用，了解非主要视图的初始化时机。
+扩展标题栏用的是 `CoreApplicationView`，自定义标题栏颜色用的是 `ApplicationView`，将控件指定为标题栏用的是 `Window`。如果我们的应用只有一个视图，其实我们随便找一个初始化的地方调用就好了。但如果我们的应用有多个视图，那么给非主要视图调用的时候就需要在其初始化之后了。阅读 [理解 UWP 视图的概念，让 UWP 应用显示多个窗口（多视图）](/post/show-multiple-views-for-an-uwp-app) 了解如何编写多个视图的 UWP 应用，了解非主要视图的初始化时机。
 
-当然，如果你比较极客，从 `Main` 函数开始写 UWP 应用，就像我在 [为了理解 UWP 的启动流程，我从零开始创建了一个 UWP 程序](/post/create-uwp-app-from-zero-1.html) 一文中做的一样，那么你也需要等到初始化完毕之后才能调用（至少是 `SetWindow` 之后了）。
+当然，如果你比较极客，从 `Main` 函数开始写 UWP 应用，就像我在 [为了理解 UWP 的启动流程，我从零开始创建了一个 UWP 程序](/post/create-uwp-app-from-zero-1) 一文中做的一样，那么你也需要等到初始化完毕之后才能调用（至少是 `SetWindow` 之后了）。
 
 ## 适配移动设备
 

@@ -44,8 +44,8 @@ When clicking into the `Microsoft.NET.Sdk` folder, we can find that the folder s
 
 I've written some posts talking about the NuGet folder structure but unfortunately they are all not in English:
 
-- [How to Write a Cross-Platform NuGet Tool Package Base on MSBuild Task](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html)
-- [How to Write a Cross-Platform NuGet Tool Package Base on Command Line Application](/post/create-a-cross-platform-command-based-nuget-tool.html)
+- [How to Write a Cross-Platform NuGet Tool Package Base on MSBuild Task](/post/create-a-cross-platform-msbuild-task-based-nuget-tool)
+- [How to Write a Cross-Platform NuGet Tool Package Base on Command Line Application](/post/create-a-cross-platform-command-based-nuget-tool)
 
 Microsoft have some official document talking about the NuGet folder structure [How to create a NuGet package from a convention-based working directory](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package#from-a-convention-based-working-directory?wt.mc_id=MVP).
 
@@ -113,7 +113,7 @@ I also find some creative `Target` that inspires me:
 </Target>
 ```
 
-▲ This is written by me to prevent a specific package named `LiteDB` to be upgrade. I post this method in [my another non-English post](/post/prevent-nuget-package-upgrade.html).
+▲ This is written by me to prevent a specific package named `LiteDB` to be upgrade. I post this method in [my another non-English post](/post/prevent-nuget-package-upgrade).
 
 ---
 

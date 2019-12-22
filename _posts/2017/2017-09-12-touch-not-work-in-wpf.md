@@ -81,7 +81,7 @@ catch (Exception ex)
 
 一样的，我们没有办法阻止每一处的 Up 事件。于是我们只能要求多人开发项目中的每一位开发人员都注意不要在 `StylusUp` 中 `e.Handled = true`。
 
-然而，要求每一个人都这么做是不现实的，尤其是团队成员不稳定的情况下。目前我还没有找到具体可实施的自动化的解决办法，不过我最近正在尝试的 Roslyn 扩展可能可以解决这样的问题。有关 Roslyn 扩展的开发，可以阅读我的另一篇文章：[Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码](/post/analysis-code-of-existed-projects-using-roslyn.html)。
+然而，要求每一个人都这么做是不现实的，尤其是团队成员不稳定的情况下。目前我还没有找到具体可实施的自动化的解决办法，不过我最近正在尝试的 Roslyn 扩展可能可以解决这样的问题。有关 Roslyn 扩展的开发，可以阅读我的另一篇文章：[Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码](/post/analysis-code-of-existed-projects-using-roslyn)。
 
 ### 第三种情况
 

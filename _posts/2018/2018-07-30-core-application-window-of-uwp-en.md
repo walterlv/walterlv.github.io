@@ -74,9 +74,9 @@ In conclusion, the `CoreWindow` and the `CoreApplicationView` provide the low-le
 
 I've written some other posts about UWP that take advantages of these concepts. Unfortunately, they are all not in English.
 
-- [Create a UWP application from zero.](/post/create-uwp-app-from-zero-1.html)
-- [Show multiple views for a UWP application](/post/show-multiple-views-for-an-uwp-app.html)
-- [Extends the titlebar of a UWP application](/post/tips-for-customize-uwp-title-bar.html)
+- [Create a UWP application from zero.](/post/create-uwp-app-from-zero-1)
+- [Show multiple views for a UWP application](/post/show-multiple-views-for-an-uwp-app)
+- [Extends the titlebar of a UWP application](/post/tips-for-customize-uwp-title-bar)
 
 ---
 

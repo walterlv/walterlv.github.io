@@ -90,4 +90,4 @@ namespace Walterlv.Demo
 }
 ```
 
-你可能会觉得这段代码有些熟悉，如果有这种感觉，说明你可能阅读过我的另一篇博客：[流畅设计 Fluent Design System 中的光照效果 RevealBrush，WPF 也能模拟实现啦！](/post/fluent-design-reveal-brush-in-wpf.html)。
+你可能会觉得这段代码有些熟悉，如果有这种感觉，说明你可能阅读过我的另一篇博客：[流畅设计 Fluent Design System 中的光照效果 RevealBrush，WPF 也能模拟实现啦！](/post/fluent-design-reveal-brush-in-wpf)。

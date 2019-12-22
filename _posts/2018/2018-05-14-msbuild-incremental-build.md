@@ -17,7 +17,7 @@ categories: visualstudio msbuild
 
 ## 一个差量编译的例子
 
-先看一个 `Target` 的例子，这里例子来源于我的另一篇文章[如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包 - 吕毅](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html)。在例子中，我没有加入任何的差量编译支持。
+先看一个 `Target` 的例子，这里例子来源于我的另一篇文章[如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包 - 吕毅](/post/create-a-cross-platform-msbuild-task-based-nuget-tool)。在例子中，我没有加入任何的差量编译支持。
 
 ```xml
 <Target Name="WalterlvDemo" BeforeTargets="CoreCompile"
@@ -30,8 +30,8 @@ categories: visualstudio msbuild
 
 如果你觉得上面的写法非常陌生，或者说不清楚那个 `Target` 节点的作用，建议先阅读：
 
-- [理解 C# 项目 csproj 文件格式的本质和编译流程 - 吕毅](/post/understand-the-csproj.html)
-- [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包 - 吕毅](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html)
+- [理解 C# 项目 csproj 文件格式的本质和编译流程 - 吕毅](/post/understand-the-csproj)
+- [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包 - 吕毅](/post/create-a-cross-platform-msbuild-task-based-nuget-tool)
 
 ## 差量编译的关键
 
@@ -44,9 +44,9 @@ categories: visualstudio msbuild
 另外，`Inputs` 和 `Outputs` **必须指定为文件或文件的集合**。因为差量编译的判定规则是 “**文件存在，且前后两次编译的大小和修改时间相同**”。
 
 
-`Inputs` 和 `Outputs` 的格式都是一组用 `;` 分隔的字符串，每一项都是一个文件的路径。不过不用特别考虑如何使用 `;` 拼接，因为当我们使用 `@` 符号时，收集到的每一项便是使用 `;` 分隔的。例如 `@(Compile)` 表示在 `<ItemGroup>` 中每一个 `Compile` 类型的节点。如果不清楚 `<ItemGroup>` 和 `<Compile>` 的作用，建议建议先阅读[理解 C# 项目 csproj 文件格式的本质和编译流程 - 吕毅](/post/understand-the-csproj.html)。
+`Inputs` 和 `Outputs` 的格式都是一组用 `;` 分隔的字符串，每一项都是一个文件的路径。不过不用特别考虑如何使用 `;` 拼接，因为当我们使用 `@` 符号时，收集到的每一项便是使用 `;` 分隔的。例如 `@(Compile)` 表示在 `<ItemGroup>` 中每一个 `Compile` 类型的节点。如果不清楚 `<ItemGroup>` 和 `<Compile>` 的作用，建议建议先阅读[理解 C# 项目 csproj 文件格式的本质和编译流程 - 吕毅](/post/understand-the-csproj)。
 
-假设我们指定 `Inputs` 为 `@(Compile)`，`Outputs` 指定为某个 xxx.exe 生成的临时文件的位置（在 [如何创建一个基于命令行工具的跨平台的 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool.html) 一文中，我假定为了 `$(IntermediateOutputPath)Doubi.cs`），那么 MSBuild 就会在执行此 Target 之前检查所有这些输入输出文件。如果所有 `<Compile>` 节点中对应的文件都没有改变，而且 `$(IntermediateOutputPath)Doubi.cs` 存在且没改变，那么此 `Target` 将不需要执行。任何一个文件不满足此条件，则 `Target` 都将重新执行。
+假设我们指定 `Inputs` 为 `@(Compile)`，`Outputs` 指定为某个 xxx.exe 生成的临时文件的位置（在 [如何创建一个基于命令行工具的跨平台的 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool) 一文中，我假定为了 `$(IntermediateOutputPath)Doubi.cs`），那么 MSBuild 就会在执行此 Target 之前检查所有这些输入输出文件。如果所有 `<Compile>` 节点中对应的文件都没有改变，而且 `$(IntermediateOutputPath)Doubi.cs` 存在且没改变，那么此 `Target` 将不需要执行。任何一个文件不满足此条件，则 `Target` 都将重新执行。
 
 ## 不是所有的 Target 都适合差量编译
 
@@ -54,7 +54,7 @@ categories: visualstudio msbuild
 
 在本文前面的例子中，我们的 `Target` 是有明确的输入和输出文件的；然而有些 `Target` 是没有输入输出文件的——他们的输出依赖于其他 Target 的输出。
 
-例如我们有另一个 `<Target>`，它的作用是生成一个属性的值，或者一组文件的名字；而另外一个 `<Target>` 使用这个属性的值和这组文件。典型的例子如我在[如何创建一个基于命令行工具的跨平台的 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool.html) 中写的那个 NuGet 工具。
+例如我们有另一个 `<Target>`，它的作用是生成一个属性的值，或者一组文件的名字；而另外一个 `<Target>` 使用这个属性的值和这组文件。典型的例子如我在[如何创建一个基于命令行工具的跨平台的 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool) 中写的那个 NuGet 工具。
 
 ```xml
 <Target Name="WalterlvDemo" BeforeTargets="CoreCompile"

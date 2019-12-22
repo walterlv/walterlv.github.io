@@ -29,7 +29,7 @@ position: knowledge
 
 ### 好好想一个协议名称
 
-就知道你想不出来名字，于是可以使用命名生成工具：[Whitman](ms-windows-store://pdp/?productid=9P8LNZRNJX85)，其原理可阅读 [冷算法：自动生成代码标识符（类名、方法名、变量名） - 吕毅](/post/algorithm-of-generating-random-identifiers.html)。
+就知道你想不出来名字，于是可以使用命名生成工具：[Whitman](ms-windows-store://pdp/?productid=9P8LNZRNJX85)，其原理可阅读 [冷算法：自动生成代码标识符（类名、方法名、变量名） - 吕毅](/post/algorithm-of-generating-random-identifiers)。
 
 然后本文使用协议名称 `walterlv`。
 

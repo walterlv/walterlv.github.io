@@ -25,7 +25,7 @@ OOBE，Out-of-Box Experience，开箱体验。对于 Windows 系统来说，就�
 
 在 OOBE 界面中，按下 Ctrl + Shift + F3 两次即会进入审核模式。
 
-实际上此时进入的账号是 Administrator 账号。我在 [Windows 中的 UAC 用户账户控制](/post/windows-user-account-control.html) 一文中说到，Administrator 账号下启动进程获取到的访问令牌都是完全访问令牌。所以在这里 UWP 程序是无法运行的（逃
+实际上此时进入的账号是 Administrator 账号。我在 [Windows 中的 UAC 用户账户控制](/post/windows-user-account-control) 一文中说到，Administrator 账号下启动进程获取到的访问令牌都是完全访问令牌。所以在这里 UWP 程序是无法运行的（逃
 
 当你进入审核模式之后，会看到自动启动了一个 sysprep 的程序，它位于 `C:\Windows\System32\Sysprep` 目录下。
 

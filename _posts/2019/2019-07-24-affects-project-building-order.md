@@ -78,7 +78,7 @@ EndProject
 
 更多关于 sln 文件的理解，可以阅读我的另一篇博客：
 
-- [理解 Visual Studio 解决方案文件格式（.sln）](/post/understand-the-sln-file.html)
+- [理解 Visual Studio 解决方案文件格式（.sln）](/post/understand-the-sln-file)
 
 ## 使用哪一种？
 
@@ -86,7 +86,7 @@ EndProject
 
 不过使用 `ReferenceOutputAssembly` 的一个缺陷是，必须要求目标框架能够匹配。比如 .NET Core 2.1 的项目就不能引用 .NET Core 3.0 或者 .NET Framework 4.8 的项目。
 
-而在解决方案级别设置项目依赖则没有框架上的限制。无论你的项目是什么框架，都可以在编译之前先编译好依赖的项目。只是旧版本的 MSBuild 工具和 `dotnet build` 不支持 `ProjectDependencies` 这样的解决方案节点，会导致要么不识别这样的项目依赖（从而实际上并没有影响编译顺序）或者无法完成编译（例如出现 [Error parsing the nested project section in solution file.](/post/error-parsing-the-nested-project-section-in-solution-file.html) 错误）。
+而在解决方案级别设置项目依赖则没有框架上的限制。无论你的项目是什么框架，都可以在编译之前先编译好依赖的项目。只是旧版本的 MSBuild 工具和 `dotnet build` 不支持 `ProjectDependencies` 这样的解决方案节点，会导致要么不识别这样的项目依赖（从而实际上并没有影响编译顺序）或者无法完成编译（例如出现 [Error parsing the nested project section in solution file.](/post/error-parsing-the-nested-project-section-in-solution-file) 错误）。
 
 ---
 

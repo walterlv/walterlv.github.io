@@ -28,8 +28,8 @@ position: principle
 
 这样，一个 Foo.cs 就会在编译时加入到被编译的文件列表中，里面的 `Foo` 类就可以被使用了。这也是 NuGet 源代码包的核心原理部分。关于 NuGet 源代码包的制作方法，可以扩展阅读：
 
-- [将 .NET Core 项目打一个最简单的 NuGet 源码包，安装此包就像直接把源码放进项目一样](/post/the-simplest-way-to-pack-a-source-code-nuget-package.html)
-- [从零开始制作 NuGet 源代码包（全面支持 .NET Core / .NET Framework / WPF 项目）](/post/build-source-code-package-for-wpf-projects.html)
+- [将 .NET Core 项目打一个最简单的 NuGet 源码包，安装此包就像直接把源码放进项目一样](/post/the-simplest-way-to-pack-a-source-code-nuget-package)
+- [从零开始制作 NuGet 源代码包（全面支持 .NET Core / .NET Framework / WPF 项目）](/post/build-source-code-package-for-wpf-projects)
 
 如果你希望一旦执行完某个编译任务之后执行某个操作，那么请使用 `AfterTargets`。例如我想在编译完成生成了输出文件之后，将这些输出文件拷贝到另一个调试目录，那么写：
 
@@ -206,4 +206,4 @@ position: principle
 
 你可以阅读我的另一篇博客了解更多：
 
-- [通过重写预定义的 Target 来扩展 MSBuild / Visual Studio 的编译过程](/post/extend-the-visual-studio-build-process.html)
+- [通过重写预定义的 Target 来扩展 MSBuild / Visual Studio 的编译过程](/post/extend-the-visual-studio-build-process)

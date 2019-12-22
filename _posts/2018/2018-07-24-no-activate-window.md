@@ -19,7 +19,7 @@ int exstyle = GetWindowLong(handle, GWL_EXSTYLE);
 SetWindowLong(handle, GWL_EXSTYLE, exstyle | WS_EX_NOACTIVATE);
 ```
 
-当然，这里需要用到 P/Invoke 平台调用，可以阅读 [使用 PInvoke.net Visual Studio Extension 辅助编写 Win32 函数签名](/post/pinvoke-net-visual-studio-extension.html) 了解快速生成平台调用方法签名的方法。
+当然，这里需要用到 P/Invoke 平台调用，可以阅读 [使用 PInvoke.net Visual Studio Extension 辅助编写 Win32 函数签名](/post/pinvoke-net-visual-studio-extension) 了解快速生成平台调用方法签名的方法。
 
 于是，我们将完整的窗口代码写完，是下面这样。
 

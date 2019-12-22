@@ -40,7 +40,7 @@ position: starter
 
 当然，有时我也会用 Visual Studio Code 来写简单的程序，这个时候也用得到命令行：
 
-- [让你的 VSCode 具备调试 C# 语言 .NET Core 程序的能力 - 吕毅](/post/equip-vscode-for-dotnet-core-app-debugging.html)
+- [让你的 VSCode 具备调试 C# 语言 .NET Core 程序的能力 - 吕毅](/post/equip-vscode-for-dotnet-core-app-debugging)
 
 ### 运行新建命令
 
@@ -66,6 +66,6 @@ dotnet new wpf -o WalterlvWpfApp
 
 ## 更多
 
-如果你希望将现有基于 .NET Framework 的 WPF 项目迁移到 .NET Core 3，那么请阅读我的另一篇博客：[将基于 .NET Framework 的 WPF 项目迁移到基于 .NET Core 3](/post/migrate-wpf-project-from-dotnet-framework-to-dotnet-core.html)。
+如果你希望将现有基于 .NET Framework 的 WPF 项目迁移到 .NET Core 3，那么请阅读我的另一篇博客：[将基于 .NET Framework 的 WPF 项目迁移到基于 .NET Core 3](/post/migrate-wpf-project-from-dotnet-framework-to-dotnet-core)。
 
 可以持续关注官方 WPF on .NET Core 的例子：[samples/wpf/WPF-WinRT at master · dotnet/samples](https://github.com/dotnet/samples/tree/master/wpf/WPF-WinRT)。

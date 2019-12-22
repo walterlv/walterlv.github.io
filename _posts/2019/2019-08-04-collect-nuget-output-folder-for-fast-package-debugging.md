@@ -17,7 +17,7 @@ position: starter
 
 我有另一篇博客介绍如何将本地文件夹设置称为 NuGet 包源：
 
-- [全局或为单独的项目添加自定义的 NuGet 源 - walterlv](/post/add-custom-nuget-source.html)
+- [全局或为单独的项目添加自定义的 NuGet 源 - walterlv](/post/add-custom-nuget-source)
 
 在 Visual Studio 中打开 `工具` -> `选项` -> `NuGet 包管理器` -> `包源` 可以直接将一个本地文件夹设置称为 NuGet 包源。
 

@@ -64,7 +64,7 @@ var executablePath = Process.GetCurrentProcess().MainModule.FileName;
 
 我在另一篇博客中提到命令行参数中包含应用程序路径：
 
-- [.NET 命令行参数包含应用程序路径吗？ - 吕毅](/post/when-will-the-command-line-args-contain-the-executable-path.html)
+- [.NET 命令行参数包含应用程序路径吗？ - 吕毅](/post/when-will-the-command-line-args-contain-the-executable-path)
 
 于是我们也可以通过命令行参数来获取到可执行程序的路径。
 

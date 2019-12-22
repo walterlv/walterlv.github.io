@@ -98,4 +98,4 @@ csc -unsafe walterlv.cs
 
 即使是 .NET Framework 也是可以使用 SDK 风格的项目文件的，详情请阅读：
 
-- [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj - walterlv](/post/introduce-new-style-csproj-into-net-framework.html)
+- [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj - walterlv](/post/introduce-new-style-csproj-into-net-framework)

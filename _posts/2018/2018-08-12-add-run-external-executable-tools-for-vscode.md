@@ -15,7 +15,7 @@ categories: vscode
 
 由于是调用外部工具，所以工具本身用什么语言写已经不重要的了，只要有环境，没有什么是不能执行的。
 
-这里以我博客中使用的外部命令 [mdmeta](https://github.com/dotnet-campus/markdown-metadata) 为例。我将此工具使用 mklink 命令链接到了 `/build` 文件夹中（当然，如果需要多人协作开发，可以使用 git-lfs 或者 git-submodule 来管理仅项目的外部命令）。关于 mklink 的使用，可以参考 [解决 mklink 使用中的各种坑（硬链接，软链接/符号链接，目录链接）](/post/problems-of-mklink.html)。
+这里以我博客中使用的外部命令 [mdmeta](https://github.com/dotnet-campus/markdown-metadata) 为例。我将此工具使用 mklink 命令链接到了 `/build` 文件夹中（当然，如果需要多人协作开发，可以使用 git-lfs 或者 git-submodule 来管理仅项目的外部命令）。关于 mklink 的使用，可以参考 [解决 mklink 使用中的各种坑（硬链接，软链接/符号链接，目录链接）](/post/problems-of-mklink)。
 
 于是，在 `/build` 文件夹中添加可执行的脚本，例如：
 

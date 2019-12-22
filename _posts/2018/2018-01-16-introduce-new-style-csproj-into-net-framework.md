@@ -13,7 +13,7 @@ categories: visualstudio msbuild
 
 **更新**：
 
-感谢小伙伴 [KodamaSakuno (神樹桜乃)](https://github.com/KodamaSakuno) 的指导，我们可以有第三方的解决方案 MSBuild.Sdk.Extras 来更简单地完成迁移。阅读 [MSBuild.Sdk.Extras](/post/use-msbuild-sdk-extras-for-wpf-and-uwp.html) 来了解更多。
+感谢小伙伴 [KodamaSakuno (神樹桜乃)](https://github.com/KodamaSakuno) 的指导，我们可以有第三方的解决方案 MSBuild.Sdk.Extras 来更简单地完成迁移。阅读 [MSBuild.Sdk.Extras](/post/use-msbuild-sdk-extras-for-wpf-and-uwp) 来了解更多。
 
 <p id="toc"></p>
 
@@ -128,7 +128,7 @@ categories: visualstudio msbuild
 1. NuGet 包的引用没有路径要求，这意味着开发者可以任意指定 NuGet 包的位置
 1. 嵌套的引用不需要重复指定（如果 A 引用了 B，B 引用了 C；那么 A 不需要显式引用 C 也能调用到 C）
 1. 可以一边编辑 csproj 一边打开项目，互不影响
-1. 可以指定多个开发框架，详见 [让一个项目指定多个开发框架 - 吕毅的博客](/post/configure-projects-to-target-multiple-platforms.html)
+1. 可以指定多个开发框架，详见 [让一个项目指定多个开发框架 - 吕毅的博客](/post/configure-projects-to-target-multiple-platforms)
 
 ## 迁移普通 .NET Framework 类库的项目文件
 
@@ -184,7 +184,7 @@ categories: visualstudio msbuild
 
 ### 自动迁移
 
-自动迁移的方法我写了一篇新的博客，请阅读 [自动将 NuGet 包的引用方式从 packages.config 升级为 PackageReference](/post/migrate-packages-config-to-package-reference.html)。当然，目前自动迁移还只是 NuGet 引用方式的改变，加上文件通配符的帮助，我们的 csproj 文件即使依然是旧格式，也能非常简洁。
+自动迁移的方法我写了一篇新的博客，请阅读 [自动将 NuGet 包的引用方式从 packages.config 升级为 PackageReference](/post/migrate-packages-config-to-package-reference)。当然，目前自动迁移还只是 NuGet 引用方式的改变，加上文件通配符的帮助，我们的 csproj 文件即使依然是旧格式，也能非常简洁。
 
 ## 迁移 WPF/UWP 这类 XAML UI 类库的项目文件
 
@@ -274,7 +274,7 @@ UWP 项目已经是 .NET Core 了，然而它依然还在采用旧样式的 cspr
 
 ## 什么都不用管的第三方迁移方案
 
-感谢小伙伴 [KodamaSakuno (神樹桜乃)](https://github.com/KodamaSakuno) 的指导，我们可以有第三方的解决方案 MSBuild.Sdk.Extras 来更简单地完成迁移。阅读 [MSBuild.Sdk.Extras](/post/use-msbuild-sdk-extras-for-wpf-and-uwp.html) 来了解更多。相比于以上全文的迁移以及带来的劣势，第三方方案并没有发现明显的缺陷，推荐使用！
+感谢小伙伴 [KodamaSakuno (神樹桜乃)](https://github.com/KodamaSakuno) 的指导，我们可以有第三方的解决方案 MSBuild.Sdk.Extras 来更简单地完成迁移。阅读 [MSBuild.Sdk.Extras](/post/use-msbuild-sdk-extras-for-wpf-and-uwp) 来了解更多。相比于以上全文的迁移以及带来的劣势，第三方方案并没有发现明显的缺陷，推荐使用！
 
 ## 什么都不用改的微软官方迁移方案
 

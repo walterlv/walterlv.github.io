@@ -20,7 +20,7 @@ position: problem
 
 你可能需要了解 csproj 文件的格式和编译过程，才可能读懂本文，所以需要先阅读：
 
-- [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj.html)
+- [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj)
 
 ## 问题
 

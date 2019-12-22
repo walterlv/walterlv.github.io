@@ -17,7 +17,7 @@ Windows Vista 及以上的操作系统才具有 sfc.exe 工具。 *相比于 Win
 
 当然，虽然系统要求如此，但如果你使用的是 Windows 8/8.1 或者 Windows 10，那么便建议使用 DISM。可以阅读：
 
-- [使用 DISM 工具检查并修复 Windows 系统文件](/post/dism-restore-health.html)
+- [使用 DISM 工具检查并修复 Windows 系统文件](/post/dism-restore-health)
 
 ## 使用方法
 

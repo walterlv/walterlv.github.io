@@ -30,10 +30,10 @@ UsePreviews=True
 
 虽然这很诡异，但确实如此，不信，可以看我是如何确认这个文件就是 .NET Core SDK 预览版的全局配置的：
 
-- [找出 .NET Core SDK 是否使用预览版的全局配置文件在那里（探索篇）](/post/find-out-the-dotnet-sdk-preview-config-file.html)
+- [找出 .NET Core SDK 是否使用预览版的全局配置文件在那里（探索篇）](/post/find-out-the-dotnet-sdk-preview-config-file)
 
 另外，如果你想知道如何在 Visual Studio 2019 中指定使用 .NET Core SDK 的预览版，可以参考我的另外一篇博客：
 
-- [如何在 Visual Studio 2019 中设置使用 .NET Core SDK 的预览版（全局生效）](/post/how-to-set-dotnet-core-sdk-preview-in-visual-studio.html)
+- [如何在 Visual Studio 2019 中设置使用 .NET Core SDK 的预览版（全局生效）](/post/how-to-set-dotnet-core-sdk-preview-in-visual-studio)
 
 ![Visual Studio 2019 的](/static/posts/2019-07-27-09-00-09.png)

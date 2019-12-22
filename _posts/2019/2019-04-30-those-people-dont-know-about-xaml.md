@@ -63,7 +63,7 @@ using System.Windows.Markup;
 
 详情请阅读博客：
 
-- [让你编写的控件库在 XAML 中有一个统一的漂亮的命名空间（xmlns）和命名空间前缀](/post/define-xmlns-of-for-xaml.html)
+- [让你编写的控件库在 XAML 中有一个统一的漂亮的命名空间（xmlns）和命名空间前缀](/post/define-xmlns-of-for-xaml)
 
 此写法要生效，定义的组件与使用的组件不能在同一程序集。
 
@@ -80,7 +80,7 @@ using System.Windows.Markup;
 
 详情请阅读博客：
 
-- [让你编写的控件库在 XAML 中有一个统一的漂亮的命名空间（xmlns）和命名空间前缀](/post/define-xmlns-of-for-xaml.html)
+- [让你编写的控件库在 XAML 中有一个统一的漂亮的命名空间（xmlns）和命名空间前缀](/post/define-xmlns-of-for-xaml)
 
 此写法要生效，定义的组件与使用的组件不能在同一程序集。
 

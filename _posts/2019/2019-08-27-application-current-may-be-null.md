@@ -16,8 +16,8 @@ position: problem
 
 由于本文所述的两个部分都略长，所以拆分成两篇博客，这样更容易理解。
 
-- [WPF 的 Application.Current.Dispatcher 中，Dispatcher 属性一定不会为 null](/post/application-dispatcher-will-never-be-null.html)
-- [WPF 的 Application.Current.Dispatcher 中，为什么 Current 可能为 null](/post/application-current-may-be-null.html)
+- [WPF 的 Application.Current.Dispatcher 中，Dispatcher 属性一定不会为 null](/post/application-dispatcher-will-never-be-null)
+- [WPF 的 Application.Current.Dispatcher 中，为什么 Current 可能为 null](/post/application-current-may-be-null)
 
 <div id="toc"></div>
 
@@ -249,7 +249,7 @@ private void ShutdownImplInSecurityContext(Object state)
 由于此终止代码在 `Dispatcher` 所在的线程执行，而所有 `Invoke/BeginInvoke/InvokeAsync` 代码也都在此线程执行，因此这些代码均不会并发。已经执行的代码会在此终止代码之前，而在此终止代码之后也不会再执行任何 `Invoke/BeginInvoke/InvokeAsync` 的任务了。
 
 - 所有通过 `Invoke/BeginInvoke/InvokeAsync` 或间接通过此方法（如 WPF 控件相关事件）调用的代码，均不会遭遇 `Application.Current` 为 `null`。
-- 所有在 UI 线程使用 `async` / `await` 并使用默认上下文执行的代码，均不会遭遇 `Application.Current` 为 `null`。（这意味着你没有使用 `.ConfigureAwait(false)`，详见[在编写异步方法时，使用 ConfigureAwait(false) 避免使用者死锁 - walterlv](/post/using-configure-await-to-avoid-deadlocks.html)。）
+- 所有在 UI 线程使用 `async` / `await` 并使用默认上下文执行的代码，均不会遭遇 `Application.Current` 为 `null`。（这意味着你没有使用 `.ConfigureAwait(false)`，详见[在编写异步方法时，使用 ConfigureAwait(false) 避免使用者死锁 - walterlv](/post/using-configure-await-to-avoid-deadlocks)。）
 
 ### 最简示例代码
 
@@ -309,7 +309,7 @@ private void OnUsbDeviceChanged(object sender, EventArgs e)
 
 关于 `Application.Dispatcher` 是否可能为 `null` 的分析，由于比较长，请参见我的另一篇博客：
 
-- [WPF 的 Application.Current.Dispatcher 中，Dispatcher 属性一定不会为 null - walterlv](/post/application-dispatcher-will-never-be-null.html)
+- [WPF 的 Application.Current.Dispatcher 中，Dispatcher 属性一定不会为 null - walterlv](/post/application-dispatcher-will-never-be-null)
 
 ---
 

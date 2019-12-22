@@ -11,10 +11,10 @@ categories: visualstudio nuget csharp dotnet msbuild
 
 “项目文件中的已知属性系列”分为两个部分：
 
-- 本文：[项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - 吕毅](/post/known-properties-in-csproj.html)
-- [项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅](/post/known-nuget-properties-in-csproj.html)
+- 本文：[项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - 吕毅](/post/known-properties-in-csproj)
+- [项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅](/post/known-nuget-properties-in-csproj)
 
-什么？你的 csproj 文件太长不想看？说明你用了旧格式的 csproj，阅读我的另一篇文章 [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj](/post/introduce-new-style-csproj-into-net-framework.html) 将它转为新格式之后，你就会觉得这么简短精炼的 csproj 文件，真不忍将它写杂。
+什么？你的 csproj 文件太长不想看？说明你用了旧格式的 csproj，阅读我的另一篇文章 [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj](/post/introduce-new-style-csproj-into-net-framework) 将它转为新格式之后，你就会觉得这么简短精炼的 csproj 文件，真不忍将它写杂。
 
 比如通过以下写法，可以将所有的 *.xaml.cs 文件折叠到对应的 *.xaml 文件下，而不需要像旧 csproj 格式那样每个文件都写一份：
 
@@ -50,7 +50,7 @@ categories: visualstudio nuget csharp dotnet msbuild
 + `$(MSBuildRuntimeType)`
     - 例如你可以使用 `Condition=" '$(MSBuildRuntimeType)' == 'Core'"` 来判断当前编译环境是否是 .NET Core。
 
-关于输出路径的更多说明，可以阅读我的另一篇博客：[如何更精准地设置 C# / .NET Core 项目的输出路径？（包括添加和删除各种前后缀）](/post/the-properties-that-affetcs-project-output-path.html)
+关于输出路径的更多说明，可以阅读我的另一篇博客：[如何更精准地设置 C# / .NET Core 项目的输出路径？（包括添加和删除各种前后缀）](/post/the-properties-that-affetcs-project-output-path)
 
 ---
 
@@ -98,7 +98,7 @@ categories: visualstudio nuget csharp dotnet msbuild
 </Project>
 ```
 
-可以阅读 [解读 Microsoft.NET.Sdk 的源码，你能定制各种奇怪而富有创意的编译过程](/post/read-microsoft-net-sdk.html) 和  [Reading the Source Code of Microsoft.NET.Sdk, Writing the Creative Extension of Compiling](/post/read-microsoft-net-sdk-en.html) 了解更多 Microsoft.NET.Sdk 源码。
+可以阅读 [解读 Microsoft.NET.Sdk 的源码，你能定制各种奇怪而富有创意的编译过程](/post/read-microsoft-net-sdk) 和  [Reading the Source Code of Microsoft.NET.Sdk, Writing the Creative Extension of Compiling](/post/read-microsoft-net-sdk-en) 了解更多 Microsoft.NET.Sdk 源码。
 
 ## 开关
 
@@ -198,7 +198,7 @@ categories: visualstudio nuget csharp dotnet msbuild
 - `$(MSBuildBinPath)`: MSBuild 程序所在的路径
 - `$(MSBuildBinPath)`: MSBuild 程序所在的路径
 
-如果希望了解在 csproj 中创建 NuGet 包时可用的属性，请参考我的另一篇博客：[项目文件中的已知 NuGet 属性（知道了这些，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅](/post/known-nuget-properties-in-csproj.html)。
+如果希望了解在 csproj 中创建 NuGet 包时可用的属性，请参考我的另一篇博客：[项目文件中的已知 NuGet 属性（知道了这些，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅](/post/known-nuget-properties-in-csproj)。
 
 ---
 

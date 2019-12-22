@@ -35,7 +35,7 @@ Direct3D11 的使用通常不是应用程序唯一的部分，于是使用 Direc
 本文不会说如何创建或者获取来自 Direct3D11 的渲染纹理，不过如果你希望了解，可以：
 
 - 自己创建：[WPF 使用封装的 SharpDx 控件](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8%E5%B0%81%E8%A3%85%E7%9A%84-SharpDx-%E6%8E%A7%E4%BB%B6.html)
-- 或者从其他进程/模块获取：[使用 Direct3D11 的 OpenSharedResource 方法渲染来自其他进程/设备的共享资源（SharedHandle）](/post/direct3d11-open-shared-resource.html)
+- 或者从其他进程/模块获取：[使用 Direct3D11 的 OpenSharedResource 方法渲染来自其他进程/设备的共享资源（SharedHandle）](/post/direct3d11-open-shared-resource)
 
 本文接下来的内容，是在你已经获得了 `SharpDX.Direct3D11.Resource` 的引用，或者 `SharpDX.Direct3D11.Texture2D` 的前提之下。当然，如果你获得了其中任何一个实例，可以通过 COM 组件的 `QueryInterface` 方法获得其他实例。
 
@@ -76,7 +76,7 @@ using (var surface = texture2D.QueryInterface<SharpDX.DXGI.Surface>())
 
 注意以上代码使用了不安全代码（指针），你需要为你的项目开启不安全代码开关，详见：
 
-- [如何在 .NET 项目中开启不安全代码（以便启用 unsafe fixed 等关键字）](/post/allow-unsafe-code-in-dotnet-project.html)
+- [如何在 .NET 项目中开启不安全代码（以便启用 unsafe fixed 等关键字）](/post/allow-unsafe-code-in-dotnet-project)
 
 ## 你可能需要拷贝资源
 
@@ -189,11 +189,11 @@ public static unsafe void MapTexture2DToFile(SharpDX.Direct3D11.Texture2D textur
 
 如果你是希望以纯软件的方式渲染到 WPF 中（WriteableBitmap），可以参考：
 
-- [WPF 高性能位图渲染 WriteableBitmap 及其高性能用法示例](/post/wpf-high-performance-bitmap-rendering.html)
+- [WPF 高性能位图渲染 WriteableBitmap 及其高性能用法示例](/post/wpf-high-performance-bitmap-rendering)
 
 记得打开不安全代码开关哦！详见：
 
-- [如何在 .NET 项目中开启不安全代码（以便启用 unsafe fixed 等关键字）](/post/allow-unsafe-code-in-dotnet-project.html)
+- [如何在 .NET 项目中开启不安全代码（以便启用 unsafe fixed 等关键字）](/post/allow-unsafe-code-in-dotnet-project)
 
 ---
 

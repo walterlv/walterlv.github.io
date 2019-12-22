@@ -10,7 +10,7 @@ versions:
   - English: /post/automatically-semantic-versioning-using-git-version-task.en.html
 ---
 
-我们在之前谈过 [语义版本号（Semantic Versioning）](/post/semantic-version.html)，在项目中应用语义版本号能够帮助库的开发者在发布包时表明更多的语义信息。这是趋势，从微软的博客 [Versioning NuGet packages in a continuous delivery world](https://blogs.msdn.microsoft.com/devops/2016/05/03/versioning-nuget-packages-cd-1/) 三部曲中可以看出，从 NuGet 4.3.0 以及 Visual Studio 2017 15.3 以上版本开始支持语义版本号 2.0 也能看出。
+我们在之前谈过 [语义版本号（Semantic Versioning）](/post/semantic-version)，在项目中应用语义版本号能够帮助库的开发者在发布包时表明更多的语义信息。这是趋势，从微软的博客 [Versioning NuGet packages in a continuous delivery world](https://blogs.msdn.microsoft.com/devops/2016/05/03/versioning-nuget-packages-cd-1/) 三部曲中可以看出，从 NuGet 4.3.0 以及 Visual Studio 2017 15.3 以上版本开始支持语义版本号 2.0 也能看出。
 
 本文将从持续集成的角度来说语义版本号，告诉大家如何自动生成包含语义的版本号，并在发布库时采用。
 

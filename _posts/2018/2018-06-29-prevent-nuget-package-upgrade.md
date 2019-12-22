@@ -19,7 +19,7 @@ categories: dotnet visualstudio nuget
 
 本文提供的方法仅适用于使用了 Sdk 风格的 csproj 项目文件。（当然并不是说旧的 csproj 不能使用这种方法，只是写法上会有差别，我没有去研究如何编写。）
 
-如果你的项目还在使用旧的 csproj 格式，推荐阅读 [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj](/post/introduce-new-style-csproj-into-net-framework.html) 迁移成新格式之后再开始。
+如果你的项目还在使用旧的 csproj 格式，推荐阅读 [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj](/post/introduce-new-style-csproj-into-net-framework) 迁移成新格式之后再开始。
 
 作为例子，假设我们的项目文件是这样的：
 
@@ -48,7 +48,7 @@ NuGet 使用 `PackageReference` 来管理所有的包引用，于是我试图通
 
 而一个典型的隐藏方法便是使用 `Target`。不在 `Target` 里面的属性和项是提前计算好的，而 `Target` 里面的属性和项是编译时才计算的。
 
-可以通过阅读 [如何编写基于 Microsoft.NET.Sdk 的跨平台的 MSBuild Target](/post/write-msbuild-target.html) 了解更多 Target 的知识。
+可以通过阅读 [如何编写基于 Microsoft.NET.Sdk 的跨平台的 MSBuild Target](/post/write-msbuild-target) 了解更多 Target 的知识。
 
 所以，我写了这样的 `Target`，然后去掉前面的 `PackageReference`。
 

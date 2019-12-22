@@ -39,7 +39,7 @@ StyleCop by JetBrains 插件的开发名称是 StyleCop.ReSharper，所以你也
 现在打开一个以前写的项目，你可能会发现大量的代码都已被波浪线入侵 😭 。
 
 ![代码已被波浪线入侵](/static/posts/2018-12-01-10-12-10.png)  
-▲ 代码已被波浪线入侵，代码源自我的另一篇博客：[如何实现一个可以用 await 异步等待的 Awaiter](/post/write-custom-awaiter.html)。
+▲ 代码已被波浪线入侵，代码源自我的另一篇博客：[如何实现一个可以用 await 异步等待的 Awaiter](/post/write-custom-awaiter)。
 
 如果你现在编写新的代码，你会发现新的代码已经开始使用 StyleCop 建议的规则了。不过，可能这个规则并不是你希望的规则，正如这张图所描述的那样：
 
@@ -68,7 +68,7 @@ StyleCop by JetBrains 插件的开发名称是 StyleCop.ReSharper，所以你也
 
 实际上使用此插件生成的 StyleCop 规则并不是 StyleCop 的通用配置，而是生成了一个 DotSettings 的 ReSharper 配置。
 
-如果需要使用到通用配置，请阅读 [在 Visual Studio 中使用 StyleCop 来约束团队代码规范](/post/introduce-stylecop-into-teams.html)。
+如果需要使用到通用配置，请阅读 [在 Visual Studio 中使用 StyleCop 来约束团队代码规范](/post/introduce-stylecop-into-teams)。
 
 ---
 

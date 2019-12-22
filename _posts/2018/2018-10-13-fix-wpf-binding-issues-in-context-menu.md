@@ -65,7 +65,7 @@ categories: wpf dotnet
 
 ## 使用 x:Reference 代替 ElementName 能够解决
 
-以上绑定失败的原因，是 `Grid.ContextMenu` 属性中赋值的 `ContextMenu` 不在可视化树中，而 `ContextMenu` 又不是一个默认建立 ScopeName 的控件，此时既没有自己指定 NameScope，有没有通过可视化树寻找上层设置的 NameScope，所以在绑定上下文中是找不到 `WalterlvWindow` 的。如果调用去查找，得到的是 `null`。详见：[WPF 中的 NameScope](/post/namescope-of-wpf.html)。
+以上绑定失败的原因，是 `Grid.ContextMenu` 属性中赋值的 `ContextMenu` 不在可视化树中，而 `ContextMenu` 又不是一个默认建立 ScopeName 的控件，此时既没有自己指定 NameScope，有没有通过可视化树寻找上层设置的 NameScope，所以在绑定上下文中是找不到 `WalterlvWindow` 的。如果调用去查找，得到的是 `null`。详见：[WPF 中的 NameScope](/post/namescope-of-wpf)。
 
 类似的情况也发生在设置非可视化树或逻辑树的属性时，典型的比如在 `Grid.Row` 或 `Grid.Column` 属性上绑定时，`ElementName` 也是失效的。
 

@@ -31,8 +31,8 @@ if (DesignerProperties.GetIsInDesignMode(d))
 
 我在这些博客中使用过这样的判断方法，可以参见源码：
 
-- [流畅设计 Fluent Design System 中的光照效果 RevealBrush，WPF 也能模拟实现啦！](/post/fluent-design-reveal-brush-in-wpf.html)
-- [如何编写 WPF 的标记扩展 MarkupExtension，即便在 ControlTemplate/DataTemplate 中也能生效](/post/wpf-markup-extension-in-control-template.html)
+- [流畅设计 Fluent Design System 中的光照效果 RevealBrush，WPF 也能模拟实现啦！](/post/fluent-design-reveal-brush-in-wpf)
+- [如何编写 WPF 的标记扩展 MarkupExtension，即便在 ControlTemplate/DataTemplate 中也能生效](/post/wpf-markup-extension-in-control-template)
 
 ## 方法二：判断设计时窗口
 

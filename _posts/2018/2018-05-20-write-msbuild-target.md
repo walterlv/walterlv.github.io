@@ -5,7 +5,7 @@ date: 2018-12-14 09:54:00 +0800
 categories: visualstudio msbuild
 ---
 
-我之前写过一篇 [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj.html)，其中，`Target` 节点就是负责编译流程的最关键的节点。但因为篇幅限制，那篇文章不便详说。于是，我在本文说说 `Target` 节点。
+我之前写过一篇 [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj)，其中，`Target` 节点就是负责编译流程的最关键的节点。但因为篇幅限制，那篇文章不便详说。于是，我在本文说说 `Target` 节点。
 
 ---
 
@@ -18,7 +18,7 @@ categories: visualstudio msbuild
 ![Target 的节点结构](/static/posts/2018-05-20-16-34-13.png)  
 ▲ 上面有绿线和蓝线区分，仅仅是因为出现了交叉，怕出现理解歧义
 
-`<Hash>` 和 `<WriteCodeFragment>` 都是 `Task`。我们可以看到，`Task` 是多种多样的，它可以占用一个 xml 节点。而本例中，`WriteCodeFragment` Task 就是生成代码文件，并且将生成的文件作为一项 `Compile` 的 Item 和 `FileWrites` 的 Item。在 [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj.html) 中我们提到 `ItemGroup` 的节点，其作用由 `Target` 指定。所有 `Compile` 会在名为 `CoreCompile` 的 `Target` 中使用，而 `FileWrites` 在 Microsoft.NET.Sdk 的多处都生成了这样的节点，不过目前从我查看到的全部 Microsoft.NET.Sdk 中，发现内部并没有使用它。
+`<Hash>` 和 `<WriteCodeFragment>` 都是 `Task`。我们可以看到，`Task` 是多种多样的，它可以占用一个 xml 节点。而本例中，`WriteCodeFragment` Task 就是生成代码文件，并且将生成的文件作为一项 `Compile` 的 Item 和 `FileWrites` 的 Item。在 [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj) 中我们提到 `ItemGroup` 的节点，其作用由 `Target` 指定。所有 `Compile` 会在名为 `CoreCompile` 的 `Target` 中使用，而 `FileWrites` 在 Microsoft.NET.Sdk 的多处都生成了这样的节点，不过目前从我查看到的全部 Microsoft.NET.Sdk 中，发现内部并没有使用它。
 
 ## Target 执行的时机和先后顺序
 
@@ -47,14 +47,14 @@ categories: visualstudio msbuild
 - `Copy` 复制文件 [Rosyln 如何使用 MSBuild Copy 复制文件](https://lindexi.oschina.io/lindexi/post/Rosyln-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-MSBuild-Copy-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6.html)
 - `Move` 移动文件 [Move Task](https://docs.microsoft.com/en-us/visualstudio/msbuild/move-task?wt.mc_id=MVP)
 - `Delete` 删除文件
-- `Message` 显示一个输出信息（我在 [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html) 中利用这个进行调试）
+- `Message` 显示一个输出信息（我在 [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包](/post/create-a-cross-platform-msbuild-task-based-nuget-tool) 中利用这个进行调试）
 - `Warning` 显示一个警告信息
 - `Error` 报错（这样，编译就会以错误结束）
 - `CombinePath`, `ConvertToAbsolutePath` 拼接路径，转成绝对路径
 - `CreateItem`, `CreateProperty` 创建项或者属性
 - `Csc` 调用 csc.exe 编译 [Csc Task](https://docs.microsoft.com/en-us/visualstudio/msbuild/csc-task?wt.mc_id=MVP)
 - `MSBuild` 编译一个项目 [MSBuild Task](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-task?wt.mc_id=MVP)
-- `Exec` 执行一个外部命令（我在 [如何创建一个基于命令行工具的跨平台的 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool.html) 一文中利用到了这个 Task 执行命令）
+- `Exec` 执行一个外部命令（我在 [如何创建一个基于命令行工具的跨平台的 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool) 一文中利用到了这个 Task 执行命令）
 - `WriteCodeFragment` 生成一段代码 [WriteCodeFragment Task](https://docs.microsoft.com/en-us/visualstudio/msbuild/writecodefragment-task?wt.mc_id=MVP)
 - `WriteLinesToFile` 向文件中写文字 [WriteLinesToFile Task](https://docs.microsoft.com/en-us/visualstudio/msbuild/writelinestofile-task?wt.mc_id=MVP)
 
@@ -62,11 +62,11 @@ categories: visualstudio msbuild
 
 ## 使用自己写的 Task
 
-我有另外的一篇文章来介绍[如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包 - 吕毅](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html)。如果希望自己写 Ta
+我有另外的一篇文章来介绍[如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包 - 吕毅](/post/create-a-cross-platform-msbuild-task-based-nuget-tool)。如果希望自己写 Ta
 
 ## 差量编译
 
-如果你认为自己写的 `Target` 执行比较耗时，那么就可以使用差量编译。我另写了一篇文章专门来说 Target 的差量编译：[每次都要重新编译？太慢！让跨平台的 MSBuild/dotnet build 的 Target 支持差量编译 - 吕毅](/post/msbuild-incremental-build.html)。
+如果你认为自己写的 `Target` 执行比较耗时，那么就可以使用差量编译。我另写了一篇文章专门来说 Target 的差量编译：[每次都要重新编译？太慢！让跨平台的 MSBuild/dotnet build 的 Target 支持差量编译 - 吕毅](/post/msbuild-incremental-build)。
 
 ---
 

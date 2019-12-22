@@ -20,7 +20,7 @@ position: knowledge
 
 从 .NET Framework 4.5.1 开始到后面的 .NET Core 所有版本，编译器会自动向你的程序集中插入绑定重定向。如果你升级使用了新的 csproj 格式，即便你用了旧的 .NET Framework 也会自动生成绑定重定向。
 
-关于新旧 csproj 格式，你可以参考我的另一篇博客：[将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj - walterlv](/post/introduce-new-style-csproj-into-net-framework.html)。
+关于新旧 csproj 格式，你可以参考我的另一篇博客：[将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj - walterlv](/post/introduce-new-style-csproj-into-net-framework)。
 
 你可以在你的应用程序的 App.config 文件中查看到自动生成的绑定重定向。当然，编译之后这个 App.config 文件会编程 “你的程序集名称.config” 文件，例如对于我的 `Walterlv.Demo.exe` 程序对应 `Walterlv.Demo.exe.config` 文件。
 

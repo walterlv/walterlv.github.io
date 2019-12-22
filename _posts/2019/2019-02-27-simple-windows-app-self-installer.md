@@ -26,9 +26,9 @@ position: starter
 
 ## 本文用到的知识
 
-- [在 Windows 系统上降低 UAC 权限运行程序（从管理员权限降权到普通用户权限） - walterlv](/post/start-process-with-lowered-uac-privileges.html)
-- [Windows 上的应用程序在运行期间可以给自己改名（可以做 OTA 自我更新） - walterlv](/post/rename-executable-self-when-running.html)
-- [仅反射加载（ReflectionOnlyLoadFrom）的 .NET 程序集，如何反射获取它的 Attribute 元数据呢？ - walterlv](/post/get-attributes-for-reflection-only-loaded-assembly.html)
+- [在 Windows 系统上降低 UAC 权限运行程序（从管理员权限降权到普通用户权限） - walterlv](/post/start-process-with-lowered-uac-privileges)
+- [Windows 上的应用程序在运行期间可以给自己改名（可以做 OTA 自我更新） - walterlv](/post/rename-executable-self-when-running)
+- [仅反射加载（ReflectionOnlyLoadFrom）的 .NET 程序集，如何反射获取它的 Attribute 元数据呢？ - walterlv](/post/get-attributes-for-reflection-only-loaded-assembly)
 
 ## 使用
 

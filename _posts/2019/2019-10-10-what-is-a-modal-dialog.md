@@ -39,9 +39,9 @@ position: knowledge
 
 当然，你可能会发现实际上你显示一个模态窗口仅仅一句话调用就够了，那是因为你所用的应用程序框架帮你完成了模态窗口的一系列机制。
 
-关于 WPF 框架是如何实现模态窗口的，可以阅读：[直击本质：WPF 框架是如何实现模态窗口的](/post/how-does-wpf-implement-modal-dialog.html)
+关于 WPF 框架是如何实现模态窗口的，可以阅读：[直击本质：WPF 框架是如何实现模态窗口的](/post/how-does-wpf-implement-modal-dialog)
 
-关于如何自己实现一个跨越线程/进程边界的模态窗口，可以阅读：[实现 Windows 系统上跨进程/跨线程的模态窗口](/post/implement-own-modal-dialogs-across-processes-or-threads.html)
+关于如何自己实现一个跨越线程/进程边界的模态窗口，可以阅读：[实现 Windows 系统上跨进程/跨线程的模态窗口](/post/implement-own-modal-dialogs-across-processes-or-threads)
 
 如果你希望定制以上第三个特点中强提醒的动画效果，可以阅读：[WPF window 子窗口反馈效果（抖动/阴影渐变) - 唐宋元明清2188 - 博客园](https://www.cnblogs.com/kybs0/p/7357759.html)。
 
@@ -83,7 +83,7 @@ UWP 中的新 API 当然已经都是使用 `async`/`await` 来实现模态等待
 
 上面 `Window.ShowDialog` 的本质也是在调用 `Dispatcher.PushFrame`，详见：
 
-- [直击本质：WPF 框架是如何实现模态窗口的](/post/how-does-wpf-implement-modal-dialog.html)
+- [直击本质：WPF 框架是如何实现模态窗口的](/post/how-does-wpf-implement-modal-dialog)
 
 关于 `PushFrame` 新开消息循环阻塞的原理可以参考：
 

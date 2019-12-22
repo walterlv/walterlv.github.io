@@ -35,7 +35,7 @@ Administrator 的权限级别和我们用户创建的管理员账户的权限级
 
 Administrator 账户目前的主要作用就是准备 OOBE 开箱体验，不适合日常使用，因为很不安全。关于 OOBE 开箱体验与审核模式，可以阅读我的另一篇博客：
 
-- [启用 Windows 审核模式（Audit Mode），以 Administrator 账户来设置电脑的开箱体验 - 吕毅](/post/windows-audit-mode.html)
+- [启用 Windows 审核模式（Audit Mode），以 Administrator 账户来设置电脑的开箱体验 - 吕毅](/post/windows-audit-mode)
 
 ## UAC 通知等级
 
@@ -51,7 +51,7 @@ Windows Vista 开始引入了 UAC，不过在 Windows Vista 上只有两种 UAC 
 
 **特别说明**！实际上 UAC 拖到最顶部，也就是所有 UAC 通知都显示 UAC 提示窗口才是真的在利用 UAC 保护你的电脑。因为 Windows 7 开始新增的两个中间级别都是在部分情况下静默提权，而这两种级别因为可以静默提权，所以也可以很容易被程序绕过。微软认为绕过 UAC 弹窗不是漏洞，因为这是用户自己的选择——如果用户选择全部通知是不会绕过的，用户选择了默认值，于是才可以绕过。所以这里推荐大家使用 UAC 的最高档，也就是全部提权都通知，这可以让大多数绕过 UAC 的方法失效。
 
-虽然说通知等级给了用户四个设置项，但实际上真正有用的只有两个而已，参见我的另一篇博客：[Windows 的 UAC 设置中的通知等级实际上只有两个档而已 - 吕毅](/post/there-are-only-two-settings-for-the-uac-slider.html)。
+虽然说通知等级给了用户四个设置项，但实际上真正有用的只有两个而已，参见我的另一篇博客：[Windows 的 UAC 设置中的通知等级实际上只有两个档而已 - 吕毅](/post/there-are-only-two-settings-for-the-uac-slider)。
 
 ## 完整性级别（Integrity Level）
 
@@ -78,7 +78,7 @@ Low 并不对应者一个用户组，这是为了一些需要特殊保护的应�
 
 关于如何通过 Manifest 设置管理员权限运行，可以参考我的另一篇博客：
 
-- [应用程序清单 Manifest 中各种 UAC 权限级别的含义和效果](/post/requested-execution-level-of-application-manifest.html)
+- [应用程序清单 Manifest 中各种 UAC 权限级别的含义和效果](/post/requested-execution-level-of-application-manifest)
 
 ## 权限提升
 

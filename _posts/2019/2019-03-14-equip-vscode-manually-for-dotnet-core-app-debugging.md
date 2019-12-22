@@ -15,7 +15,7 @@ position: starter
 
 你需要安装 .NET Core Sdk、Visual Studio Code 和 C# for Visual Studio Code，然后打开一个 .NET Core 的项目。如果你没有准备，请先阅读：
 
-- [让你的 VSCode 具备调试 C# 语言 .NET Core 程序的能力](/post/equip-vscode-for-dotnet-core-app-debugging.html)
+- [让你的 VSCode 具备调试 C# 语言 .NET Core 程序的能力](/post/equip-vscode-for-dotnet-core-app-debugging)
 
 本文主要处理自动生成的配置文件无法满足要求，手工生成。
 

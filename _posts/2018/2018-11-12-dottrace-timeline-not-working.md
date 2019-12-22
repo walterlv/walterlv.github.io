@@ -12,7 +12,7 @@ categories: dotnet windows
 
 ## dotTrace 的性能分析选项
 
-dotTrace 启动性能分析的选项有四个，你可以阅读 [用 dotTrace 进行性能分析时，各种不同性能分析选项的含义和用途](/post/dottrace-profiler-options.html) 了解不同选项的含义和用途，以便对你的性能分析提供更多的帮助和更有价值的分析数据。
+dotTrace 启动性能分析的选项有四个，你可以阅读 [用 dotTrace 进行性能分析时，各种不同性能分析选项的含义和用途](/post/dottrace-profiler-options) 了解不同选项的含义和用途，以便对你的性能分析提供更多的帮助和更有价值的分析数据。
 
 ## Timeline 打不开？
 
@@ -38,7 +38,7 @@ dotTrace 启动性能分析的选项有四个，你可以阅读 [用 dotTrace �
 
 在这四个选项中，只有 Timeline 和 Line-by-line 是打不开的，Sampling 打得开。于是可以从他们之间的差异着手分析。
 
-在 [用 dotTrace 进行性能分析时，各种不同性能分析选项的含义和用途](/post/dottrace-profiler-options.html) 一文中，我们可以得知，只有 Timeline 用到了 ETW，而这个是一个系统功能。也许是系统功能无法访问呢？毕竟这种事情还是非常常见的。
+在 [用 dotTrace 进行性能分析时，各种不同性能分析选项的含义和用途](/post/dottrace-profiler-options) 一文中，我们可以得知，只有 Timeline 用到了 ETW，而这个是一个系统功能。也许是系统功能无法访问呢？毕竟这种事情还是非常常见的。
 
 于是果然在 [Timeline is not working](https://dotnettools-support.jetbrains.com/hc/en-us/articles/206546069-Timeline-is-not-working-issue-solution-for-different-Windows-versions) 找到了解决方法 —— 你需要开启你所在的用户组对 Performance Monitor 的访问权限。
 

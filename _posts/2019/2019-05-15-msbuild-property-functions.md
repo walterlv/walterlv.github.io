@@ -17,7 +17,7 @@ position: knowledge
 
 当然，在修改编译期间的代码的时候，你可能需要提前了解项目文件相关的知识：
 
-- [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj.html)
+- [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj)
 
 以下是使用 MSBuild 自带方法的最简单的一个例子，执行 `5-1` 的数学运算。
 
@@ -33,8 +33,8 @@ position: knowledge
 
 以上两段示例分别来自我的另外两篇博客，如果不明白，可以参考这两篇博客的内容：
 
-- [在 Roslyn/MSBuild 中进行基本的数学运算](/post/msbuild-numeric-methods.html)
-- [Roslyn/MSBuild 在编译期间处理路径中的斜杠与反斜杠](/post/msbuild-path-trailing-slash.html)
+- [在 Roslyn/MSBuild 中进行基本的数学运算](/post/msbuild-numeric-methods)
+- [Roslyn/MSBuild 在编译期间处理路径中的斜杠与反斜杠](/post/msbuild-path-trailing-slash)
 
 ## MSBuild 自带的方法
 
@@ -42,7 +42,7 @@ position: knowledge
 
 MSBuild 中数学运算的部分可以参考我的另一篇博客：
 
-- [在 Roslyn/MSBuild 中进行基本的数学运算](/post/msbuild-numeric-methods.html)
+- [在 Roslyn/MSBuild 中进行基本的数学运算](/post/msbuild-numeric-methods)
 
 ### EnsureTrailingSlash
 
@@ -50,7 +50,7 @@ MSBuild 中数学运算的部分可以参考我的另一篇博客：
 
 可参考我的另一篇博客：
 
-- [Roslyn/MSBuild 在编译期间处理路径中的斜杠与反斜杠](/post/msbuild-path-trailing-slash.html)
+- [Roslyn/MSBuild 在编译期间处理路径中的斜杠与反斜杠](/post/msbuild-path-trailing-slash)
 
 ### GetDirectoryNameOfFileAbove & GetPathOfFileAbove
 
@@ -58,7 +58,7 @@ MSBuild 中数学运算的部分可以参考我的另一篇博客：
 
 可以阅读我的另一篇博客了解其用途和用法：
 
-- [Roslyn/MSBuild 在编译期间从当前文件开始查找父级文件夹，直到找到包含特定文件的文件夹](/post/msbuild-get-directory-name-of-file-above.html)
+- [Roslyn/MSBuild 在编译期间从当前文件开始查找父级文件夹，直到找到包含特定文件的文件夹](/post/msbuild-get-directory-name-of-file-above)
 
 
 ### MakeRelative

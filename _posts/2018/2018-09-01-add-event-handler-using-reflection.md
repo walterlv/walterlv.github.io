@@ -93,7 +93,7 @@ public void Walterlv_BlogPublished(object sender, EventHandler handler)
 }
 ```
 
-这里，`Delegate.CreateDelegate` 的作用就是执行委托类型的转换。我在 [.NET Core/Framework 创建委托以大幅度提高反射调用的性能](/post/create-delegate-to-improve-reflection-performance.html) 中也提到过这个方法。
+这里，`Delegate.CreateDelegate` 的作用就是执行委托类型的转换。我在 [.NET Core/Framework 创建委托以大幅度提高反射调用的性能](/post/create-delegate-to-improve-reflection-performance) 中也提到过这个方法。
 
 ---
 

@@ -412,7 +412,7 @@ private enum AccentState
 
 想要背景透明，请参见：
 
-- [WPF 制作高性能的透明背景异形窗口（使用 WindowChrome 而不要使用 AllowsTransparency=True） - walterlv](/post/wpf-transparent-window-without-allows-transparency.html)
+- [WPF 制作高性能的透明背景异形窗口（使用 WindowChrome 而不要使用 AllowsTransparency=True） - walterlv](/post/wpf-transparent-window-without-allows-transparency)
 
 ---
 

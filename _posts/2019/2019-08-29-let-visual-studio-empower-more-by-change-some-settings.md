@@ -67,7 +67,7 @@ Visual Studio 2019 默认安装了 IntelliCode 可以充分利用微软使用 Gi
 - `XAML 基础模型` *微软利用 GitHub 开源项目训练的基础模型*
 - `C# 参数完成`
 - `C# 自定义模型` *如果针对单个项目训练出来了模型，那么可以使用专门针对此项目训练的模型*
-- `EditorConfig 推理` *可以根据项目推断生成 EditorConfig 文件* 可以参见[在 Visual Studio 中使用 EditorConfig 统一代码风格](/post/editor-config-for-visual-studio.html)
+- `EditorConfig 推理` *可以根据项目推断生成 EditorConfig 文件* 可以参见[在 Visual Studio 中使用 EditorConfig 统一代码风格](/post/editor-config-for-visual-studio)
 - `自定义模型训练提示` *如果开启，那么每个项目的规模如果达到一定程度就会提示训练一个自定义模型出来*
 
 ![IntelliCode](/static/posts/2019-08-29-21-26-01.png)
@@ -80,8 +80,8 @@ Visual Studio 2019 默认安装了 IntelliCode 可以充分利用微软使用 Gi
 
 当然，设置好快捷键也是高效编码的重要一步，可以参考：
 
-- [如何快速自定义 Visual Studio 中部分功能的快捷键](/post/customizing-keyboard-shortcuts-in-visual-studio.html)
-- [提高使用 Visual Studio 开发效率的键盘快捷键](/post/keyboard-shortcuts-to-improve-the-efficiency-of-visual-studio.html)
+- [如何快速自定义 Visual Studio 中部分功能的快捷键](/post/customizing-keyboard-shortcuts-in-visual-studio)
+- [提高使用 Visual Studio 开发效率的键盘快捷键](/post/keyboard-shortcuts-to-improve-the-efficiency-of-visual-studio)
 
 ## 自动完成
 

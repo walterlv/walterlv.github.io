@@ -44,7 +44,7 @@ position: knowledge
 
 ### 配置项目启动选项
 
-但是，子进程要能够调试，你还必须开启混合模式调试，开启方法请参见我的另一篇博客：[在 Visual Studio 新旧不同的 csproj 项目格式中启用混合模式调试程序（开启本机代码调试） - walterlv](/post/visual-studio-enable-native-code-debugging.html)。
+但是，子进程要能够调试，你还必须开启混合模式调试，开启方法请参见我的另一篇博客：[在 Visual Studio 新旧不同的 csproj 项目格式中启用混合模式调试程序（开启本机代码调试） - walterlv](/post/visual-studio-enable-native-code-debugging)。
 
 现在，你只需要开始调试你的程序，那么你程序中启动的新的子进程都将可以自动加入调试。
 

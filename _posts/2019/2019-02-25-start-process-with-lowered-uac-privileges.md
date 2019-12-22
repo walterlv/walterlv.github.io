@@ -54,7 +54,7 @@ Process.Start("runas.exe", $"/trustlevel:0x20000 {subProcessFileName}");
 
 关于 runas 的更多细节，可以参考我的另一篇博客：
 
-- [Windows 下使用 runas 命令以指定的权限启动一个进程（非管理员、管理员） - 吕毅](/post/start-process-in-a-specific-trust-level.html)
+- [Windows 下使用 runas 命令以指定的权限启动一个进程（非管理员、管理员） - 吕毅](/post/start-process-in-a-specific-trust-level)
 
 ## 方法二：使用 explorer.exe 代理运行程序
 
@@ -106,7 +106,7 @@ var processInfo = new ProcessStartInfo
 Process.Start(processInfo);
 ```
 
-上面的 `ReadPassword` 函数来自我的另一篇博客：[如何让 .NET Core 命令行程序接受密码的输入而不显示密码明文 - walterlv](/post/input-password-with-mask-in-cli.html)。
+上面的 `ReadPassword` 函数来自我的另一篇博客：[如何让 .NET Core 命令行程序接受密码的输入而不显示密码明文 - walterlv](/post/input-password-with-mask-in-cli)。
 
 然而，此方法最大的问题在于——产品级的程序，不可能也不应该知道用户的密码！所以实际上这样的方法并不实用。
 

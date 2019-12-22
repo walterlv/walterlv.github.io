@@ -139,7 +139,7 @@ Windows 10 自 1703 开始引入第二代的多屏 DPI 机制（PerMonitor V2）
 
 需要注意：系统版本在 Windows 10 (1703) 或以上，V2 的感知级别才会生效，否则就直接使用系统级 DPI 感知。
 
-第一代和第二代的 Per-Monitor 感知之间的差异，可以参考：[Windows 下的高 DPI 应用开发（UWP / WPF / Windows Forms / Win32） - walterlv](/post/windows-high-dpi-development.html)
+第一代和第二代的 Per-Monitor 感知之间的差异，可以参考：[Windows 下的高 DPI 应用开发（UWP / WPF / Windows Forms / Win32） - walterlv](/post/windows-high-dpi-development)
 
 额外的，如果你的 .NET Framework 版本在 .NET Framework 4.6.2 以下，但操作系统在 Windows 10 及以上，你还需要修改 App.config 文件（在 `<configuration />` 节点）。
 

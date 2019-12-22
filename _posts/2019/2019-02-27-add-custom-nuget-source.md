@@ -9,7 +9,7 @@ position: starter
 
 ---
 
-你可以前往 [我收集的各种公有 NuGet 源](/post/public-nuget-sources.html) 以发现更多的 NuGet 源，然后使用本文的方法添加到你自己的配置中。
+你可以前往 [我收集的各种公有 NuGet 源](/post/public-nuget-sources) 以发现更多的 NuGet 源，然后使用本文的方法添加到你自己的配置中。
 
 <div id="toc"></div>
 

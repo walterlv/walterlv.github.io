@@ -157,7 +157,7 @@ position: starter
     </Project>
 ```
 
-如果你觉得这一步骤比较繁琐，那么可以在本文一开始就按照这篇博客的方式进行操作：[自动将 NuGet 包的引用方式从 packages.config 升级为 PackageReference - walterlv](/post/migrate-packages-config-to-package-reference.html)。
+如果你觉得这一步骤比较繁琐，那么可以在本文一开始就按照这篇博客的方式进行操作：[自动将 NuGet 包的引用方式从 packages.config 升级为 PackageReference - walterlv](/post/migrate-packages-config-to-package-reference)。
 
 ## 添加 Windows 兼容包
 
@@ -175,6 +175,6 @@ position: starter
 
 ## 更多
 
-如果你只是希望创建基于 .NET Core 3 的新 WPF 项目，那么请阅读我的另一篇博客：[如何创建一个基于 .NET Core 3 的 WPF 项目](/post/create-new-wpf-on-dotnet-core-project.html)。
+如果你只是希望创建基于 .NET Core 3 的新 WPF 项目，那么请阅读我的另一篇博客：[如何创建一个基于 .NET Core 3 的 WPF 项目](/post/create-new-wpf-on-dotnet-core-project)。
 
 可以持续关注官方 WPF on .NET Core 的例子：[samples/wpf/WPF-WinRT at master · dotnet/samples](https://github.com/dotnet/samples/tree/master/wpf/WPF-WinRT)。

@@ -165,4 +165,4 @@ CommandBar 的 `ClosedDisplayMode` 设为 `Compact` 时，折叠状态高度 48�
 
 但对于小型个人项目而言，可以考虑修改应用程序的外观设计来规避这么长的代码。例如让 CommandBar 始终显示或隐藏文字，或者让 CommandBar 默认为 `Minimal` 的状态。
 
-如果你对其他控件有小型样式的修改需求，可以阅读我的另一篇文章：[UWP 轻量级样式定义（Lightweight Styling）](/post/uwp-lightweight-xaml-styling.html)。
+如果你对其他控件有小型样式的修改需求，可以阅读我的另一篇文章：[UWP 轻量级样式定义（Lightweight Styling）](/post/uwp-lightweight-xaml-styling)。

@@ -40,7 +40,7 @@ position: starter
 
 如果你希望使用 .NET/C# 代码来自动化地调用 7z.exe，可以参考我的另一篇博客：
 
-- [编写 .NET/C# 代码来操作命令行程序 - 吕毅](/post/run-commands-using-csharp.html)
+- [编写 .NET/C# 代码来操作命令行程序 - 吕毅](/post/run-commands-using-csharp)
 
 本文直接介绍 7z.exe 的命令行使用，你可以将其无缝地迁移至上面这篇博客中编写的 .NET/C# 代码中。
 

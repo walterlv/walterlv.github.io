@@ -47,7 +47,7 @@ position: problem
 | 15       | 8025      |
 | 16       | 9025      |
 
-任务计时采用的是 Stopwatch，关于为什么要使用这种计时方式，可以阅读 [.NET/C# 在代码中测量代码执行耗时的建议（比较系统性能计数器和系统时间）](/post/dotnet-high-precision-performance-counting.html)
+任务计时采用的是 Stopwatch，关于为什么要使用这种计时方式，可以阅读 [.NET/C# 在代码中测量代码执行耗时的建议（比较系统性能计数器和系统时间）](/post/dotnet-high-precision-performance-counting)
 
 ![统计图表](/static/posts/2018-12-15-15-17-59.png)
 
@@ -80,7 +80,7 @@ class Program
 
 ## 原因
 
-你可以阅读 [.NET 默认的 TaskScheduler 和线程池（ThreadPool）设置](/post/default-task-scheduler-and-thread-pool.html) 了解线程池创建新工作线程的规则。这里其实真的是类似于死锁的一个例子。
+你可以阅读 [.NET 默认的 TaskScheduler 和线程池（ThreadPool）设置](/post/default-task-scheduler-and-thread-pool) 了解线程池创建新工作线程的规则。这里其实真的是类似于死锁的一个例子。
 
 1. 一开始，我们创建了 n 个 Task，然后分别安排在线程池中执行，并在每个 Task 中等待任务执行完毕；
 2. 随后这 n 个 Task 分别再创建了 n 个子 Task，并继续安排在线程池中执行；
@@ -100,12 +100,12 @@ class Program
 
 死锁问题：
 
-- [使用 Task.Wait()？立刻死锁（deadlock） - walterlv](/post/deadlock-in-task-wait.html)
-- [不要使用 Dispatcher.Invoke，因为它可能在你的延迟初始化 `Lazy<T>` 中导致死锁 - walterlv](/post/deadlock-of-invoke-in-lazy.html)
-- [在有 UI 线程参与的同步锁（如 AutoResetEvent）内部使用 await 可能导致死锁](/post/deadlock-if-await-in-ui-lock-context.html)
-- [.NET 中小心嵌套等待的 Task，它可能会耗尽你线程池的现有资源，出现类似死锁的情况 - walterlv](/post/task-wait-may-cause-long-time-waiting.html)
+- [使用 Task.Wait()？立刻死锁（deadlock） - walterlv](/post/deadlock-in-task-wait)
+- [不要使用 Dispatcher.Invoke，因为它可能在你的延迟初始化 `Lazy<T>` 中导致死锁 - walterlv](/post/deadlock-of-invoke-in-lazy)
+- [在有 UI 线程参与的同步锁（如 AutoResetEvent）内部使用 await 可能导致死锁](/post/deadlock-if-await-in-ui-lock-context)
+- [.NET 中小心嵌套等待的 Task，它可能会耗尽你线程池的现有资源，出现类似死锁的情况 - walterlv](/post/task-wait-may-cause-long-time-waiting)
 
 解决方法：
 
-- [在编写异步方法时，使用 ConfigureAwait(false) 避免使用者死锁 - walterlv](/post/using-configure-await-to-avoid-deadlocks.html)
-- [将 async/await 异步代码转换为安全的不会死锁的同步代码（使用 PushFrame） - walterlv](/post/convert-async-to-sync-by-push-frame.html)
+- [在编写异步方法时，使用 ConfigureAwait(false) 避免使用者死锁 - walterlv](/post/using-configure-await-to-avoid-deadlocks)
+- [将 async/await 异步代码转换为安全的不会死锁的同步代码（使用 PushFrame） - walterlv](/post/convert-async-to-sync-by-push-frame)

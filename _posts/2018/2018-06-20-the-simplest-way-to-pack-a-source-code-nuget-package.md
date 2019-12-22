@@ -19,7 +19,7 @@ NuGet 原本就提供了生成源码包的功能。不过，NuGet 原生的源�
 
 ## 将源码加入 NuGet 包
 
-在 [项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦）](/post/known-nuget-properties-in-csproj.html) 中，我说到了项目文件中的各种 NuGet 属性。在本文中，我们将使用到其中的一部分。
+在 [项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦）](/post/known-nuget-properties-in-csproj) 中，我说到了项目文件中的各种 NuGet 属性。在本文中，我们将使用到其中的一部分。
 
 这些属性将设置到项目文件 Walterlv.Demo.csproj 中。
 
@@ -64,7 +64,7 @@ NuGet 原本就提供了生成源码包的功能。不过，NuGet 原生的源�
 </Target>
 ```
 
-这里使用到了 `<Delete />` 和 `<Move />` 两个自带的 Task，用于将功能不全的主包删除，然后将我们的源码包替换成为主包。我此前写过 [如何编写基于 Microsoft.NET.Sdk 的跨平台的 MSBuild Target](/post/write-msbuild-target.html) 介绍了一些自带的 Task。如果你想了解更多 `<Target />` 编写相关的知识，也可以阅读这篇文章。
+这里使用到了 `<Delete />` 和 `<Move />` 两个自带的 Task，用于将功能不全的主包删除，然后将我们的源码包替换成为主包。我此前写过 [如何编写基于 Microsoft.NET.Sdk 的跨平台的 MSBuild Target](/post/write-msbuild-target) 介绍了一些自带的 Task。如果你想了解更多 `<Target />` 编写相关的知识，也可以阅读这篇文章。
 
 在增加了上面的一段 `<Target />` 之后，最终我们将只会得到一个 NuGet 包，打开后能发现其中包含源码。
 

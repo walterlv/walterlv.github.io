@@ -64,7 +64,7 @@ position: problem
 
 光照效果可以参见我的另一篇博客：
 
-- [流畅设计 Fluent Design System 中的光照效果 RevealBrush，WPF 也能模拟实现啦！](/post/fluent-design-reveal-brush-in-wpf.html)
+- [流畅设计 Fluent Design System 中的光照效果 RevealBrush，WPF 也能模拟实现啦！](/post/fluent-design-reveal-brush-in-wpf)
 
 <!-- ## 性能优化建议
 

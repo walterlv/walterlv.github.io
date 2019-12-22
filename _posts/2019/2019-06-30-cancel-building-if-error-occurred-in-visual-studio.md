@@ -13,7 +13,7 @@ position: starter
 
 如果你只是觉得你的项目或解决方案编译很慢而不知道原因，我推荐你安装 Parallel Builds Monitor 插件来调查一下。你可以阅读我的一篇博客来了解它：
 
-- [Visual Studio 使用 Parallel Builds Monitor 插件迅速找出编译速度慢的瓶颈，优化编译速度 - walterlv](/post/visual-studio-extension-parallel-builds-monitor.html)
+- [Visual Studio 使用 Parallel Builds Monitor 插件迅速找出编译速度慢的瓶颈，优化编译速度 - walterlv](/post/visual-studio-extension-parallel-builds-monitor)
 
 一个优化比较差的解决方案可能是下面这个样子的：
 

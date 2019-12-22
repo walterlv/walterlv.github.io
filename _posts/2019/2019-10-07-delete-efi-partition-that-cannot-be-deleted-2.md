@@ -13,8 +13,8 @@ Windows 系统在安装的时候，会自动为我们的磁盘划分一个恢复
 
 因为误操作会导致数据丢失，所以我将两种不同的解决方法分开成两篇文章以避免干扰：
 
-- [EFI 分区/恢复分区不可删除？你需要使用命令行了（配合鼠标操作）](/post/delete-efi-partition-that-cannot-be-deleted-1.html)
-- [EFI 分区/恢复分区不可删除？你需要使用命令行了（全命令行操作）](/post/delete-efi-partition-that-cannot-be-deleted-2.html)
+- [EFI 分区/恢复分区不可删除？你需要使用命令行了（配合鼠标操作）](/post/delete-efi-partition-that-cannot-be-deleted-1)
+- [EFI 分区/恢复分区不可删除？你需要使用命令行了（全命令行操作）](/post/delete-efi-partition-that-cannot-be-deleted-2)
 
 <div id="toc"></div>
 

@@ -13,7 +13,7 @@ XPath 是 XML 路径语言（XML Path Language），用来确定XML文档中某�
 
 本文读写的 XML 文件会以 [文章末尾的代码 - 假设的 XML 文件](#%E5%81%87%E8%AE%BE%E7%9A%84-xml-%E6%96%87%E4%BB%B6) 作为示例。
 
-关于 XPath 语法，可以阅读 [XML 的 XPath 语法](/post/xml-xpath.html) 了解更多。
+关于 XPath 语法，可以阅读 [XML 的 XPath 语法](/post/xml-xpath) 了解更多。
 
 <div id="toc"></div>
 
@@ -63,7 +63,7 @@ navigator.Select("/d:package/d:metadata/d:id", namespaceManager);
 
 > XPath treats the empty prefix as the `null` namespace. In other words, only prefixes mapped to namespaces can be used in XPath queries. This means that if you want to query against a namespace in an XML document, even if it is the default namespace, you need to define a prefix for it.
 
-路径检索的语法也有很多种，可以参考我的另一篇文章 [XML 的 XPath 语法](/post/xml-xpath.html)。
+路径检索的语法也有很多种，可以参考我的另一篇文章 [XML 的 XPath 语法](/post/xml-xpath)。
 
 为了提升性能，`XPathNavigator` 额外提供了这些方法，用于替代 `XPath` 中的部分对应的语法：
 

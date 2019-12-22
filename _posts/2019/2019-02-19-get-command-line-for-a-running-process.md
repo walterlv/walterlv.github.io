@@ -12,7 +12,7 @@ position: knowledge
 
 ---
 
-进程内部获取传入参数的方法，可以参见我的另一篇博客：[.NET 命令行参数包含应用程序路径吗？](/post/when-will-the-command-line-args-contain-the-executable-path.html)。
+进程内部获取传入参数的方法，可以参见我的另一篇博客：[.NET 命令行参数包含应用程序路径吗？](/post/when-will-the-command-line-args-contain-the-executable-path)。
 
 .NET Framework / .NET Core 框架内部是不包含获取其他进程命令行参数的方法的，但是我们可以在任务管理器中看到，说明肯定存在这样的方法。
 
@@ -92,7 +92,7 @@ namespace Walterlv
 
 使用此方法得到的命令行参数是一个字符串，而不是我们通常使用字符串时的字符串数组。如果你需要将其转换为字符串数组，可以使用我在另一篇博客中使用的方法：
 
-- [.NET/C# 将一个命令行参数字符串转换为命令行参数数组 args](/post/convert-command-line-string-to-args-array.html)
+- [.NET/C# 将一个命令行参数字符串转换为命令行参数数组 args](/post/convert-command-line-string-to-args-array)
 
 ---
 

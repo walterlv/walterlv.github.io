@@ -168,4 +168,4 @@ private async void Run()
 
 关于通用 API 设计指导，你可以阅读我的另一篇双语博客：
 
-- [好的框架需要好的 API 设计 —— API 设计的六个原则 - walterlv](/post/framework-api-design.html)
+- [好的框架需要好的 API 设计 —— API 设计的六个原则 - walterlv](/post/framework-api-design)

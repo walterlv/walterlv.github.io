@@ -79,5 +79,5 @@ Visual Studio 2019 中此对于 .NET Core SDK 的预览版的设置是全局生�
 
 那么这个全局的设置项在哪个地方呢？是如何全局生效的呢？可以阅读我的其他博客：
 
-- [Visual Studio 2019 中使用 .NET Core 预览版 SDK 的全局配置文件在哪里？](/post/where-is-the-dotnet-sdk-preview-config-file.html)
-- [找出 .NET Core SDK 是否使用预览版的全局配置文件在那里（探索篇）](/post/find-out-the-dotnet-sdk-preview-config-file.html)
+- [Visual Studio 2019 中使用 .NET Core 预览版 SDK 的全局配置文件在哪里？](/post/where-is-the-dotnet-sdk-preview-config-file)
+- [找出 .NET Core SDK 是否使用预览版的全局配置文件在那里（探索篇）](/post/find-out-the-dotnet-sdk-preview-config-file)

@@ -31,7 +31,7 @@ categories: xaml wpf uwp
 </Border>
 ```
 
-▲ `LuminanceForeground` 的作用可参见我的另一篇文章：[计算能在任何背景色上清晰显示的前景色](/post/get-gray-reversed-color.html)
+▲ `LuminanceForeground` 的作用可参见我的另一篇文章：[计算能在任何背景色上清晰显示的前景色](/post/get-gray-reversed-color)
 
 ![](/static/posts/2017-11-20-23-47-06.png)  
 ▲ 一个随便应用了一个变换的控件

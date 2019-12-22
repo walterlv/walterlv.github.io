@@ -75,7 +75,7 @@ position: starter
 如果部署过程中发生了任何错误，请：
 
 1. 检查你的步骤与本文是否有出入；
-2. 参考：[使用 Xamarin 开发 iOS 应用中需要注意的若干个问题](/post/tips-for-developing-xamarin-ios-app.html)
+2. 参考：[使用 Xamarin 开发 iOS 应用中需要注意的若干个问题](/post/tips-for-developing-xamarin-ios-app)
 
 ## 在 iPhone 上操作
 

@@ -44,8 +44,8 @@ Sdk 中的 NuGet 部分在 GitHub 上的仓库地址：
 
 关于 NuGet 包的目录结构，我在下面两篇文章中都有提到过：
 
-- [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html)
-- [如何创建一个基于命令行工具的跨平台的 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool.html)
+- [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包](/post/create-a-cross-platform-msbuild-task-based-nuget-tool)
+- [如何创建一个基于命令行工具的跨平台的 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool)
 
 官方对 NuGet 的目录结构也有介绍：[How to create a NuGet package from a convention-based working directory](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package#from-a-convention-based-working-directory?wt.mc_id=MVP)。
 
@@ -111,7 +111,7 @@ Sdk 中的 NuGet 部分在 GitHub 上的仓库地址：
 </Target>
 ```
 
-▲ 这是我另外写的一篇文章：[阻止某个 NuGet 包意外升级](/post/prevent-nuget-package-upgrade.html)
+▲ 这是我另外写的一篇文章：[阻止某个 NuGet 包意外升级](/post/prevent-nuget-package-upgrade)
 
 ---
 

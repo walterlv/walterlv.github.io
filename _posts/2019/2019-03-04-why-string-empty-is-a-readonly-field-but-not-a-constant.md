@@ -56,7 +56,7 @@ public static readonly string Empty;
     - 而在调用 `string.Empty` 时使用的 IL 是 `ldsfld string [mscorlib]System.String::Empty`（Load Static Field）
 1. 虽然 IL 在调用 `""` 和 `string.Empty` 时生成的 IL 不同，但是在 JIT 编译成本机代码的时候，生成的代码完全一样。
     - 详情请参见：[.net - What's the different between ldsfld and ldstr in IL? - Stack Overflow](https://stackoverflow.com/a/3674336/6233938)
-    - 我写过一篇文章 [.NET/C# 编译期间能确定的相同字符串，在运行期间是相同的实例 - 吕毅](/post/same-strings-at-compile-time-are-the-same-instances-at-runtime.html)。虽然一般情况下取字符串常量实例的时候会去字符串池，但是不用担心取 `""` 会造成性能问题，因为实际上 JIT 编译器已经特殊处理了，不会去找池子。
+    - 我写过一篇文章 [.NET/C# 编译期间能确定的相同字符串，在运行期间是相同的实例 - 吕毅](/post/same-strings-at-compile-time-are-the-same-instances-at-runtime)。虽然一般情况下取字符串常量实例的时候会去字符串池，但是不用担心取 `""` 会造成性能问题，因为实际上 JIT 编译器已经特殊处理了，不会去找池子。
 
 `string.Empty` 字段在整个 `String` 类型中你都看不到初始化的代码，`String` 类的静态构造函数也不会执行。也就是说，`String` 类中的所有静态成员都不会被托管代码初始化。`String` 的静态初始化过程都是由 CLR 运行时进行的，而这部分的初始化是本机代码实现的。
 
@@ -99,7 +99,7 @@ SetObjectReference( pEmptyStringHandle, StringObject::GetEmptyString(), this );
 不过，如果你使用不安全代码（`unsafe`）来修改这个字段的值就当我没说。关于使用不安全代码转换字符串的方法可以参见：
 
 - [C＃ 字符串首字符大写 - 林德熙](https://lindexi.gitee.io/post/C-%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%A6%96%E5%AD%97%E7%AC%A6%E5%A4%A7%E5%86%99.html)
-- [.NET/C# 编译期间能确定的相同字符串，在运行期间是相同的实例 - 吕毅](/post/same-strings-at-compile-time-are-the-same-instances-at-runtime.html)
+- [.NET/C# 编译期间能确定的相同字符串，在运行期间是相同的实例 - 吕毅](/post/same-strings-at-compile-time-are-the-same-instances-at-runtime)
 
 ### `""` 和 `string.Empty` 到底有什么区别？
 

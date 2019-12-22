@@ -8,7 +8,7 @@ categories: xaml uwp
 
 ---
 
-*WPF 的圆形裁剪请左转参考*：[WPF 中使用附加属性，将任意 UI 元素或控件裁剪成圆形（椭圆）](/post/clip-wpf-uielement-to-ellipse.html)。
+*WPF 的圆形裁剪请左转参考*：[WPF 中使用附加属性，将任意 UI 元素或控件裁剪成圆形（椭圆）](/post/clip-wpf-uielement-to-ellipse)。
 
 与 WPF 不同，UWP 中 `UIElement.Clip` 属性是 `RectangleGeometry` 类型的，这意味着利用此属性是没有办法完成圆形裁剪的。
 

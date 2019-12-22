@@ -18,8 +18,8 @@ C# 8.0 引入了可为空引用类型和不可为空引用类型。当你需要�
 
 本文的内容本身没什么意义，但如果你试图进行一些团队配置，那么本文的示例可能能带来一些帮助。
 
-- [C# 8.0 如何在项目中开启可空引用类型的支持 - 吕毅](/post/how-to-enable-nullable-reference-types.html)
-- [C# 可空引用类型 NullableReferenceTypes 更强制的约束：将警告改为错误 WarningsAsErrors - 吕毅](/post/warning-as-errors-for-csharp-nullable-reference-types.html)
+- [C# 8.0 如何在项目中开启可空引用类型的支持 - 吕毅](/post/how-to-enable-nullable-reference-types)
+- [C# 可空引用类型 NullableReferenceTypes 更强制的约束：将警告改为错误 WarningsAsErrors - 吕毅](/post/warning-as-errors-for-csharp-nullable-reference-types)
 
 ## 警告和错误
 

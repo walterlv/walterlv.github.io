@@ -12,14 +12,14 @@ OPML 全称是 **Outline Processor Markup Language** ，即 **大纲处理标记
 
 本文是两个部分的第二篇，前者是理解 OPML 格式，此篇是解析此格式：
 
-- [概念篇](/post/using-opml-for-rss-migrating.html)
-- [解析篇（本文）](/post/deserialize-opml-using-dotnet.html)
+- [概念篇](/post/using-opml-for-rss-migrating)
+- [解析篇（本文）](/post/deserialize-opml-using-dotnet)
 
 <div id="toc"></div>
 
 ## OPML 格式
 
-在解析之前，最好先理解此格式的的元素组成和元素属性，所以如果你没有阅读 [概念篇](/post/using-opml-for-rss-migrating.html)，请先前往阅读。
+在解析之前，最好先理解此格式的的元素组成和元素属性，所以如果你没有阅读 [概念篇](/post/using-opml-for-rss-migrating)，请先前往阅读。
 
 ## 创建适用于 RSS 的简易 OPML 模型
 
@@ -218,7 +218,7 @@ protected override void OnDeserializing(XElement element)
 
 注意，以上两个方法请分别填充到 `RssOpml.cs` 和 `RssOutline.cs` 的 `OnDeserializing` 方法中。
 
-这里，所有的 XML 解析均使用的是 XPath 语法，关于 XPath 语法，可以阅读 [XML 的 XPath 语法 - walterlv](/post/xml-xpath.html)，关于如何使用 XPath 在 .NET 中读写 XML 文件，可以阅读 [.NET 使用 XPath 来读写 XML 文件 - walterlv](/post/read-write-xml-using-xpath-in-dotnet.html)。
+这里，所有的 XML 解析均使用的是 XPath 语法，关于 XPath 语法，可以阅读 [XML 的 XPath 语法 - walterlv](/post/xml-xpath)，关于如何使用 XPath 在 .NET 中读写 XML 文件，可以阅读 [.NET 使用 XPath 来读写 XML 文件 - walterlv](/post/read-write-xml-using-xpath-in-dotnet)。
 
 ## 使用此 OPML 模型
 

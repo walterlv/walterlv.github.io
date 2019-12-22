@@ -13,8 +13,8 @@ categories: uwp msbuild
 
 本文分为两个部分：
 
-- [从零开始创建一个 UWP 项目并完成部署](/post/create-uwp-app-from-zero-0.html)
-- [从零开始编写一个 UWP 应用程序和窗口](/post/create-uwp-app-from-zero-1.html)
+- [从零开始创建一个 UWP 项目并完成部署](/post/create-uwp-app-from-zero-0)
+- [从零开始编写一个 UWP 应用程序和窗口](/post/create-uwp-app-from-zero-1)
 
 本文将一个普通项目改造成 UWP 项目，重点在了解 UWP 的项目文件组成。
 
@@ -24,8 +24,8 @@ categories: uwp msbuild
 
 虽然可以从零开始写一个 csproj 文件，不过这并没有什么技术含量，因为新的 csproj 文件实在是非常简单。参见：
 
-- [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj.html)
-- [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj](/post/introduce-new-style-csproj-into-net-framework.html)
+- [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj)
+- [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj](/post/introduce-new-style-csproj-into-net-framework)
 
 于是，我创建一个 .NET Core 控制台应用。当然，其它简单的如 .NET Standard 库都是一样的，反正最后都会被我改得面目全非。
 
@@ -70,7 +70,7 @@ namespace Walterlv.Demo.ZeroUwp
 
 UWP 程序的输出类型是 `AppContainerExe`，而不是一般的 Library 或者 Exe。
 
-另外，基于 Sdk 风格的 csproj 格式不支持 UWP 应用程序。所以我希望借助第三方的 MSBuild.Sdk.Extras 来编译 UWP 的项目。参见 [Sdk 风格的 csproj 对 WPF/UWP 支持不太好？有第三方 SDK 可以用！MSBuild.Sdk.Extras](/post/use-msbuild-sdk-extras-for-wpf-and-uwp.html)。
+另外，基于 Sdk 风格的 csproj 格式不支持 UWP 应用程序。所以我希望借助第三方的 MSBuild.Sdk.Extras 来编译 UWP 的项目。参见 [Sdk 风格的 csproj 对 WPF/UWP 支持不太好？有第三方 SDK 可以用！MSBuild.Sdk.Extras](/post/use-msbuild-sdk-extras-for-wpf-and-uwp)。
 
 然而实际情况也不容乐观，因为此第三方 Sdk 只支持 UWP 的库程序，而不支持应用程序容器。所以即便修改为以下方式，最终也因为缺少 Visual Studio RunCommand 的支持，而导致无法启动。
 
@@ -204,7 +204,7 @@ UWP 程序的输出类型是 `AppContainerExe`，而不是一般的 Library 或�
 - uap:VisualElements@Square44x44Logo
 - uap:VisualElements/uap:DefaultTile@Wide310x150Logo
 
-这是 XPath 语法，详见：[XML 的 XPath 语法](/post/xml-xpath.html)
+这是 XPath 语法，详见：[XML 的 XPath 语法](/post/xml-xpath)
 
 同时，我们还真的需要相应的图片：
 
@@ -434,4 +434,4 @@ Main 函数中的断点是可以进入的：
 - Program.cs
     - 这是一开始我们就添加好的文件，就是放 Main 函数的地方。虽然我们什么都没写，但已经能够进入断点了。
 
-接下来我们将从 Main 函数开始，完成一个 UWP 程序的启动：[(2/2) 为了理解 UWP 的启动流程，我从零开始创建了一个 UWP 程序](/post/create-uwp-app-from-zero-1.html)。
+接下来我们将从 Main 函数开始，完成一个 UWP 程序的启动：[(2/2) 为了理解 UWP 的启动流程，我从零开始创建了一个 UWP 程序](/post/create-uwp-app-from-zero-1)。

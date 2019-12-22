@@ -72,7 +72,7 @@ _popupRoot = new PopupRoot(DependencyResolver)
 
 `$$`, `||`
 
-可以阅读：[C# 重载条件逻辑运算符（&& 和 ||） - walterlv](/post/overload-conditional-and-and-or-operators-in-csharp.html)
+可以阅读：[C# 重载条件逻辑运算符（&& 和 ||） - walterlv](/post/overload-conditional-and-and-or-operators-in-csharp)
 
 `?:`
 
@@ -80,7 +80,7 @@ _popupRoot = new PopupRoot(DependencyResolver)
 
 `??`
 
-可以阅读：[C# 空合并运算符（??）不可重载？其实有黑科技可以间接重载！](/post/overload-null-coalescing-operator-in-csharp.html)
+可以阅读：[C# 空合并运算符（??）不可重载？其实有黑科技可以间接重载！](/post/overload-null-coalescing-operator-in-csharp)
 
 ## 不可被重载的运算符
 

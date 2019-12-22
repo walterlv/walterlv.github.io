@@ -78,11 +78,11 @@ private static readonly CachePool<Type, Func<object>> ConstructorCache =
 
 ### 高性能为属性赋值
 
-我在 [如何快速编写和调试 Emit 生成 IL 的代码](/post/how-to-quickly-write-emit-code.html) 一文中创建了可以为属性赋值的委托，你也可以使用此方法将委托缓存下来，以便每次给相同类型的相同属性赋值时能有不那么差的性能。
+我在 [如何快速编写和调试 Emit 生成 IL 的代码](/post/how-to-quickly-write-emit-code) 一文中创建了可以为属性赋值的委托，你也可以使用此方法将委托缓存下来，以便每次给相同类型的相同属性赋值时能有不那么差的性能。
 
 ### 高性能“反射”调用函数
 
-调用函数所得的结果可是不一样的，所以直接缓存函数结果是不靠谱的，不过我们依然可以将反射调用缓存为委托的调用。我在 [.NET Core/Framework 创建委托以大幅度提高反射调用的性能](/post/create-delegate-to-improve-reflection-performance.html) 一文中有介绍。
+调用函数所得的结果可是不一样的，所以直接缓存函数结果是不靠谱的，不过我们依然可以将反射调用缓存为委托的调用。我在 [.NET Core/Framework 创建委托以大幅度提高反射调用的性能](/post/create-delegate-to-improve-reflection-performance) 一文中有介绍。
 
 ## 附代码
 

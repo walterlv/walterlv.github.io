@@ -79,7 +79,7 @@ private void Accelerometer_ReadingChanged(Accelerometer sender, AccelerometerRea
 
 ## 将 Accelerometer 的读数转化成倾斜角度
 
-在 [Win2D 中的游戏循环：CanvasAnimatedControl](/post/game-loop-of-win2d-canvas-animated-control.html) 一文中，我在 PC 上玩这款游戏，也是在模拟桌子的倾角。于是我们也需要将读数转化成 Windows 10 设备的倾斜角度。
+在 [Win2D 中的游戏循环：CanvasAnimatedControl](/post/game-loop-of-win2d-canvas-animated-control) 一文中，我在 PC 上玩这款游戏，也是在模拟桌子的倾角。于是我们也需要将读数转化成 Windows 10 设备的倾斜角度。
 
 ```csharp
 private (float xAngle, float yAngle) GetTiltAngles()

@@ -56,7 +56,7 @@ position: knowledge
 
 如果你看不到上图中的“编辑项目文件”选项，则需要升级项目文件到 SDK 风格，详见：
 
-- [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj - walterlv](/post/introduce-new-style-csproj-into-net-framework.html)
+- [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj - walterlv](/post/introduce-new-style-csproj-into-net-framework)
 
 然后，将这两个文件添加为 `AdditionalFiles`：
 

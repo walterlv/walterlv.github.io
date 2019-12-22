@@ -16,7 +16,7 @@ position: knowledge
 
 请参见：
 
-- [全局或为单独的项目添加自定义的 NuGet 源](/post/add-custom-nuget-source.html)
+- [全局或为单独的项目添加自定义的 NuGet 源](/post/add-custom-nuget-source)
 
 ## 官方 NuGet 源
 

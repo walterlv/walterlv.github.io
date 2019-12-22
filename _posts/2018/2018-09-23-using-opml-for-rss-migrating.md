@@ -13,8 +13,8 @@ OPML 全称是 **Outline Processor Markup Language** ，即 **大纲处理标记
 
 本文分为两个部分，一个是理解 OPML 格式，一个是解析此格式：
 
-- [概念篇（本文）](/post/using-opml-for-rss-migrating.html)
-- [解析篇](/post/deserialize-opml-using-dotnet.html)
+- [概念篇（本文）](/post/using-opml-for-rss-migrating)
+- [解析篇](/post/deserialize-opml-using-dotnet)
 
 <div id="toc"></div>
 
@@ -152,4 +152,4 @@ outline 元素组成一个树状结构。也就是说，如果我们使用 OPML 
 
 ## OPML 的解析
 
-在了解了 OPML 的格式组成之后，便可以很容易的地解析此文件了。当然，我也写了一份 OPML 的解析，请参阅本文的第二部分，[解析篇](/post/deserialize-opml-using-dotnet.html)。
+在了解了 OPML 的格式组成之后，便可以很容易的地解析此文件了。当然，我也写了一份 OPML 的解析，请参阅本文的第二部分，[解析篇](/post/deserialize-opml-using-dotnet)。

@@ -119,7 +119,7 @@ position: starter
 
 关于使用 Xamarin.Forms 开发一个键盘扩展，可以阅读我的另一篇博客：
 
-- [使用 Xamarin 开发 iOS 键盘扩展（含网络访问）](/post/develop-ios-keyboard-extension-using-xamarin.html)
+- [使用 Xamarin 开发 iOS 键盘扩展（含网络访问）](/post/develop-ios-keyboard-extension-using-xamarin)
 
 ### Web 前端
 
@@ -163,7 +163,7 @@ position: starter
 
 另外，利用 ML.NET，我们还能用 C# 进行机器学习。可参见：[Bean.Hsiang - 博客园](http://www.cnblogs.com/BeanHsiang/)。
 
-利用 Roslyn，我们还能用直接做编译器，然后你还有什么不能做的？关于 Roslyn 的入门，可以阅读：[从零开始学习 dotnet 编译过程和 Roslyn 源码分析 - walterlv](/post/posts-for-learning-dotnet-build-nuget-roslyn.html)。
+利用 Roslyn，我们还能用直接做编译器，然后你还有什么不能做的？关于 Roslyn 的入门，可以阅读：[从零开始学习 dotnet 编译过程和 Roslyn 源码分析 - walterlv](/post/posts-for-learning-dotnet-build-nuget-roslyn)。
 
 还有 IoT。
 

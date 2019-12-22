@@ -14,7 +14,7 @@ position: problem
 
 <div id="toc"></div>
 
-本文涉及到新旧 csproj 项目格式，不懂这个也不影响你完成开启本机代码调试。不过如果你希望了解，可以阅读：[将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj - walterlv](/post/introduce-new-style-csproj-into-net-framework.html)。
+本文涉及到新旧 csproj 项目格式，不懂这个也不影响你完成开启本机代码调试。不过如果你希望了解，可以阅读：[将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj - walterlv](/post/introduce-new-style-csproj-into-net-framework)。
 
 ## 在旧格式的项目中开启
 

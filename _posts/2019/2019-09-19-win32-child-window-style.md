@@ -23,7 +23,7 @@ position: starter
 
 这说明当子窗口获得焦点的时候，父窗口会失去焦点并显示失去焦点的样式。
 
-你可以在[这篇博客](/post/hosted-hwnd-must-be-a-child-window.html)中找到一个简单的例子：
+你可以在[这篇博客](/post/hosted-hwnd-must-be-a-child-window)中找到一个简单的例子：
 
 ## 解决办法
 

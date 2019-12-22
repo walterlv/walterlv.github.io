@@ -46,7 +46,7 @@ view.MoveFocus(traversalRequest);
 
 参见我的另一篇博客：
 
-- [WPF 程序如何跨窗口/跨进程设置控件焦点](/post/move-focus-to-win32-window.html)
+- [WPF 程序如何跨窗口/跨进程设置控件焦点](/post/move-focus-to-win32-window)
 
 ---
 

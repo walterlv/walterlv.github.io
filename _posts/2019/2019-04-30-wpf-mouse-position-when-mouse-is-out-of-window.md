@@ -50,7 +50,7 @@ namespace Walterlv.Demo
 
 如果不知道客户区是什么，可以阅读下面我的另一篇博客：
 
-- [WPF 使用 WindowChrome，在自定义窗口标题栏的同时最大程度保留原生窗口样式（类似 UWP/Chrome）](/post/wpf-simulate-native-window-style-using-window-chrome.html)
+- [WPF 使用 WindowChrome，在自定义窗口标题栏的同时最大程度保留原生窗口样式（类似 UWP/Chrome）](/post/wpf-simulate-native-window-style-using-window-chrome)
 
 在以上图中，我拖动改变了窗口的位置，这时将鼠标移动至离开客户区后，获取到的坐标点又被固定为另一个数值。
 

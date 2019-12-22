@@ -104,7 +104,7 @@ Windows 的 DPI 感知级别经过历代升级，已经有四种了。
 
 关于在任务管理器中查看 DPI，可以阅读我的另一篇博客：
 
-- [Windows 系统上使用任务管理器查看进程的各项属性（命令行、DPI、管理员权限等） - 吕毅](/post/view-process-info-using-task-manager.html)
+- [Windows 系统上使用任务管理器查看进程的各项属性（命令行、DPI、管理员权限等） - 吕毅](/post/view-process-info-using-task-manager)
 
 任务管理器上关于 DPI 的中文翻译也是蛮有意思的。
 

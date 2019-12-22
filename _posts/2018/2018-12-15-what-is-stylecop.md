@@ -31,7 +31,7 @@ StyleCop 本质上是一个 C# 源代码规则分析器，可以帮助团队成�
 
 如果你的团队所有成员都是用 ReSharper，那么可以将 StyleCop 的规则也配置一遍到 ReSharper 中，这样编写时便可以符合 StyleCop 中定义的规范。
 
-关于使用 ReSharper 编写符合 StyleCop 规范的代码，可以参见：[使用 ReSharper，输入即遵循 StyleCop 的代码格式化规范](/post/write-code-with-stylecop-using-resharper.html)。
+关于使用 ReSharper 编写符合 StyleCop 规范的代码，可以参见：[使用 ReSharper，输入即遵循 StyleCop 的代码格式化规范](/post/write-code-with-stylecop-using-resharper)。
 
 ## StyleCop 的优势和价值
 

@@ -89,12 +89,12 @@ EndProject
 
 检查你的项目是否安装了需要的工作负载，比如做 Visual Studio 插件开发需要插件工作负载。可以阅读：
 
-- [如何安装和准备 Visual Studio 扩展/插件开发环境 - walterlv](/post/how-to-prepare-visual-studio-extension-development-environment.html)
+- [如何安装和准备 Visual Studio 扩展/插件开发环境 - walterlv](/post/how-to-prepare-visual-studio-extension-development-environment)
 
 我在另外的博客中写了解决方案中项目类型的内容：
 
-- [理解 Visual Studio 解决方案文件格式（.sln） - walterlv](/post/understand-the-sln-file.html)
-- [解决方案文件 sln 中的项目类型 GUID - walterlv](/post/a-list-of-project-type-guids.html)
+- [理解 Visual Studio 解决方案文件格式（.sln） - walterlv](/post/understand-the-sln-file)
+- [解决方案文件 sln 中的项目类型 GUID - walterlv](/post/a-list-of-project-type-guids)
 
 而如果是 nuget 自动识别出来的 MSBuild 版本过旧，则你会同时看到下面的这段提示：
 
@@ -108,7 +108,7 @@ EndProject
 
 我在另一篇博客中有写一些决定 MSBuild.exe 版本的方法：
 
-- [为 NuGet 指定检测的 MSBuild 路径或版本，解决 MSBuild auto-detection: using msbuild version 自动查找路径不合适的问题 - walterlv](/post/specify-msbuild-version-for-nuget-command-line.html)
+- [为 NuGet 指定检测的 MSBuild 路径或版本，解决 MSBuild auto-detection: using msbuild version 自动查找路径不合适的问题 - walterlv](/post/specify-msbuild-version-for-nuget-command-line)
 
 可以通过设置环境变量的方式来解决自动查找版本错误的问题。
 

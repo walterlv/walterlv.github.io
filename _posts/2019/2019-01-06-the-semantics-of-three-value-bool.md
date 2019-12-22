@@ -13,7 +13,7 @@ position: knowledge
 
 ## 重载条件逻辑运算符“与”（&&）“或”（||）
 
-在 [C# 重载条件逻辑运算符（&& 和 ||）](/post/overload-conditional-and-and-or-operators-in-csharp.html) 一文中我说明了如何重载条件逻辑运算符 `&&` 和 `||`。
+在 [C# 重载条件逻辑运算符（&& 和 ||）](/post/overload-conditional-and-and-or-operators-in-csharp) 一文中我说明了如何重载条件逻辑运算符 `&&` 和 `||`。
 
 这两个运算符不能直接重载，但可以通过重载 `&` 和 `|` 运算符来间接完成。
 

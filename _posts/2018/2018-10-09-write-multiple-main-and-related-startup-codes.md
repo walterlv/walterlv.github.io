@@ -80,7 +80,7 @@ Walterlv.Demo.Main C:\Users\lvyi\Desktop\Walterlv.Demo.Main\Walterlv.Demo.Main\N
 </Project>
 ```
 
-你可以通过阅读 [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj](/post/introduce-new-style-csproj-into-net-framework.html) 完成这样的新旧格式迁移。
+你可以通过阅读 [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj](/post/introduce-new-style-csproj-into-net-framework) 完成这样的新旧格式迁移。
 
 App.xaml 中保持默认的代码即可：
 

@@ -24,7 +24,7 @@ MSBuild 的编译过程提供了一些可以被重写的 Target，通过重写�
 - `BeforeResolveReference`, `AfterResolveReferences`
 - `BeforeResGen`, `AfterResGen`
 
-你可以[在 Microsoft.NET.Sdk 中找到各种富有创意的 Target 用来扩展](/post/read-microsoft-net-sdk.html)，以上这些也是 Microsoft.NET.Sdk 的一部分，在那个文件夹的 Microsoft.Common.targets 或者 Microsoft.Common.CurrentVersion.targets 中。
+你可以[在 Microsoft.NET.Sdk 中找到各种富有创意的 Target 用来扩展](/post/read-microsoft-net-sdk)，以上这些也是 Microsoft.NET.Sdk 的一部分，在那个文件夹的 Microsoft.Common.targets 或者 Microsoft.Common.CurrentVersion.targets 中。
 
 而写法是这样的：
 

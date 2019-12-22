@@ -53,7 +53,7 @@ var version = new Version(versionString);
 
 因为我们知道 `AssemblyFileVersionAttribute` 的构造函数只有一个，所以我们确信可以从第一个参数中拿到我们想要的值。
 
-顺便一提，我们使用 `AssemblyFileVersionAttribute` 而不是使用 `AssemblyVersionAttribute` 是因为使用 .NET Core 新格式（基于 Microsoft.NET.Sdk）编译出来的程序集默认是不带 `AssemblyVersionAttribute` 的。详见：[语义版本号（Semantic Versioning） - walterlv](/post/semantic-version.html)。
+顺便一提，我们使用 `AssemblyFileVersionAttribute` 而不是使用 `AssemblyVersionAttribute` 是因为使用 .NET Core 新格式（基于 Microsoft.NET.Sdk）编译出来的程序集默认是不带 `AssemblyVersionAttribute` 的。详见：[语义版本号（Semantic Versioning） - walterlv](/post/semantic-version)。
 
 ---
 

@@ -15,9 +15,9 @@ categories: visualstudio nuget msbuild
 
 ## 回顾遇到的问题
 
-如果你之前迁移过 csproj 文件，可能会遇到问题。关于迁移 csproj 文件，可以阅读：[将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj - 吕毅](/post/introduce-new-style-csproj-into-net-framework.html)。
+如果你之前迁移过 csproj 文件，可能会遇到问题。关于迁移 csproj 文件，可以阅读：[将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj - 吕毅](/post/introduce-new-style-csproj-into-net-framework)。
 
-如果你并没有迁移过 csproj 文件，只是升级了 NuGet 的包管理方式，也可能会遇到问题。关于自动迁移 NuGet 包管理方式，可以阅读：[自动将 NuGet 包的引用方式从 packages.config 升级为 PackageReference - 吕毅](/post/migrate-packages-config-to-package-reference.html)。
+如果你并没有迁移过 csproj 文件，只是升级了 NuGet 的包管理方式，也可能会遇到问题。关于自动迁移 NuGet 包管理方式，可以阅读：[自动将 NuGet 包的引用方式从 packages.config 升级为 PackageReference - 吕毅](/post/migrate-packages-config-to-package-reference)。
 
 在自动迁移那篇文章中，我提到了一些兼容性问题，最大的莫过于 Install.ps1 脚本不再执行：
 
@@ -31,7 +31,7 @@ categories: visualstudio nuget msbuild
 
 知道了问题所在，那么我们的根本便是将 Install.ps1 升级成新的 props 或者 targets。
 
-如果你不清楚 props 或者 targets 是什么意思，或者不知道怎么写它们，可以阅读我的另一篇文章[理解 C# 项目 csproj 文件格式的本质和编译流程 - 吕毅](/post/understand-the-csproj.html)。
+如果你不清楚 props 或者 targets 是什么意思，或者不知道怎么写它们，可以阅读我的另一篇文章[理解 C# 项目 csproj 文件格式的本质和编译流程 - 吕毅](/post/understand-the-csproj)。
 
 ### 第一步：将 install.ps1 翻译成 targets
 

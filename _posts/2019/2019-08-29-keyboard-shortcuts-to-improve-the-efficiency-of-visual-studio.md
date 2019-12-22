@@ -41,7 +41,7 @@ Visual Studio 的功能可谓真是丰富，再配合各种各样神奇强大的
 
 ![Alt + Enter](/static/posts/2019-08-29-19-05-30.png)
 
-修改方法可以参见：[如何快速自定义 Visual Studio 中部分功能的快捷键](/post/customizing-keyboard-shortcuts-in-visual-studio.html)。
+修改方法可以参见：[如何快速自定义 Visual Studio 中部分功能的快捷键](/post/customizing-keyboard-shortcuts-in-visual-studio)。
 
 它的功能是“快速操作和重构”。你几乎可以在任何代码上使用这个快捷键来快速修改你的代码。
 
@@ -57,7 +57,7 @@ Visual Studio 的功能可谓真是丰富，再配合各种各样神奇强大的
 
 ![参数判空](/static/posts/2019-08-29-20-18-16.png)
 
-还有更多功能都可以使用此快捷键。而且因为 Roslyn 优秀的 API，有更多扩展可以使用此快捷键生效，详见：[基于 Roslyn 同时为 Visual Studio 插件和 NuGet 包开发 .NET/C# 源代码分析器 Analyzer 和修改器 CodeFixProvider](/post/develop-a-code-analyzer-for-both-nuget-and-visual-studio-extension.html)。
+还有更多功能都可以使用此快捷键。而且因为 Roslyn 优秀的 API，有更多扩展可以使用此快捷键生效，详见：[基于 Roslyn 同时为 Visual Studio 插件和 NuGet 包开发 .NET/C# 源代码分析器 Analyzer 和修改器 CodeFixProvider](/post/develop-a-code-analyzer-for-both-nuget-and-visual-studio-extension)。
 
 ## 转到所有
 
@@ -73,7 +73,7 @@ Visual Studio 的功能可谓真是丰富，再配合各种各样神奇强大的
 
 ![转到所有](/static/posts/2019-09-07-09-07-22.png)
 
-修改方法可以参见：[如何快速自定义 Visual Studio 中部分功能的快捷键](/post/customizing-keyboard-shortcuts-in-visual-studio.html)，下图是此功能的命令名称 `编辑.转到所有`（`Edit.GoToAll`）：
+修改方法可以参见：[如何快速自定义 Visual Studio 中部分功能的快捷键](/post/customizing-keyboard-shortcuts-in-visual-studio)，下图是此功能的命令名称 `编辑.转到所有`（`Edit.GoToAll`）：
 
 ![编辑.转到所有](/static/posts/2019-09-07-10-04-24.png)
 
@@ -117,7 +117,7 @@ IntelliSense 以前有个漂亮的中文名字，叫做“智能感知”，不�
 
 请通过另一篇博客中的内容把 Visual Studio 的智能感知列表功能好好配置一下，然后我们才可以再次感受到它的强大（记得要翻到最后哦）：
 
-- [通过设置启用 Visual Studio 默认关闭的大量强大的功能提升开发效率](/post/let-visual-studio-empower-more-by-change-some-settings.html)
+- [通过设置启用 Visual Studio 默认关闭的大量强大的功能提升开发效率](/post/let-visual-studio-empower-more-by-change-some-settings)
 
 如果还有一些时机没有打开智能感知列表，可以配置一个快捷键打开它，我这边配置的快捷键是 `Alt + 右`。
 

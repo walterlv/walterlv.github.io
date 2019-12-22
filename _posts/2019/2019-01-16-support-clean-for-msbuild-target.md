@@ -32,7 +32,7 @@ position: knowledge
 
 这段代码的作用便是支持 Visual Studio 中的解决方案清理功能。通过指定 `CleanDependsOn` 属性的值给一个新的 Target，使得在 Clean 的时候，这个 Target 能够执行。我在 Target 中删除了我生成的所有中间文件。
 
-你可以通过阅读 [通过重写预定义的 Target 来扩展 MSBuild / Visual Studio 的编译过程](/post/extend-the-visual-studio-build-process.html) 来了解这个 Target 是如何工作起来的。
+你可以通过阅读 [通过重写预定义的 Target 来扩展 MSBuild / Visual Studio 的编译过程](/post/extend-the-visual-studio-build-process) 来了解这个 Target 是如何工作起来的。
 
 ---
 

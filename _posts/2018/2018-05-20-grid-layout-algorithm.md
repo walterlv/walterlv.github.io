@@ -27,18 +27,18 @@ Grid 算是 WPF/UWP 入门中非常重要的一个布局容器了。面对它那
 
 基本上大家所熟知的 `Grid` 布局差不多就这样么多了。
 
-*如果想了解 WPF/UWP 的布局单位，可以阅读我之前的一篇文字[将 UWP 的有效像素（Effective Pixels）引入 WPF - 吕毅](/post/introduce-uwp-effective-pixels-into-wpf.html)*。
+*如果想了解 WPF/UWP 的布局单位，可以阅读我之前的一篇文字[将 UWP 的有效像素（Effective Pixels）引入 WPF - 吕毅](/post/introduce-uwp-effective-pixels-into-wpf)*。
 
 然而，事实上 `Grid` 的布局行为才没有那么简单呢！它诡异的地方在于没有定义好多种复杂布局情况下的交叉行为。我写了中英两篇文章来说明了这些不太符合预期的行为：
 
-- [WPF/UWP 的 Grid 布局竟然有 Bug，还不止一个！了解 Grid 中那些未定义的布局规则 - 吕毅](/post/the-bugs-of-grid.html)
-- [The undefined behaviors of WPF Grid (the so-called bugs) - 吕毅](/post/the-bugs-of-grid-en.html)
+- [WPF/UWP 的 Grid 布局竟然有 Bug，还不止一个！了解 Grid 中那些未定义的布局规则 - 吕毅](/post/the-bugs-of-grid)
+- [The undefined behaviors of WPF Grid (the so-called bugs) - 吕毅](/post/the-bugs-of-grid-en)
 
 作为一个非常有潜力的 .NET Core 跨平台 UI 框架 Avalonia，应该认真定义好这些行为，而不是像 WPF/UWP 现有的 `Grid` 那样在某些情况下比较含糊，出现难以解释的布局行为。
 
 ## 为这样的 Grid 布局行为设计一套算法
 
-如果你熟知 WPF/UWP 的布局系统，那么 `MeasureOverride` 和 `ArrangeOverride` 一定不陌生，虽然它们只是布局的一部分（为什么是一部分？详见 [Visual->UIElement->FrameworkElement，带来更多功能的同时也带来了更多的限制 - 吕毅](/post/features-and-limits-on-visual-uielement-frameworkelement.html)）。
+如果你熟知 WPF/UWP 的布局系统，那么 `MeasureOverride` 和 `ArrangeOverride` 一定不陌生，虽然它们只是布局的一部分（为什么是一部分？详见 [Visual->UIElement->FrameworkElement，带来更多功能的同时也带来了更多的限制 - 吕毅](/post/features-and-limits-on-visual-uielement-frameworkelement)）。
 
 不过，写一个 `Grid` 确实只需要关心这两个函数就够了。`MeasureOverride` 传入父级测量的可用尺寸，返回此 `Grid` 测量发现所需的最小尺寸；`ArrangeOverride` 传入父级实际可提供的可用尺寸，返回此 `Grid` 实际布局所用的尺寸。
 

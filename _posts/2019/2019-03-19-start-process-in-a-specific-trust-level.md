@@ -62,7 +62,7 @@ RUNAS /trustlevel:<TrustLevel> program
 为了演示提权或者降权，我们需要有一个能够验证当前是否是管理员权限运行的程序。关于如何在程序中判断当前是否以管理员权限运行，可以阅读我和林德熙的博客：
 
 - [dotnet 判断程序当前使用管理员运行降低权使用普通权限运行 - 林德熙](https://lindexi.gitee.io/post/dotnet-%E5%88%A4%E6%96%AD%E7%A8%8B%E5%BA%8F%E5%BD%93%E5%89%8D%E4%BD%BF%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%98%E8%BF%90%E8%A1%8C%E9%99%8D%E4%BD%8E%E6%9D%83%E4%BD%BF%E7%94%A8%E6%99%AE%E9%80%9A%E6%9D%83%E9%99%90%E8%BF%90%E8%A1%8C.html)
-- [在 Windows 系统上降低 UAC 权限运行程序（从管理员权限降权到普通用户权限） - 吕毅](/post/start-process-with-lowered-uac-privileges.html)
+- [在 Windows 系统上降低 UAC 权限运行程序（从管理员权限降权到普通用户权限） - 吕毅](/post/start-process-with-lowered-uac-privileges)
 
 本质上是这段代码：
 
@@ -119,7 +119,7 @@ Process.Start("runas.exe", $"/trustlevel:0x20000 Walterlv.Demo.exe");
 
 关于更多降权运行的方法，可以参考我的另一篇博客：
 
-- [在 Windows 系统上降低 UAC 权限运行程序（从管理员权限降权到普通用户权限） - 吕毅](/post/start-process-with-lowered-uac-privileges.html)
+- [在 Windows 系统上降低 UAC 权限运行程序（从管理员权限降权到普通用户权限） - 吕毅](/post/start-process-with-lowered-uac-privileges)
 
 ---
 

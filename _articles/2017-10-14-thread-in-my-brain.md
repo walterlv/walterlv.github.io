@@ -25,7 +25,7 @@ tags: 大脑 线程
 
 ---
 
-虽说开车时这四个线程都处于活动状态，但其实微小处也是能插入一些小的可执行片段的，毕竟我有 `Yield` 神器（阅读 [出让执行权：Task.Yield, Dispathcer.Yield](/post/yield-in-task-dispatcher.html) 以了解更多）。
+虽说开车时这四个线程都处于活动状态，但其实微小处也是能插入一些小的可执行片段的，毕竟我有 `Yield` 神器（阅读 [出让执行权：Task.Yield, Dispathcer.Yield](/post/yield-in-task-dispatcher) 以了解更多）。
 
 于是，我改造了防御性驾驶算法，均匀地将其可执行片段分洒在各个不同的线程中。
 

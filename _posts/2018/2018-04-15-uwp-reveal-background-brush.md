@@ -121,4 +121,4 @@ categories: uwp xaml
 ## 本文相关
 
 - 本文所设计的源码来自我的一个个人兴趣项目，已在 GitHub 上开源：[walterlv/AssembleMailing](https://github.com/walterlv/AssembleMailing)。
-- 我写过另一篇让 WPF 实现光照效果的博客：[流畅设计 Fluent Design System 中的光照效果 RevealBrush，WPF 也能模拟实现啦！](/post/fluent-design-reveal-brush-in-wpf.html)
+- 我写过另一篇让 WPF 实现光照效果的博客：[流畅设计 Fluent Design System 中的光照效果 RevealBrush，WPF 也能模拟实现啦！](/post/fluent-design-reveal-brush-in-wpf)

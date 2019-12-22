@@ -14,8 +14,8 @@ position: problem
 
 我找到了两种临时调试而不用编译的方法：
 
-- [在 Visual Studio 的设置界面设置启动前不编译（本文）](/post/debug-without-building-for-visual-studio-project.html)
-- [通过修改项目调试配置文件](/post/debug-project-without-building-via-launch-settings.html)
+- [在 Visual Studio 的设置界面设置启动前不编译（本文）](/post/debug-without-building-for-visual-studio-project)
+- [通过修改项目调试配置文件](/post/debug-project-without-building-via-launch-settings)
 
 ## 不编译直接调试
 

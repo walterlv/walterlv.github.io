@@ -159,7 +159,7 @@ private T DoSomething<T>(T parent) where T : class
 
 ### Roslyn
 
-Roslyn 相比于任何第三方契约的优势在于它甚至能在语法层面形成契约（[比如 C#8.0 中的可空引用类型](/post/nullable-reference-in-csharp.html)）。
+Roslyn 相比于任何第三方契约的优势在于它甚至能在语法层面形成契约（[比如 C#8.0 中的可空引用类型](/post/nullable-reference-in-csharp)）。
 
 ## 实际应用
 

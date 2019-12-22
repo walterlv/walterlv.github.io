@@ -5,7 +5,7 @@ date: 2018-07-02 20:49:55 +0800
 categories: dotnet msbuild
 ---
 
-我曾经写过一篇文章 [如何创建一个基于命令行工具的跨平台的 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool.html)，通过编写一个控制台程序来参与编译过程。但是，相比于 [基于 Task 的方式](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html)，可控制的因素还是太少了。
+我曾经写过一篇文章 [如何创建一个基于命令行工具的跨平台的 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool)，通过编写一个控制台程序来参与编译过程。但是，相比于 [基于 Task 的方式](/post/create-a-cross-platform-msbuild-task-based-nuget-tool)，可控制的因素还是太少了。
 
 有没有什么办法能够让控制台程序也能与 MSBuild Target 之间发生更多的信息交换呢？比如报告编译错误和编译警告？答案是有的，通过格式化控制台输出。
 

@@ -19,7 +19,7 @@ position: problem
 
 你可以通过以下博客了解如何制作一个源代码包。
 
-- [将 .NET Core 项目打一个最简单的 NuGet 源码包，安装此包就像直接把源码放进项目一样 - 吕毅](/post/the-simplest-way-to-pack-a-source-code-nuget-package.html)
+- [将 .NET Core 项目打一个最简单的 NuGet 源码包，安装此包就像直接把源码放进项目一样 - 吕毅](/post/the-simplest-way-to-pack-a-source-code-nuget-package)
 - [Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包 - 林德熙](https://blog.lindexi.com/post/roslyn-%E5%A6%82%E4%BD%95%E5%9F%BA%E4%BA%8E-microsoft.net.sdk-%E5%88%B6%E4%BD%9C%E6%BA%90%E4%BB%A3%E7%A0%81%E5%8C%85)
 - [SourceYard 制作源代码包 - 林德熙](https://blog.lindexi.com/post/sourceyard-%E5%88%B6%E4%BD%9C%E6%BA%90%E4%BB%A3%E7%A0%81%E5%8C%85)
 
@@ -29,7 +29,7 @@ position: problem
 
 然而制作一个 NuGet 的坑很多，详见：
 
-- [MSBuild/Roslyn 和 NuGet 的 100 个坑](/post/problems-of-msbuild-and-nuget.html)
+- [MSBuild/Roslyn 和 NuGet 的 100 个坑](/post/problems-of-msbuild-and-nuget)
 
 ## 基础代码：最小的例子
 
@@ -176,7 +176,7 @@ namespace Walterlv.GettingStarted.SourceYard.Sample
 
 现在，编译我们的项目，发现完全可以正常编译，就像我在这篇博客中说到的一样：
 
-- [将 .NET Core 项目打一个最简单的 NuGet 源码包，安装此包就像直接把源码放进项目一样 - 吕毅](/post/the-simplest-way-to-pack-a-source-code-nuget-package.html)
+- [将 .NET Core 项目打一个最简单的 NuGet 源码包，安装此包就像直接把源码放进项目一样 - 吕毅](/post/the-simplest-way-to-pack-a-source-code-nuget-package)
 
 但是，事情并不那么简单。接下来全部剩下的都是问题。
 
@@ -442,7 +442,7 @@ e_vobqk5lg_wpftmp.csproj]
 
 我写了一篇讲解 WPF 编译过程的博客，在解决这个问题之前，建议阅读这篇博客了解 WPF 是如何进行编译的：
 
-- [WPF 程序的编译过程](/post/how-wpf-assemblies-are-compiled.html)
+- [WPF 程序的编译过程](/post/how-wpf-assemblies-are-compiled)
 
 在了解了 WPF 程序的编译过程之后，我们知道了前面一些疑问的答案：
 
@@ -658,7 +658,7 @@ Directory.Build.props 和 Directory.Build.targets 也是可以被自动 Import �
 如果你觉得本文略长，希望立刻获得解决办法，可以：
 
 1. 直接使用 “方案四” 中新增的那一段代码；
-1. 阅读我的另一篇专门的只说解决方案的博客：[如何为 WPF 项目制作源代码包（SourceYard 基础原理篇，解决 WPF 项目编译问题和 NuGet 包中的各种问题）](/post/build-source-code-nuget-package-for-wpf-projects.html)
+1. 阅读我的另一篇专门的只说解决方案的博客：[如何为 WPF 项目制作源代码包（SourceYard 基础原理篇，解决 WPF 项目编译问题和 NuGet 包中的各种问题）](/post/build-source-code-nuget-package-for-wpf-projects)
 
 ---
 

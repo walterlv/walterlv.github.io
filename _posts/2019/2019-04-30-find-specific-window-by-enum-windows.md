@@ -19,7 +19,7 @@ position: knowledge
 
 要在 C# 代码中使用 `EnumWindows`，你需要编写平台调用 P/Invoke 代码。使用我在另一篇博客中的方法可以自动生成这样的平台调用代码：
 
-- [使用 PInvoke.net Visual Studio Extension 辅助编写 Win32 函数签名](/post/pinvoke-net-visual-studio-extension.html)
+- [使用 PInvoke.net Visual Studio Extension 辅助编写 Win32 函数签名](/post/pinvoke-net-visual-studio-extension)
 
 我这里直接贴出来：
 

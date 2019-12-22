@@ -27,7 +27,7 @@ position: problem
 
 然而，不幸的是，除了这三个方法，我们还真的没有原生的方法来实现命令行的输入监听了。所以看样子我们需要自己来使用 `Console.ReadKey()` 实现用户输入文字的监听了。
 
-我在 [如何让 .NET Core 命令行程序接受密码的输入而不显示密码明文 - walterlv](/post/input-password-with-mask-in-cli.html) 一问中有说到如何在命令行中输入密码而不会显示明文。我们用到的就是此博客中所述的方法。
+我在 [如何让 .NET Core 命令行程序接受密码的输入而不显示密码明文 - walterlv](/post/input-password-with-mask-in-cli) 一问中有说到如何在命令行中输入密码而不会显示明文。我们用到的就是此博客中所述的方法。
 
 ```csharp
 var builder = new StringBuilder();

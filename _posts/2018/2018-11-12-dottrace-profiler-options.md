@@ -69,7 +69,7 @@ categories: dotnet
 
 推荐用于大多数情况，尤其是分析多线程应用程序的时候。你可以用这个选项来确定 UI 卡顿或不响应的原因，可以分析过多的 GC（垃圾回收），可以分析不均匀的工作负载分配、IO 不足或者其他各种异常。
 
-由于需要用到 Windows 的事件跟踪器（ETW），所以你可能遭遇 ETW 相关的问题。具体可以阅读 [用 dotTrace 进行性能分析时，Timeline 打不开？无法启动进程？也许你需要先开启系统性能计数器的访问权限](/post/dottrace-timeline-not-working.html)。
+由于需要用到 Windows 的事件跟踪器（ETW），所以你可能遭遇 ETW 相关的问题。具体可以阅读 [用 dotTrace 进行性能分析时，Timeline 打不开？无法启动进程？也许你需要先开启系统性能计数器的访问权限](/post/dottrace-timeline-not-working)。
 
 ---
 

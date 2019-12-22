@@ -262,7 +262,7 @@ categories: vscode
 
 所以在上面比较复杂的博客模板中，我们可以直接插入当前的时间 `${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND} +0800`。
 
-这个时间我之前也在输入法中调过：[常用输入法快速输入自定义格式的时间和日期（搜狗/QQ/微软拼音）](/post/ime-date-time-format.html)。
+这个时间我之前也在输入法中调过：[常用输入法快速输入自定义格式的时间和日期（搜狗/QQ/微软拼音）](/post/ime-date-time-format)。
 
 ---
 

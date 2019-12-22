@@ -50,7 +50,7 @@ position: knowledge
 
 我在另一篇博客中说过如何清晰显示一个线条：
 
-- [WPF 绘制对齐像素的清晰显示的线条](/post/draw-aligned-lines-using-guidelineset.html)
+- [WPF 绘制对齐像素的清晰显示的线条](/post/draw-aligned-lines-using-guidelineset)
 
 要清晰显示 1 像素宽度的竖线，我们需要对齐像素显示，即在整数像素上显示这根线条。于是，我们需要点亮这一列像素中的所有 RGB：
 

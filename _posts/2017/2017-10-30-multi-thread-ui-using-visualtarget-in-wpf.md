@@ -13,8 +13,8 @@ WPF 的 UI 逻辑只在同一个线程中，这是学习 WPF 开发中大家几�
 
 WPF 同一个窗口中跨线程访问 UI 有多种方法：
 
-- [使用 VisualTarget (本文)](/post/multi-thread-ui-using-visualtarget-in-wpf.html)
-- [使用 SetParent 嵌入另一个窗口](/post/embed-win32-window-using-csharp.html)
+- [使用 VisualTarget (本文)](/post/multi-thread-ui-using-visualtarget-in-wpf)
+- [使用 SetParent 嵌入另一个窗口](/post/embed-win32-window-using-csharp)
 
 前者使用的是 WPF 原生方式，做出来的跨线程 UI 可以和原来的 UI 相互重叠遮挡。后者使用的是 Win32 的方式，实际效果非常类似 `WindowsFormsHost`，新线程中的 UI 在原来的所有 WPF 控件上面遮挡。另外，后者不止可以是跨线程，还可以跨进程。
 
@@ -137,7 +137,7 @@ await Host.SetChildAsync(control);
 - [DispatcherAsyncOperation](https://github.com/walterlv/sharing-demo/blob/master/src/Walterlv.Demo.Sharing/Utils/Threading/DispatcherAsyncOperation.cs) 此类型只是为了让 `UIDispatcher` 中的方法更好写一些。
 - [AwaiterInterfaces](https://github.com/walterlv/sharing-demo/blob/master/src/Walterlv.Core/Threading/AwaiterInterfaces.cs) 这是一组可有可无的接口；给 `DispatcherAsyncOperation` 继承的接口，但是不继承也没事，一样能跑。
 
-这些辅助型代码的含义可以查看我的另一篇博客：[如何实现一个可以用 await 异步等待的 Awaiter - walterlv](/post/write-custom-awaiter.html)。
+这些辅助型代码的含义可以查看我的另一篇博客：[如何实现一个可以用 await 异步等待的 Awaiter - walterlv](/post/write-custom-awaiter)。
 
 ---
 

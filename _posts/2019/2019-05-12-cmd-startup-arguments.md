@@ -24,7 +24,7 @@ position: knowledge
 
 顺便，使用 PowerShell 来启动的方法可以参见我的另一篇博客：
 
-- [PowerShell 的命令行启动参数（可用于执行命令、传参或进行环境配置） - 吕毅](/post/powershell-startup-arguments.html)
+- [PowerShell 的命令行启动参数（可用于执行命令、传参或进行环境配置） - 吕毅](/post/powershell-startup-arguments)
 
 ## cmd.exe 的帮助文档
 

@@ -60,7 +60,7 @@ WPF 提供 `CompositionCollection` 用于将多个列表合并为一个，以便
 
 例如，我曾经用 WPF 来模拟 UWP 流畅设计（Fluent Design）中的光照效果，使用附加属性来管理此行为则完全不用担心内存泄漏问题：
 
-- [流畅设计 Fluent Design System 中的光照效果 RevealBrush，WPF 也能模拟实现啦！](/post/fluent-design-reveal-brush-in-wpf.html)
+- [流畅设计 Fluent Design System 中的光照效果 RevealBrush，WPF 也能模拟实现啦！](/post/fluent-design-reveal-brush-in-wpf)
 
 ## 使用 ConditionalWeakTable 做非 WPF 版本的缓存
 
@@ -68,7 +68,7 @@ WPF 提供 `CompositionCollection` 用于将多个列表合并为一个，以便
 
 这里的引用关系是 Key 引用着 Value，如果 Key 被回收，那么 Value 也可以被回收。
 
-- [.NET/C# 使用 ConditionalWeakTable 附加字段（CLR 版本的附加属性，也可用用来当作弱引用字典 WeakDictionary）](/post/conditional-weak-table.html)
+- [.NET/C# 使用 ConditionalWeakTable 附加字段（CLR 版本的附加属性，也可用用来当作弱引用字典 WeakDictionary）](/post/conditional-weak-table)
 
 ## 使用代码模拟触摸
 
@@ -84,14 +84,14 @@ WPF 默认情况下的触摸是通过 COM 组件 `PimcManager` 获取到的，�
 
 如果要将 WPF 模拟得很像 UWP，可以参考我的这两篇博客：
 
-- [WPF 使用 WindowChrome，在自定义窗口标题栏的同时最大程度保留原生窗口样式（类似 UWP/Chrome）](/post/wpf-simulate-native-window-style-using-window-chrome.html)
-- [WPF 应用完全模拟 UWP 的标题栏按钮](/post/wpf-simulate-native-window-title-bar-buttons.html)
+- [WPF 使用 WindowChrome，在自定义窗口标题栏的同时最大程度保留原生窗口样式（类似 UWP/Chrome）](/post/wpf-simulate-native-window-style-using-window-chrome)
+- [WPF 应用完全模拟 UWP 的标题栏按钮](/post/wpf-simulate-native-window-title-bar-buttons)
 
 ## 模拟 Fluent Design 特效
 
 目前 WPF 还不能直接使用 Windows 10 Fluent Design 特效。当然如果你的程序非常小，那么模拟一下也不会伤害太多性能：
 
-- [流畅设计 Fluent Design System 中的光照效果 RevealBrush，WPF 也能模拟实现啦！](/post/fluent-design-reveal-brush-in-wpf.html)
+- [流畅设计 Fluent Design System 中的光照效果 RevealBrush，WPF 也能模拟实现啦！](/post/fluent-design-reveal-brush-in-wpf)
 - [在 Windows 10 上为 WPF 窗口添加模糊特效](/post/win10/2017/10/02/wpf-transparent-blur-in-windows-10.html)
 
 然而充分利用 Fluent Design 的高性能，需要上 XAML Islands，详见：

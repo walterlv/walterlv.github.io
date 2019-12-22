@@ -69,6 +69,6 @@ position: starter
 
 请参见博客：
 
-- [手工编辑 tasks.json 和 launch.json，让你的 VSCode 具备调试 .NET Core 程序的能力](/post/equip-vscode-manually-for-dotnet-core-app-debugging.html)
+- [手工编辑 tasks.json 和 launch.json，让你的 VSCode 具备调试 .NET Core 程序的能力](/post/equip-vscode-manually-for-dotnet-core-app-debugging)
 
 还补充一句，本文说编译文件和调试文件是不对的，因为在 Visual Studio Code 中没有编译这个概念，编译只是任务中的一种而已。

@@ -15,9 +15,9 @@ position: knowledge
 
 系列博客：
 
-- [.NET/C# 利用 Walterlv.WeakEvents 高性能地定义和使用弱事件](/post/implement-custom-dotnet-weak-event.html)
-- [.NET/C# 利用 Walterlv.WeakEvents 高性能地中转一个自定义的弱事件（可让任意 CLR 事件成为弱事件）](/post/implement-custom-dotnet-weak-event-relay.html)
-- [.NET 设计一套高性能的弱事件机制](/post/design-a-dotnet-weak-event-relay.html)
+- [.NET/C# 利用 Walterlv.WeakEvents 高性能地定义和使用弱事件](/post/implement-custom-dotnet-weak-event)
+- [.NET/C# 利用 Walterlv.WeakEvents 高性能地中转一个自定义的弱事件（可让任意 CLR 事件成为弱事件）](/post/implement-custom-dotnet-weak-event-relay)
+- [.NET 设计一套高性能的弱事件机制](/post/design-a-dotnet-weak-event-relay)
 
 ## 场景与问题
 
@@ -130,7 +130,7 @@ namespace Walterlv.Demo
 不要紧张，我来一一解释这些代码。另外，如果你不想懂这些代码，就按照模板一个个敲就好了，都是模板化的代码（特别适合使用 Roslyn 编译器生成，我可能接下来就会做这件事情避免你写出这些代码）。
 
 1. 首先，我们定义了一个自定义的弱事件中继 `FileSystemWatcherWeakEventRelay`，继承自库 Walterlv.WeakEvents 中的 `WeakEventRelay<FileSystemWatcher>` 类型。带上的泛型参数表明是针对 `FileSystemWatcher` 类型做弱事件中继。
-2. 一个构造函数，将参数传递给基类：`public FileSystemWatcherWeakEventRelay(FileSystemWatcher eventSource) : base(eventSource) { }`。这个构造函数是可以用 Visual Studio 生成的，快捷键是 `Ctrl + .` 或者 `Alt + Enter`（快捷键功效详见：[提高使用 Visual Studio 开发效率的键盘快捷键](/post/keyboard-shortcuts-to-improve-the-efficiency-of-visual-studio.html)）
+2. 一个构造函数，将参数传递给基类：`public FileSystemWatcherWeakEventRelay(FileSystemWatcher eventSource) : base(eventSource) { }`。这个构造函数是可以用 Visual Studio 生成的，快捷键是 `Ctrl + .` 或者 `Alt + Enter`（快捷键功效详见：[提高使用 Visual Studio 开发效率的键盘快捷键](/post/keyboard-shortcuts-to-improve-the-efficiency-of-visual-studio)）
 3. 定义了一个私有的 `WeakEvent<FileSystemEventArgs>`，名为 `_changed`，这个就是弱事件的核心。泛型参数是事件参数的类型（注意，为了极致的性能，这里的泛型参数是事件参数的名称，而不是大多数弱事件框架中提供的事件处理委托类型）。
 4. 定义了一个对外公开的事件 `public event FileSystemEventHandler Changed`。
     - `add` 方法固定调用 `Subscribe(o => o.Changed += OnChanged, () => _changed.Add(value, value.Invoke));`。其中 `Changed` 是 `FileSystemWatcher` 中的事件，`OnChanged` 是我们即将定义的事件处理函数，`_changed` 是前面定义好的弱事件字段，而后面的 `value` 和 `value.Invoke` 是固定写法。
@@ -245,7 +245,7 @@ namespace Walterlv.Demo
 
 请参见我的另一篇博客：
 
-- [.NET 设计一套高性能的弱事件机制](/post/design-a-dotnet-weak-event-relay.html)
+- [.NET 设计一套高性能的弱事件机制](/post/design-a-dotnet-weak-event-relay)
 
 ---
 

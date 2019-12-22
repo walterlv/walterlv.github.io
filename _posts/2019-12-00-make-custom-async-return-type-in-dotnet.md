@@ -48,8 +48,8 @@ public async WalterlvAsyncOperation<T> Foo<T>()
 
 要支持 `await` 异步等待比较简单，需要实现两个类型（或者你也可以合并成一个类型来实现），可以参见我的另外两篇博客：
 
-- [.NET 中什么样的类是可使用 await 异步等待的？ - walterlv](/post/what-is-an-awaiter.html)
-- [.NET 除了用 Task 之外，如何自己写一个可以 await 的对象？ - walterlv](/post/understand-and-write-custom-awaiter.html)
+- [.NET 中什么样的类是可使用 await 异步等待的？ - walterlv](/post/what-is-an-awaiter)
+- [.NET 除了用 Task 之外，如何自己写一个可以 await 的对象？ - walterlv](/post/understand-and-write-custom-awaiter)
 
 要支持 `async` 构造异步方法，则需要编写一个 `AsyncMethodBuilder`，这部分代码会更多一点，接下来我们会详细说明。
 

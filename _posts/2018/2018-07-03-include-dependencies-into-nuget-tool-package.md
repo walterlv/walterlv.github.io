@@ -15,7 +15,7 @@ NuGet 提供了工具类型的包支持，生成一个基于 .NET Core 的 dll �
 
 ## 问题
 
-你可能是在 [创建一个基于命令行工具的跨平台 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool.html) 的时候遇到依赖问题的，也可能是自己做到另外什么工具遇到的。
+你可能是在 [创建一个基于命令行工具的跨平台 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool) 的时候遇到依赖问题的，也可能是自己做到另外什么工具遇到的。
 
 典型的例子，我正在做一个基于 Roslyn 的 NuGet 工具包。于是整个 Roslyn 的大量 dll 都是我的依赖。但默认情况下，打出来的包并不包含 Roslyn 相关的 dll。
 
@@ -25,7 +25,7 @@ NuGet 提供了工具类型的包支持，生成一个基于 .NET Core 的 dll �
 
 尝试找一个实际将这些依赖 Include 进来，但是不知道什么时机合适。太早了依赖文件还没有生成，太晚了 NuGet 包中即将打的文件早已确认，Include 了也没用。
 
-于是，我去阅读了 Microsoft.NET.Sdk 的源码，找到了并没有公开的内部方法来解决这个问题。关于阅读 Microsoft.NET.Sdk 源码的方式，可以参考 [解读 Microsoft.NET.Sdk 的源码，你能定制各种奇怪而富有创意的编译过程](/post/read-microsoft-net-sdk.html) 和 [Reading the Source Code of Microsoft.NET.Sdk, Writing the Creative Extension of Compiling](/post/read-microsoft-net-sdk-en.html)。
+于是，我去阅读了 Microsoft.NET.Sdk 的源码，找到了并没有公开的内部方法来解决这个问题。关于阅读 Microsoft.NET.Sdk 源码的方式，可以参考 [解读 Microsoft.NET.Sdk 的源码，你能定制各种奇怪而富有创意的编译过程](/post/read-microsoft-net-sdk) 和 [Reading the Source Code of Microsoft.NET.Sdk, Writing the Creative Extension of Compiling](/post/read-microsoft-net-sdk-en)。
 
 NuGet 打包的核心在 NuGet.Build.Tasks.Pack.targets 文件，主要是这段代码（省略了大量内容，留下了看起来有点儿关系的部分）：
 

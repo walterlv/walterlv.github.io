@@ -76,7 +76,7 @@ position: starter
 
 为了迅速验证，我们可以使用 Postman 来发送这条消息。
 
-关于下载和使用 Postman，你可以参考我的另一篇博客：[使用 Postman 调试 ASP.NET Core 开发的 API](/post/use-postman-to-debug-asp-net-core-api.html)。
+关于下载和使用 Postman，你可以参考我的另一篇博客：[使用 Postman 调试 ASP.NET Core 开发的 API](/post/use-postman-to-debug-asp-net-core-api)。
 
 填写要 POST 的 Url，然后在消息的 Body 中填写 JSON 格式的消息内容：
 

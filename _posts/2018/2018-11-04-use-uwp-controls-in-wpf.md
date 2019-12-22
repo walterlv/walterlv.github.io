@@ -144,11 +144,11 @@ private void UwpButton_Click(object sender, RoutedEventArgs e)
 
 关于 PerMonitorV2 和 PerMonitor 的理解和区别，可以参见：
 
-- [Windows 下的高 DPI 应用开发（UWP / WPF / Windows Forms / Win32） - walterlv](/post/windows-high-dpi-development.html)
+- [Windows 下的高 DPI 应用开发（UWP / WPF / Windows Forms / Win32） - walterlv](/post/windows-high-dpi-development)
 
 关于如何在 WPF 下开启 PerMonitorV2 级别的 DPI 感知可以参见：
 
-- [支持 Windows 10 最新 PerMonitorV2 特性的 WPF 多屏高 DPI 应用开发 - walterlv](/post/windows-high-dpi-development-for-wpf.html)
+- [支持 Windows 10 最新 PerMonitorV2 特性的 WPF 多屏高 DPI 应用开发 - walterlv](/post/windows-high-dpi-development-for-wpf)
 
 ## 更复杂的 UWP 控件嵌入
 
@@ -156,7 +156,7 @@ private void UwpButton_Click(object sender, RoutedEventArgs e)
 
 你需要引入一个 UWP 控件库。阅读以下文章了解更多：
 
-- [WindowsXamlHost：在 WPF 中使用 UWP 控件库中的控件 - walterlv](/post/use-uwp-control-library-in-wpf.html)
+- [WindowsXamlHost：在 WPF 中使用 UWP 控件库中的控件 - walterlv](/post/use-uwp-control-library-in-wpf)
 
 ---
 

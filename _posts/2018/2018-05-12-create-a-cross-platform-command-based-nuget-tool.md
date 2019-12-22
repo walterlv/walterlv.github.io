@@ -15,8 +15,8 @@ categories: visualstudio csharp dotnet msbuild
 
 关于创建跨平台 NuGet 工具包的博客，我写了两篇。一篇介绍写基于 MSBuild Task 的 dll，一篇介绍写任意的命令行工具，可以是用于 .NET Framework 的 exe，也可以是基于 .NET Core 的 dll，甚至可以是使用本机工具链编译的平台相关的各种格式的命令行工具。内容是相似的但关键的坑不同。我分为两篇可以减少完成单个任务的理解难度：
 
-- [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html)
-- [如何创建一个基于命令行工具的跨平台的 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool.html)
+- [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包](/post/create-a-cross-platform-msbuild-task-based-nuget-tool)
+- [如何创建一个基于命令行工具的跨平台的 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool)
 
 <div id="toc"></div>
 
@@ -136,7 +136,7 @@ namespace Walterlv.NuGetTool
 </ItemGroup>
 ```
 
-`None` 表示这一项要显示到 Visual Studio 解决方案中（其实对于不认识的文件，`None` 就是默认值）；`Include` 表示相对于项目文件的路径（支持通配符）；`Pack` 表示这一项要打包到 NuGet；`PackagePath` 表示这一项打包到 NuGet 中的路径。(*如果你想了解更多 csproj 中的 NuGet 属性，可以阅读我的另一篇文章：[项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅](/post/known-nuget-properties-in-csproj.html)*)
+`None` 表示这一项要显示到 Visual Studio 解决方案中（其实对于不认识的文件，`None` 就是默认值）；`Include` 表示相对于项目文件的路径（支持通配符）；`Pack` 表示这一项要打包到 NuGet；`PackagePath` 表示这一项打包到 NuGet 中的路径。(*如果你想了解更多 csproj 中的 NuGet 属性，可以阅读我的另一篇文章：[项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅](/post/known-nuget-properties-in-csproj)*)
 
 这样的一番设置，我们的 `build`、`buildMultiTargeting` 和 `readme.txt` 准备好了，但是 `tools` 文件夹还没有。由于我们是把我们生成的命令行工具放到 `tools` 里面，第一个想到的当然是修改输出路径——然而这是不靠谱的，因为 NuGet 并不识别输出路径。事实上，我们还可以设置一个属性 `<BuildOutputTargetFolder>`，将值指定为 `tools`，那么我们就能够将我们的输出文件打包到 NuGet 对应的 `tools` 文件夹下了。
 
@@ -169,7 +169,7 @@ namespace Walterlv.NuGetTool
 </Project>
 ```
 
-注意到我同时还在文件中新增了另外两个属性配置 `NoPackageAnalysis` 和 `DevelopmentDependency`。由于我们没有 `lib` 文件夹，所以 NuGet 会给出警告，`NoPackageAnalysis` 将阻止这个警告。`DevelopmentDependency` 是为了说明这是一个开发依赖，设置为 true 将阻止包作为依赖传递给下一个项目。（**事实上这又是官方的一个骗局！因为新版本的 NuGet 竟然去掉了这个功能！**，已经被吐槽了，详见：[PackageReference should support DevelopmentDependency metadata · Issue #4125 · NuGet/Home](https://github.com/NuGet/Home/issues/4125)）。关于这些属性更详细的解释，依然可以参见：[项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅](/post/known-nuget-properties-in-csproj.html)。
+注意到我同时还在文件中新增了另外两个属性配置 `NoPackageAnalysis` 和 `DevelopmentDependency`。由于我们没有 `lib` 文件夹，所以 NuGet 会给出警告，`NoPackageAnalysis` 将阻止这个警告。`DevelopmentDependency` 是为了说明这是一个开发依赖，设置为 true 将阻止包作为依赖传递给下一个项目。（**事实上这又是官方的一个骗局！因为新版本的 NuGet 竟然去掉了这个功能！**，已经被吐槽了，详见：[PackageReference should support DevelopmentDependency metadata · Issue #4125 · NuGet/Home](https://github.com/NuGet/Home/issues/4125)）。关于这些属性更详细的解释，依然可以参见：[项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅](/post/known-nuget-properties-in-csproj)。
 
 现在再尝试编译一下我们的项目，去输出目录下解压查看 nupkg 文件，你就能看到期望的 NuGet 文件夹结构了；建议一个个点进去看，你可以看到我们准备好的空的 `Walterlv.NuGetTool.targets` 文件，也能看到我们生成的 `Walterlv.NuGetTool.dll`。
 
@@ -196,7 +196,7 @@ namespace Walterlv.NuGetTool
 </Project>
 ```
 
-targets 的文件结构与 csproj 是一样的，你可以阅读我的另一篇文章 [理解 C# 项目 csproj 文件格式的本质和编译流程 - 吕毅](/post/understand-the-csproj.html) 了解其结构。
+targets 的文件结构与 csproj 是一样的，你可以阅读我的另一篇文章 [理解 C# 项目 csproj 文件格式的本质和编译流程 - 吕毅](/post/understand-the-csproj) 了解其结构。
 
 上面的文件中，我们指定 `Target` 的执行时机为 `CoreCompile` 之前，也就是编译那些 .cs 文件之前。在这个时机，我们可以修改要编译的 .cs 文件。如果想了解更多关于 `Target` 执行时机或顺序相关的资料，可以阅读：[Target Build Order](https://msdn.microsoft.com/en-us/library/ee216359.aspx)。
 
@@ -339,7 +339,7 @@ namespace Walterlv.NuGetTool
 }
 ```
 
-你可以尽情发挥你的想象力，传入更多让人意想不到的参数，实现不可思议的功能。更多 MSBuild 全局参数，可以参考我的另一篇文章[项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - 吕毅](/post/known-properties-in-csproj.html)。
+你可以尽情发挥你的想象力，传入更多让人意想不到的参数，实现不可思议的功能。更多 MSBuild 全局参数，可以参考我的另一篇文章[项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - 吕毅](/post/known-properties-in-csproj)。
 
 需要注意，控制台传参数是有字符数量限制的，要解决传参字符数量限制问题，可以参考 [Roslyn 使用 WriteLinesToFile 解决参数过长无法传入](https://blog.lindexi.com/post/Roslyn-%E4%BD%BF%E7%94%A8-WriteLinesToFile-%E8%A7%A3%E5%86%B3%E5%8F%82%E6%95%B0%E8%BF%87%E9%95%BF%E6%97%A0%E6%B3%95%E4%BC%A0%E5%85%A5.html)。
 
@@ -350,9 +350,9 @@ namespace Walterlv.NuGetTool
 有两种不同的方式：
 
 1. 直接传数据，这些数据可以被捕获成属性或者项，具体可以阅读我的另一篇博客：
-    - [如何使用 MSBuild Target（Exec）中的控制台输出](/post/exec-task-of-msbuild-target.html)
+    - [如何使用 MSBuild Target（Exec）中的控制台输出](/post/exec-task-of-msbuild-target)
 1. 报告编译警告和编译错误，具体可以阅读我的另一篇博客：
-    - [如何在 MSBuild Target（Exec）中报告编译错误和编译警告](/post/standard-error-warning-format.html)
+    - [如何在 MSBuild Target（Exec）中报告编译错误和编译警告](/post/standard-error-warning-format)
 
 ### 使用命令执行完之后的结果
 
@@ -391,7 +391,7 @@ namespace Walterlv.Debug
 }
 ```
 
-然后，我们需要在 .targets 文件里接收这个输出参数。然而命令行调用与 [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包 - 吕毅](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html) 中所写的 Task 不同，命令行调用的后面是不能够立刻应用命令行调用的结果的，因为此时命令还没有结束。
+然后，我们需要在 .targets 文件里接收这个输出参数。然而命令行调用与 [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包 - 吕毅](/post/create-a-cross-platform-msbuild-task-based-nuget-tool) 中所写的 Task 不同，命令行调用的后面是不能够立刻应用命令行调用的结果的，因为此时命令还没有结束。
 
 所以我们需要写一个新的 Target，来使用命令行程序执行后的结果。
 
@@ -428,7 +428,7 @@ namespace Walterlv.Debug
 
 ### 加入差量编译支持
 
-在本文的例子中，当你每次编译时，虽然核心的编译流程不怎么耗时，不过那个命令却是每次都执行。如果你觉得此命令的执行非常耗时，那么建议加入差量编译的支持。关于加入差量编译，可以参考我的另一篇文章[每次都要重新编译？太慢！让跨平台的 MSBuild/dotnet build 的 Target 支持差量编译](/post/msbuild-incremental-build.html)。
+在本文的例子中，当你每次编译时，虽然核心的编译流程不怎么耗时，不过那个命令却是每次都执行。如果你觉得此命令的执行非常耗时，那么建议加入差量编译的支持。关于加入差量编译，可以参考我的另一篇文章[每次都要重新编译？太慢！让跨平台的 MSBuild/dotnet build 的 Target 支持差量编译](/post/msbuild-incremental-build)。
 
 ### 本地测试 NuGet 包
 
@@ -453,9 +453,9 @@ namespace Walterlv.Debug
 
 如果在阅读这篇文章时存在一些概念理解上的问题，或者不知道如何扩展本文的功能，可能需要阅读下我的另一些文章：
 
-- [理解 C# 项目 csproj 文件格式的本质和编译流程 - 吕毅](/post/understand-the-csproj.html)
-- [项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - 吕毅](/post/known-properties-in-csproj.html)
-- [项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅](/post/known-nuget-properties-in-csproj.html)
+- [理解 C# 项目 csproj 文件格式的本质和编译流程 - 吕毅](/post/understand-the-csproj)
+- [项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - 吕毅](/post/known-properties-in-csproj)
+- [项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅](/post/known-nuget-properties-in-csproj)
 
 当然，还有一些正在编写，过一段时间可以阅读到。
 

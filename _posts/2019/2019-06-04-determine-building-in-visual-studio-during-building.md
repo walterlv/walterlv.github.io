@@ -11,7 +11,7 @@ position: knowledge
 
 本文需要理解的前置知识是：
 
-- [解读 Microsoft.NET.Sdk 的源码，你能定制各种奇怪而富有创意的编译过程 - walterlv](/post/read-microsoft-net-sdk.html)
+- [解读 Microsoft.NET.Sdk 的源码，你能定制各种奇怪而富有创意的编译过程 - walterlv](/post/read-microsoft-net-sdk)
 
 而使用 Visual Studio 编译的时候，会自动帮我们设置 `BuildingInsideVisualStudio` 的值为 `True`，所以实际上我们可以使用这个值进行判断。
 
@@ -67,4 +67,4 @@ position: knowledge
 
 关于如何探索 Microsoft.NET.Sdk 可以阅读我的另一篇博客：
 
-- [解读 Microsoft.NET.Sdk 的源码，你能定制各种奇怪而富有创意的编译过程 - walterlv](/post/read-microsoft-net-sdk.html)
+- [解读 Microsoft.NET.Sdk 的源码，你能定制各种奇怪而富有创意的编译过程 - walterlv](/post/read-microsoft-net-sdk)

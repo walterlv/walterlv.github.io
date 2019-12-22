@@ -25,7 +25,7 @@ WPF 的 `Window` 类是不允许设置变换矩阵的。不过，总会有小伙
 
 ![转换对于 Window 无效 - 旋转](/static/posts/2019-09-02-12-23-55.png)
 
-我们在 [WPF 不要给 Window 类设置变换矩阵（分析篇）](/post/analyze-matrix-invert-exception-for-wpf-window.html) 一文中已经证明在 WPF 的 2D 变换中，旋转一定不会造成矩阵不可逆，因此此验证是针对此属性的强验证。
+我们在 [WPF 不要给 Window 类设置变换矩阵（分析篇）](/post/analyze-matrix-invert-exception-for-wpf-window) 一文中已经证明在 WPF 的 2D 变换中，旋转一定不会造成矩阵不可逆，因此此验证是针对此属性的强验证。
 
 只有做设置的变换是恒等变换的时候，才可以完成设置。
 
@@ -57,4 +57,4 @@ scaleTransform.ScaleY = 0.5;
 
 此设置不仅没有效果，还会引发异常，请阅读我的另一篇博客了解：
 
-- [WPF 不要给 Window 类设置变换矩阵（分析篇）：System.InvalidOperationException: 转换不可逆。](/post/analyze-matrix-invert-exception-for-wpf-window.html)
+- [WPF 不要给 Window 类设置变换矩阵（分析篇）：System.InvalidOperationException: 转换不可逆。](/post/analyze-matrix-invert-exception-for-wpf-window)

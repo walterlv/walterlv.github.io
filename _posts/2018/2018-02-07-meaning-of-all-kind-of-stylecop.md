@@ -62,7 +62,7 @@ CA1824|用 NeutralResourcesLanguage 标记程序集|如果程序集中包含资�
 
 编号|名称|含义
 -|-|-
-CA2007|不应该直接 `await` 一个而不调用 `ConfigureAwait`|建议阅读 [在编写异步方法时，使用 ConfigureAwait(false) 避免使用者死锁](/post/using-configure-await-to-avoid-deadlocks.html) 了解这样提示的原因
+CA2007|不应该直接 `await` 一个而不调用 `ConfigureAwait`|建议阅读 [在编写异步方法时，使用 ConfigureAwait(false) 避免使用者死锁](/post/using-configure-await-to-avoid-deadlocks) 了解这样提示的原因
 
 ---
 

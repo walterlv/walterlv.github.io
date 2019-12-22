@@ -13,9 +13,9 @@ Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。
 
 本文是 Roslyn 入门系列之一：
 
-- [Roslyn 入门：使用 Visual Studio 的语法可视化（Syntax Visualizer）窗格查看和了解代码的语法树](/post/roslyn-syntax-visualizer.html)
-- [Roslyn 入门：使用 .NET Core 版本的 Roslyn 编译并执行跨平台的静态的源码](/post/compile-and-invoke-code-using-roslyn.html)
-- [Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码（本文）](/post/analysis-code-of-existed-projects-using-roslyn.html)
+- [Roslyn 入门：使用 Visual Studio 的语法可视化（Syntax Visualizer）窗格查看和了解代码的语法树](/post/roslyn-syntax-visualizer)
+- [Roslyn 入门：使用 .NET Core 版本的 Roslyn 编译并执行跨平台的静态的源码](/post/compile-and-invoke-code-using-roslyn)
+- [Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码（本文）](/post/analysis-code-of-existed-projects-using-roslyn)
 
 如果你希望真实地静态分析一个实际项目，并且理解这样的分析过程是如何进行的（而不只是写个 demo），那么本文的所有内容都将是必要的。
 
@@ -28,7 +28,7 @@ Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。
 ![](/static/posts/2018-03-18-18-51-26.png)  
 ▲ 在 Visual Studio 新建项目，选择“控制台程序(.NET Framework)”
 
-在目前（{% include date.html date=page.date %}），如果我们需要像本文一样分析现有的解决方案和项目，那么 **.NET Framework 是必须的**；如果只是分析单个文件，那么也可以选择 .NET Core，参见 [Roslyn 入门：使用 .NET Core 版本的 Roslyn 编译并执行跨平台的静态的源码](/post/compile-and-invoke-code-using-roslyn.html)。
+在目前（{% include date.html date=page.date %}），如果我们需要像本文一样分析现有的解决方案和项目，那么 **.NET Framework 是必须的**；如果只是分析单个文件，那么也可以选择 .NET Core，参见 [Roslyn 入门：使用 .NET Core 版本的 Roslyn 编译并执行跨平台的静态的源码](/post/compile-and-invoke-code-using-roslyn)。
 
 当然，如果你有一个现成的 .NET Core 项目，可以通过修改 .csproj 文件改成 .NET Framework 的：
 
@@ -52,7 +52,7 @@ Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。
 
 ![Microsoft.CodeAnalysis](/static/posts/2018-03-18-19-00-19.png)
 
-当然，如果你只是做一些特定的事情，当然不需要安装这么全的 NuGet 包，像 [Roslyn 静态分析 - 林德熙](https://blog.lindexi.com/post/Roslyn-%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90.html) 的 demo 和 [Roslyn 编译与执行 - 吕毅](/post/compile-and-invoke-code-using-roslyn.html) 中的教程就不需要安装所有 NuGet 包。
+当然，如果你只是做一些特定的事情，当然不需要安装这么全的 NuGet 包，像 [Roslyn 静态分析 - 林德熙](https://blog.lindexi.com/post/Roslyn-%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90.html) 的 demo 和 [Roslyn 编译与执行 - 吕毅](/post/compile-and-invoke-code-using-roslyn) 中的教程就不需要安装所有 NuGet 包。
 
 **特别注意**！！！如果前面你是通过 .NET Core 项目改过来的，那么**还需要额外安装以下三个 NuGet 包，否则运行时会无法打开解决方案和项目**。
 
@@ -122,7 +122,7 @@ class TypeParameterVisitor : CSharpSyntaxRewriter
 
 其实这段代码就是 `CSharpSyntaxRewriter` 基类中的代码，我把它贴出来可以帮助我们理解它。**你也依然需要将他放入到我们的项目中**，因为我们接下来的代码就开始要使用它了。
 
-如果你想了解更多语法节点，推荐另一篇入门文章：[Roslyn 入门：使用 Visual Studio 的语法可视化（Syntax Visualizer）窗格查看和了解代码的语法树](/post/roslyn-syntax-visualizer.html)。
+如果你想了解更多语法节点，推荐另一篇入门文章：[Roslyn 入门：使用 Visual Studio 的语法可视化（Syntax Visualizer）窗格查看和了解代码的语法树](/post/roslyn-syntax-visualizer)。
 
 ### 访问泛型参数
 

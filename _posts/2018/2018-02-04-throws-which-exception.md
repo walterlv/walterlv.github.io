@@ -4,7 +4,7 @@ date: 2018-02-04 21:25:51 +0800
 categories: dotnet csharp
 ---
 
-我在 [.NET/C# 建议的异常处理原则](/post/suggestions-for-handling-exceptions.html) 中描述了如何 `catch` 异常以及重新 `throw`。然而何时应该 `throw` 异常，以及应该 `throw` 什么异常呢？
+我在 [.NET/C# 建议的异常处理原则](/post/suggestions-for-handling-exceptions) 中描述了如何 `catch` 异常以及重新 `throw`。然而何时应该 `throw` 异常，以及应该 `throw` 什么异常呢？
 
 ---
 
@@ -66,7 +66,7 @@ categories: dotnet csharp
 不应该抛出，却又不得不抛出的异常：
 
 - `NotImplementedException` 这只能说明此功能还在开发中，一旦进入正式环境，不要抛出此异常（如果那时真的没有完成，这个方法就应该删除）
-- `AggregateException` 如果可能，真的不要抛出此异常，因为它本身不包含异常信息，让使用者很难正确 `catch` 这样的异常。如果内部只有一个异常，应该使用 `ExceptionDispatchInfo` 将内部异常合并（请参阅 [使用 ExceptionDispatchInfo 捕捉并重新抛出异常 - 吕毅](/post/exceptiondispatchinfo-capture-throw.html)）（`Task` 在执行多个任务后，如果多个任务都发生了异常，就抛出了 `AggregateException`，但这已经是没有办法的事情了，因为没有办法将两个可能不是同类的异常合并成一个）
+- `AggregateException` 如果可能，真的不要抛出此异常，因为它本身不包含异常信息，让使用者很难正确 `catch` 这样的异常。如果内部只有一个异常，应该使用 `ExceptionDispatchInfo` 将内部异常合并（请参阅 [使用 ExceptionDispatchInfo 捕捉并重新抛出异常 - 吕毅](/post/exceptiondispatchinfo-capture-throw)）（`Task` 在执行多个任务后，如果多个任务都发生了异常，就抛出了 `AggregateException`，但这已经是没有办法的事情了，因为没有办法将两个可能不是同类的异常合并成一个）
 
 永远都不应该抛出异常：
 

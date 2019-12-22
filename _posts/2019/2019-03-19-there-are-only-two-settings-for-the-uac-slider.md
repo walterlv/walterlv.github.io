@@ -61,7 +61,7 @@ Windows Vista 中，确实只有始终通知和关闭 UAC 两个选项，而且�
 
 现在 Windows 10 都发布了很多个版本了，离 UAC 最初引入到 Windows 系统中时已经过去了十多年时间，这么长的时间，足够很多应用兼容 Medium 的权限级别了。
 
-如果你不了解 Medium 权限级别，可以阅读我的另一篇博客：[Windows 中的 UAC 用户账户控制 - 吕毅](/post/windows-user-account-control.html)。
+如果你不了解 Medium 权限级别，可以阅读我的另一篇博客：[Windows 中的 UAC 用户账户控制 - 吕毅](/post/windows-user-account-control)。
 
 即便我们现在选择“始终通知”，也不会比当初 Windows 7 刚刚发布时的通知多了，更不会比当初 Windows Vista 刚刚引入时多。因为应用的 UAC 弹窗少了，而对 Windows 的管理操作也不是经常进行。
 
@@ -76,10 +76,10 @@ Windows Vista 中，确实只有始终通知和关闭 UAC 两个选项，而且�
 
 ## 更多关于 UAC 的博客
 
-- [Windows 中的 UAC 用户账户控制 - 吕毅](/post/windows-user-account-control.html)
-- [应用程序清单 Manifest 中各种 UAC 权限级别的含义和效果 - 吕毅](/post/requested-execution-level-of-application-manifest.html)
-- [在 Windows 系统上降低 UAC 权限运行程序（从管理员权限降权到普通用户权限） - 吕毅](/post/start-process-with-lowered-uac-privileges.html)
-- [Windows 下使用 runas 命令以指定的权限启动一个进程（非管理员、管理员） - 吕毅](/post/start-process-in-a-specific-trust-level.html)
+- [Windows 中的 UAC 用户账户控制 - 吕毅](/post/windows-user-account-control)
+- [应用程序清单 Manifest 中各种 UAC 权限级别的含义和效果 - 吕毅](/post/requested-execution-level-of-application-manifest)
+- [在 Windows 系统上降低 UAC 权限运行程序（从管理员权限降权到普通用户权限） - 吕毅](/post/start-process-with-lowered-uac-privileges)
+- [Windows 下使用 runas 命令以指定的权限启动一个进程（非管理员、管理员） - 吕毅](/post/start-process-in-a-specific-trust-level)
 
 ---
 

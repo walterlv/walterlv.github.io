@@ -29,7 +29,7 @@ position: open
 
 你可以参考我的另一篇博客了解设计这种不确定类型的 API 的时候的一些指导：
 
-- [如何为非常不确定的行为（如并发）设计安全的 API，使用这些 API 时如何确保安全](/post/design-principles-of-uncertain-behavior.html)
+- [如何为非常不确定的行为（如并发）设计安全的 API，使用这些 API 时如何确保安全](/post/design-principles-of-uncertain-behavior)
 
 总结起来就是：
 

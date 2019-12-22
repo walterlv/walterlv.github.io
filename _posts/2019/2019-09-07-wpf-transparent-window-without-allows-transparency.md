@@ -69,7 +69,7 @@ position: knowledge
 
 如果你有留意到我的其他博客，你会发现我定制窗口样式的时候都在极力避开设置此性能极差的属性：
 
-- [WPF 使用 WindowChrome，在自定义窗口标题栏的同时最大程度保留原生窗口样式（类似 UWP/Chrome）](/post/wpf-simulate-native-window-style-using-window-chrome.html)
+- [WPF 使用 WindowChrome，在自定义窗口标题栏的同时最大程度保留原生窗口样式（类似 UWP/Chrome）](/post/wpf-simulate-native-window-style-using-window-chrome)
 
 ## 性能对比
 

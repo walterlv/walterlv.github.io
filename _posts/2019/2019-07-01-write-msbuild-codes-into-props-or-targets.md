@@ -11,13 +11,13 @@ position: principle
 
 如果你不了解 .props 文件或者 .targets 文件，可以阅读下面的博客：
 
-- [理解 C# 项目 csproj 文件格式的本质和编译流程 - walterlv](/post/understand-the-csproj.html)
+- [理解 C# 项目 csproj 文件格式的本质和编译流程 - walterlv](/post/understand-the-csproj)
 
 具体的例子有下面这些博客。不过大概阅读一下就好，这只是 .props 和 .targets 文件的一些应用。文章比较长，你可以考虑稍后阅读。
 
-- [从零开始制作 NuGet 源代码包（全面支持 .NET Core / .NET Framework / WPF 项目） - walterlv](/post/build-source-code-package-for-wpf-projects.html)
-- [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包 - walterlv](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html)
-- [如何创建一个基于命令行工具的跨平台的 NuGet 工具包 - walterlv](/post/create-a-cross-platform-command-based-nuget-tool.html)
+- [从零开始制作 NuGet 源代码包（全面支持 .NET Core / .NET Framework / WPF 项目） - walterlv](/post/build-source-code-package-for-wpf-projects)
+- [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包 - walterlv](/post/create-a-cross-platform-msbuild-task-based-nuget-tool)
+- [如何创建一个基于命令行工具的跨平台的 NuGet 工具包 - walterlv](/post/create-a-cross-platform-command-based-nuget-tool)
 
 当我们创建的 NuGet 包中包含 .props 和 .targets 文件的时候，我们相当于在项目文件 csproj 的两个地方添加了 Import 这些文件的代码。
 

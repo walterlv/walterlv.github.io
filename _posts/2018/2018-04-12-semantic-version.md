@@ -47,7 +47,7 @@ NuGet 4.3.0 以上，并且 Visual Studio 2017 的 15.3 以上版本开始支持
 
 ## 如何在项目中使用语义版本号？
 
-如果你希望方便，在执行 `dotnet build` 或 `dotnet pack` 命令之后能够直接得到使用语义版本号的 NuGet 包，那么你必须拥有一个新格式的 csproj，就是 .NET Core 带来的那种新格式。如果你的格式是旧的，可以阅读我的另一篇文章 [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj](/post/introduce-new-style-csproj-into-net-framework.html) 迁移成新格式。
+如果你希望方便，在执行 `dotnet build` 或 `dotnet pack` 命令之后能够直接得到使用语义版本号的 NuGet 包，那么你必须拥有一个新格式的 csproj，就是 .NET Core 带来的那种新格式。如果你的格式是旧的，可以阅读我的另一篇文章 [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj](/post/introduce-new-style-csproj-into-net-framework) 迁移成新格式。
 
 这样，在 csproj 文件中将版本号写为以下方式即可：
 
@@ -70,9 +70,9 @@ NuGet 4.3.0 以上，并且 Visual Studio 2017 的 15.3 以上版本开始支持
 > msbuild /p:Version=1.6.2-beta
 ```
 
-当然，你还可以使用响应文件来简化参数，详情可阅读我的另一篇博客 [使用 MSBuild 响应文件 (rsp) 来指定 dotnet build 命令行编译时的大量参数](/post/msbuild-response-files.html)。
+当然，你还可以使用响应文件来简化参数，详情可阅读我的另一篇博客 [使用 MSBuild 响应文件 (rsp) 来指定 dotnet build 命令行编译时的大量参数](/post/msbuild-response-files)。
 
-如果希望自动化地在项目中生成语义版本号，可阅读我的另一篇博客 [使用 GitVersion 在编译或持续构建时自动使用语义版本号（Semantic Versioning）](/post/automatically-semantic-versioning-using-git-version-task.html)。
+如果希望自动化地在项目中生成语义版本号，可阅读我的另一篇博客 [使用 GitVersion 在编译或持续构建时自动使用语义版本号（Semantic Versioning）](/post/automatically-semantic-versioning-using-git-version-task)。
 
 ## 如何用 C#/.NET 支持语义版本号？
 

@@ -22,12 +22,12 @@ position: starter
 
 所以如果你不懂或者理不清，则请先阅读：
 
-- [理解 C# 项目 csproj 文件格式的本质和编译流程 - 吕毅](/post/understand-the-csproj.html)
+- [理解 C# 项目 csproj 文件格式的本质和编译流程 - 吕毅](/post/understand-the-csproj)
 
 关于 Task 的理解，我有一些介绍自带 Task 的博客以及如何编写 Task 的教程：
 
-- [如何编写基于 Microsoft.NET.Sdk 的跨平台的 MSBuild Target（附各种自带的 Task） - 吕毅](/post/write-msbuild-target.html)
-- [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包 - 吕毅](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html)
+- [如何编写基于 Microsoft.NET.Sdk 的跨平台的 MSBuild Target（附各种自带的 Task） - 吕毅](/post/write-msbuild-target)
+- [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包 - 吕毅](/post/create-a-cross-platform-msbuild-task-based-nuget-tool)
 
 ## 编写内联的编译任务（Task）
 
@@ -96,4 +96,4 @@ msbuild
 
 阅读我的另一篇博客了解如何编写一个更复杂的内联编译任务：
 
-- [编写 MSBuild 内联编译任务（Task）用于获取当前编译环境下的所有编译目标（Target） - 吕毅](/post/write-a-msbuild-inline-task-for-getting-all-targets.html)
+- [编写 MSBuild 内联编译任务（Task）用于获取当前编译环境下的所有编译目标（Target） - 吕毅](/post/write-a-msbuild-inline-task-for-getting-all-targets)

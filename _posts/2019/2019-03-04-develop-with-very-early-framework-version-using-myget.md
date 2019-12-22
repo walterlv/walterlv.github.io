@@ -18,7 +18,7 @@ position: starter
 
 添加 NuGet 源的方法在我和林德熙的博客中都有说明：
 
-- [全局或为单独的项目添加自定义的 NuGet 源 - 吕毅](/post/add-custom-nuget-source.html)
+- [全局或为单独的项目添加自定义的 NuGet 源 - 吕毅](/post/add-custom-nuget-source)
 - [VisualStudio 给项目添加特殊的 Nuget 的链接 - 林德熙](https://lindexi.gitee.io/post/VisualStudio-%E7%BB%99%E9%A1%B9%E7%9B%AE%E6%B7%BB%E5%8A%A0%E7%89%B9%E6%AE%8A%E7%9A%84-Nuget-%E7%9A%84%E9%93%BE%E6%8E%A5.html)
 
 简单点，就是在 Visual Studio 中打开 `工具` -> `选项` -> `NuGet 包管理器` -> `包源`：
@@ -29,7 +29,7 @@ position: starter
 
 - <https://dotnet.myget.org/F/dotnet-core/api/v3/index.json>
 
-如果你想添加其他的 NuGet 源，可以参见我的另一篇博客：[我收集的各种公有 NuGet 源 - 吕毅](/post/public-nuget-sources.html)。
+如果你想添加其他的 NuGet 源，可以参见我的另一篇博客：[我收集的各种公有 NuGet 源 - 吕毅](/post/public-nuget-sources)。
 
 ## 使用 .NET Standard 的预览版本
 
@@ -47,8 +47,8 @@ position: starter
 
 然而，如果你直接把 `TargetFramework` 中的值改为预览版本，是无法使用的。因为 `TargetFramework` 的匹配是按照字符串来匹配的，并不会解析成库和版本号。关于这一点可以如何得知的，可以参考我的另一篇博客（中英双语）：
 
-- [解读 Microsoft.NET.Sdk 的源码，你能定制各种奇怪而富有创意的编译过程 - 吕毅](/post/read-microsoft-net-sdk.html)
-- [Reading the Source Code of Microsoft.NET.Sdk, Writing the Creative Extension of Compiling - walterlv](/post/read-microsoft-net-sdk-en.html)
+- [解读 Microsoft.NET.Sdk 的源码，你能定制各种奇怪而富有创意的编译过程 - 吕毅](/post/read-microsoft-net-sdk)
+- [Reading the Source Code of Microsoft.NET.Sdk, Writing the Creative Extension of Compiling - walterlv](/post/read-microsoft-net-sdk-en)
 
 然而实际上的使用方法很简单，就是直接用正常的方法安装对应的 NuGet 包：
 

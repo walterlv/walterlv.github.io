@@ -189,11 +189,11 @@ AppDomain.CurrentDomain.AppendPrivatePath(folder);
 
 关于使用 ILRepack 合并依赖的内容，可以阅读我的另一篇博客：
 
-- [.NET 使用 ILRepack 合并多个程序集（替代 ILMerge），避免引入额外的依赖 - walterlv](/post/merge-assemblies-using-ilrepack.html)
+- [.NET 使用 ILRepack 合并多个程序集（替代 ILMerge），避免引入额外的依赖 - walterlv](/post/merge-assemblies-using-ilrepack)
 
 首先推荐使用 ILRepack 来进行合并，如果你愿意，也可以使用 ILMerge：
 
-- [.NET 使用 ILMerge 合并多个程序集，避免引入额外的依赖](/post/merge-assemblies-using-ilmerge.html)
+- [.NET 使用 ILMerge 合并多个程序集，避免引入额外的依赖](/post/merge-assemblies-using-ilmerge)
 
 ![使用 ILMerge 合并依赖](/static/posts/2019-06-12-16-05-44.png)
 

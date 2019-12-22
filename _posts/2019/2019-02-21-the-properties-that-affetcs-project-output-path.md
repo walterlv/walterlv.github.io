@@ -31,7 +31,7 @@ position: knowledge
 
 有没有办法可以不要生成这样的子文件夹呢？答案是可以的。
 
-我在 [解读 Microsoft.NET.Sdk 的源码，你能定制各种奇怪而富有创意的编译过程](/post/read-microsoft-net-sdk.html) 一文中有说到如何解读 Microsoft.NET.Sdk，而我们的答案就是从解读这个 Sdk 而来。
+我在 [解读 Microsoft.NET.Sdk 的源码，你能定制各种奇怪而富有创意的编译过程](/post/read-microsoft-net-sdk) 一文中有说到如何解读 Microsoft.NET.Sdk，而我们的答案就是从解读这个 Sdk 而来。
 
 ## 影响输出路径的属性
 

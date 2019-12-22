@@ -11,8 +11,8 @@ categories: visualstudio nuget csharp dotnet msbuild
 
 “项目文件中的已知属性系列”分为两个部分：
 
-- [项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - 吕毅](/post/known-properties-in-csproj.html)
-- 本文：[项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅](/post/known-nuget-properties-in-csproj.html)
+- [项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - 吕毅](/post/known-properties-in-csproj)
+- 本文：[项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅](/post/known-nuget-properties-in-csproj)
 
 NuGet 相关的属性也分为全局属性和项属性两类。不过，我更愿意分成三类来说明：
 
@@ -37,7 +37,7 @@ NuGet 相关的属性也分为全局属性和项属性两类。不过，我更�
 不过我们通常没有这么直接去设置，因为大多数属性都是有默认值的，如果不设置，将自动使用默认值。甚至什么都不写也能生成正确的 nuspec 文件。
 
 - `$(PackageId)`: NuGet 包的唯一 Id，对应 NuGet 的 Id 属性。这个 Id 需要在整个服务器（例如 nuget.org）上唯一，如果没设置，则使用 `$(AssemblyName)`；例如 `Newtonsoft.Json`。
-- `$(PackageVersion)`: NuGet 包的包版本，可以使用语义版本号（参见[语义版本号（Semantic Versioning） - 吕毅](/post/semantic-version.html)），如果没设置，则使用 `$(Version)`；例如 `3.2.0-beta`。
+- `$(PackageVersion)`: NuGet 包的包版本，可以使用语义版本号（参见[语义版本号（Semantic Versioning） - 吕毅](/post/semantic-version)），如果没设置，则使用 `$(Version)`；例如 `3.2.0-beta`。
 - `$(PackageVersionPrefix)`: 包版本前缀，默认为空。
 - `$(PackageVersionSuffix)`: 包版本后缀，默认为空。
 - `$(Authors)`: 包的作者；建议指定成在 nuget.org 上的用户名，这样访客可以点击包作者查看到包作者的信息；多个名字用分号分隔。
@@ -111,7 +111,7 @@ NuGet 相关的属性也分为全局属性和项属性两类。不过，我更�
 </Project>
 ```
 
-其中，`DevelopmentDependency` 的设置可参见：[帮助官方 NuGet 解掉 Bug，制作绝对不会传递依赖的 NuGet 包 - walterlv](/post/prevent-nuget-package-been-depended.html)。
+其中，`DevelopmentDependency` 的设置可参见：[帮助官方 NuGet 解掉 Bug，制作绝对不会传递依赖的 NuGet 包 - walterlv](/post/prevent-nuget-package-been-depended)。
 
 以上没有设置值和注释的属性，我正在查阅资料。
 
@@ -172,7 +172,7 @@ NuGet 相关的属性也分为全局属性和项属性两类。不过，我更�
 <PackageReference Update="@(PackageReference)" PrivateAssets="All" />
 ```
 
-如果你希望了解 `Reference` `PackageReference` 以及上面 `@` 的含义，可以阅读我的另一篇文章：[理解 C# 项目 csproj 文件格式的本质和编译流程 - walterlv](/post/understand-the-csproj.html)。
+如果你希望了解 `Reference` `PackageReference` 以及上面 `@` 的含义，可以阅读我的另一篇文章：[理解 C# 项目 csproj 文件格式的本质和编译流程 - walterlv](/post/understand-the-csproj)。
 
 ## 可能没有开放的内部属性
 

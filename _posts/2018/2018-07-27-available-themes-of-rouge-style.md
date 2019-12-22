@@ -34,7 +34,7 @@ Rouge 支持的语言可以前往此处查看：[Rouge](http://rouge.jneen.net/)
 
 当然，以上配置只是告诉 kramdown 转换引擎在转换 Markdown 为 HTML 的时候，使用 rouge 格式的样式（具体只语法高亮所用的 css 的 class）。我们需要另外使用 rougify 工具生成对应的样式文件才行。
 
-你需要先配好 Ruby 环境。如果没有配好，推荐阅读 [快速在 Windows 上搭建 Jekyll 开发环境](/post/setup-jekyll-in-windows.html) 快速配置。
+你需要先配好 Ruby 环境。如果没有配好，推荐阅读 [快速在 Windows 上搭建 Jekyll 开发环境](/post/setup-jekyll-in-windows) 快速配置。
 
 随后，你便可以使用命令来安装 Rouge。
 

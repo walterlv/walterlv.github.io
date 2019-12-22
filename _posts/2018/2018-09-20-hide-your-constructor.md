@@ -119,5 +119,5 @@ Console.WriteLine(full);
 
 关于运算符重载的更多内容，可以参考我的另外两篇文章：
 
-- [C# 中那些可以被重载的操作符，以及使用它们的那些丧心病狂的语法糖 - walterlv](/post/overridable-operators-in-csharp.html)
-- [C# 空合并操作符（??）不可重载？其实有黑科技可以间接重载！ - walterlv](/post/overload-null-coalescing-operator-in-csharp.html)
+- [C# 中那些可以被重载的操作符，以及使用它们的那些丧心病狂的语法糖 - walterlv](/post/overridable-operators-in-csharp)
+- [C# 空合并操作符（??）不可重载？其实有黑科技可以间接重载！ - walterlv](/post/overload-null-coalescing-operator-in-csharp)

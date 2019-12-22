@@ -45,7 +45,7 @@ position: starter
 
 比如我之前写过自己可以做一个工具包，在编译期间会执行一些代码：
 
-- [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html)
+- [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包](/post/create-a-cross-platform-msbuild-task-based-nuget-tool)
 
 ### IO 瓶颈
 

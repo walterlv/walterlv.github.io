@@ -16,7 +16,7 @@ C# 8.0 引入了可为空引用类型和不可为空引用类型。由于这是�
 
 ## 使用 Sdk 风格的项目文件
 
-如果你还在使用旧的项目文件，请先升级成 Sdk 风格的项目文件：[将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj - 吕毅](/post/introduce-new-style-csproj-into-net-framework.html)。
+如果你还在使用旧的项目文件，请先升级成 Sdk 风格的项目文件：[将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj - 吕毅](/post/introduce-new-style-csproj-into-net-framework)。
 
 本文会示例一个项目文件。
 
@@ -91,8 +91,8 @@ C# 8.0 引入了可为空引用类型和不可为空引用类型。由于这是�
 
 详见：
 
-- [C# 可空引用类型 NullableReferenceTypes 更强制的约束：将警告改为错误 WarningsAsErrors - walterlv](/post/warning-as-errors-for-csharp-nullable-reference-types.html)
-- [C# 8.0 可空引用类型中的各项警告/错误的含义和示例代码 - walterlv](/post/nullable-context-options-warnings.html)
+- [C# 可空引用类型 NullableReferenceTypes 更强制的约束：将警告改为错误 WarningsAsErrors - walterlv](/post/warning-as-errors-for-csharp-nullable-reference-types)
+- [C# 8.0 可空引用类型中的各项警告/错误的含义和示例代码 - walterlv](/post/nullable-context-options-warnings)
 
 ### 可为空注释（Annotation）上下文
 

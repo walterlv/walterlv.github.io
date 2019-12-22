@@ -118,7 +118,7 @@ $ git push
 
 ## 使用 Windows 10 四月更新的特性（推荐）
 
-我在 [Windows 10 四月更新，文件夹名称也能区分大小写？](/post/case-sensitive-in-windows-file-system.html) 一文中提到可以使用 `fsutil.exe file SetCaseSensitiveInfo` 使某个特定的文件夹支持区分大小写。
+我在 [Windows 10 四月更新，文件夹名称也能区分大小写？](/post/case-sensitive-in-windows-file-system) 一文中提到可以使用 `fsutil.exe file SetCaseSensitiveInfo` 使某个特定的文件夹支持区分大小写。
 
 经过尝试，使用此方法后，git 能够支持一次提交完美解决仅大小写的文件夹改名问题，完全不用管 git 的某种配置或其他任何因素。
 
@@ -134,7 +134,7 @@ $ git push
 
 随后，你可以像一般重命名一样去修改文件夹名称，然后像普通提交一样去 git commit。直接能生成一个仅修改文件夹名称大小写的新提交。
 
-如果你在执行以上命令时出现了问题，请移步至 [Windows 10 四月更新，文件夹名称也能区分大小写？](/post/case-sensitive-in-windows-file-system.html) 统一寻找解决方法。
+如果你在执行以上命令时出现了问题，请移步至 [Windows 10 四月更新，文件夹名称也能区分大小写？](/post/case-sensitive-in-windows-file-system) 统一寻找解决方法。
 
 ---
 

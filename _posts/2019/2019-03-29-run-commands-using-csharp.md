@@ -53,7 +53,7 @@ var info = new ProcessStartInfo(ExecutablePath, arguments)
 - `WorkingDirectory` 设置工作路径
     - 本来这是一个可选设置，不过对于 `git` 命令来说，一般都是对一个已有的 git 仓库进行操作，所以当然要指定一个合理的 git 仓库了。
 - `UseShellExecute` 设置为 `false` 表示不要使用 `ShellExecute` 函数创建进程
-    - 此属性的详细说明，请阅读我的另一篇博客：[ProcessStartInfo 中的 UseShellExecute - 吕毅](/post/use-shell-execute-in-process-start-info.html)。
+    - 此属性的详细说明，请阅读我的另一篇博客：[ProcessStartInfo 中的 UseShellExecute - 吕毅](/post/use-shell-execute-in-process-start-info)。
     - 这里我们必须指定为 `false`，因为要重定向输出的话，这是唯一有效值。顺便一提，此属性如果不设置，默认值是 `true`。
 
 ## CommandRunner

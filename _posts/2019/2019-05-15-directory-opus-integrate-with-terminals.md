@@ -17,7 +17,7 @@ position: starter
 
 如果你是从下面这篇文章阅读过来的，那么你现在应该正好已经打开了一个命令编辑器：
 
-- [在 Directory Opus 中添加自定义的工具栏按钮提升效率](/post/directory-opus-custom-toolbar-buttons.html)
+- [在 Directory Opus 中添加自定义的工具栏按钮提升效率](/post/directory-opus-custom-toolbar-buttons)
 
 如果你并没有打开命令编辑器，那么可以再阅读上面这篇文章打开一个。
 
@@ -25,7 +25,7 @@ position: starter
 
 ## 添加三个终端命令
 
-请参考 [Directory Opus 使用命令编辑器集成 TortoiseGit 的各种功能](/post/directory-opus-integrate-with-tortoise-git.html) 一文中添加自定义按钮的方法，同样地添加另外的三个按钮。这里，我将三个不同终端的添加参数放到了下面，你可以参考添加：
+请参考 [Directory Opus 使用命令编辑器集成 TortoiseGit 的各种功能](/post/directory-opus-integrate-with-tortoise-git) 一文中添加自定义按钮的方法，同样地添加另外的三个按钮。这里，我将三个不同终端的添加参数放到了下面，你可以参考添加：
 
 ### PowerShell Core
 
@@ -83,7 +83,7 @@ position: starter
 
 关于命令设置的详细细节，可以继续阅读我的另一篇博客：
 
-- [Directory Opus 使用命令编辑器集成 TortoiseGit 的各种功能](/post/directory-opus-integrate-with-tortoise-git.html)
+- [Directory Opus 使用命令编辑器集成 TortoiseGit 的各种功能](/post/directory-opus-integrate-with-tortoise-git)
 
 最后，在自定义完按钮之后，不要忘了关闭最开始弹出来的“自定义工具栏”的对话框。
 

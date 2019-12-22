@@ -24,7 +24,7 @@ Roslyn 是 .NET 平台下十分强大的编译器，其提供的 API 也非常�
 
 ![Visual Studio 扩展开发](/static/posts/2019-07-05-20-23-39.png)
 
-- [如何安装和准备 Visual Studio 扩展/插件开发环境](/post/how-to-prepare-visual-studio-extension-development-environment.html)
+- [如何安装和准备 Visual Studio 扩展/插件开发环境](/post/how-to-prepare-visual-studio-extension-development-environment)
 
 ### 创建一个分析器项目
 

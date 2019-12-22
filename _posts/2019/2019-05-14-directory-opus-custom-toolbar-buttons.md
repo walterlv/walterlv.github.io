@@ -56,8 +56,8 @@ Directory Opus 自定义的工具栏按钮可以执行非常复杂的命令，�
 
 接下来我会通过两个示例来说明如何使用这个命令编辑器。
 
-1. [Directory Opus 使用命令编辑器集成 TortoiseGit 的各种功能](/post/directory-opus-integrate-with-tortoise-git.html)
-1. [Directory Opus 使用命令编辑器添加 PowerShell / CMD / Bash 等多种终端到自定义菜单](/post/directory-opus-integrate-with-terminals.html)
+1. [Directory Opus 使用命令编辑器集成 TortoiseGit 的各种功能](/post/directory-opus-integrate-with-tortoise-git)
+1. [Directory Opus 使用命令编辑器添加 PowerShell / CMD / Bash 等多种终端到自定义菜单](/post/directory-opus-integrate-with-terminals)
 
 在自定义完按钮之后，不要忘了关闭最开始弹出来的“自定义工具栏”的对话框。
 

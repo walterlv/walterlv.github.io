@@ -200,7 +200,7 @@ DoAsync();
 
 ## 此死锁的原因
 
-WPF / UWP 等 UI 线程会使用 `DispatcherSynchronizationContext` 作为线程同步上下文，我在 [出让执行权：Task.Yield, Dispatcher.Yield - walterlv](/post/yield-in-task-dispatcher.html) 一问中有说到它的原理。
+WPF / UWP 等 UI 线程会使用 `DispatcherSynchronizationContext` 作为线程同步上下文，我在 [出让执行权：Task.Yield, Dispatcher.Yield - walterlv](/post/yield-in-task-dispatcher) 一问中有说到它的原理。
 
 在 `await` 等待完成之后，会调用 `BeginInvoke` 回到 UI 线程。然而，此时 UI 线程正卡死在 `_resetEvent.WaitOne();`，于是根本没有办法执行 `BeginInvoke` 中的操作，也就是 `await` 之后的代码。然而释放锁的代码 `_resetEvent.Set();` 就在 `await` 之后，所以不会执行，于是死锁。
 
@@ -208,12 +208,12 @@ WPF / UWP 等 UI 线程会使用 `DispatcherSynchronizationContext` 作为线程
 
 死锁问题：
 
-- [使用 Task.Wait()？立刻死锁（deadlock） - walterlv](/post/deadlock-in-task-wait.html)
-- [不要使用 Dispatcher.Invoke，因为它可能在你的延迟初始化 `Lazy<T>` 中导致死锁 - walterlv](/post/deadlock-of-invoke-in-lazy.html)
-- [在有 UI 线程参与的同步锁（如 AutoResetEvent）内部使用 await 可能导致死锁](/post/deadlock-if-await-in-ui-lock-context.html)
-- [.NET 中小心嵌套等待的 Task，它可能会耗尽你线程池的现有资源，出现类似死锁的情况 - walterlv](/post/task-wait-may-cause-long-time-waiting.html)
+- [使用 Task.Wait()？立刻死锁（deadlock） - walterlv](/post/deadlock-in-task-wait)
+- [不要使用 Dispatcher.Invoke，因为它可能在你的延迟初始化 `Lazy<T>` 中导致死锁 - walterlv](/post/deadlock-of-invoke-in-lazy)
+- [在有 UI 线程参与的同步锁（如 AutoResetEvent）内部使用 await 可能导致死锁](/post/deadlock-if-await-in-ui-lock-context)
+- [.NET 中小心嵌套等待的 Task，它可能会耗尽你线程池的现有资源，出现类似死锁的情况 - walterlv](/post/task-wait-may-cause-long-time-waiting)
 
 解决方法：
 
-- [在编写异步方法时，使用 ConfigureAwait(false) 避免使用者死锁 - walterlv](/post/using-configure-await-to-avoid-deadlocks.html)
-- [将 async/await 异步代码转换为安全的不会死锁的同步代码（使用 PushFrame） - walterlv](/post/convert-async-to-sync-by-push-frame.html)
+- [在编写异步方法时，使用 ConfigureAwait(false) 避免使用者死锁 - walterlv](/post/using-configure-await-to-avoid-deadlocks)
+- [将 async/await 异步代码转换为安全的不会死锁的同步代码（使用 PushFrame） - walterlv](/post/convert-async-to-sync-by-push-frame)

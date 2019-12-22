@@ -207,7 +207,7 @@ private void OnStylusDown(object sender, StylusDownEventArgs e)
 这种实现方式也带来了一些问题：
 
 1. 调用代码被虽然被阻塞，但又不像常规线程阻塞一样 —— 它会发生 “意料之外” 的重入问题，即单个线程也会遇到并发问题。
-    - 关于重入，可以阅读：[异步任务中的重新进入（Reentrancy）](/post/reentrancy-in-async-method.html)
+    - 关于重入，可以阅读：[异步任务中的重新进入（Reentrancy）](/post/reentrancy-in-async-method)
 1. `PushFrame` 使用 Windows 消息循环机制，而多重消息循环机制可能出现其他 Bug，例如：
     - 当你在用鼠标拖拽窗口调整位置或大小的时候，如果触发了一次 `PushFrame`，那么此窗口会卡住
         - [c# - PushFrame locks up WPF window when user is moving window - Stack Overflow](https://stackoverflow.com/q/19411613/6233938)

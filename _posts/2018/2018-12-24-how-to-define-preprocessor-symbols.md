@@ -14,8 +14,8 @@ position: starter
 
 对于新旧格式的差别或者迁移，可以查看我的其他博客：
 
-- [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj.html)
-- [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj](/post/introduce-new-style-csproj-into-net-framework.html)
+- [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj)
+- [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj](/post/introduce-new-style-csproj-into-net-framework)
 
 <div id="toc"></div>
 

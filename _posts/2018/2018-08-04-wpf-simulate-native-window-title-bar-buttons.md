@@ -11,7 +11,7 @@ WPF 自定义窗口样式有多种方式，不过基本核心实现都是在修�
 
 ---
 
-在 [WPF 使用 WindowChrome，在自定义窗口标题栏的同时最大程度保留原生窗口样式（类似 UWP/Chrome）](/post/wpf-simulate-native-window-style-using-window-chrome.html) 一文中，我使用 WindowChrome 尽可能将 Windows 原生的窗口机制都用上了，试图完全模拟原生窗口的样式。不过，如果自定义了窗口的背景色，那么标题栏那三大金刚键的背景就显得很突兀。
+在 [WPF 使用 WindowChrome，在自定义窗口标题栏的同时最大程度保留原生窗口样式（类似 UWP/Chrome）](/post/wpf-simulate-native-window-style-using-window-chrome) 一文中，我使用 WindowChrome 尽可能将 Windows 原生的窗口机制都用上了，试图完全模拟原生窗口的样式。不过，如果自定义了窗口的背景色，那么标题栏那三大金刚键的背景就显得很突兀。
 
 由于 Win32 原生的方法顶多只支持修改标题栏按钮的背景色，而不支持让标题栏按钮全透明，所以我们只能完全由自己来实现这三个按钮的功能了。
 

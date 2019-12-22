@@ -24,7 +24,7 @@ position: starter
 
 1. 安装调试工具：Mac 部分 [Xamarin开发(Mac开发)环境搭建 - 简书](https://www.jianshu.com/p/abb9ae9df631)
 1. 安装调试工具：Windows 部分 [vs2017开发IOS（vs2017 xamarin 连接mac） - ManGo.XYZ - CSDN博客](https://blog.csdn.net/qq756288646/article/details/78967532)
-1. 申请开发者账号：<https://developer.apple.com/register/>，[阅读这里了解坑](/post/tips-for-developing-xamarin-ios-app.html)
+1. 申请开发者账号：<https://developer.apple.com/register/>，[阅读这里了解坑](/post/tips-for-developing-xamarin-ios-app)
 1. 准备一根 Type-C 到 Lightning 的数据线，用于 Mac 从 Mac 部署到真机进行调试
 
 ## 你需要了解的 iOS 键盘扩展的背景知识
@@ -121,7 +121,7 @@ iOS 应用的包信息存储在 plist 中。所以在这一节，你需要正确
 
 本文不会花篇幅来讲如何真机部署调试，不然这篇文章就没有重点。
 
-但是你可以阅读：[使用 Xamarin 在 iOS 真机上部署应用进行调试](/post/deploy-and-debug-ios-app-using-xamarin.html)
+但是你可以阅读：[使用 Xamarin 在 iOS 真机上部署应用进行调试](/post/deploy-and-debug-ios-app-using-xamarin)
 
 当然这是 Mac 版本的（毕竟我在 Windows 上实际也没有成功真机调试过，我是 git 同步到 Mac 上用 Visual Studio for Mac 来真机调试的）。
 
@@ -260,7 +260,7 @@ public enum UIReturnKeyType : long
 
 如果你还遇到了一些其他诡异的问题：
 
-- 欢迎阅读 [使用 Xamarin 开发 iOS 应用中需要注意的若干个问题](/post/tips-for-developing-xamarin-ios-app.html)。
+- 欢迎阅读 [使用 Xamarin 开发 iOS 应用中需要注意的若干个问题](/post/tips-for-developing-xamarin-ios-app)。
 - 欢迎在评论区评论或者向我发邮件。
 
 ---

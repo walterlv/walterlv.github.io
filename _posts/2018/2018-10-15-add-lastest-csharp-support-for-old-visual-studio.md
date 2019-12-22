@@ -19,7 +19,7 @@ Visual Studio 每一次的重大发布都带来新的 C# 版本（至少在 Visu
 
 你可以阅读另一篇文章了解不同 Visual Studio 版本原生带来的 C# 版本。
 
-[各个 C# 版本的主要特性、发布日期和发布方式（C# 1.0 - 7.3） - 吕毅](/post/csharp-version-histories.html)
+[各个 C# 版本的主要特性、发布日期和发布方式（C# 1.0 - 7.3） - 吕毅](/post/csharp-version-histories)
 
 ## 引入 Microsoft.Net.Compilers
 

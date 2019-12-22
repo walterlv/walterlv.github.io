@@ -11,7 +11,7 @@ categories: xaml wpf
 
 ---
 
-*UWP 的圆形裁剪请左转参考*：[UWP 将图片裁剪成圆形（椭圆）](/post/clip-uwp-image-to-ellipse.html)。
+*UWP 的圆形裁剪请左转参考*：[UWP 将图片裁剪成圆形（椭圆）](/post/clip-uwp-image-to-ellipse)。
 
 WPF 的 `UIElement` 提供了 `Clip` 依赖项属性，可以使用一个 `Geometry` 来裁剪任意的 `UIElement`。由于 `Geometry` 几乎可以表示任意形状，这意味着我们可以才建成任意想要的样子。
 

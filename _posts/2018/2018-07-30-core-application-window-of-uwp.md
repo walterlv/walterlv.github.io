@@ -56,7 +56,7 @@ StackOverflow 上的地址：[c# - CoreApplicationView vs CoreWindow vs Applicat
 ![UWP 应用视图](/static/posts/2018-07-27-08-37-42.png)  
 ▲ UWP 应用视图
 
-在 [让 UWP 应用显示多个窗口（多视图）](/post/show-multiple-views-for-an-uwp-app.html) 一文中，由于一个应用对应多个视图，所以可以更容易地理解它们之间的关系。
+在 [让 UWP 应用显示多个窗口（多视图）](/post/show-multiple-views-for-an-uwp-app) 一文中，由于一个应用对应多个视图，所以可以更容易地理解它们之间的关系。
 
 `CoreWindow` 就是我们所理解的窗口。为了方便使用，`Windows.UI.XAML.Window` 类型封装了这个 `CoreWindow`。`CoreDispatcher` 是基于消息循环的线程调度模型，正是因为有了消息循环，所以此窗口才能一直显示而不被销毁。
 
@@ -74,9 +74,9 @@ StackOverflow 上的地址：[c# - CoreApplicationView vs CoreWindow vs Applicat
 
 我有另外一些文章用到了这些概念：
 
-- [从零开始创建一个 UWP 程序](/post/create-uwp-app-from-zero-1.html)
-- [让 UWP 应用显示多个窗口（多视图）](/post/show-multiple-views-for-an-uwp-app.html)
-- [UWP 扩展/自定义标题栏](/post/tips-for-customize-uwp-title-bar.html)
+- [从零开始创建一个 UWP 程序](/post/create-uwp-app-from-zero-1)
+- [让 UWP 应用显示多个窗口（多视图）](/post/show-multiple-views-for-an-uwp-app)
+- [UWP 扩展/自定义标题栏](/post/tips-for-customize-uwp-title-bar)
 
 ---
 

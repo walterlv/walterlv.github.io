@@ -58,7 +58,7 @@ pwsh -NoExit -c "nuget push *.0.8.0-alpha.nupkg -Source https://api.nuget.org/v3
 
 关于使用 PowerShell 间接执行命令的更多细节，可以参考我的另一篇博客：
 
-- [PowerShell 的命令行启动参数（可用于执行命令、传参或进行环境配置） - walterlv](/post/powershell-startup-arguments.html)
+- [PowerShell 的命令行启动参数（可用于执行命令、传参或进行环境配置） - walterlv](/post/powershell-startup-arguments)
 
 ## 集成到 Directory Opus
 
@@ -68,7 +68,7 @@ pwsh -NoExit -c "nuget push *.0.8.0-alpha.nupkg -Source https://api.nuget.org/v3
 
 关于使用 Directory Opus 继承工具栏按钮的细节，可以阅读我的另一篇博客：
 
-- [在 Directory Opus 中添加自定义的工具栏按钮提升效率 - walterlv](/post/directory-opus-custom-toolbar-buttons.html)
+- [在 Directory Opus 中添加自定义的工具栏按钮提升效率 - walterlv](/post/directory-opus-custom-toolbar-buttons)
 
 具体来说，就是安装上文中所述的方法添加一个按钮，在按钮当中需要执行的脚本如下：
 

@@ -90,7 +90,7 @@ Visual Studio 原生支持 `Visible` 属性用来控制某一项文件是否在 
 
 比较复杂的情况可能比如：
 
-- [制作跨平台的 NuGet 源码包，安装后就像直接把源码放进项目一样](/post/the-simplest-way-to-pack-a-source-code-nuget-package.html)
+- [制作跨平台的 NuGet 源码包，安装后就像直接把源码放进项目一样](/post/the-simplest-way-to-pack-a-source-code-nuget-package)
 - 需要额外为项目准备一些辅助运行的必要文件
 
 ---

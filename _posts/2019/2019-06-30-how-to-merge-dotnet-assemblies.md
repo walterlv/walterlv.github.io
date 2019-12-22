@@ -143,8 +143,8 @@ namespace Walterlv.Demo
 
 关于能够做出源代码包的原理，可以阅读我的博客：
 
-- 入门篇：[将 .NET Core 项目打一个最简单的 NuGet 源码包，安装此包就像直接把源码放进项目一样](/post/the-simplest-way-to-pack-a-source-code-nuget-package.html)
-- 进阶篇：[从零开始制作 NuGet 源代码包（全面支持 .NET Core / .NET Framework / WPF 项目）](/post/build-source-code-package-for-wpf-projects.html)
+- 入门篇：[将 .NET Core 项目打一个最简单的 NuGet 源码包，安装此包就像直接把源码放进项目一样](/post/the-simplest-way-to-pack-a-source-code-nuget-package)
+- 进阶篇：[从零开始制作 NuGet 源代码包（全面支持 .NET Core / .NET Framework / WPF 项目）](/post/build-source-code-package-for-wpf-projects)
 
 SourceYard 在 GitHub 上开源：
 
@@ -164,13 +164,13 @@ ILMerge 命令行工具是微软官方出品，下载地址：
 
 其使用方法请参见我的博客：
 
-- [.NET 使用 ILMerge 合并多个程序集，避免引入额外的依赖 - walterlv](/post/merge-assemblies-using-ilmerge.html)
+- [.NET 使用 ILMerge 合并多个程序集，避免引入额外的依赖 - walterlv](/post/merge-assemblies-using-ilmerge)
 
 #### ILRepack
 
 ILRepack 基于 Mono.Ceil 来进行 IL 合并，其使用方法可以参见我的博客：
 
-- [.NET 使用 ILRepack 合并多个程序集（替代 ILMerge），避免引入额外的依赖 - walterlv](/post/merge-assemblies-using-ilrepack.html)
+- [.NET 使用 ILRepack 合并多个程序集（替代 ILMerge），避免引入额外的依赖 - walterlv](/post/merge-assemblies-using-ilrepack)
 
 #### ILMerge-GUI 工具（已过时，但适合新手随便玩玩）
 

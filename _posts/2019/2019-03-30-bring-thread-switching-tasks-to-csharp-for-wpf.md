@@ -89,9 +89,9 @@ DoSomething();
 
 关于如何编写一个 Awaiter，可以阅读我的其他博客：
 
-- [定义一组抽象的 Awaiter 的实现接口，你下次写自己的 await 可等待对象时将更加方便 - 吕毅](/post/abstract-awaitable-and-awaiter.html)
-- [.NET 中什么样的类是可使用 await 异步等待的？ - 吕毅](/post/what-is-an-awaiter.html)
-- [.NET 除了用 Task 之外，如何自己写一个可以 await 的对象？ - 吕毅](/post/understand-and-write-custom-awaiter.html)
+- [定义一组抽象的 Awaiter 的实现接口，你下次写自己的 await 可等待对象时将更加方便 - 吕毅](/post/abstract-awaitable-and-awaiter)
+- [.NET 中什么样的类是可使用 await 异步等待的？ - 吕毅](/post/what-is-an-awaiter)
+- [.NET 除了用 Task 之外，如何自己写一个可以 await 的对象？ - 吕毅](/post/understand-and-write-custom-awaiter)
 
 这里，我直接贴出我编写的 `DispatcherSwitcher` 类的全部源码。
 

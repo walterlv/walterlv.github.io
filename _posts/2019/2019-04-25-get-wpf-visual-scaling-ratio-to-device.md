@@ -36,7 +36,7 @@ position: knowledge
 
 你可以阅读我的另一篇博客了解到有效像素单位：
 
-- [将 UWP 的有效像素（Effective Pixels）引入 WPF](/post/introduce-uwp-effective-pixels-into-wpf.html)
+- [将 UWP 的有效像素（Effective Pixels）引入 WPF](/post/introduce-uwp-effective-pixels-into-wpf)
 
 有效像素主要就是考虑了 DPI 缩放。于是实际上我们就是在计算 DPI 缩放。
 
@@ -48,7 +48,7 @@ var matrix = ct == null ? Matrix.Identity : ct.TransformToDevice;
 
 这里，我们使用的是 `PresentationSource.FromVisual(visual)?.CompositionTarget` 因为不同屏幕可能存在不同的 DPI。
 
-- [支持 Windows 10 最新 PerMonitorV2 特性的 WPF 多屏高 DPI 应用开发](/post/windows-high-dpi-development-for-wpf.html)
+- [支持 Windows 10 最新 PerMonitorV2 特性的 WPF 多屏高 DPI 应用开发](/post/windows-high-dpi-development-for-wpf)
 
 ### WPF 窗口内部的缩放
 

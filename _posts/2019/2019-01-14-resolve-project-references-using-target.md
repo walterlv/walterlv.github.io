@@ -29,7 +29,7 @@ position: knowledge
     - 比如引用了 System.Xaml，那么这里就会是 System.Xaml
 1. 如果引用是通过 ProjectReference 进行的项目引用，那么这里就没有目标项目的 dll
 
-所以，我们需要一个新的属性来查找引用的 dll。通过 [研究 Microsoft.NET.Sdk 的源码](/post/read-microsoft-net-sdk.html)，我发现有 `ReferencePath` 属性可以使用，于是将 Target 改为这样：
+所以，我们需要一个新的属性来查找引用的 dll。通过 [研究 Microsoft.NET.Sdk 的源码](/post/read-microsoft-net-sdk)，我发现有 `ReferencePath` 属性可以使用，于是将 Target 改为这样：
 
 ```xml
 <Target Name="WalterlvDemoTarget" BeforeTargets="CoreCompile;ResolveAssemblyReference">
@@ -187,7 +187,7 @@ C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4
 
 ## 解读原因
 
-解析引用的 dll 的路径的 Task 是 `ResolveAssemblyReference`，你可以在 [Microsoft.NET.Sdk 文件夹](/post/read-microsoft-net-sdk.html) 中找到它。如果想知道 Task 是什么意思，可以阅读：[理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj.html)。
+解析引用的 dll 的路径的 Task 是 `ResolveAssemblyReference`，你可以在 [Microsoft.NET.Sdk 文件夹](/post/read-microsoft-net-sdk) 中找到它。如果想知道 Task 是什么意思，可以阅读：[理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj)。
 
 ```xml
 <ResolveAssemblyReference

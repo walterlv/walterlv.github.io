@@ -40,7 +40,7 @@ description: 搭建一个博客，并且看起来还不错。
 gem install jekyll
 ```
 
-（译者注：然而 Windows 系统上复杂一点点，上面那个命令在 Windows 上其实是跑不起来的，如果你没有配好环境，请先阅读 [快速在 Windows 上搭建 Jekyll 开发环境](/post/setup-jekyll-in-windows.html)。）
+（译者注：然而 Windows 系统上复杂一点点，上面那个命令在 Windows 上其实是跑不起来的，如果你没有配好环境，请先阅读 [快速在 Windows 上搭建 Jekyll 开发环境](/post/setup-jekyll-in-windows)。）
 
 为了让 Jekyll 在你的电脑上跑起来，请阅读 [Jekyll 基本用法](http://jekyllcn.com/docs/usage/)。
 

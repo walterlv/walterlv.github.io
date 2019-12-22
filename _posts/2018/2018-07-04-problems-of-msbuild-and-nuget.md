@@ -17,14 +17,14 @@ MSBuild 不愧是强大的编译器，它提供的扩展机制让你几乎可以
 
 这是兄弟篇中的一篇，关于 MSBuild/Roslyn 和 NuGet 的 100 个坑：
 
-- [MSBuild/Roslyn 和 NuGet 的 100 个坑](/post/problems-of-msbuild-and-nuget.html)
+- [MSBuild/Roslyn 和 NuGet 的 100 个坑](/post/problems-of-msbuild-and-nuget)
 
 由于这篇博客是大量坑的记录，所以是它建立在你已经对 MSBuild/Roslyn 和 NuGet 有一些了解的基础之上的。我摘取了一些入门系列文章，也许你可以通过阅读这些来了解下：
 
-- [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj.html)
-- [迁移 csproj 文件到基于 Microsoft.NET.Sdk](/post/introduce-new-style-csproj-into-net-framework.html)
-- [创建基于 MSBuild Task 的跨平台的 NuGet 工具包](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html)
-- [创建基于命令行工具的跨平台的 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool.html)
+- [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj)
+- [迁移 csproj 文件到基于 Microsoft.NET.Sdk](/post/introduce-new-style-csproj-into-net-framework)
+- [创建基于 MSBuild Task 的跨平台的 NuGet 工具包](/post/create-a-cross-platform-msbuild-task-based-nuget-tool)
+- [创建基于命令行工具的跨平台的 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool)
 
 当然还有更多，可以访问 <https://walterlv.github.io/categories#nuget>。
 
@@ -79,7 +79,7 @@ NuGet 可以指定多个包源。既可以在 Visual Studio 中配置，也可�
 
 MSBuild 15.0 为项目文件的根节点 `Project` 带来了 `Sdk` 属性，也就是说 Visual Studio 2017 开始支持。
 
-[将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj](/post/introduce-new-style-csproj-into-net-framework.html) 一文讲述了如何为项目文件添加 Sdk 属性，以便项目能够体验到最新的 Microsoft.NET.Sdk 编译体验。其中的 NuGet 原生支持是非常清爽的。
+[将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj](/post/introduce-new-style-csproj-into-net-framework) 一文讲述了如何为项目文件添加 Sdk 属性，以便项目能够体验到最新的 Microsoft.NET.Sdk 编译体验。其中的 NuGet 原生支持是非常清爽的。
 
 升级时很清爽，降级就不爽了！这种情况会发生在新分支中进行了项目文件升级，随后切换回之前的分支；这时相当于在降级。但是，降级时会编译不通过，并提示：
 

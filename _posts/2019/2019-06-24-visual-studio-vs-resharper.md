@@ -45,7 +45,7 @@ position: knowledge
 
 修改快捷键方法详见：
 
-- [如何快速自定义 Visual Studio 中部分功能的快捷键](/post/customizing-keyboard-shortcuts-in-visual-studio.html)
+- [如何快速自定义 Visual Studio 中部分功能的快捷键](/post/customizing-keyboard-shortcuts-in-visual-studio)
 
 另外，在 `IntelliCode` 部分，可以选择打开更多的 `IntelliSense` 完成项：
 

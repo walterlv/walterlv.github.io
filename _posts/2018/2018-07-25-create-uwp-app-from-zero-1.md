@@ -13,8 +13,8 @@ categories: uwp dotnet csharp
 
 本文分为两个部分：
 
-- [从零开始创建一个 UWP 项目并完成部署](/post/create-uwp-app-from-zero-0.html)
-- [从零开始编写一个 UWP 应用程序和窗口](/post/create-uwp-app-from-zero-1.html)
+- [从零开始创建一个 UWP 项目并完成部署](/post/create-uwp-app-from-zero-0)
+- [从零开始编写一个 UWP 应用程序和窗口](/post/create-uwp-app-from-zero-1)
 
 本文将从 Main 函数开始，一步步跑起来一个应用程序，显示一个窗口，并在窗口中显示一些内容。重点在了解在 UWP 中运行应用程序，并显示窗口。
 
@@ -136,7 +136,7 @@ private CoreWindow _window;
 ![开启消息循环](/static/posts/2018-07-25-15-19-57.png)  
 ▲ 开启了消息循环之后，应用不会直接退出了
 
-你可以通过阅读 [理解 UWP 视图的概念，让 UWP 应用显示多个窗口（多视图）](/post/show-multiple-views-for-an-uwp-app.html) 一文来了解 UWP 应用（`CoreApplication`）、应用视图（`CoreApplicationView`）、窗口（`CoreWindow`/`Window`）、线程调度模型（`CoreDispatcher`）之间的关系。
+你可以通过阅读 [理解 UWP 视图的概念，让 UWP 应用显示多个窗口（多视图）](/post/show-multiple-views-for-an-uwp-app) 一文来了解 UWP 应用（`CoreApplication`）、应用视图（`CoreApplicationView`）、窗口（`CoreWindow`/`Window`）、线程调度模型（`CoreDispatcher`）之间的关系。
 
 ## 在窗口中显示点东西
 
@@ -220,4 +220,4 @@ private Compositor _compositor;
 
 我们使用 CompositionAPI 进行了一些界面显示和简单的交互。了解到即便是如此复杂的 UWP 程序，其启动流程也没有那么复杂。
 
-不过，如果你阅读了前面一篇 [(1/2) 为了理解 UWP 的启动流程，我从零开始创建了一个 UWP 程序](/post/create-uwp-app-from-zero-0.html)，会发现复杂的部分都在项目文件和系统的部分。
+不过，如果你阅读了前面一篇 [(1/2) 为了理解 UWP 的启动流程，我从零开始创建了一个 UWP 程序](/post/create-uwp-app-from-zero-0)，会发现复杂的部分都在项目文件和系统的部分。

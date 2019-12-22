@@ -70,7 +70,7 @@ position: problem
 
 关于为什么我会拖到最顶部，你可以阅读我的另一篇博客：
 
-- [Windows 的 UAC 设置中的通知等级实际上只有两个档而已](/post/there-are-only-two-settings-for-the-uac-slider.html)
+- [Windows 的 UAC 设置中的通知等级实际上只有两个档而已](/post/there-are-only-two-settings-for-the-uac-slider)
 
 ### 进程监控与调试
 

@@ -7,7 +7,7 @@ categories: dotnet csharp msbuild roslyn visualstudio nuget
 
 本文整理我和 [林德熙](https://blog.lindexi.com/) 学习的 dotnet 编译知识、Roslyn 源码分析知识，NuGet 知识。通过阅读本文可以从零散的碎片化博客中得到从零开始学习的轨迹。
 
-本文服务于 [微软技术暨生态大会 2018 课程](/post/dotnet-build-and-roslyn-course-in-tech-summit-2018.html)，你可以学习预编译框架相关的技术原理。
+本文服务于 [微软技术暨生态大会 2018 课程](/post/dotnet-build-and-roslyn-course-in-tech-summit-2018)，你可以学习预编译框架相关的技术原理。
 
 ---
 
@@ -39,26 +39,26 @@ SourceFusion 的其中一个用途是收集原本会通过反射收集的类型�
 
 你需要先了解 csproj 文件的结构，以便进行后续的学习：
 
-- [理解 C# 项目 csproj 文件格式的本质和编译流程 - 吕毅](/post/understand-the-csproj.html)
-- [项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - 吕毅](/post/known-properties-in-csproj.html)
+- [理解 C# 项目 csproj 文件格式的本质和编译流程 - 吕毅](/post/understand-the-csproj)
+- [项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - 吕毅](/post/known-properties-in-csproj)
 - [Roslyn 在项目文件使用条件判断 - 林德熙](https://blog.lindexi.com/post/Roslyn-%E5%9C%A8%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD.html)
 
 在了解到 csproj 文件结构之后，你可以通过迁移一些项目，并确保他们编译通过来练习：
 
-- [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj - 吕毅](/post/introduce-new-style-csproj-into-net-framework.html)
-- [Sdk 风格的 csproj 对 WPF/UWP 支持不太好？有第三方 SDK 可以用！MSBuild.Sdk.Extras - 吕毅](/post/use-msbuild-sdk-extras-for-wpf-and-uwp.html)
+- [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj - 吕毅](/post/introduce-new-style-csproj-into-net-framework)
+- [Sdk 风格的 csproj 对 WPF/UWP 支持不太好？有第三方 SDK 可以用！MSBuild.Sdk.Extras - 吕毅](/post/use-msbuild-sdk-extras-for-wpf-and-uwp)
 
 接着，csproj 中的重要内容 Target 对理解编译过程非常重要，因为它决定了如何编译这个项目：
 
 - [Roslyn 如何使用 MSBuild Copy 复制文件 - 林德熙](https://blog.lindexi.com/post/Roslyn-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-MSBuild-Copy-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6.html)
-- [如何使用 MSBuild Target（Exec）中的控制台输出 - 吕毅](/post/exec-task-of-msbuild-target.html)
-- [如何在 MSBuild Target（Exec）中报告编译错误和编译警告 - 吕毅](/post/standard-error-warning-format.html)
+- [如何使用 MSBuild Target（Exec）中的控制台输出 - 吕毅](/post/exec-task-of-msbuild-target)
+- [如何在 MSBuild Target（Exec）中报告编译错误和编译警告 - 吕毅](/post/standard-error-warning-format)
 
 更高级的 Target 用法：
 
-- [如何编写基于 Microsoft.NET.Sdk 的跨平台的 MSBuild Target（附各种自带的 Task） - 吕毅](/post/write-msbuild-target.html)
+- [如何编写基于 Microsoft.NET.Sdk 的跨平台的 MSBuild Target（附各种自带的 Task） - 吕毅](/post/write-msbuild-target)
 - [Roslyn 使用 WriteLinesToFile 解决参数过长无法传入 - 林德熙](https://blog.lindexi.com/post/Roslyn-%E4%BD%BF%E7%94%A8-WriteLinesToFile-%E8%A7%A3%E5%86%B3%E5%8F%82%E6%95%B0%E8%BF%87%E9%95%BF%E6%97%A0%E6%B3%95%E4%BC%A0%E5%85%A5.html)
-- [每次都要重新编译？太慢！让跨平台的 MSBuild/dotnet build 的 Target 支持差量编译 - 吕毅](/post/msbuild-incremental-build.html)
+- [每次都要重新编译？太慢！让跨平台的 MSBuild/dotnet build 的 Target 支持差量编译 - 吕毅](/post/msbuild-incremental-build)
 
 基于 Target 的一些应用：
 
@@ -66,22 +66,22 @@ SourceFusion 的其中一个用途是收集原本会通过反射收集的类型�
 
 当现有的知识和文档不足以帮助你完成现有功能的时候，也许你该考虑阅读官方源码了：
 
-- [解读 Microsoft.NET.Sdk 的源码，你能定制各种奇怪而富有创意的编译过程 - 吕毅](/post/read-microsoft-net-sdk.html)
-- [Reading the Source Code of Microsoft.NET.Sdk, Writing the Creative Extension of Compiling - 吕毅](/post/read-microsoft-net-sdk-en.html)
+- [解读 Microsoft.NET.Sdk 的源码，你能定制各种奇怪而富有创意的编译过程 - 吕毅](/post/read-microsoft-net-sdk)
+- [Reading the Source Code of Microsoft.NET.Sdk, Writing the Creative Extension of Compiling - 吕毅](/post/read-microsoft-net-sdk-en)
 
 还有一些 csproj 特性的使用：
 
-- [.NET/C# 中你可以在代码中写多个 Main 函数，然后按需要随时切换 - 吕毅](/post/write-multiple-main-and-related-startup-codes.html)
-- [在 Visual Studio 的解决方案资源管理器中隐藏一些文件 - 吕毅](/post/make-items-invisible-in-vs-solution-explorer.html)
+- [.NET/C# 中你可以在代码中写多个 Main 函数，然后按需要随时切换 - 吕毅](/post/write-multiple-main-and-related-startup-codes)
+- [在 Visual Studio 的解决方案资源管理器中隐藏一些文件 - 吕毅](/post/make-items-invisible-in-vs-solution-explorer)
 - [使用链接共享 Visual Studio 中的代码文件 - 吕毅](/visualstudio/2016/08/01/share-code-with-add-as-link.html)
 - [为 Visual Studio 使用通配符批量添加项目文件 - 吕毅](/post/vs/2017/09/26/wildcards-in-vs-projects.html)
 - [Roslyn 使用 Directory.Build.props 管理多个项目配置 - 林德熙](https://blog.lindexi.com/post/Roslyn-%E4%BD%BF%E7%94%A8-Directory.Build.props-%E7%AE%A1%E7%90%86%E5%A4%9A%E4%B8%AA%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE.html)
 - [Roslyn 使用 Directory.Build.props 文件定义编译 - 林德熙](https://blog.lindexi.com/post/Roslyn-%E4%BD%BF%E7%94%A8-Directory.Build.props-%E6%96%87%E4%BB%B6%E5%AE%9A%E4%B9%89%E7%BC%96%E8%AF%91.html)
-- [使用 MSBuild 响应文件 (rsp) 来指定 dotnet build 命令行编译时的大量参数 - 吕毅](/post/msbuild-response-files.html)
+- [使用 MSBuild 响应文件 (rsp) 来指定 dotnet build 命令行编译时的大量参数 - 吕毅](/post/msbuild-response-files)
 
 ## NuGet 基础
 
-- [项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅](/post/known-nuget-properties-in-csproj.html)
+- [项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅](/post/known-nuget-properties-in-csproj)
 
 可以使用 NuGet 做一些不是传统 dll 引用的功能：
 
@@ -90,24 +90,24 @@ SourceFusion 的其中一个用途是收集原本会通过反射收集的类型�
 
 现在，我们需要真的使用 NuGet 做一个自己的工具了：
 
-- [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包 - 吕毅](/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html)
-- [如何创建一个基于命令行工具的跨平台的 NuGet 工具包 - 吕毅](/post/create-a-cross-platform-command-based-nuget-tool.html)
-- [在制作跨平台的 NuGet 工具包时，如何将工具（exe/dll）的所有依赖一并放入包中 - 吕毅](/post/include-dependencies-into-nuget-tool-package.html)
+- [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包 - 吕毅](/post/create-a-cross-platform-msbuild-task-based-nuget-tool)
+- [如何创建一个基于命令行工具的跨平台的 NuGet 工具包 - 吕毅](/post/create-a-cross-platform-command-based-nuget-tool)
+- [在制作跨平台的 NuGet 工具包时，如何将工具（exe/dll）的所有依赖一并放入包中 - 吕毅](/post/include-dependencies-into-nuget-tool-package)
 
 NuGet 的坑很多，有些可以解，有些需要规避：
 
-- [帮助官方 NuGet 解掉 Bug，制作绝对不会传递依赖的 NuGet 包 - 吕毅](/post/prevent-nuget-package-been-depended.html)
-- [MSBuild/Roslyn 和 NuGet 的 100 个坑 - 吕毅](/post/problems-of-msbuild-and-nuget.html)
+- [帮助官方 NuGet 解掉 Bug，制作绝对不会传递依赖的 NuGet 包 - 吕毅](/post/prevent-nuget-package-been-depended)
+- [MSBuild/Roslyn 和 NuGet 的 100 个坑 - 吕毅](/post/problems-of-msbuild-and-nuget)
 - [Roslyn 通过 Nuget 引用源代码 在 VS 智能提示正常但是无法编译 - 林德熙](https://blog.lindexi.com/post/Roslyn-%E9%80%9A%E8%BF%87-Nuget-%E5%BC%95%E7%94%A8%E6%BA%90%E4%BB%A3%E7%A0%81-%E5%9C%A8-VS-%E6%99%BA%E8%83%BD%E6%8F%90%E7%A4%BA%E6%AD%A3%E5%B8%B8%E4%BD%86%E6%98%AF%E6%97%A0%E6%B3%95%E7%BC%96%E8%AF%91.html)
 
 如果你的 NuGet 格式是旧的，或者说引用方式是旧的，推荐升级：
 
-- [自动将 NuGet 包的引用方式从 packages.config 升级为 PackageReference - 吕毅](/post/migrate-packages-config-to-package-reference.html)
-- [如何最快速地将旧的 NuGet 包 (2.x, packages.config) 升级成新的 NuGet 包 (4.x, PackageReference) - 吕毅](/post/migrate-nuget-package-from-powershell-to-props-and-targets.html)
+- [自动将 NuGet 包的引用方式从 packages.config 升级为 PackageReference - 吕毅](/post/migrate-packages-config-to-package-reference)
+- [如何最快速地将旧的 NuGet 包 (2.x, packages.config) 升级成新的 NuGet 包 (4.x, PackageReference) - 吕毅](/post/migrate-nuget-package-from-powershell-to-props-and-targets)
 
 学会这些 NuGet 技能之后的一些应用：
 
-- [阻止某个 NuGet 包意外升级 - 吕毅](/post/prevent-nuget-package-upgrade.html)
+- [阻止某个 NuGet 包意外升级 - 吕毅](/post/prevent-nuget-package-upgrade)
 
 ## SourceYard 原理
 
@@ -115,44 +115,44 @@ SourceYard 利用 NuGet 自动 Import 的 Target 来执行我们的代码：
 
 - [Roslyn 使用 Target 替换占位符方式生成 nuget 打包 - 林德熙](https://blog.lindexi.com/post/Roslyn-%E4%BD%BF%E7%94%A8-Target-%E6%9B%BF%E6%8D%A2%E5%8D%A0%E4%BD%8D%E7%AC%A6%E6%96%B9%E5%BC%8F%E7%94%9F%E6%88%90-nuget-%E6%89%93%E5%8C%85.html)
 - [Roslyn 通过 Target 修改编译的文件 - 林德熙](https://blog.lindexi.com/post/Roslyn-%E9%80%9A%E8%BF%87-Target-%E4%BF%AE%E6%94%B9%E7%BC%96%E8%AF%91%E7%9A%84%E6%96%87%E4%BB%B6.html)
-- [将 .NET Core 项目打一个最简单的 NuGet 源码包，安装此包就像直接把源码放进项目一样 - 吕毅](/post/the-simplest-way-to-pack-a-source-code-nuget-package.html)
+- [将 .NET Core 项目打一个最简单的 NuGet 源码包，安装此包就像直接把源码放进项目一样 - 吕毅](/post/the-simplest-way-to-pack-a-source-code-nuget-package)
 - [Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包 - 林德熙](https://blog.lindexi.com/post/Roslyn-%E5%A6%82%E4%BD%95%E5%9F%BA%E4%BA%8E-Microsoft.NET.Sdk-%E5%88%B6%E4%BD%9C%E6%BA%90%E4%BB%A3%E7%A0%81%E5%8C%85.html)
 
 ## Roslyn 基础
 
 Roslyn 由于其丰富且易用的 API，所以入门是比较容易的。推荐的入门文章有：
 
-- [Roslyn 入门：使用 Visual Studio 的语法可视化（Syntax Visualizer）窗格查看和了解代码的语法树 - 吕毅](/post/roslyn-syntax-visualizer.html)
+- [Roslyn 入门：使用 Visual Studio 的语法可视化（Syntax Visualizer）窗格查看和了解代码的语法树 - 吕毅](/post/roslyn-syntax-visualizer)
 - [Roslyn 静态分析 - 林德熙](https://blog.lindexi.com/post/Roslyn-%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90.html)
-- [Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码 - 吕毅](/post/analysis-code-of-existed-projects-using-roslyn.html)
-- [Roslyn 入门：使用 .NET Core 版本的 Roslyn 编译并执行跨平台的静态的源码 - 吕毅](/post/compile-and-invoke-code-using-roslyn.html)
+- [Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码 - 吕毅](/post/analysis-code-of-existed-projects-using-roslyn)
+- [Roslyn 入门：使用 .NET Core 版本的 Roslyn 编译并执行跨平台的静态的源码 - 吕毅](/post/compile-and-invoke-code-using-roslyn)
 
 额外的，你可以阅读更多 Roslyn 的资料以便快速应用于你的项目：
 
-- [Roslyn 语法树中的各种语法节点及每个节点的含义 - 吕毅](/post/roslyn-syntax-tree-nodes.html)
+- [Roslyn 语法树中的各种语法节点及每个节点的含义 - 吕毅](/post/roslyn-syntax-tree-nodes)
 - [Roslyn 节点的 Span 和 FullSpan 有什么区别 - 林德熙](https://blog.lindexi.com/post/Roslyn-%E8%8A%82%E7%82%B9%E7%9A%84-Span-%E5%92%8C-FullSpan-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB.html)
 - [Roslyn NameSyntax 的 ToString 和 ToFullString 的区别 - 林德熙](https://blog.lindexi.com/post/Roslyn-NameSyntax-%E7%9A%84-ToString-%E5%92%8C-ToFullString-%E7%9A%84%E5%8C%BA%E5%88%AB.html)
 
 Roslyn 为何能够在提供如此友好的 API 的情况下依然有如此高的性能？
 
-- [理解 Roslyn 中的红绿树（Red-Green Trees） - 吕毅](/post/the-red-green-tree-of-roslyn.html)
+- [理解 Roslyn 中的红绿树（Red-Green Trees） - 吕毅](/post/the-red-green-tree-of-roslyn)
 
 一些 Roslyn 的额外功能：
 
-- [Roslyn 的确定性构建 - 吕毅](/post/deterministic-builds-in-roslyn.html)
+- [Roslyn 的确定性构建 - 吕毅](/post/deterministic-builds-in-roslyn)
 
 ## SourceFusion 预编译框架
 
 关于预编译框架的博客没有那么多，只有一些基本的使用：
 
-- [都是用 DllImport？有没有考虑过自己写一个 extern 方法？ - 吕毅](/post/write-your-own-extern-method.html)
+- [都是用 DllImport？有没有考虑过自己写一个 extern 方法？ - 吕毅](/post/write-your-own-extern-method)
 
 ## 扩展阅读
 
 这里是是用到了 csproj / NuGet 等的额外博客：
 
-- [语义版本号（Semantic Versioning） - 吕毅](/post/semantic-version.html)
-- [(1/2) 为了理解 UWP 的启动流程，我从零开始创建了一个 UWP 程序 - 吕毅](/post/create-uwp-app-from-zero-0.html)
+- [语义版本号（Semantic Versioning） - 吕毅](/post/semantic-version)
+- [(1/2) 为了理解 UWP 的启动流程，我从零开始创建了一个 UWP 程序 - 吕毅](/post/create-uwp-app-from-zero-0)
 - [dotnet core 通过修改文件头的方式隐藏控制台窗口 - 林德熙](https://blog.lindexi.com/post/dotnet-core-%E9%80%9A%E8%BF%87%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E5%A4%B4%E7%9A%84%E6%96%B9%E5%BC%8F%E9%9A%90%E8%97%8F%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%AA%97%E5%8F%A3.html)
-- [使用 GitVersion 在编译或持续构建时自动使用语义版本号（Semantic Versioning） - 吕毅](/post/automatically-semantic-versioning-using-git-version-task.html)
+- [使用 GitVersion 在编译或持续构建时自动使用语义版本号（Semantic Versioning） - 吕毅](/post/automatically-semantic-versioning-using-git-version-task)
 - [Automatically increase the semantic version using GitVersion - 吕毅](/post/automatically-semantic-versioning-using-git-version-task.en.html)

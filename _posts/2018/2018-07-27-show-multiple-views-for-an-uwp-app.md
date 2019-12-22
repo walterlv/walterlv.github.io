@@ -15,7 +15,7 @@ UWP 应用多是一个窗口完成所有业务的，事实上我也推荐使用�
 
 多窗口在传统 Win32 的开发当中是司空见惯的事儿了，不过我个人非常不喜欢，因为 Windows 系统上的多窗口太多坑。以下是我以前写的关于传统多窗口开发中的一些坑（除此之外还有更多）：
 
-- [关闭模态窗口后，父窗口居然跑到了其他窗口的后面](/post/fix-owner-window-dropping-down-when-close-a-modal-child-window.html)
+- [关闭模态窗口后，父窗口居然跑到了其他窗口的后面](/post/fix-owner-window-dropping-down-when-close-a-modal-child-window)
 - [WPF 程序无法触摸操作？我们一起来找原因和解决方法！](/wpf/2017/09/12/touch-not-work-in-wpf.html)
 
 使用多窗口的原因很简单 —— 允许用户多任务处理。从这个角度来说，传统 Win32 使用“模态”多窗口的方式简直是低效的同时还带来 Bug！
@@ -26,13 +26,13 @@ UWP 应用多是一个窗口完成所有业务的，事实上我也推荐使用�
 
 在学习如何编写 UWP 多窗口之前，我们需要了解一些 UWP 视图（View）的概念。
 
-在 [CoreApplication/Application、CoreWindow/Window 之间的区别](/post/core-application-window-of-uwp.html) 一文中，我描述了 UWP 视图的一些概念：
+在 [CoreApplication/Application、CoreWindow/Window 之间的区别](/post/core-application-window-of-uwp) 一文中，我描述了 UWP 视图的一些概念：
 
 > `CoreApplication` 管理一个 UWP 应用中的所有视图（View），而 `CoreApplication` 直接管理的视图是 `CoreApplicationView`；也就是说，UWP 应用 `CoreApplication` 管理所有的应用视图 `CoreApplicationView`。而一个 `CoreApplicationView` 包含一个窗口和一个线程调度模型，即 `CoreWindow` 和 `CoreDispatcher`。
 > 
 > `CoreWindow` 就是我们所理解的窗口。为了方便使用，`Windows.UI.XAML.Window` 类型封装了这个 `CoreWindow`。`CoreDispatcher` 是基于消息循环的线程调度模型，正是因为有了消息循环，所以此窗口才能一直显示而不被销毁。
 
-在 [为了理解 UWP 的启动流程，我从零开始创建了一个 UWP 程序](/post/create-uwp-app-from-zero-1.html) 一文中，我们也能体会到 `CoreApplication` 和 `CoreWindow` 之间的关系，了解消息循环在应用中的作用。
+在 [为了理解 UWP 的启动流程，我从零开始创建了一个 UWP 程序](/post/create-uwp-app-from-zero-1) 一文中，我们也能体会到 `CoreApplication` 和 `CoreWindow` 之间的关系，了解消息循环在应用中的作用。
 
 ![UWP 应用视图](/static/posts/2018-07-27-08-37-42.png)
 

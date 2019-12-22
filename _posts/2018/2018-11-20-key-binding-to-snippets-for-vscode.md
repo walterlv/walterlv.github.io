@@ -41,7 +41,7 @@ Visual Studio Code 默认是关闭了 Markdown 的智能感知提示的（因为
 
 在这个配置中，`alt+p` 是我指定的快捷键，`editor.action.insertSnippet` 表示执行命令插入代码片段，生效条件为 `editorTextFocus` 及文本编辑器获得焦点的期间。
 
-`args` 字段指定了两个值，作为对一个现有代码片段的引用。`langId` 是生效的语言 Id，`name` 是代码片段的名称。这个名称是我在 [在 Visual Studio Code 中添加自定义的代码片段](/post/add-custom-code-snippet-for-vscode.html) 中做的代码片段的名称。
+`args` 字段指定了两个值，作为对一个现有代码片段的引用。`langId` 是生效的语言 Id，`name` 是代码片段的名称。这个名称是我在 [在 Visual Studio Code 中添加自定义的代码片段](/post/add-custom-code-snippet-for-vscode) 中做的代码片段的名称。
 
 保存，现在按下 `alt+p` 后就会插入指定的代码片段了。
 

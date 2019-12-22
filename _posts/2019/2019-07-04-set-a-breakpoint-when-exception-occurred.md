@@ -45,7 +45,7 @@ namespace Walterlv.Demo.DoubiBlogs
 
 我在这篇博客中举了一个例子来说明如何在发生异常的时候中断，不过是使用 Visual Studio：
 
-- [在 Visual Studio 中设置当发生某个特定异常或所有异常时中断](/post/break-when-a-specific-exception-throw-in-visual-studio.html)
+- [在 Visual Studio 中设置当发生某个特定异常或所有异常时中断](/post/break-when-a-specific-exception-throw-in-visual-studio)
 
 那么现在我们使用第一次机会异常来完善一下其中的代码：
 

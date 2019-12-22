@@ -99,7 +99,7 @@ EndProject
 
 你可以在我的另一篇博客中找到项目类型：
 
-- [解决方案文件 sln 中的项目类型 GUID](/post/a-list-of-project-type-guids.html)
+- [解决方案文件 sln 中的项目类型 GUID](/post/a-list-of-project-type-guids)
 
 但是本文列举几个 .NET/C# 项目中的常见类型：
 
@@ -109,7 +109,7 @@ EndProject
 
 关于 SDK 风格的项目文件，可以阅读我的另一篇博客：
 
-- [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj - walterlv](/post/introduce-new-style-csproj-into-net-framework.html)
+- [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj - walterlv](/post/introduce-new-style-csproj-into-net-framework)
 
 项目名称和项目路径不必多说，都知道。对于文件夹而言，项目名称就是文件夹的名称，而项目路径也是文件夹的名称。
 
@@ -150,7 +150,7 @@ EndProject
 
 关于设置项目依赖关系的方法，除了 sln 文件里面的设置之外，还有通过设置项目依赖属性的方式，详情可以阅读：
 
-- [两种方法设置 .NET/C# 项目的编译顺序，而不影响项目之间的引用](/post/affects-project-building-order.html)
+- [两种方法设置 .NET/C# 项目的编译顺序，而不影响项目之间的引用](/post/affects-project-building-order)
 
 ### 全局信息
 

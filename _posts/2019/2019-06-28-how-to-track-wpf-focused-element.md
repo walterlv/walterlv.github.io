@@ -188,7 +188,7 @@ namespace Walterlv.Windows
 
 于是，你需要我在另一篇博客中写的方法来监视整个 WPF 应用程序中的所有窗口：
 
-- [如何监视 WPF 中的所有窗口，在所有窗口中订阅事件或者附加 UI](/post/how-to-monitor-all-windows-of-wpf-application.html)
+- [如何监视 WPF 中的所有窗口，在所有窗口中订阅事件或者附加 UI](/post/how-to-monitor-all-windows-of-wpf-application)
 
 里面有一段对 `ApplicationWindowMonitor` 类的使用：
 

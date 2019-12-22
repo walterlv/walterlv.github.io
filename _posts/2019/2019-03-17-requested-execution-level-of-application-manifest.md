@@ -14,7 +14,7 @@ position: knowledge
 
 阅读本文之前，你可能需要了解如何创建应用程序清单文件。阅读我的另一篇博客可以了解：
 
-- [如何创建应用程序清单文件 App.Manifest，如何创建不带清单的应用程序 - 吕毅](/post/create-manifest-file-for-application.html)
+- [如何创建应用程序清单文件 App.Manifest，如何创建不带清单的应用程序 - 吕毅](/post/create-manifest-file-for-application)
 
 ## 各种不同的 UAC 清单选项
 
@@ -35,7 +35,7 @@ position: knowledge
 
 默认情况下用户启动应用程序都是使用 Windows 资源管理器（explorer.exe）运行的；在开启了 UAC 的情况下，资源管理器是以标准用户权限运行的。于是对于用户点击打开的应用程序，默认就是以标准用户权限运行的。
 
-如果已经以管理员权限启动了一个程序，那么这个程序启动的子进程也会是管理员权限。典型的情况是一个应用程序安装包安装的时候使用管理员权限运行，于是这个安装程序在安装完成后启动的这个应用程序进程实例就是管理员权限的。有时候这种设定会出现问题，你可以阅读 [在 Windows 系统上降低 UAC 权限运行程序（从管理员权限降权到普通用户权限）](/post/start-process-with-lowered-uac-privileges.html)。
+如果已经以管理员权限启动了一个程序，那么这个程序启动的子进程也会是管理员权限。典型的情况是一个应用程序安装包安装的时候使用管理员权限运行，于是这个安装程序在安装完成后启动的这个应用程序进程实例就是管理员权限的。有时候这种设定会出现问题，你可以阅读 [在 Windows 系统上降低 UAC 权限运行程序（从管理员权限降权到普通用户权限）](/post/start-process-with-lowered-uac-privileges)。
 
 ## requireAdministrator
 
@@ -57,7 +57,7 @@ position: knowledge
 
 要更好的理解这两个概念的区别，你可能需要对 UAC 用户账户控制有一个初步的了解，可以阅读我的另一篇博客：
 
-- [Windows 中的 UAC 用户账户控制](/post/windows-user-account-control.html)
+- [Windows 中的 UAC 用户账户控制](/post/windows-user-account-control)
 
 接下来的内容，都假设你已经了解了上文所述的 UAC 用户账户控制。
 
@@ -109,7 +109,7 @@ position: knowledge
 
 ## 为什么 UWP 程序不能指定 UAC 清单选项？
 
-在我的另一篇博客 [Windows 中的 UAC 用户账户控制](/post/windows-user-account-control.html) 中说到了访问令牌。
+在我的另一篇博客 [Windows 中的 UAC 用户账户控制](/post/windows-user-account-control) 中说到了访问令牌。
 
 UWP 程序只能获得受限访问令牌，没得选，所以也就不需要指定 UAC 清单选项了。这也是为什么当你关闭 UAC 之后，UWP 程序将全部闪退的重要原因。
 

@@ -50,7 +50,7 @@ Walterlv.Foo.1
 
 ![来自微软的 ProgID 命名示例](/static/posts/2019-03-02-20-10-03.png)
 
-竟然取一个名字也能写这么多篇幅，看来程序员的命名果然是世界上的一大难题呀！赶紧试用一下我的命名神器吧 —— [点击下载](ms-windows-store://pdp/?productid=9P8LNZRNJX85)，其原理可阅读 [冷算法：自动生成代码标识符（类名、方法名、变量名） - 吕毅](/post/algorithm-of-generating-random-identifiers.html)。
+竟然取一个名字也能写这么多篇幅，看来程序员的命名果然是世界上的一大难题呀！赶紧试用一下我的命名神器吧 —— [点击下载](ms-windows-store://pdp/?productid=9P8LNZRNJX85)，其原理可阅读 [冷算法：自动生成代码标识符（类名、方法名、变量名） - 吕毅](/post/algorithm-of-generating-random-identifiers)。
 
 ### 在注册表中添加文件关联
 

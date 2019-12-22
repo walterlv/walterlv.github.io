@@ -144,7 +144,7 @@ class Program
 
 上面的这段代码，当你第一次运行此进程并且保持此进程不退出的时候并没有什么异样。但是你再启动第二个进程实例的话，就会在 `WaitOne` 那里收到一个异常 —— `AbandonedMutexException`。
 
-所以如果你不能在一处代码中使用 `try-finally` 来确保在获得锁之后一定会释放的话，那么强烈建议在 `WaitOne` 的时候捕获异常。顺便提醒，`try-finally` 中不能有异步代码，你可以参见：[在有 UI 线程参与的同步锁（如 AutoResetEvent）内部使用 await 可能导致死锁](/post/deadlock-if-await-in-ui-lock-context.html)。
+所以如果你不能在一处代码中使用 `try-finally` 来确保在获得锁之后一定会释放的话，那么强烈建议在 `WaitOne` 的时候捕获异常。顺便提醒，`try-finally` 中不能有异步代码，你可以参见：[在有 UI 线程参与的同步锁（如 AutoResetEvent）内部使用 await 可能导致死锁](/post/deadlock-if-await-in-ui-lock-context)。
 
 也就是说，当你需要等待的时候，`catch` 一下异常。在 `catch` 完之后，你并不需要再次使用 `WaitOne` 来等待，因为即便发生了异常，你也依然获得了锁。这一点你可以通过调用 `ReleaseMutex` 来验证，因为前面我们说了只有拥有锁的线程才可以释放锁。
 

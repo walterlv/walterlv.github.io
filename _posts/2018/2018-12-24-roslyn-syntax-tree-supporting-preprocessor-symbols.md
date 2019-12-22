@@ -13,7 +13,7 @@ position: knowledge
 
 如果你不知道条件编译符号是什么或者不知道怎么设置，请参见：
 
-- [.NET/C# 项目如何优雅地设置条件编译符号？](/post/how-to-define-preprocessor-symbols.html)
+- [.NET/C# 项目如何优雅地设置条件编译符号？](/post/how-to-define-preprocessor-symbols)
 
 <div id="toc"></div>
 
@@ -43,8 +43,8 @@ Types = compileTypeVisitor.Types.ToList();
 
 当然这段代码你可能编译不通过，因为这是另一篇博客中的源码：
 
-- [Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码](/post/analysis-code-of-existed-projects-using-roslyn.html)
+- [Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码](/post/analysis-code-of-existed-projects-using-roslyn)
 
 本文所用的查看语法树的插件，你可以查看另一篇博客：
 
-- [Roslyn 入门：使用 Visual Studio 的语法可视化（Syntax Visualizer）窗格查看和了解代码的语法树](/post/roslyn-syntax-visualizer.html)
+- [Roslyn 入门：使用 Visual Studio 的语法可视化（Syntax Visualizer）窗格查看和了解代码的语法树](/post/roslyn-syntax-visualizer)

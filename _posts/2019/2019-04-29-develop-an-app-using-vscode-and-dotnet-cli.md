@@ -82,11 +82,11 @@ namespace Walterlv.Demo
 
 理论上，你按下 F5，选择 .NET Core 后就能自动生成调试所需的 launch.json 和 tasks.json 文件：
 
-- [让你的 VSCode 具备调试 C# 语言 .NET Core 程序的能力](/post/equip-vscode-for-dotnet-core-app-debugging.html)
+- [让你的 VSCode 具备调试 C# 语言 .NET Core 程序的能力](/post/equip-vscode-for-dotnet-core-app-debugging)
 
 如果不能生成所需的文件，你可以使用以下博客中的方法，手动添加这两个文件：
 
-- [手工编辑 tasks.json 和 launch.json，让你的 VSCode 具备调试 .NET Core 程序的能力](/post/equip-vscode-manually-for-dotnet-core-app-debugging.html)
+- [手工编辑 tasks.json 和 launch.json，让你的 VSCode 具备调试 .NET Core 程序的能力](/post/equip-vscode-manually-for-dotnet-core-app-debugging)
 
 在经过以上两篇博客中的方法之后，你将可以跑起来你的程序。
 

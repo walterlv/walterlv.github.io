@@ -29,7 +29,7 @@ Foo();
 
 - [C# 标准性能测试 - 林德熙](https://blog.lindexi.com/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95.html)
 - [C# 标准性能测试高级用法 - 林德熙](https://blog.lindexi.com/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95.html)
-- [.NET/C# 反射的的性能数据，以及高性能开发建议（反射获取 Attribute 和反射调用方法） - 吕毅](/post/dotnet-high-performance-reflection-suggestions.html)
+- [.NET/C# 反射的的性能数据，以及高性能开发建议（反射获取 Attribute 和反射调用方法） - 吕毅](/post/dotnet-high-performance-reflection-suggestions)
 
 ## 结论：使用什么方法计时
 

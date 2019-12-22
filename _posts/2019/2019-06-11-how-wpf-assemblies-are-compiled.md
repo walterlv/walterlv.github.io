@@ -18,13 +18,13 @@ position: knowledge
 
 在阅读本文之前，你可能需要提前了解编译过程到底是怎样的。可以阅读：
 
-- [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj.html)
+- [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj)
 
 如果你不明白上面文章中的一些术语（例如 Target / Task），可能不能理解本文后面的内容。
 
 另外，除了本文所涉及的内容之外，你也可以自己探索编译过程：
 
-- [解读 Microsoft.NET.Sdk 的源码，你能定制各种奇怪而富有创意的编译过程](/post/read-microsoft-net-sdk.html)
+- [解读 Microsoft.NET.Sdk 的源码，你能定制各种奇怪而富有创意的编译过程](/post/read-microsoft-net-sdk)
 
 WPF 的编译代码都在 Microsoft.WinFx.targets 文件中，你可以通过上面这一篇博客找到这个文件。接下来，我们会一一介绍这个文件里面的编译目标（Target），然后统一说明这些 Target 是如何协同工作，将 WPF 程序编译出来的。
 
@@ -75,7 +75,7 @@ Target 名称和 Task 名称相同，都是 `MarkupCompilePass2`。
 
 实际上，如果在 Visual Studio 中编译项目，则会调用到这个 Target。而判断是否在 Visual Studio 中编译的方法可以参见：
 
-- [MSBuild 在编写编译任务的时候判断当前是否在 Visual Studio 中编译](/post/determine-building-in-visual-studio-during-building.html)
+- [MSBuild 在编写编译任务的时候判断当前是否在 Visual Studio 中编译](/post/determine-building-in-visual-studio-during-building)
 
 ```xml
 <Target Name="DesignTimeMarkupCompilation">
@@ -219,7 +219,7 @@ WPF 编译过程有两个编译传递，`MarkupCompilePass1` 和 `MarkupCompileP
 
 下面这几篇博客就是在讨论其中的一些坑：
 
-- [制作通过 NuGet 分发的源代码包时，如果目标项目是 WPF 则会出现一些问题](/post/issues-of-nuget-package-import-for-wpf-projects.html)
+- [制作通过 NuGet 分发的源代码包时，如果目标项目是 WPF 则会出现一些问题](/post/issues-of-nuget-package-import-for-wpf-projects)
 - [Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包](https://blog.lindexi.com/post/roslyn-%E5%A6%82%E4%BD%95%E5%9F%BA%E4%BA%8E-microsoft.net.sdk-%E5%88%B6%E4%BD%9C%E6%BA%90%E4%BB%A3%E7%A0%81%E5%8C%85)
 
 我需要摘抄生成临时程序集的一部分源码：
@@ -272,7 +272,7 @@ WPF 编译过程有两个编译传递，`MarkupCompilePass1` 和 `MarkupCompileP
 
 关于引用换成 `ReferencePath` 的内容，可以阅读我的另一篇博客了解更多：
 
-- [在 Target 中获取项目引用的所有依赖（dll/NuGet/Project）的路径](/post/resolve-project-references-using-target.html)
+- [在 Target 中获取项目引用的所有依赖（dll/NuGet/Project）的路径](/post/resolve-project-references-using-target)
 
 在使用 `ReferencePath` 的情况下，无论是项目引用还是 NuGet 包引用，都会被换成普通的 dll 引用，因为这个时候目标项目都已经编译完成，包含可以被引用的程序集。
 
@@ -320,7 +320,7 @@ WPF 编译过程有两个编译传递，`MarkupCompilePass1` 和 `MarkupCompileP
 
 注意，虽然新生成的项目文件中有 `PackageReference` 来表示包引用，但由于只有 `_CompileTargetNameForLocalType` 指定的编译目标和相关依赖可以被执行，而 NuGet 包中自动 Import 的部分没有加入到依赖项中，所以实际上包中的 `.props` 和 `.targets` 文件都不会被 `Import` 进来，这可能造成部分 NuGet 包在 WPF 项目中不能正常工作。比如下面这个：
 
-- [制作通过 NuGet 分发的源代码包时，如果目标项目是 WPF 则会出现一些问题](/post/issues-of-nuget-package-import-for-wpf-projects.html)
+- [制作通过 NuGet 分发的源代码包时，如果目标项目是 WPF 则会出现一些问题](/post/issues-of-nuget-package-import-for-wpf-projects)
 
 更典型的，就是 SourceYard 项目，这个 Bug 给 SourceYard 造成了不小的困扰：
 

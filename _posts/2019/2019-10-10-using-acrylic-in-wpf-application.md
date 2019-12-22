@@ -19,7 +19,7 @@ position: starter
 
 我在另一篇博客中有介绍此 API 各种用法的效果，详见：
 
-- [使用 SetWindowCompositionAttribute 来控制程序的窗口边框和背景（可以做 Acrylic 亚克力效果、模糊效果、主题色效果等） - walterlv](/post/set-window-composition-attribute.html)
+- [使用 SetWindowCompositionAttribute 来控制程序的窗口边框和背景（可以做 Acrylic 亚克力效果、模糊效果、主题色效果等） - walterlv](/post/set-window-composition-attribute)
 
 当然，使用此 API 也可以做 Windows 10 早期的模糊效果，比如：
 

@@ -40,8 +40,8 @@ UWP 才能使用的流畅设计效果好惊艳，写新的 UWP 程序可以做�
 
 以下是我后来使用此模拟的效果制作的应用。这些应用虽然看起来整个儿都很像 UWP 应用，但都是 100% 纯 WPF；因为我模拟了 UWP 的风格：
 
-- [WPF 使用 WindowChrome，在自定义窗口标题栏的同时最大程度保留原生窗口样式（类似 UWP/Chrome） - walterlv](/post/wpf-simulate-native-window-style-using-window-chrome.html)
-- [WPF 应用完全模拟 UWP 的标题栏按钮 - walterlv](/post/wpf-simulate-native-window-title-bar-buttons.html)
+- [WPF 使用 WindowChrome，在自定义窗口标题栏的同时最大程度保留原生窗口样式（类似 UWP/Chrome） - walterlv](/post/wpf-simulate-native-window-style-using-window-chrome)
+- [WPF 应用完全模拟 UWP 的标题栏按钮 - walterlv](/post/wpf-simulate-native-window-title-bar-buttons)
 
 **2019 年 1 月更新：**
 

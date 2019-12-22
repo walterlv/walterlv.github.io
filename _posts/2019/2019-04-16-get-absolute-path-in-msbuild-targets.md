@@ -32,8 +32,8 @@ position: problem
 
 你可以阅读我的其他篇博客了解到 `$(OutputPath)` 其实最终都会是相对路径：
 
-- [项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - walterlv](/post/known-properties-in-csproj.html)
-- [如何更精准地设置 C# / .NET Core 项目的输出路径？（包括添加和删除各种前后缀） - walterlv](/post/the-properties-that-affetcs-project-output-path.html)
+- [项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - walterlv](/post/known-properties-in-csproj)
+- [如何更精准地设置 C# / .NET Core 项目的输出路径？（包括添加和删除各种前后缀） - walterlv](/post/the-properties-that-affetcs-project-output-path)
 
 ---
 

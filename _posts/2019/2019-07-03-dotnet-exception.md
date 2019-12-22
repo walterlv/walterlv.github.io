@@ -69,7 +69,7 @@ catch (FileNotFoundException ex)
 
 无论是否有带 `when` 关键字，都是前面的 `catch` 块匹配的时候执行匹配的 `catch` 块而无视后面可能也匹配的 `catch` 块。
 
-如果 `when` 块中抛出异常，那么此异常将被忽略，`when` 中的表达式值视为 `false`。有个但是，请看：[.NET Framework 的 bug？try-catch-when 中如果 when 语句抛出异常，程序将彻底崩溃 - walterlv](/post/try-catch-when-causes-app-crash.html)。
+如果 `when` 块中抛出异常，那么此异常将被忽略，`when` 中的表达式值视为 `false`。有个但是，请看：[.NET Framework 的 bug？try-catch-when 中如果 when 语句抛出异常，程序将彻底崩溃 - walterlv](/post/try-catch-when-causes-app-crash)。
 
 ### 引发异常
 
@@ -144,7 +144,7 @@ public class InvalidDepartmentException : Exception
 
 一段异常处理代码中可能没有 `catch` 块而有 `finally` 块，这个时候的重点是清理资源，通常也不知道如何正确处理这个错误。
 
-一段异常处理代码中也可能 `try` 块留空，而只在 `finally` 里面写代码，这是为了“线程终止”安全考虑。在 .NET Core 中由于不支持线程终止因此可以不用这么写。详情可以参考：[.NET/C# 异常处理：写一个空的 try 块代码，而把重要代码写到 finally 中（Constrained Execution Regions） - walterlv](/post/empty-try-block.html)。
+一段异常处理代码中也可能 `try` 块留空，而只在 `finally` 里面写代码，这是为了“线程终止”安全考虑。在 .NET Core 中由于不支持线程终止因此可以不用这么写。详情可以参考：[.NET/C# 异常处理：写一个空的 try 块代码，而把重要代码写到 finally 中（Constrained Execution Regions） - walterlv](/post/empty-try-block)。
 
 ### 该不该引发异常？
 
@@ -194,11 +194,11 @@ public class InvalidDepartmentException : Exception
 - `AppDomain.UnhandledException`
     - 应用程序域未处理的异常，任何线程中未处理掉的异常都会进入此事件中
     - 当这里能够收到事件，意味着应用程序现在频临崩溃的边缘（从设计上讲，都到这里了，也再没有任何代码能够使得程序从错误中恢复了）
-    - 不过也可以[配置 legacyUnhandledExceptionPolicy 防止后台线程抛出的异常让程序崩溃退出](/post/prevent-app-crash-by-background-thread.html)
+    - 不过也可以[配置 legacyUnhandledExceptionPolicy 防止后台线程抛出的异常让程序崩溃退出](/post/prevent-app-crash-by-background-thread)
     - 建议在这个事件中记录崩溃日志，然后对应用程序进行最后的拯救恢复操作（例如保存用户的文档数据）
 - `AppDomain.FirstChanceException`
     - 应用程序域中的第一次机会异常
-    - 我们前面说过，一个异常被捕获时，其堆栈信息将包含从 `throw` 块到 `catch` 块之间的所有帧，而在第一次机会异常事件中，只是刚刚 `throw` 出来，还没有被任何 `catch` 块捕捉，因此在这个事件中堆栈信息永远只会包含一帧（不过可以稍微变通一下[在第一次机会异常 FirstChanceException 中获取比较完整的异常堆栈](/post/how-to-get-the-full-stacktrace-of-an-first-chance-exception.html)）
+    - 我们前面说过，一个异常被捕获时，其堆栈信息将包含从 `throw` 块到 `catch` 块之间的所有帧，而在第一次机会异常事件中，只是刚刚 `throw` 出来，还没有被任何 `catch` 块捕捉，因此在这个事件中堆栈信息永远只会包含一帧（不过可以稍微变通一下[在第一次机会异常 FirstChanceException 中获取比较完整的异常堆栈](/post/how-to-get-the-full-stacktrace-of-an-first-chance-exception)）
     - 注意第一次机会异常事件即便异常会被 `catch` 也会引发，因为它引发在 `catch` 之前
     - 不要认为异常已经被 `catch` 就万事大吉可以无视这个事件了。前面我们说过异常仅在真的是异常的情况才应该引发，因此如果这个事件中引发了异常，通常也真的意味着发生了错误（差别只是我们能否从错误中恢复而已）。如果你经常在正常的操作中发现可以通过此事件监听到第一次机会异常，那么一定是应用程序或框架中的异常设计出了问题（可能把正常应该处理的流程当作了异常，可能内部实现代码错误，可能出现了使用错误），这种情况一定是要改代码修 Bug 的。而一些被认为是异常的情况下收到此事件则是正常的。
 - `TaskScheduler.UnobservedTaskException`
@@ -245,7 +245,7 @@ public class InvalidDepartmentException : Exception
 
 其他的异常则是可以抛出的，只要你可以准确地表明错误原因。
 
-另外，尽量不要考虑抛出聚合异常 `AggregateException`，而是优先使用 `ExceptionDispatchInfo` 抛出其内部异常。详见：[使用 ExceptionDispatchInfo 捕捉并重新抛出异常 - walterlv](/post/exceptiondispatchinfo-capture-throw.html)。
+另外，尽量不要考虑抛出聚合异常 `AggregateException`，而是优先使用 `ExceptionDispatchInfo` 抛出其内部异常。详见：[使用 ExceptionDispatchInfo 捕捉并重新抛出异常 - walterlv](/post/exceptiondispatchinfo-capture-throw)。
 
 ### 异常的分类
 

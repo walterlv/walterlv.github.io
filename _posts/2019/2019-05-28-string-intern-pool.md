@@ -25,7 +25,7 @@ var c = "walterlv";
 
 我有另一篇博客说到了此问题，可以参见：
 
-- [.NET/C# 编译期间能确定的相同字符串，在运行期间是相同的实例](/post/same-strings-at-compile-time-are-the-same-instances-at-runtime.html)
+- [.NET/C# 编译期间能确定的相同字符串，在运行期间是相同的实例](/post/same-strings-at-compile-time-are-the-same-instances-at-runtime)
 
 字符串暂存池的出现是为了避免分配大量的字符串对象造成的过多的内存空间浪费。
 
@@ -72,7 +72,7 @@ Console.WriteLine(ReferenceEquals(a, c));
 
 在字符串暂存池中的字符串不会被垃圾回收，你可以阅读另一篇博客：
 
-- [.NET/C# 编译期能确定的字符串会在字符串暂存池中不会被 GC 垃圾回收掉](/post/-compile-time-strings-are-in-the-string-intern-pool.html)
+- [.NET/C# 编译期能确定的字符串会在字符串暂存池中不会被 GC 垃圾回收掉](/post/-compile-time-strings-are-in-the-string-intern-pool)
 
 ---
 

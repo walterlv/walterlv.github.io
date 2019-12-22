@@ -45,7 +45,7 @@ System.NotSupportedException: BitmapMetadata 在 BitmapImage 上可用。
 
 另外，你也可以用 `ExceptionDispatchInfo` 让内部异常的堆栈也连接起来，详见我的另一篇博客：
 
-- [使用 ExceptionDispatchInfo 捕捉并重新抛出异常 - 吕毅](/post/exceptiondispatchinfo-capture-throw.html)
+- [使用 ExceptionDispatchInfo 捕捉并重新抛出异常 - 吕毅](/post/exceptiondispatchinfo-capture-throw)
 
 ## 获取较完整的第一次机会异常堆栈
 
@@ -83,8 +83,8 @@ System.NotSupportedException: BitmapMetadata 在 BitmapImage 上可用。
 
 关于等待时间，可以阅读我的另一篇博客：
 
-- [C#/.NET 中 Thread.Sleep(0), Task.Delay(0), Thread.Yield(), Task.Yield() 不同的执行效果和用法建议 - 吕毅](/post/sleep-delay-zero-vs-yield.html)
+- [C#/.NET 中 Thread.Sleep(0), Task.Delay(0), Thread.Yield(), Task.Yield() 不同的执行效果和用法建议 - 吕毅](/post/sleep-delay-zero-vs-yield)
 
 如果需要对此异常进行后续的分析，可以参考我的另一篇博客：
 
-- [C#/.NET 如何获取一个异常（Exception）的关键特征，用来判断两个异常是否表示同一个异常 - 吕毅](/post/get-the-key-descriptor-of-an-exception.html)
+- [C#/.NET 如何获取一个异常（Exception）的关键特征，用来判断两个异常是否表示同一个异常 - 吕毅](/post/get-the-key-descriptor-of-an-exception)

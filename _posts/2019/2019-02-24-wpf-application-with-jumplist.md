@@ -49,7 +49,7 @@ Windows 跳转列表是自 Windows 7 时代就带来的功能，这一功能是�
 
 这种图标的指定方式是 Windows 系统中非常常用的方式。你可以在我的另一篇博客中找到各种各样系统自带的图标；至于序号，则是自己去数。
 
-- [Windows 10 自带那么多图标，去哪里找呢？](/post/where-is-the-windows-10-native-icons.html)
+- [Windows 10 自带那么多图标，去哪里找呢？](/post/where-is-the-windows-10-native-icons)
 
 ## 定制跳转列表的功能
 

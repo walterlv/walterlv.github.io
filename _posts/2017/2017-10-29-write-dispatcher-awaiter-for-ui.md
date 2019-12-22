@@ -17,14 +17,14 @@ categories: dotnet csharp wpf uwp
 
 入门篇：
 
-- [.NET 中什么样的类是可使用 await 异步等待的？](/post/what-is-an-awaiter.html)
-- [定义一组抽象的 Awaiter 的实现接口，你下次写自己的 await 可等待对象时将更加方便](/post/abstract-awaitable-and-awaiter.html)
-- [.NET 除了用 Task 之外，如何自己写一个可以 await 的对象？](/post/understand-and-write-custom-awaiter.html)
+- [.NET 中什么样的类是可使用 await 异步等待的？](/post/what-is-an-awaiter)
+- [定义一组抽象的 Awaiter 的实现接口，你下次写自己的 await 可等待对象时将更加方便](/post/abstract-awaitable-and-awaiter)
+- [.NET 除了用 Task 之外，如何自己写一个可以 await 的对象？](/post/understand-and-write-custom-awaiter)
 
 实战篇：
 
-- [在 WPF/UWP 中实现一个可以用 await 异步等待 UI 交互操作的 Awaiter](/post/write-dispatcher-awaiter-for-ui.html)
-- [.NET 编写一个可以异步等待循环中任何一个部分的 Awaiter](/post/write-an-awaiter-that-await-part-of-a-loop.html)
+- [在 WPF/UWP 中实现一个可以用 await 异步等待 UI 交互操作的 Awaiter](/post/write-dispatcher-awaiter-for-ui)
+- [.NET 编写一个可以异步等待循环中任何一个部分的 Awaiter](/post/write-an-awaiter-that-await-part-of-a-loop)
 
 ## 本文阅读建议
 

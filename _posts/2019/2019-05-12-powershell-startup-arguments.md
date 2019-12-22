@@ -22,7 +22,7 @@ position: knowledge
 
 借助 cmd.exe 来启动的方法可以参见我的另一篇博客：
 
-- [cmd.exe 的命令行启动参数（可用于执行命令、传参或进行环境配置） - 吕毅](/post/cmd-startup-arguments.html)
+- [cmd.exe 的命令行启动参数（可用于执行命令、传参或进行环境配置） - 吕毅](/post/cmd-startup-arguments)
 
 那么我们如何能够借助于 PowerShell 或者 PowerShell 来启动它呢？
 
@@ -34,7 +34,7 @@ position: knowledge
 
 关于 .NET Core 版本的 PowerShell Core 可以参见我的另一篇博客：
 
-- [安装和运行 .NET Core 版本的 PowerShell - 吕毅](/post/install-and-run-powershell-core.html)
+- [安装和运行 .NET Core 版本的 PowerShell - 吕毅](/post/install-and-run-powershell-core)
 
 接下来输入下面三个命令中的任何一个：
 

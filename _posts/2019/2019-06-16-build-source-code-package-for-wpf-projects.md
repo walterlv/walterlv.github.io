@@ -17,7 +17,7 @@ position: starter
 
 在开始制作一个源代码包之间，建议你提前了解项目文件的一些基本概念：
 
-- [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj.html)
+- [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj)
 
 当然就算不了解也没有关系。跟着本教程你也可以制作出来一个源代码包，只不过可能遇到了问题的时候不容易调试和解决。
 
@@ -179,7 +179,7 @@ props 和 targets 文件你可能在 Visual Studio 的新建文件的模板中�
 
 接下来，我们将编写编译文件 props 和 targets。注意，我们需要写的是四个文件的内容，不要弄错了。
 
-如果我们做好的 NuGet 源码包被其他项目使用，那么这四个文件中的其中一对会在目标项目被自动导入（Import）。在你理解 [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj.html) 一文内容之前，你可能不明白“导入”是什么意思。但作为从零开始的入门博客，你也不需要真的理解导入是什么意思，只要知道这四个文件中的代码将在目标项目编译期间运行就好。
+如果我们做好的 NuGet 源码包被其他项目使用，那么这四个文件中的其中一对会在目标项目被自动导入（Import）。在你理解 [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj) 一文内容之前，你可能不明白“导入”是什么意思。但作为从零开始的入门博客，你也不需要真的理解导入是什么意思，只要知道这四个文件中的代码将在目标项目编译期间运行就好。
 
 #### buildMultiTargeting 文件夹中的 Package.props 文件
 
@@ -287,7 +287,7 @@ props 和 targets 文件你可能在 Visual Studio 的新建文件的模板中�
 
 如果你对这个属性不熟悉，请回到第一步看我们一开始创建的代码，你会看到这个属性的设置的。如果还不清楚，请阅读博客：
 
-- [让一个 csproj 项目指定多个开发框架](/post/configure-projects-to-target-multiple-platforms.html)
+- [让一个 csproj 项目指定多个开发框架](/post/configure-projects-to-target-multiple-platforms)
 
 #### 体验和查看 NuGet 源代码包
 
@@ -309,7 +309,7 @@ props 和 targets 文件你可能在 Visual Studio 的新建文件的模板中�
 
 截至目前，我们只是在源代码包中引入了 C# 代码。如果我们需要加入到源代码包中的代码包含 WPF 的 XAML 文件，或者安装我们源代码包的目标项目包含 WPF 的 XAML 文件，那么这个 NuGet 源代码包直接会导致无法编译通过。至于原因，你需要阅读我的另一篇博客来了解：
 
-- [WPF 程序的编译过程](/post/how-wpf-assemblies-are-compiled.html)
+- [WPF 程序的编译过程](/post/how-wpf-assemblies-are-compiled)
 
 即便你不懂 WPF 程序的编译过程，你也可以继续完成本文的所有内容，但可能就不会明白为什么接下来我们要那样去修改我们之前创建的文件。
 
@@ -608,7 +608,7 @@ props 和 targets 文件你可能在 Visual Studio 的新建文件的模板中�
 
 更多制作源代码包的博客可以阅读。从简单到复杂的顺序：
 
-- [将 .NET Core 项目打一个最简单的 NuGet 源码包，安装此包就像直接把源码放进项目一样 - 吕毅](/post/the-simplest-way-to-pack-a-source-code-nuget-package.html)
+- [将 .NET Core 项目打一个最简单的 NuGet 源码包，安装此包就像直接把源码放进项目一样 - 吕毅](/post/the-simplest-way-to-pack-a-source-code-nuget-package)
 - [Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包 - 林德熙](https://blog.lindexi.com/post/roslyn-%E5%A6%82%E4%BD%95%E5%9F%BA%E4%BA%8E-microsoft.net.sdk-%E5%88%B6%E4%BD%9C%E6%BA%90%E4%BB%A3%E7%A0%81%E5%8C%85)
-- [制作通过 NuGet 分发的源代码包时，如果目标项目是 WPF 则会出现一些问题（探索篇，含解决方案） - 吕毅](/post/issues-of-nuget-package-import-for-wpf-projects.html)
+- [制作通过 NuGet 分发的源代码包时，如果目标项目是 WPF 则会出现一些问题（探索篇，含解决方案） - 吕毅](/post/issues-of-nuget-package-import-for-wpf-projects)
 - [SourceYard 制作源代码包 - 林德熙](https://blog.lindexi.com/post/sourceyard-%E5%88%B6%E4%BD%9C%E6%BA%90%E4%BB%A3%E7%A0%81%E5%8C%85)

@@ -13,8 +13,8 @@ WPF 的 UI 逻辑只在同一个线程中，这是学习 WPF 开发中大家几�
 
 WPF 同一个窗口中跨线程访问 UI 有多种方法：
 
-- [使用 VisualTarget (本文)](/post/multi-thread-ui-using-visualtarget-in-wpf.html)
-- [使用 SetParent 嵌入另一个窗口](/post/embed-win32-window-using-csharp.html)
+- [使用 VisualTarget (本文)](/post/multi-thread-ui-using-visualtarget-in-wpf)
+- [使用 SetParent 嵌入另一个窗口](/post/embed-win32-window-using-csharp)
 
 前者使用的是 WPF 原生方式，做出来的跨线程 UI 可以和原来的 UI 相互重叠遮挡。后者使用的是 Win32 的方式，实际效果非常类似 `WindowsFormsHost`，新线程中的 UI 在原来的所有 WPF 控件上面遮挡。另外，后者不止可以是跨线程，还可以跨进程。
 
@@ -38,7 +38,7 @@ public static extern bool MoveWindow(IntPtr hWnd, int X, int Y, int nWidth, int 
 
 ## 启动后台 UI 线程
 
-启动一个后台的 WPF UI 线程网上有不少线程的方法，但大体思路是一样的。我之前在 [如何实现一个可以用 await 异步等待的 Awaiter](/post/write-custom-awaiter.html) 一文中写了一个利用 `async`/`await` 做的更高级的版本。
+启动一个后台的 WPF UI 线程网上有不少线程的方法，但大体思路是一样的。我之前在 [如何实现一个可以用 await 异步等待的 Awaiter](/post/write-custom-awaiter) 一文中写了一个利用 `async`/`await` 做的更高级的版本。
 
 为了继续本文，我将上文中的核心文件抽出来做成了 GitHubGist，访问 [Custom awaiter with background UI thread](https://gist.github.com/walterlv/ca0fc857eae04c1088aebcb8d636d1cb) 下载那三个文件并放入到自己的项目中。
 

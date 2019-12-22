@@ -105,7 +105,7 @@ categories: dotnet csharp msbuild roslyn visualstudio nuget
 
 由于相关文章太多，所以重新整理到以下新的文章中：
 
-- [从零开始学习 dotnet 编译过程和 Roslyn 源码分析 - 吕毅](/post/posts-for-learning-dotnet-build-nuget-roslyn.html)
+- [从零开始学习 dotnet 编译过程和 Roslyn 源码分析 - 吕毅](/post/posts-for-learning-dotnet-build-nuget-roslyn)
 
 ## 更多课程
 

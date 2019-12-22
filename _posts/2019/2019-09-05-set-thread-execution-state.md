@@ -149,8 +149,8 @@ SystemSleep.ResetIdle();
 
 如果你发现无论你设置了多么短的睡眠时间和屏幕关闭时间，屏幕都不会关闭，那就是有某个程序阻止了屏幕关闭，你可以：
 
-- [查看有哪些程序会一直保持屏幕处于打开状态](/post/find-out-the-reason-that-wakes-the-pc-up.html)
-- [找到是谁持续唤醒了计算机屏幕](/post/find-out-the-reason-that-wakes-the-pc-up.html)
+- [查看有哪些程序会一直保持屏幕处于打开状态](/post/find-out-the-reason-that-wakes-the-pc-up)
+- [找到是谁持续唤醒了计算机屏幕](/post/find-out-the-reason-that-wakes-the-pc-up)
 
 ---
 

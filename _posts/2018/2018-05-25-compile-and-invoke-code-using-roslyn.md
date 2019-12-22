@@ -13,9 +13,9 @@ Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。
 
 本文是 Roslyn 入门系列之一：
 
-- [Roslyn 入门：使用 Visual Studio 的语法可视化（Syntax Visualizer）窗格查看和了解代码的语法树](/post/roslyn-syntax-visualizer.html)
-- [Roslyn 入门：使用 .NET Core 版本的 Roslyn 编译并执行跨平台的静态的源码（本文）](/post/compile-and-invoke-code-using-roslyn.html)
-- [Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码](/post/analysis-code-of-existed-projects-using-roslyn.html)
+- [Roslyn 入门：使用 Visual Studio 的语法可视化（Syntax Visualizer）窗格查看和了解代码的语法树](/post/roslyn-syntax-visualizer)
+- [Roslyn 入门：使用 .NET Core 版本的 Roslyn 编译并执行跨平台的静态的源码（本文）](/post/compile-and-invoke-code-using-roslyn)
+- [Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码](/post/analysis-code-of-existed-projects-using-roslyn)
 
 <div id="toc"></div>
 
@@ -23,7 +23,7 @@ Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。
 
 是否有过在编译期间修改一段代码的想法呢？
 
-我曾经在 [生成代码，从 T 到 T1, T2, Tn —— 自动生成多个类型的泛型](/post/generate-code-of-generic-types.html) 一文中提到过这样的想法，在这篇文章中，我希望只编写泛型的一个参数的版本 `Demo<T>`，然后自动生成 2~16 个参数的版本 `Demo<T1, T2>`, `Demo<T1, T2, T3>` ... `Demo<T1, T2, ... T16>`。不过，在那篇文章中，我写了一个应用程序来完成这样的事情。我在另一篇文章 [如何创建一个基于命令行工具的跨平台的 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool.html) 中说到我们可以将这样的应用程序打包成一个 NuGet 工具包。也就是说，利用这两种不同的技术，我们可以制作一个在编译期间生成多个泛型的 NuGet 工具包。
+我曾经在 [生成代码，从 T 到 T1, T2, Tn —— 自动生成多个类型的泛型](/post/generate-code-of-generic-types) 一文中提到过这样的想法，在这篇文章中，我希望只编写泛型的一个参数的版本 `Demo<T>`，然后自动生成 2~16 个参数的版本 `Demo<T1, T2>`, `Demo<T1, T2, T3>` ... `Demo<T1, T2, ... T16>`。不过，在那篇文章中，我写了一个应用程序来完成这样的事情。我在另一篇文章 [如何创建一个基于命令行工具的跨平台的 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool) 中说到我们可以将这样的应用程序打包成一个 NuGet 工具包。也就是说，利用这两种不同的技术，我们可以制作一个在编译期间生成多个泛型的 NuGet 工具包。
 
 不过，这样的生成方式不够通用。今天我们想生成泛型，明天我们想生成多语言类，后天我们又想生成代理类。能否做一种通用的方式来完成这样的任务呢？
 
@@ -31,7 +31,7 @@ Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。
 
 ## 准备工作
 
-与之前在 [Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码](/post/analysis-code-of-existed-projects-using-roslyn.html) 中的不同，我们这次无需打开解决方案或者项目，而是直接寻找并编译源代码文件。所以（利好消息），我们这回可以使用 .NET Core 跨平台版本的 Roslyn 了。所以为了充分有跨平台特性，我们创建`控制台应用 (.NET Core)`。
+与之前在 [Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码](/post/analysis-code-of-existed-projects-using-roslyn) 中的不同，我们这次无需打开解决方案或者项目，而是直接寻找并编译源代码文件。所以（利好消息），我们这回可以使用 .NET Core 跨平台版本的 Roslyn 了。所以为了充分有跨平台特性，我们创建`控制台应用 (.NET Core)`。
 
 ![新建项目](/static/posts/2018-05-25-20-17-01.png)  
 ▲ 千万不要吐槽相比于上一个入门教程来说，这次的界面变成了英文
@@ -46,7 +46,7 @@ Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。
 
 ## 准备一份用于编译和执行代码文件
 
-我直接使用 [生成代码，从 T 到 T1, T2, Tn —— 自动生成多个类型的泛型](/post/generate-code-of-generic-types.html) 这篇文章中的例子。把其中最关键的文件拿来用于编译和生成试验。
+我直接使用 [生成代码，从 T 到 T1, T2, Tn —— 自动生成多个类型的泛型](/post/generate-code-of-generic-types) 这篇文章中的例子。把其中最关键的文件拿来用于编译和生成试验。
 
 ```csharp
 using System.Linq;

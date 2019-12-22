@@ -17,7 +17,7 @@ Windows 8/8.1 和 Windows 10 开始提供 DISM 工具。
 
 相比于我在另一篇博客中提及的 sfc，DISM 利用 Windows 系统镜像来完成修复，所以更容易修复成功。关于 sfc（System File Check）可以参见：
 
-- [使用 System File Check (SFC) 工具检查并修复 Windows 系统文件](/post/system-file-check-scan-and-repair-system-files.html)
+- [使用 System File Check (SFC) 工具检查并修复 Windows 系统文件](/post/system-file-check-scan-and-repair-system-files)
 
 ## 使用方法
 

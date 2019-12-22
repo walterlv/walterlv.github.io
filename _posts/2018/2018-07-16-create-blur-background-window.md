@@ -135,7 +135,7 @@ WPF 的 `UIElement` 都有 `Effect` 属性，将其设置为 `BlurEffect` 即可
 </Window>
 ```
 
-如果是圆形窗口，我另外写了一篇文章来说明进行圆形裁剪：[WPF 中使用附加属性，将任意 UI 元素或控件裁剪成圆形（椭圆）](/post/clip-wpf-uielement-to-ellipse.html)。
+如果是圆形窗口，我另外写了一篇文章来说明进行圆形裁剪：[WPF 中使用附加属性，将任意 UI 元素或控件裁剪成圆形（椭圆）](/post/clip-wpf-uielement-to-ellipse)。
 
 ## UWP AcyclicBrush
 
