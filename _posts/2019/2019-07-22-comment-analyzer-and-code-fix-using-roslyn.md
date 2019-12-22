@@ -18,7 +18,7 @@ position: starter
 
 如果你对基于 Roslyn 编写分析器和代码修改器不了解，建议先阅读我的一篇入门教程：
 
-- [基于 Roslyn 同时为 Visual Studio 插件和 NuGet 包开发 .NET/C# 源代码分析器 Analyzer 和修改器 CodeFixProvider - walterlv](https://blog.walterlv.com/post/develop-a-code-analyzer-for-both-nuget-and-visual-studio-extension.html)
+- [基于 Roslyn 同时为 Visual Studio 插件和 NuGet 包开发 .NET/C# 源代码分析器 Analyzer 和修改器 CodeFixProvider - walterlv](/post/develop-a-code-analyzer-for-both-nuget-and-visual-studio-extension.html)
 
 ## 分析器
 

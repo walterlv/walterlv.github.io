@@ -69,7 +69,7 @@ catch (FileNotFoundException ex)
 
 无论是否有带 `when` 关键字，都是前面的 `catch` 块匹配的时候执行匹配的 `catch` 块而无视后面可能也匹配的 `catch` 块。
 
-如果 `when` 块中抛出异常，那么此异常将被忽略，`when` 中的表达式值视为 `false`。有个但是，请看：[.NET Framework 的 bug？try-catch-when 中如果 when 语句抛出异常，程序将彻底崩溃 - walterlv](https://blog.walterlv.com/post/try-catch-when-causes-app-crash.html)。
+如果 `when` 块中抛出异常，那么此异常将被忽略，`when` 中的表达式值视为 `false`。有个但是，请看：[.NET Framework 的 bug？try-catch-when 中如果 when 语句抛出异常，程序将彻底崩溃 - walterlv](/post/try-catch-when-causes-app-crash.html)。
 
 ### 引发异常
 
@@ -144,7 +144,7 @@ public class InvalidDepartmentException : Exception
 
 一段异常处理代码中可能没有 `catch` 块而有 `finally` 块，这个时候的重点是清理资源，通常也不知道如何正确处理这个错误。
 
-一段异常处理代码中也可能 `try` 块留空，而只在 `finally` 里面写代码，这是为了“线程终止”安全考虑。在 .NET Core 中由于不支持线程终止因此可以不用这么写。详情可以参考：[.NET/C# 异常处理：写一个空的 try 块代码，而把重要代码写到 finally 中（Constrained Execution Regions） - walterlv](https://blog.walterlv.com/post/empty-try-block.html)。
+一段异常处理代码中也可能 `try` 块留空，而只在 `finally` 里面写代码，这是为了“线程终止”安全考虑。在 .NET Core 中由于不支持线程终止因此可以不用这么写。详情可以参考：[.NET/C# 异常处理：写一个空的 try 块代码，而把重要代码写到 finally 中（Constrained Execution Regions） - walterlv](/post/empty-try-block.html)。
 
 ### 该不该引发异常？
 
@@ -245,7 +245,7 @@ public class InvalidDepartmentException : Exception
 
 其他的异常则是可以抛出的，只要你可以准确地表明错误原因。
 
-另外，尽量不要考虑抛出聚合异常 `AggregateException`，而是优先使用 `ExceptionDispatchInfo` 抛出其内部异常。详见：[使用 ExceptionDispatchInfo 捕捉并重新抛出异常 - walterlv](https://blog.walterlv.com/post/exceptiondispatchinfo-capture-throw.html)。
+另外，尽量不要考虑抛出聚合异常 `AggregateException`，而是优先使用 `ExceptionDispatchInfo` 抛出其内部异常。详见：[使用 ExceptionDispatchInfo 捕捉并重新抛出异常 - walterlv](/post/exceptiondispatchinfo-capture-throw.html)。
 
 ### 异常的分类
 

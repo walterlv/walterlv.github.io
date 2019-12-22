@@ -92,7 +92,7 @@ C# 8.0 引入了可为空引用类型和不可为空引用类型。由于这是�
 详见：
 
 - [C# 可空引用类型 NullableReferenceTypes 更强制的约束：将警告改为错误 WarningsAsErrors - walterlv](/post/warning-as-errors-for-csharp-nullable-reference-types.html)
-- [C# 8.0 可空引用类型中的各项警告/错误的含义和示例代码 - walterlv](https://blog.walterlv.com/post/nullable-context-options-warnings.html)
+- [C# 8.0 可空引用类型中的各项警告/错误的含义和示例代码 - walterlv](/post/nullable-context-options-warnings.html)
 
 ### 可为空注释（Annotation）上下文
 

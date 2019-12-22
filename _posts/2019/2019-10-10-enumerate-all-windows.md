@@ -19,7 +19,7 @@ position: knowledge
 
 剩下的我们需要其他各种方法用于获取窗口的其他属性。
 
-- `GetParent` 获取窗口的父窗口，这可以确认找到的窗口是否是顶层窗口。（关于顶层窗口，可以延伸 [使用 SetParent 跨进程设置父子窗口时的一些问题（小心卡死） - walterlv](https://blog.walterlv.com/post/all-processes-freezes-if-their-windows-are-connected-via-setparent.html)。）
+- `GetParent` 获取窗口的父窗口，这可以确认找到的窗口是否是顶层窗口。（关于顶层窗口，可以延伸 [使用 SetParent 跨进程设置父子窗口时的一些问题（小心卡死） - walterlv](/post/all-processes-freezes-if-their-windows-are-connected-via-setparent.html)。）
 - `IsWindowVisible` 判断窗口是否可见
 - `GetWindowText` 获取窗口标题
 - `GetClassName` 获取窗口类名

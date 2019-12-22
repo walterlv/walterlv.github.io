@@ -67,7 +67,7 @@ DiskGenius 是个强大的工具，不过傲梅也很良心。本文介绍使用
 
 虽然上图只是示例，但我实际将我在下面这篇博客中删除出来的空余空间全部合并在一起，并且还额外合并了两个都需要保留数据的分区。这个过程傲梅的预计时间是 9小时18分，实际上也刚好在 9 个小时左右！
 
-- [EFI 分区/恢复分区不可删除？你需要使用命令行了（全命令行操作）](https://blog.walterlv.com/post/delete-efi-partition-that-cannot-be-deleted-2.html)
+- [EFI 分区/恢复分区不可删除？你需要使用命令行了（全命令行操作）](/post/delete-efi-partition-that-cannot-be-deleted-2.html)
 
 所以，如果你打算开始进行大量的磁盘调整、对拷或者其他**无损分区**操作：
 

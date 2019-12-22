@@ -28,7 +28,7 @@ position: starter
 默认的清单中，包含 UAC 清单选项、系统兼容性选项、DPI 感知级别选项和 Windows 公共控件和对话框的主题选项。
 
 - 关于 UAC 清单选项，你可以阅读 [应用程序清单 Manifest 中各种 UAC 权限级别的含义和效果](/post/requested-execution-level-of-application-manifest.html) 了解更多。
-- 关于 DPI 感知级别选项，你可以阅读 [Windows 下的高 DPI 应用开发（UWP / WPF / Windows Forms / Win32） - walterlv](https://blog.walterlv.com/post/windows-high-dpi-development.html) 和 [支持 Windows 10 最新 PerMonitorV2 特性的 WPF 多屏高 DPI 应用开发 - walterlv](https://blog.walterlv.com/post/windows-high-dpi-development-for-wpf.html) 了解更多。
+- 关于 DPI 感知级别选项，你可以阅读 [Windows 下的高 DPI 应用开发（UWP / WPF / Windows Forms / Win32） - walterlv](/post/windows-high-dpi-development.html) 和 [支持 Windows 10 最新 PerMonitorV2 特性的 WPF 多屏高 DPI 应用开发 - walterlv](/post/windows-high-dpi-development-for-wpf.html) 了解更多。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

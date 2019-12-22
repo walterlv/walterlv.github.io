@@ -170,7 +170,7 @@ ILMerge 命令行工具是微软官方出品，下载地址：
 
 ILRepack 基于 Mono.Ceil 来进行 IL 合并，其使用方法可以参见我的博客：
 
-- [.NET 使用 ILRepack 合并多个程序集（替代 ILMerge），避免引入额外的依赖 - walterlv](https://blog.walterlv.com/post/merge-assemblies-using-ilrepack.html)
+- [.NET 使用 ILRepack 合并多个程序集（替代 ILMerge），避免引入额外的依赖 - walterlv](/post/merge-assemblies-using-ilrepack.html)
 
 #### ILMerge-GUI 工具（已过时，但适合新手随便玩玩）
 

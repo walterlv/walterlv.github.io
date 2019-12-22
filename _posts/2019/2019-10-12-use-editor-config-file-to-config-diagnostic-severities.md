@@ -63,4 +63,4 @@ dotnet_diagnostic.IDE0051.severity = none
 
 在提示有问题的代码上按下重构快捷键（默认是 `Ctrl + .`），可以出现重构菜单，其中就有配置规则严重性的选项，直接选择即可自动添加到 .editorconfig 文件中。如果项目中没有 .editorconfig 文件，则会自动在解决方案同目录下创建一个新的。
 
-对这部分快捷键不了解的话可以阅读：[提高使用 Visual Studio 开发效率的键盘快捷键 - walterlv](https://blog.walterlv.com/post/keyboard-shortcuts-to-improve-the-efficiency-of-visual-studio.html)。
+对这部分快捷键不了解的话可以阅读：[提高使用 Visual Studio 开发效率的键盘快捷键 - walterlv](/post/keyboard-shortcuts-to-improve-the-efficiency-of-visual-studio.html)。

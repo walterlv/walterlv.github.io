@@ -67,4 +67,4 @@ position: knowledge
 
 关于如何探索 Microsoft.NET.Sdk 可以阅读我的另一篇博客：
 
-- [解读 Microsoft.NET.Sdk 的源码，你能定制各种奇怪而富有创意的编译过程 - walterlv](https://blog.walterlv.com/post/read-microsoft-net-sdk.html)
+- [解读 Microsoft.NET.Sdk 的源码，你能定制各种奇怪而富有创意的编译过程 - walterlv](/post/read-microsoft-net-sdk.html)

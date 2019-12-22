@@ -36,7 +36,7 @@ Windows 操作系统的默认字体是 Segoe UI（发音为 see go 这两个单�
 
 关于 Windows 操作系统默认字体的更多内容可以阅读我的另一篇博客：
 
-- [Windows 系统的默认字体是什么？ - walterlv](https://blog.walterlv.com/post/windows-default-font-family.html)
+- [Windows 系统的默认字体是什么？ - walterlv](/post/windows-default-font-family.html)
 
 Windows 操作系统在启动应用程序的时候，会根据当前系统用户的地区决定默认字体应该采用哪一个。
 

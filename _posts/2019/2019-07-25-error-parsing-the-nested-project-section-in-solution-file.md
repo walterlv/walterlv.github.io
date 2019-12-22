@@ -89,7 +89,7 @@ EndProject
 
 检查你的项目是否安装了需要的工作负载，比如做 Visual Studio 插件开发需要插件工作负载。可以阅读：
 
-- [如何安装和准备 Visual Studio 扩展/插件开发环境 - walterlv](https://blog.walterlv.com/post/how-to-prepare-visual-studio-extension-development-environment.html)
+- [如何安装和准备 Visual Studio 扩展/插件开发环境 - walterlv](/post/how-to-prepare-visual-studio-extension-development-environment.html)
 
 我在另外的博客中写了解决方案中项目类型的内容：
 

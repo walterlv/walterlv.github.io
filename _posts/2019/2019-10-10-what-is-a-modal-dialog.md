@@ -87,7 +87,7 @@ UWP 中的新 API 当然已经都是使用 `async`/`await` 来实现模态等待
 
 关于 `PushFrame` 新开消息循环阻塞的原理可以参考：
 
-- [深入了解 WPF Dispatcher 的工作原理（PushFrame 部分） - walterlv](https://blog.walterlv.com/post/dotnet/2017/09/26/dispatcher-push-frame.html)
+- [深入了解 WPF Dispatcher 的工作原理（PushFrame 部分） - walterlv](/post/dotnet/2017/09/26/dispatcher-push-frame.html)
 
 当然，还有其他可以新开消息循环的方法。
 

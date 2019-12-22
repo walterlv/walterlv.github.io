@@ -88,7 +88,7 @@ namespace Walterlv.Demo.HighPerformanceBitmap
 
 你可以阅读我的另一篇博客了解如何启用不安全代码：
 
-- [如何在 .NET 项目中开启不安全代码（以便启用 unsafe fixed 等关键字） - walterlv](https://blog.walterlv.com/post/allow-unsafe-code-in-dotnet-project.html)
+- [如何在 .NET 项目中开启不安全代码（以便启用 unsafe fixed 等关键字） - walterlv](/post/allow-unsafe-code-in-dotnet-project.html)
 
 简单点说就是在你的项目文件中添加下面这一行：
 

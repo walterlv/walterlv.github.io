@@ -25,7 +25,7 @@ position: knowledge
 
 当然，如果并不理解，可以阅读这个机制的应用篇，里面有具体的应用场景：
 
-- [.NET/C# 利用 Walterlv.WeakEvents 高性能地中转一个自定义的弱事件（可让任意 CLR 事件成为弱事件）](https://blog.walterlv.com/post/implement-custom-dotnet-weak-event-relay.html)
+- [.NET/C# 利用 Walterlv.WeakEvents 高性能地中转一个自定义的弱事件（可让任意 CLR 事件成为弱事件）](/post/implement-custom-dotnet-weak-event-relay.html)
 
 ## 现有设计
 
@@ -70,7 +70,7 @@ position: knowledge
 
 我总结了好的 API 设计的一些原则：
 
-- [好的框架需要好的 API 设计 —— API 设计的六个原则 - walterlv](https://blog.walterlv.com/post/framework-api-design.html)
+- [好的框架需要好的 API 设计 —— API 设计的六个原则 - walterlv](/post/framework-api-design.html)
 
 不得不说，此类型设计的技术难度还是挺大的。虽然我们知道有 `WeakReference<T>` 可用，但依然存在很多的技术难点。于是 API 的设计可能要退而求其次优先满足前两个优先级更高的目标。
 
@@ -247,7 +247,7 @@ public class WalterlvDemo
 
 更具体的使用场景和示例代码，请阅读：
 
-- [.NET/C# 利用 Walterlv.WeakEvents 高性能地中转一个自定义的弱事件（可让任意 CLR 事件成为弱事件）](https://blog.walterlv.com/post/implement-custom-dotnet-weak-event-relay.html)
+- [.NET/C# 利用 Walterlv.WeakEvents 高性能地中转一个自定义的弱事件（可让任意 CLR 事件成为弱事件）](/post/implement-custom-dotnet-weak-event-relay.html)
 
 本文所涉及的全部源代码，已在 GitHub 上开源：
 

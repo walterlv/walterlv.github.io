@@ -28,7 +28,7 @@ public bool IsInitialized => !(_foo is null);
 
 当然，如果你希望为你的类型定制更多的调试器显示方式，可以参考我的另一篇博客：
 
-- [C#/.NET 调试的时候显示自定义的调试信息（DebuggerDisplay 和 DebuggerTypeProxy） - walterlv](https://blog.walterlv.com/post/display-instance-info-in-custom-debugger-view.html)
+- [C#/.NET 调试的时候显示自定义的调试信息（DebuggerDisplay 和 DebuggerTypeProxy） - walterlv](/post/display-instance-info-in-custom-debugger-view.html)
 
 ---
 

@@ -163,7 +163,7 @@ position: starter
 
 另外，利用 ML.NET，我们还能用 C# 进行机器学习。可参见：[Bean.Hsiang - 博客园](http://www.cnblogs.com/BeanHsiang/)。
 
-利用 Roslyn，我们还能用直接做编译器，然后你还有什么不能做的？关于 Roslyn 的入门，可以阅读：[从零开始学习 dotnet 编译过程和 Roslyn 源码分析 - walterlv](https://blog.walterlv.com/post/posts-for-learning-dotnet-build-nuget-roslyn.html)。
+利用 Roslyn，我们还能用直接做编译器，然后你还有什么不能做的？关于 Roslyn 的入门，可以阅读：[从零开始学习 dotnet 编译过程和 Roslyn 源码分析 - walterlv](/post/posts-for-learning-dotnet-build-nuget-roslyn.html)。
 
 还有 IoT。
 

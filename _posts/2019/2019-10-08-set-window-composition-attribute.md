@@ -266,7 +266,7 @@ private enum AccentState
 
 `ACCENT_ENABLE_BLURBEHIND` 可以在 Windows 10 上做出模糊效果，就跟 Windows 10 早期版本的模糊效果是一样的。你可以看我之前的一篇博客，那时亚克力效果还没出来：
 
-- [在 Windows 10 上为 WPF 窗口添加模糊特效（就像开始菜单和操作中心那样） - walterlv](https://blog.walterlv.com/post/win10/2017/10/02/wpf-transparent-blur-in-windows-10.html)
+- [在 Windows 10 上为 WPF 窗口添加模糊特效（就像开始菜单和操作中心那样） - walterlv](/post/win10/2017/10/02/wpf-transparent-blur-in-windows-10.html)
 
 使用 `ACCENT_ENABLE_BLURBEHIND` 时，`GradientColor` 叠加色没有任何影响，唯一影响渲染的是 `WindowChrome` 和操作系统。
 
@@ -412,7 +412,7 @@ private enum AccentState
 
 想要背景透明，请参见：
 
-- [WPF 制作高性能的透明背景异形窗口（使用 WindowChrome 而不要使用 AllowsTransparency=True） - walterlv](https://blog.walterlv.com/post/wpf-transparent-window-without-allows-transparency.html)
+- [WPF 制作高性能的透明背景异形窗口（使用 WindowChrome 而不要使用 AllowsTransparency=True） - walterlv](/post/wpf-transparent-window-without-allows-transparency.html)
 
 ---
 

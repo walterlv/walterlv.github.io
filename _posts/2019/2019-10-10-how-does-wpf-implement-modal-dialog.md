@@ -124,6 +124,6 @@ private object ShowHelper(object booleanBox)
 
 关于 `PushFrame` 为什么能够“阻塞”你的代码的同时还能继续响应 UI 操作的原理，可以阅读：
 
-- [深入了解 WPF Dispatcher 的工作原理（PushFrame 部分） - walterlv](https://blog.walterlv.com/post/dotnet/2017/09/26/dispatcher-push-frame.html)
+- [深入了解 WPF Dispatcher 的工作原理（PushFrame 部分） - walterlv](/post/dotnet/2017/09/26/dispatcher-push-frame.html)
 
 那么 `ComponentDispatcher.PushModal` 和 `ComponentDispatcher.PopModal` 呢？可以在这里（[ComponentDispatcherThread.cs](https://source.dot.net/#WindowsBase/System/Windows/Interop/ComponentDispatcherThread.cs,60a128f40eff98b3)）看它的代码，实际上是为了模态计数以及引发事件的，对模态的效果没有本质上的影响。

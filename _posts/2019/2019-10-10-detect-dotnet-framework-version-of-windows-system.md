@@ -15,11 +15,11 @@ position: knowledge
 
 有的电脑的 .NET Framework 是自带的，有的是操作系统自带的。这样，你就不能通过控制面板的“卸载程序”去找到到底安装了哪个版本的 .NET Framework 了。
 
-关于各个版本 Windows 10 上自带的 .NET Framework 版本，可以阅读 [各个版本 Windows 10 系统中自带的 .NET Framework 版本 - walterlv](https://blog.walterlv.com/post/embeded-dotnet-version-in-all-windows.html)。
+关于各个版本 Windows 10 上自带的 .NET Framework 版本，可以阅读 [各个版本 Windows 10 系统中自带的 .NET Framework 版本 - walterlv](/post/embeded-dotnet-version-in-all-windows.html)。
 
-而如果通过代码 `Environment.Version` 来获取 .NET 版本，实际上获取的是 CLR 的版本，详见 [使用 PowerShell 获取 CLR 版本号 - walterlv](https://blog.walterlv.com/post/powershell/2017/09/28/get-clr-version-via-powershell.html)。
+而如果通过代码 `Environment.Version` 来获取 .NET 版本，实际上获取的是 CLR 的版本，详见 [使用 PowerShell 获取 CLR 版本号 - walterlv](/post/powershell/2017/09/28/get-clr-version-via-powershell.html)。
 
-这些版本号是不同的，详见 [.NET Framework 4.x 程序到底运行在哪个 CLR 版本之上 - walterlv](https://blog.walterlv.com/dotnet/2017/09/22/dotnet-version.html)。
+这些版本号是不同的，详见 [.NET Framework 4.x 程序到底运行在哪个 CLR 版本之上 - walterlv](/dotnet/2017/09/22/dotnet-version.html)。
 
 那么如何获取已安装的 .NET Framework 的版本呢？最靠谱的方法竟然是通过读取注册表。
 

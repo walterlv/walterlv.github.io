@@ -63,7 +63,7 @@ namespace Walterlv.Demo
 
 那被什么引用着呢？是字符串暂存池。要理解字符串暂存池，可以阅读我的另一篇博客：
 
-- [.NET/C# 的字符串暂存池](https://blog.walterlv.com/post/string-intern-pool.html)
+- [.NET/C# 的字符串暂存池](/post/string-intern-pool.html)
 
 另外，即便设置了 `CompilationRelaxations.NoStringInterning`，编译期间能确定的字符串在上述代码中也是不会被垃圾回收的。
 

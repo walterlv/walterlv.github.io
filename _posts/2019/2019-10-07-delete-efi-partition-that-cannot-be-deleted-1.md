@@ -13,8 +13,8 @@ Windows 系统在安装的时候，会自动为我们的磁盘划分一个恢复
 
 因为误操作会导致数据丢失，所以我将两种不同的解决方法分开成两篇文章以避免干扰：
 
-- [EFI 分区/恢复分区不可删除？你需要使用命令行了（配合鼠标操作）](https://blog.walterlv.com/post/delete-efi-partition-that-cannot-be-deleted-1.html)
-- [EFI 分区/恢复分区不可删除？你需要使用命令行了（全命令行操作）](https://blog.walterlv.com/post/delete-efi-partition-that-cannot-be-deleted-2.html)
+- [EFI 分区/恢复分区不可删除？你需要使用命令行了（配合鼠标操作）](/post/delete-efi-partition-that-cannot-be-deleted-1.html)
+- [EFI 分区/恢复分区不可删除？你需要使用命令行了（全命令行操作）](/post/delete-efi-partition-that-cannot-be-deleted-2.html)
 
 <div id="toc"></div>
 
@@ -146,7 +146,7 @@ DiskPart 成功设置了分区 ID。
 
 恢复分区不能使用上面 4.1 中的方法删除，如果你在 4.1 的操作之后还发现存在不可删除的恢复分区，请尝试使用我的另一篇博客：
 
-- [EFI 分区/恢复分区不可删除？你需要使用命令行了（全命令行操作）](https://blog.walterlv.com/post/delete-efi-partition-that-cannot-be-deleted-2.html)
+- [EFI 分区/恢复分区不可删除？你需要使用命令行了（全命令行操作）](/post/delete-efi-partition-that-cannot-be-deleted-2.html)
 
 ---
 
