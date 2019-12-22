@@ -49,7 +49,7 @@ nuget sources add -Name "huaweicloud" -Source "https://mirrors.huaweicloud.com/r
 
 NuGet 的全局配置文件在 `%AppData\NuGet\NuGet.config`，例如：
 
-```text
+```
 C:\Users\lvyi\AppData\Roaming\NuGet\NuGet.Config
 ```
 

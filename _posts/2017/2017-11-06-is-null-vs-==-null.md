@@ -109,7 +109,7 @@ private void TestInWalterlvDemo(object value)
 
 反编译看看：
 
-```nasm
+```
 .method private hidebysig instance void 
     TestInWalterlvDemo(
       object 'value'
@@ -162,7 +162,7 @@ private void TestInWalterlvDemo(object value)
 
 `x is null` 对应的是：
 
-```nasm
+```
 IL_0001: ldarg.1      // 'value'
 IL_0002: ldnull       
 IL_0003: ceq          
@@ -173,7 +173,7 @@ IL_0005: stloc.0      // V_0
 
 `x == null` 对应的是：
 
-```nasm
+```
 IL_000b: ldarg.1      // 'value'
 IL_000c: ldnull       
 IL_000d: ceq          
@@ -218,7 +218,7 @@ private void TestInWalterlvDemo(object value)
 
 `value is 1`：
 
-```nasm
+```
 IL_0001: ldc.i4.1     
 IL_0002: box          [mscorlib]System.Int32
 IL_0007: ldarg.1      // 'value'
@@ -228,7 +228,7 @@ IL_000d: stloc.0      // V_0
 
 `value == (object) 1`：
 
-```nasm
+```
 IL_0013: ldarg.1      // 'value'
 IL_0014: ldc.i4.1     
 IL_0015: box          [mscorlib]System.Int32
@@ -282,7 +282,7 @@ namespace Walterlv.EqualsTest
 
 这段代码的执行结果是：
 
-```text
+```
 True
 True
 False
@@ -291,7 +291,7 @@ False
 
 他们的 IL 代码如下。可以看到 `==` 和 `Equals` 会调用重载的运算符和方法；而使用 `is` 判断和前面是一样的，不受重载影响，可以和 `Object` 的 `Equals` 静态方法一样正常完成判空。
 
-```nasm
+```
 // foo == null
 IL_0005: dup
 IL_0006: ldnull

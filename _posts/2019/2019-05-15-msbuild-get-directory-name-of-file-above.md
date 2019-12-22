@@ -23,7 +23,7 @@ position: knowledge
 
 而这段代码所在的文件，可能是这样的目录结构（里面的 Walterlv.DemoProject.csproj 文件）：
 
-```text
+```
 - D:\walterlv\root
     - \src
         - \Walterlv.DemoProject

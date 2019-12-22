@@ -36,13 +36,13 @@ Windows 上的文件关联是通过文件的扩展名来实现的。有些文件
 
 微软建议的 ProgID 的取名方式是这样的：
 
-```text
+```
 厂商名.应用名.版本号
 ```
 
 这里的版本号通常是指的大版本号。例如版本号为 `1.6.0.97` 的应用，通常只取第一位，即 `1`。一个典型的建议的取名示例是这样的：
 
-```text
+```
 Walterlv.Foo.1
 ```
 
@@ -56,7 +56,7 @@ Walterlv.Foo.1
 
 你需要在注册表的 `HKEY_LOCAL_MACHINE\Software\Classes` 或者 `HKEY_CURRENT_USER\Software\Classes` 添加一些子键：
 
-```text
+```
 HKEY_CURRENT_USER\Software\Classes
     .walv
         (Default) = Walterlv.Foo.1
@@ -91,7 +91,7 @@ HKEY_CURRENT_USER\Software\Classes
 
 我们需要为关联的程序添加谓词才能够使用我们的程序打开这个文件。通常进行文件关联时最常用的谓词是 `open`，添加路径为 `HKEY_CURRENT_USER\Software\Classes\Walterlv.Foo.1\shell\Open\Command`。添加后，我们可以在文件资源管理器中通过双击打开这个文件。
 
-```text
+```
 Walterlv.Foo.1
     (Default) = 吕毅的示例文件
     shell
@@ -104,7 +104,7 @@ Walterlv.Foo.1
 
 还可以添加其他谓词，有一些是预定义的谓词，你也可以随便写其他的谓词。另外，还可以定义文件的图标。
 
-```text
+```
 Walterlv.Foo.1
     (Default) = 吕毅的示例文件
     DefaultIcon = "C:\Users\lvyi\AppData\Local\Walterlv.Foo\lvyi-icon.ico"
@@ -127,7 +127,7 @@ Walterlv.Foo.1
 
 ## 一个完整的文件关联示例
 
-```text
+```
 HKEY_CLASSES_ROOT
     .walv
         (Default) = Walterlv.Foo.1

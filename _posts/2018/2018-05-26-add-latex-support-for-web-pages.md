@@ -29,7 +29,7 @@ $$h_\theta(x) = \theta^T x$$
 
 可以使用如下的 LaTeX 公式写出：
 
-```latex
+```
 $$h_\theta(x) = \theta_1 x_1 + \theta_2 x_2 + ... \theta_n x_n = \sum_{i=1}^n \theta_i x_i$$
 $$h_\theta(x) = \theta^T x$$
 ```

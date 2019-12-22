@@ -17,7 +17,7 @@ position: knowledge
 
 对于完全不透明的背景和带有透明度的前景，合并算法为：
 
-```text
+```
 float r = (foreground.r * alpha) + (background.r * (1.0 - alpha));
 ```
 

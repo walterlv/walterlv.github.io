@@ -174,7 +174,7 @@ private async Task DoCoreAsync()
 
 现在再运行代码，只输出几次程序就停下来了：
 
-```log
+```
 [  0] walterlv is a 逗比
 [  1] walterlv is a 逗比
 [  2] walterlv is a 逗比

@@ -37,7 +37,7 @@ position: knowledge
 
 你需要在注册表的 `HKEY_LOCAL_MACHINE\Software\Classes` 或者 `HKEY_CURRENT_USER\Software\Classes` 添加一些子键：
 
-```text
+```
 HKEY_CURRENT_USER\Software\Classes
     walterlv
         (Default) = 吕毅的特殊链接

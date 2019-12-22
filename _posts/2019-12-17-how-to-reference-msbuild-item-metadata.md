@@ -51,7 +51,7 @@ MSBuild 中写在 `<ItemGroup />` 中的每一项是一个 `Item`，`Item` 除�
 
 虽然这里我们只写了一个 `Message` Task，但是最终我们会输出两次，每一个 `_WalterlvItem` 项都会输出一次。下面是这段代码的输出：
 
-```text
+```
 _WalterlvDemo:
   欢迎访问：https://
   吕毅的博客：blog.walterlv.com
@@ -75,7 +75,7 @@ _WalterlvDemo:
 
 会输出：
 
-```text
+```
 _WalterlvDemo:
   欢迎访问;吕毅的博客
 ```

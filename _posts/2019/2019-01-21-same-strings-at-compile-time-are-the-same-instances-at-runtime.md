@@ -79,7 +79,7 @@ namespace Walterlv.Demo
 
 以上代码的输出为：
 
-```log
+```
 False
 False
 False
@@ -95,7 +95,7 @@ True
 
 我们可以通过 IL 来确定前面的间接证明（代码太长，我只贴出来最重要的 G 字符串，以及一个用来比较的 E 字符串）：
 
-```nasm
+```
 .method private hidebysig static specialname string
     get_G() cil managed
 {
@@ -147,7 +147,7 @@ static unsafe void Main(string[] args)
 
 运行结果是：
 
-```log
+```
 walterlv is a 逗比
 walterlv is a 逗比
 Walterlv is a 逗比

@@ -67,7 +67,7 @@ namespace Walterlv.Demo
 
 第二步：修改 IL，将 callvirt 修改成 call
 
-> ```nasm
+> ```
 > IL_0004:  call   instance void Walterlv.Demo.Foo::Test()
 > ```
 

@@ -65,7 +65,7 @@ defaults:
 使用如下代码：
 
 {% raw %}
-```liquid
+```
 {% assign all_posts = "" | split: "" %}
 {% for article in site.article %}
     {% assign all_posts = all_posts | push: article %}

@@ -71,7 +71,7 @@ Visual Studio 原生自带两种代码生成方式。
 
 那么 Visual Studio 用什么填充？是的，可以在模板文件中写 C# 代码！比如官方 DEMO：
 
-> ```text
+> ```
 > <#@ output extension=".txt" #>  
 > <#@ assembly name="System.Xml" #>  
 > <#  
