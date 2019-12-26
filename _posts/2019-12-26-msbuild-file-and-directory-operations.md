@@ -1,6 +1,7 @@
 ---
 title: "在 MSBuild 编译过程中操作文件和文件夹（检查存在/创建文件夹/读写文件/移动文件/复制文件/删除文件夹）"
-date: 2019-12-26 19:10:17 +0800
+publishDate: 2019-12-26 19:10:17 +0800
+date: 2019-12-26 19:47:26 +0800
 categories: msbuild dotnet
 position: knowledge
 ---
@@ -15,9 +16,11 @@ position: knowledge
 
 使用 `Exists` 可以判断一个文件或者文件夹是否存在。注意无论是文件还是文件夹，只要给定的路径存在就返回 `true`。可以作为 MSBuild 属性、项和编译任务的执行条件。
 
+```xml
 <PropertyGroup Condition=" Exists( '$(MSBuildThisFileDirectory)..\build\build.xml' ) ">
     <_WalterlvPackingDirectory>$(MSBuildThisFileDirectory)..\bin\$(Configuration)\</_WalterlvPackingDirectory>
 </PropertyGroup>
+```
 
 ## `MakeDir` 创建文件夹
 
