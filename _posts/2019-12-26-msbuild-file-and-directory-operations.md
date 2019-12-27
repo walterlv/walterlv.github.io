@@ -1,7 +1,7 @@
 ---
 title: "在 MSBuild 编译过程中操作文件和文件夹（检查存在/创建文件夹/读写文件/移动文件/复制文件/删除文件夹）"
 publishDate: 2019-12-26 19:10:17 +0800
-date: 2019-12-26 19:47:26 +0800
+date: 2019-12-27 17:34:18 +0800
 categories: msbuild dotnet
 position: knowledge
 ---
@@ -197,6 +197,8 @@ position: knowledge
                       Lines="@(_WalterlvToWriteLine)" />
 </Target>
 ```
+
+▲ 注意，默认写入文件是不会覆盖的，会将内容补充到原来文件的后面。
 
 ```xml
 <Target Name="_WalterlvWriteFilesForPacking">
