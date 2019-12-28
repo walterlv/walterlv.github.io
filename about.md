@@ -4,4 +4,4 @@ title: 关于吕毅
 permalink: /about/
 ---
 
-![吕毅](/assets/img/avatar.png)
+![吕毅](/img/avatar.png)
