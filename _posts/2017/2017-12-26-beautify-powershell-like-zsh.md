@@ -1,7 +1,7 @@
 ---
 title: "将美化进行到底，把 PowerShell 做成 oh-my-zsh 的样子"
 publishDate: 2017-12-26 15:00:17 +0800
-date: 2019-12-18 13:47:18 +0800
+date: 2020-01-02 08:09:37 +0800
 categories: windows powershell
 ---
 
@@ -141,3 +141,4 @@ PowerLine 字体官方文档在这里：[Overview — Powerline beta documentati
 
 - [powerline/fonts: Patched fonts for Powerline users.](https://github.com/powerline/fonts)
 - [Overview — Powerline beta documentation](https://powerline.readthedocs.io/en/master/overview.html)
+- [告别 Windows 终端的难看难用，从改造 PowerShell 的外观开始 – 老柴的宅](https://chaishiwei.com/blog/1621.html)
