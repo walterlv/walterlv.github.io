@@ -1,7 +1,7 @@
 ---
 title: "为 .NET 各种开发工具设置网络代理，提升在大陆的网络性能"
 publishDate: 2020-01-03 09:41:16 +0800
-date: 2020-01-03 13:21:45 +0800
+date: 2020-01-03 13:23:17 +0800
 categories: dotnet
 position: knowledge
 ---
@@ -139,3 +139,4 @@ scoop config proxy 127.0.0.1:7778
 - [no_proxy containing wildcard breaks nuget · Issue #3776 · NuGet/Home](https://github.com/NuGet/Home/issues/3776)
 - [Using Scoop behind a proxy · lukesampson/scoop Wiki](https://github.com/lukesampson/scoop/wiki/Using-Scoop-behind-a-proxy)
 - [github - Only use a proxy for certain git urls/domains? - Stack Overflow](https://stackoverflow.com/a/41623825/6233938)
+- [Configure Git to use a proxy](https://gist.github.com/evantoli/f8c23a37eb3558ab8765)
