@@ -1,6 +1,6 @@
 ---
 title: "如何在旧版本的 .NET Core / Framework 中使用 C# 8 的异步流（IAsyncDisposable / IAsyncEnumerable / IAsyncEnumerator）"
-date: 2020-01-03 17:15:26 +0800
+date: 2020-01-03 17:17:34 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -67,6 +67,8 @@ Assert.AreEqual(3, verify);
 ```xml
 <LangVersion>latest</LangVersion>
 ```
+
+另外，由于 `ValueTask` 要求的最低 .NET Framework 版本为 4.5.2，所以如果使用更低版本的 .NET Framework，将无法使用异步流。
 
 ---
 
