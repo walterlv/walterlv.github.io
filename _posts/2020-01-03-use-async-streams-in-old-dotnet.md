@@ -1,6 +1,6 @@
 ---
 title: "如何在旧版本的 .NET Core / Framework 中使用 C# 8 的异步流（IAsyncDisposable / IAsyncEnumerable / IAsyncEnumerator）"
-date: 2020-01-03 17:11:31 +0800
+date: 2020-01-03 17:15:26 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -58,6 +58,14 @@ await foreach (var i in EnumerateTestsAsync())
     verify++;
 }
 Assert.AreEqual(3, verify);
+```
+
+## 额外说明
+
+记得如果你在 .NET Framework 4.8 或以下版本，.NET Core 3.0 以下版本编写代码时，自动启用的 C# 语言版本是 7.3，所以你需要额外为你的项目启用 C# 8.0 才行。
+
+```xml
+<LangVersion>latest</LangVersion>
 ```
 
 ---
