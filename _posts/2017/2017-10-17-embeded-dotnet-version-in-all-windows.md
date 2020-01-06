@@ -1,7 +1,7 @@
 ---
 title: "各个版本 Windows 10 系统中自带的 .NET Framework 版本"
 publishDate: 2017-10-17 10:49:40 +0800
-date: 2019-10-10 15:53:24 +0800
+date: 2020-01-06 14:01:30 +0800
 categories: windows dotnet
 tags: Windows .Net
 ---
@@ -9,7 +9,7 @@ tags: Windows .Net
 | Windows 10 名称                 | Windows 版本      | 开发代号 | 自带的 .NET Framework 版本 |
 | :------------------------------ | :---------------- | -------- | -------------------------- |
 | 预览中                          | 预览中            | 20H1     | —                          |
-| 即将发布                        | 10.0.18363 (1909) | 19H2     | —                          |
+| November 2019 Update            | 10.0.18363 (1909) | 19H2     | .NET Framework 4.8         |
 | Windows 10 May 2019 Update      | 10.0.18362 (1903) | 19H1     | .NET Framework 4.8         |
 | Windows 10 October 2018 Update  | 10.0.17176 (1809) | RS5      | .NET Framework 4.7.2       |
 | Windows 10 April 2018 Update    | 10.0.17134 (1803) | RS4      | .NET Framework 4.7.2       |
@@ -28,6 +28,8 @@ tags: Windows .Net
 ---
 
 **参考资料**
+
 - [How to: Determine which .NET Framework versions are installed -Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed?wt.mc_id=MVP)
 - [Windows 10 release information - current branch, build history](https://technet.microsoft.com/en-us/windows/release-info.aspx)
 - [Windows 10 version history - Wikipedia](https://en.wikipedia.org/wiki/Windows_10_version_history)
+- [Builds • The Collection Book](https://www.thecollectionbook.info/builds/windows)
