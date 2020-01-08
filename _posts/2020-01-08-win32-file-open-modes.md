@@ -1,7 +1,7 @@
 ---
 title: "Win32 方法 CreateFile 中选择合适的文件打开模式（CREATE_NEW, CREATE_ALWAYS, OPEN_EXISTING, OPEN_ALWAYS, TRUNCATE_EXISTING）"
 publishDate: 2020-01-08 14:13:08 +0800
-date: 2020-01-08 14:27:59 +0800
+date: 2020-01-08 15:05:12 +0800
 categories: windows dotnet csharp
 position: knowledge
 ---
@@ -39,6 +39,18 @@ HANDLE CreateFileW(
 - `OPEN_ALWAYS`
 - `TRUNCATE_EXISTING`
 
+为了方便查阅，我先将大家可能关心的内容做一个表格：
+
+| `dwCreationDisposition` | 如果文件存在        | 如果文件不存在         |
+| ----------------------- | ------------------- | ---------------------- |
+| `CREATE_NEW`            | `ERROR_FILE_EXISTS` | 新建                   |
+| `CREATE_ALWAYS`         | 截断                | 新建                   |
+| `OPEN_EXISTING`         | 打开                | `ERROR_FILE_NOT_FOUND` |
+| `OPEN_ALWAYS`           | 打开                | 新建                   |
+| `TRUNCATE_EXISTING`     | 截断                | `ERROR_FILE_NOT_FOUND` |
+
+所有这些打开模式都不会修改到文件的属性（Attribute），包括创建时间、针对用户的权限设置。所以如果你希望连这些属性都不需要，而是完完全全创建新的文件，那么请先将原来的文件删除。
+
 ### `CREATE_NEW`
 
 如果文件不存在，则创建一个文件。如果文件不存在，则执行失败，通过 `GetLastError` 可以得到错误码 `ERROR_FILE_EXISTS` (80)。
@@ -64,18 +76,6 @@ HANDLE CreateFileW(
 ### `TRUNCATE_EXISTING`
 
 如果文件存在，则打开后文件的长度直接变为 0。如果文件不存在，通过 `GetLastError` 可以得到错误码 `ERROR_FILE_NOT_FOUND` (2)。
-
-## 总结表
-
-| `dwCreationDisposition` | 如果文件存在        | 如果文件不存在         |
-| ----------------------- | ------------------- | ---------------------- |
-| `CREATE_NEW`            | `ERROR_FILE_EXISTS` | 新建                   |
-| `CREATE_ALWAYS`         | 截断                | 新建                   |
-| `OPEN_EXISTING`         | 打开                | `ERROR_FILE_NOT_FOUND` |
-| `OPEN_ALWAYS`           | 打开                | 新建                   |
-| `TRUNCATE_EXISTING`     | 截断                | `ERROR_FILE_NOT_FOUND` |
-
-所有这些打开模式都不会修改到文件的属性（Attribute），包括创建时间、针对用户的权限设置。所以如果你希望连这些属性都不需要，而是完完全全创建新的文件，那么请先将原来的文件删除。
 
 ---
 

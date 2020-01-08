@@ -1,7 +1,7 @@
 ---
 title: ".NET 中选择合适的文件打开模式（CreateNew, Create, Open, OpenOrCreate, Truncate, Append）"
 publishDate: 2020-01-08 13:59:50 +0800
-date: 2020-01-08 14:28:08 +0800
+date: 2020-01-08 15:05:41 +0800
 categories: dotnet csharp windows
 position: knowledge
 ---
@@ -34,6 +34,19 @@ public enum FileMode
     Append = 6,
 }
 ```
+
+为了方便查阅，我先将大家可能关心的内容做一个表格：
+
+| FileMode     | 如果文件存在 | 如果文件不存在        |
+| ------------ | ------------ | --------------------- |
+| CreateNew    | IOException  | 新建                  |
+| Create       | 截断         | 新建                  |
+| Open         | 打开         | FileNotFoundException |
+| OpenOrCreate | 打开         | 新建                  |
+| Truncate     | 截断         | FileNotFoundException |
+| Append       | 追加         | 新建                  |
+
+所有这些打开模式都不会修改到文件的属性（Attribute），包括创建时间、针对用户的权限设置。所以如果你希望连这些属性都不需要，而是完完全全创建新的文件，那么请先将原来的文件删除。
 
 注意，在 `File.Open` 方法中传入以下这些参数的含义描述中可能有一些包含过程和判断的语句，但实际上这些真正的判断和过程发生在 Windows 内核（虽然 .NET 也有一些判断，但是一些参数预判断和参数转换），所以实际拿到文件流（对应 Win32 中拿到句柄）是一个原子操作，不会因为中间加了判断导致与其他线程发生竞争。
 
@@ -70,19 +83,6 @@ public enum FileMode
 如果文件不存在，则创建一个新的文件并返回新文件的文件流。如果文件已经存在，则创建一个可以往文件的结尾处开始写的文件流。
 
 如果试图从文件流中往前倒推找到此前的文件内容，会抛出 `IOException`。
-
-## 总结表
-
-| FileMode     | 如果文件存在 | 如果文件不存在        |
-| ------------ | ------------ | --------------------- |
-| CreateNew    | IOException  | 新建                  |
-| Create       | 截断         | 新建                  |
-| Open         | 打开         | FileNotFoundException |
-| OpenOrCreate | 打开         | 新建                  |
-| Truncate     | 截断         | FileNotFoundException |
-| Append       | 追加         | 新建                  |
-
-所有这些打开模式都不会修改到文件的属性（Attribute），包括创建时间、针对用户的权限设置。所以如果你希望连这些属性都不需要，而是完完全全创建新的文件，那么请先将原来的文件删除。
 
 ## 配合文件打开权限
 
