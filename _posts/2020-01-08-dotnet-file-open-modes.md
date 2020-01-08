@@ -1,6 +1,6 @@
 ---
 title: ".NET 中选择合适的文件打开模式（CreateNew, Create, Open, OpenOrCreate, Truncate, Append）"
-date: 2020-01-08 13:28:31 +0800
+date: 2020-01-08 13:59:50 +0800
 categories: dotnet csharp windows
 position: knowledge
 ---
@@ -10,7 +10,6 @@ position: knowledge
 ---
 
 <div id="toc"></div>
-
 ## 文件打开方式
 
 文件打开的多个重载方法中，除了封装好的 `OpenRead` / `OpenWrite` 之外，其他都是需要指定 `FileMode` 参数的。
@@ -45,23 +44,23 @@ public enum FileMode
 
 如果文件不存在，则创建一个新的文件并返回新文件的文件流。如果文件已经存在，则打开文件并返回此文件的文件流。
 
-基于此文件流的修改会完全复写文件。也就是说，如果原文件内容是 `welcome to read walterlv's blog: blog.walterlv.com`，通过此文件流写入 `welcome to read lindexi's blog`，那么最终文件内容是 `welcome to read lindexi's blog`。
+基于此文件流的修改会完全复写文件。也就是说，如果原文件内容是 `walterlv`，通过此文件流写入 `111`，那么最终文件内容是 `111`。
 
 ### `Open`
 
 如果文件存在，则打开文件并返回此文件的文件流。如果文件不存在，则抛出 `FileNotFoundException`。
 
-基于此文件流的修改不会截断文件。也就是说，如果原文件内容是 `welcome to read walterlv's blog: blog.walterlv.com`，通过此文件流写入 `welcome to read lindexi's blog`，那么最终文件内容是 `welcome to read lindexi's blogg: blog.walterlv.com`。
+基于此文件流的修改不会截断文件。也就是说，如果原文件内容是 `walterlv`，通过此文件流写入 `111`，那么最终文件内容是 `111terlv`。
 
 ### `OpenOrCreate`
 
 如果文件存在，则打开文件并返回此文件的文件流。如果文件不存在，则创建一个文件并返回新文件的文件流。
 
-基于此文件流的修改不会截断文件，也就是说，如果原文件内容是 `welcome to read walterlv's blog: blog.walterlv.com`，通过此文件流写入 `welcome to read lindexi's blog`，那么最终文件内容是 `welcome to read lindexi's blogg: blog.walterlv.com`。
+基于此文件流的修改不会截断文件。也就是说，如果原文件内容是 `walterlv`，通过此文件流写入 `111`，那么最终文件内容是 `111terlv`。
 
 ### `Truncate`
 
-如果文件存在，则打开后文件的淌直接变为 0，随后返回此文件的文件流。如果文件不存在，则会抛出 `FileNotFoundException`。
+如果文件存在，则打开后文件的长度直接变为 0，随后返回此文件的文件流。如果文件不存在，则会抛出 `FileNotFoundException`。
 
 由于在打开文件时就已经将文件设置为 0 字节，所以对应到上面截断的描述是一定会截断的。写入任何新内容到文件候，文件中都不会存在旧文件中的内容。
 
@@ -71,11 +70,62 @@ public enum FileMode
 
 如果试图从文件流中往前倒推找到此前的文件内容，会抛出 `IOException`。
 
+## 总结表
+
+| FileMode     | 如果文件存在 | 如果文件不存在        |
+| ------------ | ------------ | --------------------- |
+| CreateNew    | IOException  | 新建                  |
+| Create       | 截断         | 新建                  |
+| Open         | 打开         | FileNotFoundException |
+| OpenOrCreate | 打开         | 新建                  |
+| Truncate     | 截断         | FileNotFoundException |
+| Append       | 追加         | 新建                  |
+
 ## 配合文件打开权限
 
 在以上这些 `FileMode` 中，`CreateNew`、`Create`、`Truncate`、`Append` 都是需要写文件的权限的，`OpenOrCreate` 是否需要写权限则取决于文件是否存在。
 
 ## 附源码
+
+以下是 `FileStream` 中的 `Open` 方法最终调用处。可以发现，此方法将传入的 `FileMode` 转换成了 Win32 中的值，并且最终调用了 Windows API `CreateFile`。
+
+你可以阅读我的另一篇博客了解 Win32 API 中的 `CreateFile`：
+
+- [Win32 方法 CreateFile 中选择合适的文件打开模式（CREATE_NEW, CREATE_ALWAYS, OPEN_EXISTING, OPEN_ALWAYS, TRUNCATE_EXISTING） - walterlv](/post/win32-file-open-modes)
+
+```csharp
+private unsafe SafeFileHandle CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+{
+    Interop.Kernel32.SECURITY_ATTRIBUTES secAttrs = GetSecAttrs(share);
+
+    int fAccess =
+        ((_access & FileAccess.Read) == FileAccess.Read ? Interop.Kernel32.GenericOperations.GENERIC_READ : 0) |
+        ((_access & FileAccess.Write) == FileAccess.Write ? Interop.Kernel32.GenericOperations.GENERIC_WRITE : 0);
+
+    // Our Inheritable bit was stolen from Windows, but should be set in
+    // the security attributes class.  Don't leave this bit set.
+    share &= ~FileShare.Inheritable;
+
+    // Must use a valid Win32 constant here...
+    if (mode == FileMode.Append)
+        mode = FileMode.OpenOrCreate;
+
+    int flagsAndAttributes = (int)options;
+
+    // For mitigating local elevation of privilege attack through named pipes
+    // make sure we always call CreateFile with SECURITY_ANONYMOUS so that the
+    // named pipe server can't impersonate a high privileged client security context
+    // (note that this is the effective default on CreateFile2)
+    flagsAndAttributes |= (Interop.Kernel32.SecurityOptions.SECURITY_SQOS_PRESENT | Interop.Kernel32.SecurityOptions.SECURITY_ANONYMOUS);
+
+    using (DisableMediaInsertionPrompt.Create())
+    {
+        Debug.Assert(_path != null);
+        return ValidateFileHandle(
+            Interop.Kernel32.CreateFile(_path, fAccess, share, ref secAttrs, mode, flagsAndAttributes, IntPtr.Zero));
+    }
+}
+```
 
 ```csharp
 // Contains constants for specifying how the OS should open a file.
