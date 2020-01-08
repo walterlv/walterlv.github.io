@@ -1,6 +1,7 @@
 ---
 title: ".NET 中选择合适的文件打开模式（CreateNew, Create, Open, OpenOrCreate, Truncate, Append）"
-date: 2020-01-08 13:59:50 +0800
+publishDate: 2020-01-08 13:59:50 +0800
+date: 2020-01-08 14:28:08 +0800
 categories: dotnet csharp windows
 position: knowledge
 ---
@@ -80,6 +81,8 @@ public enum FileMode
 | OpenOrCreate | 打开         | 新建                  |
 | Truncate     | 截断         | FileNotFoundException |
 | Append       | 追加         | 新建                  |
+
+所有这些打开模式都不会修改到文件的属性（Attribute），包括创建时间、针对用户的权限设置。所以如果你希望连这些属性都不需要，而是完完全全创建新的文件，那么请先将原来的文件删除。
 
 ## 配合文件打开权限
 

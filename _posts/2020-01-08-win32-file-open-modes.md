@@ -1,6 +1,7 @@
 ---
 title: "Win32 方法 CreateFile 中选择合适的文件打开模式（CREATE_NEW, CREATE_ALWAYS, OPEN_EXISTING, OPEN_ALWAYS, TRUNCATE_EXISTING）"
-date: 2020-01-08 14:13:08 +0800
+publishDate: 2020-01-08 14:13:08 +0800
+date: 2020-01-08 14:27:59 +0800
 categories: windows dotnet csharp
 position: knowledge
 ---
@@ -73,6 +74,8 @@ HANDLE CreateFileW(
 | `OPEN_EXISTING`         | 打开                | `ERROR_FILE_NOT_FOUND` |
 | `OPEN_ALWAYS`           | 打开                | 新建                   |
 | `TRUNCATE_EXISTING`     | 截断                | `ERROR_FILE_NOT_FOUND` |
+
+所有这些打开模式都不会修改到文件的属性（Attribute），包括创建时间、针对用户的权限设置。所以如果你希望连这些属性都不需要，而是完完全全创建新的文件，那么请先将原来的文件删除。
 
 ---
 
