@@ -1,6 +1,6 @@
 ---
 title: "Win32 方法 CreateFile 中选择合适的文件打开模式（CREATE_NEW, CREATE_ALWAYS, OPEN_EXISTING, OPEN_ALWAYS, TRUNCATE_EXISTING）"
-date: 2020-01-08 14:05:46 +0800
+date: 2020-01-08 14:13:08 +0800
 categories: windows dotnet csharp
 position: knowledge
 ---
@@ -56,7 +56,7 @@ HANDLE CreateFileW(
 
 ### `OPEN_ALWAYS`
 
-如果文件存在，那么打开文件。如果文件不存在，新建一个文件。
+如果文件存在，那么会成功打开文件；并且也可以通过 `GetLastError` 可以得到状态 `ERROR_ALREADY_EXISTS` (183)。如果文件不存在，新建一个文件。
 
 基于此文件流的修改不会截断文件。也就是说，如果原文件内容是 `walterlv`，通过此文件流写入 `111`，那么最终文件内容是 `111terlv`。
 
@@ -73,8 +73,6 @@ HANDLE CreateFileW(
 | `OPEN_EXISTING`         | 打开                | `ERROR_FILE_NOT_FOUND` |
 | `OPEN_ALWAYS`           | 打开                | 新建                   |
 | `TRUNCATE_EXISTING`     | 截断                | `ERROR_FILE_NOT_FOUND` |
-
-
 
 ---
 
