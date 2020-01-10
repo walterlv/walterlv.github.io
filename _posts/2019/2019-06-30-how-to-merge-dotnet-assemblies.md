@@ -1,6 +1,7 @@
 ---
 title: ".NET 将多个程序集合并成单一程序集的 4+3 种方法"
-date: 2019-06-30 13:17:54 +0800
+publishDate: 2019-06-30 13:17:54 +0800
+date: 2020-01-10 21:52:41 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -192,7 +193,7 @@ ILMerge-GUI 工具在 Bitbucket 上开源：
 
 关于 Microsoft.DotNet.ILCompiler 的使用，你可以阅读林德熙的博客：
 
-- [dotnet core 使用 CoreRT 将程序编译为 Native 程序](https://blog.lindexi.com/post/dotnet-core-%E4%BD%BF%E7%94%A8-corert-%E5%B0%86%E7%A8%8B%E5%BA%8F%E7%BC%96%E8%AF%91%E4%B8%BA-native-%E7%A8%8B%E5%BA%8F)
+- [dotnet core 使用 CoreRT 将程序编译为 Native 程序](https://blog.lindexi.com/post/dotnet-core-%E4%BD%BF%E7%94%A8-CoreRT-%E5%B0%86%E7%A8%8B%E5%BA%8F%E7%BC%96%E8%AF%91%E4%B8%BA-Native-%E7%A8%8B%E5%BA%8F.html)
 
 #### 使用 dnSpy
 
