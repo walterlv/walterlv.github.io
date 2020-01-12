@@ -1,6 +1,6 @@
 ---
 title: "使用 Kestrel 为你的 ASP.NET Core 服务添加 https 支持"
-date: 2020-01-11 20:08:23 +0800
+date: 2020-01-11 20:10:40 +0800
 categories: dotnet web
 position: starter
 ---
@@ -73,7 +73,7 @@ Kestrel 只是一个 Web 服务器，能够提供对外的 Web 服务；但它�
 
 另外，如果你还没有 SSL 证书，可以先阅读我的另一篇博客了解如何申请免费的 SSL 证书：
 
-- [使用 freessl.org 为你的域名申请免费的 SSL 证书](/post/apply-for-free-SSL-certificates-using-freessl)
+- [使用 freessl.org 为你的域名申请免费的 SSL 证书](/post/apply-for-free-ssl-certificates-using-freessl)
 
 至此，你的 ASP.NET Core 服务已经可以通过 https 对外提供服务了。
 

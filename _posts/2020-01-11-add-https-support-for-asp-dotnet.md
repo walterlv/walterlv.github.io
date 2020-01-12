@@ -1,6 +1,6 @@
 ---
 title: "三种方法为 ASP.NET Core 对外服务添加 https 支持（kestrel / frp / nginx）"
-date: 2020-01-11 20:08:31 +0800
+date: 2020-01-11 20:10:25 +0800
 categories: dotnet web
 position: starter
 ---
@@ -19,7 +19,7 @@ position: starter
 
 如果不知道如何操作，可以参考我的另一篇博客：
 
-- [使用 freessl.org 为你的域名申请免费的 SSL 证书](/post/apply-for-free-SSL-certificates-using-freessl)
+- [使用 freessl.org 为你的域名申请免费的 SSL 证书](/post/apply-for-free-ssl-certificates-using-freessl)
 
 你可以在以上博客中得到四种不同格式的证书（Nginx/Apache/IIS/Tomcat），下面的方法中每一种方法会使用到其中的一种证书。
 
