@@ -1,6 +1,7 @@
 ---
 title: "为 ASP.NET Core 程序制作 URL 的 301/302 跳转"
-date: 2020-01-11 17:33:51 +0800
+publishDate: 2020-01-11 17:33:51 +0800
+date: 2020-01-12 22:08:32 +0800
 categories: dotnet web blazor
 position: starter
 ---
@@ -17,11 +18,13 @@ position: starter
 
 302 表示“Found”，发现；原始描述为“Moved Temporarily”，即临时移动。通过返回此状态码可以告知浏览器或者搜索引擎此 URL 临时移动到了新的 URL 地址。搜索引擎会使用此新的 URL 来抓取页面的内容但不会更新此 URL，而浏览器会访问新的 URL 但不会缓存此 URL 重定向。
 
-还有其他的重定向的 HTTP 状态码，不过并不常用：
+还有其他的重定向的 HTTP 状态码：
 
 - 303 See Other
 - 307 Temporary Redirect
 - 308 Permanent Redirect
+
+301/302 本来设计为移动资源的时候保持方法不变，但各大浏览器在实现的时候对于 POST 方法，有的实现成了 GET 方法，有的实现成了 POST 方法。于是在后来的 HTTP 标准中将浏览器的错误实现变成了标准，301 和 302 方法要求使用 GET 方法重定向。不过由于历史原因无法保证一定是改用 GET 方法，所以增加了 303 状态码要求一定使用 GET 方法重定向。随后将原来本应该正确实现的 301 和 302 重新定义成 307 和 308 状态码，要求重定向时不允许修改方法。
 
 ## ASP.NET Core
 
