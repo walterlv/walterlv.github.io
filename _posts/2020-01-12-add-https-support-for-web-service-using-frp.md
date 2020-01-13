@@ -1,6 +1,7 @@
 ---
 title: "使用 Frp 为你的 Web 服务添加 https 支持"
-date: 2020-01-12 19:27:28 +0800
+publishDate: 2020-01-12 19:27:28 +0800
+date: 2020-01-13 08:03:28 +0800
 categories: web
 position: starter
 ---
@@ -70,7 +71,7 @@ vhost_https_port = 443
 
 于是，A 机器就配置好了。
 
-#### 反向代理客户端
+### 反向代理客户端
 
 B 机器的配置将是 https 支持的重点：
 
