@@ -1,11 +1,12 @@
 ---
 title: "为什么实现 .NET 的 ICollection 集合时需要实现 SyncRoot 属性？如何正确实现这个属性？"
-date: 2020-01-07 09:29:41 +0800
+publishDate: 2020-01-07 09:29:41 +0800
+date: 2020-01-14 20:21:11 +0800
 categories: dotnet csharp
 position: knowledge
 ---
 
-非泛型版本的 `ICollection` 中有 `IsSynchronized` 属性和 `SyncRoot` 属性，这两个属性被用来设计成以线程安全的方式访问和修改集合。不过这个设计让线程安全的访问有集合的实现方转嫁到了调用方，导致要么很难实现，要么很难调用。
+非泛型版本的 `ICollection` 中有 `IsSynchronized` 属性和 `SyncRoot` 属性，这两个属性被用来设计成以线程安全的方式访问和修改集合。不过这个设计让线程安全的访问由集合的实现方转嫁到了调用方，导致要么很难实现，要么很难调用。
 
 虽然泛型版本的 `ICollection<T>` 已经改进了设计，不再引入 `SyncRoot` 这样的属性到接口中，但如果我们在某些场景下需要实现 `ICollection` 非泛型集合时，如何正确实现 SyncRoot 模式（SyncRoot Pattern）呢？
 
