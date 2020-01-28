@@ -1,7 +1,7 @@
 ---
 title: "为什么实现 .NET 的 ICollection 集合时需要实现 SyncRoot 属性？如何正确实现这个属性？"
 publishDate: 2020-01-07 09:29:41 +0800
-date: 2020-01-14 20:21:11 +0800
+date: 2020-01-28 16:52:42 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -20,7 +20,7 @@ position: knowledge
 
 于是实现 `SyncRoot` 的正确方法应该是：
 
-—— **避免公开 SyncRoot 属性**
+—— **避免公开 SyncRoot 属性** 
 
 所以 SyncRoot 模式应该这样实现：
 
