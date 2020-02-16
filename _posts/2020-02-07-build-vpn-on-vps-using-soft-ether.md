@@ -1,9 +1,8 @@
 ---
 title: "使用 SoftEther VPN 在 VPS 和个人电脑之间搭建 VPN 网络"
-date: 2020-02-07 09:48:35 +0800
+date: 2020-02-07 09:48:36 +0800
 categories: linux network
 position: starter
-published: false
 ---
 
 VPN 全称是 Virtual Private Network（虚拟专用网络），可以在多台设备之间建立安全的通信网络。VPS 是 Virtual Private Server，虚拟专用服务器，指的是一台虚拟的电脑，用于提供服务。
@@ -354,8 +353,9 @@ A TLS certificate warning will appear because the server uses self signed certif
 
 ![输入计算机名](/static/posts/2020-01-31-16-38-42.png)
 
+……
 
-
+<!-- 
 ---
 
-**参考资料**
+**参考资料** -->
