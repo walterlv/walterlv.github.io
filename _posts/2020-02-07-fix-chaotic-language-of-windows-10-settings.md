@@ -1,6 +1,6 @@
 ---
 title: "修复 Windows 10 设置界面里面混乱的语言翻译"
-date: 2020-02-07 13:35:27 +0800
+date: 2020-02-07 13:58:41 +0800
 categories: windowes
 position: problem
 ---
@@ -60,39 +60,9 @@ Windows 10 每次新发布一个版本都会遇到各种各样的新型 Bug。
 
 ### 删除中文语言包
 
-以管理员权限启动 PowerShell，然后输入 `Get-WinUserLanguageList` 命令，以获取我们要删除的语言的 LanguageTag。
+注销，然后重新登录。再次进入“Settings -> Time & Language -> Language”，将中文语言删除。
 
-```powershell
-PS C:\Windows\system32> Get-WinUserLanguageList
-
-LanguageTag     : en-US
-Autonym         : English (United States)
-EnglishName     : English
-LocalizedName   : English (United States)
-ScriptName      : Latin
-InputMethodTips : {0409:00000409}
-Spellchecking   : True
-Handwriting     : False
-
-LanguageTag     : zh-Hans-CN
-Autonym         : 中文(中华人民共和国)
-EnglishName     : Chinese
-LocalizedName   : Chinese (Simplified, China)
-ScriptName      : Chinese (Simplified)
-InputMethodTips : {0804:{81D4E9C9-1D3B-41BC-9E6C-4B40BF79E35E}{FA550B04-5AD7-411F-A5AC-CA038EC515D7}}
-Spellchecking   : True
-Handwriting     : True
-```
-
-然后，依次输入以下四句命令，获取语言列表，筛选我们要删除的语言，删除筛选出的语言，设置回列表。
-
-```powershell
-PS C:\Windows\system32> $LangList = Get-WinUserLanguageList
-PS C:\Windows\system32> $ToDeletedLang = $LangList | where LanguageTag -eq "zh-Hans-CN"
-PS C:\Windows\system32> $LangList.Remove($ToDeletedLang)
-True
-PS C:\Windows\system32> Set-WinUserLanguageList $LangList -Force
-```
+![删除中文语言包](/static/posts/2020-02-07-13-28-24.png)
 
 ### 删除下载缓存文件
 
