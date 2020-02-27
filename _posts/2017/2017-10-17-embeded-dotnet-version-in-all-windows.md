@@ -1,7 +1,7 @@
 ---
 title: "各个版本 Windows 10 系统中自带的 .NET Framework 版本"
 publishDate: 2017-10-17 10:49:40 +0800
-date: 2020-01-06 14:01:30 +0800
+date: 2020-02-27 10:14:53 +0800
 categories: windows dotnet
 tags: Windows .Net
 ---
@@ -11,12 +11,12 @@ tags: Windows .Net
 | 预览中                          | 预览中            | 20H1     | —                          |
 | November 2019 Update            | 10.0.18363 (1909) | 19H2     | .NET Framework 4.8         |
 | Windows 10 May 2019 Update      | 10.0.18362 (1903) | 19H1     | .NET Framework 4.8         |
-| Windows 10 October 2018 Update  | 10.0.17176 (1809) | RS5      | .NET Framework 4.7.2       |
+| Windows 10 October 2018 Update  | 10.0.17763 (1809) | RS5      | .NET Framework 4.7.2       |
 | Windows 10 April 2018 Update    | 10.0.17134 (1803) | RS4      | .NET Framework 4.7.2       |
 | Windows 10 Fall Creators Update | 10.0.16299 (1709) | RS3      | .NET Framework 4.7.1       |
 | Windows 10 Creators Update      | 10.0.15063 (1703) | RS2      | .NET Framework 4.7         |
 | Windows 10 Anniversary Update   | 10.0.14393 (1607) | RS1      | .NET Framework 4.6.2       |
-| Windows 10 November Update      | 10.0.15063 (1511) | TH2      | .NET Framework 4.6.1       |
+| Windows 10 November Update      | 10.0.10586 (1511) | TH2      | .NET Framework 4.6.1       |
 | Windows 10                      | 10.0.10240 (1507) | TH1      | .NET Framework 4.6         |
 
 | Windows Server 名称 | 自带的 .NET Framework 版本 |
