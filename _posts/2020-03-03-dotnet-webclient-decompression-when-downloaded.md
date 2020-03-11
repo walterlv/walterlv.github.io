@@ -1,6 +1,7 @@
 ---
 title: ".NET WebClient 类下载部分文件会错误？可能是解压缩的锅"
-date: 2020-03-03 16:26:02 +0800
+publishDate: 2020-03-03 16:26:02 +0800
+date: 2020-03-11 17:02:19 +0800
 categories: dotnet
 position: problem
 ---
@@ -62,50 +63,9 @@ Host: localhost:5000
 Connection: Keep-Alive
 ```
 
-`WebClient` 响应：
+`WebClient` 响应（因为内含乱码，会让网页显示不正常，所以放截图）：
 
-```yaml
-HTTP/1.1 200 OK
-Date: Tue, 03 Mar 2020 07:54:53 GMT
-Content-Type: image/svg+xml
-Transfer-Encoding: chunked
-Connection: keep-alive
-Expires: Tue, 02 Mar 2021 09:16:30 GMT
-Server: JSP3/2.0.14
-Content-Encoding: gzip
-ETag: W/"Fid8uZXkFIrQWqDgx84YL_8PPqIi"
-Last-Modified: Wed, 08 Jan 2020 04:20:14 GMT
-Accept-Ranges: bytes
-Cache-Control: public, max-age=31536000
-Access-Control-Allow-Origin: *
-Access-Control-Expose-Headers: X-Log, X-Reqid
-Access-Control-Max-Age: 2592000
-Content-Disposition: inline; filename="walterlv-icon.svg"; filename*=utf-8''walterlv-icon.svg
-Content-MD5: +6J/pVyMK4cWQf8n3gMnbQ==
-Content-Transfer-Encoding: binary
-X-Log: X-Log
-X-M-Log: QNM:xs441;SRCPROXY:xs1756;SRC:39;SRCPROXY:39;QNM3:40
-X-M-Reqid: wgIAAAiVtix6zucV
-X-Qiniu-Zone: 0
-X-Qnm-Cache: Miss
-X-Reqid: ttYAAAAPpS16zucV
-X-Svr: IO
-Ohc-File-Size: 992
-Timing-Allow-Origin: *
-Ohc-Cache-HIT: suz2ct85 [3], njctcache85 [1], qdix85 [1]
-Age: 81503
-X-Via: 1.1 PShbhgdx4pn187:2 (Cdn Cache Server V2.0)[0 200 0], 1.1 PS-FOC-01tho70:12 (Cdn Cache Server V2.0)[0 200 0]
-Access-Control-Allow-Methods: GET,OPTIONS
-Access-Control-Allow-Credentials: true
-Access-Control-Allow-Headers: *
-
-1fc
-        S]o 0}Τ  ;4  1 
-V-  & k u   4 ɯ m i a  9  k_  aW ! d 61b " *m  n <FM  ? } K O?o@   }u e
- !  _ <% 
-
-*** FIDDLER: RawDisplay truncated at 128 characters. Right-click to disable truncation. ***
-```
+![WebClient 响应](/static/posts/2020-03-11-17-01-05.png)
 
 Postman 请求：
 
@@ -121,50 +81,9 @@ Accept-Encoding: gzip, deflate, br
 Connection: keep-alive
 ```
 
-Postman 响应：
+Postman 响应（因为内含乱码，会让网页显示不正常，所以放截图）：
 
-```yaml
-HTTP/1.1 200 OK
-Date: Tue, 03 Mar 2020 07:58:26 GMT
-Content-Type: image/svg+xml
-Transfer-Encoding: chunked
-Connection: keep-alive
-Expires: Tue, 02 Mar 2021 09:16:30 GMT
-Server: JSP3/2.0.14
-Content-Encoding: gzip
-ETag: W/"Fid8uZXkFIrQWqDgx84YL_8PPqIi"
-Last-Modified: Wed, 08 Jan 2020 04:20:14 GMT
-Accept-Ranges: bytes
-Cache-Control: public, max-age=31536000
-Access-Control-Allow-Origin: *
-Access-Control-Expose-Headers: X-Log, X-Reqid
-Access-Control-Max-Age: 2592000
-Content-Disposition: inline; filename="walterlv-icon.svg"; filename*=utf-8''walterlv-icon.svg
-Content-MD5: +6J/pVyMK4cWQf8n3gMnbQ==
-Content-Transfer-Encoding: binary
-X-Log: X-Log
-X-M-Log: QNM:xs441;SRCPROXY:xs1756;SRC:39;SRCPROXY:39;QNM3:40
-X-M-Reqid: wgIAAAiVtix6zucV
-X-Qiniu-Zone: 0
-X-Qnm-Cache: Miss
-X-Reqid: ttYAAAAPpS16zucV
-X-Svr: IO
-Ohc-File-Size: 992
-Timing-Allow-Origin: *
-Ohc-Cache-HIT: suz2ct85 [3], njctcache85 [1], qdix85 [1]
-Age: 81716
-X-Via: 1.1 PShbhgdx4pn187:2 (Cdn Cache Server V2.0)[0 200 0], 1.1 PS-FOC-01tho70:12 (Cdn Cache Server V2.0)[0 200 0]
-Access-Control-Allow-Methods: GET,OPTIONS
-Access-Control-Allow-Credentials: true
-Access-Control-Allow-Headers: *
-
-1fc
-        S]o 0}Τ  ;4  1 
-V-  & k u   4 ɯ m i a  9  k_  aW ! d 61b " *m  n <FM  ? } K O?o@   }u e
- !  _ <% 
-
-*** FIDDLER: RawDisplay truncated at 128 characters. Right-click to disable truncation. ***
-```
+![Postman 响应](/static/posts/2020-03-11-17-02-13.png)
 
 请求和响应贴得很长，这可以让比较感兴趣的小伙伴仔细比较。但这里我直接给出我比较后的结论：
 
