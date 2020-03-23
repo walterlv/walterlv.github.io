@@ -1,7 +1,7 @@
 ---
 title: "推荐 .NET/C# 开发者安装的几款代码分析插件或对应的代码分析 NuGet 包"
 publishDate: 2019-10-12 11:36:42 +0800
-date: 2019-11-21 15:56:24 +0800
+date: 2020-03-23 11:31:59 +0800
 categories: dotnet csharp
 position: principle
 ---
@@ -20,12 +20,16 @@ position: principle
 1. Microsoft Code Analysis
     - VS 扩展：[Microsoft Code Analysis 2019](https://marketplace.visualstudio.com/items?itemName=VisualStudioPlatformTeam.MicrosoftCodeAnalysis2019)
     - NuGet 包： [Microsoft.CodeAnalysis.FxCopAnalyzers](https://www.nuget.org/packages/Microsoft.CodeAnalysis.FxCopAnalyzers)
+1. Roslynator
+    - VS 扩展：[Roslynator 2019](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2019)
+    - VS Code 扩展：[Roslynator](https://marketplace.visualstudio.com/items?itemName=josefpihrt-vscode.roslynator)
+    - NuGet 包：[Roslynator.Analyzers](https://www.nuget.org/packages/Roslynator.Analyzers/)
 1. Code Cracker
     - VS 扩展：[Code Cracker for C#](https://marketplace.visualstudio.com/items?itemName=GiovanniBassi-MVP.CodeCrackerforC)
     - NuGet 包：[codecracker.CSharp](https://www.nuget.org/packages/codecracker.CSharp/)
 1. Meziantou.Analyzer
     - VS 扩展：[Meziantou.Analyzer](https://marketplace.visualstudio.com/items?itemName=Meziantou.Meziantou-Analyzer)
-    - NuGet 包：[Meziantou.Analyzer 1.0.238](https://www.nuget.org/packages/Meziantou.Analyzer/)
+    - NuGet 包：[Meziantou.Analyzer](https://www.nuget.org/packages/Meziantou.Analyzer/)
 
 ## 类型
 
@@ -79,6 +83,14 @@ Microsoft Code Analysis 分析器的诊断 ID 都是以 `CA` 开头，因此你�
 如果你想安装这款 NuGet 包，并不需要特别去 NuGet 包管理器中安装，也不需要命令行，只需要去项目的属性页面，选择“安装”就好了。如下图：
 
 ![安装分析器](/static/posts/2019-10-12-11-36-25.png)
+
+### Roslynator
+
+是第三方开发者开发的，代码已在 GitHub 上开源，社区非常活跃：
+
+- [JosefPihrt/Roslynator: A collection of 500+ analyzers, refactorings and fixes for C#, powered by Roslyn.](https://github.com/JosefPihrt/Roslynator)
+
+提供了 500 多个代码分析和重构。更值得推荐的一个原因是他为 Visual Studio 原本的很多报告了问题的代码提供了生成解决问题代码的能力。
 
 ### Code Cracker
 
