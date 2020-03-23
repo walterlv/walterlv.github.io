@@ -1,7 +1,7 @@
 ---
 title: "将美化进行到底，把 PowerShell 做成 oh-my-zsh 的样子"
 publishDate: 2017-12-26 15:00:17 +0800
-date: 2020-01-02 08:09:37 +0800
+date: 2020-03-23 09:13:03 +0800
 categories: windows powershell
 ---
 
@@ -104,6 +104,8 @@ Set-Theme Paradox
 
 推荐的其他 PowerShell：
 
+- [Windows Terminal](https://www.microsoft.com/store/productId/9N0DX20HK701)
+- [PowerShell Core](https://github.com/PowerShell/PowerShell)
 - [ConEmu](https://www.fosshub.com/ConEmu.html)
 - [cmder - Console Emulator](http://cmder.net/)
 
