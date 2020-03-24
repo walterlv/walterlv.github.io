@@ -1,6 +1,7 @@
 ---
 title: "将 Windows Terminal 作为外部工具集成到其他工具/程序/代码中"
-date: 2020-03-17 10:05:58 +0800
+publishDate: 2020-03-17 10:05:58 +0800
+date: 2020-03-24 09:49:23 +0800
 categories: windows dotnet
 position: knowledge
 ---
@@ -18,6 +19,8 @@ Windows Terminal 在 Windows 上是一款 UWP 应用，然而其依然具有良�
 在应用商店可以下载到 [Windows Terminal (Preview)](https://www.microsoft.com/store/productId/9N0DX20HK701)，下载安装后，你就可以开始使用 `wt` 命令了，这可以用来启动 Windows Terminal。（这里要说明一下，虽然你可以找到应用程序在 `C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_0.9.433.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe` 下，但是你并没有权限直接去运行 UWP 应用的 exe 入口。
 
 因此，你在任意的命令行工具，甚至是 Win+R 运行窗口，或者开始菜单的搜索中输入 `wt` 回车就可以运行 Windows Terminal 了。
+
+增加的命令实际上来自于 `C:\Users\lvyi\AppData\Local\Microsoft\WindowsApps` 目录。你可以进入这个目录找到商店应用增加的所有的命令。
 
 默认情况下直接打开会进入用户文件夹下。
 
@@ -39,7 +42,7 @@ Windows Terminal 在 Windows 上是一款 UWP 应用，然而其依然具有良�
     },
 ```
 
-在修改成 `%__CD__%` 之后，如果通过快捷方式直接启动 Windows Terminal，则会看到路径被切换到了 `C:\Windows`。不过这不重要，因为即便是选择了用户路径，每次启动也都是要切走的。
+在修改成 `%__CD__%` 之后，如果通过快捷方式直接启动 Windows Terminal，则会看到路径被切换到了 `C:\Windows\System32`。不过这不重要，因为即便是选择了用户路径，每次启动也都是要切走的。
 
 ## 工具集成
 
