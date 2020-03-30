@@ -12,6 +12,10 @@
 
 ## About to Write
 
+- RIME / 小狼毫
+    - [致第一次安装RIME的你 - 作业部落 Cmd Markdown 编辑阅读器](https://www.zybuluo.com/eternity/note/81763)
+    - [Rime输入法能否使用笔画辅助？ - 知乎](https://www.zhihu.com/question/27121962)
+
 - LOH
     - [The large object heap on Windows systems - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/large-object-heap)
     - [GCSettings.LargeObjectHeapCompactionMode Property (System.Runtime) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.gcsettings.largeobjectheapcompactionmode)
