@@ -1,6 +1,7 @@
 ---
 title: "当无边框窗口被子窗口遮挡导致难以调节窗口大小时，可通过处理 NCHITTEST 消息重新支持调节窗口大小"
-date: 2020-04-11 18:48:41 +0800
+publishDate: 2020-04-11 18:48:41 +0800
+date: 2020-04-11 20:32:30 +0800
 categories: windows dotnet csharp
 position: problem
 ---
@@ -67,6 +68,8 @@ public partial class ChildWindow : Window
 ```
 
 上面的代码会比较简化，因为我让子窗口的所有区域都返回 `HTTRANSPARENT`，这会让整个子窗口区域的消息都不由子窗口处理。如果需要使用这段代码的话，你需要自己判断窗口的边缘。
+
+![子窗口区域可以调节窗口大小](/static/posts/2020-04-11-resize-with-child-windows-2.gif)
 
 如果需要得到当前坐标的话，可以把下面的方法加入到你的项目中：
 
