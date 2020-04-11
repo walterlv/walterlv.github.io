@@ -1,7 +1,7 @@
 ---
 title: "Windows 系统的默认字体是什么？应用的默认字体是什么？"
 publishDate: 2019-11-24 17:29:29 +0800
-date: 2019-12-08 15:29:12 +0800
+date: 2020-04-11 09:48:31 +0800
 categories: windows
 position: knowledge
 ---
@@ -28,12 +28,14 @@ Segoe UI包含拉丁（Latin），希腊（Greek），西里尔字母（Cyrillic
 
 | 语言                              | 字体               |
 | --------------------------------- | ------------------ |
-| 日语（Japanese）                  | Meiryo             |
+| 日语（Japanese）                  | Yu Gothic UI       |
 | 韩语（Korean）                    | Malgun Gothic      |
 | 繁体中文（Chinese (Traditional)） | Microsoft JhengHei |
 | 简体中文（Chinese (Simplified)）  | Microsoft YaHei    |
 | 希伯来语（Hebrew）                | Gisha              |
 | 泰语（Thai）                      | Leelawadee         |
+
+[注] 经 神樹桜乃 指出，日语系统默认字体是 Yu Gothic UI 而不是 Meiryo。
 
 Windows 操作系统在启动应用程序的时候，会根据当前系统用户的地区决定默认字体应该采用哪一个。
 
