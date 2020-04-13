@@ -1,6 +1,7 @@
 ---
 title: "通过子类化窗口（SubClass）来为现有的某个窗口添加新的窗口处理程序（或者叫钩子，Hook）"
-date: 2020-04-13 21:24:48 +0800
+publishDate: 2020-04-13 21:24:48 +0800
+date: 2020-04-13 21:33:42 +0800
 categories: win32 dotnet csharp
 position: knowledge
 ---
@@ -29,7 +30,11 @@ LONG SetWindowLongA(
 
 nIndex 指定为 `GWL_WNDPROC`，在此情况下，后面的 `dwNewLong` 就可以指定为一个函数指针，返回值就是原始的消息处理函数。
 
-对于 .NET/C# 来说，我们需要拿到窗口句柄，拿到一个消息处理函数的指针。窗口句柄在不同的 UI 框架拿的方法不同，WPF 是通过 `HwndSource` 或者 `WindowInteropHelper` 来拿。而将委托转换成函数指针则可通过 `Marshal.GetFunctionPointerForDelegate` 来转换。
+对于 .NET/C# 来说，我们需要拿到窗口句柄，拿到一个消息处理函数的指针。
+
+窗口句柄在不同的 UI 框架拿的方法不同，WPF 是通过 `HwndSource` 或者 `WindowInteropHelper` 来拿。而将委托转换成函数指针则可通过 `Marshal.GetFunctionPointerForDelegate` 来转换。
+
+你可别吐槽 WPF 另有它法来加消息处理函数啊！本文说的是 Win32，方法需要具有普适性。特别是那种你只能拿到一个窗口句柄，其他啥也不知道的窗口。
 
 ```csharp
 var hWnd = new WindowInteropHelper(this).EnsureHandle();
