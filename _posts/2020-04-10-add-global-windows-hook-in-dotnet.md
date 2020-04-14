@@ -1,6 +1,7 @@
 ---
 title: ".NET/C# 使用 SetWindowsHookEx 监听鼠标或键盘消息以及此方法的坑"
-date: 2020-04-10 17:01:18 +0800
+publishDate: 2020-04-10 17:01:18 +0800
+date: 2020-04-14 08:19:15 +0800
 categories: windows dotnet csharp
 position: knowledge
 ---
@@ -178,6 +179,10 @@ var threadId = GetWindowThreadProcessId(hWnd, out _);
 ```
 
 本来在 `SetWindowsHookEx` 最后一个参数传入 0 表示全局钩子的，那么现在传入 `threadId` 即仅监听此线程的消息。
+
+另外，如果只是打算处理单个窗口的消息，而不是这个线程里的所有消息，那么建议使用子类化的方式来实现。详情可阅读我的另一篇博客：
+
+- [通过子类化窗口（SubClass）来为现有的某个窗口添加新的窗口处理程序（或者叫钩子，Hook） - walterlv](/post/hook-a-window-by-sub-classing-it.html)
 
 ### 错误 1429：此挂接程序只可整体设置。
 

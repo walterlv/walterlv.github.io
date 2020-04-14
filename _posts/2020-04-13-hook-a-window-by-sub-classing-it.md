@@ -1,7 +1,7 @@
 ---
 title: "通过子类化窗口（SubClass）来为现有的某个窗口添加新的窗口处理程序（或者叫钩子，Hook）"
 publishDate: 2020-04-13 21:24:48 +0800
-date: 2020-04-13 21:33:42 +0800
+date: 2020-04-14 08:19:29 +0800
 categories: win32 dotnet csharp
 position: knowledge
 ---
@@ -128,7 +128,7 @@ private const int HTTRANSPARENT = -1;
 
 本文一开始说到了使用 `SetWindowsHookEx` 的方式来添加钩子，具体你可以阅读我的另一篇博客来了解如何实现：
 
-- [.NET/C# 使用 SetWindowsHookEx 监听鼠标或键盘消息以及此方法的坑 - walterlv](https://blog.walterlv.com/post/add-global-windows-hook-in-dotnet.html)
+- [.NET/C# 使用 SetWindowsHookEx 监听鼠标或键盘消息以及此方法的坑 - walterlv](/post/add-global-windows-hook-in-dotnet.html)
 
 ---
 
