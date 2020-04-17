@@ -1,7 +1,7 @@
 ---
 title: "git subtree 的使用"
 publishDate: 2019-03-10 19:04:18 +0800
-date: 2020-04-17 14:56:51 +0800
+date: 2020-04-17 15:01:24 +0800
 categories: git
 position: starter
 ---
@@ -22,7 +22,7 @@ $ git subtree add --prefix=SubFolder/B https://github.com/walterlv/walterlv.git 
 
 这样，B 仓库的整体，会被作为 A 仓库中一个 `SubFolder/B` 的子文件夹，同时保留 B 仓库中的整个日志记录。
 
-## 从 A 仓库中分离出一个在文件夹成为 B 仓库
+## 从 A 仓库中分离出一个子文件夹成为 B 仓库
 
 在 A 仓库的根目录输入命令：
 
