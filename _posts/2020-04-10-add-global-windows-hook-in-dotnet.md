@@ -1,7 +1,7 @@
 ---
 title: ".NET/C# 使用 SetWindowsHookEx 监听鼠标或键盘消息以及此方法的坑"
 publishDate: 2020-04-10 17:01:18 +0800
-date: 2020-04-18 09:44:17 +0800
+date: 2020-04-18 09:46:37 +0800
 categories: windows dotnet csharp
 position: knowledge
 ---
@@ -220,9 +220,9 @@ var threadId = GetWindowThreadProcessId(hWnd, out _);
 
 如果就是要挂接其他类型的钩子怎么办？办法总还是有的：
 
-1. 可以考虑做非托管程序集，专门用来挂接；
+1. 可以考虑做非托管 dll，专门用来挂接；
 1. 可以考虑使用 `SetWinEventHook`，这个是不用注入到目标进程的；
-1. 可以考虑使用 `SetWinEventHook` 抓取一部分有限的信息。
+1. 可以考虑使用 `System.Windows.Automation` 抓取一部分有限的信息。
 
 ---
 
