@@ -1,7 +1,7 @@
 ---
 title: ".NET/C# 使用 SetWindowsHookEx 监听鼠标或键盘消息以及此方法的坑"
 publishDate: 2020-04-10 17:01:18 +0800
-date: 2020-04-18 09:46:37 +0800
+date: 2020-04-18 10:55:53 +0800
 categories: windows dotnet csharp
 position: knowledge
 ---
@@ -33,11 +33,11 @@ public partial class MainWindow : Window
 
     private void OnLoaded(object sender, RoutedEventArgs e)
     {
-        // 下面代码在 .NET Core 3.x 以上可正常工作，在 .NET Framework 4.0 以下可正常工作。
-        // 如果不满足此条件，你也可能可以正常工作，详情请阅读本文后续内容。
-        var hModule = Marshal.GetHINSTANCE(Assembly.GetExecutingAssembly().GetModules()[0]);
-        // 如果上面的代码无法工作，可考虑换成下面这句：
-        // var hModule = LoadLibrary("user32.dll");
+        var hModule = GetModuleHandle(null);
+        // 你可能会在网上搜索到下面注释掉的这种代码，但实际上已经过时了。
+        //   下面代码在 .NET Core 3.x 以上可正常工作，在 .NET Framework 4.0 以下可正常工作。
+        //   如果不满足此条件，你也可能可以正常工作，详情请阅读本文后续内容。
+        // var hModule = Marshal.GetHINSTANCE(Assembly.GetExecutingAssembly().GetModules()[0]);
 
         _hMouseHook = SetWindowsHookEx(
             HookType.WH_MOUSE_LL,
@@ -62,6 +62,9 @@ public partial class MainWindow : Window
 本文讨论使用 .NET/C# 来完成 `SetWindowsHookEx` 的调用，所以自然少不了 P/Invoke（平台调用）。因此你必须将以下代码也添加到你的代码仓库中：
 
 ```csharp
+[DllImport("kernel32.dll")]
+public static extern IntPtr GetModuleHandle(string lpModuleName);
+
 [DllImport("kernel32", SetLastError = true)]
 static extern IntPtr LoadLibrary(string lpFileName);
 
@@ -119,13 +122,11 @@ HHOOK SetWindowsHookExA(
 
 ### 模块句柄传什么？
 
-本文一开始的代码中，我使用 `Marshal` 直接从托管程序集中获取了模块句柄，然后传入：
+本文一开始被注释掉的代码中，我使用 `Marshal` 直接从托管程序集中获取了模块句柄。
 
-```csharp
-var hModule = Marshal.GetHINSTANCE(Assembly.GetExecutingAssembly().GetModules()[0]);
-```
+这里需要说明，托管程序集不能注入到其他进程，因此也不可以挂接钩子。但有例外，`WH_KEYBOARD_LL` 或者 `WH_MOUSE_LL` 这两个是不需要注入 dll 的，因此可以挂接钩子。
 
-实际上，`SetWindowsHookEx` 方法里面根本没有使用这个模块做什么真正的事情，它只是验证一下一个模块而已。只要存在。
+对于 `WH_KEYBOARD_LL` 和 `WH_MOUSE_LL`，`SetWindowsHookEx` 方法里面根本没有使用这个模块做什么真正的事情，它只是验证一下一个模块而已。只要存在于你的进程中。
 
 所以，传入其他的模块都是可以的：
 
@@ -133,9 +134,23 @@ var hModule = Marshal.GetHINSTANCE(Assembly.GetExecutingAssembly().GetModules()[
 var hModule = LoadLibrary("user32.dll");
 ```
 
-这也是一开始我在 P/Invoke 的方法里面预留了一个 `LoadLibrary` 方法的原因。
+传入口模块也是可以的：
 
-至于为什么是 user32.dll。嗯，反正我们创建窗口监听消息都已经大量调用 user32.dll 的 API 了，这 dll 肯定已经加入到我们的进程中了，所以我们把这个传入到参数中是可以通过验证的。
+```csharp
+var hModule = Marshal.GetHINSTANCE(Assembly.GetEntryAssembly().GetModules()[0]);
+```
+
+```csharp
+var hModule = GetModuleHandle(null);
+```
+
+这也是一开始我在 P/Invoke 的方法里面预留了 `LoadLibrary` 和 `GetModuleHandle` 方法的原因。
+
+通过调试也能发现这两个的入口模块是相同的：
+
+![入口模块句柄](/static/posts/2020-04-18-10-55-00.png)
+
+至于为什么可以用 user32.dll。嗯，反正我们创建窗口监听消息都已经大量调用 user32.dll 的 API 了，这 dll 肯定已经加入到我们的进程中了，所以我们把这个传入到参数中是可以通过验证的。
 
 ### 错误 126：找不到指定的模块。
 
@@ -211,7 +226,7 @@ var threadId = GetWindowThreadProcessId(hWnd, out _);
 
 接下来说明：
 
-在 `HookType` 的所有种类中，只有 `WH_MOUSE_LL` 和 `WH_KEYBOARD_LL` 是不需要注入到目标进程的，其他都必须将 dll 注入到目标进程才可以完成挂接。然而 .NET 程序集无法被安全注入到其他进程；随便用一个其他 dll 时，里面没有被挂接的函数地址，在注入后就会导致目标进程崩溃。
+在 `HookType` 的所有种类中，只有 `WH_MOUSE_LL` 和 `WH_KEYBOARD_LL` 是不需要注入到目标进程的，其他都必须将 dll 注入到目标进程才可以完成挂接。然而 .NET 程序集无法被注入到其他进程；随便用一个其他 dll 时，里面没有被挂接的函数地址，在注入后就会导致目标进程崩溃。
 
 所以：
 
