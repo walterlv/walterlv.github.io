@@ -1,7 +1,7 @@
 ---
 title: "C# 8.0 可空引用类型中的各项警告/错误的含义和示例代码"
 publishDate: 2019-04-21 20:23:30 +0800
-date: 2019-11-24 19:11:24 +0800
+date: 2020-04-23 20:16:44 +0800
 categories: csharp visualstudio msbuild
 position: knowledge
 ---
@@ -124,11 +124,17 @@ protected override void FooAsync(string? value)
 }
 ```
 
+### `CS8614`
+
+接口中定义的成员中的 null 性与实现中成员的 null 型不匹配。
+
+具体来说，你的接口中允许为 null，但是实现中却不允许为 null。
+
 ### `CS8616`
 
 接口中定义的成员中的 null 性与实现中成员的 null 型不匹配。
 
-比如你的接口中不允许为 null，但是实现中却允许为 null。
+具体来说，你的接口中不允许为 null，但是实现中却允许为 null。
 
 ### `CS8618`
 

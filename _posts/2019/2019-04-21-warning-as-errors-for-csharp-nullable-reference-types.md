@@ -1,7 +1,7 @@
 ---
 title: "C# 可空引用类型 Nullable 更强制的约束：将警告改为错误 WarningsAsErrors"
 publishDate: 2019-04-21 20:20:18 +0800
-date: 2019-11-29 16:18:57 +0800
+date: 2020-04-23 20:17:50 +0800
 categories: csharp msbuild
 position: problem
 ---
@@ -70,7 +70,7 @@ NU1605;CS8600;CS8602;CS8603;CS8604;CS8618;CS8625
         <TargetFramework>netcoreapp3.0</TargetFramework>
         <LangVersion>latest</LangVersion>
         <Nullable>enable</Nullable>
-++      <WarningsAsErrors>$(WarningsAsErrors);CS8600;CS8601;CS8602;CS8603;CS8604;CS8609;CS8610;CS8616;CS8618;CS8619;CS8622;CS8625</WarningsAsErrors>
+++      <WarningsAsErrors>$(WarningsAsErrors);CS8600;CS8601;CS8602;CS8603;CS8604;CS8609;CS8610;CS8614;CS8616;CS8618;CS8619;CS8622;CS8625</WarningsAsErrors>
       </PropertyGroup>
 
     </Project>
