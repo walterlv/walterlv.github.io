@@ -5,6 +5,13 @@ categories: favorite
 sitemap: false
 ---
 
+- Windows Beta
+    - betawiki.net
+    - https://winworldpc.com/home
+    - old-dos.ru
+    - archive.org
+    - https://www.betaarchive.com/
+
 - Scoop
     - [Windows - Scoop软件包管理神器 - 小新博客](https://www.limufang.com/post/569.html)
 
