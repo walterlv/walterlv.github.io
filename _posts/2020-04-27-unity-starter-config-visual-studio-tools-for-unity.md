@@ -1,6 +1,6 @@
 ---
 title: "Unity3D 入门：在 Visual Studio 里使用 Visual Studio Tools for Unity 全套工具"
-date: 2020-04-27 19:35:40 +0800
+date: 2020-04-27 21:06:05 +0800
 categories: unity csharp
 position: starter
 ---
@@ -13,7 +13,7 @@ Visual Studio 安装过程中一起勾选的 Visual Studio Tools for Unity 提�
 
 ## Visual Studio Tools for Unity
 
-我在 [Unity3D 入门：安装 Unity3D 并配置与 Visual Studio 的协作开发环境 - walterlv](https://blog.walterlv.com/post/unity-starter-install-and-integrated-with-visual-studio.html) 一文中提及了在安装 Unity 的开发环境时建议勾选了 Visual Studio Tools for Unity。
+我在 [Unity3D 入门：安装 Unity3D 并配置与 Visual Studio 的协作开发环境 - walterlv](/post/unity-starter-install-and-integrated-with-visual-studio.html) 一文中提及了在安装 Unity 的开发环境时建议勾选了 Visual Studio Tools for Unity。
 
 如果你还没安装，可以阅读此博客安装。如果安装后没有设置 Unity 编辑器的关联，也可以阅读这篇博客了解如何设置关联。
 
