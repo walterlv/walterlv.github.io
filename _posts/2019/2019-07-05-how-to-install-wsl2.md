@@ -1,6 +1,7 @@
 ---
 title: "如何在 Windows 10 中安装 WSL2 的 Linux 子系统"
-date: 2019-07-05 10:18:59 +0800
+publishDate: 2019-07-05 10:18:59 +0800
+date: 2020-04-28 20:26:41 +0800
 categories: windows linux
 position: starter
 ---
@@ -70,7 +71,7 @@ wsl -l
 本文的示例使用的是小白门喜欢的 Ubuntu 发行版。
 
 ```powershell
-wsl --set-version Ubuntu> 2
+wsl --set-version Ubuntu 2
 ```
 
 ![设置 WSL2](/static/posts/2019-07-05-10-12-35.png)
