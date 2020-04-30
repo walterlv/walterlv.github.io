@@ -1,6 +1,7 @@
 ---
 title: "Linux Shell 中需要转义的字符"
-date: 2020-04-30 10:24:16 +0800
+publishDate: 2020-04-30 10:24:16 +0800
+date: 2020-04-30 11:12:46 +0800
 categories: linux
 position: knowledge
 ---
@@ -23,7 +24,7 @@ position: knowledge
 
 我有另一篇描述 Linux Shell 中路径空格转义相关的博客：
 
-- [了解 Windows/Linux 下命令行/Shell 启动程序传参的区别，这下不用再担心 Windows 下启动程序传参到 Linux 下挂掉了 - walterlv](https://blog.walterlv.com/post/typing-difference-among-shells-in-different-operating-systems.html)
+- [了解 Windows/Linux 下命令行/Shell 启动程序传参的区别，这下不用再担心 Windows 下启动程序传参到 Linux 下挂掉了 - walterlv](/post/typing-difference-among-shells-in-different-operating-systems.html)
 
 ### 星号 '\*`
 
