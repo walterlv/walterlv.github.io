@@ -1,6 +1,7 @@
 ---
 title: "git 乱改你的换行符？一句话设置让 git 不再碰你某个文件的换行符"
-date: 2020-04-29 20:17:10 +0800
+publishDate: 2020-04-29 20:17:10 +0800
+date: 2020-04-30 09:26:38 +0800
 categories: git
 position: problem
 ---
@@ -15,9 +16,9 @@ position: problem
 
 ## 关于换行符
 
-\r = CR = Carriage-Return = 回车
-\n = LF = Line-Feed = 换行
-\r\n = CRLF = Carriage-Return Line-Feed = 回车换行
+- \r = CR = Carriage-Return = 回车
+- \n = LF = Line-Feed = 换行
+- \r\n = CRLF = Carriage-Return Line-Feed = 回车换行
 
 Windows 下默认的文本换行符是 `\r\n`，Linux 下默认的换行符是 `\n`，Mac 下默认的换行符是 `\r`。因为这些差异，如果某部分文本文件会跨操作系统处理，那么换行符的处理就必须考虑了。git 允许开发者设置如何处理换行符在跨平台上的处理方式，不过不合适的设置可能带来文件发生不期望的修改。
 

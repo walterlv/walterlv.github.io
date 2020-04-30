@@ -1,8 +1,9 @@
 ---
 title: "了解 Windows/Linux 下命令行/Shell 启动程序传参的区别，这下不用再担心 Windows 下启动程序传参到 Linux 下挂掉了"
-date: 2020-04-30 09:19:06 +0800
-categories: dotnet
-position: starter
+publishDate: 2020-04-30 09:19:06 +0800
+date: 2020-04-30 09:54:25 +0800
+categories: windows linux
+position: knowledge
 ---
 
 启动某个程序，再带上一堆参数，这几乎是程序员们每天必做到事情。另外再算上各种辅助程序员们的自动化脚本，辅助构建的 CI（持续集成）等等，程序员们在创造大量的应用程序然后调用它们。
@@ -75,3 +76,13 @@ Windows 下，`\` 和 `/` 都是路径分隔符。Linux 下，只有 `/` 是路�
 关于跨平台路径分隔符的问题，我专门写了一篇博客，在那里可以了解更多：
 
 - [.NET 将混合了多个不同平台（Windows / Mac / Linux）的文件/目录的路径格式化成同一个平台下的路径 - walterlv](/post/format-mixed-path-seperators-to-platform-special.html)
+
+## 其他特殊字符（ `(` `$` `{` `*` `#` ）
+
+在 Linux 的 Shell 中，有很多字符有特殊用途，而在 Windows Shell 中，这些字符的作用完全由被调用的应用程序来决定。
+
+所以对于跨平台的脚本，最好尽量避免使用这些字符。
+
+关于 Linux 下这些转义字符的用途，可以阅读我的另一篇博客：
+
+- [Linux Shell 中的所有需要转义的字符 - walterlv](/post/linux-shell-escape.html)

@@ -1,7 +1,7 @@
 ---
 title: ".NET 将混合了多个不同平台（Windows / Mac / Linux）的文件/目录的路径格式化成同一个平台下的路径"
 publishDate: 2020-04-29 21:45:43 +0800
-date: 2020-04-30 08:50:36 +0800
+date: 2020-04-30 09:24:04 +0800
 categories: dotnet windows linux
 position: problem
 ---
@@ -90,6 +90,10 @@ Console.WriteLine($"Path.GetFullPath(part5) = {pathFromFileInfo3}");
 例如，你可以有一个文件，名字是 `foo\bar.txt`。
 
 所以，.NET 绝对不能擅自给你将 `\` 当作路径分隔符进行格式化！
+
+关于 `\` 在 Linux Shell 中的转义，你可以阅读我的另外两篇博客了解：
+
+- [了解 Windows/Linux 下命令行/Shell 启动程序传参的区别，这下不用再担心 Windows 下启动程序传参到 Linux 下挂掉了 - walterlv](/post/typing-difference-among-shells-in-different-operating-systems.html)
 
 ## 自己实现
 
