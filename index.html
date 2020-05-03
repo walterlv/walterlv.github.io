@@ -11,11 +11,11 @@ display_title: 吕毅's blog, Focus on Windows
     {% include header.html %}
     <section class="content">
       <main class="home" id="post" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
-        <div id="grid" class="row grid">
+        {% comment %} <div id="grid" class="row grid">
           <a rel="blog banner" href="http://s.blog.walterlv.com:4433/api/redirect/blog/header.png">
             <img alt="blog banner" src="http://s.blog.walterlv.com:4433/api/image/blog/header.png" />
           </a>
-        </div>
+        </div> {% endcomment %}
         <div id="grid" class="row grid">
           {% for post in paginator.posts %}
           <article class="box-item shown" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">

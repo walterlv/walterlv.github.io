@@ -27,9 +27,9 @@
         </p>
         <p itemprop="description" class="subtitle">{{ page.description }}</p>
         {{ content }}
-        <p><a rel="blog footer" href="http://s.blog.walterlv.com:4433/api/redirect/blog/footer.png">
+        {% comment %} <p><a rel="blog footer" href="http://s.blog.walterlv.com:4433/api/redirect/blog/footer.png">
           <img alt="blog footer" src="http://s.blog.walterlv.com:4433/api/image/blog/footer.png" />
-        </a></p>
+        </a></p> {% endcomment %}
         {% include license.html %}
       </article>
       {% include clickable-image.html %}
