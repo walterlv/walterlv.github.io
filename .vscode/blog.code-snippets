@@ -6,7 +6,7 @@
 			"---",
 			"title: \"${1:在此处添加标题}\"",
 			"date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND} +0800",
-			"categories: ${3|dotnet,csharp,uwp|}",
+			"categories: ${3|dotnet,csharp,uwp,unity,windows,wpf|}",
 			"position: ${2|starter,knowledge,principle,problem|}",
 			"---",
 			"",
