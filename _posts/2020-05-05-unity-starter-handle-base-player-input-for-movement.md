@@ -1,6 +1,6 @@
 ---
 title: "Unity3D 入门：最简单的控制视角，以及控制角色前进、转向的脚本"
-date: 2020-05-05 15:56:05 +0800
+date: 2020-05-05 15:58:46 +0800
 categories: unity
 position: starter
 ---
@@ -73,6 +73,10 @@ public class PlayerController : MonoBehaviour
 1. 定义了公共的两个字段 `moveSpeed` 和 `rotateSpeed` 表示移动速度和转向速度。
 2. 通过 `Input.GetAxis` 获取不同种类的玩家输入。
 3. 通过玩家的输入计算 `Transform` 组件的更新差量，然后更新 `Transform` 组件。
+
+关于在脚本当中公开属性以在编辑器中设置的更多细节，可阅读我的另一篇 Unity3D 入门博客：
+
+- [Unity3D 入门：让 C# 脚本公开可在 Unity 编辑器中设置的属性 - walterlv](/post/unity-starter-public-fields-of-unity-script.html)
 
 可以看以下效果（gif 文件有点大，多等等）：
 
