@@ -1,7 +1,7 @@
 ---
 title: "Unity3D 入门：为 Unity 的 C# 项目添加 dll 引用或安装 NuGet 包"
 publishDate: 2020-04-27 19:36:41 +0800
-date: 2020-04-28 08:22:46 +0800
+date: 2020-05-05 15:14:05 +0800
 categories: unity csharp
 position: starter
 ---
@@ -26,12 +26,16 @@ position: starter
 
 在 Unity 中，是给 C# 脚本引用 dll 或者安装 NuGet 包，而不能给 C# 项目做 dll 引用。
 
-Unity 中引用 dll 有两种途径：
+Unity 中引用 dll 有两种官方途径：
 
 1. `Assets\mcs.rsp` 文件，用于指定引用 .NET 运行时的 dll
 2. `Assets\Plugins` 文件夹，用于指定引用单独的 dll 文件
 
 当然，这两个能否正常使用，以及扔到 `Plugins` 文件夹中的 dll 应该是什么平台，取决于 Unity 项目的配置。
+
+当然，引用 NuGet 包的话更推荐非官方的方法，详见：
+
+- [如何管理 Unity 项目中的 NuGet 包？使用第三方 NuGet 包管理器——NuGetForUnity](/post/third-party-unity-nuget-management.html)
 
 ### 配置运行时和 API 兼容性级别
 
@@ -94,13 +98,23 @@ Unity 中引用 dll 有两种途径：
 
 #### 安装 NuGet 包
 
-首先，Unity 项目并不能直接安装 NuGet 包，所以实际上对于 NuGet 包的引用是通过把包里的 dll 丢到 Plugins 文件夹来实现的。
+原生 Unity 项目不能直接安装 NuGet 包，但可以通过第三方插件实现。
+
+##### 原生
+
+原生 Unity 项目并不能直接安装 NuGet 包，所以实际上对于 NuGet 包的引用是通过把包里的 dll 丢到 Plugins 文件夹来实现的。
 
 既然如此，那就看如何丢进去更有效率了。
 
 微软[官方文档](https://docs.microsoft.com/en-us/visualstudio/cross-platform/unity-scripting-upgrade)的方法是直接从 [nuget.org](https://nuget.org) 上直接把包下载下来，解压，然后将对应平台的 dll 从 lib 文件夹中取出来（例如 API 兼容性级别是 .NET Standard 2.0 的项目，请拷贝 lib/netstandard2.0 中的 dll 出来）。
 
 因为 Unity 编辑器生成了 sln 和 csproj，所以在 Visual Studio 里安装也是可以的，不过这里的安装并不会真实生效，而是我们在 Unity 项目的根目录的 Packages 文件夹中能找到我们安装的 NuGet 包，也是从对应的文件夹中取出来 dll 丢到 Plugins 文件夹中。
+
+##### 第三方
+
+更推荐非官方的方法，详见：
+
+- [如何管理 Unity 项目中的 NuGet 包？使用第三方 NuGet 包管理器——NuGetForUnity](/post/third-party-unity-nuget-management.html)
 
 ### 特别注意：反射需要额外支持
 

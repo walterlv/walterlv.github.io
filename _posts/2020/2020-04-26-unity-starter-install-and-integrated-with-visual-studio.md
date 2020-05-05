@@ -1,7 +1,7 @@
 ---
 title: "Unity3D 入门：安装 Unity3D 并配置与 Visual Studio 的协作开发环境"
 publishDate: 2020-04-26 11:44:20 +0800
-date: 2020-04-27 18:54:37 +0800
+date: 2020-05-05 15:22:45 +0800
 categories: unity csharp visualstudio
 position: starter
 ---
@@ -106,6 +106,29 @@ Visual Studio 一般在这种地方：
 如果你没有找到“附加到 Unity”按钮，那么可以在 Visual Studio 的“调试”菜单中找到“附加 Unity 调试程序”。点击后可以自动查找当前正在运行的 Unity 编辑器，选择你希望调试的那一个即可开始调试。
 
 ![附加 Unity 调试程序](/static/posts/2020-04-26-11-42-15.png)
+
+## 安装其他模块（语言/编译平台）
+
+实际上，按照以上步骤全部完成的话，编译和调试 Unity 项目已经没有问题了。如果你是出于学习目的安装的话，本文的操作到此结束。
+
+至此我们的 Unity 项目并不能发布，因为我们没有安装过任何目标平台的编译环境。
+
+请前往 Unity 的更新页面：<https://unity3d.com/get-unity/update>
+
+因为我们已经安装了 Unity Hub，所以可以选择：
+
+> I already have Unity Hub  
+> Install version from Unity Hub
+
+这时会启动 Unity Hub 然后进入更新页面。如果打开了 Unity Hub 但没有进入更新页面，请去任务栏通知区域右键退出 Unity Hub，重新点击上面的那个 `Install version from Unity Hub` 按钮。于是可以选择安装哪些组件。
+
+随后点击右下角的“安装”以安装新版本并包含需要的编译组件。
+
+当然，如果你已经安装过新版本，那么也可以通过“添加组件”的方式来安装目标平台的编译环境。
+
+![添加模块](/static/posts/2020-05-05-15-21-21.png)
+
+![可添加的模块](/static/posts/2020-05-05-15-22-35.png)
 
 ## 完成
 
