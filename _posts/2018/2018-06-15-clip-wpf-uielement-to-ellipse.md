@@ -1,7 +1,7 @@
 ---
 title: "WPF 中使用附加属性，将任意 UI 元素或控件裁剪成圆形（椭圆）"
 publishDate: 2018-06-15 09:22:29 +0800
-date: 2018-09-01 08:02:42 +0800
+date: 2020-05-06 08:15:56 +0800
 categories: xaml wpf
 ---
 
@@ -134,7 +134,7 @@ public static class EllipseClipper
 </Grid>
 ```
 
-而且才控件的大小改变的时候也能够正常更新裁剪范围。
+而且在控件的大小改变的时候也能够正常更新裁剪范围。
 
 ![裁剪成椭圆](/static/posts/2018-06-15-ellipse-clip.gif)
 
