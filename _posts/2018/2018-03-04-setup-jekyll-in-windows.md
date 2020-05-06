@@ -1,7 +1,7 @@
 ---
 title: "快速在 Windows 上搭建 Jekyll 开发环境"
 publishDate: 2018-03-04 13:30:14 +0800
-date: 2018-08-12 14:50:26 +0800
+date: 2020-05-06 08:13:27 +0800
 categories: site
 ---
 
@@ -30,15 +30,12 @@ jekyll serve
 
 ### 下载必要的软件
 
-考虑到我们的网络环境，为了提升本文的阅读效率，建议一边下载一边阅读。我为大家提供两种不同的下载源：1. 官方源；2. 加速源。
+考虑到我们的网络环境，为了提升本文的阅读效率，建议一边下载一边阅读。
 
-1. 官方源
-    - [Ruby（挑最新的下载即可）](https://rubyinstaller.org/downloads/)
-    - [MSYS2（虽然这不是必要的，但能大大提高配置环境的成功率和速度）](http://repo.msys2.org/distrib/x86_64/msys2-x86_64-20161025.exe)
+- [Ruby（挑最新的下载即可）](https://rubyinstaller.org/downloads/)
+- [MSYS2（虽然这不是必要的，但能大大提高配置环境的成功率和速度）](http://repo.msys2.org/distrib/x86_64/msys2-x86_64-20161025.exe)
 
-2. 加速源（感谢小伙伴[林德熙](https://lindexi.github.io/lindexi/)）
-    - [ruby](http://lindexi.ml:8080/index.php/s/L9LuTD14Y3pKadV)
-    - [MSYS2](http://lindexi.ml:8080/index.php/s/qn2EbO5xhy86xlf)
+如果无法下载，可以考虑 Docker 或者 Windows 上的其他包管理器（如 scoop）。
 
 ### 安装 Ruby 和 Jekyll
 
