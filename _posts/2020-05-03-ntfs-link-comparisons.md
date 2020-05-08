@@ -78,7 +78,7 @@ mklink /J current %APPDATA%\walterlv\packages\1.0.0
 | 链接到文件夹           | ❌                                                            | ✔                                                            | ✔                                |
 | 需要提升为管理员权限   | 需要                                                         | 不需要                                                       | 不需要                           |
 | 跨驱动器卷（盘符）     | ❌                                                            | ✔（仅本地计算机）                                            | ✔（包括 SMB 文件或路径）         |
-| 操作系统支持           | Windows 3.5+                                                 | Windows 2000+                                                | Windows Vista+                   |
+| 操作系统支持           | Windows NT 3.1 开始支持<br/>Windows 2000 开始有 API `CreateHardLink()`<br/>Windows NT 6.0 开始能使用 `mklink /H` | Windows 2000+                                                | Windows Vista+                   |
 | 可链接到不存在的目标   | ❌                                                            | ✔                                                            | ✔                                |
 | 可链接到相对目录       | ❌                                                            | ❌（可以使用相对路径创建，但创建完即变绝对路径）              | ✔                                |
 | 删除方法               | del                                                          | rd                                                           | rd / del                         |
@@ -107,4 +107,4 @@ mklink /J current %APPDATA%\walterlv\packages\1.0.0
 
 - [NTFS reparse point - Wikipedia](https://en.wikipedia.org/wiki/NTFS_reparse_point)
 - [windows - What is the difference between NTFS Junction Points and Symbolic Links? - Stack Overflow](https://stackoverflow.com/questions/9042542/what-is-the-difference-between-ntfs-junction-points-and-symbolic-links)
-
+- [Hard link - Wikipedia](https://en.wikipedia.org/wiki/Hard_link)
