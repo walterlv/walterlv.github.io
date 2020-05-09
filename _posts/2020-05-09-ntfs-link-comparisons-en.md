@@ -1,7 +1,7 @@
 ---
 title: "Compare four different file (folder) links on Windows (NTFS hard links, junction points, symbolic links, and well-known shortcuts)"
 publishDate: 2020-05-03 14:30:43 +0800
-date: 2020-05-09 09:59:38 +0800
+date: 2020-05-09 10:23:57 +0800
 categories: windows
 position: knowledge
 version:
@@ -79,7 +79,7 @@ Reading those words above, you may know the usage of `mklink` but don't know the
 | Command                                  | `mklink /H Link Target`                                      | `mklink /J Link Target`                                      | `mklink /D Link Target`                                      |
 | Description                              | Create an alias for a file so that different paths correspond to the data of the same file. |                                                              |                                                              |
 | Linking to files                         | ✔                                                            | ❌                                                            | ✔                                                            |
-| Linking to directories                   | ❌                                                            | ✔                                                            | ✔                                                            |
+| Linking to directories                   | ❌                                                            | ✔                                                            | ❌                                                            |
 | Nees to run as Administrator             | Yes                                                          | No                                                           | No                                                           |
 | Supports linking across volumes          | ❌                                                            | ✔(Local Machine only)                                        | ✔(including remote path such as SMB)                         |
 | Introduced since                         | Supports since Windows NT 3.1<br/>API supports since Windows 2000 by `CreateHardLink()`<br/>Supports since Windows NT 6.0 by command `mklink /H` | Windows 2000+                                                | Windows Vista+                                               |

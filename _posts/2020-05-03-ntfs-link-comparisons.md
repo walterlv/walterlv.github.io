@@ -1,7 +1,7 @@
 ---
 title: "比较 Windows 上四种不同的文件（夹）链接方式（NTFS 的硬链接、目录联接、符号链接，和大家熟知的快捷方式）"
 publishDate: 2020-05-03 14:30:43 +0800
-date: 2020-05-09 09:59:34 +0800
+date: 2020-05-09 10:23:32 +0800
 categories: windows
 position: knowledge
 version:
@@ -84,7 +84,7 @@ mklink /J current %APPDATA%\walterlv\packages\1.0.0
 | 命令                   | `mklink /H Link Target`                                      | `mklink /J Link Target`                                      | `mklink /D Link Target`          |
 | 作用                   | 为某文件创建别名，可让不同的路径对应同一个文件的数据。       |                                                              |                                  |
 | 链接到文件             | ✔                                                            | ❌                                                            | ✔                                |
-| 链接到文件夹           | ❌                                                            | ✔                                                            | ✔                                |
+| 链接到文件夹           | ❌                                                            | ✔                                                            | ❌                                |
 | 需要提升为管理员权限   | 需要                                                         | 不需要                                                       | 不需要                           |
 | 跨驱动器卷（盘符）     | ❌                                                            | ✔（仅本地计算机）                                            | ✔（包括 SMB 文件或路径）         |
 | 操作系统支持           | Windows NT 3.1 开始支持<br/>Windows 2000 开始有 API `CreateHardLink()`<br/>Windows NT 6.0 开始能使用 `mklink /H` | Windows 2000+                                                | Windows Vista+                   |
