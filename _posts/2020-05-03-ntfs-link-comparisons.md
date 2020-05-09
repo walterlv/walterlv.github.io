@@ -1,7 +1,7 @@
 ---
 title: "比较 Windows 上四种不同的文件（夹）链接方式（NTFS 的硬链接、目录联接、符号链接，和大家熟知的快捷方式）"
 publishDate: 2020-05-03 14:30:43 +0800
-date: 2020-05-09 09:56:30 +0800
+date: 2020-05-09 09:58:06 +0800
 categories: windows
 position: knowledge
 version:
