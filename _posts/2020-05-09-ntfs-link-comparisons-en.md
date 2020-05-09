@@ -1,7 +1,7 @@
 ---
 title: "Compare four different file (folder) links on Windows (NTFS hard links, junction points, symbolic links, and well-known shortcuts)"
 publishDate: 2020-05-03 14:30:43 +0800
-date: 2020-05-09 09:41:28 +0800
+date: 2020-05-09 09:49:50 +0800
 categories: windows
 position: knowledge
 version:
@@ -27,17 +27,16 @@ Using `mklink` command, you can create a "hard link", "junction points" and "sym
 
 ```powershell
 > mklink
-创建符号链接。
+Creates a symbolic link.
 
 MKLINK [[/D] | [/H] | [/J]] Link Target
 
-        /D      创建目录符号链接。默认为文件
-                符号链接。
-        /H      创建硬链接而非符号链接。
-        /J      创建目录联接。
-        Link    指定新的符号链接名称。
-        Target  指定新链接引用的路径
-                (相对或绝对)。
+        /D      Creates a directory symbolic link.  Default is a file
+                symbolic link.
+        /H      Creates a hard link instead of a symbolic link.
+        /J      Creates a Directory Junction.
+        Link    Specifies the new symbolic link name.
+        Target  Specifies the path (rel
 ```
 
 e.g:
