@@ -1,7 +1,7 @@
 ---
 title: "Compare four different file (folder) links on Windows (NTFS hard links, junction points, symbolic links, and well-known shortcuts)"
 publishDate: 2020-05-03 14:30:43 +0800
-date: 2020-05-09 09:49:50 +0800
+date: 2020-05-09 09:56:24 +0800
 categories: windows
 position: knowledge
 version:
@@ -14,6 +14,10 @@ versions:
 It is well-known that `mklink` is a command to create a variety of links on NTFS disk. But if you don't know much about it or even never hear of it, it doesn't matter because you know shortcuts at least. This post help you to lean more about `mklink` and know the differences among the difference command options.
 
 ---
+
+This post is written in **multiple languages**. Please select yours:
+
+{% include post-version-selector.html %}
 
 <div id="toc"></div>
 
