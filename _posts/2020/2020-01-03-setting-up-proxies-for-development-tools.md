@@ -1,7 +1,7 @@
 ---
 title: "为 .NET 各种开发工具设置网络代理，提升在大陆的网络性能"
 publishDate: 2020-01-03 09:41:16 +0800
-date: 2020-01-03 13:23:17 +0800
+date: 2020-05-13 10:09:47 +0800
 categories: dotnet
 position: knowledge
 ---
@@ -131,6 +131,24 @@ Scoop 是一款优秀的包管理工具，可以以绿色的方式安装各种�
 scoop config proxy 127.0.0.1:7778
 ```
 
+## Chocolatey / ChocolateyGUI
+
+Chocolatey 是 Windows 上非常著名的包管理工具。它支持的代理设置方法非常多，你可以去它的官网了解所有的设置代理的方法：[Chocolatey Software - Proxy Settings for Chocolatey](https://chocolatey.org/docs/proxy-settings-for-chocolatey)。
+
+这里简单搬运一下直接的设置方法。
+
+```powershell
+choco config set proxy 127.0.0.1:7778
+```
+
+同时，它也支持 `http_proxy` `https_proxy` 和 `no_proxy` 这样全局的环境变量设置。
+
+另外，不喜欢命令行版的 `choco` 和命令行版代理设置的同学，可以考虑用 ChocolateyGUI：
+
+- [chocolatey/ChocolateyGUI: A delicious GUI for Chocolatey](https://github.com/chocolatey/ChocolateyGUI)
+
+![ChocolateyGUI 中的代理设置](/static/posts/2020-05-13-10-07-48.png)
+
 ---
 
 **参考资料**
@@ -140,3 +158,4 @@ scoop config proxy 127.0.0.1:7778
 - [Using Scoop behind a proxy · lukesampson/scoop Wiki](https://github.com/lukesampson/scoop/wiki/Using-Scoop-behind-a-proxy)
 - [github - Only use a proxy for certain git urls/domains? - Stack Overflow](https://stackoverflow.com/a/41623825/6233938)
 - [Configure Git to use a proxy](https://gist.github.com/evantoli/f8c23a37eb3558ab8765)
+- [Chocolatey Software - Proxy Settings for Chocolatey](https://chocolatey.org/docs/proxy-settings-for-chocolatey)
