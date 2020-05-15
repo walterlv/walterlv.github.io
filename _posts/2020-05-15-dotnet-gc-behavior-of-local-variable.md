@@ -1,6 +1,6 @@
 ---
 title: ".NET Framework 和 .NET Core 在默认情况下垃圾回收（GC）机制的不同（局部变量部分）"
-date: 2020-05-15 21:50:00 +0800
+date: 2020-05-15 21:50:57 +0800
 categories: dotnet
 position: knowledge
 ---
@@ -77,7 +77,9 @@ public class Foo
 } // end of method Program::Main
 ```
 
-在这段 IL 中，
+这个问题我提在了 GitHub 上，大家可以去看看：
+
+- [GC.Collect: Object without reference will be collected in .NET Framework but will NOT been collected in .NET Core · Issue #36265 · dotnet/runtime](https://github.com/dotnet/runtime/issues/36265)
 
 ## 原因
 
