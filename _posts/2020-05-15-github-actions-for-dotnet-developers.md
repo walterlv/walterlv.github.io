@@ -1,6 +1,7 @@
 ---
 title: "适合 .NET 开发者用的 GitHub Actions（时不时更新）"
-date: 2020-05-15 19:42:55 +0800
+publishDate: 2020-05-15 19:42:55 +0800
+date: 2020-05-15 20:11:19 +0800
 categories: dotnet github
 position: knowledge
 ---
@@ -146,3 +147,9 @@ jobs:
 ```
 
 关于最后的那个参数 `1`，很魔性，只要有任何一个值都行。参见：[dotnet nuget push - Missing value for option · Issue #4864 · NuGet/Home](https://github.com/NuGet/Home/issues/4864)。
+
+## 自带环境
+
+GitHub Actions 自带了很多环境可以用，这些自带的环境不需要再去配了：
+
+- [virtual-environments/Windows2019-Readme.md at master · actions/virtual-environments](https://github.com/actions/virtual-environments/blob/master/images/win/Windows2019-Readme.md)

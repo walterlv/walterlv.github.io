@@ -1,7 +1,7 @@
 ---
 title: ".NET/Windows：删除文件夹后立即判断，有可能依然存在"
 publishDate: 2020-05-15 15:26:19 +0800
-date: 2020-05-15 19:48:28 +0800
+date: 2020-05-15 20:10:18 +0800
 categories: windows dotnet csharp
 position: problem
 ---
@@ -98,6 +98,10 @@ class Program
 
 - [.NET 中选择合适的文件打开模式（CreateNew, Create, Open, OpenOrCreate, Truncate, Append） - walterlv](/post/dotnet-file-open-modes.html)
 - [Win32 方法 CreateFile 中选择合适的文件打开模式（CREATE_NEW, CREATE_ALWAYS, OPEN_EXISTING, OPEN_ALWAYS, TRUNCATE_EXISTING） - walterlv](/post/win32-file-open-modes.html)
+
+发现 dotnet 职业技术学院另一小伙伴也遇到这个问题：
+
+- [不要在Directory删除后立刻调用Directory.Exist - huangtengxiao](https://xinyuehtx.github.io/post/%E4%B8%8D%E8%A6%81%E5%9C%A8Directory%E5%88%A0%E9%99%A4%E5%90%8E%E7%AB%8B%E5%88%BB%E8%B0%83%E7%94%A8Directory.Exist.html)
 
 ---
 
