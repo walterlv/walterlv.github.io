@@ -1,7 +1,7 @@
 ---
 title: "适合 .NET 开发者用的 GitHub Actions（时不时更新）"
 publishDate: 2020-05-15 19:42:55 +0800
-date: 2020-05-15 20:11:19 +0800
+date: 2020-05-15 20:59:00 +0800
 categories: dotnet github
 position: knowledge
 ---
@@ -31,7 +31,9 @@ on:
 
 jobs:
   build:
-    name: Build
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
     runs-on: windows-latest
     steps:
       - name: Checkout
@@ -39,9 +41,13 @@ jobs:
       - name: Setup
         uses: actions/setup-dotnet@v1
       - name: Build
-        run: dotnet build --configuration Release
+        run: dotnet build --configuration $env:Configuration
+        env:
+          Configuration: ${{ matrix.configuration }}
       - name: Test
-        run: dotnet test
+        run: dotnet test --configuration $env:Configuration
+        env:
+          Configuration: ${{ matrix.configuration }}
 ```
 
 ## .NET 编译与单元测试（仅限 Windows 系统下的编译）
@@ -143,7 +149,7 @@ jobs:
       - name: Pack
         run: dotnet build --configuration Release
       - name: Push
-        run: dotnet nuget push .\bin\Release\*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NugetOrgDotnetCampusApiKey }} --skip-duplicate --no-symbols 1
+        run: dotnet nuget push .\bin\Release\*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NuGetAPIKey }} --skip-duplicate --no-symbols 1
 ```
 
 关于最后的那个参数 `1`，很魔性，只要有任何一个值都行。参见：[dotnet nuget push - Missing value for option · Issue #4864 · NuGet/Home](https://github.com/NuGet/Home/issues/4864)。
