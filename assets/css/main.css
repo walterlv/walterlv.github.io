@@ -91,7 +91,7 @@ b, strong {
 
 code, kbd, samp {
     font-family: 'Monaco', 'Consolas', 'Menlo', monospace;
-    font-size: .9em
+    font-size: 1em
 }
 
 dfn {
