@@ -1,7 +1,7 @@
 ---
 title: "适合 .NET 开发者用的 GitHub Actions（时不时更新）"
 publishDate: 2020-05-15 19:42:55 +0800
-date: 2020-05-15 20:59:00 +0800
+date: 2020-05-16 11:01:28 +0800
 categories: dotnet github
 position: knowledge
 ---
@@ -131,7 +131,7 @@ jobs:
 **要求**：仓库的根目录有且仅有一个 sln 文件。
 
 ```yaml
-ame: NuGet Publish
+name: NuGet Push
 
 on:
   push:
