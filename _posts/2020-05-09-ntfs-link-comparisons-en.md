@@ -1,7 +1,7 @@
 ---
 title: "Compare four different file (folder) links on Windows (NTFS hard links, junction points, symbolic links, and well-known shortcuts)"
 publishDate: 2020-05-03 14:30:43 +0800
-date: 2020-05-09 10:39:39 +0800
+date: 2020-05-21 00:31:28 +0800
 categories: windows
 position: knowledge
 version:
@@ -78,13 +78,13 @@ Reading those words above, you may know the usage of `mklink` but don't know the
 | ---------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Command                                  | `mklink /H Link Target`                                      | `mklink /J Link Target`                                      | `mklink /D Link Target`                                      |
 | Description                              | Create an alias for a file so that different paths correspond to the data of the same file. |                                                              |                                                              |
-| Linking to files                         | ✔                                                            | ❌                                                            | ❌                                                            |
-| Linking to directories                   | ❌                                                            | ✔                                                            | ✔                                                            |
+| Linking to files                         | ✔️                                                            | ❌                                                            | ❌                                                            |
+| Linking to directories                   | ❌                                                            | ✔️                                                            | ✔️                                                            |
 | Nees to run as Administrator             | Yes                                                          | No                                                           | No                                                           |
-| Supports linking across volumes          | ❌                                                            | ✔(Local Machine only)                                        | ✔(including remote path such as SMB)                         |
+| Supports linking across volumes          | ❌                                                            | ✔️(Local Machine only)                                        | ✔️(including remote path such as SMB)                         |
 | Introduced since                         | Supports since Windows NT 3.1<br/>API supports since Windows 2000 by `CreateHardLink()`<br/>Supports since Windows NT 6.0 by command `mklink /H` | Windows 2000+                                                | Windows Vista+                                               |
-| Supports targets which is not exist      | ❌                                                            | ✔                                                            | ✔                                                            |
-| Link to relative directory               | ❌                                                            | ❌(You can create one with relative path but it will change to absolute path automatically.) | ✔                                                            |
+| Supports targets which is not exist      | ❌                                                            | ✔️                                                            | ✔️                                                            |
+| Link to relative directory               | ❌                                                            | ❌(You can create one with relative path but it will change to absolute path automatically.) | ✔️                                                            |
 | How to remove                            | del                                                          | rd                                                           | rd / del                                                     |
 | When the reparse point is removed        | Only after all hard links to the original file and the original file have been deleted will the file data be deleted. | The original folder is not affected after Windows Vista but is will be deleted in Windows 2000 / XP / 2003. | The original file/folder is not affected.                    |
 | When the original file/folder is removed | The hard link can still access the data of the file normally. | Directory connection failed, pointing to a directory that does not exist. | The symbolic link is invalid and points to a directory that does not exist. |
