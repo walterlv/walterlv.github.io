@@ -1,6 +1,7 @@
 ---
 title: "Unity3D 入门：如何制作天空效果？天空盒的使用"
-date: 2020-05-05 19:34:00 +0800
+publishDate: 2020-05-05 19:34:00 +0800
+date: 2020-05-22 18:48:06 +0800
 categories: unity
 position: starter
 ---
@@ -56,6 +57,10 @@ Unity 新建项目时默认的天空盒是**程序天空盒（Procedural Skybox�
 我把刚刚下载的这款天空盒的六个面分别贴出来，就会像下图这样：
 
 ![天空盒的六个面](/static/posts/2020-05-05-19-30-30.png)
+
+我简单做了个动图，用来直观观看天空盒的贴图：
+
+![天空盒](/static/posts/2020-05-22-skybox.gif)
 
 依然在 `Window->Rendering->Lighting Settings`（`窗口->渲染->照明设置`）中打开当前场景的照明设置，然后点击选择“天空盒材质”，选择刚刚我们下载的“sky,startday”。于是，我们的场景就应用了商店下载下来的天空盒了。
 
