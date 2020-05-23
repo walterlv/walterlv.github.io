@@ -1,6 +1,6 @@
 ---
 title: "Win32/C# 应用使用 GDI+ 对窗口截图（BitBlt）"
-date: 2020-05-23 13:28:18 +0800
+date: 2020-05-23 13:52:14 +0800
 categories: windows dotnet csharp
 position: knowledge
 ---
@@ -93,6 +93,12 @@ public static byte[] CaptureWindow(HWND hWnd, int width, int height)
 ```
 
 示例代码只是单纯返回 PNG 格式的位图数据。你还可以按你的需要改造成其他数据。
+
+## 更多截窗口方法
+
+- （本文）[Win32/C# 应用使用 GDI+ 对窗口截图（BitBlt） - walterlv](/post/win32-and-system-drawing-capture-window-to-bitmap)
+- [Win32/C# 应用不依赖任何库使用纯 GDI+ 对窗口截图（BitBlt） - walterlv](/post/pure-win32-capture-window-to-bitmap)
+- [Win32/C# 应用使用 PrintWindow 对窗口截图（PrintWindow） - walterlv](/post/win32-capture-window-using-print-window)
 
 ---
 

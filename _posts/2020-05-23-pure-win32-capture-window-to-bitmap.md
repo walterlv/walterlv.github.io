@@ -1,6 +1,6 @@
 ---
 title: "Win32/C# 应用不依赖任何库使用纯 GDI+ 对窗口截图（BitBlt）"
-date: 2020-05-23 13:38:12 +0800
+date: 2020-05-23 13:52:28 +0800
 categories: windows dotnet csharp
 position: knowledge
 ---
@@ -146,6 +146,12 @@ private struct BITMAPFILEHEADER
 ```
 
 这里代代码不涉及到格式转换，因此你只能生成 BMP 格式。
+
+## 更多截窗口方法
+
+- [Win32/C# 应用使用 GDI+ 对窗口截图（BitBlt） - walterlv](/post/win32-and-system-drawing-capture-window-to-bitmap)
+- （本文）[Win32/C# 应用不依赖任何库使用纯 GDI+ 对窗口截图（BitBlt） - walterlv](/post/pure-win32-capture-window-to-bitmap)
+- [Win32/C# 应用使用 PrintWindow 对窗口截图（PrintWindow） - walterlv](/post/win32-capture-window-using-print-window)
 
 ---
 
