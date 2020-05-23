@@ -12,6 +12,12 @@
 
 ## About to Write
 
+- VS 鼠标无法使用的 Bug
+    - [VS became unresponsive to mouse clicks : RSRP-478671](https://youtrack.jetbrains.com/issue/RSRP-478671#focus=streamItem-27-4036982.0-0)
+    - [HwndMouseInputProvider.cs](https://referencesource.microsoft.com/#PresentationCore/Core/CSharp/System/Windows/Interop/HwndMouseInputProvider.cs)
+    - [Mouse stops working in VS with Win10 builds 19575 and up - Developer Community](https://developercommunity.visualstudio.com/content/problem/937767/cannot-use-mouse-for-secondary-windows.html)
+    - [The mouse cannot hit anything inside Visual Studio (but the keyboard can do) - Developer Community](https://developercommunity.visualstudio.com/content/problem/957900/the-mouse-cannot-hit-anything-inside-visual-studio.html)
+
 - RIME / 小狼毫
     - [致第一次安装RIME的你 - 作业部落 Cmd Markdown 编辑阅读器](https://www.zybuluo.com/eternity/note/81763)
     - [Rime输入法能否使用笔画辅助？ - 知乎](https://www.zhihu.com/question/27121962)
