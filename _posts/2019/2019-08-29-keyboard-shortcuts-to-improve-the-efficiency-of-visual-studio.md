@@ -1,7 +1,7 @@
 ---
 title: "提高使用 Visual Studio 开发效率的键盘快捷键"
 publishDate: 2019-08-29 23:09:33 +0800
-date: 2020-05-23 10:58:29 +0800
+date: 2020-05-23 11:25:59 +0800
 categories: visualstudio csharp
 position: knowledge
 ---
@@ -219,3 +219,7 @@ IntelliSense 以前有个漂亮的中文名字，叫做“智能感知”，不�
 不过这个功能有个 bug：
 
 ![如果要跳转的文字被选中了，就点不了了](/static/posts/ctrl+click-not-work-when-selected.gif)
+
+我报给了微软：
+
+- [When text is selected, `Ctrl+Click` will not perform the `GoTo Definition`. - Developer Community](https://developercommunity.visualstudio.com/content/problem/1046526/when-text-is-selected-ctrlclick-will-not-perform-t.html)
