@@ -1,6 +1,6 @@
 ---
 title: "Unity3D 入门：如何为游戏添加 UI"
-date: 2020-05-23 15:13:18 +0800
+date: 2020-05-23 15:21:49 +0800
 categories: unity csharp
 position: starter
 ---
@@ -38,3 +38,15 @@ Unity UI 都需要放到 Canvas 上才能工作。你可以像如下图这样插
 关于 Unity UI 的其他细节，我将在单独的博客中说明。
 
 - [如何在 Unity3D 场景中显示帧率（FPS） - walterlv](/post/unity-show-fps)
+
+## 切换成 2D 视图
+
+在开发（2D）UI 的时候，建议将场景视图切换成 2D，这样比较容易做布局。
+
+![切换成 2D](/static/posts/2020-05-23-15-19-37.png)
+
+当然，如果你不像我这样能看得到整个 Canvas 的话，可以考虑调整下视角或者直接双击 `F`。
+
+关于操作视角和快捷键，可以参考我的其他博客：
+
+- [Unity3D 入门：Unity Editor 编辑器常用快捷键 - walterlv](/post/unity-starter-unity-editor-shortcut-keys.html)
