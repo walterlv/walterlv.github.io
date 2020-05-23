@@ -1,7 +1,7 @@
 ---
 title: "Unity3D 入门：为 Unity 的 C# 项目添加 dll 引用或安装 NuGet 包"
 publishDate: 2020-04-27 19:36:41 +0800
-date: 2020-05-05 15:14:05 +0800
+date: 2020-05-23 14:38:45 +0800
 categories: unity csharp
 position: starter
 ---
@@ -28,7 +28,7 @@ position: starter
 
 Unity 中引用 dll 有两种官方途径：
 
-1. `Assets\mcs.rsp` 文件，用于指定引用 .NET 运行时的 dll
+1. `Assets\csc.rsp` 文件，用于指定引用 .NET 运行时的 dll
 2. `Assets\Plugins` 文件夹，用于指定引用单独的 dll 文件
 
 当然，这两个能否正常使用，以及扔到 `Plugins` 文件夹中的 dll 应该是什么平台，取决于 Unity 项目的配置。
