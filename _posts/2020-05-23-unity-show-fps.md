@@ -1,6 +1,7 @@
 ---
 title: "如何在 Unity3D 场景中显示帧率（FPS）"
-date: 2020-05-23 16:35:28 +0800
+publishDate: 2020-05-23 16:36:57 +0800
+date: 2020-05-23 16:37:08 +0800
 categories: unity csharp
 position: knowledge
 ---
@@ -150,7 +151,7 @@ public class FpsUpdater : MonoBehaviour
 
 ![稳定的帧率指示](/static/posts/2020-05-23-steady-fps.gif)
 
-或者考虑每秒更新一次：
+或者考虑 0.5 秒更新一次：
 
 ```csharp
 public Text fpsText;
@@ -163,7 +164,7 @@ void Update()
     count++;
     deltaTime += Time.deltaTime;
 
-    if (deltaTime >= 1f)
+    if (deltaTime >= 0.5f)
     {
         var fps = count/deltaTime;
         count = 0;
