@@ -1,6 +1,6 @@
 ---
 title: "Unity3D 入门：如何为游戏添加 UI"
-date: 2020-05-23 15:12:04 +0800
+date: 2020-05-23 15:13:18 +0800
 categories: unity csharp
 position: starter
 ---
@@ -37,4 +37,4 @@ Unity UI 都需要放到 Canvas 上才能工作。你可以像如下图这样插
 
 关于 Unity UI 的其他细节，我将在单独的博客中说明。
 
-- [如何在 Unity 场景中显示帧率（FPS） - walterlv](/post/unity-show-fps)
+- [如何在 Unity3D 场景中显示帧率（FPS） - walterlv](/post/unity-show-fps)
