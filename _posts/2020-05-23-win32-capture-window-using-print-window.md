@@ -1,6 +1,6 @@
 ---
 title: "Win32/C# 应用使用 PrintWindow 对窗口截图（PrintWindow）"
-date: 2020-05-23 14:29:35 +0800
+date: 2020-05-23 14:32:26 +0800
 categories: windows dotnet csharp
 position: knowledge
 ---
@@ -33,7 +33,7 @@ public static byte[] CaptureWindow(HWND hWnd, int width, int height)
        using (Graphics memoryGraphics = Graphics.FromImage(bmp))
        {
            IntPtr dc = memoryGraphics.GetHdc();
-           PrintWindow(info.HWnd, dc, 0);
+           PrintWindow(hWnd, dc, 0);
            memoryGraphics.ReleaseHdc(dc);
 
            using (MemoryStream ms = new MemoryStream())
