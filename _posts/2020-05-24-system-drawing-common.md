@@ -1,6 +1,7 @@
 ---
 title: "杂谈 System.Drawing.Common 的跨平台性（关键词：libgdiplus / .NET Core / Mono / Win32 / Linux / ……）"
-date: 2020-05-24 14:37:19 +0800
+publishDate: 2020-05-24 14:37:19 +0800
+date: 2020-05-24 16:24:35 +0800
 categories: dotnet csharp
 position: knowledge
 ---
