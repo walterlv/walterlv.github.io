@@ -1,7 +1,7 @@
 ---
 title: "杂谈 System.Drawing.Common 的跨平台性（关键词：libgdiplus / .NET Core / Mono / Win32 / Linux / ……）"
 publishDate: 2020-05-24 14:37:19 +0800
-date: 2020-05-24 16:24:35 +0800
+date: 2020-05-24 16:28:44 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -111,7 +111,7 @@ class Program
 
 会发现，两者都是可以正常运行的。
 
-将 net48 框架项目下引用的 System.Drawing.Common.dll 反编译来看，可以发现，这是一个空的程序集，里面几乎没有任何实质上的类型。里面所有的类型都通过 `TypeForwardedTo` 特性转移到 System.Drawing.dll 程序集了，现在剩下的只是一个垫片。关于 TypeForwarding 可以阅读这篇博客了解：[C# dotnet TypeForwarding 的用法](https://blog.lindexi.com/post/C-dotnet-TypeForwarding-%E7%9A%84%E7%94%A8%E6%B3%95.html)。
+将 net48 框架项目下引用的 System.Drawing.Common.dll 反编译来看，可以发现，这是一个空的程序集，里面几乎没有任何实质上的类型。里面所有的类型都通过 `TypeForwardedTo` 特性转移到 System.Drawing.dll 程序集了，现在剩下的只是一个垫片。关于 TypeForwarding 可以阅读这篇博客了解：[C# dotnet TypeForwarding 的用法](https://blog.lindexi.com/post/C-dotnet-TypeForwarding-%E7%9A%84%E7%94%A8%E6%B3%95.html)，微软也有其他通过此方式做的 NuGet 包，可参见 [微软官方的 NuGet 包是如何做到同时兼容新旧框架的？ - walterlv](/post/microsoft-dotnet-packages-use-typeforwarded-to-keep-compatibility)。
 
 ![.NET Framework 4.8 下输出的文件](/static/posts/2020-05-24-13-44-32.png)
 

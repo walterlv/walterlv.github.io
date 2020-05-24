@@ -1,6 +1,7 @@
 ---
 title: "微软官方的 NuGet 包是如何做到同时兼容新旧框架的？例如 System.ValueTuple 是如何做到在新旧版本的框架都能使用的？"
-date: 2020-05-24 16:21:10 +0800
+publishDate: 2020-05-24 16:21:10 +0800
+date: 2020-05-24 16:27:16 +0800
 categories: dotnet nuget
 position: knowledge
 ---
@@ -176,3 +177,13 @@ dotnet publish -c Release -f netcoreapp3.1 -r win10-x64 --self-contained true
 1. 框架（.NET）和语言（C#）现在已是独立升级了，因此在使用旧框架的情况下，也可以使用新语言的特性；
 2. 旧框架使用的是完整功能的 dll（由 NuGet 包来决定使用正确的 dll）；
 3. 新框架使用的是 `TypeForwardedTo` 特性作为垫片，重定向类型到新框架中（由 NuGet 包来决定使用正确的 dll）。
+
+额外的，我写过另一个通过此方式获得新旧框架兼容的包：
+
+- [杂谈 System.Drawing.Common 的跨平台性 - walterlv](/post/system-drawing-common)
+
+---
+
+**参考资料**
+
+- [What do mean _._ files in nuget packages? · Issue #744 · dotnet/aspnetcore](https://github.com/dotnet/aspnetcore/issues/744)
