@@ -1,6 +1,7 @@
 ---
 title: "Unity3D (Mono/IL2CPP) 中 P/Invoke 平台调用代码应该如何传委托"
-date: 2020-05-23 11:56:33 +0800
+publishDate: 2020-05-23 11:56:33 +0800
+date: 2020-05-24 10:21:31 +0800
 categories: unity csharp
 position: problem
 ---
@@ -101,7 +102,7 @@ public class WindowsEnumerator
 }
 ```
 
-当然上述代码不是现成安全的。所以如果你希望在多线程环境下使用，请自行修改为线程安全的版本。
+当然上述代码不是线程安全的。所以如果你希望在多线程环境下使用，请自行修改为线程安全的版本。
 
 ---
 
