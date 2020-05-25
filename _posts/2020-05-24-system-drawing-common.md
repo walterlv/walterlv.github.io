@@ -1,7 +1,7 @@
 ---
 title: "杂谈 System.Drawing.Common 的跨平台性（关键词：libgdiplus / .NET Core / Mono / Win32 / Linux / ……）"
 publishDate: 2020-05-24 14:37:19 +0800
-date: 2020-05-25 08:54:30 +0800
+date: 2020-05-25 09:00:15 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -220,6 +220,13 @@ The type name '{0}' could not be found in the namespace 'System.Drawing'. This t
 
 // .NET Standard 2.0 的 Api 兼容级别报此错误
 The type or namespace name 'Imaging' does not exist in the namespace 'System.Drawing' (are you missing an assembly reference?)
+```
+
+IL2CPP 里在编辑器里可以正常使用（当然能正常，因为编辑器又没用 IL2CPP），打包后出现的异常如下（所有的 System.Drawing 方法调用都有异常）：
+
+```csharp
+NotSupportedException: System.Drawing.Image::FromHbitmap
+System.Drawing.Image.FromHbitmap (System.IntPtr hbitmap) (at <00000000000000000000000000000000>:0)
 ```
 
 关于 Unity 的部分，本文不打算细说。如果你有其他疑问，我就挖个坑，再写一篇来填。
