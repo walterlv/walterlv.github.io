@@ -1,7 +1,7 @@
 ---
 title: "杂谈 System.Drawing.Common 的跨平台性（关键词：libgdiplus / .NET Core / Mono / Win32 / Linux / ……）"
 publishDate: 2020-05-24 14:37:19 +0800
-date: 2020-05-24 18:20:13 +0800
+date: 2020-05-25 08:54:30 +0800
 categories: dotnet csharp
 position: knowledge
 ---
@@ -148,11 +148,15 @@ class Program
 
 ![win 版本和 unix 版本的 System.Drawing.Common.dll](/static/posts/2020-05-24-13-49-12.png)
 
-其实，这个是 Visual Studio 编译的需要 .NET Core 运行时的 .NET Core 3.1 程序，如果发布出来了，那么这个依赖就直接被替换成了目标平台的依赖 dll 了，就不用对
+这些指定的依赖，在发布此程序之后会换成真实的依赖，而不再包含多个不同平台下的 dll 了：
+
+```powershell
+dotnet publish -c Release -f netcoreapp3.1 -r win10-x64 --self-contained true
+```
 
 ### 拆包
 
-我们去 <nuget.org> 上下载下来 [System.Drawing.Common](https://www.nuget.org/packages/System.Drawing.Common/) 包拆开来看，会发现这个包有两个很关键的文件夹：
+我们去 [nuget.org](https://nuget.org) 上下载下来 [System.Drawing.Common](https://www.nuget.org/packages/System.Drawing.Common/) 包拆开来看，会发现这个包有两个很关键的文件夹：
 
 - lib
 - runtimes
