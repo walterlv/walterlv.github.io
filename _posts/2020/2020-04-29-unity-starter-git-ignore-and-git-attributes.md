@@ -1,7 +1,7 @@
 ---
-title: "Unity3D 入门：Unity 项目版本管理建议使用的 .gitignore 文件和 .gitattributes 文件（2020年4月更新）"
+title: "Unity3D 入门：Unity 项目版本管理建议使用的 .gitignore 忽略文件和 .gitattributes 文件（2020年4月更新）"
 publishDate: 2020-04-29 17:41:22 +0800
-date: 2020-04-29 20:19:27 +0800
+date: 2020-06-01 09:20:45 +0800
 categories: unity csharp
 position: starter
 ---
@@ -93,6 +93,13 @@ crashlytics-build.properties
 
 - [Unity3D 入门：使用 Visual Studio 开发 Unity C# 脚本，说说根目录的那些 sln 和 csproj 文件 - walterlv](https://blog.walterlv.com/post/unity-starter-the-sln-and-csproj-files.html)
 
+额外的，你可能注意到 Unity 项目里面有大量的 *.meta 文件，是自动生成的，这个要加入到版本管理吗？答案是**需要**。Unity 创建这些文件是为了给导入的文件添加额外的元数据信息的，毕竟不能直接修改原来的文件。这些信息包含：
+
+- 描述如何导入这个资产文件
+- 如何在项目中准备资产
+
+如果你删除了这些文件，那么 Unity 会用默认的元数据信息生成一个对应的 .meta 文件。
+
 其他类型的 .gitignore 文件前往 GitHub 的 gitignore 仓库：
 
 - [github/gitignore: A collection of useful .gitignore templates](https://github.com/github/gitignore)
@@ -100,3 +107,9 @@ crashlytics-build.properties
 另外，开启一个新的 Unity 项目时，放一个适用于大多数场景的 .gitattributes 也可以一开始规避一些坑。你可以从下面这位大佬拿到他整理的一个 .gitattribute 文件。
 
 - [.gitattributes for Unity3D with git-lfs](https://gist.github.com/nemotoo/b8a1c3a0f1225bb9231979f389fd4f3f)
+
+---
+
+**参考资料**
+
+- [unity5 - What is a .meta file and why does Unity create them for all of my assets? - Stack Overflow](https://stackoverflow.com/a/42471800/6233938)

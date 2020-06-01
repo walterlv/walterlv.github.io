@@ -1,7 +1,7 @@
 ---
 title: "Unity3D 入门：如何管理 Unity 项目中的 NuGet 包？使用第三方 NuGet 包管理器——NuGetForUnity"
 publishDate: 2020-05-05 09:08:14 +0800
-date: 2020-05-05 15:12:45 +0800
+date: 2020-06-01 09:17:00 +0800
 categories: unity
 position: problem
 ---
