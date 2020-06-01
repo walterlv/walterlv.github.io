@@ -1,7 +1,7 @@
 ---
 title: "Unity3D 入门：Unity 项目版本管理建议使用的 .gitignore 忽略文件和 .gitattributes 文件（2020年4月更新）"
 publishDate: 2020-04-29 17:41:22 +0800
-date: 2020-06-01 09:20:45 +0800
+date: 2020-06-01 09:21:30 +0800
 categories: unity csharp
 position: starter
 ---
