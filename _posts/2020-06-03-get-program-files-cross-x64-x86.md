@@ -1,6 +1,6 @@
 ---
 title: "拿别人的 Program Files 文件夹？别忘了考虑 x86/x64 路径"
-date: 2020-06-03 07:57:17 +0800
+date: 2020-06-03 08:13:44 +0800
 categories: dotnet win32
 position: starter
 ---
