@@ -19,7 +19,7 @@ permalink: /visualstudio/2016/08/01/share-code-with-add-as-link.html
 
 ## 怎么创建链接文件？
 
-### 普通的方法（适用于 Visual Studio 2019）
+### 普通的方法（适用于 Visual Studio 2019/2017/2015/2013/2012）
 
 在 Visual Studio 项目上或文件夹上 `右键`->`Add`->`ExistingItem`，选好文件后，不要直接点右下角的 `[Add]` 按钮，而是点击 `[Add]` 按钮旁边的下拉按钮，选择 `Add As Link`。
 
@@ -31,7 +31,7 @@ permalink: /visualstudio/2016/08/01/share-code-with-add-as-link.html
 
 - [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj - walterlv](https://blog.walterlv.com/post/introduce-new-style-csproj-into-net-framework.html)
 
-### 最快的方法（适用于 Visual Studio 2015/2017）
+### 最快的方法（适用于 Visual Studio 2017/2015/2013/2012）
 
 按住 Alt 键，在 Visual Studio 中将一个文件拖拽到另一个文件夹中即可完成文件的链接。
 
