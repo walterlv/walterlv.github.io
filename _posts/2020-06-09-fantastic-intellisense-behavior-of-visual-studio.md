@@ -1,11 +1,11 @@
 ---
 title: "Visual Studio 智能感知提示里的奇妙行为一览"
-date: 2020-06-09 15:51:19 +0800
+date: 2020-06-09 15:52:22 +0800
 categories: visualstudio
 position: knowledge
 ---
 
-在此处编辑 blog.walterlv.com 的博客摘要
+本文就是个吐槽，感兴趣一一去报给微软。
 
 ---
 
