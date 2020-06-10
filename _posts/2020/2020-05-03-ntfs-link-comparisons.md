@@ -1,7 +1,7 @@
 ---
 title: "比较 Windows 上四种不同的文件（夹）链接方式（NTFS 的硬链接、目录联接、符号链接，和大家熟知的快捷方式）"
 publishDate: 2020-05-03 14:30:43 +0800
-date: 2020-05-21 00:26:23 +0800
+date: 2020-06-10 09:41:01 +0800
 categories: windows
 position: knowledge
 version:
@@ -85,7 +85,7 @@ mklink /J current %APPDATA%\walterlv\packages\1.0.0
 | 作用                   | 为某文件创建别名，可让不同的路径对应同一个文件的数据。       |                                                              |                                  |
 | 链接到文件             | ✔️                                                            | ❌                                                            | ❌                                |
 | 链接到文件夹           | ❌                                                            | ✔️                                                            | ✔️                                |
-| 需要提升为管理员权限   | 需要                                                         | 不需要                                                       | 不需要                           |
+| 需要提升为管理员权限   | 需要                                                         | 不需要                                                       | 通常需要 [^坑1]                  |
 | 跨驱动器卷（盘符）     | ❌                                                            | ✔️（仅本地计算机）                                            | ✔️（包括 SMB 文件或路径）         |
 | 操作系统支持           | Windows NT 3.1 开始支持<br/>Windows 2000 开始有 API `CreateHardLink()`<br/>Windows NT 6.0 开始能使用 `mklink /H` | Windows 2000+                                                | Windows Vista+                   |
 | 可链接到不存在的目标   | ❌                                                            | ✔️                                                            | ✔️                                |
@@ -93,6 +93,10 @@ mklink /J current %APPDATA%\walterlv\packages\1.0.0
 | 删除方法               | del                                                          | rd                                                           | rd / del                         |
 | 当链接被单独删除后     | 只有所有指向原始文件的硬链接和原始文件全部删除后文件数据才会被删除。 | Windows Vista 之后原始文件夹不受影响；Windows 2000/XP/2003 会导致原始子文件夹被删除。 | 原始文件夹不受影响。             |
 | 当原始文件被单独删除后 | 硬链接依然能正常访问到文件的数据。                           | 目录联接失效，指向不存在的目录。                             | 符号链接失效，指向不存在的目录。 |
+
+[^坑1]: 在微软的官方博客中已有说明：从 Windows 10 Insiders build 14972 开始，符号链接对开发者将不再需要管理员权限，这可以让开发者像在 Linux 或 macOS 上一样高效地工作。（通过如下图所示的开关来决定此操作是否需要管理员权限，打开则无需管理员权限。）
+
+![开发者模式](/static/posts/2020-06-10-09-37-39.png)
 
 ## 额外的坑
 
@@ -117,3 +121,5 @@ mklink /J current %APPDATA%\walterlv\packages\1.0.0
 - [NTFS reparse point - Wikipedia](https://en.wikipedia.org/wiki/NTFS_reparse_point)
 - [windows - What is the difference between NTFS Junction Points and Symbolic Links? - Stack Overflow](https://stackoverflow.com/questions/9042542/what-is-the-difference-between-ntfs-junction-points-and-symbolic-links)
 - [Hard link - Wikipedia](https://en.wikipedia.org/wiki/Hard_link)
+- [Create symbolic links (Windows 10) - Windows security - Microsoft Docs](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/create-symbolic-links)
+- [Symlinks in Windows 10! - Windows Developer Blog](https://blogs.windows.com/windowsdeveloper/2016/12/02/symlinks-windows-10/)
