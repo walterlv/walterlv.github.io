@@ -1,7 +1,7 @@
 ---
 title: "支持 Windows 10 最新 PerMonitorV2 特性的 WPF 多屏高 DPI 应用开发"
 publishDate: 2018-10-22 18:04:01 +0800
-date: 2018-12-14 09:54:00 +0800
+date: 2020-06-10 16:41:39 +0800
 categories: windows dotnet wpf
 ---
 
@@ -139,6 +139,15 @@ Windows 10 自 1703 开始引入第二代的多屏 DPI 机制（PerMonitor V2）
 
 需要注意：系统版本在 Windows 10 (1703) 或以上，V2 的感知级别才会生效，否则就直接使用系统级 DPI 感知。
 
+这里我们其实偷懒了，这种写法方便我们仅处理两种不同的 DPI 缩放规则：
+
+1. Windows 10 (1703) 之后的系统，全按最全支持来做兼容；
+2. 其他系统，全按 Windows 7 的支持级别来做兼容。
+
+你可能注意到本文文末的参考文章中有微软的官方博客，里面推荐的是支持所有级别的 DPI 感知。这看你的需求，因为部分 DPI 相关的模块如果你打算都支持，可能需要更加复杂的判定和计算。本文推荐的少一些，省一点开发量（反正 Windows 8.1 和 Windows 10 早期版本的用户量太少，这部分用户体验不比 Windows 7 差，又不是不能用）。
+
+![又不是不能用](/static/posts/2020-06-10-16-41-32.png)
+
 第一代和第二代的 Per-Monitor 感知之间的差异，可以参考：[Windows 下的高 DPI 应用开发（UWP / WPF / Windows Forms / Win32） - walterlv](/post/windows-high-dpi-development)
 
 额外的，如果你的 .NET Framework 版本在 .NET Framework 4.6.2 以下，但操作系统在 Windows 10 及以上，你还需要修改 App.config 文件（在 `<configuration />` 节点）。
@@ -204,3 +213,4 @@ Windows 10 自 1703 开始引入第二代的多屏 DPI 机制（PerMonitor V2）
 - [Developing a Per-Monitor DPI-Aware WPF Application - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/hidpi/declaring-managed-apps-dpi-aware?wt.mc_id=MVP)
 - [WPF-Samples/Developer Guide - Per Monitor DPI - WPF Preview.docx at master · Microsoft/WPF-Samples](https://github.com/Microsoft/WPF-Samples/blob/master/PerMonitorDPI/Developer%20Guide%20-%20Per%20Monitor%20DPI%20-%20WPF%20Preview.docx)
 - [Application Manifests - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/sbscs/application-manifests?wt.mc_id=MVP)
+- [High-DPI Scaling Improvements for Desktop Applications in the Windows 10 Creators Update (1703) - Windows Developer Blog](https://blogs.windows.com/windowsdeveloper/2017/04/04/high-dpi-scaling-improvements-desktop-applications-windows-10-creators-update/)
