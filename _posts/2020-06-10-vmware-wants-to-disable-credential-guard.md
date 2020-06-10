@@ -1,6 +1,6 @@
 ---
 title: "VMware Workstation 与 Device/Credential Guard 不兼容。在禁用 Device/Credential Guard 后，可以运行 VMware Workstation"
-date: 2020-06-10 08:55:55 +0800
+date: 2020-06-10 08:58:01 +0800
 categories: windows
 position: problem
 ---
@@ -29,6 +29,8 @@ VMware 从 15.5.5 版本开始，已支持在启用了 Hyper-V 的 Windows 10 �
 因此，如果你觉得不想折腾，直接将 VMware 升级到 15.5.5 以上即可。
 
 ![15.5.5](/static/posts/2020-06-10-08-55-34.png)
+
+图来自于 [kkwpsv（李少珺）](https://blog.sdlsj.net/)。
 
 ## 第一步：关闭内核隔离，然后重启
 
