@@ -1,7 +1,7 @@
 ---
 title: "Compare four different file (folder) links on Windows (NTFS hard links, junction points, symbolic links, and well-known shortcuts)"
 publishDate: 2020-05-03 14:30:43 +0800
-date: 2020-06-10 09:58:19 +0800
+date: 2020-06-11 09:18:28 +0800
 categories: windows
 position: knowledge
 version:
@@ -89,7 +89,7 @@ Reading those words above, you may know the usage of `mklink` but don't know the
 | When the reparse point is removed        | Only after all hard links to the original file and the original file have been deleted will the file data be deleted. | The original folder is not affected after Windows Vista but is will be deleted in Windows 2000 / XP / 2003. | The original file/folder is not affected.                    |
 | When the original file/folder is removed | The hard link can still access the data of the file normally. | Directory connection failed, pointing to a directory that does not exist. | The symbolic link is invalid and points to a directory that does not exist. |
 
-[Tip1]: A post of Microsoft says, Starting with Windows 10 Insiders build 14972, symlinks can be created without needing to elevate the console as administrator. This will allow developers, tools and projects, that previously struggled to work effectively on Windows due to symlink issues, to behave just as efficiently and reliably as they do on Linux or OSX. (Below picture shows how to open the developer's mode.)
+[ Tip1 ]: A post of Microsoft says, Starting with Windows 10 Insiders build 14972, symlinks can be created without needing to elevate the console as administrator. This will allow developers, tools and projects, that previously struggled to work effectively on Windows due to symlink issues, to behave just as efficiently and reliably as they do on Linux or OSX. (Below picture shows how to open the developer's mode.)
 
 ![Turn on the developer mode](/static/posts/2020-06-10-09-44-50.png)
 
