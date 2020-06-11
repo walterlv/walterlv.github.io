@@ -1,7 +1,7 @@
 ---
 title: "Compare four different file (folder) links on Windows (NTFS hard links, junction points, symbolic links, and well-known shortcuts)"
 publishDate: 2020-05-03 14:30:43 +0800
-date: 2020-06-11 09:18:28 +0800
+date: 2020-06-11 09:22:52 +0800
 categories: windows
 position: knowledge
 version:
@@ -106,3 +106,5 @@ If you create shortcuts in your start menu, and the shortcuts are linking to fil
 - [NTFS reparse point - Wikipedia](https://en.wikipedia.org/wiki/NTFS_reparse_point)
 - [windows - What is the difference between NTFS Junction Points and Symbolic Links? - Stack Overflow](https://stackoverflow.com/questions/9042542/what-is-the-difference-between-ntfs-junction-points-and-symbolic-links)
 - [Hard link - Wikipedia](https://en.wikipedia.org/wiki/Hard_link)
+- [Create symbolic links (Windows 10) - Windows security - Microsoft Docs](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/create-symbolic-links)
+- [Symlinks in Windows 10! - Windows Developer Blog](https://blogs.windows.com/windowsdeveloper/2016/12/02/symlinks-windows-10/)
