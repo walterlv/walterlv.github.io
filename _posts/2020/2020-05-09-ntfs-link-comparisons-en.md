@@ -1,7 +1,7 @@
 ---
 title: "Compare four different file (folder) links on Windows (NTFS hard links, junction points, symbolic links, and well-known shortcuts)"
 publishDate: 2020-05-03 14:30:43 +0800
-date: 2020-06-11 09:22:52 +0800
+date: 2020-06-11 09:28:00 +0800
 categories: windows
 position: knowledge
 version:
@@ -80,7 +80,7 @@ Reading those words above, you may know the usage of `mklink` but don't know the
 | Description                              | Create an alias for a file so that different paths correspond to the data of the same file. |                                                              |                                                              |
 | Linking to files                         | ✔️                                                            | ❌                                                            | ❌                                                            |
 | Linking to directories                   | ❌                                                            | ✔️                                                            | ✔️                                                            |
-| Needs to run as Administrator             | Yes                                                          | No                                                           | Mostly Yes [Tip1]                                           |
+| Needs to run as Administrator             | Yes                                                          | No                                                           | Mostly Yes `[Tip1]`                                         |
 | Supports linking across volumes          | ❌                                                            | ✔️(Local Machine only)                                        | ✔️(including remote path such as SMB)                         |
 | Introduced since                         | Supports since Windows NT 3.1<br/>API supports since Windows 2000 by `CreateHardLink()`<br/>Supports since Windows NT 6.0 by command `mklink /H` | Windows 2000+                                                | Windows Vista+                                               |
 | Supports targets which is not exist      | ❌                                                            | ✔️                                                            | ✔️                                                            |
@@ -89,7 +89,7 @@ Reading those words above, you may know the usage of `mklink` but don't know the
 | When the reparse point is removed        | Only after all hard links to the original file and the original file have been deleted will the file data be deleted. | The original folder is not affected after Windows Vista but is will be deleted in Windows 2000 / XP / 2003. | The original file/folder is not affected.                    |
 | When the original file/folder is removed | The hard link can still access the data of the file normally. | Directory connection failed, pointing to a directory that does not exist. | The symbolic link is invalid and points to a directory that does not exist. |
 
-[ Tip1 ]: A post of Microsoft says, Starting with Windows 10 Insiders build 14972, symlinks can be created without needing to elevate the console as administrator. This will allow developers, tools and projects, that previously struggled to work effectively on Windows due to symlink issues, to behave just as efficiently and reliably as they do on Linux or OSX. (Below picture shows how to open the developer's mode.)
+`[Tip1]`: A post of Microsoft says, Starting with Windows 10 Insiders build 14972, symlinks can be created without needing to elevate the console as administrator. This will allow developers, tools and projects, that previously struggled to work effectively on Windows due to symlink issues, to behave just as efficiently and reliably as they do on Linux or OSX. (Below picture shows how to open the developer's mode.)
 
 ![Turn on the developer mode](/static/posts/2020-06-10-09-44-50.png)
 
