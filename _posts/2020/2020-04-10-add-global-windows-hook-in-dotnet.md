@@ -1,7 +1,7 @@
 ---
 title: ".NET/C# 使用 SetWindowsHookEx 监听鼠标或键盘消息以及此方法的坑"
 publishDate: 2020-04-10 17:01:18 +0800
-date: 2020-04-18 10:55:53 +0800
+date: 2020-06-13 17:39:12 +0800
 categories: windows dotnet csharp
 position: knowledge
 ---
@@ -15,6 +15,8 @@ position: knowledge
 <div id="toc"></div>
 
 ## 基本使用
+
+如果你在阅读本文的时候遇到了一些问题，可考虑去 GitHub 上克隆我的源码，跑一跑试试。在这里：[walterlv/Walterlv.Demo.SetWindowsHookEx](https://github.com/walterlv/Walterlv.Demo.SetWindowsHookEx)。
 
 简单一点，先贴出一部分可以工作起来的代码，你直接可以放到你的项目当中运行测试：
 
@@ -41,7 +43,7 @@ public partial class MainWindow : Window
 
         _hMouseHook = SetWindowsHookEx(
             HookType.WH_MOUSE_LL,
-            mouseHook,
+            _mouseHook,
             hModule,
             0);
         if (_hMouseHook == IntPtr.Zero)
@@ -238,6 +240,10 @@ var threadId = GetWindowThreadProcessId(hWnd, out _);
 1. 可以考虑做非托管 dll，专门用来挂接；
 1. 可以考虑使用 `SetWinEventHook`，这个是不用注入到目标进程的；
 1. 可以考虑使用 `System.Windows.Automation` 抓取一部分有限的信息。
+
+## 其他问题
+
+如果你在各种折腾之后还是有问题，可考虑去 GitHub 上克隆我的源码，跑一跑试试。在这里：[walterlv/Walterlv.Demo.SetWindowsHookEx](https://github.com/walterlv/Walterlv.Demo.SetWindowsHookEx)。或者通过本文后面附带的联系方式与我联系。
 
 ---
 
