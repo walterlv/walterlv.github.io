@@ -1,7 +1,7 @@
 ---
 title: "如何根据一个绝对文件路径生成一个相对文件路径"
 publishDate: 2018-06-07 19:30:24 +0800
-date: 2019-04-04 17:11:37 +0800
+date: 2020-06-15 17:23:04 +0800
 categories: dotnet
 ---
 
@@ -48,9 +48,10 @@ public static string MakeRelativePath(string fromPath, string toPath)
         // 不是同一种路径，无法转换成相对路径。
         return toPath;
     }
-    
+
     if (fromUri.Scheme.Equals("file", StringComparison.InvariantCultureIgnoreCase)
-        && !fromPath.EndsWith("/") && !fromPath.EndsWith("\\"))
+        && !fromPath.EndsWith("/", StringComparison.OrdinalIgnoreCase)
+        && !fromPath.EndsWith("\\", StringComparison.OrdinalIgnoreCase))
     {
         // 如果是文件系统，则视来源路径为文件夹。
         fromUri = new Uri(fromPath + Path.DirectorySeparatorChar);
