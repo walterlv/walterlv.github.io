@@ -1,7 +1,7 @@
 ---
 title: "从 “x is null 和 x == null” 的区别看 C# 7 模式匹配中常量和 null 的匹配"
 publishDate: 2017-11-06 23:24:52 +0800
-date: 2019-02-11 16:48:45 +0800
+date: 2020-06-16 10:39:41 +0800
 categories: csharp msil dotnet decompile
 ---
 
@@ -109,7 +109,7 @@ private void TestInWalterlvDemo(object value)
 
 反编译看看：
 
-```
+```csharp
 .method private hidebysig instance void 
     TestInWalterlvDemo(
       object 'value'
@@ -162,7 +162,7 @@ private void TestInWalterlvDemo(object value)
 
 `x is null` 对应的是：
 
-```
+```csharp
 IL_0001: ldarg.1      // 'value'
 IL_0002: ldnull       
 IL_0003: ceq          
@@ -173,7 +173,7 @@ IL_0005: stloc.0      // V_0
 
 `x == null` 对应的是：
 
-```
+```csharp
 IL_000b: ldarg.1      // 'value'
 IL_000c: ldnull       
 IL_000d: ceq          
@@ -184,9 +184,60 @@ IL_000f: stloc.1      // V_1
 
 ---
 
+然而，如果那个 `x` 是一个重写了 `==` 的自定义类型就不一样了（感谢 [TimAndy](https://www.cnblogs.com/xuchonglei/) 提供的示例）：
+
+```csharp
+private void TestInWalterlvDemo(Foo value)
+{
+    if (value is null)
+    {
+    }
+    if (value == null)
+    {
+    }
+}
+
+public class C
+{
+    bool M1(C x) => x is null;
+	bool M2(C x) => x == null;
+
+    int x;
+    public C(int x) => this.x=x;
+    public static bool operator== (C o1, C o2) => o1.x == o2.x;
+    public static bool operator!= (C o1, C o2)=> o1.x != o2.x;
+    public override bool Equals(object o2) => ((C)o2).x == x;
+    public override int GetHashCode() => x.GetHashCode();
+}
+```
+
+`x is null` 对应的是：
+
+```csharp
+IL_0000: ldarg.1
+IL_0001: ldnull
+IL_0002: ceq
+IL_0004: ret
+```
+
+`x == null` 对应的是：
+
+```csharp
+IL_0000: ldarg.1
+IL_0001: ldnull
+IL_0002: call bool C::op_Equality(class C, class C)
+IL_0007: ret
+```
+
+这时，调用了重写的 `==` 运算符。
+
+[TimAndy](https://www.cnblogs.com/xuchonglei/) 提供的示例详情在如下链接：
+
+<https://sharplab.io/#v2:EYLgZgpghgLgrgJwgZwLQGUCWBbADgGwgAUEB7AcwSm2QBoYRN8AfAAQCYBGAWACg/WAZgAEHYQGFhAbz7C5w4KVL5hAWU4AKSQA8AlMIC8APmHbhmZMIB2cfPgDcfAJCLla9ltP7jpwweu2DrLywXKYVjCmjrzyoiLiGuGRelIwABYWAHTaBtr2AL6hcaKcAGwKSiqkuBBUMKQIBv6epJy0EsKk7N4mrdl+nezZ0bFCJeWuVTV1DQCEzZKt7YvdPn1m84PDRWOkAG61CJgAJhAVbgCiAI5wUPjIGqTAAFYQAMaRXT3CGlq6X/0mlEdiJ9ocTmcksIAOIQGAACSgyDS4lIpw0320mVhCKRKLREAx0XyQA===>。
+
 ## 😏 `x is 常量` Vs. `x == 常量`
 
-如果只是像上面那样，那这篇文章也太没营养了！现在我们把 `null` 换成其它常量：
+现在我们把 `null` 换成其它常量：
 
 ```csharp
 private void TestInWalterlvDemo(object value)
@@ -218,7 +269,7 @@ private void TestInWalterlvDemo(object value)
 
 `value is 1`：
 
-```
+```csharp
 IL_0001: ldc.i4.1     
 IL_0002: box          [mscorlib]System.Int32
 IL_0007: ldarg.1      // 'value'
@@ -228,7 +279,7 @@ IL_000d: stloc.0      // V_0
 
 `value == (object) 1`：
 
-```
+```csharp
 IL_0013: ldarg.1      // 'value'
 IL_0014: ldc.i4.1     
 IL_0015: box          [mscorlib]System.Int32
@@ -291,7 +342,7 @@ False
 
 他们的 IL 代码如下。可以看到 `==` 和 `Equals` 会调用重载的运算符和方法；而使用 `is` 判断和前面是一样的，不受重载影响，可以和 `Object` 的 `Equals` 静态方法一样正常完成判空。
 
-```
+```csharp
 // foo == null
 IL_0005: dup
 IL_0006: ldnull
