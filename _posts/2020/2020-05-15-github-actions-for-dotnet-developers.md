@@ -1,7 +1,7 @@
 ---
 title: "适合 .NET 开发者用的 GitHub Actions（时不时更新）"
 publishDate: 2020-05-15 19:42:55 +0800
-date: 2020-05-16 11:01:28 +0800
+date: 2020-06-18 15:43:30 +0800
 categories: dotnet github
 position: knowledge
 ---
@@ -20,6 +20,7 @@ position: knowledge
 
 **要求**：仓库的根目录有且仅有一个 sln 文件，且这个文件包含了所有重要的项目和单元测试。
 
+{% raw %}
 ```yaml
 name: .NET Build & Test
 
@@ -49,6 +50,7 @@ jobs:
         env:
           Configuration: ${{ matrix.configuration }}
 ```
+{% endraw %}
 
 ## .NET 编译与单元测试（仅限 Windows 系统下的编译）
 
@@ -58,6 +60,7 @@ jobs:
 
 **要求**：仓库的根目录有且仅有一个 sln 文件，且这个文件包含了所有重要的项目和单元测试。
 
+{% raw %}
 ```yaml
 name: .NET Build & Test
 
@@ -116,6 +119,7 @@ jobs:
       env:
         Configuration: ${{ matrix.configuration }}
 ```
+{% endraw %}
 
 在这个文件中：
 
@@ -130,6 +134,7 @@ jobs:
 
 **要求**：仓库的根目录有且仅有一个 sln 文件。
 
+{% raw %}
 ```yaml
 name: NuGet Push
 
@@ -151,6 +156,7 @@ jobs:
       - name: Push
         run: dotnet nuget push .\bin\Release\*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NuGetAPIKey }} --skip-duplicate --no-symbols 1
 ```
+{% endraw %}
 
 关于最后的那个参数 `1`，很魔性，只要有任何一个值都行。参见：[dotnet nuget push - Missing value for option · Issue #4864 · NuGet/Home](https://github.com/NuGet/Home/issues/4864)。
 
