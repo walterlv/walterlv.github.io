@@ -1,6 +1,7 @@
 ---
 title: ".NET 程序集/项目/包的版本号设置有最大范围，最大不能超过 65534"
-date: 2020-06-18 18:15:19 +0800
+publishDate: 2020-06-18 18:15:19 +0800
+date: 2020-06-19 00:05:08 +0800
 categories: visualstudio dotnet
 position: problem
 ---
@@ -69,3 +70,20 @@ Class1.cs 应该不用贴出来了，因为没啥关系。
       </PropertyGroup>
     </Project>
 ```
+
+## 谁的限制？
+
+实际上，版本号限制是 Windows 系统带来的，Windows 系统限制到 65535 了。
+
+虽然你可以通过以上 AssemblyInfo 的方法绕过编译错误，但实际上生成的文件版本会溢出：
+
+![溢出的版本号](/static/posts/2020-06-19-00-04-19.png)
+
+.NET 运行时是可以支持 int 范围的版本号的，无奈兼容 Windows 的部分却不行。
+
+---
+
+**参考资料**
+
+- [Why are build numbers limited to 65535? - Microsoft Docs](https://docs.microsoft.com/zh-cn/archive/blogs/msbuild/why-are-build-numbers-limited-to-65535)
+- [c# - The specified version string does not conform to the required format - major[.minor[.build[.revision]]] - Stack Overflow](https://stackoverflow.com/a/37941296/6233938)
