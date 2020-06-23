@@ -1,7 +1,7 @@
 ---
 title: "WPF 使用 WindowChrome，在自定义窗口标题栏的同时最大程度保留原生窗口样式（类似 UWP/Chrome）"
 publishDate: 2018-07-12 15:57:30 +0800
-date: 2019-06-10 15:33:00 +0800
+date: 2020-06-23 15:16:39 +0800
 categories: wpf uwp dotnet windows
 ---
 
@@ -261,3 +261,4 @@ UWP 应用对窗口样式的定制能力是非常小的，远远小于传统 Win
 
 - [DwmSetWindowAttribute function - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/api/dwmapi/nf-dwmapi-dwmsetwindowattribute?wt.mc_id=MVP)
 - [pinvoke.net: DwmSetWindowAttribute (Enums)](https://www.pinvoke.net/default.aspx/Enums/DwmSetWindowAttribute.html)
+- [Why does a maximized window have the wrong window rectangle? - The Old New Thing](https://devblogs.microsoft.com/oldnewthing/20120326-00/?p=8003)
