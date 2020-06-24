@@ -1,6 +1,7 @@
 ---
 title: "理解 Visual Studio 解决方案文件格式（.sln）"
-date: 2019-07-24 15:34:53 +0800
+publishDate: 2019-07-24 15:34:53 +0800
+date: 2020-06-18 08:34:02 +0800
 categories: visualstudio dotnet
 position: knowledge
 ---
@@ -150,7 +151,7 @@ EndProject
 
 关于设置项目依赖关系的方法，除了 sln 文件里面的设置之外，还有通过设置项目依赖属性的方式，详情可以阅读：
 
-- [两种方法设置 .NET/C# 项目的编译顺序，而不影响项目之间的引用](/post/affects-project-building-order)
+- [三种方法设置 .NET/C# 项目的编译顺序，而不影响项目之间的引用](/post/affects-project-building-order)
 
 ### 全局信息
 
