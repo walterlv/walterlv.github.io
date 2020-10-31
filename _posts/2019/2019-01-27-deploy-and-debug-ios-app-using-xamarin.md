@@ -1,6 +1,7 @@
 ---
 title: "使用 Xamarin 在 iOS 真机上部署应用进行调试"
-date: 2019-01-27 21:17:07 +0800
+publishDate: 2019-01-27 21:17:07 +0800
+date: 2020-10-31 09:00:51 +0800
 categories: xamarin dotnet csharp ios
 position: starter
 ---
@@ -47,6 +48,11 @@ position: starter
     - 这个时候下面的 Signing Certificate 会出现一个加载中的动画，大概持续不到一秒钟，就会生成 iPhone Developer 的信息，这个就是包含 provisioning profiles 的信息（可以在 Provisioning Profile 旁边的感叹号中看到详细信息）
 1. 在 Mac 上插入你的 iPhone，解锁 iPhone，等待左上角出现你 iPhone 的名称和图标。
 1. 点击 XCode 左上角的运行按钮，等待这个空白的应用部署到你的手机上。
+
+**更新**：XCode 新版本的界面布局和本文略有不同，可前往以下链接查看变化：
+
+- [Xamarin iOS 切换开发者账号之后的签名标识和预配配置文件更新方法](https://blog.lindexi.com/post/Xamarin-iOS-%E5%88%87%E6%8D%A2%E5%BC%80%E5%8F%91%E8%80%85%E8%B4%A6%E5%8F%B7%E4%B9%8B%E5%90%8E%E7%9A%84%E7%AD%BE%E5%90%8D%E6%A0%87%E8%AF%86%E5%92%8C%E9%A2%84%E9%85%8D%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%9B%B4%E6%96%B0%E6%96%B9%E6%B3%95.html)
+- [Xamarin iOS 部署项目提示 Failed to register bundle identifier 失败](https://blog.lindexi.com/post/Xamarin-iOS-%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E6%8F%90%E7%A4%BA-Failed-to-register-bundle-identifier-%E5%A4%B1%E8%B4%A5.html)
 
 ![在 XCode 中进行设置](/static/posts/2019-01-27-20-51-52.png)
 

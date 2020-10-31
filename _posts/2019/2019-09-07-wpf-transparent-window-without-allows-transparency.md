@@ -1,7 +1,7 @@
 ---
 title: "WPF 制作高性能的透明背景异形窗口（使用 WindowChrome 而不要使用 AllowsTransparency=True）"
 publishDate: 2019-09-07 14:40:20 +0800
-date: 2019-10-17 10:36:05 +0800
+date: 2020-10-31 08:58:06 +0800
 categories: wpf dotnet csharp
 position: knowledge
 ---
@@ -147,6 +147,10 @@ position: knowledge
 ![使用 WindowChrome 制作透明窗口的性能数据](/static/posts/2019-09-07-14-08-23.png)
 
 ![使用 AllowsTransparency 制作透明窗口的性能数据](/static/posts/2019-09-07-14-08-45.png)
+
+此性能差异的原理解读，请参阅：
+
+- [WPF 从最底层源代码了解 AllowsTransparency 性能差的原因](https://lindexi.gitee.io/post/WPF-%E4%BB%8E%E6%9C%80%E5%BA%95%E5%B1%82%E6%BA%90%E4%BB%A3%E7%A0%81%E4%BA%86%E8%A7%A3-AllowsTransparency-%E6%80%A7%E8%83%BD%E5%B7%AE%E7%9A%84%E5%8E%9F%E5%9B%A0.html)
 
 ## 功能对比
 
