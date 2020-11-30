@@ -1,14 +1,16 @@
 ---
 title: "各个版本 Windows 10 的名称、完整版本号、开发代号和系统自带的 .NET Framework 版本"
 publishDate: 2017-10-17 10:49:40 +0800
-date: 2020-04-10 17:02:18 +0800
+date: 2020-11-30 14:55:30 +0800
 categories: windows dotnet
 tags: Windows .Net
 ---
 
 | Windows 10 名称                 | Windows 版本      | 开发代号 | 自带的 .NET Framework 版本 |
 | :------------------------------ | :---------------- | -------- | -------------------------- |
-| 预览中                          | 预览中            | 20H1     | —                          |
+| 预览中                          | 预览中            | —        | —                          |
+| October 2020 Update             | 10.0.19042 (20H2) | 20H2     | .NET Framework 4.8         |
+| May 2020 Update                 | 10.0.19041 (2004) | 20H1     | .NET Framework 4.8         |
 | November 2019 Update            | 10.0.18363 (1909) | 19H2     | .NET Framework 4.8         |
 | Windows 10 May 2019 Update      | 10.0.18362 (1903) | 19H1     | .NET Framework 4.8         |
 | Windows 10 October 2018 Update  | 10.0.17763 (1809) | RS5      | .NET Framework 4.7.2       |
