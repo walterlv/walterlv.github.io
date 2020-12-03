@@ -1,7 +1,7 @@
 ---
 title: "适合 .NET 开发者用的 GitHub Actions（时不时更新）"
 publishDate: 2020-05-15 19:42:55 +0800
-date: 2020-06-18 15:43:30 +0800
+date: 2020-12-03 17:44:51 +0800
 categories: dotnet github
 position: knowledge
 ---
@@ -93,23 +93,19 @@ jobs:
         dotnet-version: 3.1.202
 
     # 添加 MSBuild.exe 到环境变量: https://github.com/microsoft/setup-msbuild
-    - name: Setup MSBuild.exe
-      uses: microsoft/setup-msbuild@2008f912f56e61277eefaac6d1888b750582aa16
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.2
 
-    # 安装 NuGet
+    # 安装 NuGet（如果后面需要，可以使用它）
     - name: Setup NuGet
       uses: nuget/setup-nuget@v1
       with:
         nuget-api-key: ${{ secrets.NuGetAPIKey }}
         nuget-version: '5.x'
 
-    # 还原 NuGet 包
-    - name: NuGet restore
-      run: nuget restore
-
     # 编译整个项目
     - name: Build the solution
-      run: msbuild /p:Configuration=$env:Configuration
+      run: msbuild /p:Configuration=$env:Configuration -restore
       env:
         Configuration: ${{ matrix.configuration }}
 
