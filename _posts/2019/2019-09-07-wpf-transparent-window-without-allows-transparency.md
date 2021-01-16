@@ -1,7 +1,7 @@
 ---
 title: "WPF 制作高性能的透明背景异形窗口（使用 WindowChrome 而不要使用 AllowsTransparency=True）"
 publishDate: 2019-09-07 14:40:20 +0800
-date: 2020-10-31 08:58:06 +0800
+date: 2021-01-16 08:30:19 +0800
 categories: wpf dotnet csharp
 position: knowledge
 ---
@@ -13,6 +13,7 @@ position: knowledge
 ---
 
 <div id="toc"></div>
+
 ## 背景透明的异形窗口
 
 如下是一个背景透明异形窗口的示例：
@@ -181,6 +182,8 @@ position: knowledge
 
 这两种实现的窗口之间还有一些功能上的区别：
 
-| 方案     | WindowChrome                             | AllowsTransparency                         | 说明                                                         |
-| -------- | ---------------------------------------- | ------------------------------------------ | ------------------------------------------------------------ |
-| 点击穿透 | 在完全透明的部分点击依然点在自己的窗口上 | 在完全透明的部分点击会穿透到下面的其他窗口 | 感谢 [nocanstillbb (huang bin bin)](https://github.com/nocanstillbb) 提供的信息 |
+| 方案     | WindowChrome                             | AllowsTransparency                         
+| -------- | ---------------------------------------- | ------------------------------------------ |
+| 点击穿透 | 在完全透明的部分点击依然点在自己的窗口上 | 在完全透明的部分点击会穿透到下面的其他窗口 |
+
+然而，如果你希望在使用高性能的 WindowChrome 时也依然能点击穿透，那么你需要使用到一点点的小技巧来绕过 WPF 对 `WS_EX_LAYERED` 窗口样式的锁定。请参见：[WPF 制作支持点击穿透的高性能的透明背景异形窗口](https://blog.lindexi.com/post/WPF-%E5%88%B6%E4%BD%9C%E6%94%AF%E6%8C%81%E7%82%B9%E5%87%BB%E7%A9%BF%E9%80%8F%E7%9A%84%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E9%80%8F%E6%98%8E%E8%83%8C%E6%99%AF%E5%BC%82%E5%BD%A2%E7%AA%97%E5%8F%A3.html)。
