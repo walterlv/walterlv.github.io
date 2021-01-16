@@ -1,7 +1,7 @@
 ---
 title: "WPF 制作高性能的透明背景异形窗口（使用 WindowChrome 而不要使用 AllowsTransparency=True）"
 publishDate: 2019-09-07 14:40:20 +0800
-date: 2021-01-16 08:30:19 +0800
+date: 2021-01-16 08:30:49 +0800
 categories: wpf dotnet csharp
 position: knowledge
 ---
@@ -182,7 +182,7 @@ position: knowledge
 
 这两种实现的窗口之间还有一些功能上的区别：
 
-| 方案     | WindowChrome                             | AllowsTransparency                         
+| 方案     | WindowChrome                             | AllowsTransparency                         |
 | -------- | ---------------------------------------- | ------------------------------------------ |
 | 点击穿透 | 在完全透明的部分点击依然点在自己的窗口上 | 在完全透明的部分点击会穿透到下面的其他窗口 |
 
