@@ -1,7 +1,7 @@
 ---
 title: "Unity OpenVR 虚拟现实入门二：一个最简单的虚拟现实游戏/程序"
 publishDate: 2021-05-15 20:10:58 +0800
-date: 2021-05-16 09:05:37 +0800
+date: 2021-05-16 16:51:42 +0800
 categories: unity openvr
 position: starter
 ---
@@ -18,7 +18,8 @@ position: starter
 - [Unity OpenVR 虚拟现实入门二：一个最简单的虚拟现实游戏/程序](https://blog.walterlv.com/post/unity-openvr-starting-2.html)
 - [Unity OpenVR 虚拟现实入门三：最简单的五指交互](https://blog.walterlv.com/post/unity-openvr-starting-3.html)
 - [Unity OpenVR 虚拟现实入门四：通过脚本控制手与控制器](https://blog.walterlv.com/post/unity-openvr-starting-4.html)
-- [Unity OpenVR 虚拟现实入门五：通过传送控制角色移动](https://blog.walterlv.com/post/unity-openvr-starting-5.html)
+- [Unity OpenVR 虚拟现实入门五：通过传送控制玩家移动](https://blog.walterlv.com/post/unity-openvr-starting-5.html)
+- [Unity OpenVR 虚拟现实入门六：通过摇杆控制玩家移动](https://blog.walterlv.com/post/unity-openvr-starting-6.html)
 
 <div id="toc"></div>
 
@@ -52,7 +53,7 @@ position: starter
 ![开始调试](/static/posts/2021-05-15-20-53-43.png)  
 ▲ 开始调试
 
-如果询问你还没有生成 SteamVR 的输入行为，是否要打开输入窗口时，点“是”。并在最后点击“Generate and Save”。
+如果询问你还没有生成 SteamVR 的输入行为，是否要打开输入窗口时，点“是”。并在最后点击“Save and generate”。
 
 ![是否打开 SteamVR 输入窗口](/static/posts/2021-05-15-20-55-07.png)
 

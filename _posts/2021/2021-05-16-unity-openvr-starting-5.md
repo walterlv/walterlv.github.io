@@ -1,13 +1,14 @@
 ---
-title: "Unity OpenVR 虚拟现实入门五：通过传送控制角色移动"
-date: 2021-05-16 09:59:33 +0800
+title: "Unity OpenVR 虚拟现实入门五：通过传送控制玩家移动"
+publishDate: 2021-05-16 09:59:33 +0800
+date: 2021-05-16 16:05:50 +0800
 categories: unity openvr
 position: starter
 ---
 
 在 Unity 的帮助下，虚拟现实应用的开发非常容易。不过国内竟然还是没有什么教程，所以这里就来一点入门的，适合新手。
 
-本文将基于第四篇的简单场景，通过传送的方式控制角色移动。
+本文将基于第四篇的简单场景，通过传送的方式控制玩家移动。
 
 ---
 
@@ -17,13 +18,14 @@ position: starter
 - [Unity OpenVR 虚拟现实入门二：一个最简单的虚拟现实游戏/程序](https://blog.walterlv.com/post/unity-openvr-starting-2.html)
 - [Unity OpenVR 虚拟现实入门三：最简单的五指交互](https://blog.walterlv.com/post/unity-openvr-starting-3.html)
 - [Unity OpenVR 虚拟现实入门四：通过脚本控制手与控制器](https://blog.walterlv.com/post/unity-openvr-starting-4.html)
-- [Unity OpenVR 虚拟现实入门五：通过传送控制角色移动](https://blog.walterlv.com/post/unity-openvr-starting-5.html)
+- [Unity OpenVR 虚拟现实入门五：通过传送控制玩家移动](https://blog.walterlv.com/post/unity-openvr-starting-5.html)
+- [Unity OpenVR 虚拟现实入门六：通过摇杆控制玩家移动](https://blog.walterlv.com/post/unity-openvr-starting-6.html)
 
 <div id="toc"></div>
 
 ## 搭建一个简单的场景
 
-基于之前第四篇中我们添加的“Player”和控制器，我们这里简单打建一个场景。于是我们添加一个 3D 物体——“平面”——这足够简单。当然这不是必要的，只是会让我们后续的角色移动看起来是踩在地面上，而不是悬在空中。
+基于之前第四篇中我们添加的“Player”和控制器，我们这里简单打建一个场景。于是我们添加一个 3D 物体——“平面”——这足够简单。当然这不是必要的，只是会让我们后续的玩家移动看起来是踩在地面上，而不是悬在空中。
 
 ![创建平面](/static/posts/2021-05-16-10-22-58.png)  
 ▲ 创建平面
