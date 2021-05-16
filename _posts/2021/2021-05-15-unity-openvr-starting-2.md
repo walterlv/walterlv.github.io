@@ -1,7 +1,7 @@
 ---
 title: "Unity OpenVR 虚拟现实入门二：一个最简单的虚拟现实游戏/程序"
 publishDate: 2021-05-15 20:10:58 +0800
-date: 2021-05-16 07:59:12 +0800
+date: 2021-05-16 09:05:37 +0800
 categories: unity openvr
 position: starter
 ---
@@ -11,6 +11,12 @@ position: starter
 本文将开发一个最简单的虚拟现实应用。
 
 ---
+
+系列博客：
+
+- [Unity OpenVR 虚拟现实入门一：安装配置 Unity + OpenVR 环境](https://blog.walterlv.com/post/unity-openvr-starting-1.html)
+- [Unity OpenVR 虚拟现实入门二：一个最简单的虚拟现实游戏/程序](https://blog.walterlv.com/post/unity-openvr-starting-2.html)
+- [Unity OpenVR 虚拟现实入门三：最简单的五指交互](https://blog.walterlv.com/post/unity-openvr-starting-3.html)
 
 <div id="toc"></div>
 
@@ -44,9 +50,12 @@ position: starter
 ![开始调试](/static/posts/2021-05-15-20-53-43.png)  
 ▲ 开始调试
 
-如果询问你还没有打开 SteamVR 的输入模拟窗口是否要打开时，点“是”。
+如果询问你还没有生成 SteamVR 的输入行为，是否要打开输入窗口时，点“是”。并在最后点击“Generate and Save”。
 
 ![是否打开 SteamVR 输入窗口](/static/posts/2021-05-15-20-55-07.png)
+
+![SteamVR 输入窗口](/static/posts/2021-05-16-09-05-22.png)  
+▲ SteamVR 输入窗口
 
 随后，拿起你的头戴式显示器（HMD，Head-mounted display），享受你的第一个虚拟现实应用（也许是游戏）吧！
 

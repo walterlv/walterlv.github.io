@@ -1,7 +1,7 @@
 ---
 title: "Unity OpenVR 虚拟现实入门一：安装配置 Unity + OpenVR 环境"
 publishDate: 2021-05-15 20:08:44 +0800
-date: 2021-05-16 07:57:01 +0800
+date: 2021-05-16 08:59:56 +0800
 categories: unity openvr
 position: starter
 ---
@@ -11,6 +11,12 @@ position: starter
 本文将搭建好虚拟现实的开发环境。
 
 ---
+
+系列博客：
+
+- [Unity OpenVR 虚拟现实入门一：安装配置 Unity + OpenVR 环境](https://blog.walterlv.com/post/unity-openvr-starting-1.html)
+- [Unity OpenVR 虚拟现实入门二：一个最简单的虚拟现实游戏/程序](https://blog.walterlv.com/post/unity-openvr-starting-2.html)
+- [Unity OpenVR 虚拟现实入门三：最简单的五指交互](https://blog.walterlv.com/post/unity-openvr-starting-3.html)
 
 <div id="toc"></div>
 
