@@ -1,6 +1,6 @@
 ---
 title: "Unity OpenVR 虚拟现实入门四：通过脚本控制手与控制器"
-date: 2021-05-16 09:47:13 +0800
+date: 2021-05-16 09:49:15 +0800
 categories: unity openvr
 position: starter
 ---
@@ -62,3 +62,7 @@ public class PlayerDemoScript : MonoBehaviour
 
 [![手握住控制器](/static/posts/2021-05-16-09-46-33.png)](https://r302.cc/Yz0D3Ax?platform=enpc&channel=copylink)  
 ▲ 手握住控制器
+
+## 运行
+
+运行场景，当我们在“检查器”中勾选“showControllers”时，会在场景中看到手握住控制器。
