@@ -1,7 +1,7 @@
 ---
 title: "Unity OpenVR 虚拟现实入门五：通过传送控制玩家移动"
 publishDate: 2021-05-16 09:59:33 +0800
-date: 2021-05-16 16:05:50 +0800
+date: 2021-05-16 17:47:41 +0800
 categories: unity openvr
 position: starter
 ---
@@ -58,7 +58,7 @@ position: starter
 ![可传送到目的地](/static/posts/2021-05-16-10-39-59.png)  
 可传送到目的地
 
-在这张图片中，白色的地面让传送点很难看清，我们随便找一个非白色的材质拖拽到平面上。这里我直接使用“SteamVR”->“InteractionSystem”->“Teleport”->“Materials”里的“TeleportArea”材质（偷懒）。
+在这张图片中，白色的地面让传送点很难看清，我们随便找一个非白色的材质拖拽到平面上。这里我直接使用“SteamVR”->“InteractionSystem”->“Teleport”->“Textures”里的“TeleportArea”材质（偷懒）。
 
 ![使用非白色的材质](/static/posts/2021-05-16-10-46-56.png)
 

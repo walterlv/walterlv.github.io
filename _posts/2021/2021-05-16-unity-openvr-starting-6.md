@@ -1,7 +1,7 @@
 ---
 title: "Unity OpenVR 虚拟现实入门六：通过摇杆控制玩家移动"
 publishDate: 2021-05-16 11:00:59 +0800
-date: 2021-05-16 17:45:34 +0800
+date: 2021-05-16 18:24:17 +0800
 categories: unity openvr
 position: starter
 ---
@@ -82,11 +82,9 @@ public class PlayerMovementScript : MonoBehaviour
 ![选择输入](/static/posts/2021-05-16-16-37-04.png)  
 ▲ 选择输入
 
-在这个下拉列表中，我们点击“Add”（添加）。这时会进入 SteamVR 输入窗口，为了避免太多的输入设置影响到阅读，我删除了几乎所有默认为我们准备的 SteamVR 输入。（这是可以删除的，因为我们的这个入门应用不支持决大多数的操作，而且反正之后也会再添加。另外，关于 SteamVR 输入的更详细了解，可以阅读另一篇博客：（占位符））
+在这个下拉列表中，我们点击“Add”（添加）。我们添加一个新的（默认名字是 `NewAction`）：
 
-我们添加一个新的（默认名字是 `NewAction`）：
-
-![添加新的输入](/static/posts/2021-05-16-16-40-18.png)  
+![添加新的输入](/static/posts/2021-05-16-18-17-05.png)  
 ▲ 添加新的输入
 
 这是一个抽象的，二维向量类型的输入，我将其取名为“DirectMovement”（意为直接移动，与之相对的是本系列第五篇说的传送移动 Teleport）。SteamVR 的这种抽象的输入可以很好地将编写代码时的输入与各种各样不同类型的 VR 控制器隔离开来，避免 VR 应用绑死某个控制器的按键。
@@ -98,14 +96,16 @@ public class PlayerMovementScript : MonoBehaviour
 * 必要性为“suggested”（suggested 表示开发者定义的，但允许用户修改的按键绑定设置；而 mandatory 表示开发者强制定义不允许用户修改的按键绑定设置）
 * 我额外添加了中文和英文的两个不同本地化语言（这会在 SteamVR 的按键绑定设置时显示给开发者和用户看）
 
-![DirectMovement 的动作设置](/static/posts/2021-05-16-16-45-35.png)  
+![DirectMovement 的动作设置](/static/posts/2021-05-16-18-18-09.png)  
 ▲ DirectMovement 的动作设置
 
 添加完成之后，点击“SteamVR Input”窗口左下角的“Save and generate”按钮，等待编译完成后，关闭这个窗口。
 
+**特别注意**：`default` 的动作组不建议删除，因为 SteamVR 组件里很多组件都用到了 `default` 动作组里的动作，删除会导致无法看见手和手柄。
+
 再回到“Player”游戏对象的检查器中找到“PlayerMovementScript”脚本，我们可以为输入选择我们刚刚添加的“DirectMovement”动作了。
 
-![选择 DirectMovement 动作](/static/posts/2021-05-16-16-53-36.png)  
+![选择 DirectMovement 动作](/static/posts/2021-05-16-18-20-37.png)  
 ▲ 选择 DirectMovement 动作
 
 ## 设置控制器按键绑定
@@ -117,7 +117,7 @@ public class PlayerMovementScript : MonoBehaviour
 
 在这个“SteamVR Input”窗口中，选择右下角的“Open binding UI”按钮。
 
-![Open binding UI](/static/posts/2021-05-16-16-56-32.png)  
+![Open binding UI](/static/posts/2021-05-16-18-21-14.png)  
 ▲ Open binding UI
 
 稍等片刻，会打开“控制器按键设置”界面（这是 SteamVR 的界面，以后玩家去改键的时候看到的也是这个界面）。
@@ -133,15 +133,10 @@ public class PlayerMovementScript : MonoBehaviour
 
 我们点击“编辑”以编辑当前的按键设置。
 
-因为我们在前面删除了几乎所有的 SteamVR 输入动作，所以这里的按键设置几乎都是空的（如果没删的话，这里会有很多默认的）。
-
-![编辑按键设置](/static/posts/2021-05-16-17-03-47.png)  
+![编辑按键设置](/static/posts/2021-05-16-18-22-12.png)  
 ▲ 编辑按键设置
 
 将鼠标放到“Thumb Stick”上可以看到摇杆高亮了，这就是我们即将要绑定的那个按键。
-
-![Thumb Stick](/static/posts/2021-05-16-17-04-25.png)  
-▲ Thumb Stick
 
 点击旁边的“➕”号，会弹出这个键的各种不同用法：
 

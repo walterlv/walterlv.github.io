@@ -1,7 +1,7 @@
 ---
 title: "Unity OpenVR 虚拟现实入门四：通过脚本控制手与控制器"
 publishDate: 2021-05-16 09:49:15 +0800
-date: 2021-05-16 16:18:47 +0800
+date: 2021-05-16 17:50:13 +0800
 categories: unity openvr
 position: starter
 ---
@@ -37,7 +37,7 @@ using Valve.VR.InteractionSystem;
 
 public class PlayerDemoScript : MonoBehaviour
 {
-    public bool showControllers = false;
+    public bool showControllers;
 
     void Update()
     {
