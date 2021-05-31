@@ -1,6 +1,7 @@
 ---
 title: "编译并体验 .NET MAUI 官方示例代码"
-date: 2021-05-31 15:39:01 +0800
+publishDate: 2021-05-31 15:39:01 +0800
+date: 2021-05-31 16:38:06 +0800
 categories: dotnet maui
 position: starter
 ---
@@ -60,6 +61,8 @@ dotnet tool install -g redth.net.maui.check
 
 ![MAUI 所需环境已全部搭建完成](/static/posts/2021-05-31-15-19-09.png)
 
+如果 maui-check 不断失败，可阅读本文末尾一节。
+
 ## 增加 NuGet 源
 
 我有另一篇博客介绍如何添加 NuGet 源，详细的方法你可以去那里看：
@@ -95,7 +98,43 @@ dotnet nuget add source -n maui-preview https://aka.ms/maui-preview/index.json
 
 ## 其他问题
 
-目前，我还无法成功调试官方示例中的 HelloMauiWinUI3 项目，会出现 COM 异常，未注册类。正在寻找原因和解决方案中……
+### 无法创建 Android 模拟器
+
+```powershell
+Android Emulator - x86 - API30 - Google API's not created.
+```
+
+如果 maui-check 时出现 Android 模拟器无法创建的错误（就像下图这样），可尝试在 Visual Studio 里手工创建一个 Android 模拟器。
+
+![Android Emulator - x86 - API30 - Google API's not created.](/static/posts/2021-05-31-16-30-36.png)
+
+在 Visual Studio 里手工创建 Android 模拟器的方法如下：
+
+第一步：打开 Android 设备管理器
+
+![Android 设备管理器](/static/posts/2021-05-31-16-33-04.png)
+
+第二步：创建新设备
+
+![创建新设备](/static/posts/2021-05-31-16-33-58.png)
+
+创建时，要注意操作系统必须选择“R 11.0 - API 30”，这是 MAUI 示例应用要求的最低版本。其他随意，然后点“创建 ”。
+
+![R 11.0 - API 30](/static/posts/2021-05-31-16-35-02.png)
+
+创建完后，等待下载、解压直至安装完成。
+
+![安装模拟器完成](/static/posts/2021-05-31-16-37-03.png)
+
+第三步：重新使用 maui-check 检查
+
+这时，应该就能全部通过检查了。
+
+### 无法调试 WinUI3 项目
+
+目前，我还无法成功调试官方示例中的 HelloMauiWinUI3 项目，会出现 COM 异常，没有注册类。正在寻找原因和解决方案中……
+
+![没有注册类](/static/posts/2021-05-31-16-27-21.png)
 
 ---
 
