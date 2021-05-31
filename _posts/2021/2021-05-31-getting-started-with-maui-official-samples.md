@@ -1,6 +1,6 @@
 ---
 title: "编译并体验 .NET MAUI 官方示例代码"
-date: 2021-05-31 14:35:49 +0800
+date: 2021-05-31 15:39:01 +0800
 categories: dotnet maui
 position: starter
 ---
