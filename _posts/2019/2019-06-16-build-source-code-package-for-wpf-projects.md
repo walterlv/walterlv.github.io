@@ -1,6 +1,7 @@
 ---
 title: "从零开始制作 NuGet 源代码包（全面支持 .NET Core / .NET Framework / WPF 项目）"
-date: 2019-06-16 20:53:20 +0800
+publishDate: 2019-06-16 20:53:20 +0800
+date: 2021-06-07 15:10:47 +0800
 categories: dotnet csharp visualstudio nuget msbuild roslyn wpf
 position: starter
 ---
@@ -320,24 +321,28 @@ props 和 targets 文件你可能在 Visual Studio 的新建文件的模板中�
 
 #### build 文件夹中的 Package.props 文件
 
-在这个文件中，我们将新增一个属性 `ShouldFixNuGetImportingBugForWpfProjects`。这是我取的名字，意为“是否应该修复 WPF 项目中 NuGet 包自动导入的问题”。
+自微软在 .NET SDK 5.0.2 开始修复了 WPF 项目中 NuGet 代码生成器的 bug 后，已经不需要在这里新增属性了。当然，如果你想增加其他的属性则可以在这里加。
 
-我做一个开关的原因是怀疑我们需要针对 WPF 项目进行特殊处理是 WPF 项目自身的 Bug，如果将来 WPF 修复了这个 Bug，那么我们将可以直接通过此开关来关闭我们在这一节做的特殊处理。另外，后面我们将采用一些特别的手段来调试我们的 NuGet 源代码包，在调试项目中我们也会将这个属性设置为 `False` 以关闭 WPF 项目的特殊处理。
+关于这个 bug，详见：[[release/5.0] Support Source Generators in WPF projects by ryalanms · Pull Request #3846 · dotnet/wpf](https://github.com/dotnet/wpf/pull/3846)
+
+~~在这个文件中，我们将新增一个属性 `ShouldFixNuGetImportingBugForWpfProjects`。这是我取的名字，意为“是否应该修复 WPF 项目中 NuGet 包自动导入的问题”。~~
+
+~~我做一个开关的原因是怀疑我们需要针对 WPF 项目进行特殊处理是 WPF 项目自身的 Bug，如果将来 WPF 修复了这个 Bug，那么我们将可以直接通过此开关来关闭我们在这一节做的特殊处理。另外，后面我们将采用一些特别的手段来调试我们的 NuGet 源代码包，在调试项目中我们也会将这个属性设置为 `False` 以关闭 WPF 项目的特殊处理。~~
 
 ```diff
-    <Project>
-    
-      <PropertyGroup>
-        <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
-    
-++      <!-- 当生成 WPF 临时项目时，不会自动 Import NuGet 中的 props 和 targets 文件，这使得在临时项目中你现在看到的整个文件都不会参与编译。
-++           然而，我们可以通过欺骗的方式在主项目中通过 _GeneratedCodeFiles 集合将需要编译的文件传递到临时项目中以间接参与编译。
-++           WPF 临时项目不会 Import NuGet 中的 props 和 targets 可能是 WPF 的 Bug，也可能是刻意如此。
-++           所以我们通过一个属性开关 `ShouldFixNuGetImportingBugForWpfProjects` 来决定是否修复这个错误。-->
-++      <ShouldFixNuGetImportingBugForWpfProjects Condition=" '$(ShouldFixNuGetImportingBugForWpfProjects)' == '' ">True</ShouldFixNuGetImportingBugForWpfProjects>
-++    </PropertyGroup>
-    
-    </Project>
+--  <Project>
+--
+--    <PropertyGroup>
+--      <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+--
+--      <!-- 当生成 WPF 临时项目时，不会自动 Import NuGet 中的 props 和 targets 文件，这使得在临时项目中你现在看到的整个文件都不会参与编译。
+--           然而，我们可以通过欺骗的方式在主项目中通过 _GeneratedCodeFiles 集合将需要编译的文件传递到临时项目中以间接参与编译。
+--           WPF 临时项目不会 Import NuGet 中的 props 和 targets 可能是 WPF 的 Bug，也可能是刻意如此。
+--           所以我们通过一个属性开关 `ShouldFixNuGetImportingBugForWpfProjects` 来决定是否修复这个错误。-->
+--      <ShouldFixNuGetImportingBugForWpfProjects Condition=" '$(ShouldFixNuGetImportingBugForWpfProjects)' == '' ">True</ShouldFixNuGetImportingBugForWpfProjects>
+--    </PropertyGroup>
+--
+--  </Project>
 ```
 
 #### build 文件夹中的 Package.targets 文件
@@ -346,7 +351,7 @@ props 和 targets 文件你可能在 Visual Studio 的新建文件的模板中�
 
 ```diff
     <Project>
-    
+
       <PropertyGroup>
         <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
       </PropertyGroup>
@@ -355,15 +360,26 @@ props 和 targets 文件你可能在 Visual Studio 的新建文件的模板中�
 ++      <!-- 我们增加了一个属性，用于处理 WPF 特殊项目的源代码之前，确保我们已经收集到所有需要引入的源代码。 -->
 ++      <_WalterlvDemoImportInWpfTempProjectDependsOn>_WalterlvDemoIncludeSourceFiles</_WalterlvDemoImportInWpfTempProjectDependsOn>
 ++    </PropertyGroup>
-    
+
       <Target Name="_WalterlvDemoEvaluateProperties">
         <PropertyGroup>
           <_WalterlvDemoRoot>$(MSBuildThisFileDirectory)..\</_WalterlvDemoRoot>
           <_WalterlvDemoSourceFolder>$(MSBuildThisFileDirectory)..\src\</_WalterlvDemoSourceFolder>
+
+++    <!-- 修复旧版本的 Microsoft.NET.Sdk 中，WPF 项目不支持在临时项目中通过 NuGet 包生成源代码的问题。
+++         微软自称从 .NET 5.0.2 开始，可通过 IncludePackageReferencesDuringMarkupCompilation 属性来支持在 NuGet 包中生成源代码，该值默认为 true。
+++         不过，在低版本的 .NET 中，或者用户主动设置此值为 false 时，依然需要修复此问题。
+++         以下是此问题的描述：-->
+++    <!-- 当生成 WPF 临时项目时，不会自动 Import NuGet 中的 props 和 targets 文件，这使得在临时项目中你现在看到的整个文件都不会参与编译。
+++        然而，我们可以通过欺骗的方式在主项目中通过 _GeneratedCodeFiles 集合将需要编译的文件传递到临时项目中以间接参与编译。
+++        WPF 临时项目不会 Import NuGet 中的 props 和 targets 可能是 WPF 的 Bug，也可能是刻意如此。
+++        所以我们通过一个属性开关 `ShouldFixNuGetImportingBugForWpfProjects` 来决定是否修复这个错误。-->
+++    <ShouldFixNuGetImportingBugForWpfProjects Condition=" '$(IncludePackageReferencesDuringMarkupCompilation)' != 'True' And '$(ShouldFixNuGetImportingBugForWpfProjects)' == '' ">True</ShouldFixNuGetImportingBugForWpfProjects>
+
         </PropertyGroup>
         <Message Text="1. 初始化源代码包的编译属性" />
       </Target>
-    
+
       <!-- 引入 C# 源码。 -->
       <Target Name="_WalterlvDemoIncludeSourceFiles"
               BeforeTargets="CoreCompile"
@@ -376,7 +392,7 @@ props 和 targets 文件你可能在 Visual Studio 的新建文件的模板中�
 --      <Message Text="2 引入源代码包中的所有源代码：@(_WalterlvDemoCompile)" />
 ++      <Message Text="2.1 引入源代码包中的所有源代码：@(_WalterlvDemoCompile)" />
       </Target>
-    
+
 ++    <!-- 引入 WPF 源码。 -->
 ++    <Target Name="_WalterlvDemoIncludeWpfFiles"
 ++            BeforeTargets="MarkupCompilePass1"
@@ -524,16 +540,16 @@ props 和 targets 文件你可能在 Visual Studio 的新建文件的模板中�
 
 ```diff
     <Project>
-    
+
       <PropertyGroup>
         <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
       </PropertyGroup>
-    
+
       <PropertyGroup>
         <!-- 我们增加了一个属性，用于处理 WPF 特殊项目的源代码之前，确保我们已经收集到所有需要引入的源代码。 -->
         <_WalterlvDemoImportInWpfTempProjectDependsOn>_WalterlvDemoIncludeSourceFiles</_WalterlvDemoImportInWpfTempProjectDependsOn>
       </PropertyGroup>
-      
+
       <Target Name="_WalterlvDemoEvaluateProperties">
         <PropertyGroup>
           <_WalterlvDemoRoot>$(MSBuildThisFileDirectory)..\</_WalterlvDemoRoot>
@@ -541,7 +557,7 @@ props 和 targets 文件你可能在 Visual Studio 的新建文件的模板中�
         </PropertyGroup>
         <Message Text="1. 初始化源代码包的编译属性" />
       </Target>
-    
+
       <!-- 引入主要的 C# 源码。 -->
       <Target Name="_WalterlvDemoIncludeSourceFiles"
               BeforeTargets="CoreCompile"
@@ -553,7 +569,7 @@ props 和 targets 文件你可能在 Visual Studio 的新建文件的模板中�
         </ItemGroup>
         <Message Text="2.1 引入源代码包中的所有源代码：@(_WalterlvDemoCompile)" />
       </Target>
-    
+
       <!-- 引入 WPF 源码。 -->
       <Target Name="_WalterlvDemoIncludeWpfFiles"
               BeforeTargets="MarkupCompilePass1"
@@ -573,7 +589,7 @@ props 和 targets 文件你可能在 Visual Studio 的新建文件的模板中�
 --      <Message Text="2.2 引用 WPF 相关源码：@(_WalterlvDemoPage);@(_WalterlvDemoIcoResource);@(_WalterlvDemoPngResource)" />
 ++      <Message Text="2.2 引用 WPF 相关源码：@(_WalterlvDemoRootPage);@(_WalterlvDemoThemesPage);@(_WalterlvDemoIcoResource);@(_WalterlvDemoPngResource)" />
       </Target>
-    
+
       <!-- 当生成 WPF 临时项目时，不会自动 Import NuGet 中的 props 和 targets 文件，这使得在临时项目中你现在看到的整个文件都不会参与编译。
            然而，我们可以通过欺骗的方式在主项目中通过 _GeneratedCodeFiles 集合将需要编译的文件传递到临时项目中以间接参与编译。
            WPF 临时项目不会 Import NuGet 中的 props 和 targets 可能是 WPF 的 Bug，也可能是刻意如此。
@@ -588,7 +604,7 @@ props 和 targets 文件你可能在 Visual Studio 的新建文件的模板中�
         </ItemGroup>
         <Message Text="3. 正在欺骗临时项目，误以为此 NuGet 包中的文件是 XAML 编译后的中间代码：@(_WalterlvDemoAllCompile)" />
       </Target>
-    
+
     </Project>
 ```
 
