@@ -1,6 +1,6 @@
 ---
 title: "Windows 系统上如何揪出阻止你屏幕关闭的程序"
-date: 2021-06-07 13:28:49 +0800
+date: 2021-06-07 13:39:45 +0800
 categories: windows
 position: knowledge
 ---
@@ -76,6 +76,10 @@ position: knowledge
 ![msedge 正在重置系统计时器](/static/posts/2021-06-07-13-24-55.png)
 
 可以看到，在这条记录里，是“msedge.exe”。所以，可以去 Edge 浏览器标签里找找，是否有正在播放的视频或音频等。
+
+## 常用阻止关闭屏幕的程序
+
+[发现电脑屏幕总是不自动关闭？看看你是否打开了这些程序……](/post/these-windows-applications-always-keep-display-on)
 
 ---
 
