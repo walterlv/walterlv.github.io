@@ -1,6 +1,6 @@
 ---
 title: "Windows 系统上如何揪出阻止你屏幕关闭的程序"
-date: 2021-06-07 13:39:45 +0800
+date: 2021-06-07 13:42:18 +0800
 categories: windows
 position: knowledge
 ---
@@ -15,7 +15,13 @@ position: knowledge
 
 <div id="toc"></div>
 
-## `powercfg /requests`
+## 命令 `powercfg /requests`
+
+在终端中输入命令：
+
+```powershell
+powercfg /requests
+```
 
 `/requests` 参数的作用是‎“列举应用程序和驱动程序的电源请求。电源请求可防止计算机自动关闭显示屏或进入低功耗睡眠模式。‎”官方文档对此的描述是：
 
@@ -33,7 +39,13 @@ position: knowledge
 
 ![没有程序在阻止屏幕关闭](/static/posts/2021-06-07-08-42-38.png)
 
-## `powercfg -energy -trace`
+## 命令 `powercfg -energy -trace`
+
+在终端中输入命令：
+
+```powershell
+powercfg -energy -trace
+```
 
 有时，应用并没有直接阻止你的屏幕关闭，而是在一段时间之内试图不断重置睡眠计时器，这种情况，前面的命令不能完全帮助你找到问题所在，于是你需要使用这个新命令。
 
