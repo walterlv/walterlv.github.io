@@ -1,7 +1,7 @@
 ---
 title: "从零开始制作 NuGet 源代码包（全面支持 .NET Core / .NET Framework / WPF 项目）"
 publishDate: 2019-06-16 20:53:20 +0800
-date: 2021-06-07 15:10:47 +0800
+date: 2021-06-07 15:14:39 +0800
 categories: dotnet csharp visualstudio nuget msbuild roslyn wpf
 position: starter
 ---
@@ -330,19 +330,19 @@ props 和 targets 文件你可能在 Visual Studio 的新建文件的模板中�
 ~~我做一个开关的原因是怀疑我们需要针对 WPF 项目进行特殊处理是 WPF 项目自身的 Bug，如果将来 WPF 修复了这个 Bug，那么我们将可以直接通过此开关来关闭我们在这一节做的特殊处理。另外，后面我们将采用一些特别的手段来调试我们的 NuGet 源代码包，在调试项目中我们也会将这个属性设置为 `False` 以关闭 WPF 项目的特殊处理。~~
 
 ```diff
---  <Project>
---
---    <PropertyGroup>
---      <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
---
+<Project>
+
+    <PropertyGroup>
+      <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+
 --      <!-- 当生成 WPF 临时项目时，不会自动 Import NuGet 中的 props 和 targets 文件，这使得在临时项目中你现在看到的整个文件都不会参与编译。
 --           然而，我们可以通过欺骗的方式在主项目中通过 _GeneratedCodeFiles 集合将需要编译的文件传递到临时项目中以间接参与编译。
 --           WPF 临时项目不会 Import NuGet 中的 props 和 targets 可能是 WPF 的 Bug，也可能是刻意如此。
 --           所以我们通过一个属性开关 `ShouldFixNuGetImportingBugForWpfProjects` 来决定是否修复这个错误。-->
 --      <ShouldFixNuGetImportingBugForWpfProjects Condition=" '$(ShouldFixNuGetImportingBugForWpfProjects)' == '' ">True</ShouldFixNuGetImportingBugForWpfProjects>
---    </PropertyGroup>
---
---  </Project>
+    </PropertyGroup>
+
+  </Project>
 ```
 
 #### build 文件夹中的 Package.targets 文件
