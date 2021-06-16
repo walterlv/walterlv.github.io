@@ -1,6 +1,6 @@
 ---
 title: "Windows 中的 HRESULT"
-date: 2021-06-16 10:42:15 +0800
+date: 2021-06-16 10:51:05 +0800
 categories: windows
 position: knowledge
 ---
@@ -117,6 +117,6 @@ public static bool IsDiskFullException(this IOException ex)
 
 **参考资料**
 
-- [[MS-ERREF]: HRESULT - Microsoft Docs](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-erref/0642cb2f-2075-4469-918c-4441e69c548a)
+- [MS-ERREF: HRESULT - Microsoft Docs](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-erref/0642cb2f-2075-4469-918c-4441e69c548a)
 - [HRESULT - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/HRESULT)
 - [The Microsoft Error Lookup Tool - Win32 apps - Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/debug/system-error-code-lookup-tool)
