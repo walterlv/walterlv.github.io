@@ -1,6 +1,7 @@
 ---
 title: "C# 的事件，一般你不需要担心它的线程安全问题！"
-date: 2021-06-18 13:45:29 +0800
+publishDate: 2021-06-18 13:45:29 +0800
+date: 2021-06-18 14:03:17 +0800
 categories: csharp dotnet
 position: knowledge
 ---
@@ -288,3 +289,35 @@ if (handler != null)
 从前面原理层面的剖析，我们可以明确知道，普通的事件 `+=`、`-=` 和引发是不会产生线程安全问题的；但这不代表任何情况你都不会遇到线程安全问题。
 
 如果你引发事件的代码逻辑比较复杂，涉及到多次读取事件成员（例如前面例子中的 `SomeEvent`），那么依然会出现线程安全问题，因为你无法保证两次读取事件成员时，期间没有发生过事件的 `+=` 和 `-=`。
+
+## 关于 `+=` `-=` 的额外说明
+
+在上文写完之后，有小伙伴说，C# 里面 `+=` `-=` 不是线程安全的，并举了以下例子：
+
+```csharp
+private int _value;
+
+public void AddValue(int i)
+{
+    _value += i;
+}
+```
+
+当并发调用 `AddValue` 时，可能导致部分调用的结果被另一部分覆盖，从而出现线程安全问题。
+
+因为 `_value += i` 这个语法糖相当于以下句子：
+
+```csharp
+var temp = _value + i;
+_value = temp;
+```
+
+然而，事件没有这样的问题，因为事件的 `+=` 语法糖相当于以下句子：
+
+```csharp
+// demo.SomeEvent += DemoClass_SomeEvent;
+// 相当于：
+demo.add_SomeEvent(new EventHandler(DemoClass_SomeEvent));
+```
+
+注意这是一次函数调用，并没有像普通的数值运算一样执行两步计算。所以事件的 `+=` 不会出现线程安全问题。
