@@ -1,7 +1,7 @@
 ---
 title: "C# 的事件，一般你不需要担心它的线程安全问题！"
 publishDate: 2021-06-18 13:45:29 +0800
-date: 2021-06-18 15:27:19 +0800
+date: 2021-06-18 15:42:18 +0800
 categories: csharp dotnet
 position: knowledge
 ---
@@ -327,5 +327,24 @@ demo.add_SomeEvent(new EventHandler(DemoClass_SomeEvent));
 ```csharp
 /* 0x000002B2 280100002B   */ IL_001E: call      !!0 [System.Threading]System.Threading.Interlocked::CompareExchange<class [System.Runtime]System.EventHandler>(!!0&, !!0, !!0)
 ```
+
+转换成容易理解的 C# 代码大约是这样：
+
+```csharp
+while (true)
+{
+    var originalValue = _value;
+    var value = originalValue + add;
+    var resultValue = Interlocked.CompareExchange(ref _value, value, originalValue);
+    if (resultValue == value)
+    {
+        break;
+    }
+}
+```
+
+1. 当 `CompareExchange` 的返回值与第三个参数相同，说明本次原子操作成功完成，那么赋值有效，退出循环。
+2. 当 `CompareExchange` 的返回值与第三个参数不同，说明本次原子操作冲突，在下一次循环中重试赋值。
+3. 因为赋值是很迅速的，所以即使大量并发，也只会有少数冲突，整体是非常快的。
 
 完整的 IL 代码可以在本文前面看到。这里的 !!0 是引用第 0 号泛型类型，即找到 `CompareExchange(!!T$, !!T, !!T):!!T` 重载。
