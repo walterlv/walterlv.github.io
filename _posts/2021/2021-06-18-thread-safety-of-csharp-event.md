@@ -1,7 +1,7 @@
 ---
 title: "C# 的事件，一般你不需要担心它的线程安全问题！"
 publishDate: 2021-06-18 13:45:29 +0800
-date: 2021-06-18 14:03:17 +0800
+date: 2021-06-18 15:27:19 +0800
 categories: csharp dotnet
 position: knowledge
 ---
@@ -320,4 +320,12 @@ _value = temp;
 demo.add_SomeEvent(new EventHandler(DemoClass_SomeEvent));
 ```
 
-注意这是一次函数调用，并没有像普通的数值运算一样执行两步计算。所以事件的 `+=` 不会出现线程安全问题。
+注意这是一次函数调用，并没有像普通的数值运算一样执行两步计算；所以至少这一次方法调用不会有问题。
+
+那么，`add_SomeEvent` 里面是线程安全的吗？如果只是单纯 `Delegate.Combine` 然后赋值当然不是线程安全，但它不是简单赋值，而是通过 `Interlocked.CompareExchange` 原子操作赋值，在保证线程安全的同时还确保了性能：
+
+```csharp
+/* 0x000002B2 280100002B   */ IL_001E: call      !!0 [System.Threading]System.Threading.Interlocked::CompareExchange<class [System.Runtime]System.EventHandler>(!!0&, !!0, !!0)
+```
+
+完整的 IL 代码可以在本文前面看到。这里的 !!0 是引用第 0 号泛型类型，即找到 `CompareExchange(!!T$, !!T, !!T):!!T` 重载。
