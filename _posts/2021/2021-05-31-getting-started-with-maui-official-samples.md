@@ -1,7 +1,7 @@
 ---
 title: "编译并体验 .NET MAUI 官方示例代码"
 publishDate: 2021-05-31 15:39:01 +0800
-date: 2021-05-31 16:38:06 +0800
+date: 2021-06-25 17:22:05 +0800
 categories: dotnet maui
 position: starter
 ---
@@ -132,12 +132,19 @@ Android Emulator - x86 - API30 - Google API's not created.
 
 ### 无法调试 WinUI3 项目
 
-目前，我还无法成功调试官方示例中的 HelloMauiWinUI3 项目，会出现 COM 异常，没有注册类。正在寻找原因和解决方案中……
+调试官方示例中的 HelloMauiWinUI3 项目时，你可能会遇到 COM 异常“没有注册类”：
 
 ![没有注册类](/static/posts/2021-05-31-16-27-21.png)
+
+原因是，你应该将“HelloMauiWinUI3 (Package)”后缀的 WinUI 项目设为启动项，而不应该将“HelloMauiWinUI3”设为启动项。并且，调试启动时，应该选 Local Machine。
+
+以下是我运行另一个“Weather TwentyOne”官方示例应用的截图：
+
+![Weather Twenty One](/static/posts/2021-06-25-17-20-06.png)
 
 ---
 
 **参考资料**
 
 - [Announcing .NET MAUI Preview 4 - .NET Blog](https://devblogs.microsoft.com/dotnet/announcing-net-maui-preview-4/)
+- [[Bug] An unhandled exception of type 'System.Reflection.TargetInvocationException' occurred in System.Private.CoreLib.dll · Issue #1127 · dotnet/maui](https://github.com/dotnet/maui/issues/1127)
