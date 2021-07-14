@@ -1,7 +1,7 @@
 ---
 title: "用 WiX 制作安装包：创建一个简单的 msi 安装包"
-date: 2021-07-14 17:45:15 +0800
-categories: dotnet wix
+date: 2021-07-14 17:47:10 +0800
+categories: dotnet msi wix
 position: starter
 ---
 

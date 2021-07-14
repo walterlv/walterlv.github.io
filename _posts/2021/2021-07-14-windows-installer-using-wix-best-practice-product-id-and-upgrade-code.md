@@ -1,7 +1,7 @@
 ---
 title: "WiX 安装包制作最佳实践：Id、UpgradeCode 应该怎么设置？"
-date: 2021-07-14 17:38:25 +0800
-categories: windows msi wix
+date: 2021-07-14 17:46:49 +0800
+categories: dotnet msi wix
 position: starter
 ---
 

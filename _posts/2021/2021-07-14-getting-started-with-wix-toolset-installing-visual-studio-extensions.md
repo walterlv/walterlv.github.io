@@ -1,7 +1,7 @@
 ---
 title: "用 WiX 制作安装包：安装 WiX Toolset 系列 Visual Studio 插件"
-date: 2021-07-14 14:52:03 +0800
-categories: dotnet wix
+date: 2021-07-14 17:47:10 +0800
+categories: dotnet msi wix
 position: starter
 ---
 

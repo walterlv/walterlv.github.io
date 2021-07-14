@@ -1,7 +1,7 @@
 ---
 title: "用 WiX 制作安装包：准备一个用于学习 WiX 安装包制作的 Visual Studio 解决方案"
-date: 2021-07-14 15:18:18 +0800
-categories: dotnet wix
+date: 2021-07-14 17:47:10 +0800
+categories: dotnet msi wix
 position: starter
 ---
 
