@@ -1,7 +1,7 @@
 ---
 title: "WiX Toolset 安装包制作入门教程（目录篇）"
-date: 2021-07-14 10:53:42 +0800
-categories: dotnet wix
+date: 2021-07-14 18:54:18 +0800
+categories: dotnet msi wix
 position: starter
 published: false
 ---
@@ -28,37 +28,37 @@ WiX 能制作不同种类的安装包，各类安装包的制作方法不同，�
 
 ### msi 格式安装包的 Hello World
 
-1. [安装 WiX Toolset 工具集]()
-1. [安装 WiX Toolset Build Tools 的 Visual Studio 插件]()
-1. [准备一个用于学习 WiX 安装包制作的 Visual Studio 解决方案]()
-1. [使用 WiX 创建一个简单的 msi 安装包]()
+1. [安装 WiX Toolset 工具集](/post/getting-started-with-wix-toolset-installing-build-tools)
+1. [安装 WiX Toolset Visual Studio 插件](/post/getting-started-with-wix-toolset-installing-visual-studio-extensions)
+1. [准备一个用于学习 WiX 安装包制作的 Visual Studio 解决方案](/post/getting-started-with-wix-toolset-create-a-new-learning-vs-solution.md)
+1. [使用 WiX 创建一个简单的 msi 安装包](/post/getting-started-with-wix-toolset-msi-hello-world)
 
 ### exe 格式安装包的 Hello World
 
-1. [安装 WiX Toolset 工具集]()
-1. [安装 WiX Toolset Build Tools 的 Visual Studio 插件]()
-1. [准备一个用于学习 WiX 安装包制作的 Visual Studio 解决方案]()
-1. [使用 WiX 创建一个简单的 msi 安装包]()
-1. [使用 WiX 创建一个简单的 exe 安装包]()
+1. [安装 WiX Toolset 工具集](/post/getting-started-with-wix-toolset-installing-build-tools)
+1. [安装 WiX Toolset Visual Studio 插件](/post/getting-started-with-wix-toolset-installing-visual-studio-extensions)
+1. [准备一个用于学习 WiX 安装包制作的 Visual Studio 解决方案](/post/getting-started-with-wix-toolset-create-a-new-learning-vs-solution.md)
+1. [使用 WiX 创建一个简单的 msi 安装包](/post/getting-started-with-wix-toolset-msi-hello-world)
+1. [使用 WiX 创建一个简单的 exe 安装包](/post/getting-started-with-wix-toolset-exe-hello-world)
 
 ### 要求 .NET Framework 前置 Hello World
 
-1. [安装 WiX Toolset 工具集]()
-1. [安装 WiX Toolset Build Tools 的 Visual Studio 插件]()
-1. [准备一个用于学习 WiX 安装包制作的 Visual Studio 解决方案]()
-1. [使用 WiX 创建一个简单的 msi 安装包]()
+1. [安装 WiX Toolset 工具集](/post/getting-started-with-wix-toolset-installing-build-tools)
+1. [安装 WiX Toolset Visual Studio 插件](/post/getting-started-with-wix-toolset-installing-visual-studio-extensions)
+1. [准备一个用于学习 WiX 安装包制作的 Visual Studio 解决方案](/post/getting-started-with-wix-toolset-create-a-new-learning-vs-solution.md)
+1. [使用 WiX 创建一个简单的 msi 安装包](/post/getting-started-with-wix-toolset-msi-hello-world)
 1. [为 WiX 制作的 msi 安装包添加 .NET Framework 环境检查]()
-1. [使用 WiX 创建一个简单的 exe 安装包]()
+1. [使用 WiX 创建一个简单的 exe 安装包](/post/getting-started-with-wix-toolset-exe-hello-world)
 1. [为 WiX 制作的 exe 安装包添加 .NET Framework 前置的安装步骤]()
 
 ### 使用 WPF 制作安装界面的 Hello World
 
-1. [安装 WiX Toolset 工具集]()
-1. [安装 WiX Toolset Build Tools 的 Visual Studio 插件]()
-1. [准备一个用于学习 WiX 安装包制作的 Visual Studio 解决方案]()
-1. [使用 WiX 创建一个简单的 msi 安装包]()
+1. [安装 WiX Toolset 工具集](/post/getting-started-with-wix-toolset-installing-build-tools)
+1. [安装 WiX Toolset Visual Studio 插件](/post/getting-started-with-wix-toolset-installing-visual-studio-extensions)
+1. [准备一个用于学习 WiX 安装包制作的 Visual Studio 解决方案](/post/getting-started-with-wix-toolset-create-a-new-learning-vs-solution.md)
+1. [使用 WiX 创建一个简单的 msi 安装包](/post/getting-started-with-wix-toolset-msi-hello-world)
 1. [为 WiX 制作的 msi 安装包添加 .NET Framework 环境检查]()
-1. [使用 WiX 创建一个简单的 exe 安装包]()
+1. [使用 WiX 创建一个简单的 exe 安装包](/post/getting-started-with-wix-toolset-exe-hello-world)
 1. [为 WiX 制作的 exe 安装包添加 .NET Framework 前置的安装步骤]()
 1. [为 WiX 制作 WPF 的基本安装包界面]()
 
