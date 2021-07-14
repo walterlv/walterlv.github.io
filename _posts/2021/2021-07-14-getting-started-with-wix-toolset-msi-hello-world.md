@@ -1,6 +1,6 @@
 ---
 title: "用 WiX 制作安装包：创建一个简单的 msi 安装包"
-date: 2021-07-14 17:39:46 +0800
+date: 2021-07-14 17:45:15 +0800
 categories: dotnet wix
 position: starter
 ---
@@ -119,3 +119,50 @@ position: starter
 ▲ Program Files 文件夹
 
 测试完成后，记得及时卸载掉这个包。虽然这次没什么影响，但后续我们会学到的某个操作可能导致未及时卸载的包再也无法通过正常途径卸载，所以请保持良好的习惯。（虚拟机调试的小伙伴可无视）。
+
+## 附源代码
+
+附上必要的源码，避免你在阅读教程时因模板文件的版本差异造成一些意料之外的问题。
+
+![必要的源码](/static/posts/2021-07-14-17-43-34.png)
+
+### Product.wxs：
+
+`// 除了本文所说的改动外，本文件的其他内容均保持模板文件的原始模样。`
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*"
+           Name="Walterlv.Demo.MainApp"
+           Language="1033"
+           Version="1.0.0.0"
+           Manufacturer="walterlv"
+           UpgradeCode="2aeffe1a-8bb6-4b06-b1c0-feca18e17cf7">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate />
+
+    <Feature Id="ProductFeature" Title="Walterlv.Installer.Msi" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+    </Feature>
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="Walterlv.Installer.Msi" />
+      </Directory>
+    </Directory>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="ProductComponent">
+        <File Source="$(var.Walterlv.Demo.MainApp.TargetPath)" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>
+```
