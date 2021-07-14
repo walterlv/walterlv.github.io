@@ -1,9 +1,9 @@
 ---
 title: "WiX Toolset 安装包制作入门教程（目录篇）"
-date: 2021-07-14 18:54:18 +0800
+publishDate: 2021-07-14 18:54:18 +0800
+date: 2021-07-15 07:16:34 +0800
 categories: dotnet msi wix
 position: starter
-published: false
 ---
 
 WiX 全称为 Windows Installer XML，是使用 XML 文件创建 Windows 安装程序的一组工具集。它开源且完全免费。
