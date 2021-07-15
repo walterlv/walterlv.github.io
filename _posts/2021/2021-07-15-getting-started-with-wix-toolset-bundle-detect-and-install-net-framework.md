@@ -184,3 +184,34 @@ WiX 已开源，其中 wix3 的代码在这里：
 现在，编译 MSI 项目，然后去没有 .NET Framework 4.6.2 的电脑上运行输出目录下的 exe 文件，可以看到已经在安装 .NET Framework 了。
 
 ![正在安装 .NET Framework](/static/posts/2021-07-15-15-44-25.png)
+
+## 附源代码
+
+附上必要的源码，避免你在阅读教程时因模板文件的版本差异造成一些意料之外的问题。
+
+![必要的源码](/static/posts/2021-07-15-16-08-11.png)
+
+### Bundle.wxs：
+
+`// 除了本文所说的改动外，本文件的其他内容均保持模板文件的原始模样。`
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Bundle Name="Walterlv.Demo.MainApp"
+          Version="1.0.0.0"
+          Manufacturer="walterlv"
+          UpgradeCode="528f80ca-a8f5-4bd4-8131-59fdcd69a411">
+    <BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense">
+      <Payload Name="redist\NDP462-KB3151800-x86-x64-AllOS-ENU.exe"
+               SourceFile="Assets\ndp462-kb3151800-x86-x64-allos-enu.exe"/>
+    </BootstrapperApplicationRef>
+
+    <Chain>
+      <PackageGroupRef Id="NetFx462Redist"/>
+      <MsiPackage Compressed="yes"
+                  SourceFile="$(var.Walterlv.Installer.Msi.TargetPath)"/>
+    </Chain>
+  </Bundle>
+</Wix>
+```
