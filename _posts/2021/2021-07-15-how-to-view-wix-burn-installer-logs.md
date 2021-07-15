@@ -1,6 +1,6 @@
 ---
 title: "如何查看用 WiX 制作的安装包的日志"
-date: 2021-07-15 20:18:05 +0800
+date: 2021-07-15 20:18:52 +0800
 categories: dotnet msi wix
 position: starter
 ---
