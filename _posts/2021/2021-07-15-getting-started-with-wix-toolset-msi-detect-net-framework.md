@@ -1,6 +1,7 @@
 ---
 title: "用 WiX 制作安装包：为 WiX 制作的 msi 安装包添加 .NET Framework 环境检查"
-date: 2021-07-15 11:55:30 +0800
+publishDate: 2021-07-15 11:55:30 +0800
+date: 2021-07-15 19:46:48 +0800
 categories: dotnet msi wix
 position: starter
 ---
@@ -163,7 +164,7 @@ WiX 3 不支持 .NET Core 3.x、.NET 5 以及 .NET 6 的判断。如需检查这
 
 ![必要的源码](/static/posts/2021-07-15-11-50-39.png)
 
-### Product.wxs：
+### Product.wxs
 
 `// 除了本文所说的改动外，本文件的其他内容均保持模板文件的原始模样。`
 

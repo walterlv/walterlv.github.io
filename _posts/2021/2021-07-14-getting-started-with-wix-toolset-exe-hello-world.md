@@ -1,6 +1,7 @@
 ---
 title: "用 WiX 制作安装包：创建一个简单的 exe 安装包"
-date: 2021-07-14 18:52:59 +0800
+publishDate: 2021-07-14 18:52:59 +0800
+date: 2021-07-15 19:46:34 +0800
 categories: dotnet msi wix
 position: starter
 ---
@@ -123,7 +124,7 @@ position: starter
 
 ![必要的源码](/static/posts/2021-07-14-18-52-22.png)
 
-### Bundle.wxs：
+### Bundle.wxs
 
 `// 除了本文所说的改动外，本文件的其他内容均保持模板文件的原始模样。`
 

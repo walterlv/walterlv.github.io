@@ -1,6 +1,6 @@
 ---
 title: "用 WiX 制作安装包：为 WiX 制作的 exe 安装包添加 .NET Framework 前置的安装步骤"
-date: 2021-07-15 15:49:34 +0800
+date: 2021-07-15 19:46:34 +0800
 categories: dotnet msi wix
 position: starter
 ---
@@ -191,7 +191,7 @@ WiX 已开源，其中 wix3 的代码在这里：
 
 ![必要的源码](/static/posts/2021-07-15-16-08-11.png)
 
-### Bundle.wxs：
+### Bundle.wxs
 
 `// 除了本文所说的改动外，本文件的其他内容均保持模板文件的原始模样。`
 
