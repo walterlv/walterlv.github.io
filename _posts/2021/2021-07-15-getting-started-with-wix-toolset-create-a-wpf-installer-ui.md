@@ -1,6 +1,6 @@
 ---
 title: "用 WiX 制作安装包：制作 WPF 安装包界面（入门篇）"
-date: 2021-07-15 19:48:35 +0800
+date: 2021-07-15 19:52:35 +0800
 categories: dotnet msi wix
 position: starter
 ---
@@ -307,7 +307,7 @@ WiX 要引导到我们自己写的 WPF UI 上启动需要一个关键的配置�
 
 如果发现无法运行，请前往此篇文章调试和解决问题：
 
-- [使用 WiX 创建最简单的安装包过程中可能出现的问题和解决方案汇总](/post/)
+- [使用 WiX 创建最简单的安装包过程中可能出现的问题和解决方案汇总](/post/getting-started-with-wix-toolset-the-pit-you-might-step-on)
 
 如果可以正常运行，那么恭喜你，完成了 WiX 安装包入门教程的 Hello World 部分，可以进阶到入门教程的后续内容了。请回到目录：
 
