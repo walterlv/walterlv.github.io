@@ -1,6 +1,6 @@
 ---
 title: "用 WiX 制作安装包：为 WiX 制作的 msi 安装包添加 .NET Framework 环境检查"
-date: 2021-07-15 11:41:13 +0800
+date: 2021-07-15 11:55:30 +0800
 categories: dotnet msi wix
 position: starter
 ---
@@ -44,15 +44,15 @@ position: starter
 > </WixExtension>
 > ```
 
-添加完 WixNetFxExtension 的引用后，还需要把它的命名空间添加到 Product.wxs 中。
-
-打开 Product.wxs 文件，在里面添加一行：
+添加完 WixNetFxExtension 的引用后，还需要把它的命名空间添加到 Product.wxs 中。打开 Product.wxs 文件，在里面添加一行：
 
 ```diff
 --  <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 ++  <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
          xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
 ```
+
+注意，添加此命名空间不是必要操作，因为本教程后续没有用到此命名空间。
 
 ## 编辑 Product.wxs
 
@@ -115,7 +115,7 @@ position: starter
 
 因为我们的判断条件里没有使用到 XML 特殊字符，所以我刻意删掉了 `<![CDATA[` 和 `]]>` 以提升可读性。有的团队为避免出错要求强制加上此包裹，有的团队为了提升可读性建议如无必要则不要加上包裹。你也可以定义你的团队规范。
 
-`Installed` 属性表示当前此产品是否已安装。
+`Installed` 属性表示当前此产品是否已安装。也就是说新的判断条件的意思是：如果当前产品已安装，或者 .NET Framework 已安装有 4.6.2 或更高版本，则满足安装条件，准许安装，否则弹出错误提示。
 
 ### 可供判断的 .NET Framework 版本
 
@@ -156,6 +156,60 @@ WiX 3 不支持 .NET Core 3.x、.NET 5 以及 .NET 6 的判断。如需检查这
 ![.NET Framework 需求](/static/posts/2021-07-15-10-55-07.png)
 
 如果点击“OK”，安装程序将直接退出，不会执行任何安装操作。
+
+## 附源代码
+
+附上必要的源码，避免你在阅读教程时因模板文件的版本差异造成一些意料之外的问题。
+
+![必要的源码](/static/posts/2021-07-15-11-50-39.png)
+
+### Product.wxs：
+
+`// 除了本文所说的改动外，本文件的其他内容均保持模板文件的原始模样。`
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+  <Product Id="*"
+           Name="Walterlv.Demo.MainApp"
+           Language="1033"
+           Version="1.0.0.0"
+           Manufacturer="walterlv"
+           UpgradeCode="2aeffe1a-8bb6-4b06-b1c0-feca18e17cf7">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <PropertyRef Id="WIX_IS_NETFRAMEWORK_462_OR_LATER_INSTALLED"/>
+
+    <Condition Message="This application requires .NET Framework 4.6.2. Please install the .NET Framework then run this installer again.">
+      <![CDATA[WIX_IS_NETFRAMEWORK_462_OR_LATER_INSTALLED]]>
+    </Condition>
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate />
+
+    <Feature Id="ProductFeature" Title="Walterlv.Installer.Msi" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+    </Feature>
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="Walterlv.Installer.Msi" />
+      </Directory>
+    </Directory>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="ProductComponent">
+        <File Source="$(var.Walterlv.Demo.MainApp.TargetPath)" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>
+```
 
 ---
 
