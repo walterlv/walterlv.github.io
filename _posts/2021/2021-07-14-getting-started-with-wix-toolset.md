@@ -1,7 +1,7 @@
 ---
 title: "WiX Toolset 安装包制作入门教程（目录篇）"
 publishDate: 2021-07-14 18:54:18 +0800
-date: 2021-07-15 19:53:14 +0800
+date: 2021-07-15 20:21:17 +0800
 categories: dotnet msi wix
 position: starter
 ---
@@ -63,7 +63,14 @@ WiX 能制作不同种类的安装包，各类安装包的制作方法不同，�
 
 ## 你可能在 Hello World 系列中遇到的问题和解决办法汇总
 
+### 方法与汇总
+
+- [如何查看用 WiX 制作的安装包的日志](/post/how-to-view-wix-burn-installer-logs)
 - [使用 WiX 创建最简单的安装包过程中可能出现的问题和解决方案汇总](/post/getting-started-with-wix-toolset-the-pit-you-might-step-on)
+- [如何调试用 WiX 制作的安装包](/post/how-to-debug-wix-burn-installer)
+
+### 具体问题
+
 - [用 WiX 制作安装包：设置的 .NET Framework 前置会始终安装，即使目标电脑已经自带或装好]()
 
 ## 基本概念和原则
