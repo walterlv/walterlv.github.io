@@ -1,6 +1,6 @@
 ---
 title: "用 WiX 制作安装包：为 WiX 制作的 msi 安装包添加 .NET Framework 环境检查"
-date: 2021-07-15 11:30:02 +0800
+date: 2021-07-15 11:41:13 +0800
 categories: dotnet msi wix
 position: starter
 ---
@@ -141,7 +141,7 @@ WiX 已开源，其中 wix3 的代码在这里：
 
 更低版本的 .NET Framework 没有直接的“是否安装”判断方法，需要根据版本号比较来判断，所以我不在此入门教程中列出。
 
-WiX 3 不支持 .NET Core 3.x、.NET 5 以及 .NET 6 的判断。如需检查这些环境，要么需要自己写判断方法（不属于此新手教程内容），要么需要升级到 WiX 4（本教程基于 WiX 3）。
+WiX 3 不支持 .NET Core 3.x、.NET 5 以及 .NET 6 的判断。如需检查这些环境，要么需要自己写判断方法（不属于此新手教程内容），要么需要升级到 WiX 4（本教程基于 WiX 3）。见：[Support .NET Standard and/or .NET Core custom Bootstrapper · Issue #6108 · wixtoolset/issues](https://github.com/wixtoolset/issues/issues/6108)。
 
 ## 测试效果
 
