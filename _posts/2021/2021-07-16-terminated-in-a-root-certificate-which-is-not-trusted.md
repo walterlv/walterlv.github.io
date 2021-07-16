@@ -1,6 +1,6 @@
 ---
 title: "0x800b0109 - 已处理证书链，但是在不受信任提供程序信任的根证书中终止。"
-date: 2021-07-16 17:45:49 +0800
+date: 2021-07-16 17:51:20 +0800
 categories: dotnet msi wix
 position: problem
 ---
@@ -48,7 +48,7 @@ position: problem
 
 为系统安装有效的微软证书即可。
 
-第一步：下载证书（见附件），下载完后解压得到 MicrosoftRootCertificateAuthority2011.cer 文件。（你也可以从其他已安装证书的电脑上导出。）
+第一步：[下载证书 MicrosoftRootCertificateAuthority2011.zip](/static/attachments/MicrosoftRootCertificateAuthority2011.zip)，下载完后解压得到 MicrosoftRootCertificateAuthority2011.cer 文件。（你也可以从其他已安装证书的电脑上导出。）
 
 第二步：双击安装证书。
 
