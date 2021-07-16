@@ -1,7 +1,7 @@
 ---
 title: "WiX Toolset 安装包制作入门教程（目录篇）"
 publishDate: 2021-07-14 18:54:18 +0800
-date: 2021-07-16 11:49:49 +0800
+date: 2021-07-16 17:48:46 +0800
 categories: dotnet msi wix
 position: starter
 ---
@@ -74,6 +74,7 @@ WiX 能制作不同种类的安装包，各类安装包的制作方法不同，�
 - [用 WiX 制作安装包：设置的 .NET Framework 前置会始终安装，即使目标电脑已经自带或装好](/post/wix-burn-always-install-netfx-even-if-already-installed)
 - [用 WiX Burn 制作托管安装包：出现 `0x80070002` 错误](/post/wix-managed-bootstrapper-application-error-80070002)
 - [用 WiX Burn 制作托管安装包：出现 `0x80131508` 错误](/post/wix-managed-bootstrapper-application-error-80131508)
+- [0x800b0109 - 已处理证书链，但是在不受信任提供程序信任的根证书中终止。](/post/terminated-in-a-root-certificate-which-is-not-trusted)
 
 ## 基本概念和原则
 
