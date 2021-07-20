@@ -1,7 +1,7 @@
 ---
 title: "用 WiX 制作安装包：创建一个简单的 exe 安装包"
 publishDate: 2021-07-14 18:52:59 +0800
-date: 2021-07-20 08:58:53 +0800
+date: 2021-07-20 09:11:05 +0800
 categories: dotnet msi wix
 position: starter
 ---
@@ -91,6 +91,10 @@ position: starter
 这里的 `UpgradeCode` 如果改成和之前的 MSI 文件的一样，那么无论是做成 MSI 还是 EXE 格式的安装包，他们都是可以互相被升级的。
 
 当然，对于一个 Bundle 来说可以集合多个安装包。当要一次安装多个 MSI 包的时候，建议选不一样的 `UpgradeCode`。
+
+关于设置 MSI 和 EXE 安装包的 `UpgradeCode` 的更多细节，可以阅读我的另一篇博客：
+
+- [MSI 和 EXE 的 UpgradeCode 应该设置成相同还是不同？](/post/wix-toolset-should-the-upgrade-code-be-the-same-between-exe-and-msi)
 
 ## 测试效果
 
