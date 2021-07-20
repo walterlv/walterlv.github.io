@@ -1,7 +1,7 @@
 ---
 title: "用 WiX 制作安装包：创建一个简单的 exe 安装包"
 publishDate: 2021-07-14 18:52:59 +0800
-date: 2021-07-20 08:49:55 +0800
+date: 2021-07-20 08:58:53 +0800
 categories: dotnet msi wix
 position: starter
 ---
@@ -22,7 +22,7 @@ position: starter
 
 ## 创建 WiX EXE 项目
 
-在解决方案上右键，“添加”->“新建项目...”，然后在“添加新项目”窗口中搜索“WiX”，找到“Setup Project for WiX v3”。按“下一步”取个名字，然后“创建”。
+在解决方案上右键，“添加”->“新建项目...”，然后在“添加新项目”窗口中搜索“WiX”，找到“Bootstrapper Project for WiX v3”。按“下一步”取个名字，然后“创建”。
 
 注意，选择的模板要注意这些要点：
 
