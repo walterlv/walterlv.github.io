@@ -1,7 +1,7 @@
 ---
 title: "用 WiX 制作安装包：创建一个简单的 exe 安装包"
 publishDate: 2021-07-14 18:52:59 +0800
-date: 2021-07-15 19:46:34 +0800
+date: 2021-07-20 08:49:55 +0800
 categories: dotnet msi wix
 position: starter
 ---
@@ -14,7 +14,7 @@ position: starter
 
 本文开始前，请确保你已经可以生成一个最简单的 msi 安装包了：
 
-- [用 WiX 制作安装包：创建一个简单的 msi 安装包](/post/getting-started-with-wix-toolset-create-a-new-learning-vs-solution.md)
+- [用 WiX 制作安装包：创建一个简单的 msi 安装包](/post/getting-started-with-wix-toolset-msi-hello-world)
 
 由于 exe 格式的安装包自己带了 UI，所以 msi 中的 UI 怎么样都是可以不用管的（不用纠结 msi 做成了扫什么样，能像上文结尾一样正常安装就好）。
 
