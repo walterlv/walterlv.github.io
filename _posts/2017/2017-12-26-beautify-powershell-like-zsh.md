@@ -1,7 +1,7 @@
 ---
 title: "将美化进行到底，把 PowerShell 做成 oh-my-zsh 的样子"
 publishDate: 2017-12-26 15:00:17 +0800
-date: 2020-03-23 09:13:03 +0800
+date: 2021-08-28 16:56:59 +0800
 categories: windows powershell
 ---
 
@@ -58,8 +58,10 @@ Import-Module oh-my-posh
 其实写本文主要就是想体验 zsh 的操作，并看看 git 文件夹的视觉效果。现在我们就试试，输入：
 
 ```powershell
-Set-Theme
+Set-PoshPrompt
 ```
+
+（注意，oh-my-posh 更新后，命令从 `Set-Theme` 变成了 `Set-PoshPrompt`。）
 
 然后按一下空格，按一下 Tab。会发现这时已经可以用方向键来选择参数了！原生 PowerShell 可没有这个功能啊！
 
@@ -85,7 +87,7 @@ Set-Theme
 
 ```powershell
 Import-Module oh-my-posh
-Set-Theme Paradox
+Set-PoshPrompt Paradox
 ```
 
 ![在个人配置文件中的内容](/static/posts/2019-12-18-13-36-33.png)
