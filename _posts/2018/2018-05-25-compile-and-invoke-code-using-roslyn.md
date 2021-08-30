@@ -1,7 +1,7 @@
 ---
 title: "Roslyn 入门：使用 .NET Core 版本的 Roslyn 编译并执行跨平台的静态的源码"
 publishDate: 2018-05-25 21:24:08 +0800
-date: 2018-06-02 09:26:33 +0800
+date: 2021-08-30 10:40:55 +0800
 categories: visualstudio dotnet csharp roslyn
 ---
 
@@ -90,7 +90,7 @@ namespace Walterlv.Demo.Roslyn
             return content.Trim();
         }
 
-        private static string FromTemplate(string template, string part, string seperator, int count)
+        private static string FromTemplate(string template, string part, string separator, int count)
         {
             return string.Format(template,
                 string.Join(separator, Enumerable.Range(1, count).Select(x => part.Replace("{n}", x.ToString()))));
