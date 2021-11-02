@@ -59,7 +59,6 @@ permalink: /friends/
 - [迪莫的小站](https://www.dimojang.com/)
 - [Ron.Liang - 博客园](https://www.cnblogs.com/viter/)
 - [木杉的博客 - 要么精通，要么死](http://imushan.com/)
-- [Nagisa](http://i.pcbeta.com/home.php?mod=space&uid=3887572&do=thread&type=reply&view=me&from=space) Windows Runtime [Nagisa 0.3 开发近况](http://bbs.pcbeta.com/viewthread-1778794-1-1.html) [Project-Nagisa/Nagisa](https://github.com/Project-Nagisa/Nagisa)
 - [HandyOrg/HandyControl - 纳边](https://github.com/HandyOrg/HandyControl) WPF 控件库
 - [什么是WPF - The complete WPF tutorial](https://wpf-tutorial.com/zh/1/%E5%85%B3%E4%BA%8Ewpf/%E4%BB%80%E4%B9%88%E6%98%AFwpf/)  
     由 Ryzen、玩命夜狼 等翻译
