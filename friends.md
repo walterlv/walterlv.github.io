@@ -21,7 +21,7 @@ permalink: /friends/
 
 ## 朋友
 
-- [ 大贤者初春令月](https://mourinaruto.github.io/zh/)  
+- [大贤者初春令月](https://mourinaruto.github.io/zh/)  
   NSudo、NanaZip 的开发者，对 Windows 的机制有很深的了解
 - [gandalfliang的个人博客](https://gandalfliang.github.io/)
 - [黄腾霄 - huangtengxiao](https://huangtengxiao.gitee.io/)
@@ -41,7 +41,6 @@ permalink: /friends/
 - [周三台 - 博客园](https://www.cnblogs.com/3Tai/)
 - [吴波 - 叹为观止](http://blog.vichamp.com/) PowerShell 技能
 - [Bean.Hsiang - 博客园](http://www.cnblogs.com/BeanHsiang/) 如果你想学习机器学习 ML.NET，他真的很接地气
-- [毛利的技术小站](https://mourinaruto.github.io/?file=Home)
 - [Edi Wang](http://edi.wang/) 微软 MVP，国内 .NET 的大神，有很多的文章，有 WPF、UWP 还有其他的 Linux……
 - [晓晨Master - 博客园](https://www.cnblogs.com/stulzq/) 微软 MVP
 - [.NET骚操作 - 周杰 - 博客园](https://www.cnblogs.com/sdflysha/)
