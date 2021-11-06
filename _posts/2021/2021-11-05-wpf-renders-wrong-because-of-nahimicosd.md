@@ -1,8 +1,14 @@
 ---
 title: "所有 WPF 程序的界面渲染完全糊掉，竟是戴尔电脑惹的锅？"
-date: 2021-11-05 20:47:55 +0800
+publishDate: 2021-11-05 20:47:55 +0800
+date: 2021-11-06 10:26:58 +0800
 categories: wpf
 position: problem
+version:
+  current: 中文
+versions:
+  - 中文: #
+  - English: /post/wpf-renders-wrong-because-of-nahimicosd-en.html
 ---
 
 近期收到了多起来自用户的反馈，说我们软件界面糊成一团，完全没办法看到按钮在哪里。我一看，这可棘手了，完全不是我们软件能渲染出来的样子啊！
@@ -10,6 +16,10 @@ position: problem
 本文将先给出结论帮助大家解决问题，随后再展示我们的调查过程。
 
 ---
+
+This post is written in **multiple languages**. Please select yours:
+
+{% include post-version-selector.html %}
 
 <div id="toc"></div>
 
