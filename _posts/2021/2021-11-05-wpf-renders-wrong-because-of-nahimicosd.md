@@ -1,7 +1,7 @@
 ---
 title: "所有 WPF 程序的界面渲染完全糊掉，竟是戴尔电脑惹的锅？"
 publishDate: 2021-11-05 20:47:55 +0800
-date: 2021-11-08 09:24:34 +0800
+date: 2021-11-08 09:35:30 +0800
 categories: wpf
 position: problem
 version:
@@ -63,7 +63,10 @@ NahimicOSD 是一个用于在应用程序最终渲染结果上叠加另一个显
 
 由于这个文件已经注入到了很多应用中，所以解决方法是[将 NahimicOSD.dll 文件重命名](http://blog.walterlv.com/post/rename-executable-self-when-running.html)（因为你直接删删不掉）。等重启电脑后，这个文件也就不会注入到任何程序里去了，这时你想怎么处置都可以。
 
-另外，这个文件可能有 x86 和 x64 两个版本，目前已知 x86 版本会出问题。
+另外，这个文件可能有 x86 和 x64 两个版本；可能都需要处理，适用于不同架构的进程。已知有问题的应用：
+
+1. dnSpy (x64, .NET)
+1. [WPF Performance Suite](http://blog.walterlv.com/post/wpf-rendering-dirty-region.html) (x64/x86, .NET Framework)
 
 我们已经在试图紧急跟戴尔客服取得联系，希望他们重视并解决掉线上的这些问题。
 
