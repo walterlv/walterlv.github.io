@@ -1,7 +1,7 @@
 ---
 title: "WHAT DID DELL DO? All WPF apps are rendered in a mess!"
 publishDate: 2021-11-05 20:47:55 +0800
-date: 2021-11-06 10:54:38 +0800
+date: 2021-11-08 09:28:47 +0800
 categories: wpf
 position: problem
 version:
@@ -49,7 +49,9 @@ NahimicOSD is an on-screen display library that displays something on any softwa
 
 ## Solutions
 
-Delete the files in the paths above helps. This prevents the DLLs be injected into any other applications.
+1. Renaming the NahimicOSD.dll (because it cannot be deleted in case of being occupied)
+2. Restart your computer (Then it will not be injected into any programs)
+3. Lose your temper at this file
 
 ## How did we find the reason and solutions?
 
