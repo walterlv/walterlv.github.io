@@ -1422,11 +1422,11 @@ body.dark-theme .post-content hr {
 }
 
 .post-content>table {
-    margin: 0 auto;
     width: auto;
     max-width: 60rem;
     border-spacing: 0;
     border-collapse: collapse;
+    display: block;
 }
 
 .post-content>table th, .post-content>table td {
