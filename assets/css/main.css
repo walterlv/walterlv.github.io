@@ -1142,7 +1142,7 @@ body.dark-theme ul.pager li.active {
     font-style: normal
 }
 
-.post-content p, .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content ul, .post-content ol, .post-content iframe, .post-content div.post-inline {
+.post-content p, .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content ul, .post-content ol, .post-content table, .post-content iframe, .post-content div.post-inline {
     width: auto;
     max-width: 60rem;
     float: none;
