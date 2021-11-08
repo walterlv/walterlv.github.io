@@ -1,7 +1,7 @@
 ---
-title: "各个版本 Windows 10 的名称、完整版本号、开发代号和系统自带的 .NET Framework 版本"
+title: "各个版本 Windows 11 / Windows 10 的名称、完整版本号、开发代号和系统自带的 .NET Framework 版本"
 publishDate: 2017-10-17 10:49:40 +0800
-date: 2021-11-08 16:34:04 +0800
+date: 2021-11-08 16:51:50 +0800
 categories: windows dotnet
 tags: Windows .Net
 ---
