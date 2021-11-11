@@ -1,6 +1,7 @@
 ---
 title: "Visual Studio 2022 升级不再附带 .NET Framework 4.5 这种古老的目标包了，本文帮你装回来"
-date: 2021-11-09 09:58:41 +0800
+publishDate: 2021-11-09 09:58:41 +0800
+date: 2021-11-11 17:49:43 +0800
 categories: visualstudio dotnet
 position: problem
 ---
@@ -23,7 +24,7 @@ position: problem
 
 ![没有 .NET Frameweork 4.5 的目标包](/static/posts/2021-11-09-09-49-26.png)
 
-## 重新安装回 .NET Framework 4.5 的目标包
+## 方法一：重新安装回 .NET Framework 4.5 的目标包
 
 重新安装 Visual Studio 2019 可以让你重新安装 .NET Framework 4.5 目标包，然而现在再去 Visual Studio 的官网，会发现下载链接已经全面替换成了新出的 Visual Studio 2022 了，那我改如何下载回来？
 
@@ -40,3 +41,7 @@ position: problem
 * .NET Framework 4.5.1 目标包
 
 ![勾选 .NET Framework 4.5 目标包](/static/posts/2021-11-09-09-57-43.png)
+
+## 方法二：安装 [Microsoft.NETFramework.ReferenceAssemblies](https://www.nuget.org/packages/Microsoft.NETFramework.ReferenceAssemblies/) NuGet 包
+
+详见：[无需安装 VS2019，在 Visual Studio 2022 中编译 .NET Framework 4.5/4/3.5 这样的古老框架](/post/support-old-netfx-on-vs2022-or-later) 
