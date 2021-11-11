@@ -1,6 +1,6 @@
 ---
 title: "无需安装 VS2019，在 Visual Studio 2022 中编译 .NET Framework 4.5/4/3.5 这样的古老框架"
-date: 2021-11-11 17:51:13 +0800
+date: 2021-11-11 17:59:52 +0800
 categories: visualstudio dotnet
 position: problem
 ---
@@ -34,10 +34,20 @@ Visual Studio 2022 已正式发布！着急升级的小伙伴兴致勃勃地升�
 ```xml
 <Project>
   <ItemGroup>
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
   </ItemGroup>
 </Project>
 ```
+
+**请特别注意**
+
+如果你正在开发的是库项目，那么在引用此 NuGet 包之后，应该加上 `PrivateAssets="all"` 来标记此 NuGet 包不会成为你自己的库的其中一个依赖。否则就会像下图一样有一个不期望的依赖。
+
+![不期望的依赖](/static/posts/2021-11-11-17-56-48.png)  
+▲ 不期望的依赖
+
+![正常的依赖](/static/posts/2021-11-11-17-59-41.png)  
+▲ 正常的依赖
 
 ## 一些注意事项
 
