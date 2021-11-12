@@ -1,7 +1,7 @@
 ---
 title: "无需安装 VS2019，在 Visual Studio 2022 中编译 .NET Framework 4.5/4/3.5 这样的古老框架"
 publishDate: 2021-11-11 17:59:52 +0800
-date: 2021-11-12 11:41:43 +0800
+date: 2021-11-12 12:16:58 +0800
 categories: visualstudio dotnet
 position: problem
 ---
@@ -91,6 +91,44 @@ Visual Studio 2022 已正式发布！着急升级的小伙伴兴致勃勃地升�
 
 另外，这里的 `%(RecursiveDir)` 是递归显示文件夹（否则所有文件会拍平到项目里），`%(Filename)` 是将链接显示成文件名，`%(Extension)` 是在文件名后面显示文件扩展名。经此写法，项目里显示的其他文件夹的文件看起来就像真的在这个项目里一样。
 
-### 3. 不想折腾？
+### 4. 不想折腾之一：还是装回 VS2019 吧
 
-不想折腾的话，那就把 .NET Framework 4.5 目标包装回来吧，可参见：[Visual Studio 2022 升级不再附带 .NET Framework 4.5 这种古老的目标包了，本文帮你装回来](/post/how-to-support-net45-on-vs2022-or-later)。
+有时候，你可能会遇到各种意料之外的问题，超出我上面列举的坑。不想折腾的话，那就把 .NET Framework 4.5 目标包装回来吧，可参见：[Visual Studio 2022 升级不再附带 .NET Framework 4.5 这种古老的目标包了，本文帮你装回来](/post/how-to-support-net45-on-vs2022-or-later)。
+
+### 5. 不想折腾之二：打死也不装回 VS2019
+
+有时候，你可能会遇到各种意料之外的问题，超出我上面列举的坑。如果你跟我一样，无论如何都不想装回 VS2019，那么还有解决方法：直接把 .NET Framework 的引用全拷到项目里来。操作如下：
+
+1. 去 [Microsoft.NETFramework.ReferenceAssemblies](https://www.nuget.org/packages/Microsoft.NETFramework.ReferenceAssemblies/) NuGet 包的下载页，找到 Dependencies 标签，里面有各个不同 .NET Framework 版本的 .NET Framework 引用包。
+2. 点开你项目需要的那个版本的 .NET Framework 包，然后在页面右边找到 Download package 链接，点它，下下来。
+3. 解压下载下来的 NuGet 包，取出其中的“/build/.NET Framework”文件夹，复制到你的项目里某个位置。
+4. 在你仓库的根目录添加或修改 Directory.Build.props 文件，里面添加下面的代码。
+
+![各个版本的 .NET Framework 引用包](/static/posts/2021-11-12-11-59-41.png)
+
+![复制 .NET Framework 文件夹](/static/posts/2021-11-12-12-03-33.png)
+
+Directory.Build.props 文件的新增内容：
+
+```diff
+<Project>
+
+++  <PropertyGroup>
+++      <TargetFrameworkRootPath>Dependencies</TargetFrameworkRootPath>
+++  </PropertyGroup>
+
+++  <ItemGroup Condition=" ('$(TargetFrameworkIdentifier)' == '.NETFramework') And ('$(TargetFrameworkVersion)' == 'v4.5') ">
+++      <Reference Include="mscorlib" Pack="false" />
+++      <Reference Include="Microsoft.VisualBasic" Pack="false" Condition="'$(Language)' == 'VB' And '$(UsingMicrosoftNETSdk)' == 'true'" />
+++  </ItemGroup>
+
+</Project>
+```
+
+其中：
+
+1. 如果没有此文件，那么创建一个。
+2. 那个 `TargetFrameworkRootPath` 的值是 `.NETFramework` 文件夹的**父级文件夹**。划重点，你需要确保那个文件夹里面包含我们从 NuGet 包里解压出来的 `.NETFramework` 完整文件夹。
+3. 后面的 `ItemGroup` 里的内容，直接照抄上文即可，我也是照抄 [Microsoft.NETFramework.ReferenceAssemblies](https://www.nuget.org/packages/Microsoft.NETFramework.ReferenceAssemblies/) 包里的
+
+用最后的这种方法，算就究级解决方案了。没有这种方案解决不了的问题！如果有，那就是有某项目没受此文件影响，把这段代码拷到那个项目的 csproj 文件里去。
