@@ -1,7 +1,7 @@
 ---
 title: "WPF 使用 WindowChrome，在自定义窗口标题栏的同时最大程度保留原生窗口样式（类似 UWP/Chrome）"
 publishDate: 2018-07-12 15:57:30 +0800
-date: 2020-06-23 15:16:39 +0800
+date: 2021-11-12 14:31:33 +0800
 categories: wpf uwp dotnet windows
 ---
 
@@ -254,6 +254,18 @@ WPF 自定义窗口可是非常容易的，完全自定义样式、异形都不�
 UWP 应用对窗口样式的定制能力是非常小的，远远小于传统 Win32 应用。但因为其与系统原生集成，如果要求保证原生窗口体验，UWP 的定制能力又是各种方法里面最大的，而且 API 非常简单。
 
 如果你正在使用 UWP 开发应用，可参考林德熙的博客 [win10 uwp 标题栏](https://blog.lindexi.com/post/win10-uwp-%E6%A0%87%E9%A2%98%E6%A0%8F.html) 来定制标题栏。
+
+## 特别处理 Windows 7 上关闭 Aero 效果的情况
+
+博客更新：特别说明，在 Windows 7 上可以关闭 Aero 效果，这时用本文方法做出的窗口，透明部分会显示黑色。
+
+解决方法为调用 `DwmIsCompositionEnabled()` 判断一下是否开启了 Aero 特效，如果关闭了，则使用传统的 AllowsTransparency 属性替代或放弃异形窗口。
+
+```csharp
+[DllImport("Dwmapi.dll", ExactSpelling = true, PreserveSig = false)]
+[return: MarshalAs(UnmanagedType.Bool)]
+public static extern bool DwmIsCompositionEnabled();
+```
 
 ---
 
