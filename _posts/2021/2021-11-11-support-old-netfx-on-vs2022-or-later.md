@@ -1,6 +1,7 @@
 ---
 title: "无需安装 VS2019，在 Visual Studio 2022 中编译 .NET Framework 4.5/4/3.5 这样的古老框架"
-date: 2021-11-11 17:59:52 +0800
+publishDate: 2021-11-11 17:59:52 +0800
+date: 2021-11-12 11:41:43 +0800
 categories: visualstudio dotnet
 position: problem
 ---
@@ -69,6 +70,26 @@ Visual Studio 2022 已正式发布！着急升级的小伙伴兴致勃勃地升�
 
 1. 给所有含 .NET Framework 框架的项目安装 [Microsoft.NETFramework.ReferenceAssemblies](https://www.nuget.org/packages/Microsoft.NETFramework.ReferenceAssemblies/) NuGet 包
 2. 如果不想直接给所有项目安装，可以使用 [Directory.Build.props](https://blog.lindexi.com/post/Roslyn-%E4%BD%BF%E7%94%A8-Directory.Build.props-%E7%AE%A1%E7%90%86%E5%A4%9A%E4%B8%AA%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE.html) 来一并安装
+
+### 3. 不支持同一个文件夹下有两个 csproj 项目的情况
+
+有时候为了方便，当两个项目几乎所有文件都相同，只是项目配置不同时，我们会考虑将这两个项目放到同一个文件夹里面以共用文件。可惜这种方式组织的项目，跟本问所提供的方案不兼容。
+
+![两个项目文件在同一个文件夹下](/static/posts/2021-11-12-11-34-47.png)
+
+如果解决方案中存在这样的项目组织方式，你会发现其他项目都能编译通过，唯独这两个项目依旧死在缺少 .NET Framework 45 目标包上。解决方法就是把这两个项目拆开成两个文件夹。
+
+可是他们共用的文件怎么办？答案是在每个项目的 csproj 文件中添加下面几行：
+
+```xml
+  <ItemGroup>
+    <Compile Include="..\SomeCommonFolder\**\*.cs" Link="%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+```
+
+即他们都去共同的目录下把文件都拉进来编译，并且以链接的方式显示到 Visual Studio 解决方案管理器里。详见：[使用链接共享 Visual Studio 中的代码文件](/visualstudio/2016/08/01/share-code-with-add-as-link)
+
+另外，这里的 `%(RecursiveDir)` 是递归显示文件夹（否则所有文件会拍平到项目里），`%(Filename)` 是将链接显示成文件名，`%(Extension)` 是在文件名后面显示文件扩展名。经此写法，项目里显示的其他文件夹的文件看起来就像真的在这个项目里一样。
 
 ### 3. 不想折腾？
 
