@@ -1,7 +1,7 @@
 ---
 title: "无需安装 VS2019，在 Visual Studio 2022 中编译 .NET Framework 4.5/4/3.5 这样的古老框架"
 publishDate: 2021-11-11 17:59:52 +0800
-date: 2021-11-15 15:17:45 +0800
+date: 2021-11-15 15:55:01 +0800
 categories: visualstudio dotnet
 position: problem
 ---
@@ -112,11 +112,19 @@ Visual Studio 2022 已正式发布！着急升级的小伙伴兴致勃勃地升�
 
 另外，这里的 `%(RecursiveDir)` 是递归显示文件夹（否则所有文件会拍平到项目里），`%(Filename)` 是将链接显示成文件名，`%(Extension)` 是在文件名后面显示文件扩展名。经此写法，项目里显示的其他文件夹的文件看起来就像真的在这个项目里一样。
 
-### 3. 不想折腾之一：还是装回 VS2019 吧
+### 3. 对于经典 csproj 格式（而非 SDK 风格 csproj 格式）的情况
+
+评论区 [@afunc233](https://github.com/afunc233) 的[回复](https://github.com/walterlv/BlogComments/issues/104#issuecomment-968103614) 说经典 csproj 格式没办法使用本文所述的方法。
+
+我个人建议还是迁移一下比较好，不难而且完全兼容旧格式的所有功能。迁移教程：[将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj](https://blog.walterlv.com/post/introduce-new-style-csproj-into-net-framework)。
+
+如果不想迁移，也可以试试[官方的方法](https://github.com/Microsoft/dotnet/tree/master/releases/reference-assemblies)。但我不想尝试，所以就在线等 TA 在评论区的回复吧！
+
+### 4. 不想折腾之一：还是装回 VS2019 吧
 
 有时候，你可能会遇到各种意料之外的问题，超出我上面列举的坑。不想折腾的话，那就把 .NET Framework 4.5 目标包装回来吧，可参见：[Visual Studio 2022 升级不再附带 .NET Framework 4.5 这种古老的目标包了，本文帮你装回来](/post/how-to-support-net45-on-vs2022-or-later)。
 
-### 4. 不想折腾之二：打死也不装回 VS2019
+### 5. 不想折腾之二：打死也不装回 VS2019
 
 有时候，你可能会遇到各种意料之外的问题，超出我上面列举的坑。如果你跟我一样，无论如何都不想装回 VS2019，那么还有解决方法：直接把 .NET Framework 的引用全拷到项目里来。操作如下：
 
