@@ -1,7 +1,7 @@
 ---
 title: "将美化进行到底，使用 Oh My Posh 把 PowerShell 做成 oh-my-zsh 的样子"
 publishDate: 2017-12-26 15:00:17 +0800
-date: 2021-11-18 13:25:08 +0800
+date: 2021-11-18 13:30:21 +0800
 categories: windows powershell
 ---
 
@@ -104,7 +104,8 @@ Set-PoshPrompt agnoster
 
 主题在这个文件夹下，可以自行编辑：
 
-* ~\Documents\PowerShell\Modules\oh-my-posh\<版本号>\themes
+* `~\Documents\PowerShell\Modules\oh-my-posh\<版本号>\themes`  
+    ▲ 如果你用的是 Windows PowerShell 而不是 PowerShell，可用 `$PROFILE` 查询一下跟目录
 
 ---
 
