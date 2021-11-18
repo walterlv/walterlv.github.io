@@ -1,7 +1,7 @@
 ---
 title: "所有 WPF 程序的界面渲染完全糊掉，竟是戴尔电脑惹的锅？"
 publishDate: 2021-11-05 20:47:55 +0800
-date: 2021-11-18 18:06:28 +0800
+date: 2021-11-18 19:25:32 +0800
 categories: wpf
 position: problem
 version:
@@ -72,6 +72,10 @@ NahimicOSD 是一个用于在应用程序最终渲染结果上叠加另一个显
 
 * [Solved: Area-51m R2, blurred text and images in some apps - Dell Community](https://www.dell.com/community/Alienware/Area-51m-R2-blurred-text-and-images-in-some-apps/m-p/8073108#M47622)
 * [m17 R2, WPF apps distorted, disappearing window contents - Dell Community](https://www.dell.com/community/Alienware/m17-R2-WPF-apps-distorted-disappearing-window-contents/m-p/8069137#M47499)
+
+也写了一篇无奈的吐槽：
+
+* [The WPF UI is blurring and broken while the Alienware NahimicOSD.dll injects · Issue #5708 · dotnet/wpf](https://github.com/dotnet/wpf/issues/5708)
 
 ## 调查过程
 
