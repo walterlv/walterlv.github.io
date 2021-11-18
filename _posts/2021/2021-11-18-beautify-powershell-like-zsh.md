@@ -1,7 +1,7 @@
 ---
 title: "将美化进行到底，使用 Oh My Posh 把 PowerShell 做成 oh-my-zsh 的样子"
 publishDate: 2017-12-26 15:00:17 +0800
-date: 2021-11-18 13:03:49 +0800
+date: 2021-11-18 13:16:30 +0800
 categories: windows powershell
 ---
 
@@ -56,7 +56,7 @@ Install-Module oh-my-posh -Scope CurrentUser
 
 ![寻找 PowerShell Proile 文件](/static/posts/2021-11-18-12-07-37.png)
 
-去对应的文件夹找一下这个文件。如果你没有这个文件，就新建一个，文件里面编写如下内容：
+去对应的文件夹找一下这个文件（Microsoft.PowerShell_profile.ps1）。如果你没有这个文件，就新建一个，文件里面编写如下内容：
 
 ```powershell
 Import-Module oh-my-posh
@@ -90,7 +90,7 @@ Set-PoshPrompt agnoster
 
 ![更换了 Fira Code NF 字体后新启动的终端](/static/posts/2021-11-18-12-55-51.png)
 
-重新输入 `Get-PoshThemes` 再预览主题，然后挑选一个：
+重新输入 `Get-PoshThemes` 再预览主题，然后挑选一个。挑好后，去修改 Microsoft.PowerShell_profile.ps1 文件内容，换主题名。
 
 ![挑选主题](/static/posts/2021-11-18-12-56-52.png)
 
