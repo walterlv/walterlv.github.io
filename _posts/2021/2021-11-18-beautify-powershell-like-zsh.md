@@ -1,7 +1,7 @@
 ---
 title: "将美化进行到底，使用 Oh My Posh 把 PowerShell 做成 oh-my-zsh 的样子"
 publishDate: 2017-12-26 15:00:17 +0800
-date: 2021-11-18 13:16:30 +0800
+date: 2021-11-18 13:25:08 +0800
 categories: windows powershell
 ---
 
@@ -28,7 +28,7 @@ Windows 下我们用 Oh My Posh 在 PowerShell 中实现这样的效果。先放
 
 无论你选了哪一个，当你设置好后，会在所有终端中生效，包括 Visual Studio、Visual Studio Code 中内嵌的终端。
 
-另外，如果你从来没有在你的电脑上折腾过终端，那么可能还需要额外去应用商店安装一下 [PowerShell](https://www.microsoft.com/store/productId/9MZ1SNWT0N5D) 的 .NET 版本：
+另外，如果你从来没有在你的电脑上折腾过终端，那么可能还需要额外去应用商店安装一下 [PowerShell](https://www.microsoft.com/store/productId/9MZ1SNWT0N5D) 的 .NET 版本（不装的话，默认是 Windows PowerShell，版本会旧一些）：
 
 ![应用商店中的 PowerShell](/static/posts/2021-11-18-11-50-24.png)
 
