@@ -1,7 +1,7 @@
 ---
 title: "WHAT DID DELL DO? All WPF apps are rendered in a mess!"
 publishDate: 2021-11-05 20:47:55 +0800
-date: 2021-11-08 09:28:47 +0800
+date: 2021-11-18 18:03:32 +0800
 categories: wpf
 position: problem
 version:
@@ -53,6 +53,11 @@ NahimicOSD is an on-screen display library that displays something on any softwa
 2. Restart your computer (Then it will not be injected into any programs)
 3. Lose your temper at this file
 
+I've posted the issue on the DELL Alienware community and waiting for their reply and new driver update. You can see my discussions there:
+
+* [Solved: Area-51m R2, blurred text and images in some apps - Dell Community](https://www.dell.com/community/Alienware/Area-51m-R2-blurred-text-and-images-in-some-apps/m-p/8073108#M47622)
+* [m17 R2, WPF apps distorted, disappearing window contents - Dell Community](https://www.dell.com/community/Alienware/m17-R2-WPF-apps-distorted-disappearing-window-contents/m-p/8069137#M47499)
+
 ## How did we find the reason and solutions?
 
 Some of our software users gave feedback to us with the messing UI as attachments. Most of them were DELL devices with a 10th CPU and two graphics cards which confuses us. We tried to switch the default graphics card and tried to upgrade the graphics drivers but nothing helped.
@@ -68,3 +73,5 @@ What made changes was a special user which was using a LENOVO device. We find th
 **References**
 
 - [Button renders wrong after mouse leave · Issue #707 · dotnet/wpf](https://github.com/dotnet/wpf/issues/707)
+- [Solved: Area-51m R2, blurred text and images in some apps - Dell Community](https://www.dell.com/community/Alienware/Area-51m-R2-blurred-text-and-images-in-some-apps/m-p/8073108#M47622)
+- [m17 R2, WPF apps distorted, disappearing window contents - Dell Community](https://www.dell.com/community/Alienware/m17-R2-WPF-apps-distorted-disappearing-window-contents/m-p/8069137#M47499)
