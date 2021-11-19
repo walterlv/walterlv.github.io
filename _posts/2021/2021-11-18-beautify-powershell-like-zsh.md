@@ -1,7 +1,7 @@
 ---
 title: "将美化进行到底，使用 Oh My Posh 把 PowerShell 做成 oh-my-zsh 的样子"
 publishDate: 2017-12-26 15:00:17 +0800
-date: 2021-11-18 13:30:21 +0800
+date: 2021-11-19 15:40:33 +0800
 categories: windows powershell
 ---
 
@@ -94,11 +94,7 @@ Set-PoshPrompt agnoster
 
 ![挑选主题](/static/posts/2021-11-18-12-56-52.png)
 
-这里，我选了 `iterm2`，于是就有了本文一开始的美化效果了：
-
-![最终美化效果](/static/posts/2021-11-18-12-16-48.png)
-
-同样，在 Visual Studio Code 里设置一下终端字体也可以在 Visual Studio Code 里看到相同的效果：
+这里，我选了 `iterm2`，于是就有了本文一开始的美化效果了。同样，在 Visual Studio Code 里设置一下终端字体也可以在 Visual Studio Code 里看到相同的效果：
 
 ![在 Visual Studio Code 里的效果](/static/posts/2021-11-18-13-03-12.png)
 
@@ -106,6 +102,14 @@ Set-PoshPrompt agnoster
 
 * `~\Documents\PowerShell\Modules\oh-my-posh\<版本号>\themes`  
     ▲ 如果你用的是 Windows PowerShell 而不是 PowerShell，可用 `$PROFILE` 查询一下跟目录
+
+[S0cialEngineering - 灰色铅笔的彩色世界。](https://github.com/S0cialEngineering) 基于自带的 iterm2 魔改了一个 iterm3 主题，他授权我在这里分流提供给大家下载。我觉得非常好看，就白瞟了。
+
+* [下载 iterm3.omp.json](/static/attachments/oh-my-posh/themes/iterm3.omp.json)
+
+效果如下：
+
+![iterm3.omp.json 效果](/static/posts/2021-11-19-15-37-29.png)
 
 ---
 
