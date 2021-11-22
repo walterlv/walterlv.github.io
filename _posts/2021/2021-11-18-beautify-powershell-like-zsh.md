@@ -1,8 +1,9 @@
 ---
 title: "将美化进行到底，使用 Oh My Posh 把 PowerShell 做成 oh-my-zsh 的样子"
 publishDate: 2017-12-26 15:00:17 +0800
-date: 2021-11-19 15:40:33 +0800
+date: 2021-11-22 16:35:33 +0800
 categories: windows powershell
+position: starter
 ---
 
 不知你有没有看过 Linux 上 oh-my-zsh 的样子？看过之后你一定会惊叹，原来命令行还能这么玩！然而 Windows 下能这么玩吗？答案是可行的，接下来就来看看怎么玩。
