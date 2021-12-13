@@ -19,7 +19,11 @@ description: 了解 Windows 系统上如何使 32 位应用程序使用大于 2G
 
 32 位寻址空间只有 4GB 大小，于是 32 位应用程序进程最大只能用到 4GB 的内存。然而，除了应用程序本身要用内存，操作系统内核也需要使用。应用程序使用的内存空间分为用户空间和内核空间，每个 32 位程序的用户空间可独享前 2GB 空间（指针值为正数），而内核空间为所有进程共享 2GB 空间（指针值为负数）。所以，32 位应用程序实际能够访问的内存地址空间最多只有 2GB。
 
-## 让 32 位程序使用大于 2GB 内存的两种方法
+## 让 32 位程序使用大于 2GB 内存的三种方法
+
+### 推荐：dotnetCampus.LargeAddressAware 库
+
+详见：[为 .NET Core / Framework 程序开启大内存感知（LargeAddressAware），使 32 位程序支持最多 4GB 的用户空间内存](/post/how-to-enable-large-address-aware-for-net-apps)
 
 ### editbin
 
