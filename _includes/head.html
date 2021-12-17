@@ -1,89 +1,75 @@
+<!--
+  The Head
+-->
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!--  -->
-    <title>{{ page.title }} - {{ site.title }}</title>
-    <meta name="author" content="{{ site.author }}" />
-    <meta name="description" content="{% if page.title %}{{ page.title }}{% else %}{{ site.description }}{% endif %}" />
-    <meta name="keywords" content="{% if page.title %}{{ page.title }}, {{ site.title }}, {% for categ in page.categories %}{{ categ }}{% if forloop.last == false %}, {% endif %}{% endfor %}{% else %}{{ site.title }}, {% for category in site.categories %}{% capture categories_slug %}{{ category | first }}{% endcapture %}{% for categ in categories_slug %}{{ categ }}{% endfor %}{% if forloop.last == false %}, {% endif %}{% endfor %}{% endif %}" />
+  {% if page.layout == 'home' or page.layout == 'post' %}
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ site.baseurl }}{{ site.icon }}" />
-    
-    <!-- Apple Touch Icons -->
-    <link rel="apple-touch-icon" href="{{ site.baseurl }}{{ site.logo }}" />
+    <!-- i18n for `_javascript/utils/timeago.js` -->
+    <meta name="day-prompt" content="{{ site.data.locales[lang].post.timeago.day }}">
+    <meta name="hour-prompt" content="{{ site.data.locales[lang].post.timeago.hour }}">
+    <meta name="minute-prompt" content="{{ site.data.locales[lang].post.timeago.minute }}">
+    <meta name="justnow-prompt" content="{{ site.data.locales[lang].post.timeago.just_now }}">
 
-    <!-- Windows 8 Tile Icons -->
-    <meta name="application-name" content="{{ site.post_author }} Blog">
-    <meta name="msapplication-TileColor" content="#0562DC">
-    <meta name="msapplication-square70x70logo" content="smalltile.png" />
-    <meta name="msapplication-square150x150logo" content="mediumtile.png" />
-    <meta name="msapplication-wide310x150logo" content="widetile.png" />
-    <meta name="msapplication-square310x310logo" content="largetile.png" />
-    
-    <!-- Android Lolipop Theme Color -->
-    <meta name="theme-color" content="{{ page.color }}">
-
-    <!-- Meta for other sites -->
-    <meta content="{{ site.share.fb_appid }}" property="fb:app_id">
-    <meta content="{{ site.title }}" property="og:site_name">
-    {% if page.title %}
-        <meta content="{{ page.title }}" property="og:title">
-    {% else %}
-        <meta content="{{ site.title }}" property="og:title">
-    {% endif %}
-    {% if page.title %}
-        <meta content="article" property="og:type">
-    {% else %}
-        <meta content="website" property="og:type">
-    {% endif %}
-    {% if page.description %}
-        <meta content="{{ page.description }}" property="og:description">
-    {% else %}
-        <meta content="{{ site.description }}" property="og:description">
-    {% endif %}
-    {% if page.url %}
-        <meta content="{{ site.baseurl }}{{ page.url }}" property="og:url">
-    {% endif %}
-    {% if page.date %}
-        <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
-        <meta content="{{ site.baseurl }}/about/" property="article:author">
-    {% endif %}
-    {% if page.categories %}
-        {% for category in page.categories limit:1 %}
-        <meta content="{{ category }}" property="article:section">
-        {% endfor %}
-    {% endif %}
-    {% if page.tags %}
-        {% for tag in page.tags %}
-        <meta content="{{ tag }}" property="article:tag">
-        {% endfor %}
-    {% endif %}
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@{{ site.share.twitter_username }}">
-    <meta name="twitter:creator" content="@{{ site.share.twitter_username }}">
-    {% if page.title %}
-        <meta name="twitter:title" content="{{ page.title }}">
-    {% else %}
-        <meta name="twitter:title" content="{{ site.title }}">
-    {% endif %}
-    {% if page.url %}
-        <meta name="twitter:url" content="{{ site.baseurl }}{{ page.url }}">
-    {% endif %}
-    {% if page.description %}
-        <meta name="twitter:description" content="{{ page.description }}">
-    {% else %}
-        <meta name="twitter:description" content="{{ site.description }}">
-    {% endif %}
-    {% if page.header-img %}
-        <meta name="twitter:image:src" content="{{ site.baseurl }}/{{ page.header-img }}">
+    {% if site.google_analytics.pv.proxy_endpoint %}
+      <meta name="pv-proxy-endpoint" content="{{ site.google_analytics.pv.proxy_endpoint }}">
     {% endif %}
 
-    <!-- Fonts -->
-    <link rel="stylesheet" href="{{ "/assets/css/main.min.css" | prepend: site.baseurl }}">
-    <link rel="stylesheet" href="{{ "/assets/css/syntax.min.css" | prepend: site.baseurl }}">
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+    {% if site.google_analytics.pv.cache_path %}
+      <meta name="pv-cache-path" content="{{ site.google_analytics.pv.cache_path | relative_url }}">
+    {% endif %}
+
+  {% endif %}
+
+  {% seo title=false %}
+
+  <title>
+  {%- unless page.layout == "home" -%}
+    {{ page.title | append: " | "}}
+  {%- endunless -%}
+    {{ site.title }}
+  </title>
+
+  {% include favicons.html %}
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <!-- GA -->
+  {% if jekyll.environment == 'production' %}
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    {% if site.google_analytics.pv.proxy_endpoint %}
+      {% assign proxy_url = site.google_analytics.pv.proxy_endpoint
+        | replace: "https://", "" | split: "/" | first | prepend: "https://" %}
+
+      <link rel="preconnect" href="{{ proxy_url }}" crossorigin="use-credentials">
+      <link rel="dns-prefetch" href="{{ proxy_url }}">
+    {% endif %}
+  {% endif %}
+
+  <!-- jsDelivr CDN -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css">
+
+  {% include css-selector.html %}
+
+  <!-- JavaScript -->
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+
 </head>

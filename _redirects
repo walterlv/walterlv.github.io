@@ -1,4 +1,0 @@
-# Redirect default Netlify subdomain to primary domain
-https://walterlv.com/* https://blog.walterlv.com/:splat 301
-https://www.walterlv.com/* https://blog.walterlv.com/:splat 301
-https://walterlv.netlify.com/* https://blog.walterlv.com/:splat 301!

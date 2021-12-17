@@ -1,105 +1,170 @@
-# Basic Site Information
-title: walterlv
-author: walterlv
-post_author: 吕毅
-description: 吕毅，.NET/UWP/WPF/Roslyn/Windows 开发者，微软最有价值专家，Microsoft MVP
-mail: walter.lv@qq.com
-about: .NET and Windows Developer, Microsoft MVP
+# The Site Configuration
 
-# Site Appearance
-logo: /assets/img/logo.png
-icon: /favicon.ico
-avatar:
-  img: /assets/img/mvp.svg
-  alt: Microsoft MVP
-  url: https://mvp.microsoft.com/en-us/PublicProfile/5003225
-  hint: 查看我的微软 MVP 主页
-license:
-  img: /assets/img/by-nc-sa.svg
-default-theme: light
-markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+# Import the theme
+theme: jekyll-theme-chirpy
 
-# Site Urls
-baseurl: ""
-url: "https://blog.walterlv.com"
-links:
-  - title: 博客
-    url: /
-  - title: 胡思乱想
-    url: /mind
-  - title: 朋友
-    url: /friends
-  - title: 开源项目
-    url: /projects
-  - title: 关于
-    url: /about/
-links-light:
-  - icon: users
-    title: 朋友
-    url: /friends
-  - icon: rss
-    title: RSS
-    url: /feed.xml
+# Change the following value to '/PROJECT_NAME' ONLY IF your site type is GitHub Pages Project sites
+# and doesn't have a custom domain.
+baseurl: ''
 
-# Social Accounts
+# The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
+# If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
+# otherwise, the layout language will use the default value of 'en'.
+lang: en
+
+# Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
+timezone: Asia/Shanghai
+
+# jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+# ↓ --------------------------
+
+title: Chirpy                          # the main title
+
+tagline: A text-focused Jekyll theme   # it will display as the sub-title
+
+description: >-                        # used by seo meta and the atom feed
+  A minimal, portfolio, sidebar,
+  bootstrap Jekyll theme with responsive web design
+  and focuses on text presentation.
+
+# fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
+url: ''
+
 github:
-  username: walterlv
-  link: https://github.com/walterlv
-facebook:
-  username: Xblero
+  username: github_username             # change to your github username
+
 twitter:
-  username: _lvyi_
-stackoverflow:
-  link: https://stackoverflow.com/users/6233938/walterlv
+  username: twitter_username            # change to your twitter username
 
-# Visit Analysis
-analytics:
-  google: UA-108101550-1
-  cnzz: cnzz_stat_icon_1264408226
+social:
+  # Change to your full name.
+  # It will be displayed as the default author of the posts and the copyright owner in the Footer
+  name: your_full_name
+  email: example@doamin.com             # change to your email address
+  links:
+    # The first element serves as the copyright owner's link
+    - https://twitter.com/username      # change to your twitter homepage
+    - https://github.com/username       # change to your github homepage
+    # Uncomment below to add more social links
+    # - https://www.facebook.com/username
+    # - https://www.linkedin.com/in/username
+
+google_site_verification: google_meta_tag_verification # change to your verification string
+
+# ↑ --------------------------
+
+
+google_analytics:
+  id: ''              # fill in your Google Analytics ID
+  # Google Analytics pageviews report settings
+  pv:
+    proxy_endpoint:   # fill in the Google Analytics superProxy endpoint of Google App Engine
+    cache_path:       # the local PV cache data, friendly to visitors from GFW region
+
+# Prefer color scheme setting.
+#
+# Note: Keep empty will follow the system prefer color by default,
+# and there will be a toggle to switch the theme between dark and light
+# on the bottom left of the sidebar.
+#
+# Available options:
+#
+#     light  - Use the light color scheme
+#     dark   - Use the dark color scheme
+#
+theme_mode:   # [light|dark]
+
+# The CDN endpoint for images.
+# Notice that once it is assigned, the CDN url
+# will be added to all image (site avatar & posts' images) paths starting with '/'
+#
+# e.g. 'https://cdn.com'
+img_cdn:
+
+# the avatar on sidebar, support local or CORS resources
+avatar:
+
+# boolean type, the global switch for ToC in posts.
+toc: true
+
 disqus:
-  name: walterlv
-  url: https://walterlv.com
-gitment:
-  owner: walterlv
-  client_id: 9a8b44a07f269679e9b5
-  client_secret: 3412cef75373074fd43b62462a7adef7ad1e2127
-  repo: walterlv.github.io
-leancloud:
-  appid: 2NpLNUTfjU4ey5wOeWPPiXXL-gzGzoHsz
-  appkey: OeA2qCtXi7ifv96UbMQ4J1kn
+  comments: false  # boolean type, the global switch for posts comments.
+  shortname: ''    # Fill with your Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
-# Post Settings
-excerpt_separator: ---
-paginate: 30
-per_page: 30
-paginate_path: "/blog/page:num/"
+paginate: 10
+
+# ------------ The following options are not recommended to be modified ------------------
+
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:   # Rouge Options › https://github.com/jneen/rouge#full-options
+    css_class: highlight
+    # default_lang: console
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
 collections:
-  articles:
+  tabs:
     output: true
+    sort_by: order
+
+
 defaults:
-  - scope:
-      path: "_posts"
-      type: "posts"
+  -
+    scope:
+      path: ''          # An empty string here means all files in the project
+      type: posts
     values:
-      layout: "post"
-      author: "吕毅"
-      permalink: "/post/:title.html"
-  - scope:
-      path: "_articles"
-      type: "articles"
+      layout: post
+      comments: true    # Enable comments in posts.
+      toc: true         # Display TOC column in posts.
+      # DO NOT modify the following parameter unless you are confident enough
+      # to update the code of all other post links in this project.
+      permalink: /posts/:title/
+  -
+    scope:
+      path: _drafts
     values:
-      layout: "post"
-      author: "吕毅"
-      permalink: "/article/:title.html"
+      comments: false
+  -
+    scope:
+      path: ''
+      type: tabs             # see `site.collections`
+    values:
+      layout: page
+      permalink: /:title/
 
-# Plugins
-plugins:
-  - jekyll-paginate
-  - jekyll-gist
-  - jemoji
+sass:
+  style: compressed
 
-# Others
-exclude: ['package.json', 'src', 'node_modules']
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
+exclude:
+  - '*.gem'
+  - '*.gemspec'
+  - tools
+  - docs
+  - README.md
+  - LICENSE
+  - gulpfile.js
+  - node_modules
+  - package*.json
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/

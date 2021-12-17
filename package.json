@@ -1,42 +1,30 @@
 {
-  "name": "thiagorossener.github.io",
-  "version": "1.0.0",
-  "description": "Blog pessoal de Thiago Rossener.",
-  "main": "gulpfile.js",
+  "name": "jekyll-theme-chirpy",
+  "version": "4.3.4",
+  "description": "A minimal, sidebar, responsive web design Jekyll theme that focuses on text presentation.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
   "scripts": {
-    "test": "test"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thiagorossener/thiagorossener.github.io.git"
+    "url": "git+https://github.com/cotes2020/jekyll-theme-chirpy.git"
   },
-  "keywords": [
-    "jekyll",
-    "blog",
-    "css",
-    "js",
-    "gulp",
-    "stylus"
-  ],
-  "author": "Thiago Rossener",
-  "license": "ISC",
+  "author": "Cotes Chung",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/thiagorossener/thiagorossener.github.io/issues"
+    "url": "https://github.com/cotes2020/jekyll-theme-chirpy/issues"
   },
-  "homepage": "https://github.com/thiagorossener/thiagorossener.github.io#readme",
-  "devDependencies": {
-    "autoprefixer-stylus": "^0.14.0",
-    "browser-sync": "^2.18.13",
-    "child_process": "^1.0.2",
-    "gulp": "^3.9.1",
+  "homepage": "https://github.com/cotes2020/jekyll-theme-chirpy#readme",
+  "dependencies": {
+    "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
-    "gulp-imagemin": "^3.3.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-stylus": "^2.6.0",
-    "gulp-uglify": "^3.0.0",
-    "jeet": "^7.1.0",
-    "kouto-swiss": "^1.1.0",
-    "minimist": "^1.2.0",
-    "rupture": "^0.6.2"
+    "gulp-insert": "^0.5.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-uglify": "^3.0.2",
+    "uglify-js": "^3.14.3"
   }
 }
