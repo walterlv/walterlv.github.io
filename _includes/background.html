@@ -3,12 +3,12 @@
 -->
 
 
-{% if page.image.src %}
+{% if page.coverImage %}
   {% capture bg %}
     {% unless page.image.no_bg %}{{ 'bg' }}{% endunless %}
   {% endcapture %}
   <div id="page-bluring-bg" style="
-    background-image: url('{{ page.image.src }}');
+    background-image: url('{{ page.coverImage }}');
   "></div>
 
 {% endif %}

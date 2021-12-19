@@ -3,8 +3,7 @@ title: "为 .NET Core / Framework 程序开启大内存感知（LargeAddressAwar
 date: 2021-12-13 21:01:43 +0800
 tags: dotnet windows
 position: knowledge
-image:
-  src: /static/posts/2021-12-13-20-51-53.png
+coverImage: /static/posts/2021-12-13-20-51-53.png
 ---
 
 如果你不做特殊处理，把你的项目以 x86 的架构进行编译，那么你的应用程序在 Windows 上最多只能使用 2GB 的内存（地址空间）。如果你的项目使用 .NET Framework 框架，那么现行有很多简单的方法来帮你实现大内存感知，但 .NET Core 框架下却没有。所以我写了一个库 dotnetCampus.LargeAddressAware，帮助你轻松实现 32 位程序的大内存感知。
