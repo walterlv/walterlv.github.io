@@ -4,7 +4,7 @@ date: 2021-08-05 17:20:04 +0800
 tags: wpf dotnet
 position: problem
 coverImage: /static/posts/2021-08-05-16-51-03.png
-permalink: /posts/create-a-realistic-sunshine-on-your-desktop-using-wpf.html
+permalink: /post/create-a-realistic-sunshine-on-your-desktop-using-wpf.html
 ---
 
 本文想要做的，可不是随便弄一点阳光的半透明形状，然后简单地放到桌面上，**而是真真正正地要照亮桌面上的窗口元素**！并且，全程使用 GPU 加速，而且代码超简单。

@@ -3,7 +3,7 @@ title: "文件和文件夹不存在的时候，FileSystemWatcher 监听不到文
 date: 2018-12-20 10:05:38 +0800
 tags: dotnet windows
 position: problem
-permalink: /posts/watch-file-change-even-the-file-or-directory-not-exist.html
+permalink: /post/watch-file-change-even-the-file-or-directory-not-exist.html
 ---
 
 当你需要监视文件或文件夹的改变的时候，使用 `FileSystemWatcher` 便可以完成。不过，`FileSystemWatcher` 对文件夹的监视要求文件夹必须存在，否则会产生错误“无效路径”。

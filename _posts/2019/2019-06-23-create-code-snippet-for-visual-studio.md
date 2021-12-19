@@ -5,7 +5,7 @@ date: 2019-07-05 13:32:21 +0800
 tags: visualstudio dotnet csharp
 position: starter
 coverImage: /static/posts/2019-06-23-11-06-48.png
-permalink: /posts/create-code-snippet-for-visual-studio.html
+permalink: /post/create-code-snippet-for-visual-studio.html
 ---
 
 使用 Visual Studio 的代码片段功能，我们可以快速根据已有模板创建出大量常用的代码出来。ReSharper 已经自带了一份非常好用的代码片段工具，不过使用 ReSharper 创建出来的代码片段只能用在 ReSharper 插件中。如果团队当中有一些小伙伴没有 ReSharper（毕竟很贵），那么也可以使用到 Visual Studio 原生的代码片段。

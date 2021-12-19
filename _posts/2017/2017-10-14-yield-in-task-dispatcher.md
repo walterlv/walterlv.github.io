@@ -4,7 +4,7 @@ publishDate: 2017-10-14 17:18:49 +0800
 date: 2018-10-29 13:03:35 +0800
 tags: dotnet csharp wpf uwp
 description: 一个耗时的任务，可以通过 Task.Yield 或者 Dispatcher.Yield 来中断以便分割成多个小的任务片段执行。
-permalink: /posts/yield-in-task-dispatcher.html
+permalink: /post/yield-in-task-dispatcher.html
 ---
 
 `Yield` 这个词很有意思，叫做“屈服”“放弃”“让步”，字面意义上是让出当前任务的执行权，转而让其他任务可以插入执行。`Task`、`Dispatcher`、`Thread` 都有 `Yield()` 方法，看起来都可以让出当前任务的执行权。

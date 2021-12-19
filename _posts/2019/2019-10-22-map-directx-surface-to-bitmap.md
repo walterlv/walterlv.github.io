@@ -3,7 +3,7 @@ title: "将 Direct3D11 在 GPU 中的纹理（Texture2D）导出到内存（Map�
 date: 2019-10-22 14:07:29 +0800
 tags: directx sharpdx dotnet csharp
 position: knowledge
-permalink: /posts/map-directx-surface-to-bitmap.html
+permalink: /post/map-directx-surface-to-bitmap.html
 ---
 
 Direct3D11 的使用通常不是应用程序唯一的部分，于是使用 Direct3D11 的代码如何与其他模块正确地组合在一起就是一个需要解决的问题。

@@ -5,7 +5,7 @@ date: 2021-06-25 17:36:03 +0800
 tags: dotnet maui
 position: starter
 coverImage: /static/posts/2021-05-31-15-02-58.png
-permalink: /posts/getting-started-with-maui-official-samples.html
+permalink: /post/getting-started-with-maui-official-samples.html
 ---
 
 在微软的 Build 2021 大会上，微软发布了 .NET 6 Preview 4，同时发布了于它的 MAUI 第四个预览版。在 MAUI 成为 Visual Studio 2022 的官方工作负载之前，成功编译并运行 MAUI 的示例程序会比较麻烦，本文旨在帮助大家完成示例程序的编译运行和体验。

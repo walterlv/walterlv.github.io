@@ -4,7 +4,7 @@ date: 2019-01-16 20:18:20 +0800
 tags: csharp dotnet
 position: problem
 coverImage: /static/posts/2019-01-16-20-14-28.png
-permalink: /posts/verify-a-string-as-a-file-path.html
+permalink: /post/verify-a-string-as-a-file-path.html
 ---
 
 很多方法要求传入一个字符串作为文件名或者文件路径，不过方法在实际执行到使用文件名的时候才会真正使用到这个文件名；于是这这种时候才会因为各种各样的异常发现文件名或者文件路径是不合法的。

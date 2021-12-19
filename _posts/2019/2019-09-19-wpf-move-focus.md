@@ -3,7 +3,7 @@ title: "WPF 程序如何移动焦点到其他控件"
 date: 2019-09-19 11:41:12 +0800
 tags: wpf dotnet csharp
 position: knowledge
-permalink: /posts/wpf-move-focus.html
+permalink: /post/wpf-move-focus.html
 ---
 
 WPF 中可以使用 `UIElement.Focus()` 将焦点设置到某个特定的控件，也可以使用 `TraversalRequest` 仅仅移动焦点。本文介绍如何在 WPF 程序中控制控件的焦点。

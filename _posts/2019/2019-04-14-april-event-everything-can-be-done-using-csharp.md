@@ -5,7 +5,7 @@ date: 2019-04-16 08:54:48 +0800
 tags: csharp dotnet wpf uwp xamarin web
 position: starter
 coverImage: /static/posts/2019-04-14-17-10-52.png
-permalink: /posts/april-event-everything-can-be-done-using-csharp.html
+permalink: /post/april-event-everything-can-be-done-using-csharp.html
 ---
 
 每个人都拥有 **好奇心**，好奇心驱使着我们总是去尝试做一些有趣的事情。

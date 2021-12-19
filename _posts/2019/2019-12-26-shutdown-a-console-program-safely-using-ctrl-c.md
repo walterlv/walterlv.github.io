@@ -4,7 +4,7 @@ date: 2019-12-26 14:16:11 +0800
 tags: dotnet csharp
 position: knowledge
 coverImage: /static/posts/2019-12-26-14-04-19.png
-permalink: /posts/shutdown-a-console-program-safely-using-ctrl-c.html
+permalink: /post/shutdown-a-console-program-safely-using-ctrl-c.html
 ---
 
 我的电脑上每天会跑一大堆控制台程序，于是管理这些程序的运行就成了一个问题。或者说你可能也在考虑启动一个控制台程序来完成某些特定的任务。

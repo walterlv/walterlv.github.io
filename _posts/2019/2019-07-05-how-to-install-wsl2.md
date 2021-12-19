@@ -5,7 +5,7 @@ date: 2020-04-28 20:26:41 +0800
 tags: windows linux
 position: starter
 coverImage: /static/posts/2019-07-05-08-22-01.png
-permalink: /posts/how-to-install-wsl2.html
+permalink: /post/how-to-install-wsl2.html
 ---
 
 本文介绍如何在 Windows 10 中安装 WSL2 的 Linux 子系统

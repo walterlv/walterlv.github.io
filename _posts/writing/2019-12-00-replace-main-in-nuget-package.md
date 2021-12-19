@@ -4,7 +4,7 @@ date: 2019-11-05 11:24:22 +0800
 tags: visualstudio msbuild nuget dotnet csharp
 position: knowledge
 published: false
-permalink: /posts/replace-main-in-nuget-package.html
+permalink: /post/replace-main-in-nuget-package.html
 ---
 
 

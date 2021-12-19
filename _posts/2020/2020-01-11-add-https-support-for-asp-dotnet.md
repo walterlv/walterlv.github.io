@@ -3,7 +3,7 @@ title: "三种方法为 ASP.NET Core 对外服务添加 https 支持（kestrel /
 date: 2020-01-11 20:10:25 +0800
 tags: dotnet web
 position: starter
-permalink: /posts/add-https-support-for-asp-dotnet.html
+permalink: /post/add-https-support-for-asp-dotnet.html
 ---
 
 虽然使用 Visual Studio 创建 ASP.NET Core 程序的时候可以选择是否添加 https 支持，不过这种方式只添加了 `localhost` 的证书，只有本地访问时浏览器才会承认。真正对外公开服务的时候这样是绝对没法儿提供 https 服务的。

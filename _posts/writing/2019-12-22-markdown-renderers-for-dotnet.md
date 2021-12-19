@@ -4,7 +4,7 @@ date: 2019-12-22 18:58:24 +0800
 tags: dotnet blazor wpf
 position: starter
 published: false
-permalink: /posts/markdown-renderers-for-dotnet.html
+permalink: /post/markdown-renderers-for-dotnet.html
 ---
 
 在此处编辑 blog.walterlv.com 的博客摘要

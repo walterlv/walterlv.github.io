@@ -5,7 +5,7 @@ date: 2019-03-24 14:25:49 +0800
 tags: dotnet
 position: event
 coverImage: /static/posts/2019-03-24-13-15-11.png
-permalink: /posts/december-event-microsoft-technology-salon.html
+permalink: /post/december-event-microsoft-technology-salon.html
 ---
 
 2018 年 12 月 8 日，在 CVTE·视源股份，在广州黄埔区云埔四路 6 号，我们举办了广州微软技术沙龙。现场参与人数 136 人（不含工作人员），线上参与人员 400+ 人。活动完全免费。

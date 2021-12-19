@@ -5,7 +5,7 @@ date: 2019-03-09 09:11:47 +0800
 tags: wpf dotnet powershell
 position: knowledge
 coverImage: /static/posts/2019-01-28-22-21-02.png
-permalink: /posts/powershell-of-snoop.html
+permalink: /post/powershell-of-snoop.html
 ---
 
 在 WPF 开发时，有 Snoop 的帮助，UI 的调试将变得非常轻松。使用 Snoop，能轻松地查看 WPF 中控件的可视化树以及每一个 Visual 节点的各种属性，或者查看数据上下文，或者监听查看事件的引发。

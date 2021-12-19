@@ -5,7 +5,7 @@ date: 2019-05-15 10:41:09 +0800
 tags: windows
 position: starter
 coverImage: /static/posts/2019-05-14-16-53-32.png
-permalink: /posts/directory-opus-custom-toolbar-buttons.html
+permalink: /post/directory-opus-custom-toolbar-buttons.html
 ---
 
 使用 Directory Opus 替代 Windows 自带的文件资源管理器来管理你计算机上的文件可以极大地提高你的文件处理效率。

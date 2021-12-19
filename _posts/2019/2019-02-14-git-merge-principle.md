@@ -4,7 +4,7 @@ date: 2019-02-14 21:03:00 +0800
 tags: git
 position: principle
 coverImage: /static/posts/2019-02-12-21-09-19.png
-permalink: /posts/git-merge-principle.html
+permalink: /post/git-merge-principle.html
 ---
 
 如果 git 只是一行行比较，然后把不同的行报成冲突，那么你在合并的时候可能会遇到大量的冲突；这显然不是一个好的版本管理工具。

@@ -4,7 +4,7 @@ date: 2019-09-19 10:24:12 +0800
 tags: windows wpf dotnet csharp
 position: starter
 coverImage: /static/posts/2019-09-19-10-21-31.png
-permalink: /posts/win32-child-window-style.html
+permalink: /post/win32-child-window-style.html
 ---
 
 制作传统 Win32 程序以及 Windows Forms 程序的时候，一个用户看起来独立的窗口本就是通过各种父子窗口嵌套完成的，有大量窗口句柄，窗口之间形成父子关系。不过，对于 WPF 程序来说，一个独立的窗口实际上只有一个窗口句柄，窗口内的所有内容都是 WPF 绘制的。

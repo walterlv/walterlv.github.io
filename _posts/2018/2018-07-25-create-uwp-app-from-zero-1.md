@@ -4,7 +4,7 @@ publishDate: 2018-07-25 21:20:36 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: uwp dotnet csharp
 coverImage: /static/posts/2018-07-25-10-24-17.png
-permalink: /posts/create-uwp-app-from-zero-1.html
+permalink: /post/create-uwp-app-from-zero-1.html
 ---
 
 每次使用 Visual Studio 的模板创建一个 UWP 程序，我们会在项目中发现大量的项目文件、配置、应用启动流程代码和界面代码。然而这些文件在 UWP 程序中到底是如何工作起来的？

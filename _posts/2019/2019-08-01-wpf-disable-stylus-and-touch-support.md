@@ -4,7 +4,7 @@ date: 2019-08-01 20:56:16 +0800
 tags: wpf windows dotnet csharp
 position: knowledge
 coverImage: /static/posts/2019-08-01-19-08-18.png
-permalink: /posts/wpf-disable-stylus-and-touch-support.html
+permalink: /post/wpf-disable-stylus-and-touch-support.html
 ---
 
 WPF 框架自己实现了一套触摸机制，但同一窗口只能支持一套触摸机制，于是这会禁用系统的触摸消息（`WM_TOUCH`）。这能够很大程度提升 WPF 程序的触摸响应速度，但是很多时候又会产生一些 Bug。

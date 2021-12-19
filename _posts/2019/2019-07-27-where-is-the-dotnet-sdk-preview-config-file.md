@@ -5,7 +5,7 @@ date: 2019-07-29 17:47:40 +0800
 tags: msbuild visualstudio dotnet
 position: problem
 coverImage: /static/posts/2019-07-27-09-37-10.png
-permalink: /posts/where-is-the-dotnet-sdk-preview-config-file.html
+permalink: /post/where-is-the-dotnet-sdk-preview-config-file.html
 ---
 
 本文介绍在使用 Visual Studio 2019 或者命令行执行 `MSBuild` `dotnet build` 命令时，决定是否使用 .NET Core SDK 预览版的全局配置文件。

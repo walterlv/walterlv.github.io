@@ -3,7 +3,7 @@ title: "如何编写 WPF 的标记扩展 MarkupExtension，即便在 ControlTemp
 publishDate: 2018-05-29 20:56:46 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: xaml wpf
-permalink: /posts/wpf-markup-extension-in-control-template.html
+permalink: /post/wpf-markup-extension-in-control-template.html
 ---
 
 WPF 的标记扩展为 WPF 带来了强大的扩展性。利用自定义的标记扩展，我们能够为 XAML 中的属性提供各种各样种类的值，而不仅限于自带的那一些。

@@ -5,7 +5,7 @@ date: 2020-06-13 17:39:12 +0800
 tags: windows dotnet csharp
 position: knowledge
 coverImage: /static/posts/2020-04-18-10-55-00.png
-permalink: /posts/add-global-windows-hook-in-dotnet.html
+permalink: /post/add-global-windows-hook-in-dotnet.html
 ---
 
 一般来说，大家在需要监听全局消息的时候会考虑 `SetWindowsHookEx` 这个 API。或者需要处理一些非自己编写的窗口的消息循环的时候，也会考虑使用它。

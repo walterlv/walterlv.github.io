@@ -9,7 +9,7 @@ versions:
   - 中文: /post/handle-horizontal-scrolling-of-touchpad.html
   - English: #
 coverImage: /static/posts/2017-11-23-21-52-22.png
-permalink: /posts/handle-horizontal-scrolling-of-touchpad-en.html
+permalink: /post/handle-horizontal-scrolling-of-touchpad-en.html
 ---
 
 Finally, Microsoft started to support touchpad like Apple did years ago. As Microsoft never do well in touchpad, WPF application even doesn't support horizontal scrolling of touchpad. Also, WPF uses `MouseWheel` to handle vertical scrolling, not a particular method.

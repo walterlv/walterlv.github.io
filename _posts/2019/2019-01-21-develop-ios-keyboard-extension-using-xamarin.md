@@ -5,7 +5,7 @@ date: 2019-03-04 22:15:47 +0800
 tags: xamarin dotnet csharp xaml ios
 position: starter
 coverImage: /static/posts/2019-01-21-19-43-40.png
-permalink: /posts/develop-ios-keyboard-extension-using-xamarin.html
+permalink: /post/develop-ios-keyboard-extension-using-xamarin.html
 ---
 
 作为一位 .NET 技术的死忠，开发 iOS 应用当然要使用 Xamarin 啦！

@@ -5,7 +5,7 @@ date: 2019-03-10 21:30:54 +0800
 tags: windows wpf dotnet csharp
 position: knowledge
 coverImage: /static/posts/2019-02-21-21-45-13.png
-permalink: /posts/wpf-application-with-jumplist.html
+permalink: /post/wpf-application-with-jumplist.html
 ---
 
 Windows 跳转列表是自 Windows 7 时代就带来的功能，这一功能是跟随 Windows 7 的任务栏而发布的。当时应用程序要想用上这样的功能需要调用 shell 提供的一些 API。

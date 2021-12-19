@@ -10,7 +10,7 @@ versions:
   - 中文: /post/wpf-renders-wrong-because-of-nahimicosd.html
   - English: #
 coverImage: /static/posts/2021-11-05-20-07-45.png
-permalink: /posts/wpf-renders-wrong-because-of-nahimicosd-en.html
+permalink: /post/wpf-renders-wrong-because-of-nahimicosd-en.html
 ---
 
 Recently, we have received many feedbacks from users, saying that our software interface is a mess, and there is no way to find any button locations. That's really difficult to resolve because we do nothing extra about the rendering part of our software.

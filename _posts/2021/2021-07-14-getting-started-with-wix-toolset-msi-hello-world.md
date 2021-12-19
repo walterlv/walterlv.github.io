@@ -5,7 +5,7 @@ date: 2021-07-15 19:46:48 +0800
 tags: dotnet msi wix
 position: starter
 coverImage: /static/posts/2021-07-14-15-28-01.png
-permalink: /posts/getting-started-with-wix-toolset-msi-hello-world.html
+permalink: /post/getting-started-with-wix-toolset-msi-hello-world.html
 ---
 
 本文是 [WiX Toolset 安装包制作入门教程](/post/getting-started-with-wix-toolset) 系列中的一篇，可前往阅读完整教程。

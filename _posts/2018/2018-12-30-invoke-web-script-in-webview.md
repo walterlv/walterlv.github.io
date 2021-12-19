@@ -5,7 +5,7 @@ date: 2019-03-09 09:10:11 +0800
 tags: uwp javascript
 position: starter
 coverImage: /static/posts/2018-12-30-21-49-37.png
-permalink: /posts/invoke-web-script-in-webview.html
+permalink: /post/invoke-web-script-in-webview.html
 ---
 
 UWP 中使用 WebView 时可以在网页中额外执行一些代码。于是你几乎可以在网页上做任何事情，那些你可以在浏览器控制台中做的事情。

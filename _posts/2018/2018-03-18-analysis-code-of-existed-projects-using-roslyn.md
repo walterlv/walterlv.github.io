@@ -4,7 +4,7 @@ publishDate: 2018-03-18 20:45:22 +0800
 date: 2018-06-02 09:26:14 +0800
 tags: visualstudio dotnet csharp roslyn
 coverImage: /static/posts/2018-03-18-18-51-26.png
-permalink: /posts/analysis-code-of-existed-projects-using-roslyn.html
+permalink: /post/analysis-code-of-existed-projects-using-roslyn.html
 ---
 
 Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。以至于我们只需要编写很少量的代码便能够分析我们的项目文件。

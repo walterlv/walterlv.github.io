@@ -5,7 +5,7 @@ date: 2019-05-31 20:11:59 +0800
 tags: dotnet wpf
 position: starter
 coverImage: /static/posts/2018-12-06-10-00-06.png
-permalink: /posts/migrate-wpf-project-from-dotnet-framework-to-dotnet-core.html
+permalink: /post/migrate-wpf-project-from-dotnet-framework-to-dotnet-core.html
 ---
 
 在 Connect(); 2018 大会上，微软发布了 .NET Core 3 Preview，以及基于 .NET Core 3 的 WPF；同时还发布了 Visual Studio 2019 预览版。你可以基于 .NET Core 3 创建 WPF 程序。不过，如果你已经有基于 .NET Framework 的 WPF 项目，那么如何快速迁移到基于 .NET Core 的版本呢？

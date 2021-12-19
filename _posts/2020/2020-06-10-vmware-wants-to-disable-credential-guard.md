@@ -4,7 +4,7 @@ date: 2020-06-10 08:58:01 +0800
 tags: windows
 position: problem
 coverImage: /static/posts/2020-06-08-08-53-37.png
-permalink: /posts/vmware-wants-to-disable-credential-guard.html
+permalink: /post/vmware-wants-to-disable-credential-guard.html
 ---
 
 VMware Workstation 与 Device/Credential Guard 不兼容。在禁用 Device/Credential Guard 后，可以运行 VMware Workstation。有关更多详细信息，请访问 <http://www.vmware.com/go/turnoff_CG_DG>。

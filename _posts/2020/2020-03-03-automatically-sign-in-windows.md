@@ -5,7 +5,7 @@ date: 2020-03-23 11:36:48 +0800
 tags: windows
 position: knowledge
 coverImage: /static/posts/2020-03-03-08-58-32.png
-permalink: /posts/automatically-sign-in-windows.html
+permalink: /post/automatically-sign-in-windows.html
 ---
 
 你一定要为你的 Windows 用户账户设置密码，一来会安全一些，而来可以远程登录使用；但有时出于一些特殊的目的，不希望在每次开机后都必须输入密码才能进入系统。于是你可以使用本文提供的方法在每次开机的时候免密码登录到 Windows 操作系统。

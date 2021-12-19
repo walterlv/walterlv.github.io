@@ -8,7 +8,7 @@ version:
 versions:
   - 中文: #
   - English: /post/detecting-rebuild-switch-using-msbuild-target-en.html
-permalink: /posts/detecting-rebuild-switch-using-msbuild-target.html
+permalink: /post/detecting-rebuild-switch-using-msbuild-target.html
 ---
 
 MSBuild 或 Roslyn 编译项目时均支持差量编译，毕竟为了性能。我在 [每次都要重新编译？太慢！让跨平台的 MSBuild/dotnet build 的 Target 支持差量编译](/post/msbuild-incremental-build) 一文中介绍了如何使一个 Target 支持差量编译。在那篇文章中我说到差量编译会导致 Target 不执行；也就是说，如果一个 Target 对后续的编译会产生影响，那么一定不能设置为差量编译。

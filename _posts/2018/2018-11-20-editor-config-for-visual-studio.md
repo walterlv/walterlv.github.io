@@ -4,7 +4,7 @@ publishDate: 2018-11-20 12:17:50 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: visualstudio csharp dotnet
 coverImage: /static/posts/2018-11-20-10-34-36.png
-permalink: /posts/editor-config-for-visual-studio.html
+permalink: /post/editor-config-for-visual-studio.html
 ---
 
 EditorConfig 是一种被各种编辑器广泛支持的配置，使用此配置有助于项目在整个团队中保持一致的代码风格。Visual Studio 2017 开始原生支持 EditorConfig。

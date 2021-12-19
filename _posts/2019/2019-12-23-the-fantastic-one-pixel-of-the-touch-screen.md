@@ -4,7 +4,7 @@ date: 2019-12-23 16:00:30 +0800
 tags: windows dotnet wpf
 position: problem
 coverImage: /static/posts/2019-12-23-15-39-01.png
-permalink: /posts/the-fantastic-one-pixel-of-the-touch-screen.html
+permalink: /post/the-fantastic-one-pixel-of-the-touch-screen.html
 ---
 
 如果你的屏幕分辨率是 1920×1080，那么一个全屏的窗口程序尺寸是多少呢？想都不用想，是 1920×1080。

@@ -4,7 +4,7 @@ date: 2019-05-05 21:42:43 +0800
 tags: visualstudio dotnet
 position: starter
 coverImage: /static/posts/2019-05-05-21-34-42.png
-permalink: /posts/visual-studio-extension-parallel-builds-monitor.html
+permalink: /post/visual-studio-extension-parallel-builds-monitor.html
 ---
 
 嫌项目编译太慢？不一定是 Visual Studio 的问题，有可能是你项目的引用关系决定这个编译时间真的省不下来。

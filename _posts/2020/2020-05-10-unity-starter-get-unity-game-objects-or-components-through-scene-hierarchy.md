@@ -5,7 +5,7 @@ date: 2020-05-10 15:34:05 +0800
 tags: unity
 position: starter
 coverImage: /static/posts/2020-05-10-15-16-04.png
-permalink: /posts/unity-starter-get-unity-game-objects-or-components-through-scene-hierarchy.html
+permalink: /post/unity-starter-get-unity-game-objects-or-components-through-scene-hierarchy.html
 ---
 
 在真正能玩的游戏场景中，很多脚本的执行是在不确定的游戏对象上进项的，于是会考虑在父对象或者子对象上去写脚本。这时，可能需要查找游戏对象。那么如何在脚本中找到父子游戏对象（gameObject）呢？

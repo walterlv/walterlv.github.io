@@ -4,7 +4,7 @@ publishDate: 2018-05-20 19:00:34 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: visualstudio msbuild
 coverImage: /static/posts/2018-05-20-16-34-13.png
-permalink: /posts/write-msbuild-target.html
+permalink: /post/write-msbuild-target.html
 ---
 
 我之前写过一篇 [理解 C# 项目 csproj 文件格式的本质和编译流程](/post/understand-the-csproj)，其中，`Target` 节点就是负责编译流程的最关键的节点。但因为篇幅限制，那篇文章不便详说。于是，我在本文说说 `Target` 节点。

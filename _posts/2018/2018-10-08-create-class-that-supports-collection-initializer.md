@@ -4,7 +4,7 @@ publishDate: 2018-10-08 16:34:13 +0800
 date: 2019-03-09 09:09:21 +0800
 tags: dotnet
 coverImage: /static/posts/2018-10-08-15-56-50.png
-permalink: /posts/create-class-that-supports-collection-initializer.html
+permalink: /post/create-class-that-supports-collection-initializer.html
 ---
 
 对象初始化器和集合初始化器只是语法糖，但是能让你的代码看起来更加清晰。至少能让对象初始化的代码和其他业务执行的代码分开，可读性会好一些。

@@ -4,7 +4,7 @@ date: 2019-02-27 12:26:12 +0800
 tags: nuget visualstudio
 position: starter
 coverImage: /static/posts/2019-02-27-11-58-37.png
-permalink: /posts/add-custom-nuget-source.html
+permalink: /post/add-custom-nuget-source.html
 ---
 
 本文介绍如何添加自定义的 NuGet 源。包括全局所有项目生效的 NuGet 源和仅在某些特定项目中生效的 NuGet 源。

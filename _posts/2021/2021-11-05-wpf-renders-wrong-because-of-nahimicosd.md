@@ -10,7 +10,7 @@ versions:
   - 中文: #
   - English: /post/wpf-renders-wrong-because-of-nahimicosd-en.html
 coverImage: /static/posts/2021-11-05-20-07-45.png
-permalink: /posts/wpf-renders-wrong-because-of-nahimicosd.html
+permalink: /post/wpf-renders-wrong-because-of-nahimicosd.html
 ---
 
 近期收到了多起来自用户的反馈，说我们软件界面糊成一团，完全没办法看到按钮在哪里。我一看，这可棘手了，完全不是我们软件能渲染出来的样子啊！

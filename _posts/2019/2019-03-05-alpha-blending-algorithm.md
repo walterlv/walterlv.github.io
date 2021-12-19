@@ -4,7 +4,7 @@ date: 2019-03-05 15:01:55 +0800
 tags: algorithm dotnet wpf uwp
 position: knowledge
 coverImage: /static/posts/2019-03-05-14-30-00.png
-permalink: /posts/alpha-blending-algorithm.html
+permalink: /post/alpha-blending-algorithm.html
 ---
 
 本文介绍透明度叠加算法（Alpha Blending Algorithm），并用 C#/WPF 的代码，以及像素着色器的代码 HLSL 来实现它。

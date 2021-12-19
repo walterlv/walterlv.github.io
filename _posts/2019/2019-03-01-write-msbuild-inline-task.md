@@ -4,7 +4,7 @@ date: 2019-03-01 15:12:04 +0800
 tags: msbuild dotnet visualstudio csharp
 position: starter
 coverImage: /static/posts/2019-03-01-15-09-19.png
-permalink: /posts/write-msbuild-inline-task.html
+permalink: /post/write-msbuild-inline-task.html
 ---
 
 我之前写过一些改变 MSBuild 编译过程的一些博客，包括利用 Microsoft.NET.Sdk 中各种自带的 Task 来执行各种各样的编译任务。更复杂的任务难以直接利用自带的 Task 实现，需要自己写 Task。

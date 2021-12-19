@@ -4,7 +4,7 @@ date: 2019-03-19 09:37:16 +0800
 tags: windows csharp dotnet
 position: knowledge
 coverImage: /static/posts/2019-03-19-09-21-30.png
-permalink: /posts/start-process-in-a-specific-trust-level.html
+permalink: /post/start-process-in-a-specific-trust-level.html
 ---
 
 在默认情况下，Windows 系统中启动一个进程会继承父进程的令牌。如果父进程是管理员权限，那么子进程就是管理员权限；如果父进程是标准用户权限，那么子进程也是标准用户权限。

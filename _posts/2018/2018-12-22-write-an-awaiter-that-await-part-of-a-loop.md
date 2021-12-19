@@ -4,7 +4,7 @@ date: 2018-12-22 19:50:54 +0800
 tags: dotnet csharp
 position: problem
 coverImage: /static/posts/2018-12-22-16-03-05.png
-permalink: /posts/write-an-awaiter-that-await-part-of-a-loop.html
+permalink: /post/write-an-awaiter-that-await-part-of-a-loop.html
 ---
 
 [林德熙](https://blog.lindexi.com/) 小伙伴希望保存一个文件，并且希望如果出错了也要不断地重试。然而我认为如果一直错误则应该对外抛出异常让调用者知道为什么会一直错误。

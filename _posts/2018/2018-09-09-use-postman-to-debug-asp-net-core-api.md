@@ -4,7 +4,7 @@ publishDate: 2018-09-09 20:38:19 +0800
 date: 2019-03-09 09:07:59 +0800
 tags: dotnet csharp asp
 coverImage: /static/posts/2018-09-09-19-54-25.png
-permalink: /posts/use-postman-to-debug-asp-net-core-api.html
+permalink: /post/use-postman-to-debug-asp-net-core-api.html
 ---
 
 使用 ASP.NET Core 开发简单的后台 API 还是非常容易的。涉及到 GET 请求的调试我们可以用浏览器简单搞定，那么 POST/PUT/DELETE 这样的请求呢？

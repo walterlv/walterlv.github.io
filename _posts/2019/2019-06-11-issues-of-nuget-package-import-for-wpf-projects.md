@@ -4,7 +4,7 @@ date: 2019-06-11 15:30:40 +0800
 tags: dotnet csharp wpf nuget visualstudio msbuild roslyn
 position: problem
 coverImage: /static/posts/2019-06-10-17-45-21.png
-permalink: /posts/issues-of-nuget-package-import-for-wpf-projects.html
+permalink: /post/issues-of-nuget-package-import-for-wpf-projects.html
 ---
 
 在使用 NuGet 包来分发源代码时，如果目标项目是 WPF 项目，那么会有一大堆的问题。

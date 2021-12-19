@@ -4,7 +4,7 @@ date: 2019-02-27 13:48:30 +0800
 tags: web
 position: knowledge
 coverImage: /static/posts/2019-02-27-09-06-59.png
-permalink: /posts/share-cnzz-report-to-others.html
+permalink: /post/share-cnzz-report-to-others.html
 ---
 
 友盟（cnzz）可以帮助我们分析站点的访问数据。不过如果有更多的决策者，则需要更多人可以访问到友盟的数据。

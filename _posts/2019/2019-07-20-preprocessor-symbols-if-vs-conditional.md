@@ -4,7 +4,7 @@ publishDate: 2019-07-12 14:38:32 +0800
 date: 2019-07-20 15:41:17 +0800
 tags: dotnet csharp
 position: starter
-permalink: /posts/preprocessor-symbols-if-vs-conditional.html
+permalink: /post/preprocessor-symbols-if-vs-conditional.html
 ---
 
 有小伙伴看到我有时写了 `#if` 有时写了 `[Conditional]` 问我两个不是一样的吗，何必多此一举。然而实际上两者的编译处理是不同的，因此也有不同的应用场景。

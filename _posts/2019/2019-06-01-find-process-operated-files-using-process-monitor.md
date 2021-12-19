@@ -4,7 +4,7 @@ date: 2019-06-01 13:49:15 +0800
 tags: windows
 position: problem
 coverImage: /static/posts/2019-06-01-13-36-35.png
-permalink: /posts/find-process-operated-files-using-process-monitor.html
+permalink: /post/find-process-operated-files-using-process-monitor.html
 ---
 
 很多系统问题都是可以修的，不需要重装系统，但是最近我还是重装了。发现之前正在玩的一款游戏的存档没有了……因为我原有系统的数据并没有删除，所以我还是能找回原来的游戏存档的。但是，我怎么知道这款游戏将存档放在了那个路径下呢？搜索当然是好方法，不过我喜欢玩的游戏大多是冷门游戏，有些搜不到。于是我就用 Process Monitor 找到了存档所在，恢复了我的游戏进度。

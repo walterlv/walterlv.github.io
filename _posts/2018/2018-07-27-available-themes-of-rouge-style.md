@@ -4,7 +4,7 @@ publishDate: 2018-07-27 22:15:25 +0800
 date: 2018-08-12 14:51:50 +0800
 tags: site
 coverImage: /static/posts/2018-07-27-21-10-28.png
-permalink: /posts/available-themes-of-rouge-style.html
+permalink: /post/available-themes-of-rouge-style.html
 ---
 
 写了那么久的代码，找到了满意的代码着色风格吗？想必文本编辑器的代码着色风格你已经找到了中意的了，那么你在网上 post 上去的代码呢？

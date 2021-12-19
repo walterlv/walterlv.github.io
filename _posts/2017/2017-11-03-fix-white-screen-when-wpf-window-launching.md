@@ -2,7 +2,7 @@
 title: "修复 WPF 窗口在启动期间短暂的白底显示"
 date: 2017-11-03 23:08:46 +0800
 tags: wpf
-permalink: /posts/fix-white-screen-when-wpf-window-launching.html
+permalink: /post/fix-white-screen-when-wpf-window-launching.html
 ---
 
 不管你做的 WPF 窗口做得多么简单，是否总感觉启动的那一瞬间窗口内是白白的一片？是否试过无数偏方黑科技，但始终无法解决？

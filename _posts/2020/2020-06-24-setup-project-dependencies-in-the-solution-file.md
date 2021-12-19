@@ -4,7 +4,7 @@ date: 2020-06-24 09:04:14 +0800
 tags: visualstudio dotnet
 position: problem
 coverImage: /static/posts/2019-07-24-12-17-34.png
-permalink: /posts/setup-project-dependencies-in-the-solution-file.html
+permalink: /post/setup-project-dependencies-in-the-solution-file.html
 ---
 
 有时在编译解决方案的时候，希望两个项目有明确的编译顺序，而不是自动决定，或者在并行编译的时候同时编译。

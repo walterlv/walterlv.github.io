@@ -4,7 +4,7 @@ date: 2021-07-16 16:47:57 +0800
 tags: dotnet msi wix
 position: starter
 coverImage: /static/posts/2021-07-16-16-41-05.png
-permalink: /posts/how-to-debug-wix-burn-installer.html
+permalink: /post/how-to-debug-wix-burn-installer.html
 ---
 
 WiX 本身很强大，使用本来也没那么难。奈何 WiX 3 的官方文档可读性极差且长期不更新，于是新手在使用 WiX 制作安装包时极容易出问题，导致制作的安装包各种行为不正常。

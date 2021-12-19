@@ -5,7 +5,7 @@ date: 2019-06-29 12:57:15 +0800
 tags: dotnet csharp
 position: problem
 coverImage: /static/posts/2019-03-14-22-42-34.png
-permalink: /posts/move-files-from-a-directory-to-another.html
+permalink: /post/move-files-from-a-directory-to-another.html
 ---
 
 .NET 提供了一个简单的 API 来移动一个文件夹 `Directory.Move(string sourceDirName, string destDirName)`。不过如果你稍微尝试一下这个 API 就会发现其实相当不实用。

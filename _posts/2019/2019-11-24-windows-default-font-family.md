@@ -5,7 +5,7 @@ date: 2020-04-11 09:48:31 +0800
 tags: windows
 position: knowledge
 coverImage: /static/posts/2019-11-18-21-29-13.png
-permalink: /posts/windows-default-font-family.html
+permalink: /post/windows-default-font-family.html
 ---
 
 作为中文应用的开发者，我们多半会认为系统的默认字体是“微软雅黑”。然而如果真的产生了这种误解，则很容易在开发本地化应用的时候踩坑。

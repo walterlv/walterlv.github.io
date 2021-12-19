@@ -5,7 +5,7 @@ date: 2019-10-29 11:53:34 +0800
 tags: dotnet csharp
 position: knowledge
 coverImage: /static/posts/2019-10-28-17-03-49.png
-permalink: /posts/method-group-and-event-handler.html
+permalink: /post/method-group-and-event-handler.html
 ---
 
 当我们在写 `+=` 和 `-=` 事件的时候，我们会在 `+=` 或 `-=` 的右边写上事件处理函数。我们可以写很多种不同的事件处理函数的形式，那么这些形式都是一样的吗？如果你不注意，可能出现内存泄漏问题。

@@ -4,7 +4,7 @@ publishDate: 2018-08-05 14:24:11 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: windows dotnet csharp
 coverImage: /static/posts/2018-08-05-14-02-54.png
-permalink: /posts/enable-virtual-terminal-processing.html
+permalink: /post/enable-virtual-terminal-processing.html
 ---
 
 各种操作系统的控制台都支持 ANSI 转义序列（ANSI Escape Code）。使用转义序列，可以对控制台进行很多额外的定制，例如修改颜色、修改标题栏，将文字添加下划线等。

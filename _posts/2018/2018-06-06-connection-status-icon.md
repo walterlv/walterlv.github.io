@@ -3,7 +3,7 @@ title: "微软 Windows 系统检测网络连通性（用于显示感叹号）竟
 publishDate: 2018-06-06 10:27:40 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: windows
-permalink: /posts/connection-status-icon.html
+permalink: /post/connection-status-icon.html
 ---
 
 一次我走到了弱网环境中，意外地发现浏览器打开了 <http://www.msftconnecttest.com/redirect> 网址，随后右下角的网络图标出现了一枚“感叹号”。

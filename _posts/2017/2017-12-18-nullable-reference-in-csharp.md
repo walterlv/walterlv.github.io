@@ -4,7 +4,7 @@ publishDate: 2017-12-18 21:41:56 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: csharp
 coverImage: /static/posts/2017-12-18-21-17-42.png
-permalink: /posts/nullable-reference-in-csharp.html
+permalink: /post/nullable-reference-in-csharp.html
 ---
 
 在我之前的一篇博客 [NullReferenceException，就不应该存在！](/post/wipe-out-null-reference-exception) 中，我吐槽了 C# 中 null 的弊端以及避免 null 的方法；事实上这本都是现代高级语言中极力推崇的做法。Kotlin 和 Swift 自诞生之日起引用类型就不能为空，C# 背着历史的包袱直到 8.0 才开始这么做……

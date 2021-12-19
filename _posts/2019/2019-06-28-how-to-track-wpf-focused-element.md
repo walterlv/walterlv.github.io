@@ -5,7 +5,7 @@ date: 2019-06-29 09:07:54 +0800
 tags: wpf dotnet csharp
 position: knowledge
 coverImage: /static/posts/2019-06-28-08-58-54.png
-permalink: /posts/how-to-track-wpf-focused-element.html
+permalink: /post/how-to-track-wpf-focused-element.html
 ---
 
 我们有很多的调试工具可以帮助我们查看 WPF 窗口中当前获得键盘焦点的元素。本文介绍监控当前键盘焦点元素的方法，并且提供一个不需要任何调试工具的自己绘制键盘焦点元素的方法。

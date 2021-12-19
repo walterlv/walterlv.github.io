@@ -5,7 +5,7 @@ date: 2019-04-12 09:40:06 +0800
 tags: visualstudio dotnet csharp
 position: problem
 coverImage: /static/posts/2019-02-20-22-25-48.png
-permalink: /posts/visual-studio-enable-native-code-debugging.html
+permalink: /post/visual-studio-enable-native-code-debugging.html
 ---
 
 因为我使用 Visual Studio 主要用来编写 .NET 托管程序，所以平时调试的时候是仅限托管代码的。不过有时需要在托管代码中混合调试本机代码，那么就需要额外在项目中开启本机代码调试。

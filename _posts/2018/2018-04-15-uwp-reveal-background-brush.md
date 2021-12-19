@@ -3,7 +3,7 @@ title: "UWP 流畅设计中的光照效果（容易的 RevealBorderBrush 和不�
 publishDate: 2018-04-15 09:37:14 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: uwp xaml
-permalink: /posts/uwp-reveal-background-brush.html
+permalink: /post/uwp-reveal-background-brush.html
 ---
 
 在 Windows 10.0.16299 中，RevealBrush 被引入，可以实现炫酷的鼠标滑过高亮效果和点击光照。本文将告诉大家如何完整地实现这样的效果。

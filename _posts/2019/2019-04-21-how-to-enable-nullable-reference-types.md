@@ -4,7 +4,7 @@ publishDate: 2019-04-21 19:22:00 +0800
 date: 2020-04-23 20:17:25 +0800
 tags: csharp msbuild visualstudio
 position: starter
-permalink: /posts/how-to-enable-nullable-reference-types.html
+permalink: /post/how-to-enable-nullable-reference-types.html
 ---
 
 C# 8.0 引入了可为空引用类型和不可为空引用类型。由于这是语法级别的支持，所以比传统的契约式编程具有更强的约束力。更容易帮助我们消灭 `null` 异常。

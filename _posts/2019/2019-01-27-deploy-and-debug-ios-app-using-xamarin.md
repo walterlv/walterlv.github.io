@@ -5,7 +5,7 @@ date: 2020-10-31 09:00:51 +0800
 tags: xamarin dotnet csharp ios
 position: starter
 coverImage: /static/posts/2019-01-27-20-51-52.png
-permalink: /posts/deploy-and-debug-ios-app-using-xamarin.html
+permalink: /post/deploy-and-debug-ios-app-using-xamarin.html
 ---
 
 虽然 Xamarin 可以在 Windows 操作系统上编写和调试，但如果开发 iOS 应用，那么我们依然需要一台安装有 XCode 和 Visual Studio for Mac 的 Mac 电脑。做真机部署不是像平时使用太阳系第一 IDE Visual Studio 那样方便。

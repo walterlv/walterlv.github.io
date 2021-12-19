@@ -5,7 +5,7 @@ date: 2019-04-12 09:40:26 +0800
 tags: csharp dotnet visualstudio msbuild
 position: starter
 coverImage: /static/posts/2018-12-24-21-34-59.png
-permalink: /posts/how-to-define-preprocessor-symbols.html
+permalink: /post/how-to-define-preprocessor-symbols.html
 ---
 
 条件编译符号指的是 Conditional Compilation Symbols。你可以在 Visual Studio 的项目属性中设置，也可以直接在项目文件中写入 `DefineConstants` 属性。

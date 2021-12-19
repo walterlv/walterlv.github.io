@@ -5,7 +5,7 @@ date: 2021-01-16 08:30:49 +0800
 tags: wpf dotnet csharp
 position: knowledge
 coverImage: /static/posts/2019-09-07-13-16-56.png
-permalink: /posts/wpf-transparent-window-without-allows-transparency.html
+permalink: /post/wpf-transparent-window-without-allows-transparency.html
 ---
 
 在 WPF 中，如果想做一个背景透明的异形窗口，基本上都要设置 `WindowStyle="None"`、`AllowsTransparency="True"` 这两个属性。如果不想自定义窗口样式，还需要设置 `Background="Transparent"`。这样的设置会让窗口变成 Layered Window，WPF 在这种类型窗口上的渲染性能是非常糟糕的。

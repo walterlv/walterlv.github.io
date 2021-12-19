@@ -3,7 +3,7 @@ title: ".NET Framework 和 .NET Core 在默认情况下垃圾回收（GC）机�
 date: 2020-05-15 21:50:57 +0800
 tags: dotnet
 position: knowledge
-permalink: /posts/dotnet-gc-behavior-of-local-variable.html
+permalink: /post/dotnet-gc-behavior-of-local-variable.html
 ---
 
 垃圾回收机制有一些未定义部分，一般来说不要依赖于这些未定义部分编程，否则容易出现一些诡异的 bug 或者不稳定的现象。

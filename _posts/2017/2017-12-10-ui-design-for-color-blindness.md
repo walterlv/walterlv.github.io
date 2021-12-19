@@ -4,7 +4,7 @@ publishDate: 2017-12-10 18:58:07 +0800
 date: 2019-03-14 13:00:53 +0800
 tags: ux ui
 coverImage: /static/posts/2017-12-09-16-20-39.png
-permalink: /posts/ui-design-for-color-blindness.html
+permalink: /post/ui-design-for-color-blindness.html
 ---
 
 我给博客改了主题色，从 [这样的](https://blog.lindexi.com/) 改成了 [这样的](http://walterlv.gitee.io/)；然而我问小伙伴看看效果他却并没有发现改变。

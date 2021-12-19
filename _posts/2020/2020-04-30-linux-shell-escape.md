@@ -4,7 +4,7 @@ publishDate: 2020-04-30 10:24:16 +0800
 date: 2020-04-30 11:12:46 +0800
 tags: linux
 position: knowledge
-permalink: /posts/linux-shell-escape.html
+permalink: /post/linux-shell-escape.html
 ---
 
 本文整理 Linux Shell 中的转义字符。

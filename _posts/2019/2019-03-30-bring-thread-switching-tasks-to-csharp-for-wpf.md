@@ -4,7 +4,7 @@ publishDate: 2019-03-30 08:24:45 +0800
 date: 2019-03-30 09:13:12 +0800
 tags: dotnet csharp wpf
 position: play
-permalink: /posts/bring-thread-switching-tasks-to-csharp-for-wpf.html
+permalink: /post/bring-thread-switching-tasks-to-csharp-for-wpf.html
 ---
 
 如果你要在 WPF 程序中使用线程池完成一个特殊的任务，那么使用 .NET 的 API `Task.Run` 并传入一个 Lambda 表达式可以完成。不过，使用 Lambda 表达式会带来变量捕获的一些问题，比如说你需要区分一个变量作用于是在 Lambda 表达式中，还是当前上下文全局（被 Lambda 表达式捕获到的变量）。然后，在静态分析的时候，也难以知道此 Lambda 表达式在整个方法中的执行先后顺序，不利于分析潜在的 Bug。

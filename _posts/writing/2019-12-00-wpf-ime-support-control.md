@@ -4,7 +4,7 @@ date: 2019-11-05 11:24:43 +0800
 tags: wpf dotnet csharp
 position: knowledge
 published: false
-permalink: /posts/wpf-ime-support-control.html
+permalink: /post/wpf-ime-support-control.html
 ---
 
 在此处编辑 blog.walterlv.com 的博客摘要

@@ -5,7 +5,7 @@ date: 2020-05-22 18:48:06 +0800
 tags: unity
 position: starter
 coverImage: /static/posts/2020-05-05-18-42-14.png
-permalink: /posts/unity-starter-unity3d-skybox.html
+permalink: /post/unity-starter-unity3d-skybox.html
 ---
 
 在 Unity 编辑器的主界面中我们可以很容易制作各种场景物体，但天空如何制作呢？

@@ -3,7 +3,7 @@ title: "StyleCop 是什么，可以帮助团队带来什么价值？"
 date: 2018-12-15 16:14:38 +0800
 tags: dotnet csharp visualstudio
 position: knowledge
-permalink: /posts/what-is-stylecop.html
+permalink: /post/what-is-stylecop.html
 ---
 
 StyleCop 本质上是一个 C# 源代码规则分析器，可以帮助团队成员强制执行一组代码样式和一致性规则。

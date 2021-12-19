@@ -4,7 +4,7 @@ date: 2019-06-30 13:36:09 +0800
 tags: visualstudio dotnet csharp
 position: starter
 coverImage: /static/posts/2019-06-30-13-28-01.png
-permalink: /posts/cancel-building-if-error-occurred-in-visual-studio.html
+permalink: /post/cancel-building-if-error-occurred-in-visual-studio.html
 ---
 
 对于稍微大一点的 .NET 解决方案来说，编译时间通常都会长一些。如果项目结构和差量编译优化的好，可能编译完也就 5~30 秒，但如果没有优化好，那么出现 1~3 分钟都是可能的。

@@ -4,7 +4,7 @@ publishDate: 2018-07-12 15:57:30 +0800
 date: 2021-11-12 14:31:33 +0800
 tags: wpf uwp dotnet windows
 coverImage: /static/posts/2018-07-12-09-22-32.png
-permalink: /posts/wpf-simulate-native-window-style-using-window-chrome.html
+permalink: /post/wpf-simulate-native-window-style-using-window-chrome.html
 ---
 
 WPF 自定义窗口样式有多种方式，不过基本核心实现都是在修改 Win32 窗口样式。然而，Windows 上的应用就应该有 Windows 应用的样子嘛，在保证自定义的同时也能与其他窗口样式保持一致当然能最大程度保证 Windows 操作系统上的体验一致性。

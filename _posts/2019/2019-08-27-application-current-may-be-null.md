@@ -5,7 +5,7 @@ date: 2019-08-27 13:05:49 +0800
 tags: wpf dotnet csharp
 position: problem
 coverImage: /static/posts/2019-08-27-13-04-03.png
-permalink: /posts/application-current-may-be-null.html
+permalink: /post/application-current-may-be-null.html
 ---
 
 在 WPF 程序中，可能会存在 `Application.Current.Dispatcher.Xxx` 这样的代码让一部分逻辑回到主 UI 线程。因为发现在调用这句代码的时候出现了 `NullReferenceException`，于是就有三位小伙伴告诉我说 `Current` 和 `Dispatcher` 属性都可能为 `null`。

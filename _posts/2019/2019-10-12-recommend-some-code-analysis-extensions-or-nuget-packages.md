@@ -5,7 +5,7 @@ date: 2020-03-23 11:31:59 +0800
 tags: dotnet csharp
 position: principle
 coverImage: /static/posts/2019-10-12-10-19-55.png
-permalink: /posts/recommend-some-code-analysis-extensions-or-nuget-packages.html
+permalink: /post/recommend-some-code-analysis-extensions-or-nuget-packages.html
 ---
 
 如果你使用的是旧版本的 Visual Studio，那么默认的代码分析规则集是“最小建议规则集”。基于这个，写出来的代码其实只能说是能跑通过而已。随着 Roslyn 的发布，带来了越来越多更强大的代码分析器，可以为编写高质量的代码带来更多的帮助。

@@ -4,7 +4,7 @@ publishDate: 2018-03-04 13:30:14 +0800
 date: 2020-05-06 08:13:27 +0800
 tags: site
 coverImage: /static/posts/2018-03-04-12-14-41.png
-permalink: /posts/setup-jekyll-in-windows.html
+permalink: /post/setup-jekyll-in-windows.html
 ---
 
 Jekyll 是一个不错的静态博客工具，本文将提供快速在 Windows 系统上搭建 Jekyll 开发环境的方法。

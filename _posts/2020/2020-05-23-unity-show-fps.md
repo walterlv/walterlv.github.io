@@ -5,7 +5,7 @@ date: 2020-05-23 16:37:08 +0800
 tags: unity csharp
 position: knowledge
 coverImage: /static/posts/2020-05-23-15-16-44.png
-permalink: /posts/unity-show-fps.html
+permalink: /post/unity-show-fps.html
 ---
 
 本文介绍如何在 Unity3D 场景中显示帧率。

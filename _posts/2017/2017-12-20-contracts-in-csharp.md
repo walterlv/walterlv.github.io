@@ -4,7 +4,7 @@ publishDate: 2017-12-20 23:04:21 +0800
 date: 2019-03-14 12:57:32 +0800
 tags: csharp dotnet
 coverImage: /static/posts/2017-12-20-22-19-10.png
-permalink: /posts/contracts-in-csharp.html
+permalink: /post/contracts-in-csharp.html
 ---
 
 > 将文档放到代码里面，文档才会及时地更新！

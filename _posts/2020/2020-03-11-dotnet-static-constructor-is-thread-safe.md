@@ -5,7 +5,7 @@ date: 2020-03-23 11:37:11 +0800
 tags: dotnet
 position: knowledge
 published: false
-permalink: /posts/dotnet-static-constructor-is-thread-safe.html
+permalink: /post/dotnet-static-constructor-is-thread-safe.html
 ---
 
 今天有小伙伴在评估某类线程安全问题的时候，怀疑到静态构造函数里面去了。于是就有了本文。

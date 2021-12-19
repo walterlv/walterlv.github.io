@@ -4,7 +4,7 @@ date: 2019-10-12 11:35:04 +0800
 tags: dotnet csharp
 position: knowledge
 coverImage: /static/posts/2019-10-12-11-14-12.png
-permalink: /posts/use-editor-config-file-to-config-diagnostic-severities.html
+permalink: /post/use-editor-config-file-to-config-diagnostic-severities.html
 ---
 
 随着 Visual Studio 2019 更新，在 Visual Studio 中编写代码的时候也带来了基于 Roslyn 的代码质量分析。有一些代码分析严重程度可能与团队约定的不一致，这时就需要配置规则的严重程度。另外如果是个人使用插件安装了分析器，也可以配置一些严重程度满足个人的喜好。

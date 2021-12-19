@@ -3,7 +3,7 @@ title: "使用 Emit 生成 IL 代码"
 publishDate: 2018-04-22 21:14:58 +0800
 date: 2018-09-01 08:11:23 +0800
 tags: dotnet csharp
-permalink: /posts/generate-il-using-emit.html
+permalink: /post/generate-il-using-emit.html
 ---
 
 .NET Core/.NET Framework 的 `System.Reflection.Emit` 命名空间为我们提供了动态生成 IL 代码的能力。利用这项能力，我们能够在运行时生成一段代码/一个方法/一个类/一个程序集。

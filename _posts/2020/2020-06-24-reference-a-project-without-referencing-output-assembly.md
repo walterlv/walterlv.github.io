@@ -4,7 +4,7 @@ date: 2020-06-24 08:42:26 +0800
 tags: visualstudio dotnet
 position: problem
 coverImage: /static/posts/2019-07-24-12-04-50.png
-permalink: /posts/reference-a-project-without-referencing-output-assembly.html
+permalink: /post/reference-a-project-without-referencing-output-assembly.html
 ---
 
 正常当两个 .NET 项目有引用的时候，会将一个的输出拷贝到另一个的输出目录下。但有时我们只是希望通过引用建立一个依赖关系而已，最终两个项目的输出是独立的。

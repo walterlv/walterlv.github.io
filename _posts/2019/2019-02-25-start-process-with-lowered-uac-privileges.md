@@ -4,7 +4,7 @@ publishDate: 2019-02-25 07:28:19 +0800
 date: 2019-03-19 09:36:49 +0800
 tags: windows dotnet csharp
 position: problem
-permalink: /posts/start-process-with-lowered-uac-privileges.html
+permalink: /post/start-process-with-lowered-uac-privileges.html
 ---
 
 在 Windows 系统中，管理员权限和非管理员权限运行的程序之间不能使用 Windows 提供的通信机制进行通信。对于部分文件夹（ProgramData），管理员权限创建的文件是不能以非管理员权限修改和删除的。

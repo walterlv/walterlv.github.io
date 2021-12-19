@@ -5,7 +5,7 @@ tags: vscode
 position: starter
 published: false
 coverImage: /static/posts/2018-12-30-17-06-59.png
-permalink: /posts/run-command-in-shortcut-key-with-arguments-in-vscode.html
+permalink: /post/run-command-in-shortcut-key-with-arguments-in-vscode.html
 ---
 
 为 VSCode 安装插件可以添加各种各样的功能，不过有时候我只是期望简单配置一个私有的功能。这时候通用性可能更加重要 —— 一个能够执行所有命令并支持快捷键和参数的方法。

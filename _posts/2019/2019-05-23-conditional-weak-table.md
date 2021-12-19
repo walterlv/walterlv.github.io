@@ -4,7 +4,7 @@ date: 2019-05-23 13:17:23 +0800
 tags: dotnet csharp
 position: knowledge
 coverImage: /static/posts/2019-05-23-13-06-36.png
-permalink: /posts/conditional-weak-table.html
+permalink: /post/conditional-weak-table.html
 ---
 
 如果你使用过 WPF/UWP 等 XAML UI 框架，那么应该了解到附加属性的概念。那么没有依赖属性支持的时候如何做附加属性的功能呢？你可能会想到弱引用。但这需要做一个弱引用字典，要写的代码还是非常麻烦的。

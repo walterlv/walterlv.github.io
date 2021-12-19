@@ -4,7 +4,7 @@ date: 2018-12-24 22:36:28 +0800
 tags: roslyn csharp visualstudio msbuild
 position: knowledge
 coverImage: /static/posts/2018-12-24-22-29-21.png
-permalink: /posts/roslyn-syntax-tree-supporting-preprocessor-symbols.html
+permalink: /post/roslyn-syntax-tree-supporting-preprocessor-symbols.html
 ---
 
 我们在代码中会写 `#if DEBUG` 或者 `[Conditional("DEBUG")]` 来使用已经定义好的条件编译符号。而定义条件编译符号可以在代码中使用 `#define WALTERLV` 来实现，也可以通过在项目属性中设置条件编译符号（Conditional Compilation Symbols）来实现。

@@ -4,7 +4,7 @@ publishDate: 2018-03-16 13:40:41 +0800
 date: 2018-09-01 08:12:39 +0800
 tags: dotnet csharp
 coverImage: /static/posts/2018-03-16-13-07-51.png
-permalink: /posts/where-is-the-gray-candidate-window-come-from.html
+permalink: /post/where-is-the-gray-candidate-window-come-from.html
 ---
 
 为什么屏幕上出现了一个灰框，里面有黑色数字，而且还不消失？强迫症难以忍受啊！

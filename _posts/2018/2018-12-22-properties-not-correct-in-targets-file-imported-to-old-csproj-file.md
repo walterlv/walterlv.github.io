@@ -4,7 +4,7 @@ publishDate: 2018-12-22 22:30:12 +0800
 date: 2019-04-12 09:40:00 +0800
 tags: dotnet visualstudio msbuild roslyn nuget
 position: problem
-permalink: /posts/properties-not-correct-in-targets-file-imported-to-old-csproj-file.html
+permalink: /post/properties-not-correct-in-targets-file-imported-to-old-csproj-file.html
 ---
 
 我在之前的博客中有教大家如何编写 NuGet 工具包，其中就有编写 .targets 文件。

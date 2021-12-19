@@ -5,7 +5,7 @@ date: 2021-11-22 16:35:33 +0800
 tags: windows powershell
 position: starter
 coverImage: /static/posts/2021-11-18-12-16-48.png
-permalink: /posts/beautify-powershell-like-zsh.html
+permalink: /post/beautify-powershell-like-zsh.html
 ---
 
 不知你有没有看过 Linux 上 oh-my-zsh 的样子？看过之后你一定会惊叹，原来命令行还能这么玩！然而 Windows 下能这么玩吗？答案是可行的，接下来就来看看怎么玩。

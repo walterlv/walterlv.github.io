@@ -5,7 +5,7 @@ date: 2021-06-07 15:14:39 +0800
 tags: dotnet csharp visualstudio nuget msbuild roslyn wpf
 position: starter
 coverImage: /static/posts/2019-06-16-17-50-20.png
-permalink: /posts/build-source-code-package-for-wpf-projects.html
+permalink: /post/build-source-code-package-for-wpf-projects.html
 ---
 
 默认情况下，我们打包 NuGet 包时，目标项目安装我们的 NuGet 包会引用我们生成的库文件（dll）。除此之外，我们也可以专门做 NuGet 工具包，还可以做 NuGet 源代码包。然而做源代码包可能是其中最困难的一种了，目标项目安装完后，这些源码将直接随目标项目一起编译。

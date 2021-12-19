@@ -4,7 +4,7 @@ date: 2019-11-05 11:24:35 +0800
 tags: wpf dotnet csharp
 position: starter
 published: false
-permalink: /posts/wpf-attach-ui-using-adorner.html
+permalink: /post/wpf-attach-ui-using-adorner.html
 ---
 
 在此处编辑 blog.walterlv.com 的博客摘要

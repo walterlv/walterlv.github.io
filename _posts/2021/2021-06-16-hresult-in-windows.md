@@ -4,7 +4,7 @@ date: 2021-06-16 10:51:05 +0800
 tags: windows
 position: knowledge
 coverImage: /static/posts/2021-06-16-10-36-42.png
-permalink: /posts/hresult-in-windows.html
+permalink: /post/hresult-in-windows.html
 ---
 
 Windows 协议文档中所描述的协议规范中，错误码使用 HRESULT、Win32 错误码和 NTSTATUS 来描述。本文科普一下 HRESULT。

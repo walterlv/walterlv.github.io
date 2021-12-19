@@ -5,7 +5,7 @@ date: 2019-03-04 22:14:42 +0800
 tags: dotnet csharp
 position: problem
 coverImage: /static/posts/2019-01-21-21-56-04.png
-permalink: /posts/notify-text-changed-when-typing-in-console-application.html
+permalink: /post/notify-text-changed-when-typing-in-console-application.html
 ---
 
 这真是一个诡异的需求。为什么我需要在命令行中得知用户输入文字的改变啊！实际上我希望实现的是：在命令行中输入一段文字，然后不断地将这段文字发往其他地方。

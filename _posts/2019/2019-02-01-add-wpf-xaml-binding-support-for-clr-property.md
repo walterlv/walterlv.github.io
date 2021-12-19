@@ -5,7 +5,7 @@ date: 2019-03-09 09:12:06 +0800
 tags: wpf dotnet csharp xaml
 position: problem
 coverImage: /static/posts/2019-02-01-00-02-34.png
-permalink: /posts/add-wpf-xaml-binding-support-for-clr-property.html
+permalink: /post/add-wpf-xaml-binding-support-for-clr-property.html
 ---
 
 如果你写了一个 `MarkupExtension` 在 XAML 当中使用，你会发现你在 `MarkupExtension` 中定时的属性是无法使用 XAML 绑定的，因为 `MarkupExtension` 不是一个 `DependencyObject`。

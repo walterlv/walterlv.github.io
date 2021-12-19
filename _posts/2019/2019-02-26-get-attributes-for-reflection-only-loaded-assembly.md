@@ -4,7 +4,7 @@ publishDate: 2019-02-26 21:28:08 +0800
 date: 2019-03-04 22:14:26 +0800
 tags: dotnet csharp
 position: knowledge
-permalink: /posts/get-attributes-for-reflection-only-loaded-assembly.html
+permalink: /post/get-attributes-for-reflection-only-loaded-assembly.html
 ---
 
 平时我们获取一个程序集或者类型的 `Attribute` 是非常轻松的，只需要通过 `GetCustomAttribute` 方法就能拿到实例然后获取其中的值。但是，有时我们仅为反射加载一些程序集的时候，获取这些元数据就不那么简单了，因为我们没有加载目标程序集中的类型。

@@ -5,7 +5,7 @@ date: 2020-05-23 12:00:00 +0800
 tags: dotnet csharp
 position: knowledge
 published: false
-permalink: /posts/dotnet-in-out-keywords-and-in-out-attributes.html
+permalink: /post/dotnet-in-out-keywords-and-in-out-attributes.html
 ---
 
 在此处编辑 blog.walterlv.com 的博客摘要

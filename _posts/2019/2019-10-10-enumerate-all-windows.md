@@ -4,7 +4,7 @@ date: 2019-10-10 12:11:37 +0800
 tags: windows dotnet csharp
 position: knowledge
 coverImage: /static/posts/2019-10-10-12-06-19.png
-permalink: /posts/enumerate-all-windows.html
+permalink: /post/enumerate-all-windows.html
 ---
 
 在 Windows 应用开发中，如果需要操作其他的窗口，那么可以使用 `EnumWindows` 这个 API 来枚举这些窗口。

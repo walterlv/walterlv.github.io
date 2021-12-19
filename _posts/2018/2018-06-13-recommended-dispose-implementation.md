@@ -3,7 +3,7 @@ title: "C#/.NET 中推荐的 Dispose 模式的实现"
 publishDate: 2015-02-05 10:10:00 +0800
 date: 2018-06-13 11:02:37 +0800
 tags: csharp dotnet
-permalink: /posts/recommended-dispose-implementation.html
+permalink: /post/recommended-dispose-implementation.html
 ---
 
 如果你觉得你的类需要实现 `IDisposable` 接口，还是需要注意一些坑的。不过前人准备了 **Dispose 模式** 供我们参考，最大程度避免这样的坑。

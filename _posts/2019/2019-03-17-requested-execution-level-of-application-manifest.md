@@ -5,7 +5,7 @@ date: 2019-03-20 21:39:33 +0800
 tags: windows dotnet csharp wpf
 position: knowledge
 coverImage: /static/posts/2019-03-17-16-34-34.png
-permalink: /posts/requested-execution-level-of-application-manifest.html
+permalink: /post/requested-execution-level-of-application-manifest.html
 ---
 
 如果你的程序对 Windows 运行权限有要求，那么需要设置应用程序清单。本文介绍如何添加应用程序清单，并解释其中各项 UAC 权限设置的实际效果。

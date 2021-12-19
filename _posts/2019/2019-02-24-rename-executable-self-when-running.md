@@ -5,7 +5,7 @@ date: 2019-03-10 21:30:52 +0800
 tags: windows dotnet csharp
 position: knowledge
 coverImage: /static/posts/2019-02-24-17-26-25.png
-permalink: /posts/rename-executable-self-when-running.html
+permalink: /post/rename-executable-self-when-running.html
 ---
 
 程序如何自己更新自己呢？你可能会想到启动一个新的程序或者脚本来更新自己。然而 Windows 操作系统允许一个应用程序在运行期间修改自己的名称甚至移动自己到另一个文件夹中。利用这一点，我们可以很简单直接地做程序的 OTA 自动更新。

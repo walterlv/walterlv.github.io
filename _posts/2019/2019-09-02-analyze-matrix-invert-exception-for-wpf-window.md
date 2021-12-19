@@ -5,7 +5,7 @@ date: 2019-09-02 14:13:35 +0800
 tags: wpf dotnet csharp
 position: problem
 coverImage: /static/posts/2019-09-02-09-51-48.png
-permalink: /posts/analyze-matrix-invert-exception-for-wpf-window.html
+permalink: /post/analyze-matrix-invert-exception-for-wpf-window.html
 ---
 
 最近总是收到一个异常 “`System.InvalidOperationException: 转换不可逆。`”，然而看其堆栈，一点点自己写的代码都没有。到底哪里除了问题呢？

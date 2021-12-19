@@ -4,7 +4,7 @@ date: 2020-04-30 11:40:22 +0800
 tags: windows
 position: knowledge
 published: false
-permalink: /posts/setup-ssl-certificate-for-rdp.html
+permalink: /post/setup-ssl-certificate-for-rdp.html
 ---
 
 在此处编辑 blog.walterlv.com 的博客摘要

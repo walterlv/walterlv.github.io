@@ -5,7 +5,7 @@ date: 2020-03-11 17:02:19 +0800
 tags: dotnet
 position: problem
 coverImage: /static/posts/2020-03-11-17-01-05.png
-permalink: /posts/dotnet-webclient-decompression-when-downloaded.html
+permalink: /post/dotnet-webclient-decompression-when-downloaded.html
 ---
 
 一直在使用 `WebClient` 下载文件，.NET 已经封装好，所以用起来代码非常简洁；但直到今天发现有一个文件一直不能正确下载下来。

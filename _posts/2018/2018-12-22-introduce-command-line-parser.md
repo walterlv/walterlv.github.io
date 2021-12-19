@@ -5,7 +5,7 @@ date: 2018-12-30 16:10:22 +0800
 tags: dotnet csharp
 position: knowledge
 coverImage: /static/posts/2018-12-22-22-56-11.png
-permalink: /posts/introduce-command-line-parser.html
+permalink: /post/introduce-command-line-parser.html
 ---
 
 `CommandLineParser` 是一款用于解析命令行参数的 NuGet 包。你只需要关注你的业务，而命令行解析只需要极少量的配置代码。

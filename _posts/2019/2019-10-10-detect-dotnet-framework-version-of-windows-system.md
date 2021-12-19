@@ -4,7 +4,7 @@ date: 2019-10-10 16:51:58 +0800
 tags: dotnet csharp
 position: knowledge
 coverImage: /static/posts/2019-10-10-14-57-02.png
-permalink: /posts/detect-dotnet-framework-version-of-windows-system.html
+permalink: /post/detect-dotnet-framework-version-of-windows-system.html
 ---
 
 如果你希望知道某台计算机上安装了哪些版本的 .NET Framework，那么正好本文可以帮助你解决问题。

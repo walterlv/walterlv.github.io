@@ -5,7 +5,7 @@ date: 2020-01-13 08:04:22 +0800
 tags: dotnet web
 position: starter
 coverImage: /static/posts/2020-01-12-21-08-49.png
-permalink: /posts/configure-urls-and-port-for-asp-dotnet.html
+permalink: /post/configure-urls-and-port-for-asp-dotnet.html
 ---
 
 Web 服务需要配置监听的 IP 和端口才可以对外提供真正的服务。本文介绍如何设置 ASP.NET Core 程序监听的 IP 和端口。

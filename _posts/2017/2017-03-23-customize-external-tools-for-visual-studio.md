@@ -5,7 +5,7 @@ date: 2019-03-04 11:06:33 +0800
 tags: visualstudio
 position: knowledge
 coverImage: /static/posts/2019-02-02-10-13-02.png
-permalink: /posts/customize-external-tools-for-visual-studio.html
+permalink: /post/customize-external-tools-for-visual-studio.html
 ---
 
 Visual Studio 支持自定义的外部命令，于是即便 Visual Studio 原生没有的功能，插件没有提供的功能，你也能仅仅通过配置就实现。比如，我们可以一键打开 Git Bash 输入 git 命令，比如可以一键打开项目或者文件所在的文件夹。

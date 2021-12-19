@@ -4,7 +4,7 @@ date: 2021-07-16 17:51:20 +0800
 tags: dotnet msi wix
 position: problem
 coverImage: /static/posts/2021-07-16-17-41-15.png
-permalink: /posts/terminated-in-a-root-certificate-which-is-not-trusted.html
+permalink: /post/terminated-in-a-root-certificate-which-is-not-trusted.html
 ---
 
 有时在安装程序时无法安装出现错误，或者在更新某些系统组件时也遇到同样的错误：“已处理证书链，但是在不受信任提供程序信任的根证书中终止。”。

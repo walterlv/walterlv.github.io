@@ -4,7 +4,7 @@ date: 2019-01-29 18:04:22 +0800
 tags: roslyn dotnet
 position: knowledge
 published: false
-permalink: /posts/find-definitions-and-references-using-roslyn.html
+permalink: /post/find-definitions-and-references-using-roslyn.html
 ---
 
 在此处编辑 walterlv.com 的博客摘要

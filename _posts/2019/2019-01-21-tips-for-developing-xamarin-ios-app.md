@@ -5,7 +5,7 @@ date: 2019-01-22 09:11:53 +0800
 tags: xamarin ios
 position: knowledge
 coverImage: /static/posts/2019-01-21-15-19-55.png
-permalink: /posts/tips-for-developing-xamarin-ios-app.html
+permalink: /post/tips-for-developing-xamarin-ios-app.html
 ---
 
 本文收集整理使用 Xamarin 开发 iOS 应用时可能会遇到的各种问题。

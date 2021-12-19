@@ -5,7 +5,7 @@ date: 2020-04-23 20:16:44 +0800
 tags: csharp visualstudio msbuild
 position: knowledge
 coverImage: /static/posts/2019-04-21-20-07-16.png
-permalink: /posts/nullable-context-options-warnings.html
+permalink: /post/nullable-context-options-warnings.html
 ---
 
 C# 8.0 引入了可为空引用类型和不可为空引用类型。当你需要给你或者团队更严格的要求时，可能需要定义这部分的警告和错误级别。

@@ -5,7 +5,7 @@ date: 2020-01-13 08:05:30 +0800
 tags: web
 position: starter
 coverImage: /static/posts/2020-01-12-19-55-56.png
-permalink: /posts/apply-for-free-ssl-certificates-using-freessl.html
+permalink: /post/apply-for-free-ssl-certificates-using-freessl.html
 ---
 
 到现在还不为你的网站添加 https 的话，浏览器已经会非常显眼地显示“不安全”了。

@@ -5,7 +5,7 @@ date: 2020-06-19 00:05:08 +0800
 tags: visualstudio dotnet
 position: problem
 coverImage: /static/posts/2020-06-18-18-01-22.png
-permalink: /posts/dotnet-version-number-too-large.html
+permalink: /post/dotnet-version-number-too-large.html
 ---
 
 试过给 .NET Core 项目设置一个大于 65535 的版本号吗？可能没有，因为设置了会炸！

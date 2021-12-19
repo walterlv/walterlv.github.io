@@ -4,7 +4,7 @@ date: 2020-04-27 21:06:05 +0800
 tags: unity csharp
 position: starter
 coverImage: /static/posts/2020-04-27-19-12-32.png
-permalink: /posts/unity-starter-config-visual-studio-tools-for-unity.html
+permalink: /post/unity-starter-config-visual-studio-tools-for-unity.html
 ---
 
 Visual Studio 安装过程中一起勾选的 Visual Studio Tools for Unity 提供了与 Unity 编辑器方便的交互功能，充分使用 Visual Studio Tools for Unity 可以提升一部分开发效率减少一点点坑。

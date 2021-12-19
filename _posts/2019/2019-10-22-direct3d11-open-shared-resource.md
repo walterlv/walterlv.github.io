@@ -4,7 +4,7 @@ publishDate: 2019-10-22 11:39:59 +0800
 date: 2019-10-22 14:07:30 +0800
 tags: directx sharpdx dotnet
 position: knowledge
-permalink: /posts/direct3d11-open-shared-resource.html
+permalink: /post/direct3d11-open-shared-resource.html
 ---
 
 如果你得到了一个来自于其他进程或者其他模块的 Direct3D11 的共享资源，即 SharedHandle 句柄，那么可以使用本文提到的方法将其转换成 Direct3D11 的设备和纹理，这样你可以进行后续的其他处理。

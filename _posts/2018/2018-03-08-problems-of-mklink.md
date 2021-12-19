@@ -3,7 +3,7 @@ title: "解决 mklink 使用中的各种坑（硬链接，软链接/符号链接
 publishDate: 2018-03-08 20:23:06 +0800
 date: 2019-03-14 13:01:14 +0800
 tags: windows
-permalink: /posts/problems-of-mklink.html
+permalink: /post/problems-of-mklink.html
 ---
 
 通过 mklink 命令可以创建文件或文件夹的链接，而这种链接跟快捷方式是不一样的。然而我们还可能会遇到其使用过程中的一些坑，本文将整理这些坑并提供解决方法。

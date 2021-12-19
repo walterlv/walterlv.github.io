@@ -4,7 +4,7 @@ publishDate: 2021-06-18 13:45:29 +0800
 date: 2021-06-18 15:42:18 +0800
 tags: csharp dotnet
 position: knowledge
-permalink: /posts/thread-safety-of-csharp-event.html
+permalink: /post/thread-safety-of-csharp-event.html
 ---
 
 时不时会有小伙伴跟我提到在 C# 写事件 `+=` `-=` 以及 `Invoke` 时可能遇到线程安全问题。然而实际上这些操作并不会有线程安全问题，所以我特别写一篇博客来说明一下，从原理层面说说为什么不会有线程安全问题。

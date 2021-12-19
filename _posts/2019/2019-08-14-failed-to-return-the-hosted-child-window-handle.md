@@ -4,7 +4,7 @@ date: 2019-08-14 16:32:42 +0800
 tags: wpf windows dotnet csharp
 position: problem
 coverImage: /static/posts/2019-08-14-16-08-13.png
-permalink: /posts/failed-to-return-the-hosted-child-window-handle.html
+permalink: /post/failed-to-return-the-hosted-child-window-handle.html
 ---
 
 当试图在 WPF 窗口中嵌套显示 Win32 子窗口的时候，你有可能出现错误：“`BuildWindowCore 无法返回寄宿的子窗口句柄。`”。

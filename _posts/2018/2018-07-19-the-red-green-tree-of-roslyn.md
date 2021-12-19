@@ -3,7 +3,7 @@ title: "理解 Roslyn 中的红绿树（Red-Green Trees）"
 date: 2018-07-19 19:48:52 +0800
 tags: roslyn dotnet csharp
 coverImage: /static/posts/2018-07-19-20-07-50.png
-permalink: /posts/the-red-green-tree-of-roslyn.html
+permalink: /post/the-red-green-tree-of-roslyn.html
 ---
 
 Roslyn 的 API 是非常易用的。即便如此复杂的 C# 语法，建立的复杂的 C# 语法树，还有其复杂的树遍历和修改过程，也都被其 API 包装得干净简洁。

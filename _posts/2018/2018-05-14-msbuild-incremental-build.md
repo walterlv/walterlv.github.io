@@ -3,7 +3,7 @@ title: "每次都要重新编译？太慢！让跨平台的 MSBuild/dotnet build
 publishDate: 2018-05-14 15:46:50 +0800
 date: 2018-07-28 17:52:22 +0800
 tags: visualstudio msbuild
-permalink: /posts/msbuild-incremental-build.html
+permalink: /post/msbuild-incremental-build.html
 ---
 
 如果你干预到了项目的编译过程，可能就需要考虑到差量编译了。不然——当你的项目大起来的时候，就会感受到每次都重新编译时，每次重复调试的过程都要进行漫长等待时的绝望和无奈。

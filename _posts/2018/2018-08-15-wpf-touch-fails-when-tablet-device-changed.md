@@ -8,7 +8,7 @@ version:
 versions:
   - 中文: #
   - English: /post/wpf-touch-fails-when-tablet-device-changed-en.html
-permalink: /posts/wpf-touch-fails-when-tablet-device-changed.html
+permalink: /post/wpf-touch-fails-when-tablet-device-changed.html
 ---
 
 在 .NET Framework 4.7 以前，WPF 程序的触摸处理是基于操作系统组件但又自成一套的，这其实也为其各种各样的触摸失效问题埋下了伏笔。再加上它出现得比较早，触摸失效问题也变得更加难以解决。即便是 .NET Framework 4.7 以后也需要开发者手动开启 `Pointer` 消息，并且存在兼容性问题。

@@ -4,7 +4,7 @@ publishDate: 2018-04-22 20:23:26 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: dotnet csharp
 coverImage: /static/posts/2018-04-22-18-35-42.png
-permalink: /posts/how-to-quickly-write-emit-code.html
+permalink: /post/how-to-quickly-write-emit-code.html
 ---
 
 .NET Core/.NET Framework 的 `System.Reflection.Emit` 命名空间为我们提供了动态生成 IL 代码的能力。利用这项能力，我们能够在运行时生成一段代码/一个方法/一个类/一个程序集。

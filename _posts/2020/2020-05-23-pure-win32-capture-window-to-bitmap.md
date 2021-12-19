@@ -3,7 +3,7 @@ title: "Win32/C# 应用不依赖任何库使用纯 GDI+ 对窗口截图（BitBlt
 date: 2020-05-23 13:52:28 +0800
 tags: windows dotnet csharp
 position: knowledge
-permalink: /posts/pure-win32-capture-window-to-bitmap.html
+permalink: /post/pure-win32-capture-window-to-bitmap.html
 ---
 
 在 Windows 上有 GDI+ 来操作位图，不止能完成很多的位图操作，还提供了与 Win32 窗口的互操作，可以截到 Win32 窗口的图片。

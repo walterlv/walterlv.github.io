@@ -3,7 +3,7 @@ title: "从零开始学习 dotnet 编译过程和 Roslyn 源码分析"
 publishDate: 2018-10-19 16:23:18 +0800
 date: 2019-04-12 09:41:03 +0800
 tags: dotnet csharp msbuild roslyn visualstudio nuget
-permalink: /posts/posts-for-learning-dotnet-build-nuget-roslyn.html
+permalink: /post/posts-for-learning-dotnet-build-nuget-roslyn.html
 ---
 
 本文整理我和 [林德熙](https://blog.lindexi.com/) 学习的 dotnet 编译知识、Roslyn 源码分析知识，NuGet 知识。通过阅读本文可以从零散的碎片化博客中得到从零开始学习的轨迹。

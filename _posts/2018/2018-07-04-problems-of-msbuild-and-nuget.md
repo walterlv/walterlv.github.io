@@ -4,7 +4,7 @@ publishDate: 2018-07-04 21:29:29 +0800
 date: 2019-04-12 09:38:58 +0800
 tags: msbuild nuget visualstudio dotnet
 coverImage: /static/posts/2018-07-04-20-44-01.png
-permalink: /posts/problems-of-msbuild-and-nuget.html
+permalink: /post/problems-of-msbuild-and-nuget.html
 ---
 
 MSBuild 不愧是强大的编译器，它提供的扩展机制让你几乎可以编译任何类型的文件或项目；Roslyn 是全新编写的一套编译器，不过它保留了 MSBuild 的大部分机制；NuGet 是 .NET 生态系统中的包管理机制，被原生集成在新的 Microsoft.NET.Sdk 中。

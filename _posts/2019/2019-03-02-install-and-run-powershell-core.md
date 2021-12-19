@@ -5,7 +5,7 @@ date: 2019-04-30 19:37:52 +0800
 tags: dotnet powershell
 position: knowledge
 coverImage: /static/posts/2019-03-02-16-13-46.png
-permalink: /posts/install-and-run-powershell-core.html
+permalink: /post/install-and-run-powershell-core.html
 ---
 
 Windows 自带一个强大的 PowerShell，不过自带的 PowerShell 一直是基于 .NET Framework 的版本。你可以下载安装一个 .NET Core 版本的 PowerShell，以便获得 .NET Core 的各种好处。包括跨平台，以及更好的性能。

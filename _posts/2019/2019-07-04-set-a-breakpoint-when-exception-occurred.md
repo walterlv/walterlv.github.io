@@ -4,7 +4,7 @@ date: 2019-07-04 13:26:55 +0800
 tags: dotnet csharp
 position: problem
 coverImage: /static/posts/2019-07-04-13-08-47.png
-permalink: /posts/set-a-breakpoint-when-exception-occurred.html
+permalink: /post/set-a-breakpoint-when-exception-occurred.html
 ---
 
 使用 Visual Studio 可以帮助我们在发生异常的时候中断，便于我们调试程序出现异常那一时刻的状态。如果没有 Visual Studio 的帮助（例如运行已发布的程序），当出现某个或某些特定异常的时候如何能够迅速进入中断的环境来调试呢？

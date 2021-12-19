@@ -3,7 +3,7 @@ title: "NullReferenceException，就不应该存在！"
 publishDate: 2017-11-30 00:08:27 +0800
 date: 2019-04-16 10:47:57 +0800
 tags: csharp dotnet
-permalink: /posts/wipe-out-null-reference-exception.html
+permalink: /post/wipe-out-null-reference-exception.html
 ---
 
 如果要你说出 .NET 中的三个异常，`NullReferenceException` 一定会成为其中一个；如果说出 .NET 中的一个异常，`NullReferenceException` 也会被大多数人说出来。它让这么多人印象深刻，是因为它在项目中实在是太常见了，常见到每一个 C#/.NET 入门者必然会遇到。

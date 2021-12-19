@@ -4,7 +4,7 @@ publishDate: 2018-08-12 20:47:34 +0800
 date: 2018-12-30 17:00:43 +0800
 tags: vscode
 coverImage: /static/posts/2018-08-12-20-35-30.png
-permalink: /posts/add-run-external-executable-tools-for-vscode.html
+permalink: /post/add-run-external-executable-tools-for-vscode.html
 ---
 
 我们有很多全局的工具能在各处使用命令行调用，针对某个仓库特定的命令可以放到仓库中。不过，如果能够直接为顺手的文本编辑器添加自定义的外部命令，那么执行命令只需要简单的快捷键即可，不需要再手工敲了。

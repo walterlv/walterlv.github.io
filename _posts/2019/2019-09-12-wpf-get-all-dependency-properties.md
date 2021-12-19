@@ -3,7 +3,7 @@ title: "在 WPF 中获取一个依赖对象的所有依赖项属性"
 date: 2019-09-12 11:24:33 +0800
 tags: wpf dotnet csharp
 position: knowledge
-permalink: /posts/wpf-get-all-dependency-properties.html
+permalink: /post/wpf-get-all-dependency-properties.html
 ---
 
 本文介绍如何在 WPF 中获取一个依赖对象的所有依赖项属性。

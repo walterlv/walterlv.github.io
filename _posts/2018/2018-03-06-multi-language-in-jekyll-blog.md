@@ -12,7 +12,7 @@ versions:
   - 简体中文: #
   - 日本語: #
   - ไทย: #
-permalink: /posts/multi-language-in-jekyll-blog.html
+permalink: /post/multi-language-in-jekyll-blog.html
 ---
 
 我有几篇博客是用多种语言编写的，一开始我是在每篇博客中添加其他语言的链接，但多语言博客多了之后就成了复制粘贴了。是时候做一个通用的布局来实现多语言博客了！

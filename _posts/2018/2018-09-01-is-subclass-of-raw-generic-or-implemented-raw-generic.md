@@ -2,7 +2,7 @@
 title: ".NET/C# 判断某个类是否是泛型类型或泛型接口的子类型"
 date: 2018-09-01 16:28:05 +0800
 tags: dotnet csharp
-permalink: /posts/is-subclass-of-raw-generic-or-implemented-raw-generic.html
+permalink: /post/is-subclass-of-raw-generic-or-implemented-raw-generic.html
 ---
 
 .NET 中提供了很多判断某个类型或实例是某个类的子类或某个接口的实现类的方法，然而这事情一旦牵扯到泛型就没那么省心了。

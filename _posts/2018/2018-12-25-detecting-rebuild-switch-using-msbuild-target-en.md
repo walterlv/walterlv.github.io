@@ -8,7 +8,7 @@ version:
 versions:
   - 中文: /post/detecting-rebuild-switch-using-msbuild-target.html
   - English: #
-permalink: /posts/detecting-rebuild-switch-using-msbuild-target-en.html
+permalink: /post/detecting-rebuild-switch-using-msbuild-target-en.html
 ---
 
 MSBuild or the dotnet build command both supports Incremental Building for compiling performance. You can read [How to: Build Incrementally - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-build-incrementally) to lean more about incremental building. When a target supports increment building and the project is rebuilding for the moment, the Target will not execute. So if it affects followed other Targets, it cannot be set to incremental building.

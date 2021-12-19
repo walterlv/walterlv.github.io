@@ -9,7 +9,7 @@ versions:
   - 中文: /post/core-application-window-of-uwp.html
   - English: #
 coverImage: /static/posts/2018-07-27-08-37-42.png
-permalink: /posts/core-application-window-of-uwp-en.html
+permalink: /post/core-application-window-of-uwp-en.html
 ---
 
 I find a question on Stack Overflow [CoreApplicationView vs CoreWindow vs ApplicationView](https://stackoverflow.com/a/51585979/6233938), so I write this post for the answer.

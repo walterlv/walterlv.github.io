@@ -5,7 +5,7 @@ date: 2019-04-17 14:32:07 +0800
 tags: dotnet csharp wpf directx
 position: starter
 coverImage: /static/posts/2019-04-17-10-48-18.png
-permalink: /posts/create-wpf-pixel-shader-effects-using-shazzam-shader-editor.html
+permalink: /post/create-wpf-pixel-shader-effects-using-shazzam-shader-editor.html
 ---
 
 HLSL，High Level Shader Language，高级着色器语言，是 Direct3D 着色器模型所必须的语言。WPF 支持 Direct3D 9，也支持使用 HLSL 来编写着色器。你可以使用任何一款编辑器来编写 HLSL，但 Shazzam Shader Editor 则是专门为 WPF 实现像素着色器而设计的一款编辑器，使用它来编写像素着色器，可以省去像素着色器接入到 WPF 所需的各种手工操作。

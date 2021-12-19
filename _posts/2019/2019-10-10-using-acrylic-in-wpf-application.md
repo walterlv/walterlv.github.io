@@ -4,7 +4,7 @@ date: 2019-10-10 10:25:11 +0800
 tags: dotnet
 position: starter
 coverImage: /static/posts/2019-10-10-10-25-00.png
-permalink: /posts/using-acrylic-in-wpf-application.html
+permalink: /post/using-acrylic-in-wpf-application.html
 ---
 
 从 Windows 10 (1803) 开始，Win32 应用也可以有 API 来实现原生的亚克力效果了。不过相比于 UWP 来说，可定制性会差很多。

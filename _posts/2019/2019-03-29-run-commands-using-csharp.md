@@ -5,7 +5,7 @@ date: 2019-04-21 20:36:42 +0800
 tags: dotnet csharp git
 position: starter
 coverImage: /static/posts/2019-03-29-14-19-19.png
-permalink: /posts/run-commands-using-csharp.html
+permalink: /post/run-commands-using-csharp.html
 ---
 
 我们可以在命令行中操作 git，但是作为一名程序员，如果在大量重复的时候还手动敲命令行，那就太笨了。

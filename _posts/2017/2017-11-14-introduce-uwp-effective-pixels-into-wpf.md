@@ -4,7 +4,7 @@ publishDate: 2017-11-14 11:26:33 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: wpf uwp xaml
 coverImage: /static/posts/2017-11-14-09-48-42.png
-permalink: /posts/introduce-uwp-effective-pixels-into-wpf.html
+permalink: /post/introduce-uwp-effective-pixels-into-wpf.html
 ---
 
 在很久很久以前，WPF 诞生之初，有一个神奇的单位，它的名字叫做——设备无关单位（DIP，Device Independent Unit）。微软给它描绘了一片美好的愿景——在任何显示器上显示的尺寸是相同的。

@@ -4,7 +4,7 @@ date: 2019-07-27 16:54:26 +0800
 tags: dotnet csharp visualstudio nuget roslyn
 position: knowledge
 coverImage: /static/posts/2019-07-27-15-58-05.png
-permalink: /posts/track-api-changes-using-roslyn-public-api-analyzers.html
+permalink: /post/track-api-changes-using-roslyn-public-api-analyzers.html
 ---
 
 做库的时候，需要一定程度上保持 API 的兼容性

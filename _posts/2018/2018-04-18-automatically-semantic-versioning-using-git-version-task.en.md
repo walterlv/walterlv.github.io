@@ -9,7 +9,7 @@ versions:
   - 中文: /post/automatically-semantic-versioning-using-git-version-task.html
   - English: #
 coverImage: /static/posts/2018-04-13-15-34-08.png
-permalink: /posts/automatically-semantic-versioning-using-git-version-task.en.html
+permalink: /post/automatically-semantic-versioning-using-git-version-task.en.html
 ---
 
 I wrote another post talking about [Semantic Versioning](/post/semantic-version) before (*but it is not in English*). Introducing the semantic version to a project can give library users more semantic information when library developers publishing packages. From the Microsoft blog [Versioning NuGet packages in a continuous delivery world](https://blogs.msdn.microsoft.com/devops/2016/05/03/versioning-nuget-packages-cd-1/) we could find that semantic versioning is the trend.

@@ -10,7 +10,7 @@ versions:
   - 中文: /post/ntfs-link-comparisons.html
   - English: #
 coverImage: /static/posts/2020-06-10-09-44-50.png
-permalink: /posts/ntfs-link-comparisons-en.html
+permalink: /post/ntfs-link-comparisons-en.html
 ---
 
 It is well-known that `mklink` is a command to create a variety of links on NTFS disk. But if you don't know much about it or even never hear of it, it doesn't matter because you know shortcuts at least. This post help you to lean more about `mklink` and know the differences among the difference command options.

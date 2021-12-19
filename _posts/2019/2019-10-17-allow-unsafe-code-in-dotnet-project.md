@@ -5,7 +5,7 @@ date: 2019-10-29 11:53:34 +0800
 tags: dotnet csharp
 position: starter
 coverImage: /static/posts/2019-10-17-15-34-33.png
-permalink: /posts/allow-unsafe-code-in-dotnet-project.html
+permalink: /post/allow-unsafe-code-in-dotnet-project.html
 ---
 
 有小伙伴希望在 .NET 代码中使用指针，操作非托管资源，于是可能使用到 `unsafe` `fixed` 关键字。但使用此关键字的前提是需要在项目中开启不安全代码。

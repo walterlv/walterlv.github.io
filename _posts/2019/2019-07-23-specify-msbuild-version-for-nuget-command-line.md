@@ -5,7 +5,7 @@ date: 2019-07-25 18:11:47 +0800
 tags: nuget msbuild visualstudio dotnet
 position: problem
 coverImage: /static/posts/2019-07-25-18-07-00.png
-permalink: /posts/specify-msbuild-version-for-nuget-command-line.html
+permalink: /post/specify-msbuild-version-for-nuget-command-line.html
 ---
 
 使用 `nuget restore` 命令还原项目的 NuGet 包的时候，NuGet 会尝试自动检测计算机上已经安装的 MSBuild。不过，如果你同时安装了 Visual Studio 2017 和 Visual Studio 2019，那么 NuGet 有可能找到错误版本的 MSBuild。

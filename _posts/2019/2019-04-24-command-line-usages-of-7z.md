@@ -4,7 +4,7 @@ date: 2019-04-24 09:55:21 +0800
 tags: windows dotnet
 position: starter
 coverImage: /static/posts/2019-04-24-08-23-43.png
-permalink: /posts/command-line-usages-of-7z.html
+permalink: /post/command-line-usages-of-7z.html
 ---
 
 7-Zip 也有一个简短的名称 7z。它的原生 UI 确实不怎么好看，非常有年代感；不过 7-Zip 的强大之处不在于 UI，而在于其算法和各种文件的支持情况。不过，7-Zip 提供了命令行的版本，让你摒除一切杂念，专心处理压缩文件的工作。

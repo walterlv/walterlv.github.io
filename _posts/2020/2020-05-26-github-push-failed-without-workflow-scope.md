@@ -4,7 +4,7 @@ date: 2020-05-26 21:48:42 +0800
 tags: github
 position: problem
 coverImage: /static/posts/2020-05-26-21-30-01.png
-permalink: /posts/github-push-failed-without-workflow-scope.html
+permalink: /post/github-push-failed-without-workflow-scope.html
 ---
 
 refusing to allow an OAuth App to create or update workflow `{0}` without `workflow` scope.

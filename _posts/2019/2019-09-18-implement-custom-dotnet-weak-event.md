@@ -3,7 +3,7 @@ title: ".NET/C# 利用 Walterlv.WeakEvents 高性能地定义和使用弱事件"
 date: 2019-09-18 22:05:55 +0800
 tags: dotnet csharp
 position: knowledge
-permalink: /posts/implement-custom-dotnet-weak-event.html
+permalink: /post/implement-custom-dotnet-weak-event.html
 ---
 
 弱引用是 .NET 引入的概念，可以用来协助解决内存泄漏问题。然而事件也可能带来内存泄漏问题，是否有弱事件机制可以使用呢？.NET 没有自带的弱事件机制，但其中的一个子集 WPF 带了。然而我们不是什么项目都能引用 WPF 框架类库的。

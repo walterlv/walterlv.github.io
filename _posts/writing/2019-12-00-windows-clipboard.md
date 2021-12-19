@@ -4,7 +4,7 @@ date: 2019-11-05 11:24:31 +0800
 tags: windows dotnet csharp
 position: knowledge
 published: false
-permalink: /posts/windows-clipboard.html
+permalink: /post/windows-clipboard.html
 ---
 
 在此处编辑 blog.walterlv.com 的博客摘要

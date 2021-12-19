@@ -4,7 +4,7 @@ date: 2019-05-09 21:02:40 +0800
 tags: windows
 position: knowledge
 coverImage: /static/posts/2019-05-09-18-44-35.png
-permalink: /posts/system-file-check-scan-and-repair-system-files.html
+permalink: /post/system-file-check-scan-and-repair-system-files.html
 ---
 
 sfc.exe 这个程序的名称指的是 System File Check，用于做系统文件检查。本文介绍使用此命令检查并修复 Windows 系统文件。

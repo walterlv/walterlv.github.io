@@ -4,7 +4,7 @@ publishDate: 2019-01-14 15:38:10 +0800
 date: 2019-03-04 22:15:01 +0800
 tags: msbuild visualstudio
 position: knowledge
-permalink: /posts/resolve-project-references-using-target.html
+permalink: /post/resolve-project-references-using-target.html
 ---
 
 在项目编译成 dll 之前，如何分析项目的所有依赖呢？可以在在项目的 Target 中去收集项目的依赖。

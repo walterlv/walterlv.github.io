@@ -4,7 +4,7 @@ date: 2019-11-05 11:24:40 +0800
 tags: wpf dotnet csharp windows
 position: knowledge
 published: false
-permalink: /posts/wpf-handle-text-input.html
+permalink: /post/wpf-handle-text-input.html
 ---
 
 在此处编辑 blog.walterlv.com 的博客摘要

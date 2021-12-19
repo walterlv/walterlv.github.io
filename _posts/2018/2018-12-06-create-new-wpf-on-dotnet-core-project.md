@@ -5,7 +5,7 @@ date: 2019-03-19 18:30:07 +0800
 tags: dotnet wpf
 position: starter
 coverImage: /static/posts/2019-03-19-18-26-22.png
-permalink: /posts/create-new-wpf-on-dotnet-core-project.html
+permalink: /post/create-new-wpf-on-dotnet-core-project.html
 ---
 
 在 Connect(); 2018 大会上，微软发布了 .NET Core 3 Preview，以及基于 .NET Core 3 的 WPF；同时还发布了 Visual Studio 2019 预览版。不过 Visual Studio 2019 的预览版中并没有携带 WPF on .NET Core 3 的模板，于是新建项目的时候并不能快速创建一个基于 .NET Core 3 的 WPF 项目。

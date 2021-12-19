@@ -5,7 +5,7 @@ date: 2019-10-22 12:43:29 +0800
 tags: wpf dotnet csharp
 position: principle
 coverImage: /static/posts/2019-10-17-16-18-59.png
-permalink: /posts/wpf-high-performance-bitmap-rendering.html
+permalink: /post/wpf-high-performance-bitmap-rendering.html
 ---
 
 WPF 渲染框架并没有对外提供多少可以完全控制渲染的部分，目前可以做的有：

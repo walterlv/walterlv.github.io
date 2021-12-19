@@ -5,7 +5,7 @@ date: 2019-04-12 09:40:15 +0800
 tags: dotnet csharp visualstudio msbuild
 position: knowledge
 coverImage: /static/posts/2019-02-21-17-54-13.png
-permalink: /posts/the-properties-that-affetcs-project-output-path.html
+permalink: /post/the-properties-that-affetcs-project-output-path.html
 ---
 
 我们都知道可以通过在 Visual Studio 中设置输出路径（OutputPath）来更改项目输出文件所在的位置。对于 .NET Core 所使用的 Sdk 风格的 csproj 格式来说，你可能会发现实际生成路径中带了 `netcoreapp3.0` 或者 `net472` 这样的子文件夹。

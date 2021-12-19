@@ -3,7 +3,7 @@ title: "如何监视 WPF 中的所有窗口，在所有窗口中订阅事件或�
 date: 2019-06-28 08:38:21 +0800
 tags: wpf dotnet csharp
 position: problem
-permalink: /posts/how-to-monitor-all-windows-of-wpf-application.html
+permalink: /post/how-to-monitor-all-windows-of-wpf-application.html
 ---
 
 由于 WPF 路由事件（主要是隧道和冒泡）的存在，我们很容易能够通过只监听窗口中的某些事件使得整个窗口中所有控件发生的事件都被监听到。然而，如果我们希望监听的是整个应用程序中所有的事件呢？路由事件的路由可并不会跨越窗口边界呀？

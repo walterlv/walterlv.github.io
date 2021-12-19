@@ -4,7 +4,7 @@ publishDate: 2017-11-09 23:25:41 +0800
 date: 2017-11-10 14:42:45 +0800
 tags: wpf
 coverImage: /static/posts/2017-11-09-23-25-23.png
-permalink: /posts/convert-bitmap-to-imagesource-using-unsafe-method.html
+permalink: /post/convert-bitmap-to-imagesource-using-unsafe-method.html
 ---
 
 在 WPF 中将一个现成的 Bitmap 位图转换成 ImageSource 用于显示一个麻烦的事儿，因为 WPF 并没有提供多少可以转过来的方法。不过产生 Bitmap 来源却非常多，比如屏幕截图、GDI 图、数组或其它非托管框架生成的图片。

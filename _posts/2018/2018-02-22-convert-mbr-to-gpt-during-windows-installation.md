@@ -2,7 +2,7 @@
 title: "在 Windows 安装期间将 MBR 磁盘转换为 GPT 磁盘"
 date: 2018-02-22 22:13:16 +0800
 tags: windows sysprep
-permalink: /posts/convert-mbr-to-gpt-during-windows-installation.html
+permalink: /post/convert-mbr-to-gpt-during-windows-installation.html
 ---
 
 以 UEFI 启动的 Windows 磁盘必须是 GPT 格式。本文将介绍如何在安装 Windows 期间将磁盘从 MBR 转换成 GPT。

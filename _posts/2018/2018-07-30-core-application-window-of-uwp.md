@@ -9,7 +9,7 @@ versions:
   - 中文: #
   - English: /post/core-application-window-of-uwp-en.html
 coverImage: /static/posts/2018-07-27-08-37-42.png
-permalink: /posts/core-application-window-of-uwp.html
+permalink: /post/core-application-window-of-uwp.html
 ---
 
 在 StackOverflow 上看到有小伙伴询问 `CoreApplication`, `CoreApplicationView`, `Application`, `ApplicationView`, `CoreWindow`, `Window` 它们的含义以及它们之间的区别。

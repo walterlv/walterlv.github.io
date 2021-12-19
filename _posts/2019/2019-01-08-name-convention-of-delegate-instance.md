@@ -3,7 +3,7 @@ title: "C# 中委托实例的命名规则"
 date: 2019-01-08 17:09:07 +0800
 tags: dotnet csharp
 position: starter
-permalink: /posts/name-convention-of-delegate-instance.html
+permalink: /post/name-convention-of-delegate-instance.html
 ---
 
 我们知道一个类中的属性应该用名词或名词性短语，方法用动词或动宾短语；但是委托的实例却似乎有一些游离。因为在 .NET 中委托代表的是一个动作，既可以把它看作是名词，也可以看作是动词。在用法上，既可以像属性和变量一样被各种传递，也可以像一个方法一样被调用。

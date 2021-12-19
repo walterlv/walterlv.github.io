@@ -5,7 +5,7 @@ date: 2019-07-10 22:03:12 +0800
 tags: visualstudio dotnet csharp
 position: knowledge
 coverImage: /static/posts/2019-06-24-07-56-52.png
-permalink: /posts/visual-studio-vs-resharper.html
+permalink: /post/visual-studio-vs-resharper.html
 ---
 
 本文只谈论 ReSharper 的那些常用功能中，Visual Studio 2019 能还原多少，主要提供给那些正在考虑不使用 ReSharper 插件的 Visual Studio 用户作为参考。毕竟 ReSharper 如此强大的功能是建立在每年缴纳不少的费用以及噩梦般占用 Visual Studio 性能的基础之上的。然而使用 Visual Studio 2019 社区版不搭配 ReSharper 则可以免费为开源社区做贡献。

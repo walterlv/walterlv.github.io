@@ -4,7 +4,7 @@ date: 2019-11-05 11:24:33 +0800
 tags: windows
 position: knowledge
 published: false
-permalink: /posts/windows-localized-folder-name.html
+permalink: /post/windows-localized-folder-name.html
 ---
 
 在此处编辑 blog.walterlv.com 的博客摘要

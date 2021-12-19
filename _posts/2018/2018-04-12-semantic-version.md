@@ -4,7 +4,7 @@ publishDate: 2018-04-12 20:20:39 +0800
 date: 2019-04-12 09:36:54 +0800
 tags: visualstudio nuget csharp dotnet
 coverImage: /static/posts/2018-04-12-19-48-26.png
-permalink: /posts/semantic-version.html
+permalink: /post/semantic-version.html
 ---
 
 版本号格式不陌生吧，.NET 传统的版本号格式类似这样 1.5.1254.0。本文将推荐一种新的版本号格式——语义版本号，格式类似这样 1.4.6-beta。我推荐语义版本号是因为这样的版本号自包含语义，而且这样的语义能够在版本库中体现出来。

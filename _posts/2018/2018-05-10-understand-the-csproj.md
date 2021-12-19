@@ -4,7 +4,7 @@ publishDate: 2018-05-10 08:13:43 +0800
 date: 2019-04-12 09:37:21 +0800
 tags: visualstudio msbuild
 coverImage: /static/posts/2018-05-05-12-31-53.png
-permalink: /posts/understand-the-csproj.html
+permalink: /post/understand-the-csproj.html
 ---
 
 写了这么多个 C# 项目，是否对项目文件 csproj 有一些了解呢？Visual Studio 是怎么让 csproj 中的内容正确显示出来的呢？更深入的，我能够自己扩展 csproj 的功能吗？

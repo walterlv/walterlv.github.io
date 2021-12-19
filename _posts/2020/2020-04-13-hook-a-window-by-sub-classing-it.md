@@ -4,7 +4,7 @@ publishDate: 2020-04-13 21:24:48 +0800
 date: 2020-04-14 08:19:29 +0800
 tags: win32 dotnet csharp
 position: knowledge
-permalink: /posts/hook-a-window-by-sub-classing-it.html
+permalink: /post/hook-a-window-by-sub-classing-it.html
 ---
 
 创建窗口的时候，可以传一个消息处理函数。然而如果窗口不是自己创建的，还能增加消息处理函数吗？答案是可以的，除了 `SetWindowsHookEx` 来添加钩子之外，更推荐用子类化的方式来添加。

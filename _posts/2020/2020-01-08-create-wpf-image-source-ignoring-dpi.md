@@ -3,7 +3,7 @@ title: "WPF 中如何创建忽略 DPI 属性的图片"
 date: 2020-01-08 12:57:02 +0800
 tags: wpf dotnet csharp
 position: problem
-permalink: /posts/create-wpf-image-source-ignoring-dpi.html
+permalink: /post/create-wpf-image-source-ignoring-dpi.html
 ---
 
 WPF 框架设计为与 DPI 无关，但你依然可能遇到 DPI 问题。尤其是 `Image` 控件显示的图片会根据图片 EXIF 中的 DPI 信息和屏幕 DPI 自动缩放图片。对于 UI 用图来说这是好事，但对于软件用户随便插入的图片来说就不是了——用户传入的图片可能是各种各样不统一的 DPI。因此这种 DPI 我们应该忽略。

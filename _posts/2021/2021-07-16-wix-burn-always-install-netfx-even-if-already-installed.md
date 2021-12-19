@@ -4,7 +4,7 @@ date: 2021-07-16 12:08:39 +0800
 tags: dotnet msi wix
 position: problem
 coverImage: /static/posts/2021-07-16-11-04-09.png
-permalink: /posts/wix-burn-always-install-netfx-even-if-already-installed.html
+permalink: /post/wix-burn-always-install-netfx-even-if-already-installed.html
 ---
 
 使用 WiX 的 Burn 引擎制作自定义托管引导程序的 exe 安装包时，你可能会遇到这种情况：明明目标电脑上已经装好了 .NET Framework，但无论如何就是会提示安装，始终不启动自定义的安装界面。

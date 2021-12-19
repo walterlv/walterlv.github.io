@@ -3,7 +3,7 @@ title: "在 .NET 对象和 JSON 互相序列化的时候，枚举类型如何设
 date: 2020-06-03 07:57:07 +0800
 tags: dotnet
 position: problem
-permalink: /posts/newtonsoft-json-convert-enum-as-strings.html
+permalink: /post/newtonsoft-json-convert-enum-as-strings.html
 ---
 
 默认情况下，Newtonsoft.Json 库序列化和反序列化 JSON 到 .NET 类型的时候，对于枚举值，使用的是整数。然而，在公开 JSON 格式的 API 时，整数会让 API 不易于理解，也不利于扩展和兼容。

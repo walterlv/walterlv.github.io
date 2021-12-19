@@ -9,7 +9,7 @@ versions:
   - 中文: #
   - English: /post/introduce-mstest-enhancer.html
 coverImage: /static/posts/2018-02-12-08-54-31.png
-permalink: /posts/get-rid-or-naming-in-unit-test.html
+permalink: /post/get-rid-or-naming-in-unit-test.html
 ---
 
 有没有觉得命名太难？有没有觉得单元测试的命名更难？没错，你不是一个人！看看这个你就知道了：[程序员最头疼的事：命名](http://blog.jobbole.com/50708/#rd?sukey=fc78a68049a14bb285ac0d81ca56806ac10192f4946a780ea3f3dd630804f86056e6fcfe6fcaeddb3dc04830b7e3b3eb) 或它的英文原文 [Don’t go into programming if you don’t have a good thesaurus - ITworld](https://www.itworld.com/article/2833265/cloud-computing/don-t-go-into-programming-if-you-don-t-have-a-good-thesaurus.html)。

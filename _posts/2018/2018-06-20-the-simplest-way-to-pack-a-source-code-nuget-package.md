@@ -4,7 +4,7 @@ publishDate: 2018-06-20 09:22:34 +0800
 date: 2019-01-30 22:33:24 +0800
 tags: dotnet visualstudio nuget msbuild
 coverImage: /static/posts/2018-06-20-08-36-11.png
-permalink: /posts/the-simplest-way-to-pack-a-source-code-nuget-package.html
+permalink: /post/the-simplest-way-to-pack-a-source-code-nuget-package.html
 ---
 
 NuGet 原本就提供了生成源码包的功能。不过，NuGet 原生的源码包仅用于调试时自带调试信息和调试源码。

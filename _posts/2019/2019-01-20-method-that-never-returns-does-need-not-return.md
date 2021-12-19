@@ -3,7 +3,7 @@ title: "C# 永远不会返回的方法真的不会返回"
 date: 2019-01-20 15:36:40 +0800
 tags: csharp
 position: knowledge
-permalink: /posts/method-that-never-returns-does-need-not-return.html
+permalink: /post/method-that-never-returns-does-need-not-return.html
 ---
 
 一般情况下，如果一个方法声明了返回值，但是实际上在编写代码的时候没有返回，那么这个时候会出现编译错误。

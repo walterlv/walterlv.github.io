@@ -5,7 +5,7 @@ date: 2020-05-24 16:27:16 +0800
 tags: dotnet nuget
 position: knowledge
 coverImage: /static/posts/2020-05-24-15-44-37.png
-permalink: /posts/microsoft-dotnet-packages-use-typeforwarded-to-keep-compatibility.html
+permalink: /post/microsoft-dotnet-packages-use-typeforwarded-to-keep-compatibility.html
 ---
 
 不知你是否好奇，System.ValueTuple 是新框架（.NET Core 3.0）开始引入的类型，但可以通过 NuGet 包向旧框架提供这些类型的使用。并且，这些包即便安装到本来就有此类型的新框架上也能正常运行而不会出现多处类型定义的问题。

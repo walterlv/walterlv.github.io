@@ -5,7 +5,7 @@ date: 2020-04-07 20:48:11 +0800
 tags: vscode
 position: knowledge
 coverImage: /static/posts/2020-04-07-11-04-56.png
-permalink: /posts/how-to-select-all-matched-search-result-in-vscode.html
+permalink: /post/how-to-select-all-matched-search-result-in-vscode.html
 ---
 
 最近需要处理几十万行的文字，然后提取出数千行（嗯，我在做输入法词库）。在 VSCode 里我用正则匹配到了想要的结果后，如何能够快速把这些行提取出来呢？

@@ -4,7 +4,7 @@ publishDate: 2019-03-24 11:40:31 +0800
 date: 2019-03-26 14:35:51 +0800
 tags: dotnet csharp
 position: principle
-permalink: /posts/get-the-key-descriptor-of-an-exception.html
+permalink: /post/get-the-key-descriptor-of-an-exception.html
 ---
 
 在 .NET / C# 程序中出现异常是很常见的事情，程序出现异常后记录日志或者收集到统一的地方可以便于分析程序中各种各样此前未知的问题。但是，有些异常表示的是同一个异常，只是因为参数不同、状态不同、用户的语言环境不同就分开成多个异常的话，分析起来会有些麻烦。

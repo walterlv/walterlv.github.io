@@ -3,7 +3,7 @@ title: "WPF 中的 NameScope"
 publishDate: 2018-10-14 12:23:40 +0800
 date: 2018-10-16 21:01:20 +0800
 tags: dotnet wpf
-permalink: /posts/namescope-of-wpf.html
+permalink: /post/namescope-of-wpf.html
 ---
 
 我们在 WPF 中使用绑定时可以使用 `ElementName=Foo` 这样的写法，并且还能够真的在运行时找到这个名称对应的对象，是因为 WPF 中提供了名称范围概念。

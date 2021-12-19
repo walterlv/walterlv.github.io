@@ -3,7 +3,7 @@ title: "在 Roslyn/MSBuild 中进行基本的数学运算"
 date: 2019-05-11 14:53:09 +0800
 tags: msbuild visualstudio roslyn
 position: knowledge
-permalink: /posts/msbuild-numeric-methods.html
+permalink: /post/msbuild-numeric-methods.html
 ---
 
 在任何一种编程语言中，做基本的数学运算都是非常容易的事情。不过，不知道 .NET 项目的项目文件 csproj 文件中进行数学运算就不像一般的编程语言那样直观了，毕竟这不是一门语言，而只是一种项目文件格式而已。

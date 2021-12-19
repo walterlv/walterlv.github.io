@@ -5,7 +5,7 @@ date: 2019-09-24 08:37:39 +0800
 tags: msbuild visualstudio dotnet
 position: starter
 coverImage: /static/posts/2019-07-27-18-31-15.png
-permalink: /posts/how-to-set-dotnet-core-sdk-preview-in-visual-studio.html
+permalink: /post/how-to-set-dotnet-core-sdk-preview-in-visual-studio.html
 ---
 
 .NET Core 3 相比于 .NET Core 2 是一个大更新。也正因为如此，即便它长时间处于预览版尚未发布的状态，大家也一直在使用。

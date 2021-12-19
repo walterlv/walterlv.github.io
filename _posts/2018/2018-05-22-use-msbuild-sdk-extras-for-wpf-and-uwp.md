@@ -4,7 +4,7 @@ publishDate: 2018-05-22 15:07:22 +0800
 date: 2019-04-12 09:38:30 +0800
 tags: visualstudio dotnet csharp msbuild
 coverImage: /static/posts/2018-07-26-07-15-26.png
-permalink: /posts/use-msbuild-sdk-extras-for-wpf-and-uwp.html
+permalink: /post/use-msbuild-sdk-extras-for-wpf-and-uwp.html
 ---
 
 自从微软推出 .NET Core 以来，新的项目文件格式以其优秀的可扩展性正吸引着更多项目采用。然而——微软官方的 WPF/UWP 项目模板依然还在采用旧的 csproj 格式！

@@ -5,7 +5,7 @@ date: 2020-04-30 09:24:04 +0800
 tags: dotnet windows linux
 position: problem
 coverImage: /static/posts/2020-04-29-20-54-33.png
-permalink: /posts/format-mixed-path-seperators-to-platform-special.html
+permalink: /post/format-mixed-path-seperators-to-platform-special.html
 ---
 
 Windows 下的路径分隔符是 `\` 而 Linux 和 Mac 下的路径分隔符是 `\`。正常如果你的数据不跨 Windows 和 Linux 平台流通的话，不怎么会遇到多种换行符并存的问题的。但如果真发生了流通，那么如何将它们格式化为统一的当前平台认识的分隔符呢？

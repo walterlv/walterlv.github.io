@@ -4,7 +4,7 @@ publishDate: 2018-05-26 16:51:02 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: dotnet
 coverImage: /static/posts/2018-05-26-16-40-58.png
-permalink: /posts/input-password-with-mask-in-cli.html
+permalink: /post/input-password-with-mask-in-cli.html
 ---
 
 如果是在 GUI 中要求用户输入密码，各 UI 框架基本都提供了用于输入密码的控件；在这些控件中，用户在输入密码的时候会显示掩码。然而对于控制台程序来说，并没有用于输入密码的原生方法。

@@ -4,7 +4,7 @@ publishDate: 2020-04-29 20:17:10 +0800
 date: 2020-04-30 09:26:38 +0800
 tags: git
 position: problem
-permalink: /posts/fix-git-unexpected-line-end-changing.html
+permalink: /post/fix-git-unexpected-line-end-changing.html
 ---
 
 前些天有位小伙伴告诉我说 git 改了某个重要文件的换行符，导致文件的哈希变了，于是文件校验出现错误。之前一直没问题而最近才有问题是因为最近换了部署服务器，git 的换行符配置不一样。

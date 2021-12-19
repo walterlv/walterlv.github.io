@@ -3,7 +3,7 @@ title: "谨慎使用 FileInfo.Exists 实例方法，而是使用 File.Exists 静
 date: 2018-12-30 16:41:21 +0800
 tags: dotnet windows
 position: problem
-permalink: /posts/file-exists-vs-fileinfo-exists.html
+permalink: /post/file-exists-vs-fileinfo-exists.html
 ---
 
 如果你在代码中使用了 `FileInfo.Exists` 实例方法来判断一个文件是否存在，也许会发现此方法可能错误地判断来一个文件是否真的存在。这是一个坑。

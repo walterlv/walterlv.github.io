@@ -3,7 +3,7 @@ title: ".NET 使用 XPath 来读写 XML 文件（顺带解决 XML 命名空间�
 publishDate: 2018-06-24 21:10:08 +0800
 date: 2019-01-01 11:34:30 +0800
 tags: dotnet
-permalink: /posts/read-write-xml-using-xpath-in-dotnet.html
+permalink: /post/read-write-xml-using-xpath-in-dotnet.html
 ---
 
 XPath 是 XML 路径语言（XML Path Language），用来确定XML文档中某部分位置的语言。无论是什么语言什么框架，几乎都可以使用 XPath 来高效查询 XML 文件。

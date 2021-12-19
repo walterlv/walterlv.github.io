@@ -4,7 +4,7 @@ date: 2020-06-09 15:52:22 +0800
 tags: visualstudio
 position: knowledge
 coverImage: /static/posts/2020-06-09-14-28-25.png
-permalink: /posts/fantastic-intellisense-behavior-of-visual-studio.html
+permalink: /post/fantastic-intellisense-behavior-of-visual-studio.html
 ---
 
 本文就是个吐槽，感兴趣一一去报给微软。

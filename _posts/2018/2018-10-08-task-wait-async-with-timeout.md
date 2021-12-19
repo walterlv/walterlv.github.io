@@ -4,7 +4,7 @@ publishDate: 2018-10-08 21:41:31 +0800
 date: 2019-06-21 09:17:55 +0800
 tags: dotnet csharp
 coverImage: /static/posts/2018-10-08-21-19-48.png
-permalink: /posts/task-wait-async-with-timeout.html
+permalink: /post/task-wait-async-with-timeout.html
 ---
 
 Task 自带有很多等待任务完成的方法，有的是实例方法，有的是静态方法。有的阻塞，有的不阻塞。不过带超时的方法只有一个，但它是阻塞的。

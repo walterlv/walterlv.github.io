@@ -4,7 +4,7 @@ date: 2019-11-05 11:24:13 +0800
 tags: dotnet csharp
 position: knowledge
 published: false
-permalink: /posts/app-context-swtich-overrides.html
+permalink: /post/app-context-swtich-overrides.html
 ---
 
 在此处编辑 blog.walterlv.com 的博客摘要

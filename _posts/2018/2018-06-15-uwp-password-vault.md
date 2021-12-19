@@ -3,7 +3,7 @@ title: "PasswordVault —— 在 UWP 应用中安全地保存密码"
 publishDate: 2018-06-15 21:43:08 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: uwp
-permalink: /posts/uwp-password-vault.html
+permalink: /post/uwp-password-vault.html
 ---
 
 只要你做过自动登录，一定会遇到密码的安全问题。现在大部分的网络服务都已经支持 Token 了，有些已经支持 OAuth2.0，这意味着客户端不怎么需要关心密码的安全保存问题。

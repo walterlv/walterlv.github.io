@@ -3,7 +3,7 @@ title: "如何将一个 .NET 对象序列化为 HTTP GET 的请求字符串"
 date: 2019-12-23 18:45:19 +0800
 tags: dotnet csharp
 position: problem
-permalink: /posts/serialize-object-to-http-get-query-string.html
+permalink: /post/serialize-object-to-http-get-query-string.html
 ---
 
 HTTP GET 请求时携带的参数直接在 URL 中，形式如 `?key1=value&key2=value&key3=value`。如果是 POST 请求时，我们可以使用一些库序列化为 json 格式作为 BODY 发送，那么 GET 请求呢？有可以直接将其序列化为 HTTP GET 请求的 query 字符串的吗？

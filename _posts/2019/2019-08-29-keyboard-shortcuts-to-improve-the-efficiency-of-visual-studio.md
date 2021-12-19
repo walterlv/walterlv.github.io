@@ -5,7 +5,7 @@ date: 2020-05-23 11:25:59 +0800
 tags: visualstudio csharp
 position: knowledge
 coverImage: /static/posts/2019-08-29-19-03-27.png
-permalink: /posts/keyboard-shortcuts-to-improve-the-efficiency-of-visual-studio.html
+permalink: /post/keyboard-shortcuts-to-improve-the-efficiency-of-visual-studio.html
 ---
 
 Visual Studio 的功能可谓真是丰富，再配合各种各样神奇强大的插件，Visual Studio 作为太阳系最强大的 IDE 名副其实。

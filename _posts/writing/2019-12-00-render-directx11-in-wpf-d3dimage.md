@@ -4,7 +4,7 @@ date: 2019-11-05 11:24:05 +0800
 tags: directx sharpdx wpf dotnet csharp
 position: starter
 published: false
-permalink: /posts/render-directx11-in-wpf-d3dimage.html
+permalink: /post/render-directx11-in-wpf-d3dimage.html
 ---
 
 在此处编辑 blog.walterlv.com 的博客摘要

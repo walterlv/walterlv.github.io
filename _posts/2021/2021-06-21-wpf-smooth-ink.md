@@ -4,7 +4,7 @@ date: 2021-06-21 17:38:14 +0800
 tags: wpf
 position: problem
 coverImage: /static/posts/2021-06-21-17-36-55.png
-permalink: /posts/wpf-smooth-ink.html
+permalink: /post/wpf-smooth-ink.html
 ---
 
 在 WPF 中绘制笔迹的时候，你可能会注意到绘制的笔迹非常的……呃……棱角分明。这在鼠标绘制的时候大家基本都能接受，但如果遇到一些触摸框报告触摸点也那么稀疏，那么写的字很不好看。另外，还有可能绘制的笔迹点来源于其他设备，通过网络传输而来，这时更容易遇到稀疏的点。

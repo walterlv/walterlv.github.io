@@ -4,7 +4,7 @@ date: 2019-03-19 19:52:39 +0800
 tags: windows
 position: knowledge
 coverImage: /static/posts/2019-03-19-18-51-09.png
-permalink: /posts/view-process-info-using-task-manager.html
+permalink: /post/view-process-info-using-task-manager.html
 ---
 
 Windows 系统上的任务管理器进化到 Windows 10 的 1809 版本后，又新增了几项可以查看的进程属性。

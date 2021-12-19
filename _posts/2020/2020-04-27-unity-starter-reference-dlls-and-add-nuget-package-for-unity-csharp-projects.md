@@ -5,7 +5,7 @@ date: 2020-05-23 14:38:45 +0800
 tags: unity csharp
 position: starter
 coverImage: /static/posts/2020-04-27-20-50-54.png
-permalink: /posts/unity-starter-reference-dlls-and-add-nuget-package-for-unity-csharp-projects.html
+permalink: /post/unity-starter-reference-dlls-and-add-nuget-package-for-unity-csharp-projects.html
 ---
 
 因为 Visual Studio 有强大的包管理器插件，所以即便是不熟悉 NuGet 命令的小伙伴也能轻松安装和管理 NuGet 包。不过，对 Unity C# 项目来说，你并不能直接引用 dll，也不能直接使用自带的 NuGet 包管理器完成 NuGet 包安装。

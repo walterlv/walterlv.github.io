@@ -4,7 +4,7 @@ date: 2019-04-24 20:35:25 +0800
 tags: msbuild visualstudio dotnet
 position: knowledge
 coverImage: /static/posts/2019-04-24-20-20-01.png
-permalink: /posts/msbuild-referencing-metadata.html
+permalink: /post/msbuild-referencing-metadata.html
 ---
 
 在编写项目文件或者 MSBuild Target 文件的时候，我们经常会使用 `<Foo Include="Identity" />` 来定义集合中的一项。在定义的同时，我们也会额外指定一些属性。

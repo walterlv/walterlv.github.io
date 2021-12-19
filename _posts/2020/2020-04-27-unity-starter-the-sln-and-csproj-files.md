@@ -4,7 +4,7 @@ date: 2020-04-27 21:04:09 +0800
 tags: unity csharp
 position: starter
 coverImage: /static/posts/2020-04-27-19-52-25.png
-permalink: /posts/unity-starter-the-sln-and-csproj-files.html
+permalink: /post/unity-starter-the-sln-and-csproj-files.html
 ---
 
 本文介绍 Unity3D 项目根目录的 sln 和 csproj 文件，你将知道如何正确理解和使用它们。

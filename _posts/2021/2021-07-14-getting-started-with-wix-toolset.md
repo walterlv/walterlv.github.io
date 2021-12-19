@@ -4,7 +4,7 @@ publishDate: 2021-07-14 18:54:18 +0800
 date: 2021-07-16 17:48:46 +0800
 tags: dotnet msi wix
 position: starter
-permalink: /posts/getting-started-with-wix-toolset.html
+permalink: /post/getting-started-with-wix-toolset.html
 ---
 
 WiX 全称为 Windows Installer XML，是使用 XML 文件创建 Windows 安装程序的一组工具集。它开源且完全免费。

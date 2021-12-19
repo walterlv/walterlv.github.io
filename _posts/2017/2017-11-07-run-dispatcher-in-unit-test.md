@@ -4,7 +4,7 @@ publishDate: 2017-11-07 21:02:54 +0800
 date: 2018-11-27 13:10:18 +0800
 tags: wpf unittest
 coverImage: /static/posts/2017-11-07-20-49-51.png
-permalink: /posts/run-dispatcher-in-unit-test.html
+permalink: /post/run-dispatcher-in-unit-test.html
 ---
 
 对于部分涉及到 WPF UI 的部分，单元测试一般都难以进行。但是，如果只是使用到其中的 UI 线程调度，那就稍微容易一些。不过为了找到这个方法我做了很多天的尝试。

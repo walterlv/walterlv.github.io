@@ -4,7 +4,7 @@ date: 2019-08-29 21:54:47 +0800
 tags: visualstudio csharp
 position: starter
 coverImage: /static/posts/2019-08-29-20-31-44.png
-permalink: /posts/let-visual-studio-empower-more-by-change-some-settings.html
+permalink: /post/let-visual-studio-empower-more-by-change-some-settings.html
 ---
 
 使用 Visual Studio 开发 C#/.NET 应用程序，以前有 ReSharper 来不足其各项功能短板，后来不断将 ReSharper 的功能一点点搬过来稍微好了一些。不过直到 Visual Studio 2019，才开始渐渐可以和 ReSharper 拼一下了。

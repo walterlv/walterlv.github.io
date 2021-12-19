@@ -3,7 +3,7 @@ title: "C#/.NET 序列化和反序列化 YAML 元数据"
 publishDate: 2018-08-12 20:44:50 +0800
 date: 2018-08-13 05:47:27 +0800
 tags: dotnet csharp
-permalink: /posts/serialize-and-deserialize-yaml.html
+permalink: /post/serialize-and-deserialize-yaml.html
 ---
 
 我希望能够对我博客中的所有 YAML 元数据进行格式化和自动生成，于是我需要进行一些 YAML 解析和写入的操作。

@@ -4,7 +4,7 @@ publishDate: 2018-03-20 19:54:40 +0800
 date: 2018-03-20 20:35:30 +0800
 tags: visualstudio csharp resharper
 coverImage: /static/posts/2018-03-20-18-51-20.png
-permalink: /posts/analyze-and-fix-code-using-resharper-custom-pattern.html
+permalink: /post/analyze-and-fix-code-using-resharper-custom-pattern.html
 ---
 
 多人协作开发的项目总会遇到代码编写风格上的差异。一般工具都能帮我们将常见的差异统一起来——例如 `if` 的换行；但也有一些不那么通用，但项目中却经常会出现的写法也需要统一。

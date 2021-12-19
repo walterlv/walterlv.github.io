@@ -5,7 +5,7 @@ date: 2019-06-16 20:53:20 +0800
 tags: windows
 position: problem
 coverImage: /static/posts/2019-06-14-22-05-03.png
-permalink: /posts/fix-downloading-and-installing-windows-language-pack-issues.html
+permalink: /post/fix-downloading-and-installing-windows-language-pack-issues.html
 ---
 
 最近我想在我的 Windows 10 上安装一个新的语言包，在 “设置” -> “时间和语言” -> “语言” 中，添加了新的语言之后，语言进入了下载状态。但是没过一小会儿，下载进度条就结束了，提示语言已经下载安装完成。但实际上只能作为显示使用，（日语）输入法却不能使用。

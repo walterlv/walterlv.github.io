@@ -5,7 +5,7 @@ date: 2020-06-01 09:21:30 +0800
 tags: unity
 position: problem
 coverImage: /static/posts/2020-05-05-14-56-18.png
-permalink: /posts/third-party-unity-nuget-management.html
+permalink: /post/third-party-unity-nuget-management.html
 ---
 
 Unity 项目虽然可使用 C# 项目作为脚本，却并没有提供一种类似 NuGet 的第一方包管理器。不过，还是有第三方包管理器可以用，为 C# 脚本应用现有的库提供方便。

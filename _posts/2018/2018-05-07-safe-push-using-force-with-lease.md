@@ -4,7 +4,7 @@ publishDate: 2018-05-07 19:16:42 +0800
 date: 2018-09-23 12:33:38 +0800
 tags: git
 coverImage: /static/posts/2018-09-23-12-31-26.png
-permalink: /posts/safe-push-using-force-with-lease.html
+permalink: /post/safe-push-using-force-with-lease.html
 ---
 
 由于 `git rebase` 命令的存在，强制将提交推送到远端仓库似乎也有些必要。不过都知道 `git push --force` 是不安全的，这让 `git rebase` 命令显得有些鸡肋。

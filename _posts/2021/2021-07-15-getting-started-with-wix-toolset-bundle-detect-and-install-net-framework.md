@@ -4,7 +4,7 @@ date: 2021-07-15 19:46:34 +0800
 tags: dotnet msi wix
 position: starter
 coverImage: /static/posts/2021-07-15-14-31-16.png
-permalink: /posts/getting-started-with-wix-toolset-bundle-detect-and-install-net-framework.html
+permalink: /post/getting-started-with-wix-toolset-bundle-detect-and-install-net-framework.html
 ---
 
 本文是 [WiX Toolset 安装包制作入门教程](/post/getting-started-with-wix-toolset) 系列中的一篇，可前往阅读完整教程。

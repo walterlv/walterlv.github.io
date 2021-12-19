@@ -4,7 +4,7 @@ date: 2019-04-25 17:24:19 +0800
 tags: dotnet csharp wpf
 position: knowledge
 coverImage: /static/posts/2019-04-25-17-03-18.png
-permalink: /posts/get-wpf-visual-scaling-ratio-to-device.html
+permalink: /post/get-wpf-visual-scaling-ratio-to-device.html
 ---
 
 我们知道，在 WPF 中的坐标单位不是屏幕像素单位，所以如果需要知道某个控件的像素尺寸，以便做一些与屏幕像素尺寸相关的操作，就需要经过一些计算（例如得到屏幕的 DPI）。

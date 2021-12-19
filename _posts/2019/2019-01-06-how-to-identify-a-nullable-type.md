@@ -5,7 +5,7 @@ date: 2019-01-08 18:01:14 +0800
 tags: csharp dotnet
 position: knowledge
 coverImage: /static/posts/2019-01-06-19-32-19.png
-permalink: /posts/how-to-identify-a-nullable-type.html
+permalink: /post/how-to-identify-a-nullable-type.html
 ---
 
 使用 `Nullable<T>` 我们可以为原本不可能为 `null` 的值类型像引用类型那样提供一个 `null` 值。不过注意：`Nullable<T>` 本身也是个 `struct`，是个值类型哦。这意味着你随时可以调用 `.HasValue` 这样的方法，而不用担心会出现 `NullReferenceException`。

@@ -4,7 +4,7 @@ publishDate: 2018-10-05 19:37:30 +0800
 date: 2018-10-16 16:57:39 +0800
 tags: uwp
 coverImage: /static/posts/2018-10-05-16-43-23.png
-permalink: /posts/force-the-commandbar-to-open-down.html
+permalink: /post/force-the-commandbar-to-open-down.html
 ---
 
 在 UWP 中使用 CommandBar 来迅速添加一组功能按钮是非常迅速的，是 UWP 中推荐的交互方案之一。也许你能见到 CommandBar 按你所需向下展开，不过可能更多数情况会看到 CommandBar 的展开方向是向上的。

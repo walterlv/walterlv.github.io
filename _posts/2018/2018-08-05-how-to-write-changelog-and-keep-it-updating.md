@@ -3,7 +3,7 @@ title: "发布了一款库（或工具包），如何持续地编写更新日志
 date: 2018-08-05 17:35:23 +0800
 tags: dotnet
 coverImage: /static/posts/2018-08-05-17-34-12.png
-permalink: /posts/how-to-write-changelog-and-keep-it-updating.html
+permalink: /post/how-to-write-changelog-and-keep-it-updating.html
 ---
 
 据说程序员最讨厌的两件事是 “别人没有写文档” 和 “要我写文档”。

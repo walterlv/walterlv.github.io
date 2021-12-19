@@ -4,7 +4,7 @@ publishDate: 2018-03-31 08:26:39 +0800
 date: 2018-09-01 08:12:18 +0800
 tags: dotnet msil
 coverImage: /static/posts/2018-03-31-07-47-18.png
-permalink: /posts/this-could-be-null.html
+permalink: /post/this-could-be-null.html
 ---
 
 `if (this == null) Console.WriteLine("this is null");` 这句话一写，大家一定觉得荒谬，然而 `if` 内代码的执行却是可能的！本文讲介绍到底发生了什么。

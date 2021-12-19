@@ -4,7 +4,7 @@ publishDate: 2019-03-04 21:37:58 +0800
 date: 2019-04-12 09:40:20 +0800
 tags: dotnet visualstudio msbuild
 position: knowledge
-permalink: /posts/disable-generating-binding-redirects.html
+permalink: /post/disable-generating-binding-redirects.html
 ---
 
 当你的项目中多个不同的项目以及不同的依赖存在不同的依赖程序集时，可能会因为依赖于不同版本的程序集而产生冲突。而绑定重定向可以帮助解决不同程序集的依赖版本不同的问题，使整个程序使用统一个版本的 dll 来运行整个应用程序。

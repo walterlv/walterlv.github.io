@@ -4,7 +4,7 @@ date: 2021-12-13 20:21:48 +0800
 tags: dotnet nuget msbuild
 position: knowledge
 coverImage: /static/posts/2021-12-13-20-02-30.png
-permalink: /posts/create-a-nuget-package-with-native-dependencies.html
+permalink: /post/create-a-nuget-package-with-native-dependencies.html
 ---
 
 正常如果你想写一个 .NET 的 NuGet 包，直接打包就好了，你的引用程序集会出现在 NuGet 包内的 lib 文件夹内。然而，如果我们的 NuGet 包包含本机依赖的话怎么办呢？

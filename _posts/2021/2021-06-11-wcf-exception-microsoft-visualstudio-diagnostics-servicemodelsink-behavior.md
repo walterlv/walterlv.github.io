@@ -3,7 +3,7 @@ title: "无法加载为扩展“Microsoft.VisualStudio.Diagnostics.ServiceModelS
 date: 2021-06-11 14:34:28 +0800
 tags: dotnet
 position: problem
-permalink: /posts/wcf-exception-microsoft-visualstudio-diagnostics-servicemodelsink-behavior.html
+permalink: /post/wcf-exception-microsoft-visualstudio-diagnostics-servicemodelsink-behavior.html
 ---
 
 一天，某用户反馈过来说我们的软件无法运行，我一看异常信息看到了这个：“`System.Configuration.ConfigurationErrorsException: 无法加载为扩展“Microsoft.VisualStudio.Diagnostics.ServiceModelSink.Behavior”注册的类型“Microsoft.VisualStudio.Diagnostics.ServiceModelSink.Behavior, Microsoft.VisualStudio.Diagnostics.ServiceModelSink, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a”。 (C:\Windows\Microsoft.NET\Framework\v4.0.30319\Config\machine.config line 232)`”。

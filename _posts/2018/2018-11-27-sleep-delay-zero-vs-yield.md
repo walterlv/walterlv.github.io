@@ -4,7 +4,7 @@ publishDate: 2018-11-27 13:14:07 +0800
 date: 2019-08-29 16:34:41 +0800
 tags: dotnet csharp
 coverImage: /static/posts/2018-11-27-11-10-43.png
-permalink: /posts/sleep-delay-zero-vs-yield.html
+permalink: /post/sleep-delay-zero-vs-yield.html
 ---
 
 在 C#/.NET 中，有 `Thread.Sleep(0)`, `Task.Delay(0)`, `Thread.Yield()`, `Task.Yield()` 中，有几种不同的让当前线程释放执行权的方法。他们的作用都是放弃当前线程当前的执行权，让其他线程得以调度。但是他们又不太一样。

@@ -5,7 +5,7 @@ date: 2019-10-22 14:04:24 +0800
 tags: dotnet windows csharp
 position: knowledge
 coverImage: /static/posts/2019-10-19-17-45-41.png
-permalink: /posts/mklink-junction-in-dotnet.html
+permalink: /post/mklink-junction-in-dotnet.html
 ---
 
 我们知道 Windows 系统 NTFS 文件系统提供了硬连接功能，可以通过 `mklink` 命令开启。如果能够通过代码实现，那么我们能够做更多有趣的事情。

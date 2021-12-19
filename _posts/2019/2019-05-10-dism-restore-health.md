@@ -4,7 +4,7 @@ date: 2019-05-10 09:02:34 +0800
 tags: windows
 position: knowledge
 coverImage: /static/posts/2019-05-09-21-06-09.png
-permalink: /posts/dism-restore-health.html
+permalink: /post/dism-restore-health.html
 ---
 
 DISM，Deployment Image Servicing and Management，部署映像服务和管理。本文介绍使用此工具检查并修复 Windows 的系统文件。

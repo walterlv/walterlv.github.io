@@ -3,7 +3,7 @@ title: "三值 bool? 进行与或运算后的结果"
 date: 2019-01-06 20:52:33 +0800
 tags: dotnet csharp
 position: knowledge
-permalink: /posts/the-semantics-of-three-value-bool.html
+permalink: /post/the-semantics-of-three-value-bool.html
 ---
 
 `bool?` 实际上是 `Nullable<Boolean>` 类型，可以当作三值的 `bool` 类型来使用。不过三值的布尔进行与或运算时的结果与二值有什么不同吗？

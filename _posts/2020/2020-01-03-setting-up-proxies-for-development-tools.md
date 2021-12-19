@@ -5,7 +5,7 @@ date: 2020-05-13 10:09:47 +0800
 tags: dotnet
 position: knowledge
 coverImage: /static/posts/2020-01-03-08-04-35.png
-permalink: /posts/setting-up-proxies-for-development-tools.html
+permalink: /post/setting-up-proxies-for-development-tools.html
 ---
 
 git、nuget、scoop 如何设置网络代理提升网络访问速度呢？

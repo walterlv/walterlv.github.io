@@ -3,7 +3,7 @@ title: "如何最快速地将旧的 NuGet 包 (2.x, packages.config) 升级成�
 publishDate: 2018-05-13 17:07:23 +0800
 date: 2019-04-12 09:37:27 +0800
 tags: visualstudio nuget msbuild
-permalink: /posts/migrate-nuget-package-from-powershell-to-props-and-targets.html
+permalink: /post/migrate-nuget-package-from-powershell-to-props-and-targets.html
 ---
 
 最近我将项目格式进行了升级，从旧的 csproj 升级成了新的 csproj；NuGet 包管理的方式也从 `packages.config` 升级成了 `PackageReference`。然而迁移完才发现，这个项目竟然还依赖了大量的从 NuGet 2.x 时代发布的 NuGet 包，这些包并不能在 `PackageReference` 下好好工作。

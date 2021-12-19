@@ -9,7 +9,7 @@ versions:
   - 中文: /post/visual-brush-refresh-views-only-but-not-layout.html
   - English: #
 coverImage: /static/posts/2019-07-12-20-12-56.png
-permalink: /posts/visual-brush-refresh-views-only-but-not-layout-en.html
+permalink: /post/visual-brush-refresh-views-only-but-not-layout-en.html
 ---
 
 Now we'll talk about a behavior of WPF `VisualBrush`. Maybe it is a bug, but let's view some details and determine whether it is or not.

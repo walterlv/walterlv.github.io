@@ -4,7 +4,7 @@ date: 2019-05-15 17:27:32 +0800
 tags: windows
 position: starter
 coverImage: /static/posts/2019-05-15-17-00-43.png
-permalink: /posts/directory-opus-integrate-with-terminals.html
+permalink: /post/directory-opus-integrate-with-terminals.html
 ---
 
 使用 Directory Opus 替代 Windows 自带的文件资源管理器来管理你计算机上的文件可以极大地提高你的文件处理效率。

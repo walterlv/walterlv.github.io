@@ -4,7 +4,7 @@ publishDate: 2018-04-24 18:03:20 +0800
 date: 2019-04-12 09:37:05 +0800
 tags: dotnet visualstudio nuget msbuild
 coverImage: /static/posts/2019-03-03-16-40-10.png
-permalink: /posts/migrate-packages-config-to-package-reference.html
+permalink: /post/migrate-packages-config-to-package-reference.html
 ---
 
 在前段时间我写了一篇迁移 csproj 格式的博客 [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj](/post/introduce-new-style-csproj-into-net-framework)，不过全过程是手工进行的，而且到最后处理 XAML 问题也非常头疼。

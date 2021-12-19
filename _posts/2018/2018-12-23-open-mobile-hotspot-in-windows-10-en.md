@@ -9,7 +9,7 @@ versions:
   - 中文: /post/open-mobile-hotspot-in-windows-10.html
   - English: #
 coverImage: /static/posts/2018-12-23-13-12-37.png
-permalink: /posts/open-mobile-hotspot-in-windows-10-en.html
+permalink: /post/open-mobile-hotspot-in-windows-10-en.html
 ---
 
 We'll learn how to turn on Mobile Hotspot (Wi-Fi) in Windows 10.

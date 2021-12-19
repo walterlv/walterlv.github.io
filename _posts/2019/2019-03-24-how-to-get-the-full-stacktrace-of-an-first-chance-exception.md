@@ -3,7 +3,7 @@ title: "C#/.NET 如何在第一次机会异常 FirstChanceException 中获取比
 date: 2019-03-24 12:09:37 +0800
 tags: dotnet csharp
 position: knowledge
-permalink: /posts/how-to-get-the-full-stacktrace-of-an-first-chance-exception.html
+permalink: /post/how-to-get-the-full-stacktrace-of-an-first-chance-exception.html
 ---
 
 在 `FirstChangeException` 事件中，我们通常只能拿到异常堆栈的第一帧，这对于我们捕捉到异常是好的，但对分析第一次机会异常可能并不利。

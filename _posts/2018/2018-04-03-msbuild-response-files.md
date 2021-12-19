@@ -3,7 +3,7 @@ title: "使用 MSBuild 响应文件 (rsp) 来指定 dotnet build 命令行编译
 publishDate: 2018-04-03 19:51:04 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: visualstudio msbuild
-permalink: /posts/msbuild-response-files.html
+permalink: /post/msbuild-response-files.html
 ---
 
 在为开源项目 [dotnet-campus/MSTestEnhancer](https://github.com/dotnet-campus/MSTestEnhancer/) 进行持续集成编译时，需要在编译命令中传入较多的参数。这对于新接手此项目的人来说，成本还是高了一点儿。本文将介绍 MSBuild 响应文件 (MSBuild Response Files, *.rsp) 来优化命令行编译体验。

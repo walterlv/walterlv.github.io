@@ -4,7 +4,7 @@ publishDate: 2019-02-20 11:26:00 +0800
 date: 2019-03-09 09:12:32 +0800
 tags: git
 position: problem
-permalink: /posts/git-push-to-all-remotes.html
+permalink: /post/git-push-to-all-remotes.html
 ---
 
 git 支持一个本地仓库包含多个远端（remote），这对于开源社区来说是一个很重要的功能，可以实时获取到最新的开源代码且能推送到自己的仓库中提交 pull request。

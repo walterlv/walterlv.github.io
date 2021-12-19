@@ -2,7 +2,7 @@
 title: "当我们使用 MVVM 模式时，我们究竟在每一层里做些什么？"
 date: 2017-11-30 01:29:14 +0800
 tags: windows wpf uwp
-permalink: /posts/mvvm-do-and-dont.html
+permalink: /post/mvvm-do-and-dont.html
 ---
 
 这篇文章不会说 MVVM 是什么，因为讲这个的文章太多了；也不会说 MVVM 的好处，因为这样的文章也是一搜一大把。我只是想说说我们究竟应该如何理解 M-V-VM，当我们真正开始写代码时，应该在里面的每一层里写些什么。

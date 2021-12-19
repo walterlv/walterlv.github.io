@@ -3,7 +3,7 @@ title: "WPF 和 UWP 中，不用设置 From 或 To，Storyboard 即拥有更灵�
 publishDate: 2017-10-26 12:55:27 +0800
 date: 2018-02-20 06:41:52 +0800
 tags: wpf uwp
-permalink: /posts/using-storyboard-without-from-or-to.html
+permalink: /post/using-storyboard-without-from-or-to.html
 ---
 
 无论是 WPF 还是 UWP 开发，如果用 `Storyboard` 和 `Animation` 做动画，我们多数时候都会设置 `From` 和 `To` 属性，用于从起始值动画到目标值。然而动画并不总是可以静态地指定这些值，因为更多的时候动画的起始值和目标值取决于当前 UI 的状态。

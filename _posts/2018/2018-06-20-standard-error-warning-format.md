@@ -4,7 +4,7 @@ publishDate: 2018-06-20 13:17:32 +0800
 date: 2018-07-02 20:49:55 +0800
 tags: dotnet msbuild
 coverImage: /static/posts/2018-06-20-13-10-34.png
-permalink: /posts/standard-error-warning-format.html
+permalink: /post/standard-error-warning-format.html
 ---
 
 我曾经写过一篇文章 [如何创建一个基于命令行工具的跨平台的 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool)，通过编写一个控制台程序来参与编译过程。但是，相比于 [基于 Task 的方式](/post/create-a-cross-platform-msbuild-task-based-nuget-tool)，可控制的因素还是太少了。

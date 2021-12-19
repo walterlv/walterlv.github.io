@@ -3,7 +3,7 @@ title: "MSBuild 在编写编译任务的时候判断当前是否在 Visual Studi
 date: 2019-06-04 22:23:50 +0800
 tags: dotnet msbuild visualstudio
 position: knowledge
-permalink: /posts/determine-building-in-visual-studio-during-building.html
+permalink: /post/determine-building-in-visual-studio-during-building.html
 ---
 
 我们这里说的编译任务是 MSBuild 的 Target。虽然只有少部分，但确实有一些情况需要判断是否在 Visual Studio 中编译的时候才需要执行的编译任务，典型的如某些仅为设计器准备的代码。

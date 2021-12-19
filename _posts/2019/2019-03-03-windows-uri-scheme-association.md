@@ -5,7 +5,7 @@ date: 2019-07-20 09:15:12 +0800
 tags: windows
 position: knowledge
 coverImage: /static/posts/2019-03-03-16-19-28.png
-permalink: /posts/windows-uri-scheme-association.html
+permalink: /post/windows-uri-scheme-association.html
 ---
 
 移动程序关联 URL 是常态，桌面应用程序其实也早就支持关联 URL 以便在浏览器中打开。当我们的程序关联了一个 URL 协议之后，开发的网站上就可以通过这个 URL 与程序进行互操作，这很互联网。

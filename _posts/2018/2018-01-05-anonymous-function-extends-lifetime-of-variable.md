@@ -4,7 +4,7 @@ publishDate: 2018-01-05 09:26:40 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: csharp dotnet
 coverImage: /static/posts/2018-01-05-09-48-13.png
-permalink: /posts/anonymous-function-extends-lifetime-of-variable.html
+permalink: /post/anonymous-function-extends-lifetime-of-variable.html
 ---
 
 小伙伴在一次垃圾回收中，发现对象并没有被回收掉，而注释掉一句代码后它便能够回收。

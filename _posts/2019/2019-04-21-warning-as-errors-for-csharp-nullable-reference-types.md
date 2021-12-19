@@ -5,7 +5,7 @@ date: 2020-04-23 20:17:50 +0800
 tags: csharp msbuild
 position: problem
 coverImage: /static/posts/2019-04-21-19-40-24.png
-permalink: /posts/warning-as-errors-for-csharp-nullable-reference-types.html
+permalink: /post/warning-as-errors-for-csharp-nullable-reference-types.html
 ---
 
 程序员不看警告！

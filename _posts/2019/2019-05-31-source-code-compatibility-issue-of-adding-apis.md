@@ -9,7 +9,7 @@ version:
 versions:
   - 中文: #
   - English: /post/source-code-compatibility-issue-of-adding-apis-en.html
-permalink: /posts/source-code-compatibility-issue-of-adding-apis.html
+permalink: /post/source-code-compatibility-issue-of-adding-apis.html
 ---
 
 我只是增加库的一个 API，比如增加几个类而已，应该不会造成兼容性问题吧。对于编译好的二进制文件来说，不会造成兼容性问题；但——可能造成源码不兼容。

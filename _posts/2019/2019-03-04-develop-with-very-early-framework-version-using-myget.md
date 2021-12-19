@@ -5,7 +5,7 @@ date: 2019-03-10 16:57:26 +0800
 tags: dotnet csharp visualstudio msbuild nuget
 position: starter
 coverImage: /static/posts/2019-02-27-11-58-37.png
-permalink: /posts/develop-with-very-early-framework-version-using-myget.html
+permalink: /post/develop-with-very-early-framework-version-using-myget.html
 ---
 
 很多库都会在 nuget.org 上发布预览版本，不过一般来说这个预览版本也是大多可用的。然而想要体验日构建版本，这个就没有了，毕竟要照顾绝大多数开发者嘛……

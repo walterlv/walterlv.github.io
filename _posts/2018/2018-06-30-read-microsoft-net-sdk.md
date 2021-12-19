@@ -9,7 +9,7 @@ versions:
   - 中文: #
   - English: /post/read-microsoft-net-sdk-en.html
 coverImage: /static/posts/2018-06-30-21-06-06.png
-permalink: /posts/read-microsoft-net-sdk.html
+permalink: /post/read-microsoft-net-sdk.html
 ---
 
 在 csproj 中，`Project` 中的 `Sdk` 属性是 MSBuild 15.0 开始支持的，也就是 Visual Studio 2017 开始支持。有了 Sdk 属性的存在，MSBuild 编译过程能够扩展得非常强大，而不止是过去 `Import` 的一个 `props` 和 `targets` 文件。

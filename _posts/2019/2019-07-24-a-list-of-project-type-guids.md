@@ -3,7 +3,7 @@ title: "解决方案文件 sln 中的项目类型 GUID"
 date: 2019-07-24 11:06:12 +0800
 tags: visualstudio
 position: knowledge
-permalink: /posts/a-list-of-project-type-guids.html
+permalink: /post/a-list-of-project-type-guids.html
 ---
 
 Visual Studio 可以通过得知项目类型快速地为项目显示相应的图标、对应的功能等等。

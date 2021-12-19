@@ -4,7 +4,7 @@ date: 2019-11-05 11:23:56 +0800
 tags: git
 position: knowledge
 published: false
-permalink: /posts/blame-code-using-tortoise-git-while-the-file-has-been-moved-or-splitted.html
+permalink: /post/blame-code-using-tortoise-git-while-the-file-has-been-moved-or-splitted.html
 ---
 
 在此处编辑 blog.walterlv.com 的博客摘要

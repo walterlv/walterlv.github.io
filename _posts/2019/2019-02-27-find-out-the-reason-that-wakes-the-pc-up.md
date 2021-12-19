@@ -4,7 +4,7 @@ date: 2019-02-27 14:09:22 +0800
 tags: windows
 position: problem
 coverImage: /static/posts/2019-02-18-09-16-28.png
-permalink: /posts/find-out-the-reason-that-wakes-the-pc-up.html
+permalink: /post/find-out-the-reason-that-wakes-the-pc-up.html
 ---
 
 在昏暗的夜晚，一个人躺在房间的床上，静静的思考着什么。突然间电脑屏幕亮了！什么鬼！到底是谁唤醒了我的电脑！！！

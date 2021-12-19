@@ -4,7 +4,7 @@ date: 2019-11-05 11:24:00 +0800
 tags: git
 position: problem
 published: false
-permalink: /posts/split-a-file-into-two-while-preserving-git-line-history.html
+permalink: /post/split-a-file-into-two-while-preserving-git-line-history.html
 ---
 
 喜欢重构的小伙伴，把一个文件拆分成两个到多个简直是常态。可是同时也给大家带来了一堆吐槽，因为接下来大家追溯文件历史记录的时候，总能发现这个重构小伙伴，而不是这段代码的真实作者。虽然使用多个 git 命令依然可以准确找到这段代码的原始修改，但毕竟麻烦很多，需要大量人工参与。

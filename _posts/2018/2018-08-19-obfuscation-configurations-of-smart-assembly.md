@@ -4,7 +4,7 @@ publishDate: 2018-08-19 20:42:42 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: dotnet csharp
 coverImage: /static/posts/2018-08-19-15-14-44.png
-permalink: /posts/obfuscation-configurations-of-smart-assembly.html
+permalink: /post/obfuscation-configurations-of-smart-assembly.html
 ---
 
 长文预警！！！

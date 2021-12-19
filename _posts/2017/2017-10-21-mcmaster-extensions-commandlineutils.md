@@ -3,7 +3,7 @@ title: "安利一款非常好用的命令行参数库：McMaster.Extensions.Comm
 publishDate: 2017-10-21 09:44:02 +0800
 date: 2018-04-26 20:39:31 +0800
 tags: dotnet dotnet-core dotnet-standard
-permalink: /posts/mcmaster-extensions-commandlineutils.html
+permalink: /post/mcmaster-extensions-commandlineutils.html
 ---
 
 命令行参数解析想必是每一个命令行程序都难以避开的工程。这工程可小可大，但每次都写始终是在浪费时间。而且，不同人实现也千差万别，使得不同的命令行程序命令参数传入的体验总有差异。

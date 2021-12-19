@@ -3,7 +3,7 @@ title: ".NET/C# 的字符串暂存池"
 date: 2019-05-28 21:26:27 +0800
 tags: dotnet csharp
 position: knowledge
-permalink: /posts/string-intern-pool.html
+permalink: /post/string-intern-pool.html
 ---
 
 本文介绍 .NET 中的字符串暂存池。

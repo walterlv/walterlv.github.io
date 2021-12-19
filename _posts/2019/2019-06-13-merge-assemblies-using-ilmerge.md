@@ -5,7 +5,7 @@ date: 2019-06-17 21:34:41 +0800
 tags: dotnet csharp
 position: knowledge
 coverImage: /static/posts/2019-06-13-08-08-00.png
-permalink: /posts/merge-assemblies-using-ilmerge.html
+permalink: /post/merge-assemblies-using-ilmerge.html
 ---
 
 我们有多种工具可以将程序集合并成为一个。打包成一个程序集可以避免分发程序的时候带上一堆依赖而出问题。

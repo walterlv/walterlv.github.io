@@ -4,7 +4,7 @@ date: 2019-05-15 14:57:35 +0800
 tags: csharp dotnet
 position: starter
 coverImage: /static/posts/2019-05-15-14-28-13.png
-permalink: /posts/default-interface-members-practise.html
+permalink: /post/default-interface-members-practise.html
 ---
 
 当你升级到 C# 8.0 和 .NET Core 3.0 之后，你就可以开始使用默认接口实现的功能了。

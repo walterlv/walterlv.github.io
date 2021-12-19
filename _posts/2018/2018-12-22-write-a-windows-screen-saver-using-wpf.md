@@ -4,7 +4,7 @@ date: 2018-12-22 10:24:33 +0800
 tags: windows wpf
 position: starter
 coverImage: /static/posts/2018-12-22-09-58-32.png
-permalink: /posts/write-a-windows-screen-saver-using-wpf.html
+permalink: /post/write-a-windows-screen-saver-using-wpf.html
 ---
 
 最近有小伙伴问我如何可以让 Windows 静置一段时间不操作之后，显示一个特殊的界面。我想了想，屏幕保护程序可以做到这一点，而且，屏幕保护程序的开发也是非常简单的。

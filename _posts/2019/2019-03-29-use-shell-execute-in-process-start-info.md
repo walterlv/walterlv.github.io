@@ -4,7 +4,7 @@ publishDate: 2019-03-29 15:23:35 +0800
 date: 2019-09-17 12:37:17 +0800
 tags: dotnet csharp
 position: knowledge
-permalink: /posts/use-shell-execute-in-process-start-info.html
+permalink: /post/use-shell-execute-in-process-start-info.html
 ---
 
 在 .NET 中创建进程时，可以传入 `ProcessStartInfo` 类的一个新实例。在此类型中，有一个 `UseShellExecute` 属性。

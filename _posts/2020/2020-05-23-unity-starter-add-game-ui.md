@@ -4,7 +4,7 @@ date: 2020-05-23 15:21:49 +0800
 tags: unity csharp
 position: starter
 coverImage: /static/posts/2020-05-23-14-46-33.png
-permalink: /posts/unity-starter-add-game-ui.html
+permalink: /post/unity-starter-add-game-ui.html
 ---
 
 早期的 Unity3D 做 UI 并不容易，以至于大家习惯于使用 NGUI 插件来开发。后来 NGUI 的开发者加入开发了 Unity UI，现在就有了一套更好用的 Unity UI 可用了。

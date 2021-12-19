@@ -3,7 +3,7 @@ title: ".NET/C# 如何获取当前进程的 CPU 和内存占用？如何获取�
 date: 2019-06-28 07:48:08 +0800
 tags: dotnet
 position: knowledge
-permalink: /posts/how-to-get-process-cpu-memory-usage.html
+permalink: /post/how-to-get-process-cpu-memory-usage.html
 ---
 
 都知道可以在任务管理器中查看进程的 CPU 和内存占用，那么如何通过 .NET 编写代码的方式来获取到 CPU 和内存占用呢？

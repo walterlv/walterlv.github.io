@@ -4,7 +4,7 @@ date: 2019-07-03 16:51:53 +0800
 tags: windows
 position: starter
 coverImage: /static/posts/2019-07-03-16-24-01.png
-permalink: /posts/add-a-new-profile-for-windows-terminal.html
+permalink: /post/add-a-new-profile-for-windows-terminal.html
 ---
 
 Windows Terminal 的预览版本可以在微软应用商店下载，下载完后它原生就可以打开三个不同的终端 PowerShell Core、CMD 和 PowerShell。然而我的计算机上还安装了一个 Bash 可以如何添加到 Windows Terminal 里呢？

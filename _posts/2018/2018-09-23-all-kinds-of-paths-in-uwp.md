@@ -4,7 +4,7 @@ publishDate: 2018-09-23 20:01:28 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: dotnet uwp
 coverImage: /static/posts/2018-09-23-14-55-08.png
-permalink: /posts/all-kinds-of-paths-in-uwp.html
+permalink: /post/all-kinds-of-paths-in-uwp.html
 ---
 
 UWP 提供了多种不同文件路径访问方式，对应到不同的文件路径中。可能我们只是简单用 `ApplicationData.Current` 获取一下可以读写的路径便能应付我们应用日常所需的各种文件读写需求，不过，UWP 还提供了更多的路径选项。

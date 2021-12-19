@@ -4,7 +4,7 @@ publishDate: 2018-09-13 21:00:09 +0800
 date: 2018-10-05 6:40:51 +0800
 tags: dotnet wpf
 coverImage: /static/posts/2018-09-13-20-21-36.png
-permalink: /posts/net-core-desktop-api-analyzer.html
+permalink: /post/net-core-desktop-api-analyzer.html
 ---
 
 今年五月的 Build 大会上，微软说 .NET Core 3.0 将带来 WPF / Windows Forms 这些桌面应用的支持。当然，是通过 Windows 兼容包（Windows Compatibility Pack）实现的。为了提前检查你的程序是否能在未来跑在 .NET Core 3.0 上，微软在 2018年8月8日 推出了 .NET Core 3.0 Desktop API Analyzer，帮助你提前检查你的程序能有多容易迁移到 .NET Core 3.0 

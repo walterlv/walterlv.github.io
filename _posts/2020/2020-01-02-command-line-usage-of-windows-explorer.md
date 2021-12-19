@@ -4,7 +4,7 @@ date: 2020-01-02 11:05:18 +0800
 tags: windows
 position: knowledge
 coverImage: /static/posts/2020-01-02-08-17-31.png
-permalink: /posts/command-line-usage-of-windows-explorer.html
+permalink: /post/command-line-usage-of-windows-explorer.html
 ---
 
 大多数用户还是习惯使用 Windows 自带的文件资源管理器来管理文件，于是我们可以利用它的命令行参数来帮助我们做一些与之相关的交互。

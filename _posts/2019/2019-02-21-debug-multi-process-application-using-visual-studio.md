@@ -4,7 +4,7 @@ date: 2019-02-21 15:24:56 +0800
 tags: dotnet visualstudio
 position: knowledge
 coverImage: /static/posts/2019-02-20-22-53-42.png
-permalink: /posts/debug-multi-process-application-using-visual-studio.html
+permalink: /post/debug-multi-process-application-using-visual-studio.html
 ---
 
 当你的编写的是一个多进程的程序的时候，调试起来可能会比较困难，因为 Visual Studio 默认只会把你当前设置的启动项目的启动调试。

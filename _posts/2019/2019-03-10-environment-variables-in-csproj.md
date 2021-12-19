@@ -5,7 +5,7 @@ date: 2019-03-12 11:53:06 +0800
 tags: dotnet csharp visualstudio msbuild
 position: starter
 coverImage: /static/posts/2019-03-10-18-51-38.png
-permalink: /posts/environment-variables-in-csproj.html
+permalink: /post/environment-variables-in-csproj.html
 ---
 
 Windows 系统以及很多应用程序会考虑使用系统的环境变量来传递一些公共的参数或者配置。Windows 资源管理器使用 `%var%` 来使用环境变量，那么我们能否在 Visual Studio 的项目文件中使用环境变量呢？

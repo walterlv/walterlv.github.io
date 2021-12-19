@@ -4,7 +4,7 @@ date: 2019-01-30 20:34:19 +0800
 tags: dotnet resharper windows
 position: problem
 coverImage: /static/posts/2019-01-30-20-23-31.png
-permalink: /posts/safely-remove-jetbrains-resharper-cache-folder.html
+permalink: /post/safely-remove-jetbrains-resharper-cache-folder.html
 ---
 
 一个不小心，我的 SSD 又满了。到底是谁占用了那么多的空间！如果你是 ReSharper 的重度用户，那么可能你的调查结果会直指 JetBrains ReSharper。

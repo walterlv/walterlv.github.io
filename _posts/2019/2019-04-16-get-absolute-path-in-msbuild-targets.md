@@ -3,7 +3,7 @@ title: "如何在 MSBuild 的项目文件 csproj 中获取绝对路径"
 date: 2019-04-16 18:16:07 +0800
 tags: msbuild
 position: problem
-permalink: /posts/get-absolute-path-in-msbuild-targets.html
+permalink: /post/get-absolute-path-in-msbuild-targets.html
 ---
 
 通常我们能够在 csproj 文件中仅仅使用相对路径就完成大多数的编译任务。但是有些外部命令的执行需要用到绝对路径，或者对此外部工具来说，相对路径具有不同的含义。这个时候，就需要将相对路径在 csproj 中转换为绝对路径来使用。

@@ -3,7 +3,7 @@ title: "使用 Microsoft.Net.Compilers 在旧版本的 Visual Studio 2013/2015/2
 publishDate: 2018-10-15 15:23:45 +0800
 date: 2019-03-23 10:30:03 +0800
 tags: visualstudio csharp
-permalink: /posts/add-lastest-csharp-support-for-old-visual-studio.html
+permalink: /post/add-lastest-csharp-support-for-old-visual-studio.html
 ---
 
 新版本的 C# 特性需要新版本的 Visual Studio 的支持。不过，如果你不介意修改项目的话，你也能在低版本的 Visual Studio 中获得高版本的 C# 语言支持了。

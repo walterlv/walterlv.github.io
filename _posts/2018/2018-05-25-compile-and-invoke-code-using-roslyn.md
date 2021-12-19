@@ -4,7 +4,7 @@ publishDate: 2018-05-25 21:24:08 +0800
 date: 2021-08-30 10:40:55 +0800
 tags: visualstudio dotnet csharp roslyn
 coverImage: /static/posts/2018-05-25-20-17-01.png
-permalink: /posts/compile-and-invoke-code-using-roslyn.html
+permalink: /post/compile-and-invoke-code-using-roslyn.html
 ---
 
 Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。以至于我们只需要编写很少量的代码便能够编译并执行我们的代码。

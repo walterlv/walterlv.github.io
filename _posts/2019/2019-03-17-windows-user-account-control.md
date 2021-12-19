@@ -5,7 +5,7 @@ date: 2019-03-19 17:42:26 +0800
 tags: windows
 position: knowledge
 coverImage: /static/posts/2019-03-17-18-42-26.png
-permalink: /posts/windows-user-account-control.html
+permalink: /post/windows-user-account-control.html
 ---
 
 阅读本文，你可以初步了解 Windows 上的 UAC 用户账户控制机制。本文不会涉及到 UAC 的底层实现原理和安全边界问题。

@@ -9,7 +9,7 @@ versions:
   - 中文: #
   - English: /post/open-mobile-hotspot-in-windows-10-en.html
 coverImage: /static/posts/2018-12-23-13-21-40.png
-permalink: /posts/open-mobile-hotspot-in-windows-10.html
+permalink: /post/open-mobile-hotspot-in-windows-10.html
 ---
 
 本文将介绍如何在 Windows 10 中开启移动 Wi-Fi 热点。

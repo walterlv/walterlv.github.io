@@ -3,7 +3,7 @@ title: "使用 WiX 创建最简单的安装包过程中可能出现的问题和�
 date: 2021-07-16 11:50:15 +0800
 tags: dotnet msi wix
 position: problem
-permalink: /posts/getting-started-with-wix-toolset-the-pit-you-might-step-on.html
+permalink: /post/getting-started-with-wix-toolset-the-pit-you-might-step-on.html
 ---
 
 本文是 [WiX Toolset 安装包制作入门教程](/post/getting-started-with-wix-toolset) 系列中的番外篇，可前往阅读完整教程。

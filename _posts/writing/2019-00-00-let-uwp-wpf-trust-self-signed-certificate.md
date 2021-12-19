@@ -4,7 +4,7 @@ date: 2019-01-29 18:04:31 +0800
 tags: dotnet asp wpf uwp windows
 position: problem
 published: false
-permalink: /posts/let-uwp-wpf-trust-self-signed-certificate.html
+permalink: /post/let-uwp-wpf-trust-self-signed-certificate.html
 ---
 
 在此处编辑 walterlv.com 的博客摘要

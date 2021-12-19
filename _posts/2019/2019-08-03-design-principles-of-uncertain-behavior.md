@@ -3,7 +3,7 @@ title: "如何为非常不确定的行为（如并发）设计安全的 API，�
 date: 2019-08-03 13:56:32 +0800
 tags: dotnet csharp
 position: principle
-permalink: /posts/design-principles-of-uncertain-behavior.html
+permalink: /post/design-principles-of-uncertain-behavior.html
 ---
 
 .NET 中提供了一些线程安全的类型，如 `ConcurrentDictionary<TKey, TValue>`，它们的 API 设计与常规设计差异很大。如果你对此觉得奇怪，那么正好阅读本文。本文介绍为这些非常不确定的行为设计 API 时应该考虑的原则，了解这些原则之后你会体会到为什么会有这些 API 设计上的差异，然后指导你设计新的类型。

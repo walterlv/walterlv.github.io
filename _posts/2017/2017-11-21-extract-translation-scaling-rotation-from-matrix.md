@@ -4,7 +4,7 @@ publishDate: 2017-11-21 00:20:36 +0800
 date: 2017-11-22 21:24:08 +0800
 tags: xaml wpf uwp
 coverImage: /static/posts/2017-11-20-23-47-06.png
-permalink: /posts/extract-translation-scaling-rotation-from-matrix.html
+permalink: /post/extract-translation-scaling-rotation-from-matrix.html
 ---
 
 在 XAML 中，我们对一个 `UIElement` 进行一个 `RenderTransform` 是再常见不过的事情了，我们可以从众多叠加的 `TransformGroup` 瞬间得到一个 `Matrix` 表示整个变换的综合变换矩阵，然而反过来却不好做——从变换矩阵中反向得到变换分量。

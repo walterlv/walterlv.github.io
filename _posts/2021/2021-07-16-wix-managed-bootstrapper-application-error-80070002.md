@@ -3,7 +3,7 @@ title: "用 WiX Burn 制作托管安装包：出现 0x80070002 错误"
 date: 2021-07-16 10:48:59 +0800
 tags: dotnet msi wix
 position: problem
-permalink: /posts/wix-managed-bootstrapper-application-error-80070002.html
+permalink: /post/wix-managed-bootstrapper-application-error-80070002.html
 ---
 
 使用 WiX 的 Burn 引擎制作自定义托管引导程序的 exe 安装包时，双击生成的安装包没有反应。如果查看日志可以发现有 `0x80070002` 错误。本文介绍其调查和解决方法。

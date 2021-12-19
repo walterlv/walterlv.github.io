@@ -3,7 +3,7 @@ title: "如何在保留原本所有样式/绑定和用户设置值的情况下�
 date: 2020-06-03 07:13:24 +0800
 tags: wpf dotnet
 position: knowledge
-permalink: /posts/change-and-restore-wpf-dependency-value-without-disabling-the-declared-use-of-the-property.html
+permalink: /post/change-and-restore-wpf-dependency-value-without-disabling-the-declared-use-of-the-property.html
 ---
 
 WPF 备份某控件的一些属性，做一些神奇的操作，然后再还原这些属性。多么司空见惯的操作呀！然而怎么备份却是值得研究的问题。直接赋值？那一定是因为你没踩到一些坑。

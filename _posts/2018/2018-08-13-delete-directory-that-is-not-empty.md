@@ -4,7 +4,7 @@ publishDate: 2018-08-13 17:21:04 +0800
 date: 2018-09-01 08:14:59 +0800
 tags: windows
 coverImage: /static/posts/2018-08-13-15-38-13.png
-permalink: /posts/delete-directory-that-is-not-empty.html
+permalink: /post/delete-directory-that-is-not-empty.html
 ---
 
 在日常使用 Windows 10 时，有时会遇到删除很普通的文件夹时提示“访问被拒绝”，以管理员权限重试后依然提示没有权限。如果使用命令行删除，则会提示“无法删除文件夹 XXX，目录不是空的。”。

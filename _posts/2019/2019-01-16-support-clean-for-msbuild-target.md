@@ -3,7 +3,7 @@ title: "让 MSBuild Target 支持 Clean"
 date: 2019-01-16 15:20:39 +0800
 tags: msbuild visualstudio
 position: knowledge
-permalink: /posts/support-clean-for-msbuild-target.html
+permalink: /post/support-clean-for-msbuild-target.html
 ---
 
 我们有时候会使用解决方案的清理（Clean）功能来解决一些项目编译过程中非常诡异的问题。这通常是一些 Target 生成了一些错误的中间文件，但又不知道到底是哪里错了。

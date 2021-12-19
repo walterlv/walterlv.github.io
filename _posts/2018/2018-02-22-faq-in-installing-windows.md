@@ -2,7 +2,7 @@
 title: "安装 Windows 需要知道的 256 个问题"
 date: 2018-02-22 20:57:12 +0800
 tags: windows sysprep
-permalink: /posts/faq-in-installing-windows.html
+permalink: /post/faq-in-installing-windows.html
 ---
 
 如果你希望更刺激地安装 Windows，那么你需要了解很多 Windows 系统相关的问题。

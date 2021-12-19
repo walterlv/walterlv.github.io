@@ -4,7 +4,7 @@ date: 2019-11-05 11:23:09 +0800
 tags: dotnet csharp
 position: knowledge
 published: false
-permalink: /posts/all-configurations-of-cef-settings.html
+permalink: /post/all-configurations-of-cef-settings.html
 ---
 
 在此处编辑 blog.walterlv.com 的博客摘要

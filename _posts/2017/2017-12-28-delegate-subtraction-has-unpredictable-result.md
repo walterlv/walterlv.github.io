@@ -3,7 +3,7 @@ title: "为什么委托的减法（- 或 -=）可能出现非预期的结果？�
 date: 2017-12-28 10:03:44 +0800
 tags: csharp dotnet
 coverImage: /static/posts/2017-12-28-08-51-19.png
-permalink: /posts/delegate-subtraction-has-unpredictable-result.html
+permalink: /post/delegate-subtraction-has-unpredictable-result.html
 ---
 
 当我们为一个委托写 `-=` 的时候，ReSharper 会提示“Delegate Subtraction Has Unpredictable Result”，即“委托的减法可能出现非预期的结果”。然而在写为事件写 `-=` 的时候却并没有这样的提示。然而这个提示是什么意思呢？为什么会“非预期”？为什么委托会提示而事件不会提示？

@@ -4,7 +4,7 @@ publishDate: 2020-04-30 09:19:06 +0800
 date: 2021-08-30 10:41:03 +0800
 tags: windows linux
 position: knowledge
-permalink: /posts/typing-difference-among-shells-in-different-operating-systems.html
+permalink: /post/typing-difference-among-shells-in-different-operating-systems.html
 ---
 
 启动某个程序，再带上一堆参数，这几乎是程序员们每天必做到事情。另外再算上各种辅助程序员们的自动化脚本，辅助构建的 CI（持续集成）等等，程序员们在创造大量的应用程序然后调用它们。

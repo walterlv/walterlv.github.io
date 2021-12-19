@@ -4,7 +4,7 @@ date: 2019-08-04 21:17:27 +0800
 tags: dotnet csharp msbuild visualstudio nuget
 position: starter
 coverImage: /static/posts/2019-02-27-11-58-37.png
-permalink: /posts/collect-nuget-output-folder-for-fast-package-debugging.html
+permalink: /post/collect-nuget-output-folder-for-fast-package-debugging.html
 ---
 
 我们做的公共库可能通过 nuget.org 发布，也可能是自己搭建 NuGet 服务器。但是，如果某个包正在开发中，需要快速验证其是否解决掉一些诡异的 bug 的话，除了单元测试这种间接的测试方法，还可以在本地安装未发布的 NuGet 包的方法来快速调试。

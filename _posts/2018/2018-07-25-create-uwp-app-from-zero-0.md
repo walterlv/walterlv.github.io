@@ -4,7 +4,7 @@ publishDate: 2018-07-25 09:27:23 +0800
 date: 2019-04-12 09:40:58 +0800
 tags: uwp msbuild
 coverImage: /static/posts/2018-07-24-20-37-18.png
-permalink: /posts/create-uwp-app-from-zero-0.html
+permalink: /post/create-uwp-app-from-zero-0.html
 ---
 
 每次使用 Visual Studio 的模板创建一个 UWP 程序，我们会在项目中发现大量的项目文件、配置、应用启动流程代码和界面代码。然而这些文件在 UWP 程序中到底是如何工作起来的？

@@ -5,7 +5,7 @@ date: 2019-12-08 15:29:05 +0800
 tags: powershell nuget dotnet
 position: problem
 coverImage: /static/posts/2019-11-20-14-31-13.png
-permalink: /posts/push-nuget-packages-using-powershell.html
+permalink: /post/push-nuget-packages-using-powershell.html
 ---
 
 要发布 NuGet 包，只需要执行命令 `nuget push xxx.nupkg` 即可，或者去 nuget.org 点鼠标上传。

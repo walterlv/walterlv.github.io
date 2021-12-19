@@ -4,7 +4,7 @@ publishDate: 2019-11-27 10:03:09 +0800
 date: 2019-12-08 15:29:19 +0800
 tags: dotnet csharp
 position: starter
-permalink: /posts/get-derived-type-name-without-base-type-name.html
+permalink: /post/get-derived-type-name-without-base-type-name.html
 ---
 
 基类是 `MenuItem`，子类是 `WalterlvMenuItem`、`FooMenuItem`。基类是 `Configuration`，子类是 `WalterlvConfiguration`、`ExtensionConfiguration`。在代码中，我们可能会为了能够一眼看清类之间的继承（从属）关系而在子类名称后缀中带上基类的名称。但是由于这种情况下的基类不参与实际的业务，所以对外（文件/网络）的名称通常不需要带上这个后缀。

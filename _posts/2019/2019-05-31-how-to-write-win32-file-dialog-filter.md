@@ -4,7 +4,7 @@ date: 2019-05-31 20:36:03 +0800
 tags: windows dotnet csharp wpf uwp
 position: starter
 coverImage: /static/posts/2019-05-31-20-31-40.png
-permalink: /posts/how-to-write-win32-file-dialog-filter.html
+permalink: /post/how-to-write-win32-file-dialog-filter.html
 ---
 
 在使用 Win32 / WPF / Windows Forms 的打开或保存文件对话框的时候，多数情况下我们都会考虑编写文件过滤器。UWP 中有 `FileTypeFilter` 集合可以添加不同的文件种类，但 Win32 中却是一个按一定规则组合而成的字符串。

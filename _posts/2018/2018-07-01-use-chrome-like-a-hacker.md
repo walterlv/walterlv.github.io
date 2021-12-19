@@ -4,7 +4,7 @@ publishDate: 2018-07-01 19:56:51 +0800
 date: 2018-07-28 07:40:40 +0800
 tags: windows
 coverImage: /static/posts/2018-07-28-07-39-24.png
-permalink: /posts/use-chrome-like-a-hacker.html
+permalink: /post/use-chrome-like-a-hacker.html
 ---
 
 有那么一波小伙伴，多数时候都不需要用到鼠标，通常他们正好是“黑客”。当你开始使用键盘操作一切时，便能体会到无需用鼠标瞄准按钮时的干脆，无需在键盘和鼠标之间移动手时的轻松。

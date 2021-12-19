@@ -5,7 +5,7 @@ date: 2020-05-05 19:35:25 +0800
 tags: unity
 position: starter
 coverImage: /static/posts/2020-05-05-17-31-06.png
-permalink: /posts/unity-starter-unity-editor-shortcut-keys.html
+permalink: /post/unity-starter-unity-editor-shortcut-keys.html
 ---
 
 本文为 Unity3D 入门小伙伴整理 Unity 编辑器中的常用快捷键。

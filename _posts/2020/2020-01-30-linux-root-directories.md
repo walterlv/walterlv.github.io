@@ -4,7 +4,7 @@ date: 2020-01-30 16:02:14 +0800
 tags: linux
 position: starter
 coverImage: /static/posts/2020-01-30-16-00-42.png
-permalink: /posts/linux-root-directories.html
+permalink: /post/linux-root-directories.html
 ---
 
 本文介绍 Linux 系统根目录下的各种文件夹及其用途，了解这些目录可以帮助你更好地管理你的 Linux 主机。

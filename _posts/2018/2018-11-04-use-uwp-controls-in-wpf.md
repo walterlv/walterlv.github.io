@@ -4,7 +4,7 @@ publishDate: 2018-11-04 11:47:23 +0800
 date: 2019-03-09 09:09:02 +0800
 tags: uwp wpf dotnet
 coverImage: /static/posts/2018-11-04-09-34-39.png
-permalink: /posts/use-uwp-controls-in-wpf.html
+permalink: /post/use-uwp-controls-in-wpf.html
 ---
 
 Windows Community Toolkit 再次更新到 5.0。以前可以在 WPF 中使用有限的 UWP 控件，而现在有了 WindowsXamlHost，则可以使用更多 UWP 原生控件了。

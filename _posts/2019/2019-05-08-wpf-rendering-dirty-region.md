@@ -5,7 +5,7 @@ date: 2019-05-13 09:50:23 +0800
 tags: wpf dotnet csharp
 position: problem
 coverImage: /static/posts/2019-05-08-09-00-36.png
-permalink: /posts/wpf-rendering-dirty-region.html
+permalink: /post/wpf-rendering-dirty-region.html
 ---
 
 本文介绍通过发现渲染脏区来提高渲染性能。

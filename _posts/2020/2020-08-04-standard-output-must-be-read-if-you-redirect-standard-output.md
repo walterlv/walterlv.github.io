@@ -4,7 +4,7 @@ date: 2020-08-04 11:00:19 +0800
 tags: dotnet csharp
 position: problem
 coverImage: /static/posts/2020-08-03-19-42-13.png
-permalink: /posts/standard-output-must-be-read-if-you-redirect-standard-output.html
+permalink: /post/standard-output-must-be-read-if-you-redirect-standard-output.html
 ---
 
 设置进程的 RedirectStandardOutput 重定向输出后，必须将其读出来。本文带你做一个实验并得出结论。

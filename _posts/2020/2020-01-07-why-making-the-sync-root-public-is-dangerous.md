@@ -3,7 +3,7 @@ title: "为什么不应该公开用来同步的加锁对象？为什么不应该
 date: 2020-01-07 09:29:31 +0800
 tags: dotnet csharp
 position: knowledge
-permalink: /posts/why-making-the-sync-root-public-is-dangerous.html
+permalink: /post/why-making-the-sync-root-public-is-dangerous.html
 ---
 
 如果你编写线程安全代码时为了省事儿直接 `lock(this)`，或者早已听说不应该 `lock(this)`，只是不知道原因，那么阅读本文可以帮助你了解原因。

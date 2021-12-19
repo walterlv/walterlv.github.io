@@ -5,7 +5,7 @@ date: 2019-10-22 14:14:08 +0800
 tags: wpf windows dotnet csharp
 position: problem
 coverImage: /static/posts/2019-08-02-08-16-22.png
-permalink: /posts/window-flickers-on-resizing-if-the-window-contains-a-hwndhost-element.html
+permalink: /post/window-flickers-on-resizing-if-the-window-contains-a-hwndhost-element.html
 ---
 
 因为 Win32 的窗口句柄是可以跨进程传递的，所以可以用来实现跨进程 UI。不过，本文不会谈论跨进程 UI 的具体实现，只会提及其实现中的一个重要缓解，使用子窗口的方式。

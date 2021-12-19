@@ -3,7 +3,7 @@ title: ".NET/C# 避免调试器不小心提前计算本应延迟计算的值"
 date: 2019-05-28 18:51:13 +0800
 tags: dotnet csharp
 position: problem
-permalink: /posts/avoid-value-been-evaluated-by-debugger.html
+permalink: /post/avoid-value-been-evaluated-by-debugger.html
 ---
 
 延迟计算属性的值，应该很多小伙伴都经常使用。比如在属性的 `get` 方法中判断是否已初始化，如果没有初始化则立即开始初始化。

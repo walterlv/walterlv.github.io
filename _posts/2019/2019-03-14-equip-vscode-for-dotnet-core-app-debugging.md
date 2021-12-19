@@ -4,7 +4,7 @@ date: 2019-03-14 22:31:16 +0800
 tags: dotnet csharp vscode msbuild visualstudio
 position: starter
 coverImage: /static/posts/2019-03-14-20-01-52.png
-permalink: /posts/equip-vscode-for-dotnet-core-app-debugging.html
+permalink: /post/equip-vscode-for-dotnet-core-app-debugging.html
 ---
 
 如果你是开发个人项目，那就直接用 Visual Studio Community 版本吧，对个人免费，对小团体免费，不需要这么折腾。

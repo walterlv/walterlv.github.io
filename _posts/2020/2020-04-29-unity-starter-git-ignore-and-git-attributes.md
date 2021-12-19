@@ -4,7 +4,7 @@ publishDate: 2020-04-29 17:41:22 +0800
 date: 2020-06-01 09:21:30 +0800
 tags: unity csharp
 position: starter
-permalink: /posts/unity-starter-git-ignore-and-git-attributes.html
+permalink: /post/unity-starter-git-ignore-and-git-attributes.html
 ---
 
 Unity3D 项目虽然说使用 C# 脚本开发，但毕竟不是 .NET/C# 项目。今天一位小伙伴告诉我说用错了 .gitignore 文件，结果管理仓库时丢了很多重要的文件。

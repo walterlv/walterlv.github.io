@@ -3,7 +3,7 @@ title: "如何查看用 WiX 制作的安装包的日志"
 date: 2021-07-15 20:18:52 +0800
 tags: dotnet msi wix
 position: starter
-permalink: /posts/how-to-view-wix-burn-installer-logs.html
+permalink: /post/how-to-view-wix-burn-installer-logs.html
 ---
 
 如果你使用 WiX 制作安装包，并且遇到了问题，一定需要一个趁手的调试方案。本文介绍如何查看 WiX 制作的安装包的日志。

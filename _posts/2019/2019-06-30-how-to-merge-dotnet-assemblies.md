@@ -5,7 +5,7 @@ date: 2020-01-10 21:52:41 +0800
 tags: dotnet csharp
 position: knowledge
 coverImage: /static/posts/2019-06-30-11-44-16.png
-permalink: /posts/how-to-merge-dotnet-assemblies.html
+permalink: /post/how-to-merge-dotnet-assemblies.html
 ---
 
 编写 .NET 程序的时候，我们经常会在项目的输出目录下发现一大堆的文件。除了我们项目自己生成的程序集之外，还能找到这个项目所依赖的一大堆依赖程序集。有没有什么方法可以把这些依赖和我们的程序集合并到一起呢？

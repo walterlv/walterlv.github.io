@@ -4,7 +4,7 @@ publishDate: 2018-05-12 09:09:02 +0800
 date: 2019-08-07 14:50:52 +0800
 tags: visualstudio csharp dotnet msbuild
 coverImage: /static/posts/2018-05-12-07-46-48.png
-permalink: /posts/create-a-cross-platform-command-based-nuget-tool.html
+permalink: /post/create-a-cross-platform-command-based-nuget-tool.html
 ---
 
 命令行可是跨进程通信的一种非常方便的手段呢，只需启动一个进程传入一些参数即可完成一些很复杂的任务。NuGet 为我们提供了一种自动导入 .props 和 .targets 的方法，同时还是一个 .NET 的包平台；我们可以利用 NuGet 发布我们的工具并自动启用这样的工具。

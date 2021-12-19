@@ -5,7 +5,7 @@ date: 2019-04-26 12:22:57 +0800
 tags: visualstudio dotnet csharp
 position: problem
 coverImage: /static/posts/2019-04-25-19-29-31.png
-permalink: /posts/debug-project-without-building-via-launch-settings.html
+permalink: /post/debug-project-without-building-via-launch-settings.html
 ---
 
 .NET 托管程序的编译速度比非托管程序要快非常多，即便是 .NET Core，只要不编译成 Native 程序，编译速度也是很快的。然而总是有一些逗比大项目编译速度非常缓慢（我指的是分钟级别的），而且还没做好差量编译；于是每一次编译都需要等待几十秒到数分钟。这显然是非常影响效率的。

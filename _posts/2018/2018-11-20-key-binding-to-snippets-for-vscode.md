@@ -4,7 +4,7 @@ publishDate: 2018-11-20 10:32:28 +0800
 date: 2019-03-09 09:10:05 +0800
 tags: vscode
 coverImage: /static/posts/2018-11-20-09-59-06.png
-permalink: /posts/key-binding-to-snippets-for-vscode.html
+permalink: /post/key-binding-to-snippets-for-vscode.html
 ---
 
 Visual Studio Code 默认是关闭了 Markdown 的智能感知提示的（因为真的是不好用，尤其是其没有中文分词的情况下）。那么在没有智能感知提示的情况下如何快速插入代码片段呢？

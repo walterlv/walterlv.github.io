@@ -5,7 +5,7 @@ date: 2019-07-07 09:52:24 +0800
 tags: roslyn visualstudio nuget dotnet csharp
 position: knowledge
 coverImage: /static/posts/2019-07-05-20-23-39.png
-permalink: /posts/develop-a-code-analyzer-for-both-nuget-and-visual-studio-extension.html
+permalink: /post/develop-a-code-analyzer-for-both-nuget-and-visual-studio-extension.html
 ---
 
 Roslyn 是 .NET 平台下十分强大的编译器，其提供的 API 也非常丰富好用。本文将基于 Roslyn 开发一个 C# 代码分析器，你不止可以将分析器作为 Visual Studio 代码分析和重构插件发布，还可以作为 NuGet 包发布。不管哪一种，都可以让我们编写的 C# 代码分析器工作起来并真正起到代码建议和重构的作用。

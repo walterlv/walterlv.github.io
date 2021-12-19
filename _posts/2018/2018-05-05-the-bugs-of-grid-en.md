@@ -9,7 +9,7 @@ versions:
   - 中文: /post/the-bugs-of-grid.html
   - English: #
 coverImage: /static/posts/2018-05-05-14-15-13.png
-permalink: /posts/the-bugs-of-grid-en.html
+permalink: /post/the-bugs-of-grid-en.html
 ---
 
 As long as you write code in XAML, I bet you must have used `Grid` in various ways. I wonder if you have seen any strange layout results of `Grid`.

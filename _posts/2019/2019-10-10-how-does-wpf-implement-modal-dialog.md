@@ -3,7 +3,7 @@ title: "直击本质：WPF 框架是如何实现模态窗口的"
 date: 2019-10-10 18:57:27 +0800
 tags: wpf dotnet csharp windows
 position: knowledge
-permalink: /posts/how-does-wpf-implement-modal-dialog.html
+permalink: /post/how-does-wpf-implement-modal-dialog.html
 ---
 
 想知道你在 WPF 编写 `Window.ShowDialog()` 之后，WPF 框架是如何帮你实现模态窗口的吗？

@@ -5,7 +5,7 @@ tags: windows
 position: problem
 published: false
 coverImage: /static/posts/2019-01-04-10-12-22.png
-permalink: /posts/find-file-read-write-issues-using-sysinternals.html
+permalink: /post/find-file-read-write-issues-using-sysinternals.html
 ---
 
 在此处编辑 walterlv.com 的博客摘要

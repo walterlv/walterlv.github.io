@@ -4,7 +4,7 @@ date: 2019-08-14 16:32:16 +0800
 tags: wpf windows dotnet csharp
 position: problem
 coverImage: /static/posts/2019-08-14-16-17-50.png
-permalink: /posts/hosted-hwnd-must-be-a-child-window-of-the-specified-parent.html
+permalink: /post/hosted-hwnd-must-be-a-child-window-of-the-specified-parent.html
 ---
 
 当试图在 WPF 窗口中嵌套显示 Win32 子窗口的时候，你有可能出现错误：“`寄宿的 HWND 必须是指定父级的子窗口。`”。

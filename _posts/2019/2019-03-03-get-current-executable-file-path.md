@@ -4,7 +4,7 @@ publishDate: 2019-03-03 19:51:29 +0800
 date: 2019-03-09 09:10:45 +0800
 tags: dotnet csharp
 position: knowledge
-permalink: /posts/get-current-executable-file-path.html
+permalink: /post/get-current-executable-file-path.html
 ---
 
 本文介绍四种不同的获取可执行程序文件路径的方法。适用于 .NET Core 以及 .NET Framework。

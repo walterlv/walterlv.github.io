@@ -3,7 +3,7 @@ title: "从 git 的历史记录中彻底删除文件或文件夹"
 date: 2019-06-23 16:43:41 +0800
 tags: git
 position: starter
-permalink: /posts/remove-files-or-folders-from-git-history.html
+permalink: /post/remove-files-or-folders-from-git-history.html
 ---
 
 如果你对外开源的代码中出现了敏感信息（例如你将私钥上传到了仓库中），你可能需要考虑将这个文件从 git 的历史记录中完全删除掉。

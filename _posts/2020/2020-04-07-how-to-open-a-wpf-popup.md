@@ -4,7 +4,7 @@ publishDate: 2020-04-03 16:40:01 +0800
 date: 2020-04-07 21:34:17 +0800
 tags: wpf dotnet
 position: principle
-permalink: /posts/how-to-open-a-wpf-popup.html
+permalink: /post/how-to-open-a-wpf-popup.html
 ---
 
 在 WPF 中打开一个 Popup 并没有想象当中容易。虽说提供了一个 `IsOpen` 属性用于显示 Popup，但实际上造成的 Bug 会让你解得死去活来。Win32 的 WS_POPUP 也坑，不过 WPF 会额外再带来一些，所以本文只说 WPF。

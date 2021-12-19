@@ -4,7 +4,7 @@ publishDate: 2017-11-14 01:05:37 +0800
 date: 2018-08-19 19:09:39 +0800
 tags: site
 coverImage: /static/posts/2017-11-14-00-58-47.png
-permalink: /posts/redirect-for-blog-links.html
+permalink: /post/redirect-for-blog-links.html
 ---
 
 不同于笔记，博客除了给自己带来知识的积累之外，还将知识和思想分享给了互联网上的同道中人。

@@ -4,7 +4,7 @@ date: 2019-03-17 20:02:05 +0800
 tags: windows
 position: knowledge
 coverImage: /static/posts/2019-03-17-20-00-59.png
-permalink: /posts/windows-audit-mode.html
+permalink: /post/windows-audit-mode.html
 ---
 
 在你刚刚安装完 Windows，在 Windows 开箱体验输入以创建你的用户账户之前，你可以按下 Ctrl + Shift + F3 来进入审核模式。

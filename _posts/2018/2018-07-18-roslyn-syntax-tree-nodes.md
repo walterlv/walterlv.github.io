@@ -2,7 +2,7 @@
 title: "Roslyn 语法树中的各种语法节点及每个节点的含义"
 date: 2018-07-18 20:24:00 +0800
 tags: roslyn dotnet csharp
-permalink: /posts/roslyn-syntax-tree-nodes.html
+permalink: /post/roslyn-syntax-tree-nodes.html
 ---
 
 使用 Roslyn 进行源码分析时，我们会对很多不同种类的语法节点进行分析。如果能够一次性了解到各种不同种类的语法节点，并明白其含义和结构，那么在源码分析的过程中将会更加得心应手。

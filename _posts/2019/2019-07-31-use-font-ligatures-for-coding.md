@@ -5,7 +5,7 @@ date: 2019-09-27 10:04:33 +0800
 tags: windows vscode visualstudio dotnet
 position: starter
 coverImage: /static/posts/2019-09-27-10-01-28.png
-permalink: /posts/use-font-ligatures-for-coding.html
+permalink: /post/use-font-ligatures-for-coding.html
 ---
 
 启用转为编程设计的连字字体，可以给你的变成带来不一样的体验。

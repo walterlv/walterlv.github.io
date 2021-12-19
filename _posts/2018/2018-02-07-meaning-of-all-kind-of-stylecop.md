@@ -3,7 +3,7 @@ title: "（持续整理中）Visual Studio 中 C# 代码分析规则集中每一
 publishDate: 2018-02-07 21:55:12 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: csharp visualstudio
-permalink: /posts/meaning-of-all-kind-of-stylecop.html
+permalink: /post/meaning-of-all-kind-of-stylecop.html
 ---
 
 因为我希望在要求很高的库中及时发现潜在的代码问题，所以我开启了 Visual Studio 的代码分析。

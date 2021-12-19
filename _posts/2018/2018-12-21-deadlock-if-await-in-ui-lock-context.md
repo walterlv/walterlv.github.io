@@ -4,7 +4,7 @@ publishDate: 2018-12-21 16:37:18 +0800
 date: 2019-03-15 15:54:00 +0800
 tags: dotnet wpf
 position: knowledge
-permalink: /posts/deadlock-if-await-in-ui-lock-context.html
+permalink: /post/deadlock-if-await-in-ui-lock-context.html
 ---
 
 `AutoResetEvent`、`ManualResetEvent`、`Monitor`、`lock` 等等这些用来做同步的类，如果在异步上下文（await）中使用，需要非常谨慎。

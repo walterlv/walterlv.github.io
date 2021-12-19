@@ -9,7 +9,7 @@ versions:
   - 中文: #
   - English: /post/create-blur-background-window-en.html
 coverImage: /static/posts/2017-10-01-23-49-15.png
-permalink: /posts/create-blur-background-window.html
+permalink: /post/create-blur-background-window.html
 ---
 
 现代的操作系统中创建一张图片的高斯模糊效果非常容易，不过如果要在窗口中获得模糊支持就需要操作系统的原生支持了。iOS/Mac 和 Windows 系统都对此有支持。

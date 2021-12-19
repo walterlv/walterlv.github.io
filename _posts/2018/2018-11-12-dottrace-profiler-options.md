@@ -4,7 +4,7 @@ publishDate: 2018-11-12 16:14:37 +0800
 date: 2018-11-28 16:25:46 +0800
 tags: dotnet
 coverImage: /static/posts/2018-11-12-15-29-04.png
-permalink: /posts/dottrace-profiler-options.html
+permalink: /post/dottrace-profiler-options.html
 ---
 
 对 .NET 程序进行性能分析，dotTrace 能应对绝大多数的场景。在开启一个进程进行性能分析之前，我们会看到一些性能分析选项（Profiler Options）。本文将介绍这几个选项的含义，并用实际的例子来说明其用途。

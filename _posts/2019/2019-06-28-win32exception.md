@@ -4,7 +4,7 @@ publishDate: 2019-06-28 07:50:24 +0800
 date: 2019-10-22 14:13:45 +0800
 tags: dotnet csharp wpf
 position: problem
-permalink: /posts/win32exception.html
+permalink: /post/win32exception.html
 ---
 
 在 WPF 获取鼠标当前坐标的时候，可能会得到一个异常：`System.ComponentModel.Win32Exception:“无效的窗口句柄。”`。

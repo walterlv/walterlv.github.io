@@ -3,7 +3,7 @@ title: "在 WPF/UWP 中实现一个可以用 await 异步等待 UI 交互操作�
 publishDate: 2017-10-29 16:38:57 +0800
 date: 2018-12-22 19:54:48 +0800
 tags: dotnet csharp wpf uwp
-permalink: /posts/write-dispatcher-awaiter-for-ui.html
+permalink: /post/write-dispatcher-awaiter-for-ui.html
 ---
 
 .NET 和 C# 共同给我们带来的 `async`/`await` 异步编程模型（TAP）用起来真的很爽。为了实现异步等待，我们只需要在一切能够能够异步等待的方法前面加上 `await` 即可。能够异步等待的最常见的类型莫过于 `Task`，但也有一些其他类型。即便有些耗时操作没有返回可等待的类型，我们也可以用一句 `Task.Run(action)` 来包装（[同步转异步 - 林德熙](https://blog.lindexi.com/post/win10-uwp-%E5%BC%82%E6%AD%A5%E8%BD%AC%E5%90%8C%E6%AD%A5.html) 中也有说明）；不过副作用就是 `Run` 里面的方法在后台线程执行了（谁知道这是好处呢还是坏处呢 ^_^）。

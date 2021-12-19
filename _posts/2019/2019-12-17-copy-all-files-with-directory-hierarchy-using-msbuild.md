@@ -4,7 +4,7 @@ date: 2019-12-17 16:36:39 +0800
 tags: msbuild dotnet
 position: knowledge
 coverImage: /static/posts/2019-12-17-16-13-21.png
-permalink: /posts/copy-all-files-with-directory-hierarchy-using-msbuild.html
+permalink: /post/copy-all-files-with-directory-hierarchy-using-msbuild.html
 ---
 
 使用 MSBuild 中的 `Copy` 这个编译目标可以在 .NET 项目编译期间复制一些文件。不过使用默认的参数复制的时候文件夹结构会丢失，所有的文件会保留在同一级文件夹下。

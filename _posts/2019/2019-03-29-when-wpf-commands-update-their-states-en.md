@@ -8,7 +8,7 @@ version:
 versions:
   - 中文: /post/when-wpf-commands-update-their-states.html
   - English: #
-permalink: /posts/when-wpf-commands-update-their-states-en.html
+permalink: /post/when-wpf-commands-update-their-states-en.html
 ---
 
 When writing `Command="{Binding WalterlvCommand}"` into your XAML code and your button or other controls can automatically execute command and updating the command states, such as enabling or disabling the button.

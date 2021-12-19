@@ -5,7 +5,7 @@ date: 2020-04-30 18:35:49 +0800
 tags: dotnet wpf
 position: problem
 coverImage: /static/posts/2020-02-17-07-48-35.png
-permalink: /posts/get-image-pixel-width-and-height-in-dotnet.html
+permalink: /post/get-image-pixel-width-and-height-in-dotnet.html
 ---
 
 获取图片宽高的方法有很多种，本文介绍 .NET 中获取图片宽高的几种方法并评估其性能。如果你打算对大量图片进行一些处理，本文可能有用。

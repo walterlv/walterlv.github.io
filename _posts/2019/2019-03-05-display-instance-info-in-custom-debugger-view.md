@@ -4,7 +4,7 @@ date: 2019-03-05 22:53:06 +0800
 tags: dotnet csharp visualstudio
 position: starter
 coverImage: /static/posts/2019-03-05-22-30-28.png
-permalink: /posts/display-instance-info-in-custom-debugger-view.html
+permalink: /post/display-instance-info-in-custom-debugger-view.html
 ---
 
 使用 Visual Studio 调试 .NET 程序的时候，在局部变量窗格或者用鼠标划到变量上就能查看变量的各个字段和属性的值。默认显示的是对象 `ToString()` 方法调用之后返回的字符串，不过如果 `ToString()` 已经被占作它用，或者我们只是希望在调试的时候得到我们最希望关心的信息，则需要使用 .NET 中调试器相关的特性。

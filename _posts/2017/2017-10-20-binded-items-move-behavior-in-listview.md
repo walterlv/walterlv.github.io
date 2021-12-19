@@ -3,7 +3,7 @@ title: "UWP 和 WPF 不同，ListView 中绑定的集合修改顺序时，UI 的
 date: 2017-10-20 08:14:00 +0800
 tags: dotnet wpf uwp
 description: 
-permalink: /posts/binded-items-move-behavior-in-listview.html
+permalink: /post/binded-items-move-behavior-in-listview.html
 ---
 
 `ObservableCollection<T>` 中有一个 `Move` 方法，而这个方法在其他类型的集合中是很少见的。由于 `ObservableCollection<T>` 主要用于绑定，涉及到 UI 更新，而 UI 更新普遍比普通的集合修改慢了不止一个数量级，所以可以大胆猜想，`Move` 的存在是为了提升 UI 刷新性能。

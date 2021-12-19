@@ -4,7 +4,7 @@ publishDate: 2019-06-09 09:49:30 +0800
 date: 2019-07-11 14:16:23 +0800
 tags: wpf dotnet csharp
 position: knowledge
-permalink: /posts/those-people-dont-know-about-wpf.html
+permalink: /post/those-people-dont-know-about-wpf.html
 ---
 
 本文介绍不那么常见的 WPF 相关的知识。

@@ -5,7 +5,7 @@ date: 2019-07-13 09:49:39 +0800
 tags: windows ui ux
 position: knowledge
 coverImage: /static/posts/2019-07-08-12-13-25.png
-permalink: /posts/some-confusing-ui-text.html
+permalink: /post/some-confusing-ui-text.html
 ---
 
 经常有小伙伴跟我撕到底一些常用同音的词语应该使用哪个的问题。于是我将一些常用的软件界面中用错的文案整理出来，为自己和其他开发者提供我 **已经整理的结论** 和 **可以溯源的资料**。

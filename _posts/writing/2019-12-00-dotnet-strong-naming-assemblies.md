@@ -4,7 +4,7 @@ date: 2019-11-05 11:24:02 +0800
 tags: dotnet
 position: principle
 published: false
-permalink: /posts/dotnet-strong-naming-assemblies.html
+permalink: /post/dotnet-strong-naming-assemblies.html
 ---
 
 在此处编辑 blog.walterlv.com 的博客摘要

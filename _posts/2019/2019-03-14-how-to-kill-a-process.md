@@ -3,7 +3,7 @@ title: "C#/.NET 如何结束掉一个进程"
 date: 2019-03-14 22:57:27 +0800
 tags: dotnet csharp
 position: starter
-permalink: /posts/how-to-kill-a-process.html
+permalink: /post/how-to-kill-a-process.html
 ---
 
 本文介绍如何结束掉一个进程。

@@ -5,7 +5,7 @@ date: 2020-05-05 16:22:24 +0800
 tags: unity
 position: starter
 coverImage: /static/posts/2020-05-05-16-14-41.png
-permalink: /posts/unity-starter-public-fields-of-unity-script.html
+permalink: /post/unity-starter-public-fields-of-unity-script.html
 ---
 
 将一部分参数从 C# 脚本中抽离出来，可以让 C# 脚本在 Unity 项目中更通用，适用于更多游戏对象（gameObject）。

@@ -3,7 +3,7 @@ title: "WPF 中那些可跨线程访问的 DispatcherObject（WPF Free Threaded 
 publishDate: 2018-11-23 13:15:12 +0800
 date: 2019-01-03 09:03:45 +0800
 tags: wpf dotnet
-permalink: /posts/wpf-free-threaded-dispatcher-object.html
+permalink: /post/wpf-free-threaded-dispatcher-object.html
 ---
 
 众所周知的，WPF 中多数对象都继承自 `DispatcherObject`，而 `DispatcherObject` 带给这些对象一个特点：不能跨线程访问。

@@ -5,7 +5,7 @@ date: 2018-12-23 15:16:55 +0800
 tags: dotnet
 position: knowledge
 coverImage: /static/posts/2018-12-23-14-53-33.png
-permalink: /posts/default-task-scheduler-and-thread-pool.html
+permalink: /post/default-task-scheduler-and-thread-pool.html
 ---
 
 .NET Framework 4.5 开始引入 `Task.Run`，它可以很方便的帮助我们使用 `async` / `await` 语法，同时还使用线程池来帮助我们管理线程。以至于我们编写异步代码可以像编写同步代码一样方便。

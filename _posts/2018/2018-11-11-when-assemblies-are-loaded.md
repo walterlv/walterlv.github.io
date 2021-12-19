@@ -2,7 +2,7 @@
 title: "了解 .NET/C# 程序集的加载时机，以便优化程序启动性能"
 date: 2018-11-11 19:06:51 +0800
 tags: dotnet csharp
-permalink: /posts/when-assemblies-are-loaded.html
+permalink: /post/when-assemblies-are-loaded.html
 ---
 
 林德熙在 [C# 程序集数量对软件启动性能的影响](https://blog.lindexi.com/post/C-%E7%A8%8B%E5%BA%8F%E9%9B%86%E6%95%B0%E9%87%8F%E5%AF%B9%E8%BD%AF%E4%BB%B6%E5%90%AF%E5%8A%A8%E6%80%A7%E8%83%BD%E7%9A%84%E5%BD%B1%E5%93%8D.html) 一文中说到程序集数量对程序启动性能的影响。在那篇文章中，我们得出结论，想同类数量的情况下，程序集的数量越多，程序启动越慢。

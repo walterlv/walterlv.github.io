@@ -4,7 +4,7 @@ publishDate: 2018-09-15 14:59:10 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: csharp
 coverImage: /static/posts/2018-09-15-10-45-58.png
-permalink: /posts/overload-null-coalescing-operator-in-csharp.html
+permalink: /post/overload-null-coalescing-operator-in-csharp.html
 ---
 
 `??` 操作符叫做 null-coalescing operator，即 null 合并运算符。如果此运算符的左操作数不为 null，则此运算符将返回左操作数；否则返回右操作数。

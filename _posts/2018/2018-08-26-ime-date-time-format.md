@@ -4,7 +4,7 @@ publishDate: 2018-08-26 16:48:08 +0800
 date: 2019-03-09 15:30:38 +0800
 tags: ime windows
 coverImage: /static/posts/2018-08-26-15-49-17.png
-permalink: /posts/ime-date-time-format.html
+permalink: /post/ime-date-time-format.html
 ---
 
 几个主流的输入法输入 `rq` 或者 `sj` 都可以得到预定义格式的日期或者时间。然而他们都是预定义的格式；当我们需要一些其他格式的时候该怎么做呢？

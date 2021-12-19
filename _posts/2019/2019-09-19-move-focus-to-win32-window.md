@@ -4,7 +4,7 @@ publishDate: 2019-09-19 12:24:28 +0800
 date: 2019-11-27 08:53:01 +0800
 tags: windows wpf dotnet csharp
 position: starter
-permalink: /posts/move-focus-to-win32-window.html
+permalink: /post/move-focus-to-win32-window.html
 ---
 
 WPF 程序提供了 `Focus` 方法和 `TraversalRequest` 来在 WPF 焦点范围内转移焦点。但如果 WPF 窗口中嵌入了其他框架的 UI（比如另一个子窗口），那么就需要使用其他的方法来设置焦点了。
