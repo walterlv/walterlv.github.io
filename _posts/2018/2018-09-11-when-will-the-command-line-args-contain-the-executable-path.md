@@ -4,6 +4,7 @@ publishDate: 2018-09-11 21:28:09 +0800
 date: 2018-09-13 11:24:33 +0800
 tags: dotnet csharp
 coverImage: /static/posts/2018-09-11-21-13-55.png
+permalink: /posts/when-will-the-command-line-args-contain-the-executable-path.html
 ---
 
 如果你关注过命令行参数，也许发现有时你会在命令行参数的第一个参数中中看到应用程序的路径，有时又不会。那么什么情况下有路径呢？
@@ -128,4 +129,5 @@ namespace Walterlv.Demo.CommandLines
 1. Main 函数的参数中不包含应用程序执行路径；
 1. `System.Environment.GetCommandLineArgs()` 得到的命令行参数中包含应用程序的执行路径；
 1. Windows 上的所有程序其命令行参数的行为表现都是如此，这不是 .NET 的专属特性。
+
 

@@ -4,6 +4,7 @@ publishDate: 2018-03-09 21:26:59 +0800
 date: 2018-05-27 09:02:27 +0800
 tags: windows
 coverImage: /static/posts/2018-03-09-21-11-35.png
+permalink: /posts/find-out-which-process-is-using-a-file.html
 ---
 
 文件或文件夹被占用，然后无法删除？这真的很恼人。关键是还不知道究竟是哪个程序占用的，想退出都不行。
@@ -38,4 +39,5 @@ coverImage: /static/posts/2018-03-09-21-11-35.png
 ▲ 搜索到的进程
 
 感谢评论区 [@晒太阳的猫](http://jgrass.cc/) 推荐的界面和“资源监视器”一样丑不拉叽但功能强大的 [LockHunter](http://lockhunter.com/) 和 [@林德熙](https://lindexi.github.io/lindexi/) 推荐的软媒家两年没更新的十八般武器 [软媒魔方 - 文件解除](http://mofang.ruanmei.com/)。
+
 

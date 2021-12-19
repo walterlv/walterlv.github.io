@@ -3,6 +3,7 @@ title: "用 dotTrace 进行性能分析时，Timeline 打不开？无法启动�
 date: 2018-11-12 16:46:37 +0800
 tags: dotnet windows
 coverImage: /static/posts/2018-11-12-16-08-58.png
+permalink: /posts/dottrace-timeline-not-working.html
 ---
 
 对 .NET 程序使用 dotTrace 进行性能分析时，你也可能遭遇到 dotTrace 的 Bug。我就遇到了性能分析选项 Timeline 打不开进程的情况。
@@ -90,4 +91,5 @@ dotTrace 启动性能分析的选项有四个，你可以阅读 [用 dotTrace �
 
 - [Timeline is not working: issue solution for different Windows versions – .NET Tools Support - JetBrains](https://dotnettools-support.jetbrains.com/hc/en-us/articles/206546069-Timeline-is-not-working-issue-solution-for-different-Windows-versions)
 - [Can't start ETW collector. – .NET Tools Support - JetBrains](https://dotnettools-support.jetbrains.com/hc/en-us/community/posts/207099769-Can-t-start-ETW-collector-)
+
 

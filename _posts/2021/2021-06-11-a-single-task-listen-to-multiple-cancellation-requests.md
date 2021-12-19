@@ -3,6 +3,7 @@ title: ".NET 单个异步任务如何同时监听多个取消请求（Cancellati
 date: 2021-06-11 09:13:06 +0800
 tags: dotnet
 position: knowledge
+permalink: /posts/a-single-task-listen-to-multiple-cancellation-requests.html
 ---
 
 异步编程中，并不是所有时候 `await` 等的都是新的异步任务；有时候同一个异步任务可能被多次等待，并且每个等待都可以有自己的取消请求，即 `CancellationToken`。那么如何在一个异步任务中同时响应多个取消请求呢？
@@ -60,3 +61,4 @@ var token = CancellationTokenSource.CreateLinkedTokenSource(token1, token2)
 **参考资料**
 
 - [How to: Listen for Multiple Cancellation Requests - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/threading/how-to-listen-for-multiple-cancellation-requests)
+

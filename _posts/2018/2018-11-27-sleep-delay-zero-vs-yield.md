@@ -4,6 +4,7 @@ publishDate: 2018-11-27 13:14:07 +0800
 date: 2019-08-29 16:34:41 +0800
 tags: dotnet csharp
 coverImage: /static/posts/2018-11-27-11-10-43.png
+permalink: /posts/sleep-delay-zero-vs-yield.html
 ---
 
 在 C#/.NET 中，有 `Thread.Sleep(0)`, `Task.Delay(0)`, `Thread.Yield()`, `Task.Yield()` 中，有几种不同的让当前线程释放执行权的方法。他们的作用都是放弃当前线程当前的执行权，让其他线程得以调度。但是他们又不太一样。
@@ -278,4 +279,5 @@ Console.WriteLine($"Thread.Sleep(0) : {elapsed}");
 - [c# - When to use Task.Delay, when to use Thread.Sleep? - Stack Overflow](https://stackoverflow.com/q/20082221/6233938)
 - [c# - Should I always use Task.Delay instead of Thread.Sleep? - Stack Overflow](https://stackoverflow.com/q/29356139/6233938)
 - [What's the difference between Thread.Sleep(0) and Thread,Yield()?](https://social.msdn.microsoft.com/Forums/en-US/d7071ba4-8962-43c6-975a-28cdbce51548/whats-the-difference-between-threadsleep0-and-threadyield?forum=csharplanguage)
+
 

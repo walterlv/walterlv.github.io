@@ -3,6 +3,7 @@ title: "在操作系统重启后恢复应用程序的工作状态"
 publishDate: 2018-01-21 21:29:01 +0800
 date: 2018-09-01 08:13:21 +0800
 tags: csharp windows
+permalink: /posts/application-restart-manager.html
 ---
 
 Windows 10 创意者更新之后，默认开启了重启后恢复应用程序状态的功能。这是自 Vista 以来就提供的功能——Restart Manager。
@@ -141,3 +142,4 @@ namespace Walterlv.Win32
 - [c# - Restart a crashed program with RegisterApplicationRestart without user prompt - Stack Overflow](https://stackoverflow.com/q/32520036/6233938)
 - [Vista Application Crash Recovery in C# - CodeProject](https://www.codeproject.com/Articles/17024/Vista-Application-Crash-Recovery-in-C)
 - [c# - Restart a crashed program with RegisterApplicationRestart without user prompt - Stack Overflow](https://stackoverflow.com/q/32520036/6233938)
+

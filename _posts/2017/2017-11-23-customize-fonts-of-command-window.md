@@ -3,6 +3,7 @@ title: "自定义 Windows PowerShell 和 cmd 的字体"
 date: 2017-11-23 00:26:13 +0800
 tags: windows powershell
 coverImage: /static/posts/2017-11-23-00-01-33.png
+permalink: /posts/customize-fonts-of-command-window.html
 ---
 
 Windows 系统下的命令行界面，字体要么是点阵字体，要么是宋体；但无论哪种，始终觉得难看了。然而，字体选择界面却始终没办法选择到我们新安装的各种字体。
@@ -88,4 +89,5 @@ Inziu 字体族较多，实测有些有效有些无效：
 - [为什么 Windows 下 cmd 和 PowerShell 不能方便地自定义字体？ - 知乎](https://www.zhihu.com/question/36344262)
 - HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Console\TrueTypeFont
 - [List of all colors available for powershell? - Stack Overflow](https://stackoverflow.com/questions/20541456/list-of-all-colors-available-for-powershell)
+
 

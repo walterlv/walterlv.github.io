@@ -5,6 +5,7 @@ date: 2018-12-30 16:10:22 +0800
 tags: dotnet csharp
 position: knowledge
 coverImage: /static/posts/2018-12-22-22-56-11.png
+permalink: /posts/introduce-command-line-parser.html
 ---
 
 `CommandLineParser` 是一款用于解析命令行参数的 NuGet 包。你只需要关注你的业务，而命令行解析只需要极少量的配置代码。
@@ -173,4 +174,5 @@ Value 是命令行的无名参数，它是靠在命令行谓词后面的参数�
 - [Home · commandlineparser/commandline Wiki](https://github.com/commandlineparser/commandline/wiki)
 - [C＃命令行解析工具 - 林德熙](https://blog.lindexi.com/post/C-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7.html)
 - [The week in .NET – Command Line Parser Library, .NET South East - .NET Blog](https://blogs.msdn.microsoft.com/dotnet/2017/07/18/the-week-in-net-command-line-parser-library-net-south-east/)
+
 

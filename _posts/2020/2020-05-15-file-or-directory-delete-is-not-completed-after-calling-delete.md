@@ -5,6 +5,7 @@ date: 2020-05-15 20:10:18 +0800
 tags: windows dotnet csharp
 position: problem
 coverImage: /static/posts/2020-05-15-15-12-13.png
+permalink: /posts/file-or-directory-delete-is-not-completed-after-calling-delete.html
 ---
 
 如果你不了解本文的内容，可能会在未来某个时候踩坑--你可能在判断文件夹是否存在的时候得到错误的返回值。
@@ -110,4 +111,5 @@ class Program
 
 - [RemoveDirectoryA function (fileapi.h) - Win32 apps - Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-removedirectorya)
 - [DeleteFile function (winbase.h) - Win32 apps - Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-deletefile)
+
 

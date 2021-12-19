@@ -4,6 +4,7 @@ publishDate: 2017-10-23 22:22:43 +0800
 date: 2017-10-27 07:38:48 +0800
 tags: dotnet dotnet-core dotnet-standard csharp
 coverImage: /static/posts/2017-10-23-21-31-48.png
+permalink: /posts/exceptiondispatchinfo-capture-throw.html
 ---
 
 当你跑起了一个异步线程，并用 `await` 异步等待时，有没有好奇为什么能够在主线程 `catch` 到异步线程的异常？
@@ -145,4 +146,5 @@ else if(exceptions.Count > 1)
 至于多个异常的情况，那就只能使用内部异常来处理了。
 
 而这些，正是 `Task` 管理异步线程异常时采用的策略——单个异常直接在调用线程直接抛出，多个异常抛出 `AggregateException`。
+
 

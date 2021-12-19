@@ -4,6 +4,7 @@ publishDate: 2020-05-23 11:56:33 +0800
 date: 2020-05-24 10:21:31 +0800
 tags: unity csharp
 position: problem
+permalink: /posts/unity3d-marshal-callback-must-be-static.html
 ---
 
 `IL2CPP does not support marshaling delegates that point to instance methods to native code.` 你可能平时在 .NET Core / Framework 的代码中写得很正常的托管代码的委托调用，在 Unity3D 中变得不可行。
@@ -109,3 +110,4 @@ public class WindowsEnumerator
 **参考资料**
 
 - [MonoPInvokeCallbackAttribute Class (ObjCRuntime) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/objcruntime.monopinvokecallbackattribute)
+

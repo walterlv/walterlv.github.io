@@ -4,6 +4,7 @@ publishDate: 2019-07-01 15:54:13 +0800
 date: 2021-06-07 15:12:04 +0800
 tags: visualstudio msbuild nuget dotnet
 position: principle
+permalink: /posts/write-msbuild-codes-into-props-or-targets.html
 ---
 
 .NET 扩展编译用的文件有 .props 文件和 .targets 文件。不给我选择还好，给了我选择之后我应该使用哪个文件来编写扩展编译的代码呢？
@@ -107,3 +108,4 @@ position: principle
 
 </Project>
 ```
+

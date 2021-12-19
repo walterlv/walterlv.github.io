@@ -5,6 +5,7 @@ date: 2018-12-23 15:17:09 +0800
 tags: dotnet csharp
 position: starter
 coverImage: /static/posts/2018-12-22-13-40-55.png
+permalink: /posts/understand-and-write-custom-awaiter.html
 ---
 
 .NET 中的 `async` / `await` 写异步代码用起来真的很爽，就像写同步一样。我们可以在各种各样的异步代码中看到 `Task` 返回值，这样大家便可以使用 `await` 等待这个方法。不过，有时需要写一些特别的异步方法，这时需要自己来实现一个可以异步等待的对象。
@@ -227,4 +228,5 @@ static async Task Main(string[] args)
 ```
 
 ![程序运行结果](/static/posts/2018-12-22-13-40-55.png)
+
 

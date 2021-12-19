@@ -3,6 +3,7 @@ title: "CentOS 的终端中如何搜索文件"
 date: 2019-01-20 15:05:40 +0800
 tags: linux
 position: starter
+permalink: /posts/search-file-in-the-centos-command-line.html
 ---
 
 CentOS 中搜索文件可以使用 find 命令。
@@ -46,3 +47,4 @@ CentOS 中搜索文件可以使用 find 命令。
 **参考资料**
 
 - [linux - How to search for a file in the CentOS command line - Stack Overflow](https://stackoverflow.com/a/21046448/6233938)
+

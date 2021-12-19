@@ -2,6 +2,7 @@
 title: ".NET 中 GetProcess 相关方法的性能"
 date: 2018-08-19 15:04:19 +0800
 tags: dotnet windows
+permalink: /posts/performance-of-get-process.html
 ---
 
 .NET 的 `Process` 类中提供了查找进程的若干方法，其中部分方法还比较消耗性能。如果你试图优化查找进程相关方法的性能，可能本文分享的一些耗时数据可以作为参考。
@@ -213,3 +214,4 @@ public static extern int GetCurrentProcessId();
 
 - [Windows的PID为什么是4的倍数 - 开源中国社区](https://www.oschina.net/question/23734_29378)
 - [WINDOWS进程或线程号为什么是4的倍数 - GUO Xingwang - 博客园](http://www.cnblogs.com/Thriving-Country/archive/2011/09/18/2180143.html)
+

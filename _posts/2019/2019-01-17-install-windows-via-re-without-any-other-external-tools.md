@@ -4,6 +4,7 @@ date: 2019-01-17 20:13:38 +0800
 tags: windows
 position: starter
 coverImage: /static/posts/2019-01-17-19-33-15.png
+permalink: /posts/install-windows-via-re-without-any-other-external-tools.html
 ---
 
 安装 Windows 有非常多种方法，现在我们要解决的问题是：
@@ -86,4 +87,5 @@ coverImage: /static/posts/2019-01-17-19-33-15.png
 ![格式化分区或者删除磁盘](/static/posts/2019-01-17-20-12-58.png)
 
 剩下的，祝你好运！
+
 

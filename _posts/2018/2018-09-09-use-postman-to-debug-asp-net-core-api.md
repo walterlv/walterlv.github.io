@@ -4,6 +4,7 @@ publishDate: 2018-09-09 20:38:19 +0800
 date: 2019-03-09 09:07:59 +0800
 tags: dotnet csharp asp
 coverImage: /static/posts/2018-09-09-19-54-25.png
+permalink: /posts/use-postman-to-debug-asp-net-core-api.html
 ---
 
 使用 ASP.NET Core 开发简单的后台 API 还是非常容易的。涉及到 GET 请求的调试我们可以用浏览器简单搞定，那么 POST/PUT/DELETE 这样的请求呢？
@@ -160,4 +161,5 @@ Postman 的安装是极简的，没有任何设置。当启动后，注册或登
 ## 关于本文调试的 ASP.NET 程序 Rssman
 
 [Rssman](https://github.com/walterlv/rssman) 是用来管理 RSS 订阅的 ASP.NET 程序，目前正在开发中。
+
 

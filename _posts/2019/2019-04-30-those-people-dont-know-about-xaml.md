@@ -4,6 +4,7 @@ publishDate: 2019-04-30 10:30:24 +0800
 date: 2019-04-30 19:08:20 +0800
 tags: dotnet csharp wpf uwp
 position: knowledge
+permalink: /posts/those-people-dont-know-about-xaml.html
 ---
 
 本文介绍不那么常见的 XAML 相关的知识。
@@ -107,3 +108,4 @@ using System.Windows.Markup;
 ```
 
 此写法要生效，定义的组件与使用的组件不能在同一程序集。
+

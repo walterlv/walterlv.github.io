@@ -9,6 +9,7 @@ versions:
   - 中文: /post/visual-brush-refresh-views-only-but-not-layout.html
   - English: #
 coverImage: /static/posts/2019-07-12-20-12-56.png
+permalink: /posts/visual-brush-refresh-views-only-but-not-layout-en.html
 ---
 
 Now we'll talk about a behavior of WPF `VisualBrush`. Maybe it is a bug, but let's view some details and determine whether it is or not.
@@ -107,4 +108,5 @@ Only at the very beginning when the program runs it behaves the same as we predi
 I've fired this issue into GitHub and this is the link:
 
 - [The VisualBrush only refresh the visual but not the layout when the Visual visibility changes · Issue #1241 · dotnet/wpf](https://github.com/dotnet/wpf/issues/1241)
+
 

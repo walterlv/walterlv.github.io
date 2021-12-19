@@ -3,6 +3,7 @@ title: "实现一个 WPF 版本的 ConnectedAnimation"
 publishDate: 2017-12-25 19:44:21 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: wpf uwp
+permalink: /posts/connected-animation-of-wpf.html
 ---
 
 Windows 10 的创造者更新为开发者们带来了 Connected Animation 连接动画，这也是 Fluent Design System 的一部分。它的视觉引导性很强，用户能够在它的帮助下迅速定位操作的对象。
@@ -582,3 +583,4 @@ private async void BeginConnectedAnimation(UIElement source, UIElement destinati
 - [Connected animation - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/motion/connected-animation?wt.mc_id=MVP)
 - [UWP Connected Animations updates with Windows Creators release – Varun Shandilya](http://varunshandilya.com/uwp-connected-animations-updates-with-windows-creators-release/)
 - [实现 Fluent Design 中的 Connected Animation - ^ _ ^ .io](https://lijiaxiang98.github.io/2017/09/08/%E5%AE%9E%E7%8E%B0Fluent-Design%E4%B8%AD%E7%9A%84Connected-Animation/)
+

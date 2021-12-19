@@ -9,6 +9,7 @@ versions:
   - 中文: /post/try-catch-when-causes-app-crash.html
   - English: #
 coverImage: /static/posts/2019-07-02-15-06-35.png
+permalink: /posts/try-catch-when-causes-app-crash-en.html
 ---
 
 We know that we can add a `when` keyword after a `catch` filter. But if there is another exception happened in the `when` expression, the app will totally crash.
@@ -98,4 +99,5 @@ If we run the app step by step in Visual Studio, we can see that a CLR exception
 This animated picture below shows how the code goes step by step.
 
 ![Step debugging](/static/posts/2019-07-02-catch-when-crash.gif)
+
 

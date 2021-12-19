@@ -3,6 +3,7 @@ title: "Windows 10 自带那么多图标，去哪里找呢？"
 date: 2018-02-27 23:11:21 +0800
 tags: windows personalize
 coverImage: /static/posts/2018-02-27-21-50-42.png
+permalink: /posts/where-is-the-windows-10-native-icons.html
 ---
 
 无意间发现我的 D 盘根目录中大部分的文件夹都是系统专用文件夹，有自己的独特图标，偶有一两个开发用的文件夹是默认图标。于是想把它们改成独特样式，**而且是 Windows 10 那些新图标样式**！
@@ -124,4 +125,5 @@ Windows 10 自带的图标几乎都在 `%systemroot\system32\*.dll` 中，主要
 ▲ wiashext.dll 各种图片、照片和媒体设备图标
 
 一个说明：你会发现有些图标是空白的，这个不是 BUG，是微软的无奈……因为有些古老的不负责任的程序会依赖于这些老旧的被微软淘汰的图标，如果微软删掉了这些图标，那么这些程序会崩溃。哎……
+
 

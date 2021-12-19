@@ -4,6 +4,7 @@ publishDate: 2018-06-20 13:17:32 +0800
 date: 2018-07-02 20:49:55 +0800
 tags: dotnet msbuild
 coverImage: /static/posts/2018-06-20-13-10-34.png
+permalink: /posts/standard-error-warning-format.html
 ---
 
 我曾经写过一篇文章 [如何创建一个基于命令行工具的跨平台的 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool)，通过编写一个控制台程序来参与编译过程。但是，相比于 [基于 Task 的方式](/post/create-a-cross-platform-msbuild-task-based-nuget-tool)，可控制的因素还是太少了。
@@ -83,4 +84,5 @@ Demo.cs(344,59,344,78): warning CS0067: The event 'WalterlvClass.Foo' is never u
 **参考资料**
 
 - [Exec task and "error :" in output](https://social.msdn.microsoft.com/Forums/vstudio/en-US/77eb8b02-8cd7-4d32-acad-3ab0dc308d78/exec-task-and-error-in-output?forum=msbuild)
+
 

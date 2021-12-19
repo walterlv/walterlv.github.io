@@ -4,6 +4,7 @@ date: 2019-08-14 16:32:42 +0800
 tags: wpf windows dotnet csharp
 position: problem
 coverImage: /static/posts/2019-08-14-16-08-13.png
+permalink: /posts/failed-to-return-the-hosted-child-window-handle.html
 ---
 
 当试图在 WPF 窗口中嵌套显示 Win32 子窗口的时候，你有可能出现错误：“`BuildWindowCore 无法返回寄宿的子窗口句柄。`”。
@@ -54,4 +55,5 @@ protected override HandleRef BuildWindowCore(HandleRef hwndParent)
 ```
 
 要解决，就需要传入正确的句柄值。当然上面的代码为了示例，故意传了一个不知道哪里的 `_handle`，实际上应该传入 `source.Handle` 才是正确的。
+
 

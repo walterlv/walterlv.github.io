@@ -5,6 +5,7 @@ tags: windows
 position: problem
 published: false
 coverImage: /static/posts/2019-01-04-10-12-22.png
+permalink: /posts/find-file-read-write-issues-using-sysinternals.html
 ---
 
 在此处编辑 walterlv.com 的博客摘要
@@ -40,4 +41,5 @@ coverImage: /static/posts/2019-01-04-10-12-22.png
 - [What is the cause of FAST I/O DISALLOWED errors? (Causing Outlook to open attachments really slowly) - Server Fault](https://serverfault.com/questions/104966/what-is-the-cause-of-fast-i-o-disallowed-errors-causing-outlook-to-open-attach)
 - [windows - False 'Sharing Violation' Xcopy error message - Stack Overflow](https://stackoverflow.com/questions/20154980/false-sharing-violation-xcopy-error-message)
 - [A sharing violation occurred while accessing filename.](https://msdn.microsoft.com/en-us/library/ms831574.aspx?f=255&MSPPError=-2147217396)
+
 

@@ -5,6 +5,7 @@ date: 2019-04-12 09:40:15 +0800
 tags: dotnet csharp visualstudio msbuild
 position: knowledge
 coverImage: /static/posts/2019-02-21-17-54-13.png
+permalink: /posts/the-properties-that-affetcs-project-output-path.html
 ---
 
 我们都知道可以通过在 Visual Studio 中设置输出路径（OutputPath）来更改项目输出文件所在的位置。对于 .NET Core 所使用的 Sdk 风格的 csproj 格式来说，你可能会发现实际生成路径中带了 `netcoreapp3.0` 或者 `net472` 这样的子文件夹。
@@ -61,4 +62,5 @@ bin\x64\Debug\win7-x64\netcoreapp3.0
 - `$(TargetFramework)` 这是在 csproj 文件中强制要求指定的，如果不设置的话项目是无法编译的；可以通过 `$(AppendTargetFrameworkToOutputPath)` 属性指定是否将此加入到输出路径中。
 
 现在，你应该可以更轻松地设置你的输出路径，而不用担心总会出现各种意料之外的子文件夹了吧！
+
 

@@ -3,6 +3,7 @@ title: "在 WPF 中使用 x:Reference"
 publishDate: 2018-10-13 22:24:02 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: dotnet wpf
+permalink: /posts/wpf-x-reference.html
 ---
 
 x:Reference 是 XAML 2009 中引入的功能，也算是比较早的功能了；ElementName 是 XAML 一开始出现便开始有的功能。二者在使用时在感觉上是比较相似的，但多数情况下都更有优势。
@@ -39,3 +40,4 @@ x:Reference 是 XAML 2009 中引入的功能，也算是比较早的功能了；
 - [wpf - What is the difference between x:Reference and ElementName? - Stack Overflow](https://stackoverflow.com/q/19244111/6233938)
 - [binding - When is x:Reference in WPF resolved and why does XAML element order affect it? - Stack Overflow](https://stackoverflow.com/q/14644924/6233938)
 - [wpf – x：Reference和ElementName之间有什么区别？ - 代码日志](https://codeday.me/bug/20170930/78263.html)
+

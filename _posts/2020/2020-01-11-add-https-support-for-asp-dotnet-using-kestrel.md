@@ -3,6 +3,7 @@ title: "使用 Kestrel 为你的 ASP.NET Core 服务添加 https 支持"
 date: 2020-01-11 20:10:40 +0800
 tags: dotnet web
 position: starter
+permalink: /posts/add-https-support-for-asp-dotnet-using-kestrel.html
 ---
 
 Kestrel 是一个跨平台的适用于 ASP.NET Core 的 Web 服务器。它内置集成在了 ASP.NET Core 项目模板中，所以编写和对外开放一个 Web 服务会非常简单。
@@ -145,3 +146,4 @@ webBuilder.ConfigureKestrel(serverOptions =>
 **参考资料**
 
 - [ASP.NET Core 中的 Kestrel Web 服务器实现 - Microsoft Docs](https://docs.microsoft.com/zh-cn/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-3.1)
+

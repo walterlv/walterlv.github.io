@@ -4,6 +4,7 @@ date: 2020-04-02 17:44:31 +0800
 tags: dotnet visualstudio
 position: knowledge
 coverImage: /static/posts/2020-04-02-17-36-40.png
+permalink: /posts/view-which-managed-thread-is-holding-a-dotnet-object-lock-using-visual-studio.html
 ---
 
 Visual Studio 2019 (16.5) 版本更新中带来了一项很小很难注意到却非常实用的功能，查看哪一个托管线程正在持有 .NET 对象锁。
@@ -86,4 +87,5 @@ static void Main(string[] args)
 **参考资料**
 - [Visual Studio 2019 version 16.5 Release Notes - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes)
 - [Visual Studio 2019 version 16.5 is now available - Visual Studio Blog](https://devblogs.microsoft.com/visualstudio/visual-studio-2019-version-16-5/)
+
 

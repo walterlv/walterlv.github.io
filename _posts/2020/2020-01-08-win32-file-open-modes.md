@@ -4,6 +4,7 @@ publishDate: 2020-01-08 14:13:08 +0800
 date: 2020-01-08 15:05:12 +0800
 tags: windows dotnet csharp
 position: knowledge
+permalink: /posts/win32-file-open-modes.html
 ---
 
 Windows 打开文件的 API 中提供了多种不同的文件打开方式。你可以根据你的业务场景选择适合你的文件打开方式。
@@ -82,3 +83,4 @@ HANDLE CreateFileW(
 **参考资料**
 
 - [CreateFileW function (fileapi.h) - Win32 apps - Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilew)
+

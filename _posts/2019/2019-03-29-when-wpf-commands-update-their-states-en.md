@@ -8,6 +8,7 @@ version:
 versions:
   - 中文: /post/when-wpf-commands-update-their-states.html
   - English: #
+permalink: /posts/when-wpf-commands-update-their-states-en.html
 ---
 
 When writing `Command="{Binding WalterlvCommand}"` into your XAML code and your button or other controls can automatically execute command and updating the command states, such as enabling or disabling the button.
@@ -107,3 +108,4 @@ Actually, not only those events above but also these methods below refresh the c
 - When doing many operations in a `DataGrid`. *[DataGrid](https://referencesource.microsoft.com/#PresentationFramework/src/Framework/System/Windows/Controls/DataGrid.cs,0a7919e43781659b,references)*
 - When navigating back in a `JournalNavigationScope`. *[JournalNavigationScope.OnBackForwardStateChange](https://referencesource.microsoft.com/#PresentationFramework/src/Framework/MS/Internal/AppModel/JournalNavigationScope.cs,279da0f5dea085dc,references)*
 - And others, you can find references of `InvalidateRequerySuggested`: [InvalidateRequerySuggested](https://referencesource.microsoft.com/#PresentationCore/Core/CSharp/System/Windows/Input/Command/CommandManager.cs,fb01095b2fe73140,references)
+

@@ -5,6 +5,7 @@ date: 2020-05-25 09:00:15 +0800
 tags: dotnet csharp
 position: knowledge
 coverImage: /static/posts/2020-05-24-13-44-32.png
+permalink: /posts/system-drawing-common.html
 ---
 
 经过 Mono 团队的不懈努力，原本专属于 Win32 平台的 GDI+ 终于可以跨平台了，不过这中间还有好多的故事和好多的坑。
@@ -249,4 +250,5 @@ System.Drawing.Image.FromHbitmap (System.IntPtr hbitmap) (at <000000000000000000
 - [mono/libgdiplus: C-based implementation of the GDI+ API](https://github.com/mono/libgdiplus)
 - [libgdiplus/TODO at master · mono/libgdiplus](https://github.com/mono/libgdiplus/blob/master/TODO)
 - [libgdiplus - Mono](https://www.mono-project.com/docs/gui/libgdiplus/)
+
 

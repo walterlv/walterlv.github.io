@@ -4,6 +4,7 @@ publishDate: 2019-12-26 19:10:17 +0800
 date: 2019-12-27 17:34:18 +0800
 tags: msbuild dotnet
 position: knowledge
+permalink: /posts/msbuild-file-and-directory-operations.html
 ---
 
 本文整理 MSBuild 在编译过程中对文件和文件夹处理的各种自带的编译任务（Task）。
@@ -229,3 +230,4 @@ position: knowledge
     </RemoveDir>
 </Target>
 ```
+

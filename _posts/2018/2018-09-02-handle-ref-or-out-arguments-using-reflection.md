@@ -2,6 +2,7 @@
 title: ".NET/C# 使用反射调用含 ref 或 out 参数的方法"
 date: 2018-09-02 14:59:00 +0800
 tags: dotnet csharp
+permalink: /posts/handle-ref-or-out-arguments-using-reflection.html
 ---
 
 使用反射，我们可以很容易地在运行时调用一些编译时无法确定的属性、方法等。然而，如果方法的参数中包含 `ref` 或 `out` 关键字的时候，又该怎么调用呢？
@@ -56,3 +57,4 @@ var value = (string) typeof(Walterlv).GetMethod("Get").Invoke(walterlv, args);
 
 - [out, ref and InvokeMember !!! - CodeProject](https://www.codeproject.com/Articles/97728/out-ref-and-InvokeMember)
 - [c# - How to pass a parameter as a reference with MethodInfo.Invoke - Stack Overflow](https://stackoverflow.com/q/8779731/6233938)
+

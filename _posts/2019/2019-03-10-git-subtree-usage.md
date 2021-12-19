@@ -4,6 +4,7 @@ publishDate: 2019-03-10 19:04:18 +0800
 date: 2020-04-17 15:01:24 +0800
 tags: git
 position: starter
+permalink: /posts/git-subtree-usage.html
 ---
 
 本文收集 git subtree 的使用。
@@ -57,3 +58,4 @@ $ git subtree push --prefix=SubFolder/B walterlv master
 ```bash
 $ git subtree pull --prefix=SubFolder/B walterlv master
 ```
+

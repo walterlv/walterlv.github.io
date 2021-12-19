@@ -5,6 +5,7 @@ date: 2019-04-21 20:06:45 +0800
 tags: visualstudio
 position: starter
 coverImage: /static/posts/2019-04-20-18-50-04.png
+permalink: /posts/customizing-keyboard-shortcuts-in-visual-studio.html
 ---
 
 Visual Studio 中有些自带的快捷键与现有软件有冲突，那么如何修改这些快捷键让这些功能正常工作起来呢？
@@ -52,4 +53,5 @@ Visual Studio 中有些自带的快捷键与现有软件有冲突，那么如何
 **参考资料**
 
 - [Identify and customize keyboard shortcuts - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/ide/identifying-and-customizing-keyboard-shortcuts-in-visual-studio?view=vs-2019)
+
 

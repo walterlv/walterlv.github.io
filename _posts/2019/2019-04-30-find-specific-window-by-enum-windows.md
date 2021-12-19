@@ -3,6 +3,7 @@ title: "使用 EnumWindows 找到满足你要求的窗口"
 date: 2019-04-30 21:11:32 +0800
 tags: windows dotnet csharp wpf
 position: knowledge
+permalink: /posts/find-specific-window-by-enum-windows.html
 ---
 
 在 Windows 应用开发中，如果需要操作其他的窗口，那么可以使用 `EnumWindows` 这个 API 来枚举这些窗口。
@@ -114,3 +115,4 @@ GetWindowText(hwnd, lptrString, lptrString.Capacity);
 
 - [EnumWindows function (winuser.h) - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-enumwindows)
 - [GetClassName function (winuser.h) - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-getclassname)
+

@@ -4,6 +4,7 @@ publishDate: 2018-12-21 16:37:18 +0800
 date: 2019-03-15 15:54:00 +0800
 tags: dotnet wpf
 position: knowledge
+permalink: /posts/deadlock-if-await-in-ui-lock-context.html
 ---
 
 `AutoResetEvent`、`ManualResetEvent`、`Monitor`、`lock` 等等这些用来做同步的类，如果在异步上下文（await）中使用，需要非常谨慎。
@@ -217,3 +218,4 @@ WPF / UWP 等 UI 线程会使用 `DispatcherSynchronizationContext` 作为线程
 
 - [在编写异步方法时，使用 ConfigureAwait(false) 避免使用者死锁 - walterlv](/post/using-configure-await-to-avoid-deadlocks)
 - [将 async/await 异步代码转换为安全的不会死锁的同步代码（使用 PushFrame） - walterlv](/post/convert-async-to-sync-by-push-frame)
+

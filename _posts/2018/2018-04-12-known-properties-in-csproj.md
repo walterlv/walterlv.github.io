@@ -3,6 +3,7 @@ title: "项目文件中的已知属性（知道了这些，就不会随便在 cs
 publishDate: 2018-04-12 21:03:52 +0800
 date: 2019-04-12 09:36:45 +0800
 tags: visualstudio nuget csharp dotnet msbuild
+permalink: /posts/known-properties-in-csproj.html
 ---
 
 知道了 csproj 文件中的一些常用属性，修改文件的时候就不会写很多的垃圾代码。
@@ -205,3 +206,4 @@ tags: visualstudio nuget csharp dotnet msbuild
 **参考资料**
 
 - [MSBuild Well-known Item Metadata](https://msdn.microsoft.com/en-us/library/ms164313.aspx)
+

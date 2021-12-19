@@ -3,6 +3,7 @@ title: ".NET/C# 的字符串暂存池"
 date: 2019-05-28 21:26:27 +0800
 tags: dotnet csharp
 position: knowledge
+permalink: /posts/string-intern-pool.html
 ---
 
 本文介绍 .NET 中的字符串暂存池。
@@ -79,3 +80,4 @@ Console.WriteLine(ReferenceEquals(a, c));
 **参考资料**
 
 - [String.Intern(String) Method (System) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.string.intern?redirectedfrom=MSDN&view=netframework-4.8#System_String_Intern_System_String_)
+

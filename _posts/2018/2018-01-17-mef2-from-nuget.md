@@ -4,6 +4,7 @@ publishDate: 2018-01-17 23:41:00 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: visualstudio dotnet
 coverImage: /static/posts/2018-01-17-08-49-22.png
+permalink: /posts/mef2-from-nuget.html
 ---
 
 MEF，Managed Extensibility Framework，现在已经发布了三个版本了，它们是 MEF 和 MEF2。
@@ -130,3 +131,4 @@ compositionHost.SatisfyImports(targetObject);
 - [Is MEF or MEF2 baked into the .NET Framework? - Stack Overflow](https://stackoverflow.com/a/33522249/6233938)
 - [vs-mef/why.md at master · Microsoft/vs-mef](https://github.com/Microsoft/vs-mef/blob/master/doc/why.md)
 - [mef/Home.md at master · MicrosoftArchive/mef](https://github.com/MicrosoftArchive/mef/blob/master/Wiki/Home.md)
+

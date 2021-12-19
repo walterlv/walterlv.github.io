@@ -4,6 +4,7 @@ publishDate: 2018-09-26 09:17:07 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: dotnet csharp uwp
 coverImage: /static/posts/2018-09-25-20-00-48.png
+permalink: /posts/uwp-lightweight-xaml-styling.html
 ---
 
 在 UWP 中，可以通过给控件直接设置属性或在 `Style` 中设置属性来定制控件的样式；不过这样的样式定义十分有限，比如按钮按下时的样式就没法儿设置。当然可以通过修改 `Template` 来设置控件的样式，然而 UWP 中控件的样式代码实在是太多太复杂了，还不容易从 Blend 中复制了大量代码出来改，下个版本样式又不一样，于是我们就丢了不少功能。
@@ -184,4 +185,5 @@ coverImage: /static/posts/2018-09-25-20-00-48.png
 ### 第四步：轻量级样式定义
 
 请先删除这份副本样式，这样你就可以进行 “轻量级样式定义” 了。代码量相比于上面这份完整样式可以少非常多。
+
 

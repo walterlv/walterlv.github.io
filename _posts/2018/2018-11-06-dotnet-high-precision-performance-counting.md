@@ -3,6 +3,7 @@ title: ".NET/C# 在代码中测量代码执行耗时的建议（比较系统性�
 publishDate: 2018-11-06 15:33:54 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: dotnet csharp
+permalink: /posts/dotnet-high-precision-performance-counting.html
 ---
 
 我们有很多种方法评估一个方法的执行耗时，比如使用性能分析工具，使用基准性能测试。不过传统的在代码中编写计时的方式依然有效，因为它可以生产环境或用户端得到真实环境下的执行耗时。
@@ -120,3 +121,4 @@ internal static extern long GetSystemTimeAsFileTime();
 - [Stopwatch.IsHighResolution Field (System.Diagnostics) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch.ishighresolution?redirectedfrom=MSDN&view=netframework-4.7.2?wt.mc_id=MVP)
 - [Stopwatch.cs](https://referencesource.microsoft.com/#System/services/monitoring/system/diagnosticts/Stopwatch.cs,ceb0ba9cc88de82e)
 - [timespan.cs](https://referencesource.microsoft.com/#mscorlib/system/timespan.cs,865ef7b89f41b632)
+

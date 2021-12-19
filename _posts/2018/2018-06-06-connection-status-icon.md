@@ -3,6 +3,7 @@ title: "微软 Windows 系统检测网络连通性（用于显示感叹号）竟
 publishDate: 2018-06-06 10:27:40 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: windows
+permalink: /posts/connection-status-icon.html
 ---
 
 一次我走到了弱网环境中，意外地发现浏览器打开了 <http://www.msftconnecttest.com/redirect> 网址，随后右下角的网络图标出现了一枚“感叹号”。
@@ -58,3 +59,4 @@ tags: windows
 - [msftconnecttest.com - Microsoft Community](https://answers.microsoft.com/en-us/windows/forum/windows_10-networking/msftconnecttestcom/54cd5060-dbd3-4c82-b958-1a8706184a88?auth=1)
 - [http://www.msftconnecttest.com/redirect](https://social.technet.microsoft.com/Forums/windows/en-US/5a696f31-04a8-4852-8050-780208263a0c/httpwwwmsftconnecttestcomredirect?forum=win10itpronetworking)
 - [Appendix K: Network Connectivity Status Indicator and Resulting Internet Communication in Windows Vista - Microsoft Docs](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-vista/cc766017(v=ws.10)?wt.mc_id=MVP)
+

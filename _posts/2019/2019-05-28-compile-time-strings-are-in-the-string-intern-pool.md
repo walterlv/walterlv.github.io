@@ -4,6 +4,7 @@ date: 2019-05-28 21:31:24 +0800
 tags: dotnet csharp
 position: knowledge
 coverImage: /static/posts/2019-05-28-21-21-55.png
+permalink: /posts/compile-time-strings-are-in-the-string-intern-pool.html
 ---
 
 当我们不再使用某个对象的时候，此对象会被 GC 垃圾回收掉。当然前提是你没有写出内存泄漏的代码。我们也知道如果生成了大量的字符串，会对 GC 造成很大的压力。
@@ -73,4 +74,5 @@ namespace Walterlv.Demo
 **参考资料**
 
 - [c# - Strings and Garbage Collection - Stack Overflow](https://stackoverflow.com/a/2423134/6233938)
+
 

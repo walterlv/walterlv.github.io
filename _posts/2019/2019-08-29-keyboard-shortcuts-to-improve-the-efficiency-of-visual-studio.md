@@ -5,6 +5,7 @@ date: 2020-05-23 11:25:59 +0800
 tags: visualstudio csharp
 position: knowledge
 coverImage: /static/posts/2019-08-29-19-03-27.png
+permalink: /posts/keyboard-shortcuts-to-improve-the-efficiency-of-visual-studio.html
 ---
 
 Visual Studio 的功能可谓真是丰富，再配合各种各样神奇强大的插件，Visual Studio 作为太阳系最强大的 IDE 名副其实。
@@ -224,4 +225,5 @@ IntelliSense 以前有个漂亮的中文名字，叫做“智能感知”，不�
 我报给了微软：
 
 - [When text is selected, `Ctrl+Click` will not perform the `GoTo Definition`. - Developer Community](https://developercommunity.visualstudio.com/content/problem/1046526/when-text-is-selected-ctrlclick-will-not-perform-t.html)
+
 

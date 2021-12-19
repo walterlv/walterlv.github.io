@@ -5,6 +5,7 @@ date: 2019-06-13 13:49:44 +0800
 tags: dotnet csharp
 position: knowledge
 coverImage: /static/posts/2019-06-12-11-40-55.png
+permalink: /posts/assembly-loading-context.html
 ---
 
 我们编写的 .NET 应用程序会使用到各种各样的依赖库。我们都知道 CLR 会在一些路径下帮助我们程序找到依赖，但如果我们需要手动控制程序集加载路径的话，需要了解程序集加载上下文。
@@ -205,4 +206,5 @@ AppDomain.CurrentDomain.AppendPrivatePath(folder);
 - [Loading .NET Assemblies out of Seperate Folders - Rick Strahl's Web Log](https://weblog.west-wind.com/posts/2016/dec/12/loading-net-assemblies-out-of-seperate-folders)
 - [Best Practices for Assembly Loading - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/deployment/best-practices-for-assembly-loading)
 - [Why is AppDomain.AppendPrivatePath Obsolete? - .NET Blog](https://devblogs.microsoft.com/dotnet/why-is-appdomain-appendprivatepath-obsolete/)
+
 

@@ -3,6 +3,7 @@ title: "MSBuild 如何编写带条件的属性、集合和任务 Condition？"
 date: 2019-04-16 17:27:46 +0800
 tags: msbuild
 position: starter
+permalink: /posts/how-to-write-msbuild-conditions.html
 ---
 
 在项目文件 csproj 中，通过编写带条件的属性（PropertyGroup）、集合（ItemGroup）和任务（Target）可以完成更加复杂的项目文件的功能。
@@ -101,3 +102,4 @@ Condition=" $if$ ( %expression% ), $else$, $endif$ "
 
 - [MSBuild Conditions - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-conditions)
 - [Visual Studio Project/Item Template Parameter Logic - Stack Overflow](https://stackoverflow.com/q/6709057/6233938)
+

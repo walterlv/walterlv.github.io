@@ -4,6 +4,7 @@ publishDate: 2017-10-14 17:18:49 +0800
 date: 2018-10-29 13:03:35 +0800
 tags: dotnet csharp wpf uwp
 description: 一个耗时的任务，可以通过 Task.Yield 或者 Dispatcher.Yield 来中断以便分割成多个小的任务片段执行。
+permalink: /posts/yield-in-task-dispatcher.html
 ---
 
 `Yield` 这个词很有意思，叫做“屈服”“放弃”“让步”，字面意义上是让出当前任务的执行权，转而让其他任务可以插入执行。`Task`、`Dispatcher`、`Thread` 都有 `Yield()` 方法，看起来都可以让出当前任务的执行权。
@@ -118,3 +119,4 @@ public override void Post(SendOrPostCallback d, Object state)
 - [c# - Task.Yield - real usages? - Stack Overflow](chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=c%23%20-%20Task.Yield%20-%20real%20usages%3F%20-%20Stack%20Overflow&uri=https://stackoverflow.com/questions/23431595/task-yield-real-usages)
 - [Task.Yield Method (System.Threading.Tasks)](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task.yield%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396)
 - [c# - Difference between Synchronization Context and Dispatcher - Stack Overflow](https://stackoverflow.com/questions/24671883/difference-between-synchronization-context-and-dispatcher)
+

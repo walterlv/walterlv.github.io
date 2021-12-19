@@ -4,6 +4,7 @@ publishDate: 2018-07-11 21:35:58 +0800
 date: 2019-03-21 10:13:01 +0800
 tags: wpf dotnet csharp windows
 coverImage: /static/posts/2018-07-11-21-31-07.png
+permalink: /posts/embed-win32-window-using-csharp.html
 ---
 
 WPF 的 UI 逻辑只在同一个线程中，这是学习 WPF 开发中大家几乎都会学习到的经验。如果希望做不同线程的 UI，大家也会想到使用另一个窗口来实现，让每个窗口拥有自己的 UI 线程。然而，就不能让同一个窗口内部使用多个 UI 线程吗？
@@ -175,4 +176,5 @@ await dispatcher.InvokeAsync(() =>
 1. [DispatcherAsyncOperation.cs](https://gist.github.com/walterlv/ca0fc857eae04c1088aebcb8d636d1cb#file-dispatcherasyncoperation-cs)
 1. [UIDispatcher.cs](https://gist.github.com/walterlv/ca0fc857eae04c1088aebcb8d636d1cb#file-uidispatcher-cs)
 1. [VisualTargetPresentationSource.cs](https://github.com/walterlv/sharing-demo/blob/master/src/Walterlv.Demo.WPF/Utils/Threading/VisualTargetPresentationSource.cs)
+
 

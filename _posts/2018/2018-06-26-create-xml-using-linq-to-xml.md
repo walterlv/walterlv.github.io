@@ -3,6 +3,7 @@ title: "使用 LINQ to XML，.NET 让生成 XML 文件变得和直接写 XML 一
 publishDate: 2018-06-26 11:26:40 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: dotnet
+permalink: /posts/create-xml-using-linq-to-xml.html
 ---
 
 由 .NET Framework 3.5 引入，并依然在 .NET Core 中发扬光大的 LINQ to XML 让编写 XML 文件变得非常轻松。
@@ -122,3 +123,4 @@ var dependencies = new Dictionary<string, (string id, string version, string exc
 
 - [LINQ to XML 与DOM (C#) - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/concepts/linq/linq-to-xml-vs-dom?wt.mc_id=MVP)
 - [如何：控制命名空间前缀 (C#) (LINQ to XML) - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/concepts/linq/how-to-control-namespace-prefixes-linq-to-xml?wt.mc_id=MVP)
+

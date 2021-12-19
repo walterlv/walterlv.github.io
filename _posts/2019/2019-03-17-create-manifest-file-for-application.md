@@ -4,6 +4,7 @@ date: 2019-03-17 17:34:18 +0800
 tags: windows dotnet csharp wpf
 position: starter
 coverImage: /static/posts/2019-03-17-15-40-41.png
+permalink: /posts/create-manifest-file-for-application.html
 ---
 
 如果你的程序对 Windows 运行权限有要求，那么需要设置应用程序清单。本文介绍如何添加应用程序清单，并解释其中各项权限设置的实际效果。
@@ -114,4 +115,5 @@ coverImage: /static/posts/2019-03-17-15-40-41.png
 你也可以创建一个不带应用程序清单的应用程序。方法是在属性页中将清单设置为“创建不带清单的应用程序”。
 
 ![创建不带清单的应用程序](/static/posts/2019-03-17-15-48-41.png)
+
 

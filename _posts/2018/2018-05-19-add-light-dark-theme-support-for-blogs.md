@@ -3,6 +3,7 @@ title: "为博客添加可切换的暗色和亮色主题"
 publishDate: 2018-05-19 21:42:23 +0800
 date: 2018-08-12 14:50:56 +0800
 tags: site html javascript css
+permalink: /posts/add-light-dark-theme-support-for-blogs.html
 ---
 
 不知从什么时候开始，越来越多的小伙伴喜欢在暗色的编辑器中编写代码；于是写博客的小伙伴们也得在博客中顺应这样的潮流，这样才能更接近平时写代码时的环境。
@@ -141,3 +142,4 @@ body.dark-theme .post-content h5 {
 ```
 
 试试点击本文上面的“切换黑白主题”按钮吧！
+

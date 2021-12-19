@@ -4,6 +4,7 @@ publishDate: 2019-02-27 12:27:27 +0800
 date: 2019-03-12 12:41:49 +0800
 tags: dotnet nuget
 position: knowledge
+permalink: /posts/public-nuget-sources.html
 ---
 
 本文收集我发现的各种公共 NuGet 源。
@@ -56,3 +57,4 @@ position: knowledge
 
 - [FuGet Gallery - https://www.fuget.org/](https://www.fuget.org/)
     - 此项目开源：[praeclarum/FuGetGallery: An alternative web UI for browsing nuget packages](https://github.com/praeclarum/FuGetGallery)
+

@@ -9,6 +9,7 @@ versions:
   - 中文: /post/create-blur-background-window.html
   - English: #
 coverImage: /static/posts/2017-10-01-23-49-15.png
+permalink: /posts/create-blur-background-window-en.html
 ---
 
 This post is an answer from [Stack Overflow](https://stackoverflow.com/a/51257595/6233938) and introduce some methods to create a window with blurring background.
@@ -133,4 +134,5 @@ You can also add a `RectangleGeometry` to clip your UIElement into a rounded rec
 ## UWP AcyclicBrush
 
 You can read Microsoft's documents [Acrylic material - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/style/acrylic?wt.mc_id=MVP) for more details about how to write an `AcylicBrush`.
+
 

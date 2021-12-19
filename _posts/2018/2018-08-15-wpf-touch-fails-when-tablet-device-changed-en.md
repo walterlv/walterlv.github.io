@@ -7,6 +7,7 @@ version:
 versions:
   - 中文: /post/wpf-touch-fails-when-tablet-device-changed.html
   - English: #
+permalink: /posts/wpf-touch-fails-when-tablet-device-changed-en.html
 ---
 
 WPF framework handles touch devices and events mostly using its own code and COM components instead of using the windows message loop. Unfortunately, there may be some bugs in the WPF touch handling codes. So we sometimes suffer from the WPF touch failures. This changes after Microsoft introducing .NET Framework 4.7, but the developers have to switch on the `Pointer` message manually with some compliant issues.
@@ -135,3 +136,4 @@ Since WPF touch details involve more types and source code which requires a lot 
 - [通过解读 WPF 触摸源码，分析 WPF 插拔设备触摸失效的问题（分析篇） - walterlv](/post/analyze-wpf-losting-touch-when-tablet-device-changed)
 
 All of the .NET Framework source code in this article is decompiled by [dnSpy](https://github.com/0xd4d/dnSpy), and the analysis process is basically based on the dnSpy's no-PDB debugging feature.
+

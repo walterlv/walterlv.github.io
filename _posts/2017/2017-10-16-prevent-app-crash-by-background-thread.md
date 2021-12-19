@@ -4,6 +4,7 @@ publishDate: 2017-10-16 20:52:01 +0800
 date: 2019-11-28 16:08:14 +0800
 tags: dotnet wpf
 description: legacyUnhandledExceptionPolicy 可以防止程序在后台线程抛出异常后崩溃退出。
+permalink: /posts/prevent-app-crash-by-background-thread.html
 ---
 
 如果你的程序抛了异常，你是怎么处理的呢？等待程序崩溃退出？还是进行补救？
@@ -53,3 +54,4 @@ WPF 和 Windows Forms 都是微软的框架，为了照顾初学者，微软会�
 **参考资料**
 - [c# - How to prevent an exception in a background thread from terminating an application? - Stack Overflow](https://stackoverflow.com/questions/186854/how-to-prevent-an-exception-in-a-background-thread-from-terminating-an-applicati)
 - [Exceptions in Managed Threads - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/threading/exceptions-in-managed-threads?wt.mc_id=MVP)
+

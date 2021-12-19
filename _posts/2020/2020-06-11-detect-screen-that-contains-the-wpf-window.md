@@ -3,6 +3,7 @@ title: "WPF / Windows Forms 检测窗口在哪个屏幕"
 date: 2020-06-11 18:39:48 +0800
 tags: wpf dotnet csharp
 position: starter
+permalink: /posts/detect-screen-that-contains-the-wpf-window.html
 ---
 
 使用 Windows Forms 自带的 System.Windows.Forms.Screen 类可以从一个窗口句柄获取到对应的屏幕。随后可以使用此 `Screen` 类获取各种屏幕信息。
@@ -126,3 +127,4 @@ namespace Walterlv.Issues.Dpi
     }
 }
 ```
+

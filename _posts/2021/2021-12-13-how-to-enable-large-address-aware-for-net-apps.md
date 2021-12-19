@@ -4,6 +4,7 @@ date: 2021-12-13 21:01:43 +0800
 tags: dotnet windows
 position: knowledge
 coverImage: /static/posts/2021-12-13-20-51-53.png
+permalink: /posts/how-to-enable-large-address-aware-for-net-apps.html
 ---
 
 如果你不做特殊处理，把你的项目以 x86 的架构进行编译，那么你的应用程序在 Windows 上最多只能使用 2GB 的内存（地址空间）。如果你的项目使用 .NET Framework 框架，那么现行有很多简单的方法来帮你实现大内存感知，但 .NET Core 框架下却没有。所以我写了一个库 dotnetCampus.LargeAddressAware，帮助你轻松实现 32 位程序的大内存感知。
@@ -98,3 +99,4 @@ dumpbin /headers xxx.exe | more
     - `dumpbin /headers xxx.exe | more`
     - [verify if largeAddressAware is in effect?](https://stackoverflow.com/questions/3979624/verify-if-largeaddressaware-is-in-effect)
     - [LargeAddressAware Visual Studio 2015 C#](https://stackoverflow.com/questions/31565532/largeaddressaware-visual-studio-2015-c-sharp)
+

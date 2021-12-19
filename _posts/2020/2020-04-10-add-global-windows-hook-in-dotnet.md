@@ -5,6 +5,7 @@ date: 2020-06-13 17:39:12 +0800
 tags: windows dotnet csharp
 position: knowledge
 coverImage: /static/posts/2020-04-18-10-55-00.png
+permalink: /posts/add-global-windows-hook-in-dotnet.html
 ---
 
 一般来说，大家在需要监听全局消息的时候会考虑 `SetWindowsHookEx` 这个 API。或者需要处理一些非自己编写的窗口的消息循环的时候，也会考虑使用它。
@@ -257,4 +258,5 @@ var threadId = GetWindowThreadProcessId(hWnd, out _);
 - [.net - Example of hooking a window? - Stack Overflow](https://stackoverflow.com/questions/6872044/example-of-hooking-a-window)
 - [.net - SetWindowHookEx fails at runtime in C# application - Stack Overflow](https://stackoverflow.com/a/18499468/6233938)
 - [winapi - Is there a way to know when another hwnd has closed? - Stack Overflow](https://stackoverflow.com/a/22249063/6233938)
+
 

@@ -5,6 +5,7 @@ date: 2021-07-15 19:46:48 +0800
 tags: dotnet msi wix
 position: starter
 coverImage: /static/posts/2021-07-15-10-08-48.png
+permalink: /posts/getting-started-with-wix-toolset-msi-detect-net-framework.html
 ---
 
 本文是 [WiX Toolset 安装包制作入门教程](/post/getting-started-with-wix-toolset) 系列中的一篇，可前往阅读完整教程。
@@ -219,4 +220,5 @@ WiX 3 不支持 .NET Core 3.x、.NET 5 以及 .NET 6 的判断。如需检查这
 
 - [How To: Check for .NET Framework Versions](https://wixtoolset.org/documentation/manual/v3/howtos/redistributables_and_install_checks/check_for_dotnet.html)
 - [Expression Syntax](https://www.firegiant.com/wix/tutorial/com-expression-syntax-miscellanea/expression-syntax/)
+
 

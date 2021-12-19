@@ -4,6 +4,7 @@ date: 2021-07-14 17:47:10 +0800
 tags: dotnet msi wix
 position: starter
 coverImage: /static/posts/2021-07-14-11-29-43.png
+permalink: /posts/getting-started-with-wix-toolset-installing-visual-studio-extensions.html
 ---
 
 本文是 [WiX Toolset 安装包制作入门教程](/post/getting-started-with-wix-toolset) 系列中的一篇，可前往阅读完整教程。
@@ -49,4 +50,5 @@ WiX 插件暂不支持 Visual Studio 2022，毕竟到了 Visual Studio 2022 开�
 如果你有自己的插件需要升级到支持 VS2022，可阅读我的另一篇博客：
 
 - [Visual Studio 2022 出来啦！教你如何将 VS2019 的 VSIX 扩展/插件项目迁移到 VS2022](/post/add-vs2019-extension-support-to-vs2022.html)
+
 

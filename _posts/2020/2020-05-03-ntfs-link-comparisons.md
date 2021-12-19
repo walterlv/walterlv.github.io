@@ -10,6 +10,7 @@ versions:
   - 中文: #
   - English: /post/ntfs-link-comparisons-en.html
 coverImage: /static/posts/2020-06-10-09-37-39.png
+permalink: /posts/ntfs-link-comparisons.html
 ---
 
 可能有很多小伙伴已经知道通过 `mklink` 命令来创建 NTFS 磁盘上的各种链接；当然，就算不知道 `mklink` 的链接，快捷方式应该每个人都知道吧。`mklink` 的选项有很多种，但你可能在其他文章中难以找到对这些不同选项的不同效果和使用限制的准确和统一描述。本文将介绍 Windows 系统中所有的链接方式，它们的优缺点、使用条件和坑。
@@ -124,4 +125,5 @@ mklink /J current %APPDATA%\walterlv\packages\1.0.0
 - [Hard link - Wikipedia](https://en.wikipedia.org/wiki/Hard_link)
 - [Create symbolic links (Windows 10) - Windows security - Microsoft Docs](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/create-symbolic-links)
 - [Symlinks in Windows 10! - Windows Developer Blog](https://blogs.windows.com/windowsdeveloper/2016/12/02/symlinks-windows-10/)
+
 

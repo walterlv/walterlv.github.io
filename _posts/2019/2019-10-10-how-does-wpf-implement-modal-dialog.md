@@ -3,6 +3,7 @@ title: "直击本质：WPF 框架是如何实现模态窗口的"
 date: 2019-10-10 18:57:27 +0800
 tags: wpf dotnet csharp windows
 position: knowledge
+permalink: /posts/how-does-wpf-implement-modal-dialog.html
 ---
 
 想知道你在 WPF 编写 `Window.ShowDialog()` 之后，WPF 框架是如何帮你实现模态窗口的吗？
@@ -127,3 +128,4 @@ private object ShowHelper(object booleanBox)
 - [深入了解 WPF Dispatcher 的工作原理（PushFrame 部分） - walterlv](/post/dotnet/2017/09/26/dispatcher-push-frame.html)
 
 那么 `ComponentDispatcher.PushModal` 和 `ComponentDispatcher.PopModal` 呢？可以在这里（[ComponentDispatcherThread.cs](https://source.dot.net/#WindowsBase/System/Windows/Interop/ComponentDispatcherThread.cs,60a128f40eff98b3)）看它的代码，实际上是为了模态计数以及引发事件的，对模态的效果没有本质上的影响。
+

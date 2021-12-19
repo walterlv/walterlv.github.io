@@ -4,6 +4,7 @@ publishDate: 2018-07-04 21:29:29 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: dotnet
 coverImage: https://www.mozilla.org/media/img/firefox/organizations/release-overview.d8ca18efe06f.png
+permalink: /posts/what-is-long-term-support.html
 ---
 
 在 .NET Core 2.1 发布之时，微软称之为一个 LTS 版本，那么 LTS 的版本是一种怎样的版本呢？
@@ -53,4 +54,5 @@ LTS 是 long-term support 的缩写，意为长期支持。
 ▲ Firefox ESR Release Overview
 
 详见：[Firefox Extended Support Release for Your Organization, Business, Enterprise — Mozilla](https://www.mozilla.org/en-US/firefox/organizations/)。
+
 

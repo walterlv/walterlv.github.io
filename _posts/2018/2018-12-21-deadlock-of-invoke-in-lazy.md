@@ -4,6 +4,7 @@ publishDate: 2018-12-21 14:47:30 +0800
 date: 2019-03-15 15:52:24 +0800
 tags: dotnet wpf
 position: knowledge
+permalink: /posts/deadlock-of-invoke-in-lazy.html
 ---
 
 WPF 中为了 UI 的跨线程访问，提供了 `Dispatcher` 线程模型。其 `Invoke` 方法，无论在哪个线程调用，都可以让传入的方法回到 UI 线程。
@@ -99,3 +100,4 @@ class Walterlv
 
 - [在编写异步方法时，使用 ConfigureAwait(false) 避免使用者死锁 - walterlv](/post/using-configure-await-to-avoid-deadlocks)
 - [将 async/await 异步代码转换为安全的不会死锁的同步代码（使用 PushFrame） - walterlv](/post/convert-async-to-sync-by-push-frame)
+

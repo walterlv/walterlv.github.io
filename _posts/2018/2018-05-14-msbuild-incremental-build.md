@@ -3,6 +3,7 @@ title: "每次都要重新编译？太慢！让跨平台的 MSBuild/dotnet build
 publishDate: 2018-05-14 15:46:50 +0800
 date: 2018-07-28 17:52:22 +0800
 tags: visualstudio msbuild
+permalink: /posts/msbuild-incremental-build.html
 ---
 
 如果你干预到了项目的编译过程，可能就需要考虑到差量编译了。不然——当你的项目大起来的时候，就会感受到每次都重新编译时，每次重复调试的过程都要进行漫长等待时的绝望和无奈。
@@ -74,3 +75,4 @@ tags: visualstudio msbuild
 因为前者已经生成了文件，如果不执行，文件依然存在；但后者一旦不执行，那么我们就会少一个编译的文件。这将导致后续名为 `CoreCompile` 的 Target 执行时，发现少了一个文件，将重新执行编译。
 
 所以前者的 `Inputs` 指定为空字符串，`Outputs` 指定为 `$(IntermediateOutputPath)Doubi.cs`；但是后者不应该指定 `Inputs` 和 `Outputs`。
+

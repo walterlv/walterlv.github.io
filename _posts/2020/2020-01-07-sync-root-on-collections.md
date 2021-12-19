@@ -4,6 +4,7 @@ publishDate: 2020-01-07 09:29:41 +0800
 date: 2020-01-28 16:53:15 +0800
 tags: dotnet csharp
 position: knowledge
+permalink: /posts/sync-root-on-collections.html
 ---
 
 非泛型版本的 `ICollection` 中有 `IsSynchronized` 属性和 `SyncRoot` 属性，这两个属性被用来设计成以线程安全的方式访问和修改集合。不过这个设计让线程安全的访问由集合的实现方转嫁到了调用方，导致要么很难实现，要么很难调用。
@@ -42,3 +43,4 @@ object ICollection.SyncRoot => this;
 关于为什么同步时不应该返回 `this` 或者返回公开的对象，原因可以看我的另一篇博客：
 
 - [为什么不应该公开用来同步的加锁对象？为什么不应该 lock(this)/lock(string) 或者 lock 任何非私有对象？ - walterlv](/post/why-making-the-sync-root-public-is-dangerous)
+

@@ -4,6 +4,7 @@ date: 2021-08-05 17:20:04 +0800
 tags: wpf dotnet
 position: problem
 coverImage: /static/posts/2021-08-05-16-51-03.png
+permalink: /posts/create-a-realistic-sunshine-on-your-desktop-using-wpf.html
 ---
 
 本文想要做的，可不是随便弄一点阳光的半透明形状，然后简单地放到桌面上，**而是真真正正地要照亮桌面上的窗口元素**！并且，全程使用 GPU 加速，而且代码超简单。
@@ -221,4 +222,5 @@ namespace Walterlv.DesktopSunshine
 最重要的是——它几乎不消耗性能！因为它在图形渲染管线的像素着色器部分运行，其所有代码都在 GPU 中并行执行，且每次执行仅需不到 10 条指令。你可以看到任务管理器中，它的 CPU 和 GPU 消耗都是 0。
 
 ![性能占用非常低](/static/posts/2021-08-05-17-19-52.png)
+
 

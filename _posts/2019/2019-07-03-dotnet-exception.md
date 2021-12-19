@@ -4,6 +4,7 @@ publishDate: 2019-07-03 20:02:18 +0800
 date: 2019-07-12 08:33:36 +0800
 tags: dotnet csharp
 position: knowledge
+permalink: /posts/dotnet-exception.html
 ---
 
 什么时候该抛出异常，抛出什么异常？什么时候该捕获异常，捕获之后怎么处理异常？你可能已经使用异常一段时间了，但对 .NET/C# 的异常机制依然有一些疑惑。那么，可以阅读本文。
@@ -317,3 +318,4 @@ public class InvalidDepartmentException : Exception
 - [Handling and throwing exceptions in .NET - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/exceptions/)
 - [Exceptions and Exception Handling - C# Programming Guide - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/exceptions/)
 - [Design Guidelines for Exceptions - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/exceptions)
+

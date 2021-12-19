@@ -4,6 +4,7 @@ publishDate: 2018-10-22 18:04:01 +0800
 date: 2020-06-10 16:41:39 +0800
 tags: windows dotnet wpf
 coverImage: /static/posts/2018-10-18-18-18-31.png
+permalink: /posts/windows-high-dpi-development-for-wpf.html
 ---
 
 Windows 10 自 1703 开始引入第二代的多屏 DPI 机制（PerMonitor V2），而 WPF 框架可以支持此第二代的多屏 DPI 机制。
@@ -215,4 +216,5 @@ Windows 10 自 1703 开始引入第二代的多屏 DPI 机制（PerMonitor V2）
 - [WPF-Samples/Developer Guide - Per Monitor DPI - WPF Preview.docx at master · Microsoft/WPF-Samples](https://github.com/Microsoft/WPF-Samples/blob/master/PerMonitorDPI/Developer%20Guide%20-%20Per%20Monitor%20DPI%20-%20WPF%20Preview.docx)
 - [Application Manifests - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/sbscs/application-manifests?wt.mc_id=MVP)
 - [High-DPI Scaling Improvements for Desktop Applications in the Windows 10 Creators Update (1703) - Windows Developer Blog](https://blogs.windows.com/windowsdeveloper/2017/04/04/high-dpi-scaling-improvements-desktop-applications-windows-10-creators-update/)
+
 

@@ -5,6 +5,7 @@ date: 2020-06-18 08:34:02 +0800
 tags: visualstudio dotnet
 position: knowledge
 coverImage: /static/posts/2019-07-24-10-47-00.png
+permalink: /posts/understand-the-sln-file.html
 ---
 
 一般情况下我们并不需要关心 Visual Studio 解决方案文件格式（.sln），因为 Visual Studio 对解决方案文件的自动修复能力是非常强的。但是如果遇到自动解冲突错误或者编译不通过了，那么此文件还是需要手工修改的。
@@ -239,4 +240,5 @@ Global
 	EndGlobalSection
 EndGlobal
 ```
+
 

@@ -3,6 +3,7 @@ title: "从零开始学习 dotnet 编译过程和 Roslyn 源码分析"
 publishDate: 2018-10-19 16:23:18 +0800
 date: 2019-04-12 09:41:03 +0800
 tags: dotnet csharp msbuild roslyn visualstudio nuget
+permalink: /posts/posts-for-learning-dotnet-build-nuget-roslyn.html
 ---
 
 本文整理我和 [林德熙](https://blog.lindexi.com/) 学习的 dotnet 编译知识、Roslyn 源码分析知识，NuGet 知识。通过阅读本文可以从零散的碎片化博客中得到从零开始学习的轨迹。
@@ -156,3 +157,4 @@ Roslyn 为何能够在提供如此友好的 API 的情况下依然有如此高�
 - [dotnet core 通过修改文件头的方式隐藏控制台窗口 - 林德熙](https://blog.lindexi.com/post/dotnet-core-%E9%80%9A%E8%BF%87%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E5%A4%B4%E7%9A%84%E6%96%B9%E5%BC%8F%E9%9A%90%E8%97%8F%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%AA%97%E5%8F%A3.html)
 - [使用 GitVersion 在编译或持续构建时自动使用语义版本号（Semantic Versioning） - 吕毅](/post/automatically-semantic-versioning-using-git-version-task)
 - [Automatically increase the semantic version using GitVersion - 吕毅](/post/automatically-semantic-versioning-using-git-version-task.en.html)
+

@@ -5,6 +5,7 @@ date: 2019-12-08 15:29:27 +0800
 tags: csharp dotnet
 position: knowledge
 coverImage: /static/posts/2019-11-27-16-39-21.png
+permalink: /posts/csharp-nullable-analysis-attributes.html
 ---
 
 C# 8.0 引入了可空引用类型，你可以通过 `?` 为字段、属性、方法参数、返回值等添加是否可为 null 的特性。
@@ -223,4 +224,5 @@ public string? GetValue(string key, string? defaultValue)
 **参考资料**
 
 - [Upgrade APIs for nullable reference types with attributes that define expectations for null values - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/nullable-attributes)
+
 

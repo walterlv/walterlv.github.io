@@ -3,6 +3,7 @@ title: "使用 WiX 创建最简单的安装包过程中可能出现的问题和�
 date: 2021-07-16 11:50:15 +0800
 tags: dotnet msi wix
 position: problem
+permalink: /posts/getting-started-with-wix-toolset-the-pit-you-might-step-on.html
 ---
 
 本文是 [WiX Toolset 安装包制作入门教程](/post/getting-started-with-wix-toolset) 系列中的番外篇，可前往阅读完整教程。
@@ -23,3 +24,4 @@ position: problem
 ## .NET Framework 始终会安装
 
 - [用 WiX 制作安装包：设置的 .NET Framework 前置会始终安装，即使目标电脑已经自带或装好](/post/wix-burn-always-install-netfx-even-if-already-installed)
+

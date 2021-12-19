@@ -4,6 +4,7 @@ date: 2021-07-14 17:46:49 +0800
 tags: dotnet msi wix
 position: starter
 coverImage: /static/posts/2021-07-14-17-04-08.png
+permalink: /posts/windows-installer-using-wix-best-practice-product-id-and-upgrade-code.html
 ---
 
 在 WiX 安装包制作时，Product.wxs 文件中的 `Product` 标签中存在一些属性，这些属性应该如何设置才是比较合适的呢？
@@ -47,4 +48,5 @@ coverImage: /static/posts/2021-07-14-17-04-08.png
 - [Product Identification (ProductCode and UpgradeCode)](https://www.advancedinstaller.com/user-guide/product-identification.html)
 - [In WiX, where is the ProductCode specified? - Stack Overflow](https://stackoverflow.com/a/26734471/6233938)
 - [ProductCode 属性 - Win32 apps - Microsoft Docs](https://docs.microsoft.com/zh-cn/windows/win32/msi/productcode?redirectedfrom=MSDN)
+
 

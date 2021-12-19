@@ -4,6 +4,7 @@ date: 2020-04-27 21:04:09 +0800
 tags: unity csharp
 position: starter
 coverImage: /static/posts/2020-04-27-19-52-25.png
+permalink: /posts/unity-starter-the-sln-and-csproj-files.html
 ---
 
 本文介绍 Unity3D 项目根目录的 sln 和 csproj 文件，你将知道如何正确理解和使用它们。
@@ -32,4 +33,5 @@ coverImage: /static/posts/2020-04-27-19-52-25.png
 1. 但让 Visual Studio 的各种功能激活后就会让我们这样的入门开发者产生误会，认为这其实就是 C# 项目，会尝试真的对这些项目进行可能超出 Unity 功能范围的修改。
 
 真正在编译完成放到游戏中运行的，是 Assets 文件夹中的文件。而外面的 sln 和 csproj 文件，应该加入到 .gitignore 文件中，从版本管理中忽略掉。
+
 

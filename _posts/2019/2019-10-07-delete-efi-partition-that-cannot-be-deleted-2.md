@@ -4,6 +4,7 @@ date: 2019-10-07 11:04:58 +0800
 tags: windows
 position: knowledge
 coverImage: /static/posts/2019-10-07-10-02-13.png
+permalink: /posts/delete-efi-partition-that-cannot-be-deleted-2.html
 ---
 
 Windows 系统在安装的时候，会自动为我们的磁盘划分一个恢复分区和一个 EFI 分区。如果后面不打算再用这些分区的时候，却发现无法删除。
@@ -155,4 +156,5 @@ DISKPART> list partition
 **参考资料**
 
 - [磁盘中出现多个的恢复分区，能否删除？ - 知乎](https://www.zhihu.com/question/36238673)
+
 

@@ -3,6 +3,7 @@ title: "如何使用 MSBuild Target（Exec）中的控制台输出"
 publishDate: 2018-06-13 08:08:06 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: dotnet msbuild
+permalink: /posts/exec-task-of-msbuild-target.html
 ---
 
 我曾经写过一篇文章 [如何创建一个基于命令行工具的跨平台的 NuGet 工具包](/post/create-a-cross-platform-command-based-nuget-tool)，通过编写一个控制台程序来参与编译过程。但是，相比于 [基于 Task 的方式](/post/create-a-cross-platform-msbuild-task-based-nuget-tool)，可控制的因素还是太少了。
@@ -79,3 +80,4 @@ MSBuild 还自带了一个 `Task`，名为 `CreateItem`，就是从一段字符�
 - [Empty an MSBuild ItemGroup - Stack Overflow](https://stackoverflow.com/q/7909825/6233938)
 - [What's New in MSBuild 15 - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/what-s-new-in-msbuild-15-0#updates?wt.mc_id=MVP)
 - [Item Element (MSBuild) - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/item-element-msbuild?wt.mc_id=MVP)
+

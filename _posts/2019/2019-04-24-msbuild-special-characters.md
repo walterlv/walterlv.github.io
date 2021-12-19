@@ -3,6 +3,7 @@ title: "MSBuild 中的特殊字符（$ @ % 等）：含义、用法以及转义"
 date: 2019-04-24 20:48:21 +0800
 tags: msbuild visualstudio dotnet
 position: knowledge
+permalink: /posts/msbuild-special-characters.html
 ---
 
 在 MSBuild 中有一些特殊字符，如 `$` `@` `%` `'` 等，本文介绍他们的含义，如何使用他们，以及你真的需要这些字符的时候如何编写他们。
@@ -138,3 +139,4 @@ MSBuild 中有这些特殊字符：
 
 - [MSBuild Special Characters - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-special-characters?view=vs-2019)
 - [How to: Escape Special Characters in MSBuild - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-escape-special-characters-in-msbuild?view=vs-2019)
+

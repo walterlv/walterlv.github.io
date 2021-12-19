@@ -3,6 +3,7 @@ title: "C# 中那些可以被重载的运算符（操作符），以及使用它
 publishDate: 2018-05-19 23:20:52 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: csharp
+permalink: /posts/overridable-operators-in-csharp.html
 ---
 
 C# 中的运算符重载并不新鲜。然而，到底有哪些运算符可以重载，重载运算符可以用来做哪些丧心病狂的事情呢？
@@ -93,3 +94,4 @@ _popupRoot = new PopupRoot(DependencyResolver)
 **参考资料**
 
 - [Overloadable Operators (C# Programming Guide) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/overloadable-operators?wt.mc_id=MVP)
+

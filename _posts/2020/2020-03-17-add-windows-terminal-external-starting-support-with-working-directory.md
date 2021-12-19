@@ -5,6 +5,7 @@ date: 2020-03-24 09:49:23 +0800
 tags: windows dotnet
 position: knowledge
 coverImage: /static/posts/2020-03-17-09-52-28.png
+permalink: /posts/add-windows-terminal-external-starting-support-with-working-directory.html
 ---
 
 Windows Terminal 在 Windows 上是一款 UWP 应用，然而其依然具有良好的与外部工具的集成特性，你可以在其他各种工具中配置使用 Windows Terminal 打开。
@@ -76,4 +77,5 @@ Process.Start(info);
 **参考资料**
 
 - [Programmatically Opening Windows Terminal in a Specific Folder - Rick Strahl's Web Log](https://weblog.west-wind.com/posts/2019/Sep/03/Programmatically-Opening-Windows-Terminal-in-a-Specific-Folder)
+
 

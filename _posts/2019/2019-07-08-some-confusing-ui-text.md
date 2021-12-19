@@ -5,6 +5,7 @@ date: 2019-07-13 09:49:39 +0800
 tags: windows ui ux
 position: knowledge
 coverImage: /static/posts/2019-07-08-12-13-25.png
+permalink: /posts/some-confusing-ui-text.html
 ---
 
 经常有小伙伴跟我撕到底一些常用同音的词语应该使用哪个的问题。于是我将一些常用的软件界面中用错的文案整理出来，为自己和其他开发者提供我 **已经整理的结论** 和 **可以溯源的资料**。
@@ -168,4 +169,5 @@ Windows 系统采用了 “帐户” 一词。不过其中文版对此异形词�
 - [第一批异形词整理表 - 维基文库，自由的图书馆](https://zh.wikisource.org/zh-hans/%E7%AC%AC%E4%B8%80%E6%89%B9%E5%BC%82%E5%BD%A2%E8%AF%8D%E6%95%B4%E7%90%86%E8%A1%A8)
 - [第一批异体字整理表 - 维基文库，自由的图书馆](https://zh.wikisource.org/wiki/%E7%AC%AC%E4%B8%80%E6%89%B9%E5%BC%82%E4%BD%93%E5%AD%97%E6%95%B4%E7%90%86%E8%A1%A8)
 - [【撤销】【撤消】|× 【C】√ - 校对标准：寻找权威依据 - Powered by phpwind](http://www.jiaodui.com/bbs/read.php?tid=9865)
+
 

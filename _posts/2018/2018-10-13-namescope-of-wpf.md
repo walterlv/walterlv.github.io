@@ -3,6 +3,7 @@ title: "WPF 中的 NameScope"
 publishDate: 2018-10-14 12:23:40 +0800
 date: 2018-10-16 21:01:20 +0800
 tags: dotnet wpf
+permalink: /posts/namescope-of-wpf.html
 ---
 
 我们在 WPF 中使用绑定时可以使用 `ElementName=Foo` 这样的写法，并且还能够真的在运行时找到这个名称对应的对象，是因为 WPF 中提供了名称范围概念。
@@ -172,3 +173,4 @@ internal override DependencyObject InheritanceContext
 特别说明，只有那些重写了 `InheritanceContext` 的类型才会在查找名称的时候找得到 NameScope；只有以上这些调用了 `DependencyObject.AddInheritanceContext` 方法的属性才会在赋值是能够找得到 NameScope。
 
 所以，我另一篇文章中所说的 ContextMenu 是找不到对应的 NameScope 的。[WPF 的 ElementName 在 ContextMenu 中无法绑定成功？试试使用 x:Reference！](/post/fix-wpf-binding-issues-in-context-menu)。此文中 `ContextMenu` 找到的 NameScope 是 `null`。
+

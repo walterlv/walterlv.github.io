@@ -3,6 +3,7 @@ title: "解决方案文件 sln 中的项目类型 GUID"
 date: 2019-07-24 11:06:12 +0800
 tags: visualstudio
 position: knowledge
+permalink: /posts/a-list-of-project-type-guids.html
 ---
 
 Visual Studio 可以通过得知项目类型快速地为项目显示相应的图标、对应的功能等等。
@@ -83,3 +84,4 @@ Visual Studio 可以通过得知项目类型快速地为项目显示相应的图
 - [csproj - Visual Studio project type guids - Stack Overflow](https://stackoverflow.com/a/53485177/6233938)
 - [INFO: List of known project type Guids](https://www.mztools.com/articles/2008/mz2008017.aspx)
 - [List of Visual Studio Project Type GUIDs - CodeProject](https://www.codeproject.com/Reference/720512/List-of-Visual-Studio-Project-Type-GUIDs)
+

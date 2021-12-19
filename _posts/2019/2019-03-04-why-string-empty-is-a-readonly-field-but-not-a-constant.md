@@ -4,6 +4,7 @@ publishDate: 2019-03-04 23:29:47 +0800
 date: 2019-03-05 23:54:05 +0800
 tags: dotnet csharp
 position: principle
+permalink: /posts/why-string-empty-is-a-readonly-field-but-not-a-constant.html
 ---
 
 使用 C# 语言编写字符串常量的时候，你可能会发现可以使用 `""` 而不能使用 `string.Empty`。进一步可以发现 `string.Empty` 实际上是一个静态只读字段，而不是一个常量。
@@ -115,3 +116,4 @@ SetObjectReference( pEmptyStringHandle, StringObject::GetEmptyString(), this );
 - [Intrinsic](https://source.dot.net/#System.Private.CoreLib/shared/System/Runtime/CompilerServices/IntrinsicAttribute.cs,0b1553fdd9183e62,references)
 - [在C#中 String.Empty和 "" 有什么区别？ - 知乎](https://www.zhihu.com/question/24811218)
 - [.net - What's the different between ldsfld and ldstr in IL? - Stack Overflow](https://stackoverflow.com/a/3674336/6233938)
+

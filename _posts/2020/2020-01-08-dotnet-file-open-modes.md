@@ -4,6 +4,7 @@ publishDate: 2020-01-08 13:59:50 +0800
 date: 2020-01-08 15:05:41 +0800
 tags: dotnet csharp windows
 position: knowledge
+permalink: /posts/dotnet-file-open-modes.html
 ---
 
 .NET 中文件打开的 API `File.Open` 提供了多种不同的文件打开方式，这些方式大多数与 Windows 文件 API 中的模式是对应的，但也有一些 .NET 层面的判断以及名称的变化。在 .NET 层你可以选择适合你业务场景需要的文件打开方式。
@@ -169,3 +170,4 @@ public enum FileMode
 **参考资料**
 
 - [FileMode Enum (System.IO) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.io.filemode?view=netframework-4.8)
+

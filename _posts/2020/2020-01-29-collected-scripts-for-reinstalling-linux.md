@@ -4,6 +4,7 @@ date: 2020-01-29 21:58:13 +0800
 tags: linux
 position: starter
 coverImage: /static/posts/2020-01-29-21-14-23.png
+permalink: /posts/collected-scripts-for-reinstalling-linux.html
 ---
 
 因为 VPS 上预装的操作系统我并不习惯，所以打算重装一个。有的 VPS 服务商提供了较多种类的系统选择，有的却没有。如果你发现你希望重装的系统服务商没有提供，可以考虑自己安装。
@@ -105,4 +106,5 @@ Select Install OS [stretch amd64] to install system.
 随后会进入安装和设置界面。
 
 ![安装界面](/static/posts/2020-01-29-20-57-46.png)
+
 

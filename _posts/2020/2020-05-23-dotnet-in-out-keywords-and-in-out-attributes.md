@@ -5,6 +5,7 @@ date: 2020-05-23 12:00:00 +0800
 tags: dotnet csharp
 position: knowledge
 published: false
+permalink: /posts/dotnet-in-out-keywords-and-in-out-attributes.html
 ---
 
 在此处编辑 blog.walterlv.com 的博客摘要
@@ -125,3 +126,4 @@ Interop 封送拆收器保证下列与方向特性有关的行为：
 - [out parameter modifier - C# Reference - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/out-parameter-modifier)
 - [out keyword - C# Reference - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/out)
 - [Directional (Parameter) Attributes - Win32 apps - Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/rpc/directional-parameter-attributes)
+

@@ -5,6 +5,7 @@ date: 2019-03-09 09:12:11 +0800
 tags: dotnet csharp windows
 position: knowledge
 coverImage: /static/posts/2019-02-19-21-04-41.png
+permalink: /posts/get-command-line-for-a-running-process.html
 ---
 
 在自己的进程内部，我们可以通过 `Main` 函数传入的参数，也可以通过 `Environment.GetCommandLineArgs` 来获取命令行参数。
@@ -101,4 +102,5 @@ namespace Walterlv
 
 - [Can I get command line arguments of other processes from .NET/C#? - Stack Overflow](https://stackoverflow.com/a/2633674/6233938)
 - [How to get Command Line info for a process in PowerShell or C# - Stack Overflow](https://stackoverflow.com/a/17582576/6233938)
+
 

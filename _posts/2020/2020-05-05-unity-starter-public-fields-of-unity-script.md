@@ -5,6 +5,7 @@ date: 2020-05-05 16:22:24 +0800
 tags: unity
 position: starter
 coverImage: /static/posts/2020-05-05-16-14-41.png
+permalink: /posts/unity-starter-public-fields-of-unity-script.html
 ---
 
 将一部分参数从 C# 脚本中抽离出来，可以让 C# 脚本在 Unity 项目中更通用，适用于更多游戏对象（gameObject）。
@@ -71,4 +72,5 @@ Unity 编辑器会在每次重新激活编辑器窗口的时候重新加载 Unit
 不过，无论你用什么命名，Inspector 中都会将你的名称拆开成多个单词，并首字母大写。
 
 更有趣的是，如果你使用了一些预设的字段名称，那么 Inspector 中会显示成预设的名称。典型的是命名成 `Name` 的时候，Inspector 中会显示“名称”（如果你装了中文语言包的话）。
+
 

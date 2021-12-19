@@ -4,6 +4,7 @@ date: 2019-07-27 16:54:26 +0800
 tags: dotnet csharp visualstudio nuget roslyn
 position: knowledge
 coverImage: /static/posts/2019-07-27-15-58-05.png
+permalink: /posts/track-api-changes-using-roslyn-public-api-analyzers.html
 ---
 
 做库的时候，需要一定程度上保持 API 的兼容性
@@ -158,4 +159,5 @@ Walterlv.PackageDemo.ApiTracking.Class1.Foo.get -> string
 **参考资料**
 
 - [roslyn-analyzers/Microsoft.CodeAnalysis.PublicApiAnalyzers.md at master · dotnet/roslyn-analyzers](https://github.com/dotnet/roslyn-analyzers/blob/master/src/PublicApiAnalyzers/Microsoft.CodeAnalysis.PublicApiAnalyzers.md)
+
 

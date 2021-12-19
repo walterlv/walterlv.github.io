@@ -5,6 +5,7 @@ date: 2021-05-16 17:47:41 +0800
 tags: unity openvr
 position: starter
 coverImage: /static/posts/2021-05-16-10-22-58.png
+permalink: /posts/unity-openvr-starting-5.html
 ---
 
 在 Unity 的帮助下，虚拟现实应用的开发非常容易。不过国内竟然还是没有什么教程，所以这里就来一点入门的，适合新手。
@@ -84,4 +85,5 @@ coverImage: /static/posts/2021-05-16-10-22-58.png
 
 ![可以传送了](/static/posts/2021-05-16-10-56-42.png)  
 ▲ 可以传送了
+
 

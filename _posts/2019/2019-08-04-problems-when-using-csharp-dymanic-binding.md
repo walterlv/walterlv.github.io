@@ -4,6 +4,7 @@ date: 2019-08-04 14:58:15 +0800
 tags: csharp dotnet
 position: problem
 coverImage: /static/posts/2019-08-04-14-10-52.png
+permalink: /posts/problems-when-using-csharp-dymanic-binding.html
 ---
 
 你可以使用 `dynamic` 来定义一个变量或者字段，随后你可以像弱类型语言一样调用这个实例的各种方法，就像你一开始就知道这个类型的所有属性和方法一样。
@@ -119,4 +120,5 @@ object GetSomeInstance()
 **参考资料**
 
 - [c# - Why a Microsoft.CSharp.RuntimeBinder.RuntimeBinderException if the invoked method is there? - Stack Overflow](https://stackoverflow.com/q/5678608/6233938)
+
 

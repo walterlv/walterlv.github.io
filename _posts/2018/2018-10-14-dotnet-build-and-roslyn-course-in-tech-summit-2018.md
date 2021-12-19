@@ -4,6 +4,7 @@ publishDate: 2018-10-14 21:16:48 +0800
 date: 2018-10-19 13:24:10 +0800
 tags: dotnet csharp msbuild roslyn visualstudio nuget
 coverImage: /static/posts/2018-10-14-20-08-21.png
+permalink: /posts/dotnet-build-and-roslyn-course-in-tech-summit-2018.html
 ---
 
 微软技术暨生态大会（Tech Summit），2018 年在上海世博中心召开。这是最后一次的 Tech Summit 了；明年开始，中国大陆地区就要和其他国家和地区一样，进行全球 Ignite Tour 了。
@@ -114,4 +115,5 @@ coverImage: /static/posts/2018-10-14-20-08-21.png
     - 时间：2018 年 10 月 27 日 17:00-17:45
     - 讲师：邵猛
     - 代号：NUE204
+
 

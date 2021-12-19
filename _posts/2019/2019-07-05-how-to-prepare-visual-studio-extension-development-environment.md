@@ -5,6 +5,7 @@ date: 2019-07-07 09:58:32 +0800
 tags: visualstudio dotnet
 position: starter
 coverImage: /static/posts/2019-07-05-20-10-40.png
+permalink: /posts/how-to-prepare-visual-studio-extension-development-environment.html
 ---
 
 因为很多涉及到 Visual Studio 插件开发相关的文章/博客需要以安装 Visual Studio 插件开发环境为基础，所以本文介绍如何安装 Visual Studio 插件开发环境，以简化那些博客中的内容。
@@ -40,4 +41,5 @@ coverImage: /static/posts/2019-07-05-20-10-40.png
 如果你成功安装了 Visual Studio 扩展开发的工作负载，那么你在新建项目的时候就可以看到 Visual Studio 扩展开发相关的项目模板。
 
 ![Visual Studio 扩展开发相关模板](/static/posts/2019-07-05-20-20-14.png)
+
 

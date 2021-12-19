@@ -4,6 +4,7 @@ publishDate: 2018-12-22 22:30:12 +0800
 date: 2019-04-12 09:40:00 +0800
 tags: dotnet visualstudio msbuild roslyn nuget
 position: problem
+permalink: /posts/properties-not-correct-in-targets-file-imported-to-old-csproj-file.html
 ---
 
 我在之前的博客中有教大家如何编写 NuGet 工具包，其中就有编写 .targets 文件。
@@ -74,3 +75,4 @@ position: problem
 ## 衍生知识
 
 旧格式的 csproj 是不会自动计算属性和集合的变更的，这也是为什么项目文件改变的时候，Visual Studio 需要重新加载项目才可以正常显示和编译项目。同时，如果编辑旧格式的 csproj 文件，也需要先卸载掉项目才可以。而新格式的 csproj 是可以直接编辑而不需要卸载项目的，同时如果被外部改变，也不需要重新加载项目，而是可以直接计算出来新的属性和集合。
+

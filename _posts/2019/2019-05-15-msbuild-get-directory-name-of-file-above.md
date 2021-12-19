@@ -3,6 +3,7 @@ title: "Roslyn/MSBuild 在编译期间从当前文件开始查找父级文件夹
 date: 2019-05-15 21:16:11 +0800
 tags: dotnet visualstudio msbuild roslyn
 position: knowledge
+permalink: /posts/msbuild-get-directory-name-of-file-above.html
 ---
 
 大家在进行各种开发的时候，往往都不是写一个单纯项目就完了的，通常都会有一个解决方案，里面包含了多个项目甚至是大量的项目。我们经常会考虑输出一些文件或者处理一些文件，例如主项目的输出目录一般会选在仓库的根目录，文档文件夹一般会选在仓库的根目录。
@@ -59,3 +60,4 @@ position: knowledge
 **参考资料**
 
 - [Finding the Root Build Folder with MSBuild - Mode 13h](https://www.mode19.net/posts/msbuildbuildroot/)
+

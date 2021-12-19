@@ -4,6 +4,7 @@ date: 2019-06-04 15:31:18 +0800
 tags: git windows
 position: problem
 coverImage: /static/posts/2019-06-04-14-39-41.png
+permalink: /posts/fix-credential-issues-of-git.html
 ---
 
 无论你使用原生的 git 命令行，还是使用其他的 GUI 客户端来管理你的 git 仓库，都会遇到 git 远程仓库的身份认证机制。如果在某个远程仓库第一次认证的时候输入了错误的信息，那么 git 以及一部分 git GUI 客户端会记住这个错误的身份认证信息，使得以后也不能继续与远程仓库进行交互了。
@@ -73,4 +74,5 @@ coverImage: /static/posts/2019-06-04-14-39-41.png
 - [git - Remove saved credentials from TortoiseGit - Stack Overflow](https://stackoverflow.com/a/31782500/6233938)
 - [git - my old username is still in use - Stack Overflow](https://stackoverflow.com/a/39944557/6233938)
 - [windows - How to solve TortoiseGitPlink Fatal Error? - Stack Overflow](https://stackoverflow.com/questions/28106717/how-to-solve-tortoisegitplink-fatal-error)
+
 

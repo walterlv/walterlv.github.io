@@ -4,6 +4,7 @@ date: 2019-11-05 11:24:43 +0800
 tags: wpf dotnet csharp
 position: knowledge
 published: false
+permalink: /posts/wpf-ime-support-control.html
 ---
 
 在此处编辑 blog.walterlv.com 的博客摘要
@@ -20,3 +21,4 @@ published: false
 
 - [Adding IME support for WPF custom control](https://social.msdn.microsoft.com/Forums/vstudio/en-US/c5939e6b-9896-4906-a000-d961759f3a10/adding-ime-support-for-wpf-custom-control?forum=wpf)
 - [How to write IME aware applications in WPF?](https://social.msdn.microsoft.com/Forums/vstudio/en-US/5cff59f9-9ed4-4ec1-b64d-b1cbd38f611c/how-to-write-ime-aware-applications-in-wpf?forum=wpf)
+

@@ -5,6 +5,7 @@ date: 2020-05-19 19:47:30 +0800
 tags: miscellaneous
 position: starter
 coverImage: /static/posts/2020-05-19-18-42-51.png
+permalink: /posts/patorjk-software-taag.html
 ---
 
 通过学习本文的知识，你将可以在你的项目代码里创造大量的注释。让你的注释闪瞎团队所有人的钛合金X眼，我们是专业团队。
@@ -43,4 +44,5 @@ Console.WriteLine(@"
 尽情写到团队项目里面吧！我们是专业团队！
 
 ![专业团队](/static/posts/2020-05-19-18-42-51.png)
+
 

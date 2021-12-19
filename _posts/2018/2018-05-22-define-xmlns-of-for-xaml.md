@@ -3,6 +3,7 @@ title: "让你编写的控件库在 XAML 中有一个统一的漂亮的命名空
 publishDate: 2018-05-22 21:21:22 +0800
 date: 2018-09-01 08:04:53 +0800
 tags: dotnet xaml wpf
+permalink: /posts/define-xmlns-of-for-xaml.html
 ---
 
 在 WPF XAML 中使用自己定义的控件时，想必大家都能在 XAML 中编写出这个控件的命名空间了。**然而——我写不出来，除非借助 ReSharper。**
@@ -109,3 +110,4 @@ using System.Windows.Markup;
 
 - [wpf - How to make XmlnsDefinition work on the local assembly? - Stack Overflow](https://stackoverflow.com/a/2778489/6233938)
 - [XmlnsDefinition doesn't work in the same assembly](https://social.msdn.microsoft.com/Forums/vstudio/en-US/7e7a032a-dad3-4e02-9e5a-d73e346b75ed/xmlnsdefinition-doesnt-work-in-the-same-assembly)
+

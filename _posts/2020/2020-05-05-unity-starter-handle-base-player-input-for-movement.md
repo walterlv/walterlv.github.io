@@ -4,6 +4,7 @@ date: 2020-05-05 15:58:46 +0800
 tags: unity
 position: starter
 coverImage: /static/posts/2020-05-05-15-29-26.png
+permalink: /posts/unity-starter-handle-base-player-input-for-movement.html
 ---
 
 本文依然是 Unity3D 的入门篇。作为 Unity3D 的入门读者，你可能希望迅速让你能在游戏中操作你的视角，或者让角色移动。
@@ -82,4 +83,5 @@ public class PlayerController : MonoBehaviour
 可以看以下效果（gif 文件有点大，多等等）：
 
 ![运动效果](/static/post/2020-05-05-player-controller.gif)
+
 

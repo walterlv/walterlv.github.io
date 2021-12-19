@@ -3,6 +3,7 @@ title: "如何根据一个绝对文件路径生成一个相对文件路径"
 publishDate: 2018-06-07 19:30:24 +0800
 date: 2020-06-15 17:23:04 +0800
 tags: dotnet
+permalink: /posts/make-relative-file-path.html
 ---
 
 日常的开发中，获取绝对文件路径才是主流吧！连 `Path.GetFullPath` 这种生成绝对路径的方法都已经成为 .NET Standard 的一部分了。
@@ -79,3 +80,4 @@ public static string MakeRelativePath(string fromPath, string toPath)
 
 - [.net - How to get relative path from absolute path - Stack Overflow](https://stackoverflow.com/q/275689/6233938)
 - [Path.GetRelativePath](https://source.dot.net/#System.Private.CoreLib/shared/System/IO/Path.cs,4aa697c72b567ed8,references)
+

@@ -3,6 +3,7 @@ title: "使用正则表达式尽可能准确匹配域名/网址"
 date: 2019-12-09 16:58:13 +0800
 tags: dotnet csharp
 position: knowledge
+permalink: /posts/match-web-url-using-regex.html
 ---
 
 你可能需要准确地知道一段字符串是否是域名/网址/URL。虽然可以使用 `.`、`/` 这些来模糊匹配，但会造成误判。
@@ -169,3 +170,4 @@ position: knowledge
 - [In search of the perfect URL validation regex](https://mathiasbynens.be/demo/url-regex)
 - [域名 - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D)
 - [中国电信网站备案自助管理系统](http://beian.ct10000.com/portal/icp/help/helpdetail.do?helpid=305)
+

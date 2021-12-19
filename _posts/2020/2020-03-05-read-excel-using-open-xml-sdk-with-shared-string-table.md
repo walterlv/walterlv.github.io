@@ -5,6 +5,7 @@ date: 2020-03-23 11:37:07 +0800
 tags: dotnet office
 position: starter
 published: false
+permalink: /posts/read-excel-using-open-xml-sdk-with-shared-string-table.html
 ---
 
 在此处编辑 blog.walterlv.com 的博客摘要

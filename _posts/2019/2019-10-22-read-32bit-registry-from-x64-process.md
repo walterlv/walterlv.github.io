@@ -4,6 +4,7 @@ date: 2019-10-22 16:59:03 +0800
 tags: dotnet windows csharp
 position: knowledge
 coverImage: /static/posts/2019-10-22-15-37-14.png
+permalink: /posts/read-32bit-registry-from-x64-process.html
 ---
 
 我们知道，32 位程序在读取注册表的时候，会自动将注册表的路径映射到 32 位路径下，即在 `Wow6432Node` 子节点下。但是 64 位程序不会映射到 32 位路径下。那么 64 位程序如何读取到 32 位程序写入的注册表路径呢？
@@ -68,4 +69,5 @@ RegistryKey.OpenBaseKey(root, RegistryView.Registry32);
 **参考资料**
 
 - [c# - Reading the registry and Wow6432Node key - Stack Overflow](https://stackoverflow.com/a/2040103/6233938)
+
 

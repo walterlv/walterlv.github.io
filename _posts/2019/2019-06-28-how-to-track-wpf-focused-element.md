@@ -5,6 +5,7 @@ date: 2019-06-29 09:07:54 +0800
 tags: wpf dotnet csharp
 position: knowledge
 coverImage: /static/posts/2019-06-28-08-58-54.png
+permalink: /posts/how-to-track-wpf-focused-element.html
 ---
 
 我们有很多的调试工具可以帮助我们查看 WPF 窗口中当前获得键盘焦点的元素。本文介绍监控当前键盘焦点元素的方法，并且提供一个不需要任何调试工具的自己绘制键盘焦点元素的方法。
@@ -208,4 +209,5 @@ void OnActiveWindowChanged(object sender, ActiveWindowEventArgs e)
 于是，我们只需要在 `OnActiveWindowChanged` 事件中，将我面前面写的控件 `KeyboardFocusView` 从原来的窗口中移除，然后放到新的窗口中即可监视新的窗口中的键盘焦点。
 
 由于每一次的窗口激活状态的切换都会更新当前激活的窗口，所以，我们可以监听整个 WPF 应用程序中所有窗口中的键盘焦点。
+
 

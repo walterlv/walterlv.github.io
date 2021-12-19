@@ -4,6 +4,7 @@ date: 2017-10-21 11:20:54 +0800
 tags: dotnet dotnet-core dotnet-standard wpf uwp
 description: 
 coverImage: /static/posts/2017-10-21-10-20-33.png
+permalink: /posts/organize-csharp-project-targeting-multiple-platforms.html
 ---
 
 希望写一个小型工具，给自己和需要的人。考虑到代码尽可能的复用，我准备采用 .Net Standard 来编写大多数核心代码，并基于 .Net Core 编写跨平台控制台入口，用 WPF 编写桌面端 UI 入口，用 UWP 作为可上架商店的 UI 入口，然后用 Shared Project 共享 WPF 和 UI 的多数 UI 入口代码。
@@ -50,4 +51,5 @@ coverImage: /static/posts/2017-10-21-10-20-33.png
 
 这样，项目在 Visual Studio 中看起来大概是这样的：  
 ![](/static/posts/2017-10-21-11-19-16.png)
+
 

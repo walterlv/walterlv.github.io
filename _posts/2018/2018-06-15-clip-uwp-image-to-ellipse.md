@@ -3,6 +3,7 @@ title: "UWP 将图片裁剪成圆形（椭圆）"
 date: 2018-06-15 21:21:21 +0800
 tags: xaml uwp
 coverImage: /static/posts/2018-06-15-21-19-44.png
+permalink: /posts/clip-uwp-image-to-ellipse.html
 ---
 
 不知从什么时候开始，头像流行使用圆形了，于是各个平台开始追逐显示圆形裁剪图像的技术。UWP 有内建的机制支持这种圆形图像裁剪，不过，仅限于画刷。
@@ -30,4 +31,5 @@ coverImage: /static/posts/2018-06-15-21-19-44.png
 这是我的头像，原图是这样的：
 
 ![](/static/posts/2018-06-15-21-20-36.png)
+
 

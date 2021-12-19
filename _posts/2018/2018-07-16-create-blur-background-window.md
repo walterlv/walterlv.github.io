@@ -9,6 +9,7 @@ versions:
   - 中文: #
   - English: /post/create-blur-background-window-en.html
 coverImage: /static/posts/2017-10-01-23-49-15.png
+permalink: /posts/create-blur-background-window.html
 ---
 
 现代的操作系统中创建一张图片的高斯模糊效果非常容易，不过如果要在窗口中获得模糊支持就需要操作系统的原生支持了。iOS/Mac 和 Windows 系统都对此有支持。
@@ -141,4 +142,5 @@ WPF 的 `UIElement` 都有 `Effect` 属性，将其设置为 `BlurEffect` 即可
 ## UWP AcyclicBrush
 
 微软的官方文档 [Acrylic material - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/style/acrylic?wt.mc_id=MVP) 讲解了如何使用亚克力效果。
+
 

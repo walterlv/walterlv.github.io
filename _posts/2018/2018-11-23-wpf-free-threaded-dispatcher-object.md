@@ -3,6 +3,7 @@ title: "WPF 中那些可跨线程访问的 DispatcherObject（WPF Free Threaded 
 publishDate: 2018-11-23 13:15:12 +0800
 date: 2019-01-03 09:03:45 +0800
 tags: wpf dotnet
+permalink: /posts/wpf-free-threaded-dispatcher-object.html
 ---
 
 众所周知的，WPF 中多数对象都继承自 `DispatcherObject`，而 `DispatcherObject` 带给这些对象一个特点：不能跨线程访问。
@@ -499,3 +500,4 @@ namespace Walterlv.Windows.Threading
 - [Freezable Objects Overview - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/freezable-objects-overview?wt.mc_id=MVP)
 - [mc:Ignorable Attribute - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/mc-ignorable-attribute?wt.mc_id=MVP)
 - [DispatcherObject.cs](https://referencesource.microsoft.com/#WindowsBase/Base/System/Windows/Threading/DispatcherObject.cs,85082c8bba6e8038)
+

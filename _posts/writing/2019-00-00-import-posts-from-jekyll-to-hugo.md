@@ -3,6 +3,7 @@ title: "从 Jekyll 博客迁移到 Hugo 博客"
 date: 2018-09-09 20:37:55 +0800
 tags: site
 published: false
+permalink: /posts/import-posts-from-jekyll-to-hugo.html
 ---
 
 同为静态博客，Hugo 以其静态站点的快速生成速度而闻名。以我的博客为例，Jekyll 的生成时间接近 30 秒，但 Hugo 生成同样的站点只需要不到 1 秒。Hugo 提供了不少优秀漂亮的主题，然而我自己的博客样式相当大部分是我自己写的，所以只用社区提供的主题是不能完全完成我的迁移的。所以我需要手工迁移一部分。
@@ -60,3 +61,4 @@ title: 从 Jekyll 博客迁移到 Hugo 博客
 - [码云 Pages 新玩法，支持 Hexo 和 Hugo – 码云 Gitee 官方博客](https://blog.gitee.com/2018/07/05/hexo_hugo/)
 - [零基础使用Hugo和GitHub Pages创建自己的博客 - 宋净超的博客|Cloud Native Developer Advocate|jimmysong.io](https://jimmysong.io/posts/building-github-pages-with-hugo/)
 - [Hugo静态网站生成器中文教程 - nanshu.wang](http://nanshu.wang/post/2015-01-31/)
+

@@ -3,6 +3,7 @@ title: "拿别人的 Program Files 文件夹？别忘了考虑 x86/x64 路径"
 date: 2020-06-03 08:13:44 +0800
 tags: dotnet win32
 position: starter
+permalink: /posts/get-program-files-cross-x64-x86.html
 ---
 
 要拿适用于自己进程的 `Program Files` 文件夹很简单，无脑拿就好了。不过，如果涉及到拿其他程序的，那么就会涉及到与其他程序不同架构时路径不同的问题。
@@ -60,3 +61,4 @@ current = C:\Program Files (x86)
 
 - [Environment.SpecialFolder Enum (System) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.environment.specialfolder)
 - [C# - How to get Program Files (x86) on Windows 64 bit - Stack Overflow](https://stackoverflow.com/questions/194157/c-sharp-how-to-get-program-files-x86-on-windows-64-bit)
+

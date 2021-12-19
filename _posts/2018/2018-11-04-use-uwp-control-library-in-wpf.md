@@ -4,6 +4,7 @@ publishDate: 2018-11-04 12:14:24 +0800
 date: 2019-03-09 09:09:25 +0800
 tags: uwp wpf dotnet
 coverImage: /static/posts/2018-11-04-11-05-48.png
+permalink: /posts/use-uwp-control-library-in-wpf.html
 ---
 
 在 [WindowsXamlHost：在 WPF 中使用 UWP 的控件（Windows Community Toolkit）](/post/use-uwp-controls-in-wpf) 一文中，我们说到了在 WPF 中引入简单的 UWP 控件以及相关的注意事项。不过，通常更有实际价值的是更复杂的 UWP 控件的引入，通常是一整个 Page。
@@ -185,4 +186,5 @@ namespace Walterlv.Whitman.Universal
 
 - [WindowsXAMLHost control - Windows Community Toolkit - Microsoft Docs](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost?wt.mc_id=MVP)
 - [Enhance your desktop application for Windows 10 - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project?wt.mc_id=MVP)
+
 

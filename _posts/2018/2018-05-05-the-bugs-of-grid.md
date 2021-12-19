@@ -9,6 +9,7 @@ versions:
   - 中文: #
   - English: /post/the-bugs-of-grid-en.html
 coverImage: /static/posts/2018-05-05-14-15-13.png
+permalink: /posts/the-bugs-of-grid.html
 ---
 
 只要你用 XAML 写代码，我敢打赌你一定用各种方式使(nuè)用(dài)过 `Grid`。不知你有没有在此过程中看到过 `Grid` 那些匪夷所思的布局结果呢？
@@ -265,4 +266,5 @@ F5
 不过，我整整三天的时间写了一个全新的 `Grid` 布局算法（*感谢 @[林德熙](https://lindexi.github.io/lindexi/) 抽出时间跟我探讨 `Grid` 的布局算法*）。在新的算法中，对于微软公开的 `Grid` 布局行为，我跟它的表现是一样的。对于本文中提到的各种 Bug，我找不到手段实现跟它一模一样的布局结果，但是，我可以文档化地完全确定 `Grid` 整个布局的所有行为。包括以上所有我认为的“未定义的规则”。
 
 新 `Grid` 布局算法的源码在 GitHub 上，我提交给了 Avalonia：[A new grid layout algorithm to improve performance and fix some bugs by walterlv · Pull Request #1517 · AvaloniaUI/Avalonia](https://github.com/AvaloniaUI/Avalonia/pull/1517/files)。
+
 

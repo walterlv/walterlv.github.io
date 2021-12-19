@@ -4,6 +4,7 @@ publishDate: 2019-07-25 08:24:41 +0800
 date: 2019-07-25 19:35:37 +0800
 tags: msbuild visualstudio dotnet
 position: problem
+permalink: /posts/error-parsing-the-nested-project-section-in-solution-file.html
 ---
 
 我这里使用 Visual Studio 2019 能好好编译的一个项目，发现在另一个小伙伴那里却编译不通过，是在 NuGet 还原那里报告了错误：
@@ -125,3 +126,4 @@ EndProject
 - [VS2017 MSBuild autodetection takes MSBuild/v14 instead of v15 for WPF project - Stack Overflow](https://stackoverflow.com/q/49997388/6233938)
 - [How Can I Tell NuGet What MSBuild Executable to Use? - Stack Overflow](https://stackoverflow.com/q/49822757/6233938)
 - [NuGet CLI restore command - Microsoft Docs](https://docs.microsoft.com/en-us/nuget/reference/cli-reference/cli-ref-restore)
+

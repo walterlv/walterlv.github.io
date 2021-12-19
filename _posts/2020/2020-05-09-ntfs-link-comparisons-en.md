@@ -10,6 +10,7 @@ versions:
   - 中文: /post/ntfs-link-comparisons.html
   - English: #
 coverImage: /static/posts/2020-06-10-09-44-50.png
+permalink: /posts/ntfs-link-comparisons-en.html
 ---
 
 It is well-known that `mklink` is a command to create a variety of links on NTFS disk. But if you don't know much about it or even never hear of it, it doesn't matter because you know shortcuts at least. This post help you to lean more about `mklink` and know the differences among the difference command options.
@@ -109,4 +110,5 @@ If you create shortcuts in your start menu, and the shortcuts are linking to fil
 - [Hard link - Wikipedia](https://en.wikipedia.org/wiki/Hard_link)
 - [Create symbolic links (Windows 10) - Windows security - Microsoft Docs](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/create-symbolic-links)
 - [Symlinks in Windows 10! - Windows Developer Blog](https://blogs.windows.com/windowsdeveloper/2016/12/02/symlinks-windows-10/)
+
 

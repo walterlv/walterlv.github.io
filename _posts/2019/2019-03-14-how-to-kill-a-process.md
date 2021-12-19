@@ -3,6 +3,7 @@ title: "C#/.NET 如何结束掉一个进程"
 date: 2019-03-14 22:57:27 +0800
 tags: dotnet csharp
 position: starter
+permalink: /posts/how-to-kill-a-process.html
 ---
 
 本文介绍如何结束掉一个进程。
@@ -50,3 +51,4 @@ private void KillProcess(string processName)
 可以是参见林德熙的博客，使用 `Environment.FailFast`，在结束掉自己的时候记录自己的错误日志。
 
 - [dotnet 使用 Environment.FailFast 结束程序 - 林德熙](https://blog.lindexi.com/post/dotnet-%E4%BD%BF%E7%94%A8-environment.failfast-%E7%BB%93%E6%9D%9F%E7%A8%8B%E5%BA%8F)
+

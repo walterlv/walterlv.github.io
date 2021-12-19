@@ -3,6 +3,7 @@ title: "程序员与英语：即时聊天中的英语缩写 lol / lmao / idk"
 publishDate: 2018-07-21 15:00:23 +0800
 date: 2019-03-27 16:56:05 +0800
 tags: miscellaneous
+permalink: /posts/programmers-english-abbr-in-chat.html
 ---
 
 经常混迹各大英文开发者社区的你，是否会遇到一些奇怪的英文缩写呢？本文整理一些即时聊天中常用的缩写。
@@ -96,3 +97,4 @@ tags: miscellaneous
 
 - [聊天中经常用的「lol」是什么意思？ - 知乎](https://www.zhihu.com/question/20624224)
 - [LMAO 不是老毛，是笑出猪叫 【英文缩写专题课】](https://zhuanlan.zhihu.com/p/35944392)
+

@@ -3,6 +3,7 @@ title: "StyleCop 是什么，可以帮助团队带来什么价值？"
 date: 2018-12-15 16:14:38 +0800
 tags: dotnet csharp visualstudio
 position: knowledge
+permalink: /posts/what-is-stylecop.html
 ---
 
 StyleCop 本质上是一个 C# 源代码规则分析器，可以帮助团队成员强制执行一组代码样式和一致性规则。
@@ -36,3 +37,4 @@ StyleCop 本质上是一个 C# 源代码规则分析器，可以帮助团队成�
 ## StyleCop 的优势和价值
 
 StyleCop 的最大优势在于其“**强制性**”。无论你使用哪种 IDE 进行开发，由于其检查过程可以嵌入到编译过程中，所以如果你开发出不符合 StyleCop 规范要求的代码，直接可以无法成功编译项目。对于格式或其他代码风格要求非常高的项目，可以持续保持项目的一致性。
+

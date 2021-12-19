@@ -4,6 +4,7 @@ date: 2021-07-16 16:47:57 +0800
 tags: dotnet msi wix
 position: starter
 coverImage: /static/posts/2021-07-16-16-41-05.png
+permalink: /posts/how-to-debug-wix-burn-installer.html
 ---
 
 WiX 本身很强大，使用本来也没那么难。奈何 WiX 3 的官方文档可读性极差且长期不更新，于是新手在使用 WiX 制作安装包时极容易出问题，导致制作的安装包各种行为不正常。
@@ -50,4 +51,5 @@ WiX 本身很强大，使用本来也没那么难。奈何 WiX 3 的官方文档
 例如在[制作 WPF 安装包界面的教程](https://blog.walterlv.com/post/getting-started-with-wix-toolset-create-a-wpf-installer-ui.html)中，我们有四个项目。这个示例[已经开源到 GitHub 上了](https://github.com/walterlv/Walterlv.WixInstallerDemo/tree/1b6600bb694c593894fc20cea76154b61ccf0c1f)。于是我们可以尝试将出问题的项目中的部分模块替换成这个正常的项目对应部分。当最终能正常工作时，最近替换的模块便最有可能是问题模块。
 
 ![制作 WPF 安装包界面教程中的项目](/static/posts/2021-07-15-16-23-19.png)
+
 

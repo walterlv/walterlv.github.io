@@ -4,6 +4,7 @@ publishDate: 2019-11-27 10:03:09 +0800
 date: 2019-12-08 15:29:19 +0800
 tags: dotnet csharp
 position: starter
+permalink: /posts/get-derived-type-name-without-base-type-name.html
 ---
 
 基类是 `MenuItem`，子类是 `WalterlvMenuItem`、`FooMenuItem`。基类是 `Configuration`，子类是 `WalterlvConfiguration`、`ExtensionConfiguration`。在代码中，我们可能会为了能够一眼看清类之间的继承（从属）关系而在子类名称后缀中带上基类的名称。但是由于这种情况下的基类不参与实际的业务，所以对外（文件/网络）的名称通常不需要带上这个后缀。
@@ -81,3 +82,4 @@ internal class XFoo : Foo
 ```
 
 于是我们可以得到 `name` 局部变量的值为 `X`。如果这个时候我们对 `XFoo` 类型改名，例如改成 `XFoo1`，那么就不会截取，而是直接得到名称 `XFoo1`。
+

@@ -5,6 +5,7 @@ date: 2019-06-17 21:30:46 +0800
 tags: dotnet csharp
 position: knowledge
 coverImage: /static/posts/2019-06-13-09-30-59.png
+permalink: /posts/merge-assemblies-using-ilrepack.html
 ---
 
 我们有多种工具可以将程序集合并成为一个。比如 ILMerge、Mono.Merge。前者不可定制、运行缓慢、消耗资源（不过好消息是现在开源了）；后者已被弃用、不受支持且基于旧版本的 Mono.Cecil。
@@ -171,4 +172,5 @@ ilrepack /lib:D:\Dependencies /out:Walterlv.Demo.AssemblyLoading.exe Walterlv.De
 
 - [gluck/il-repack: Open-source alternative to ILMerge](https://github.com/gluck/il-repack)
 - [Is it expected that pdb files are not merged? · Issue #217 · gluck/il-repack](https://github.com/gluck/il-repack/issues/217)
+
 

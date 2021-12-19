@@ -3,6 +3,7 @@ title: ".NET/C# 如何获取当前进程的 CPU 和内存占用？如何获取�
 date: 2019-06-28 07:48:08 +0800
 tags: dotnet
 position: knowledge
+permalink: /posts/how-to-get-process-cpu-memory-usage.html
 ---
 
 都知道可以在任务管理器中查看进程的 CPU 和内存占用，那么如何通过 .NET 编写代码的方式来获取到 CPU 和内存占用呢？
@@ -63,3 +64,4 @@ var ramCounter = new PerformanceCounter("Process", "Working Set", name);
 - [.net - Get CPU Usage for Process by Process ID - Stack Overflow](https://stackoverflow.com/q/14802787/6233938)
 - [c# - What is the correct Performance Counter to get CPU and Memory Usage of a Process? - Stack Overflow](https://stackoverflow.com/a/4680030/6233938)
 - [debugging - What is private bytes, virtual bytes, working set? - Stack Overflow](https://stackoverflow.com/q/1984186/6233938)
+

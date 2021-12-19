@@ -3,6 +3,7 @@ title: "WPF 窗口和控件的 Unloaded 事件什么情况下不会触发"
 date: 2021-06-30 16:11:02 +0800
 tags: wpf
 position: problem
+permalink: /posts/wpf-unloaded-event-not-fired.html
 ---
 
 WPF 中如果监听窗口或者控件的的 `Unloaded` 事件，那么这个事件会触发吗？答案是不确定的。
@@ -68,3 +69,4 @@ private void Window_Closed(object sender, EventArgs e)
 
 - [Unloaded event not called on Window when app closed · Issue #1442 · dotnet/wpf](https://github.com/dotnet/wpf/issues/1442)
 - [FrameworkElement.Unloaded Event (System.Windows) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.windows.frameworkelement.unloaded)
+

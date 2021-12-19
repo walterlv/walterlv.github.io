@@ -5,6 +5,7 @@ date: 2019-11-27 08:53:48 +0800
 tags: csharp dotnet
 position: knowledge
 published: false
+permalink: /posts/make-custom-async-return-type-in-dotnet.html
 ---
 
 我们习惯了在异步方法中返回 `Task`、`Task<T>` 或者仅仅是 `void`。如果你使用 C# 7.0 即以上，并且安装了 [System.Threading.Tasks.Extensions](https://www.nuget.org/packages/System.Threading.Tasks.Extensions/) 的 NuGet 包，会发现也可以使用 `ValueTask`、`ValueTask<T>` 还有 `IAsyncEnumerable<T>` 和 `IAsyncEnumerator<T>`。
@@ -210,3 +211,4 @@ namespace Walterlv.Demo
 - [Dixin's Blog - Understanding C# async / await (2) The Awaitable-Awaiter Pattern](https://weblogs.asp.net/dixin/understanding-c-sharp-async-await-2-awaitable-awaiter-pattern)
 - [Dixin's Blog - Understanding C# async / await (3) Runtime Context](https://weblogs.asp.net/dixin/understanding-c-sharp-async-await-3-runtime-context)
 - [Interface ICriticalNotifyCompletion - CoreCLR site](https://dotnet.github.io/dotnet-web/api/System.Runtime.CompilerServices.ICriticalNotifyCompletion.html)
+

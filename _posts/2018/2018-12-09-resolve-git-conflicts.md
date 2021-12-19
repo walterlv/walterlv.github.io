@@ -4,6 +4,7 @@ date: 2018-12-09 19:45:25 +0800
 tags: git visualstudio
 position: knowledge
 coverImage: /static/posts/2018-12-09-19-14-48.png
+permalink: /posts/resolve-git-conflicts.html
 ---
 
 使用 git 合并代码时出现冲突是很常见的，不过如何解冲突才能更加可靠呢？不漏掉别人的修改，也同时让自己的修改完全保留。
@@ -43,4 +44,5 @@ coverImage: /static/posts/2018-12-09-19-14-48.png
 你可以在下图看到这两个不同选项的理解。
 
 ![git 合并过程](/static/posts/2018-12-09-19-37-14.png)
+
 

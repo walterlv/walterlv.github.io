@@ -3,6 +3,7 @@ title: "设计一个 .NET 可用的弱引用集合（可用来做缓存池使用
 date: 2019-08-04 14:49:21 +0800
 tags: dotnet csharp
 position: open
+permalink: /posts/dotnet-weak-collection.html
 ---
 
 我们有弱引用 `WeakReference<T>` 可以用来保存可被垃圾回收的对象，也有可以保存键值对的 `ConditionalWeakTable`。
@@ -163,3 +164,4 @@ public class WeakCollection<T> where T : class
 - [Walterlv.Collections.Source](https://www.nuget.org/packages/Walterlv.Collections.Source)
 
 安装后，你可以在你的项目中使用其源代码，并且可以直接使用 Ctrl + 鼠标点击的方式打开类型的源代码，而不需要进行反编译。
+

@@ -5,6 +5,7 @@ date: 2019-05-25 09:50:48 +0800
 tags: windows powershell
 position: knowledge
 coverImage: /static/posts/2019-05-12-12-48-57.png
+permalink: /posts/cmd-startup-arguments.html
 ---
 
 有一些程序不支持被直接启动，而要求通过命令行启动。这个时候，你就需要使用 cmd.exe 来启动这样的程序。我们都知道如何在 cmd.exe 中启动一个程序，但是当你需要自动启动这个程序的时候，你就需要知道如何通过 cmd.exe 来启动一个程序，而不是手工输入然后回车运行了。
@@ -260,4 +261,5 @@ coverImage: /static/posts/2019-05-12-12-48-57.png
 > 需要引号的特殊字符是:
 >      `<space>`
 >      `()[]{}^=;!'+,`~(&()`
+
 

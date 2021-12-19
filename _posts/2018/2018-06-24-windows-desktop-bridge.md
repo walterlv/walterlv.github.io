@@ -4,6 +4,7 @@ publishDate: 2018-06-24 14:39:10 +0800
 date: 2019-01-08 18:01:14 +0800
 tags: dotnet
 coverImage: /static/posts/2018-06-23-19-43-16.png
+permalink: /posts/windows-desktop-bridge.html
 ---
 
 能上架 Windows 应用商店的并不一定必须是 UWP 应用程序或者 PWA 程序，也可以是普通的 Win32 应用程序。典型的上架应用商店的应用有微信、Telegram、Snipaste 等。使用 Desktop Bridge，我们即可以为我们的普通 Win32 应用程序做一个 UWP 的包来。
@@ -157,4 +158,5 @@ Desktop App Converter 基础系统镜像下载完后随便放到某个地方，�
 - [“Package acceptance validation error” when you submit a UWP + Desktop Bridge app on the Store – App Consult Team](https://blogs.msdn.microsoft.com/appconsult/2018/02/20/package-acceptance-validation-error-when-you-submit-a-uwp-desktop-bridge-app-on-the-store/)
 - [Preparing a Desktop Bridge application for the Store submission – App Consult Team](https://blogs.msdn.microsoft.com/appconsult/2017/09/25/preparing-a-desktop-bridge-application-for-the-store-submission/)
 - [Publish your packaged desktop app to a Windows store or sideload it onto one or more devices. - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-distribute?wt.mc_id=MVP)
+
 

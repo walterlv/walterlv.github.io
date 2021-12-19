@@ -3,6 +3,7 @@ title: "使用 SetParent 跨进程设置父子窗口时的一些问题（小心�
 date: 2019-08-27 08:49:06 +0800
 tags: dotnet wpf csharp windows
 position: problem
+permalink: /posts/all-processes-freezes-if-their-windows-are-connected-via-setparent.html
 ---
 
 在微软的官方文档中，说 `SetParent` 可以在进程内设置，也可以跨进程设置。当使用跨进程设置窗口的父子关系时，你需要注意本文提到的一些问题，避免踩坑。
@@ -78,3 +79,4 @@ Windows 会让具有父子关系的所有窗口的消息循环强制同步。具
 - [Hosting WPF UI cross-thread and cross-process – Diaries of a Software Plumber](https://blogs.msdn.microsoft.com/changov/2009/10/26/hosting-wpf-ui-cross-thread-and-cross-process/)
 - [Is it legal to have a cross-process parent/child or owner/owned window relationship? | The Old New Thing](https://devblogs.microsoft.com/oldnewthing/?p=4683)
 - [winapi - Why are "TranslateMessage" and "DispatchMessage" separate calls? - Stack Overflow](https://stackoverflow.com/questions/3152011/why-are-translatemessage-and-dispatchmessage-separate-calls)
+

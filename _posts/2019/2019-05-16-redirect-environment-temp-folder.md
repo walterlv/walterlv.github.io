@@ -4,6 +4,7 @@ publishDate: 2019-05-16 10:48:53 +0800
 date: 2019-05-16 20:03:57 +0800
 tags: windows dotnet csharp wpf
 position: problem
+permalink: /posts/redirect-environment-temp-folder.html
 ---
 
 Windows 系统提供了一个在 Windows 单个用户下全局的 Temp 文件夹，用于给各种不同的应用程序提供一个临时目录。但是，直到 Windows 10 推出存储感知功能之前，这个文件夹都一直只归各个应用程序自己管理，应用自己需要删除里面的文件。另外，进程多了，临时文件也会互相影响（例如个数过多、进程读写竞争等等）。
@@ -67,3 +68,4 @@ var tempPath = Path.GetTempFileName();
 - [azure - .NET Change Temp Path - Stack Overflow](https://stackoverflow.com/a/4485432/6233938)
 - [GetTempFileNameA function (fileapi.h) - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/api/fileapi/nf-fileapi-gettempfilenamea)
 - [Path.GetTempFileName Method (System.IO) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.io.path.gettempfilename)
+

@@ -4,6 +4,7 @@ date: 2019-05-23 20:25:30 +0800
 tags: visualstudio
 position: starter
 coverImage: /static/posts/2019-05-23-20-17-12.png
+permalink: /posts/make-advanced-save-out-in-visual-studio.html
 ---
 
 Visual Studio 的早期版本中有一个高级保存功能，但是升级到 Visual Studio 2019 之后这个功能就不在菜单项里面了。
@@ -31,4 +32,5 @@ Visual Studio 的早期版本中有一个高级保存功能，但是升级到 Vi
 为了照顾英文版，我也放出英文版的界面：
 
 ![English Save Options](/static/posts/2019-05-23-20-25-22.png)
+
 

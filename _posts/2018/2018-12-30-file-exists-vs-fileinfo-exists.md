@@ -3,6 +3,7 @@ title: "谨慎使用 FileInfo.Exists 实例方法，而是使用 File.Exists 静
 date: 2018-12-30 16:41:21 +0800
 tags: dotnet windows
 position: problem
+permalink: /posts/file-exists-vs-fileinfo-exists.html
 ---
 
 如果你在代码中使用了 `FileInfo.Exists` 实例方法来判断一个文件是否存在，也许会发现此方法可能错误地判断来一个文件是否真的存在。这是一个坑。
@@ -86,3 +87,4 @@ public static bool FileExists(string fullPath)
 所以，如果你正在处理的文件在不同的时间可能存在也可能不存在，那么最好使用 `File.Exists` 来判断文件存在与否，而不是使用 `FileInfo.Exists` 来判断。
 
 不过，如果你需要一次性判断文件的非常多的信息（而不只是文件存在与否），那么依然建议使用 `FileInfo`，只不过在使用之前需要调用 `Refresh` 进行一次刷新。
+

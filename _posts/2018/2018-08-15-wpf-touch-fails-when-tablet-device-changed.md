@@ -8,6 +8,7 @@ version:
 versions:
   - 中文: #
   - English: /post/wpf-touch-fails-when-tablet-device-changed-en.html
+permalink: /posts/wpf-touch-fails-when-tablet-device-changed.html
 ---
 
 在 .NET Framework 4.7 以前，WPF 程序的触摸处理是基于操作系统组件但又自成一套的，这其实也为其各种各样的触摸失效问题埋下了伏笔。再加上它出现得比较早，触摸失效问题也变得更加难以解决。即便是 .NET Framework 4.7 以后也需要开发者手动开启 `Pointer` 消息，并且存在兼容性问题。
@@ -149,3 +150,4 @@ catch(ArgumentException)
 
 - [断点调试 Windows 源代码 - lindexi](https://blog.lindexi.com/post/%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95-Windows-%E6%BA%90%E4%BB%A3%E7%A0%81.html)
 - [神器如 dnSpy，无需源码也能修改 .NET 程序 - walterlv](/post/edit-and-recompile-assembly-using-dnspy)
+

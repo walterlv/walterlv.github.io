@@ -5,6 +5,7 @@ date: 2019-03-15 15:54:00 +0800
 tags: dotnet
 position: problem
 coverImage: /static/posts/2018-12-15-15-08-59.png
+permalink: /posts/task-wait-may-cause-long-time-waiting.html
 ---
 
 一个简单的 `Task` 不会消耗多少时间，但如果你不合适地将 `Task` 转为同步等待，那么也可能很快耗尽线程池的所有资源，出现类似死锁的情况。
@@ -110,4 +111,5 @@ class Program
 
 - [在编写异步方法时，使用 ConfigureAwait(false) 避免使用者死锁 - walterlv](/post/using-configure-await-to-avoid-deadlocks)
 - [将 async/await 异步代码转换为安全的不会死锁的同步代码（使用 PushFrame） - walterlv](/post/convert-async-to-sync-by-push-frame)
+
 

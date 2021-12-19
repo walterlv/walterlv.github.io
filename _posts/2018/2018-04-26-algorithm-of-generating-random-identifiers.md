@@ -3,6 +3,7 @@ title: "冷算法：自动生成代码标识符（类名、方法名、变量名
 date: 2018-04-26 08:04:56 +0800
 tags: algorithm
 coverImage: /static/posts/2018-04-26-07-42-48.png
+permalink: /posts/algorithm-of-generating-random-identifiers.html
 ---
 
 竟然有小伙伴喜欢在编写代码时使用随机字符当作类名、方法名、变量名，例如这一篇博客里的代码：[使用 Resharper 特性 - 林德熙](https://blog.lindexi.com/post/%E4%BD%BF%E7%94%A8-Resharper-%E7%89%B9%E6%80%A7.html)。既然随机，那也随机得像一些啊！于是我改进了标识符的随机算法，使得生成的标识符更像真实单词的组合。
@@ -86,4 +87,5 @@ var camel = _identifier.Generate(false);
 ```
 
 传入 `true` 生成首字母大写的版本，传入 `false` 生成首字母小写的版本。
+
 

@@ -4,6 +4,7 @@ publishDate: 2019-10-22 11:39:59 +0800
 date: 2019-10-22 14:07:30 +0800
 tags: directx sharpdx dotnet
 position: knowledge
+permalink: /posts/direct3d11-open-shared-resource.html
 ---
 
 如果你得到了一个来自于其他进程或者其他模块的 Direct3D11 的共享资源，即 SharedHandle 句柄，那么可以使用本文提到的方法将其转换成 Direct3D11 的设备和纹理，这样你可以进行后续的其他处理。
@@ -100,3 +101,4 @@ var surface = texture2D.QueryInterface<SharpDX.DXGI.Surface>();
 - [IDXGIResource interface (Windows)](https://msdn.microsoft.com/en-us/windows/hardware/bb174560(v=vs.110))
 - [IDXGIResource (dxgi.h) - Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/dxgi/nn-dxgi-idxgiresource)
 - [IUnknown::QueryInterface(Q,) - Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
+

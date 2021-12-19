@@ -4,6 +4,7 @@ publishDate: 2018-08-05 14:24:11 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: windows dotnet csharp
 coverImage: /static/posts/2018-08-05-14-02-54.png
+permalink: /posts/enable-virtual-terminal-processing.html
 ---
 
 各种操作系统的控制台都支持 ANSI 转义序列（ANSI Escape Code）。使用转义序列，可以对控制台进行很多额外的定制，例如修改颜色、修改标题栏，将文字添加下划线等。
@@ -93,4 +94,5 @@ Console.WriteLine($"Some {UNDERLINE}underlined{RESET} and {RED}red{RESET} text")
 - [ANSI escape code - Wikipedia](https://en.wikipedia.org/wiki/ANSI_escape_code)
 - [c# - adding text decorations to console output - Stack Overflow](https://stackoverflow.com/q/5237666/6233938)
 - [Windows 10 Command Prompt: New Console vs. Legacy Console - Password Recovery](https://www.top-password.com/blog/windows-10-command-prompt-new-console-vs-legacy-console/)
+
 

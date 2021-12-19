@@ -4,6 +4,7 @@ date: 2021-06-01 20:34:17 +0800
 tags: dotnet msbuild csharp
 position: knowledge
 coverImage: /static/posts/2021-06-01-19-54-27.png
+permalink: /posts/msbuild-generate-code-when-file-is-saved.html
 ---
 
 我之前的博客中有介绍如何在项目中生成额外的代码，也有介绍制作一个生成代码的 NuGet 包。而本文是在此基础上更进一步，可以让生成代码变成实时的；更准确的说，是在保存文件时即生成代码，而无需完整编译一次项目。
@@ -99,4 +100,5 @@ coverImage: /static/posts/2021-06-01-19-54-27.png
 - [Build Time Code Generation in MSBuild · mhut.ch](https://mhut.ch/journal/2015/06/30/build-time-code-generation-in-msbuild)
 - [grpc/grpc: The C based gRPC (C++, Python, Ruby, Objective-C, PHP, C#)](https://github.com/grpc/grpc)
 - [NuGet Gallery - Grpc.Tools](https://www.nuget.org/packages/Grpc.Tools/)
+
 

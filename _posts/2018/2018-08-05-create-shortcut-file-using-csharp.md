@@ -4,6 +4,7 @@ publishDate: 2015-04-07 12:48:00 +0800
 date: 2018-08-11 09:58:29 +0800
 tags: windows csharp dotnet
 coverImage: /static/posts/2018-08-05-20-37-14.png
+permalink: /posts/create-shortcut-file-using-csharp.html
 ---
 
 快捷方式是一种特殊的文件，扩展名为 lnk。有很多种方式来创建快捷方式，不过使用 C# 代码创建一个却并不那么容易。
@@ -81,4 +82,5 @@ private static void CreateShortcut(string lnkFilePath, string args = "")
         null, shortcut, null);
 }
 ```
+
 

@@ -3,6 +3,7 @@ title: "在 MSBuild 编译项目时阻止输出所有的警告信息"
 date: 2019-02-27 17:35:48 +0800
 tags: msbuild dotnet visualstudio
 position: knowledge
+permalink: /posts/suppress-all-warnings-for-msbuild.html
 ---
 
 大型旧项目可能存在大量的 Warning，在编译之后 Visual Studio 会给出大量的警告。Visual Studio 中可以直接点掉警告，然而如果是通过命令行 msbuild 编译的，那如何不要让警告输出呢？
@@ -40,3 +41,4 @@ msbuild /p:WarningLevel=0
 - [visual studio 2013 - How to have MSBuild quiet output but with error/warning summary - Stack Overflow](https://stackoverflow.com/q/25565610/6233938)
 - [-warn (C# Compiler Options) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/warn-compiler-option)
 - [Suppress MSB4126](https://social.msdn.microsoft.com/Forums/en-US/96b3ea2e-92ed-4483-bbfe-a4dda3231eb9/suppress-msb4126)
+

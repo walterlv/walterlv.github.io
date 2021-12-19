@@ -3,6 +3,7 @@ title: "Visual Studio 在编译 A 项目时，确保 B 项目已编译"
 date: 2020-06-18 08:53:17 +0800
 tags: visualstudio dotnet
 position: problem
+permalink: /posts/msbuild-another-project-in-msbuild-targets.html
 ---
 
 如果考虑在你的某个项目中安插一个专门用来做编译的项目，这个项目要求最先编译，那么你会考虑用什么方法呢？
@@ -52,3 +53,4 @@ A 在编译的时候，需要确保 B 项目已经编译（因为可能用到 B 
 本文的方法已加入到此类型解法的方法列表中，详情请看：
 
 - [三种方法设置 .NET/C# 项目的编译顺序，而不影响项目之间的引用 - walterlv](https://blog.walterlv.com/post/affects-project-building-order.html)
+

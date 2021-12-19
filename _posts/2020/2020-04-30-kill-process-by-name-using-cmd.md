@@ -3,6 +3,7 @@ title: "在 CMD 里根据进程名杀掉进程"
 date: 2020-04-30 11:31:27 +0800
 tags: windows
 position: knowledge
+permalink: /posts/kill-process-by-name-using-cmd.html
 ---
 
 任务管理器杀进程大家都会，不过如果你的系统被卡到任务管理器都无法操作了，怎么办？拿控制台 CMD 吧！
@@ -101,3 +102,4 @@ TASKKILL [/S system [/U username [/P [password]]]]
 **参考资料**
 
 - [how to kill a program by process name using cmd in windows 8? - Stack Overflow](https://stackoverflow.com/a/29233238/6233938)
+

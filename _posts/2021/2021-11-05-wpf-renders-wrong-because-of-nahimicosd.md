@@ -10,6 +10,7 @@ versions:
   - 中文: #
   - English: /post/wpf-renders-wrong-because-of-nahimicosd-en.html
 coverImage: /static/posts/2021-11-05-20-07-45.png
+permalink: /posts/wpf-renders-wrong-because-of-nahimicosd.html
 ---
 
 近期收到了多起来自用户的反馈，说我们软件界面糊成一团，完全没办法看到按钮在哪里。我一看，这可棘手了，完全不是我们软件能渲染出来的样子啊！
@@ -108,4 +109,5 @@ NahimicOSD 是一个用于在应用程序最终渲染结果上叠加另一个显
 **参考资料**
 
 - [Button renders wrong after mouse leave · Issue #707 · dotnet/wpf](https://github.com/dotnet/wpf/issues/707)
+
 

@@ -12,6 +12,7 @@ versions:
   - 简体中文: #
   - 日本語: #
   - ไทย: #
+permalink: /posts/multi-language-in-jekyll-blog.html
 ---
 
 我有几篇博客是用多种语言编写的，一开始我是在每篇博客中添加其他语言的链接，但多语言博客多了之后就成了复制粘贴了。是时候做一个通用的布局来实现多语言博客了！
@@ -118,3 +119,4 @@ html 里可以用 `<select>` 来做选择器。当然，本文只是用 `<select
 - [How can I set the default value for an HTML `<select>` element? - Stack Overflow](https://stackoverflow.com/q/3518002/6233938)
 - [超详细的HTML `<select>` 标签用法及技巧介绍_w3cschool](https://www.w3cschool.cn/htmltags/tag-select.html)
 - [Whitespace control – Liquid template language](http://shopify.github.io/liquid/basics/whitespace/)
+

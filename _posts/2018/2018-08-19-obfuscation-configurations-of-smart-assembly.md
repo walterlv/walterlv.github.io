@@ -4,6 +4,7 @@ publishDate: 2018-08-19 20:42:42 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: dotnet csharp
 coverImage: /static/posts/2018-08-19-15-14-44.png
+permalink: /posts/obfuscation-configurations-of-smart-assembly.html
 ---
 
 长文预警！！！
@@ -807,4 +808,5 @@ SmartAssembly 的官方文档写得还是太简单了，很难得到每一个设
 
 - [SmartAssembly 6 documentation - SmartAssembly 6 - Product Documentation](https://documentation.red-gate.com/sa6)
 - [Obfuscating code with name mangling - SmartAssembly 6 - Product Documentation](https://documentation.red-gate.com/sa6/obfuscating-your-code-with-smartassembly/obfuscating-code-with-name-mangling)
+
 

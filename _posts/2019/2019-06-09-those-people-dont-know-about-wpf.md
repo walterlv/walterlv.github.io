@@ -4,6 +4,7 @@ publishDate: 2019-06-09 09:49:30 +0800
 date: 2019-07-11 14:16:23 +0800
 tags: wpf dotnet csharp
 position: knowledge
+permalink: /posts/those-people-dont-know-about-wpf.html
 ---
 
 本文介绍不那么常见的 WPF 相关的知识。
@@ -97,3 +98,4 @@ WPF 默认情况下的触摸是通过 COM 组件 `PimcManager` 获取到的，�
 然而充分利用 Fluent Design 的高性能，需要上 XAML Islands，详见：
 
 - [Using the UWP XAML hosting API in a desktop application - Windows apps | Microsoft Docs](https://docs.microsoft.com/en-us/windows/apps/desktop/modernize/using-the-xaml-hosting-api)
+

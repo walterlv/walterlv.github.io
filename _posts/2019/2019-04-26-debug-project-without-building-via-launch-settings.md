@@ -5,6 +5,7 @@ date: 2019-04-26 12:22:57 +0800
 tags: visualstudio dotnet csharp
 position: problem
 coverImage: /static/posts/2019-04-25-19-29-31.png
+permalink: /posts/debug-project-without-building-via-launch-settings.html
 ---
 
 .NET 托管程序的编译速度比非托管程序要快非常多，即便是 .NET Core，只要不编译成 Native 程序，编译速度也是很快的。然而总是有一些逗比大项目编译速度非常缓慢（我指的是分钟级别的），而且还没做好差量编译；于是每一次编译都需要等待几十秒到数分钟。这显然是非常影响效率的。
@@ -25,4 +26,5 @@ coverImage: /static/posts/2019-04-25-19-29-31.png
 现在，将默认的启动从“项目”改为“可执行文件”，然后将我们本来调试时输出的程序路径贴上去。
 
 现在，如果你不希望编译大项目而直接进行调试，那么将启动项目改为这个小项目即可。
+
 

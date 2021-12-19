@@ -5,6 +5,7 @@ date: 2020-03-23 11:37:11 +0800
 tags: dotnet
 position: knowledge
 published: false
+permalink: /posts/dotnet-static-constructor-is-thread-safe.html
 ---
 
 今天有小伙伴在评估某类线程安全问题的时候，怀疑到静态构造函数里面去了。于是就有了本文。
@@ -33,3 +34,4 @@ published: false
 - [Thread Safety In C#](https://www.c-sharpcorner.com/UploadFile/1c8574/thread-safety369/)
 - [multithreading - Is the C# static constructor thread safe? - Stack Overflow](https://stackoverflow.com/q/7095/6233938)
 - [Static Constructors - C# Programming Guide - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/static-constructors)
+

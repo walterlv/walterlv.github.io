@@ -4,6 +4,7 @@ publishDate: 2018-03-16 13:40:41 +0800
 date: 2018-09-01 08:12:39 +0800
 tags: dotnet csharp
 coverImage: /static/posts/2018-03-16-13-07-51.png
+permalink: /posts/where-is-the-gray-candidate-window-come-from.html
 ---
 
 为什么屏幕上出现了一个灰框，里面有黑色数字，而且还不消失？强迫症难以忍受啊！
@@ -76,4 +77,5 @@ coverImage: /static/posts/2018-03-16-13-07-51.png
 - [number in upper-left corner of screen - Developer Community](https://developercommunity.visualstudio.com/content/problem/118174/number-in-upper-left-corner-of-screen.html)
 - [Visual Studio leaving numbers in tooltips on desktop - Developer Community](https://developercommunity.visualstudio.com/content/problem/190178/visual-studio-leaving-numbers-in-tooltips-on-deskt.html)
 - [visual studio 2012 puts a small number in the top left corner of my screen - Stack Overflow](https://stackoverflow.com/q/27101609/6233938)
+
 

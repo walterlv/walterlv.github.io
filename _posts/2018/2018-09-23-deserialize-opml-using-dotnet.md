@@ -2,6 +2,7 @@
 title: "使用并解析 OPML 格式的订阅列表来转移自己的 RSS 订阅（解析篇）"
 date: 2018-09-23 20:01:15 +0800
 tags: dotnet csharp uwp
+permalink: /posts/deserialize-opml-using-dotnet.html
 ---
 
 OPML 全称是 **Outline Processor Markup Language** ，即 **大纲处理标记语言**。目前流行于收集博客的 RSS 源，便于用户转移自己的订阅项目。
@@ -238,3 +239,4 @@ using (var stream = await folder.OpenStreamForReadAsync("sample-opml.xml"))
 在 .NET Framework 传统应用中，可以使用 `File.Read` 来打开一个文件流。
 
 由于我们本文中创建的模型均实现了 `INotifyPropertyChanged` 接口，所以你甚至可以直接将 `Opml.ParseAsync` 的返回结果应用于绑定。
+

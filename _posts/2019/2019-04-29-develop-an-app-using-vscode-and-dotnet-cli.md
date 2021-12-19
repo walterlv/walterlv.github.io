@@ -4,6 +4,7 @@ date: 2019-04-29 11:09:50 +0800
 tags: dotnet vscode csharp
 position: starter
 coverImage: /static/posts/2019-03-14-20-01-52.png
+permalink: /posts/develop-an-app-using-vscode-and-dotnet-cli.html
 ---
 
 如果你是开发个人项目，那就直接用 Visual Studio Community 版本吧，对个人免费，对小团体免费，不需要这么折腾。
@@ -150,4 +151,5 @@ namespace Walterlv.Demo
 这样可以给 `Walterlv.Demo` 项目引用 `Newtonsoft.Json` 包。
 
 接下来就像前面一节我们所描述的那样使用这个包里面的类就好了。
+
 

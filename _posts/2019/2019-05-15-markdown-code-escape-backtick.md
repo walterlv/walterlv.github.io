@@ -3,6 +3,7 @@ title: "Markdown 如何在内联代码或者代码块中使用代码开始符号
 date: 2019-05-15 22:09:44 +0800
 tags: markdown
 position: problem
+permalink: /posts/markdown-code-escape-backtick.html
 ---
 
 我们都知道如何在 Markdown 中使用反引号 `` ` `` 来包裹一段代码。无论是内联的代码还是单独的代码块，都需要使用它，只是个数的差别，比如 `` ` `` 和 ```` ``` ````。
@@ -81,3 +82,4 @@ position: problem
 **参考资料**
 
 - [Daring Fireball: Markdown Syntax Documentation](https://daringfireball.net/projects/markdown/syntax)
+

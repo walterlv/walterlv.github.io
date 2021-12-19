@@ -2,6 +2,7 @@
 title: "为 Web 页面添加 iPhone 固定标签页的图标"
 date: 2017-10-28 00:16:52 +0800
 tags: web ios
+permalink: /posts/add-icon-for-pinned-tab-icons.html
 ---
 
 我曾经将一个 Web 标签页固定到 iPhone 的主屏幕上，发现居然有一个图标。当时没有留意，可直到今天发现我的博客页面在我的 iPhone 主屏幕上显示一片空白后，才想起来原来还可以自定义图标。
@@ -29,3 +30,4 @@ tags: web ios
 **参考资料**
 - [Creating Pinned Tab Icons](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/pinnedTabs/pinnedTabs.html)
 - [Configuring Web Applications](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
+

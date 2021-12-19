@@ -4,6 +4,7 @@ publishDate: 2020-04-11 18:48:41 +0800
 date: 2020-04-11 20:32:30 +0800
 tags: windows dotnet csharp
 position: problem
+permalink: /posts/handle-nchittest-message-to-support-resize-even-if-window-is-covered-with-child-windows.html
 ---
 
 做无边框窗口之后，我们有方法可以让窗口的标题栏区域和边缘调大小的区域继续正常工作，直到——这个窗口上面覆盖了其他的子窗口。这个子窗口会吃掉消息导致父窗口的边缘无法再继续处理这些消息。
@@ -108,3 +109,4 @@ var (x, y) = GetOrderWord(lParam);
 - [HTTRANSPARENT is evil - virtualdub.org](http://virtualdub.org/blog/pivot/entry.php?id=147)
 - [c++ - how to move parent window without border from child using WM_NCHITTEST - Stack Overflow](https://stackoverflow.com/questions/8969852/how-to-move-parent-window-without-border-from-child-using-wm-nchittest)
 - [winapi - Win api in C#. Get Hi and low word from IntPtr - Stack Overflow](https://stackoverflow.com/a/7913393/6233938)
+

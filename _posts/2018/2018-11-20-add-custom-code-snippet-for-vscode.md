@@ -4,6 +4,7 @@ publishDate: 2018-11-20 10:19:28 +0800
 date: 2019-03-14 13:01:30 +0800
 tags: vscode
 coverImage: /static/posts/2018-11-19-20-57-16.png
+permalink: /posts/add-custom-code-snippet-for-vscode.html
 ---
 
 无论是那个编辑器，如果能够添加一些自定义代码片段，能够大大提升代码的输入效率。
@@ -270,4 +271,5 @@ coverImage: /static/posts/2018-11-19-20-57-16.png
 **参考资料**
 
 - [Creating your own snippets in Visual Studio Code](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
+
 

@@ -4,6 +4,7 @@ publishDate: 2018-06-29 17:59:00 +0800
 date: 2019-04-12 09:38:45 +0800
 tags: dotnet visualstudio nuget
 coverImage: /static/posts/2018-06-29-17-02-09.png
+permalink: /posts/prevent-nuget-package-upgrade.html
 ---
 
 出于兼容性考虑，我们可能不再更新某个项目的 NuGet 包。典型的情况是软件版本进行了大规模的不兼容的升级，需要对旧格式的数据进行读取，以便迁移到新格式的数据。
@@ -122,4 +123,5 @@ NuGet 使用 `PackageReference` 来管理所有的包引用，于是我试图通
 ```
 
 在这种 `Target` 的帮助下，无论如何更新 LiteDB 的 NuGet 版本，都能更新成功，但无法生效。
+
 

@@ -4,6 +4,7 @@ date: 2019-06-11 15:30:40 +0800
 tags: dotnet csharp wpf nuget visualstudio msbuild roslyn
 position: problem
 coverImage: /static/posts/2019-06-10-17-45-21.png
+permalink: /posts/issues-of-nuget-package-import-for-wpf-projects.html
 ---
 
 在使用 NuGet 包来分发源代码时，如果目标项目是 WPF 项目，那么会有一大堆的问题。
@@ -668,4 +669,5 @@ Directory.Build.props 和 Directory.Build.targets 也是可以被自动 Import �
 - [msbuild is adding a random hash and wpftmp to my AssemblyName during build - Developer Community](https://developercommunity.visualstudio.com/content/problem/210156/msbuild-is-adding-a-random-hash-and-wpftmp-to-my-a.html)
 - [WPF .Targets Files - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/wpf-dot-targets-files)
 - [MarkupCompilePass2 Task - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/markupcompilepass2-task)
+
 

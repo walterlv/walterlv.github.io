@@ -9,6 +9,7 @@ versions:
   - 中文: /post/wpf-multi-thread-ui-is-not-thread-safe.html
   - English: #
 coverImage: /static/posts/2019-01-29-11-04-38.png
+permalink: /posts/wpf-multi-thread-ui-is-not-thread-safe-en.html
 ---
 
 WPF supports multiple UI threads in its framework. You can create multiple UI thread windows or create multiple UI threads in a single window. But unfortunately, this is not really thread-safe.
@@ -112,4 +113,5 @@ SynchronizationContext.SetSynchronizationContext(
     new DispatcherSynchronizationContext(
         Dispatcher.CurrentDispatcher));
 ```
+
 

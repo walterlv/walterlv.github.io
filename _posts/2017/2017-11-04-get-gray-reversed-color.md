@@ -4,6 +4,7 @@ publishDate: 2017-11-04 22:51:33 +0800
 date: 2018-02-20 06:37:19 +0800
 tags: algorithm wpf uwp dotnet csharp
 coverImage: /static/posts/2017-11-04-22-18-36.png
+permalink: /posts/get-gray-reversed-color.html
 ---
 
 背景色千差万别，如果希望在这样复杂的背景色下显示清晰可辨的前景色（例如显示文字），那如何选择这样的前景色才能确保适用于所有的背景呢？
@@ -95,4 +96,5 @@ private static Color GetReverseForegroundColor(double grayLevel) => grayLevel > 
 **参考资料**
 - [Luma (video) - Wikipedia](https://en.wikipedia.org/wiki/Luma_(video))
 - [从RGB色转为灰度色算法（转） - carekee - 博客园](http://www.cnblogs.com/carekee/articles/3629964.html)
+
 

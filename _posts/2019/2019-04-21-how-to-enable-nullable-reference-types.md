@@ -4,6 +4,7 @@ publishDate: 2019-04-21 19:22:00 +0800
 date: 2020-04-23 20:17:25 +0800
 tags: csharp msbuild visualstudio
 position: starter
+permalink: /posts/how-to-enable-nullable-reference-types.html
 ---
 
 C# 8.0 引入了可为空引用类型和不可为空引用类型。由于这是语法级别的支持，所以比传统的契约式编程具有更强的约束力。更容易帮助我们消灭 `null` 异常。
@@ -177,3 +178,4 @@ ReSharper 从 2019.1.1 版本开始支持 C# 8.0，如果使用早期版本，�
 
 - [Nullable reference types - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/nullable-references)
 - [c# - What is the difference between NullableContextOptions and NullableReferenceTypes? - Stack Overflow](https://stackoverflow.com/a/54855437/6233938)
+

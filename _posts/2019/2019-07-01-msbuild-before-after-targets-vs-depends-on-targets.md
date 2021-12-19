@@ -3,6 +3,7 @@ title: ".NET / MSBuild 扩展编译时什么时候用 BeforeTargets / AfterTarge
 date: 2019-07-01 16:43:43 +0800
 tags: visualstudio msbuild nuget dotnet
 position: principle
+permalink: /posts/msbuild-before-after-targets-vs-depends-on-targets.html
 ---
 
 在为 .NET 项目扩展 MSBuild 编译而编写编译目标（Target）时，我们会遇到用于扩展编译目标用的属性 `BeforeTargets` `AfterTargets` 和 `DependsOnTargets`。
@@ -207,3 +208,4 @@ position: principle
 你可以阅读我的另一篇博客了解更多：
 
 - [通过重写预定义的 Target 来扩展 MSBuild / Visual Studio 的编译过程](/post/extend-the-visual-studio-build-process)
+

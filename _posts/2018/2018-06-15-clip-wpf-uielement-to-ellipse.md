@@ -4,6 +4,7 @@ publishDate: 2018-06-15 09:22:29 +0800
 date: 2020-05-06 08:15:56 +0800
 tags: xaml wpf
 coverImage: /static/posts/2018-06-15-09-51-13.png
+permalink: /posts/clip-wpf-uielement-to-ellipse.html
 ---
 
 不知从什么时候开始，头像流行使用圆形了，于是各个平台开始追逐显示圆形裁剪图像的技术。WPF 作为一个优秀的 UI 框架，当然有其内建的机制支持这种圆形裁剪。
@@ -140,4 +141,5 @@ public static class EllipseClipper
 ![裁剪成椭圆](/static/posts/2018-06-15-ellipse-clip.gif)
 
 这篇博客的核心代码我也贴在了 StackOverflow 上：[c# - WPF displaying a gif in an ellipse - Stack Overflow](https://stackoverflow.com/a/50867867/6233938)
+
 

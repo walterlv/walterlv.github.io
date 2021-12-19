@@ -3,6 +3,7 @@ title: "异步任务中的重新进入（Reentrancy）"
 publishDate: 2017-12-05 22:10:04 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: csharp dotnet
+permalink: /posts/reentrancy-in-async-method.html
 ---
 
 一个按钮，点击执行一个任务。我们可能直接在它的 `Click` 事件中写下了执行任务的代码。
@@ -99,3 +100,4 @@ Button.IsEnabled = true;
 
 - [Handling Reentrancy in Async Apps (C#) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/handling-reentrancy-in-async-apps?wt.mc_id=MVP)
 - [处理异步应用中的重新进入 (C#) - Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/concepts/async/handling-reentrancy-in-async-apps?wt.mc_id=MVP)
+

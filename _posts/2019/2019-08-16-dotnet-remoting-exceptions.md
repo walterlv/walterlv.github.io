@@ -4,6 +4,7 @@ publishDate: 2019-08-19 08:44:13 +0800
 date: 2019-09-05 21:26:31 +0800
 tags: dotnet
 position: problem
+permalink: /posts/dotnet-remoting-exceptions.html
 ---
 
 在使用 .NET Remoting 开发跨进程应用的时候，你可能会遇到一些异常。因为这些异常在后验的时候非常简单但在一开始有各种异常烦扰的时候却并不清晰，所以我将这些异常整理到此文中，方便小伙伴们通过搜索引擎查阅。
@@ -97,3 +98,4 @@ namespace Walterlv.Remoting.Framework
 **参考资料**
 
 - [c# - .Net remoting error "Requested Service not found" - Stack Overflow](https://stackoverflow.com/questions/44373484/net-remoting-error-requested-service-not-found)
+

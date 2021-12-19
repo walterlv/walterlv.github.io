@@ -2,6 +2,7 @@
 title: "未知的编译错误：“已添加具有相同键的项。Unknown build error, 'An item with the same key has already been added.'”"
 date: 2015-06-30 20:13:00 +0800
 tags: visualstudio
+permalink: /posts/unkown-build-error-item-same-key-added.html
 ---
 
 未知的编译错误：“已添加具有相同键的项。”
@@ -63,3 +64,4 @@ namespace Walterlv.Tools
 所以，平时开发的过程中，如果要到处拖拽文件的话，小心哦！
 
 [正在录制](正在录制.gif)
+

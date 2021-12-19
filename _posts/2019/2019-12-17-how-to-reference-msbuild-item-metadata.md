@@ -4,6 +4,7 @@ publishDate: 2019-12-17 19:28:39 +0800
 date: 2019-12-27 17:45:37 +0800
 tags: msbuild dotnet
 position: knowledge
+permalink: /posts/how-to-reference-msbuild-item-metadata.html
 ---
 
 MSBuild 中写在 `<ItemGroup />` 中的每一项是一个 `Item`，`Item` 除了可以使用 `Include`/`Update`/`Remove` 来增删之外，还可以定义其他的元数据（Metadata）。
@@ -131,3 +132,4 @@ _WalterlvDemo:
 **参考资料**
 
 - [MSBuild Items - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-items)
+

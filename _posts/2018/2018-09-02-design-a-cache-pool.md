@@ -3,6 +3,7 @@ title: ".NET/C# 推荐一个我设计的缓存类型（适合缓存反射等耗�
 publishDate: 2018-09-02 22:27:47 +0800
 date: 2018-09-02 15:59:05 +0800
 tags: dotnet csharp
+permalink: /posts/design-a-cache-pool.html
 ---
 
 这里我想说的是类型“实例”的缓存，适用于那些实例或者值计算很耗时的操作。典型的场景如反射获取 `Attribute`。
@@ -87,3 +88,4 @@ private static readonly CachePool<Type, Func<object>> ConstructorCache =
 ## 附代码
 
 <script src="https://gist.github.com/walterlv/85c43ce2c064e7a2bd2b70756b968cd5.js"></script>
+

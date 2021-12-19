@@ -5,6 +5,7 @@ tags: slack web
 position: starter
 published: false
 coverImage: /static/posts/2019-01-06-14-14-32.png
+permalink: /posts/slack-api-starter-bot-users.html
 ---
 
 一个工程师团队使用 Slack 进行团队协作比 QQ / 微信流的效率高多啦。除了基本的 IM 之外，它的扩展性也是非常重要的一点。
@@ -69,4 +70,5 @@ coverImage: /static/posts/2019-01-06-14-14-32.png
 **参考资料**
 
 - [Enabling interactions with bots - Slack](https://api.slack.com/bot-users)
+
 

@@ -5,6 +5,7 @@ date: 2019-05-23 18:53:39 +0800
 tags: windows dotnet csharp wpf
 position: knowledge
 coverImage: /static/posts/2019-05-22-16-57-28.png
+permalink: /posts/dock-window-into-windows-desktop.html
 ---
 
 本文介绍如何使用 Windows 的 AppBar 相关 API 实现固定停靠在桌面上的特殊窗口。
@@ -499,4 +500,5 @@ namespace Walterlv.Demo.DesktopDocking
 - [AppBar using C# - CodeProject](https://www.codeproject.com/Articles/6741/AppBar-using-C)
 - [SHAppBarMessage function (shellapi.h) - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/api/shellapi/nf-shellapi-shappbarmessage)
 - [RegisterWindowMessageA function (winuser.h) - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-registerwindowmessagea)
+
 

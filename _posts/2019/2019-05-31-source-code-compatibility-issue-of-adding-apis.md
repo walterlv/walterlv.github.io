@@ -9,6 +9,7 @@ version:
 versions:
   - 中文: #
   - English: /post/source-code-compatibility-issue-of-adding-apis-en.html
+permalink: /posts/source-code-compatibility-issue-of-adding-apis.html
 ---
 
 我只是增加库的一个 API，比如增加几个类而已，应该不会造成兼容性问题吧。对于编译好的二进制文件来说，不会造成兼容性问题；但——可能造成源码不兼容。
@@ -50,3 +51,4 @@ namespace Walterlv.Demo
 是的，即使是单纯的新增 API 也可能会导致使用库的一方在源码级不兼容。当然二进制还是兼容的。
 
 另外，[OpportunityLiu](https://github.com/OpportunityLiu) 提醒，如果命名空间是 `Walterlv.B.Walterlv.A.Diagnostics.Bar`，一样可以让写全了的命名空间炸掉。呃……还是不要在库里面折腾这样的命名空间好……不然代码当中到处充斥着 `global::` 可是非常难受的。
+

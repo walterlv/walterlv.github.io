@@ -4,6 +4,7 @@ publishDate: 2019-07-12 14:38:32 +0800
 date: 2019-07-20 15:41:17 +0800
 tags: dotnet csharp
 position: starter
+permalink: /posts/preprocessor-symbols-if-vs-conditional.html
 ---
 
 有小伙伴看到我有时写了 `#if` 有时写了 `[Conditional]` 问我两个不是一样的吗，何必多此一举。然而实际上两者的编译处理是不同的，因此也有不同的应用场景。
@@ -55,3 +56,4 @@ public void Foo()
 因为 `#if DEBUG` 和 `#endif` 仅仅影响包含在其内的代码块，因此其仅仅影响写的这点代码所在的项目（或者说程序集）。于是使用 `#if` 只会影响实现代码。
 
 而 `[Conditional("DEBUG")]` 影响的是调用它的代码，因此可以设计作为 API 使用——让目标项目（或者程序集）仅在目标项目特定的配置下才会编译。
+

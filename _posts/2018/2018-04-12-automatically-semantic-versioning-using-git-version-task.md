@@ -9,6 +9,7 @@ versions:
   - 中文: #
   - English: /post/automatically-semantic-versioning-using-git-version-task.en.html
 coverImage: /static/posts/2018-04-13-15-34-08.png
+permalink: /posts/automatically-semantic-versioning-using-git-version-task.html
 ---
 
 我们在之前谈过 [语义版本号（Semantic Versioning）](/post/semantic-version)，在项目中应用语义版本号能够帮助库的开发者在发布包时表明更多的语义信息。这是趋势，从微软的博客 [Versioning NuGet packages in a continuous delivery world](https://blogs.msdn.microsoft.com/devops/2016/05/03/versioning-nuget-packages-cd-1/) 三部曲中可以看出，从 NuGet 4.3.0 以及 Visual Studio 2017 15.3 以上版本开始支持语义版本号 2.0 也能看出。
@@ -187,4 +188,5 @@ branches:
 - [`dotnet build` command always fails with GitVersionTask 4.0.0-beta · Issue #1399 · GitTools/GitVersion](https://github.com/GitTools/GitVersion/issues/1399)
 - [.NET Core MSBuild cannot load tasks built against MSBuild 4.0 · Issue #2111 · Microsoft/msbuild](https://github.com/Microsoft/msbuild/issues/2111)
 - [Should the SDK include Microsoft.Build.Utilities.v4.0? · Issue #1870 · dotnet/sdk](https://github.com/dotnet/sdk/issues/1870)
+
 

@@ -5,6 +5,7 @@ date: 2020-04-23 20:17:50 +0800
 tags: csharp msbuild
 position: problem
 coverImage: /static/posts/2019-04-21-19-40-24.png
+permalink: /posts/warning-as-errors-for-csharp-nullable-reference-types.html
 ---
 
 程序员不看警告！
@@ -89,4 +90,5 @@ NU1605;CS8600;CS8602;CS8603;CS8604;CS8618;CS8625
 
 - [Switch to errors instead of warnings for nullable reference types in C# 8 - tabs ↹ over ␣ ␣ ␣ spaces by Jiří {x2} Činčura](https://www.tabsoverspaces.com/233764-switch-to-errors-instead-of-warnings-for-nullable-reference-types-in-csharp-8)
 - [NuGet Warning NU1605 - Microsoft Docs](https://docs.microsoft.com/en-us/nuget/reference/errors-and-warnings/nu1605)
+
 

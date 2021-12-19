@@ -9,6 +9,7 @@ version:
 versions:
   - 中文: /post/source-code-compatibility-issue-of-adding-apis.html
   - English: #
+permalink: /posts/source-code-compatibility-issue-of-adding-apis-en.html
 ---
 
 You might just add some simple APIs in your library and you'll not think that will break down your compatibility. But actually, it might, that is -- the source-code compatibility.
@@ -41,3 +42,4 @@ And now we add a new class `Walterlv.B.Diagnostics.Bar` class into the B library
 Unfortunately, the code above would fail to compile because of the ambiguity of `Diagnostics` namespace. The `Foo` class cannot be found in an ambiguity namespace.
 
 I write this post down to tell you that there may be source-code compatibility issue even if you only upgrade your library by simply adding APIs.
+

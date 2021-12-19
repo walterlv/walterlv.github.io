@@ -4,6 +4,7 @@ date: 2019-05-15 14:57:35 +0800
 tags: csharp dotnet
 position: starter
 coverImage: /static/posts/2019-05-15-14-28-13.png
+permalink: /posts/default-interface-members-practise.html
 ---
 
 当你升级到 C# 8.0 和 .NET Core 3.0 之后，你就可以开始使用默认接口实现的功能了。
@@ -175,4 +176,5 @@ public class Foo : IWalterlv
 - [Default implementations in interfaces - .NET Blog](https://devblogs.microsoft.com/dotnet/default-implementations-in-interfaces/)
 - [Visual Studio 2019 version 16.1 Preview 3 - The Visual Studio Blog](https://devblogs.microsoft.com/visualstudio/visual-studio-2019-version-16-1-preview-3/)
 - [Safely update interfaces using default interface members in C# - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/default-interface-members-versions)
+
 

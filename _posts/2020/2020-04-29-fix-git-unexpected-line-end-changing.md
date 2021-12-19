@@ -4,6 +4,7 @@ publishDate: 2020-04-29 20:17:10 +0800
 date: 2020-04-30 09:26:38 +0800
 tags: git
 position: problem
+permalink: /posts/fix-git-unexpected-line-end-changing.html
 ---
 
 前些天有位小伙伴告诉我说 git 改了某个重要文件的换行符，导致文件的哈希变了，于是文件校验出现错误。之前一直没问题而最近才有问题是因为最近换了部署服务器，git 的换行符配置不一样。
@@ -71,3 +72,4 @@ git 有个全局配置，在 `%USERPROFILE%\.gitconfig` 文件里面，可以指
 以前的服务器全局配置没有问题，是因为服务器配置为 `true`，于是拉下来时一定都是 `\r\n` 哈希正确。而现在全局配置是 `false`，于是会原样把 git 仓库里的拉下来，哈希错误。
 
 是的，你没看错！远程 git 仓库里的是错的！这是因为有小伙伴使用了 `true` 或者 `input` 的配置，导致推送时统一把换行符改成了 `\r\n`。
+

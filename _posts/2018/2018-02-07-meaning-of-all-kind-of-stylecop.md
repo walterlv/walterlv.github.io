@@ -3,6 +3,7 @@ title: "（持续整理中）Visual Studio 中 C# 代码分析规则集中每一
 publishDate: 2018-02-07 21:55:12 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: csharp visualstudio
+permalink: /posts/meaning-of-all-kind-of-stylecop.html
 ---
 
 因为我希望在要求很高的库中及时发现潜在的代码问题，所以我开启了 Visual Studio 的代码分析。
@@ -70,3 +71,4 @@ CA2007|不应该直接 `await` 一个而不调用 `ConfigureAwait`|建议阅读 
 
 - [Code Analysis for Managed Code Warnings - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/code-quality/code-analysis-for-managed-code-warnings?wt.mc_id=MVP)
 - [C# Compiler Errors - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/?wt.mc_id=MVP)
+

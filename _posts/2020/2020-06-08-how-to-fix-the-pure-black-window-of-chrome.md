@@ -4,6 +4,7 @@ date: 2020-06-08 08:22:55 +0800
 tags: windows web
 position: problem
 coverImage: /static/posts/2020-06-08-08-08-05.png
+permalink: /posts/how-to-fix-the-pure-black-window-of-chrome.html
 ---
 
 Chrome 的窗口偶尔会出现全黑掉的情况。从轻微的到严重的，本文都有解决方案。
@@ -58,4 +59,5 @@ Chrome 全黑的状态看起来像下图这样：
 2. 重新启动 Chrome 浏览器
 
 例如，我的文件夹是 `C:\Users\lvyi\AppData\Local\Google\Chrome\User Data\ShaderCache\GPUCache`，全部删除后重新启动即恢复。
+
 

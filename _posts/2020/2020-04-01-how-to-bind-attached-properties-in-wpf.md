@@ -3,6 +3,7 @@ title: "WPF 中如何绑定附加属性？XAML 中记得加括号，C# 中记得
 date: 2020-04-01 20:35:51 +0800
 tags: wpf dotnet
 position: knowledge
+permalink: /posts/how-to-bind-attached-properties-in-wpf.html
 ---
 
 在 XAML 中写绑定是 WPF 学习的必修课，进阶一点的，是用 C# 代码来写绑定。然而一旦绑定的属性是附加属性，好多小伙伴就会开始遇到坑了。
@@ -105,3 +106,4 @@ BindingOperations.SetBinding(DemoDraggableElement, TextBox.TextProperty, binding
 **参考资料**
 
 - [Binding to an Attached Property](http://geekswithblogs.net/NewThingsILearned/archive/2008/01/15/binding-to-an-attached-property.aspx)
+

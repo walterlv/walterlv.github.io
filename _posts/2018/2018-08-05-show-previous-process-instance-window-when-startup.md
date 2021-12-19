@@ -3,6 +3,7 @@ title: "Win32 程序在启动时激活前一个启动程序的窗口"
 publishDate: 2018-08-05 21:48:50 +0800
 date: 2018-09-01 08:15:17 +0800
 tags: windows wpf
+permalink: /posts/show-previous-process-instance-window-when-startup.html
 ---
 
 UWP 程序天生单实例。当然，新 API （10.0.17134）开始也提供了多实例功能。不过，传统 Win32 程序可就要自己来控制单实例了。
@@ -91,3 +92,4 @@ public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
 - [c# - How to show/hide an application with Visible and ShowInTaskBar as false - Stack Overflow](https://stackoverflow.com/q/8935985/6233938)
 - [ShowWindowAsync function (Windows)](https://msdn.microsoft.com/en-us/library/ms633549%28VS.85%29.aspx?f=255&MSPPError=-2147217396)
 - [How do I maximize/minimize applications programmatically in C#?](https://social.msdn.microsoft.com/Forums/vstudio/en-US/9bde4870-1599-4958-9ab4-902fa98ba53a/how-do-i-maximizeminimize-applications-programmatically-in-c?forum=csharpgeneral)
+

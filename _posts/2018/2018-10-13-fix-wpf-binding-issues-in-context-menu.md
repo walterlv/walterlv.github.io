@@ -4,6 +4,7 @@ publishDate: 2018-10-13 21:38:01 +0800
 date: 2018-10-14 12:25:19 +0800
 tags: wpf dotnet
 coverImage: /static/posts/2018-10-14-11-11-23.png
+permalink: /posts/fix-wpf-binding-issues-in-context-menu.html
 ---
 
 在 Binding 中使用 ElementName 司空见惯，没见它出过什么事儿。不过当你预见 ContextMenu，或者类似 Grid.Row / Grid.Column 这样的属性中设置的时候，ElementName 就不那么管用了。
@@ -161,4 +162,5 @@ public sealed class BindingProxy : Freezable
 **参考资料**
 
 - [c# - WPF databinding error in Tag property - Stack Overflow](https://stackoverflow.com/a/32879146/6233938)
+
 

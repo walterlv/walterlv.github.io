@@ -5,6 +5,7 @@ date: 2019-03-20 21:39:33 +0800
 tags: windows dotnet csharp wpf
 position: knowledge
 coverImage: /static/posts/2019-03-17-16-34-34.png
+permalink: /posts/requested-execution-level-of-application-manifest.html
 ---
 
 如果你的程序对 Windows 运行权限有要求，那么需要设置应用程序清单。本文介绍如何添加应用程序清单，并解释其中各项 UAC 权限设置的实际效果。
@@ -121,4 +122,5 @@ UWP 程序只能获得受限访问令牌，没得选，所以也就不需要指�
 - [Registry Virtualization - Windows applications - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/sysinfo/registry-virtualization#registry-virtualization-scope)
 <!-- - [UAC 实现原理及绕过方法 - _chesky - 博客园](https://www.cnblogs.com/Chesky/p/UAC_Bypass.html) -->
 - [How User Account Control (UAC) Affects Your Application - Microsoft Docs](https://docs.microsoft.com/en-us/cpp/security/how-user-account-control-uac-affects-your-application)
+
 

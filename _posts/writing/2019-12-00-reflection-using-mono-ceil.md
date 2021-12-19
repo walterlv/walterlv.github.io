@@ -4,6 +4,7 @@ date: 2019-11-05 11:24:19 +0800
 tags: dotnet csharp
 position: knowledge
 published: false
+permalink: /posts/reflection-using-mono-ceil.html
 ---
 
 在此处编辑 blog.walterlv.com 的博客摘要

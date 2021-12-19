@@ -3,6 +3,7 @@ title: ".NET/C# 将一个命令行参数字符串转换为命令行参数数组 
 date: 2019-02-19 21:49:15 +0800
 tags: dotnet csharp windows
 position: knowledge
+permalink: /posts/convert-command-line-string-to-args-array.html
 ---
 
 我们通常得到的命令行参数是一个字符串数组 `string[] args`，以至于很多的命令行解析库也是使用数组作为解析的参数来源。
@@ -71,3 +72,4 @@ namespace Walterlv
 - [CommandLineToArgvW function - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/api/shellapi/nf-shellapi-commandlinetoargvw)
 - [Converting Command Line String to Args[] using CommandLineToArgvW() API - IntelliTect](https://intellitect.com/converting-command-line-string-to-args-using-commandlinetoargvw-api/)
 - [Split string containing command-line parameters into string[] in C# - Stack Overflow](https://stackoverflow.com/a/749653/6233938)
+

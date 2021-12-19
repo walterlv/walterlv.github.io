@@ -4,6 +4,7 @@ publishDate: 2020-04-30 10:24:16 +0800
 date: 2020-04-30 11:12:46 +0800
 tags: linux
 position: knowledge
+permalink: /posts/linux-shell-escape.html
 ---
 
 本文整理 Linux Shell 中的转义字符。
@@ -92,3 +93,4 @@ Hello "Walterlv"
 - [How to enable linux support double backslashes "\\" as the path delimiter - Stack Overflow](https://stackoverflow.com/q/9734212/6233938)
 - [shell - Backslash in Path - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/484197/backslash-in-path)
 - [shell - Which characters need to be escaped when using Bash? - Stack Overflow](https://stackoverflow.com/a/20053121/6233938)
+

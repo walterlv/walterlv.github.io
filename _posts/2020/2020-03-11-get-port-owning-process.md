@@ -5,6 +5,7 @@ date: 2020-05-23 20:21:49 +0800
 tags: windows linux powershell
 position: starter
 coverImage: /static/posts/2020-03-11-15-04-19.png
+permalink: /posts/get-port-owning-process.html
 ---
 
 管理服务程序的时候，可能会查询某个端口当前被哪个进程占用。不仅能找出有问题的进程将其处理掉，也可以用来辅助检查某个程序是否开启了服务并在监听端口。
@@ -53,4 +54,5 @@ netstat -tunpl | grep 端口号
 walterlv@localhost:~# netstat -tunpl | grep 35412
 tcp6   0   0 :::5000     :::*             731/dotnet_serve
 ```
+
 

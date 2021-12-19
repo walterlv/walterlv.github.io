@@ -4,6 +4,7 @@ publishDate: 2019-10-29 11:53:34 +0800
 date: 2019-11-05 11:22:22 +0800
 tags: git
 position: starter
+permalink: /posts/clean-up-git-repo-using-bfg.html
 ---
 
 你可能接触过 `git-filter-branch` 来清理 git 仓库，不过同时也能体会到这个命令使用的繁琐，以及其超长的执行时间。
@@ -253,3 +254,4 @@ bfg 1.13.0
 **参考资料**
 
 - [BFG Repo-Cleaner by rtyley](https://rtyley.github.io/bfg-repo-cleaner/)
+

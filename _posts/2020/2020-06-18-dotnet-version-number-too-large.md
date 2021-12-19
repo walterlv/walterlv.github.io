@@ -5,6 +5,7 @@ date: 2020-06-19 00:05:08 +0800
 tags: visualstudio dotnet
 position: problem
 coverImage: /static/posts/2020-06-18-18-01-22.png
+permalink: /posts/dotnet-version-number-too-large.html
 ---
 
 试过给 .NET Core 项目设置一个大于 65535 的版本号吗？可能没有，因为设置了会炸！
@@ -88,4 +89,5 @@ Class1.cs 应该不用贴出来了，因为没啥关系。
 
 - [Why are build numbers limited to 65535? - Microsoft Docs](https://docs.microsoft.com/zh-cn/archive/blogs/msbuild/why-are-build-numbers-limited-to-65535)
 - [c# - The specified version string does not conform to the required format - major[.minor[.build[.revision]]] - Stack Overflow](https://stackoverflow.com/a/37941296/6233938)
+
 

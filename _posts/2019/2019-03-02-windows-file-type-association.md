@@ -5,6 +5,7 @@ date: 2019-03-04 22:15:30 +0800
 tags: dotnet windows csharp
 position: knowledge
 coverImage: /static/posts/2019-03-02-20-10-03.png
+permalink: /posts/windows-file-type-association.html
 ---
 
 对于 Windows 桌面应用来说，让应用关联一种或多种文件类型是通过修改注册表来实现的。
@@ -165,4 +166,5 @@ HKEY_CLASSES_ROOT
 - [File Types and File Associations - Windows applications - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/shell/fa-intro)
 - [Programmatic Identifiers - Windows applications - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/shell/fa-progids)
 - [Media Types](http://www.iana.org/assignments/media-types/media-types.xhtml)
+
 

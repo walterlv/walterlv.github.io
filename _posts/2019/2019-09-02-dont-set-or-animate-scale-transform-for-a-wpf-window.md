@@ -4,6 +4,7 @@ date: 2019-09-02 12:34:25 +0800
 tags: wpf dotnet csharp
 position: problem
 coverImage: /static/posts/2019-09-02-11-58-46.png
+permalink: /posts/dont-set-or-animate-scale-transform-for-a-wpf-window.html
 ---
 
 WPF 的 `Window` 类是不允许设置变换矩阵的。不过，总会有小伙伴为了能够设置一下试图绕过一些验证机制。
@@ -59,4 +60,5 @@ scaleTransform.ScaleY = 0.5;
 此设置不仅没有效果，还会引发异常，请阅读我的另一篇博客了解：
 
 - [WPF 不要给 Window 类设置变换矩阵（分析篇）：System.InvalidOperationException: 转换不可逆。](/post/analyze-matrix-invert-exception-for-wpf-window)
+
 

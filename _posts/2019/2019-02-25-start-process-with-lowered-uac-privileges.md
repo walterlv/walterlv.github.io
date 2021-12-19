@@ -4,6 +4,7 @@ publishDate: 2019-02-25 07:28:19 +0800
 date: 2019-03-19 09:36:49 +0800
 tags: windows dotnet csharp
 position: problem
+permalink: /posts/start-process-with-lowered-uac-privileges.html
 ---
 
 在 Windows 系统中，管理员权限和非管理员权限运行的程序之间不能使用 Windows 提供的通信机制进行通信。对于部分文件夹（ProgramData），管理员权限创建的文件是不能以非管理员权限修改和删除的。
@@ -126,3 +127,4 @@ Process.Start(processInfo);
 - [windows - Force a program to run *without* administrator privileges or UAC? - Super User](https://superuser.com/q/171917/940098)
 - [High elevation can be bad for your application: How to start a non-elevated process at the end of the installation - CodeProject](https://www.codeproject.com/Articles/18946/High-elevation-can-be-bad-for-your-application-How)
 - [How to Enable Drag and Drop for an Elevated MFC Application on Vista/Windows 7 • Helge Klein](https://helgeklein.com/blog/2010/03/how-to-enable-drag-and-drop-for-an-elevated-mfc-application-on-vistawindows-7/)
+

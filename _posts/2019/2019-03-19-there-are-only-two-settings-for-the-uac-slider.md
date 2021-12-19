@@ -4,6 +4,7 @@ date: 2019-03-19 17:43:47 +0800
 tags: windows
 position: knowledge
 coverImage: /static/posts/2019-03-19-16-40-47.png
+permalink: /posts/there-are-only-two-settings-for-the-uac-slider.html
 ---
 
 Windows 系统中的 UAC 设置界面有四种不同的选项可以选，但实际上真正有意义的只有两个选项。
@@ -87,4 +88,5 @@ Windows Vista 中，确实只有始终通知和关闭 UAC 两个选项，而且�
 **参考资料**
 
 - [The Old New Thing - There are really only two effectively distinct settings for the UAC slider](https://devblogs.microsoft.com/oldnewthing/?p=94105)
+
 

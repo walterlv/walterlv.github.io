@@ -4,6 +4,7 @@ publishDate: 2018-01-05 09:26:40 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: csharp dotnet
 coverImage: /static/posts/2018-01-05-09-48-13.png
+permalink: /posts/anonymous-function-extends-lifetime-of-variable.html
 ---
 
 小伙伴在一次垃圾回收中，发现对象并没有被回收掉，而注释掉一句代码后它便能够回收。
@@ -94,4 +95,5 @@ private void OnLoaded(object sender, RoutedEventArgs e)
 - [c# - .NET Do lambdas prevent garbage collection of external references used in them? - Stack Overflow](https://stackoverflow.com/a/31729713/6233938)
 - [C# Language Specification 5.0](http://www.c-sharpcorner.com/ebooks/csharp-language-specification_5)
 - [C# 6.0 draft Language Specification - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/?wt.mc_id=MVP)
+
 

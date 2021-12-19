@@ -4,6 +4,7 @@ publishDate: 2019-01-14 15:38:10 +0800
 date: 2019-03-04 22:15:01 +0800
 tags: msbuild visualstudio
 position: knowledge
+permalink: /posts/resolve-project-references-using-target.html
 ---
 
 在项目编译成 dll 之前，如何分析项目的所有依赖呢？可以在在项目的 Target 中去收集项目的依赖。
@@ -259,3 +260,4 @@ C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4
     - 要写入的一些缓存文件
 - DependsOnSystemRuntime
     - 以上都是集合，唯独这是一个布尔值，表示是否依赖系统运行时
+

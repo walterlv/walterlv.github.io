@@ -4,6 +4,7 @@ publishDate: 2020-01-11 17:33:51 +0800
 date: 2020-01-12 22:08:32 +0800
 tags: dotnet web blazor
 position: starter
+permalink: /posts/redirect-middleware-for-asp-dotnet.html
 ---
 
 如果你有一些需要重定向网页 URL 的情况，可以返回 HTTP 状态码 301/302 告诉浏览器或者搜索引擎访问新的 URL。本文描述如何在 ASP.NET Core 中进行重定向。
@@ -107,3 +108,4 @@ public static IApplicationBuilder UseAutoRemoveHtmlExtension(this IApplicationBu
 **参考资料**
 
 - [HTTP 302 - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/HTTP_302)
+

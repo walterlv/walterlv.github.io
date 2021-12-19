@@ -4,6 +4,7 @@ date: 2021-12-13 20:21:48 +0800
 tags: dotnet nuget msbuild
 position: knowledge
 coverImage: /static/posts/2021-12-13-20-02-30.png
+permalink: /posts/create-a-nuget-package-with-native-dependencies.html
 ---
 
 正常如果你想写一个 .NET 的 NuGet 包，直接打包就好了，你的引用程序集会出现在 NuGet 包内的 lib 文件夹内。然而，如果我们的 NuGet 包包含本机依赖的话怎么办呢？
@@ -280,3 +281,4 @@ coverImage: /static/posts/2021-12-13-20-02-30.png
 对于 .NET Core App 项目，项目编译后，输出目录下会出现“runtimes”和“ref”两个文件夹，分别对应 NuGet 包里的同名文件夹，不过只包含业务项目需要的框架，而不含其他框架。
 
 如果你最终直接把此 .NET Core App 项目发布出去，则这两个文件夹配合“.deps”文件需要一并带上。如果你使用 .NET 的发布功能将其发布成框架独立的应用程序，那么编译器会自动将 runtimes 里面的对应架构和框架的文件拷贝至输出目录下，于是你就能正常运行你的程序了。
+

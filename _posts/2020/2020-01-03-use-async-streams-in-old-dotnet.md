@@ -3,6 +3,7 @@ title: "如何在旧版本的 .NET Core / Framework 中使用 C# 8 的异步流�
 date: 2020-01-03 17:17:34 +0800
 tags: dotnet csharp
 position: knowledge
+permalink: /posts/use-async-streams-in-old-dotnet.html
 ---
 
 C# 8.0 为我们带来了异步流，可以使用 `async foreach`，不过使用此语法需要 `IAsyncEnumerable` / `IAsyncEnumerator` 类型。本文介绍如何在旧版本的 .NET Framework 和旧版本的 .NET Core 中获得此类型。
@@ -76,3 +77,4 @@ Assert.AreEqual(3, verify);
 
 - [Async streams - C# 8.0 specification proposals - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-8.0/async-streams)
 - [Using async disposable and async enumerable in frameworks older than .NET Core 3.0 - StrathWeb. A free flowing web tech monologue.](https://www.strathweb.com/2019/11/using-async-disposable-and-async-enumerable-in-frameworks-older-than-net-core-3-0/)
+

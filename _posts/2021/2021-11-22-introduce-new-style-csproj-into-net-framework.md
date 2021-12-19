@@ -5,6 +5,7 @@ date: 2021-11-22 16:44:55 +0800
 tags: visualstudio msbuild
 position: starter
 coverImage: /static/posts/2021-11-22-16-19-23.png
+permalink: /posts/introduce-new-style-csproj-into-net-framework.html
 ---
 
 现在再使用 Visual Studio 创建新的 WPF 项目时，将默认引诱你使用 .NET 6（或者 5、.NET Core 3.1）框架和配套的新的 SDK 风格的项目文件（csproj）。
@@ -111,3 +112,4 @@ using System.Windows;
 - [Ignore PROJECT.JSON when using .CSPROJ · Issue #394 · Microsoft/msbuild](https://github.com/Microsoft/msbuild/issues/394)
 - [dotnet build fails when referencing a project converted to PackageReference · Issue #6294 · dotnet/cli](https://github.com/dotnet/cli/issues/6294)
 - [Visual studio project.json does not have a runtime section - Stack Overflow](https://stackoverflow.com/q/45614394/6233938)
+

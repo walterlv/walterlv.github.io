@@ -4,6 +4,7 @@ publishDate: 2019-02-27 10:36:29 +0800
 date: 2019-03-22 00:44:03 +0800
 tags: windows dotnet csharp
 position: starter
+permalink: /posts/simple-windows-app-self-installer.html
 ---
 
 本文主要说的是 .NET 客户端应用，可以是只能在 Windows 端运行的基于 .NET Framework 或基于 .NET Core 的 WPF / Windows Forms 应用，也可以是其他基于 .NET Core 的跨平台应用。但是不是那些更新权限受到严格控制的 UWP / iOS / Android 应用。

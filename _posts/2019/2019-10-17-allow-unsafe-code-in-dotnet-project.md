@@ -5,6 +5,7 @@ date: 2019-10-29 11:53:34 +0800
 tags: dotnet csharp
 position: starter
 coverImage: /static/posts/2019-10-17-15-34-33.png
+permalink: /posts/allow-unsafe-code-in-dotnet-project.html
 ---
 
 有小伙伴希望在 .NET 代码中使用指针，操作非托管资源，于是可能使用到 `unsafe` `fixed` 关键字。但使用此关键字的前提是需要在项目中开启不安全代码。
@@ -100,4 +101,5 @@ csc -unsafe walterlv.cs
 即使是 .NET Framework 也是可以使用 SDK 风格的项目文件的，详情请阅读：
 
 - [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj - walterlv](/post/introduce-new-style-csproj-into-net-framework)
+
 

@@ -4,6 +4,7 @@ date: 2019-02-14 21:03:00 +0800
 tags: git
 position: principle
 coverImage: /static/posts/2019-02-12-21-09-19.png
+permalink: /posts/git-merge-principle.html
 ---
 
 如果 git 只是一行行比较，然后把不同的行报成冲突，那么你在合并的时候可能会遇到大量的冲突；这显然不是一个好的版本管理工具。
@@ -104,4 +105,5 @@ git 还有非常简单的快进式（Fast-Forward）合并。快进式合并要�
 - [git merge - Which version of the git file will be finally used: LOCAL, BASE or REMOTE? - Stack Overflow](https://stackoverflow.com/q/11133290/6233938)
 - [Git merge strategy options & examples - Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials/using-branches/merge-strategy)
 - [git-merge-base (1) - Find as good common ancestors as possible for a merge](https://www.unix.com/man-page/linux/1/git-merge-base/)
+
 

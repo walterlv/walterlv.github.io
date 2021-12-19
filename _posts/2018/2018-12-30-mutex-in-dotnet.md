@@ -3,6 +3,7 @@ title: ".NET 中使用 Mutex 进行跨越进程边界的同步"
 date: 2018-12-30 16:41:54 +0800
 tags: dotnet windows csharp
 position: knowledge
+permalink: /posts/mutex-in-dotnet.html
 ---
 
 Mutex 是 Mutual Exclusion 的缩写，是互斥锁，用于防止两个线程同时对计算机上的同一个资源进行访问。不过相比于其他互斥的方式，Mutex 能够跨越线程边界。
@@ -171,3 +172,4 @@ private static void WaitOne()
 - [Mutexes - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/threading/mutexes)
 - [Mutex Constructor (System.Threading) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.threading.mutex.-ctor)
 - [Mutex Class (System.Threading) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.threading.mutex)
+

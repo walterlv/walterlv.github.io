@@ -4,6 +4,7 @@ publishDate: 2017-12-17 15:34:26 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: wpf uwp
 coverImage: /static/posts/2017-12-17-15-27-27.png
+permalink: /posts/customize-focus-visual-style.html
 ---
 
 WPF 自带的键盘焦点样式是与传统控件样式搭配的，但 WPF 凭着其强大的自定义样式的能力，做出与传统控件样式完全不同风格的 UI 简直易如反掌。这时，其自带的键盘焦点样式（`FocusVisualStyle`）就非常不搭了，改改会舒服得多。比如，改成 UWP 的样式。
@@ -80,4 +81,5 @@ StackOverflow 上也有人说了这件事：[xaml - How to redefine FocusVisualS
 - [Styling for Focus in Controls, and FocusVisualStyle - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle?wt.mc_id=MVP)
 - [xaml - How to redefine FocusVisualStyle for a WPF user control - Stack Overflow](https://stackoverflow.com/questions/29101942/how-to-redefine-focusvisualstyle-for-a-wpf-user-control)
 - [wpf - Change the FocusVisualStyle in the entire application - Stack Overflow](https://stackoverflow.com/questions/1879526/change-the-focusvisualstyle-in-the-entire-application)
+
 

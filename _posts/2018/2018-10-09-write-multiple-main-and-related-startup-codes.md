@@ -4,6 +4,7 @@ publishDate: 2018-10-09 20:26:01 +0800
 date: 2019-04-12 09:39:32 +0800
 tags: dotnet csharp msbuild
 coverImage: /static/posts/2018-10-09-17-54-01.png
+permalink: /posts/write-multiple-main-and-related-startup-codes.html
 ---
 
 .NET/C# 程序从 Main 函数开始执行，基本上各种书籍资料都是这么写的。不过，我们可以写多个 Main 函数，然后在项目文件中设置应该选择哪一个 Main 函数。
@@ -245,4 +246,5 @@ namespace Walterlv.Demo
         }
     }
 ```
+
 

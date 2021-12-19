@@ -4,6 +4,7 @@ date: 2019-11-05 11:24:05 +0800
 tags: directx sharpdx wpf dotnet csharp
 position: starter
 published: false
+permalink: /posts/render-directx11-in-wpf-d3dimage.html
 ---
 
 在此处编辑 blog.walterlv.com 的博客摘要
@@ -26,3 +27,4 @@ published: false
 - [D3DImage.cs](https://source.dot.net/#PresentationCore/System/Windows/InterOp/D3DImage.cs)
 - [WPF and Direct3D9 Interoperation - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/wpf-and-direct3d9-interoperation)
 - [Render Targets Overview - Windows applications - Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/direct2d/render-targets-overview)
+

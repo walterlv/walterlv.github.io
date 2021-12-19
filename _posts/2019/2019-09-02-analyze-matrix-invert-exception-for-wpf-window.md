@@ -5,6 +5,7 @@ date: 2019-09-02 14:13:35 +0800
 tags: wpf dotnet csharp
 position: problem
 coverImage: /static/posts/2019-09-02-09-51-48.png
+permalink: /posts/analyze-matrix-invert-exception-for-wpf-window.html
 ---
 
 最近总是收到一个异常 “`System.InvalidOperationException: 转换不可逆。`”，然而看其堆栈，一点点自己写的代码都没有。到底哪里除了问题呢？
@@ -353,4 +354,5 @@ $$\cos^{2}{\alpha} + \sin^{2}{\alpha} = 1$$
 ### 解决方案
 
 不要给 `Window` 类设置变换，如果要做，请给 `Window` 内部的子元素设置。比如上面的例子中，我们给 `Grid` 设置就没有问题（而且可以做到类似的效果。
+
 

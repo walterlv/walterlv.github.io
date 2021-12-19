@@ -3,6 +3,7 @@ title: ".NET 中的轻量级线程安全"
 publishDate: 2018-01-14 20:46:22 +0800
 date: 2019-03-14 13:01:05 +0800
 tags: dotnet
+permalink: /posts/lightweight-thread-safe-since-dotnet-4.html
 ---
 
 对线程安全有要求的代码中，通常会使用锁（lock）。自 .NET 诞生以来就有锁，然而从 .NET Framework 4.0 开始，又诞生了 6 个轻量级的线程安全方案：`SpinLock`, `SpinWait`, `CountdownEvent`, `SemaphoreSlim`, `ManualResetEventSlim`, `Barrier`。
@@ -45,3 +46,4 @@ SpinLock 被称之为“自旋锁”，SpinWait 称为“自旋等待”，适�
 - [How to: Enable Thread-Tracking Mode in SpinLock - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/threading/how-to-enable-thread-tracking-mode-in-spinlock?wt.mc_id=MVP)
 - [C# SpinWait 实现 - 程序园](http://www.voidcn.com/article/p-pbnmpkmu-bqz.html)
 - [C#并行编程 (Barrier,CountdownEvent,ManualResetEventSlim,SemaphoreSlim,SpinLock,SpinWait )--Thread,Ant,ICP,index,ConsoleWriteLine,CookTasks,cook,particpants](http://www.bijishequ.com/detail/359812?p=13-67)
+

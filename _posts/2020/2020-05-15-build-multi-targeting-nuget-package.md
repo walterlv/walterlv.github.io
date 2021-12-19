@@ -3,6 +3,7 @@ title: "在制作多框架项目的 NuGet 包时应该注意的问题（buildMul
 date: 2020-05-15 14:23:19 +0800
 tags: nuget dotnet msbuild
 position: knowledge
+permalink: /posts/build-multi-targeting-nuget-package.html
 ---
 
 制作一个 dll 引用的 NuGet 包简直是一键完成，无论是不是多框架项目；制作 dotnet-tools 也是如此。但如果需要自定义一些编译步骤，那么就需要在制作 NuGet 包时做很多的特殊处理了。
@@ -183,3 +184,4 @@ position: knowledge
 
 - [Create a NuGet package using nuget.exe CLI - Microsoft Docs](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package)
 - [Allow package authors to define build assets transitive behavior · NuGet/Home Wiki](https://github.com/NuGet/Home/wiki/Allow-package--authors-to-define-build-assets-transitive-behavior)
+

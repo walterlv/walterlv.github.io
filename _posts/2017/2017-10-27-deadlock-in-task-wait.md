@@ -3,6 +3,7 @@ title: "使用 Task.Wait()？立刻死锁（deadlock）"
 publishDate: 2017-10-27 23:54:46 +0800
 date: 2019-03-15 15:54:00 +0800
 tags: dotnet csharp
+permalink: /posts/deadlock-in-task-wait.html
 ---
 
 最近读到一篇异步转同步的文章，发现其中没有考虑到异步转同步过程中发生的死锁问题，所以特地在本文说说异步转同步过程中的死锁问题。
@@ -131,3 +132,4 @@ async Task DoAsync()
 
 - [There Is No Thread](http://blog.stephencleary.com/2013/11/there-is-no-thread.html)
 - [Async/Await - Best Practices in Asynchronous Programming](https://msdn.microsoft.com/en-us/magazine/jj991977.aspx)
+

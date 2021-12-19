@@ -3,6 +3,7 @@ title: "将 Direct3D11 在 GPU 中的纹理（Texture2D）导出到内存（Map�
 date: 2019-10-22 14:07:29 +0800
 tags: directx sharpdx dotnet csharp
 position: knowledge
+permalink: /posts/map-directx-surface-to-bitmap.html
 ---
 
 Direct3D11 的使用通常不是应用程序唯一的部分，于是使用 Direct3D11 的代码如何与其他模块正确地组合在一起就是一个需要解决的问题。
@@ -205,3 +206,4 @@ public static unsafe void MapTexture2DToFile(SharpDX.Direct3D11.Texture2D textur
 - [Desktop Duplication API - Windows applications - Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/direct3ddxgi/desktop-dup-api?redirectedfrom=MSDN)
 - [c# - Reading Datastream sharpDX Error all values are 0 - Stack Overflow](https://stackoverflow.com/q/44908867/6233938)
 - [SharpDX-Samples/Program.cs at master · sharpdx/SharpDX-Samples](https://github.com/sharpdx/SharpDX-Samples/blob/master/Desktop/Direct3D11/MiniCube/Program.cs)
+

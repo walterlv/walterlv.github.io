@@ -4,6 +4,7 @@ publishDate: 2020-05-15 19:42:55 +0800
 date: 2020-12-03 17:44:51 +0800
 tags: dotnet github
 position: knowledge
+permalink: /posts/github-actions-for-dotnet-developers.html
 ---
 
 本文制作并长期更新适合 .NET 开发者用的 GitHub Actions。整理方式为整个文件而不是单个可用的模块，这样可以方便大家以最快的速度为自己的项目添加 GitHub Actions。当然自己改改也可。
@@ -161,3 +162,4 @@ jobs:
 GitHub Actions 自带了很多环境可以用，这些自带的环境不需要再去配了：
 
 - [virtual-environments/Windows2019-Readme.md at master · actions/virtual-environments](https://github.com/actions/virtual-environments/blob/master/images/win/Windows2019-Readme.md)
+

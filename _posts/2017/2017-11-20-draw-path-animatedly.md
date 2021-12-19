@@ -4,6 +4,7 @@ publishDate: 2017-11-20 08:49:55 +0800
 date: 2017-11-20 09:07:07 +0800
 tags: xaml wpf uwp
 coverImage: /static/posts/2017-11-20-00-34-29.png
+permalink: /posts/draw-path-animatedly.html
 ---
 
 WPF/UWP 中提供的 `Path` 类可以为我们绘制几乎所有可能的矢量图形。但是，如果这些矢量图形可以以动画的形式播放出来，那将可以得到非常炫酷的演示效果。
@@ -140,4 +141,5 @@ public static class GeometryExtensions
 
 - [SVG技术入门：如何画出一条会动的线 – WEB骇客](http://www.webhek.com/post/animated-line-drawing-in-svg.html)
 - [c# - Getting Geometry length - Stack Overflow](https://stackoverflow.com/questions/10877631/getting-geometry-length)
+
 

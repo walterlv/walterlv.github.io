@@ -5,6 +5,7 @@ date: 2020-05-23 16:37:08 +0800
 tags: unity csharp
 position: knowledge
 coverImage: /static/posts/2020-05-23-15-16-44.png
+permalink: /posts/unity-show-fps.html
 ---
 
 本文介绍如何在 Unity3D 场景中显示帧率。
@@ -189,4 +190,5 @@ void Update()
 - [How do I find the frames per second of my game? - Unity Answers](https://answers.unity.com/questions/46745/how-do-i-find-the-frames-per-second-of-my-game.html)
 - [FramesPerSecond - Unify Community Wiki](http://wiki.unity3d.com/index.php?title=FramesPerSecond)
 - [Accurate Frames Per Second Count - Unity Answers](https://answers.unity.com/questions/64331/accurate-frames-per-second-count.html)
+
 

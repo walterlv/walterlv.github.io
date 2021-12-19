@@ -5,6 +5,7 @@ date: 2019-01-25 15:47:13 +0800
 tags: dotnet csharp
 position: knowledge
 coverImage: /static/posts/2019-01-21-14-42-00.png
+permalink: /posts/same-strings-at-compile-time-are-the-same-instances-at-runtime.html
 ---
 
 我们知道，在编译期间相同的字符串，在运行期间就会是相同的字符串实例。然而，如果编译期间存在字符串的运算，那么在运行期间是否是同一个实例呢？
@@ -167,4 +168,5 @@ Walterlv is a 逗比
 - [[Discussion] Constant string interpolation · Issue #2077 · dotnet/csharplang](https://github.com/dotnet/csharplang/issues/2077)
 - [String interpolation constants · Issue #384 · dotnet/csharplang](https://github.com/dotnet/csharplang/issues/384)
 - [[Discussion] Constant string interpolation · Issue #11259 · dotnet/roslyn](https://github.com/dotnet/roslyn/issues/11259)
+
 

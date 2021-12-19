@@ -4,6 +4,7 @@ publishDate: 2020-04-04 12:17:24 +0800
 date: 2020-04-04 22:55:07 +0800
 tags: wpf dotnet
 position: knowledge
+permalink: /posts/wpf-adaptive-ui-in-simplest-way.html
 ---
 
 响应式布局在各种现代的 UI 框架中不是什么新鲜的概念，基本都是内置支持。然而在古老的 WPF 框架中却并没有原生支持，后来虽然通过 Blend 自带的 Interactions 库实现了响应式布局，但生成的代码量太大了，而且需要引入额外的库。
@@ -173,3 +174,4 @@ namespace Cvte.EasiNote.UI.Styles.Converters
         </DataTrigger>
 </DataTemplate>
 ```
+

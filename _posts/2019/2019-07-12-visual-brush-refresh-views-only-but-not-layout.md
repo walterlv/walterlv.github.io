@@ -9,6 +9,7 @@ versions:
   - 中文: #
   - English: /post/visual-brush-refresh-views-only-but-not-layout-en.html
 coverImage: /static/posts/2019-07-12-20-12-32.png
+permalink: /posts/visual-brush-refresh-views-only-but-not-layout.html
 ---
 
 WPF 的 `VisualBrush` 可以帮助我们在一个控件中显示另一个控件的外观。这是非常妙的功能。
@@ -117,4 +118,5 @@ namespace Walterlv.Demo
 参见：
 
 - [wpf VisualBrush 已知问题 - 林德熙](https://blog.lindexi.com/post/wpf-VisualBrush-%E5%B7%B2%E7%9F%A5%E9%97%AE%E9%A2%98.html)
+
 

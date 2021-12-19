@@ -4,6 +4,7 @@ date: 2019-12-23 16:00:30 +0800
 tags: windows dotnet wpf
 position: problem
 coverImage: /static/posts/2019-12-23-15-39-01.png
+permalink: /posts/the-fantastic-one-pixel-of-the-touch-screen.html
 ---
 
 如果你的屏幕分辨率是 1920×1080，那么一个全屏的窗口程序尺寸是多少呢？想都不用想，是 1920×1080。
@@ -56,4 +57,5 @@ coverImage: /static/posts/2019-12-23-15-39-01.png
 林德熙小伙伴告诉我说可以特意把窗口的尺寸做大一个像素。我试过了，确实能够让触摸在整个屏幕上生效，但对于双屏用户来说，就能在另外一个屏幕上看到“露馅儿”了的窗口，对于我这种强迫症患者来说，显然是不能接受的。
 
 我的建议是，并不需要对这种情况进行什么特殊的处理。
+
 

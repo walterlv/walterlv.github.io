@@ -4,6 +4,7 @@ date: 2020-06-09 15:52:22 +0800
 tags: visualstudio
 position: knowledge
 coverImage: /static/posts/2020-06-09-14-28-25.png
+permalink: /posts/fantastic-intellisense-behavior-of-visual-studio.html
 ---
 
 本文就是个吐槽，感兴趣一一去报给微软。
@@ -94,4 +95,5 @@ coverImage: /static/posts/2020-06-09-14-28-25.png
 - 如果没选中按钮，则是否自动选中智能感知提示**简直随缘**
 
 你要说，Visual Studio 猜得准的时候会自动选中，猜不准的时候不会自动选中。但实际使用效果却是，你自认为猜得准的时候，我却不需要你的提示；你自认为猜不准的时候，给出的建议却非常完美。不如直接按照开关来，简单利索，还不用在开发的时候琢磨到底该不该按上下来一轮选择。
+
 

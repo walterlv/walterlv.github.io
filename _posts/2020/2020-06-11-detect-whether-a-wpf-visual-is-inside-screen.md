@@ -4,6 +4,7 @@ date: 2020-06-11 17:40:47 +0800
 tags: wpf csharp
 position: starter
 coverImage: /static/posts/2020-06-11-11-56-53.png
+permalink: /posts/detect-whether-a-wpf-visual-is-inside-screen.html
 ---
 
 你的 WPF 窗口是可以拖到屏幕外面去的，所以拉几个元素到屏幕外很正常。你的屏幕可能有多个。你的多个屏幕可能有不同的 DPI。你检测的元素可能带有旋转。
@@ -176,4 +177,5 @@ private bool IsOutsideOfScreen(FrameworkElement target)
 | 纯 WPF 代码（无需引用 Windows Forms） | ✔️      | ✔️      | ❌      |
 | 元素形状不规则                        | ❌      | ❌      | ❌      |
 | 性能                                  | 好     | 较好   | 一般   |
+
 

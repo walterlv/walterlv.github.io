@@ -4,6 +4,7 @@ date: 2019-11-05 11:24:25 +0800
 tags: wpf windows dotnet csharp
 position: problem
 published: false
+permalink: /posts/solve-shadow-edge-of-an-window-when-maximized-in-duo-screen.html
 ---
 
 在此处编辑 blog.walterlv.com 的博客摘要

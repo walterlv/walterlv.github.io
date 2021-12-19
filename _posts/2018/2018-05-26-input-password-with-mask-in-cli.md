@@ -4,6 +4,7 @@ publishDate: 2018-05-26 16:51:02 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: dotnet
 coverImage: /static/posts/2018-05-26-16-40-58.png
+permalink: /posts/input-password-with-mask-in-cli.html
 ---
 
 如果是在 GUI 中要求用户输入密码，各 UI 框架基本都提供了用于输入密码的控件；在这些控件中，用户在输入密码的时候会显示掩码。然而对于控制台程序来说，并没有用于输入密码的原生方法。
@@ -139,4 +140,5 @@ internal static string CreateString(SecureString secureString)
 - [c# - How to convert SecureString to System.String? - Stack Overflow](https://stackoverflow.com/q/818704/6233938)
 - [SecureString.MakeReadOnly Method (System.Security) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.security.securestring.makereadonly?redirectedfrom=MSDN&view=netframework-4.7.2#System_Security_SecureString_MakeReadOnly?wt.mc_id=MVP)
 - [SecureStringHelper.CreateString - Reference Source](https://referencesource.microsoft.com/#System/net/System/Net/UnsafeNativeMethods.cs,182c88988a485cda,references)
+
 

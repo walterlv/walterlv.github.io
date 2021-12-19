@@ -3,6 +3,7 @@ title: "在 PowerShell 里根据进程名杀掉进程"
 date: 2020-04-30 11:31:24 +0800
 tags: powershell
 position: knowledge
+permalink: /posts/kill-process-by-name-using-powershell.html
 ---
 
 任务管理器杀进程大家都会，不过如果你的系统被卡到任务管理器都无法操作了，怎么办？直接在 PowerShell 中干掉！另外，这也非常容易集成到各种工具链中。
@@ -64,3 +65,4 @@ Get-Process -Name chrome | Stop-Process
 ```powershell
 Get-Process -Name chrome | Foreach-Object { $_.Kill() }
 ```
+

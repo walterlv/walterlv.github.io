@@ -4,6 +4,7 @@ date: 2019-01-29 18:04:31 +0800
 tags: dotnet asp wpf uwp windows
 position: problem
 published: false
+permalink: /posts/let-uwp-wpf-trust-self-signed-certificate.html
 ---
 
 在此处编辑 walterlv.com 的博客摘要
@@ -24,3 +25,4 @@ published: false
 - [ssl - C#/UWP : How to manage certificate errors with HttpClient? - Stack Overflow](https://stackoverflow.com/questions/49872872/c-uwp-how-to-manage-certificate-errors-with-httpclient)
 - [Certificate error while setting SSL enabled for my Asp.Net MVC project - Stack Overflow](https://stackoverflow.com/questions/38792395/certificate-error-while-setting-ssl-enabled-for-my-asp-net-mvc-project)
 - [How to trust the IIS Express Self-Signed Certificate – Robert McMurray's Blog [MSFT]](https://blogs.msdn.microsoft.com/robert_mcmurray/2013/11/15/how-to-trust-the-iis-express-self-signed-certificate/)
+

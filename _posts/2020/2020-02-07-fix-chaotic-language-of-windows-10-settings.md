@@ -5,6 +5,7 @@ date: 2020-03-23 11:35:35 +0800
 tags: windowes
 position: problem
 coverImage: /static/posts/2020-02-07-09-56-38.png
+permalink: /posts/fix-chaotic-language-of-windows-10-settings.html
 ---
 
 Windows 10 每次新发布一个版本都会遇到各种各样的新型 Bug。
@@ -115,4 +116,5 @@ PS C:\Windows\system32> Set-WinUserLanguageList $LangList -Force
 等安装进度条全部结束之后，再选择现实语言为“中文”即可。
 
 ![选择现实语言为中文](/static/posts/2020-02-07-13-35-17.png)
+
 

@@ -5,6 +5,7 @@ date: 2019-03-12 11:53:06 +0800
 tags: dotnet csharp visualstudio msbuild
 position: starter
 coverImage: /static/posts/2019-03-10-18-51-38.png
+permalink: /posts/environment-variables-in-csproj.html
 ---
 
 Windows 系统以及很多应用程序会考虑使用系统的环境变量来传递一些公共的参数或者配置。Windows 资源管理器使用 `%var%` 来使用环境变量，那么我们能否在 Visual Studio 的项目文件中使用环境变量呢？
@@ -58,4 +59,5 @@ Windows 系统以及很多应用程序会考虑使用系统的环境变量来传
 这里，我额外设置了 `AppendTargetFrameworkToOutputPath` 属性，这是避免 `net472` 出现在了目标输出路径中。你可以阅读我的另一篇博客了解更多关于输出路径的问题：
 
 - [如何更精准地设置 C# / .NET Core 项目的输出路径？（包括添加和删除各种前后缀） - walterlv](/post/the-properties-that-affetcs-project-output-path)
+
 

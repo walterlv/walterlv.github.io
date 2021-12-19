@@ -4,6 +4,7 @@ publishDate: 2019-08-13 17:34:24 +0800
 date: 2019-08-19 08:44:36 +0800
 tags: miscellaneous
 position: knowledge
+permalink: /posts/programming-naming-conventions.html
 ---
 
 古老的程序员们有时会纠结命名问题，而现在，程序员们的命名已经开创了数个流派。本文整理了程序员们命名会使用到的各种流派，当然一些编程语言会同时使用数个流派。
@@ -44,3 +45,4 @@ walterlv-is-a-doubi
 
 - [Letter case - Wikipedia](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles)
 - [Naming convention (programming) - Wikipedia](https://en.wikipedia.org/wiki/Naming_convention_(programming))
+

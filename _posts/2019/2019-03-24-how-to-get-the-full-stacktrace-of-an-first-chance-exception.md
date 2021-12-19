@@ -3,6 +3,7 @@ title: "C#/.NET 如何在第一次机会异常 FirstChanceException 中获取比
 date: 2019-03-24 12:09:37 +0800
 tags: dotnet csharp
 position: knowledge
+permalink: /posts/how-to-get-the-full-stacktrace-of-an-first-chance-exception.html
 ---
 
 在 `FirstChangeException` 事件中，我们通常只能拿到异常堆栈的第一帧，这对于我们捕捉到异常是好的，但对分析第一次机会异常可能并不利。
@@ -88,3 +89,4 @@ System.NotSupportedException: BitmapMetadata 在 BitmapImage 上可用。
 如果需要对此异常进行后续的分析，可以参考我的另一篇博客：
 
 - [C#/.NET 如何获取一个异常（Exception）的关键特征，用来判断两个异常是否表示同一个异常 - 吕毅](/post/get-the-key-descriptor-of-an-exception)
+

@@ -2,6 +2,7 @@
 title: "各个 C# 版本的主要特性、发布日期和发布方式（C# 1.0 - 7.3）"
 date: 2018-10-15 15:00:20 +0800
 tags: visualstudio csharp dotnet
+permalink: /posts/csharp-version-histories.html
 ---
 
 本文收集各个 C# 版本的主要特性、发布日期和发布方式。
@@ -72,3 +73,4 @@ tags: visualstudio csharp dotnet
 **参考资料**
 
 - [.net - What are the correct version numbers for C#? - Stack Overflow](https://stackoverflow.com/a/247623/6233938)
+

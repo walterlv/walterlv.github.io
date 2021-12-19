@@ -3,6 +3,7 @@ title: "在编译期间使用 Roslyn/MSBuild 自带的方法/函数判断、计�
 date: 2019-05-15 21:41:27 +0800
 tags: msbuild visualstudio roslyn
 position: knowledge
+permalink: /posts/msbuild-property-functions.html
 ---
 
 充分利用 MSBuild 自带的方法，可以在编译期间完成大多数常见的属性转换，而不再需要自己专门写库来完成。
@@ -103,3 +104,4 @@ MSBuild 剩下的一些方法使用场景非常有限（不懂就别瞎装懂了
 **参考资料**
 
 - [Property Functions - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/property-functions)
+

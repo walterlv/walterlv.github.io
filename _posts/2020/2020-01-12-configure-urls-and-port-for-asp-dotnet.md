@@ -5,6 +5,7 @@ date: 2020-01-13 08:04:22 +0800
 tags: dotnet web
 position: starter
 coverImage: /static/posts/2020-01-12-21-08-49.png
+permalink: /posts/configure-urls-and-port-for-asp-dotnet.html
 ---
 
 Web 服务需要配置监听的 IP 和端口才可以对外提供真正的服务。本文介绍如何设置 ASP.NET Core 程序监听的 IP 和端口。
@@ -84,4 +85,5 @@ dotnet ./blog.walterlv.com.exe --urls http://0.0.0.0:13800
 设置环境变量 `ASPNETCORE_URLS` 即可为 ASP.NET Core 程序指定监听的 URL，格式与上面使用命令行参数是一样的。
 
 注意，这里说的环境变量是单独为某一个程序设置的环境变量，而不是为用户账户或者操作系统设置的环境变量（那样显然会让所有 ASP.NET Core 程序冲突）。所以通常都是用来在反向代理服务器中配置的。
+
 

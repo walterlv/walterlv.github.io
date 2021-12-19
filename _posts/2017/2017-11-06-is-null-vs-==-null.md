@@ -3,6 +3,7 @@ title: "从 “x is null 和 x == null” 的区别看 C# 7 模式匹配中常�
 publishDate: 2017-11-06 23:24:52 +0800
 date: 2020-06-16 10:39:41 +0800
 tags: csharp msil dotnet decompile
+permalink: /posts/is-null-vs-==-null.html
 ---
 
 尝试过写 `if (x is null)`？它与 `if (x == null)` 相比，孰优孰劣呢？
@@ -391,3 +392,4 @@ IL_002c: call         void [System.Console]System.Console::WriteLine(bool)
 - [OpCodes.Ldarg_0 Field (System.Reflection.Emit)](https://msdn.microsoft.com/en-us/library/system.reflection.emit.opcodes.ldarg_0%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396)
 - [OpCodes.Stloc Field (System.Reflection.Emit)](https://msdn.microsoft.com/en-us/library/system.reflection.emit.opcodes.stloc%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396)
 - [OpCodes.Ldc_I4_1 Field (System.Reflection.Emit)](https://msdn.microsoft.com/en-us/library/system.reflection.emit.opcodes.ldc_i4_1%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396)
+

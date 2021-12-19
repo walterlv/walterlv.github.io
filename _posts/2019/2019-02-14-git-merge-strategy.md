@@ -4,6 +4,7 @@ publishDate: 2019-02-14 22:13:36 +0800
 date: 2019-02-15 14:31:09 +0800
 tags: git
 position: knowledge
+permalink: /posts/git-merge-strategy.html
 ---
 
 不清楚 git 冲突的表示方法，不了解 git 的合并原理，不知道 git 解冲突的多种策略。即便如此，大多数人依然可以正常使用 git 完成合并、拉取操作，并且解一些冲突。这得益于 git 默认情况下的合并方式可以处理大多数情况下的正常合并。
@@ -182,3 +183,4 @@ Merge with strategy octopus failed.
 - [When would you use the different git merge strategies? - Stack Overflow](https://stackoverflow.com/a/366940/6233938)
 - [`-X patience` vs `-X diff-algorithm=patience` with `git merge-recursive` - Stack Overflow](https://stackoverflow.com/a/50359017/6233938)
 - [Git diff --patience not working - Stack Overflow](https://stackoverflow.com/q/23870235/6233938)
+

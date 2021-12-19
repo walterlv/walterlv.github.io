@@ -4,6 +4,7 @@ date: 2018-12-26 12:54:01 +0800
 tags: wpf
 position: starter
 coverImage: /static/posts/2018-12-26-12-01-34.png
+permalink: /posts/how-to-get-high-resolution-view-of-a-wpf-app.html
 ---
 
 我想要截取一个 WPF 程序的图标，但是它太小了。如果我就这样截屏截下来，是很不高清的。由于我需要制作一份课件，所以我需要超高清版本，可是，如何做才能最快速拿到 WPF 程序的超高清截图呢？
@@ -41,4 +42,5 @@ coverImage: /static/posts/2018-12-26-12-01-34.png
 实际上前面的 Snoop 界面也是这样放大的，注意到了吗？
 
 ![放大之后的同步按钮](/static/posts/2018-12-26-12-50-52.png)
+
 

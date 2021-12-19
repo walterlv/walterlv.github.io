@@ -4,6 +4,7 @@ date: 2019-02-21 15:24:56 +0800
 tags: dotnet visualstudio
 position: knowledge
 coverImage: /static/posts/2019-02-20-22-53-42.png
+permalink: /posts/debug-multi-process-application-using-visual-studio.html
 ---
 
 当你的编写的是一个多进程的程序的时候，调试起来可能会比较困难，因为 Visual Studio 默认只会把你当前设置的启动项目的启动调试。
@@ -140,4 +141,5 @@ namespace Walterlv.Debugging
 - [How to start Visual Studio programmatically – Kirill Osenkov](https://blogs.msdn.microsoft.com/kirillosenkov/2009/03/03/how-to-start-visual-studio-programmatically/)
 - [EnvDTE Namespace - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/envdte?view=visualstudiosdk-2017)
 - [c# - Using the EnvDTE assembly - Stack Overflow](https://stackoverflow.com/a/19374401/6233938)
+
 

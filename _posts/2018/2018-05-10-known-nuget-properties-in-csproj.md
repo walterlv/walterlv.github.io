@@ -3,6 +3,7 @@ title: "项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGe
 publishDate: 2018-05-10 21:49:21 +0800
 date: 2019-03-09 09:07:32 +0800
 tags: visualstudio nuget csharp dotnet msbuild
+permalink: /posts/known-nuget-properties-in-csproj.html
 ---
 
 知道了 csproj 文件中的一些常用 NuGet 属性，创建 NuGet 包时就可以充分发挥新 Sdk 自动生成 NuGet 包的优势，不需要 nuspec 文件啦。（毕竟 nuspec 文件没有 .csproj 和 .targets 文件强大而又有扩展性。）
@@ -281,3 +282,4 @@ NuGet 相关的属性也分为全局属性和项属性两类。不过，我更�
 
 - [NuGet pack and restore as MSBuild targets - Microsoft Docs](https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets?wt.mc_id=MVP)
 - [NuGet PackageReference format (package references in project files) - Microsoft Docs](https://docs.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files?wt.mc_id=MVP)
+

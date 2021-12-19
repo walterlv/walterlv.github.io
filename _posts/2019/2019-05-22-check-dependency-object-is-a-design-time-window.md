@@ -3,6 +3,7 @@ title: "WPF 判断一个对象是否是设计时的窗口类型，而不是运�
 date: 2019-05-22 19:53:07 +0800
 tags: wpf dotnet csharp
 position: problem
+permalink: /posts/check-dependency-object-is-a-design-time-window.html
 ---
 
 当我们对 `Window` 类型写一个附加属性的时候，在属性变更通知中我们需要判断依赖对象是否是一个窗口。但是，如果直接判断是否是 `Window` 类型，那么在设计器中这个属性的设置就会直接出现异常。
@@ -86,3 +87,4 @@ else
     // 这不是一个窗口，需要抛出异常。
 }
 ```
+

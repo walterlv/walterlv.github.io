@@ -3,6 +3,7 @@ title: "无法加载为扩展“Microsoft.VisualStudio.Diagnostics.ServiceModelS
 date: 2021-06-11 14:34:28 +0800
 tags: dotnet
 position: problem
+permalink: /posts/wcf-exception-microsoft-visualstudio-diagnostics-servicemodelsink-behavior.html
 ---
 
 一天，某用户反馈过来说我们的软件无法运行，我一看异常信息看到了这个：“`System.Configuration.ConfigurationErrorsException: 无法加载为扩展“Microsoft.VisualStudio.Diagnostics.ServiceModelSink.Behavior”注册的类型“Microsoft.VisualStudio.Diagnostics.ServiceModelSink.Behavior, Microsoft.VisualStudio.Diagnostics.ServiceModelSink, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a”。 (C:\Windows\Microsoft.NET\Framework\v4.0.30319\Config\machine.config line 232)`”。
@@ -96,3 +97,4 @@ System.Configuration.ConfigurationErrorsException: 无法加载为扩展“Micro
 - [visual studio 2010 - 'Microsoft.VisualStudio.Diagnostics.ServiceModelSink.Behavior' could not be loaded - Stack Overflow](https://stackoverflow.com/questions/26732621/microsoft-visualstudio-diagnostics-servicemodelsink-behavior-could-not-be-load)
 - [c# - WCF and Windows Store apps, ConfigurationErrorsException - Stack Overflow](https://stackoverflow.com/questions/17001861/wcf-and-windows-store-apps-configurationerrorsexception)
 - [iis 7 - WCF: Routing service and "Unable to automatically debug 'service name'. The remote procedure could not be debugged - Stack Overflow](https://stackoverflow.com/questions/6271112/wcf-routing-service-and-unable-to-automatically-debug-service-name-the-remo)
+

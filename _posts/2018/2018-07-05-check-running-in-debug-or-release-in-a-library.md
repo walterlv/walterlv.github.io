@@ -3,6 +3,7 @@ title: "如何在 .NET 库的代码中判断当前程序运行在 Debug 下还�
 publishDate: 2018-07-05 19:39:00 +0800
 date: 2018-09-01 08:00:29 +0800
 tags: dotnet
+permalink: /posts/check-running-in-debug-or-release-in-a-library.html
 ---
 
 我们经常会使用条件编译符 `#if DEBUG` 在 Debug 下执行某些特殊代码。但是一旦我们把代码打包成 dll，然后发布给其他小伙伴使用的时候，这样的判断就失效了，因为发布的库是 Release 配置的；那些 `#if DEBUG` 的代码根本都不会编译进库中。然而总有时候希望在库中也能得知程序是 Debug 还是 Release，以便库发布之后也能在 Debug 下多做一些检查。
@@ -181,3 +182,4 @@ var assembly = new StackTrace().GetFrames().Last().GetMethod().Module.Assembly;
 - [Assembly.GetEntryAssembly Method (System.Reflection)](https://msdn.microsoft.com/en-us/library/system.reflection.assembly.getentryassembly.aspx?f=255&MSPPError=-2147217396)
 - [c# - I need an alternative to `Assembly.GetEntryAssembly()` that never returns null - Stack Overflow](https://stackoverflow.com/a/14165787/6233938)
 - [StackTrace.GetFrames](https://referencesource.microsoft.com/#mscorlib/system/diagnostics/stacktrace.cs,84f88e3b241d29e3,references)
+

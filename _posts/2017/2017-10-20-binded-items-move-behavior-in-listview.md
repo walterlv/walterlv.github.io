@@ -3,6 +3,7 @@ title: "UWP 和 WPF 不同，ListView 中绑定的集合修改顺序时，UI 的
 date: 2017-10-20 08:14:00 +0800
 tags: dotnet wpf uwp
 description: 
+permalink: /posts/binded-items-move-behavior-in-listview.html
 ---
 
 `ObservableCollection<T>` 中有一个 `Move` 方法，而这个方法在其他类型的集合中是很少见的。由于 `ObservableCollection<T>` 主要用于绑定，涉及到 UI 更新，而 UI 更新普遍比普通的集合修改慢了不止一个数量级，所以可以大胆猜想，`Move` 的存在是为了提升 UI 刷新性能。
@@ -113,3 +114,4 @@ EditableCollection.Insert(random.Next(EditableCollection.Count), new EditableMod
 ## 结论
 
 UWP 比 WPF 对 `ObservableCollection<T>` 的集合操作进行了更好的性能优化，在添加、删除、移动时会重用之前创建好的控件。而在 WPF 中，则简单地创建和销毁这些控件——即便调用了 `ObservableCollection<T>` 专有的 `Move` 方法也没有做更多的优化。
+

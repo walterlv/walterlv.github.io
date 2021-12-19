@@ -4,6 +4,7 @@ date: 2019-05-23 16:15:26 +0800
 tags: git
 position: problem
 coverImage: /static/posts/2019-05-23-16-07-59.png
+permalink: /posts/modify-author-info-of-the-whole-git-history.html
 ---
 
 一般情况下不建议修改 git 仓库的历史。
@@ -79,4 +80,5 @@ git push --tags origin 'refs/heads/*'
 **参考资料**
 
 - [Changing author info - GitHub Help](https://help.github.com/en/articles/changing-author-info)
+
 

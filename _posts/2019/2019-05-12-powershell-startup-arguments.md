@@ -5,6 +5,7 @@ date: 2019-11-20 14:39:56 +0800
 tags: windows powershell
 position: knowledge
 coverImage: /static/posts/2019-05-12-12-48-57.png
+permalink: /posts/powershell-startup-arguments.html
 ---
 
 有一些程序不支持被直接启动，而要求通过命令行启动。这个时候，你就需要使用 PowerShell 或者 PowerShell Core 来启动这样的程序。我们都知道如何在命令行或各种终端中启动一个程序，但是当你需要自动启动这个程序的时候，你就需要知道如何通过 PowerShell 或其他命令行终端来启动一个程序，而不是手工输入然后回车运行了。
@@ -233,4 +234,5 @@ PowerShell -Command "& {Get-EventLog -LogName security}"
 - [How to split long commands over multiple lines in PowerShell - Stack Overflow](https://stackoverflow.com/q/2608144/6233938)
 - [Stop Powershell from exiting - Stack Overflow](https://stackoverflow.com/q/9362722/6233938)
 - [Powershell 任意键退出 – PowerShell 中文博客](https://www.pstips.net/powershell-any-key-exit.html)
+
 

@@ -2,6 +2,7 @@
 title: ".NET Standard 的管理策略"
 date: 2018-07-08 22:28:41 +0800
 tags: dotnet
+permalink: /posts/net-standard-governance.html
 ---
 
 .NET Standard 作为各大 .NET 的标准，我们有必要了解一下它是如何在各种 .NET 的实现之间履行自己的职责的。所以，本文会说说它的管理策略。
@@ -49,3 +50,4 @@ tags: dotnet
 **参考资料**
 
 - [standard/README.md at master · dotnet/standard](https://github.com/dotnet/standard/blob/master/docs/governance/README.md)
+

@@ -3,6 +3,7 @@ title: "NullReferenceException，就不应该存在！"
 publishDate: 2017-11-30 00:08:27 +0800
 date: 2019-04-16 10:47:57 +0800
 tags: csharp dotnet
+permalink: /posts/wipe-out-null-reference-exception.html
 ---
 
 如果要你说出 .NET 中的三个异常，`NullReferenceException` 一定会成为其中一个；如果说出 .NET 中的一个异常，`NullReferenceException` 也会被大多数人说出来。它让这么多人印象深刻，是因为它在项目中实在是太常见了，常见到每一个 C#/.NET 入门者必然会遇到。
@@ -90,3 +91,4 @@ public class Walterlv
 其中，对于第 2 点，不用担心异常导致雪崩，因为 `try-catch-finally` 就是用来恢复错误防止雪崩的，在需要防止雪崩的地方恢复错误即可。但要注意异常依然需要报告，可由程序统一处理这些未经处理的异常。
 
 对于第 3 点，`JetBrains` 为我们提供了 `JetBrains.Annotations`，这是一组 100+ 个的 `Attribute`，以 NuGet 包的形式提供。强烈建议在 `null` 代表了某种特殊意义的地方标记 `[CanBeNull]`；这样，ReSharper 插件将提醒我们这些地方必须要进行判空。C# 8.0 极有可能为我们带来“可空引用类型”或者“非空引用类型”；如果真的带来了，这将比 `JetBrains.Annotations` 拥有更大的强制性，帮助我们避免出现意外的 `null` 引用，帮助我们在可能为 `null` 的地方强制判空。再次重申：**我们使用 `null` 一定是因为它代表了某种确定的特殊含义，而不是代表了一堆不明所以的错误！**
+

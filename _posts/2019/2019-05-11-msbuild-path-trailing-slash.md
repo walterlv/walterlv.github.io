@@ -4,6 +4,7 @@ publishDate: 2019-05-11 12:56:58 +0800
 date: 2019-05-12 14:47:08 +0800
 tags: msbuild roslyn visualstudio
 position: knowledge
+permalink: /posts/msbuild-path-trailing-slash.html
 ---
 
 本文介绍如何在项目文件 csproj，或者 MSBuild 的其他文件（props、targets）中处理路径中的斜杠与反斜杠。
@@ -91,3 +92,4 @@ position: knowledge
 更多关于在 Roslyn/MSBuild 中进行数学运算的内容，可以阅读我的另一篇博客：
 
 - [在 Roslyn/MSBuild 中进行数学运算 - walterlv](/post/msbuild-numeric-methods)
+

@@ -4,6 +4,7 @@ publishDate: 2018-06-26 10:32:21 +0800
 date: 2018-09-01 08:01:01 +0800
 tags: git
 coverImage: /static/posts/2018-06-26-10-18-22.png
+permalink: /posts/performance-of-git-subtree.html
 ---
 
 原生 git 对于公共组件那种类型的子仓库的支持并不怎么好，就是那种某个子文件夹是一个另外的 git 仓库，并被多个 git 父仓库使用的形式。实际使用的感受甚至是“糟糕透了”。
@@ -82,4 +83,5 @@ $ git subtree split --rejoin --prefix=Dependencies/Cvte.Paint/ HEAD
 - [git-subtree pull merge conflict - Stack Overflow](https://stackoverflow.com/q/25294227/6233938)
 - [git - Reduce increasing time to push a subtree - Stack Overflow](https://stackoverflow.com/q/16134975/6233938)
 - [git-subtree/git-subtree.txt at master · apenwarr/git-subtree](https://github.com/apenwarr/git-subtree/blob/master/git-subtree.txt)
+
 

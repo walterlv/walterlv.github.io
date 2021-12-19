@@ -5,6 +5,7 @@ date: 2020-05-05 15:22:45 +0800
 tags: unity csharp visualstudio
 position: starter
 coverImage: /static/posts/2020-04-26-10-43-44.png
+permalink: /posts/unity-starter-install-and-integrated-with-visual-studio.html
 ---
 
 实际上本文不看也罢，因为整个过程除了网速之外基本没啥坑。不过装完可能有一些配置，所以如果不知道的话可以参考本文。
@@ -134,4 +135,5 @@ Visual Studio 一般在这种地方：
 ## 完成
 
 至此，Unity 的安装和基本配置已全部完成。
+
 

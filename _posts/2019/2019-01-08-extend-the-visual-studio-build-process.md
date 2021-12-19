@@ -4,6 +4,7 @@ publishDate: 2019-01-08 19:19:58 +0800
 date: 2019-03-04 22:15:06 +0800
 tags: dotnet msbuild visualstudio
 position: knowledge
+permalink: /posts/extend-the-visual-studio-build-process.html
 ---
 
 MSBuild 的编译过程提供了一些可以被重写的 Target，通过重写这些 Target 可以扩展 MSBuild 的编译过程。
@@ -112,3 +113,4 @@ MSBuild 的编译过程提供了一些可以被重写的 Target，通过重写�
 
 - [Extend the build process - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process)
 - [c# - Determine if MSBuild CoreCompile will run and call custom target - Stack Overflow](https://stackoverflow.com/questions/11667510/determine-if-msbuild-corecompile-will-run-and-call-custom-target)
+

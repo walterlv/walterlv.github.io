@@ -4,6 +4,7 @@ date: 2020-01-30 16:02:14 +0800
 tags: linux
 position: starter
 coverImage: /static/posts/2020-01-30-16-00-42.png
+permalink: /posts/linux-root-directories.html
 ---
 
 本文介绍 Linux 系统根目录下的各种文件夹及其用途，了解这些目录可以帮助你更好地管理你的 Linux 主机。
@@ -45,4 +46,5 @@ coverImage: /static/posts/2020-01-30-16-00-42.png
 
 - [Linux 系统目录结构 - 菜鸟教程](https://www.runoob.com/linux/linux-system-contents.html)
 - [Linux中etc目录详解大全总汇详解_mianjunan的博客-CSDN博客](https://blog.csdn.net/mianjunan/article/details/6684966)
+
 

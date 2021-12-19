@@ -4,6 +4,7 @@ date: 2020-04-30 11:40:20 +0800
 tags: windows
 position: knowledge
 published: false
+permalink: /posts/automatically-launch-an-app-when-you-login-to-windows.html
 ---
 
 本文介绍设置应用开机自动启动的多种方法，你可以在自己配置自己电脑的时候使用，或者在开发应用程序做开机自动启动功能的时候使用。

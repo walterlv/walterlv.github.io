@@ -9,6 +9,7 @@ versions:
   - 中文: /post/get-rid-or-naming-in-unit-test.html
   - English: #
 coverImage: /static/posts/2018-02-13-13-09-26.png
+permalink: /posts/introduce-mstest-enhancer.html
 ---
 
 Don't you think that naming is very very hard? Especially naming for unit test method? Read this article for more data of naming: [Don’t go into programming if you don’t have a good thesaurus - ITworld](https://www.itworld.com/article/2833265/cloud-computing/don-t-go-into-programming-if-you-don-t-have-a-good-thesaurus.html).
@@ -129,4 +130,5 @@ All `Test` extension method support async action so that you can test any async 
 ### Some Fantastic Feature
 
 Nested unit test classes are supported by MSTest v2, so you can write an infinite level unit test tree.
+
 

@@ -4,6 +4,7 @@ publishDate: 2018-10-05 19:37:30 +0800
 date: 2018-10-16 16:57:39 +0800
 tags: uwp
 coverImage: /static/posts/2018-10-05-16-43-23.png
+permalink: /posts/force-the-commandbar-to-open-down.html
 ---
 
 在 UWP 中使用 CommandBar 来迅速添加一组功能按钮是非常迅速的，是 UWP 中推荐的交互方案之一。也许你能见到 CommandBar 按你所需向下展开，不过可能更多数情况会看到 CommandBar 的展开方向是向上的。
@@ -167,4 +168,5 @@ CommandBar 的 `ClosedDisplayMode` 设为 `Compact` 时，折叠状态高度 48�
 但对于小型个人项目而言，可以考虑修改应用程序的外观设计来规避这么长的代码。例如让 CommandBar 始终显示或隐藏文字，或者让 CommandBar 默认为 `Minimal` 的状态。
 
 如果你对其他控件有小型样式的修改需求，可以阅读我的另一篇文章：[UWP 轻量级样式定义（Lightweight Styling）](/post/uwp-lightweight-xaml-styling)。
+
 

@@ -4,6 +4,7 @@ date: 2019-02-27 13:48:30 +0800
 tags: web
 position: knowledge
 coverImage: /static/posts/2019-02-27-09-06-59.png
+permalink: /posts/share-cnzz-report-to-others.html
 ---
 
 友盟（cnzz）可以帮助我们分析站点的访问数据。不过如果有更多的决策者，则需要更多人可以访问到友盟的数据。
@@ -77,4 +78,5 @@ cnzz 移动端下载安装后首页有四个按钮。点击“查看密码”后
 cnzz 移动端下载安装后首页有四个按钮。点击“网站统计”后可以看到自己的站点和被授权的站点。
 
 ![移动端](/static/posts/2019-02-27-10-02-12.png)
+
 

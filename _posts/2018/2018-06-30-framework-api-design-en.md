@@ -9,6 +9,7 @@ versions:
   - 中文: /post/framework-api-design.html
   - English: #
 coverImage: /static/posts/2018-06-30-15-59-13.png
+permalink: /posts/framework-api-design-en.html
 ---
 
 We have [S.O.L.I.D](https://en.wikipedia.org/wiki/SOLID) principles of object-oriented programming, and we also have [Software design patterns](https://en.wikipedia.org/wiki/Software_design_pattern) to solve general, reusable solution to a commonly occurring problem. But we don't have public-accepted API design principles or patterns for us to develop better APIs.
@@ -144,4 +145,5 @@ Hope you'll design better APIs by reading the six API design principals.
 ### References
 
 - *Practical API Design* by Jaroslav Tulach (The NetBeans founder)
+
 

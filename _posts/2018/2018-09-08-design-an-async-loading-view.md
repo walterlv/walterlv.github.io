@@ -4,6 +4,7 @@ publishDate: 2018-09-08 20:53:03 +0800
 date: 2019-03-09 09:09:12 +0800
 tags: wpf dotnet csharp
 coverImage: /static/posts/2018-09-08-20-41-51.png
+permalink: /posts/design-an-async-loading-view.html
 ---
 
 对于 WPF 程序，如果你有某一个 UI 控件非常复杂，很有可能会卡住主 UI，给用户软件很卡的感受。但如果此时能有一个加载动画，那么就不会感受到那么卡顿了。UI 的卡住不同于 IO 操作或者密集的 CPU 计算，WPF 中的 UI 卡顿时，我们几乎没有可以让 UI 响应的方式，因为 WPF 一个窗口只有一个 UI 线程。
@@ -168,4 +169,5 @@ namespace Walterlv.Demo
 如果你不能在下面看到 `AsyncBox` 的源码，那么你的网络应该是被屏蔽了，可以访问 [AsyncBox.cs - A UI container for async loading.](https://gist.github.com/walterlv/4581ee10530a21ddf00f47b2cd680714) 查看。
 
 <script src="https://gist.github.com/walterlv/4581ee10530a21ddf00f47b2cd680714.js"></script>
+
 

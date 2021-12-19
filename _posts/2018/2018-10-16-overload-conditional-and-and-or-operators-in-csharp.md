@@ -3,6 +3,7 @@ title: "C# 重载条件逻辑运算符（&& 和 ||）"
 publishDate: 2018-10-16 21:04:28 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: csharp
+permalink: /posts/overload-conditional-and-and-or-operators-in-csharp.html
 ---
 
 在微软的官方文档中，规定 `&&` 和 `||` 运算符不可被重载，但允许通过重载 `&`、`|`、`true` 和 `false` 实现间接重载。
@@ -175,3 +176,4 @@ Console.WriteLine(a || b);
 - [C# 中那些可以被重载的操作符 - walterlv - 请阅读文章末尾的评论](/post/overridable-operators-in-csharp.html#comment-4147325525)
 - [true Operator (C# Reference) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/true-operator?wt.mc_id=MVP)
 - [JavaScript: Truthy? Falsy? - 格物致知](https://amobiz.github.io/2015/09/28/javascript-truthy-falsy/)
+

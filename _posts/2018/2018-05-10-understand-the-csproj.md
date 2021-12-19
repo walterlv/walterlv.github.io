@@ -4,6 +4,7 @@ publishDate: 2018-05-10 08:13:43 +0800
 date: 2019-04-12 09:37:21 +0800
 tags: visualstudio msbuild
 coverImage: /static/posts/2018-05-05-12-31-53.png
+permalink: /posts/understand-the-csproj.html
 ---
 
 写了这么多个 C# 项目，是否对项目文件 csproj 有一些了解呢？Visual Studio 是怎么让 csproj 中的内容正确显示出来的呢？更深入的，我能够自己扩展 csproj 的功能吗？
@@ -268,4 +269,5 @@ xml 声明部分完全没有在此解释的必要了，为兼容性提供了方�
 - [从以前的项目格式迁移到 VS2017 新项目格式 - 林德熙](https://lindexi.github.io/post/%E4%BB%8E%E4%BB%A5%E5%89%8D%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E8%BF%81%E7%A7%BB%E5%88%B0-VS2017-%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F.html#%E5%A4%9A%E4%B8%AA%E6%A1%86%E6%9E%B6)
 - [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj - 吕毅](/post/introduce-new-style-csproj-into-net-framework)
 - [自动将 NuGet 包的引用方式从 packages.config 升级为 PackageReference - 吕毅](/post/migrate-packages-config-to-package-reference)
+
 

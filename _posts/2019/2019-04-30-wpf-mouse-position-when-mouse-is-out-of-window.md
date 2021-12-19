@@ -4,6 +4,7 @@ date: 2019-04-30 14:53:52 +0800
 tags: wpf dotnet csharp
 position: knowledge
 coverImage: /static/posts/2019-04-30-14-41-36.png
+permalink: /posts/wpf-mouse-position-when-mouse-is-out-of-window.html
 ---
 
 在 WPF 程序中，我们有 `Mouse.GetPosition(IInputElement relativeTo)` 方法可以拿到鼠标当前相对于某个 WPF 控件的位置，也可以通过在 `MouseMove` 事件中通过 `e.GetPosition(IInputElement relativeTo)` 方法拿到同样的信息。不过，在任意时刻去获取鼠标位置的时候，如果鼠标在窗口之外，将获取到什么点呢？
@@ -114,4 +115,5 @@ public static Point ClientToScreen(Point pointClient, PresentationSource present
 - [pinvoke.net: clienttoscreen (user32)](https://www.pinvoke.net/default.aspx/user32.clienttoscreen)
 - [c# - ClientToScreen unexpected return values? - Stack Overflow](https://stackoverflow.com/q/34534279/6233938)
 - [ClientToScreen function (winuser.h) - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-clienttoscreen)
+
 

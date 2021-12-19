@@ -4,6 +4,7 @@ date: 2019-11-05 11:23:18 +0800
 tags: windows dotnet wpf csharp
 position: knowledge
 published: false
+permalink: /posts/implement-own-modal-dialogs-across-processes-or-threads.html
 ---
 
 在此处编辑 blog.walterlv.com 的博客摘要

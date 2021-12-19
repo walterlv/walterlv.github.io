@@ -4,6 +4,7 @@ date: 2020-03-11 17:59:23 +0800
 tags: dotnet
 position: knowledge
 coverImage: /static/posts/2020-03-11-16-43-44.png
+permalink: /posts/dotnet-test-with-filter.html
 ---
 
 本文介绍使用 `dotnet test` 命令进行单元测试的时候，过滤出被测项目中的一部分测试出来，仅测试这一部分。
@@ -117,4 +118,5 @@ dotnet test --filter Name~TestMethod1&TestCategory=CategoryA
 **参考资料**
 
 - [Running selective unit tests - .NET Core - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/core/testing/selective-unit-tests)
+
 

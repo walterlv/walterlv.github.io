@@ -4,6 +4,7 @@ publishDate: 2018-12-22 19:52:17 +0800
 date: 2018-12-23 15:17:11 +0800
 tags: dotnet
 position: knowledge
+permalink: /posts/what-is-an-awaiter.html
 ---
 
 我们已经知道 `Task` 是可等待的，但是去看看 `Task` 类的实现，几乎找不到哪个基类、接口或者方法属性能够告诉我们与 `await` 相关。
@@ -124,3 +125,4 @@ public class Test2 : INotifyCompletion
 **参考资料**
 
 - [Dixin's Blog - Understanding C# async / await (2) The Awaitable-Awaiter Pattern](https://weblogs.asp.net/dixin/understanding-c-sharp-async-await-2-awaitable-awaiter-pattern)
+

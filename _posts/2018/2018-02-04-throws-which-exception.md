@@ -2,6 +2,7 @@
 title: "应该抛出什么异常？不应该抛出什么异常？（.NET/C#）"
 date: 2018-02-04 21:25:51 +0800
 tags: dotnet csharp
+permalink: /posts/throws-which-exception.html
 ---
 
 我在 [.NET/C# 建议的异常处理原则](/post/suggestions-for-handling-exceptions) 中描述了如何 `catch` 异常以及重新 `throw`。然而何时应该 `throw` 异常，以及应该 `throw` 什么异常呢？
@@ -171,3 +172,4 @@ button.Click += OnButtonClick;
 此时，开发者们将有更多的精力关注在“解决的具体业务”上面，而不是不停地解决编码上的 BUG。
 
 *特别的，“实现异常”可以被单元测试进行有效的检测。*
+

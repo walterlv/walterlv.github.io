@@ -4,6 +4,7 @@ publishDate: 2021-07-14 18:54:18 +0800
 date: 2021-07-16 17:48:46 +0800
 tags: dotnet msi wix
 position: starter
+permalink: /posts/getting-started-with-wix-toolset.html
 ---
 
 WiX 全称为 Windows Installer XML，是使用 XML 文件创建 Windows 安装程序的一组工具集。它开源且完全免费。
@@ -106,3 +107,4 @@ WiX 能制作不同种类的安装包，各类安装包的制作方法不同，�
 - [WiX Toolset v3 Manual Table of Contents](https://wixtoolset.org/documentation/manual/v3/)
 - [WiX Toolset 教程索引页 - 奇葩史 - 博客园](https://www.cnblogs.com/huaxia283611/p/WiX-ToolsetIndex.html)
 - [visual studio 2010 - WiX 'Bundle' 'ExePackage' 'DetectCondition' is always false - Stack Overflow](https://stackoverflow.com/questions/14863905/wix-bundle-exepackage-detectcondition-is-always-false)
+

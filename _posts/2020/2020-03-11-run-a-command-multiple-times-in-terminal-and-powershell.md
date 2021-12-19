@@ -3,6 +3,7 @@ title: "如何在终端和 PowerShell 中将一个命令自动重复执行多次
 date: 2020-03-11 16:26:03 +0800
 tags: windows powershell
 position: starter
+permalink: /posts/run-a-command-multiple-times-in-terminal-and-powershell.html
 ---
 
 你可能有很多原因要将一个命令重复执行多次，本文介绍在多个平台下如何多次重复执行命令。
@@ -100,3 +101,4 @@ Microsoft (R) 测试执行命令行工具版本 16.3.0
 **参考资料**
 
 - [How To Run a Command Multiple Times in Terminal and PowerShell](https://medium.com/better-programming/how-to-run-a-command-multiple-times-in-terminal-and-powershell-5af76df8d123)
+

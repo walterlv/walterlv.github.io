@@ -3,6 +3,7 @@ title: "解决 mklink 使用中的各种坑（硬链接，软链接/符号链接
 publishDate: 2018-03-08 20:23:06 +0800
 date: 2019-03-14 13:01:14 +0800
 tags: windows
+permalink: /posts/problems-of-mklink.html
 ---
 
 通过 mklink 命令可以创建文件或文件夹的链接，而这种链接跟快捷方式是不一样的。然而我们还可能会遇到其使用过程中的一些坑，本文将整理这些坑并提供解决方法。
@@ -71,3 +72,4 @@ C:\Users\lvyi>mklink /D D:\Foo D:\OneDrive\Foo
 - [Creating a Symbolic Link using PowerShell - Learn Powershell - Achieve More](https://learn-powershell.net/2013/07/16/creating-a-symbolic-link-using-powershell/)
 - [win10 无法运行mklink命令同步onedrive和电脑数据 - Microsoft Community](https://answers.microsoft.com/zh-hans/windows/forum/windows_10-files-winpc/win10/8df12869-96f4-4cd1-a914-355e908a6015)
 - [Win10下执行mklink提示你没有足够权限执行此操作 - CSDN博客](http://blog.csdn.net/u011583025/article/details/52908508)
+

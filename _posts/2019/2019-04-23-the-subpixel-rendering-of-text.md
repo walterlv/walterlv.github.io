@@ -4,6 +4,7 @@ date: 2019-04-23 19:17:48 +0800
 tags: windows
 position: knowledge
 coverImage: /static/posts/2019-04-23-17-39-16.png
+permalink: /posts/the-subpixel-rendering-of-text.html
 ---
 
 有位小伙伴问我为什么他电脑上的文本看起来比较虚。我去看了下，发现他电脑上关掉了 ClearType。
@@ -116,4 +117,5 @@ coverImage: /static/posts/2019-04-23-17-39-16.png
 ![ClearType 设置 1](/static/posts/2019-04-23-19-15-43.png)
 
 ![ClearType 设置 2](/static/posts/2019-04-23-19-15-48.png)
+
 

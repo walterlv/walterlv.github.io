@@ -4,6 +4,7 @@ publishDate: 2018-08-04 17:35:09 +0800
 date: 2018-08-05 10:21:51 +0800
 tags: wpf uwp dotnet windows
 coverImage: /static/posts/2018-08-04-16-53-12.png
+permalink: /posts/wpf-simulate-native-window-title-bar-buttons.html
 ---
 
 WPF 自定义窗口样式有多种方式，不过基本核心实现都是在修改 Win32 窗口样式。然而，Windows 上的应用就应该有 Windows 应用的样子嘛，在保证自定义的同时也能与其他窗口样式保持一致当然能最大程度保证 Windows 操作系统上的体验一致性。
@@ -389,4 +390,5 @@ namespace Walterlv.Themes
     <StreamGeometry>M 3,3 L 3,4 L 4,4 L 4,3 Z M 5,5 L 5,6 L 6,6 L 6,5 Z M 7,7 L 7,9 L 9,9 L 9,7 Z M 9,9 L 9,10 L 10,10 L 10,9 Z M 11,11 L 11,12 L 12,12 L 12,11 Z M 4,4 L 4,5 L 5,5 L 5,4 Z M 6,6 L 6,7 L 7,7 L 7,6 Z M 12,3 L 12,4 L 13,4 L 13,3 Z M 10,10 L 10,11 L 11,11 L 11,10 Z M 12,12 L 12,13 L 13,13 L 13,12 Z M 11,4 L 11,5 L 12,5 L 12,4 Z M 10,5 L 10,6 L 11,6 L 11,5 Z M 9,6 L 9,7 L 10,7 L 10,6 Z M 6,9 L 6,10 L 7,10 L 7,9 Z M 5,10 L 5,11 L 6,11 L 6,10 Z M 4,11 L 4,12 L 5,12 L 5,11 Z M 3,12 L 3,13 L 4,13 L 4,12 Z</StreamGeometry>
 </Button>
 ```
+
 

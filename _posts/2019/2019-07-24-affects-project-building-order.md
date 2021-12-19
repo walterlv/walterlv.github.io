@@ -5,6 +5,7 @@ date: 2020-06-24 09:40:36 +0800
 tags: visualstudio msbuild dotnet
 position: knowledge
 coverImage: /static/posts/2019-07-24-12-17-34.png
+permalink: /posts/affects-project-building-order.html
 ---
 
 当 A 项目引用 B 项目，那么使用 Visual Studio 或者 MSBuild 编译 A 项目之前就会确保 B 项目已经编译完毕。通常我们指定这种引用是因为 A 项目确实在运行期间需要 B 项目生成的程序集。
@@ -88,4 +89,5 @@ coverImage: /static/posts/2019-07-24-12-17-34.png
 **参考资料**
 
 - [Question about Visual Studio *.sln file format - Stack Overflow](https://stackoverflow.com/a/5774449/6233938)
+
 

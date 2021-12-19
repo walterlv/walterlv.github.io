@@ -5,6 +5,7 @@ date: 2019-07-20 09:15:12 +0800
 tags: windows
 position: knowledge
 coverImage: /static/posts/2019-03-03-16-19-28.png
+permalink: /posts/windows-uri-scheme-association.html
 ---
 
 移动程序关联 URL 是常态，桌面应用程序其实也早就支持关联 URL 以便在浏览器中打开。当我们的程序关联了一个 URL 协议之后，开发的网站上就可以通过这个 URL 与程序进行互操作，这很互联网。
@@ -76,4 +77,5 @@ HKEY_CURRENT_USER\Software\Classes
 感谢 [人猿](https://me.csdn.net/xnyqh) 提供的补充信息：
 
 > 假如初次点击不打开，并且勾选了始终，那么以后这个弹框就没有了，而程序也不会打开，需要做下配置的修改 谷歌浏览器：C:\Users\(你的用户名)\AppData\Local\Google\Chrome\User Data\Default\Preferences 火狐浏览器：先关闭浏览器C:\Users\(你的用户名)\AppData\Roaming\Mozilla\Firefox\Profiles\4uasyvvi.default 找到handlers.json
+
 

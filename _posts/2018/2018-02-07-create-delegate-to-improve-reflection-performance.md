@@ -4,6 +4,7 @@ publishDate: 2018-02-07 17:45:21 +0800
 date: 2019-04-04 19:21:42 +0800
 tags: dotnet csharp
 coverImage: /static/posts/2018-02-07-16-03-57.png
+permalink: /posts/create-delegate-to-improve-reflection-performance.html
 ---
 
 都知道反射伤性能，但不得不反射的时候又怎么办呢？当真的被问题逼迫的时候还是能找到解决办法的。
@@ -186,4 +187,5 @@ namespace Walterlv.Demo
 ```
 
 泛型的多参数版本可以使用泛型类型生成器生成，我在 [生成代码，从 `<T>` 到 `<T1, T2, Tn>` —— 自动生成多个类型的泛型 - 吕毅](/post/generate-code-of-generic-types) 一文中写了一个泛型生成器，可以稍加修改以便适应这种泛型类。
+
 

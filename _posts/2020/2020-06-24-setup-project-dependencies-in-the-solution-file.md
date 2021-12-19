@@ -4,6 +4,7 @@ date: 2020-06-24 09:04:14 +0800
 tags: visualstudio dotnet
 position: problem
 coverImage: /static/posts/2019-07-24-12-17-34.png
+permalink: /posts/setup-project-dependencies-in-the-solution-file.html
 ---
 
 有时在编译解决方案的时候，希望两个项目有明确的编译顺序，而不是自动决定，或者在并行编译的时候同时编译。
@@ -43,4 +44,5 @@ EndProject
 本文的方法已加入到此类型解法的方法列表中，详情请看：
 
 - [三种方法设置 .NET/C# 项目的编译顺序，而不影响项目之间的引用 - walterlv](https://blog.walterlv.com/post/affects-project-building-order.html)
+
 

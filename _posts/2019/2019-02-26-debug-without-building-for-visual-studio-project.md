@@ -5,6 +5,7 @@ date: 2019-04-26 08:11:44 +0800
 tags: dotnet csharp visualstudio
 position: problem
 coverImage: /static/posts/2019-02-26-20-08-51.png
+permalink: /posts/debug-without-building-for-visual-studio-project.html
 ---
 
 .NET 托管程序的编译速度比非托管程序要快非常多，即便是 .NET Core，只要不编译成 Native 程序，编译速度也是很快的。然而总是有一些逗比大项目编译速度非常缓慢（我指的是分钟级别的），而且还没做好差量编译；于是每一次编译都需要等待几十秒到数分钟。这显然是非常影响效率的。
@@ -39,4 +40,5 @@ coverImage: /static/posts/2019-02-26-20-08-51.png
 这时，你再点击运行你的项目的时候，就不会再编译了，而是直接进入调试状态。
 
 这特别适合用来定位 Bug，因为这时基本不改什么代码，都是在尝试复现问题以及查看各种程序的中间状态。
+
 

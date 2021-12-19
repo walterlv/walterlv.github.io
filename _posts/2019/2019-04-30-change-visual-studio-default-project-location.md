@@ -4,6 +4,7 @@ date: 2019-04-30 10:29:19 +0800
 tags: visualstudio
 position: starter
 coverImage: /static/posts/2019-04-30-10-17-14.png
+permalink: /posts/change-visual-studio-default-project-location.html
 ---
 
 Visual Studio 创建新项目的时候，默认位置在 `C:\Users\lvyi\source\repos\` 下。多数时候，我们都希望将其改为一个更适合自己开发习惯的路径。实际上修改默认路径并不是一个麻烦的事情，但是当紧急需要修改的时候，你可能找不到设置项在哪里。
@@ -33,4 +34,5 @@ Visual Studio 创建新项目的时候，默认位置在 `C:\Users\lvyi\source\r
 修改完后，再次新建项目，就可以看到修改后的默认路径了。
 
 ![修改后的默认位置](/static/posts/2019-04-30-10-28-56.png)
+
 
