@@ -1,7 +1,7 @@
 ---
 title: "如何给 GitHub Pages 配置多个域名？"
 date: 2020-04-10 15:02:52 +0800
-categories: github
+tags: github
 position: problem
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "在 Visual Studio 2019 (16.5) 中查看托管线程正在等待的锁被哪个线程占用"
 date: 2020-04-02 17:44:31 +0800
-categories: dotnet visualstudio
+tags: dotnet visualstudio
 position: knowledge
 ---
 

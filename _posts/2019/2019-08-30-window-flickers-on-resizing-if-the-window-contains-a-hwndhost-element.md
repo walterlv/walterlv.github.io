@@ -2,7 +2,7 @@
 title: "解决 WPF 嵌套的子窗口在改变窗口大小的时候闪烁的问题"
 publishDate: 2019-08-30 14:26:00 +0800
 date: 2019-10-22 14:14:08 +0800
-categories: wpf windows dotnet csharp
+tags: wpf windows dotnet csharp
 position: problem
 ---
 

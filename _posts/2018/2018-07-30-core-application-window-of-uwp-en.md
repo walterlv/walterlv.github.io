@@ -2,7 +2,7 @@
 title: "UWP CoreApplication / Application Vs CoreApplicationView / ApplicationView Vs CoreWindow / Window"
 publishDate: 2018-07-30 09:21:58 +0800
 date: 2018-12-14 09:54:00 +0800
-categories: uwp
+tags: uwp
 version:
   current: English
 versions:

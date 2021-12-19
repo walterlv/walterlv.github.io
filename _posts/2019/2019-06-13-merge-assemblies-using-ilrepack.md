@@ -2,7 +2,7 @@
 title: ".NET 使用 ILRepack 合并多个程序集（替代 ILMerge），避免引入额外的依赖"
 publishDate: 2019-06-13 09:47:28 +0800
 date: 2019-06-17 21:30:46 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 ---
 

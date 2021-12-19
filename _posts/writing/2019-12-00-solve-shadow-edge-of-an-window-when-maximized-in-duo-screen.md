@@ -1,7 +1,7 @@
 ---
 title: "修复多屏下最大化的 WPF 窗口在另一屏幕边缘会留下残影的问题"
 date: 2019-11-05 11:24:25 +0800
-categories: wpf windows dotnet csharp
+tags: wpf windows dotnet csharp
 position: problem
 published: false
 ---

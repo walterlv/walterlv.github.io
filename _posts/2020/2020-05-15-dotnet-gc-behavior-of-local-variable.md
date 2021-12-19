@@ -1,7 +1,7 @@
 ---
 title: ".NET Framework 和 .NET Core 在默认情况下垃圾回收（GC）机制的不同（局部变量部分）"
 date: 2020-05-15 21:50:57 +0800
-categories: dotnet
+tags: dotnet
 position: knowledge
 ---
 

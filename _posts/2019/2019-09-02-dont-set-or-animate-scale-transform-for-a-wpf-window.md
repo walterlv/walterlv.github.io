@@ -1,7 +1,7 @@
 ---
 title: "WPF 不要给 Window 类设置变换矩阵（应用篇）"
 date: 2019-09-02 12:34:25 +0800
-categories: wpf dotnet csharp
+tags: wpf dotnet csharp
 position: problem
 ---
 

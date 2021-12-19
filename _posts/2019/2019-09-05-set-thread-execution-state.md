@@ -1,7 +1,7 @@
 ---
 title: ".NET/C# 阻止屏幕关闭，阻止系统进入睡眠状态"
 date: 2019-09-05 14:49:41 +0800
-categories: dotnet csharp windows
+tags: dotnet csharp windows
 position: knowledge
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "如何调试 WiX Burn 制作的自定义托管引导程序的 exe 安装包"
 date: 2021-07-16 16:47:57 +0800
-categories: dotnet msi wix
+tags: dotnet msi wix
 position: starter
 ---
 

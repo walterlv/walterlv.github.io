@@ -1,7 +1,7 @@
 ---
 title: "如何在保留原本所有样式/绑定和用户设置值的情况下，设置和还原 WPF 依赖项属性的值"
 date: 2020-06-03 07:13:24 +0800
-categories: wpf dotnet
+tags: wpf dotnet
 position: knowledge
 ---
 

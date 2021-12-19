@@ -2,7 +2,7 @@
 title: "Win32 程序在启动时激活前一个启动程序的窗口"
 publishDate: 2018-08-05 21:48:50 +0800
 date: 2018-09-01 08:15:17 +0800
-categories: windows wpf
+tags: windows wpf
 ---
 
 UWP 程序天生单实例。当然，新 API （10.0.17134）开始也提供了多实例功能。不过，传统 Win32 程序可就要自己来控制单实例了。

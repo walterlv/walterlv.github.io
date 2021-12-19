@@ -2,7 +2,7 @@
 title: "Unity OpenVR 虚拟现实入门二：一个最简单的虚拟现实游戏/程序"
 publishDate: 2021-05-15 20:10:58 +0800
 date: 2021-05-16 16:51:42 +0800
-categories: unity openvr
+tags: unity openvr
 position: starter
 ---
 

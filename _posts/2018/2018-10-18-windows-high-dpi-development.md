@@ -2,7 +2,7 @@
 title: "Windows 下的高 DPI 应用开发（UWP / WPF / Windows Forms / Win32）"
 publishDate: 2018-10-18 10:06:11 +0800
 date: 2021-01-04 20:33:15 +0800
-categories: windows dotnet wpf uwp
+tags: windows dotnet wpf uwp
 ---
 
 本文将介绍 Windows 系统中高 DPI 开发的基础知识。由于涉及到坐标转换，这种转换经常发生在计算的不知不觉中；所以无论你使用哪种 Windows 下的 UI 框架进行开发，你都需要了解这些内容，以免不断踩坑。

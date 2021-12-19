@@ -2,7 +2,7 @@
 title: "使用并解析 OPML 格式的订阅列表来转移自己的 RSS 订阅（概念篇）"
 publishDate: 2018-09-23 20:01:47 +0800
 date: 2019-03-09 09:08:10 +0800
-categories: dotnet csharp uwp
+tags: dotnet csharp uwp
 ---
 
 OPML 全称是 **Outline Processor Markup Language** ，即 **大纲处理标记语言**。目前流行于收集博客的 RSS 源，便于用户转移自己的订阅项目。

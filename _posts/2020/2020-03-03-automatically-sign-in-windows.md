@@ -2,7 +2,7 @@
 title: "设置用户无需密码自动登录到 Windows 系统"
 publishDate: 2020-03-03 08:58:42 +0800
 date: 2020-03-23 11:36:48 +0800
-categories: windows
+tags: windows
 position: knowledge
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: ".NET/C# 使用 ConditionalWeakTable 附加字段（CLR 版本的附加属性，也可用用来当作弱引用字典 WeakDictionary）"
 date: 2019-05-23 13:17:23 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 ---
 

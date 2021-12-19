@@ -1,7 +1,7 @@
 ---
 title: "WPF 程序如何移动焦点到其他控件"
 date: 2019-09-19 11:41:12 +0800
-categories: wpf dotnet csharp
+tags: wpf dotnet csharp
 position: knowledge
 ---
 

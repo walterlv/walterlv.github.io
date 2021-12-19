@@ -2,7 +2,7 @@
 title: "如何更精准地设置 C# / .NET Core 项目的输出路径？（包括添加和删除各种前后缀）"
 publishDate: 2019-02-21 18:49:14 +0800
 date: 2019-04-12 09:40:15 +0800
-categories: dotnet csharp visualstudio msbuild
+tags: dotnet csharp visualstudio msbuild
 position: knowledge
 ---
 

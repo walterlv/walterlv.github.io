@@ -2,7 +2,7 @@
 title: "再也不用克隆多个仓库啦！git worktree 一个 git 仓库可以连接多个工作目录"
 publishDate: 2018-01-19 09:20:06 +0800
 date: 2018-09-17 18:45:12 +0800
-categories: git
+tags: git
 ---
 
 我在 `feature` 分支开发得多些，但总时不时被高优先级的 BUG 打断需要临时去 `develop` 分一个分支出来解 BUG。git 2.6 以上开始提供了 worktree 功能，可以解决这样的问题。

@@ -1,7 +1,7 @@
 ---
 title: "设计一个 .NET 可用的弱引用集合（可用来做缓存池使用）"
 date: 2019-08-04 14:49:21 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: open
 ---
 

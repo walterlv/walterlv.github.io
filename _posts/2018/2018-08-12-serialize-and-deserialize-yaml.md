@@ -2,7 +2,7 @@
 title: "C#/.NET 序列化和反序列化 YAML 元数据"
 publishDate: 2018-08-12 20:44:50 +0800
 date: 2018-08-13 05:47:27 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 ---
 
 我希望能够对我博客中的所有 YAML 元数据进行格式化和自动生成，于是我需要进行一些 YAML 解析和写入的操作。
@@ -24,7 +24,7 @@ layout: post
 title: "利用 TypeConverter，转换字符串和各种类型只需写一个函数"
 date_published: 2017-01-17 18:13:00 +0800
 date: 2018-04-23 07:31:32 +0800
-categories: dotnet
+tags: dotnet
 permalink: /dotnet/2017/01/17/convert-using-type-converter.html
 keywords: dotnet typeconverter
 description: 使用 TypeConverter 实现字符串转各种类型。
@@ -89,7 +89,7 @@ public sealed class YamlFrontMeta
 title: "Good Framework Rely on Good Api —— Six API Design Principles"
 date_published: 2018-06-30 19:09:53 +0800
 date: 2018-08-12 16:04:26 +0800
-categories: dotnet framework
+tags: dotnet framework
 versions:
   - 中文: /post/framework-api-design.html
   - English: #

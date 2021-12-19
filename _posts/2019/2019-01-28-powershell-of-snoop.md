@@ -2,7 +2,7 @@
 title: "在 Snoop 中使用 PowerShell 脚本进行更高级的 UI 调试"
 publishDate: 2019-01-28 23:01:02 +0800
 date: 2019-03-09 09:11:47 +0800
-categories: wpf dotnet powershell
+tags: wpf dotnet powershell
 position: knowledge
 ---
 

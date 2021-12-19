@@ -1,7 +1,7 @@
 ---
 title: ".NET/C# 中设置当发生某个特定异常时进入断点（不借助 Visual Studio 的纯代码实现）"
 date: 2019-07-04 13:26:55 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: problem
 ---
 

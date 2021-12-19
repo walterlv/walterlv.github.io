@@ -1,7 +1,7 @@
 ---
 title: ".NET/C# 使用反射调用含 ref 或 out 参数的方法"
 date: 2018-09-02 14:59:00 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 ---
 
 使用反射，我们可以很容易地在运行时调用一些编译时无法确定的属性、方法等。然而，如果方法的参数中包含 `ref` 或 `out` 关键字的时候，又该怎么调用呢？

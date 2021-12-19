@@ -2,7 +2,7 @@
 title: "Unity OpenVR 虚拟现实入门三：最简单的五指交互"
 publishDate: 2021-05-16 09:24:20 +0800
 date: 2021-05-16 16:06:12 +0800
-categories: unity openvr
+tags: unity openvr
 position: starter
 ---
 

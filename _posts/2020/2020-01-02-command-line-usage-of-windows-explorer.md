@@ -1,7 +1,7 @@
 ---
 title: "Windows 系统文件资源管理器的命令行参数（如何降权打开程序，如何选择文件）"
 date: 2020-01-02 11:05:18 +0800
-categories: windows
+tags: windows
 position: knowledge
 ---
 

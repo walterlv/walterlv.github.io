@@ -1,7 +1,7 @@
 ---
 title: "使用 EnumWindows 找到满足你要求的窗口"
 date: 2019-04-30 21:11:32 +0800
-categories: windows dotnet csharp wpf
+tags: windows dotnet csharp wpf
 position: knowledge
 ---
 

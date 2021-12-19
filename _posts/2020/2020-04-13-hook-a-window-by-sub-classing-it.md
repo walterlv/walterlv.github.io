@@ -2,7 +2,7 @@
 title: "通过子类化窗口（SubClass）来为现有的某个窗口添加新的窗口处理程序（或者叫钩子，Hook）"
 publishDate: 2020-04-13 21:24:48 +0800
 date: 2020-04-14 08:19:29 +0800
-categories: win32 dotnet csharp
+tags: win32 dotnet csharp
 position: knowledge
 ---
 

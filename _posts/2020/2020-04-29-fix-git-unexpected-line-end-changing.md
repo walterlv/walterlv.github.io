@@ -2,7 +2,7 @@
 title: "git 乱改你的换行符？一句话设置让 git 不再碰你某个文件的换行符"
 publishDate: 2020-04-29 20:17:10 +0800
 date: 2020-04-30 09:26:38 +0800
-categories: git
+tags: git
 position: problem
 ---
 

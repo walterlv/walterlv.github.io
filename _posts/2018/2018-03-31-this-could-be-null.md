@@ -2,8 +2,7 @@
 title: "（C#）if (this == null)？你在逗我，this 怎么可能为 null！用 IL 编译和反编译看穿一切"
 publishDate: 2018-03-31 08:26:39 +0800
 date: 2018-09-01 08:12:18 +0800
-categories: dotnet msil
-tags: ilasm ildasm
+tags: dotnet msil
 ---
 
 `if (this == null) Console.WriteLine("this is null");` 这句话一写，大家一定觉得荒谬，然而 `if` 内代码的执行却是可能的！本文讲介绍到底发生了什么。

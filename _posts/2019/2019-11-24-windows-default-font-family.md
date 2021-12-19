@@ -2,7 +2,7 @@
 title: "Windows 系统的默认字体是什么？应用的默认字体是什么？"
 publishDate: 2019-11-24 17:29:29 +0800
 date: 2020-04-11 09:48:31 +0800
-categories: windows
+tags: windows
 position: knowledge
 ---
 

@@ -2,7 +2,7 @@
 title: "Compare four different file (folder) links on Windows (NTFS hard links, junction points, symbolic links, and well-known shortcuts)"
 publishDate: 2020-05-03 14:30:43 +0800
 date: 2020-06-11 09:28:00 +0800
-categories: windows
+tags: windows
 position: knowledge
 version:
   current: English

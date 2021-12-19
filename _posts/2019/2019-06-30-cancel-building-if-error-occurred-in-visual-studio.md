@@ -1,7 +1,7 @@
 ---
 title: "使用 Visual Studio 编译时，让错误一开始发生时就停止编译（以便及早排查编译错误节省时间）"
 date: 2019-06-30 13:36:09 +0800
-categories: visualstudio dotnet csharp
+tags: visualstudio dotnet csharp
 position: starter
 ---
 

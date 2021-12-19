@@ -1,7 +1,7 @@
 ---
 title: "Roslyn/MSBuild 在编译期间从当前文件开始查找父级文件夹，直到找到包含特定文件的文件夹"
 date: 2019-05-15 21:16:11 +0800
-categories: dotnet visualstudio msbuild roslyn
+tags: dotnet visualstudio msbuild roslyn
 position: knowledge
 ---
 

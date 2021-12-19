@@ -1,7 +1,7 @@
 ---
 title: ".NET 中使用 Mutex 进行跨越进程边界的同步"
 date: 2018-12-30 16:41:54 +0800
-categories: dotnet windows csharp
+tags: dotnet windows csharp
 position: knowledge
 ---
 

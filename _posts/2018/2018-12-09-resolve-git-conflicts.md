@@ -1,7 +1,7 @@
 ---
 title: "git 如何更可靠地解决冲突？"
 date: 2018-12-09 19:45:25 +0800
-categories: git visualstudio
+tags: git visualstudio
 position: knowledge
 ---
 

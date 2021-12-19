@@ -3,7 +3,7 @@ layout: post
 title: "为 Visual Studio 使用通配符批量添加项目文件"
 publishDate: 2017-09-26 21:12:15 +0800
 date: 2018-12-14 09:54:00 +0800
-categories: visualstudio msbuild
+tags: visualstudio msbuild
 permalink: /post/vs/2017/09/26/wildcards-in-vs-projects.html
 keywords: visual studio wildcards
 description: Visual Studio 的项目文件其实是支持使用通配符的，尤其适合添加大量资源文件。

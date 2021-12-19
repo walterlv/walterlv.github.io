@@ -2,7 +2,7 @@
 title: "最简单的代码，让 WPF 支持响应式布局"
 publishDate: 2020-04-04 12:17:24 +0800
 date: 2020-04-04 22:55:07 +0800
-categories: wpf dotnet
+tags: wpf dotnet
 position: knowledge
 ---
 

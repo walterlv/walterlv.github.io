@@ -2,7 +2,7 @@
 title: "如何快速自定义 Visual Studio 中部分功能的快捷键"
 publishDate: 2019-04-21 12:31:19 +0800
 date: 2019-04-21 20:06:45 +0800
-categories: visualstudio
+tags: visualstudio
 position: starter
 ---
 

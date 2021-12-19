@@ -2,7 +2,7 @@
 title: "System.ComponentModel.Win32Exception (0x80004005): 无效的窗口句柄。"
 publishDate: 2019-06-28 07:50:24 +0800
 date: 2019-10-22 14:13:45 +0800
-categories: dotnet csharp wpf
+tags: dotnet csharp wpf
 position: problem
 ---
 

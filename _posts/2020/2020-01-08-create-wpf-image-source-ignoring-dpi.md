@@ -1,7 +1,7 @@
 ---
 title: "WPF 中如何创建忽略 DPI 属性的图片"
 date: 2020-01-08 12:57:02 +0800
-categories: wpf dotnet csharp
+tags: wpf dotnet csharp
 position: problem
 ---
 

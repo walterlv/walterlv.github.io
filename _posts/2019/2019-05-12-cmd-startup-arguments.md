@@ -2,7 +2,7 @@
 title: "cmd.exe 的命令行启动参数（可用于执行命令、传参或进行环境配置）"
 publishDate: 2019-05-12 13:06:46 +0800
 date: 2019-05-25 09:50:48 +0800
-categories: windows powershell
+tags: windows powershell
 position: knowledge
 ---
 

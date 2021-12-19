@@ -2,7 +2,7 @@
 layout: post
 title:  "Windows DPI Awareness for WPF"
 date:   2014-09-20 16:56:00 +0800
-categories: windows
+tags: windows
 permalink: /windows/2014/09/20/windows-dpi-awareness-for-wpf.html
 ---
 

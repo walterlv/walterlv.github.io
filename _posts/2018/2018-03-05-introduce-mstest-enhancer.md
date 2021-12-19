@@ -2,7 +2,7 @@
 title: "Introducing MSTestEnhancer to make unit test result easy to read"
 publishDate: 2018-03-05 14:21:05 +0800
 date: 2018-08-12 16:03:10 +0800
-categories: csharp dotnet unittest
+tags: csharp dotnet unittest
 version:
   current: English
 versions:

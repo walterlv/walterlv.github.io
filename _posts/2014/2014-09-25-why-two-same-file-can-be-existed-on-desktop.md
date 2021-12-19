@@ -2,7 +2,7 @@
 layout: post
 title:  "为什么桌面上可能有两个同名文件？"
 date:   2014-09-25 18:11:00 +0800
-categories: windows
+tags: windows
 permalink: /windows/2014/09/25/why-two-same-file-can-be-existed-on-desktop.html
 ---
 

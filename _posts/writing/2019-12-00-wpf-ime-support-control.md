@@ -1,7 +1,7 @@
 ---
 title: "如何在 WPF 中实现一个可以支持输入法的自定义控件"
 date: 2019-11-05 11:24:43 +0800
-categories: wpf dotnet csharp
+tags: wpf dotnet csharp
 position: knowledge
 published: false
 ---

@@ -2,7 +2,7 @@
 title: "一文看懂 .NET 的异常处理机制、原则以及最佳实践"
 publishDate: 2019-07-03 20:02:18 +0800
 date: 2019-07-12 08:33:36 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 ---
 

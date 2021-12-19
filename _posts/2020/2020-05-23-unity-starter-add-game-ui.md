@@ -1,7 +1,7 @@
 ---
 title: "Unity3D 入门：如何为游戏添加 UI"
 date: 2020-05-23 15:21:49 +0800
-categories: unity csharp
+tags: unity csharp
 position: starter
 ---
 

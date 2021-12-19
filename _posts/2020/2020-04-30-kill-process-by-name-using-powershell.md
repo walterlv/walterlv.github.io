@@ -1,7 +1,7 @@
 ---
 title: "在 PowerShell 里根据进程名杀掉进程"
 date: 2020-04-30 11:31:24 +0800
-categories: powershell
+tags: powershell
 position: knowledge
 ---
 

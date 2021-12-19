@@ -1,7 +1,7 @@
 ---
 title: "在 VSCode 中使用带参数的快捷键执行指定命令"
 date: 2018-12-30 21:43:14 +0800
-categories: vscode
+tags: vscode
 position: starter
 published: false
 ---

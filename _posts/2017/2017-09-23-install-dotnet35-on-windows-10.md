@@ -2,7 +2,7 @@
 layout: post
 title: "试图在 Windows 10 上安装 .NET Framework 3.5 时提示错误 0x800F081F"
 date: 2017-09-23 00:15:46 +0800
-categories: dotnet
+tags: dotnet
 permalink: /dotnet/2017/09/23/install-dotnet35-on-windows-10.html
 keywords: dotnet 0x800F081F windows 10
 description: 如果在 Windows 10 上在线安装 .NET Framework 3.5 时提示错误 0x800F081F，可以考虑修复 Windows Update 服务后重试。

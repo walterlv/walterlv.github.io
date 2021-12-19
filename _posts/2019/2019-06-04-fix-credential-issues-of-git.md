@@ -1,7 +1,7 @@
 ---
 title: "git 配置错误导致无法推送远端仓库？本文介绍各种修复方式"
 date: 2019-06-04 15:31:18 +0800
-categories: git windows
+tags: git windows
 position: problem
 ---
 

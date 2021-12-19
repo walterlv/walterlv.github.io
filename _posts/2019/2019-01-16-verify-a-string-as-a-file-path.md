@@ -1,7 +1,7 @@
 ---
 title: "C#/.NET 如何确认一个路径是否是合法的文件路径"
 date: 2019-01-16 20:18:20 +0800
-categories: csharp dotnet
+tags: csharp dotnet
 position: problem
 ---
 

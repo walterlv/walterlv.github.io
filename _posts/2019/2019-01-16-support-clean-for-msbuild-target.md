@@ -1,7 +1,7 @@
 ---
 title: "让 MSBuild Target 支持 Clean"
 date: 2019-01-16 15:20:39 +0800
-categories: msbuild visualstudio
+tags: msbuild visualstudio
 position: knowledge
 ---
 

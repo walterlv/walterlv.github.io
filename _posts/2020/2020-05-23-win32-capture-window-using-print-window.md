@@ -1,7 +1,7 @@
 ---
 title: "Win32/C# 应用使用 PrintWindow 对窗口截图（PrintWindow）"
 date: 2020-05-23 14:32:26 +0800
-categories: windows dotnet csharp
+tags: windows dotnet csharp
 position: knowledge
 ---
 

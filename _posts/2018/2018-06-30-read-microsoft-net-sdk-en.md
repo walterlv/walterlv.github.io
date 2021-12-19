@@ -2,7 +2,7 @@
 title: "Reading the Source Code of Microsoft.NET.Sdk, Writing the Creative Extension of Compiling"
 publishDate: 2018-06-30 20:27:54 +0800
 date: 2019-07-02 19:43:29 +0800
-categories: dotnet visualstudio nuget msbuild
+tags: dotnet visualstudio nuget msbuild
 version:
   current: English
 versions:

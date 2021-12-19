@@ -1,7 +1,7 @@
 ---
 title: "C#/.NET 读取或修改文件的创建时间和修改时间"
 date: 2018-08-12 19:44:24 +0800
-categories: windows dotnet csharp
+tags: windows dotnet csharp
 ---
 
 手工在博客中添加 Front Matter 文件头可是个相当费事儿的做法，这种事情就应该自动完成。

@@ -1,8 +1,7 @@
 ---
 title: "如何删除 Windows 10 系统生成的 WindowsApps 文件夹"
 date: 2018-02-28 00:03:43 +0800
-categories: windows sysprep
-tags: Windows10 Win10
+tags: windows sysprep
 ---
 
 如果曾经修改过 Windows 10 应用安装路径到非系统盘，那么那个盘下就会生成一些文件夹。如果以后重装了系统或者应用删除了，挪位置了，那些文件夹依然在那里——删不掉！

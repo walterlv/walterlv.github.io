@@ -2,7 +2,7 @@
 title: "git subtree 的使用"
 publishDate: 2019-03-10 19:04:18 +0800
 date: 2020-04-17 15:01:24 +0800
-categories: git
+tags: git
 position: starter
 ---
 

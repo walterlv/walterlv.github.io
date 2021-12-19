@@ -1,7 +1,7 @@
 ---
 title: "When WPF Commands update their CanExecute states?"
 date: 2019-03-29 16:43:19 +0800
-categories: wpf dotnet csharp
+tags: wpf dotnet csharp
 position: problem
 version:
   current: English

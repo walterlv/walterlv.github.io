@@ -2,7 +2,7 @@
 title: ".NET 中选择合适的文件打开模式（CreateNew, Create, Open, OpenOrCreate, Truncate, Append）"
 publishDate: 2020-01-08 13:59:50 +0800
 date: 2020-01-08 15:05:41 +0800
-categories: dotnet csharp windows
+tags: dotnet csharp windows
 position: knowledge
 ---
 

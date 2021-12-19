@@ -1,7 +1,7 @@
 ---
 title: ".NET 单个异步任务如何同时监听多个取消请求（CancellationToken）"
 date: 2021-06-11 09:13:06 +0800
-categories: dotnet
+tags: dotnet
 position: knowledge
 ---
 

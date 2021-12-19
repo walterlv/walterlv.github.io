@@ -1,7 +1,7 @@
 ---
 title: "用 WiX Burn 制作托管安装包：出现 0x80070002 错误"
 date: 2021-07-16 10:48:59 +0800
-categories: dotnet msi wix
+tags: dotnet msi wix
 position: problem
 ---
 

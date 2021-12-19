@@ -2,7 +2,7 @@
 title: "Visual Studio 如何能够不进行编译就调试 .NET/C# 项目（用于解决大项目编译缓慢的问题）"
 publishDate: 2019-02-26 20:40:15 +0800
 date: 2019-04-26 08:11:44 +0800
-categories: dotnet csharp visualstudio
+tags: dotnet csharp visualstudio
 position: problem
 ---
 

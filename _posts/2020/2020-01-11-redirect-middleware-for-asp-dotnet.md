@@ -2,7 +2,7 @@
 title: "为 ASP.NET Core 程序制作 URL 的 301/302 跳转"
 publishDate: 2020-01-11 17:33:51 +0800
 date: 2020-01-12 22:08:32 +0800
-categories: dotnet web blazor
+tags: dotnet web blazor
 position: starter
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: ".NET 设计一套高性能的弱事件机制"
 date: 2019-09-18 21:59:58 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 ---
 

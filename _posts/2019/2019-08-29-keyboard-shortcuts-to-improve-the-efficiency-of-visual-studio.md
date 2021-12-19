@@ -2,7 +2,7 @@
 title: "提高使用 Visual Studio 开发效率的键盘快捷键"
 publishDate: 2019-08-29 23:09:33 +0800
 date: 2020-05-23 11:25:59 +0800
-categories: visualstudio csharp
+tags: visualstudio csharp
 position: knowledge
 ---
 

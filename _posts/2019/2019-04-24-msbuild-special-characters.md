@@ -1,7 +1,7 @@
 ---
 title: "MSBuild 中的特殊字符（$ @ % 等）：含义、用法以及转义"
 date: 2019-04-24 20:48:21 +0800
-categories: msbuild visualstudio dotnet
+tags: msbuild visualstudio dotnet
 position: knowledge
 ---
 

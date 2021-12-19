@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio 也开始支持 Ctrl 点击跳转了，于是需要解决跟 ReSharper 的冲突"
 date: 2017-11-07 15:55:11 +0800
-categories: visualstudio
+tags: visualstudio
 ---
 
 微软在 2017年10月9日 发布了 Visual Studio 2017 version 15.4.0。而这个版本带来了大家期待已久的 Ctrl+Click 跳转到定义的功能。然而……ReSharper 也是这样的快捷键，也是这样的功能！！！

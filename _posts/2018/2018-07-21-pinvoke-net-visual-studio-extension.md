@@ -1,7 +1,7 @@
 ---
 title: "使用 PInvoke.net Visual Studio Extension 辅助编写 Win32 函数签名"
 date: 2018-07-21 22:35:49 +0800
-categories: dotnet csharp visualstudio windows
+tags: dotnet csharp visualstudio windows
 ---
 
 在 .NET 程序中使用 Win32 函数并不如 C++ 中方便。因为 C# 中不能引入 C++ 中常用的头文件，于是各种方法签名、结构体定义等等都需要各种寻找。然而 PInvoke.net 帮助我们解决了这个问题。本文推荐一款 Visual Studio 插件来帮助我们更快速地插入 Win32 函数签名。

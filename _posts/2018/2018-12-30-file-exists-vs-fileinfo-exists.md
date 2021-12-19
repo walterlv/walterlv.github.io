@@ -1,7 +1,7 @@
 ---
 title: "谨慎使用 FileInfo.Exists 实例方法，而是使用 File.Exists 静态方法替代"
 date: 2018-12-30 16:41:21 +0800
-categories: dotnet windows
+tags: dotnet windows
 position: problem
 ---
 

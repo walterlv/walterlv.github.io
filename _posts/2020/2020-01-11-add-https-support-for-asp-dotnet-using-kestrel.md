@@ -1,7 +1,7 @@
 ---
 title: "使用 Kestrel 为你的 ASP.NET Core 服务添加 https 支持"
 date: 2020-01-11 20:10:40 +0800
-categories: dotnet web
+tags: dotnet web
 position: starter
 ---
 

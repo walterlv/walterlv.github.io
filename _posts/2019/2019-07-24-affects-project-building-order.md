@@ -2,7 +2,7 @@
 title: "三种方法设置 .NET/C# 项目的编译顺序，而不影响项目之间的引用"
 publishDate: 2019-07-24 12:22:37 +0800
 date: 2020-06-24 09:40:36 +0800
-categories: visualstudio msbuild dotnet
+tags: visualstudio msbuild dotnet
 position: knowledge
 ---
 

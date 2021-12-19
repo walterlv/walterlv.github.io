@@ -1,7 +1,7 @@
 ---
 title: "使用 Roslyn 查找方法的定义和方法的引用"
 date: 2019-01-29 18:04:22 +0800
-categories: roslyn dotnet
+tags: roslyn dotnet
 position: knowledge
 published: false
 ---

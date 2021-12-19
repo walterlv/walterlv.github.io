@@ -2,7 +2,7 @@
 title: ".NET/C# 建议的异常处理原则"
 publishDate: 2017-12-03 16:20:20 +0800
 date: 2018-02-04 21:19:06 +0800
-categories: csharp dotnet wpf
+tags: csharp dotnet wpf
 ---
 
 “体验”一词早已泛滥却又能够粗略地表达开发团队对客户端产品的要求，“质量”在 [卡诺模型（KANO Model）](/post/kano-model) 中是“必备特性”——**做得好了用户感觉不到，做得差一点儿用户就会破口大骂**。

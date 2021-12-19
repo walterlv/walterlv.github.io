@@ -2,7 +2,7 @@
 title: "使用 C# 代码创建快捷方式文件"
 publishDate: 2015-04-07 12:48:00 +0800
 date: 2018-08-11 09:58:29 +0800
-categories: windows csharp dotnet
+tags: windows csharp dotnet
 ---
 
 快捷方式是一种特殊的文件，扩展名为 lnk。有很多种方式来创建快捷方式，不过使用 C# 代码创建一个却并不那么容易。

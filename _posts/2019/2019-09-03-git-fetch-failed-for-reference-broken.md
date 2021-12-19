@@ -2,7 +2,7 @@
 title: "git fetch 失败，因为 unable to resolve reference 'refs/remotes/origin/xxx': reference broken"
 publishDate: 2019-09-03 12:46:08 +0800
 date: 2019-09-05 14:37:15 +0800
-categories: git
+tags: git
 position: problem
 ---
 

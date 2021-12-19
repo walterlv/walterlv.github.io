@@ -2,7 +2,7 @@
 title: "程序员可能会使用的各种命名规则"
 publishDate: 2019-08-13 17:34:24 +0800
 date: 2019-08-19 08:44:36 +0800
-categories: miscellaneous
+tags: miscellaneous
 position: knowledge
 ---
 

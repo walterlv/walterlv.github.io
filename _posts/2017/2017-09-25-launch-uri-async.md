@@ -3,7 +3,7 @@ layout: post
 title: "UWP 中的 LaunchUriAsync，使用默认浏览器或其他应用打开链接"
 publishDate: 2017-09-25 00:39:53 +0800
 date: 2018-12-14 09:54:33 +0800
-categories: uwp
+tags: uwp
 permalink: /uwp/2017/09/25/launch-uri-async.html
 keywords: uwp LaunchUriAsync windows 10
 description: 在 UWP 中使用默认的应用或浏览器打开链接，当然也可以指定用哪个应用打开。

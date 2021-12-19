@@ -1,7 +1,7 @@
 ---
 title: "Slack 开发入门之 Incoming Webhooks：往 Slack 的 Channel 中发消息"
 date: 2019-01-06 15:29:19 +0800
-categories: slack web
+tags: slack web
 position: starter
 ---
 

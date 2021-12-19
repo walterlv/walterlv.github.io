@@ -2,7 +2,7 @@
 title: "Write a MSBuild Target to detect whether the project is rebuilding or not"
 publishDate: 2018-12-24 11:59:45 +0800
 date: 2018-12-25 08:07:34 +0800
-categories: visualstudio msbuild
+tags: visualstudio msbuild
 version:
   current: English
 versions:

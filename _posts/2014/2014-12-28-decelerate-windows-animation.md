@@ -2,7 +2,7 @@
 layout: post
 title:  "减速动画 AnimationShiftKey"
 date:   2014-12-28 15:57:00 +0800
-categories: windows
+tags: windows
 permalink: /windows/2014/12/28/decelerate-windows-animation.html
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "收集的 Linux VPS 在线重装系统脚本"
 date: 2020-01-29 21:58:13 +0800
-categories: linux
+tags: linux
 position: starter
 ---
 

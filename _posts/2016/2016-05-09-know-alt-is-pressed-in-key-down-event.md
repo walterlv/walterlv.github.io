@@ -2,7 +2,7 @@
 layout: post
 title: "KeyDown/PreviewKeyDown 事件中监听 Alt 键按下"
 date: 2016-05-09 10:59:00 +0800
-categories: wpf
+tags: wpf
 permalink: /wpf/2016/05/09/know-alt-is-pressed-in-key-down-event.html
 keywords: wpf
 description: 当用户按下 Alt 键时，程序监听到的并不是 Alt 键被按下，而是 System 键。

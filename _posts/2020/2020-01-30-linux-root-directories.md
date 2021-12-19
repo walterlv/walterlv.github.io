@@ -1,7 +1,7 @@
 ---
 title: "Linux 系统根目录下的文件夹"
 date: 2020-01-30 16:02:14 +0800
-categories: linux
+tags: linux
 position: starter
 ---
 

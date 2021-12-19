@@ -1,7 +1,7 @@
 ---
 title: "如何修改 Visual Studio 新建项目时的默认路径"
 date: 2019-04-30 10:29:19 +0800
-categories: visualstudio
+tags: visualstudio
 position: starter
 ---
 

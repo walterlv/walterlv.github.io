@@ -1,7 +1,7 @@
 ---
 title: "从 git 的历史记录中彻底删除文件或文件夹"
 date: 2019-06-23 16:43:41 +0800
-categories: git
+tags: git
 position: starter
 ---
 

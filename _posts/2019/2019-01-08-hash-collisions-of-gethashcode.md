@@ -2,7 +2,7 @@
 title: ".NET 中 GetHashCode 的哈希值有多大概率会相同（哈希碰撞）"
 publishDate: 2019-01-08 15:02:58 +0800
 date: 2019-01-10 11:41:48 +0800
-categories: dotnet
+tags: dotnet
 position: knowledge
 ---
 

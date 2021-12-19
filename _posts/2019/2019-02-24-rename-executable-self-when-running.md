@@ -2,7 +2,7 @@
 title: "Windows 上的应用程序在运行期间可以给自己改名（可以做 OTA 自我更新）"
 publishDate: 2019-02-24 20:15:05 +0800
 date: 2019-03-10 21:30:52 +0800
-categories: windows dotnet csharp
+tags: windows dotnet csharp
 position: knowledge
 ---
 

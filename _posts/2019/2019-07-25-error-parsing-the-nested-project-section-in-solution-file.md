@@ -2,7 +2,7 @@
 title: "nuget.exe 还原解决方案 NuGet 包的时候出现错误：调用的目标发生了异常。Error parsing the nested project section in solution file."
 publishDate: 2019-07-25 08:24:41 +0800
 date: 2019-07-25 19:35:37 +0800
-categories: msbuild visualstudio dotnet
+tags: msbuild visualstudio dotnet
 position: problem
 ---
 

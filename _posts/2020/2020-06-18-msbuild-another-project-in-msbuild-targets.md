@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio 在编译 A 项目时，确保 B 项目已编译"
 date: 2020-06-18 08:53:17 +0800
-categories: visualstudio dotnet
+tags: visualstudio dotnet
 position: problem
 ---
 

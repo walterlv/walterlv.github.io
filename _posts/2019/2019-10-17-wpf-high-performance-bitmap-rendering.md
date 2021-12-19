@@ -2,7 +2,7 @@
 title: "WPF 高性能位图渲染 WriteableBitmap 及其高性能用法示例"
 publishDate: 2019-10-17 17:07:14 +0800
 date: 2019-10-22 12:43:29 +0800
-categories: wpf dotnet csharp
+tags: wpf dotnet csharp
 position: principle
 ---
 

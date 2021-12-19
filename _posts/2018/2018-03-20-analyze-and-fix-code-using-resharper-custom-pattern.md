@@ -2,7 +2,7 @@
 title: "利用 ReSharper 自定义代码中的错误模式，在代码审查之前就发现并修改错误"
 publishDate: 2018-03-20 19:54:40 +0800
 date: 2018-03-20 20:35:30 +0800
-categories: visualstudio csharp resharper
+tags: visualstudio csharp resharper
 ---
 
 多人协作开发的项目总会遇到代码编写风格上的差异。一般工具都能帮我们将常见的差异统一起来——例如 `if` 的换行；但也有一些不那么通用，但项目中却经常会出现的写法也需要统一。

@@ -2,7 +2,7 @@
 title: ".NET/C# 编译期间能确定的相同字符串，在运行期间是相同的实例"
 publishDate: 2019-01-21 15:03:23 +0800
 date: 2019-01-25 15:47:13 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 ---
 

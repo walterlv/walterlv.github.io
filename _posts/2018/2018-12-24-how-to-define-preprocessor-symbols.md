@@ -2,7 +2,7 @@
 title: ".NET/C# 项目如何优雅地设置条件编译符号？"
 publishDate: 2018-12-24 22:17:53 +0800
 date: 2019-04-12 09:40:26 +0800
-categories: csharp dotnet visualstudio msbuild
+tags: csharp dotnet visualstudio msbuild
 position: starter
 ---
 

@@ -2,7 +2,7 @@
 title: "使用 ExceptionDispatchInfo 捕捉并重新抛出异常"
 publishDate: 2017-10-23 22:22:43 +0800
 date: 2017-10-27 07:38:48 +0800
-categories: dotnet dotnet-core dotnet-standard csharp
+tags: dotnet dotnet-core dotnet-standard csharp
 ---
 
 当你跑起了一个异步线程，并用 `await` 异步等待时，有没有好奇为什么能够在主线程 `catch` 到异步线程的异常？

@@ -1,7 +1,7 @@
 ---
 title: "使用基于 Roslyn 的 Microsoft.CodeAnalysis.PublicApiAnalyzers 来追踪项目的 API 改动，帮助保持库的 API 兼容性"
 date: 2019-07-27 16:54:26 +0800
-categories: dotnet csharp visualstudio nuget roslyn
+tags: dotnet csharp visualstudio nuget roslyn
 position: knowledge
 ---
 

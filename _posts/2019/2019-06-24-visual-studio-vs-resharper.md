@@ -2,7 +2,7 @@
 title: "如果不用 ReSharper，那么 Visual Studio 2019 能还原 ReSharper 多少功能呢？"
 publishDate: 2019-06-24 08:00:38 +0800
 date: 2019-07-10 22:03:12 +0800
-categories: visualstudio dotnet csharp
+tags: visualstudio dotnet csharp
 position: knowledge
 ---
 

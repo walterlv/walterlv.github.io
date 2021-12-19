@@ -2,7 +2,7 @@
 title: "推荐近乎免费的调试神器——OzCode"
 publishDate: 2018-01-18 08:43:27 +0800
 date: 2018-05-22 09:47:14 +0800
-categories: visualstudio
+tags: visualstudio
 ---
 
 当一只断点打在 Visual Studio 的代码编辑器中，程序命中断点的那一刻，调试才刚刚开始……这个时候忙碌的手在键盘和鼠标之间来回跳跃，试图抓住每一次单步执行带来的状态改变。

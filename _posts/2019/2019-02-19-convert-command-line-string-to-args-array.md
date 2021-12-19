@@ -1,7 +1,7 @@
 ---
 title: ".NET/C# 将一个命令行参数字符串转换为命令行参数数组 args"
 date: 2019-02-19 21:49:15 +0800
-categories: dotnet csharp windows
+tags: dotnet csharp windows
 position: knowledge
 ---
 

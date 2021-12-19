@@ -1,7 +1,7 @@
 ---
 title: "Windows 中的 HRESULT"
 date: 2021-06-16 10:51:05 +0800
-categories: windows
+tags: windows
 position: knowledge
 ---
 

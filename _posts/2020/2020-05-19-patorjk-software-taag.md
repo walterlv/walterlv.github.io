@@ -2,7 +2,7 @@
 title: "专业团队：推荐一个网站，生成巨幅文字注释"
 publishDate: 2020-05-19 18:45:45 +0800
 date: 2020-05-19 19:47:30 +0800
-categories: miscellaneous
+tags: miscellaneous
 position: starter
 ---
 

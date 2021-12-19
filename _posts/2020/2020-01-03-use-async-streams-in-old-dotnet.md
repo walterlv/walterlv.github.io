@@ -1,7 +1,7 @@
 ---
 title: "如何在旧版本的 .NET Core / Framework 中使用 C# 8 的异步流（IAsyncDisposable / IAsyncEnumerable / IAsyncEnumerator）"
 date: 2020-01-03 17:17:34 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 ---
 

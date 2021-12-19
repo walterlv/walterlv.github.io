@@ -1,7 +1,7 @@
 ---
 title: "让 Directory Opus 支持 Windows 10 的暗色主题"
 date: 2019-05-14 16:17:51 +0800
-categories: csharp
+tags: csharp
 position: starter
 ---
 

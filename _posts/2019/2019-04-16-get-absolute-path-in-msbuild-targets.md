@@ -1,7 +1,7 @@
 ---
 title: "如何在 MSBuild 的项目文件 csproj 中获取绝对路径"
 date: 2019-04-16 18:16:07 +0800
-categories: msbuild
+tags: msbuild
 position: problem
 ---
 

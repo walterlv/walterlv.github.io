@@ -2,7 +2,7 @@
 title: "VSCode：当匹配到结果时，如何一次性全部选中操作（复制/删除）？"
 publishDate: 2020-04-07 11:09:54 +0800
 date: 2020-04-07 20:48:11 +0800
-categories: vscode
+tags: vscode
 position: knowledge
 ---
 

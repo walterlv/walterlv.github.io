@@ -2,7 +2,7 @@
 title: "Automatically increase the semantic version using GitVersion"
 publishDate: 2018-04-18 20:51:39 +0800
 date: 2018-09-01 08:11:36 +0800
-categories: visualstudio nuget csharp dotnet
+tags: visualstudio nuget csharp dotnet
 version:
   current: English
 versions:

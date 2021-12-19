@@ -2,7 +2,7 @@
 title: "Unity3D (Mono/IL2CPP) 中 P/Invoke 平台调用代码应该如何传委托"
 publishDate: 2020-05-23 11:56:33 +0800
 date: 2020-05-24 10:21:31 +0800
-categories: unity csharp
+tags: unity csharp
 position: problem
 ---
 

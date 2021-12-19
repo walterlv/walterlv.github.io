@@ -1,7 +1,7 @@
 ---
 title: "在 MSBuild 编译项目时阻止输出所有的警告信息"
 date: 2019-02-27 17:35:48 +0800
-categories: msbuild dotnet visualstudio
+tags: msbuild dotnet visualstudio
 position: knowledge
 ---
 

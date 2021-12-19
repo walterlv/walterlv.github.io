@@ -1,7 +1,7 @@
 ---
 title: "在 Roslyn 分析语法树时添加条件编译符号的支持"
 date: 2018-12-24 22:36:28 +0800
-categories: roslyn csharp visualstudio msbuild
+tags: roslyn csharp visualstudio msbuild
 position: knowledge
 ---
 

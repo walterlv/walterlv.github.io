@@ -2,7 +2,7 @@
 title: "WPF 同一窗口内的多线程 UI（VisualTarget）"
 publishDate: 2017-10-30 23:38:21 +0800
 date: 2018-09-05 13:47:01 +0800
-categories: wpf dotnet csharp
+tags: wpf dotnet csharp
 ---
 
 WPF 的 UI 逻辑只在同一个线程中，这是学习 WPF 开发中大家几乎都会学习到的经验。如果希望做不同线程的 UI，大家也会想到使用另一个窗口来实现，让每个窗口拥有自己的 UI 线程。然而，就不能让同一个窗口内部使用多个 UI 线程吗？

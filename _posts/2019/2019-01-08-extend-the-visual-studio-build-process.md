@@ -2,7 +2,7 @@
 title: "通过重写预定义的 Target 来扩展 MSBuild / Visual Studio 的编译过程"
 publishDate: 2019-01-08 19:19:58 +0800
 date: 2019-03-04 22:15:06 +0800
-categories: dotnet msbuild visualstudio
+tags: dotnet msbuild visualstudio
 position: knowledge
 ---
 

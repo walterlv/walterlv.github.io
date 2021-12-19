@@ -2,7 +2,7 @@
 title: "Windows 中的 UAC 用户账户控制"
 publishDate: 2019-03-17 20:03:59 +0800
 date: 2019-03-19 17:42:26 +0800
-categories: windows
+tags: windows
 position: knowledge
 ---
 

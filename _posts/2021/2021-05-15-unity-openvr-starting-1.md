@@ -2,7 +2,7 @@
 title: "Unity OpenVR 虚拟现实入门一：安装配置 Unity + OpenVR 环境"
 publishDate: 2021-05-15 20:08:44 +0800
 date: 2021-05-16 16:06:12 +0800
-categories: unity openvr
+tags: unity openvr
 position: starter
 ---
 

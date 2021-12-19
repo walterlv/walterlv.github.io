@@ -1,7 +1,7 @@
 ---
 title: "屏幕边缘上有趣的 1 个像素，看不见、摸不到"
 date: 2019-12-23 16:00:30 +0800
-categories: windows dotnet wpf
+tags: windows dotnet wpf
 position: problem
 ---
 

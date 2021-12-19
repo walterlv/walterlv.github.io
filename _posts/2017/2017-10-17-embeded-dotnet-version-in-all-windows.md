@@ -2,8 +2,7 @@
 title: "各个版本 Windows 11 / Windows 10 的名称、完整版本号、开发代号和系统自带的 .NET Framework 版本"
 publishDate: 2017-10-17 10:49:40 +0800
 date: 2021-11-08 16:51:50 +0800
-categories: windows dotnet
-tags: Windows .Net
+tags: windows dotnet
 ---
 
 自 Windows 10 (1903) 版本开始，自带的 .NET Framework 版本一直保持为 4.8 并且不再允许手动安装。如果 .NET Framework 出了问题，基本只能重装系统；而 Windows Update 就有可能把 .NET Framework 搞坏。

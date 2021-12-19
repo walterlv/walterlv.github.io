@@ -2,7 +2,7 @@
 title: "在使用 .NET Remoting 技术开发跨进程通信时可能遇到的各种异常"
 publishDate: 2019-08-19 08:44:13 +0800
 date: 2019-09-05 21:26:31 +0800
-categories: dotnet
+tags: dotnet
 position: problem
 ---
 

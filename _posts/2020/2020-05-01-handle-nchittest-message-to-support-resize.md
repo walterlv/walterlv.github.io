@@ -1,7 +1,7 @@
 ---
 title: "对于无边框窗口，可通过处理 NCHITTEST 消息重新支持窗口标题栏拖拽以及调节窗口大小"
 date: 2020-04-30 11:40:17 +0800
-categories: windows dotnet csharp
+tags: windows dotnet csharp
 position: problem
 published: false
 ---

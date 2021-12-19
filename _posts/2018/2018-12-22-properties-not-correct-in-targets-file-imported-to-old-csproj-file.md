@@ -2,7 +2,7 @@
 title: "Visual Studio 2017 以前的旧格式的 csproj Import 进来的 targets 文件有时不能正确计算属性（PropertyGroup）和集合（ItemGroup）"
 publishDate: 2018-12-22 22:30:12 +0800
 date: 2019-04-12 09:40:00 +0800
-categories: dotnet visualstudio msbuild roslyn nuget
+tags: dotnet visualstudio msbuild roslyn nuget
 position: problem
 ---
 

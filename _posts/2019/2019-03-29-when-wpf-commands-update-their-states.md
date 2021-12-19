@@ -2,7 +2,7 @@
 title: "WPF 的命令的自动刷新时机——当你 CanExecute 会返回 true 但命令依旧不可用时可能是这些原因"
 publishDate: 2019-03-29 08:41:28 +0800
 date: 2019-03-29 16:43:27 +0800
-categories: wpf dotnet csharp
+tags: wpf dotnet csharp
 position: problem
 version:
   current: 中文

@@ -1,7 +1,7 @@
 ---
 title: "各个 C# 版本的主要特性、发布日期和发布方式（C# 1.0 - 7.3）"
 date: 2018-10-15 15:00:20 +0800
-categories: visualstudio csharp dotnet
+tags: visualstudio csharp dotnet
 ---
 
 本文收集各个 C# 版本的主要特性、发布日期和发布方式。

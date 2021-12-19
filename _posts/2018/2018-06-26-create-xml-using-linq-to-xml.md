@@ -2,7 +2,7 @@
 title: "使用 LINQ to XML，.NET 让生成 XML 文件变得和直接写 XML 一样轻松"
 publishDate: 2018-06-26 11:26:40 +0800
 date: 2018-12-14 09:54:00 +0800
-categories: dotnet
+tags: dotnet
 ---
 
 由 .NET Framework 3.5 引入，并依然在 .NET Core 中发扬光大的 LINQ to XML 让编写 XML 文件变得非常轻松。

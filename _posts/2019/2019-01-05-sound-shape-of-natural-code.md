@@ -2,7 +2,7 @@
 title: "自然码的形码"
 publishDate: 2019-01-05 17:27:08 +0800
 date: 2019-03-14 13:01:47 +0800
-categories: ime
+tags: ime
 position: knowledge
 ---
 

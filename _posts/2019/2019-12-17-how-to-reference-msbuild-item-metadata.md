@@ -2,7 +2,7 @@
 title: "如何在 MSBuild 中正确使用 % 来引用每一个项（Item）中的元数据"
 publishDate: 2019-12-17 19:28:39 +0800
 date: 2019-12-27 17:45:37 +0800
-categories: msbuild dotnet
+tags: msbuild dotnet
 position: knowledge
 ---
 

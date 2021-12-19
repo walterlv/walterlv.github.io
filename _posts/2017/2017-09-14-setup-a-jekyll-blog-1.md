@@ -3,7 +3,7 @@ layout: post
 title: "[译] 搭建一个托管在 GitHub Pages 的 Jekyll 博客，并添加 Disqus 评论功能"
 publishDate: 2017-09-15 20:50:20 +0800
 date: 2018-08-12 14:46:55 +0800
-categories: site
+tags: site
 permalink: /jekyll/2017/09/15/setup-a-jekyll-blog-1.html
 keywords: jekyll
 description: 搭建一个博客，并且看起来还不错。

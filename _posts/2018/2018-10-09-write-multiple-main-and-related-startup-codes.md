@@ -2,7 +2,7 @@
 title: ".NET/C# 中你可以在代码中写多个 Main 函数，然后按需要随时切换"
 publishDate: 2018-10-09 20:26:01 +0800
 date: 2019-04-12 09:39:32 +0800
-categories: dotnet csharp msbuild
+tags: dotnet csharp msbuild
 ---
 
 .NET/C# 程序从 Main 函数开始执行，基本上各种书籍资料都是这么写的。不过，我们可以写多个 Main 函数，然后在项目文件中设置应该选择哪一个 Main 函数。

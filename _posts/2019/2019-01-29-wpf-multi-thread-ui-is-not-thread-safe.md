@@ -1,7 +1,7 @@
 ---
 title: "WPF 支持的多线程 UI 并不是线程安全的"
 date: 2019-01-29 12:02:50 +0800
-categories: wpf dotnet
+tags: wpf dotnet
 position: problem
 version:
   current: 中文

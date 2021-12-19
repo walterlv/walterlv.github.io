@@ -2,7 +2,7 @@
 title: "如何为你的 Windows 应用程序关联 URL 协议，以便在浏览器中也能打开你的应用"
 publishDate: 2019-03-03 16:28:12 +0800
 date: 2019-07-20 09:15:12 +0800
-categories: windows
+tags: windows
 position: knowledge
 ---
 

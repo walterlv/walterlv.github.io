@@ -2,7 +2,7 @@
 title: "Roslyn 的确定性构建"
 publishDate: 2018-03-31 17:22:19 +0800
 date: 2018-12-14 09:54:00 +0800
-categories: visualstudio dotnet csharp roslyn msbuild
+tags: visualstudio dotnet csharp roslyn msbuild
 ---
 
 注意到每次编译完之后，你的 dll 或者 exe 是不一样的吗？本来这并没有什么大不了的，但大家都知道数字和鹅厂的安全软件遍布在我们大(tiān)陆(cháo)地区的大量电脑上，它们的查杀策略是——凡是不认识的一律是病毒木马；于是每次不一样的编译很容易引起它们的警告——真不想每次都把编译后的样本提交给它们存档入库。

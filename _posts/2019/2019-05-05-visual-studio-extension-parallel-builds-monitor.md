@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio 使用 Parallel Builds Monitor 插件迅速找出编译速度慢的瓶颈，优化编译速度"
 date: 2019-05-05 21:42:43 +0800
-categories: visualstudio dotnet
+tags: visualstudio dotnet
 position: starter
 ---
 

@@ -2,7 +2,7 @@
 title: "Linux Shell 中需要转义的字符"
 publishDate: 2020-04-30 10:24:16 +0800
 date: 2020-04-30 11:12:46 +0800
-categories: linux
+tags: linux
 position: knowledge
 ---
 

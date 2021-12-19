@@ -1,7 +1,7 @@
 ---
 title: "WPF 获取元素（Visual）相对于屏幕设备的缩放比例，可用于清晰显示图片"
 date: 2019-04-25 17:24:19 +0800
-categories: dotnet csharp wpf
+tags: dotnet csharp wpf
 position: knowledge
 ---
 

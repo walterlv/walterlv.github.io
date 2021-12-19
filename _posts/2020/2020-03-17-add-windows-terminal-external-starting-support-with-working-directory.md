@@ -2,7 +2,7 @@
 title: "将 Windows Terminal 作为外部工具集成到其他工具/程序/代码中"
 publishDate: 2020-03-17 10:05:58 +0800
 date: 2020-03-24 09:49:23 +0800
-categories: windows dotnet
+tags: windows dotnet
 position: knowledge
 ---
 

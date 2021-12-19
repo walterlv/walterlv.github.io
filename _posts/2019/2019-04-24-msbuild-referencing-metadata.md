@@ -1,7 +1,7 @@
 ---
 title: "在项目文件 csproj 中或者 MSBuild 的 Target 中使用 % 引用集合中每一项的属性"
 date: 2019-04-24 20:35:25 +0800
-categories: msbuild visualstudio dotnet
+tags: msbuild visualstudio dotnet
 position: knowledge
 ---
 

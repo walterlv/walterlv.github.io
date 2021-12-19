@@ -2,7 +2,7 @@
 title: "将 C++/WinRT 中的线程切换体验带到 C# 中来（WPF 版本）"
 publishDate: 2019-03-30 08:24:45 +0800
 date: 2019-03-30 09:13:12 +0800
-categories: dotnet csharp wpf
+tags: dotnet csharp wpf
 position: play
 ---
 

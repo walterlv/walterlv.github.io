@@ -2,7 +2,7 @@
 title: "WPF 多线程 UI：设计一个异步加载 UI 的容器"
 publishDate: 2018-09-08 20:53:03 +0800
 date: 2019-03-09 09:09:12 +0800
-categories: wpf dotnet csharp
+tags: wpf dotnet csharp
 ---
 
 对于 WPF 程序，如果你有某一个 UI 控件非常复杂，很有可能会卡住主 UI，给用户软件很卡的感受。但如果此时能有一个加载动画，那么就不会感受到那么卡顿了。UI 的卡住不同于 IO 操作或者密集的 CPU 计算，WPF 中的 UI 卡顿时，我们几乎没有可以让 UI 响应的方式，因为 WPF 一个窗口只有一个 UI 线程。

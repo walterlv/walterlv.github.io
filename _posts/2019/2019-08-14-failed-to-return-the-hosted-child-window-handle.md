@@ -1,7 +1,7 @@
 ---
 title: "System.InvalidOperationException:“BuildWindowCore 无法返回寄宿的子窗口句柄。”"
 date: 2019-08-14 16:32:42 +0800
-categories: wpf windows dotnet csharp
+tags: wpf windows dotnet csharp
 position: problem
 ---
 

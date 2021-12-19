@@ -1,7 +1,7 @@
 ---
 title: "C#/.NET 调试的时候显示自定义的调试信息（DebuggerDisplay 和 DebuggerTypeProxy）"
 date: 2019-03-05 22:53:06 +0800
-categories: dotnet csharp visualstudio
+tags: dotnet csharp visualstudio
 position: starter
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: ".NET Framework 4.x 程序到底运行在哪个 CLR 版本之上"
 publishDate: 2017-09-22 18:05:00 +0800
 date: 2019-10-16 09:42:52 +0800
-categories: dotnet
+tags: dotnet
 permalink: /dotnet/2017/09/22/dotnet-version.html
 keywords: dotnet version sku runtime
 description: 了解 .NET Framework 的公共语言运行时版本，这与 .NET Framework 基础库的版本是不一样的。

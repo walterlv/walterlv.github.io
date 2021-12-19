@@ -2,7 +2,7 @@
 title: "使用 Win2D 绘制带图片纹理的圆（或椭圆）"
 publishDate: 2018-11-11 21:50:09 +0800
 date: 2018-11-28 16:25:46 +0800
-categories: dotnet win2d uwp
+tags: dotnet win2d uwp
 ---
 
 使用 Win2D 绘制图片和绘制椭圆都非常容易，可是如何使用 Win2D 绘制图片纹理的椭圆呢？

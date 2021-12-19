@@ -3,7 +3,7 @@ layout: post
 title: "用 AppContext 解决类库的更新兼容问题"
 publishDate: 2017-09-30 23:45:25 +0800
 date: 2018-12-14 09:54:00 +0800
-categories: dotnet
+tags: dotnet
 permalink: /post/dotnet/2017/09/30/app-context.html
 keywords: dotnet AppContext
 ---

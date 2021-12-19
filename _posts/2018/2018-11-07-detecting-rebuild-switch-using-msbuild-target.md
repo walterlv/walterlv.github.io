@@ -2,7 +2,7 @@
 title: "编写 Target 检测 MSBuild / dotnet build 此次编译是否是差量编译"
 publishDate: 2018-11-07 21:24:56 +0800
 date: 2018-12-25 07:43:28 +0800
-categories: visualstudio msbuild
+tags: visualstudio msbuild
 version:
   current: 中文
 versions:

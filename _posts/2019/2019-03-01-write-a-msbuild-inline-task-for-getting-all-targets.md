@@ -1,7 +1,7 @@
 ---
 title: "编写 MSBuild 内联编译任务（Task）用于获取当前编译环境下的所有编译目标（Target）"
 date: 2019-03-01 15:35:27 +0800
-categories: msbuild dotnet visualstudio csharp
+tags: msbuild dotnet visualstudio csharp
 position: problem
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "将 svn 仓库迁移到 git 仓库"
 date: 2019-02-20 10:22:31 +0800
-categories: git
+tags: git
 position: starter
 ---
 

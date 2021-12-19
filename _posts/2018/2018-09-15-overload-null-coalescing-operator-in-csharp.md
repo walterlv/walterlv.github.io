@@ -2,7 +2,7 @@
 title: "C# 空合并操作符（??）不可重载？其实有黑科技可以间接重载！"
 publishDate: 2018-09-15 14:59:10 +0800
 date: 2018-12-14 09:54:00 +0800
-categories: csharp
+tags: csharp
 ---
 
 `??` 操作符叫做 null-coalescing operator，即 null 合并运算符。如果此运算符的左操作数不为 null，则此运算符将返回左操作数；否则返回右操作数。

@@ -3,7 +3,7 @@ layout: post
 title: "设置 .NET Native 运行时指令以支持反射（尤其适用于 UWP）"
 publishDate: 2017-09-21 00:38:17 +0800
 date: 2017-09-21 07:35:41 +0800
-categories: uwp
+tags: uwp
 permalink: /uwp/2017/09/21/reflection-using-dotnet-native-runtime-directive.html
 keywords: uwp dotnet native dynamic reflection
 description: 如果你正在写 UWP 程序时发现 DEBUG 下可以反射获取到属性，但是 RELEASE 下获取不到，那么了解本文将有助于你解决问题。

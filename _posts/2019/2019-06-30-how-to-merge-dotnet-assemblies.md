@@ -2,7 +2,7 @@
 title: ".NET 将多个程序集合并成单一程序集的 4+3 种方法"
 publishDate: 2019-06-30 13:17:54 +0800
 date: 2020-01-10 21:52:41 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 ---
 

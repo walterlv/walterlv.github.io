@@ -1,7 +1,7 @@
 ---
 title: "让你的 Windows 应用程序在任意路径也能够直接通过文件名执行"
 date: 2019-03-02 19:07:48 +0800
-categories: windows
+tags: windows
 position: knowledge
 ---
 

@@ -2,7 +2,7 @@
 title: "WPF 不要给 Window 类设置变换矩阵（分析篇）：System.InvalidOperationException: 转换不可逆。"
 publishDate: 2019-09-02 11:54:06 +0800
 date: 2019-09-02 14:13:35 +0800
-categories: wpf dotnet csharp
+tags: wpf dotnet csharp
 position: problem
 ---
 

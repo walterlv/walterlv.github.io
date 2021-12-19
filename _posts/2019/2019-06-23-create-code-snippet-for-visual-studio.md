@@ -2,7 +2,7 @@
 title: "如何快速创建 Visual Studio 代码片段？"
 publishDate: 2019-06-23 12:03:35 +0800
 date: 2019-07-05 13:32:21 +0800
-categories: visualstudio dotnet csharp
+tags: visualstudio dotnet csharp
 position: starter
 ---
 

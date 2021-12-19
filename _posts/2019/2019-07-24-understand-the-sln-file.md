@@ -2,7 +2,7 @@
 title: "理解 Visual Studio 解决方案文件格式（.sln）"
 publishDate: 2019-07-24 15:34:53 +0800
 date: 2020-06-18 08:34:02 +0800
-categories: visualstudio dotnet
+tags: visualstudio dotnet
 position: knowledge
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "无法加载为扩展“Microsoft.VisualStudio.Diagnostics.ServiceModelSink.Behavior”注册的类型"
 date: 2021-06-11 14:34:28 +0800
-categories: dotnet
+tags: dotnet
 position: problem
 ---
 

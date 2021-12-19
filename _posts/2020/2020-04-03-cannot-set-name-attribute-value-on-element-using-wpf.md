@@ -1,7 +1,7 @@
 ---
 title: "WPF：无法对元素“XXX”设置 Name 特性值“YYY”。“XXX”在元素“ZZZ”的范围内，在另一范围内定义它时，已注册了名称。"
 date: 2020-04-03 14:44:21 +0800
-categories: wpf dotnet
+tags: wpf dotnet
 position: problem
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "在 Visual Studio 的解决方案资源管理器中隐藏一些文件"
 date: 2018-07-04 20:30:08 +0800
-categories: msbuild nuget visualstudio dotnet
+tags: msbuild nuget visualstudio dotnet
 ---
 
 项目文件中有一些属性几乎是专门为 IDE 而准备的，不过考虑到 .NET 生态的开发者多数都使用 Visual Studio，所以基本上也只有 Visual Studio 对这些特性支持的最全面。（才不会透漏这些属性其实本就是为 Visual Studio 而准备的呢。）

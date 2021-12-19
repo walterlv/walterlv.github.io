@@ -1,7 +1,7 @@
 ---
 title: "如何让 WPF/UWP 程序信任 ASP.NET Core 开发时的自签名证书"
 date: 2019-01-29 18:04:31 +0800
-categories: dotnet asp wpf uwp windows
+tags: dotnet asp wpf uwp windows
 position: problem
 published: false
 ---

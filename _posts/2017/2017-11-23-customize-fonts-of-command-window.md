@@ -1,7 +1,7 @@
 ---
 title: "自定义 Windows PowerShell 和 cmd 的字体"
 date: 2017-11-23 00:26:13 +0800
-categories: windows powershell
+tags: windows powershell
 ---
 
 Windows 系统下的命令行界面，字体要么是点阵字体，要么是宋体；但无论哪种，始终觉得难看了。然而，字体选择界面却始终没办法选择到我们新安装的各种字体。

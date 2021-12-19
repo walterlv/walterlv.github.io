@@ -1,9 +1,8 @@
 ---
 title: "CaptureMouse/CaptureStylus 可能会失败"
 date: 2017-10-09 19:05:56 +0800
-categories: wpf
+tags: wpf
 permalink: /post/wpf/capture-mouse-failed.html
-tags: CaptureMouse CaptureStylus
 description: 了解 Mouse.Capture 和 Stylus.Capture 方法的调用可能返回 false，了解其返回 false 的原因。
 ---
 

@@ -2,7 +2,7 @@
 title: "如何安装和准备 Visual Studio 扩展/插件开发环境"
 publishDate: 2019-07-05 20:21:28 +0800
 date: 2019-07-07 09:58:32 +0800
-categories: visualstudio dotnet
+tags: visualstudio dotnet
 position: starter
 ---
 

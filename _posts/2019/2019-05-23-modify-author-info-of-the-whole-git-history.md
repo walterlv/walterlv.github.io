@@ -1,7 +1,7 @@
 ---
 title: "在整个 Git 仓库的历史（包括所有分支和标签）中修改提交作者的信息（姓名和邮箱）"
 date: 2019-05-23 16:15:26 +0800
-categories: git
+tags: git
 position: problem
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "WPF 制作跨进程 UI"
 date: 2019-11-05 11:24:37 +0800
-categories: wpf dotnet csharp
+tags: wpf dotnet csharp
 position: knowledge
 published: false
 ---

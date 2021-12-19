@@ -2,7 +2,7 @@
 title: "软件界面中一些易混淆/易用错的界面文案，以及一些约定俗成的文案约定"
 publishDate: 2019-07-08 14:18:50 +0800
 date: 2019-07-13 09:49:39 +0800
-categories: windows ui ux
+tags: windows ui ux
 position: knowledge
 ---
 

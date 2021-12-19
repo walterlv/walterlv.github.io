@@ -1,7 +1,7 @@
 ---
 title: "未知的编译错误：“已添加具有相同键的项。Unknown build error, 'An item with the same key has already been added.'”"
 date: 2015-06-30 20:13:00 +0800
-categories: visualstudio
+tags: visualstudio
 ---
 
 未知的编译错误：“已添加具有相同键的项。”

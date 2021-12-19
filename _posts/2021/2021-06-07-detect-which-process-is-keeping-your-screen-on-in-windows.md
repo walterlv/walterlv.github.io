@@ -1,7 +1,7 @@
 ---
 title: "Windows 系统上如何揪出阻止你屏幕关闭的程序"
 date: 2021-06-07 13:42:18 +0800
-categories: windows
+tags: windows
 position: knowledge
 ---
 

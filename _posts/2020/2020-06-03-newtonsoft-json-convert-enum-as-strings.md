@@ -1,7 +1,7 @@
 ---
 title: "在 .NET 对象和 JSON 互相序列化的时候，枚举类型如何设置成字符串序列化，而不是整型？"
 date: 2020-06-03 07:57:07 +0800
-categories: dotnet
+tags: dotnet
 position: problem
 ---
 

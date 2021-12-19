@@ -1,7 +1,7 @@
 ---
 title: "如何为非常不确定的行为（如并发）设计安全的 API，使用这些 API 时如何确保安全"
 date: 2019-08-03 13:56:32 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: principle
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "C#/.NET 如何创建带有本机依赖的多框架多系统 NuGet 包"
 date: 2021-12-13 20:21:48 +0800
-categories: dotnet nuget msbuild
+tags: dotnet nuget msbuild
 position: knowledge
 image:
   src: /static/posts/2021-12-13-20-02-30.png

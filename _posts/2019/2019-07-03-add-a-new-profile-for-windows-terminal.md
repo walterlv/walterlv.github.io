@@ -1,7 +1,7 @@
 ---
 title: "如何给 Windows Terminal 增加一个新的终端（以 Bash 为例）"
 date: 2019-07-03 16:51:53 +0800
-categories: windows
+tags: windows
 position: starter
 ---
 

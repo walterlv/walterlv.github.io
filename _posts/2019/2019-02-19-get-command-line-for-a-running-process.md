@@ -2,7 +2,7 @@
 title: ".NET/C# 获取一个正在运行的进程的命令行参数"
 publishDate: 2019-02-19 21:51:19 +0800
 date: 2019-03-09 09:12:11 +0800
-categories: dotnet csharp windows
+tags: dotnet csharp windows
 position: knowledge
 ---
 

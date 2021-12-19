@@ -1,7 +1,7 @@
 ---
 title: "Win32/C# 应用使用 GDI+ 对窗口截图（BitBlt）"
 date: 2020-05-23 13:52:14 +0800
-categories: windows dotnet csharp
+tags: windows dotnet csharp
 position: knowledge
 ---
 

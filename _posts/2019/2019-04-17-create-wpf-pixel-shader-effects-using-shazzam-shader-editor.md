@@ -2,7 +2,7 @@
 title: "WPF 像素着色器入门：使用 Shazzam Shader Editor 编写 HLSL 像素着色器代码"
 publishDate: 2019-04-17 12:00:55 +0800
 date: 2019-04-17 14:32:07 +0800
-categories: dotnet csharp wpf directx
+tags: dotnet csharp wpf directx
 position: starter
 ---
 

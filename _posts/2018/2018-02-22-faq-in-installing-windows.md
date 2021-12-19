@@ -1,8 +1,7 @@
 ---
 title: "安装 Windows 需要知道的 256 个问题"
 date: 2018-02-22 20:57:12 +0800
-categories: windows sysprep
-tags: Windows10 Win10 FAT32 NTFS GPT UEFI
+tags: windows sysprep
 ---
 
 如果你希望更刺激地安装 Windows，那么你需要了解很多 Windows 系统相关的问题。

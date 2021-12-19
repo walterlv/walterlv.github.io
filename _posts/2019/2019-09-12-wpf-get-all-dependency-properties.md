@@ -1,7 +1,7 @@
 ---
 title: "在 WPF 中获取一个依赖对象的所有依赖项属性"
 date: 2019-09-12 11:24:33 +0800
-categories: wpf dotnet csharp
+tags: wpf dotnet csharp
 position: knowledge
 ---
 

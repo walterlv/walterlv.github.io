@@ -2,7 +2,7 @@
 title: "推荐几款连字字体，在代码编辑器中启用连字字体（Visual Studio Code）"
 publishDate: 2019-07-31 08:52:52 +0800
 date: 2019-09-27 10:04:33 +0800
-categories: windows vscode visualstudio dotnet
+tags: windows vscode visualstudio dotnet
 position: starter
 ---
 

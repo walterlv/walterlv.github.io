@@ -2,7 +2,7 @@
 title: "git 合并策略"
 publishDate: 2019-02-14 22:13:36 +0800
 date: 2019-02-15 14:31:09 +0800
-categories: git
+tags: git
 position: knowledge
 ---
 

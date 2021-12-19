@@ -1,7 +1,7 @@
 ---
 title: "WPF 窗口和控件的 Unloaded 事件什么情况下不会触发"
 date: 2021-06-30 16:11:02 +0800
-categories: wpf
+tags: wpf
 position: problem
 ---
 

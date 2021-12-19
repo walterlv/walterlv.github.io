@@ -1,7 +1,7 @@
 ---
 title: "透明度叠加算法：如何计算半透明像素叠加到另一个像素上的实际可见像素值（附 WPF 和 HLSL 的实现）"
 date: 2019-03-05 15:01:55 +0800
-categories: algorithm dotnet wpf uwp
+tags: algorithm dotnet wpf uwp
 position: knowledge
 ---
 

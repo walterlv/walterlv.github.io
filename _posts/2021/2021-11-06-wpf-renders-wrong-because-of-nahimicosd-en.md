@@ -2,7 +2,7 @@
 title: "WHAT DID DELL DO? All WPF apps are rendered in a mess!"
 publishDate: 2021-11-05 20:47:55 +0800
 date: 2021-11-18 19:26:02 +0800
-categories: wpf
+tags: wpf
 position: problem
 version:
   current: English

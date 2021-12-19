@@ -2,7 +2,7 @@
 title: "出让执行权：Task.Yield, Dispatcher.Yield"
 publishDate: 2017-10-14 17:18:49 +0800
 date: 2018-10-29 13:03:35 +0800
-categories: dotnet csharp wpf uwp
+tags: dotnet csharp wpf uwp
 description: 一个耗时的任务，可以通过 Task.Yield 或者 Dispatcher.Yield 来中断以便分割成多个小的任务片段执行。
 ---
 

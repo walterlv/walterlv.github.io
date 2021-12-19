@@ -2,7 +2,7 @@
 title: "为带有多种语言的 Jekyll 博客添加多语言选择"
 publishDate: 2018-03-06 14:47:40 +0800
 date: 2018-09-01 08:13:02 +0800
-categories: site web html css
+tags: site web html css
 version:
   current: 简体中文
 versions:

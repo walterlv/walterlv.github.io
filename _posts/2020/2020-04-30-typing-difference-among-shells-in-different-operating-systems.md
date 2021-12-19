@@ -2,7 +2,7 @@
 title: "了解 Windows/Linux 下命令行/Shell 启动程序传参的区别，这下不用再担心 Windows 下启动程序传参到 Linux 下挂掉了"
 publishDate: 2020-04-30 09:19:06 +0800
 date: 2021-08-30 10:41:03 +0800
-categories: windows linux
+tags: windows linux
 position: knowledge
 ---
 

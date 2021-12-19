@@ -1,7 +1,7 @@
 ---
 title: "实现 Windows 系统上跨进程/跨线程的模态窗口"
 date: 2019-11-05 11:23:18 +0800
-categories: windows dotnet wpf csharp
+tags: windows dotnet wpf csharp
 position: knowledge
 published: false
 ---

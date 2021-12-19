@@ -2,7 +2,7 @@
 title: ".NET 中小心嵌套等待的 Task，它可能会耗尽你线程池的现有资源，出现类似死锁的情况"
 publishDate: 2018-12-13 19:21:25 +0800
 date: 2019-03-15 15:54:00 +0800
-categories: dotnet
+tags: dotnet
 position: problem
 ---
 

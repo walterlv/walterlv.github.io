@@ -2,7 +2,7 @@
 title: "为 WPF 程序添加 Windows 跳转列表的支持"
 publishDate: 2019-02-24 16:40:50 +0800
 date: 2019-03-10 21:30:54 +0800
-categories: windows wpf dotnet csharp
+tags: windows wpf dotnet csharp
 position: knowledge
 ---
 

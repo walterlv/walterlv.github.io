@@ -2,7 +2,7 @@
 title: "如何在单元测试中使用 Dispatcher.Invoke/InvokeAsync？"
 publishDate: 2017-11-07 21:02:54 +0800
 date: 2018-11-27 13:10:18 +0800
-categories: wpf unittest
+tags: wpf unittest
 ---
 
 对于部分涉及到 WPF UI 的部分，单元测试一般都难以进行。但是，如果只是使用到其中的 UI 线程调度，那就稍微容易一些。不过为了找到这个方法我做了很多天的尝试。

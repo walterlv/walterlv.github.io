@@ -1,7 +1,7 @@
 ---
 title: "在制作多框架项目的 NuGet 包时应该注意的问题（buildMultiTargeting/TargetFrameworks）"
 date: 2020-05-15 14:23:19 +0800
-categories: nuget dotnet msbuild
+tags: nuget dotnet msbuild
 position: knowledge
 ---
 

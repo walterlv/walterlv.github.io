@@ -2,7 +2,7 @@
 title: "Good Framework Rely on Good Api —— Six API Design Principles"
 publishDate: 2018-06-30 19:09:53 +0800
 date: 2018-08-12 16:04:26 +0800
-categories: dotnet framework
+tags: dotnet framework
 version:
   current: English
 versions:

@@ -1,7 +1,7 @@
 ---
 title: "解决方案文件 sln 中的项目类型 GUID"
 date: 2019-07-24 11:06:12 +0800
-categories: visualstudio
+tags: visualstudio
 position: knowledge
 ---
 

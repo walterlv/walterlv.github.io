@@ -1,7 +1,7 @@
 ---
 title: "让 ScrollViewer 的滚动带上动画"
 date: 2017-12-19 20:19:41 +0800
-categories: wpf
+tags: wpf
 ---
 
 WPF 的 `ScrollViewer` 没有水平滚动和垂直滚动的属性 `HorizontalScrollOffset` `VerticalScrollOffset`，只有水平滚动和垂直滚动的方法 `ScrollToHorizontalOffset` `ScrollToVerticalOffset`，那么怎么给滚动过程加上动画呢？

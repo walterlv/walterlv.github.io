@@ -2,7 +2,7 @@
 title: "应用程序清单 Manifest 中各种 UAC 权限级别的含义和效果"
 publishDate: 2019-03-17 20:03:29 +0800
 date: 2019-03-20 21:39:33 +0800
-categories: windows dotnet csharp wpf
+tags: windows dotnet csharp wpf
 position: knowledge
 ---
 

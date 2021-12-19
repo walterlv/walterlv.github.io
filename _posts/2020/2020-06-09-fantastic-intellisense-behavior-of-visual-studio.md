@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio 智能感知提示里的奇妙行为一览"
 date: 2020-06-09 15:52:22 +0800
-categories: visualstudio
+tags: visualstudio
 position: knowledge
 ---
 

@@ -2,7 +2,7 @@
 title: "C# 可空引用类型 Nullable 更强制的约束：将警告改为错误 WarningsAsErrors"
 publishDate: 2019-04-21 20:20:18 +0800
 date: 2020-04-23 20:17:50 +0800
-categories: csharp msbuild
+tags: csharp msbuild
 position: problem
 ---
 

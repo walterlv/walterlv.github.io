@@ -1,7 +1,7 @@
 ---
 title: "Unity3D 入门：使用 Visual Studio 开发 Unity C# 脚本，说说根目录的那些 sln 和 csproj 文件"
 date: 2020-04-27 21:04:09 +0800
-categories: unity csharp
+tags: unity csharp
 position: starter
 ---
 

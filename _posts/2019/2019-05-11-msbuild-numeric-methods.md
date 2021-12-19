@@ -1,7 +1,7 @@
 ---
 title: "在 Roslyn/MSBuild 中进行基本的数学运算"
 date: 2019-05-11 14:53:09 +0800
-categories: msbuild visualstudio roslyn
+tags: msbuild visualstudio roslyn
 position: knowledge
 ---
 

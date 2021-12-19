@@ -1,7 +1,7 @@
 ---
 title: "使用 C# 中的 dynamic 关键字调用类型方法时可能遇到的各种问题"
 date: 2019-08-04 14:58:15 +0800
-categories: csharp dotnet
+tags: csharp dotnet
 position: problem
 ---
 

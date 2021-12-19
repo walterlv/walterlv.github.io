@@ -1,7 +1,7 @@
 ---
 title: ".NET/C# 避免调试器不小心提前计算本应延迟计算的值"
 date: 2019-05-28 18:51:13 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: problem
 ---
 

@@ -2,7 +2,7 @@
 title: "WiX Toolset 安装包制作入门教程（目录篇）"
 publishDate: 2021-07-14 18:54:18 +0800
 date: 2021-07-16 17:48:46 +0800
-categories: dotnet msi wix
+tags: dotnet msi wix
 position: starter
 ---
 

@@ -2,7 +2,7 @@
 title: "基于 Roslyn 同时为 Visual Studio 插件和 NuGet 包开发 .NET/C# 源代码分析器 Analyzer 和修改器 CodeFixProvider"
 publishDate: 2019-07-06 09:20:23 +0800
 date: 2019-07-07 09:52:24 +0800
-categories: roslyn visualstudio nuget dotnet csharp
+tags: roslyn visualstudio nuget dotnet csharp
 position: knowledge
 ---
 

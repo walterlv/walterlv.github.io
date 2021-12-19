@@ -2,7 +2,7 @@
 title: ".NET/Windows：删除文件夹后立即判断，有可能依然存在"
 publishDate: 2020-05-15 15:26:19 +0800
 date: 2020-05-15 20:10:18 +0800
-categories: windows dotnet csharp
+tags: windows dotnet csharp
 position: problem
 ---
 

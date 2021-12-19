@@ -2,7 +2,7 @@
 title: "快速在 Windows 上搭建 Jekyll 开发环境"
 publishDate: 2018-03-04 13:30:14 +0800
 date: 2020-05-06 08:13:27 +0800
-categories: site
+tags: site
 ---
 
 Jekyll 是一个不错的静态博客工具，本文将提供快速在 Windows 系统上搭建 Jekyll 开发环境的方法。

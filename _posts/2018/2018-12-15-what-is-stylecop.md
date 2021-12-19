@@ -1,7 +1,7 @@
 ---
 title: "StyleCop 是什么，可以帮助团队带来什么价值？"
 date: 2018-12-15 16:14:38 +0800
-categories: dotnet csharp visualstudio
+tags: dotnet csharp visualstudio
 position: knowledge
 ---
 

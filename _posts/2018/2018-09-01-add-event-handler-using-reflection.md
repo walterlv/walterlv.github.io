@@ -1,7 +1,7 @@
 ---
 title: ".NET/C# 使用反射注册事件"
 date: 2018-09-01 20:31:24 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 ---
 
 使用反射，我们可以很容易地在运行时调用一些编译时无法确定的属性、方法等。那么如何注册事件呢？

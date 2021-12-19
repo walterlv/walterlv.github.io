@@ -1,7 +1,7 @@
 ---
 title: ".NET/C# 在正确的条件下抛出最合适的异常"
 date: 2019-11-05 11:24:28 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 published: false
 ---

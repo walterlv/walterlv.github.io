@@ -2,7 +2,7 @@
 title: "WPF 的 ElementName 在 ContextMenu 中无法绑定成功？试试使用 x:Reference！"
 publishDate: 2018-10-13 21:38:01 +0800
 date: 2018-10-14 12:25:19 +0800
-categories: wpf dotnet
+tags: wpf dotnet
 ---
 
 在 Binding 中使用 ElementName 司空见惯，没见它出过什么事儿。不过当你预见 ContextMenu，或者类似 Grid.Row / Grid.Column 这样的属性中设置的时候，ElementName 就不那么管用了。

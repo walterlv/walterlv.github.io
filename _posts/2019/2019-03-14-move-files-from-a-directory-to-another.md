@@ -2,7 +2,7 @@
 title: "C#/.NET 移动或重命名一个文件夹（如果存在，则合并而不是出现异常报错）"
 publishDate: 2019-03-14 22:46:56 +0800
 date: 2019-06-29 12:57:15 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: problem
 ---
 

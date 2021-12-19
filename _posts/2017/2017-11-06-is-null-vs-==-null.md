@@ -2,7 +2,7 @@
 title: "从 “x is null 和 x == null” 的区别看 C# 7 模式匹配中常量和 null 的匹配"
 publishDate: 2017-11-06 23:24:52 +0800
 date: 2020-06-16 10:39:41 +0800
-categories: csharp msil dotnet decompile
+tags: csharp msil dotnet decompile
 ---
 
 尝试过写 `if (x is null)`？它与 `if (x == null)` 相比，孰优孰劣呢？

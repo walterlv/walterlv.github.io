@@ -2,7 +2,7 @@
 layout: post
 title:  "关联一个文件扩展名或协议"
 date:   2015-07-07 20:00:00 +0800
-categories: windows
+tags: windows
 permalink: /windows/2015/07/07/associate-with-file-or-protocol.html
 ---
 

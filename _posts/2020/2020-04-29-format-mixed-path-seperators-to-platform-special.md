@@ -2,7 +2,7 @@
 title: ".NET 将混合了多个不同平台（Windows / Mac / Linux）的文件/目录的路径格式化成同一个平台下的路径"
 publishDate: 2020-04-29 21:45:43 +0800
 date: 2020-04-30 09:24:04 +0800
-categories: dotnet windows linux
+tags: dotnet windows linux
 position: problem
 ---
 

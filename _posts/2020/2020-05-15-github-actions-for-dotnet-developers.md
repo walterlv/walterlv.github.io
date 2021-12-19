@@ -2,7 +2,7 @@
 title: "适合 .NET 开发者用的 GitHub Actions（时不时更新）"
 publishDate: 2020-05-15 19:42:55 +0800
 date: 2020-12-03 17:44:51 +0800
-categories: dotnet github
+tags: dotnet github
 position: knowledge
 ---
 

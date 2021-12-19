@@ -2,7 +2,7 @@
 title: "C#/.NET 如何获取一个异常（Exception）的关键特征，用来判断两个异常是否表示同一个异常"
 publishDate: 2019-03-24 11:40:31 +0800
 date: 2019-03-26 14:35:51 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: principle
 ---
 

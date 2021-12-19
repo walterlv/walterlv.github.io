@@ -2,7 +2,7 @@
 title: ".NET Framework 的 bug？try-catch-when 中如果 when 语句抛出异常，程序将彻底崩溃"
 publishDate: 2019-07-02 19:32:25 +0800
 date: 2019-09-12 14:58:50 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: problem
 version:
   current: 中文

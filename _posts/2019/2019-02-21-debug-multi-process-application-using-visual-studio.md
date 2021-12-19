@@ -1,7 +1,7 @@
 ---
 title: "使用 Visual Studio 调试多进程的程序"
 date: 2019-02-21 15:24:56 +0800
-categories: dotnet visualstudio
+tags: dotnet visualstudio
 position: knowledge
 ---
 

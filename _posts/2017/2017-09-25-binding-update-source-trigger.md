@@ -3,7 +3,7 @@ layout: post
 title: "WPF/UWP 绑定中的 UpdateSourceTrigger"
 publishDate: 2017-09-25 01:20:35 +0800
 date: 2018-12-14 09:54:33 +0800
-categories: uwp
+tags: uwp
 permalink: /uwp/2017/09/25/binding-update-source-trigger.html
 keywords: uwp wpf binding UpdateSourceTrigger TextBox Text
 description: 为 `TextBox` 的 `Text` 属性制定了双向绑定，然而运行却发现绑定源的对应属性却不及时变化。阅读本文将了解其原因和解决办法。

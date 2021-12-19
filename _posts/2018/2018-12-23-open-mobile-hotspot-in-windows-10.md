@@ -1,7 +1,7 @@
 ---
 title: "在 Windows 10 中开启移动 WLAN 热点"
 date: 2018-12-23 13:27:54 +0800
-categories: windows
+tags: windows
 position: starter
 version:
   current: 中文

@@ -1,7 +1,7 @@
 ---
 title: "编写你的专属 MSBuild C# 代码生成器：在保存文件时自动实时生成你的代码"
 date: 2021-06-01 20:34:17 +0800
-categories: dotnet msbuild csharp
+tags: dotnet msbuild csharp
 position: knowledge
 ---
 

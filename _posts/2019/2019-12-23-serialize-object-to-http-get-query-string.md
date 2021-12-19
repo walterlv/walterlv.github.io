@@ -1,7 +1,7 @@
 ---
 title: "如何将一个 .NET 对象序列化为 HTTP GET 的请求字符串"
 date: 2019-12-23 18:45:19 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: problem
 ---
 

@@ -2,7 +2,7 @@
 title: "如何在命令行中监听用户输入文本的改变？"
 publishDate: 2019-01-21 22:03:07 +0800
 date: 2019-03-04 22:14:42 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: problem
 ---
 

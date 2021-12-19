@@ -2,7 +2,7 @@
 title: "如何在 Visual Studio 2019 中设置使用 .NET Core SDK 的预览版（全局生效）"
 publishDate: 2019-07-27 09:38:56 +0800
 date: 2019-09-24 08:37:39 +0800
-categories: msbuild visualstudio dotnet
+tags: msbuild visualstudio dotnet
 position: starter
 ---
 

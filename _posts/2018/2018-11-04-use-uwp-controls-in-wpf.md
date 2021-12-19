@@ -2,7 +2,7 @@
 title: "WindowsXamlHost：在 WPF 中使用 UWP 的控件（Windows Community Toolkit）"
 publishDate: 2018-11-04 11:47:23 +0800
 date: 2019-03-09 09:09:02 +0800
-categories: uwp wpf dotnet
+tags: uwp wpf dotnet
 ---
 
 Windows Community Toolkit 再次更新到 5.0。以前可以在 WPF 中使用有限的 UWP 控件，而现在有了 WindowsXamlHost，则可以使用更多 UWP 原生控件了。

@@ -1,7 +1,7 @@
 ---
 title: "如何在 Windows 中实现本地化的文件夹名称功能"
 date: 2019-11-05 11:24:33 +0800
-categories: windows
+tags: windows
 position: knowledge
 published: false
 ---

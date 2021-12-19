@@ -2,7 +2,7 @@
 title: "在 Visual Studio Code 中添加自定义的代码片段"
 publishDate: 2018-11-20 10:19:28 +0800
 date: 2019-03-14 13:01:30 +0800
-categories: vscode
+tags: vscode
 ---
 
 无论是那个编辑器，如果能够添加一些自定义代码片段，能够大大提升代码的输入效率。
@@ -165,7 +165,7 @@ categories: vscode
 			"---",
 			"title: \"${1:在此处添加标题}\"",
 			"date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND} +0800",
-			"categories: ${2|dotnet,csharp,uwp|}",
+			"tags: ${2|dotnet,csharp,uwp|}",
 			"---",
 			"",
 			"${0:在此处编辑 blog.walterlv.com 的博客摘要}",

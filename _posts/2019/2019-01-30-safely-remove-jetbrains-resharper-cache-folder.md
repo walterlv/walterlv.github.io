@@ -1,7 +1,7 @@
 ---
 title: "ReSharper 在 C 盘占用了太多空间了，本文告诉你如何安全地删除或转移这些文件"
 date: 2019-01-30 20:34:19 +0800
-categories: dotnet resharper windows
+tags: dotnet resharper windows
 position: problem
 ---
 

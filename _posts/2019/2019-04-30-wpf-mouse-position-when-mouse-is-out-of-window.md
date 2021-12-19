@@ -1,7 +1,7 @@
 ---
 title: "WPF 程序鼠标在窗口之外的时候，控件拿到的鼠标位置在哪里？"
 date: 2019-04-30 14:53:52 +0800
-categories: wpf dotnet csharp
+tags: wpf dotnet csharp
 position: knowledge
 ---
 

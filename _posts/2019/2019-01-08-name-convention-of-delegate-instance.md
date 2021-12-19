@@ -1,7 +1,7 @@
 ---
 title: "C# 中委托实例的命名规则"
 date: 2019-01-08 17:09:07 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: starter
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "git 的合并原理（递归三路合并算法）"
 date: 2019-02-14 21:03:00 +0800
-categories: git
+tags: git
 position: principle
 ---
 

@@ -2,7 +2,7 @@
 title: "使用 Xamarin 在 iOS 真机上部署应用进行调试"
 publishDate: 2019-01-27 21:17:07 +0800
 date: 2020-10-31 09:00:51 +0800
-categories: xamarin dotnet csharp ios
+tags: xamarin dotnet csharp ios
 position: starter
 ---
 

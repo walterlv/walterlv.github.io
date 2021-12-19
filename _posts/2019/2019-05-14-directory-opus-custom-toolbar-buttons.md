@@ -2,7 +2,7 @@
 title: "在 Directory Opus 中添加自定义的工具栏按钮提升效率"
 publishDate: 2019-05-14 19:52:15 +0800
 date: 2019-05-15 10:41:09 +0800
-categories: windows
+tags: windows
 position: starter
 ---
 

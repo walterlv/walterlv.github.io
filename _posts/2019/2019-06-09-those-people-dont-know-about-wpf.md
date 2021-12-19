@@ -2,7 +2,7 @@
 title: "WPF 很少人知道的科技"
 publishDate: 2019-06-09 09:49:30 +0800
 date: 2019-07-11 14:16:23 +0800
-categories: wpf dotnet csharp
+tags: wpf dotnet csharp
 position: knowledge
 ---
 

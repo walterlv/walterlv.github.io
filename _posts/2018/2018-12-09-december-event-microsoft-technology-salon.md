@@ -2,7 +2,7 @@
 title: "在 CVTE 和广州 .NET 微软技术俱乐部共同举办的 12月8日 广州微软技术沙龙活动"
 publishDate: 2018-12-09 00:00:00 +0800
 date: 2019-03-24 14:25:49 +0800
-categories: dotnet
+tags: dotnet
 position: event
 ---
 

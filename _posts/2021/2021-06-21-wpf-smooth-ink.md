@@ -1,7 +1,7 @@
 ---
 title: "两个方法，让 WPF 绘制的笔迹更加平滑"
 date: 2021-06-21 17:38:14 +0800
-categories: wpf
+tags: wpf
 position: problem
 ---
 

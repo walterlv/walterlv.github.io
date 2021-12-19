@@ -2,7 +2,7 @@
 title: "在操作系统重启后恢复应用程序的工作状态"
 publishDate: 2018-01-21 21:29:01 +0800
 date: 2018-09-01 08:13:21 +0800
-categories: csharp windows
+tags: csharp windows
 ---
 
 Windows 10 创意者更新之后，默认开启了重启后恢复应用程序状态的功能。这是自 Vista 以来就提供的功能——Restart Manager。

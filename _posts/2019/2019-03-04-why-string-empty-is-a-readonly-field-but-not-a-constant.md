@@ -2,7 +2,7 @@
 title: "为什么 C# 的 string.Empty 是一个静态只读字段，而不是一个常量呢？"
 publishDate: 2019-03-04 23:29:47 +0800
 date: 2019-03-05 23:54:05 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: principle
 ---
 

@@ -2,7 +2,7 @@
 title: "Visual Studio 通过修改项目的调试配置文件做到临时调试的时候不要编译（解决大项目编译缓慢问题）"
 publishDate: 2019-04-26 08:50:05 +0800
 date: 2019-04-26 12:22:57 +0800
-categories: visualstudio dotnet csharp
+tags: visualstudio dotnet csharp
 position: problem
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "用 WiX 制作安装包：设置的 .NET Framework 前置会始终安装，即使目标电脑已经自带或装好"
 date: 2021-07-16 12:08:39 +0800
-categories: dotnet msi wix
+tags: dotnet msi wix
 position: problem
 ---
 

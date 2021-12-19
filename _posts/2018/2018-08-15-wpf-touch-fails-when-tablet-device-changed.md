@@ -2,7 +2,7 @@
 title: "通过解读 WPF 触摸源码，分析 WPF 插拔设备触摸失效的问题（问题篇）"
 publishDate: 2018-08-15 15:42:08 +0800
 date: 2018-08-19 19:09:56 +0800
-categories: wpf windows
+tags: wpf windows
 version:
   current: 中文
 versions:

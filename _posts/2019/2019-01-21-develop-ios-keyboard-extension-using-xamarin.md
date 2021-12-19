@@ -2,7 +2,7 @@
 title: "使用 Xamarin 开发 iOS 键盘扩展（含网络访问）"
 publishDate: 2019-01-21 22:32:48 +0800
 date: 2019-03-04 22:15:47 +0800
-categories: xamarin dotnet csharp xaml ios
+tags: xamarin dotnet csharp xaml ios
 position: starter
 ---
 

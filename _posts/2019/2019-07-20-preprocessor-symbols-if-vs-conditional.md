@@ -2,7 +2,7 @@
 title: ".NET/C# 使用 #if 和 Conditional 特性来按条件编译代码的不同原理和适用场景"
 publishDate: 2019-07-12 14:38:32 +0800
 date: 2019-07-20 15:41:17 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: starter
 ---
 

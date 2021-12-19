@@ -1,7 +1,7 @@
 ---
 title: "如何为 Win32 的打开和保存对话框编写文件过滤器（Filter）"
 date: 2019-05-31 20:36:03 +0800
-categories: windows dotnet csharp wpf uwp
+tags: windows dotnet csharp wpf uwp
 position: starter
 ---
 

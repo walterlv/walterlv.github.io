@@ -2,7 +2,7 @@
 title: "3 Ways to create a window with blurring background on Windows 10"
 publishDate: 2018-07-16 19:14:59 +0800
 date: 2018-12-14 09:54:00 +0800
-categories: windows wpf uwp dotnet
+tags: windows wpf uwp dotnet
 version:
   current: English
 versions:

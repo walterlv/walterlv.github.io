@@ -2,7 +2,7 @@
 title: "在制作跨平台的 NuGet 工具包时，如何将工具（exe/dll）的所有依赖一并放入包中"
 publishDate: 2018-07-03 21:30:25 +0800
 date: 2018-12-14 09:54:00 +0800
-categories: msbuild nuget visualstudio dotnet
+tags: msbuild nuget visualstudio dotnet
 ---
 
 NuGet 提供了工具类型的包支持，生成一个基于 .NET Core 的 dll 或者基于 .NET Framework 的 exe 之后，你几乎可以对项目做任何事情。但是，默认情况下，NuGet 不会将这些工具的依赖一起打包进入 NuGet 包 nupkg 文件内，这就使得功能比较复杂的跨平台 NuGet 工具包几乎是无法正常工作的。

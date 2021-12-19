@@ -1,7 +1,7 @@
 ---
 title: "神器如 dnSpy，无需源码也能修改 .NET 程序"
 date: 2018-05-22 22:02:13 +0800
-categories: dotnet
+tags: dotnet
 ---
 
 [dnSpy](https://github.com/0xd4d/dnSpy) 是 [0xd4d](https://github.com/0xd4d) 开发的 .NET 程序调试神器。

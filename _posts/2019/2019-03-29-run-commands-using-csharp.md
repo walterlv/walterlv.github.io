@@ -2,7 +2,7 @@
 title: "C#/.NET 使用 git 命令行来操作 git 仓库"
 publishDate: 2019-03-29 14:39:08 +0800
 date: 2019-04-21 20:36:42 +0800
-categories: dotnet csharp git
+tags: dotnet csharp git
 position: starter
 ---
 

@@ -2,7 +2,7 @@
 title: "用 WiX 制作安装包：为 WiX 制作的 msi 安装包添加 .NET Framework 环境检查"
 publishDate: 2021-07-15 11:55:30 +0800
 date: 2021-07-15 19:46:48 +0800
-categories: dotnet msi wix
+tags: dotnet msi wix
 position: starter
 ---
 

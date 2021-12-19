@@ -2,9 +2,8 @@
 title: "转义，解决花括号在 Jekyll 被识别成 Liquid 代码的问题"
 publishDate: 2017-10-13 00:08:29 +0800
 date: 2018-08-12 14:49:15 +0800
-categories: site
+tags: site
 permalink: /post/jekyll/raw-in-jekyll.html
-tags: jekyll liquid raw
 description: 
 ---
 

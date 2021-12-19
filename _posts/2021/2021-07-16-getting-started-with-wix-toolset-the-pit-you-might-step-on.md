@@ -1,7 +1,7 @@
 ---
 title: "使用 WiX 创建最简单的安装包过程中可能出现的问题和解决方案汇总"
 date: 2021-07-16 11:50:15 +0800
-categories: dotnet msi wix
+tags: dotnet msi wix
 position: problem
 ---
 

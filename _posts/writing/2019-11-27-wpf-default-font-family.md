@@ -2,7 +2,7 @@
 title: "WPF 应用的默认字体是什么，如何修改默认字体（FontFamily）"
 publishDate: 2019-11-24 17:30:54 +0800
 date: 2019-11-27 07:01:59 +0800
-categories: wpf dotnet windows
+tags: wpf dotnet windows
 position: knowledge
 published: false
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio 2022 出来啦！教你如何将 VS2019 的 VSIX 扩展/插件项目迁移到 VS2022"
 date: 2021-06-25 14:05:52 +0800
-categories: visualstudio dotnet
+tags: visualstudio dotnet
 position: problem
 ---
 

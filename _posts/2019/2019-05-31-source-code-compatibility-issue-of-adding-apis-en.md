@@ -2,7 +2,7 @@
 title: "The partial same C# namespace may cause source code compatibility issue"
 publishDate: 2019-05-31 19:39:23 +0800
 date: 2019-07-27 20:48:49 +0800
-categories: csharp dotnet visualstudio
+tags: csharp dotnet visualstudio
 position: problem
 version:
   current: English

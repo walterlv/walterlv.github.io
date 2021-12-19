@@ -2,7 +2,7 @@
 title: ".NET/C# 推荐一个我设计的缓存类型（适合缓存反射等耗性能的操作，附用法）"
 publishDate: 2018-09-02 22:27:47 +0800
 date: 2018-09-02 15:59:05 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 ---
 
 这里我想说的是类型“实例”的缓存，适用于那些实例或者值计算很耗时的操作。典型的场景如反射获取 `Attribute`。

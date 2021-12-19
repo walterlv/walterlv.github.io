@@ -1,7 +1,7 @@
 ---
 title: "CentOS 的终端中如何搜索文件"
 date: 2019-01-20 15:05:40 +0800
-categories: linux
+tags: linux
 position: starter
 ---
 

@@ -2,7 +2,7 @@
 title: "长期支持 LTS（Long-term Support）是怎样的一种支持方式"
 publishDate: 2018-07-04 21:29:29 +0800
 date: 2018-12-14 09:54:00 +0800
-categories: dotnet
+tags: dotnet
 ---
 
 在 .NET Core 2.1 发布之时，微软称之为一个 LTS 版本，那么 LTS 的版本是一种怎样的版本呢？

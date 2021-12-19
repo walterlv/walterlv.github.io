@@ -2,7 +2,7 @@
 title: "解决关闭模态窗口后，父窗口居然失去焦点跑到了其他窗口的后面的问题"
 publishDate: 2018-02-05 13:58:49 +0800
 date: 2019-11-05 09:58:20 +0800
-categories: dotnet csharp windows
+tags: dotnet csharp windows
 ---
 
 显示一个模态窗口，正常而普遍的操作。然而却一直有一个难缠的 BUG：当关闭模态窗口时，父窗口有时会跑到其他程序窗口的后面！

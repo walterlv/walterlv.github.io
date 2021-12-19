@@ -2,7 +2,7 @@
 title: ".NET 的静态构造函数是否线程安全？答案是肯定的！"
 publishDate: 2020-03-11 18:17:50 +0800
 date: 2020-03-23 11:37:11 +0800
-categories: dotnet
+tags: dotnet
 position: knowledge
 published: false
 ---

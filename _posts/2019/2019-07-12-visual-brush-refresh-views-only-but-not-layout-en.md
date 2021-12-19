@@ -1,7 +1,7 @@
 ---
 title: "The VisualBrush of WPF only refresh the visual but not the layout"
 date: 2019-07-12 20:53:11 +0800
-categories: wpf dotnet csharp
+tags: wpf dotnet csharp
 position: problem
 version:
   current: English

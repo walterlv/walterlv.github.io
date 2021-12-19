@@ -2,7 +2,7 @@
 title: "使 WPF 支持触摸板的横向滚动"
 publishDate: 2017-11-23 21:25:40 +0800
 date: 2018-08-12 16:02:51 +0800
-categories: windows wpf
+tags: windows wpf
 version:
   current: 中文
 versions:

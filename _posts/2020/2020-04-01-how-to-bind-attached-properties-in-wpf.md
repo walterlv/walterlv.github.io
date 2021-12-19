@@ -1,7 +1,7 @@
 ---
 title: "WPF 中如何绑定附加属性？XAML 中记得加括号，C# 中记得不能用字符串"
 date: 2020-04-01 20:35:51 +0800
-categories: wpf dotnet
+tags: wpf dotnet
 position: knowledge
 ---
 

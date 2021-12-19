@@ -2,7 +2,7 @@
 title: "四种方法获取可执行程序的文件路径（.NET Core / .NET Framework）"
 publishDate: 2019-03-03 19:51:29 +0800
 date: 2019-03-09 09:10:45 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 ---
 

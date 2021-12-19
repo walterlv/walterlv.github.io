@@ -1,7 +1,7 @@
 ---
 title: "MSBuild 在编写编译任务的时候判断当前是否在 Visual Studio 中编译"
 date: 2019-06-04 22:23:50 +0800
-categories: dotnet msbuild visualstudio
+tags: dotnet msbuild visualstudio
 position: knowledge
 ---
 

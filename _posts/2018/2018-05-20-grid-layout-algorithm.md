@@ -1,7 +1,7 @@
 ---
 title: "Grid 布局算法！自己动手实现一个 Grid"
 date: 2018-05-20 15:11:54 +0800
-categories: wpf uwp algorithm
+tags: wpf uwp algorithm
 ---
 
 [Avalonia](https://github.com/AvaloniaUI/Avalonia) 是一款尚在开发中的基于 .NET Core 的跨平台 UI 框架。目前用在个人项目中还是不错的，不过还需要大家在开源社区中多多支持。

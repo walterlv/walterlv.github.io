@@ -1,7 +1,7 @@
 ---
 title: ".NET/C# 利用 Walterlv.WeakEvents 高性能地中转一个自定义的弱事件（可让任意 CLR 事件成为弱事件）"
 date: 2019-09-18 21:59:52 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 ---
 

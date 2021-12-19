@@ -2,7 +2,7 @@
 title: "C#/.NET 中的契约式编程，以及 ReSharper 为我们提供的契约特性"
 publishDate: 2017-12-20 23:04:21 +0800
 date: 2019-03-14 12:57:32 +0800
-categories: csharp dotnet
+tags: csharp dotnet
 ---
 
 > 将文档放到代码里面，文档才会及时地更新！

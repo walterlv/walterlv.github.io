@@ -2,7 +2,7 @@
 title: "The undefined behaviors of WPF Grid (the so-called bugs)"
 publishDate: 2018-05-05 17:07:21 +0800
 date: 2018-08-12 16:04:03 +0800
-categories: wpf uwp xaml
+tags: wpf uwp xaml
 version:
   current: English
 versions:

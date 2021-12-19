@@ -2,7 +2,7 @@
 title: "通过修改环境变量修改当前进程使用的系统 Temp 文件夹的路径"
 publishDate: 2019-05-16 10:48:53 +0800
 date: 2019-05-16 20:03:57 +0800
-categories: windows dotnet csharp wpf
+tags: windows dotnet csharp wpf
 position: problem
 ---
 

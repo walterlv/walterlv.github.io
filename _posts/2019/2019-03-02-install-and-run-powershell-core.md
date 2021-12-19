@@ -2,7 +2,7 @@
 title: "安装和运行 .NET Core 版本的 PowerShell"
 publishDate: 2019-03-02 17:29:05 +0800
 date: 2019-04-30 19:37:52 +0800
-categories: dotnet powershell
+tags: dotnet powershell
 position: knowledge
 ---
 

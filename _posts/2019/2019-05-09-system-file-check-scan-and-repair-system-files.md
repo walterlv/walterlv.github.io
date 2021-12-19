@@ -1,7 +1,7 @@
 ---
 title: "使用 System File Check (SFC) 工具检查并修复 Windows 系统文件"
 date: 2019-05-09 21:02:40 +0800
-categories: windows
+tags: windows
 position: knowledge
 ---
 

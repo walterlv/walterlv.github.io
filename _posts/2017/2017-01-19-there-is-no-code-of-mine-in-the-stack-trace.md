@@ -3,7 +3,7 @@ layout: post
 title: "有些异常堆栈中真没我们写的源码"
 publishDate: 2017-01-19 14:54:00 +0800
 date: 2018-01-16 09:57:50 +0800
-categories: dotnet
+tags: dotnet
 permalink: /dotnet/2017/01/19/there-is-no-code-of-mine-in-the-stack-trace.html
 keywords: dotnet
 description: 有时候会发生一些异常，但异常的堆栈信息中完全找不到我们自己写的源码，这样的异常到底怎么调试！

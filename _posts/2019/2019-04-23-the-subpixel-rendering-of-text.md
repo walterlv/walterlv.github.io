@@ -1,7 +1,7 @@
 ---
 title: "ClearType 的原理：Windows 上文本的亚像素控制"
 date: 2019-04-23 19:17:48 +0800
-categories: windows
+tags: windows
 position: knowledge
 ---
 

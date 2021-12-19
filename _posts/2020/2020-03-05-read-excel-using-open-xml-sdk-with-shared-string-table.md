@@ -2,7 +2,7 @@
 title: "使用 Open XML SDK 解析带有共享字符串（SharedStrings）表的 Excel 表格"
 publishDate: 2020-03-05 14:59:41 +0800
 date: 2020-03-23 11:37:07 +0800
-categories: dotnet office
+tags: dotnet office
 position: starter
 published: false
 ---

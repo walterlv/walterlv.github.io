@@ -2,7 +2,7 @@
 title: "Unity3D 入门：让 C# 脚本公开可在 Unity 编辑器中设置的属性"
 publishDate: 2020-05-05 09:20:09 +0800
 date: 2020-05-05 16:22:24 +0800
-categories: unity
+tags: unity
 position: starter
 ---
 

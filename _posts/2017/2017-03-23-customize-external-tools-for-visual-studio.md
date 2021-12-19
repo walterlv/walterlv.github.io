@@ -2,7 +2,7 @@
 title: "使用 Visual Studio 自定义外部命令 (External Tools) 快速打开 git bash 等各种工具"
 publishDate: 2017-03-23 10:01:40 +0800
 date: 2019-03-04 11:06:33 +0800
-categories: visualstudio
+tags: visualstudio
 position: knowledge
 ---
 

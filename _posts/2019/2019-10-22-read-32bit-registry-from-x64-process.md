@@ -1,7 +1,7 @@
 ---
 title: ".NET/C# 在 64 位进程中读取 32 位进程重定向后的注册表"
 date: 2019-10-22 16:59:03 +0800
-categories: dotnet windows csharp
+tags: dotnet windows csharp
 position: knowledge
 ---
 

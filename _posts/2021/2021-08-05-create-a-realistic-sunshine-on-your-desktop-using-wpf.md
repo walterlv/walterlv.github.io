@@ -1,7 +1,7 @@
 ---
 title: "使用 WPF 做一个可以逼真地照亮你桌面的高性能阳光"
 date: 2021-08-05 17:20:04 +0800
-categories: wpf dotnet
+tags: wpf dotnet
 position: problem
 ---
 

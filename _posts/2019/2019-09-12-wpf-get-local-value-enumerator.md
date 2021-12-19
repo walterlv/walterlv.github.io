@@ -1,7 +1,7 @@
 ---
 title: "如何在 WPF 中获取所有已经显式赋过值的依赖项属性"
 date: 2019-09-12 11:39:49 +0800
-categories: wpf dotnet csharp
+tags: wpf dotnet csharp
 position: knowledge
 ---
 

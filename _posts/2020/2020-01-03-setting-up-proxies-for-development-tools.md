@@ -2,7 +2,7 @@
 title: "为 .NET 各种开发工具设置网络代理，提升在大陆的网络性能"
 publishDate: 2020-01-03 09:41:16 +0800
 date: 2020-05-13 10:09:47 +0800
-categories: dotnet
+tags: dotnet
 position: knowledge
 ---
 

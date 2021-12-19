@@ -1,7 +1,7 @@
 ---
 title: "应该抛出什么异常？不应该抛出什么异常？（.NET/C#）"
 date: 2018-02-04 21:25:51 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 ---
 
 我在 [.NET/C# 建议的异常处理原则](/post/suggestions-for-handling-exceptions) 中描述了如何 `catch` 异常以及重新 `throw`。然而何时应该 `throw` 异常，以及应该 `throw` 什么异常呢？

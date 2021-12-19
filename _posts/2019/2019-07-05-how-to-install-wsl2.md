@@ -2,7 +2,7 @@
 title: "如何在 Windows 10 中安装 WSL2 的 Linux 子系统"
 publishDate: 2019-07-05 10:18:59 +0800
 date: 2020-04-28 20:26:41 +0800
-categories: windows linux
+tags: windows linux
 position: starter
 ---
 

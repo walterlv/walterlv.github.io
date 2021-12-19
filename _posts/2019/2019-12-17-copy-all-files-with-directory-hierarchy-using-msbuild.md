@@ -1,7 +1,7 @@
 ---
 title: "使用 MSBuild Target 复制文件的时候如何保持文件夹结构不变"
 date: 2019-12-17 16:36:39 +0800
-categories: msbuild dotnet
+tags: msbuild dotnet
 position: knowledge
 ---
 

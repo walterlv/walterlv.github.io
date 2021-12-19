@@ -2,7 +2,7 @@
 title: "使用一句 git 命令将仓库的改动推送到所有的远端"
 publishDate: 2019-02-20 11:26:00 +0800
 date: 2019-03-09 09:12:32 +0800
-categories: git
+tags: git
 position: problem
 ---
 

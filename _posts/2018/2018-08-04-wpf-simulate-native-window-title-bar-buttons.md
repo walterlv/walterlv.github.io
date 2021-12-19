@@ -2,7 +2,7 @@
 title: "WPF 应用完全模拟 UWP 的标题栏按钮"
 publishDate: 2018-08-04 17:35:09 +0800
 date: 2018-08-05 10:21:51 +0800
-categories: wpf uwp dotnet windows
+tags: wpf uwp dotnet windows
 ---
 
 WPF 自定义窗口样式有多种方式，不过基本核心实现都是在修改 Win32 窗口样式。然而，Windows 上的应用就应该有 Windows 应用的样子嘛，在保证自定义的同时也能与其他窗口样式保持一致当然能最大程度保证 Windows 操作系统上的体验一致性。

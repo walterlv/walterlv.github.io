@@ -1,9 +1,8 @@
 ---
 title: "查询已连接 Wi-Fi 的密码（入门和进阶两种方法）"
 date: 2017-10-09 21:01:31 +0800
-categories: windows
+tags: windows
 permalink: /post/windows/find-wifi-password.html
-tags: Windows Wi-Fi wifi
 description: 了解如何查询已连接 Wi-Fi 的密码
 ---
 

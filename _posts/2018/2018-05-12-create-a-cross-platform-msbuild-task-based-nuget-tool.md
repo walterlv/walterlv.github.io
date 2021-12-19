@@ -2,7 +2,7 @@
 title: "如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包"
 publishDate: 2018-05-12 00:04:14 +0800
 date: 2019-08-07 14:50:59 +0800
-categories: visualstudio csharp dotnet msbuild
+tags: visualstudio csharp dotnet msbuild
 ---
 
 MSBuild 的 Task 为我们扩展项目的编译过程提供了强大的扩展性，它使得我们可以用 C# 语言编写扩展；利用这种扩展性，我们可以为我们的项目定制一部分的编译细节。NuGet 为我们提供了一种自动导入 .props 和 .targets 的方法，同时还是一个 .NET 的包平台；我们可以利用 NuGet 发布我们的工具并自动启用这样的工具。

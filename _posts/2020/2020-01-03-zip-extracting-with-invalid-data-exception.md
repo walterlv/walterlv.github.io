@@ -1,7 +1,7 @@
 ---
 title: ".NET/C# 解压 Zip 文件时出现异常：System.IO.InvalidDataException: 找不到中央目录结尾记录。"
 date: 2020-01-03 17:12:52 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: problem
 ---
 

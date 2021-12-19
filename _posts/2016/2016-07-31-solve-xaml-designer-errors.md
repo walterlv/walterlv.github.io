@@ -3,7 +3,7 @@ layout: post
 title:  "解决XAML设计器中遇到的那些错误"
 publishDate:   2016-07-31 22:29:12 +0800
 date:   2016-08-02 14:33:38 +0800
-categories: wpf
+tags: wpf
 permalink: /wpf/2016/07/31/solve-xaml-designer-errors.html
 ---
 

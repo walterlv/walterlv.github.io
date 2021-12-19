@@ -2,7 +2,7 @@
 layout: post
 title: "Why Unload Twice"
 date: 2017-09-19 18:32:39 +0800
-categories: wpf
+tags: wpf
 permalink: /wpf/2017/09/19/why-unload-twice.html
 keywords: wpf load unload LogicalTree
 description: Why WPF sometimes unloaded twice? It really confused me.

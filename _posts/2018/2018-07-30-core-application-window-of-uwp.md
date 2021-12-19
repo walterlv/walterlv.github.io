@@ -2,7 +2,7 @@
 title: "UWP 应用中 CoreApplication / Application, CoreWindow / Window 之间的区别"
 publishDate: 2018-07-30 07:51:34 +0800
 date: 2018-12-14 09:54:00 +0800
-categories: uwp
+tags: uwp
 version:
   current: 中文
 versions:

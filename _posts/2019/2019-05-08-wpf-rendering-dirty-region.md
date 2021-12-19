@@ -2,7 +2,7 @@
 title: "通过分析 WPF 的渲染脏区优化渲染性能"
 publishDate: 2019-05-08 09:36:29 +0800
 date: 2019-05-13 09:50:23 +0800
-categories: wpf dotnet csharp
+tags: wpf dotnet csharp
 position: problem
 ---
 

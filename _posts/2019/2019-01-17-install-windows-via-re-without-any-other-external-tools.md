@@ -1,7 +1,7 @@
 ---
 title: "不使用 U 盘等任何工具全新安装 Windows 操作系统"
 date: 2019-01-17 20:13:38 +0800
-categories: windows
+tags: windows
 position: starter
 ---
 

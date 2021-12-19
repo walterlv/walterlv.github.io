@@ -1,7 +1,7 @@
 ---
 title: "直击本质：WPF 框架是如何实现模态窗口的"
 date: 2019-10-10 18:57:27 +0800
-categories: wpf dotnet csharp windows
+tags: wpf dotnet csharp windows
 position: knowledge
 ---
 

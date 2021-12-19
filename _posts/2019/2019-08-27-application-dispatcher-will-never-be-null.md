@@ -2,7 +2,7 @@
 title: "WPF 的 Application.Current.Dispatcher 中，Dispatcher 属性一定不会为 null"
 publishDate: 2019-08-27 10:10:50 +0800
 date: 2019-08-27 12:51:43 +0800
-categories: wpf dotnet csharp
+tags: wpf dotnet csharp
 position: problem
 ---
 

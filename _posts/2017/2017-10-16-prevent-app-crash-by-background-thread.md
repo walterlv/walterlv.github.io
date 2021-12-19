@@ -2,8 +2,7 @@
 title: "配置 legacyUnhandledExceptionPolicy 防止后台线程抛出的异常让程序崩溃退出"
 publishDate: 2017-10-16 20:52:01 +0800
 date: 2019-11-28 16:08:14 +0800
-categories: dotnet wpf
-tags: AppDomain Application Dispatcher legacyUnhandledExceptionPolicy
+tags: dotnet wpf
 description: legacyUnhandledExceptionPolicy 可以防止程序在后台线程抛出异常后崩溃退出。
 ---
 

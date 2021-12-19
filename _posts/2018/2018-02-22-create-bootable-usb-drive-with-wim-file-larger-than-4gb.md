@@ -1,8 +1,7 @@
 ---
 title: "制作 Windows 10 安装盘，解决大于 4GB 的 Windows 10 镜像在 UEFI 模式下的安装问题"
 date: 2018-02-22 22:14:19 +0800
-categories: windows sysprep
-tags: U盘 优盘 量产 Windows10 Win10 4GB FAT32 NTFS GPT UEFI
+tags: windows sysprep
 ---
 
 制作一个 Windows 安装 U 盘是很容易的，使用 UltraISO 这样的刻录工具量产一个 iso 镜像文件到 U 盘即可。然而随着 Windows 10 版本号的提升，镜像变得越来越大，终于 FAT32 文件系统不再能够容纳得下安装镜像文件 install.wim 了。

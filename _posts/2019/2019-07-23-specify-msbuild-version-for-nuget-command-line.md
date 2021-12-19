@@ -2,7 +2,7 @@
 title: "为 NuGet 指定检测的 MSBuild 路径或版本，解决 MSBuild auto-detection: using msbuild version 自动查找路径不合适的问题"
 publishDate: 2019-07-23 18:13:54 +0800
 date: 2019-07-25 18:11:47 +0800
-categories: nuget msbuild visualstudio dotnet
+tags: nuget msbuild visualstudio dotnet
 position: problem
 ---
 

@@ -2,7 +2,7 @@
 title: "所有 WPF 程序的界面渲染完全糊掉，竟是戴尔电脑惹的锅？"
 publishDate: 2021-11-05 20:47:55 +0800
 date: 2021-11-18 19:25:32 +0800
-categories: wpf
+tags: wpf
 position: problem
 version:
   current: 中文

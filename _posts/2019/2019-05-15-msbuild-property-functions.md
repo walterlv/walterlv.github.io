@@ -1,7 +1,7 @@
 ---
 title: "在编译期间使用 Roslyn/MSBuild 自带的方法/函数判断、计算和修改属性"
 date: 2019-05-15 21:41:27 +0800
-categories: msbuild visualstudio roslyn
+tags: msbuild visualstudio roslyn
 position: knowledge
 ---
 

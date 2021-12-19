@@ -2,7 +2,7 @@
 title: "一点点从坑里爬出来：如何正确打开 WPF 里的 Popup？"
 publishDate: 2020-04-03 16:40:01 +0800
 date: 2020-04-07 21:34:17 +0800
-categories: wpf dotnet
+tags: wpf dotnet
 position: principle
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: "优化 UWP 中图片的内存占用"
 publishDate: 2017-09-17 12:44:45 +0800
 date: 2018-12-21 16:51:33 +0800
-categories: uwp
+tags: uwp
 permalink: /uwp/2017/09/17/optimize-image-in-uwp.html
 keywords: uwp image thumbnail GetThumbnailAsync UriSource
 description: 优化 UWP 中图片的内存占用。

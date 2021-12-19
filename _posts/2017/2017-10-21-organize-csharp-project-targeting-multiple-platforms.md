@@ -1,7 +1,7 @@
 ---
 title: "如何组织一个同时面向 UWP/WPF/.Net Core 控制台的 C# 项目解决方案"
 date: 2017-10-21 11:20:54 +0800
-categories: dotnet dotnet-core dotnet-standard wpf uwp
+tags: dotnet dotnet-core dotnet-standard wpf uwp
 description: 
 ---
 

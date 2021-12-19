@@ -2,7 +2,7 @@
 title: "如何创建一个基于 .NET Core 3 的 WPF 项目"
 publishDate: 2018-12-06 11:11:05 +0800
 date: 2019-03-19 18:30:07 +0800
-categories: dotnet wpf
+tags: dotnet wpf
 position: starter
 ---
 

@@ -2,7 +2,7 @@
 title: "使用 Xamarin 开发 iOS 应用中需要注意的若干个问题"
 publishDate: 2019-01-21 15:21:29 +0800
 date: 2019-01-22 09:11:53 +0800
-categories: xamarin ios
+tags: xamarin ios
 position: knowledge
 ---
 

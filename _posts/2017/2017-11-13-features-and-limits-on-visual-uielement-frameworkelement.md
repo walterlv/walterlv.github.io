@@ -2,7 +2,7 @@
 title: "Visual->UIElement->FrameworkElement，带来更多功能的同时也带来了更多的限制"
 publishDate: 2017-11-13 23:55:58 +0800
 date: 2018-12-14 09:54:00 +0800
-categories: wpf uwp xaml
+tags: wpf uwp xaml
 ---
 
 在 WPF 或 UWP 中，我们平时开发所遇到的那些 UI 控件或组件，都直接或间接继承自 `Framework`。例如：`Grid`、`StackPanel`、`Canvas`、`Border`、`Image`、`Button`、`Slider`。我们总会自然而然地认为这些控件都是有大小的，它们会在合适的位置显示自己，通常不会超出去。但是，`FrameworkElement` 甚至是 `Control` 用得久了，都开始忘记 `Visual`、`UIElement` 带给我们的那些自由。

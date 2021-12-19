@@ -2,7 +2,7 @@
 title: ".NET/C# 异常处理：写一个空的 try 块代码，而把重要代码写到 finally 中（Constrained Execution Regions）"
 publishDate: 2018-11-02 21:14:25 +0800
 date: 2018-12-14 09:54:00 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 ---
 
 不知你是否见过 `try { } finally { }` 代码中，`try` 块留空，而只往 `finally` 中写代码的情况呢？这种写法有其特殊的目的。

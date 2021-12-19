@@ -2,7 +2,7 @@
 title: "WPF 的 Application.Current.Dispatcher 中，为什么 Current 可能为 null"
 publishDate: 2019-08-27 12:45:27 +0800
 date: 2019-08-27 13:05:49 +0800
-categories: wpf dotnet csharp
+tags: wpf dotnet csharp
 position: problem
 ---
 

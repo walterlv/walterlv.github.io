@@ -2,7 +2,7 @@
 title: "如何为你的 Windows 应用程序关联一种或多种文件类型"
 publishDate: 2019-03-02 21:22:40 +0800
 date: 2019-03-04 22:15:30 +0800
-categories: dotnet windows csharp
+tags: dotnet windows csharp
 position: knowledge
 ---
 

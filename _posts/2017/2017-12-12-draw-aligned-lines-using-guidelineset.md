@@ -2,7 +2,7 @@
 title: "WPF 绘制对齐像素的清晰显示的线条"
 publishDate: 2017-12-12 21:49:53 +0800
 date: 2018-08-13 20:47:08 +0800
-categories: wpf
+tags: wpf
 ---
 
 此前有小伙伴询问我为何他 1 像素的线条显示发虚，然后我告诉他是“像素对齐”的问题，然而他设置了各种对齐像素的属性依旧没有作用。于是我对此进行了一系列试验，对 WPF 像素对齐的各种方法进行了一次总结。此后在 StackOverflow 中，我回答了 [graphics - WPF DrawingContext seems ignore SnapToDevicePixels - Stack Overflow](https://stackoverflow.com/questions/6018106/wpf-drawingcontext-seems-ignore-snaptodevicepixels) 问题。

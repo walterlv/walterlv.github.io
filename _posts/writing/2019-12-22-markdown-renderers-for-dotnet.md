@@ -1,7 +1,7 @@
 ---
 title: "适用于 .NET Core（Blazor/WPF/js）的 Markdown 渲染库"
 date: 2019-12-22 18:58:24 +0800
-categories: dotnet blazor wpf
+tags: dotnet blazor wpf
 position: starter
 published: false
 ---

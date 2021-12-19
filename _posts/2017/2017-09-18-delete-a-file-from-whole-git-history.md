@@ -3,7 +3,7 @@ layout: post
 title: "彻底删除 Git 仓库中的文件避免占用大量磁盘空间"
 publishDate: 2017-09-18 23:45:21 +0800
 date: 2017-09-29 07:36:22 +0800
-categories: git
+tags: git
 permalink: /git/2017/09/18/delete-a-file-from-whole-git-history.html
 keywords: git filter-branch delete
 description: 如果不小心向 Git 仓库中上传了一个不需要的超大文件，我们如何才能够删除它，使之不占用我们宝贵的磁盘空间。

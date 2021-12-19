@@ -2,7 +2,7 @@
 title: "在 Target 中获取项目引用的所有依赖（dll/NuGet/Project）的路径"
 publishDate: 2019-01-14 15:38:10 +0800
 date: 2019-03-04 22:15:01 +0800
-categories: msbuild visualstudio
+tags: msbuild visualstudio
 position: knowledge
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: ".NET 强签名"
 date: 2019-11-05 11:24:02 +0800
-categories: dotnet
+tags: dotnet
 position: principle
 published: false
 ---

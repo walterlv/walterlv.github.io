@@ -2,7 +2,7 @@
 title: "Windows 10 解决无法完整下载安装语言包（日语输入法无法下载使用）"
 publishDate: 2019-06-14 23:14:44 +0800
 date: 2019-06-16 20:53:20 +0800
-categories: windows
+tags: windows
 position: problem
 ---
 

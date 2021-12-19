@@ -2,7 +2,7 @@
 title: "Unity OpenVR 虚拟现实入门五：通过传送控制玩家移动"
 publishDate: 2021-05-16 09:59:33 +0800
 date: 2021-05-16 17:47:41 +0800
-categories: unity openvr
+tags: unity openvr
 position: starter
 ---
 

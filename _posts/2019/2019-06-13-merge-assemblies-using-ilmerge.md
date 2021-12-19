@@ -2,7 +2,7 @@
 title: ".NET 使用 ILMerge 合并多个程序集，避免引入额外的依赖"
 publishDate: 2019-06-13 08:43:39 +0800
 date: 2019-06-17 21:34:41 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 ---
 

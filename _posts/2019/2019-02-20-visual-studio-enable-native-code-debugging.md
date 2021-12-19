@@ -2,7 +2,7 @@
 title: "在 Visual Studio 新旧不同的 csproj 项目格式中启用混合模式调试程序（开启本机代码调试）"
 publishDate: 2019-02-20 22:40:43 +0800
 date: 2019-04-12 09:40:06 +0800
-categories: visualstudio dotnet csharp
+tags: visualstudio dotnet csharp
 position: problem
 ---
 

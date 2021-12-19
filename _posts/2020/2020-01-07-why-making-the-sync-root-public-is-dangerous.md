@@ -1,7 +1,7 @@
 ---
 title: "为什么不应该公开用来同步的加锁对象？为什么不应该 lock(this)/lock(string) 或者 lock 任何非私有对象？"
 date: 2020-01-07 09:29:31 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 ---
 

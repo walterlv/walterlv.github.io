@@ -2,7 +2,7 @@
 title: "Unity OpenVR 虚拟现实入门六：通过摇杆控制玩家移动"
 publishDate: 2021-05-16 11:00:59 +0800
 date: 2021-05-17 08:31:31 +0800
-categories: unity openvr
+tags: unity openvr
 position: starter
 ---
 

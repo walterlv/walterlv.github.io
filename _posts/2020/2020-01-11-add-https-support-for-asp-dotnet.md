@@ -1,7 +1,7 @@
 ---
 title: "三种方法为 ASP.NET Core 对外服务添加 https 支持（kestrel / frp / nginx）"
 date: 2020-01-11 20:10:25 +0800
-categories: dotnet web
+tags: dotnet web
 position: starter
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "WPF / Windows Forms 检测窗口在哪个屏幕"
 date: 2020-06-11 18:39:48 +0800
-categories: wpf dotnet csharp
+tags: wpf dotnet csharp
 position: starter
 ---
 

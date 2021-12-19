@@ -2,7 +2,7 @@
 title: "如何在 Unity3D 场景中显示帧率（FPS）"
 publishDate: 2020-05-23 16:36:57 +0800
 date: 2020-05-23 16:37:08 +0800
-categories: unity csharp
+tags: unity csharp
 position: knowledge
 ---
 

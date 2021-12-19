@@ -1,7 +1,7 @@
 ---
 title: "Unity3D 入门：最简单的控制视角，以及控制角色前进、转向的脚本"
 date: 2020-05-05 15:58:46 +0800
-categories: unity
+tags: unity
 position: starter
 ---
 

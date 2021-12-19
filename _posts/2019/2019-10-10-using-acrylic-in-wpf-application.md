@@ -1,7 +1,7 @@
 ---
 title: "在 WPF 程序中应用 Windows 10 真•亚克力效果"
 date: 2019-10-10 10:25:11 +0800
-categories: dotnet
+tags: dotnet
 position: starter
 ---
 

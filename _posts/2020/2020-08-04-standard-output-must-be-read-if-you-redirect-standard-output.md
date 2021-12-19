@@ -1,7 +1,7 @@
 ---
 title: "设置进程的 RedirectStandardOutput 重定向输出后，如果不将输出读出来，会卡死此进程"
 date: 2020-08-04 11:00:19 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: problem
 ---
 

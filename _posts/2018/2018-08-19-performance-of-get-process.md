@@ -1,7 +1,7 @@
 ---
 title: ".NET 中 GetProcess 相关方法的性能"
 date: 2018-08-19 15:04:19 +0800
-categories: dotnet windows
+tags: dotnet windows
 ---
 
 .NET 的 `Process` 类中提供了查找进程的若干方法，其中部分方法还比较消耗性能。如果你试图优化查找进程相关方法的性能，可能本文分享的一些耗时数据可以作为参考。

@@ -2,7 +2,7 @@
 title: "C#/.NET 使用 CommandLineParser 来标准化地解析命令行"
 publishDate: 2018-12-22 23:22:41 +0800
 date: 2018-12-30 16:10:22 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 ---
 

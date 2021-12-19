@@ -1,7 +1,7 @@
 ---
 title: "Windows 的剪贴板机制"
 date: 2019-11-05 11:24:31 +0800
-categories: windows dotnet csharp
+tags: windows dotnet csharp
 position: knowledge
 published: false
 ---

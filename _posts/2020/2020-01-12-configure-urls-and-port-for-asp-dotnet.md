@@ -2,7 +2,7 @@
 title: "如何设置 ASP.NET Core 程序监听的 IP 和端口"
 publishDate: 2020-01-12 21:31:22 +0800
 date: 2020-01-13 08:04:22 +0800
-categories: dotnet web
+tags: dotnet web
 position: starter
 ---
 

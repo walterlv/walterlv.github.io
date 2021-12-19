@@ -2,7 +2,7 @@
 title: "Unity3D 入门：安装 Unity3D 并配置与 Visual Studio 的协作开发环境"
 publishDate: 2020-04-26 11:44:20 +0800
 date: 2020-05-05 15:22:45 +0800
-categories: unity csharp visualstudio
+tags: unity csharp visualstudio
 position: starter
 ---
 

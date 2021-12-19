@@ -1,7 +1,7 @@
 ---
 title: "使用 7-Zip 的命令行版本来压缩和解压文件"
 date: 2019-04-24 09:55:21 +0800
-categories: windows dotnet
+tags: windows dotnet
 position: starter
 ---
 

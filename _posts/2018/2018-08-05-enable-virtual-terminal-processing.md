@@ -2,7 +2,7 @@
 title: "让控制台支持 ANSI 转义序列，输出下划线、修改颜色或其他控制"
 publishDate: 2018-08-05 14:24:11 +0800
 date: 2018-12-14 09:54:00 +0800
-categories: windows dotnet csharp
+tags: windows dotnet csharp
 ---
 
 各种操作系统的控制台都支持 ANSI 转义序列（ANSI Escape Code）。使用转义序列，可以对控制台进行很多额外的定制，例如修改颜色、修改标题栏，将文字添加下划线等。

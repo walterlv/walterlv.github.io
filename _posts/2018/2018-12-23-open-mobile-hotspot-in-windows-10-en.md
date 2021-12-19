@@ -1,7 +1,7 @@
 ---
 title: "Turn on Mobile Hotspot (Wi-Fi) in Windows 10"
 date: 2018-12-23 13:35:01 +0800
-categories: windows
+tags: windows
 position: starter
 version:
   current: English

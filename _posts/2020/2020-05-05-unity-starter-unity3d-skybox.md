@@ -2,7 +2,7 @@
 title: "Unity3D 入门：如何制作天空效果？天空盒的使用"
 publishDate: 2020-05-05 19:34:00 +0800
 date: 2020-05-22 18:48:06 +0800
-categories: unity
+tags: unity
 position: starter
 ---
 

@@ -2,7 +2,7 @@
 title: "Win2D 中的游戏循环：CanvasAnimatedControl"
 publishDate: 2018-11-11 21:35:58 +0800
 date: 2018-11-28 16:25:46 +0800
-categories: dotnet win2d uwp
+tags: dotnet win2d uwp
 ---
 
 Win2D 是 DirectX 的一个高层封装，提供了极大 DirectX 性能的同时，又具有很好用的 API 设计。

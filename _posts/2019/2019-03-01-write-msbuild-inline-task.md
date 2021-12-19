@@ -1,7 +1,7 @@
 ---
 title: "如何在 csproj 中用 C# 代码写一个内联的编译任务 Task"
 date: 2019-03-01 15:12:04 +0800
-categories: msbuild dotnet visualstudio csharp
+tags: msbuild dotnet visualstudio csharp
 position: starter
 ---
 

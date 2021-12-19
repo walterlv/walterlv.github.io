@@ -1,7 +1,7 @@
 ---
 title: "用 WiX 制作安装包：制作 WPF 安装包界面（入门篇）"
 date: 2021-07-15 19:52:35 +0800
-categories: dotnet msi wix
+tags: dotnet msi wix
 position: starter
 ---
 

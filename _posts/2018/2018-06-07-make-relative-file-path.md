@@ -2,7 +2,7 @@
 title: "如何根据一个绝对文件路径生成一个相对文件路径"
 publishDate: 2018-06-07 19:30:24 +0800
 date: 2020-06-15 17:23:04 +0800
-categories: dotnet
+tags: dotnet
 ---
 
 日常的开发中，获取绝对文件路径才是主流吧！连 `Path.GetFullPath` 这种生成绝对路径的方法都已经成为 .NET Standard 的一部分了。

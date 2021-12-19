@@ -1,7 +1,7 @@
 ---
 title: ".NET / MSBuild 扩展编译时什么时候用 BeforeTargets / AfterTargets 什么时候用 DependsOnTargets？"
 date: 2019-07-01 16:43:43 +0800
-categories: visualstudio msbuild nuget dotnet
+tags: visualstudio msbuild nuget dotnet
 position: principle
 ---
 

@@ -2,7 +2,7 @@
 title: "让一个 csproj 项目指定多个开发框架"
 publishDate: 2018-01-21 11:28:55 +0800
 date: 2019-04-12 09:36:19 +0800
-categories: visualstudio
+tags: visualstudio
 ---
 
 可移植类库、共享项目、.NET Standard 项目都能够帮我们完成跨多个 .NET SDK 的单一项目开发，但它们的跨 SDK 开发都有些限制。现在，我们又有新的方式能够跨多个 .NET SDK 开发了，这就是使用新的 csproj 文件格式。

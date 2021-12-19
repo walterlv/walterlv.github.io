@@ -1,7 +1,7 @@
 ---
 title: "在 Visual Studio 中重新将高级保存功能放出来，便于强制指定文件编码格式"
 date: 2019-05-23 20:25:30 +0800
-categories: visualstudio
+tags: visualstudio
 position: starter
 ---
 

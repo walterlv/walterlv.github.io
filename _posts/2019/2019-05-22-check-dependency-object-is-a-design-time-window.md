@@ -1,7 +1,7 @@
 ---
 title: "WPF 判断一个对象是否是设计时的窗口类型，而不是运行时的窗口"
 date: 2019-05-22 19:53:07 +0800
-categories: wpf dotnet csharp
+tags: wpf dotnet csharp
 position: problem
 ---
 

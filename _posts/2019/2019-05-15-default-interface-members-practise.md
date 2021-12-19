@@ -1,7 +1,7 @@
 ---
 title: "C# 8.0 中开启默认接口实现"
 date: 2019-05-15 14:57:35 +0800
-categories: csharp dotnet
+tags: csharp dotnet
 position: starter
 ---
 

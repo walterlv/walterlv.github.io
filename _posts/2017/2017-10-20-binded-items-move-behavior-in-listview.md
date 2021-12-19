@@ -1,8 +1,7 @@
 ---
 title: "UWP 和 WPF 不同，ListView 中绑定的集合修改顺序时，UI 的刷新规则"
 date: 2017-10-20 08:14:00 +0800
-categories: dotnet wpf uwp
-tags: UWP WPF ListView Binding Items
+tags: dotnet wpf uwp
 description: 
 ---
 

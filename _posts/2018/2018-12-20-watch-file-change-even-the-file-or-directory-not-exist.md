@@ -1,7 +1,7 @@
 ---
 title: "文件和文件夹不存在的时候，FileSystemWatcher 监听不到文件的改变？如果递归地监听就可以了"
 date: 2018-12-20 10:05:38 +0800
-categories: dotnet windows
+tags: dotnet windows
 position: problem
 ---
 

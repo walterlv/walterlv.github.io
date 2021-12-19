@@ -1,7 +1,7 @@
 ---
 title: "用 WiX 制作安装包：安装 WiX Toolset 工具集"
 date: 2021-07-14 17:47:10 +0800
-categories: dotnet msi wix
+tags: dotnet msi wix
 position: starter
 ---
 

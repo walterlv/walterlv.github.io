@@ -2,7 +2,7 @@
 title: ".NET 使用 JustAssembly 比较两个不同版本程序集的 API 变化"
 publishDate: 2019-02-24 17:09:17 +0800
 date: 2019-03-10 21:30:49 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: starter
 ---
 

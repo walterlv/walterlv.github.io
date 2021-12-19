@@ -2,7 +2,7 @@
 title: "使用 Microsoft.UI.Xaml 解决 UWP 控件和对老版本 Windows 10 的兼容性问题"
 publishDate: 2018-07-21 21:51:05 +0800
 date: 2018-12-14 09:54:00 +0800
-categories: uwp windows
+tags: uwp windows
 ---
 
 虽然微软宣称 Windows 10 将是最后一个 Windows 版本，但由于年代跨越实在太久远，兼容性依然是避不开的问题。Microsoft.UI.Xaml 的预览版现已推出，旨在解决 UWP UI 控件在各个不同版本 Windows 上的兼容性问题。

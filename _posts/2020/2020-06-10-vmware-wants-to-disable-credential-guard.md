@@ -1,7 +1,7 @@
 ---
 title: "VMware Workstation 与 Device/Credential Guard 不兼容。在禁用 Device/Credential Guard 后，可以运行 VMware Workstation"
 date: 2020-06-10 08:58:01 +0800
-categories: windows
+tags: windows
 position: problem
 ---
 

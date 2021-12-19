@@ -1,7 +1,7 @@
 ---
 title: "手工编辑 tasks.json 和 launch.json，让你的 VSCode 具备调试 .NET Core 程序的能力"
 date: 2019-03-14 22:31:12 +0800
-categories: dotnet csharp vscode msbuild visualstudio
+tags: dotnet csharp vscode msbuild visualstudio
 position: starter
 ---
 

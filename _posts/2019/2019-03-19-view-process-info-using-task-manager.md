@@ -1,7 +1,7 @@
 ---
 title: "Windows 系统上使用任务管理器查看进程的各项属性（命令行、DPI、管理员权限等）"
 date: 2019-03-19 19:52:39 +0800
-categories: windows
+tags: windows
 position: knowledge
 ---
 

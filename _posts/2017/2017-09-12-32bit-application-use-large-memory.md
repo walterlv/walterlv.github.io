@@ -3,7 +3,7 @@ layout: post
 title: "使 32 位程序使用大于 2GB 的内存"
 publishDate: 2017-09-12 21:48:46 +0800
 date: 2017-12-26 09:05:27 +0800
-categories: windows
+tags: windows
 permalink: /windows/2017/09/12/32bit-application-use-large-memory.html
 keywords: Windows 32-bit 2GB largeaddressaware editbin dumpbin anycpu
 description: 了解 Windows 系统上如何使 32 位应用程序使用大于 2GB 的内存。

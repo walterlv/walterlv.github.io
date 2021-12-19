@@ -1,7 +1,7 @@
 ---
 title: "制作通过 NuGet 分发的源代码包时，如果目标项目是 WPF 则会出现一些问题（探索篇，含解决方案）"
 date: 2019-06-11 15:30:40 +0800
-categories: dotnet csharp wpf nuget visualstudio msbuild roslyn
+tags: dotnet csharp wpf nuget visualstudio msbuild roslyn
 position: problem
 ---
 

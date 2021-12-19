@@ -2,7 +2,7 @@
 title: "为什么实现 .NET 的 ICollection 集合时需要实现 SyncRoot 属性？如何正确实现这个属性？"
 publishDate: 2020-01-07 09:29:41 +0800
 date: 2020-01-28 16:53:15 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 ---
 

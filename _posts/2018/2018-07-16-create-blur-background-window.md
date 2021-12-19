@@ -2,7 +2,7 @@
 title: "Windows 10 应用创建模糊背景窗口的三种方法"
 publishDate: 2018-07-16 19:44:07 +0800
 date: 2018-12-14 09:54:00 +0800
-categories: windows wpf uwp dotnet
+tags: windows wpf uwp dotnet
 version:
   current: 中文
 versions:

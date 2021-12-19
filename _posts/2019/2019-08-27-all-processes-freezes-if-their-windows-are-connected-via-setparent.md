@@ -1,7 +1,7 @@
 ---
 title: "使用 SetParent 跨进程设置父子窗口时的一些问题（小心卡死）"
 date: 2019-08-27 08:49:06 +0800
-categories: dotnet wpf csharp windows
+tags: dotnet wpf csharp windows
 position: problem
 ---
 

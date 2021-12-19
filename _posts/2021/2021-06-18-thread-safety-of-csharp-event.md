@@ -2,7 +2,7 @@
 title: "C# 的事件，一般你不需要担心它的线程安全问题！"
 publishDate: 2021-06-18 13:45:29 +0800
 date: 2021-06-18 15:42:18 +0800
-categories: csharp dotnet
+tags: csharp dotnet
 position: knowledge
 ---
 

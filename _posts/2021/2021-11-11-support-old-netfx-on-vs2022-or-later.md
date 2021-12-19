@@ -2,7 +2,7 @@
 title: "无需安装 VS2019，在 Visual Studio 2022 中编译 .NET Framework 4.5/4/3.5 这样的古老框架"
 publishDate: 2021-11-11 17:59:52 +0800
 date: 2021-11-15 15:55:01 +0800
-categories: visualstudio dotnet
+tags: visualstudio dotnet
 position: problem
 ---
 

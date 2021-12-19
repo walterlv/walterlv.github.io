@@ -1,7 +1,7 @@
 ---
 title: "EFI 分区/恢复分区不可删除？你需要使用命令行了（配合鼠标操作）"
 date: 2019-10-07 11:05:02 +0800
-categories: windows
+tags: windows
 position: knowledge
 ---
 

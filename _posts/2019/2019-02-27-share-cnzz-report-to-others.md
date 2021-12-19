@@ -1,7 +1,7 @@
 ---
 title: "将友盟（cnzz）站点的访问数据报告分享给其他人"
 date: 2019-02-27 13:48:30 +0800
-categories: web
+tags: web
 position: knowledge
 ---
 

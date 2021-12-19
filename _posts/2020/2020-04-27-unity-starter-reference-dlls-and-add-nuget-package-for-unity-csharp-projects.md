@@ -2,7 +2,7 @@
 title: "Unity3D 入门：为 Unity 的 C# 项目添加 dll 引用或安装 NuGet 包"
 publishDate: 2020-04-27 19:36:41 +0800
 date: 2020-05-23 14:38:45 +0800
-categories: unity csharp
+tags: unity csharp
 position: starter
 ---
 

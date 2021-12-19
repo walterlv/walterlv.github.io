@@ -2,7 +2,7 @@
 title: ".NET 程序如何获取图片的宽高（框架自带多种方法的不同性能）"
 publishDate: 2020-02-17 08:32:28 +0800
 date: 2020-04-30 18:35:49 +0800
-categories: dotnet wpf
+tags: dotnet wpf
 position: problem
 ---
 

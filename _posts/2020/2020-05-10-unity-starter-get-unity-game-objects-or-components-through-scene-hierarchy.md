@@ -2,7 +2,7 @@
 title: "Unity3D 入门：如何在脚本中找到游戏对象的父子级/祖孙级对象和它们的组件"
 publishDate: 2020-05-05 09:17:37 +0800
 date: 2020-05-10 15:34:05 +0800
-categories: unity
+tags: unity
 position: starter
 ---
 

@@ -2,7 +2,7 @@
 title: "临时编写和调试 C++ 代码？用 VSCode 就够了！一分钟搭好 C++ 调试环境"
 publishDate: 2019-09-07 09:52:29 +0800
 date: 2019-09-07 10:07:36 +0800
-categories: cpp vscode
+tags: cpp vscode
 position: knowledge
 ---
 

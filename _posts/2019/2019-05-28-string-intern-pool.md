@@ -1,7 +1,7 @@
 ---
 title: ".NET/C# 的字符串暂存池"
 date: 2019-05-28 21:26:27 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 ---
 

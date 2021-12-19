@@ -1,7 +1,7 @@
 ---
 title: "如何监视 WPF 中的所有窗口，在所有窗口中订阅事件或者附加 UI"
 date: 2019-06-28 08:38:21 +0800
-categories: wpf dotnet csharp
+tags: wpf dotnet csharp
 position: problem
 ---
 

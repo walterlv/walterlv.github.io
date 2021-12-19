@@ -1,7 +1,7 @@
 ---
 title: "在 CMD 里根据进程名杀掉进程"
 date: 2020-04-30 11:31:27 +0800
-categories: windows
+tags: windows
 position: knowledge
 ---
 

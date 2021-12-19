@@ -1,7 +1,7 @@
 ---
 title: "System.InvalidOperationException:“寄宿的 HWND 必须是指定父级的子窗口。”"
 date: 2019-08-14 16:32:16 +0800
-categories: wpf windows dotnet csharp
+tags: wpf windows dotnet csharp
 position: problem
 ---
 

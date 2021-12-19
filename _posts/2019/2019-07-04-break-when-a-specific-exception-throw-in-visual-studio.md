@@ -1,7 +1,7 @@
 ---
 title: "在 Visual Studio 中设置当发生某个特定异常或所有异常时中断"
 date: 2019-07-04 13:07:52 +0800
-categories: dotnet csharp visualstudio
+tags: dotnet csharp visualstudio
 position: starter
 ---
 

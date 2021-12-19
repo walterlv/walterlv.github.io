@@ -1,7 +1,7 @@
 ---
 title: "Windows 的 UAC 设置中的通知等级实际上只有两个档而已"
 date: 2019-03-19 17:43:47 +0800
-categories: windows
+tags: windows
 position: knowledge
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "只需 5 秒钟，你就能取到 WPF 程序的超高分辨率超高清截图"
 date: 2018-12-26 12:54:01 +0800
-categories: wpf
+tags: wpf
 position: starter
 ---
 

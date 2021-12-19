@@ -1,7 +1,7 @@
 ---
 title: "使用 .editorconfig 配置 .NET/C# 项目的代码分析规则的严重程度"
 date: 2019-10-12 11:35:04 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 ---
 

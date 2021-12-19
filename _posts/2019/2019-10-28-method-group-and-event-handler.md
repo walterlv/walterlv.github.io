@@ -2,7 +2,7 @@
 title: "C#/.NET 当我们在写事件 += 和 -= 的时候，方法是如何转换成事件处理器的"
 publishDate: 2019-10-28 18:48:46 +0800
 date: 2019-10-29 11:53:34 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 ---
 

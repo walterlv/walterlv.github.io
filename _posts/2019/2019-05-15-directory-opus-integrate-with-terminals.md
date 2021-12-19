@@ -1,7 +1,7 @@
 ---
 title: "Directory Opus 使用命令编辑器添加 PowerShell / CMD / Bash 等多种终端到自定义菜单"
 date: 2019-05-15 17:27:32 +0800
-categories: windows
+tags: windows
 position: starter
 ---
 

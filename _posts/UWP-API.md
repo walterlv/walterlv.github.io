@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "UWP API"
-categories: favorites uwp
+tags: favorites uwp
 keywords: uwp api
 published: false
 ---

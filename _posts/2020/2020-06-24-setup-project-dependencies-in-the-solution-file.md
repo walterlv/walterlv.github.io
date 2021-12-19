@@ -1,7 +1,7 @@
 ---
 title: "通过设置 sln 解决方案依赖，确保不引用的两个项目之间有明确的编译顺序"
 date: 2020-06-24 09:04:14 +0800
-categories: visualstudio dotnet
+tags: visualstudio dotnet
 position: problem
 ---
 

@@ -2,7 +2,7 @@
 title: ".NET 的程序集加载上下文"
 publishDate: 2019-06-12 16:30:53 +0800
 date: 2019-06-13 13:49:44 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 ---
 

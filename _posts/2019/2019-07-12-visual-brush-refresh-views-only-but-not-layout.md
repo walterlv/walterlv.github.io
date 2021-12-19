@@ -1,7 +1,7 @@
 ---
 title: "WPF 的 VisualBrush 只刷新显示的视觉效果，不刷新布局范围"
 date: 2019-07-12 20:31:34 +0800
-categories: wpf dotnet csharp
+tags: wpf dotnet csharp
 position: problem
 version:
   current: 中文

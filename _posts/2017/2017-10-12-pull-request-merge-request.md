@@ -1,9 +1,8 @@
 ---
 title: "GitHub 的 Pull Request 和 GitLab 的 Merge Request 有区别吗？"
 date: 2017-10-12 09:13:40 +0800
-categories: git
+tags: git
 permalink: /post/git/pull-request-merge-request.html
-tags: git merge pull request
 description: 
 ---
 

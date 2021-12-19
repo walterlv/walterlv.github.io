@@ -2,7 +2,7 @@
 title: "Visual Studio 2022 升级不再附带 .NET Framework 4.5 这种古老的目标包了，本文帮你装回来"
 publishDate: 2021-11-09 09:58:41 +0800
 date: 2021-11-11 17:49:43 +0800
-categories: visualstudio dotnet
+tags: visualstudio dotnet
 position: problem
 ---
 

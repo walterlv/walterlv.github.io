@@ -1,7 +1,7 @@
 ---
 title: "0x800b0109 - 已处理证书链，但是在不受信任提供程序信任的根证书中终止。"
 date: 2021-07-16 17:51:20 +0800
-categories: dotnet msi wix
+tags: dotnet msi wix
 position: problem
 ---
 

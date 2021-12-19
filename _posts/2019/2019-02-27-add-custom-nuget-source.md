@@ -1,7 +1,7 @@
 ---
 title: "全局或为单独的项目添加自定义的 NuGet 源"
 date: 2019-02-27 12:26:12 +0800
-categories: nuget visualstudio
+tags: nuget visualstudio
 position: starter
 ---
 

@@ -2,7 +2,7 @@
 title: "Windows/Linux 系统中获取端口被哪个应用程序占用"
 publishDate: 2020-03-11 15:38:02 +0800
 date: 2020-05-23 20:21:49 +0800
-categories: windows linux powershell
+tags: windows linux powershell
 position: starter
 ---
 

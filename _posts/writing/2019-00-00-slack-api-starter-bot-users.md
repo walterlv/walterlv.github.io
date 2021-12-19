@@ -1,7 +1,7 @@
 ---
 title: "Slack 开发入门之 Bot User：Slack 机器人"
 date: 2019-01-06 20:00:51 +0800
-categories: slack web
+tags: slack web
 position: starter
 published: false
 ---

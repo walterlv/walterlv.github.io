@@ -1,7 +1,7 @@
 ---
 title: "AppContextSwitchOverrides"
 date: 2019-11-05 11:24:13 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 published: false
 ---

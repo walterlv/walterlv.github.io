@@ -2,7 +2,7 @@
 title: "在有 UI 线程参与的同步锁（如 AutoResetEvent）内部使用 await 可能导致死锁"
 publishDate: 2018-12-21 16:37:18 +0800
 date: 2019-03-15 15:54:00 +0800
-categories: dotnet wpf
+tags: dotnet wpf
 position: knowledge
 ---
 

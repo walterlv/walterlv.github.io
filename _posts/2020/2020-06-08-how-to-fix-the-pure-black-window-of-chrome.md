@@ -1,7 +1,7 @@
 ---
 title: "Chrome 窗口全黑了，不怕，有招"
 date: 2020-06-08 08:22:55 +0800
-categories: windows web
+tags: windows web
 position: problem
 ---
 

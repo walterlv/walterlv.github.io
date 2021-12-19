@@ -2,7 +2,7 @@
 title: "在项目文件 / MSBuild / NuGet 包中编写扩展编译的时候，正确使用 props 文件和 targets 文件"
 publishDate: 2019-07-01 15:54:13 +0800
 date: 2021-06-07 15:12:04 +0800
-categories: visualstudio msbuild nuget dotnet
+tags: visualstudio msbuild nuget dotnet
 position: principle
 ---
 

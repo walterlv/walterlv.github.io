@@ -2,7 +2,7 @@
 title: ".NET 中各种混淆（Obfuscation）的含义、原理、实际效果和不同级别的差异（使用 SmartAssembly）"
 publishDate: 2018-08-19 20:42:42 +0800
 date: 2018-12-14 09:54:00 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 ---
 
 长文预警！！！

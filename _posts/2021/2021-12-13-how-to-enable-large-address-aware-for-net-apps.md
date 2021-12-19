@@ -1,7 +1,7 @@
 ---
 title: "为 .NET Core / Framework 程序开启大内存感知（LargeAddressAware），使 32 位程序支持最多 4GB 的用户空间内存"
 date: 2021-12-13 21:01:43 +0800
-categories: dotnet windows
+tags: dotnet windows
 position: knowledge
 image:
   src: /static/posts/2021-12-13-20-51-53.png

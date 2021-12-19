@@ -1,7 +1,7 @@
 ---
 title: "Windows 系统上用 .NET/C# 查找所有窗口，并获得窗口的标题、位置、尺寸、最小化、可见性等各种状态"
 date: 2019-10-10 12:11:37 +0800
-categories: windows dotnet csharp
+tags: windows dotnet csharp
 position: knowledge
 ---
 

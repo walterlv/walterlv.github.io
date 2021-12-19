@@ -1,7 +1,7 @@
 ---
 title: "使用 ProcessMonitor 找到进程所操作的文件的路径"
 date: 2019-06-01 13:49:15 +0800
-categories: windows
+tags: windows
 position: problem
 ---
 

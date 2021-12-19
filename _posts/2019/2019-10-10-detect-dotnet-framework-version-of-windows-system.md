@@ -1,7 +1,7 @@
 ---
 title: ".NET/C# 检测电脑上安装的 .NET Framework 的版本"
 date: 2019-10-10 16:51:58 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 ---
 

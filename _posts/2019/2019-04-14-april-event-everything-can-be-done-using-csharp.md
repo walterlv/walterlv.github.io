@@ -2,7 +2,7 @@
 title: "C# 跨设备前后端开发探索"
 publishDate: 2019-04-13 17:31:39 +0800
 date: 2019-04-16 08:54:48 +0800
-categories: csharp dotnet wpf uwp xamarin web
+tags: csharp dotnet wpf uwp xamarin web
 position: starter
 ---
 

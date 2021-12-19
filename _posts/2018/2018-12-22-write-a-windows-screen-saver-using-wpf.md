@@ -1,7 +1,7 @@
 ---
 title: "使用 WPF 开发一个 Windows 屏幕保护程序"
 date: 2018-12-22 10:24:33 +0800
-categories: windows wpf
+tags: windows wpf
 position: starter
 ---
 

@@ -2,7 +2,7 @@
 title: "（持续整理中）Visual Studio 中 C# 代码分析规则集中每一项的含义 (stylecop ruleset)"
 publishDate: 2018-02-07 21:55:12 +0800
 date: 2018-12-14 09:54:00 +0800
-categories: csharp visualstudio
+tags: csharp visualstudio
 ---
 
 因为我希望在要求很高的库中及时发现潜在的代码问题，所以我开启了 Visual Studio 的代码分析。

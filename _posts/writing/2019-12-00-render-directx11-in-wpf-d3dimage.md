@@ -1,7 +1,7 @@
 ---
 title: "使用 WPF D3DImage 渲染 DirectX 11 中的内容"
 date: 2019-11-05 11:24:05 +0800
-categories: directx sharpdx wpf dotnet csharp
+tags: directx sharpdx wpf dotnet csharp
 position: starter
 published: false
 ---

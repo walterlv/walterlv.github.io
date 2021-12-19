@@ -2,7 +2,7 @@
 title: ".NET 程序集/项目/包的版本号设置有最大范围，最大不能超过 65534"
 publishDate: 2020-06-18 18:15:19 +0800
 date: 2020-06-19 00:05:08 +0800
-categories: visualstudio dotnet
+tags: visualstudio dotnet
 position: problem
 ---
 

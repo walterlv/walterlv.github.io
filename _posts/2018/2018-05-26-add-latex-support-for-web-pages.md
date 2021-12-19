@@ -2,7 +2,7 @@
 title: "为博客或个人站点的 Markdown 添加 LaTeX 公式支持"
 publishDate: 2018-05-26 10:20:16 +0800
 date: 2018-08-12 14:51:35 +0800
-categories: site web vscode
+tags: site web vscode
 ---
 
 LaTeX 是一套排版系统，原生包含对科学和技术型文档内容的支持，而 LaTeX 公式（LaTeX math and equations）则是这种支持中非常重要的一部分。如果能够在博客或个人站点中使用到 LaTeX 的排版系统，或者说只是其中的数学公式部分，对学术性（或者只是使用到了部分数学原理）文章来说将会非常方便。

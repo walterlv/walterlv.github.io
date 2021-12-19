@@ -1,7 +1,7 @@
 ---
 title: "Directory Opus 使用命令编辑器集成 TortoiseGit 的各种功能"
 date: 2019-05-15 10:41:39 +0800
-categories: windows
+tags: windows
 position: starter
 ---
 

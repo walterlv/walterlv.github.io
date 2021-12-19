@@ -2,7 +2,7 @@
 title: "修复 Windows 10 设置界面里面混乱的语言翻译"
 publishDate: 2020-02-07 13:35:27 +0800
 date: 2020-03-23 11:35:35 +0800
-categories: windowes
+tags: windowes
 position: problem
 ---
 

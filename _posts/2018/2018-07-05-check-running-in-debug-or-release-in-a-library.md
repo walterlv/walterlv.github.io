@@ -2,7 +2,7 @@
 title: "如何在 .NET 库的代码中判断当前程序运行在 Debug 下还是 Release 下"
 publishDate: 2018-07-05 19:39:00 +0800
 date: 2018-09-01 08:00:29 +0800
-categories: dotnet
+tags: dotnet
 ---
 
 我们经常会使用条件编译符 `#if DEBUG` 在 Debug 下执行某些特殊代码。但是一旦我们把代码打包成 dll，然后发布给其他小伙伴使用的时候，这样的判断就失效了，因为发布的库是 Release 配置的；那些 `#if DEBUG` 的代码根本都不会编译进库中。然而总有时候希望在库中也能得知程序是 Debug 还是 Release，以便库发布之后也能在 Debug 下多做一些检查。

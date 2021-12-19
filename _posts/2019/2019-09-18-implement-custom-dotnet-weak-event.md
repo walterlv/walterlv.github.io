@@ -1,7 +1,7 @@
 ---
 title: ".NET/C# 利用 Walterlv.WeakEvents 高性能地定义和使用弱事件"
 date: 2019-09-18 22:05:55 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 ---
 

@@ -2,7 +2,7 @@
 title: "如何使用 MyGet 这个激进的 NuGet 源体验日构建版本的 .NET Standard / .NET Core"
 publishDate: 2019-03-04 22:29:23 +0800
 date: 2019-03-10 16:57:26 +0800
-categories: dotnet csharp visualstudio msbuild nuget
+tags: dotnet csharp visualstudio msbuild nuget
 position: starter
 ---
 

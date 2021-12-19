@@ -1,7 +1,7 @@
 ---
 title: "WPF Applications Stop Responding to Touches after Adding or Removing Tablet Devices"
 date: 2018-08-15 15:42:00 +0800
-categories: wpf windows
+tags: wpf windows
 version:
   current: English
 versions:

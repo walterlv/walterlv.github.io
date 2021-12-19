@@ -2,7 +2,7 @@
 title: "Unity3D 入门：Unity Editor 编辑器常用快捷键"
 publishDate: 2020-05-05 18:23:20 +0800
 date: 2020-05-05 19:35:25 +0800
-categories: unity
+tags: unity
 position: starter
 ---
 

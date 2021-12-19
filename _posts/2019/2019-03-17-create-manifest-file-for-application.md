@@ -1,7 +1,7 @@
 ---
 title: "如何创建应用程序清单文件 App.Manifest，如何创建不带清单的应用程序"
 date: 2019-03-17 17:34:18 +0800
-categories: windows dotnet csharp wpf
+tags: windows dotnet csharp wpf
 position: starter
 ---
 

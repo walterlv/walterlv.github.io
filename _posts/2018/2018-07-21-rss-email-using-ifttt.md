@@ -1,7 +1,7 @@
 ---
 title: "使用 IFTTT 做 RSS 的邮件订阅服务"
 date: 2018-07-21 17:40:56 +0800
-categories: miscellaneous
+tags: miscellaneous
 ---
 
 IFTTT 是一个奇特的网络服务。它本身没有提供什么功能，但因为它的工作方式类似编程，所以你可以拿它做各种各样难以想象的事情。

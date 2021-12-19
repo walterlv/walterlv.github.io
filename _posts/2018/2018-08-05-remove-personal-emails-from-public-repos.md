@@ -1,7 +1,7 @@
 ---
 title: "在 GitHub 公开仓库中隐藏自己的私人邮箱地址"
 date: 2018-08-05 16:56:26 +0800
-categories: git github
+tags: git github
 ---
 
 GitHub 重点在开方源代码，其本身还是非常注重隐私的。这一点与面向企业的 GitLab 很不一样。

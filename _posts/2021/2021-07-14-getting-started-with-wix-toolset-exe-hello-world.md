@@ -2,7 +2,7 @@
 title: "用 WiX 制作安装包：创建一个简单的 exe 安装包"
 publishDate: 2021-07-14 18:52:59 +0800
 date: 2021-07-20 09:11:05 +0800
-categories: dotnet msi wix
+tags: dotnet msi wix
 position: starter
 ---
 

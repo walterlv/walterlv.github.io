@@ -1,7 +1,7 @@
 ---
 title: "使用 ReSharper，输入即遵循 StyleCop 的代码格式化规范"
 date: 2018-12-01 12:36:27 +0800
-categories: visualstudio csharp dotnet
+tags: visualstudio csharp dotnet
 position: starter
 ---
 

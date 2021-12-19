@@ -1,7 +1,7 @@
 ---
 title: "用 WiX 制作安装包：为 WiX 制作的 exe 安装包添加 .NET Framework 前置的安装步骤"
 date: 2021-07-15 19:46:34 +0800
-categories: dotnet msi wix
+tags: dotnet msi wix
 position: starter
 ---
 

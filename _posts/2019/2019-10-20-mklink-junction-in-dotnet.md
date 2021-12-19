@@ -2,7 +2,7 @@
 title: ".NET 实现 NTFS 文件系统的硬链接 mklink /J（Junction）"
 publishDate: 2019-10-20 22:04:46 +0800
 date: 2019-10-22 14:04:24 +0800
-categories: dotnet windows csharp
+tags: dotnet windows csharp
 position: knowledge
 ---
 

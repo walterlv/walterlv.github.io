@@ -1,7 +1,7 @@
 ---
 title: "如何在终端和 PowerShell 中将一个命令自动重复执行多次"
 date: 2020-03-11 16:26:03 +0800
-categories: windows powershell
+tags: windows powershell
 position: starter
 ---
 

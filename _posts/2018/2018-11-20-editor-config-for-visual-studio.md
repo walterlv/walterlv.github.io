@@ -2,7 +2,7 @@
 title: "在 Visual Studio 中使用 EditorConfig 统一代码风格（含原生与插件）"
 publishDate: 2018-11-20 12:17:50 +0800
 date: 2018-12-14 09:54:00 +0800
-categories: visualstudio csharp dotnet
+tags: visualstudio csharp dotnet
 ---
 
 EditorConfig 是一种被各种编辑器广泛支持的配置，使用此配置有助于项目在整个团队中保持一致的代码风格。Visual Studio 2017 开始原生支持 EditorConfig。

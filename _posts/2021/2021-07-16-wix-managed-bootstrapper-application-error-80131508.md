@@ -1,7 +1,7 @@
 ---
 title: "用 WiX Burn 制作托管安装包：出现 0x80131508 错误"
 date: 2021-07-16 14:24:33 +0800
-categories: dotnet msi wix
+tags: dotnet msi wix
 position: problem
 ---
 

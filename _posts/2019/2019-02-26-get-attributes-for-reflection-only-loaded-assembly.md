@@ -2,7 +2,7 @@
 title: "仅反射加载（ReflectionOnlyLoadFrom）的 .NET 程序集，如何反射获取它的 Attribute 元数据呢？"
 publishDate: 2019-02-26 21:28:08 +0800
 date: 2019-03-04 22:14:26 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 ---
 

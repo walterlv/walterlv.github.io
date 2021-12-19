@@ -3,7 +3,7 @@ layout: post
 title: "用微软拼音快速输入自定义格式的时间和日期"
 publishDate: 2017-09-18 21:58:58 +0800
 date: 2018-12-14 09:54:33 +0800
-categories: ime
+tags: ime
 permalink: /ime/2017/09/18/date-time-format-using-microsoft-pinyin.html
 keywords: Micosoft Pinyin IME date time format
 description: 教你如何用微软拼音输入法的用户自定义短语快速输入自定义格式的时间和日期。

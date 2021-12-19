@@ -1,7 +1,7 @@
 ---
 title: ".NET 中使用 TaskCompletionSource 作为线程同步互斥或异步操作的事件"
 date: 2018-12-22 15:50:23 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 ---
 

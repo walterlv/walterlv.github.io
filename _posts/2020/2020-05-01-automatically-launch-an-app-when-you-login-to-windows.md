@@ -1,7 +1,7 @@
 ---
 title: "设置 Windows 应用开机自动启动的 N 种方式"
 date: 2020-04-30 11:40:20 +0800
-categories: windows
+tags: windows
 position: knowledge
 published: false
 ---

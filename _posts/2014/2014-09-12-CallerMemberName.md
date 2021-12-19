@@ -2,7 +2,7 @@
 layout: post
 title:  "CallerMemberName"
 date:   2014-09-12 10:19:00 +0800
-categories: dotnet
+tags: dotnet
 permalink: /dotnet/2014/09/12/CallerMemberName.html
 ---
 

@@ -2,7 +2,7 @@
 title: "int? 竟然真的可以是 null！.NET/C# 确定可空值类型 Nullable<T> 实例的真实类型"
 publishDate: 2019-01-06 20:41:50 +0800
 date: 2019-01-08 18:01:14 +0800
-categories: csharp dotnet
+tags: csharp dotnet
 position: knowledge
 ---
 

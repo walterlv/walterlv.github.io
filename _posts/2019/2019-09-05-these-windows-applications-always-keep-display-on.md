@@ -2,7 +2,7 @@
 title: "发现电脑屏幕总是不自动关闭？看看你是否打开了这些程序……"
 publishDate: 2019-09-05 15:04:38 +0800
 date: 2021-06-07 13:39:27 +0800
-categories: windows
+tags: windows
 position: problem
 ---
 

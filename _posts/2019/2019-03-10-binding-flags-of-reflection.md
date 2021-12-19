@@ -1,7 +1,7 @@
 ---
 title: "详解 .NET 反射中的 BindingFlags 以及常用的 BindingFlags 使用方式"
 date: 2019-03-10 19:05:11 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 ---
 

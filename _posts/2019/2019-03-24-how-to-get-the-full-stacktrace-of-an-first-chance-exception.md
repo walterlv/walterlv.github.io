@@ -1,7 +1,7 @@
 ---
 title: "C#/.NET 如何在第一次机会异常 FirstChanceException 中获取比较完整的异常堆栈"
 date: 2019-03-24 12:09:37 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 ---
 

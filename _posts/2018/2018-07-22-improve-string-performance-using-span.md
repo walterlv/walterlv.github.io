@@ -1,7 +1,7 @@
 ---
 title: ".NET/C# 使用 Span<T> 为字符串处理提升性能"
 date: 2018-07-22 00:51:23 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 ---
 
 .NET Core 2.1 和 C# 7.2 带来了 Span<T> 的原生支持，原本需要使用不安全代码操作的内存块现在可以使用安全的方式来完成。此前在性能和稳定性上需要有所取舍，而现在可以兼得了。

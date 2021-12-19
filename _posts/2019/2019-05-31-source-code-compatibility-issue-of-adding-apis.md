@@ -2,7 +2,7 @@
 title: "不要在 C# 代码中写部分命名空间（要么不写，要么写全），否则会有源码兼容性问题"
 publishDate: 2019-05-31 19:39:26 +0800
 date: 2019-10-29 08:51:56 +0800
-categories: csharp dotnet visualstudio
+tags: csharp dotnet visualstudio
 position: problem
 version:
   current: 中文

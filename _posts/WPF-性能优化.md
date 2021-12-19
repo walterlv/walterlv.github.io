@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WPF 性能优化"
-categories: favorites wpf
+tags: favorites wpf
 keywords: wpf performance
 published: false
 ---

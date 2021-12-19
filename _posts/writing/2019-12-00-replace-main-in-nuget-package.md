@@ -1,7 +1,7 @@
 ---
 title: "在 NuGet 包中替换目标项目的入口点函数 Main"
 date: 2019-11-05 11:24:22 +0800
-categories: visualstudio msbuild nuget dotnet csharp
+tags: visualstudio msbuild nuget dotnet csharp
 position: knowledge
 published: false
 ---

@@ -1,7 +1,7 @@
 ---
 title: "C#/.NET 如何结束掉一个进程"
 date: 2019-03-14 22:57:27 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: starter
 ---
 

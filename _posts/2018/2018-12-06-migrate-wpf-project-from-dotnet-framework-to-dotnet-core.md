@@ -2,7 +2,7 @@
 title: "将基于 .NET Framework 的 WPF 项目迁移到基于 .NET Core 3"
 publishDate: 2018-12-06 11:11:10 +0800
 date: 2019-05-31 20:11:59 +0800
-categories: dotnet wpf
+tags: dotnet wpf
 position: starter
 ---
 

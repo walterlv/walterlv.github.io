@@ -1,7 +1,7 @@
 ---
 title: "使用傲梅分区助手无损合并分区，无损调整分区大小"
 date: 2019-10-07 20:14:24 +0800
-categories: windows
+tags: windows
 position: starter
 ---
 

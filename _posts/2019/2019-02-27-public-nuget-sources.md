@@ -2,7 +2,7 @@
 title: "我收集的各种公有 NuGet 源"
 publishDate: 2019-02-27 12:27:27 +0800
 date: 2019-03-12 12:41:49 +0800
-categories: dotnet nuget
+tags: dotnet nuget
 position: knowledge
 ---
 

@@ -2,7 +2,7 @@
 title: "编译并体验 .NET MAUI 官方示例代码"
 publishDate: 2021-05-31 15:39:01 +0800
 date: 2021-06-25 17:36:03 +0800
-categories: dotnet maui
+tags: dotnet maui
 position: starter
 ---
 

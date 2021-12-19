@@ -1,7 +1,7 @@
 ---
 title: "通过 ReferenceOutputAssembly=False 在引用项目时，不额外引入依赖文件"
 date: 2020-06-24 08:42:26 +0800
-categories: visualstudio dotnet
+tags: visualstudio dotnet
 position: problem
 ---
 

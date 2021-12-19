@@ -1,7 +1,7 @@
 ---
 title: "使用 dotnet 命令行配合 vscode 完成一个完整 .NET 解决方案的编写和调试"
 date: 2019-04-29 11:09:50 +0800
-categories: dotnet vscode csharp
+tags: dotnet vscode csharp
 position: starter
 ---
 

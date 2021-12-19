@@ -1,7 +1,7 @@
 ---
 title: "通过设置启用 Visual Studio 默认关闭的大量强大的功能提升开发效率"
 date: 2019-08-29 21:54:47 +0800
-categories: visualstudio csharp
+tags: visualstudio csharp
 position: starter
 ---
 

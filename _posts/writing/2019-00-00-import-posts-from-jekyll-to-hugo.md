@@ -1,7 +1,7 @@
 ---
 title: "从 Jekyll 博客迁移到 Hugo 博客"
 date: 2018-09-09 20:37:55 +0800
-categories: site
+tags: site
 published: false
 ---
 
@@ -32,13 +32,13 @@ $ hugo import jekyll your-jekyll-dir target-dir
 title: "从 Jekyll 博客迁移到 Hugo 博客"
 publishDate: 2018-08-19 20:42:42 +0800
 date: 2018-08-21 07:58:54 +0800
-categories: site
+tags: site
 ```
 
 然而迁移完后是这样的：
 
 ```yaml
-categories: site
+tags: site
 date: "2018-08-19T07:58:54Z"
 publishDate: 2018-08-19 20:42:42 +0800
 title: 从 Jekyll 博客迁移到 Hugo 博客

@@ -1,7 +1,7 @@
 ---
 title: "通过 mklink 收集本地文件系统的所有 NuGet 包输出目录来快速调试公共组件代码"
 date: 2019-08-04 21:17:27 +0800
-categories: dotnet csharp msbuild visualstudio nuget
+tags: dotnet csharp msbuild visualstudio nuget
 position: starter
 ---
 

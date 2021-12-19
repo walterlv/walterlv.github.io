@@ -2,7 +2,7 @@
 title: "制作一个极简的 .NET 客户端应用自安装或自更新程序"
 publishDate: 2019-02-27 10:36:29 +0800
 date: 2019-03-22 00:44:03 +0800
-categories: windows dotnet csharp
+tags: windows dotnet csharp
 position: starter
 ---
 

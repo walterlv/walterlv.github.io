@@ -2,7 +2,7 @@
 title: ".NET WebClient 类下载部分文件会错误？可能是解压缩的锅"
 publishDate: 2020-03-03 16:26:02 +0800
 date: 2020-03-11 17:02:19 +0800
-categories: dotnet
+tags: dotnet
 position: problem
 ---
 

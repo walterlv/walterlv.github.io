@@ -1,7 +1,7 @@
 ---
 title: "Win32/C# 应用不依赖任何库使用纯 GDI+ 对窗口截图（BitBlt）"
 date: 2020-05-23 13:52:28 +0800
-categories: windows dotnet csharp
+tags: windows dotnet csharp
 position: knowledge
 ---
 

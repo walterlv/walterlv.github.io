@@ -2,7 +2,7 @@
 title: ".NET/MSBuild 中的发布路径在哪里呢？如何在扩展编译的时候修改发布路径中的文件呢？"
 publishDate: 2019-07-02 19:56:43 +0800
 date: 2019-07-04 09:47:21 +0800
-categories: dotnet csharp msbuild visualstudio
+tags: dotnet csharp msbuild visualstudio
 position: starter
 ---
 

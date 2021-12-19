@@ -1,7 +1,7 @@
 ---
 title: "如何在 .NET/C# 代码中安全地结束掉一个控制台应用程序？通过发送 Ctrl+C 信号来结束"
 date: 2019-12-26 14:16:11 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 ---
 

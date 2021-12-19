@@ -1,7 +1,7 @@
 ---
 title: "解决包含 GitHub Actions Workflow 的分支无法推送的问题"
 date: 2020-05-26 21:48:42 +0800
-categories: github
+tags: github
 position: problem
 ---
 

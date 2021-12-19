@@ -1,7 +1,7 @@
 ---
 title: "启用 Windows 审核模式（Audit Mode），以 Administrator 账户来设置电脑的开箱体验"
 date: 2019-03-17 20:02:05 +0800
-categories: windows
+tags: windows
 position: knowledge
 ---
 

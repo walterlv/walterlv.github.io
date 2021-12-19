@@ -2,7 +2,7 @@
 title: "PowerShell 的命令行启动参数（可用于执行命令、传参或进行环境配置）"
 publishDate: 2019-05-12 15:05:23 +0800
 date: 2019-11-20 14:39:56 +0800
-categories: windows powershell
+tags: windows powershell
 position: knowledge
 ---
 

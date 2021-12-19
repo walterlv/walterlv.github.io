@@ -1,7 +1,7 @@
 ---
 title: ".NET/C# 编译期能确定的字符串会在字符串暂存池中不会被 GC 垃圾回收掉"
 date: 2019-05-28 21:31:24 +0800
-categories: dotnet csharp
+tags: dotnet csharp
 position: knowledge
 ---
 

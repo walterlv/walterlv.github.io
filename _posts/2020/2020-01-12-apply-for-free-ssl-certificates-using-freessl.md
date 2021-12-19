@@ -2,7 +2,7 @@
 title: "全民 https！使用 FreeSSL 申请免费的 https 证书"
 publishDate: 2020-01-12 20:38:55 +0800
 date: 2020-01-13 08:05:30 +0800
-categories: web
+tags: web
 position: starter
 ---
 

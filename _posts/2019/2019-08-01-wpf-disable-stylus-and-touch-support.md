@@ -1,7 +1,7 @@
 ---
 title: "通过 AppSwitch 禁用 WPF 内置的触摸让 WPF 程序可以处理 Windows 触摸消息"
 date: 2019-08-01 20:56:16 +0800
-categories: wpf windows dotnet csharp
+tags: wpf windows dotnet csharp
 position: knowledge
 ---
 

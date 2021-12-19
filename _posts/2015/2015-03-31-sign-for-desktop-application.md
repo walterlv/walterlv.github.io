@@ -2,7 +2,7 @@
 layout: post
 title:  "为程序签名"
 date:   2015-03-31 16:46:00 +0800
-categories: windows
+tags: windows
 permalink: /windows/2015/03/31/sign-for-desktop-application.html
 ---
 
