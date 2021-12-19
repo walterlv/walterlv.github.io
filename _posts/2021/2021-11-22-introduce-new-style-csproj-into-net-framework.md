@@ -1,9 +1,11 @@
 ---
 title: "删删删！快速将旧版 .NET Framework 的 WPF 项目格式(csproj) 迁移成新版 SDK 风格的项目格式"
 publishDate: 2018-01-16 00:04:28 +0800
-date: 2021-11-22 16:39:38 +0800
+date: 2021-11-22 16:44:55 +0800
 categories: visualstudio msbuild
 position: starter
+image:
+  src: /static/posts/2021-11-22-16-19-23.png
 ---
 
 现在再使用 Visual Studio 创建新的 WPF 项目时，将默认引诱你使用 .NET 6（或者 5、.NET Core 3.1）框架和配套的新的 SDK 风格的项目文件（csproj）。

@@ -1,0 +1,14 @@
+<!--
+  The bluring background image
+-->
+
+
+{% if page.image.src %}
+  {% capture bg %}
+    {% unless page.image.no_bg %}{{ 'bg' }}{% endunless %}
+  {% endcapture %}
+  <div id="page-bluring-bg" style="
+    background-image: url('{{ page.image.src }}');
+  "></div>
+
+{% endif %}

@@ -3,32 +3,21 @@
 -->
 
 <div id="sidebar" class="d-flex flex-column align-items-end" lang="{{lang}}">
-  <div class="profile-wrapper text-center">
+  <div class="sidebar-box post-item-box profile-wrapper text-center">
     <div id="avatar">
-      <a href="{{ '/' | relative_url }}" alt="avatar" class="mx-auto">
-        {% if site.avatar != '' and site.avatar %}
-          {% capture avatar_url %}
-            {%- if site.avatar contains '://' -%}
-              {{ site.avatar }}
-            {%- elsif site.img_cdn != '' and site.img_cdn -%}
-              {{ site.avatar | prepend: site.img_cdn }}
-            {%- else -%}
-              {{ site.avatar | relative_url }}
-            {%- endif -%}
-          {% endcapture %}
-          <img src="{{ avatar_url }}" alt="avatar" onerror="this.style.display='none'">
-        {% endif %}
+      <a href="{{ site.avatar.url }}" alt="avatar" class="mx-auto">
+        <img src="{{ site.avatar.img }}" alt="avatar" onerror="this.style.display='none'">
       </a>
     </div>
 
     <div class="site-title mt-3">
-      <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <a href="{{ '/' | relative_url }}">{{ site.author }}</a>
     </div>
-    <div class="site-subtitle font-italic">{{ site.tagline }}</div>
+    <div class="site-subtitle font-italic">{{ site.about }}</div>
 
   </div><!-- .profile-wrapper -->
 
-  <ul class="w-100">
+  <ul class="sidebar-box post-item-box">
 
     <!-- home -->
     <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">

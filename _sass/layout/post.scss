@@ -314,7 +314,7 @@ nav[data-toggle=toc] {
   }
 }
 
-.license-wrapper {
+.comments-wrapper {
   line-height: 1.2rem;
 
   > a {
@@ -328,7 +328,7 @@ nav[data-toggle=toc] {
   span:last-child {
     font-size: 0.85rem;
   }
-} // .license-wrapper
+} // .comments-wrapper
 
 @media all and (max-width: 576px) {
   .preview-img[data-src] {

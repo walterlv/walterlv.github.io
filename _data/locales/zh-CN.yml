@@ -11,8 +11,8 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: 首页
-  categories: 分类
-  tags: 标签
+  friends: 朋友和收藏
+  mind: 胡思乱想
   archives: 归档
   about: 关于
 
@@ -38,16 +38,19 @@ date_format:
 copyright:
   # Shown at the bottom of the post
   license:
-    template: 本文由作者按照 :LICENSE_NAME 进行授权
+    template: 本文由吕毅按照 :LICENSE_NAME 进行授权
     name: CC BY 4.0
     link: https://creativecommons.org/licenses/by/4.0/
 
   # Displayed in the footer
   brief: 保留部分权利。
   verbose: >-
-    除非另有说明，本网站上的博客文章均由作者按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。
+    除非另有说明，本网站上的博客文章均由吕毅按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。
 
-meta: 本站由 :PLATFORM 生成，采用 :THEME 主题。
+comments:
+  tip: 登录 GitHub 账号进行评论
+
+meta: 本站由 :PLATFORM 生成，由吕毅 (walterlv) 基于 :THEME 主题修改。
 
 not_found:
   statment: 抱歉，我们放错了该 URL，或者它指向了不存在的内容。

@@ -1,8 +1,11 @@
 ---
-title: About
+layout: talking
+title: 关于吕毅
 icon: fas fa-info-circle
 order: 4
+permalink: /about/
+tail_includes:
+  - comments
 ---
 
-
-> **Note**: Add Markdown syntax content to file `_tabs/about.md` and it will show up on this page.
+![吕毅](/assets/img/logo.png)

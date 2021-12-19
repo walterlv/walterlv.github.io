@@ -555,9 +555,9 @@ img[data-src] {
   box-shadow: 0 0 8px 0 var(--btn-box-shadow) !important;
 }
 
-.topbar-up {
-  top: -3rem !important; /* same as topbar height. */
-}
+// .topbar-up {
+//   top: -3rem !important; /* same as topbar height. */
+// }
 
 .no-text-decoration {
   @include no-text-decoration;
@@ -600,6 +600,18 @@ figure .mfp-title {
   text-align: center;
 }
 
+#page-bluring-bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(32px);
+  -webkit-filter: blur(32px);
+  opacity: var(--bluring-bg-opacity);
+}
+
 /* --- sidebar layout --- */
 
 $sidebar-display: "sidebar-display";
@@ -610,11 +622,11 @@ $sidebar-display: "sidebar-display";
   position: fixed;
   top: 0;
   left: 0;
+  padding-top: $topbar-height;
   height: 100%;
   overflow-y: auto;
   width: $sidebar-width;
-  z-index: 99;
-  background: var(--sidebar-bg);
+  z-index: 50;
 
   /* Hide scrollbar for Chrome, Safari and Opera */
   &::-webkit-scrollbar {
@@ -638,10 +650,8 @@ $sidebar-display: "sidebar-display";
   #avatar {
     > a {
       display: block;
-      width: 6rem;
-      height: 6rem;
-      border-radius: 50%;
-      border: 2px solid rgba(222, 222, 222, 0.7);
+      width: calc(100% - 24px);
+      margin-top: 12px;
       overflow: hidden;
       transform: translateZ(0); // fixed the zoom in Safari
       -webkit-transition: border-color 0.35s ease-in-out;
@@ -660,12 +670,12 @@ $sidebar-display: "sidebar-display";
       -moz-transition: transform 0.5s;
       transition: transform 0.5s;
 
-      &:hover {
-        -ms-transform: scale(1.2);
-        -moz-transform: scale(1.2);
-        -webkit-transform: scale(1.2);
-        transform: scale(1.2);
-      }
+      // &:hover {
+      //   -ms-transform: scale(1.2);
+      //   -moz-transform: scale(1.2);
+      //   -webkit-transform: scale(1.2);
+      //   transform: scale(1.2);
+      // }
     }
   } // #avatar
 
@@ -677,6 +687,7 @@ $sidebar-display: "sidebar-display";
       font-size: 1.5rem;
       letter-spacing: 0.5px;
       color: rgba(134, 133, 133, 99%);
+      margin: 0.5rem 1.5rem 0.5rem 1.5rem;
     }
   }
 
@@ -716,9 +727,8 @@ $sidebar-display: "sidebar-display";
   }
 
   ul {
-    height: $tab-height * $tab-count;
     margin-bottom: 2rem;
-    padding-left: 0;
+    padding: 12px 0;
 
     li {
       width: 100%;
@@ -825,6 +835,12 @@ $sidebar-display: "sidebar-display";
 
 } // #sidebar
 
+.post-item-box {
+  background-color: var(--topbar-wrapper-bg);
+  box-shadow: var(--theme-shadow-color) 0px 4px 8px;
+  border-radius: 8px;
+}
+
 @media (hover: hover) {
   #sidebar ul > li:last-child::after {
     -webkit-transition: top 0.5s ease;
@@ -834,9 +850,17 @@ $sidebar-display: "sidebar-display";
   }
 }
 
+.sidebar {
+  margin-left: 40px;
+}
+
 .profile-wrapper {
-  margin-top: 2rem;
-  width: 100%;
+  margin-top: 3rem;
+}
+
+.sidebar-box {
+  margin: 12px 12px 12px 40px;
+  width: calc(100% - 52px);
 }
 
 #search-result-wrapper {
@@ -855,35 +879,41 @@ $sidebar-display: "sidebar-display";
   height: $topbar-height;
   position: fixed;
   top: 0;
-  left: $sidebar-width; /* same as sidebar width */
+  left: 0; /* same as sidebar width */
   right: 0;
   transition: top 0.2s ease-in-out;
-  z-index: 50;
+  z-index: 99;
   border-bottom: 1px solid rgba(0, 0, 0, 0.07);
   background-color: var(--topbar-wrapper-bg);
+  box-shadow: var(--topbar-shadow-color) 0px 0px 12px;
 }
 
 #topbar {
+  padding: 0;
+
   i { // icons
     color: #999;
   }
 
-  #breadcrumb {
-    font-size: 1rem;
-    color: gray;
-    padding-left: 0.5rem;
+  #topbar-logoside {
+    display: flex;
+    padding: 0;
 
-    a:hover {
-      @extend %link-hover;
+    #topbar-logo {
+      img {
+        width: $topbar-height;
+        height: $topbar-height;
+        max-width: inherit;
+        max-height: inherit;
+      }
     }
 
-    span {
-      &:not(:last-child) {
-        &::after {
-          content: "›";
-          padding: 0 0.3rem;
-        }
-      }
+    #sidebar-trigger {    
+      width: $topbar-height;
+      height: $topbar-height;
+      min-width: $topbar-height;
+      min-height: $topbar-height;
+      line-height: $topbar-height;
     }
   }
 } // #topbar
@@ -895,9 +925,9 @@ $sidebar-display: "sidebar-display";
 
 #search-wrapper {
   display: flex;
-  width: 85%;
-  border-radius: 1rem;
-  border: 1px solid var(--search-wrapper-border-color);
+  width: 100%;
+  height: calc(#{$topbar-height} - 12px);
+  border-radius: 8px;
   background: var(--search-wrapper-bg);
   padding: 0 0.5rem;
 
@@ -1008,17 +1038,17 @@ $sidebar-display: "sidebar-display";
 } // #search-results
 
 #topbar-title {
-  display: none;
   font-size: 1.1rem;
   font-weight: 600;
   font-family: sans-serif;
   color: var(--topbar-text-color);
   text-align: center;
-  width: 70%;
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: keep-all;
   white-space: nowrap;
+  padding: 0 1rem;
+  line-height: $topbar-height;
 }
 
 #core-wrapper {
@@ -1052,7 +1082,6 @@ $sidebar-display: "sidebar-display";
 /* --- main wrapper --- */
 
 #main-wrapper {
-  background-color: var(--main-wrapper-bg);
   position: relative;
   min-height: 100vh;
   padding-bottom: $footer-height;
@@ -1202,7 +1231,6 @@ $sidebar-display: "sidebar-display";
       transform: translateX(0);
     }
 
-    #topbar-wrapper,
     #main-wrapper {
       transform: translateX(#{$sidebar-width});
     }
@@ -1243,19 +1271,22 @@ $sidebar-display: "sidebar-display";
     left: 0;
   }
 
-  .topbar-up {
-    top: 0 !important;
-  }
+  // .topbar-up {
+  //   top: 0 !important;
+  // }
 
   #main > div.row:first-child > div:nth-child(1),
   #main > div.row:first-child > div:nth-child(2) {
     margin-top: 0;
   }
 
-  #topbar-title,
   #sidebar-trigger,
   #search-trigger {
     display: block;
+  }
+
+  #topbar-title {
+    padding: 0;
   }
 
   #search-wrapper {
@@ -1316,7 +1347,7 @@ $sidebar-display: "sidebar-display";
   }
 
   #search-wrapper {
-    width: 22%;
+    width: 100%;
     min-width: 150px;
   }
 
@@ -1334,13 +1365,9 @@ $sidebar-display: "sidebar-display";
     right: 1.2rem;
   }
 
-  .topbar-up {
-    box-shadow: none !important;
-  }
-
-  #topbar-title {
-    text-align: left;
-  }
+  // .topbar-up {
+  //   box-shadow: none !important;
+  // }
 
   footer > div.d-flex {
     width: 92%;
@@ -1380,10 +1407,6 @@ $sidebar-display: "sidebar-display";
     }
   }
 
-  #topbar-wrapper {
-    left: 210px;
-  }
-
   #search-results > div {
     max-width: 700px;
   }
@@ -1419,10 +1442,6 @@ $sidebar-display: "sidebar-display";
     display: none;
   }
 
-  #topbar {
-    padding: 0;
-  }
-
   #main > div.row {
     -webkit-box-pack: center !important;
     -ms-flex-pack: center !important;
@@ -1439,11 +1458,6 @@ $sidebar-display: "sidebar-display";
     flex: 0 0 75%;
     max-width: 75%;
     padding-left: 3%;
-  }
-
-  #topbar {
-    padding: 0;
-    max-width: 1070px;
   }
 
   #panel-wrapper {
@@ -1481,84 +1495,11 @@ $sidebar-display: "sidebar-display";
     display: none;
   }
 
-  .post-content {
-    font-size: 1.03rem;
-  }
-
-  footer > div.d-felx {
-    width: 85%;
-  }
-
-}
-
-@media all and (min-width: 1400px) {
-  #main > div.row {
-    padding-left: calc((100% - #{$main-content-max-width}) / 2);
-
-    > div.col-xl-8 {
-      max-width: 850px;
-    }
-  }
-
-  #search-result-wrapper {
-    padding-right: 2rem;
-
-    > div {
-      max-width: 1110px;
-    }
-  }
-
-  #search-wrapper .fa-times-circle {
-    right: 2.6rem;
-  }
-
-}
-
-@media all and (min-width: 1400px) and (max-width: 1650px) {
-  #topbar {
-    padding-right: 2rem;
-  }
-}
-
-@media all and (min-width: 1650px) {
-  #breadcrumb {
-    padding-left: 0;
-  }
-
-  #main > div.row > div.col-xl-8 {
-    padding-left: 0;
-
-    > div:first-child {
-      padding-left: 0.55rem !important;
-      padding-right: 1.9rem !important;
-    }
-  }
-
-  #main-wrapper {
-    margin-left: $sidebar-width-large;
-  }
-
-  #panel-wrapper {
-    margin-left: calc((100% - #{$main-content-max-width}) / 10);
-  }
-
-  #topbar-wrapper {
-    left: $sidebar-width-large;
-  }
-
-  #topbar {
-    max-width: #{$main-content-max-width};
-  }
-
-  #search-wrapper {
-    margin-right: 3%;
-  }
-
   #sidebar {
     width: $sidebar-width-large;
 
     .profile-wrapper {
-      margin-top: 4rem;
+      margin-top: 3rem;
       margin-bottom: 1rem;
 
       &.text-center {
@@ -1566,13 +1507,12 @@ $sidebar-display: "sidebar-display";
       }
 
       %profile-ml {
-        margin-left: 4.5rem;
       }
 
       #avatar {
         @extend %profile-ml;
 
-        > a {
+        li > a {
           width: 6.2rem;
           height: 6.2rem;
 
@@ -1601,8 +1541,6 @@ $sidebar-display: "sidebar-display";
     } // .profile-wrapper (min-width: 1650px)
 
     ul {
-      padding-left: 2.5rem;
-
       > li:last-child {
         > a {
           position: static;
@@ -1672,6 +1610,65 @@ $sidebar-display: "sidebar-display";
 
   } // #sidebar
 
+  .post-content {
+    font-size: 1.03rem;
+  }
+
+  footer > div.d-felx {
+    width: 85%;
+  }
+
+}
+
+@media all and (min-width: 1400px) {
+  #main > div.row {
+    padding-left: calc((100% - #{$main-content-max-width}) / 2);
+
+    > div.col-xl-8 {
+      max-width: 850px;
+    }
+  }
+
+  #search-result-wrapper {
+    padding-right: 2rem;
+
+    > div {
+      max-width: 1110px;
+    }
+  }
+
+  #search-wrapper .fa-times-circle {
+    right: 2.6rem;
+  }
+
+}
+
+@media all and (min-width: 1650px) {
+  #breadcrumb {
+    padding-left: 0;
+  }
+
+  #main > div.row > div.col-xl-8 {
+    padding-left: 0;
+
+    > div:first-child {
+      padding-left: 0.55rem !important;
+      padding-right: 1.9rem !important;
+    }
+  }
+
+  #main-wrapper {
+    margin-left: $sidebar-width-large;
+  }
+
+  #panel-wrapper {
+    margin-left: calc((100% - #{$main-content-max-width}) / 10);
+  }
+
+  #search-wrapper {
+    margin-right: 3%;
+  }
+
   footer > div.d-flex {
     width: 92%;
     max-width: 1140px;
@@ -1689,10 +1686,6 @@ $sidebar-display: "sidebar-display";
   #topbar-wrapper {
     /* 100% - 350px - (1920px - 350px); */
     padding-right: calc(100% - #{$sidebar-width-large} - (1920px - #{$sidebar-width-large}));
-  }
-
-  #topbar {
-    max-width: calc(#{$main-content-max-width} + 20px);
   }
 
   #main > div.row {

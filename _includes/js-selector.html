@@ -56,13 +56,11 @@
 
 <script src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.16.1,npm/bootstrap@4/dist/js/bootstrap.min.js"></script>
 
-{% if jekyll.environment == 'production' %}
+<!-- {% if jekyll.environment == 'production' %} -->
   <!-- PWA -->
   <script defer src="{{ '/app.js' | relative_url }}"></script>
 
   <!-- GA -->
-  {% if site.google_analytics.id %}
-    {% include google-analytics.html %}
-  {% endif %}
+  {% include analytics.html %}
 
-{% endif %}
+<!-- {% endif %} -->
