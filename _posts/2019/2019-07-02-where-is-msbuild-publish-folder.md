@@ -4,6 +4,7 @@ publishDate: 2019-07-02 19:56:43 +0800
 date: 2019-07-04 09:47:21 +0800
 tags: dotnet csharp msbuild visualstudio
 position: starter
+coverImage: /static/posts/2019-07-02-19-52-15.png
 ---
 
 在扩展 MSBuild 编译的时候，我们一般的处理的路径都是临时路径或者输出路径，那么发布路径在哪里呢？
@@ -35,3 +36,4 @@ position: starter
 ```
 
 和其他。
+

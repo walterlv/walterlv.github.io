@@ -3,6 +3,7 @@ title: "MSBuild/Roslyn 和 NuGet 的 100 个坑"
 publishDate: 2018-07-04 21:29:29 +0800
 date: 2019-04-12 09:38:58 +0800
 tags: msbuild nuget visualstudio dotnet
+coverImage: /static/posts/2018-07-04-20-44-01.png
 ---
 
 MSBuild 不愧是强大的编译器，它提供的扩展机制让你几乎可以编译任何类型的文件或项目；Roslyn 是全新编写的一套编译器，不过它保留了 MSBuild 的大部分机制；NuGet 是 .NET 生态系统中的包管理机制，被原生集成在新的 Microsoft.NET.Sdk 中。
@@ -132,3 +133,4 @@ MSBuild 15.0 为项目文件的根节点 `Project` 带来了 `Sdk` 属性，也�
 ```
 
 这里我们不通过直接修改 `obj\Walterlv.Demo.csproj.nuget.g.props` 和 `obj\Walterlv.Demo.csproj.nuget.g.targets` 文件是因为这两个文件不在版本管理中；而且如果执行 `nuget restore` 或者 `dotnet restore` 后会重新生成。
+

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "彻底删除 Git 仓库中的文件避免占用大量磁盘空间"
 publishDate: 2017-09-18 23:45:21 +0800
 date: 2017-09-29 07:36:22 +0800
@@ -7,6 +6,7 @@ tags: git
 permalink: /git/2017/09/18/delete-a-file-from-whole-git-history.html
 keywords: git filter-branch delete
 description: 如果不小心向 Git 仓库中上传了一个不需要的超大文件，我们如何才能够删除它，使之不占用我们宝贵的磁盘空间。
+coverImage: /static/posts/2017-09-18-git-for-windows-high-cpu.png
 ---
 
 今天早上照常 `git fetch --prune` 获取大家写的代码，发现需要好长时间，但没怎么在意。直到下午小伙伴们才发现居然 `fetch` 了一个多 GB！询问才发现小伙伴 [JAKE](http://niuyanjie.gitee.io/blog/)（其实我是在推荐博客）误传了 1.47GB 的垃圾文件。关键是等发现时，`develop` 分支上已经有 20+ 个基于这个文件的新提交了。
@@ -124,3 +124,4 @@ $ git push -d origin 死灰复燃的包含误传提交的某个分支名
 ---
 
 另外再吐个槽，以上一切都做完了，还写完了这篇博客。结果 `filter-branch` 那个命令依然还跑着没有结束……
+

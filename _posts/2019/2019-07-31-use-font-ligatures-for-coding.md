@@ -4,6 +4,7 @@ publishDate: 2019-07-31 08:52:52 +0800
 date: 2019-09-27 10:04:33 +0800
 tags: windows vscode visualstudio dotnet
 position: starter
+coverImage: /static/posts/2019-09-27-10-01-28.png
 ---
 
 启用转为编程设计的连字字体，可以给你的变成带来不一样的体验。
@@ -109,3 +110,4 @@ Variable True Type 是可以无极变换的 True Type 字体。
 **参考资料**
 
 - [Type is Beautiful » 参数化设计与字体战争：从 OpenType 1.8 说起](https://thetype.com/2016/09/10968/)
+

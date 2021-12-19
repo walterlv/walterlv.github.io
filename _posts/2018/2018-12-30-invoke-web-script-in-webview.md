@@ -4,6 +4,7 @@ publishDate: 2018-12-30 22:08:37 +0800
 date: 2019-03-09 09:10:11 +0800
 tags: uwp javascript
 position: starter
+coverImage: /static/posts/2018-12-30-21-49-37.png
 ---
 
 UWP 中使用 WebView 时可以在网页中额外执行一些代码。于是你几乎可以在网页上做任何事情，那些你可以在浏览器控制台中做的事情。
@@ -94,3 +95,4 @@ await LoginWebView.InvokeScriptAsync("eval", new[]
 
 - [JavaScript eval() 函数](http://www.w3school.com.cn/js/jsref_eval.asp)
 - [win10 uwp 模拟网页输入](https://blog.lindexi.com/post/win10-uwp-%E6%A8%A1%E6%8B%9F%E7%BD%91%E9%A1%B5%E8%BE%93%E5%85%A5.html)
+

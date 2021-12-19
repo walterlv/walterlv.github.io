@@ -3,6 +3,7 @@ title: "Windows 系统上如何揪出阻止你屏幕关闭的程序"
 date: 2021-06-07 13:42:18 +0800
 tags: windows
 position: knowledge
+coverImage: /static/posts/2021-06-07-08-31-42.png
 ---
 
 使用 Win32 API `SetThreadExecutionState` 可以阻止进入屏幕保护程序，也能阻止屏幕关闭、阻止系统睡眠。这很方便，这也就可能造成各种参差不齐的程序都试图阻止你的屏幕关闭，于是来一个一整晚亮瞎眼就很难受。
@@ -98,3 +99,4 @@ powercfg -energy -trace
 **参考资料**
 
 - [Powercfg command-line options - Microsoft Docs](https://docs.microsoft.com/en-us/windows-hardware/design/device-experiences/powercfg-command-line-options)
+

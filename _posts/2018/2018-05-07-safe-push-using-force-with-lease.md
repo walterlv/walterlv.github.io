@@ -3,6 +3,7 @@ title: "Git 更安全的强制推送，--force-with-lease"
 publishDate: 2018-05-07 19:16:42 +0800
 date: 2018-09-23 12:33:38 +0800
 tags: git
+coverImage: /static/posts/2018-09-23-12-31-26.png
 ---
 
 由于 `git rebase` 命令的存在，强制将提交推送到远端仓库似乎也有些必要。不过都知道 `git push --force` 是不安全的，这让 `git rebase` 命令显得有些鸡肋。
@@ -92,3 +93,4 @@ Git 官方文档对 `rebase` 有如下描述：
 - [How do I properly force a Git push? - Stack Overflow](https://stackoverflow.com/q/5509543/6233938)
 - [Force-with-lease: an alternative to force push - Weiqing](http://weiqingtoh.github.io/force-with-lease/)
 - [--force considered harmful; understanding git's --force-with-lease - Atlassian Developers](https://developer.atlassian.com/blog/2015/04/force-with-lease/)
+

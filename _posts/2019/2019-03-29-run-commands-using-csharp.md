@@ -4,6 +4,7 @@ publishDate: 2019-03-29 14:39:08 +0800
 date: 2019-04-21 20:36:42 +0800
 tags: dotnet csharp git
 position: starter
+coverImage: /static/posts/2019-03-29-14-19-19.png
 ---
 
 我们可以在命令行中操作 git，但是作为一名程序员，如果在大量重复的时候还手动敲命令行，那就太笨了。
@@ -135,3 +136,4 @@ namespace Walterlv.GitDemo
 ```
 
 ![运行结果](/static/posts/2019-03-29-14-19-19.png)
+

@@ -3,6 +3,7 @@ title: "使用 SetParent 制作父子窗口的时候，如何设置子窗口的�
 date: 2019-09-19 10:24:12 +0800
 tags: windows wpf dotnet csharp
 position: starter
+coverImage: /static/posts/2019-09-19-10-21-31.png
 ---
 
 制作传统 Win32 程序以及 Windows Forms 程序的时候，一个用户看起来独立的窗口本就是通过各种父子窗口嵌套完成的，有大量窗口句柄，窗口之间形成父子关系。不过，对于 WPF 程序来说，一个独立的窗口实际上只有一个窗口句柄，窗口内的所有内容都是 WPF 绘制的。
@@ -46,3 +47,4 @@ position: starter
 **参考资料**
 
 - [关于WS_CLIPCHILDREN和WS_CLIPSIBLINGS的理解（个人认为还是相当全面的） - helloj2ee - 博客园](https://www.cnblogs.com/helloj2ee/archive/2009/05/29/1491822.html)
+

@@ -3,6 +3,7 @@ title: "用 WiX 制作安装包：设置的 .NET Framework 前置会始终安装
 date: 2021-07-16 12:08:39 +0800
 tags: dotnet msi wix
 position: problem
+coverImage: /static/posts/2021-07-16-11-04-09.png
 ---
 
 使用 WiX 的 Burn 引擎制作自定义托管引导程序的 exe 安装包时，你可能会遇到这种情况：明明目标电脑上已经装好了 .NET Framework，但无论如何就是会提示安装，始终不启动自定义的安装界面。
@@ -144,3 +145,4 @@ Loading prerequisite bootstrapper application because managed host could not be 
 **参考资料**
 
 - [installation - Wix ExePackage always installs regardless of DetectCondition, InstallCondition, on install, or uninstall - Stack Overflow](https://stackoverflow.com/q/46322994/6233938)
+

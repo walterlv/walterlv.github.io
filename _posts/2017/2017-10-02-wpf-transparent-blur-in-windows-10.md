@@ -1,11 +1,11 @@
 ---
-layout: post
 title: "在 Windows 10 上为 WPF 窗口添加模糊特效（就像开始菜单和操作中心那样）"
 publishDate: 2017-10-02 00:14:07 +0800
 date: 2018-02-20 06:31:10 +0800
 tags: win10 windows wpf
 permalink: /post/win10/2017/10/02/wpf-transparent-blur-in-windows-10.html
 description: 
+coverImage: /static/posts/2017-10-01-23-47-29.png
 ---
 
 其实我是希望能够找到为 Win32 桌面程序实现 Fluent Design System 效果的，不过一直没找到。倒是发现了一个可以让 Win32 桌面程序做出类似 Windows 10 开始菜单和操作中心那种模糊效果的方法。
@@ -116,3 +116,4 @@ WindowBlur.SetIsEnabled(this, true);
 ## 附：封装好的 API 代码
 
 <script src="https://gist.github.com/walterlv/752669f389978440d344941a5fcd5b00.js"></script>
+

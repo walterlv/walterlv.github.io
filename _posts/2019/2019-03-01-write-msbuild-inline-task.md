@@ -3,6 +3,7 @@ title: "如何在 csproj 中用 C# 代码写一个内联的编译任务 Task"
 date: 2019-03-01 15:12:04 +0800
 tags: msbuild dotnet visualstudio csharp
 position: starter
+coverImage: /static/posts/2019-03-01-15-09-19.png
 ---
 
 我之前写过一些改变 MSBuild 编译过程的一些博客，包括利用 Microsoft.NET.Sdk 中各种自带的 Task 来执行各种各样的编译任务。更复杂的任务难以直接利用自带的 Task 实现，需要自己写 Task。
@@ -97,3 +98,4 @@ msbuild
 阅读我的另一篇博客了解如何编写一个更复杂的内联编译任务：
 
 - [编写 MSBuild 内联编译任务（Task）用于获取当前编译环境下的所有编译目标（Target） - 吕毅](/post/write-a-msbuild-inline-task-for-getting-all-targets)
+

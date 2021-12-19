@@ -3,6 +3,7 @@ title: "只有你能 new 出来！.NET 隐藏构造函数的 n 种方法（Build
 publishDate: 2018-09-20 20:53:37 +0800
 date: 2018-11-27 13:08:55 +0800
 tags: dotnet csharp
+coverImage: /static/posts/2018-09-20-20-30-36.png
 ---
 
 如果你给类写了一个公有构造函数，那么这个类就能被其他开发者 new 出来。如果你不想让他们 new 出来，把构造函数 `private` 就好了呀。
@@ -121,3 +122,4 @@ Console.WriteLine(full);
 
 - [C# 中那些可以被重载的操作符，以及使用它们的那些丧心病狂的语法糖 - walterlv](/post/overridable-operators-in-csharp)
 - [C# 空合并操作符（??）不可重载？其实有黑科技可以间接重载！ - walterlv](/post/overload-null-coalescing-operator-in-csharp)
+

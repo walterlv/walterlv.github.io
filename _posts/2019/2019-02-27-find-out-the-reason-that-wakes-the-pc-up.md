@@ -3,6 +3,7 @@ title: "电脑总是意外从睡眠状态唤醒，可以找出原因然后解决
 date: 2019-02-27 14:09:22 +0800
 tags: windows
 position: problem
+coverImage: /static/posts/2019-02-18-09-16-28.png
 ---
 
 在昏暗的夜晚，一个人躺在房间的床上，静静的思考着什么。突然间电脑屏幕亮了！什么鬼！到底是谁唤醒了我的电脑！！！
@@ -66,3 +67,4 @@ powercfg -waketimers
 **参考资料**
 
 - [How to find out why your PC wakes up, and how to stop it - gHacks Tech News](https://www.ghacks.net/2013/12/31/find-pc-wakes-stop/)
+

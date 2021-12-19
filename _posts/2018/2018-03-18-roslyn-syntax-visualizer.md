@@ -3,6 +3,7 @@ title: "Roslyn 入门：使用 Visual Studio 的语法可视化（Syntax Visuali
 publishDate: 2018-03-18 20:50:09 +0800
 date: 2019-07-07 10:00:43 +0800
 tags: visualstudio dotnet csharp roslyn
+coverImage: /static/posts/2018-03-18-20-51-14.png
 ---
 
 使用 Visual Studio 提供的 Syntax Visualizer，我们可以实时看到一个代码文件中的语法树。这对我们基于 Roslyn 编写静态分析和修改工具非常有帮助。本文将介绍如何安装它和使用它。
@@ -40,3 +41,4 @@ tags: visualstudio dotnet csharp roslyn
 **参考资料**
 
 - [Get started with syntax analysis (Roslyn APIs) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/roslyn-sdk/get-started/syntax-analysis)
+

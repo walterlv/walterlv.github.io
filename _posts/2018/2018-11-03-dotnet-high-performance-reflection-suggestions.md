@@ -3,6 +3,7 @@ title: ".NET/C# 反射的的性能数据，以及高性能开发建议（反射�
 publishDate: 2018-11-03 15:25:17 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: dotnet csharp
+coverImage: /static/posts/2018-11-03-14-01-05.png
 ---
 
 大家都说反射耗性能，但是到底有多耗性能，哪些反射方法更耗性能；这些问题却没有统一的描述。
@@ -341,3 +342,4 @@ namespace Walterlv.Demo.Reflection
 - [Retrieving Custom Attributes Using Reflection - Scott Dorman](https://scottdorman.github.io/2010/05/16/retrieving-custom-attributes-using-reflection/)
 - [Showtime - BenchmarkDotNet](https://benchmarkdotnet.org/)
 - [Choosing RunStrategy - BenchmarkDotNet](https://benchmarkdotnet.org/articles/guides/choosing-run-strategy.html)
+

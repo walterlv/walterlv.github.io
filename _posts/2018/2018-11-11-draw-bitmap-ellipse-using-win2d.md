@@ -3,6 +3,7 @@ title: "使用 Win2D 绘制带图片纹理的圆（或椭圆）"
 publishDate: 2018-11-11 21:50:09 +0800
 date: 2018-11-28 16:25:46 +0800
 tags: dotnet win2d uwp
+coverImage: /static/posts/2018-11-11-21-44-05.png
 ---
 
 使用 Win2D 绘制图片和绘制椭圆都非常容易，可是如何使用 Win2D 绘制图片纹理的椭圆呢？
@@ -108,3 +109,4 @@ using (var list = new CanvasCommandList(creator))
 上面的例子中，我们是用到了 `CanvasCommandList`。它可以帮助我们将绘制命令先绘制到一个缓存的上下文中，以便被其他绘制上下文进行统一的处理。
 
 阅读林德熙的博客了解更多 `CanvasCommandList` 的资料：[win2d CanvasCommandList 使用方法 - 林德熙](https://blog.lindexi.com/post/win2d-CanvasCommandList-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.html)。
+

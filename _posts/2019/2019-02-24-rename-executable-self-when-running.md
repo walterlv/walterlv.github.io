@@ -4,6 +4,7 @@ publishDate: 2019-02-24 20:15:05 +0800
 date: 2019-03-10 21:30:52 +0800
 tags: windows dotnet csharp
 position: knowledge
+coverImage: /static/posts/2019-02-24-17-26-25.png
 ---
 
 程序如何自己更新自己呢？你可能会想到启动一个新的程序或者脚本来更新自己。然而 Windows 操作系统允许一个应用程序在运行期间修改自己的名称甚至移动自己到另一个文件夹中。利用这一点，我们可以很简单直接地做程序的 OTA 自动更新。
@@ -84,3 +85,4 @@ namespace Walterlv.Windows.Updater
 - [c# - Why does rename a loaded .net assembly work? - Stack Overflow](https://stackoverflow.com/a/14775626/6233938)
 - [windows 7 - Why can I rename a running executable, but not delete it? - Super User](https://superuser.com/questions/488127/why-can-i-rename-a-running-executable-but-not-delete-it)
 - [deployment - How can we overwrite EXE files while users are running them? - Stack Overflow](https://stackoverflow.com/questions/3365347/how-can-we-overwrite-exe-files-while-users-are-running-them)
+

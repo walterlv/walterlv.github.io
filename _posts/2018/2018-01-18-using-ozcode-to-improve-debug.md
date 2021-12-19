@@ -3,6 +3,7 @@ title: "推荐近乎免费的调试神器——OzCode"
 publishDate: 2018-01-18 08:43:27 +0800
 date: 2018-05-22 09:47:14 +0800
 tags: visualstudio
+coverImage: /static/posts/2018-01-18-08-37-56.png
 ---
 
 当一只断点打在 Visual Studio 的代码编辑器中，程序命中断点的那一刻，调试才刚刚开始……这个时候忙碌的手在键盘和鼠标之间来回跳跃，试图抓住每一次单步执行带来的状态改变。
@@ -34,3 +35,4 @@ OzCode 有这些非常吸引我的地方：
 
 ![近乎免费](/static/posts/2018-01-10-09-05-27.png)  
 ▲ 每次更新 Visual Studio 之后，OzCode 都会重置
+

@@ -3,6 +3,7 @@ title: "都是用 DllImport？有没有考虑过自己写一个 extern 方法？
 publishDate: 2018-09-06 21:58:49 +0800
 date: 2018-11-27 13:08:55 +0800
 tags: dotnet csharp roslyn msbuild
+coverImage: /static/posts/2018-09-06-21-13-11.png
 ---
 
 你做 .NET 开发的时候，一定用过 `DllImport` 这个特性吧，这货是用于 P/Invoke (Platform Invoke, 平台调用) 的。这种 `DllImport` 标记的方法都带有一个 `extern` 关键字。
@@ -234,3 +235,4 @@ class Demo
 **参考资料**
 
 - [c# - How does DllImport really work? - Stack Overflow](https://stackoverflow.com/a/14471704/6233938)
+

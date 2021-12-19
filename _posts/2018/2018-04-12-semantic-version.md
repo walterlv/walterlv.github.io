@@ -3,6 +3,7 @@ title: "语义版本号（Semantic Versioning）"
 publishDate: 2018-04-12 20:20:39 +0800
 date: 2019-04-12 09:36:54 +0800
 tags: visualstudio nuget csharp dotnet
+coverImage: /static/posts/2018-04-12-19-48-26.png
 ---
 
 版本号格式不陌生吧，.NET 传统的版本号格式类似这样 1.5.1254.0。本文将推荐一种新的版本号格式——语义版本号，格式类似这样 1.4.6-beta。我推荐语义版本号是因为这样的版本号自包含语义，而且这样的语义能够在版本库中体现出来。
@@ -89,3 +90,4 @@ NuGet 4.3.0 以上，并且 Visual Studio 2017 的 15.3 以上版本开始支持
 - [Versioning NuGet packages in a continuous delivery world: part 1 – Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/2016/05/03/versioning-nuget-packages-cd-1/)
 - [Versioning NuGet packages in a continuous delivery world: part 3 – Microsoft DevOps Blog](https://blogs.msdn.microsoft.com/devops/2016/05/26/versioning-nuget-packages-cd-3/)
 - [Supporting Semantic Versioning 2.0.0](https://blog.nuget.org/20140924/supporting-semver-2.0.0.html)
+

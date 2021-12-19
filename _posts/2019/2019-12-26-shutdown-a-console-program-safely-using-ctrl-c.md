@@ -3,6 +3,7 @@ title: "如何在 .NET/C# 代码中安全地结束掉一个控制台应用程序
 date: 2019-12-26 14:16:11 +0800
 tags: dotnet csharp
 position: knowledge
+coverImage: /static/posts/2019-12-26-14-04-19.png
 ---
 
 我的电脑上每天会跑一大堆控制台程序，于是管理这些程序的运行就成了一个问题。或者说你可能也在考虑启动一个控制台程序来完成某些特定的任务。
@@ -197,3 +198,4 @@ if (!ConsoleInterop.StopConsoleProgram(process, 2000))
 - [Stopping command-line applications programatically with Ctrl-C event from .Net – a working demo - Nemo's Realms](http://stanislavs.org/stopping-command-line-applications-programatically-with-ctrl-c-events-from-net/)
 - [AttachConsole function - Windows Console - Microsoft Docs](https://docs.microsoft.com/en-us/windows/console/attachconsole)
 - [SetConsoleCtrlHandler function - Windows Console - Microsoft Docs](https://docs.microsoft.com/en-us/windows/console/setconsolectrlhandler)
+

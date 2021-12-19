@@ -4,6 +4,7 @@ publishDate: 2019-10-07 20:30:10 +0800
 date: 2019-10-10 08:09:12 +0800
 tags: windows csharp dotnet wpf
 position: knowledge
+coverImage: /static/posts/2019-10-09-20-05-49.png
 ---
 
 Windows 系统中有一个没什么文档的 API，`SetWindowCompositionAttribute`，可以允许应用的开发者将自己窗口中的内容渲染与窗口进行组合。这可以实现很多系统中预设的窗口特效，比如 Windows 7 的毛玻璃特效，Windows 8/10 的前景色特效，Windows 10 的模糊特效，以及 Windows 10 1709 的亚克力（Acrylic）特效。而且这些组合都发生在 dwm 进程中，不会额外占用应用程序的渲染性能。

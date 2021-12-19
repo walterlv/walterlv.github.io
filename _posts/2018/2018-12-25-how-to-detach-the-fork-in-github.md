@@ -4,6 +4,7 @@ publishDate: 2018-12-25 11:36:23 +0800
 date: 2019-01-15 19:50:33 +0800
 tags: github git
 position: problem
+coverImage: /static/posts/2018-12-25-09-50-53.png
 ---
 
 如果需要为 GitHub 上的项目做贡献，我们通常会 Fork 到自己的名称空间下。在推送代码之后添加 pull request 时，GitHub 会自动为我们跨仓库建立 pull request 的连接，非常方便。但是，如果 Fork 是出于项目的迁移，例如从个人名下迁移到某个组织下或者反过来，那么这种自动的 pull request 的设置就很影响效率了。
@@ -37,3 +38,4 @@ position: problem
 - [Delete fork dependency of a GitHub repository - Stack Overflow](https://stackoverflow.com/a/16052845/6233938)
 - [Why are my contributions not showing up on my profile? - User Documentation](https://help.github.com/articles/why-are-my-contributions-not-showing-up-on-my-profile/#commit-was-made-in-a-fork)
 - [Contact GitHub](https://github.com/contact)
+

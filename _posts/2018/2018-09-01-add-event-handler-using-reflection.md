@@ -2,6 +2,7 @@
 title: ".NET/C# 使用反射注册事件"
 date: 2018-09-01 20:31:24 +0800
 tags: dotnet csharp
+coverImage: /static/posts/2018-09-01-20-08-33.png
 ---
 
 使用反射，我们可以很容易地在运行时调用一些编译时无法确定的属性、方法等。那么如何注册事件呢？
@@ -100,3 +101,4 @@ public void Walterlv_BlogPublished(object sender, EventHandler handler)
 **参考资料**
 
 - [c# - AddEventHandler using reflection - Stack Overflow](https://stackoverflow.com/a/1121489/6233938)
+

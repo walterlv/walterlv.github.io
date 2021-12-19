@@ -3,6 +3,7 @@ title: "Visual Studio 2022 出来啦！教你如何将 VS2019 的 VSIX 扩展/�
 date: 2021-06-25 14:05:52 +0800
 tags: visualstudio dotnet
 position: problem
+coverImage: /static/posts/2021-06-25-13-39-38.png
 ---
 
 从 Visual Studio 2022 开始，Visual Studio 正式启用了 amd64 架构。为了确保扩展的兼容性，Visual Studio 2022 不会启用以前编译过的扩展，即使以前编译过的扩展把支持的 Visual Studio 版本号加到了 17.0（对应 VS2022）也不行。毕竟 x64 的进程真加载一个 x86 的程序集时，会炸得体无完肤。
@@ -103,3 +104,4 @@ source.extension.vsixmanifest：
 **参考资料**
 
 - [visualstudio-docs/update-visual-studio-extension.md at master · MicrosoftDocs/visualstudio-docs](https://github.com/MicrosoftDocs/visualstudio-docs/blob/177db460a2dbd7de2876e2ad564795294dd1c80a/docs/extensibility/migration/update-visual-studio-extension.md)
+

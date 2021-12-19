@@ -4,6 +4,7 @@ publishDate: 2020-01-12 20:38:55 +0800
 date: 2020-01-13 08:05:30 +0800
 tags: web
 position: starter
+coverImage: /static/posts/2020-01-12-19-55-56.png
 ---
 
 到现在还不为你的网站添加 https 的话，浏览器已经会非常显眼地显示“不安全”了。
@@ -108,3 +109,4 @@ position: starter
 将证书用于你的 Web 服务器，参见：
 
 - [三种方法为 ASP.NET Core 对外服务添加 https 支持（kestrel / frp / nginx）](/post/add-https-support-for-asp-dotnet)
+

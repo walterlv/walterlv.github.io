@@ -8,6 +8,7 @@ version:
 versions:
   - 中文: /post/the-bugs-of-grid.html
   - English: #
+coverImage: /static/posts/2018-05-05-14-15-13.png
 ---
 
 As long as you write code in XAML, I bet you must have used `Grid` in various ways. I wonder if you have seen any strange layout results of `Grid`.
@@ -258,3 +259,4 @@ I have read the layout source code of `Grid`, and I can't understand all the log
 However, I have written a totally new `Grid` layout algorithm (*thanks to @[lindexi](https://lindexi.github.io/lindexi/) that he spend so much time on discussing the layout algorithm with me.*). In the new algorithm, I do the same with Microsoft's public documented `Grid` layout behavior. But for the various bugs mentioned in this post, I can't find a way to achieve the same layout results as it does, but I can document and determine all the behaviors of the new `Grid` layout, without any undefined behavior.
 
 I've created a new pull request for the new `Grid` layout algorithm to Avalonia. Goto [A new grid layout algorithm to improve performance and fix some bugs by walterlv · Pull Request #1517 · AvaloniaUI/Avalonia](https://github.com/AvaloniaUI/Avalonia/pull/1517/files) to view the source code and to see more details.
+

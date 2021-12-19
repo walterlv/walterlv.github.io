@@ -3,6 +3,7 @@ title: "WindowsXamlHost：在 WPF 中使用 UWP 的控件（Windows Community To
 publishDate: 2018-11-04 11:47:23 +0800
 date: 2019-03-09 09:09:02 +0800
 tags: uwp wpf dotnet
+coverImage: /static/posts/2018-11-04-09-34-39.png
 ---
 
 Windows Community Toolkit 再次更新到 5.0。以前可以在 WPF 中使用有限的 UWP 控件，而现在有了 WindowsXamlHost，则可以使用更多 UWP 原生控件了。
@@ -164,3 +165,4 @@ private void UwpButton_Click(object sender, RoutedEventArgs e)
 
 - [WindowsXAMLHost control - Windows Community Toolkit - Microsoft Docs](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost?wt.mc_id=MVP)
 - [Enhance your desktop application for Windows 10 - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project?wt.mc_id=MVP)
+

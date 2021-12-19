@@ -3,6 +3,7 @@ title: "Windows 系统文件资源管理器的命令行参数（如何降权打�
 date: 2020-01-02 11:05:18 +0800
 tags: windows
 position: knowledge
+coverImage: /static/posts/2020-01-02-08-17-31.png
 ---
 
 大多数用户还是习惯使用 Windows 自带的文件资源管理器来管理文件，于是我们可以利用它的命令行参数来帮助我们做一些与之相关的交互。
@@ -115,3 +116,4 @@ explorer ,
 
 - [How to run Windows Explorer as a different user (so I can do admin work) – Florin Lazar – Consistency Checkpoint](https://blogs.msdn.microsoft.com/florinlazar/2005/09/17/how-to-run-windows-explorer-as-a-different-user-so-i-can-do-admin-work/)
 - [How to launch Windows Explorer with the privileges of a different domain user? - Super User](https://superuser.com/a/591082/940098)
+

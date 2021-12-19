@@ -3,6 +3,7 @@ title: "在 Visual Studio 中设置当发生某个特定异常或所有异常时
 date: 2019-07-04 13:07:52 +0800
 tags: dotnet csharp visualstudio
 position: starter
+coverImage: /static/posts/2019-07-04-09-28-21.png
 ---
 
 当使用 Visual Studio 调试的时候，如果我们的代码中出现了异常，那么 Visual Studio 会让我们的程序中断，然后我们就能知道程序中出现了异常。但是，如果这个异常已经被 `catch` 了，那么默认情况下 Visual Studio 是不会帮我们中断的。
@@ -104,3 +105,4 @@ Visual Studio 提供了一个异常窗格，可以用来设置在发生哪些异
 有没有方法可以在异常发生的那一刻中断呢？请阅读我的另一篇博客：
 
 - [.NET/C# 中设置当发生某个特定异常时进入断点（不借助 Visual Studio 的纯代码实现）](/post/set-a-breakpoint-when-exception-occurred)
+

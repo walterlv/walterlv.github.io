@@ -4,6 +4,7 @@ publishDate: 2019-07-27 13:19:41 +0800
 date: 2019-07-27 14:57:42 +0800
 tags: msbuild visualstudio dotnet
 position: problem
+coverImage: /static/posts/2019-06-01-13-36-35.png
 ---
 
 你是否好奇 Visual Studio 2019 中的 .NET Core SDK 预览版开关是全局生效的，那个全局的配置在哪里呢？
@@ -188,3 +189,4 @@ private void ReadFromDisk()
     _disallowPrerelease = _disallowPrereleaseByDefault;
 }
 ```
+

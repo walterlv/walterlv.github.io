@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "让 GitHub Pages 强制使用 HTTPS（含码云的 gitee/oschina.io）"
 publishDate: 2017-09-17 16:01:34 +0800
 date: 2018-08-12 14:48:47 +0800
@@ -7,6 +6,7 @@ tags: site git github
 permalink: /jekyll/2017/09/17/force-https-for-github-pages.html
 keywords: jekyll https
 description: 对于 GitHub Pages，了解如何强制使用 https；对于码云 gitee.io 和 oschina.io，了解如何强制重定向到 https。
+coverImage: /static/posts/2017-09-17-15-44-17.png
 ---
 
 一天晚上在手机上浏览自己的博客时，发现居然充斥着各种恶心的广告！顿时内心犹如一万只神兽呼啸而过，不过又能怪谁呢？！
@@ -61,3 +61,4 @@ GitHub Pages 设置得这么轻松，想必码云的 Pages 服务应该也不难
 ```
 
 现在本文用的就是这个。不信？往上看，把地址栏里 https 的 s 去掉回车，是不是还是 https？
+

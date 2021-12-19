@@ -3,6 +3,7 @@ title: "EFI 分区/恢复分区不可删除？你需要使用命令行了（配�
 date: 2019-10-07 11:05:02 +0800
 tags: windows
 position: knowledge
+coverImage: /static/posts/2019-10-07-10-02-13.png
 ---
 
 Windows 系统在安装的时候，会自动为我们的磁盘划分一个恢复分区和一个 EFI 分区。如果后面不打算再用这些分区的时候，却发现无法删除。
@@ -154,3 +155,4 @@ DiskPart 成功设置了分区 ID。
 
 - [windows10删除EFI分区(绝对安全) - 修炼之路 - CSDN博客](https://blog.csdn.net/sinat_29957455/article/details/88726797)
 - [How to Delete EFI System Partition in Windows 10/8.1/8/7/XP/Vista - EaseUS](https://www.easeus.com/partition-master/delete-efi-system-partition.html)
+

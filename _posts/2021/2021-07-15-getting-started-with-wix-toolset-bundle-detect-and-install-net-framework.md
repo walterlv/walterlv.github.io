@@ -3,6 +3,7 @@ title: "用 WiX 制作安装包：为 WiX 制作的 exe 安装包添加 .NET Fra
 date: 2021-07-15 19:46:34 +0800
 tags: dotnet msi wix
 position: starter
+coverImage: /static/posts/2021-07-15-14-31-16.png
 ---
 
 本文是 [WiX Toolset 安装包制作入门教程](/post/getting-started-with-wix-toolset) 系列中的一篇，可前往阅读完整教程。
@@ -215,3 +216,4 @@ WiX 已开源，其中 wix3 的代码在这里：
   </Bundle>
 </Wix>
 ```
+

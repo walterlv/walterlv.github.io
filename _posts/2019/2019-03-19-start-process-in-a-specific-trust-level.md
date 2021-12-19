@@ -3,6 +3,7 @@ title: "Windows 下使用 runas 命令以指定的权限启动一个进程（非
 date: 2019-03-19 09:37:16 +0800
 tags: windows csharp dotnet
 position: knowledge
+coverImage: /static/posts/2019-03-19-09-21-30.png
 ---
 
 在默认情况下，Windows 系统中启动一个进程会继承父进程的令牌。如果父进程是管理员权限，那么子进程就是管理员权限；如果父进程是标准用户权限，那么子进程也是标准用户权限。
@@ -126,3 +127,4 @@ Process.Start("runas.exe", $"/trustlevel:0x20000 Walterlv.Demo.exe");
 **参考资料**
 
 - [windows - How to run a process as non-admin from an elevated PowerShell console? - Stack Overflow](https://stackoverflow.com/a/29570173/6233938)
+

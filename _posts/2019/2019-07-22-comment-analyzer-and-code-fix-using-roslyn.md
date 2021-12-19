@@ -4,6 +4,7 @@ publishDate: 2019-07-22 09:04:15 +0800
 date: 2019-07-22 11:43:03 +0800
 tags: roslyn visualstudio nuget dotnet csharp
 position: starter
+coverImage: /static/posts/2019-07-20-22-04-53.png
 ---
 
 如果某天改了一点代码但是没有完成，我们可能会在注释里面加上 `// TODO`。如果某个版本为了控制影响范围临时使用不太合适的方法解了 Bug，我们可能也会在注释里面加上 `// TODO`。但是，对于团队项目来说，一个人写的 `TODO` 可能过了一段时间就淹没在大量的 `TODO` 堆里面了。如果能够强制要求所有的 `TODO` 被跟踪，那么代码里面就比较容易能够控制住 `TODO` 的影响了。
@@ -257,3 +258,4 @@ namespace Walterlv.Analyzers.Maintainability
     }
 }
 ```
+

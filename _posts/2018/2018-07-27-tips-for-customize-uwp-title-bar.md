@@ -3,6 +3,7 @@ title: "UWP 扩展/自定义标题栏的方法，一些概念和一些注意事�
 publishDate: 2018-07-27 14:17:44 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: uwp
+coverImage: /static/posts/2018-07-27-08-48-53.png
 ---
 
 在 Windows 10 的前几个版本中将页面内容扩展到标题栏上还算简单，主要是没什么坑。直到一些新控件的引入和一些外观设计趋势变化之后，扩展标题栏开始出现一些坑了。
@@ -99,3 +100,4 @@ Window.Current.SetTitleBar(TitleBar);
 **参考资料**
 
 - [Title bar customization - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/shell/title-bar?wt.mc_id=MVP)
+

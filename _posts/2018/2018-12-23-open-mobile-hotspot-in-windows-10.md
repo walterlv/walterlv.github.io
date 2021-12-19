@@ -8,6 +8,7 @@ version:
 versions:
   - 中文: #
   - English: /post/open-mobile-hotspot-in-windows-10-en.html
+coverImage: /static/posts/2018-12-23-13-21-40.png
 ---
 
 本文将介绍如何在 Windows 10 中开启移动 Wi-Fi 热点。
@@ -31,3 +32,4 @@ This post is written in **multiple languages**. Please select yours:
 还有其他的开启方式，直接在任务栏的通知区域，打开网络图标，最右边就有移动热点的开关。
 
 ![通知区域的网络图标](/static/posts/2018-12-23-13-27-43.png)
+

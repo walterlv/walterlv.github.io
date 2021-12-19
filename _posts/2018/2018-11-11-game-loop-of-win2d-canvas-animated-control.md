@@ -3,6 +3,7 @@ title: "Win2D 中的游戏循环：CanvasAnimatedControl"
 publishDate: 2018-11-11 21:35:58 +0800
 date: 2018-11-28 16:25:46 +0800
 tags: dotnet win2d uwp
+coverImage: /static/posts/2018-11-11-20-14-26.png
 ---
 
 Win2D 是 DirectX 的一个高层封装，提供了极大 DirectX 性能的同时，又具有很好用的 API 设计。
@@ -184,3 +185,4 @@ private async void OnCreateResources(CanvasAnimatedControl sender, CanvasCreateR
 - [win10 uwp win2d 入门 看这一篇就够了 - 林德熙](https://blog.lindexi.com/post/win10-uwp-win2d-%E5%85%A5%E9%97%A8-%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html)
 - [win10 uwp win2d CanvasVirtualControl 与 CanvasAnimatedControl - 林德熙](https://blog.lindexi.com/post/win10-uwp-win2d-CanvasVirtualControl-%E4%B8%8E-CanvasAnimatedControl.html)
 - [win10 uwp 萤火虫效果 - 林德熙](https://blog.lindexi.com/post/win10-uwp-%E8%90%A4%E7%81%AB%E8%99%AB%E6%95%88%E6%9E%9C.html)
+

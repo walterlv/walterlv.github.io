@@ -3,6 +3,7 @@ title: "使用 Windows 10 中的加速度计（Accelerometer，重力传感器�
 publishDate: 2018-11-11 21:29:36 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: uwp
+coverImage: /static/posts/2018-11-11-21-22-55.png
 ---
 
 在做 UWP 应用开发的时候还有什么理由可以用到加速度计呢？场景很多啦，比如做游戏，做类似 Surface Hub 那种一边旋转，一边所有内容跟着一起转的效果。
@@ -112,3 +113,4 @@ private (float xAngle, float yAngle) GetTiltAngles()
 **参考资料**
 
 - [Use the accelerometer - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/devices-sensors/use-the-accelerometer?wt.mc_id=MVP)
+

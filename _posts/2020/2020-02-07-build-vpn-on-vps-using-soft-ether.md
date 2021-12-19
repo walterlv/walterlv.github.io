@@ -4,6 +4,7 @@ publishDate: 2020-02-07 09:48:36 +0800
 date: 2020-03-23 11:35:30 +0800
 tags: linux network
 position: starter
+coverImage: /static/posts/2020-01-29-23-09-12.png
 ---
 
 VPN 全称是 Virtual Private Network（虚拟专用网络），可以在多台设备之间建立安全的通信网络。VPS 是 Virtual Private Server，虚拟专用服务器，指的是一台虚拟的电脑，用于提供服务。
@@ -360,3 +361,4 @@ A TLS certificate warning will appear because the server uses self signed certif
 ---
 
 **参考资料** -->
+

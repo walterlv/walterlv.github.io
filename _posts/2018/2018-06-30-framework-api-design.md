@@ -8,6 +8,7 @@ version:
 versions:
   - 中文: #
   - English: /post/framework-api-design-en.html
+coverImage: /static/posts/2018-06-30-15-46-00.png
 ---
 
 说到框架设计，打心底都会觉得很大很宽泛，而 API 设计是框架设计中的重要组成部分。相比于有很多大佬都认可的*面向对象的六大原则*、*23 种常见的设计模式*来说，API 设计确实缺少行业公认的原则或者说设计范式。
@@ -162,3 +163,4 @@ API 内部本身需要被测试（单元测试、基准测试等）；然而，A
 **参考资料**
 
 - *Practical API Design*, NetBeans 创始人 Jaroslav Tulach 著
+

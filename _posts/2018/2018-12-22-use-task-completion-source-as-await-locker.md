@@ -3,6 +3,7 @@ title: ".NET 中使用 TaskCompletionSource 作为线程同步互斥或异步操
 date: 2018-12-22 15:50:23 +0800
 tags: dotnet csharp
 position: knowledge
+coverImage: /static/posts/2018-12-22-15-47-52.png
 ---
 
 你可以使用临界区（Critical Section）、互斥量（Mutex）、信号量（Semaphores）和事件（Event）来处理线程同步。然而，在编写一些异步处理函数，尤其是还有 async 和 await 使用的时候，还有一些更方便的类型可以用来处理线程同步。
@@ -55,3 +56,4 @@ await demo.WaitAsync();
 ```csharp
 _source.SetResult(null);
 ```
+

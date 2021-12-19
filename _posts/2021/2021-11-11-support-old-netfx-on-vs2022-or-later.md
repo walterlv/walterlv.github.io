@@ -4,6 +4,7 @@ publishDate: 2021-11-11 17:59:52 +0800
 date: 2021-11-15 15:55:01 +0800
 tags: visualstudio dotnet
 position: problem
+coverImage: /static/posts/2021-11-09-09-46-36.png
 ---
 
 Visual Studio 2022 已正式发布！着急升级的小伙伴兴致勃勃地升级并卸载了原来的 Visual Studio 2019 后，发现自己的几个库项目竟然无法编译通过了。究其原因，是因为我的一些库依旧在支持古老的 .NET Framework 4.5 框架，而 Visual Studio 2022 不再附带如此古老的目标包了。
@@ -161,3 +162,4 @@ Directory.Build.props 文件的新增内容：
 3. 后面的 `ItemGroup` 里的内容，直接照抄上文即可，我也是照抄 [Microsoft.NETFramework.ReferenceAssemblies](https://www.nuget.org/packages/Microsoft.NETFramework.ReferenceAssemblies/) 包里的
 
 用最后的这种方法，算就究级解决方案了。没有这种方案解决不了的问题！如果有，那就是有某项目没受此文件影响，把这段代码拷到那个项目的 csproj 文件里去。
+

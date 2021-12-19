@@ -4,6 +4,7 @@ publishDate: 2020-04-27 19:36:41 +0800
 date: 2020-05-23 14:38:45 +0800
 tags: unity csharp
 position: starter
+coverImage: /static/posts/2020-04-27-20-50-54.png
 ---
 
 因为 Visual Studio 有强大的包管理器插件，所以即便是不熟悉 NuGet 命令的小伙伴也能轻松安装和管理 NuGet 包。不过，对 Unity C# 项目来说，你并不能直接引用 dll，也不能直接使用自带的 NuGet 包管理器完成 NuGet 包安装。
@@ -137,3 +138,4 @@ Unity 中引用 dll 有两种官方途径：
 **参考资料**
 
 - [Unity - Manual: Referencing additional class library assemblies](https://docs.unity3d.com/Manual/dotnetProfileAssemblies.html?_ga=2.153567932.542818802.1587977026-543747318.1585549821)
+

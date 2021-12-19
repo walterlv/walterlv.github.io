@@ -3,6 +3,7 @@ title: "启用 Windows 审核模式（Audit Mode），以 Administrator 账户�
 date: 2019-03-17 20:02:05 +0800
 tags: windows
 position: knowledge
+coverImage: /static/posts/2019-03-17-20-00-59.png
 ---
 
 在你刚刚安装完 Windows，在 Windows 开箱体验输入以创建你的用户账户之前，你可以按下 Ctrl + Shift + F3 来进入审核模式。
@@ -50,3 +51,4 @@ OOBE，Out-of-Box Experience，开箱体验。对于 Windows 系统来说，就�
 **参考资料**
 
 - [Boot Windows to Audit Mode or OOBE - Microsoft Docs](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/boot-windows-to-audit-mode-or-oobe)
+

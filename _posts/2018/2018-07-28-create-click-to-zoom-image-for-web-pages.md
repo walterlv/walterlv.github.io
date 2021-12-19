@@ -3,6 +3,7 @@ title: "图片点击放大，你的网页也能做到！"
 publishDate: 2018-07-28 13:27:40 +0800
 date: 2018-08-12 14:52:05 +0800
 tags: site
+coverImage: /static/posts/2018-07-28-11-11-16.png
 ---
 
 我经常在博客中插入大图，然而总需要借助浏览器的滚轮缩放功能放大观看实在是不方便。于是我希望做一个点击即放大的功能。
@@ -160,3 +161,4 @@ for (i = 0; i < document.images.length; i++) {
 **参考资料**
 
 - [How To Create Modal Images](https://www.w3schools.com/howto/howto_css_modal_images.asp)
+

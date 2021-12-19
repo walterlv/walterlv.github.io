@@ -3,6 +3,7 @@ title: "0x800b0109 - 已处理证书链，但是在不受信任提供程序信�
 date: 2021-07-16 17:51:20 +0800
 tags: dotnet msi wix
 position: problem
+coverImage: /static/posts/2021-07-16-17-41-15.png
 ---
 
 有时在安装程序时无法安装出现错误，或者在更新某些系统组件时也遇到同样的错误：“已处理证书链，但是在不受信任提供程序信任的根证书中终止。”。
@@ -64,3 +65,4 @@ position: problem
 ![选择存储位置](/static/posts/2021-07-16-17-44-29.png)
 
 最后，重新安装 .NET Framework 或者其他程序即可。
+

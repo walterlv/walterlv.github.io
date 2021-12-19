@@ -3,6 +3,7 @@ title: ".NET/C# 检测电脑上安装的 .NET Framework 的版本"
 date: 2019-10-10 16:51:58 +0800
 tags: dotnet csharp
 position: knowledge
+coverImage: /static/posts/2019-10-10-14-57-02.png
 ---
 
 如果你希望知道某台计算机上安装了哪些版本的 .NET Framework，那么正好本文可以帮助你解决问题。
@@ -142,3 +143,4 @@ var currentVersion = NdpInfo.GetCurrentVersionName();
 ```
 
 这可以直接获取到一个字符串，比如 `.NET Framework 4.8`。对于只是简单获取一下已安装名称而不用做更多处理的程序来说会比较方便。
+

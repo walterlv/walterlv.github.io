@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "用微软拼音快速输入自定义格式的时间和日期"
 publishDate: 2017-09-18 21:58:58 +0800
 date: 2018-12-14 09:54:33 +0800
@@ -7,6 +6,7 @@ tags: ime
 permalink: /ime/2017/09/18/date-time-format-using-microsoft-pinyin.html
 keywords: Micosoft Pinyin IME date time format
 description: 教你如何用微软拼音输入法的用户自定义短语快速输入自定义格式的时间和日期。
+coverImage: /static/posts/2017-09-18-22-03-01.png
 ---
 
 用微软拼音输入 `rq` 或者 `sj`，我们可以在第五个候选词分别得到 `2017年9月18日` 和 `22点05分`。但是，其实我想输入的是：`2017-09-18` 和 `2017-09-18 22:05:51 +0800`。在设置里面折腾一番没找到之后，原本以为只好自己输入了，没想到后面还是找到了方法。
@@ -66,3 +66,4 @@ ss|2 位秒数
 ![输入法选项](/static/posts/2017-09-18-22-14-05.png)  
 ![编辑短语](/static/posts/2017-09-18-22-16-36.png)  
 ![添加短语](/static/posts/2017-09-18-22-17-08.png)
+

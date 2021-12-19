@@ -3,6 +3,7 @@ title: "Slack 开发入门之 Incoming Webhooks：往 Slack 的 Channel 中发�
 date: 2019-01-06 15:29:19 +0800
 tags: slack web
 position: starter
+coverImage: /static/posts/2019-01-06-14-14-32.png
 ---
 
 一个工程师团队使用 Slack 进行团队协作比 QQ / 微信流的效率高多啦。除了基本的 IM 之外，它的扩展性也是非常重要的一点。
@@ -107,3 +108,4 @@ position: starter
 **参考资料**
 
 - [Enabling interactions with bots - Slack](https://api.slack.com/bot-users)
+

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "使 32 位程序使用大于 2GB 的内存"
 publishDate: 2017-09-12 21:48:46 +0800
 date: 2017-12-26 09:05:27 +0800
@@ -7,6 +6,7 @@ tags: windows
 permalink: /windows/2017/09/12/32bit-application-use-large-memory.html
 keywords: Windows 32-bit 2GB largeaddressaware editbin dumpbin anycpu
 description: 了解 Windows 系统上如何使 32 位应用程序使用大于 2GB 的内存。
+coverImage: /static/posts/2017-09-12-normal-32bit-header.png
 ---
 
 不管在 32 位 Windows 上还是在 64 位 Windows 上，32 位的应用程序都只能使用最大 2GB 的内存，这是我们司空见惯的一个设定。但其实 Windows 提供了一些方法让我们打破这样的设定，使程序使用大于 2GB 的内存。
@@ -92,3 +92,4 @@ editbin 改之前和改之后用 dumpbin 查看我们的程序头信息，得到
     - `dumpbin /headers xxx.exe | more`
     - [verify if largeAddressAware is in effect?](https://stackoverflow.com/questions/3979624/verify-if-largeaddressaware-is-in-effect)
     - [LargeAddressAware Visual Studio 2015 C#](https://stackoverflow.com/questions/31565532/largeaddressaware-visual-studio-2015-c-sharp)
+

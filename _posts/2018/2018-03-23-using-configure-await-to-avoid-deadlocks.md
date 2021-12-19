@@ -3,6 +3,7 @@ title: "在编写异步方法时，使用 ConfigureAwait(false) 避免使用者�
 publishDate: 2018-03-23 21:54:20 +0800
 date: 2019-03-15 15:54:00 +0800
 tags: dotnet
+coverImage: /static/posts/2018-03-23-21-19-51.png
 ---
 
 我在 [使用 Task.Wait()？立刻死锁（deadlock）](/post/deadlock-in-task-wait) 一文中站在类库使用者的角度看 `async`/`await` 代码的死锁问题；而本文将站在类库设计者的角度来看死锁问题。
@@ -153,3 +154,4 @@ private async Task RunAsync()
 
 - [在编写异步方法时，使用 ConfigureAwait(false) 避免使用者死锁 - walterlv](/post/using-configure-await-to-avoid-deadlocks)
 - [将 async/await 异步代码转换为安全的不会死锁的同步代码（使用 PushFrame） - walterlv](/post/convert-async-to-sync-by-push-frame)
+

@@ -3,6 +3,7 @@ title: "Directory Opus 使用命令编辑器集成 TortoiseGit 的各种功能"
 date: 2019-05-15 10:41:39 +0800
 tags: windows
 position: starter
+coverImage: /static/posts/2019-05-15-08-41-46.png
 ---
 
 使用 Directory Opus 替代 Windows 自带的文件资源管理器来管理你计算机上的文件可以极大地提高你的文件处理效率。
@@ -124,3 +125,4 @@ C:\Program Files\TortoiseGit\bin\TortoiseGitProc.exe /command:clone /path:"{sour
 在自定义完按钮之后，不要忘了关闭最开始弹出来的“自定义工具栏”的对话框。
 
 ![“自定义工具栏”对话框](/static/posts/2019-05-15-10-41-23.png)
+

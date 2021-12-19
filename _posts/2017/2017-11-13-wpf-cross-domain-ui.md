@@ -3,6 +3,7 @@ title: "WPF 跨应用程序域的 UI（Cross AppDomain UI）"
 publishDate: 2017-11-13 00:36:28 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: wpf
+coverImage: /static/posts/2017-11-13-13-23-53.png
 ---
 
 为自己写的程序添加插件真的是一个相当常见的功能，然而如果只是简单加载程序集然后去执行程序集中的代码，会让宿主应用程序暴露在非常危险的境地！因为只要插件能够运行任何一行代码，就能将宿主应用程序修改得天翻地覆哭爹喊娘；而根本原因，就在于暴露了整个托管堆和整个 UI 树。
@@ -86,3 +87,4 @@ MAF 框架对插件和宿主程序集所在的文件夹结构有要求。这可�
 - [WPF Add-Ins Overview - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/app-development/wpf-add-ins-overview?wt.mc_id=MVP)
 - [Walkthrough: Creating an Extensible Application - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/add-ins/walkthrough-create-extensible-app?wt.mc_id=MVP)
 - [Add-ins and Extensibility - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/add-ins/?wt.mc_id=MVP)
+

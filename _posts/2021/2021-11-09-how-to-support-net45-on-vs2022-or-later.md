@@ -4,6 +4,7 @@ publishDate: 2021-11-09 09:58:41 +0800
 date: 2021-11-11 17:49:43 +0800
 tags: visualstudio dotnet
 position: problem
+coverImage: /static/posts/2021-11-09-09-46-36.png
 ---
 
 就在北京时间 2021 年 11 月 9 日凌晨，Visual Studio 2022 正式发布了！着急升级的小伙伴兴致勃勃地升级并卸载了原来的 Visual Studio 2019 后，发现自己的几个库项目竟然无法编译通过了。究其原因，是因为我的一些库依旧在支持古老的 .NET Framework 4.5 框架，而 Visual Studio 2022 不再附带如此古老的目标包了。
@@ -45,3 +46,4 @@ position: problem
 ## 方法二：安装 [Microsoft.NETFramework.ReferenceAssemblies](https://www.nuget.org/packages/Microsoft.NETFramework.ReferenceAssemblies/) NuGet 包
 
 详见：[无需安装 VS2019，在 Visual Studio 2022 中编译 .NET Framework 4.5/4/3.5 这样的古老框架](/post/support-old-netfx-on-vs2022-or-later) 
+

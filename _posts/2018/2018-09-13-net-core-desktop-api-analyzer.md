@@ -3,6 +3,7 @@ title: "分析现有 WPF / Windows Forms 程序能否顺利迁移到 .NET Core 3
 publishDate: 2018-09-13 21:00:09 +0800
 date: 2018-10-05 6:40:51 +0800
 tags: dotnet wpf
+coverImage: /static/posts/2018-09-13-20-21-36.png
 ---
 
 今年五月的 Build 大会上，微软说 .NET Core 3.0 将带来 WPF / Windows Forms 这些桌面应用的支持。当然，是通过 Windows 兼容包（Windows Compatibility Pack）实现的。为了提前检查你的程序是否能在未来跑在 .NET Core 3.0 上，微软在 2018年8月8日 推出了 .NET Core 3.0 Desktop API Analyzer，帮助你提前检查你的程序能有多容易迁移到 .NET Core 3.0 
@@ -128,3 +129,4 @@ Cannot locate assembly information for System.Object. Microsoft assemblies found
 关于 .NET Framework 迁移到 .NET Core 的好处，以及 .NET Framework 未来的支持情况，可以阅读微软的另一篇博客了解：
 
 [Update on .NET Core 3.0 and .NET Framework 4.8 - .NET Blog](https://blogs.msdn.microsoft.com/dotnet/2018/10/04/update-on-net-core-3-0-and-net-framework-4-8/)
+

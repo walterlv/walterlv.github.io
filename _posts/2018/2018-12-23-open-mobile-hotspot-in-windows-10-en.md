@@ -8,6 +8,7 @@ version:
 versions:
   - 中文: /post/open-mobile-hotspot-in-windows-10.html
   - English: #
+coverImage: /static/posts/2018-12-23-13-12-37.png
 ---
 
 We'll learn how to turn on Mobile Hotspot (Wi-Fi) in Windows 10.
@@ -31,3 +32,4 @@ You'll find this hotspot in your other devices. After you connect your device to
 Click the network icon in the task bar notification area and you can also turn on the Wi-Fi hotspot there.
 
 ![The Network Icon](/static/posts/2018-12-23-13-34-09.png)
+

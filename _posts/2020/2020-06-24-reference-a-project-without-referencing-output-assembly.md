@@ -3,6 +3,7 @@ title: "通过 ReferenceOutputAssembly=False 在引用项目时，不额外引�
 date: 2020-06-24 08:42:26 +0800
 tags: visualstudio dotnet
 position: problem
+coverImage: /static/posts/2019-07-24-12-04-50.png
 ---
 
 正常当两个 .NET 项目有引用的时候，会将一个的输出拷贝到另一个的输出目录下。但有时我们只是希望通过引用建立一个依赖关系而已，最终两个项目的输出是独立的。
@@ -57,3 +58,4 @@ position: problem
 本文的方法已加入到此类型解法的方法列表中，详情请看：
 
 - [三种方法设置 .NET/C# 项目的编译顺序，而不影响项目之间的引用 - walterlv](https://blog.walterlv.com/post/affects-project-building-order.html)
+

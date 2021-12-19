@@ -3,6 +3,7 @@ title: "让你的 Windows 应用程序在任意路径也能够直接通过文件
 date: 2019-03-02 19:07:48 +0800
 tags: windows
 position: knowledge
+coverImage: /static/posts/2019-03-02-17-31-37.png
 ---
 
 我们可以在任何路径下输入 `explorer` 来启动资源管理器，可以在任何路径中输入 `git` 来使用 git 相关的命令。我们知道可以通过将一个应用程序加入到环境变量中来获得这个效果，但是还有其他的方式吗？
@@ -44,3 +45,4 @@ position: knowledge
 **参考资料**
 
 - [Application Registration - Windows applications - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/shell/app-registration)
+

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: ".NET Framework 4.x 程序到底运行在哪个 CLR 版本之上"
 publishDate: 2017-09-22 18:05:00 +0800
 date: 2019-10-16 09:42:52 +0800
@@ -7,6 +6,7 @@ tags: dotnet
 permalink: /dotnet/2017/09/22/dotnet-version.html
 keywords: dotnet version sku runtime
 description: 了解 .NET Framework 的公共语言运行时版本，这与 .NET Framework 基础库的版本是不一样的。
+coverImage: /static/posts/2017-09-22-21-39-42.png
 ---
 
 当我们编译程序目标框架选为 .NET Framework 4.5/4.6/4.7/4.8 时，CLR 运行时是如何判断我们究竟应该用哪一个 .NET Framework 呢？.NET Framework 的版本到底由哪些部分组成？我们编译 .NET Framework 时选择的版本决定了什么？
@@ -120,3 +120,4 @@ description: 了解 .NET Framework 的公共语言运行时版本，这与 .NET 
 - [.NET 4.5 is an in-place replacement for .NET 4.0 - Rick Strahl's Web Log](https://weblog.west-wind.com/posts/2012/Mar/13/NET-45-is-an-inplace-replacement-for-NET-40)
 - [app config - What does "SKU" (attribute) mean in C#? - Stack Overflow](https://stackoverflow.com/questions/17148496/what-does-sku-attribute-mean-in-c)
 - [.net - What happens if I remove the auto added supportedRuntime element? - Stack Overflow](https://stackoverflow.com/questions/21566528/what-happens-if-i-remove-the-auto-added-supportedruntime-element)
+

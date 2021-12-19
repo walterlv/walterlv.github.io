@@ -3,6 +3,7 @@ title: "Windows 系统上用 .NET/C# 查找所有窗口，并获得窗口的标�
 date: 2019-10-10 12:11:37 +0800
 tags: windows dotnet csharp
 position: knowledge
+coverImage: /static/posts/2019-10-10-12-06-19.png
 ---
 
 在 Windows 应用开发中，如果需要操作其他的窗口，那么可以使用 `EnumWindows` 这个 API 来枚举这些窗口。
@@ -238,3 +239,4 @@ namespace Walterlv.WindowDetector
     }
 }
 ```
+

@@ -3,6 +3,7 @@ title: "自动将 NuGet 包的引用方式从 packages.config 升级为 PackageR
 publishDate: 2018-04-24 18:03:20 +0800
 date: 2019-04-12 09:37:05 +0800
 tags: dotnet visualstudio nuget msbuild
+coverImage: /static/posts/2019-03-03-16-40-10.png
 ---
 
 在前段时间我写了一篇迁移 csproj 格式的博客 [将 WPF、UWP 以及其他各种类型的旧 csproj 迁移成 Sdk 风格的 csproj](/post/introduce-new-style-csproj-into-net-framework)，不过全过程是手工进行的，而且到最后处理 XAML 问题也非常头疼。
@@ -85,3 +86,4 @@ NuGet.Configuration 4.0.0 -> NuGet.Versioning (= 4.0.0)
 
 - [Migrating from package.config to PackageReference formats - Microsoft Docs](https://docs.microsoft.com/en-us/nuget/reference/migrate-packages-config-to-package-reference?wt.mc_id=MVP)
 - [packages.config (PC) to PackageReference (PR) Migrator · NuGet/Home Wiki](https://github.com/NuGet/Home/wiki/packages.config-(PC)-to-PackageReference-(PR)-Migrator)
+

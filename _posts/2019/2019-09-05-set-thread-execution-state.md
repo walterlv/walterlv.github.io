@@ -3,6 +3,7 @@ title: ".NET/C# 阻止屏幕关闭，阻止系统进入睡眠状态"
 date: 2019-09-05 14:49:41 +0800
 tags: dotnet csharp windows
 position: knowledge
+coverImage: /static/posts/2019-09-05-14-48-37.png
 ---
 
 在 Windows 系统中，一段时间不操作键盘和鼠标，屏幕便会关闭，系统会进入睡眠状态。但有些程序（比如游戏、视频和演示文稿）在运行过程中应该阻止屏幕关闭，否则屏幕总是关闭，会导致体验会非常糟糕。
@@ -157,3 +158,4 @@ SystemSleep.ResetIdle();
 **参考资料**
 
 - [SetThreadExecutionState function (winbase.h) - Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setthreadexecutionstate)
+

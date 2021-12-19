@@ -4,6 +4,7 @@ publishDate: 2019-06-14 23:14:44 +0800
 date: 2019-06-16 20:53:20 +0800
 tags: windows
 position: problem
+coverImage: /static/posts/2019-06-14-22-05-03.png
 ---
 
 最近我想在我的 Windows 10 上安装一个新的语言包，在 “设置” -> “时间和语言” -> “语言” 中，添加了新的语言之后，语言进入了下载状态。但是没过一小会儿，下载进度条就结束了，提示语言已经下载安装完成。但实际上只能作为显示使用，（日语）输入法却不能使用。
@@ -100,3 +101,4 @@ position: problem
 - [win10 可选功能更新（输入法）失败 - Microsoft Community](https://answers.microsoft.com/zh-hans/windows/forum/all/win10/9ae722f4-0c8e-4864-a4e7-018bf478bc87)
 - [解决Windows10专业版无法安装语言包！！！ - Antrn的博客 - CSDN博客](https://blog.csdn.net/qq_38232598/article/details/80687009)
 - [Win10 1803日文输入法问题 - Kevin的博客 - CSDN博客](https://blog.csdn.net/yinghua12a/article/details/81105287)
+

@@ -4,6 +4,7 @@ publishDate: 2018-12-09 00:00:00 +0800
 date: 2019-03-24 14:25:49 +0800
 tags: dotnet
 position: event
+coverImage: /static/posts/2019-03-24-13-15-11.png
 ---
 
 2018 年 12 月 8 日，在 CVTE·视源股份，在广州黄埔区云埔四路 6 号，我们举办了广州微软技术沙龙。现场参与人数 136 人（不含工作人员），线上参与人员 400+ 人。活动完全免费。
@@ -103,3 +104,4 @@ position: event
 附叶伟民没有写完的总结：
 
 - [2018年12月8日广州.NET微软技术俱乐部活动总结 - 叶伟民 - 博客园](https://www.cnblogs.com/adalovelacer/p/summary-of-dec-8-2018-event.html)
+

@@ -4,6 +4,7 @@ publishDate: 2019-01-27 21:17:07 +0800
 date: 2020-10-31 09:00:51 +0800
 tags: xamarin dotnet csharp ios
 position: starter
+coverImage: /static/posts/2019-01-27-20-51-52.png
 ---
 
 虽然 Xamarin 可以在 Windows 操作系统上编写和调试，但如果开发 iOS 应用，那么我们依然需要一台安装有 XCode 和 Visual Studio for Mac 的 Mac 电脑。做真机部署不是像平时使用太阳系第一 IDE Visual Studio 那样方便。
@@ -93,3 +94,4 @@ position: starter
 还需要注意，如果你删除了你部署的应用，那么下次部署的时候在 iPhone 上的操作部分需要重新进行。
 
 还需要注意，可能每过 6 天，本文所述的所有步骤都需要重新进行一遍。
+

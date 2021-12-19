@@ -3,6 +3,7 @@ title: "帮助官方 NuGet 解掉 Bug，制作绝对不会传递依赖的 NuGet 
 publishDate: 2018-08-05 21:22:12 +0800
 date: 2019-02-27 16:34:26 +0800
 tags: nuget msbuild
+coverImage: /static/posts/2018-07-30-19-52-46.png
 ---
 
 如果你希望做一个 NuGet 工具包，那么这个包一定不能作为依赖传递给下一个包。典型的例子，做一个生成版本号的工具 NuGet 包，或者做一个代码分析器。
@@ -177,3 +178,4 @@ dotnet build
 
 </Project>
 ```
+

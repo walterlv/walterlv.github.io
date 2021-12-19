@@ -3,6 +3,7 @@ title: "如何给 Windows Terminal 增加一个新的终端（以 Bash 为例）
 date: 2019-07-03 16:51:53 +0800
 tags: windows
 position: starter
+coverImage: /static/posts/2019-07-03-16-24-01.png
 ---
 
 Windows Terminal 的预览版本可以在微软应用商店下载，下载完后它原生就可以打开三个不同的终端 PowerShell Core、CMD 和 PowerShell。然而我的计算机上还安装了一个 Bash 可以如何添加到 Windows Terminal 里呢？
@@ -91,3 +92,4 @@ Visual Studio 自带了一个 guid 生成工具，你可以在菜单的工具中
 在你按下 Ctrl+S 保存这个配置文件之后，配置将会立刻生效。你可以在你的 Windows Terminal 中看到你新增的 Bash 终端了。
 
 ![最终效果](/static/posts/2019-07-03-16-51-11.png)
+

@@ -4,6 +4,7 @@ publishDate: 2019-03-14 22:46:56 +0800
 date: 2019-06-29 12:57:15 +0800
 tags: dotnet csharp
 position: problem
+coverImage: /static/posts/2019-03-14-22-42-34.png
 ---
 
 .NET 提供了一个简单的 API 来移动一个文件夹 `Directory.Move(string sourceDirName, string destDirName)`。不过如果你稍微尝试一下这个 API 就会发现其实相当不实用。
@@ -65,3 +66,4 @@ private static void MoveDirectory(string sourceDirectory, string targetDirectory
 ```
 
 `depth` 是一个整型，表示递归深度。我在计算文件需要移动到的新文件夹的路径的时候，需要使用到这个递归深度，以便回溯到最开始需要移动的那个文件夹上。
+

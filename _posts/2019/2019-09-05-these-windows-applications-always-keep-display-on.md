@@ -4,6 +4,7 @@ publishDate: 2019-09-05 15:04:38 +0800
 date: 2021-06-07 13:39:27 +0800
 tags: windows
 position: problem
+coverImage: /static/posts/2019-09-05-14-48-37.png
 ---
 
 本文收集一些已知的导致电脑屏幕不关闭的程序。如果你发现无论你设置多短的屏幕关闭超时时间但一直都不关闭，那么可以参考本文检查是否打开了这些程序。
@@ -56,3 +57,4 @@ position: problem
 ### 如何揪出阻止屏幕关闭的程序？
 
 可以看我的另一篇博客：[Windows 系统上如何揪出阻止你屏幕关闭的程序](/post/detect-which-process-is-keeping-your-screen-on-in-windows)
+

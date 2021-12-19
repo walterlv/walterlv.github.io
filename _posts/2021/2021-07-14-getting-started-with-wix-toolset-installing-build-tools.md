@@ -3,6 +3,7 @@ title: "用 WiX 制作安装包：安装 WiX Toolset 工具集"
 date: 2021-07-14 17:47:10 +0800
 tags: dotnet msi wix
 position: starter
+coverImage: /static/posts/2021-07-14-14-22-57.png
 ---
 
 本文是 [WiX Toolset 安装包制作入门教程](/post/getting-started-with-wix-toolset) 系列中的首篇，可前往阅读完整教程。
@@ -74,3 +75,4 @@ scoop install wixtoolset
 ```
 
 如果感兴趣通过 NuGet 的方式来安装 WiX Toolset，我可以再写一篇专门使用此方式安装并在团队所有人电脑上可直接构建安装包的博客。
+

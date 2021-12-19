@@ -4,6 +4,7 @@ publishDate: 2020-05-05 09:17:37 +0800
 date: 2020-05-10 15:34:05 +0800
 tags: unity
 position: starter
+coverImage: /static/posts/2020-05-10-15-16-04.png
 ---
 
 在真正能玩的游戏场景中，很多脚本的执行是在不确定的游戏对象上进项的，于是会考虑在父对象或者子对象上去写脚本。这时，可能需要查找游戏对象。那么如何在脚本中找到父子游戏对象（gameObject）呢？
@@ -63,3 +64,4 @@ for (int i = 0; 0 < renderers.Length; i++)
     transform.GetChild(i).gameObject.SetActive(true);
 }
 ```
+

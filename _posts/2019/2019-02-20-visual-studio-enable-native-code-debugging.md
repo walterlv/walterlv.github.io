@@ -4,6 +4,7 @@ publishDate: 2019-02-20 22:40:43 +0800
 date: 2019-04-12 09:40:06 +0800
 tags: visualstudio dotnet csharp
 position: problem
+coverImage: /static/posts/2019-02-20-22-25-48.png
 ---
 
 因为我使用 Visual Studio 主要用来编写 .NET 托管程序，所以平时调试的时候是仅限托管代码的。不过有时需要在托管代码中混合调试本机代码，那么就需要额外在项目中开启本机代码调试。
@@ -77,3 +78,4 @@ position: problem
 
 - [How to: Debug in Mixed Mode - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/debugger/how-to-debug-in-mixed-mode?view=vs-2017)
 - [Tutorial: Debug C# and C++ code (mixed mode) - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/debugger/how-to-debug-managed-and-native-code?view=vs-2017)
+

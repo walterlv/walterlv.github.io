@@ -2,6 +2,7 @@
 title: "真的要比较 for 和 foreach 的性能吗？（内附性能比较的实测数据）"
 date: 2017-12-07 23:30:35 +0800
 tags: csharp dotnet
+coverImage: /static/posts/2017-12-07-21-38-53.png
 ---
 
 小伙伴告诉我，`List<T>.Find` 方法比 `List.FirstOrDefault` 扩展方法性能更高，详见：[C＃ Find vs FirstOrDefault - 林德熙](https://blog.lindexi.com/post/C-Find-vs-FirstOrDefault.html)。这可让我震惊了，因为我从来都没有考虑过在如此微观尺度衡量它们的性能差异。
@@ -299,3 +300,4 @@ public void _B1_List()
 - [c# - In .NET, which loop runs faster, 'for' or 'foreach'? - Stack Overflow](https://stackoverflow.com/questions/365615/in-net-which-loop-runs-faster-for-or-foreach)
 - [An easy and efficient way to improve .NET code performances - Patrick Smacchia](http://codebetter.com/patricksmacchia/2008/11/19/an-easy-and-efficient-way-to-improve-net-code-performances/)
 - [C# For Versus Foreach Performance - Dot Net Perls](https://www.dotnetperls.com/for-foreach)
+

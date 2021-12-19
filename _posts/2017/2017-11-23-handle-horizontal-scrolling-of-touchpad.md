@@ -8,6 +8,7 @@ version:
 versions:
   - 中文: #
   - English: /post/handle-horizontal-scrolling-of-touchpad-en.html
+coverImage: /static/posts/2017-11-23-21-19-52.png
 ---
 
 微软终于开始学苹果一样好好做触摸板了*（就是键盘空格键下面那一大块）*。然而鉴于以前没有好好做，以至于 WPF 程序甚至都没有对触摸板的横向滚动提供支持*（竖向滚动是直接使用了 `MouseWheel`，汗……）*。但有些功能真希望能够支持横向滚动！
@@ -87,3 +88,4 @@ private void OnMouseTilt(int tilt)
 微软的 Microsoft Sculpt Comfort Mouse 鼠标滚轮也是支持横向滚动的，以上方法也可以支持。
 
 ![](https://blogswin.blob.core.windows.net/win/sites/2/2013/05/2_5F00_77B60B43.jpg)
+

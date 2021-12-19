@@ -4,6 +4,7 @@ publishDate: 2019-03-02 17:29:05 +0800
 date: 2019-04-30 19:37:52 +0800
 tags: dotnet powershell
 position: knowledge
+coverImage: /static/posts/2019-03-02-16-13-46.png
 ---
 
 Windows 自带一个强大的 PowerShell，不过自带的 PowerShell 一直是基于 .NET Framework 的版本。你可以下载安装一个 .NET Core 版本的 PowerShell，以便获得 .NET Core 的各种好处。包括跨平台，以及更好的性能。
@@ -45,3 +46,4 @@ Windows 平台上建议下载 msi 格式的安装包，这样它可以帮助你�
 - [让你的 Windows 应用程序在任意路径也能够直接通过文件名执行 - 吕毅](/post/run-your-application-without-full-executable-path)
 
 ![在 cmd 中启动 PowerShell Core](/static/posts/2019-03-02-17-28-53.png)
+

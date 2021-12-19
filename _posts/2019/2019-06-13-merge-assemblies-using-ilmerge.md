@@ -4,6 +4,7 @@ publishDate: 2019-06-13 08:43:39 +0800
 date: 2019-06-17 21:34:41 +0800
 tags: dotnet csharp
 position: knowledge
+coverImage: /static/posts/2019-06-13-08-08-00.png
 ---
 
 我们有多种工具可以将程序集合并成为一个。打包成一个程序集可以避免分发程序的时候带上一堆依赖而出问题。
@@ -190,3 +191,4 @@ ILMerge.Merge:        There were errors reported in ReferencedProject's metadata
 - [Support for portable PDBs · Issue #11 · dotnet/ILMerge](https://github.com/dotnet/ILMerge/issues/11)
 - [Merging assemblies using ILRepack - Meziantou's blog](https://www.meziantou.net/merging-assemblies-using-ilrepack.htm)
 - [peters/ILRepack.MSBuild.Task: MSBuild task for ILRepack which is an open-source alternative to ILMerge.](https://github.com/peters/ILRepack.MSBuild.Task)
+

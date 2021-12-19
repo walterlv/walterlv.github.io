@@ -3,6 +3,7 @@ title: "编写 MSBuild 内联编译任务（Task）用于获取当前编译环�
 date: 2019-03-01 15:35:27 +0800
 tags: msbuild dotnet visualstudio csharp
 position: problem
+coverImage: /static/posts/2019-03-01-15-21-18.png
 ---
 
 我之前写过一些改变 MSBuild 编译过程的一些博客，包括利用 Microsoft.NET.Sdk 中各种自带的 Task 来执行各种各样的编译任务。更复杂的任务难以直接利用自带的 Task 实现，需要自己写 Task。
@@ -523,3 +524,4 @@ WalterlvOutputAllTargets:
 **参考资料**
 
 - [msbuild - Is there a way to list all the build targets available in a build file? - Stack Overflow](https://stackoverflow.com/a/2781693/6233938)
+

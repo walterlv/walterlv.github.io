@@ -3,6 +3,7 @@ title: "通过设置启用 Visual Studio 默认关闭的大量强大的功能提
 date: 2019-08-29 21:54:47 +0800
 tags: visualstudio csharp
 position: starter
+coverImage: /static/posts/2019-08-29-20-31-44.png
 ---
 
 使用 Visual Studio 开发 C#/.NET 应用程序，以前有 ReSharper 来不足其各项功能短板，后来不断将 ReSharper 的功能一点点搬过来稍微好了一些。不过直到 Visual Studio 2019，才开始渐渐可以和 ReSharper 拼一下了。
@@ -94,3 +95,4 @@ Visual Studio 2019 默认安装了 IntelliCode 可以充分利用微软使用 Gi
 这样，当出现智能感知列表的时候，我们直接就可以按下回车键输入这个选项了；否则你还需要按上下选中再回车。
 
 ![建议完成和标准完成](/static/posts/2019-08-29-21-53-51.png)
+

@@ -4,6 +4,7 @@ publishDate: 2019-01-21 15:21:29 +0800
 date: 2019-01-22 09:11:53 +0800
 tags: xamarin ios
 position: knowledge
+coverImage: /static/posts/2019-01-21-15-19-55.png
 ---
 
 本文收集整理使用 Xamarin 开发 iOS 应用时可能会遇到的各种问题。
@@ -59,3 +60,4 @@ Visual Studio for Mac 中的设置方法则是选中这个项目的 Info.plist �
 **参考资料**
 
 - [How to check whether Xcode downloaded all profiles? - Stack Overflow](https://stackoverflow.com/questions/44321291/how-to-check-whether-xcode-downloaded-all-profiles)
+

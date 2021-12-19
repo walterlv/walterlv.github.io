@@ -4,6 +4,7 @@ publishDate: 2019-02-01 01:01:18 +0800
 date: 2019-03-09 09:12:06 +0800
 tags: wpf dotnet csharp xaml
 position: problem
+coverImage: /static/posts/2019-02-01-00-02-34.png
 ---
 
 如果你写了一个 `MarkupExtension` 在 XAML 当中使用，你会发现你在 `MarkupExtension` 中定时的属性是无法使用 XAML 绑定的，因为 `MarkupExtension` 不是一个 `DependencyObject`。
@@ -217,3 +218,4 @@ public class WalterlvExtension : MarkupExtension
 - [Tore Senneseth's blog » Custom Markup Extension with bindable properties](http://blogs.profitbase.com/tsenn/?p=73)
 - [Markup Extensions for XAML Overview - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/xaml-services/markup-extensions-for-xaml-overview)
 - [Service Contexts Available to Type Converters and Markup Extensions - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/xaml-services/service-contexts-available-to-type-converters-and-markup-extensions)
+

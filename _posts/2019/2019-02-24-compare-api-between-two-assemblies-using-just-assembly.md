@@ -4,6 +4,7 @@ publishDate: 2019-02-24 17:09:17 +0800
 date: 2019-03-10 21:30:49 +0800
 tags: dotnet csharp
 position: starter
+coverImage: /static/posts/2019-02-24-16-59-29.png
 ---
 
 最近我大幅度重构了我一个库的项目结构，使之使用最新的项目文件格式（基于 Microsoft.NET.Sdk）并使用 SourceYard 源码包来打包其中的一些公共代码。不过，最终生成了一个新的 dll 之后却心有余悸，不知道我是否删除或者修改了某些 API，是否可能导致我原有库的使用者出现意料之外的兼容性问题。
@@ -57,3 +58,4 @@ position: starter
 
 - [telerik/JustAssembly: Assembly Diff and Analysis Tool](https://github.com/telerik/justassembly)
 - [Assembly Diff Tool for .NET - JustAssembly](https://www.telerik.com/justassembly)
+

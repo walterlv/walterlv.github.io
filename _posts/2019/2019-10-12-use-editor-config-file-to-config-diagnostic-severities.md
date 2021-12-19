@@ -3,6 +3,7 @@ title: "使用 .editorconfig 配置 .NET/C# 项目的代码分析规则的严重
 date: 2019-10-12 11:35:04 +0800
 tags: dotnet csharp
 position: knowledge
+coverImage: /static/posts/2019-10-12-11-14-12.png
 ---
 
 随着 Visual Studio 2019 更新，在 Visual Studio 中编写代码的时候也带来了基于 Roslyn 的代码质量分析。有一些代码分析严重程度可能与团队约定的不一致，这时就需要配置规则的严重程度。另外如果是个人使用插件安装了分析器，也可以配置一些严重程度满足个人的喜好。
@@ -64,3 +65,4 @@ dotnet_diagnostic.IDE0051.severity = none
 在提示有问题的代码上按下重构快捷键（默认是 `Ctrl + .`），可以出现重构菜单，其中就有配置规则严重性的选项，直接选择即可自动添加到 .editorconfig 文件中。如果项目中没有 .editorconfig 文件，则会自动在解决方案同目录下创建一个新的。
 
 对这部分快捷键不了解的话可以阅读：[提高使用 Visual Studio 开发效率的键盘快捷键 - walterlv](/post/keyboard-shortcuts-to-improve-the-efficiency-of-visual-studio)。
+

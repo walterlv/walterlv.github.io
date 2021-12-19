@@ -8,6 +8,7 @@ version:
 versions:
   - 中文: /post/read-microsoft-net-sdk.html
   - English: #
+coverImage: /static/posts/2018-06-30-21-06-06.png
 ---
 
 `Project` node starts to support the `Sdk` attribute since MSBuild release the 15.0 version which is embedded in Visual Studio 2017. For the `Sdk` attribute, the C# project file whose file extension is csproj becomes much more powerful and extensible.
@@ -120,3 +121,4 @@ I also find some creative `Target` that inspires me:
 ### References
 
 - [How to: Reference an MSBuild Project SDK - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-use-project-sdk?wt.mc_id=MVP)
+

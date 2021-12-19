@@ -4,6 +4,7 @@ publishDate: 2019-03-17 20:03:59 +0800
 date: 2019-03-19 17:42:26 +0800
 tags: windows
 position: knowledge
+coverImage: /static/posts/2019-03-17-18-42-26.png
 ---
 
 阅读本文，你可以初步了解 Windows 上的 UAC 用户账户控制机制。本文不会涉及到 UAC 的底层实现原理和安全边界问题。
@@ -113,3 +114,4 @@ lvyi 是我安装系统时创建的管理员账号，但是我使用的是 walte
 **参考资料**
 
 - [Windows 7 中的用户帐户控制（UAC）真的有必要吗？ - 洛晓晓晓晓的回答 - 知乎](https://www.zhihu.com/question/20139121/answer/57630581) -->
+

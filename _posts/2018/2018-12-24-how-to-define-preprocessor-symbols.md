@@ -4,6 +4,7 @@ publishDate: 2018-12-24 22:17:53 +0800
 date: 2019-04-12 09:40:26 +0800
 tags: csharp dotnet visualstudio msbuild
 position: starter
+coverImage: /static/posts/2018-12-24-21-34-59.png
 ---
 
 条件编译符号指的是 Conditional Compilation Symbols。你可以在 Visual Studio 的项目属性中设置，也可以直接在项目文件中写入 `DefineConstants` 属性。
@@ -91,3 +92,4 @@ Debug 和 Release 的名称来自于配置（Configuration）。你的项目有 
     - 例如：DEBUG, RELEASE, NET47, NETCOREAPP2_1
 1. 配置使用 Pascal 命名
     - 例如：Debug, Release
+

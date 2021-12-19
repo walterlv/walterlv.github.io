@@ -3,6 +3,7 @@ title: "手工编辑 tasks.json 和 launch.json，让你的 VSCode 具备调试 
 date: 2019-03-14 22:31:12 +0800
 tags: dotnet csharp vscode msbuild visualstudio
 position: starter
+coverImage: /static/posts/2019-03-14-22-14-37.png
 ---
 
 如果 C# for Visual Studio Code 没有办法自动为你生成正确的 tasks.json 和 launch.json 文件，那么可以考虑阅读本文手工创建他们。
@@ -87,3 +88,4 @@ tasks.json 定义一组任务。其中我们需要的是编译任务，通常编
 ```
 
 这样自己手写的方式更灵活但是也更难。
+

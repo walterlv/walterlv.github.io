@@ -8,6 +8,7 @@ version:
 versions:
   - 中文: /post/automatically-semantic-versioning-using-git-version-task.html
   - English: #
+coverImage: /static/posts/2018-04-13-15-34-08.png
 ---
 
 I wrote another post talking about [Semantic Versioning](/post/semantic-version) before (*but it is not in English*). Introducing the semantic version to a project can give library users more semantic information when library developers publishing packages. From the Microsoft blog [Versioning NuGet packages in a continuous delivery world](https://blogs.msdn.microsoft.com/devops/2016/05/03/versioning-nuget-packages-cd-1/) we could find that semantic versioning is the trend.
@@ -184,3 +185,4 @@ branches:
 - [`dotnet build` command always fails with GitVersionTask 4.0.0-beta · Issue #1399 · GitTools/GitVersion](https://github.com/GitTools/GitVersion/issues/1399)
 - [.NET Core MSBuild cannot load tasks built against MSBuild 4.0 · Issue #2111 · Microsoft/msbuild](https://github.com/Microsoft/msbuild/issues/2111)
 - [Should the SDK include Microsoft.Build.Utilities.v4.0? · Issue #1870 · dotnet/sdk](https://github.com/dotnet/sdk/issues/1870)
+

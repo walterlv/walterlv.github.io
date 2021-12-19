@@ -8,6 +8,7 @@ version:
 versions:
   - 中文: #
   - English: /post/wpf-multi-thread-ui-is-not-thread-safe-en.html
+coverImage: /static/posts/2019-01-29-11-04-38.png
 ---
 
 WPF 支持创建多个 UI 线程，跨窗口的或者窗口内的都是可以的；但是这个过程并不是线程安全的。
@@ -111,3 +112,4 @@ SynchronizationContext.SetSynchronizationContext(
     new DispatcherSynchronizationContext(
         Dispatcher.CurrentDispatcher));
 ```
+

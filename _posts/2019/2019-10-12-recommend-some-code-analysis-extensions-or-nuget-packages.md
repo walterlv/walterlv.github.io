@@ -4,6 +4,7 @@ publishDate: 2019-10-12 11:36:42 +0800
 date: 2020-03-23 11:31:59 +0800
 tags: dotnet csharp
 position: principle
+coverImage: /static/posts/2019-10-12-10-19-55.png
 ---
 
 如果你使用的是旧版本的 Visual Studio，那么默认的代码分析规则集是“最小建议规则集”。基于这个，写出来的代码其实只能说是能跑通过而已。随着 Roslyn 的发布，带来了越来越多更强大的代码分析器，可以为编写高质量的代码带来更多的帮助。
@@ -129,3 +130,4 @@ Code Cracker 支持的所有种类的代码分析都可以在这里查得到：
 关于如何配置代码分析严重程度，你可以阅读：
 
 - [使用 .editorconfig 配置 .NET/C# 项目的规则严重性 - walterlv](/post/use-editor-config-file-to-config-diagnostic-severities)
+

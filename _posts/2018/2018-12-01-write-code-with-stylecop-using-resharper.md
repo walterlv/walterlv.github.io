@@ -3,6 +3,7 @@ title: "使用 ReSharper，输入即遵循 StyleCop 的代码格式化规范"
 date: 2018-12-01 12:36:27 +0800
 tags: visualstudio csharp dotnet
 position: starter
+coverImage: /static/posts/2018-12-01-09-42-41.png
 ---
 
 StyleCop 可以帮助强制执行代码格式化规范，ReSharper 可以帮助你更高效地编写代码。把两者结合起来，你便能高效地编写符合团队强制格式化规范的代码来。
@@ -76,3 +77,4 @@ StyleCop by JetBrains 插件的开发名称是 StyleCop.ReSharper，所以你也
 
 - [StyleCop code style settings and inspections - .NET Tools Blog.NET Tools Blog](https://blog.jetbrains.com/dotnet/2018/04/09/stylecop-code-style-settings-inspections/)
 - [ReSharper Gallery - StyleCop by JetBrains](https://resharper-plugins.jetbrains.com/packages/StyleCop.StyleCop/)
+

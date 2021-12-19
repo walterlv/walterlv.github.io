@@ -3,6 +3,7 @@ title: "WPF 使用 WindowChrome，在自定义窗口标题栏的同时最大程�
 publishDate: 2018-07-12 15:57:30 +0800
 date: 2021-11-12 14:31:33 +0800
 tags: wpf uwp dotnet windows
+coverImage: /static/posts/2018-07-12-09-22-32.png
 ---
 
 WPF 自定义窗口样式有多种方式，不过基本核心实现都是在修改 Win32 窗口样式。然而，Windows 上的应用就应该有 Windows 应用的样子嘛，在保证自定义的同时也能与其他窗口样式保持一致当然能最大程度保证 Windows 操作系统上的体验一致性。
@@ -274,3 +275,4 @@ public static extern bool DwmIsCompositionEnabled();
 - [DwmSetWindowAttribute function - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/api/dwmapi/nf-dwmapi-dwmsetwindowattribute?wt.mc_id=MVP)
 - [pinvoke.net: DwmSetWindowAttribute (Enums)](https://www.pinvoke.net/default.aspx/Enums/DwmSetWindowAttribute.html)
 - [Why does a maximized window have the wrong window rectangle? - The Old New Thing](https://devblogs.microsoft.com/oldnewthing/20120326-00/?p=8003)
+

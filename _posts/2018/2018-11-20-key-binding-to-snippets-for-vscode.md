@@ -3,6 +3,7 @@ title: "在 Visual Studio Code 中为代码片段（Code Snippets）添加快捷
 publishDate: 2018-11-20 10:32:28 +0800
 date: 2019-03-09 09:10:05 +0800
 tags: vscode
+coverImage: /static/posts/2018-11-20-09-59-06.png
 ---
 
 Visual Studio Code 默认是关闭了 Markdown 的智能感知提示的（因为真的是不好用，尤其是其没有中文分词的情况下）。那么在没有智能感知提示的情况下如何快速插入代码片段呢？
@@ -70,3 +71,4 @@ Visual Studio Code 默认是关闭了 Markdown 的智能感知提示的（因为
 
 - [Creating your own snippets in Visual Studio Code](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
 - [load keybindings.json from .vscode dir if there is any ? · Issue #10708 · Microsoft/vscode](https://github.com/Microsoft/vscode/issues/10708)
+

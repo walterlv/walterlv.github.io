@@ -2,6 +2,7 @@
 title: "如何精准地用打印机在贺卡或邀请函上打字"
 date: 2018-08-26 15:35:47 +0800
 tags: office
+coverImage: /static/posts/2018-08-24-08-55-33.png
 ---
 
 当你有一堆带有空位的贺卡或邀请函，你是准备手写呢，还是准备打字呢？你的旁边恰巧有一位书法漂亮的 MM 那自不必说，然而如果字都像我这样写得丑，那还是选择打字好了。
@@ -141,3 +142,4 @@ tags: office
 Word 中有“邮件合并”功能，你可以在 Word 中插入“域”，然后导入 Excel 名单为每一个人生成专属的邀请函。
 
 关于“邮件合并”功能，你可以阅读：[使用 Excel 电子表格进行邮件合并 - Word](https://support.office.com/zh-cn/article/%E4%BD%BF%E7%94%A8-excel-%E7%94%B5%E5%AD%90%E8%A1%A8%E6%A0%BC%E8%BF%9B%E8%A1%8C%E9%82%AE%E4%BB%B6%E5%90%88%E5%B9%B6-858c7d7f-5cc0-4ba1-9a7b-0a948fa3d7d3)。
+

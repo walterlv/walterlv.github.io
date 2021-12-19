@@ -3,6 +3,7 @@ title: "让 Directory Opus 支持 Windows 10 的暗色主题"
 date: 2019-05-14 16:17:51 +0800
 tags: csharp
 position: starter
+coverImage: /static/posts/2019-05-14-15-55-57.png
 ---
 
 使用 Directory Opus 替代 Windows 自带的文件资源管理器来管理你计算机上的文件可以极大地提高你的文件处理效率。
@@ -98,3 +99,4 @@ Directory Opus 在安装完之后的默认主题样式是下面这样的：
 - [Latest Themes topics - Directory Opus Resource Centre](https://resource.dopus.com/c/downloads/themes)
 - [Simple Windows 10 Dark Theme - Downloads / Themes - Directory Opus Resource Centre](https://resource.dopus.com/t/simple-windows-10-dark-theme/30055)
 - [Plain / Default Theme - Themes - Directory Opus Resource Centre](https://resource.dopus.com/t/plain-default-theme/1169)
+

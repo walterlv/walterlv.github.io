@@ -1,11 +1,11 @@
 ---
-layout: post
 title: "Why Unload Twice"
 date: 2017-09-19 18:32:39 +0800
 tags: wpf
 permalink: /wpf/2017/09/19/why-unload-twice.html
 keywords: wpf load unload LogicalTree
 description: Why WPF sometimes unloaded twice? It really confused me.
+coverImage: https://github.com/walterlv/why-unload-twice/raw/master/Docs/removing-from-visual-tree-with-non-generic-style.png
 ---
 
 Sometimes WPF raise unload event twice. In this case, it happens when a logical tree is build all by myself. Why unload twice? It really confused me.
@@ -59,3 +59,4 @@ Removing from logical tree with non-generic style
 
 Removing from visual tree with generic style  
 ![Removing from visual tree with generic style](https://github.com/walterlv/why-unload-twice/raw/master/Docs/removing-from-visual-tree-with-generic-style.png)
+

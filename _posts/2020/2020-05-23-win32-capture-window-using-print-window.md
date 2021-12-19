@@ -3,6 +3,7 @@ title: "Win32/C# 应用使用 PrintWindow 对窗口截图（PrintWindow）"
 date: 2020-05-23 14:32:26 +0800
 tags: windows dotnet csharp
 position: knowledge
+coverImage: /static/posts/2020-05-23-14-28-54.png
 ---
 
 相比于 Windows 2000 引入到 GDI+ 中的 `BitBlt` 方法截取窗口图片，Windows XP 时也引入了 `PrintWindow` 方法来专门截取窗口，截取的原理也不同。
@@ -74,3 +75,4 @@ static extern bool PrintWindow(IntPtr hwnd, IntPtr hdc, uint nFlags);
 
 - [PrintWindow function (winuser.h) - Win32 apps - Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-printwindow)
 - [office的截屏是用的什么技术？ - 知乎](https://www.zhihu.com/question/272066252)
+

@@ -3,6 +3,7 @@ title: "Unity3D 入门：如何为游戏添加 UI"
 date: 2020-05-23 15:21:49 +0800
 tags: unity csharp
 position: starter
+coverImage: /static/posts/2020-05-23-14-46-33.png
 ---
 
 早期的 Unity3D 做 UI 并不容易，以至于大家习惯于使用 NGUI 插件来开发。后来 NGUI 的开发者加入开发了 Unity UI，现在就有了一套更好用的 Unity UI 可用了。
@@ -50,3 +51,4 @@ Unity UI 都需要放到 Canvas 上才能工作。你可以像如下图这样插
 关于操作视角和快捷键，可以参考我的其他博客：
 
 - [Unity3D 入门：Unity Editor 编辑器常用快捷键 - walterlv](/post/unity-starter-unity-editor-shortcut-keys.html)
+

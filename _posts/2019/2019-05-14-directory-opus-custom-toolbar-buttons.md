@@ -4,6 +4,7 @@ publishDate: 2019-05-14 19:52:15 +0800
 date: 2019-05-15 10:41:09 +0800
 tags: windows
 position: starter
+coverImage: /static/posts/2019-05-14-16-53-32.png
 ---
 
 使用 Directory Opus 替代 Windows 自带的文件资源管理器来管理你计算机上的文件可以极大地提高你的文件处理效率。
@@ -68,3 +69,4 @@ Directory Opus 自定义的工具栏按钮可以执行非常复杂的命令，�
 一切皆命令。
 
 这些命令组成了 Directory Opus 主界面的绝大多数功能。
+

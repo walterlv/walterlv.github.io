@@ -3,6 +3,7 @@ title: "在 Roslyn 分析语法树时添加条件编译符号的支持"
 date: 2018-12-24 22:36:28 +0800
 tags: roslyn csharp visualstudio msbuild
 position: knowledge
+coverImage: /static/posts/2018-12-24-22-29-21.png
 ---
 
 我们在代码中会写 `#if DEBUG` 或者 `[Conditional("DEBUG")]` 来使用已经定义好的条件编译符号。而定义条件编译符号可以在代码中使用 `#define WALTERLV` 来实现，也可以通过在项目属性中设置条件编译符号（Conditional Compilation Symbols）来实现。
@@ -48,3 +49,4 @@ Types = compileTypeVisitor.Types.ToList();
 本文所用的查看语法树的插件，你可以查看另一篇博客：
 
 - [Roslyn 入门：使用 Visual Studio 的语法可视化（Syntax Visualizer）窗格查看和了解代码的语法树](/post/roslyn-syntax-visualizer)
+

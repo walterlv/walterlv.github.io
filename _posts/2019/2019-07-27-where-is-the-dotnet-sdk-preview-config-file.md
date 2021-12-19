@@ -4,6 +4,7 @@ publishDate: 2019-07-27 09:39:00 +0800
 date: 2019-07-29 17:47:40 +0800
 tags: msbuild visualstudio dotnet
 position: problem
+coverImage: /static/posts/2019-07-27-09-37-10.png
 ---
 
 本文介绍在使用 Visual Studio 2019 或者命令行执行 `MSBuild` `dotnet build` 命令时，决定是否使用 .NET Core SDK 预览版的全局配置文件。
@@ -37,3 +38,4 @@ UsePreviews=True
 - [如何在 Visual Studio 2019 中设置使用 .NET Core SDK 的预览版（全局生效）](/post/how-to-set-dotnet-core-sdk-preview-in-visual-studio)
 
 ![Visual Studio 2019 的](/static/posts/2019-07-27-09-00-09.png)
+

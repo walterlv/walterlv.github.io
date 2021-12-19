@@ -4,6 +4,7 @@ publishDate: 2019-04-21 20:23:30 +0800
 date: 2020-04-23 20:16:44 +0800
 tags: csharp visualstudio msbuild
 position: knowledge
+coverImage: /static/posts/2019-04-21-20-07-16.png
 ---
 
 C# 8.0 引入了可为空引用类型和不可为空引用类型。当你需要给你或者团队更严格的要求时，可能需要定义这部分的警告和错误级别。
@@ -186,3 +187,4 @@ void Foo(string walterlv = null)
 ### `CS8653`
 
 对于泛型 T，使用 `default` 设置其值。如果 T 是引用类型，那么 `default` 就会将这个泛型类型赋值为 `null`。然而并没有将泛型 T 的使用写为 T?。
+

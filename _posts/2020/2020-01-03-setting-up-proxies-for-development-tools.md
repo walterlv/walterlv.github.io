@@ -4,6 +4,7 @@ publishDate: 2020-01-03 09:41:16 +0800
 date: 2020-05-13 10:09:47 +0800
 tags: dotnet
 position: knowledge
+coverImage: /static/posts/2020-01-03-08-04-35.png
 ---
 
 git、nuget、scoop 如何设置网络代理提升网络访问速度呢？
@@ -159,3 +160,4 @@ choco config set proxy 127.0.0.1:7778
 - [github - Only use a proxy for certain git urls/domains? - Stack Overflow](https://stackoverflow.com/a/41623825/6233938)
 - [Configure Git to use a proxy](https://gist.github.com/evantoli/f8c23a37eb3558ab8765)
 - [Chocolatey Software - Proxy Settings for Chocolatey](https://chocolatey.org/docs/proxy-settings-for-chocolatey)
+

@@ -3,6 +3,7 @@ title: "Windows 中的 HRESULT"
 date: 2021-06-16 10:51:05 +0800
 tags: windows
 position: knowledge
+coverImage: /static/posts/2021-06-16-10-36-42.png
 ---
 
 Windows 协议文档中所描述的协议规范中，错误码使用 HRESULT、Win32 错误码和 NTSTATUS 来描述。本文科普一下 HRESULT。
@@ -120,3 +121,4 @@ public static bool IsDiskFullException(this IOException ex)
 - [MS-ERREF: HRESULT - Microsoft Docs](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-erref/0642cb2f-2075-4469-918c-4441e69c548a)
 - [HRESULT - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/HRESULT)
 - [The Microsoft Error Lookup Tool - Win32 apps - Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/debug/system-error-code-lookup-tool)
+

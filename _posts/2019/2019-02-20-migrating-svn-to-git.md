@@ -3,6 +3,7 @@ title: "将 svn 仓库迁移到 git 仓库"
 date: 2019-02-20 10:22:31 +0800
 tags: git
 position: starter
+coverImage: /static/posts/2019-02-20-10-11-00.png
 ---
 
 我找到了一个很久很久以前编写的项目，然而当时是使用 svn 进行版本管理的。然而现在的版本管理全部是 git，不愿意再装一个 svn 工具来管理这些古老的项目，于是打算将其迁移到 git 中。
@@ -62,3 +63,4 @@ git.exe svn clone "https://svn.walterlv.com/LvYi/Timer" ".\Walterlv.RepoFromSvn"
 - [Git - Migrating to Git](https://git-scm.com/book/en/v2/Git-and-Other-Systems-Migrating-to-Git)
 - [How to get svn remote repository URL? - Stack Overflow](https://stackoverflow.com/questions/9128344/how-to-get-svn-remote-repository-url)
 - [Migrate from Subversion (SVN) to Git - Microsoft Docs](https://docs.microsoft.com/en-us/azure/devops/articles/perform-migration-from-svn-to-git?view=azure-devops)
+

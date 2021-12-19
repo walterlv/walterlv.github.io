@@ -1,11 +1,11 @@
 ---
-layout: post
 title: "找回你 C 盘丢失的空间（SpaceSniffer）"
 date: 2017-09-17 15:13:33 +0800
 tags: windows
 permalink: /windows/2017/09/17/find-lost-space-using-space-sniffer.html
 keywords: windows ScpaceSniffer C盘 空间不足
 description: 使用神器 Space Sniffer，C 盘满了再也不用担心了。
+coverImage: /static/posts/2017-09-17-14-36-58.png
 ---
 
 什么鬼！C 盘空间满了！我分了 120GB 啊！！！是不是要删软件删游戏，是不是要重装系统？
@@ -57,3 +57,4 @@ description: 使用神器 Space Sniffer，C 盘满了再也不用担心了。
 ---
 
 最后多说一句，不要吐槽为何我的 C 盘只有 120GB，因为我用的是 Surface pro 啊，总共就 256GB 可用。考虑到系统出问题可以随时重装，重要资料当然不会放到 C 盘。
+

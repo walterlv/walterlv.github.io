@@ -4,6 +4,7 @@ publishDate: 2020-03-03 16:26:02 +0800
 date: 2020-03-11 17:02:19 +0800
 tags: dotnet
 position: problem
+coverImage: /static/posts/2020-03-11-17-01-05.png
 ---
 
 一直在使用 `WebClient` 下载文件，.NET 已经封装好，所以用起来代码非常简洁；但直到今天发现有一个文件一直不能正确下载下来。
@@ -140,3 +141,4 @@ class AutoDecompressionWebClient : WebClient
 - [c# - WebClient.DownloadFile File Corrupt - Stack Overflow](https://stackoverflow.com/questions/19227156/webclient-downloadfile-file-corrupt)
 - [Download file using Webclient shows Wrong Data - CodeProject](https://www.codeproject.com/Questions/620959/Download-file-using-Webclient-shows-Wrong-Data)
 - [[Solved] WebClient DownloadFile method downloads damaged PDF files - CodeProject](https://www.codeproject.com/Questions/604484/WebClient-DownloadFileplusdownloadsplusdamagedplus)
+

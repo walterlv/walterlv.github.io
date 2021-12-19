@@ -1,9 +1,9 @@
 ---
-layout: post
 title:  "为什么桌面上可能有两个同名文件？"
 date:   2014-09-25 18:11:00 +0800
 tags: windows
 permalink: /windows/2014/09/25/why-two-same-file-can-be-existed-on-desktop.html
+coverImage: /static/posts/2014-09-25-two-same-files.png
 ---
 
 是否见过桌面上同时存在两个同名的文件？这其实是可能的。
@@ -25,3 +25,4 @@ permalink: /windows/2014/09/25/why-two-same-file-can-be-existed-on-desktop.html
 ![属性面板](/static/posts/2014-09-25-attributes.png)
 
 请注意“对象名称”，其中指示两个文件存在于不同路径。
+

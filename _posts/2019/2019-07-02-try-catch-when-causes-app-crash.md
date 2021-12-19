@@ -9,6 +9,7 @@ version:
 versions:
   - 中文: #
   - English: /post/try-catch-when-causes-app-crash-en.html
+coverImage: /static/posts/2019-07-02-15-06-35.png
 ---
 
 在 .NET Framework 4.8 中，try-catch-when 中如果 when 语句抛出异常，程序将彻底崩溃。而 .NET Core 3.0 中不会出现这样的问题。
@@ -112,3 +113,4 @@ namespace Walterlv.Demo.CatchWhenCrash
 请参见：
 
 - [dotnet/dotnet48-changes.md at master · microsoft/dotnet](https://github.com/microsoft/dotnet/blob/master/releases/net48/dotnet48-changes.md)
+

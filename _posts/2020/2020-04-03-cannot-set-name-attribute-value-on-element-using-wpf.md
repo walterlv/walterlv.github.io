@@ -3,6 +3,7 @@ title: "WPF：无法对元素“XXX”设置 Name 特性值“YYY”。“XXX”
 date: 2020-04-03 14:44:21 +0800
 tags: wpf dotnet
 position: problem
+coverImage: /static/posts/2020-04-03-14-40-15.png
 ---
 
 最近在改一段 XAML 代码时，我发现无论如何给一个控件添加 `Name` 或者 `x:Name` 属性时都会出现编译错误：无法对元素“XXX”设置 Name 特性值“YYY”。“XXX”在元素“ZZZ”的范围内，在另一范围内定义它时，已注册了名称。

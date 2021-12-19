@@ -4,6 +4,7 @@ publishDate: 2015-03-31 16:47:00 +0800
 date: 2020-04-25 11:50:18 +0800
 tags: wpf
 position: knowledge
+coverImage: /static/posts/2020-04-25-11-48-26.png
 ---
 
 启动系统自带的放大镜程序，我们会发现即便进了 Windows 8 的开始屏幕，或打开了 Windows 10 的开始菜单和消息中心，它也依然显示在最顶层。如果你为任务管理器开启置顶效果，你会发现它也能显示到开始屏幕的顶层。这是怎么做到的呢？
@@ -79,3 +80,4 @@ Debug Applications with uiAccess Set to “True”
 Debugging with uiAccess=true  
 [https://social.msdn.microsoft.com/forums/windowsdesktop/en-us/7a42efab-5ce8-456f-8a58-dfedbc2cefcb/debugging-with-uiaccesstrue](https://social.msdn.microsoft.com/forums/windowsdesktop/en-us/7a42efab-5ce8-456f-8a58-dfedbc2cefcb/debugging-with-uiaccesstrue
 )
+

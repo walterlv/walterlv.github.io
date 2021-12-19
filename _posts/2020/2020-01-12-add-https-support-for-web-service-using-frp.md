@@ -4,6 +4,7 @@ publishDate: 2020-01-12 19:27:28 +0800
 date: 2020-01-13 08:03:28 +0800
 tags: web
 position: starter
+coverImage: /static/posts/2020-01-12-19-15-53.png
 ---
 
 > frp 是一个可用于内网穿透的高性能的反向代理应用，支持 tcp, udp 协议，为 http 和 https 应用协议提供了额外的能力，且尝试性支持了点对点穿透。
@@ -147,3 +148,4 @@ plugin_key_path = C:/Samples/_.walterlv.com_key.key
 **参考资料**
 
 - [frp/README_zh.md at master · fatedier/frp](https://github.com/fatedier/frp/blob/master/README_zh.md)
+

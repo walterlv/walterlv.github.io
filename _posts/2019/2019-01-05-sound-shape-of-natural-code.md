@@ -4,6 +4,7 @@ publishDate: 2019-01-05 17:27:08 +0800
 date: 2019-03-14 13:01:47 +0800
 tags: ime
 position: knowledge
+coverImage: /static/posts/2019-01-05-17-15-12.png
 ---
 
 使用拼音/双拼输入法，如果你的打字速度还需要继续提升，那么就不应该再不断地看着候选框打字了。使用双拼形码可以规避相当多字词的选字。
@@ -65,3 +66,4 @@ position: knowledge
 
 - [【双拼输入法】自然码辅助码入门教程（辅助码表） – 柳婼 の blog](https://www.liuchuo.net/archives/2847)
 - [如何评价手心输入法？ - 知乎](https://www.zhihu.com/question/24722335)
+

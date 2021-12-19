@@ -3,6 +3,7 @@ title: "使用不安全代码将 Bitmap 位图转为 WPF 的 ImageSource 以获�
 publishDate: 2017-11-09 23:25:41 +0800
 date: 2017-11-10 14:42:45 +0800
 tags: wpf
+coverImage: /static/posts/2017-11-09-23-25-23.png
 ---
 
 在 WPF 中将一个现成的 Bitmap 位图转换成 ImageSource 用于显示一个麻烦的事儿，因为 WPF 并没有提供多少可以转过来的方法。不过产生 Bitmap 来源却非常多，比如屏幕截图、GDI 图、数组或其它非托管框架生成的图片。
@@ -67,3 +68,4 @@ public static class WriteableBitmapExtensions
 ![内存占用](/static/posts/2017-11-09-23-25-23.png)
 
 这个方法的简化空间还非常大，比如，如果数据源是一个一次申请不断修改的数组，那么连 `Bitmap` 都可以不需要了，直接拷贝数组空间即可。我的朋友林德熙为此将这段代码简化得只剩下几行代码了：[WPF 使用不安全代码快速从数组转 WriteableBitmap - 林德熙](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8%E4%B8%8D%E5%AE%89%E5%85%A8%E4%BB%A3%E7%A0%81%E5%BF%AB%E9%80%9F%E4%BB%8E%E6%95%B0%E7%BB%84%E8%BD%AC-WriteableBitmap.html)。
+

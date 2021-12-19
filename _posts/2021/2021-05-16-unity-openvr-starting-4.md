@@ -4,6 +4,7 @@ publishDate: 2021-05-16 09:49:15 +0800
 date: 2021-05-16 17:50:13 +0800
 tags: unity openvr
 position: starter
+coverImage: /static/posts/2021-05-16-09-46-33.png
 ---
 
 在 Unity 的帮助下，虚拟现实应用的开发非常容易。不过国内竟然还是没有什么教程，所以这里就来一点入门的，适合新手。
@@ -68,3 +69,4 @@ public class PlayerDemoScript : MonoBehaviour
 ## 运行
 
 运行场景，当我们在“检查器”中勾选“showControllers”时，会在场景中看到手握住控制器。
+

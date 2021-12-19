@@ -4,6 +4,7 @@ publishDate: 2019-03-04 22:29:23 +0800
 date: 2019-03-10 16:57:26 +0800
 tags: dotnet csharp visualstudio msbuild nuget
 position: starter
+coverImage: /static/posts/2019-02-27-11-58-37.png
 ---
 
 很多库都会在 nuget.org 上发布预览版本，不过一般来说这个预览版本也是大多可用的。然而想要体验日构建版本，这个就没有了，毕竟要照顾绝大多数开发者嘛……
@@ -75,3 +76,4 @@ PM> Install-Package NETStandard.Library -Version 2.1.0-preview1-27119-01
 至于版本号如何确定，请直接前往 MyGet 网站查看：[dotnet-core - NETStandard.Library - MyGet](https://dotnet.myget.org/feed/dotnet-core/package/nuget/NETStandard.Library)。
 
 这个时候，.NET Standard 的预览版标准库会使用以替换 .NET Standard 2.0 的正式版本库。
+

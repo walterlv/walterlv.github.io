@@ -8,6 +8,7 @@ version:
 versions:
   - 中文: /post/core-application-window-of-uwp.html
   - English: #
+coverImage: /static/posts/2018-07-27-08-37-42.png
 ---
 
 I find a question on Stack Overflow [CoreApplicationView vs CoreWindow vs ApplicationView](https://stackoverflow.com/a/51585979/6233938), so I write this post for the answer.
@@ -83,3 +84,4 @@ I've written some other posts about UWP that take advantages of these concepts. 
 ### References
 
 - [Title bar customization - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/shell/title-bar?wt.mc_id=MVP)
+

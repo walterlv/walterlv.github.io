@@ -4,6 +4,7 @@ publishDate: 2019-08-30 14:26:00 +0800
 date: 2019-10-22 14:14:08 +0800
 tags: wpf windows dotnet csharp
 position: problem
+coverImage: /static/posts/2019-08-02-08-16-22.png
 ---
 
 因为 Win32 的窗口句柄是可以跨进程传递的，所以可以用来实现跨进程 UI。不过，本文不会谈论跨进程 UI 的具体实现，只会提及其实现中的一个重要缓解，使用子窗口的方式。
@@ -73,3 +74,4 @@ position: problem
 - [wpf - Custom dwm drawn window frame flickers on resizing if the window contains a HwndHost element - Stack Overflow](https://stackoverflow.com/q/6500336/6233938)
 - [WPF多进程UI探索（Like Chrome） - 简书](https://www.jianshu.com/p/f2c6a2d9bbb2)
 - [关于WS_CLIPCHILDREN和WS_CLIPSIBLINGS的理解（个人认为还是相当全面的） - helloj2ee - 博客园](https://www.cnblogs.com/helloj2ee/archive/2009/05/29/1491822.html)
+

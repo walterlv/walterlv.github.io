@@ -4,6 +4,7 @@ publishDate: 2019-10-20 22:04:46 +0800
 date: 2019-10-22 14:04:24 +0800
 tags: dotnet windows csharp
 position: knowledge
+coverImage: /static/posts/2019-10-19-17-45-41.png
 ---
 
 我们知道 Windows 系统 NTFS 文件系统提供了硬连接功能，可以通过 `mklink` 命令开启。如果能够通过代码实现，那么我们能够做更多有趣的事情。
@@ -74,3 +75,4 @@ JunctionPoint.Create("walterlv.demo", @"D:\Developments", true);
 - [windows - What the C# equivalent of "mklink /J"? - Stack Overflow](https://stackoverflow.com/q/11156754/6233938)
 - [Manipulating NTFS Junction Points in .NET - CodeProject](https://www.codeproject.com/Articles/15633/Manipulating-NTFS-Junction-Points-in-NET)
 - [Reparse Points - Windows applications - Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/fileio/reparse-points)
+

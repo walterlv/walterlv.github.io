@@ -3,6 +3,7 @@ title: "理解 UWP 视图的概念，让 UWP 应用显示多个窗口（多视�
 publishDate: 2018-07-27 09:19:14 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: uwp
+coverImage: /static/posts/2018-07-27-08-37-42.png
 ---
 
 UWP 应用多是一个窗口完成所有业务的，事实上我也推荐使用这种单一窗口的方式。不过，总有一些特别的情况下我们需要用到不止一个窗口，那么 UWP 中如何使用多窗口呢？
@@ -94,3 +95,4 @@ await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);
 **参考资料**
 
 - [Show multiple views for an app - UWP app developer - Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/design/layout/show-multiple-views?wt.mc_id=MVP)
+

@@ -5,6 +5,7 @@ date: 2019-11-27 07:01:59 +0800
 tags: wpf dotnet windows
 position: knowledge
 published: false
+coverImage: /static/posts/2019-11-18-21-29-13.png
 ---
 
 如果不是在开发 WPF 程序的时候遇到了字体相关的问题，估计你是不会阅读到这篇博客的。是的，WPF 界面上文字的默认字体会随着你的系统语言的不同而不同。
@@ -71,3 +72,4 @@ public static FontFamily MessageFontFamily
 - [UX checklist for desktop applications - Win32 apps - Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/uxguide/top-violations)
 - [.net - What is the default font family of a WPF application? - Stack Overflow](https://stackoverflow.com/q/4141877/6233938)
 - [c# - Is there a way of setting culture for a whole application? All current threads and new threads? - Stack Overflow](https://stackoverflow.com/q/468791/6233938)
+

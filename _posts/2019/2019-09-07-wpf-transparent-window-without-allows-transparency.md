@@ -4,6 +4,7 @@ publishDate: 2019-09-07 14:40:20 +0800
 date: 2021-01-16 08:30:49 +0800
 tags: wpf dotnet csharp
 position: knowledge
+coverImage: /static/posts/2019-09-07-13-16-56.png
 ---
 
 在 WPF 中，如果想做一个背景透明的异形窗口，基本上都要设置 `WindowStyle="None"`、`AllowsTransparency="True"` 这两个属性。如果不想自定义窗口样式，还需要设置 `Background="Transparent"`。这样的设置会让窗口变成 Layered Window，WPF 在这种类型窗口上的渲染性能是非常糟糕的。
@@ -187,3 +188,4 @@ position: knowledge
 | 点击穿透 | 在完全透明的部分点击依然点在自己的窗口上 | 在完全透明的部分点击会穿透到下面的其他窗口 |
 
 然而，如果你希望在使用高性能的 WindowChrome 时也依然能点击穿透，那么你需要使用到一点点的小技巧来绕过 WPF 对 `WS_EX_LAYERED` 窗口样式的锁定。请参见：[WPF 制作支持点击穿透的高性能的透明背景异形窗口](https://blog.lindexi.com/post/WPF-%E5%88%B6%E4%BD%9C%E6%94%AF%E6%8C%81%E7%82%B9%E5%87%BB%E7%A9%BF%E9%80%8F%E7%9A%84%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E9%80%8F%E6%98%8E%E8%83%8C%E6%99%AF%E5%BC%82%E5%BD%A2%E7%AA%97%E5%8F%A3.html)。
+

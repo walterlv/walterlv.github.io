@@ -4,6 +4,7 @@ publishDate: 2019-01-08 15:02:58 +0800
 date: 2019-01-10 11:41:48 +0800
 tags: dotnet
 position: knowledge
+coverImage: /static/posts/2019-01-08-14-51-31.png
 ---
 
 如果你试图通过 `GetHashCode` 得到的一个哈希值来避免冲突，你可能要失望了。因为实际上 `GetHashCode` 得到的只是一个 `Int32` 的结果，而 `Int32` 只有 32 个 bit。
@@ -105,3 +106,4 @@ $$\frac{k(k-1)}{2n}$$
 - [Hash Collision Probabilities](https://preshing.com/20110504/hash-collision-probabilities/)
 
 [x]: https://preshing.com/20110504/hash-collision-probabilities/
+

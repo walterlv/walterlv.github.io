@@ -3,6 +3,7 @@ title: "解决包含 GitHub Actions Workflow 的分支无法推送的问题"
 date: 2020-05-26 21:48:42 +0800
 tags: github
 position: problem
+coverImage: /static/posts/2020-05-26-21-30-01.png
 ---
 
 refusing to allow an OAuth App to create or update workflow `{0}` without `workflow` scope.
@@ -67,3 +68,4 @@ error: failed to push some refs to 'https://github.com/dotnet-campus/HandyContro
 如果你那里有很多 GitHub 相关的凭据而不确定是哪一个的话，可以考虑全部删掉。这样下次推送的时候就会要求你输入账号密码，输入那个 Token 作为密码即可。
 
 现在，你就能推送成功了。
+

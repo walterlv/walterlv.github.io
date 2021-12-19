@@ -3,6 +3,7 @@ title: "（C#）if (this == null)？你在逗我，this 怎么可能为 null！�
 publishDate: 2018-03-31 08:26:39 +0800
 date: 2018-09-01 08:12:18 +0800
 tags: dotnet msil
+coverImage: /static/posts/2018-03-31-07-47-18.png
 ---
 
 `if (this == null) Console.WriteLine("this is null");` 这句话一写，大家一定觉得荒谬，然而 `if` 内代码的执行却是可能的！本文讲介绍到底发生了什么。
@@ -130,3 +131,4 @@ namespace Walterlv.Demo
 - [.net - Call and Callvirt - Stack Overflow](https://stackoverflow.com/a/193952/6233938)
 - [Observing a null this value](http://blog.paranoidcoding.com/2015/03/11/observing-a-null-this.html)
 <!-- - [用CIL写程序:从“call vs callvirt”看方法调用 - 陈嘉栋 - 博客园](http://www.cnblogs.com/murongxiaopifu/p/4298167.html) -->
+

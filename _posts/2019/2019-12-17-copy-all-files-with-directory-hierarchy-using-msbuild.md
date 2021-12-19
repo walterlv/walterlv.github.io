@@ -3,6 +3,7 @@ title: "使用 MSBuild Target 复制文件的时候如何保持文件夹结构�
 date: 2019-12-17 16:36:39 +0800
 tags: msbuild dotnet
 position: knowledge
+coverImage: /static/posts/2019-12-17-16-13-21.png
 ---
 
 使用 MSBuild 中的 `Copy` 这个编译目标可以在 .NET 项目编译期间复制一些文件。不过使用默认的参数复制的时候文件夹结构会丢失，所有的文件会保留在同一级文件夹下。
@@ -47,3 +48,4 @@ position: knowledge
 ```
 
 ![保留了文件夹层次结构](/static/posts/2019-12-17-16-14-27.png)
+

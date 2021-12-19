@@ -4,6 +4,7 @@ date: 2017-10-09 21:01:31 +0800
 tags: windows
 permalink: /post/windows/find-wifi-password.html
 description: 了解如何查询已连接 Wi-Fi 的密码
+coverImage: /static/posts/2017-10-09-20-48-55.png
 ---
 
 新买了手机或者带着朋友去好玩的地方，我自己的 Windows 10 设备连接上了 Wi-Fi，朋友也希望连接上，但是我忘记了密码怎么办？
@@ -58,3 +59,4 @@ netsh wlan show profiles name="walterlv" key=Clear
 
 **参考资料**
 - [2 Ways To Find All Saved Wifi Passwords In Windows 10](https://www.itechtics.com/2-ways-find-saved-wifi-passwords-windows-10/)
+

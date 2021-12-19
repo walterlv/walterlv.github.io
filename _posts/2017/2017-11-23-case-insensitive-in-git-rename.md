@@ -3,6 +3,7 @@ title: "解决 Git 重命名时遇到的大小写不敏感的问题"
 publishDate: 2017-11-23 16:51:07 +0800
 date: 2019-03-29 17:19:06 +0800
 tags: windows git
+coverImage: /static/posts/2017-11-23-15-42-24.png
 ---
 
 Windows/Mac OS 操作系统文件的大小写是不敏感的，不管文件路径是何种奇怪的大小写，我们始终可以以另一种大小写的方式访问到这个路径种的文件或者文件夹。Linux 操作系统文件的大小写却是敏感的，不同大小写意味着不同的路径。于是，Windows 下的 A 文件在 Docs 文件夹下，B 文件在 docs 文件夹下，最终效果是 A B 都在 docs 文件夹下；而同样的情况放到 Linux 中，A B 就在两个不同的文件夹。
@@ -142,3 +143,4 @@ $ git push
 
 - [How do I commit case-sensitive only filename changes in Git? - Stack Overflow](https://stackoverflow.com/questions/17683458/how-do-i-commit-case-sensitive-only-filename-changes-in-git)
 - [In a Git repository, how to properly rename a directory? - Stack Overflow](https://stackoverflow.com/q/11183788/6233938)
+

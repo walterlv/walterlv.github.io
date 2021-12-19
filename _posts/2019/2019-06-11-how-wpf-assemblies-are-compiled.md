@@ -4,6 +4,7 @@ publishDate: 2019-06-11 14:05:04 +0800
 date: 2019-06-11 16:05:22 +0800
 tags: wpf dotnet csharp msbuild visualstudio roslyn
 position: knowledge
+coverImage: /static/posts/2019-06-11-11-32-30.png
 ---
 
 基于 Sdk 的项目进行编译的时候，会使用 Sdk 中附带的 props 文件和 targets 文件对项目进行编译。Microsoft.NET.Sdk.WindowsDesktop 的 Sdk 包含 WPF 项目的编译过程。
@@ -333,3 +334,4 @@ WPF 编译过程有两个编译传递，`MarkupCompilePass1` 和 `MarkupCompileP
 - [WPF MSBuild Task Reference - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/msbuild/wpf-msbuild-task-reference?view=vs-2019)
 - [GenerateTemporaryTargetAssembly.cs](https://referencesource.microsoft.com/#PresentationBuildTasks/BuildTasks/Microsoft/Build/Tasks/Windows/GenerateTemporaryTargetAssembly.cs)
 - [Localization Attributes and Comments - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/localization-attributes-and-comments)
+

@@ -3,6 +3,7 @@ title: "Windows 系统上使用任务管理器查看进程的各项属性（命�
 date: 2019-03-19 19:52:39 +0800
 tags: windows
 position: knowledge
+coverImage: /static/posts/2019-03-19-18-51-09.png
 ---
 
 Windows 系统上的任务管理器进化到 Windows 10 的 1809 版本后，又新增了几项可以查看的进程属性。
@@ -80,3 +81,4 @@ UAC 虚拟化相关的问题可以阅读 [应用程序清单 Manifest 中各种 
 
 - [Windows 下的高 DPI 应用开发（UWP / WPF / Windows Forms / Win32） - 吕毅](/post/windows-high-dpi-development)
 - [支持 Windows 10 最新 PerMonitorV2 特性的 WPF 多屏高 DPI 应用开发 - 吕毅](/post/windows-high-dpi-development-for-wpf)
+

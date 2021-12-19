@@ -3,6 +3,7 @@ title: "csproj 文件中那个空的 NuGetPackageImportStamp 是干什么的？"
 publishDate: 2018-11-25 21:48:07 +0800
 date: 2019-04-12 09:39:51 +0800
 tags: visualstudio nuget
+coverImage: /static/posts/2018-11-25-15-52-50.png
 ---
 
 当我们在传统格式的 csproj 项目文件中安装 NuGet 包后，有时会在项目文件中发现空的 `NuGetPackageImportStamp` 节点。这个空的节点让我们这波强迫症患者觉得有点难以接受，关键是手工删除之后也没发现有什么副作用。
@@ -166,3 +167,4 @@ protected static void UpdateImportStamp(IVsProjectAdapter vsProjectAdapter)
     }
 }
 ```
+

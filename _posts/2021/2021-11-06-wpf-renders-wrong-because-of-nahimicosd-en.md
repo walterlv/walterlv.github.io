@@ -9,6 +9,7 @@ version:
 versions:
   - 中文: /post/wpf-renders-wrong-because-of-nahimicosd.html
   - English: #
+coverImage: /static/posts/2021-11-05-20-07-45.png
 ---
 
 Recently, we have received many feedbacks from users, saying that our software interface is a mess, and there is no way to find any button locations. That's really difficult to resolve because we do nothing extra about the rendering part of our software.
@@ -76,3 +77,4 @@ What made changes was a special user which was using a LENOVO device. We find th
 - [Button renders wrong after mouse leave · Issue #707 · dotnet/wpf](https://github.com/dotnet/wpf/issues/707)
 - [Solved: Area-51m R2, blurred text and images in some apps - Dell Community](https://www.dell.com/community/Alienware/Area-51m-R2-blurred-text-and-images-in-some-apps/m-p/8073108#M47622)
 - [m17 R2, WPF apps distorted, disappearing window contents - Dell Community](https://www.dell.com/community/Alienware/m17-R2-WPF-apps-distorted-disappearing-window-contents/m-p/8069137#M47499)
+

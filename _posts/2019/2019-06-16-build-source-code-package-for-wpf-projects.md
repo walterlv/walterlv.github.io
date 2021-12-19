@@ -4,6 +4,7 @@ publishDate: 2019-06-16 20:53:20 +0800
 date: 2021-06-07 15:14:39 +0800
 tags: dotnet csharp visualstudio nuget msbuild roslyn wpf
 position: starter
+coverImage: /static/posts/2019-06-16-17-50-20.png
 ---
 
 默认情况下，我们打包 NuGet 包时，目标项目安装我们的 NuGet 包会引用我们生成的库文件（dll）。除此之外，我们也可以专门做 NuGet 工具包，还可以做 NuGet 源代码包。然而做源代码包可能是其中最困难的一种了，目标项目安装完后，这些源码将直接随目标项目一起编译。
@@ -628,3 +629,4 @@ props 和 targets 文件你可能在 Visual Studio 的新建文件的模板中�
 - [Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包 - 林德熙](https://blog.lindexi.com/post/roslyn-%E5%A6%82%E4%BD%95%E5%9F%BA%E4%BA%8E-microsoft.net.sdk-%E5%88%B6%E4%BD%9C%E6%BA%90%E4%BB%A3%E7%A0%81%E5%8C%85)
 - [制作通过 NuGet 分发的源代码包时，如果目标项目是 WPF 则会出现一些问题（探索篇，含解决方案） - 吕毅](/post/issues-of-nuget-package-import-for-wpf-projects)
 - [SourceYard 制作源代码包 - 林德熙](https://blog.lindexi.com/post/sourceyard-%E5%88%B6%E4%BD%9C%E6%BA%90%E4%BB%A3%E7%A0%81%E5%8C%85)
+

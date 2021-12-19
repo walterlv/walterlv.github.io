@@ -4,6 +4,7 @@ publishDate: 2021-07-29 17:31:08 +0800
 date: 2021-07-30 08:50:07 +0800
 tags: wpf dotnet
 position: knowledge
+coverImage: /static/posts/2021-07-29-17-19-10.png
 ---
 
 无论是 WPF、UWP 还是 Xamarin、MAUI、WinUI，都有可以绘制任意形状的 `Geometry` 类型，它支持一种路径标记语法，可以拟合各种形状。同时，SVG 格式使用的也是完全相同的路径语法，你用文本编辑器打开一个 SVG 格式时也会看到这样的字符串。
@@ -200,3 +201,4 @@ SVG 中如果要实现相同的效果，需要设置 `path/@style` 属性，即`
 - [Path Markup Syntax - WPF .NET Framework - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/desktop/wpf/graphics-multimedia/path-markup-syntax)
 - [Paths — SVG 2](https://www.w3.org/TR/SVG/paths.html)
 - [Paths – SVG 1.1 (Second Edition)](https://www.w3.org/TR/SVG11/paths.html)
+

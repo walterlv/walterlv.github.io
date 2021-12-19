@@ -3,6 +3,7 @@ title: "Roslyn 的确定性构建"
 publishDate: 2018-03-31 17:22:19 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: visualstudio dotnet csharp roslyn msbuild
+coverImage: /static/posts/2018-03-31-16-33-42.png
 ---
 
 注意到每次编译完之后，你的 dll 或者 exe 是不一样的吗？本来这并没有什么大不了的，但大家都知道数字和鹅厂的安全软件遍布在我们大(tiān)陆(cháo)地区的大量电脑上，它们的查杀策略是——凡是不认识的一律是病毒木马；于是每次不一样的编译很容易引起它们的警告——真不想每次都把编译后的样本提交给它们存档入库。
@@ -52,3 +53,4 @@ tags: visualstudio dotnet csharp roslyn msbuild
 - [Deterministic Builds in C#](https://gist.github.com/aelij/b20271f4bd0ab1298e49068b388b54ae)
 - [[Umbrella] Compilers should be deterministic: same inputs generate same outputs · Issue #372 · dotnet/roslyn](https://github.com/dotnet/roslyn/issues/372)
 - [Deterministic builds in Roslyn](http://blog.paranoidcoding.com/2016/04/05/deterministic-builds-in-roslyn.html)
+

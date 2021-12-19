@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "深入了解 WPF Dispatcher 的工作原理（Invoke/InvokeAsync 部分）"
 publishDate: 2017-09-26 02:02:24 +0800
 date: 2018-12-14 09:54:00 +0800
@@ -7,6 +6,7 @@ tags: dotnet
 permalink: /post/dotnet/2017/09/26/dispatcher-invoke-async.html
 keywords: dotnet dotnet dispatcher Invoke BeginInvoke InvokeAsync
 description: 了解 Dispatcher.BeginInvoke 和 Dispatcher.InvokeAsync 的不同之处，并且学习它们的工作原理。
+coverImage: /static/posts/2017-09-26-01-20-05.png
 ---
 
 深耕 WPF 开发的各位程序员大大们一定避不开使用 Dispatcher。跨线程访问 UI 当然免不了用到它，将某个任务延迟到当前任务之后执行也会用到它。Dispatcher.Invoke、Dispatcher.BeginInvoke 是过去大家经常使用的方法，而 .NET Framework 4.5 中微软为我们带来了 Dispatcher.InvokeAsync 方法，它和前面两个有何不同？
@@ -225,3 +225,4 @@ public DispatcherOperationStatus Wait(TimeSpan timeout)
   - [WPF的消息机制（二）- WPF内部的5个窗口之隐藏消息窗口 - 葡萄城控件技术团队博客 - CSDN博客](http://blog.csdn.net/powertoolsteam/article/details/6109036)
 - Awaiter
   - [How to write a custom awaiter – Lucian's VBlog](https://blogs.msdn.microsoft.com/lucian/2012/12/11/how-to-write-a-custom-awaiter/)
+

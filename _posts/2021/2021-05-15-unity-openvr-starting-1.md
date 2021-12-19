@@ -4,6 +4,7 @@ publishDate: 2021-05-15 20:08:44 +0800
 date: 2021-05-16 16:06:12 +0800
 tags: unity openvr
 position: starter
+coverImage: /static/posts/2021-05-15-20-21-39.png
 ---
 
 在 Unity 的帮助下，虚拟现实应用的开发非常容易。不过国内竟然还是没有什么教程，所以这里就来一点入门的，适合新手。
@@ -61,3 +62,4 @@ position: starter
 
 ![XR Plug-in Management](/static/posts/2021-05-15-20-40-09.png)  
 ▲ XR Plug-in Management
+

@@ -3,6 +3,7 @@ title:  "使用链接共享 Visual Studio 中的代码文件"
 date:   2016-08-01 11:04:42 +0800
 tags: visualstudio msbuild
 permalink: /visualstudio/2016/08/01/share-code-with-add-as-link.html
+coverImage: /static/posts/2016-08-01-share-file-as-link.png
 ---
 
 如果你还在通过复制来共享代码就太 out 了！
@@ -62,3 +63,4 @@ permalink: /visualstudio/2016/08/01/share-code-with-add-as-link.html
 **参考资料**
 
 - [MSDN - Share code with Add as Link](https://msdn.microsoft.com/en-us/library/windows/apps/jj714082(v=vs.105).aspx)
+

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "UWP 中的 LaunchUriAsync，使用默认浏览器或其他应用打开链接"
 publishDate: 2017-09-25 00:39:53 +0800
 date: 2018-12-14 09:54:33 +0800
@@ -7,6 +6,7 @@ tags: uwp
 permalink: /uwp/2017/09/25/launch-uri-async.html
 keywords: uwp LaunchUriAsync windows 10
 description: 在 UWP 中使用默认的应用或浏览器打开链接，当然也可以指定用哪个应用打开。
+coverImage: /static/posts/2017-09-25-00-18-22.png
 ---
 
 古老的 Win32 应用启动其他程序太过方便，以至于一部分开发者都已经不记得 Windows 能通过关联协议（参见 [桌面应用程序关联协议](/windows/2015/07/07/associate-with-file-or-protocol.html)）的方式通过统一资源定位符（URI）来启动应用程序了。
@@ -112,3 +112,4 @@ public bool LimitPickerToCurrentAppAndAppUriHandlers { get; set; }
 - [启动 URI 的默认应用 - UWP app developer](https://docs.microsoft.com/zh-cn/windows/uwp/launch-resume/launch-default-app?wt.mc_id=MVP)
 - [启动 Windows 设置应用 - UWP app developer](https://docs.microsoft.com/zh-cn/windows/uwp/launch-resume/launch-settings-app?wt.mc_id=MVP)
 - [启动 Windows 应用商店应用 - UWP app developer](https://docs.microsoft.com/zh-cn/windows/uwp/launch-resume/launch-store-app?wt.mc_id=MVP)
+

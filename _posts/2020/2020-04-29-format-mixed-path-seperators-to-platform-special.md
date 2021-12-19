@@ -4,6 +4,7 @@ publishDate: 2020-04-29 21:45:43 +0800
 date: 2020-04-30 09:24:04 +0800
 tags: dotnet windows linux
 position: problem
+coverImage: /static/posts/2020-04-29-20-54-33.png
 ---
 
 Windows 下的路径分隔符是 `\` 而 Linux 和 Mac 下的路径分隔符是 `\`。正常如果你的数据不跨 Windows 和 Linux 平台流通的话，不怎么会遇到多种换行符并存的问题的。但如果真发生了流通，那么如何将它们格式化为统一的当前平台认识的分隔符呢？
@@ -126,3 +127,4 @@ var path = path
 **参考资料**
 
 - [How to enable linux support double backslashes "\\" as the path delimiter - Stack Overflow](https://stackoverflow.com/a/9734782/6233938)
+

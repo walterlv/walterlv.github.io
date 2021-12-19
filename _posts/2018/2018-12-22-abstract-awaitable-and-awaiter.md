@@ -4,6 +4,7 @@ publishDate: 2018-12-22 19:52:44 +0800
 date: 2018-12-23 15:17:04 +0800
 tags: dotnet csharp
 position: knowledge
+coverImage: /static/posts/2018-12-22-14-05-42.png
 ---
 
 我在几篇文章中都说到了在 .NET 中自己实现 Awaiter 情况。`async` / `await` 写异步代码用起来真的很爽，就像写同步一样。然而实现 Awaiter 没有现成的接口，它需要你按照编译器的要求为你的类型添加一些具有特定名称的属性和方法。然而没有接口的帮助，我们编写起来就很难获得工具（如 ReSharper）自动生成代码的支持。
@@ -132,3 +133,4 @@ public sealed class Awaiter : IAwaiter<string>, IAwaitable<Awaiter, string>
 
 - [在 WPF/UWP 中实现一个可以用 await 异步等待 UI 交互操作的 Awaiter](/post/write-dispatcher-awaiter-for-ui)
 - [.NET 编写一个可以异步等待循环中任何一个部分的 Awaiter](/post/write-an-awaiter-that-await-part-of-a-loop)
+

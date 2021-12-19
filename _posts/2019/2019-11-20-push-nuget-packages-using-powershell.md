@@ -4,6 +4,7 @@ publishDate: 2019-11-20 14:38:39 +0800
 date: 2019-12-08 15:29:05 +0800
 tags: powershell nuget dotnet
 position: problem
+coverImage: /static/posts/2019-11-20-14-31-13.png
 ---
 
 要发布 NuGet 包，只需要执行命令 `nuget push xxx.nupkg` 即可，或者去 nuget.org 点鼠标上传。
@@ -99,3 +100,4 @@ pwsh -NoExit -c "$file=[Regex]::Match('{file}', '\.\d+\.\d+\.\d+.+.nupkg').Value
 **参考资料**
 
 - [NuGet CLI push command - Microsoft Docs](https://docs.microsoft.com/en-us/nuget/reference/cli-reference/cli-ref-push)
+

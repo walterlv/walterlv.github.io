@@ -3,6 +3,7 @@ title: "什么是模态窗口？本文带你了解模态窗口的本质"
 date: 2019-10-10 19:28:26 +0800
 tags: windows dotnet csharp wpf
 position: knowledge
+coverImage: /static/posts/2019-10-08-09-01-47.png
 ---
 
 做 Windows 桌面应用开发的小伙伴们对“模态窗口”（Modal Dialog）一定不陌生。如果你希望在模态窗口之上做更多的事情，或者自己实现一套模态窗口类似的机制，那么你可能需要了解模态窗口的本质。
@@ -110,3 +111,4 @@ Windows 采用的方式是让标题栏闪烁，让阴影闪烁。
 详见：[WPF window 子窗口反馈效果（抖动/阴影渐变) - 唐宋元明清2188 - 博客园](https://www.cnblogs.com/kybs0/p/7357759.html)
 
 通常你不需要手工处理这些消息，但是如果你完全定制了窗口样式，则可能需要自行做一个这样的模态窗口提醒效果。
+

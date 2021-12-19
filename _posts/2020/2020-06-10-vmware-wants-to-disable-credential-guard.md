@@ -3,6 +3,7 @@ title: "VMware Workstation 与 Device/Credential Guard 不兼容。在禁用 Dev
 date: 2020-06-10 08:58:01 +0800
 tags: windows
 position: problem
+coverImage: /static/posts/2020-06-08-08-53-37.png
 ---
 
 VMware Workstation 与 Device/Credential Guard 不兼容。在禁用 Device/Credential Guard 后，可以运行 VMware Workstation。有关更多详细信息，请访问 <http://www.vmware.com/go/turnoff_CG_DG>。
@@ -67,3 +68,4 @@ bcdedit /set hypervisorlaunchtype off
 **参考资料**
 
 - [Windows沙盒和vmware workstation似乎只能存在一个-远景论坛-微软极客社区](http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1813168&page=1#pid49133290)
+

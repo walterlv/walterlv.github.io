@@ -3,6 +3,7 @@ title: "使用 System File Check (SFC) 工具检查并修复 Windows 系统文�
 date: 2019-05-09 21:02:40 +0800
 tags: windows
 position: knowledge
+coverImage: /static/posts/2019-05-09-18-44-35.png
 ---
 
 sfc.exe 这个程序的名称指的是 System File Check，用于做系统文件检查。本文介绍使用此命令检查并修复 Windows 系统文件。
@@ -66,3 +67,4 @@ sfc /verifyonly
 
 - [System file check (SFC) Scan and Repair System Files - Microsoft Community](https://answers.microsoft.com/en-us/windows/forum/windows_10-update/system-file-check-sfc-scan-and-repair-system-files/bc609315-da1f-4775-812c-695b60477a93?auth=1)
 - [Use the System File Checker tool to repair missing or corrupted system files](https://support.microsoft.com/en-us/help/929833/use-the-system-file-checker-tool-to-repair-missing-or-corrupted-system)
+

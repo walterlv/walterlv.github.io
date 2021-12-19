@@ -4,6 +4,7 @@ publishDate: 2018-12-13 18:41:33 +0800
 date: 2018-12-23 15:16:55 +0800
 tags: dotnet
 position: knowledge
+coverImage: /static/posts/2018-12-23-14-53-33.png
 ---
 
 .NET Framework 4.5 开始引入 `Task.Run`，它可以很方便的帮助我们使用 `async` / `await` 语法，同时还使用线程池来帮助我们管理线程。以至于我们编写异步代码可以像编写同步代码一样方便。
@@ -104,3 +105,4 @@ Task 使用 `TaskScheduler` 来决定何时执行一个异步任务，如果你�
 - [Attached and Detached Child Tasks - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/parallel-programming/attached-and-detached-child-tasks?wt.mc_id=MVP)
 - 在 [ThreadPool.GetMinThreads(Int32, Int32) Method (System.Threading) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.threading.threadpool.getminthreads?wt.mc_id=MVP)
 - [Managed Threading Best Practices - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/threading/managed-threading-best-practices?wt.mc_id=MVP)
+

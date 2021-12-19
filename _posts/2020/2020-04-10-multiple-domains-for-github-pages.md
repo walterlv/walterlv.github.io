@@ -3,6 +3,7 @@ title: "如何给 GitHub Pages 配置多个域名？"
 date: 2020-04-10 15:02:52 +0800
 tags: github
 position: problem
+coverImage: /static/posts/2020-04-10-10-31-52.png
 ---
 
 因为以前对域名进行了一些调整，所以实际上我的博客在历年来经历了两个域名 blog.walterlv.com（新）和 walterlv.com（旧）。然而 GitHub Pages 只支持一个自定义域名，所以为了兼容旧域名的访问，如何可以让多个域名对应同一个 GitHub Pages 呢？
@@ -107,3 +108,4 @@ author: walterlv
 **参考资料**
 
 - [多个域名映射同一个github pages - 守望的个人博客](https://www.yanbinghu.com/2019/03/29/25951.html)
+

@@ -4,6 +4,7 @@ publishDate: 2021-05-16 09:24:20 +0800
 date: 2021-05-16 16:06:12 +0800
 tags: unity openvr
 position: starter
+coverImage: /static/posts/2021-05-16-09-06-08.png
 ---
 
 在 Unity 的帮助下，虚拟现实应用的开发非常容易。不过国内竟然还是没有什么教程，所以这里就来一点入门的，适合新手。
@@ -58,3 +59,4 @@ SteamVR 中自带的其他几种控制器模型有：
 
 [![RenderModel Floppy](/static/posts/2021-05-16-09-21-10.png)](https://r302.cc/erJGmvD?platform=enpc&channel=copylink)  
 ▲ RenderModel Floppy
+

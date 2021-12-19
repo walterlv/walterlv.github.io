@@ -4,6 +4,7 @@ publishDate: 2019-09-03 12:46:08 +0800
 date: 2019-09-05 14:37:15 +0800
 tags: git
 position: problem
+coverImage: /static/posts/2019-09-03-11-52-12.png
 ---
 
 我在使用 `git fetch` 命令的时候，发现竟然会失败，提示错误 `error: cannot lock ref 'refs/remotes/origin/xxx': unable to resolve reference 'refs/remotes/origin/xxx': reference broken`。
@@ -63,3 +64,4 @@ From gitlab.gz.cvte.cn:t/tech-app/dev/win/app/easinote
 ---
 
 **参考资料** -->
+

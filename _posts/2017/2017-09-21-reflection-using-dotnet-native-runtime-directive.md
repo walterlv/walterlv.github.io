@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "设置 .NET Native 运行时指令以支持反射（尤其适用于 UWP）"
 publishDate: 2017-09-21 00:38:17 +0800
 date: 2017-09-21 07:35:41 +0800
@@ -7,6 +6,7 @@ tags: uwp
 permalink: /uwp/2017/09/21/reflection-using-dotnet-native-runtime-directive.html
 keywords: uwp dotnet native dynamic reflection
 description: 如果你正在写 UWP 程序时发现 DEBUG 下可以反射获取到属性，但是 RELEASE 下获取不到，那么了解本文将有助于你解决问题。
+coverImage: /static/posts/2017-09-20-23-55-48.png
 ---
 
 我们经常会尝试用一用反射来解决一部分动态可执行代码的问题，不过这个问题在 UWP 中似乎并不那么轻松。也许你写了一句获取某个类所有属性的代码，结果发现 DEBUG 下跑得好好的，RELEASE 下居然拿不到！
@@ -112,3 +112,4 @@ var properties = type.GetTypeInfo().DeclaredProperties;
 - [c# - Type.GetProperties() doesn't work in Release - Stack Overflow](https://stackoverflow.com/questions/35359942/type-getproperties-doesnt-work-in-release/35361710)
 - [c# - Adding runtime directives for generic types in UWP app - Stack Overflow](https://stackoverflow.com/questions/39365184/adding-runtime-directives-for-generic-types-in-uwp-app)
 - [.NET Native Deep Dive: Dynamic Features in Static Code](https://blogs.msdn.microsoft.com/dotnet/2014/05/20/net-native-deep-dive-dynamic-features-in-static-code/)
+

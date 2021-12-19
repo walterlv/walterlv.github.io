@@ -3,6 +3,7 @@ title: "Unity3D 入门：在 Visual Studio 里使用 Visual Studio Tools for Uni
 date: 2020-04-27 21:06:05 +0800
 tags: unity csharp
 position: starter
+coverImage: /static/posts/2020-04-27-19-12-32.png
 ---
 
 Visual Studio 安装过程中一起勾选的 Visual Studio Tools for Unity 提供了与 Unity 编辑器方便的交互功能，充分使用 Visual Studio Tools for Unity 可以提升一部分开发效率减少一点点坑。
@@ -66,3 +67,4 @@ Visual Studio 安装过程中一起勾选的 Visual Studio Tools for Unity 提�
 **参考资料**
 
 - [Getting Started with Visual Studio Tools for Unity - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/cross-platform/getting-started-with-visual-studio-tools-for-unity?view=vs-2019)
+

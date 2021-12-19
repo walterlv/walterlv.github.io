@@ -3,6 +3,7 @@ title: "在项目文件 csproj 中或者 MSBuild 的 Target 中使用 % 引用�
 date: 2019-04-24 20:35:25 +0800
 tags: msbuild visualstudio dotnet
 position: knowledge
+coverImage: /static/posts/2019-04-24-20-20-01.png
 ---
 
 在编写项目文件或者 MSBuild Target 文件的时候，我们经常会使用 `<Foo Include="Identity" />` 来定义集合中的一项。在定义的同时，我们也会额外指定一些属性。
@@ -46,3 +47,4 @@ position: knowledge
 ```
 
 这里的 `CopyToOutputDirectory` 不是一个总是会设置的属性。
+

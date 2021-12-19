@@ -3,6 +3,7 @@ title: "生成代码，从 T 到 T1, T2, Tn —— 自动生成多个类型的�
 publishDate: 2018-01-31 13:38:11 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: csharp dotnet visualstudio
+coverImage: /static/posts/2018-01-31-13-08-09.png
 ---
 
 当你想写一个泛型 `<T>` 的类型的时候，是否想过两个泛型参数、三个泛型参数、四个泛型参数或更多泛型参数的版本如何编写呢？是一个个编写？类小还好，类大了就杯具！
@@ -274,3 +275,4 @@ class Program
 
 - [Code Generation and T4 Text Templates - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/modeling/code-generation-and-t4-text-templates?wt.mc_id=MVP)
 - [Custom Tools - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/custom-tools?wt.mc_id=MVP)
+

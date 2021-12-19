@@ -2,6 +2,7 @@
 title: "卡诺模型（KANO Model）"
 date: 2018-01-09 17:57:54 +0800
 tags: ux
+coverImage: /static/posts/2018-01-09-17-12-19.png
 ---
 
 卡诺模型是一种研究影响顾客满意度因素的方法，在软件工程中可以用来辅助做需求分析和优化产品的质量。
@@ -27,3 +28,4 @@ tags: ux
 - [什么是卡诺KANO模型？ - 知乎](https://www.zhihu.com/question/22989667)
 - [KANO模型 - MBA智库百科](http://wiki.mbalib.com/wiki/KANO%E6%A8%A1%E5%9E%8B)
 - [需求分析神器Kano模型 - 简书](https://www.jianshu.com/p/3c32cd247892)
+

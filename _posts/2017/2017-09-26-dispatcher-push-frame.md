@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "深入了解 WPF Dispatcher 的工作原理（PushFrame 部分）"
 publishDate: 2017-09-26 03:49:41 +0800
 date: 2018-11-27 13:08:55 +0800
@@ -7,6 +6,7 @@ tags: dotnet
 permalink: /post/dotnet/2017/09/26/dispatcher-push-frame.html
 keywords: dotnet dotnet dispatcher PushFrame
 description: 了解 Dispatcher.PushFrame 方法的作用和背后的实现原理。
+coverImage: /static/posts/2017-09-26-03-33-28.png
 ---
 
 在上一篇文章 [深入了解 WPF Dispatcher 的工作原理（Invoke/InvokeAsync 部分）](/post/dotnet/2017/09/26/dispatcher-invoke-async.html) 中我们发现 `Dispatcher.Invoke` 方法内部是靠 `Dispatcher.PushFrame` 来确保“不阻塞地等待”的。然而它是怎么做到“不阻塞地等待”的呢？
@@ -231,3 +231,4 @@ private void OnStylusDown(object sender, StylusDownEventArgs e)
     - [调试 ms 源代码 - 林德熙](http://blog.lindexi.com/lindexi//post/%E8%B0%83%E8%AF%95-ms-%E6%BA%90%E4%BB%A3%E7%A0%81/)
 - 已知缺陷
     - [c# - PushFrame locks up WPF window when user is moving window - Stack Overflow](https://stackoverflow.com/q/19411613/6233938)
+

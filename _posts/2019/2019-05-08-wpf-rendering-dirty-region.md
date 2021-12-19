@@ -4,6 +4,7 @@ publishDate: 2019-05-08 09:36:29 +0800
 date: 2019-05-13 09:50:23 +0800
 tags: wpf dotnet csharp
 position: problem
+coverImage: /static/posts/2019-05-08-09-00-36.png
 ---
 
 本文介绍通过发现渲染脏区来提高渲染性能。
@@ -78,3 +79,4 @@ position: problem
 **参考资料**
 
 - [WPF Performance Suite - Microsoft Docs](https://docs.microsoft.com/en-us/previous-versions/aa969767(v=vs.110))
+

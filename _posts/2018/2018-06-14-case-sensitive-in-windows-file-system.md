@@ -3,6 +3,7 @@ title: "Windows 10 四月更新，文件夹名称也能区分大小写了"
 publishDate: 2018-06-14 08:02:24 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: windows
+coverImage: /static/posts/2018-06-20-10-43-02.png
 ---
 
 Linux 一向都是区分文件和文件夹大小写的。Mac OS 默认不区分文件和文件夹大小写，不过可以配置成支持。而 Windows 向来是不区分文件和文件夹大小写的，但是从 NTFS 开始却又支持区分文件夹大小写。
@@ -144,3 +145,4 @@ wim             Transparent wim hosting management
 
 - [fsutil setCaseSensitiveInfo · Issue #977 · MicrosoftDocs/windowsserverdocs](https://github.com/MicrosoftDocs/windowsserverdocs/issues/977)
 - [windows - fsutil - The request is not supported after setCaseSensitiveInfo - Stack Overflow](https://stackoverflow.com/q/50839623/6233938)
+

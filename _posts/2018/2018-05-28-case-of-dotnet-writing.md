@@ -3,6 +3,7 @@ title: ".NET 三个字母究竟应该如何大小写？前面的 “.” 什么�
 publishDate: 2018-05-28 16:23:49 +0800
 date: 2018-07-30 19:47:02 +0800
 tags: dotnet
+coverImage: /static/posts/2018-05-28-15-45-53.png
 ---
 
 本文将解释在 .NET 技术栈中各种不同使用方式下 N E T 三个字母何时大写何时小写；前面的 “.” 什么时候加上，什么时候去掉，什么时候又使用 “dot”。
@@ -81,3 +82,4 @@ JetBrains 家的 .NET 团队很喜欢用 `dot` 作为软件名称的前缀，例
 - `Microsoft.NET.Sdk`
 - `dotnet-standard`
 - `net472`
+

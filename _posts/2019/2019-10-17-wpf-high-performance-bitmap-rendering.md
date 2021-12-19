@@ -4,6 +4,7 @@ publishDate: 2019-10-17 17:07:14 +0800
 date: 2019-10-22 12:43:29 +0800
 tags: wpf dotnet csharp
 position: principle
+coverImage: /static/posts/2019-10-17-16-18-59.png
 ---
 
 WPF 渲染框架并没有对外提供多少可以完全控制渲染的部分，目前可以做的有：
@@ -384,3 +385,4 @@ channel.SendCommand((byte*)&command, sizeof(DUCE.MILCMD_DOUBLEBUFFEREDBITMAP_COP
 前面我们通过脏区大小可以得出内存拷贝不是 CPU 占用率的瓶颈，脏区大小才是，不过是渲染线程在占用这 CPU 而不是主线程。但是内存拷贝却成为了主线程的瓶颈（当然前面我们给出了数据，实际上非常小）。所以如果试图分析这么高 CPU 的占用，会发现并不能从主线程上调查得出符合预期的结论（因为即便你完全干掉了内存拷贝，CPU 占用依然是这么高）。
 
 ![内存拷贝是性能瓶颈](/static/posts/2019-10-17-17-38-04.png)
+

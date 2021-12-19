@@ -3,6 +3,7 @@ title: "System.InvalidOperationException:“寄宿的 HWND 必须是指定父级
 date: 2019-08-14 16:32:16 +0800
 tags: wpf windows dotnet csharp
 position: problem
+coverImage: /static/posts/2019-08-14-16-17-50.png
 ---
 
 当试图在 WPF 窗口中嵌套显示 Win32 子窗口的时候，你有可能出现错误：“`寄宿的 HWND 必须是指定父级的子窗口。`”。
@@ -36,3 +37,4 @@ WPF 中可以使用 `HwndSource` 来包装一个 WPF 控件到 Win32 窗口，�
 具体来说，就是 A 窗口使用 `HwndHost` 设置成了 B 的子窗口，随后 A 又通过一个新的 `HwndHost` 设置成了新子窗口。
 
 要解决，则必须确保一个窗口只能使用 `HwndHost` 设置一次子窗口。
+

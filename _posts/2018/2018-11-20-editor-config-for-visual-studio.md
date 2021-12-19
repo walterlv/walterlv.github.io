@@ -3,6 +3,7 @@ title: "在 Visual Studio 中使用 EditorConfig 统一代码风格（含原生�
 publishDate: 2018-11-20 12:17:50 +0800
 date: 2018-12-14 09:54:00 +0800
 tags: visualstudio csharp dotnet
+coverImage: /static/posts/2018-11-20-10-34-36.png
 ---
 
 EditorConfig 是一种被各种编辑器广泛支持的配置，使用此配置有助于项目在整个团队中保持一致的代码风格。Visual Studio 2017 开始原生支持 EditorConfig。
@@ -354,3 +355,4 @@ dotnet_style_qualification_for_property = false:suggestion
 
 - [Using EditorConfig settings in Visual Studio - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/ide/create-portable-custom-editor-options?view=vs-2017?wt.mc_id=MVP)
 - [.NET coding convention settings For EditorConfig - Visual Studio - Microsoft Docs](https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference?view=vs-2017#formatting-conventions?wt.mc_id=MVP)
+

@@ -4,6 +4,7 @@ publishDate: 2020-02-17 08:32:28 +0800
 date: 2020-04-30 18:35:49 +0800
 tags: dotnet wpf
 position: problem
+coverImage: /static/posts/2020-02-17-07-48-35.png
 ---
 
 获取图片宽高的方法有很多种，本文介绍 .NET 中获取图片宽高的几种方法并评估其性能。如果你打算对大量图片进行一些处理，本文可能有用。
@@ -127,3 +128,4 @@ var height = frame.PixelHeight;
 **参考资料**
 
 - [WMF - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/WMF)
+

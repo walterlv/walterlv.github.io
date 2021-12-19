@@ -4,6 +4,7 @@ publishDate: 2019-09-07 09:52:29 +0800
 date: 2019-09-07 10:07:36 +0800
 tags: cpp vscode
 position: knowledge
+coverImage: /static/posts/2019-09-07-09-30-54.png
 ---
 
 突然间要编写或者调试几个 C++ 的小程序，动用 Visual Studio 创建一个解决方案显得大了些。如果能够利用随时随地就方便打开的 Visual Studio Code 来开发，则清爽很多。
@@ -102,3 +103,4 @@ int main()
 > 于是可以推导出……
 
 ![推导出](/static/posts/2019-09-07-10-06-10.png)
+
