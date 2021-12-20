@@ -54,7 +54,7 @@ git 有个全局配置，在 `%USERPROFILE%\.gitconfig` 文件里面，可以指
 
 ```ini
 [core]
-	autocrlf = true
+    autocrlf = true
 ```
 
 有三个可选值：

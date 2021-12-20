@@ -31,19 +31,19 @@ git remote add github https://github.com/walterlv/walterlv.github.io.git --no-ta
 
 ```ini
 [remote "origin"]
-	url = https://github.com/walterlv/walterlv.github.io.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
+    url = https://github.com/walterlv/walterlv.github.io.git
+    fetch = +refs/heads/*:refs/remotes/origin/*
 [branch "master"]
-	remote = origin
-	merge = refs/heads/master
+    remote = origin
+    merge = refs/heads/master
 [remote "github"]
-	url = https://github.com/walterlv/walterlv.github.io.git
-	fetch = +refs/heads/*:refs/remotes/github/*
-	tagopt = --no-tags
+    url = https://github.com/walterlv/walterlv.github.io.git
+    fetch = +refs/heads/*:refs/remotes/github/*
+    tagopt = --no-tags
 [remote "gitee"]
-	url = https://gitee.com/walterlv/walterlv.git
-	fetch = +refs/heads/*:refs/remotes/gitee/*
-	tagopt = --no-tags
+    url = https://gitee.com/walterlv/walterlv.git
+    fetch = +refs/heads/*:refs/remotes/gitee/*
+    tagopt = --no-tags
 ```
 
 ## 第二步：添加一个名为 all 的新远端
@@ -52,9 +52,9 @@ git remote add github https://github.com/walterlv/walterlv.github.io.git --no-ta
 
 ```ini
 [remote "all"]
-	url = https://github.com/walterlv/walterlv.github.io.git
-	url = https://gitee.com/walterlv/walterlv.git
-	tagopt = --no-tags
+    url = https://github.com/walterlv/walterlv.github.io.git
+    url = https://gitee.com/walterlv/walterlv.git
+    tagopt = --no-tags
 ```
 
 如果你有更多需要同步的远端，那么就在里面添加更多的 url。

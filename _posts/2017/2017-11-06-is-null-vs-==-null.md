@@ -201,7 +201,7 @@ private void TestInWalterlvDemo(Foo value)
 public class C
 {
     bool M1(C x) => x is null;
-	bool M2(C x) => x == null;
+    bool M2(C x) => x == null;
 
     int x;
     public C(int x) => this.x=x;

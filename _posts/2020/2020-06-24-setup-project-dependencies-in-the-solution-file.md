@@ -29,9 +29,9 @@ permalink: /post/setup-project-dependencies-in-the-solution-file.html
 
 ```
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Walterlv.Demo", "Walterlv.Demo\Walterlv.Demo.csproj", "{DC0B1D44-5DF4-4590-BBFE-072183677A78}"
-	ProjectSection(ProjectDependencies) = postProject
-		{98FF9756-B95A-4FDB-9858-5106F486FBF3} = {98FF9756-B95A-4FDB-9858-5106F486FBF3}
-	EndProjectSection
+    ProjectSection(ProjectDependencies) = postProject
+        {98FF9756-B95A-4FDB-9858-5106F486FBF3} = {98FF9756-B95A-4FDB-9858-5106F486FBF3}
+    EndProjectSection
 EndProject
 ```
 

@@ -47,22 +47,22 @@ permalink: /post/add-custom-code-snippet-for-vscode.html
 
 ```json
 {
-	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
-	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
-	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
-	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
-	// Placeholders with the same ids are connected.
-	// Example:
-	// "Print to console": {
-	// 	"scope": "javascript,typescript",
-	// 	"prefix": "log",
-	// 	"body": [
-	// 		"console.log('$1');",
-	// 		"$2"
-	// 	],
-	// 	"description": "Log output to console"
-	// }
+    // Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+    // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+    // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+    // used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+    // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+    // Placeholders with the same ids are connected.
+    // Example:
+    // "Print to console": {
+    //     "scope": "javascript,typescript",
+    //     "prefix": "log",
+    //     "body": [
+    //         "console.log('$1');",
+    //         "$2"
+    //     ],
+    //     "description": "Log output to console"
+    // }
 }
 ```
 
@@ -77,15 +77,15 @@ permalink: /post/add-custom-code-snippet-for-vscode.html
 
 ```json
 {
-	"Add toc to post": {
-		"scope": "markdown",
-		"prefix": "toc",
-		"body": [
-			"@[TOC](${1:walterlv 的目录})",
-			"$0"
-		],
-		"description": "添加 walterlv 的博客的目录"
-	}
+    "Add toc to post": {
+        "scope": "markdown",
+        "prefix": "toc",
+        "body": [
+            "@[TOC](${1:walterlv 的目录})",
+            "$0"
+        ],
+        "description": "添加 walterlv 的博客的目录"
+    }
 }
 ```
 
@@ -160,30 +160,30 @@ permalink: /post/add-custom-code-snippet-for-vscode.html
 
 ```json
 {
-	"Insert a post for blog.walterlv.com": {
-		"scope": "markdown",
-		"prefix": "post",
-		"body": [
-			"---",
-			"title: \"${1:在此处添加标题}\"",
-			"date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND} +0800",
-			"tags: ${2|dotnet,csharp,uwp|}",
-			"---",
-			"",
-			"${0:在此处编辑 blog.walterlv.com 的博客摘要}",
-			"",
-			"---",
-			"",
-			"@[TOC](本文内容)",
-			"",
-			"## 标题",
-			"",
-			"---",
-			"",
-			"**参考资料**"
-		],
-		"description": "使用 blog.walterlv.com 专用的博客模板"
-	}
+    "Insert a post for blog.walterlv.com": {
+        "scope": "markdown",
+        "prefix": "post",
+        "body": [
+            "---",
+            "title: \"${1:在此处添加标题}\"",
+            "date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND} +0800",
+            "tags: ${2|dotnet,csharp,uwp|}",
+            "---",
+            "",
+            "${0:在此处编辑 blog.walterlv.com 的博客摘要}",
+            "",
+            "---",
+            "",
+            "@[TOC](本文内容)",
+            "",
+            "## 标题",
+            "",
+            "---",
+            "",
+            "**参考资料**"
+        ],
+        "description": "使用 blog.walterlv.com 专用的博客模板"
+    }
 }
 ```
 
@@ -220,47 +220,47 @@ permalink: /post/add-custom-code-snippet-for-vscode.html
 在 Visual Studio Code 中，你有这些变量可以使用：
 
 -`TM_SELECTED_TEXT`
-	- 在插入代码片段的时刻选中的文本
+    - 在插入代码片段的时刻选中的文本
 -`TM_CURRENT_LINE`
-	- 在插入代码片段的时刻光标所在的行
+    - 在插入代码片段的时刻光标所在的行
 -`TM_CURRENT_WORD`
-	- 在插入代码片段的时刻光标所在的词
+    - 在插入代码片段的时刻光标所在的词
 -`TM_LINE_INDEX`
-	- 在插入代码片段的时刻的行号（0 为首行）
+    - 在插入代码片段的时刻的行号（0 为首行）
 -`TM_LINE_NUMBER`
-	- 当前文档的总行数
+    - 当前文档的总行数
 -`TM_FILENAME`
-	- 当前文档的文件名称
+    - 当前文档的文件名称
 -`TM_FILENAME_BASE`
-	- 当前文档不含扩展名的名称
+    - 当前文档不含扩展名的名称
 -`TM_DIRECTORY`
-	- 当前文档所在的文件夹
+    - 当前文档所在的文件夹
 -`TM_FILEPATH`
-	- 当前文档的完全路径
+    - 当前文档的完全路径
 -`CLIPBOARD`
-	- 剪贴板中的内容
+    - 剪贴板中的内容
 -`CURRENT_YEAR`
-	- 年
+    - 年
 -`CURRENT_YEAR_SHORT`
-	- 两位数字显示的年
+    - 两位数字显示的年
 -`CURRENT_MONTH`
-	- 月，如 02
+    - 月，如 02
 -`CURRENT_MONTH_NAME`
-	- 月的英文名称，如 July
+    - 月的英文名称，如 July
 -`CURRENT_MONTH_NAME_SHORT`
-	- 月的英文缩写，如 Jul
+    - 月的英文缩写，如 Jul
 -`CURRENT_DATE`
-	- 日
+    - 日
 -`CURRENT_DAY_NAME`
-	- 星期的英文名称，如 Monday
+    - 星期的英文名称，如 Monday
 -`CURRENT_DAY_NAME_SHORT`
-	- 星期的英文缩写，如 Mon
+    - 星期的英文缩写，如 Mon
 -`CURRENT_HOUR`
-	- 24 小时制的时
+    - 24 小时制的时
 -`CURRENT_MINUTE`
-	- 分
+    - 分
 -`CURRENT_SECOND`
-	- 秒
+    - 秒
 
 所以在上面比较复杂的博客模板中，我们可以直接插入当前的时间 `${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND} +0800`。
 

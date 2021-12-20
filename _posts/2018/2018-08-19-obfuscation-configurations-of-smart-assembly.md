@@ -489,23 +489,23 @@ public string Generate(bool pascal)
 // Token: 0x0200001A RID: 26
 internal sealed class \u0001 : MulticastDelegate
 {
-	// Token: 0x06000030 RID: 48
-	public extern \u0001(object, IntPtr);
+    // Token: 0x06000030 RID: 48
+    public extern \u0001(object, IntPtr);
 
-	// Token: 0x06000031 RID: 49
-	public extern int Invoke(object, int, int);
+    // Token: 0x06000031 RID: 49
+    public extern int Invoke(object, int, int);
 
-	// Token: 0x06000032 RID: 50 RVA: 0x000030A8 File Offset: 0x000012A8
-	static \u0001()
-	{
-		MemberRefsProxy.CreateMemberRefsDelegates(25);
-	}
+    // Token: 0x06000032 RID: 50 RVA: 0x000030A8 File Offset: 0x000012A8
+    static \u0001()
+    {
+        MemberRefsProxy.CreateMemberRefsDelegates(25);
+    }
 
-	// Token: 0x04000016 RID: 22
-	internal static \u0001 \u0001;
+    // Token: 0x04000016 RID: 22
+    internal static \u0001 \u0001;
 
-	// Token: 0x04000017 RID: 23
-	internal static \u0001 ~\u0001;
+    // Token: 0x04000017 RID: 23
+    internal static \u0001 ~\u0001;
 }
 ```
 
@@ -666,22 +666,22 @@ public class Strings
 前面那份统一收集的字符串依然还是明文存储为资源，但还可以进行压缩。这时，Resources 中的那份字符串资源现在是二进制文件（截取前 256 字节）：
 
 ```
-00000000:	7b7a	7d02	efbf	bdef	bfbd	4def	bfbd	efbf
-00000010:	bd7e	6416	efbf	bd6a	efbf	bd22	efbf	bd08
-00000020:	efbf	bdef	bfbd	4c42	7138	72ef	bfbd	efbf
-00000030:	bd54	1337	efbf	bd0e	22ef	bfbd	69ef	bfbd
-00000040:	613d	efbf	bd6e	efbf	bd35	efbf	bd0a	efbf
-00000050:	bd33	6043	efbf	bd26	59ef	bfbd	5471	efbf
-00000060:	bdef	bfbd	2cef	bfbd	18ef	bfbd	6def	bfbd
-00000070:	efbf	bdef	bfbd	64ef	bfbd	c9af	efbf	bdef
-00000080:	bfbd	efbf	bd4b	efbf	bdef	bfbd	66ef	bfbd
-00000090:	1e70	efbf	bdef	bfbd	ce91	71ef	bfbd	1d5e
-000000a0:	1863	efbf	bd16	0473	25ef	bfbd	2204	efbf
-000000b0:	bdef	bfbd	11ef	bfbd	4fef	bfbd	265a	375f
-000000c0:	7bef	bfbd	19ef	bfbd	d5bd	efbf	bdef	bfbd
-000000d0:	efbf	bd70	71ef	bfbd	efbf	bd05	c789	efbf
-000000e0:	bd51	eaae	beef	bfbd	ee97	adef	bfbd	0a33
-000000f0:	d986	141c	2bef	bfbd	efbf	bdef	bfbd	1fef
+00000000:  7b7a  7d02  efbf  bdef  bfbd  4def  bfbd  efbf
+00000010:  bd7e  6416  efbf  bd6a  efbf  bd22  efbf  bd08
+00000020:  efbf  bdef  bfbd  4c42  7138  72ef  bfbd  efbf
+00000030:  bd54  1337  efbf  bd0e  22ef  bfbd  69ef  bfbd
+00000040:  613d  efbf  bd6e  efbf  bd35  efbf  bd0a  efbf
+00000050:  bd33  6043  efbf  bd26  59ef  bfbd  5471  efbf
+00000060:  bdef  bfbd  2cef  bfbd  18ef  bfbd  6def  bfbd
+00000070:  efbf  bdef  bfbd  64ef  bfbd  c9af  efbf  bdef
+00000080:  bfbd  efbf  bd4b  efbf  bdef  bfbd  66ef  bfbd
+00000090:  1e70  efbf  bdef  bfbd  ce91  71ef  bfbd  1d5e
+000000a0:  1863  efbf  bd16  0473  25ef  bfbd  2204  efbf
+000000b0:  bdef  bfbd  11ef  bfbd  4fef  bfbd  265a  375f
+000000c0:  7bef  bfbd  19ef  bfbd  d5bd  efbf  bdef  bfbd
+000000d0:  efbf  bd70  71ef  bfbd  efbf  bd05  c789  efbf
+000000e0:  bd51  eaae  beef  bfbd  ee97  adef  bfbd  0a33
+000000f0:  d986  141c  2bef  bfbd  efbf  bdef  bfbd  1fef
 ```
 
 这份压缩的字符串在程序启动的时候会进行一次解压，随后就直接读取解压后的字符串了。所以会占用启动时间（虽然不长），但不会占用太多运行时时间。

@@ -65,9 +65,9 @@ Windows Terminal 在 Windows 上是一款 UWP 应用，然而其依然具有良�
 
 ```csharp
 var info = new ProcessStartInfo{
-	FileName = "wt.exe",
-	WorkingDirectory = @"D:\walterlv",
-	UseShellExecute = false,
+    FileName = "wt.exe",
+    WorkingDirectory = @"D:\walterlv",
+    UseShellExecute = false,
 };
 Process.Start(info);
 ```

@@ -83,7 +83,7 @@ float4 main(float2 uv : TEXCOORD) : COLOR
 
     if(a < Threshold)
     {
-   	    color.a  = 0;
+           color.a  = 0;
     }
     else
     {

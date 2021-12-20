@@ -165,7 +165,7 @@ xml 声明部分完全没有在此解释的必要了，为兼容性提供了方�
 >       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 >       <Visible>False</Visible>
 >     </Content>
-> 	<Content Include="$(MSBuildThisFileDirectory)..\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll">
+>   <Content Include="$(MSBuildThisFileDirectory)..\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll">
 >       <Link>Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll</Link>
 >       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 >       <Visible>False</Visible>
