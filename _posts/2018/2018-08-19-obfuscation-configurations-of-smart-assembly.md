@@ -1,7 +1,7 @@
 ---
 title: ".NET 中各种混淆（Obfuscation）的含义、原理、实际效果和不同级别的差异（使用 SmartAssembly）"
 publishDate: 2018-08-19 20:42:42 +0800
-date: 2018-12-14 09:54:00 +0800
+date: 2021-12-20 23:15:01 +0800
 tags: dotnet csharp
 coverImage: /static/posts/2018-08-19-15-14-44.png
 permalink: /post/obfuscation-configurations-of-smart-assembly.html
@@ -523,16 +523,20 @@ internal sealed class \u0001 : MulticastDelegate
 在我的项目中，统一收集的字符串可以形成下面这份字符串（也即是上图中 Resources 文件夹中的那个文件内容）：
 
 ```
-cQ==dw==cg==dA==eQ==cA==cw==ZA==Zg==Zw==aA==ag==aw==bA==eg==eA==
-Yw==dg==Yg==bg==bQ==dHI=ZHI=Y2g=d2g=c3Q=YQ==ZQ==aQ==bw==dQ==YXI=
-YXM=YWk=YWlyYXk=YWw=YWxsYXc=ZWU=ZWE=ZWFyZW0=ZXI=ZWw=ZXJlaXM=aXI=
-b3U=b3I=b28=b3c=dXI=MjAxOC0wOC0yNlQxODoxMDo0Mw==`VGhpcyBhc3NlbWJseSBoYXMgY
-mVlbiBidWlsdCB3aXRoIFNtYXJ0QXNzZW1ibHkgezB9LCB3aGljaCBoYXMgZXhwaXJlZC4=RXZhbHVh
+ cQ== dw== cg== dA== eQ== cA== cw== ZA== Zg== Zw== aA== ag== aw== bA== eg== eA==
+ Yw== dg== Yg== bg== bQ== dHI= ZHI= Y2g= d2g= c3Q= YQ== ZQ== aQ== bw== dQ== YXI=
+ YXM= YWk= YWly YXk= YWw= YWxs YXc= ZWU= ZWE= ZWFy ZW0= ZXI= ZWw= ZXJl aXM= aXI=
+ b3U= b3I= b28= b3c= dXI= MjAxOC0wOC0yNlQxODoxMDo0Mw==`VGhpcyBhc3NlbWJseSBoYXMgY
+mVlbiBidWlsdCB3aXRoIFNtYXJ0QXNzZW1ibHkgezB9LCB3aGljaCBoYXMgZXhwaXJlZC4= RXZhbHVh
 dGlvbiBWZXJzaW9uxVGhpcyBhc3NlbWJseSBoYXMgYmVlbiBidWlsdCB3aXRoIFNtYXJ0QXNzZW1ibHk
-gezB9LCBhbmQgdGhlcmVmb3JlIGNhbm5vdCBiZSBkaXN0cmlidXRlZC4=IA==Ni4xMi41Ljc5OQ==
-U21hcnRBc3NlbWJseQ==UGF0aA==U29mdHdhcmVcUmVkIEdhdGVc(U29mdHdhcmVcV293NjQzMk5vZ
+gezB9LCBhbmQgdGhlcmVmb3JlIGNhbm5vdCBiZSBkaXN0cmlidXRlZC4= IA== Ni4xMi41Ljc5OQ== 
+U21hcnRBc3NlbWJseQ== UGF0aA== U29mdHdhcmVcUmVkIEdhdGVc(U29mdHdhcmVcV293NjQzMk5vZ
 GVcUmVkIEdhdGVc
 ```
+
+由于这些不可见字符让我的博客挂掉了，所以我用图来补，上文就换成空格了……
+
+![带有不可见字符的图片](/static/posts/2021-12-20-23-13-22.png)
 
 虽然字符串难以读懂，但其实我原本就是这么写的；给你看看我的原始代码就知道了（来自 [冷算法：自动生成代码标识符（类名、方法名、变量名）](/post/algorithm-of-generating-random-identifiers)）：
 
