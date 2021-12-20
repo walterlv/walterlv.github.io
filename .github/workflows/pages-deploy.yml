@@ -11,7 +11,7 @@ on:
 jobs:
   continuous-delivery:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Checkout
@@ -24,6 +24,11 @@ jobs:
         with:
           ruby-version: 2.6
           bundler-cache: true
+      
+      - name: Set up MinGW
+        uses: egor-tensin/setup-mingw@v2
+        with:
+          platform: x64
 
       - name: Deploy
         run: bash tools/deploy.sh
