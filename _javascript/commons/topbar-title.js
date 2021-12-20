@@ -28,15 +28,15 @@ $(function() {
       return false;
     }
 
-    if ($(this).scrollTop() >= 95) {
-      if (topbarTitle.text() !== title) {
-        topbarTitle.text(title);
-      }
-    } else {
-      if (topbarTitle.text() !== DEFAULT) {
-        topbarTitle.text(DEFAULT);
-      }
-    }
+    // if ($(this).scrollTop() >= 95) {
+    //   if (topbarTitle.text() !== title) {
+    //     topbarTitle.text(title);
+    //   }
+    // } else {
+    //   if (topbarTitle.text() !== DEFAULT) {
+    //     topbarTitle.text(DEFAULT);
+    //   }
+    // }
   });
 
   /* Click title remove hover effect. */
