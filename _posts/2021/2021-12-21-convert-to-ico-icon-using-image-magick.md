@@ -1,8 +1,10 @@
 ---
 title: "使用 ImageMagick 轻松制作带有多种尺寸的 ico 图标文件"
-date: 2021-12-21 11:11:50 +0800
+publishDate: 2021-12-21 11:11:50 +0800
+date: 2021-12-21 11:43:40 +0800
 categories: windows
 position: starter
+coverImage: /static/posts/2021-12-21-11-06-12.png
 ---
 
 ico 图标格式是一种包含多种尺寸位图的容器格式，Windows 用这种格式来作为图标是为了能让文件图标在各种不同显示尺寸下都能看起来清晰可辨。可是，相当多的平面设计软件都没有内嵌 ico 格式的支持（尤其是 macOS 版的），导致设计师很难直接输出 ico 格式的图标。另外，有些自称能 png 转 ico 格式的图片转换器虽然能生成 ico 格式，但这种 ico 格式内只包含一种位图尺寸，导致在很小或很大时图标显示非常模糊。
@@ -50,3 +52,4 @@ magick convert 16.png 24.png 32.png 48.png 256.png walterlv.ico
 前面的所有参数都是 png 图片，最后一个参数是 ico 输出文件名。ImageMagick 会自动识别 png 的尺寸并设置到 ico 中。
 
 ![ImageMagick 转 ico 命令](/static/posts/2021-12-21-11-06-12.png)
+
