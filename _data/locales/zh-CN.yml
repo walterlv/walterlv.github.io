@@ -50,7 +50,7 @@ copyright:
 comments:
   tip: 登录 GitHub 账号进行评论
 
-meta: 本站由 :PLATFORM 生成，由吕毅 (walterlv) 基于 :THEME 主题修改。
+meta: 本站由 :PLATFORM 生成，基于 :THEME 主题修改。
 
 not_found:
   statment: 抱歉，我们放错了该 URL，或者它指向了不存在的内容。
