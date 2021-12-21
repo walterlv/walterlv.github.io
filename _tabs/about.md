@@ -24,15 +24,15 @@ tail_includes:
     - 适配系统的明暗
     - Windows 11 流畅设计风格
     - 仿 Windows 11 云母材质
-2. 全文搜索，而不是之前的标题搜索
-3. 重新设计的头像，同时适配明暗主题
+2. 全文搜索，而不是之前的标题搜索；
+3. 重新设计的头像，同时适配明暗主题。
 
 ### 5.0
 
 2020年01月15日
 
-1. 使用 Blazor 重新设计的 WebAssembly 博客，100% 独自开发的前后端
-2. 轻微调整部分样式，使文字更清晰更易读
+1. 使用 Blazor 重新设计的 WebAssembly 博客，100% 独自开发的前后端；
+2. 轻微调整部分样式，使文字更清晰更易读。
 
 *此版本因缺乏稳定的服务器资源而停运，随后重新上线 4.1 版本。*
 
@@ -58,10 +58,10 @@ tail_includes:
 
 2017年10月14日
 
-1. 基于 [HCZ Material theme](https://github.com/codeasashu/hcz-jekyll-blog) 主题修改，重新设计博客
-    - 现在大家在看到的[林德熙的博客](https://blog.lindexi.com/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E6%9C%AC%E6%A8%A1%E6%9D%BF%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2.html)以及其衍生博客样式基本都是基于我的本次修改
-2. 加入了 Disqus 评论系统
-3. 加入了访问流量记录和分析
+1. 基于 [HCZ Material theme](https://github.com/codeasashu/hcz-jekyll-blog) 主题修改，重新设计博客；
+    - 现在大家在看到的[林德熙的博客](https://blog.lindexi.com/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E6%9C%AC%E6%A8%A1%E6%9D%BF%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2.html)以及其衍生博客样式基本都是基于我的本次修改；
+2. 加入了 Disqus 评论系统；
+3. 加入了访问流量记录和分析。
 
 ### 2.0
 
