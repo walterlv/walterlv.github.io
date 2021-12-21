@@ -1,7 +1,7 @@
 ---
-title: "删删删！快速将旧版 .NET Framework 的 WPF 项目格式(csproj) 迁移成新版 SDK 风格的项目格式"
+title: "删删删！快速将旧版 .NET Framework 的 WPF / Windows Forms 项目格式(csproj) 迁移成新版 SDK 风格的项目格式"
 publishDate: 2018-01-16 00:04:28 +0800
-date: 2021-11-22 16:44:55 +0800
+date: 2021-12-21 12:03:14 +0800
 tags: visualstudio msbuild
 position: starter
 coverImage: /static/posts/2021-11-22-16-19-23.png
@@ -45,6 +45,8 @@ permalink: /post/introduce-new-style-csproj-into-net-framework.html
 </Project>
 ```
 
+如果是 Windows Forms 项目，则将其中的 `<UseWPF>true</UseWPF>` 换成 `<UseWindowsForms>true</UseWindowsForms>`；如果同时用到了 WPF 和 Windows Forms，则这两句都需要加上。
+
 额外的，根据你项目的实际情况稍作调整：
 
 * 如果期望其他的 .NET Framework 版本，则把 `net48` 改为其他版本（如 `net45`、`net462` 等）
@@ -79,6 +81,8 @@ using System.Windows;
                                               //、应用程序或任何主题专用资源字典中找到时使用)
 )]
 ```
+
+Windows Forms 项目里面没有这个特性，所以整个文件都可以删除。
 
 ### 第三步：加回以前的引用，改回以前的属性
 
