@@ -1,7 +1,7 @@
 ---
 title: "所有 WPF 程序的界面渲染完全糊掉，竟是戴尔电脑惹的锅？"
 publishDate: 2021-11-05 20:47:55 +0800
-date: 2021-12-21 16:16:28 +0800
+date: 2021-12-21 16:18:51 +0800
 tags: wpf
 position: problem
 version:
@@ -36,6 +36,22 @@ This post is written in **multiple languages**. Please select yours:
 ![糊掉的界面](/static/posts/2021-11-05-20-07-45.png)
 
 很明显，这是渲染炸掉了。我们软件的各处逻辑功能什么的都非常正常。
+
+另外，评论区有童鞋反馈搜不到这篇答案，所以我多贴一些关键字在这里：
+
+```
+WPF花屏
+Blend界面花屏
+WPF控件错乱
+wpf模糊
+wpf控件显示异常
+wpf重影
+wpf按钮异常显示
+wpf异常放大
+wpf渲染问题
+wpf渲染错误
+wpf render abnormal
+```
 
 ## 原因
 
