@@ -1,7 +1,7 @@
 ---
 title: "所有 WPF 程序的界面渲染完全糊掉，竟是戴尔电脑惹的锅？"
 publishDate: 2021-11-05 20:47:55 +0800
-date: 2021-11-18 19:25:32 +0800
+date: 2021-12-21 16:16:28 +0800
 tags: wpf
 position: problem
 version:
@@ -63,6 +63,8 @@ NahimicOSD 是一个用于在应用程序最终渲染结果上叠加另一个显
 
 ## 解决方法
 
+### 用户端解决方法（你自己遇到问题时使用）
+
 由于这个文件已经注入到了很多应用中，所以解决方法是[将 NahimicOSD.dll 文件重命名](http://blog.walterlv.com/post/rename-executable-self-when-running.html)（因为你直接删删不掉）。等重启电脑后，这个文件也就不会注入到任何程序里去了，这时你想怎么处置都可以。
 
 另外，这个文件可能有 x86 和 x64 两个版本；可能都需要处理，适用于不同架构的进程。已知有问题的应用：
@@ -78,6 +80,61 @@ NahimicOSD 是一个用于在应用程序最终渲染结果上叠加另一个显
 也写了一篇无奈的吐槽：
 
 * [The WPF UI is blurring and broken while the Alienware NahimicOSD.dll injects · Issue #5708 · dotnet/wpf](https://github.com/dotnet/wpf/issues/5708)
+
+### 开发端解决方法（修改你的程序以应对这种情况）
+
+#### 方法一：软渲染（无奈之举）
+
+如果你的程序足够简单，那么采用软渲染来规避这个问题也未尝不可。方法是在你第一个窗口显示出来之前，调用一下下面这句话：
+
+```csharp
+System.Windows.Media.RenderOptions.ProcessRenderMode = System.Windows.Interop.RenderMode.SoftwareOnly;
+```
+
+如果想避免影响范围太大，还可以判断一下是否存在这个文件：
+
+```csharp
+bool hasInjected = Process.GetCurrentProcess().Modules.OfType<ProcessModule>().Any(x =>
+{
+    return x.FileName.Equals(@"C:\ProgramData\A-Volute\DellInc.AlienwareSoundCenter\Modules\ScheduledModules\NahimicOSD.dll", StringComparison.OrdinalIgnoreCase)
+    || x.FileName.Equals(@"C:\ProgramData\AWHeadset\DellInc.AlienwareSoundCenter\Modules\ScheduledModules\NahimicOSD.dll", StringComparison.OrdinalIgnoreCase);
+});
+if (hasInjected)
+{
+    RenderOptions.ProcessRenderMode = RenderMode.SoftwareOnly;
+}
+```
+
+#### 方法二：黑名单（需要管理员权限）
+
+NahimicOSD 有一个黑名单文件 BlackApps.dat，在列表里的程序将不会注入破坏其渲染。
+
+路径在：`C:\ProgramData\A-Volute\DellInc.AlienwareSoundCenter\Modules\ScheduledModules\Configurator\BlackApps.dat`
+
+虽然扩展名是 `dat` 但这是一个标准的文本文件，截取开头的一部分如下：
+
+```plaintext
+firefox.exe
+chrome.exe
+iexplore.exe
+opera.exe
+steam.exe
+gameoverlayui.exe
+vlc.exe
+skype.exe
+SkypeApp.exe
+RzSynapse.exe
+MovieMaker.exe
+Photoshop.exe
+blender.exe
+googleearth.exe
+XBMC.exe
+BOXEE.exe
+```
+
+你的程序可以用管理员权限修改这个文件，在末尾把你的进程名加上。
+
+顺便吐槽一下，这个文件截至目前已有 398 行了，包含了大量常用软件。所以既然开发商早已知道问题这么多，竟然还不修机制，而是通过黑名单来避免冲突，也是扯！
 
 ## 调查过程
 
