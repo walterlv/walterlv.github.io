@@ -1,7 +1,7 @@
 ---
 title: "将 Windows Terminal 作为外部工具集成到其他工具/程序/代码中"
 publishDate: 2020-03-17 10:05:58 +0800
-date: 2020-03-24 09:49:23 +0800
+date: 2021-12-22 13:30:18 +0800
 tags: windows dotnet
 position: knowledge
 coverImage: /static/posts/2020-03-17-09-52-28.png
@@ -50,6 +50,14 @@ Windows Terminal 在 Windows 上是一款 UWP 应用，然而其依然具有良�
 
 在了解了以上命令行调用后，工具集成就简单多了，只需要设置好启动 `wt` 命令，以及设置好工作路径即可。
 
+设置工作路径的方法为为：
+
+```powershell
+wt -d .
+```
+
+其中后面的 `.` 是当前路径，你也可以换成你需要的路径。
+
 如下图是我在 Directory Opus 中设置的 Windows Terminal 的一键打开按钮：
 
 ![在 Directory Opus 中设置](/static/posts/2020-03-17-10-02-46.png)
@@ -61,12 +69,11 @@ Windows Terminal 在 Windows 上是一款 UWP 应用，然而其依然具有良�
 
 ## C# 代码调用
 
-使用 C# 代码启动的方法也非常常规，直接 `Process.Start` 然后设置工作路径即可。前提是前面设置了 `%__CD__%` 为启动路径。
+使用 C# 代码启动的方法也非常常规，直接 `Process.Start` 然后设置工作路径即可。
 
 ```csharp
-var info = new ProcessStartInfo{
-    FileName = "wt.exe",
-    WorkingDirectory = @"D:\walterlv",
+var info = new ProcessStartInfo("wt.exe", @"-d D:\walterlv")
+{
     UseShellExecute = false,
 };
 Process.Start(info);
@@ -76,6 +83,5 @@ Process.Start(info);
 
 **参考资料**
 
+- [Windows Terminal command line arguments - Microsoft Docs](https://docs.microsoft.com/en-us/windows/terminal/command-line-arguments)
 - [Programmatically Opening Windows Terminal in a Specific Folder - Rick Strahl's Web Log](https://weblog.west-wind.com/posts/2019/Sep/03/Programmatically-Opening-Windows-Terminal-in-a-Specific-Folder)
-
-
