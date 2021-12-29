@@ -1,6 +1,6 @@
 ---
 title: "使用 Source Generator 在编译你的 .NET 项目时自动生成代码"
-date: 2021-12-29 14:01:58 +0800
+date: 2021-12-29 14:04:25 +0800
 categories: dotnet csharp roslyn
 position: starter
 coverImage: /static/posts/2021-12-29-13-26-13.png
@@ -16,18 +16,14 @@ coverImage: /static/posts/2021-12-29-13-26-13.png
 
 ## dotnetCampus.Ipc 简介
 
-例如你有一个接口 `IWalterlv`：
+例如你有一个接口 `IWalterlv` 和其对应的实现 `WalterlvImpl`：
 
 ```csharp
 public interface IWalterlv
 {
     Task<string> GetUrlAsync();
 }
-```
 
-有一个对应的实现 `WalterlvImpl`：
-
-```csharp
 public class WalterlvImpl : IWalterlv
 {
     public Task<string> GetUrlAsync()
@@ -42,12 +38,6 @@ public class WalterlvImpl : IWalterlv
 ```diff
 ++  [IpcPublic(typeof(IWalterlv))]
     public class WalterlvImpl : IWalterlv
-    {
-        public Task<string> GetUrlAsync()
-        {
-            return Task.FromResult("https://blog.walterlv.com");
-        }
-    }
 ```
 
 这时，编译这个项目，将会自动生成这样的两个类：
