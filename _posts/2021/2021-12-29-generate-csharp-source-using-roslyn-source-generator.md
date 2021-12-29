@@ -1,6 +1,6 @@
 ---
 title: "使用 Source Generator 在编译你的 .NET 项目时自动生成代码"
-date: 2021-12-29 14:04:25 +0800
+date: 2021-12-29 14:07:43 +0800
 categories: dotnet csharp roslyn
 position: starter
 coverImage: /static/posts/2021-12-29-13-26-13.png
@@ -105,6 +105,7 @@ public class ProxyJointGenerator : ISourceGenerator
 
 例如，我们可以随便写一个：
 
+{% raw %}
 ```csharp
 // 这段代码来自 https://docs.microsoft.com/zh-cn/dotnet/csharp/roslyn-sdk/source-generators-overview
 public void Execute(GeneratorExecutionContext context)
@@ -131,6 +132,7 @@ namespace {mainMethod.ContainingNamespace.ToDisplayString()}
     context.AddSource("generatedSource", source);
 }
 ```
+{% endraw %}
 
 这里的 `AddSource` 就是将代码添加到你的项目中了。
 
