@@ -1,7 +1,7 @@
 ---
-title: "Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码"
+title: "Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码（语法分析）"
 publishDate: 2018-03-18 20:45:22 +0800
-date: 2018-06-02 09:26:14 +0800
+date: 2021-12-28 19:39:29 +0800
 tags: visualstudio dotnet csharp roslyn
 coverImage: /static/posts/2018-03-18-18-51-26.png
 permalink: /post/analysis-code-of-existed-projects-using-roslyn.html
