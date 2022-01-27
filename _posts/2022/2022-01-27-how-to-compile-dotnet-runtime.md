@@ -1,6 +1,7 @@
 ---
 title: "修改 .NET 运行时、框架和库，从编译 dotnet runtime 仓库开始"
-date: 2022-01-27 15:39:14 +0800
+publishDate: 2022-01-27 15:39:14 +0800
+date: 2022-01-27 15:43:53 +0800
 categories: dotnet
 position: starter
 coverImage: /static/posts/2022-01-27-15-33-26.png
@@ -37,6 +38,8 @@ coverImage: /static/posts/2022-01-27-15-33-26.png
 ![在 PowerShell 中编译 dotnet runtime](/static/posts/2022-01-27-15-33-26.png)
 
 首次编译会慢一些，需要拉一些包以及下载一些工具，如果有些工具一直无法下载的话，可能需要考虑一下魔法上网。如果没有改动代码的话，不需要做其他额外设置即可完成编译。在首次编译完成后，后续差量编译大约 15 分钟能完成。
+
+等全部编译完成后，你可以在 `artifacts` 路径中找到所有输出的文件，按需取用即可。
 
 ## 更详细的命令
 
