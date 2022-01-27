@@ -1,7 +1,7 @@
 ---
 title: "在 Windows 系统上降低 UAC 权限运行程序（从管理员权限降权到普通用户权限）"
 publishDate: 2019-02-25 07:28:19 +0800
-date: 2019-03-19 09:36:49 +0800
+date: 2022-01-27 12:50:19 +0800
 tags: windows dotnet csharp
 position: problem
 permalink: /post/start-process-with-lowered-uac-privileges.html
@@ -49,7 +49,7 @@ if (principal.IsInRole(WindowsBuiltInRole.Administrator))
 ```
 
 ```csharp
-var subProcessFileName = "C:\Users\walterlv\Desktop\walterlv.exe";
+var subProcessFileName = @"C:\Users\walterlv\Desktop\walterlv.exe";
 Process.Start("runas.exe", $"/trustlevel:0x20000 {subProcessFileName}");
 ```
 
