@@ -1,6 +1,7 @@
 ---
 title: "在多个可执行程序（exe）之间共享同一个私有部署的 .NET 运行时"
-date: 2022-01-27 12:48:23 +0800
+publishDate: 2022-01-27 12:48:23 +0800
+date: 2022-01-27 13:00:09 +0800
 categories: dotnet
 position: problem
 ---
@@ -111,7 +112,7 @@ GitHub 上其实也有人在讨论如何共享运行时的问题：
 
 ### 适用
 
-目前，dotnetCampus.AppHost 支持的评价与平台如下，还在继续添加其他框架和平台的支持：
+目前，dotnetCampus.AppHost 支持的框架与平台如下，还在继续添加其他框架和平台的支持：
 
 - [x] net6.0
     - [x] win-x64
