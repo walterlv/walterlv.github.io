@@ -1,7 +1,7 @@
 ---
 title: "在多个可执行程序（exe）之间共享同一个私有部署的 .NET 运行时"
 publishDate: 2022-01-27 12:48:23 +0800
-date: 2022-01-27 13:00:09 +0800
+date: 2022-01-27 16:52:33 +0800
 categories: dotnet
 position: problem
 ---
@@ -50,7 +50,7 @@ GitHub 上其实也有人在讨论如何共享运行时的问题：
 
 ## 我们的解决方案
 
-鉴于官方目前仍没有比较省心的共享独立部署 .NET 运行时的方案，我们就不得不自己操刀来干这件事情。为此，我们开发了一个 dotnetCampus.AppHost 库。
+鉴于官方目前仍没有比较省心的共享独立部署 .NET 运行时的方案，我们就不得不自己操刀来干这件事情。为此，我们开发了一个 dotnetCampus.AppHost 库，其原理是允许你单独修改每个 exe 所查找的 .NET 运行时路径。
 
 ### dotnetCampus.AppHost 库
 
