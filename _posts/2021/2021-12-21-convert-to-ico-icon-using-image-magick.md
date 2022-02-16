@@ -1,7 +1,7 @@
 ---
 title: "使用 ImageMagick 轻松制作带有多种尺寸的 ico 图标文件"
 publishDate: 2021-12-21 11:11:50 +0800
-date: 2021-12-21 11:43:40 +0800
+date: 2022-02-16 10:05:35 +0800
 categories: windows
 position: starter
 coverImage: /static/posts/2021-12-21-11-06-12.png
@@ -17,6 +17,26 @@ ico 图标格式是一种包含多种尺寸位图的容器格式，Windows 用�
 
 ## ImageMagick 下载安装
 
+### WinGet 安装（推荐）
+
+一句命令完成：
+
+```powershell
+winget install ImageMagick
+```
+
+装完后你将自动拥有其对应的命令行工具，可随时在各个终端输入命令。
+
+### scoop 安装
+
+如果你使用 scoop 来管理软件包，那么只需输入：
+
+```powershell
+scoop install imagemagick
+```
+
+与 WinGet 相同，随后即可拥有工具。
+
 ### 直接下载
 
 - 官方网站：[ImageMagick – Convert, Edit, or Compose Digital Images](https://imagemagick.org/index.php)
@@ -26,16 +46,6 @@ ico 图标格式是一种包含多种尺寸位图的容器格式，Windows 用�
 官方下载地址里，Windows 的下载在最后一项——“Windows Binary Release”。介绍文字很多，如果看不下去的话，直接选 Windows 章节下第一个表格里第一个版本下载即可，这是 64 位系统下的 ImageMagick 安装包，下载完点击安装后即可拥有其完整的命令行工具。
 
 软件基于 Apache 2.0 协议，如果你只是使用它生成的二进制文件，那么可免费用于个人、公司内部或商业用途。
-
-### scoop 安装（推荐）
-
-如果你使用 scoop 来管理软件包，那么只需输入：
-
-```powershell
-scoop install imagemagick
-```
-
-装完后你将自动拥有其对应的命令行工具，可随时在各个终端输入命令。
 
 ## ImageMagick 使用
 
