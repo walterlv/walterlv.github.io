@@ -1,7 +1,7 @@
 ---
 title: "在多个可执行程序（exe）之间共享同一个私有部署的 .NET 运行时"
 publishDate: 2022-01-27 12:48:23 +0800
-date: 2022-01-27 16:52:33 +0800
+date: 2022-02-16 09:59:05 +0800
 categories: dotnet
 position: problem
 ---
@@ -70,7 +70,7 @@ GitHub 上其实也有人在讨论如何共享运行时的问题：
         <OutputType>Exe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
 ++      <!-- 可以是相对路径，也可以是绝对路径。但既然要私有部署，当然选相对路径更好。这里瞎写一个 runtime\6.0.1 -->
-++      <DCAppHostDotnetRoot>runtime\6.0.1</DCAppHostDotnetRoot>
+++      <AppHostDotNetRoot>runtime\6.0.1</AppHostDotNetRoot>
       </PropertyGroup>
 
       <ItemGroup>
@@ -97,7 +97,7 @@ GitHub 上其实也有人在讨论如何共享运行时的问题：
     - Walterlv.SubProcess.exe
 ```
 
-这样，为 Walterlv.Demo 和 Walterlv.Updater 项目设置 `DCAppHostDotnetRoot` 为 `runtime\6.0.1`；为 Walterlv.SubProcess 项目设置 `DCAppHostDotnetRoot` 为 `..\runtime\6.0.1`，他们就可以共用一个私有部署的运行时了。
+这样，为 Walterlv.Demo 和 Walterlv.Updater 项目设置 `AppHostDotNetRoot` 为 `runtime\6.0.1`；为 Walterlv.SubProcess 项目设置 `AppHostDotNetRoot` 为 `..\runtime\6.0.1`，他们就可以共用一个私有部署的运行时了。
 
 那，这个 .NET 运行时文件夹哪里来呢？当然是官网下啦：
 
