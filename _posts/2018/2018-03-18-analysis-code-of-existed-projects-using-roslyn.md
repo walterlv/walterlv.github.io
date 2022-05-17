@@ -1,7 +1,7 @@
 ---
 title: "Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码（语法分析）"
 publishDate: 2018-03-18 20:45:22 +0800
-date: 2021-12-28 19:39:29 +0800
+date: 2022-05-17 17:34:26 +0800
 tags: visualstudio dotnet csharp roslyn
 coverImage: /static/posts/2018-03-18-18-51-26.png
 permalink: /post/analysis-code-of-existed-projects-using-roslyn.html
@@ -183,6 +183,8 @@ class TypeParameterVisitor : CSharpSyntaxRewriter
     }
 }
 ```
+
+如果你觉得编写生成代码的语法树很麻烦，可以使用[使用 林晓lx 的 RoslynSyntaxTool 工具互相转换 C# 代码与语法树代码](https://blog.csdn.net/jevonsflash/article/details/124798973)。
 
 ## 总结
 

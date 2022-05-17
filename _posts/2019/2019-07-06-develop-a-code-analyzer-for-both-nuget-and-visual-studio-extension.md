@@ -1,7 +1,7 @@
 ---
 title: "基于 Roslyn 同时为 Visual Studio 插件和 NuGet 包开发 .NET/C# 源代码分析器 Analyzer 和修改器 CodeFixProvider"
 publishDate: 2019-07-06 09:20:23 +0800
-date: 2019-07-07 09:52:24 +0800
+date: 2022-05-17 17:35:16 +0800
 tags: roslyn visualstudio nuget dotnet csharp
 position: knowledge
 coverImage: /static/posts/2019-07-05-20-23-39.png
@@ -476,6 +476,8 @@ private SyntaxNode[] CreateNotificationProperty(TypeSyntax type, string property
         ),
     };
 ```
+
+以上这段代码写起来非常不直观，如果你也觉得麻烦，可以使用[使用 林晓lx 的 RoslynSyntaxTool 工具互相转换 C# 代码与语法树代码](https://blog.csdn.net/jevonsflash/article/details/124798973)。
 
 实际上本文并不会重点介绍如何使用 Roslyn 生成新的语法节点，因此我不会解释上面我是如何写出这样的语法节点来的，但如果你对照着语法可视化窗格（Syntax Visualizer）来看的话，也是不难理解为什么我会这么写的。
 

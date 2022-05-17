@@ -27,16 +27,6 @@ tail_includes:
 
 - [大贤者初春令月](https://mourinaruto.github.io/zh/)  
   NSudo、NanaZip 的开发者，对 Windows 的机制有很深的了解
-- [gandalfliang的个人博客](https://gandalfliang.github.io/)
-- [黄腾霄 - huangtengxiao](https://huangtengxiao.gitee.io/)
-- [胡承](https://huchengv5.github.io/)
-- [唐宋元明清2188 - 博客园](https://www.cnblogs.com/kybs0)
-- [Neal's Blog](https://getandplay.github.io/)
-- [Erdao - 简书](https://www.jianshu.com/u/e51c5543bb4b)
-- [【Miss_Bread的博客】C#和WPF桌面编程_操作系统之——Linux_C/C++ - CSDN博客](https://blog.csdn.net/miss_bread)
-- [【王文平_Trista的博客】好记性不如烂笔头 - CSDN博客](https://blog.csdn.net/trista_wang)
-- [niuyanjie's blog](http://niuyanjie.gitee.io/blog/)
-- [离开 wolfleave.github.io](https://wolfleave.github.io/)
 - [码友网](https://codedefault.com/) Reflector 的网站，专注 .NET/.NET Core 开发的编程爱好者社区
 - [dino.c - 博客园](https://www.cnblogs.com/dino623/)
 - [Win2D - 淹死的鱼 - 知乎](https://zhuanlan.zhihu.com/c_191585960)
@@ -66,6 +56,20 @@ tail_includes:
 - [HandyOrg/HandyControl - 纳边](https://github.com/HandyOrg/HandyControl) WPF 控件库
 - [什么是WPF - The complete WPF tutorial](https://wpf-tutorial.com/zh/1/%E5%85%B3%E4%BA%8Ewpf/%E4%BB%80%E4%B9%88%E6%98%AFwpf/)  
     由 Ryzen、玩命夜狼 等翻译
+- [林晓lx的博客_CSDN博客-.NetCore,XAML/Maui/Xamarin/WPF,JavaScript领域博主](https://blog.csdn.net/jevonsflash?type=blog)
+
+---
+
+- [gandalfliang的个人博客](https://gandalfliang.github.io/)
+- [黄腾霄 - huangtengxiao](https://huangtengxiao.gitee.io/)
+- [胡承](https://huchengv5.github.io/)
+- [唐宋元明清2188 - 博客园](https://www.cnblogs.com/kybs0)
+- [Neal's Blog](https://getandplay.github.io/)
+- [Erdao - 简书](https://www.jianshu.com/u/e51c5543bb4b)
+- [【Miss_Bread的博客】C#和WPF桌面编程_操作系统之——Linux_C/C++ - CSDN博客](https://blog.csdn.net/miss_bread)
+- [【王文平_Trista的博客】好记性不如烂笔头 - CSDN博客](https://blog.csdn.net/trista_wang)
+- [niuyanjie's blog](http://niuyanjie.gitee.io/blog/)
+- [离开 wolfleave.github.io](https://wolfleave.github.io/)
 
 ---
 

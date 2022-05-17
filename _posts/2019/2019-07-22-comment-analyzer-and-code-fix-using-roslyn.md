@@ -1,7 +1,7 @@
 ---
 title: "使用 Roslyn 分析代码注释，给 TODO 类型的注释添加负责人、截止日期和 issue 链接跟踪"
 publishDate: 2019-07-22 09:04:15 +0800
-date: 2019-07-22 11:43:03 +0800
+date: 2022-05-17 17:35:43 +0800
 tags: roslyn visualstudio nuget dotnet csharp
 position: starter
 coverImage: /static/posts/2019-07-20-22-04-53.png
@@ -260,4 +260,4 @@ namespace Walterlv.Analyzers.Maintainability
 }
 ```
 
-
+如果你觉得编写生成代码的语法树很麻烦，可以使用[使用 林晓lx 的 RoslynSyntaxTool 工具互相转换 C# 代码与语法树代码](https://blog.csdn.net/jevonsflash/article/details/124798973)。
