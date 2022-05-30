@@ -1,7 +1,7 @@
 ---
 title: "git subtree 不断增加的推送时间，解不玩的冲突！这篇文章应该能救你"
 publishDate: 2018-06-26 10:32:21 +0800
-date: 2018-09-01 08:01:01 +0800
+date: 2022-05-30 09:08:40 +0800
 tags: git
 coverImage: /static/posts/2018-06-26-10-18-22.png
 permalink: /post/performance-of-git-subtree.html
@@ -34,9 +34,9 @@ fatal: ambiguous argument 'cb0580bb6ee76fa96f5bc3c7095303f9a33f5834^0': unknown 
 Use '--' to separate paths from revisions, like this:
 'git <command> [<revision>...] -- [<file>...]'
 could not rev-parse split hash cb0580bb6ee76fa96f5bc3c7095303f9a33f5834 from commit 691c5a1531ff38d02cb62fa34c99231dbde050b3
-To gitlab.gz.cvte.cn:iip-win/cvte-paint.git
+To gitlab.walterlv:cbb/walterlv.demo.git
  ! [rejected]              1d3913a2e0ec6e4c507dbe2baabae18ef4b8fab9 -> temp/from-main (non-fast-forward)
-error: failed to push some refs to 'git@gitlab.gz.cvte.cn:iip-win/cvte-paint.git'
+error: failed to push some refs to 'git@gitlab.walterlv.com:cbb/walterlv.demo.git'
 hint: Updates were rejected because a pushed branch tip is behind its remote
 hint: counterpart. Check out this branch and integrate the remote changes
 hint: (e.g. 'git pull ...') before pushing again.

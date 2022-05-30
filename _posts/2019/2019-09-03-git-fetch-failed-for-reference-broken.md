@@ -1,7 +1,7 @@
 ---
 title: "git fetch 失败，因为 unable to resolve reference 'refs/remotes/origin/xxx': reference broken"
 publishDate: 2019-09-03 12:46:08 +0800
-date: 2019-09-05 14:37:15 +0800
+date: 2022-05-30 09:07:35 +0800
 tags: git
 position: problem
 coverImage: /static/posts/2019-09-03-11-52-12.png
@@ -54,7 +54,7 @@ error: Could not fetch origin
 ```bash
 $ git fetch --all --prune
 Fetching origin
-From gitlab.gz.cvte.cn:t/tech-app/dev/win/app/easinote
+From gitlab.walterlv.com:t/app/demo
    a1fd2551f7..cfb662e870  next/release  -> origin/next/release
  * [new branch]            feature/ai    -> origin/feature/ai
    97d72dfc8f..ceb346c8e2  release       -> origin/release
