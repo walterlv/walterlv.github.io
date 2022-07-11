@@ -1,7 +1,7 @@
 ---
 title: "git subtree 不断增加的推送时间，解不玩的冲突！这篇文章应该能救你"
 publishDate: 2018-06-26 10:32:21 +0800
-date: 2022-05-30 09:08:40 +0800
+date: 2022-07-11 09:49:07 +0800
 tags: git
 coverImage: /static/posts/2018-06-26-10-18-22.png
 permalink: /post/performance-of-git-subtree.html
@@ -73,7 +73,7 @@ git subtree 提供了 `split` 命令，官方对此的描述是：
 于是，当需要 push 的时候，git 将只计算 split 之后的新提交；并且下次 split 的时候，以前相同的历史纪录将得到相同的 git 提交号。
 
 ```bash
-$ git subtree split --rejoin --prefix=Dependencies/Cvte.Paint/ HEAD
+$ git subtree split --rejoin --prefix=SubDir/ HEAD
 ```
 
 ---

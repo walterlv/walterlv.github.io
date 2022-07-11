@@ -1,7 +1,7 @@
 ---
 title: "MSBuild/Roslyn 和 NuGet 的 100 个坑"
 publishDate: 2018-07-04 21:29:29 +0800
-date: 2019-04-12 09:38:58 +0800
+date: 2022-07-11 09:49:23 +0800
 tags: msbuild nuget visualstudio dotnet
 coverImage: /static/posts/2018-07-04-20-44-01.png
 permalink: /post/problems-of-msbuild-and-nuget.html
@@ -122,10 +122,6 @@ MSBuild 15.0 为项目文件的根节点 `Project` 带来了 `Sdk` 属性，也�
     <TargetFramework>net45</TargetFramework>
     <LanguageTargets>$(MSBuildToolsPath)\Microsoft.CSharp.targets</LanguageTargets>
   </PropertyGroup>
-  
-  <ItemGroup>
-    <PackageReference Include="Cvte.Core" Version="2.1.0.293" />
-  </ItemGroup>
 
   <Import Condition=" Exists('obj\Walterlv.Demo.csproj.nuget.g.targets') " Project="obj\Walterlv.Demo.csproj.nuget.g.targets" />
 

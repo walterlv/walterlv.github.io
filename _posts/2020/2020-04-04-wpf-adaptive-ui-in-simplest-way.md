@@ -1,7 +1,7 @@
 ---
 title: "最简单的代码，让 WPF 支持响应式布局"
 publishDate: 2020-04-04 12:17:24 +0800
-date: 2020-04-04 22:55:07 +0800
+date: 2022-07-11 09:49:42 +0800
 tags: wpf dotnet
 position: knowledge
 permalink: /post/wpf-adaptive-ui-in-simplest-way.html
@@ -44,7 +44,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 
-namespace Cvte.EasiNote.UI.Styles.Converters
+namespace Walterlv.Styles.Converters
 {
     public class GreaterOrEqualsConverter : IValueConverter
     {
