@@ -1,6 +1,6 @@
 ---
 title: "使用 AutoMapper 自动在多个数据模型间进行转换"
-date: 2022-09-20 19:51:25 +0800
+date: 2022-09-20 20:06:02 +0800
 categories: dotnet csharp
 position: starter
 ---
@@ -10,6 +10,11 @@ position: starter
 使用 `AutoMapper` 便可以很方便地在不同的模型之间进行转换而减少编写太多的转换代码（如果这一处的代码对性能不太敏感的话）。
 
 ---
+
+关于 AutoMapper 的系列文章：
+
+- [使用 AutoMapper 自动在多个数据模型间进行转换](/post/convert-models-using-auto-mapper)
+- [使用 AutoMapper 自动映射模型时，处理不同模型属性缺失的问题](/post/convert-models-using-auto-mapper-with-property-missing)
 
 <div id="toc"></div>
 
@@ -80,11 +85,10 @@ public class Walterlv1Vo
 
 如果你的应用程序中会使用到依赖注入，那么只需要把拿到的 `IMapper` 加入即可。
 
-如果希望两个类型之间能够双向映射，那么在初始化 `IMapper` 的时候也应该双向写两遍，否则就会抛出异常 `AutoMapper.AutoMapperMappingException:“Missing type map configuration or unsupported mapping.”`。
+如果希望两个类型之间能够双向映射，那么在初始化 `IMapper` 的时候也应该再额外调用一下 `ReverseMap` 方法，否则就会抛出异常 `AutoMapper.AutoMapperMappingException:“Missing type map configuration or unsupported mapping.”`。
 
 ```csharp
-cfg.CreateMap<Walterlv1Dao, Walterlv1Vo>();
-cfg.CreateMap<Walterlv1Vo, Walterlv1Dao>();
+cfg.CreateMap<Walterlv1Dao, Walterlv1Vo>().ReverseMap();
 ```
 
 ## 复杂类型和集合
@@ -119,10 +123,8 @@ public class FriendVo
 AutoMapper 能处理这样的属性嵌套情况，只需要设置嵌套类型也能映射即可：
 
 ```csharp
-cfg.CreateMap<Walterlv1Dao, Walterlv1Vo>();
-cfg.CreateMap<Walterlv1Vo, Walterlv1Dao>();
-cfg.CreateMap<FriendDao, FriendVo>();
-cfg.CreateMap<FriendVo, FriendDao>();
+cfg.CreateMap<Walterlv1Dao, Walterlv1Vo>().ReverseMap();
+cfg.CreateMap<FriendDao, FriendVo>().ReverseMap();
 ```
 
 如果两个模型中子模型的类型是一样的，那么只会进行简单的赋值，而不会创建新的对象。
