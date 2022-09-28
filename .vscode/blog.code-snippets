@@ -32,5 +32,15 @@
 			"欢迎访问 ${author}.com 的博客"
 		],
 		"description": "添加 walterlv 的博客的目录"
+	},
+	"Insert code snippet": {
+		"scope": "markdown",
+		"prefix": "```",
+		"body": [
+			"```${1|csharp,xml,css,plaintext|}",
+			"${0}",
+			"```"
+		],
+		"description": "插入代码片段"
 	}
 }
