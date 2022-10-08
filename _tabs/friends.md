@@ -86,9 +86,6 @@ tail_includes:
 - [Artech - 博客园](http://www.cnblogs.com/artech/) 蒋金楠，Artech，知名 IT 博主, 微软多领域 MVP，畅销 IT 图书作者，著《WCF全面解析》、《ASP.NET MVC 4/5框架揭秘》、《ASP.NET Web API 2框架揭秘》等。
 - [葡萄城产品技术社区](http://gcdn.gcpowertools.com.cn/forum.php)
 - [VALID VOID](https://validvoid.net/) void_CE void² void²ⁿ⁻¹
-- [我是bug](https://bug.ge/)
-    - [wphoneveloper的个人空间 - 哔哩哔哩 ( ゜- ゜)つロ 乾杯~ Bilibili](https://space.bilibili.com/25828081/)
-    - [4K HEVC测试 40M码率 测网速 - wphoneveloper - 哔哩哔哩直播，二次元弹幕直播平台](https://live.bilibili.com/1629664)
 - [Sabia科学研究所](https://www.sabia.cc/)
 - [月江流 · 语雀](https://www.yuque.com/yuejiangliu)
 - [小渣渣的个人博客](https://www.itsvse.com/blog_xzz.html)
