@@ -25,6 +25,8 @@ tail_includes:
 
 ## 朋友
 
+- [一氧晓云の下载站](https://d.oxyxc.top)  
+  什么都收集的奇怪朋友
 - [大贤者初春令月](https://mourinaruto.github.io/zh/)  
   NSudo、NanaZip 的开发者，对 Windows 的机制有很深的了解
 - [码友网](https://codedefault.com/) Reflector 的网站，专注 .NET/.NET Core 开发的编程爱好者社区
