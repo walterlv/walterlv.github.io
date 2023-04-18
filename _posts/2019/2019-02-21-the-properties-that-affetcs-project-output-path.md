@@ -1,7 +1,7 @@
 ---
 title: "如何更精准地设置 C# / .NET Core 项目的输出路径？（包括添加和删除各种前后缀）"
 publishDate: 2019-02-21 18:49:14 +0800
-date: 2019-04-12 09:40:15 +0800
+date: 2023-04-18 08:54:42 +0800
 tags: dotnet csharp visualstudio msbuild
 position: knowledge
 coverImage: /static/posts/2019-02-21-17-54-13.png
@@ -22,10 +22,10 @@ permalink: /post/the-properties-that-affetcs-project-output-path.html
 
 ```xml
 <Project>
-  <ItemGroup>
+  <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <OutputPath>bin\$(Configuration)</OutputPath>
-  </ItemGroup>
+  </PropertyGroup>
 </Project>
 ```
 
