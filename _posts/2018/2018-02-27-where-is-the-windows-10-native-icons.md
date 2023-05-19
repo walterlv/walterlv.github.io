@@ -1,6 +1,7 @@
 ---
 title: "Windows 10 自带那么多图标，去哪里找呢？"
-date: 2018-02-27 23:11:21 +0800
+publishDate: 2018-02-27 23:11:21 +0800
+date: 2023-05-19 19:48:24 +0800
 tags: windows personalize
 coverImage: /static/posts/2018-02-27-21-50-42.png
 permalink: /post/where-is-the-windows-10-native-icons.html
@@ -18,14 +19,14 @@ permalink: /post/where-is-the-windows-10-native-icons.html
 
 ![属性 → 自定义 → 更改图标](/static/posts/2018-02-27-21-53-16.png)
 
-Windows 10 自带的图标几乎都在 `%systemroot\system32\*.dll` 中，主要是这些：
+Windows 10 自带的图标几乎都在 `%systemroot%\system32\*.dll` 中，主要是这些：
 
 - Windows 10 风格
-    - `%systemroot\system32\ddores.dll`
-    - `%systemroot\system32\dmdskres.dll`
-    - `%systemroot\system32\imageres.dll`
-    - `%systemroot\system32\mmres.dll`
-    - `%systemroot\system32\networkexplorer.dll`
+    - `%systemroot%\system32\ddores.dll`
+    - `%systemroot%\system32\dmdskres.dll`
+    - `%systemroot%\system32\imageres.dll`
+    - `%systemroot%\system32\mmres.dll`
+    - `%systemroot%\system32\networkexplorer.dll`
     - `%systemroot%\system32\pnidui.dll`
     - `%systemroot%\system32\sensorscpl.dll`
     - `%systemroot%\system32\setupapi.dll`
@@ -34,18 +35,18 @@ Windows 10 自带的图标几乎都在 `%systemroot\system32\*.dll` 中，主要
     - `%systemroot%\system32\wpdshext.dll`
 
 - Windows 7 风格
-    - `%systemroot\system32\accessibilitycpl.dll`
-    - `%systemroot\system32\dsuiext.dll`
-    - `%systemroot\system32\gameux.dll`
-    - `%systemroot\system32\ieframe.dll`
-    - `%systemroot\system32\mstscax.dll`
-    - `%systemroot\system32\netcenter.dll`
+    - `%systemroot%\system32\accessibilitycpl.dll`
+    - `%systemroot%\system32\dsuiext.dll`
+    - `%systemroot%\system32\gameux.dll`
+    - `%systemroot%\system32\ieframe.dll`
+    - `%systemroot%\system32\mstscax.dll`
+    - `%systemroot%\system32\netcenter.dll`
 
 - Windows 早期风格
-    - `%systemroot\system32\compstui.dll`
-    - `%systemroot\system32\mmcndmgr.dll`
-    - `%systemroot\system32\moricons.dll`
-    - `%systemroot\system32\pifmgr.dll`
+    - `%systemroot%\system32\compstui.dll`
+    - `%systemroot%\system32\mmcndmgr.dll`
+    - `%systemroot%\system32\moricons.dll`
+    - `%systemroot%\system32\pifmgr.dll`
 
 我们一起来看看它们都是什么样的吧！
 
