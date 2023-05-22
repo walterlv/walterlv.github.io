@@ -1,7 +1,7 @@
 ---
 title: "WPF 像素着色器入门：使用 Shazzam Shader Editor 编写 HLSL 像素着色器代码"
 publishDate: 2019-04-17 12:00:55 +0800
-date: 2019-04-17 14:32:07 +0800
+date: 2023-05-22 22:06:04 +0800
 tags: dotnet csharp wpf directx
 position: starter
 coverImage: /static/posts/2019-04-17-10-48-18.png
@@ -51,9 +51,17 @@ Shazzam 是开源的，但是官方开源在 CodePlex 上，<https://archive.cod
 
 #### 目标框架 Target Framework
 
-WPF 自 .NET Framework 4.0 开始支持 PS_3，当然也包括现在的 .NET Core 3.0。如果你不是为了兼容古老的 .NET Framework 3.5 或者更早版本，则建议将默认的 PS_2 修改为 PS_3。因为 PS_2 的限制还是太多了。
+WPF 自 .NET Framework 4.0 开始支持 PS_3，当然也包括现在的 .NET Core 3.x 和后续的全版本 .NET。
 
-关于 PS_3 相比于此前带来的更新可以查看微软的官方文档了解：[ps_3_0 - Windows applications - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/direct3dhlsl/dx9-graphics-reference-asm-ps-3-0)。
+PS_3 带来了比 PS_2 更多的功能，但需要注意，不是所有的显卡设备都支持 PS_3，这其中就包括了至今仍在广泛使用的 Windows 远程桌面（RDP）。
+
+![Windows 远程桌面上无法使用 PS_3](/static/posts/2023-05-22-22-03-17.png)
+
+所以，如果希望让你的着色器代码能在目前所有设备上正常运行，建议使用 PS_2；如果不在乎这一点，或者你有其他低性能的方法（例如用 CPU 画位图）来替代 PS_3，那么还是可以继续用的。
+
+如果你正在写的 HLSL 代码指令数刚好超过 PS_2 的限制（64 条指令）不太多，可以参考我在另一篇博客中的优化方式：
+
+关于 PS_3 相比于此前带来的更新可以查看微软的官方文档了解：[ps_3_0 - Windows applications - Microsoft Docs](https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx9-graphics-reference-asm-ps-3-0)。
 
 #### 生成的命名空间 Generated Namespace
 
@@ -210,7 +218,6 @@ pixelShader.UriSource = new Uri("/Walterlv.Effects;component/WalterlvEffect.ps",
 - [Shazzam Shader Editor - CodePlex Archive](https://archive.codeplex.com/?p=shazzam)
 - [JohanLarsson/Shazzam: A fork of https://shazzam.codeplex.com/](https://github.com/JohanLarsson/Shazzam)
 - [Shazzam - A Tool for Creating WPF Pixel Shader Effects - The Continuum Show - Channel 9](https://channel9.msdn.com/Shows/Continuum/Shazzam)
-- [ps_3_0 - Windows applications - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/direct3dhlsl/dx9-graphics-reference-asm-ps-3-0)
+- [ps_3_0 - Windows applications - Microsoft Docs](https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx9-graphics-reference-asm-ps-3-0)
 - [ps_3_0 Registers - Windows applications - Microsoft Docs](https://docs.microsoft.com/en-us/windows/desktop/direct3dhlsl/dx9-graphics-reference-asm-ps-registers-ps-3-0)
-
-
+- [WPF Custom Effect disappears when using Remote Desktop - Stack Overflow](https://stackoverflow.com/a/30622575/6233938)
