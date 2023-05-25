@@ -23,8 +23,8 @@ coverImage: /static/posts/2023-05-22-22-21-30.png
 
 为了让后面的代码容易看懂，我们需要先简单了解一下 HSL/HSV/HSB。
 
-HSL：hue 色相, saturation 饱和度, lightness 亮度
-HSV/HSB：hue 色相, saturation 饱和度, value/brighness 明度
+- HSL：hue 色相, saturation 饱和度, lightness 亮度
+- HSV/HSB：hue 色相, saturation 饱和度, value/brighness 明度
 
 这是两个不同但类似的，符合人眼感知的颜色表示方法，其中后两者只是名称不同，实际上是完全相同的意思。
 
