@@ -1,6 +1,7 @@
 ---
 title: "WPF 像素着色器进阶：使用 HLSL 编写一个高性能的实时变化的 HSL/HSV/HSB 调色盘"
-date: 2023-05-22 22:43:37 +0800
+publishDate: 2023-05-22 22:43:37 +0800
+date: 2023-05-25 16:19:47 +0800
 categories: wpf dotnet windows
 position: problem
 coverImage: /static/posts/2023-05-22-22-21-30.png
@@ -36,6 +37,8 @@ HSV/HSB：hue 色相, saturation 饱和度, value/brighness 明度
 ▲ HSV
 
 ## HSL 和 HSV/HSB 的 HLSL 代码
+
+### 版本一：初步实现
 
 由于 HSL 和 HSV/HSB 到 RGB 的转换是非常广泛被使用的，所以网上的代码非常丰富，我们只需要让 GPT-4 帮我们生成一个就可以了：
 
@@ -185,7 +188,7 @@ float4 main(float2 uv : TEXCOORD) : COLOR
 
 ![HSL/HSV/HSB 调色](/static/posts/2023-05-22-22-43-27.png)
 
-## 精简指令
+### 版本二：精简指令
 
 需要注意的是，上述代码都是超过了 PS_2 的最大 64 条指令的，也就是说只能以 PS_3 作为目标框架。不过，PS_3 不支持部分显卡（例如 Windows 远程桌面 RDP 所虚拟的显卡）。所以，如果你希望上述像素着色器能够在这样的情况下工作，则需要放弃 PS_3 转而使用 PS_2，或者在不满足要求的情况下自己用其他方式进行软渲染。
 
@@ -230,9 +233,147 @@ float4 main(float2 uv : TEXCOORD) : COLOR
 }
 ```
 
-考虑到有些小伙伴可能对我的 GPT-4 提示词感兴趣，那么我就把我的询问过程贴出来：
+### 版本三：带有完整功能的精简指令
+
+既然可以把指令精简到如此程度，那么我们把前面删除的 `BackColor` 功能加回来能否继续保证在 64 指令数以内呢？
+
+既然 GPT-4 那么强大，那么就劳烦一下它吧，经过反复询问以及我的调试下，HSL 调色盘和 HSV/HSB 调色盘的精简指令全功能版本就出来啦，代码如下，大家可复制参考。
+
+HSL 调色盘：
+
+```csharp
+sampler2D input : register(s0);
+
+/// <summary>Hue Initial Angle</summary>
+/// <type>Single</type>
+/// <minValue>0</minValue>
+/// <maxValue>360</maxValue>
+/// <defaultValue>0</defaultValue>
+float HueInitialAngle : register(C1);
+
+/// <summary>Lightness</summary>
+/// <type>Single</type>
+/// <minValue>0</minValue>
+/// <maxValue>1</maxValue>
+/// <defaultValue>0.5</defaultValue>
+float Lightness : register(C2);
+
+/// <summary>Gamma Correction</summary>
+/// <type>Single</type>
+/// <minValue>1.0</minValue>
+/// <maxValue>2.4</maxValue>
+/// <defaultValue>1.0</defaultValue>
+float Gamma : register(C3);
+
+/// <summary>Background Color outside of the Circle</summary>
+/// <type>Color</type>
+/// <minValue>0,0,0,1</minValue>
+/// <maxValue>1,1,1,1</maxValue>
+/// <defaultValue>1,1,1,1</defaultValue>
+float4 OutsideColor : register(C4);
+
+float3 HUEtoRGB(float H)
+{
+    float R = abs(H * 6 - 3) - 1;
+    float G = 2 - abs(H * 6 - 2);
+    float B = 2 - abs(H * 6 - 4);
+    return saturate(float3(R,G,B));
+}
+
+float3 HSLtoRGB(in float3 HSL)
+{
+    float3 RGB = HUEtoRGB(HSL.x);
+    float C = (1 - abs(2 * HSL.z - 1)) * HSL.y;
+    return (RGB - 0.5) * C + HSL.z;
+}
+
+float4 main(float2 uv : TEXCOORD) : COLOR
+{
+    float2 pos = uv * 2.0f - 1.0f;
+    float dist = length(pos);
+    dist = pow(dist, Gamma);
+
+    float h = (atan2(pos.y, pos.x) / (2.0f * 3.1415926f) + 1.0f + HueInitialAngle / 360.0f) % 1.0f;
+    float s = dist;
+    float l = Lightness;
+    float3 hsl = float3(h, s, l);
+    float3 color = HSLtoRGB(hsl);
+    float4 finalColor = float4(color, 1.0f);
+
+    if(dist > 1.0f)
+        finalColor = float4(OutsideColor.rgb, 1.0f) * OutsideColor.a + finalColor * (1 - OutsideColor.a);
+
+    return finalColor;
+}
+```
+
+HSV/HSB 调色盘：
+
+```csharp
+sampler2D input : register(s0);
+
+/// <summary>Hue Initial Angle</summary>
+/// <type>Single</type>
+/// <minValue>0</minValue>
+/// <maxValue>360</maxValue>
+/// <defaultValue>0</defaultValue>
+float HueInitialAngle : register(C0);
+
+/// <summary>Brightness</summary>
+/// <type>Single</type>
+/// <minValue>0</minValue>
+/// <maxValue>1</maxValue>
+/// <defaultValue>1</defaultValue>
+float Brightness : register(C1);
+
+/// <summary>Gamma Correction</summary>
+/// <type>Single</type>
+/// <minValue>1.0</minValue>
+/// <maxValue>2.4</maxValue>
+/// <defaultValue>2.2</defaultValue>
+float Gamma : register(C2);
+
+/// <summary>Color outside of the Circle</summary>
+/// <type>Color</type>
+/// <minValue>0,0,0,1</minValue>
+/// <maxValue>1,1,1,1</maxValue>
+/// <defaultValue>1,1,1,1</defaultValue>
+float4 OutsideColor : register(C3);
+
+float3 HSBToRGB(float3 hsb)
+{
+    float4 K = float4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
+    float3 p = abs(frac(hsb.xxx + K.xyz) * 6.0 - K.www);
+    return hsb.z * lerp(K.xxx, clamp(p - K.xxx, 0.0, 1.0), hsb.y);
+}
+
+float4 main(float2 uv : TEXCOORD) : COLOR
+{
+    float2 pos = uv * 2.0f - 1.0f;
+    float dist = length(pos);
+    dist = pow(dist, Gamma);
+
+    float h = (atan2(pos.y, pos.x) / (2.0f * 3.1415926f) + HueInitialAngle / 360.0f) % 1.0f;
+    float s = dist;
+    float b = Brightness;
+    float3 hsb = float3(h, s, b);
+    float3 color = HSBToRGB(hsb);
+    float4 finalColor = float4(color, 1.0f);
+
+    if(dist > 1.0f)
+        finalColor = float4(OutsideColor.rgb, 1.0f) * OutsideColor.a + finalColor * (1 - OutsideColor.a);
+
+    return finalColor;
+}
+```
+
+## 附：GPT-4 提示词
+
+考虑到有些小伙伴可能对我的 GPT-4 提示词感兴趣，那么我就把我的询问过程贴出来。
 
 ![GPT-4 对 HLSL 代码精简指令数](/static/posts/2023-05-22-22-35-52.png)
+
+![GPT-4 编写调色盘全功能版本](/static/posts/2023-05-25-16-19-27.png)
 
 ---
 
