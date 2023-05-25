@@ -1,7 +1,7 @@
 ---
 title: "WPF 像素着色器进阶：使用 HLSL 编写一个高性能的实时变化的 HSL/HSV/HSB 调色盘"
 publishDate: 2023-05-22 22:43:37 +0800
-date: 2023-05-25 16:19:47 +0800
+date: 2023-05-25 16:33:06 +0800
 categories: wpf dotnet windows
 position: problem
 coverImage: /static/posts/2023-05-22-22-21-30.png
@@ -238,6 +238,18 @@ float4 main(float2 uv : TEXCOORD) : COLOR
 既然可以把指令精简到如此程度，那么我们把前面删除的 `BackColor` 功能加回来能否继续保证在 64 指令数以内呢？
 
 既然 GPT-4 那么强大，那么就劳烦一下它吧，经过反复询问以及我的调试下，HSL 调色盘和 HSV/HSB 调色盘的精简指令全功能版本就出来啦，代码如下，大家可复制参考。
+
+至于全功能是哪写全功能呢？
+
+1. 支持使用 HueInitialAngle 参数控制色相的旋转角度
+2. 支持设置 HSL 中的 L（Lightness）或 HSV/HSB 中的 B（Brighness）
+3. 支持 Gamma 校正（设置为 1.0 则不校正，如果希望用户看起来更自然一些，可以设置为 2.2）
+4. 支持 OutsideColor 参数设置调色盘圆外的颜色，且支持设置半透明色
+
+如下图是这四个参数的设置效果，其中圆外设置成了半透明黑色。
+
+![全功能的 HSB 调色盘](/static/posts/2023-05-25-16-32-16.png)  
+▲ 全功能的 HSB 调色盘
 
 HSL 调色盘：
 
