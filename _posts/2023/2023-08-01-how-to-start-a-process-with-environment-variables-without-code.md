@@ -52,4 +52,3 @@ C:\Windows\System32\cmd.exe /c "set HTTP_PROXY=http://127.0.0.1:7778 && set HTTP
 **参考资料**
 
 - [Launch Windows program with custom environment variable - Super User](https://superuser.com/a/424002/940098)
-
