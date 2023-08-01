@@ -1,6 +1,6 @@
 ---
 title: "在 Windows 上如何在启动程序时单独为这个程序指定环境变量，而不需要编写任何代码或脚本"
-date: 2023-08-01 16:48:15 +0800
+date: 2023-08-01 16:50:35 +0800
 categories: windows
 position: problem
 coverImage: /static/posts/2023-08-01-16-46-50.png
