@@ -1,6 +1,6 @@
 ---
 title: "如何在控制台程序中监听 Windows 前台窗口的变化"
-date: 2023-08-03 11:02:53 +0800
+date: 2023-08-03 11:50:23 +0800
 categories: dotnet csharp windows
 position: knowledge
 coverImage: /static/posts/2023-08-03-10-54-17.png
@@ -230,7 +230,9 @@ void WinEventProc(HWINEVENTHOOK hWinEventHook, uint @event, HWND hwnd, int idObj
 
 ![监听前台窗口变化的运行效果](/static/posts/2023-08-03-10-54-17.png)
 
-关于如何在控制台中输出表格（并实现中英文字符对齐显示），可以阅读我后面要写的另一篇博客。
+关于如何在控制台中输出表格（并实现中英文字符对齐显示），可以阅读我的另一篇博客。
+
+- [.NET/C# 程序如何在控制台/终端中以字符表格的形式输出数据 - walterlv](/post/format-data-as-a-table-in-console)
 
 ### 开源项目
 
