@@ -25,6 +25,7 @@ tail_includes:
 
 ## 朋友
 
+- [林晓lx](https://blog.matoapp.net/)  
 - [一氧晓云の下载站](https://d.oxyxc.top)  
   什么都收集的奇怪朋友
 - [大贤者初春令月](https://mourinaruto.github.io/zh/)  
