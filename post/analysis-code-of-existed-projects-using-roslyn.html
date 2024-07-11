@@ -1,0 +1,231 @@
+<!DOCTYPE html><html lang="zh-CN" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="day-prompt" content="天前"><meta name="hour-prompt" content="小时前"><meta name="minute-prompt" content="分钟前"><meta name="justnow-prompt" content="刚刚"><meta name="generator" content="Jekyll v4.2.1" /><meta property="og:title" content="Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码（语法分析）" /><meta name="author" content="吕毅" /><meta property="og:locale" content="zh_CN" /><meta name="description" content="Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。以至于我们只需要编写很少量的代码便能够分析我们的项目文件。 作为 Roslyn 入门篇文章，你将可以通过本文学习如何开始编写一个 Roslyn 扩展项目，如何开始分析一个解决方案（.sln）中项目（.csproj）的代码文件（.cs）。" /><meta property="og:description" content="Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。以至于我们只需要编写很少量的代码便能够分析我们的项目文件。 作为 Roslyn 入门篇文章，你将可以通过本文学习如何开始编写一个 Roslyn 扩展项目，如何开始分析一个解决方案（.sln）中项目（.csproj）的代码文件（.cs）。" /><link rel="canonical" href="https://blog.walterlv.com/post/analysis-code-of-existed-projects-using-roslyn.html" /><meta property="og:url" content="https://blog.walterlv.com/post/analysis-code-of-existed-projects-using-roslyn.html" /><meta property="og:site_name" content="walterlv" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2022-05-17T17:34:26+08:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码（语法分析）" /><meta name="twitter:site" content="@_lvyi_" /><meta name="twitter:creator" content="@吕毅" /> <script type="application/ld+json"> {"datePublished":"2022-05-17T17:34:26+08:00","description":"Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。以至于我们只需要编写很少量的代码便能够分析我们的项目文件。 作为 Roslyn 入门篇文章，你将可以通过本文学习如何开始编写一个 Roslyn 扩展项目，如何开始分析一个解决方案（.sln）中项目（.csproj）的代码文件（.cs）。","dateModified":"2022-05-17T17:39:05+08:00","headline":"Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码（语法分析）","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.walterlv.com/post/analysis-code-of-existed-projects-using-roslyn.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://blog.walterlv.com/assets/img/logo.png"},"name":"吕毅"},"url":"https://blog.walterlv.com/post/analysis-code-of-existed-projects-using-roslyn.html","author":{"@type":"Person","name":"吕毅"},"@type":"BlogPosting","@context":"https://schema.org"}</script><title>Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码（语法分析） - walterlv</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="walterlv"><meta name="application-name" content="walterlv"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } static get ID() { return "mode-toggle"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } let self = this; /* always follow the system prefers */ this.sysDarkPrefers.addEventListener("change", () => { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.notify(); }); } /* constructor() */ get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode === ModeToggle.DARK_MODE; } get isLightMode() { return this.mode === ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } setDark() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_KEY); sessionStorage.removeItem(ModeToggle.MODE_KEY); } /* Notify another plugins that the theme mode has changed */ notify() { window.postMessage({ direction: ModeToggle.ID, message: this.modeStatus }, "*"); } } /* ModeToggle */ const toggle = new ModeToggle(); function flipMode() { if (toggle.hasMode) { if (toggle.isSysDarkPrefer) { if (toggle.isLightMode) { toggle.clearMode(); } else { toggle.setLight(); } } else { if (toggle.isDarkMode) { toggle.clearMode(); } else { toggle.setDark(); } } } else { if (toggle.isSysDarkPrefer) { toggle.setLight(); } else { toggle.setDark(); } } toggle.notify(); } /* flipMode() */ </script><body data-spy="scroll" data-target="#toc"><div id="page-bluring-bg" style=" background-image: url('/static/posts/2018-03-18-18-51-26.png'); "></div><div id="topbar-wrapper" class="row topbar-down"><div id="topbar" class="col-12 d-flex h-100 align-items-center"><div id="topbar-logoside" class="col"> <a id="topbar-logo" href="https://blog.walterlv.com" alt="avatar"> <img src="/assets/img/logo.png" alt="avatar" onerror="this.style.display='none'"> </a> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i> <a id="topbar-title" class="site-title" href="https://blog.walterlv.com" alt="walterlv"> walterlv </a></div><div id="topbar-searchside" class="justify-content-center col-5"> <i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="搜索..."> <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i> </span> <span id="search-cancel" >取消</span></div><div class="col"></div></div></div><div id="sidebar" class="d-flex flex-column align-items-end" lang="zh-CN"><div class="sidebar-box post-item-box profile-wrapper text-center"><div class="site-title mt-3"> <a href="/">吕毅</a></div><div class="site-subtitle font-italic">.NET and Windows App Developer, Microsoft MVP</div></div><ul class="sidebar-box post-item-box"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>首页</span> </a><li class="nav-item"> <a href="/friends/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>朋友和收藏</span> </a><li class="nav-item"> <a href="/mind/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>胡思乱想</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>归档</span> </a><li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>关于</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <button class="mode-toggle btn" aria-label="Switch Mode"> <i class="fas fa-adjust"></i> </button> <span class="icon-border"></span> <a href="https://github.com/walterlv" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github"></i> </a> <a href="https://twitter.com/_lvyi_" aria-label="twitter" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['walter.lv','qq.com'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="main-wrapper"><div id="main"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><h1 data-toc-skip>Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码（语法分析）</h1><div class="post-meta text-muted"><div class="d-flex"> <span> 吕毅 </span> <span> 发表于 <em class="timeago" date="2018-03-18 20:45:22 +0800" data-toggle="tooltip" data-placement="bottom" title="2018-03-18, 20:45 +0800" >2018-03-18</em> </span> <span> 更新于 <em class="timeago" date="2022-05-17 17:34:26 +0800" data-toggle="tooltip" data-placement="bottom" title="2022-05-17, 17:34 +0800" >2022-05-17</em> </span></div></div><div class="post-content"><p>Roslyn 是微软为 C# 设计的一套分析器，它具有很强的扩展性。以至于我们只需要编写很少量的代码便能够分析我们的项目文件。</p><p>作为 Roslyn 入门篇文章，你将可以通过本文学习如何开始编写一个 Roslyn 扩展项目，如何开始分析一个解决方案（.sln）中项目（.csproj）的代码文件（.cs）。</p><hr /><p>本文是 Roslyn 入门系列之一：</p><ul><li><a href="/post/roslyn-syntax-visualizer">Roslyn 入门：使用 Visual Studio 的语法可视化（Syntax Visualizer）窗格查看和了解代码的语法树</a><li><a href="/post/compile-and-invoke-code-using-roslyn">Roslyn 入门：使用 .NET Core 版本的 Roslyn 编译并执行跨平台的静态的源码</a><li><a href="/post/analysis-code-of-existed-projects-using-roslyn">Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码（本文）</a></ul><p>如果你希望真实地静态分析一个实际项目，并且理解这样的分析过程是如何进行的（而不只是写个 demo），那么本文的所有内容都将是必要的。</p><div id="toc"></div><h2 id="准备工作">准备工作<a href="#准备工作"><i class="fas fa-hashtag"></i></a></h2></h2><p>为了能够进行后面关键的操作，我们需要先有一个能跑起来的项目。</p><p><img data-proofer-ignore data-src="/static/posts/2018-03-18-18-51-26.png" alt="" /><br /> ▲ 在 Visual Studio 新建项目，选择“控制台程序(.NET Framework)”</p><p>在目前（2022-05-17 17:34），如果我们需要像本文一样分析现有的解决方案和项目，那么 <strong>.NET Framework 是必须的</strong>；如果只是分析单个文件，那么也可以选择 .NET Core，参见 <a href="/post/compile-and-invoke-code-using-roslyn">Roslyn 入门：使用 .NET Core 版本的 Roslyn 编译并执行跨平台的静态的源码</a>。</p><p>当然，如果你有一个现成的 .NET Core 项目，可以通过修改 .csproj 文件改成 .NET Framework 的：</p><p><img data-proofer-ignore data-src="/static/posts/2018-03-18-18-57-00.png" alt="" /></p><div class="language-xml highlighter-rouge"><div class="code-header"> <span label-text="XML"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="nt">&lt;Project</span> <span class="na">Sdk=</span><span class="s">"Microsoft.NET.Sdk"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;PropertyGroup&gt;</span>
+    <span class="nt">&lt;OutputType&gt;</span>Exe<span class="nt">&lt;/OutputType&gt;</span>
+    <span class="c">&lt;!-- 从 netcoreapp2.0 改成 net471，因为 NuGet 包中的 ValueTuple 与 net47 不兼容，所以只能选择 net471 或以上  --&gt;</span>
+    <span class="nt">&lt;TargetFramework&gt;</span>net471<span class="nt">&lt;/TargetFramework&gt;</span>
+  <span class="nt">&lt;/PropertyGroup&gt;</span>
+<span class="nt">&lt;/Project&gt;</span>
+</pre></table></code></div></div><p>现在，我们有了一个可以开始写代码的 Program.cs 文件，接下来就可以正式开始入门了。</p><h2 id="安装必要的-nuget-包">安装必要的 NuGet 包<a href="#安装必要的-nuget-包"><i class="fas fa-hashtag"></i></a></h2></h2><p>在 NuGet 包管理器中搜索并安装 Microsoft.CodeAnalysis 包 —— 这是一个包含 Roslyn 所有 API 的各种 NuGet 包的合集。</p><p><img data-proofer-ignore data-src="/static/posts/2018-03-18-19-00-19.png" alt="Microsoft.CodeAnalysis" /></p><p>当然，如果你只是做一些特定的事情，当然不需要安装这么全的 NuGet 包，像 <a href="https://blog.lindexi.com/post/Roslyn-%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90.html">Roslyn 静态分析 - 林德熙</a> 的 demo 和 <a href="/post/compile-and-invoke-code-using-roslyn">Roslyn 编译与执行 - 吕毅</a> 中的教程就不需要安装所有 NuGet 包。</p><p><strong>特别注意</strong>！！！如果前面你是通过 .NET Core 项目改过来的，那么<strong>还需要额外安装以下三个 NuGet 包，否则运行时会无法打开解决方案和项目</strong>。</p><ul><li><code class="language-plaintext highlighter-rouge">Microsoft.Build</code><li><code class="language-plaintext highlighter-rouge">Microsoft.Build.Tasks.Core</code><li><code class="language-plaintext highlighter-rouge">System.Threading.Tasks.Dataflow</code></ul><h2 id="打开一个解决方案项目和其中的文件">打开一个解决方案/项目和其中的文件<a href="#打开一个解决方案项目和其中的文件"><i class="fas fa-hashtag"></i></a></h2></h2><p>现在，我们使用这些代码打开解决方案。我以 <a href="https://github.com/dotnet-campus/MSTestEnhancer/">MSTestEnhancer</a> 为例：</p><div class="language-csharp highlighter-rouge"><div class="code-header"> <span label-text="C#"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre><td class="rouge-code"><pre><span class="c1">// 打开 MSTestEnhancer(https://github.com/dotnet-campus/MSTestEnhancer/) 解决方案文件。</span>
+<span class="c1">// 注意这里的 MSBuildWorkspace.Create() 会返回 WorkSpace 的实例。</span>
+<span class="c1">// 虽然 WorkSpace 是跨平台的，但是 MSBuildWorkspace 仅在 Windows 下可用。</span>
+<span class="kt">var</span> <span class="n">solution</span> <span class="p">=</span> <span class="k">await</span> <span class="n">MSBuildWorkspace</span><span class="p">.</span><span class="nf">Create</span><span class="p">().</span><span class="nf">OpenSolutionAsync</span><span class="p">(</span>
+    <span class="s">@"D:\Developments\Open\MSTestEnhancer\MSTest.Extensions.sln"</span><span class="p">);</span>
+    
+<span class="c1">// 从解决方案中选出 MSTest.Extensions 项目。</span>
+<span class="kt">var</span> <span class="n">project</span> <span class="p">=</span> <span class="n">solution</span><span class="p">.</span><span class="n">Projects</span><span class="p">.</span><span class="nf">First</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">Name</span> <span class="p">==</span> <span class="s">"MSTest.Extensions"</span><span class="p">);</span>
+
+<span class="c1">// 从 MSTest.Extensions 项目中选出我们要分析的 ContractTestContext.cs 文件。</span>
+<span class="c1">// 这里只是一个示例，所以我们只分析一个文件。你可以从 Documents 集合中找出这个项目的所有文件进行分析。</span>
+<span class="kt">var</span> <span class="n">document</span> <span class="p">=</span> <span class="n">project</span><span class="p">.</span><span class="n">Documents</span><span class="p">.</span><span class="nf">First</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span>
+        <span class="n">x</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="nf">Equals</span><span class="p">(</span><span class="s">"ContractTestContext.cs"</span><span class="p">,</span> <span class="n">StringComparison</span><span class="p">.</span><span class="n">InvariantCultureIgnoreCase</span><span class="p">));</span>
+</pre></table></code></div></div><h2 id="分析代码">分析代码<a href="#分析代码"><i class="fas fa-hashtag"></i></a></h2></h2><p>我们要分析的代码大致是这样的：</p><div class="language-csharp highlighter-rouge"><div class="code-header"> <span label-text="C#"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="c1">// 这里是 using，省略。</span>
+<span class="c1">// 这里是命名空间，省略。</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">ContractTestContext</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span>
+<span class="p">{</span>
+    <span class="c1">// 这是代码的细节，省略。</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>现在，我们开始使用 Roslyn API 找出里面的泛型 <code class="language-plaintext highlighter-rouge">T</code>。</p><p>这里，我们必须引入一个概念 —— Syntax Rewriter。</p><h3 id="语法重写syntax-rewriter">语法重写——Syntax Rewriter<a href="#语法重写syntax-rewriter"><i class="fas fa-hashtag"></i></a></h3></h3><p>Roslyn 对 C# 代码进行分析的一个非常关键的 API 是 <code class="language-plaintext highlighter-rouge">CSharpSyntaxRewriter</code>——这是一个专门用来给你继承的类。<code class="language-plaintext highlighter-rouge">CSharpSyntaxRewriter</code> 是<strong>访问者模式</strong>中访问者的一个实现，如果你不了解访问者模式，推荐阅读 <a href="http://blog.csdn.net/zhengzhb/article/details/7489639#reply">23种设计模式（9）：访问者模式 - CSDN博客</a> 进行了解，否则我们后面的代码你将只能跟着我写，而不能明白其中的含义。</p><p>当你阅读到这里时，我开始假设你已经了解了访问者模式了。</p><p>我们每个人都可能会写出不同的基于 Roslyn 的分析器，这些分析器通常都会对不同文件的 C# 语法树进行不同的操作；于是，我们通过重写 <code class="language-plaintext highlighter-rouge">CSharpSyntaxRewriter</code> 可以实现各种各样不同的操作。在访问者模式中，由于 C# 的语法在一个 C# 版本发布之后就会确定，其中各种各样类型的语法对应访问者模式中的各种不同类型的数据，Roslyn 为我们构建的语法树对应访问者模式中需要访问的庞大的数据结构。由于 Roslyn 的语法树是非常庞大的，以至于对其进行遍历也是一个非常复杂的操作；所以 Roslyn 通过访问者模式为我们封装了这种复杂的遍历过程，我们只需要重写 <code class="language-plaintext highlighter-rouge">CSharpSyntaxRewriter</code> 就可以实现对某种特定语法节点的操作。</p><p>现在，我们编写一个用于找出泛型参数 <code class="language-plaintext highlighter-rouge">T</code> 的 Syntax Rewriter。</p><div class="language-csharp highlighter-rouge"><div class="code-header"> <span label-text="C#"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre><span class="k">class</span> <span class="nc">TypeParameterVisitor</span> <span class="p">:</span> <span class="n">CSharpSyntaxRewriter</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="n">SyntaxNode</span> <span class="nf">VisitTypeParameterList</span><span class="p">(</span><span class="n">TypeParameterListSyntax</span> <span class="n">node</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">lessThanToken</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="nf">VisitToken</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">LessThanToken</span><span class="p">);</span>
+        <span class="kt">var</span> <span class="n">parameters</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="nf">VisitList</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">Parameters</span><span class="p">);</span>
+        <span class="kt">var</span> <span class="n">greaterThanToken</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="nf">VisitToken</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">GreaterThanToken</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">node</span><span class="p">.</span><span class="nf">Update</span><span class="p">(</span><span class="n">lessThanToken</span><span class="p">,</span> <span class="n">parameters</span><span class="p">,</span> <span class="n">greaterThanToken</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>其实这段代码就是 <code class="language-plaintext highlighter-rouge">CSharpSyntaxRewriter</code> 基类中的代码，我把它贴出来可以帮助我们理解它。<strong>你也依然需要将他放入到我们的项目中</strong>，因为我们接下来的代码就开始要使用它了。</p><p>如果你想了解更多语法节点，推荐另一篇入门文章：<a href="/post/roslyn-syntax-visualizer">Roslyn 入门：使用 Visual Studio 的语法可视化（Syntax Visualizer）窗格查看和了解代码的语法树</a>。</p><h3 id="访问泛型参数">访问泛型参数<a href="#访问泛型参数"><i class="fas fa-hashtag"></i></a></h3></h3><p>现在，我们继续在之前打开解决方案和项目文件的代码后面增添代码：</p><div class="language-csharp highlighter-rouge"><div class="code-header"> <span label-text="C#"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre><td class="rouge-code"><pre><span class="c1">// 从我们一开始打开的项目文件中获取语法树。</span>
+<span class="kt">var</span> <span class="n">tree</span> <span class="p">=</span> <span class="k">await</span> <span class="n">document</span><span class="p">.</span><span class="nf">GetSyntaxTreeAsync</span><span class="p">();</span>
+<span class="kt">var</span> <span class="n">syntax</span> <span class="p">=</span> <span class="n">tree</span><span class="p">.</span><span class="nf">GetCompilationUnitRoot</span><span class="p">();</span>
+
+<span class="c1">// 使用我们刚刚重写 CSharpSyntaxRewriter 的类来访问语法树。</span>
+<span class="kt">var</span> <span class="n">visitor</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">TypeParameterVisitor</span><span class="p">();</span>
+<span class="kt">var</span> <span class="n">node</span> <span class="p">=</span> <span class="n">visitor</span><span class="p">.</span><span class="nf">Visit</span><span class="p">(</span><span class="n">syntax</span><span class="p">);</span>
+
+<span class="c1">// 得到的 node 是新的语法树节点，</span>
+<span class="c1">// 如果我们在 `TypeParameterVisitor` 中修改了语法树，</span>
+<span class="c1">// 那么这里就会得到修改后的 node 节点。</span>
+<span class="c1">// 我们可以通过这个 node 节点做各种后续的操作。</span>
+</pre></table></code></div></div><p>如果我们使用 node 的方式是修改代码，那么可以使用 <code class="language-plaintext highlighter-rouge">var text = node.GetText();</code> 来得到新的语法树生成的代码，使用这段文本替换之前的文本可以达到修改代码的目的。不过，这不是本文的重点，本文的重点依然在入门。</p><p>现在，整合以上的三大段代码，你的项目应该能够完整地跑起来了。哪三段？1. 打开项目文件；2. <code class="language-plaintext highlighter-rouge">TypeParameterVisitor</code>；3. 访问泛型参数。其中 1 和 3 写在一个方法中，2 是一个新类。</p><h3 id="分析这个泛型参数">分析这个泛型参数<a href="#分析这个泛型参数"><i class="fas fa-hashtag"></i></a></h3></h3><p>直到现在，我们所写的任何代码都还只是为了使使用 Roslyn API 的代码能够跑起来，没有进行任何实质上的分析。接下来，我们会修改 <code class="language-plaintext highlighter-rouge">CSharpSyntaxRewriter</code> 以进行真正的分析。不过在此之前，我假设上面的代码你是能正常跑起来而且没有错误的。（<em>如果不行，就在下面留言吧！留言有邮件通知的，我会在第一时间回复你。</em>）</p><p>如果你不了解 Roslyn，强烈建议去 <code class="language-plaintext highlighter-rouge">VisitTypeParameterList</code> 重写方法中打一个断点观察 <code class="language-plaintext highlighter-rouge">lessThanToken</code> <code class="language-plaintext highlighter-rouge">parameters</code> <code class="language-plaintext highlighter-rouge">greaterThanToken</code> 这几个实例的含义。<code class="language-plaintext highlighter-rouge">lessThanToken</code> 就是 <code class="language-plaintext highlighter-rouge">&lt;</code>，<code class="language-plaintext highlighter-rouge">greaterThanToken</code> 就是 <code class="language-plaintext highlighter-rouge">&gt;</code>；而 <code class="language-plaintext highlighter-rouge">parameters</code> 是一个泛型参数列表，在这里，是一个 <code class="language-plaintext highlighter-rouge">T</code>。</p><p>现在，我们构造一个自己的泛型参数列表试试，名字不是 <code class="language-plaintext highlighter-rouge">T</code> 了，而是 <code class="language-plaintext highlighter-rouge">TParameter</code>。</p><div class="language-csharp highlighter-rouge"><div class="code-header"> <span label-text="C#"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre><span class="kt">var</span> <span class="n">parameters</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SeparatedSyntaxList</span><span class="p">&lt;</span><span class="n">TypeParameterSyntax</span><span class="p">&gt;();</span>
+<span class="n">parameters</span> <span class="p">=</span> <span class="n">parameters</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">SyntaxFactory</span><span class="p">.</span><span class="nf">TypeParameter</span><span class="p">(</span><span class="s">"TParameter"</span><span class="p">));</span>
+</pre></table></code></div></div><p>特别注意：<code class="language-plaintext highlighter-rouge">SeparatedSyntaxList</code> 的 <code class="language-plaintext highlighter-rouge">Add</code> 操作<strong>不会</strong>修改原集合，而是会返回一个新的集合！所以上面 <code class="language-plaintext highlighter-rouge">Add</code> 之后的赋值语句不能少！这样的设计应该是为了避免遍历语法树的时候语法树被修改导致遍历不可控。</p><p>于是，我们的 <code class="language-plaintext highlighter-rouge">TypeParameterVisitor</code> 变成了这样：</p><div class="language-csharp highlighter-rouge"><div class="code-header"> <span label-text="C#"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre><td class="rouge-code"><pre><span class="k">class</span> <span class="nc">TypeParameterVisitor</span> <span class="p">:</span> <span class="n">CSharpSyntaxRewriter</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="n">SyntaxNode</span> <span class="nf">VisitTypeParameterList</span><span class="p">(</span><span class="n">TypeParameterListSyntax</span> <span class="n">node</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// 构造一个自己的泛型列表，名字改为了 TParameter。</span>
+        <span class="kt">var</span> <span class="n">parameters</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SeparatedSyntaxList</span><span class="p">&lt;</span><span class="n">TypeParameterSyntax</span><span class="p">&gt;();</span>
+        <span class="n">parameters</span> <span class="p">=</span> <span class="n">parameters</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">SyntaxFactory</span><span class="p">.</span><span class="nf">TypeParameter</span><span class="p">(</span><span class="s">"TParameter"</span><span class="p">));</span>
+
+        <span class="c1">// 依然保留之前的更新语法节点的方法。</span>
+        <span class="c1">// 这样，我们将会在语法树访问结束后得到新的语法树。</span>
+        <span class="kt">var</span> <span class="n">lessThanToken</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="nf">VisitToken</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">LessThanToken</span><span class="p">);</span>
+        <span class="kt">var</span> <span class="n">greaterThanToken</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="nf">VisitToken</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">GreaterThanToken</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">node</span><span class="p">.</span><span class="nf">Update</span><span class="p">(</span><span class="n">lessThanToken</span><span class="p">,</span> <span class="n">parameters</span><span class="p">,</span> <span class="n">greaterThanToken</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>如果你觉得编写生成代码的语法树很麻烦，可以使用<a href="https://blog.csdn.net/jevonsflash/article/details/124798973">使用 林晓lx 的 RoslynSyntaxTool 工具互相转换 C# 代码与语法树代码</a>。</p><h2 id="总结">总结<a href="#总结"><i class="fas fa-hashtag"></i></a></h2></h2><p>我们总共编写了两个关键类：</p><ul><li>Program<ul><li>Main（用于打开项目和文件，并调用 TypeParameterVisitor 遍历语法树）<br /> <em>需要注意，Main 函数只有 C#7.2 及以上才支持 <code class="language-plaintext highlighter-rouge">async</code>，如果没有这么高，需要再编写一个新函数，然后在 Main 里面调用它。</em></ul><li>TypeParameterVisitor<ul><li>VisitTypeParameterList（用于遍历和修改语法树中的泛型参数列表）</ul></ul><p>以上便是分析和修改 Roslyn 语法树的简单实例了，我将整个 Program.cs 文件贴在下面，以便整体查看。</p><div class="language-csharp highlighter-rouge"><div class="code-header"> <span label-text="C#"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+</pre><td class="rouge-code"><pre><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.IO</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.CodeAnalysis</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.CodeAnalysis.CSharp</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.CodeAnalysis.CSharp.Syntax</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.CodeAnalysis.MSBuild</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">Walterlv.Demo.Roslyn</span>
+<span class="p">{</span>
+    <span class="k">class</span> <span class="nc">Program</span>
+    <span class="p">{</span>
+        <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nf">RunAsync</span><span class="p">().</span><span class="nf">Wait</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">static</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">RunAsync</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">solution</span> <span class="p">=</span> <span class="k">await</span> <span class="n">MSBuildWorkspace</span><span class="p">.</span><span class="nf">Create</span><span class="p">().</span><span class="nf">OpenSolutionAsync</span><span class="p">(</span>
+                <span class="s">@"D:\Developments\Open\MSTestEnhancer\MSTest.Extensions.sln"</span><span class="p">);</span>
+            <span class="kt">var</span> <span class="n">project</span> <span class="p">=</span> <span class="n">solution</span><span class="p">.</span><span class="n">Projects</span><span class="p">.</span><span class="nf">First</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">Name</span> <span class="p">==</span> <span class="s">"MSTest.Extensions"</span><span class="p">);</span>
+            <span class="kt">var</span> <span class="n">document</span> <span class="p">=</span> <span class="n">project</span><span class="p">.</span><span class="n">Documents</span><span class="p">.</span><span class="nf">First</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span>
+                <span class="n">x</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="nf">Equals</span><span class="p">(</span><span class="s">"ContractTestContext.cs"</span><span class="p">,</span> <span class="n">StringComparison</span><span class="p">.</span><span class="n">InvariantCultureIgnoreCase</span><span class="p">));</span>
+
+            <span class="kt">var</span> <span class="n">tree</span> <span class="p">=</span> <span class="k">await</span> <span class="n">document</span><span class="p">.</span><span class="nf">GetSyntaxTreeAsync</span><span class="p">();</span>
+            <span class="kt">var</span> <span class="n">syntax</span> <span class="p">=</span> <span class="n">tree</span><span class="p">.</span><span class="nf">GetCompilationUnitRoot</span><span class="p">();</span>
+
+            <span class="kt">var</span> <span class="n">visitor</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">TypeParameterVisitor</span><span class="p">();</span>
+            <span class="kt">var</span> <span class="n">node</span> <span class="p">=</span> <span class="n">visitor</span><span class="p">.</span><span class="nf">Visit</span><span class="p">(</span><span class="n">syntax</span><span class="p">);</span>
+
+            <span class="kt">var</span> <span class="n">text</span> <span class="p">=</span> <span class="n">node</span><span class="p">.</span><span class="nf">GetText</span><span class="p">();</span>
+            <span class="n">File</span><span class="p">.</span><span class="nf">WriteAllText</span><span class="p">(</span><span class="n">document</span><span class="p">.</span><span class="n">FilePath</span><span class="p">,</span> <span class="n">text</span><span class="p">.</span><span class="nf">ToString</span><span class="p">());</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">class</span> <span class="nc">TypeParameterVisitor</span> <span class="p">:</span> <span class="n">CSharpSyntaxRewriter</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="k">override</span> <span class="n">SyntaxNode</span> <span class="nf">VisitTypeParameterList</span><span class="p">(</span><span class="n">TypeParameterListSyntax</span> <span class="n">node</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">syntaxList</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SeparatedSyntaxList</span><span class="p">&lt;</span><span class="n">TypeParameterSyntax</span><span class="p">&gt;();</span>
+            <span class="n">syntaxList</span> <span class="p">=</span> <span class="n">syntaxList</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">SyntaxFactory</span><span class="p">.</span><span class="nf">TypeParameter</span><span class="p">(</span><span class="s">"TParameter"</span><span class="p">));</span>
+
+            <span class="kt">var</span> <span class="n">lessThanToken</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="nf">VisitToken</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">LessThanToken</span><span class="p">);</span>
+            <span class="kt">var</span> <span class="n">greaterThanToken</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="nf">VisitToken</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">GreaterThanToken</span><span class="p">);</span>
+            <span class="k">return</span> <span class="n">node</span><span class="p">.</span><span class="nf">Update</span><span class="p">(</span><span class="n">lessThanToken</span><span class="p">,</span> <span class="n">syntaxList</span><span class="p">,</span> <span class="n">greaterThanToken</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><hr /><p><strong>参考资料</strong></p><ul><li><a href="http://blog.csdn.net/zhengzhb/article/details/7489639#reply">23种设计模式（9）：访问者模式 - CSDN博客</a><li><a href="https://johnkoerner.com/csharp/using-a-csharp-syntax-rewriter/">John Koerner - Using a CSharp Syntax Rewriter</a><li><a href="https://joshvarty.com/2014/08/15/learn-roslyn-now-part-5-csharpsyntaxrewriter/">Learn Roslyn Now: Part 5 CSharpSyntaxRewriter – Shotgun Debugging</a><li><a href="https://tomassetti.me/code-generation-with-roslyn-a-skeleton-class-from-uml/">Code Generation with Roslyn: a Skeleton Class from UML - Federico Tomassetti - Software Architect</a></ul><p> 本文会经常更新，请阅读原文： <a href="/post/analysis-code-of-existed-projects-using-roslyn.html">https://blog.walterlv.com/post/analysis-code-of-existed-projects-using-roslyn.html</a> ，以避免陈旧错误知识的误导，同时有更好的阅读体验。</p><p> <a rel="知识共享许可协议" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"> <img alt="知识共享许可协议" src="https://blog.walterlv.com/assets/img/by-nc-sa.svg" /> </a></p><p> 本作品采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a> 进行许可。欢迎转载、使用、重新发布，但务必保留文章署名 吕毅 （包含链接： <a href="https://blog.walterlv.com">https://blog.walterlv.com</a> ），不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请 <a href="mailto:walter.lv@qq.com">与我联系 (walter.lv@qq.com)</a> 。</p></div><div class="post-tail-wrapper text-muted"><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="comments-wrapper"> 登录 GitHub 账号进行评论</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">分享</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码（语法分析） - walterlv&url=https://blog.walterlv.com/post/analysis-code-of-existed-projects-using-roslyn.html" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码（语法分析） - walterlv&u=https://blog.walterlv.com/post/analysis-code-of-existed-projects-using-roslyn.html" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://telegram.me/share?text=Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码（语法分析） - walterlv&url=https://blog.walterlv.com/post/analysis-code-of-existed-projects-using-roslyn.html" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i id="copy-link" class="fa-fw fas fa-link small" data-toggle="tooltip" data-placement="top" title="分享链接" title-succeed="链接已复制！"> </i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"><div class="access"><div id="access-lastmod" class="post"><div class="panel-heading">最近更新</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/post/monitor-foreground-window-on-windows">如何在控制台程序中监听 Windows 前台窗口的变化</a><li><a href="/post/how-to-start-a-process-with-environment-variables-without-code">在 Windows 上如何在启动程序时单独为这个程序指定环境变量，而不需要编写任何代码或脚本</a><li><a href="/post/wpf-draw-a-hsl-hsb-palette-using-hlsl">WPF 像素着色器进阶：使用 HLSL 编写一个高性能的实时变化的 HSL/HSV/HSB 调色盘</a><li><a href="/post/create-wpf-pixel-shader-effects-using-shazzam-shader-editor.html">WPF 像素着色器入门：使用 Shazzam Shader Editor 编写 HLSL 像素着色器代码</a><li><a href="/post/where-is-the-windows-10-native-icons.html">Windows 10 自带那么多图标，去哪里找呢？</a></ul></div><div id="access-tags"><div class="panel-heading">热门标签</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/dotnet/">dotnet</a> <a class="post-tag" href="/tags/csharp/">csharp</a> <a class="post-tag" href="/tags/windows/">windows</a> <a class="post-tag" href="/tags/wpf/">wpf</a> <a class="post-tag" href="/tags/visualstudio/">visualstudio</a> <a class="post-tag" href="/tags/msbuild/">msbuild</a> <a class="post-tag" href="/tags/uwp/">uwp</a> <a class="post-tag" href="/tags/nuget/">nuget</a> <a class="post-tag" href="/tags/git/">git</a> <a class="post-tag" href="/tags/roslyn/">roslyn</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"><div class="panel-heading pl-3 pt-2 mb-2">文章内容</div><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="tail-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><section class="comments"> <script src="https://utteranc.es/client.js" repo="walterlv/BlogComments" issue-term="pathname" theme="preferred-color-scheme" crossorigin="anonymous" async> </script></section></div></div></div><footer class="d-flex flex-column w-100 justify-content-center"><div id="analytics-box"> <script defer src="https://www.googletagmanager.com/gtag/js?id=UA-108101550-1"></script> <script> document.addEventListener("DOMContentLoaded", function (event) { window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'UA-108101550-1'); }); </script> <script async type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1264408226'%3E%3C/span%3E%3Cscript src='//s22.cnzz.com/z_stat.php%3Fid%3D1264408226%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script></div><div class="d-flex justify-content-between align-items-center text-muted"><div class="footer-left"><p class="mb-0"> © 2014-2024 <a href="https://github.com/walterlv">walterlv</a>. <span data-toggle="tooltip" data-placement="top" title="除非另有说明，本网站上的博客文章均由吕毅按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。">保留部分权利。</span></p></div><div class="footer-right"><p class="mb-0"> 本站由 <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> 生成，基于 <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> 主题修改。</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">热门标签</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/dotnet/">dotnet</a> <a class="post-tag" href="/tags/csharp/">csharp</a> <a class="post-tag" href="/tags/windows/">windows</a> <a class="post-tag" href="/tags/wpf/">wpf</a> <a class="post-tag" href="/tags/visualstudio/">visualstudio</a> <a class="post-tag" href="/tags/msbuild/">msbuild</a> <a class="post-tag" href="/tags/uwp/">uwp</a> <a class="post-tag" href="/tags/nuget/">nuget</a> <a class="post-tag" href="/tags/git/">git</a> <a class="post-tag" href="/tags/roslyn/">roslyn</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">搜索结果为空</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js,npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/clipboard@2/dist/clipboard.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.16.1,npm/bootstrap@4/dist/js/bootstrap.min.js"></script> <script defer src="/app.js"></script>

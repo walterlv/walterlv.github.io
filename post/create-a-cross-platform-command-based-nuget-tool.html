@@ -1,0 +1,411 @@
+<!DOCTYPE html><html lang="zh-CN" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="day-prompt" content="天前"><meta name="hour-prompt" content="小时前"><meta name="minute-prompt" content="分钟前"><meta name="justnow-prompt" content="刚刚"><meta name="generator" content="Jekyll v4.2.1" /><meta property="og:title" content="如何创建一个基于命令行工具的跨平台的 NuGet 工具包" /><meta name="author" content="吕毅" /><meta property="og:locale" content="zh_CN" /><meta name="description" content="命令行可是跨进程通信的一种非常方便的手段呢，只需启动一个进程传入一些参数即可完成一些很复杂的任务。NuGet 为我们提供了一种自动导入 .props 和 .targets 的方法，同时还是一个 .NET 的包平台；我们可以利用 NuGet 发布我们的工具并自动启用这样的工具。 制作这样的一个跨平台 NuGet 工具，我们能够为安装此工具的项目提供自动的但定制化的编译细节——例如自动生成版本号，自动生成某些中间文件等。 本文更偏向于入门，只在帮助你一步一步地制作一个最简单的 NuGet 工具包，以体验和学习这个过程。然后我会在另一篇博客中完善其功能，做一个完整可用的 NuGet 工具。" /><meta property="og:description" content="命令行可是跨进程通信的一种非常方便的手段呢，只需启动一个进程传入一些参数即可完成一些很复杂的任务。NuGet 为我们提供了一种自动导入 .props 和 .targets 的方法，同时还是一个 .NET 的包平台；我们可以利用 NuGet 发布我们的工具并自动启用这样的工具。 制作这样的一个跨平台 NuGet 工具，我们能够为安装此工具的项目提供自动的但定制化的编译细节——例如自动生成版本号，自动生成某些中间文件等。 本文更偏向于入门，只在帮助你一步一步地制作一个最简单的 NuGet 工具包，以体验和学习这个过程。然后我会在另一篇博客中完善其功能，做一个完整可用的 NuGet 工具。" /><link rel="canonical" href="https://blog.walterlv.com/post/create-a-cross-platform-command-based-nuget-tool.html" /><meta property="og:url" content="https://blog.walterlv.com/post/create-a-cross-platform-command-based-nuget-tool.html" /><meta property="og:site_name" content="walterlv" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2019-08-07T14:50:52+08:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="如何创建一个基于命令行工具的跨平台的 NuGet 工具包" /><meta name="twitter:site" content="@_lvyi_" /><meta name="twitter:creator" content="@吕毅" /> <script type="application/ld+json"> {"datePublished":"2019-08-07T14:50:52+08:00","description":"命令行可是跨进程通信的一种非常方便的手段呢，只需启动一个进程传入一些参数即可完成一些很复杂的任务。NuGet 为我们提供了一种自动导入 .props 和 .targets 的方法，同时还是一个 .NET 的包平台；我们可以利用 NuGet 发布我们的工具并自动启用这样的工具。 制作这样的一个跨平台 NuGet 工具，我们能够为安装此工具的项目提供自动的但定制化的编译细节——例如自动生成版本号，自动生成某些中间文件等。 本文更偏向于入门，只在帮助你一步一步地制作一个最简单的 NuGet 工具包，以体验和学习这个过程。然后我会在另一篇博客中完善其功能，做一个完整可用的 NuGet 工具。","dateModified":"2021-12-20T00:40:29+08:00","headline":"如何创建一个基于命令行工具的跨平台的 NuGet 工具包","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.walterlv.com/post/create-a-cross-platform-command-based-nuget-tool.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://blog.walterlv.com/assets/img/logo.png"},"name":"吕毅"},"url":"https://blog.walterlv.com/post/create-a-cross-platform-command-based-nuget-tool.html","author":{"@type":"Person","name":"吕毅"},"@type":"BlogPosting","@context":"https://schema.org"}</script><title>如何创建一个基于命令行工具的跨平台的 NuGet 工具包 - walterlv</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="walterlv"><meta name="application-name" content="walterlv"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } static get ID() { return "mode-toggle"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } let self = this; /* always follow the system prefers */ this.sysDarkPrefers.addEventListener("change", () => { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.notify(); }); } /* constructor() */ get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode === ModeToggle.DARK_MODE; } get isLightMode() { return this.mode === ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } setDark() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_KEY); sessionStorage.removeItem(ModeToggle.MODE_KEY); } /* Notify another plugins that the theme mode has changed */ notify() { window.postMessage({ direction: ModeToggle.ID, message: this.modeStatus }, "*"); } } /* ModeToggle */ const toggle = new ModeToggle(); function flipMode() { if (toggle.hasMode) { if (toggle.isSysDarkPrefer) { if (toggle.isLightMode) { toggle.clearMode(); } else { toggle.setLight(); } } else { if (toggle.isDarkMode) { toggle.clearMode(); } else { toggle.setDark(); } } } else { if (toggle.isSysDarkPrefer) { toggle.setLight(); } else { toggle.setDark(); } } toggle.notify(); } /* flipMode() */ </script><body data-spy="scroll" data-target="#toc"><div id="page-bluring-bg" style=" background-image: url('/static/posts/2018-05-12-07-46-48.png'); "></div><div id="topbar-wrapper" class="row topbar-down"><div id="topbar" class="col-12 d-flex h-100 align-items-center"><div id="topbar-logoside" class="col"> <a id="topbar-logo" href="https://blog.walterlv.com" alt="avatar"> <img src="/assets/img/logo.png" alt="avatar" onerror="this.style.display='none'"> </a> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i> <a id="topbar-title" class="site-title" href="https://blog.walterlv.com" alt="walterlv"> walterlv </a></div><div id="topbar-searchside" class="justify-content-center col-5"> <i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="搜索..."> <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i> </span> <span id="search-cancel" >取消</span></div><div class="col"></div></div></div><div id="sidebar" class="d-flex flex-column align-items-end" lang="zh-CN"><div class="sidebar-box post-item-box profile-wrapper text-center"><div class="site-title mt-3"> <a href="/">吕毅</a></div><div class="site-subtitle font-italic">.NET and Windows App Developer, Microsoft MVP</div></div><ul class="sidebar-box post-item-box"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>首页</span> </a><li class="nav-item"> <a href="/friends/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>朋友和收藏</span> </a><li class="nav-item"> <a href="/mind/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>胡思乱想</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>归档</span> </a><li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>关于</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <button class="mode-toggle btn" aria-label="Switch Mode"> <i class="fas fa-adjust"></i> </button> <span class="icon-border"></span> <a href="https://github.com/walterlv" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github"></i> </a> <a href="https://twitter.com/_lvyi_" aria-label="twitter" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['walter.lv','qq.com'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="main-wrapper"><div id="main"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><h1 data-toc-skip>如何创建一个基于命令行工具的跨平台的 NuGet 工具包</h1><div class="post-meta text-muted"><div class="d-flex"> <span> 吕毅 </span> <span> 发表于 <em class="timeago" date="2018-05-12 09:09:02 +0800" data-toggle="tooltip" data-placement="bottom" title="2018-05-12, 09:09 +0800" >2018-05-12</em> </span> <span> 更新于 <em class="timeago" date="2019-08-07 14:50:52 +0800" data-toggle="tooltip" data-placement="bottom" title="2019-08-07, 14:50 +0800" >2019-08-07</em> </span></div></div><div class="post-content"><p>命令行可是跨进程通信的一种非常方便的手段呢，只需启动一个进程传入一些参数即可完成一些很复杂的任务。NuGet 为我们提供了一种自动导入 .props 和 .targets 的方法，同时还是一个 .NET 的包平台；我们可以利用 NuGet 发布我们的工具并自动启用这样的工具。</p><p>制作这样的一个跨平台 NuGet 工具，我们能够为安装此工具的项目提供自动的但定制化的编译细节——例如自动生成版本号，自动生成某些中间文件等。</p><p>本文更偏向于入门，只在帮助你一步一步地制作一个最简单的 NuGet 工具包，以体验和学习这个过程。然后我会在另一篇博客中完善其功能，做一个完整可用的 NuGet 工具。</p><hr /><p>关于创建跨平台 NuGet 工具包的博客，我写了两篇。一篇介绍写基于 MSBuild Task 的 dll，一篇介绍写任意的命令行工具，可以是用于 .NET Framework 的 exe，也可以是基于 .NET Core 的 dll，甚至可以是使用本机工具链编译的平台相关的各种格式的命令行工具。内容是相似的但关键的坑不同。我分为两篇可以减少完成单个任务的理解难度：</p><ul><li><a href="/post/create-a-cross-platform-msbuild-task-based-nuget-tool">如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包</a><li><a href="/post/create-a-cross-platform-command-based-nuget-tool">如何创建一个基于命令行工具的跨平台的 NuGet 工具包</a></ul><div id="toc"></div><h2 id="第零步前置条件">第零步：前置条件<a href="#第零步前置条件"><i class="fas fa-hashtag"></i></a></h2></h2><h2 id="第一步创建一个项目用来写工具的核心逻辑">第一步：创建一个项目，用来写工具的核心逻辑<a href="#第一步创建一个项目用来写工具的核心逻辑"><i class="fas fa-hashtag"></i></a></h2></h2><p>为了方便制作跨平台的 NuGet 工具，新建项目时我们优先选用 .NET Core 控制台项目。</p><p><img data-proofer-ignore data-src="/static/posts/2018-05-12-07-46-48.png" alt="新建一个项目" /></p><p>紧接着，我们需要打开编辑此项目的 .csproj 文件，填写必要的信息（尤其是 <code class="language-plaintext highlighter-rouge">&lt;GeneratePackageOnBuild&gt;</code>，确保编译时会生成 NuGet 包）。</p><div class="language-xml highlighter-rouge"><div class="code-header"> <span label-text="XML"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre><td class="rouge-code"><pre><span class="c">&lt;!-- Walterlv.NuGetTool.csproj --&gt;</span>
+<span class="nt">&lt;Project</span> <span class="na">Sdk=</span><span class="s">"Microsoft.NET.Sdk"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;PropertyGroup&gt;</span>
+    <span class="c">&lt;!-- 输出为 exe（其实对于 .NET Core 依然是 dll，除非进行发布）。 --&gt;</span>
+    <span class="nt">&lt;OutputType&gt;</span>Exe<span class="nt">&lt;/OutputType&gt;</span>
+    <span class="c">&lt;!-- 给一个初始的版本号。 --&gt;</span>
+    <span class="nt">&lt;Version&gt;</span>1.0.0-alpha<span class="nt">&lt;/Version&gt;</span>
+    <span class="c">&lt;!-- 由于 .NET Core 本身即具备跨平台的特性，所以我们直接基于 .NET Core 开发 --&gt;</span>
+    <span class="nt">&lt;TargetFramework&gt;</span>netcoreapp2.0<span class="nt">&lt;/TargetFramework&gt;</span>
+    <span class="c">&lt;!-- 这个就是创建项目时使用的名称。 --&gt;</span>
+    <span class="nt">&lt;AssemblyName&gt;</span>Walterlv.NuGetTool<span class="nt">&lt;/AssemblyName&gt;</span>
+    <span class="c">&lt;!-- 此值设为 true，才会在编译之后生成 NuGet 包。 --&gt;</span>
+    <span class="nt">&lt;GeneratePackageOnBuild&gt;</span>true<span class="nt">&lt;/GeneratePackageOnBuild&gt;</span>
+    <span class="c">&lt;!-- 作者的 Id，如果要发布到 nuget.org，那么这里就是 NuGet 用户 Id。 --&gt;</span>
+    <span class="nt">&lt;Authors&gt;</span>walterlv<span class="nt">&lt;/Authors&gt;</span>
+  <span class="nt">&lt;/PropertyGroup&gt;</span>
+<span class="nt">&lt;/Project&gt;</span>
+</pre></table></code></div></div><p>接下来随便在 Program.cs 里写什么代码，这取决于你希望这个 NuGet 工具做什么。</p><div class="language-csharp highlighter-rouge"><div class="code-header"> <span label-text="C#"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre><td class="rouge-code"><pre><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">Walterlv.NuGetTool</span>
+<span class="p">{</span>
+    <span class="k">class</span> <span class="nc">Program</span>
+    <span class="p">{</span>
+        <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Hello World!"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>这时进行编译，我们的 NuGet 包就会出现在项目的输出目录 <code class="language-plaintext highlighter-rouge">bin\Debug</code> 下了。</p><p><img data-proofer-ignore data-src="/static/posts/2018-05-12-07-52-23.png" alt="输出目录下的 NuGet 包" /></p><h2 id="第二步组织-nuget-目录">第二步：组织 NuGet 目录<a href="#第二步组织-nuget-目录"><i class="fas fa-hashtag"></i></a></h2></h2><p>刚刚生成的 NuGet 包还不能真正拿来用。事实上你也可以拿去安装，不过最终的效果只是加了一个毫无作用的引用程序集而已（事实上就是把你写的程序作为普通 dll 引用了）。</p><p>所以，我们需要进行“一番配置”，使得这个项目编译成一个<strong>NuGet 工具</strong>，而不是一个<strong>依赖包</strong>。</p><p>现在，介绍一下 NuGet 预设的目录（如果你想看，可以去解压 .nupkg 文件）：</p><div class="language-csharp highlighter-rouge"><div class="code-header"> <span label-text="C#"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre><span class="c1">// 根目录，用来放 readme.txt 的（已经有人提 issue 要求加入 markdown 支持了）</span>
+<span class="p">+</span> <span class="p">/</span>
+<span class="c1">// 用来放引用程序集 .dll，文档注释 .xml 和符号文件 .pdb 的</span>
+<span class="p">+</span> <span class="n">lib</span><span class="p">/</span>
+<span class="c1">// 用来放那些与平台相关的 .dll/.pdb/.pri 的</span>
+<span class="p">+</span> <span class="n">runtimes</span><span class="p">/</span>
+<span class="c1">// 任意种类的文件，在这个文件夹中的文件会在编译时拷贝到输出目录（保持文件夹结构）</span>
+<span class="p">+</span> <span class="n">content</span><span class="p">/</span>
+<span class="c1">// 这里放 .props 和 .targets 文件，会自动被 NuGet 导入，成为项目的一部分（要求文件名与包名相同）</span>
+<span class="p">+</span> <span class="n">build</span><span class="p">/</span>
+<span class="c1">// 这里也是放 .props 和 .targets 文件，会自动被 NuGet 导入，成为项目的一部分（要求文件名与包名相同）</span>
+<span class="p">+</span> <span class="n">buildMultiTargeting</span><span class="p">/</span>
+<span class="c1">// PowerShell 脚本或者程序，在这里的工具可以在“包管理控制台”(Package Manager Console) 中使用</span>
+<span class="p">+</span> <span class="n">tools</span><span class="p">/</span>
+</pre></table></code></div></div><p>▲ 以上结构可以去官网翻阅原文 <a href="https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package?wt.mc_id=MVP">How to create a NuGet package - Microsoft Docs</a>，不过我这里额外写了一个预设目录 <code class="language-plaintext highlighter-rouge">buildMultiTargeting</code>，官方文档却没有说。</p><blockquote><p>注意到我们的 csproj 文件中的 <code class="language-plaintext highlighter-rouge">&lt;TargetFrameworks&gt;</code> 节点吗？如果指定为单个框架，则自动导入的是 <code class="language-plaintext highlighter-rouge">build</code> 目录下的；如果指定为多个框架，则自动导入的是 <code class="language-plaintext highlighter-rouge">buildMultiTargeting</code> 目录下的。</p></blockquote><p>我们的初衷是做一个 NuGet 工具，所以我们需要选择合适的目录来存放我们的输出文件。</p><p>我们要放一个 <code class="language-plaintext highlighter-rouge">Walterlv.NuGetTool.targets</code> 文件到 <code class="language-plaintext highlighter-rouge">build</code> 和 <code class="language-plaintext highlighter-rouge">buildMultiTargeting</code> 文件夹中，以便能够让我们定制编译流程。我们要让我们写的 .NET Core 工具程序能够工作，所以我们将生成的输出程序放到 tools 目录下。</p><p>于是我们自己的目录结构为：</p><div class="language-csharp highlighter-rouge"><div class="code-header"> <span label-text="C#"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre><span class="p">+</span> <span class="n">build</span><span class="p">/</span>
+    <span class="p">-</span> <span class="n">Walterlv</span><span class="p">.</span><span class="n">NuGetTool</span><span class="p">.</span><span class="n">targets</span>
+<span class="p">+</span> <span class="n">buildMultiTargeting</span><span class="p">/</span>
+    <span class="p">-</span> <span class="n">Walterlv</span><span class="p">.</span><span class="n">NuGetTool</span><span class="p">.</span><span class="n">targets</span>
+<span class="p">+</span> <span class="n">tools</span><span class="p">/</span>
+    <span class="p">+</span> <span class="n">netcoreapp2</span><span class="p">.</span><span class="m">0</span><span class="p">/</span>
+        <span class="p">-</span> <span class="n">Walterlv</span><span class="p">.</span><span class="n">NuGetTool</span><span class="p">.</span><span class="n">dll</span>
+<span class="p">-</span> <span class="n">readme</span><span class="p">.</span><span class="n">txt</span>
+</pre></table></code></div></div><p>提醒一下，.NET Core 生成的程序，如果没有针对特定平台发布，输出的是 dll。</p><p>那么，如何改造我们的项目才能够生成这样的 NuGet 目录结构呢？</p><p>我们先在 Visual Studio 里建好文件夹：</p><p><img data-proofer-ignore data-src="/static/posts/2018-05-12-07-57-30.png" alt="Visual Studio 里的目录结构" /></p><p>随后去编辑项目的 .csproj 文件，在最后的 <code class="language-plaintext highlighter-rouge">&lt;/Project&gt;</code> 前面添加下面这些项：</p><div class="language-xml highlighter-rouge"><div class="code-header"> <span label-text="XML"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="c">&lt;!-- Walterlv.NuGetTool.csproj --&gt;</span>
+<span class="nt">&lt;ItemGroup&gt;</span>
+  <span class="nt">&lt;None</span> <span class="na">Include=</span><span class="s">"Assets\build\**"</span> <span class="na">Pack=</span><span class="s">"True"</span> <span class="na">PackagePath=</span><span class="s">"build\"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;None</span> <span class="na">Include=</span><span class="s">"Assets\buildMultiTargeting\**"</span> <span class="na">Pack=</span><span class="s">"True"</span> <span class="na">PackagePath=</span><span class="s">"buildMultiTargeting\"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;None</span> <span class="na">Include=</span><span class="s">"Assets\readme.txt"</span> <span class="na">Pack=</span><span class="s">"True"</span> <span class="na">PackagePath=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/ItemGroup&gt;</span>
+</pre></table></code></div></div><p><code class="language-plaintext highlighter-rouge">None</code> 表示这一项要显示到 Visual Studio 解决方案中（其实对于不认识的文件，<code class="language-plaintext highlighter-rouge">None</code> 就是默认值）；<code class="language-plaintext highlighter-rouge">Include</code> 表示相对于项目文件的路径（支持通配符）；<code class="language-plaintext highlighter-rouge">Pack</code> 表示这一项要打包到 NuGet；<code class="language-plaintext highlighter-rouge">PackagePath</code> 表示这一项打包到 NuGet 中的路径。(<em>如果你想了解更多 csproj 中的 NuGet 属性，可以阅读我的另一篇文章：<a href="/post/known-nuget-properties-in-csproj">项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅</a></em>)</p><p>这样的一番设置，我们的 <code class="language-plaintext highlighter-rouge">build</code>、<code class="language-plaintext highlighter-rouge">buildMultiTargeting</code> 和 <code class="language-plaintext highlighter-rouge">readme.txt</code> 准备好了，但是 <code class="language-plaintext highlighter-rouge">tools</code> 文件夹还没有。由于我们是把我们生成的命令行工具放到 <code class="language-plaintext highlighter-rouge">tools</code> 里面，第一个想到的当然是修改输出路径——然而这是不靠谱的，因为 NuGet 并不识别输出路径。事实上，我们还可以设置一个属性 <code class="language-plaintext highlighter-rouge">&lt;BuildOutputTargetFolder&gt;</code>，将值指定为 <code class="language-plaintext highlighter-rouge">tools</code>，那么我们就能够将我们的输出文件打包到 NuGet 对应的 <code class="language-plaintext highlighter-rouge">tools</code> 文件夹下了。</p><p>至此，我们的 .csproj 文件看起来像如下这样（为了减少行数，我已经去掉了注释）：</p><div class="language-xml highlighter-rouge"><div class="code-header"> <span label-text="XML"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre><td class="rouge-code"><pre><span class="c">&lt;!-- Walterlv.NuGetTool.csproj --&gt;</span>
+<span class="nt">&lt;Project</span> <span class="na">Sdk=</span><span class="s">"Microsoft.NET.Sdk"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;PropertyGroup&gt;</span>
+    <span class="nt">&lt;Version&gt;</span>1.0.0-alpha<span class="nt">&lt;/Version&gt;</span>
+    <span class="nt">&lt;AssemblyName&gt;</span>Walterlv.NuGetTool<span class="nt">&lt;/AssemblyName&gt;</span>
+    <span class="nt">&lt;GeneratePackageOnBuild&gt;</span>true<span class="nt">&lt;/GeneratePackageOnBuild&gt;</span>
+    <span class="c">&lt;!-- ↓ 新增的属性 --&gt;</span>
+    <span class="nt">&lt;BuildOutputTargetFolder&gt;</span>tools<span class="nt">&lt;/BuildOutputTargetFolder&gt;</span>
+    <span class="c">&lt;!-- ↓ 新增的属性 --&gt;</span>
+    <span class="nt">&lt;NoPackageAnalysis&gt;</span>true<span class="nt">&lt;/NoPackageAnalysis&gt;</span>
+    <span class="c">&lt;!-- ↓ 新增的属性 --&gt;</span>
+    <span class="nt">&lt;DevelopmentDependency&gt;</span>true<span class="nt">&lt;/DevelopmentDependency&gt;</span>
+    <span class="nt">&lt;Authors&gt;</span>walterlv<span class="nt">&lt;/Authors&gt;</span>
+  <span class="nt">&lt;/PropertyGroup&gt;</span>
+  <span class="nt">&lt;ItemGroup&gt;</span>
+    <span class="nt">&lt;Folder</span> <span class="na">Include=</span><span class="s">"Assets\tools\"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/ItemGroup&gt;</span>
+  <span class="nt">&lt;ItemGroup&gt;</span>
+    <span class="c">&lt;!-- ↓ 新增的三项 --&gt;</span>
+    <span class="nt">&lt;None</span> <span class="na">Include=</span><span class="s">"Assets\build\**"</span> <span class="na">Pack=</span><span class="s">"True"</span> <span class="na">PackagePath=</span><span class="s">"build\"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;None</span> <span class="na">Include=</span><span class="s">"Assets\buildMultiTargeting\**"</span> <span class="na">Pack=</span><span class="s">"True"</span> <span class="na">PackagePath=</span><span class="s">"buildMultiTargeting\"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;None</span> <span class="na">Include=</span><span class="s">"Assets\readme.txt"</span> <span class="na">Pack=</span><span class="s">"True"</span> <span class="na">PackagePath=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/ItemGroup&gt;</span>
+<span class="nt">&lt;/Project&gt;</span>
+</pre></table></code></div></div><p>注意到我同时还在文件中新增了另外两个属性配置 <code class="language-plaintext highlighter-rouge">NoPackageAnalysis</code> 和 <code class="language-plaintext highlighter-rouge">DevelopmentDependency</code>。由于我们没有 <code class="language-plaintext highlighter-rouge">lib</code> 文件夹，所以 NuGet 会给出警告，<code class="language-plaintext highlighter-rouge">NoPackageAnalysis</code> 将阻止这个警告。<code class="language-plaintext highlighter-rouge">DevelopmentDependency</code> 是为了说明这是一个开发依赖，设置为 true 将阻止包作为依赖传递给下一个项目。（<strong>事实上这又是官方的一个骗局！因为新版本的 NuGet 竟然去掉了这个功能！</strong>，已经被吐槽了，详见：<a href="https://github.com/NuGet/Home/issues/4125">PackageReference should support DevelopmentDependency metadata · Issue #4125 · NuGet/Home</a>）。关于这些属性更详细的解释，依然可以参见：<a href="/post/known-nuget-properties-in-csproj">项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅</a>。</p><p>现在再尝试编译一下我们的项目，去输出目录下解压查看 nupkg 文件，你就能看到期望的 NuGet 文件夹结构了；建议一个个点进去看，你可以看到我们准备好的空的 <code class="language-plaintext highlighter-rouge">Walterlv.NuGetTool.targets</code> 文件，也能看到我们生成的 <code class="language-plaintext highlighter-rouge">Walterlv.NuGetTool.dll</code>。</p><p><img data-proofer-ignore data-src="/static/posts/2018-05-12-08-03-01.png" alt="生成的 NuGet 包的目录结构" /></p><h2 id="第三步编写-target">第三步：编写 Target<a href="#第三步编写-target"><i class="fas fa-hashtag"></i></a></h2></h2><p>.targets 文件是对项目功能进行扩展的关键文件，由于安装 NuGet 包会自动导入包中的此文件，所以它几乎相当于我们功能的入口。</p><p>现在，我们需要徒手编写这个文件了。</p><div class="language-xml highlighter-rouge"><div class="code-header"> <span label-text="XML"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre><td class="rouge-code"><pre><span class="c">&lt;!-- Assets\build\Walterlv.NuGetTool.targets --&gt;</span>
+<span class="nt">&lt;Project&gt;</span>
+
+  <span class="nt">&lt;PropertyGroup&gt;</span>
+    <span class="nt">&lt;NuGetWalterlvToolPath&gt;</span>$(MSBuildThisFileDirectory)..\tools\netcoreapp2.0\Walterlv.NuGetTool.dll<span class="nt">&lt;/NuGetWalterlvToolPath&gt;</span>
+  <span class="nt">&lt;/PropertyGroup&gt;</span>
+
+  <span class="nt">&lt;Target</span> <span class="na">Name=</span><span class="s">"WalterlvDemo"</span> <span class="na">BeforeTargets=</span><span class="s">"CoreCompile"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;Exec</span> <span class="na">Command=</span><span class="s">"dotnet $(NuGetWalterlvToolPath)"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/Target&gt;</span>
+
+<span class="nt">&lt;/Project&gt;</span>
+</pre></table></code></div></div><p>targets 的文件结构与 csproj 是一样的，你可以阅读我的另一篇文章 <a href="/post/understand-the-csproj">理解 C# 项目 csproj 文件格式的本质和编译流程 - 吕毅</a> 了解其结构。</p><p>上面的文件中，我们指定 <code class="language-plaintext highlighter-rouge">Target</code> 的执行时机为 <code class="language-plaintext highlighter-rouge">CoreCompile</code> 之前，也就是编译那些 .cs 文件之前。在这个时机，我们可以修改要编译的 .cs 文件。如果想了解更多关于 <code class="language-plaintext highlighter-rouge">Target</code> 执行时机或顺序相关的资料，可以阅读：<a href="https://msdn.microsoft.com/en-us/library/ee216359.aspx">Target Build Order</a>。</p><p>别忘了我们还有一个 <code class="language-plaintext highlighter-rouge">buildMultiTargeting</code> 文件夹，也要放一个几乎一样功能的 targets 文件；不过我们肯定不会傻到复制一个一样的。我们在 <code class="language-plaintext highlighter-rouge">buildMultiTargeting</code> 文件夹里的 targets 文件中写以下内容，这样我们的注意力便可以集中在前面的 targets 文件中了。</p><div class="language-xml highlighter-rouge"><div class="code-header"> <span label-text="XML"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="c">&lt;!-- Assets\buildMultiTargeting\Walterlv.NuGetTool.targets --&gt;</span>
+<span class="nt">&lt;Project&gt;</span>
+  <span class="c">&lt;!-- 直接 Import 我们在 build 中写的那个 targets 文件。
+       NuGet 留下了为多框架项目提供特殊扩展的方案，其实有时候也是很有用的。--&gt;</span>
+  <span class="nt">&lt;Import</span> <span class="na">Project=</span><span class="s">"..\build\Walterlv.NuGetTool.targets"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/Project&gt;</span>
+</pre></table></code></div></div><h2 id="第四部调试">第四部：调试<a href="#第四部调试"><i class="fas fa-hashtag"></i></a></h2></h2><p>严格来说，写到这里，我们的跨平台 NuGet 工具已经写完了。在以上状态下，你只需要编译一下，就可以获得一个跨平台的基于 MSBuild Task 的 NuGet 工具。只是——你肯定会非常郁闷——心里非常没谱，这工具到底有没有工作起来！有没有按照我预期的进行工作！如果遇到了 Bug 怎么办！</p><p>于是现在我们来掌握一些调试技巧，这样才方便我们一步步完善我们的功能嘛！<strong>额外插一句：以上第一到第三步几乎都是结构化的步骤，其实非常适合用工具来自动化完成的。</strong></p><h3 id="让我们的-target-能够正确找到我们新生成的-dll">让我们的 Target 能够正确找到我们新生成的 dll<a href="#让我们的-target-能够正确找到我们新生成的-dll"><i class="fas fa-hashtag"></i></a></h3></h3><p>你应该注意到，我们的 targets 文件在 <code class="language-plaintext highlighter-rouge">Assets\build</code> 目录下，而我们的 <code class="language-plaintext highlighter-rouge">Assets</code> 文件夹下并没有真实的 <code class="language-plaintext highlighter-rouge">tools</code> 文件夹（里面是空的）。于是我们希望在调试状态下，dll 能够指向输出目录下。于是我们修改 targets 文件添加配置：</p><div class="language-xml highlighter-rouge"><div class="code-header"> <span label-text="XML"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre><td class="rouge-code"><pre><span class="c">&lt;!-- Assets\build\Walterlv.NuGetTool.targets --&gt;</span>
+<span class="nt">&lt;Project&gt;</span>
+
+  <span class="nt">&lt;PropertyGroup</span> <span class="na">Condition=</span><span class="s">" $(IsInDemoToolDebugMode) == 'True' "</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;NuGetWalterlvToolPath&gt;</span>$(MSBuildThisFileDirectory)..\..\bin\$(Configuration)\netcoreapp2.0\Walterlv.NuGetTool.dll<span class="nt">&lt;/NuGetWalterlvToolPath&gt;</span>
+  <span class="nt">&lt;/PropertyGroup&gt;</span>
+
+  <span class="nt">&lt;PropertyGroup</span> <span class="na">Condition=</span><span class="s">" $(IsInDemoToolDebugMode) != 'True' "</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;NuGetWalterlvToolPath&gt;</span>$(MSBuildThisFileDirectory)..\tools\netcoreapp2.0\Walterlv.NuGetTool.dll<span class="nt">&lt;/NuGetWalterlvToolPath&gt;</span>
+  <span class="nt">&lt;/PropertyGroup&gt;</span>
+
+  <span class="nt">&lt;Target</span> <span class="na">Name=</span><span class="s">"WalterlvDemo"</span> <span class="na">BeforeTargets=</span><span class="s">"CoreCompile"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;Exec</span> <span class="na">Command=</span><span class="s">"dotnet $(NuGetWalterlvToolPath)"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/Target&gt;</span>
+
+<span class="nt">&lt;/Project&gt;</span>
+</pre></table></code></div></div><p>这样，我们就拥有了一个可以供用户设置的属性 <code class="language-plaintext highlighter-rouge">&lt;IsInDemoToolDebugMode&gt;</code> 了。</p><h3 id="准备一个用于测试此命令行工具的测试项目">准备一个用于测试此命令行工具的测试项目<a href="#准备一个用于测试此命令行工具的测试项目"><i class="fas fa-hashtag"></i></a></h3></h3><p>接着，我们在解决方案中新建一个调试项目 <code class="language-plaintext highlighter-rouge">Walterlv.Debug</code>（我选用了 .NET Standard 2.0 框架）。然后在它的 csproj 中 <code class="language-plaintext highlighter-rouge">&lt;Import&gt;</code> 我们刚刚的 .targets 文件，并设置 <code class="language-plaintext highlighter-rouge">&lt;IsInDemoToolDebugMode&gt;</code> 属性为 <code class="language-plaintext highlighter-rouge">True</code>：</p><div class="language-xml highlighter-rouge"><div class="code-header"> <span label-text="XML"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre><span class="c">&lt;!-- Walterlv.Debug.csproj --&gt;</span>
+<span class="nt">&lt;Project</span> <span class="na">Sdk=</span><span class="s">"Microsoft.NET.Sdk"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;PropertyGroup&gt;</span>
+    <span class="nt">&lt;TargetFramework&gt;</span>netstandard2.0<span class="nt">&lt;/TargetFramework&gt;</span>
+    <span class="nt">&lt;IsInDemoToolDebugMode&gt;</span>True<span class="nt">&lt;/IsInDemoToolDebugMode&gt;</span>
+  <span class="nt">&lt;/PropertyGroup&gt;</span>
+
+  <span class="nt">&lt;Import</span> <span class="na">Project=</span><span class="s">"..\Walterlv.NuGetTool\Assets\build\Walterlv.NuGetTool.targets"</span> <span class="nt">/&gt;</span>
+  
+<span class="nt">&lt;/Project&gt;</span>
+</pre></table></code></div></div><p>当准备好基本的调试环境之后，我们的解决方案看起来是下面这样的样子：</p><p><img data-proofer-ignore data-src="/static/posts/2018-05-12-08-13-03.png" alt="带有调试环境的解决方案" /></p><h3 id="调试命令行项目">调试命令行项目<a href="#调试命令行项目"><i class="fas fa-hashtag"></i></a></h3></h3><p>为了保持根兄弟文章的结构一致，我依然保留了“调试项目”这一部分内容，但其实大家都懂，不是吗？—— <strong>一个控制台程序，谁不会调试啊</strong>！！！</p><p>但是——如果你希望能够在 MSBuild 或者 <code class="language-plaintext highlighter-rouge">dotnet build</code> 的环境下调试，就会发现，普通的调试方法并不能得到这样的环境——例如项目特定的参数。</p><p>加一句 <code class="language-plaintext highlighter-rouge">Debugger.Launch();</code> 是最简单的方法了。</p><div class="language-csharp highlighter-rouge"><div class="code-header"> <span label-text="C#"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre><td class="rouge-code"><pre><span class="c1">// Program.cs</span>
+<span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Diagnostics</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">Walterlv.NuGetTool</span>
+<span class="p">{</span>
+    <span class="k">class</span> <span class="nc">Program</span>
+    <span class="p">{</span>
+        <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// 新增了启动调试器的代码。</span>
+            <span class="n">Debugger</span><span class="p">.</span><span class="nf">Launch</span><span class="p">();</span>
+            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Hello World!"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>这样，在使用 <code class="language-plaintext highlighter-rouge">msbuild</code> 或者 <code class="language-plaintext highlighter-rouge">dotnet build</code> 时，就会弹出一个调试器选择界面。</p><p><img data-proofer-ignore data-src="/static/posts/2018-05-11-22-07-18.png" alt="选择调试器" /></p><p>当然，也有一些比较正统的方法，为了使这篇文章尽可能简单，我只附一张图，如果有需要，可以自己去尝试：</p><p><img data-proofer-ignore data-src="/static/posts/2018-05-12-08-40-14.png" alt="使用“调试配置”调试" /></p><p>现在，即使我们去 Walterlv.Debug 目录下输入 <code class="language-plaintext highlighter-rouge">msbuild</code> 命令或 <code class="language-plaintext highlighter-rouge">dotnet build</code> 命令，也能进入我们的断点了：</p><h2 id="第五步发挥你的想象力">第五步：发挥你的想象力<a href="#第五步发挥你的想象力"><i class="fas fa-hashtag"></i></a></h2></h2><p>想象力是没有限制的，我们只需要在 .targets 文件里面向我们的控制台程序传入合适的参数，即可完成非常多的功能。</p><h3 id="targets-向控制台程序传参数">.targets 向控制台程序传参数<a href="#targets-向控制台程序传参数"><i class="fas fa-hashtag"></i></a></h3></h3><p>.targets 向控制台程序传参数只需要按照普通控制台程序传参的方式就可以了：</p><div class="language-xml highlighter-rouge"><div class="code-header"> <span label-text="XML"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre><span class="c">&lt;!-- Assets\build\Walterlv.NuGetTool.targets --&gt;</span>
+<span class="nt">&lt;Target</span> <span class="na">Name=</span><span class="s">"WalterlvDemo"</span> <span class="na">BeforeTargets=</span><span class="s">"CoreCompile"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Exec</span> <span class="na">Command=</span><span class="s">"dotnet $(NuGetWalterlvToolPath) -i $(IntermediateOutputPath)"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/Target&gt;</span>
+</pre></table></code></div></div><p>这里，<code class="language-plaintext highlighter-rouge">$(IntermediateOutputPath)</code> 是 msbuild 编译期间会自动设置的全局属性，代表此项目编译过程中临时文件的存放路径（也就是我们常见的 obj 文件夹）。当然，使用 <code class="language-plaintext highlighter-rouge">dotnet build</code> 或者 <code class="language-plaintext highlighter-rouge">dotnet msbuild</code> 也是有这样的全局属性的。</p><p>在 Program.cs 中，只需要解析命令行参数即可接收这样的传参。</p><div class="language-csharp highlighter-rouge"><div class="code-header"> <span label-text="C#"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre><td class="rouge-code"><pre><span class="c1">// Program.cs</span>
+<span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Diagnostics</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">Walterlv.NuGetTool</span>
+<span class="p">{</span>
+    <span class="k">class</span> <span class="nc">Program</span>
+    <span class="p">{</span>
+        <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Debugger</span><span class="p">.</span><span class="nf">Launch</span><span class="p">();</span>
+            <span class="kt">var</span> <span class="n">intermediateOutputPath</span> <span class="p">=</span> <span class="n">args</span><span class="p">[</span><span class="m">1</span><span class="p">];</span>
+            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Hello World!"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>你可以尽情发挥你的想象力，传入更多让人意想不到的参数，实现不可思议的功能。更多 MSBuild 全局参数，可以参考我的另一篇文章<a href="/post/known-properties-in-csproj">项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - 吕毅</a>。</p><p>需要注意，控制台传参数是有字符数量限制的，要解决传参字符数量限制问题，可以参考 <a href="https://blog.lindexi.com/post/Roslyn-%E4%BD%BF%E7%94%A8-WriteLinesToFile-%E8%A7%A3%E5%86%B3%E5%8F%82%E6%95%B0%E8%BF%87%E9%95%BF%E6%97%A0%E6%B3%95%E4%BC%A0%E5%85%A5.html">Roslyn 使用 WriteLinesToFile 解决参数过长无法传入</a>。</p><h3 id="控制台程序向-targets-返回数据">控制台程序向 .targets 返回数据<a href="#控制台程序向-targets-返回数据"><i class="fas fa-hashtag"></i></a></h3></h3><p>控制台程序的输出（也就是 <code class="language-plaintext highlighter-rouge">Console.WriteLine()</code> 那个）是能够直接和 MSBuild 的 Target 进行数据交换的。</p><p>有两种不同的方式：</p><ol><li>直接传数据，这些数据可以被捕获成属性或者项，具体可以阅读我的另一篇博客：<ul><li><a href="/post/exec-task-of-msbuild-target">如何使用 MSBuild Target（Exec）中的控制台输出</a></ul><li>报告编译警告和编译错误，具体可以阅读我的另一篇博客：<ul><li><a href="/post/standard-error-warning-format">如何在 MSBuild Target（Exec）中报告编译错误和编译警告</a></ul></ol><h3 id="使用命令执行完之后的结果">使用命令执行完之后的结果<a href="#使用命令执行完之后的结果"><i class="fas fa-hashtag"></i></a></h3></h3><p>如果只是传入参数，那么我们顶多只能干一些不痛不痒的事情，我们应该使用我们的控制台程序做一些什么。什么？你说直接去改源代码？那万一你的代码不幸崩溃了，项目岂不被你破坏了！（当然，你去改了源码，还会破坏 MSBuild 的差量编译。）</p><p>所以，我们应该建立一种约定，要求控制台程序生成一些什么，然后在 .targets 里面取出使用。</p><div class="language-csharp highlighter-rouge"><div class="code-header"> <span label-text="C#"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+</pre><td class="rouge-code"><pre><span class="c1">// Program.cs</span>
+<span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Diagnostics</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.IO</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">Walterlv.NuGetTool</span>
+<span class="p">{</span>
+    <span class="k">class</span> <span class="nc">Program</span>
+    <span class="p">{</span>
+        <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Debugger</span><span class="p">.</span><span class="nf">Launch</span><span class="p">();</span>
+            <span class="kt">var</span> <span class="n">additionalCompileFile</span> <span class="p">=</span> <span class="n">args</span><span class="p">[</span><span class="m">1</span><span class="p">];</span>
+            <span class="n">File</span><span class="p">.</span><span class="nf">WriteAllText</span><span class="p">(</span><span class="n">additionalCompileFile</span><span class="p">,</span>
+                <span class="s">@"using System;
+namespace Walterlv.Debug
+{
+    public class Doubi
+    {
+        public string Name { get; }
+        private Doubi(string name) =&gt; Name = name;
+        public static Doubi Get() =&gt; new Doubi(""吕毅"");
+    }
+}"</span><span class="p">);</span>
+            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Hello World!"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>然后，我们需要在 .targets 文件里接收这个输出参数。然而命令行调用与 <a href="/post/create-a-cross-platform-msbuild-task-based-nuget-tool">如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包 - 吕毅</a> 中所写的 Task 不同，命令行调用的后面是不能够立刻应用命令行调用的结果的，因为此时命令还没有结束。</p><p>所以我们需要写一个新的 Target，来使用命令行程序执行后的结果。</p><div class="language-xml highlighter-rouge"><div class="code-header"> <span label-text="XML"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre><span class="c">&lt;!-- Assets\build\Walterlv.NuGetTool.targets --&gt;</span>
+<span class="nt">&lt;Target</span> <span class="na">Name=</span><span class="s">"WalterlvDemo"</span> <span class="na">BeforeTargets=</span><span class="s">"CoreCompile"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Exec</span> <span class="na">Command=</span><span class="s">"dotnet $(NuGetWalterlvToolPath) -i $(IntermediateOutputPath)Doubi.cs"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/Target&gt;</span>
+
+<span class="nt">&lt;Target</span> <span class="na">Name=</span><span class="s">"WalterlvDemoUseResult"</span> <span class="na">AfterTargets=</span><span class="s">"WalterlvDemo"</span> <span class="na">BeforeTargets=</span><span class="s">"CoreCompile"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ItemGroup&gt;</span>
+    <span class="nt">&lt;Compile</span> <span class="na">Include=</span><span class="s">"$(IntermediateOutputPath)Doubi.cs"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/ItemGroup&gt;</span>
+<span class="nt">&lt;/Target&gt;</span>
+</pre></table></code></div></div><p>这样，我们生成的 Walterlv.Debug 调试项目在编译完成之后，还会额外多出一个“逗比”类。而且——我们甚至能够直接在 Walterlv.Debug 项目的中使用这个编译中生成的新类。</p><p><img data-proofer-ignore data-src="/static/posts/2018-05-11-23-37-47.png" alt="可以使用额外生成的类" /></p><p>使用编译生成的新类既不会报错，也不会产生警告下划线，就像原生写的类一样。</p><p>如果你要在编译期间替换一个类而不是新增一个类，例如将 Class1.cs 更换成新类，那么需要将其从编译列表中移除：</p><div class="language-xml highlighter-rouge"><div class="code-header"> <span label-text="XML"><i class="fas fa-code small"></i></span> <button aria-label="copy" title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="c">&lt;!-- Assets\build\Walterlv.NuGetTool.targets --&gt;</span>
+<span class="nt">&lt;ItemGroup&gt;</span>
+  <span class="nt">&lt;Compile</span> <span class="na">Remove=</span><span class="s">"Class1.cs"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;Compile</span> <span class="na">Include=</span><span class="s">"$(IntermediateOutputPath)Doubi.cs"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/ItemGroup&gt;</span>
+</pre></table></code></div></div><p>需要注意：<strong>编译期间才生成的项（<code class="language-plaintext highlighter-rouge">&lt;ItemGroup&gt;</code>）或者属性（<code class="language-plaintext highlighter-rouge">&lt;PropertyGroup&gt;</code>），需要写在 <code class="language-plaintext highlighter-rouge">&lt;Target&gt;</code> 节点的里面。</strong>如果写在外面，则不是编译期间生效的，而是始终生效的。当写在外面时，要特别留意可能某些属性没有初始化完全，你应该只使用那些肯定能确认存在的属性或文件。</p><h3 id="加入差量编译支持">加入差量编译支持<a href="#加入差量编译支持"><i class="fas fa-hashtag"></i></a></h3></h3><p>在本文的例子中，当你每次编译时，虽然核心的编译流程不怎么耗时，不过那个命令却是每次都执行。如果你觉得此命令的执行非常耗时，那么建议加入差量编译的支持。关于加入差量编译，可以参考我的另一篇文章<a href="/post/msbuild-incremental-build">每次都要重新编译？太慢！让跨平台的 MSBuild/dotnet build 的 Target 支持差量编译</a>。</p><h3 id="本地测试-nuget-包">本地测试 NuGet 包<a href="#本地测试-nuget-包"><i class="fas fa-hashtag"></i></a></h3></h3><p>在发布 NuGet 包之前，我们可以先在本地安装测试。由于我们在 <code class="language-plaintext highlighter-rouge">C:\Users\lvyi\Desktop\Walterlv.NuGetTool\Walterlv.NuGetTool\bin\Debug</code> 输出路径下已经有了打包好的 nupkg 文件，所以可以加一个本地 NuGet 源。</p><p>我们找一个其他的项目，然后在 Visual Studio 中设置 NuGet 源为我们那个 NuGet 工具项目的输出路径。</p><p><img data-proofer-ignore data-src="/static/posts/2018-05-11-23-53-47.png" alt="设置本地 NuGet 包源" /></p><p>这时安装，编译完之后，我们就会发现我们的项目生成的 dll 中多出了一个“逗比(Doubi)”类，并且可以在那个项目中编写使用 <code class="language-plaintext highlighter-rouge">Doubi</code> 的代码了。</p><h2 id="总结">总结<a href="#总结"><i class="fas fa-hashtag"></i></a></h2></h2><p>制作一个跨平台的基于控制台的 NuGet 工具包虽然无关步骤比较多，但总体还算不太难，我们总结一下：</p><ol><li>准备项目的基本配置（设置各种必要的项目属性）<li>建立好 NuGet 的文件夹结构<li>编写 Target<li>新增功能、调试和测试</ol><p>如果你在实践的过程中遇到了各种问题，欢迎在下面留言，一般我会在一天之内给予回复。</p><p>如果在阅读这篇文章时存在一些概念理解上的问题，或者不知道如何扩展本文的功能，可能需要阅读下我的另一些文章：</p><ul><li><a href="/post/understand-the-csproj">理解 C# 项目 csproj 文件格式的本质和编译流程 - 吕毅</a><li><a href="/post/known-properties-in-csproj">项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - 吕毅</a><li><a href="/post/known-nuget-properties-in-csproj">项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - 吕毅</a></ul><p>当然，还有一些正在编写，过一段时间可以阅读到。</p><hr /><p><strong>参考资料</strong></p><ul><li><a href="https://github.com/NuGet/docs.microsoft.com-nuget/blob/master/docs/create-packages/Creating-a-Package.md">docs.microsoft.com-nuget/Creating-a-Package.md at master · NuGet/docs.microsoft.com-nuget</a><li><a href="https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets?wt.mc_id=MVP">NuGet pack and restore as MSBuild targets - Microsoft Docs</a><li><a href="https://www.natemcmaster.com/blog/2017/11/11/build-tools-in-nuget/">Bundling .NET build tools in NuGet</a><li><a href="https://msdn.microsoft.com/en-us/library/ms164309.aspx">MSBuild Reserved and Well-Known Properties</a><li><a href="https://stackoverflow.com/a/6982575/6233938">build process - How does MSBuild check whether a target is up to date or not? - Stack Overflow</a><li><a href="https://msdn.microsoft.com/en-us/library/ms171483.aspx">How to: Build Incrementally</a><li><a href="https://msdn.microsoft.com/en-us/library/x8zx72cd.aspx">Exec Task</a><li><a href="https://stackoverflow.com/a/1367309/6233938">Overwrite properties with MSBuild - Stack Overflow</a><li><a href="https://stackoverflow.com/a/39745383/6233938">visual studio - How to get property value of a project file using msbuild - Stack Overflow</a><li><a href="https://github.com/davidfowl/NuGetPowerTools">davidfowl/NuGetPowerTools: A bunch of powershell modules that make it even easier to work with nuget</a><li>[MSBuild and Skipping target “<TargetName>" because it has no outputs - Stack Overflow](https://stackoverflow.com/q/27377095/6233938)</TargetName><li><a href="https://stackoverflow.com/q/15012963/6233938">Don’t include dependencies from packages.config file when creating NuGet package - Stack Overflow</a><li><a href="https://docs.microsoft.com/zh-cn/nuget/release-notes/nuget-2.7#Development-Only_Dependencies?wt.mc_id=MVP">NuGet 2.7 Release Notes - Microsoft Docs</a><li><a href="https://github.com/NuGet/Home/issues/4125">PackageReference should support DevelopmentDependency metadata · Issue #4125 · NuGet/Home</a></ul><p> 本文会经常更新，请阅读原文： <a href="/post/create-a-cross-platform-command-based-nuget-tool.html">https://blog.walterlv.com/post/create-a-cross-platform-command-based-nuget-tool.html</a> ，以避免陈旧错误知识的误导，同时有更好的阅读体验。</p><p> <a rel="知识共享许可协议" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"> <img alt="知识共享许可协议" src="https://blog.walterlv.com/assets/img/by-nc-sa.svg" /> </a></p><p> 本作品采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a> 进行许可。欢迎转载、使用、重新发布，但务必保留文章署名 吕毅 （包含链接： <a href="https://blog.walterlv.com">https://blog.walterlv.com</a> ），不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请 <a href="mailto:walter.lv@qq.com">与我联系 (walter.lv@qq.com)</a> 。</p></div><div class="post-tail-wrapper text-muted"><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="comments-wrapper"> 登录 GitHub 账号进行评论</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">分享</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=如何创建一个基于命令行工具的跨平台的 NuGet 工具包 - walterlv&url=https://blog.walterlv.com/post/create-a-cross-platform-command-based-nuget-tool.html" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=如何创建一个基于命令行工具的跨平台的 NuGet 工具包 - walterlv&u=https://blog.walterlv.com/post/create-a-cross-platform-command-based-nuget-tool.html" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://telegram.me/share?text=如何创建一个基于命令行工具的跨平台的 NuGet 工具包 - walterlv&url=https://blog.walterlv.com/post/create-a-cross-platform-command-based-nuget-tool.html" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i id="copy-link" class="fa-fw fas fa-link small" data-toggle="tooltip" data-placement="top" title="分享链接" title-succeed="链接已复制！"> </i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"><div class="access"><div id="access-lastmod" class="post"><div class="panel-heading">最近更新</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/post/monitor-foreground-window-on-windows">如何在控制台程序中监听 Windows 前台窗口的变化</a><li><a href="/post/how-to-start-a-process-with-environment-variables-without-code">在 Windows 上如何在启动程序时单独为这个程序指定环境变量，而不需要编写任何代码或脚本</a><li><a href="/post/wpf-draw-a-hsl-hsb-palette-using-hlsl">WPF 像素着色器进阶：使用 HLSL 编写一个高性能的实时变化的 HSL/HSV/HSB 调色盘</a><li><a href="/post/create-wpf-pixel-shader-effects-using-shazzam-shader-editor.html">WPF 像素着色器入门：使用 Shazzam Shader Editor 编写 HLSL 像素着色器代码</a><li><a href="/post/where-is-the-windows-10-native-icons.html">Windows 10 自带那么多图标，去哪里找呢？</a></ul></div><div id="access-tags"><div class="panel-heading">热门标签</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/dotnet/">dotnet</a> <a class="post-tag" href="/tags/csharp/">csharp</a> <a class="post-tag" href="/tags/windows/">windows</a> <a class="post-tag" href="/tags/wpf/">wpf</a> <a class="post-tag" href="/tags/visualstudio/">visualstudio</a> <a class="post-tag" href="/tags/msbuild/">msbuild</a> <a class="post-tag" href="/tags/uwp/">uwp</a> <a class="post-tag" href="/tags/nuget/">nuget</a> <a class="post-tag" href="/tags/git/">git</a> <a class="post-tag" href="/tags/roslyn/">roslyn</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"><div class="panel-heading pl-3 pt-2 mb-2">文章内容</div><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="tail-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><section class="comments"> <script src="https://utteranc.es/client.js" repo="walterlv/BlogComments" issue-term="pathname" theme="preferred-color-scheme" crossorigin="anonymous" async> </script></section></div></div></div><footer class="d-flex flex-column w-100 justify-content-center"><div id="analytics-box"> <script defer src="https://www.googletagmanager.com/gtag/js?id=UA-108101550-1"></script> <script> document.addEventListener("DOMContentLoaded", function (event) { window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'UA-108101550-1'); }); </script> <script async type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1264408226'%3E%3C/span%3E%3Cscript src='//s22.cnzz.com/z_stat.php%3Fid%3D1264408226%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script></div><div class="d-flex justify-content-between align-items-center text-muted"><div class="footer-left"><p class="mb-0"> © 2014-2024 <a href="https://github.com/walterlv">walterlv</a>. <span data-toggle="tooltip" data-placement="top" title="除非另有说明，本网站上的博客文章均由吕毅按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。">保留部分权利。</span></p></div><div class="footer-right"><p class="mb-0"> 本站由 <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> 生成，基于 <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> 主题修改。</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">热门标签</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/dotnet/">dotnet</a> <a class="post-tag" href="/tags/csharp/">csharp</a> <a class="post-tag" href="/tags/windows/">windows</a> <a class="post-tag" href="/tags/wpf/">wpf</a> <a class="post-tag" href="/tags/visualstudio/">visualstudio</a> <a class="post-tag" href="/tags/msbuild/">msbuild</a> <a class="post-tag" href="/tags/uwp/">uwp</a> <a class="post-tag" href="/tags/nuget/">nuget</a> <a class="post-tag" href="/tags/git/">git</a> <a class="post-tag" href="/tags/roslyn/">roslyn</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">搜索结果为空</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script src="https://cdn.jsdelivr.net/combine/npm/lozad/dist/lozad.min.js,npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/clipboard@2/dist/clipboard.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.16.1,npm/bootstrap@4/dist/js/bootstrap.min.js"></script> <script defer src="/app.js"></script>
