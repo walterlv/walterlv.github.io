@@ -254,7 +254,7 @@ GetShellWindow
 GetWindowThreadProcessId
 ```
 
-完全的项目代码 [github](https://github.com/lindexi/lindexi_gd/tree/37b1367680592d8f80c0a950d96474ac1ec2a806/Workbench/FefaleregairHelhigacemwai) 上，可使用如下命令拉取
+完全的项目代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/37b1367680592d8f80c0a950d96474ac1ec2a806/Workbench/FefaleregairHelhigacemwai) 上，可使用如下命令拉取
 
 ```
 # 新建一个文件夹，随后使用 cd 命令进入此文件夹，或直接在此文件夹内输入以下命令
